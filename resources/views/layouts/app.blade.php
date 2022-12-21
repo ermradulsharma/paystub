@@ -33,93 +33,142 @@
 
 <body>
 
-    <header >
+    <!-- Start Header Section -->
+    <div class="row">
+        <div class="col-10">
 
-        <nav class="navbar navbar-expand fixed py-5">
-            <div class="container ">
-                <div class="mt-3">
-                <a href="{{url('/')}}"><img class="logo" src="images/Paystub X.webp"></a>
-                </div>
+            <div class=" container ">
 
-                 <div class="collapse navbar-collapse ml-3">
-                        <ul class="navbar-nav  mt-2 ">
-                           
-                            <li class="nav-item">
-                                <a class="btn btn-lg mx-2 p-2 navbtn" href="{{url('/')}}">USA</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="btn btn-lg mx-2 p-2 navbtn" href="{{url('/')}}">CANADA</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="btn btn-lg mx-2 p-2 navbtn" href="{{url('/')}}">UK</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="btn btn-lg mx-2 p-2 navbtn" href="{{url('/')}}">GLOBLE</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="btn btn-lg mx-2 p-2 navbtn" href="{{url('/')}}">W-2 FORM</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="btn btn-md mx-2 p-2 btn-danger login" href="{{url('/')}}">Login</a>
-                            </li>
-                        </ul>
+                <nav class="navbar navbar-expand fixed py-5">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="mt-3">
+                                <a href="{{url('/')}}"><img class="w-100" src="images/Paystub X.webp"></a>
+                            </div>
+                        </div>
+
+                        <div class="col-8 mt-3">
+
+
+                            <div class="row">
+                                <div class="col-2">
+                                    <a class="btn btn-lg  p-2 w-100  navbtn" href="{{url('/')}}">USA</a>
+
+                                </div>
+                                <div class="col-2">
+                                    <a class="btn btn-lg p-2 w-100 navbtn" href="{{url('/')}}">CANADA</a>
+
+                                </div>
+                                <div class="col-2   ">
+                                    <a class="btn btn-lg  p-2 w-100  navbtn" href="{{url('/')}}">UK</a>
+
+                                </div>
+                                <div class="col-2">
+                                    <a class="btn btn-lg  p-2 w-100   navbtn" href="{{url('/')}}">GLOBLE</a>
+
+                                </div>
+                                <div class="col-2">
+                                    <a class="btn btn-lg  p-2 w-100   navbtn" href="{{url('/')}}">FORM</a>
+
+                                </div>
+                                <div class="col-2">
+                                    <a class="btn btn-md  p-2 w-100  btn-danger login" href="{{url('/')}}">Login</a>
+
+                                </div>
+                            </div>
+
+
+
+                        </div>
 
                     </div>
-                </div>
-            </div>
-        </nav>
 
-    </header>
+                </nav>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- End Header Section -->
+
+
+
+
 
 
     @yield('content')
 
+
+
     <!-- Start Footer Section -->
- <section id="footer-section" class="footer-section fixed-footer ">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-2">
+<div class="footerSection">
 
-                    <div class="btn">
-                        <a href="{{ url('/privacy') }}" target="_self" aria-disabled="false"><button type="button"
-                                class="btn btn-success" style="margin-right:10px">Privacy</button></a>
-                        <a href="{{ url('/term') }}" target="_self" aria-disabled="false"><button type="button"
-                                class="btn btn-success">Terms</button></a>
-                    </div>
+    <div class="container">
 
-
+        <div class="row">
+            <div class="col-2 my-5">
+                <div>
+                <a class="btn btn-lg  p-2 w-100 border border-white  footbtn" href="{{url('terms')}}">Terms & Conditions</a>
                 </div>
-
-                <div class="col-md-5 copy">
-                    <h4 class="" style="letter-spacing:2px; font-size:16px;">© 2011-2022 Christapp. All Rights Reserved
-                        Worldwide</h4>
+                <div class="mt-3">
+                <a class="btn btn-lg  p-2 w-100 border border-white  footbtn" href="{{url('privacy')}}">Privacy Policy</a>
                 </div>
-
-                <div class="col-md-5">
-                    <ul class="d-inline-flex py-4">
-                        <li> <a href="https://www.instagram.com/wix/" target="_blank"><img src="images/icons/instaa.png"
-                                    style="color:white;width:35px;"></a> </li>&nbsp
-                        <li> <a href="https://www.facebook.com/wix" target="_blank"><img src="images/icons/fb.png"
-                                    style="color:white;width:35px;"></a> </li> &nbsp
-                        <li> <a href="https://twitter.com/wix" target="_blank"><img src="images/icons/tw.png"
-                                    style="color:white;width:35px;"></a> </li> &nbsp
-                        <li><a href="https://il.linkedin.com/company/wix-com?trk=public_jobs_topcard_logo"
-                                target="_blank"><img src="images/icons/linkin.png" style="color:white;width:35px;"></a>
-                        </li> &nbsp
-                        <li><a href="https://www.tiktok.com/notfound" target="_blank"><img src="images/icons/tiktok.png"
-                                    style="color:white;width:35px;"></a> </li> &nbsp
-                        <li><a href="https://www.youtube.com/user/Wix" target="_blank"><img
-                                    src="images/icons/youtube.png" style="color:white;width:35px;"></a> </li> &nbsp
-                    </ul>
-
+                <div class="mt-3">
+                <a class="btn btn-lg  p-2 w-100 border border-white  footbtn" href="{{url('refund')}}">Refund Policy</a>
                 </div>
-
+                <div class="mt-3">
+                <a class="btn btn-lg  p-2 w-100 border border-white  footbtn" href="{{url('contact')}}">Contact Us</a>
+                </div>
             </div>
-            <!--/.row 
-    </div>
-    <!-- /.container 
 
-    </section> -->
+             <div class="col-1"></div>
+
+            <div class="col-4">
+                <div class="row mt-5 pt-3">
+                    <div class="col-2">
+                    <a href="{{url('/')}}"><img class="w-100" src="images/insta.png"></a>
+                    </div>
+                    <div class="col-2">
+                    <a href="{{url('/')}}"><img class="w-100" src="images/fb.png"></a>
+                    </div>
+                    <div class="col-2">
+                    <a href="{{url('/')}}"><img class="w-100" src="images/tweet.png"></a>
+                    </div>
+                    <div class="col-2">
+                    <a href="{{url('/')}}"><img class="w-100" src="images/linkd.png"></a>
+                    </div>
+                    <div class="col-2">
+                    <a href="{{url('/')}}"><img class="w-100" src="images/youtube.png"></a>
+                    </div>
+                    <div class="col-2">
+                    <a href="{{url('/')}}"><img class="w-100" src="images/tiktok.png"></a>
+                    </div>
+                     
+                </div>
+            </div>
+
+            <div class="col-1"></div>
+
+            <div class="col-4 ">
+                <div class="row mt-5 text-center">
+                <p class="text-white">COPYRIGHT © 2022 PaystubX,<br> ALL RIGHTS RESERVED.</p>
+                </div>
+                <div class="row mt-3">
+                    <a href="{{url('/')}}"><img class="w-50" src="images/satisfaction.webp"></a>
+                    </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+</div>
+
+
+
+
     <!-- End Footer Section -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">

@@ -2,9 +2,9 @@
 @section('content')
 <div class="paystub">
     <div class="container">
-        <div class="row">
-            <div class="col-6 mt-5 pt-5">
-                <h1 class="instant">
+        <div class="row pb-5    ">
+            <div class="col-5 mt-5 pt-5">
+                <h1 class="instant display-4">
                     Instant Online Professional PayStub Generator
                 </h1>
                 <h4 class="QUICK">
@@ -19,9 +19,9 @@
                             src="images/Download_on_the_App_Store_Badge.webp"></a>
                 </div>
             </div>
-            <div class="col-6" text-left>
+            <div class="col-7" text-left>
                 <div class="mt-5">
-                    <a href="{{url('/')}}"><img class="img1 ml-3" src="images/paystub_image.webp"></a>
+                    <a href="{{url('/')}}"><img class="w-100 ml-3" src="images/paystub_image.webp"></a>
                 </div>
             </div>
 
@@ -32,7 +32,7 @@
 <div class="mt-2 ">
     <div class="container">
         <div class="row">
-            <a href="{{url('/')}}"><img class="img2" src="images/2022-12-14_174735.webp"></a>
+            <a href="{{url('/')}}"><img class="w-100" src="images/2022-12-14_174735.webp"></a>
         </div>
 
     </div>
@@ -41,7 +41,7 @@
 <div class="mt-2 createSample">
     <div class="container">
         <div class="row">
-            <a href="{{url('/')}}"><img class="img3" src="images/Create me.webp"></a>
+            <a href="{{url('/')}}"><img class="w-100" src="images/Create me.webp"></a>
         </div>
 
     </div>
@@ -72,9 +72,9 @@
                     <p>
                         <li class="proof"> Apply for health insurance ✅</li>
                     </p>
-                    <div class="mt-3">
+                    <div>
                         <p style="font-family:sans-serif; font-size:25px;">Generate 100% Legal Pay Stubs in seconds.</p>
-                        <img class="img4" src="images/previewed.webp">
+                        <img class="w-50" src="images/previewed.png">
                     </div>
                     <p style="font-size: 25px; font-family:sans-serif; color:#767672;">TAX FILING HAS NEVER BEEN SO EASY
                     </p>
@@ -106,8 +106,8 @@
                 <p>
                     <li class="proof">Manage all payroll documents in one place ✅</li>
                 </p>
-                <img class="img5" src="images/paystubx_images.webp">
-                <div class="mt-3">
+                <img class="w-100" src="images/paystubx_images.png">
+                <div class="mt-5">
                     <p class="OnPaystub ml-2">On Paystub X Join thousands of satisfied independent contractors and small
                         business owners and
                         get the highest quality pay stubs, W2s and 1099s — right to your inbox! We make it easy.
@@ -293,8 +293,8 @@
 <div>
     <div class="container ">
         <div class="row">
-            <div class="col-7">
-                <div class="mt-3" style="font-size: 24px;">
+            <div class="col-6 text-left mb-5">
+                <div class="mt-5 " style="font-size: 24px;">
                     <b> Ready to Explore our Online Paystub Generator?</b>
                 </div>
                 <div>
@@ -302,8 +302,8 @@
                         <li class="" style="font-size: 18px;"> W-2 - Efile with SSA, Distribute to Employees. ✅</li>
                     </p>
                     <p>
-                        <li class="" style="font-size: 18px;">1099-NEC, 1099-MISC - Efile with IRS, Distribute to
-                            Contractors. ✅</li>
+                        <li class="" style="font-size: 18px;">1099-NEC, 1099-MISC - Efile with IRS, Distribute
+                            Contractor✅</li>
                     </p>
                     <p>
                         <li class="" style="font-size: 20px;">Request a small business loan ✅</li>
@@ -314,16 +314,38 @@
                 </div>
             </div>
 
-            <div class="col-5">
-            <div class="mt-3" style="font-size: 24px;">
-                    <b> Generate Paystubs Using our<span class="text-danger">Android or iOS App</span>
 
-</b>
+            <div class="col-6 text-left mb-5">
+                <div class="mt-5 " style="font-size: 24px;">
+                    <b> Generate Paystubs Using our<span class="text-danger">Android or iOS App</span></b>
+                </div>
+                <p style="font-size: 18px;" class="mt-3 ml-2">Generate paystubs instantly by using our paystub generator
+                    app.It's simple, easy, and accurate.</p>
+                    <div class="mt-5 pt-5 ">
+                    <a href="{{url('/')}}"><img class="storbtn " src="images/Google_Play_Store_badge_EN.webp"></a>
+                    <a href="{{url('/')}}"><img class="storbtn ml-5"
+                            src="images/Download_on_the_App_Store_Badge.webp"></a>
                 </div>
             </div>
+
         </div>
     </div>
 </div>
+
+<div>
+<div class="container mb-5">
+    <div class="row">
+        <div class="col-lg-12">
+        <a href="{{url('/')}}"><img class="w-100" src="images/2022-12-16_220238.webp"></a>
+        </div>
+    </div>
+
+
+  
+    
+</div>
+</div>
+
 
 
 @endsection
