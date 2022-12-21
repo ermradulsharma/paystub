@@ -118,40 +118,212 @@
         </div>
     </div>
 </div>
+
+<div class="mt-5 calculations">
+    <div class="container text-justify text-center pb-5">
+        <h2 style="font-size:30px; font-family:sans-serif" class="text-white pt-5">Generate paystubs with accurate tax
+            calculations, W-2, 1099S Etc in Seconds</h2>
+
+        <div class="row mt-5">
+
+            <div class="col-md-4 text-center">
+                <h2 style="font-size:40px; font-family:sans-serif" class="text-white">Add your Data</h2>
+                <p style="font-size:18px; font-family:sans-serif" class="text-white">Our paystub generator accurately
+                    calculates your Federal and State taxes, including Social security and Medicare taxes so you don't
+                </p>
+                <img src="images/1.webp"
+                    style=" width: 94px; height: 94px; object-fit: cover; object-position: 50% 50%;">
+
+
+            </div>
+
+            <div class="col-md-4 text-center">
+                <h2 style="font-size:40px; font-family:sans-serif" class="text-white">Download & Email your Paystub</h2>
+                <p style="font-size:18px; font-family:sans-serif" class="text-white">You will get to generate unlimited
+                    payslip, paycheck or paystub according to the plan you select.
+                </p>
+
+                <img src="images/2.webp"
+                    style=" width: 94px; height: 94px; object-fit: cover; object-position: 50% 50%;">
+
+
+            </div>
+
+            <div class="col-md-4 text-center">
+                <h2 style="font-size:40px; font-family:sans-serif" class="text-white">Preview Data</h2>
+                <p style="font-size:18px; font-family:sans-serif" class="text-white">Generate pay stubs with accurate
+                    state income taxes, based on state W-4, and other applicable local taxes. </p>
+
+                <img src="images/3.webp"
+                    style=" width: 94px; height: 94px; object-fit: cover; object-position: 50% 50%;">
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
 <div>
-<div class="container">
-<div class="row" style="margin-top:30px;">
+    <div class="container text-justify text-center pb-5">
+        <h1 style="font-size:40px; font-family:sans-serif" class="pt-5">Why do Small Businesses Love Paystub<span
+                class="text-danger">X</span>?</h1>
 
-<div class="col-md-4">
-    <img src="images/Missions/icons8-bible-99.webp" style=" width: 121px; height: 121px; object-fit: cover; object-position: 50% 50%;">
-    <h4 style="font-size:20px; margin-top:35px;">TWI BIBLE VERSIONS</h4>
-    <p style="margin-top:40px;color:white;">Choose from more than 1000 <br> Bible versions in over 50
-        <br> languages on your computer, <br> phone, or tablet -- with many <br>
-        available as audio Bibles.</p>
+        <div class="row mt-5">
+
+            <div class="col-md-4 mt-4">
+
+                <div class="  border border-dark">
+                    <div class="boxAccurate border border-dark p-1">
+                        <div class="Accurate container p-2 ">
+                            <div class="card card-bordered border-dark pb-5">
+                                <div class="card-img-block">
+                                    <div class="info-box mt-3" style="font-size:25px; font-family:sans-serif">
+                                        <b>Accurate Tax Calculations </b>
+                                    </div>
+                                </div>
+                                <div class="card-body pt-5 pb-5">
+                                    <img src="images/salary.webp" class="salary">
+                                    <p class="card-text text-center mt-5 pb-4"
+                                        style=" color:#767672; font-size:20px; line-height:2em; font-family:sans-serif">
+                                        Keeping
+                                        payroll records is a complex task. Once you set everything up, we take care of
+                                        it
+                                        for
+                                        you. Our reliable online service removes the human error of payroll record
+                                        keeping.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mt-4">
+
+                <div class="  border border-dark">
+                    <div class="boxAccurate border border-dark p-1">
+                        <div class="Accurate container p-2 ">
+                            <div class="card card-bordered border-dark pb-1">
+                                <div class="card-img-block">
+                                    <div class="info-box mt-3" style="font-size:25px; font-family:sans-serif">
+                                        <b> Form W-2</b>
+                                    </div>
+                                </div>
+                                <div class="card-body pt-5">
+                                    <img src="images/NYCFreeTaxPrep-Documents-W2.webp" class="salary">
+                                    <p class="card-text text-center mt-4"
+                                        style=" color:#767672; font-size:20px; line-height:2em; font-family:sans-serif">
+                                        A W-2 tax form shows important information about the income you've earned from
+                                        your employer, amount of taxes withheld from your paycheck, benefits provided
+                                        and other information for the year. You use this form to file your federal and
+                                        state taxes.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mt-4 ">
+                <div class=" border border-dark">
+                    <div class="boxAccurate border border-dark p-1">
+                        <div class="Accurate container p-2 ">
+                            <div class="card card-bordered border-dark  pb-5">
+                                <div class="card-img-block ">
+                                    <div class="info-box mt-3" style="font-size:25px; font-family:sans-serif">
+                                        <b>1099-MISC</b>
+                                    </div>
+                                </div>
+                                <div class="card-body pt-5 pb-5">
+                                    <img src="images/2573180.webp" class="salary mb-3">
+                                    <p class="card-text text-center mt-4 pb-5 mb-4"
+                                        style=" color:#767672; font-size:20px; line-height:2em; font-family:sans-serif; ">
+
+                                        Form 1099-MISC reports payments other than nonemployee compensation made by a
+                                        trade or business to others.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
 </div>
 
-<div class="col-md-4">
-    <img src="images/Missions/icons8-marker-pen-64.webp" style=" width: 121px; height: 121px; object-fit: cover; object-position: 50% 50%;">
-    <h5 style="font-size:20px; margin-top:35px;">BIBLE STUDIES</h5>
-    <p style="margin-top:40px;color:white;">Highlight or Bookmark your <br> favorite verses,make Verse
-        <br>Images that you can share, and <br> attach public or private Notes to <br>
-        Bible passages.</p>
-</div>
+<div class="mt-5 vedios">
+    <div class="container text-justify text-center pb-5">
+        <div style="font-size:35px; font-family:sans-serif;" class="text-white pt-5"><b>Useful Videos for FAQ</b></div>
 
-<div class="col-md-4">
-    <img src="images/Missions/icons8-phone-64.webp" style=" width: 121px; height: 121px; object-fit: cover; object-position: 50% 50%;">
-    <h5 style="font-size:20px; margin-top:35px;">Service Name</h5>
-    <p style="margin-top:40px;color:white;">Twi Bible App is completely free,<br> and available on iOS
-        and Android <br> devices.<br>Download the Free Bible App <br>NOW</p>
-</div>
-</div>
- </div>
-</div>
+        <div class="row mt-5">
+
+            <div class="col-md-4 text-center">
+                <div>
+                    <div style="background-image: url('.jpg');"></div>
+                </div>
+                <p style="font-size:18px; font-family:sans-serif" class="text-white">Add your Data</p>
 
 
+
+            </div>
+
+            <div class="col-md-4 text-center">
+                <p style="font-size:18px; font-family:sans-serif" class="text-white">Download & Email your Paystub</p>
+
+
+
+            </div>
+
+            <div class="col-md-4 text-center">
+                <p style="font-size:18px; font-family:sans-serif" class="text-white">Preview Data</p>
+
+
+
+            </div>
+        </div>
+    </div>
 </div>
 
+<div>
+    <div class="container ">
+        <div class="row">
+            <div class="col-7">
+                <div class="mt-3" style="font-size: 24px;">
+                    <b> Ready to Explore our Online Paystub Generator?</b>
+                </div>
+                <div>
+                    <p>
+                        <li class="" style="font-size: 18px;"> W-2 - Efile with SSA, Distribute to Employees. ✅</li>
+                    </p>
+                    <p>
+                        <li class="" style="font-size: 18px;">1099-NEC, 1099-MISC - Efile with IRS, Distribute to
+                            Contractors. ✅</li>
+                    </p>
+                    <p>
+                        <li class="" style="font-size: 20px;">Request a small business loan ✅</li>
+                    </p>
+                </div>
+                <div class="mt-5">
+                    <a class="btn btn-lg  btn-danger Generate " href="{{url('/')}}">Generate Paystub Now</a>
+                </div>
+            </div>
 
+            <div class="col-5">
+            <div class="mt-3" style="font-size: 24px;">
+                    <b> Generate Paystubs Using our<span class="text-danger">Android or iOS App</span>
+
+</b>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 @endsection

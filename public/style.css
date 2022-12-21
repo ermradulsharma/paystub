@@ -115,6 +115,25 @@ object-fit: fill;
     font-size: 25px;
     color: #767672;
 }
+.calculations{
+    background: #42419e;
+   
+}
+.salary{
+    width: 117px;
+    height: 117px;
+}
+.Accurate{
+ background-color:#b3dade;  
+
+}
+.boxAccurate{
+    background-color: black;
+}
+.vedios{
+    background: #ff6261;
+    
+}
 
 
 
