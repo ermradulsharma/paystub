@@ -170,7 +170,7 @@
 
         <div class="row mt-5">
 
-            <div class="col-md-4 mt-4">
+            <div class="col-sm-12 col-md-4 col-lg-4  mt-4">
 
                 <div class="  border border-dark">
                     <div class="boxAccurate border border-dark p-1">
@@ -199,7 +199,7 @@
                 </div>
             </div>
 
-            <div class="col-md-4 mt-4">
+            <div class="col-sm-12 col-md-4 col-lg-4  mt-4">
 
                 <div class="  border border-dark">
                     <div class="boxAccurate border border-dark p-1">
@@ -226,7 +226,7 @@
                 </div>
             </div>
 
-            <div class="col-md-4 mt-4 ">
+            <div class="col-sm-12 col-md-4 col-lg-4  mt-4 ">
                 <div class=" border border-dark">
                     <div class="boxAccurate border border-dark p-1">
                         <div class="Accurate container p-2 ">

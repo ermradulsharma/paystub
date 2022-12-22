@@ -1,0 +1,23 @@
+.createbtn{
+    padding: 10px 64px;
+    border-radius: 32px;
+    background-color: red;
+    color: white;
+    border: 1px solid white'';
+    border: 1px solid #ffffffad;
+    font-size: 20px;
+}
+.netimg{
+    width: 181px;
+    height: 172px;
+    margin-right: 10px;
+}
+.netimg1{
+    width: 181px;
+    height: 172px;
+    margin-right: 10px;
+}
+.box-usa{
+    border: 1px solid black;
+    padding: 10px;
+}

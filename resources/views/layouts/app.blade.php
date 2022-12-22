@@ -19,6 +19,7 @@
 
     <!-- Sulfur CSS Styles  -->
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="newstyle.css">
 
     <!-- Responsive CSS Style -->
     <link rel="stylesheet" type="text/css" href="css/responsive.css">
@@ -45,19 +46,19 @@
                         <ul class="navbar-nav  mt-2 ">
                            
                             <li class="nav-item">
-                                <a class="btn btn-lg mx-2 p-2 navbtn" href="{{url('/')}}">USA</a>
+                                <a class="btn btn-lg mx-2 p-2 navbtn" href="{{url('usa')}}">USA</a>
                             </li>
                             <li class="nav-item">
-                                <a class="btn btn-lg mx-2 p-2 navbtn" href="{{url('/')}}">CANADA</a>
+                                <a class="btn btn-lg mx-2 p-2 navbtn" href="{{url('canada')}}">CANADA</a>
                             </li>
                             <li class="nav-item">
-                                <a class="btn btn-lg mx-2 p-2 navbtn" href="{{url('/')}}">UK</a>
+                                <a class="btn btn-lg mx-2 p-2 navbtn" href="{{url('uk')}}">UK</a>
                             </li>
                             <li class="nav-item">
-                                <a class="btn btn-lg mx-2 p-2 navbtn" href="{{url('/')}}">GLOBLE</a>
+                                <a class="btn btn-lg mx-2 p-2 navbtn" href="{{url('globle')}}">GLOBLE</a>
                             </li>
                             <li class="nav-item">
-                                <a class="btn btn-lg mx-2 p-2 navbtn" href="{{url('/')}}">W-2 FORM</a>
+                                <a class="btn btn-lg mx-2 p-2 navbtn" href="{{url('forms')}}">W-2 FORM</a>
                             </li>
                             <li class="nav-item">
                                 <a class="btn btn-md mx-2 p-2 btn-danger login" href="{{url('/')}}">Login</a>
