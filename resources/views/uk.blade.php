@@ -3,54 +3,71 @@
 
 
 
-<div class="ukheader">
-    <div class="container fluid">
-        <div class="container">
+<div title="Uk-header" style="background: #ff6261; ">
 
-            <div class="row pb-5">
-                <div class="col-5 text-center  mt-5 pt-3 ">
-                    <h1 class="text-white" style="font-family:'serif;"><b>Generate 100% Legal UK Payslips
-                            Instantly</b>
-                    </h1>
+    <div class="row pb-5">
 
-                    <div class="mt-5">
-                        <div class="text-white Payslips" style="">
-                            Join Paystubx: we’re the best payslip maker for a reason. Join thousands of satisfied
-                            independent contractors and small business owners and get the highest quality UK
-                            payslips — right to your inbox! We make it easy. Guaranteed. A simple way to make check
-                            stubs online. Generate, print and use. It’s that simple!
+        <div class="col-5 text-center  mt-5 pt-5 m-auto ">
+            <div class="row m-auto content-justify-center text-center">
+                <div class="col-2"></div>
+                <div class="col-10">
+                    <div class="container-fluid">
+                        <div class="container">
+
+                            <h1 class="text-white" style="font-family:'serif;"><b>Generate 100% Legal UK Payslips
+                                    Instantly</b>
+                            </h1>
+
+                            <div class="mt-5 pt-3">
+                                <div class="text-white Payslips" style="">
+                                    Join Paystubx: we’re the best payslip maker for a reason. Join thousands of
+                                    satisfied
+                                    independent contractors and small business owners and get the highest quality UK
+                                    payslips — right to your inbox! We make it easy. Guaranteed. A simple way to make
+                                    check
+                                    stubs online. Generate, print and use. It’s that simple!
+                                </div>
+                            </div>
+
+                            <div class="mt-5 pt-3">
+                                <a class="btn btn-lg  mt-2 p-2 btn-danger Generate " href="{{url('/')}}">Generate
+                                    Paystub
+                                    Now</a>
+                            </div>
+                            <div class="mt-5 pt-3">
+                                <a href="{{url('/')}}"><img class="storbtn "
+                                        src="images/Google_Play_Store_badge_EN.webp"></a>
+                                <a href="{{url('/')}}"><img class="storbtn ml-3"
+                                        src="images/Download_on_the_App_Store_Badge.webp"></a>
+                            </div>
+
                         </div>
-                    </div>
 
-                    <div class="mt-3">
-                        <a class="btn btn-lg  mt-2 p-2 btn-danger Generate " href="{{url('/')}}">Generate Paystub
-                            Now</a>
                     </div>
-                    <div class="mt-5">
-                        <a href="{{url('/')}}"><img class="storbtn " src="images/Google_Play_Store_badge_EN.webp"></a>
-                        <a href="{{url('/')}}"><img class="storbtn ml-3"
-                                src="images/Download_on_the_App_Store_Badge.webp"></a>
-                    </div>
-
                 </div>
-
-                <div class="col-7">
-                    <img class="w-100 mt-5 pt-3" src="images/uk/payslip_uk.png">
-                </div>
-
             </div>
 
         </div>
+
+
+        <div class="col-7">
+            <img class="w-100 mt-5 pt-3" src="images/uk/payslip_uk.png">
+        </div>
+
     </div>
+
+
+
 </div>
 
 
 <div class="row">
     <div class="col-6" style="background:#e9e6e6;">
-        <div class="row">
-            <div class="col-8 container text-justify">
-                <div class="row">
-                    <h1 class="mt-5" style="font-family:'sans-serif">
+        <div class="row ">
+            <div class="col-4"></div>
+            <div class="col-8 text-justify">
+                <div class=" container m-auto ">
+                    <h1 class="mt-2" style="font-family:'sans-serif">
                         <b>Create Payslips For Yourself</b>
                     </h1>
 
@@ -58,7 +75,7 @@
 
                         Create Payslips For Your Employees</h2>
 
-                    <div class="mt-3">
+                    <div class="mt-2">
                         <p>
                             <li>Help employees qualify for loans, housing & mor</li>
                         </p>
@@ -75,7 +92,47 @@
                             <li>Manage all payroll documents in one plac</li>
                         </p>
                     </div>
+
+                    <h1 class="mt-2" style="font-family:'sans-serif">
+                        <b>Show proof of income.</b>
+                    </h1>
+
+                    <div class="mt-2">
+
+                        <p>
+                            <li>Rent an apartmen </li>
+                        </p>
+                        <p>
+                            <li>Qualify for a mortgag </li>
+                        </p>
+                        <p>
+                            <li>Request a small business loa </li>
+                        </p>
+                        <p>
+                            <li>Verify income for child support or alimon </li>
+                        </p>
+                        <p>
+                            <li>Apply for medical insuranc </li>
+                        </p>
+                    </div>
+
+                    <h1 class="mt-2" style="font-family:'sans-serif">
+                        <b>Online payroll No <br> software require</b>
+                    </h1>
+
+                    <p class="m-auto" style="font-family:'sans-serif; font-size:50px;" >Most payroll systems were
+                        developed in the last century to ,<br> run on a PC. Our software works online
+                        (aka cloud or SaaS)<br> and is accessed with any web browser on any device e.g.<br> Mac, PC,
+                        Tablet or
+                        Mobile. That means no software to<br> install, no updates, backup or archive – we take care of
+                        it<br>
+                        all for you. Multi-user enables any number of administrators <br>or employees to access
+                        paiyroll®
+                        simultaneously.
+                    </p>
                 </div>
+
+
 
             </div>
         </div>
@@ -195,7 +252,7 @@
                 current financial year (which runs from 6 April to 5 April). This can be particularly helpful for
                 checking if you’ve been taxed correctly.</p>
 
-                <div class="my-3">
+            <div class="my-3">
                 <a class="btn btn-lg  btn-danger Generate " href="{{url('/')}}">Generate Paystub
                     Now</a>
             </div>

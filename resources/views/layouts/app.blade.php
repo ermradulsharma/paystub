@@ -53,27 +53,27 @@
 
                             <div class="row">
                                 <div class="col-2">
-                                    <a class="btn btn-lg  p-2 w-100  navbtn" href="{{url('/')}}">USA</a>
+                                    <a class="btn btn-lg  p-2 w-100  navbtn" href="{{url('usa')}}">USA</a>
 
                                 </div>
                                 <div class="col-2">
-                                    <a class="btn btn-lg p-2 w-100 navbtn" href="{{url('/')}}">CANADA</a>
+                                    <a class="btn btn-lg p-2 w-100 navbtn" href="{{url('canada')}}">CANADA</a>
 
                                 </div>
                                 <div class="col-2   ">
-                                    <a class="btn btn-lg  p-2 w-100  navbtn" href="{{url('/')}}">UK</a>
+                                    <a class="btn btn-lg  p-2 w-100  navbtn" href="{{url('uk')}}">UK</a>
 
                                 </div>
                                 <div class="col-2">
-                                    <a class="btn btn-lg  p-2 w-100   navbtn" href="{{url('/')}}">GLOBLE</a>
+                                    <a class="btn btn-lg  p-2 w-100   navbtn" href="{{url('globle')}}">GLOBLE</a>
 
                                 </div>
                                 <div class="col-2">
-                                    <a class="btn btn-lg  p-2 w-100   navbtn" href="{{url('/')}}">FORM</a>
+                                    <a class="btn btn-lg  p-2 w-100   navbtn" href="{{url('form')}}">FORM</a>
 
                                 </div>
                                 <div class="col-2">
-                                    <a class="btn btn-md  p-2 w-100  btn-danger login" href="{{url('/')}}">Login</a>
+                                    <a class="btn btn-md  p-2 w-100  btn-danger login" href="{{url('login')}}">Login</a>
 
                                 </div>
                             </div>

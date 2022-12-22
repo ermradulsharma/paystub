@@ -29,7 +29,7 @@ Route::get('uk', function () {
 Route::get('globle', function () {
     return view('globle');
 });
-Route::get('forms', function () {
+Route::get('form', function () {
     return view('forms');
 });
 Route::get('terms', function () {
