@@ -17,9 +17,12 @@
                                 instant pay stub delivery, and free pay stub preview. Simple as ABC.</p>
                             <div class=""><button class="createbtn">Create Paystub</button>
                             </div>
-                            <div class="netbtn d-flex justify-content-center">
-                                <img src="images/apl.png" class="netimg"> <img src="images/apl.png" class="netimg">
-                            </div>
+                           
+                            <div class="mt-5">
+                    <a href="{{url('/')}}"><img class="storbtn " src="images/Google_Play_Store_badge_EN.webp"></a>
+                    <a href="{{url('/')}}"><img class="storbtn ml-3"
+                            src="images/Download_on_the_App_Store_Badge.webp"></a>
+                </div>
                         </div>
 
                         <div class="col-md-7">
@@ -101,16 +104,17 @@
 
 
 
-<div class="container mt-   ">
+<div class="container">
 <div class="row">
-<div class="col-md-12 text-center">
-<h1 style=""; font-family: avenir-lt-w01_35-light1475496,sans-serif;>Generate Paystubs Using our Android or iOS App</h1>
+<div class="col-md-12 text-center mt-3">
+<h1 style="font-family: avenir-lt-w01_35-light1475496,sans-serif;" >Generate Paystubs Using our Android or iOS App</h1>
 <p style="font-size:18px; font-family: avenir-lt-w01_35-light1475496,sans-serif;">Generate paystubs instantly by using our paystub generator app. It's simple, easy, and accurate.</p>
 
-<div class="netbtn d-flex justify-content-center">
-  <img src="images/apl.png" class="netimg">
-   <img src="images/apl.png" class="netimg">
- </div>
+<div class="my-5">
+                    <a href="{{url('/')}}"><img class="storbtn " src="images/Google_Play_Store_badge_EN.webp"></a>
+                    <a href="{{url('/')}}"><img class="storbtn ml-3"
+                            src="images/Download_on_the_App_Store_Badge.webp"></a>
+                </div>
 
 </div>
 </div>
