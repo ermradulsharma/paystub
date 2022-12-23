@@ -7,7 +7,7 @@
         <div class="col-lg-6 text-center  mt-5 pt-5 m-auto ">
             <div class="row m-auto justify-content-center text-center">
 
-                <div class="col-10">
+                
                     <div class="container-fluid">
                         <div class="container">
 
@@ -41,13 +41,14 @@
                     </div>
                 </div>
             </div>
-
-        </div>
-
-
-        <div class="col-lg-6">
+            <div class="col-lg-6 m-auto">
             <img class="w-100 mt-5 pt-3" src="images/globle/qewqq22.png">
         </div>
+
+        </div>
+
+
+       
 
     </div>
 
@@ -59,7 +60,7 @@
 <div style="background-color: #e9e6e6;">
 
     <div class="row">
-        <div class="col-6">
+        <div class="col-lg-6">
             <div class="row">
                 <div class="col-3"></div>
                 <div class="col-9">
@@ -112,10 +113,10 @@
             </div>
         </div>
 
-        <div class="col-6">
+        <div class="col-lg-6">
 
-            <div class="row">
-                <div class="col-10">
+            <div class="row justify-contetn-center">
+                <div class="col-lg-10">
                     <div class="text-center">
                         <h3 class="mt-2" style="font-family:'sans-serif">
                             <b>

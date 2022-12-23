@@ -51,7 +51,7 @@
 <div>
     <div class="container">
         <div class="row mt-5">
-            <div class="col-6">
+            <div class="col-lg-6">
                 <h1 class="WithPaystubX">
                     With Paystub<span class="text-danger">X</span>
                     <h3 class="Show">
@@ -89,7 +89,7 @@
                     </div>
             </div>
 
-            <div class="col-6">
+            <div class="col-lg-6">
                 <h3 class="Createpay">
                     Create pay stubs for your employees.
                 </h3>

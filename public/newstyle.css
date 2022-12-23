@@ -258,8 +258,18 @@ p{
      
    }
 
+
+
+   @media screen and (max-width: 1024px) {
+.create-container li{
+font-size: 10px;
+}
+.create-p{
+    font-size: 8px;
+    }
+   }
 @media screen and (max-width: 600px) {
-   .pay-box1 {
+   .pay-box1  {
      
     }
   }

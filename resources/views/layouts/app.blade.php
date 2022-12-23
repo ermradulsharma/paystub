@@ -167,22 +167,21 @@
 
                 <div class="col-lg-3">
                     <div class="row mt-5 pt-3 justify-content-center">
-                        <div class="col-lg-2 col-sm-1">
+                        <div class="col-lg-4 col-sm-2">
                             <a href="{{url('/')}}"><img class="w-100" src="images/insta.png"></a>
                         </div>
-                        <div class="col-lg-2 col-sm-1">
-                            <a href="{{url('/')}}"><img class="w-100" src="images/fb.png"></a>
+                        <div class="col-lg-4 col-sm-2"><img class="w-100" src="images/fb.png"></a>
                         </div>
-                        <div class="col-lg-2 col-sm-1">
+                        <div class="col-lg-4 col-sm-2 ">
                             <a href="{{url('/')}}"><img class="w-100" src="images/tweet.png"></a>
                         </div>
-                        <div class="col-lg-2 col-sm-1">
+                        <div class="col-lg-4 col-sm-2 ">
                             <a href="{{url('/')}}"><img class="w-100" src="images/linkd.png"></a>
                         </div>
-                        <div class="col-lg-2 col-sm-1">
+                        <div class="col-lg-4 col-sm-2 ">
                             <a href="{{url('/')}}"><img class="w-100" src="images/youtube.png"></a>
                         </div>
-                        <div class="col-lg-2 col-sm-1">
+                        <div class="col-lg-4 col-sm-2">
                             <a href="{{url('/')}}"><img class="w-100" src="images/tiktok.png"></a>
                         </div>
 

@@ -290,26 +290,26 @@
                     </div>
 
                     <div class="row mb-3">
-                        <div class="col-md-2">
+                        <div class="col-md-2 mb-2">
                             <button CLASS="statementbtn">EARNING</button>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-md-2 mb-2">
 
                             <button CLASS="statementbtn">RATE</button>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-md-2 mb-2">
 
                             <button CLASS="statementbtn">HOURS</button>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-md-2 mb-2">
 
                             <button CLASS="statementbtn">TOTAL</button>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-md-2 mb-2">
 
                             <button CLASS="statementbtn">THIS PERIOD</button>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-md-2 mb-2">
 
                             <button CLASS="statementbtn">YTD TOTAL</button>
                         </div>
