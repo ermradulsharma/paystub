@@ -7,12 +7,13 @@
     <!-- Basic -->
     <title>PAYSTUB</title>
 
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Bootstrap CSS  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css" type="text/css">
+   
 
     <!-- Font Awesome CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
@@ -104,7 +105,7 @@
     <!-- Start Footer Section -->
 <div class="footerSection">
 
-    <div class="container">
+    <div class="container p-5">
 
         <div class="row justify-content-center">
             <div class="col-lg-3 col-sm-6 my-5 m-auto">

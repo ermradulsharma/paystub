@@ -141,5 +141,26 @@ border: 1px solid white ;
 }
 
 p{
-    font-family: serif;
+    
 }
+.pay-box{
+    border: 1px solid #0000008c;
+    padding: 26px 27px;
+    background: white;
+    font-weight: 200;
+    text-align: center;
+    font-size: 19px;
+}
+.pay-box1{
+    border: 1px solid #0000008c;
+    padding: 11px;
+    background: white;
+    font-weight: 200;
+    text-align: center;
+    font-size: 17px;
+}
+@media only screen and (max-width: 600px) {
+   .pay-box1 {
+     
+    }
+  }
