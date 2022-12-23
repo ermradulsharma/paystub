@@ -304,7 +304,7 @@
 
 </div>
 
-<div class="row" style="background:#2c2b69;">
+<div class="container-fluid p-3" style="background:#2c2b69;">
     <div class="col-lg-12 my-5 justify-content-center  text-white">
         <div class=" text-justify text-center text-white">
             <h1>Generate 100% Legal UK Payslips</h1>

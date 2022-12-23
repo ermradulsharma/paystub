@@ -106,7 +106,7 @@
 
 <div class="container">
 <div class="row">
-<div class="col-md-12 col-lg-4 text-center mt-3">
+<div class="col-md-12 col-lg-12 text-center mt-3">
 <h1 style="font-family: avenir-lt-w01_35-light1475496,sans-serif;" >Generate Paystubs Using our Android or iOS App</h1>
 <p style="font-size:18px; font-family: avenir-lt-w01_35-light1475496,sans-serif;">Generate paystubs instantly by using our paystub generator app. It's simple, easy, and accurate.</p>
 
