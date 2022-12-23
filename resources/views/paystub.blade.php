@@ -167,7 +167,7 @@
 </div>
 
 <div>
-    <div class="container text-justify text-center pb-5">
+    <!-- <div class="container text-justify text-center pb-5">
         <h1 style="font-size:40px; font-family:sans-serif" class="pt-5">Why do Small Businesses Love Paystub<span
                 class="text-danger">X</span>?</h1>
 
@@ -255,8 +255,10 @@
             </div>
 
         </div>
-    </div>
-
+    </div> -->
+<div class="container">
+    <div class="row"></div>
+</div>
 
 </div>
 

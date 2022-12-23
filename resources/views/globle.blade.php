@@ -4,9 +4,9 @@
 
     <div class="row pb-5">
 
-        <div class="col-5 text-center  mt-5 pt-5 m-auto ">
-            <div class="row m-auto content-justify-center text-center">
-                <div class="col-2"></div>
+        <div class="col-lg-6 text-center  mt-5 pt-5 m-auto ">
+            <div class="row m-auto justify-content-center text-center">
+
                 <div class="col-10">
                     <div class="container-fluid">
                         <div class="container">
@@ -45,7 +45,7 @@
         </div>
 
 
-        <div class="col-7">
+        <div class="col-lg-6">
             <img class="w-100 mt-5 pt-3" src="images/globle/qewqq22.png">
         </div>
 
@@ -123,33 +123,39 @@
                         </h3>
                     </div>
                     <div class="mt-2">
-                        <ul>
-                            <li class="mt-3" style="font-size:20px; font-family:'sans-serif;">Employee contracts aren’t
+                        <ul class="row d-flex">
+                            <li class="mt-3 col-md-12" style="font-size:18px; font-family:'sans-serif;">Employee
+                                contracts aren’t
                                 a legal requirement, but they protect your employees and
                                 your
                                 business. Contracts can outline everything from job descriptions and expected hours
                                 of
                                 work to the date of employment and salary details. A lawyer can help you draft a
                                 contract if you have any questions as to what should be included</li>
-                            <li class="mt-3" style="font-size:20px; font-family:'sans-serif;">Whether you hire full-time
+                            <li class="mt-3 col-md-6" style="font-size:18px; font-family:'sans-serif;">Whether you hire
+                                full-time
                                 employees, contractors or freelancers makes a big
                                 difference
                                 when it comes to payroll. Make sure you’re compensating them properly and according
                                 to
                                 the tax guidelines where your business operates</li>
-                            <li class="mt-3" style="font-size:20px; font-family:'sans-serif;">Wave’s small business
+                            <li class="mt-3 col-md-6" style="font-size:18px; font-family:'sans-serif;">Wave’s small
+                                business
                                 payroll software comes with worry-free features such as
                                 automatic
                                 tax remittances, direct deposits into your employee’s bank accounts, and automatic
                                 payroll journal entries</li>
-                            <li class="mt-3" style="font-size:20px; font-family:'sans-serif;">Got questions about
+                            <li class="mt-3 col-md-6" style="font-size:18px; font-family:'sans-serif;">Got questions
+                                about
                                 payroll and taxes? Check out The Ultimate Year-end Payroll
                                 Checklist
                             </li>
-                            <li class="mt-3" style="font-size:20px; font-family:'sans-serif;">Check out our other free
+                            <li class="mt-3 col-md-6" style="font-size:18px; font-family:'sans-serif;">Check out our
+                                other free
                                 payroll tools that can help you manage your business</li>
 
-                            <p style="line-height:2em; font-size:20px; font-family:'sans-serif;">Simply enter the
+                            <p class="mt-4" style="line-height:2em; font-size:18px; font-family:'sans-serif;">Simply
+                                enter the
                                 information about your company, employee,
                                 income,
                                 and deductions to create
@@ -198,9 +204,9 @@
 </div>
 
 <div class="row">
-    <div class="col-7">
-        <div class="row">
-            <div class="col-2"></div>
+    <div class="col-lg-6 justify-content-center">
+        <div class="row justify-content-center">
+
             <div class="col-10">
                 <h1 class="mt-5" style="font-family:'serif;"><b>
                         How to use the Pay Stub Generator</b>
@@ -244,7 +250,7 @@
                     </ol>
                 </div>
 
-                <div class="row">
+                <div class="row justify-content-center">
                     <div class="col-9">
                         <div class="mt-2 text-center ">
                             <a class="btn btn-lg  mt-2 p-2 btn-danger Generate " href="{{url('/')}}">Generate
@@ -261,24 +267,26 @@
 
         </div>
     </div>
+                               
+                                
 
-    <div class="col-5">
+    <div class="col-lg-6">
         <img src="images/globle/yoga.gif" class="w-100">
     </div>
 </div>
-
+                                </diV>
 <div class="row saveTime">
-    <div class="col-7 ">
+    <div class="col-lg-6 ">
         <img class="w-100" src="images/globle/image3s.jpeg">
 
     </div>
-
-    <div class="col-5  pt-5">
+    <div class="col-lg-6 pt-5">
         <h2 class="mt-5" style="font-family:'sans-serif">
             <b>
                 Save Time</b>
         </h2>
-        <p class="mt-2" style="font-size:20px; line-height:2em;">Automate payroll and concentrate on growing your business.</p>
+        <p class="mt-2" style="font-size:20px; line-height:2em;">Automate payroll and concentrate on growing your
+            business.</p>
         <h2 class="mt-2" style="font-family:'sans-serif">
             <b>
                 Save Money</b>
@@ -289,23 +297,28 @@
             <b>
                 Happy Employees</b>
         </h2>
-        <p class="mt-2" style="font-size:20px; line-height:2em;">Pay employees accurately and on time to increase their productivity.</p>
+        <p class="mt-2" style="font-size:20px; line-height:2em;">Pay employees accurately and on time to increase their
+            productivity.</p>
         <h2 class="mt-2" style="font-family:'sans-serif">
             <b>
                 100% Accuracy</b>
         </h2>
-        <p class="mt-2" style="font-size:20px; line-height:2em;">Deliver error-free paychecks, W-2s, and payroll reports.</p>
+        <p class="mt-2" style="font-size:20px; line-height:2em;">Deliver error-free paychecks, W-2s, and payroll
+            reports.</p>
         <h2 class="mt-2" style="font-family:'sans-serif">
             <b>
                 Simplified Compliance</b>
         </h2>
-        <p class="mt-2" style="font-size:20px; line-height:2em;">Stay in compliance with IRS laws and reporting requirements.</p>
+        <p class="mt-2" style="font-size:20px; line-height:2em;">Stay in compliance with IRS laws and reporting
+            requirements.</p>
         <h2 class="mt-2" style="font-family:'sans-serif">
             <b>
                 Streamline Payroll</b>
         </h2>
-        <p class="mt-2" style="font-size:20px; line-height:2em;">Improve the efficiency of your company and employees.</p>
+        <p class="mt-2" style="font-size:20px; line-height:2em;">Improve the efficiency of your company and employees.
+        </p>
     </div>
+                                </div>
 </div>
 
 

@@ -1,0 +1,165 @@
+.footerSection{
+    background-color: #252e58;
+    background-image: linear-gradient(92deg, #252e58 7%, #625b9e 38%, #252e58 69%, #766fe5 98%);
+    
+
+}
+.footbtn{
+    font-size: 16px;
+    font-family: emoji;
+    color: white;
+
+}
+.footbtn:hover{
+    background: white;
+    color: black;
+    
+}
+.logo{
+    width: 355px;
+    height: 80px;
+    object-fit: cover;
+ }
+
+.navbtn{
+    color: white;
+    background: #0B2F5B;
+    font-size: 16px;
+    font-family: emoji;
+    border: 4px double;
+  
+}
+.navbtn:hover{
+    color: #0B2F5B;
+    background: white;
+    
+}
+.login{
+    color: white;
+    background: #d3230c;
+    font-size: 16px;
+    font-family: emoji;
+    border: 4px double;
+    padding: 3px;
+    width: 145px;
+    height: 45px;
+    border-radius: 15px;
+}
+.paystub{
+    background-color: #252e58;
+background-image: linear-gradient(96deg, #252e58 5%, #3f3e95 46%, #2a5960 100%);
+
+    width: 100%;
+}
+.instant{
+   
+    line-height: 1.3em;
+    color: white;
+    font-family: sans-serif;
+}
+.QUICK{
+    font-family:'Times New Roman', Times, serif;
+    color: white;
+    line-height: 1em;
+    font-size: 26px;
+    word-spacing: 1px;
+    letter-spacing: 1px;
+}
+.Generate{
+    font-family: serif;
+    width: 280px;
+    height: 50px;
+    border-radius: 60px;
+    background-color: #dc2b13;
+}
+.storbtn{
+    width: 159px;
+    height: 47px;
+    object-fit: cover;
+}
+
+.img2{
+    width: 1200px;
+    object-fit: fill; 
+}
+.createSample{
+background-color: #6d8507;
+background-image: linear-gradient(135deg, #6d8507 0%, #faaa63 50%, #c9c6ff 100%);
+}
+
+.WithPaystubX{
+font-size: 48px;
+font-family:serif;
+
+} 
+.Show{
+    font-size: 48px; 
+    font-family:serif;
+}
+.Createpay{
+    font-size: 33px;
+}
+.proof{
+    font-size: 20px;
+}
+.img4{
+ width: 400px;
+ height: 720px;
+object-fit: fill;
+}
+.img5{
+    width: 900px;
+    object-fit: fill;
+}  
+.OnPaystub{
+    font-family:serif;
+    font-size: 25px;
+    color: #767672;
+}
+.calculations{
+    background: #42419e;
+   
+}
+.salary{
+    width: 117px;
+    height: 117px;
+}
+.Accurate{
+ background-color:#b3dade;  
+
+}
+.boxAccurate{
+    background-color: black;
+}
+.vedios{
+    background: #ff6261;
+    
+}
+
+
+.Payslips{
+    font-family: serif ;
+    font-size: 22px;
+    line-height: 2em;
+}
+.ukimg{
+    /* Created with https://www.css-gradient.com */
+background: #773E85;
+background: -webkit-linear-gradient(bottom, #773E85, #E84265);
+background: -moz-linear-gradient(bottom, #773E85, #E84265);
+background: linear-gradient(to top, #773E85, #E84265);
+}
+.saveTime{
+    background-color: #6d8507;
+    background-image: linear-gradient(135deg, #6d8507 0%, #faaa63 50%, #c9c6ff 100%);
+}
+.needw2{
+    /* Created with https://www.css-gradient.com */
+background: #3022AD;
+background: -webkit-linear-gradient(top left, #3022AD, #D5469E);
+background: -moz-linear-gradient(top left, #3022AD, #D5469E);
+background: linear-gradient(to bottom right, #3022AD, #D5469E);
+}
+
+
+

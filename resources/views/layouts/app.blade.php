@@ -10,7 +10,7 @@
 
 
     <!-- Bootstrap CSS  -->
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css" type="text/css">
 
@@ -106,8 +106,8 @@
 
     <div class="container">
 
-        <div class="row">
-            <div class="col-2 my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-3 col-sm-6 my-5 m-auto">
                 <div>
                 <a class="btn btn-lg  p-2 w-100 border border-white  footbtn" href="{{url('terms')}}">Terms & Conditions</a>
                 </div>
@@ -122,39 +122,38 @@
                 </div>
             </div>
 
-             <div class="col-1"></div>
+           
 
-            <div class="col-4">
-                <div class="row mt-5 pt-3">
-                    <div class="col-2">
+            <div class="col-lg-3">
+                <div class="row mt-5 pt-3 justify-content-center">
+                    <div class="col-lg-2 col-sm-1">
                     <a href="{{url('/')}}"><img class="w-100" src="images/insta.png"></a>
                     </div>
-                    <div class="col-2">
+                    <div class="col-lg-2 col-sm-1">
                     <a href="{{url('/')}}"><img class="w-100" src="images/fb.png"></a>
                     </div>
-                    <div class="col-2">
+                    <div class="col-lg-2 col-sm-1">
                     <a href="{{url('/')}}"><img class="w-100" src="images/tweet.png"></a>
                     </div>
-                    <div class="col-2">
+                    <div class="col-lg-2 col-sm-1">
                     <a href="{{url('/')}}"><img class="w-100" src="images/linkd.png"></a>
                     </div>
-                    <div class="col-2">
+                    <div class="col-lg-2 col-sm-1">
                     <a href="{{url('/')}}"><img class="w-100" src="images/youtube.png"></a>
                     </div>
-                    <div class="col-2">
+                    <div class="col-lg-2 col-sm-1">
                     <a href="{{url('/')}}"><img class="w-100" src="images/tiktok.png"></a>
                     </div>
                      
                 </div>
             </div>
 
-            <div class="col-1"></div>
-
-            <div class="col-4 ">
-                <div class="row mt-5 text-center">
+          
+            <div class="col-lg-3 text-center m-auto ">
+                <div class="row mt-5 text-center justify-content-center">
                 <p class="text-white">COPYRIGHT © 2022 PaystubX,<br> ALL RIGHTS RESERVED.</p>
                 </div>
-                <div class="row mt-3">
+                <div class="row mt-3 justify-content-center">
                     <a href="{{url('/')}}"><img class="w-50" src="images/satisfaction.webp"></a>
                     </div>
             </div>
@@ -168,7 +167,16 @@
 </div>
 
 
-
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
 
     <!-- End Footer Section -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -179,6 +187,8 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+        
+        
     </script>
 </body>
 
