@@ -34,7 +34,7 @@
                                     Now</a>
                             </div>
                             <div class="mt-5 pt-3 d-flex" style="margin: auto;
-    justify-content: center;">
+                                justify-content: center;">
                                 <a href="{{url('/')}}"><img class="storbtn "
                                         src="images/Google_Play_Store_badge_EN.webp"></a>
                                 <a href="{{url('/')}}"><img class="storbtn ml-3"
@@ -46,13 +46,13 @@
                     </div>
                 </div>
             </div>
-
-        </div>
-
-
-        <div class="col-lg-6 justify-content-center">
+            <div class="col-lg-6 justify-content-center">
             <img class="w-100 mt-5 pt-3" src="images/uk/payslip_uk.png">
         </div>
+        </div>
+
+
+        
 
     </div>
 
@@ -62,7 +62,7 @@
 
 
 <div class="row">
-    <div class="col-lg-6  justify-content-center" style="background:#e9e6e6;">
+    <div class="col-lg-6  justify-content-center create-container" style="background:#e9e6e6;">
         
             <div class=" container m-auto ">
                     <h3 style="font-family:'sans-serif">
@@ -118,7 +118,7 @@
                         <b>Online payroll No <br> software require</b>
                     </h3>
 
-                    <p class="m-auto" style="font-family:'sans-serif; font-size:50px;">Most payroll systems were
+                    <p class="m-auto create-p" style="font-family:'sans-serif; font-size:50px;">Most payroll systems were
                         developed in the last century to ,<br> run on a PC. Our software works online
                         (aka cloud or SaaS)<br> and is accessed with any web browser on any device e.g.<br> Mac, PC,
                         Tablet or

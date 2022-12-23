@@ -39,7 +39,7 @@
     <div class="container-fluid p-5" style="background-color: #0b070733;">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 m-auto">
+                <div class="col-md-6 col-sm-6 m-auto justifuy-content-center">
                     <h1 class=""
                         style="font-family: helvetica-w01-bold,helvetica-w02-bold,helvetica-lt-w10-bold,sans-serif;font-weight: 600;">
                         READY TO GET STARTED?</h1>
@@ -47,10 +47,10 @@
     font-weight: 200;
     line-height: 46px;">Very easy platform to generate your Canadian Paystub, and Payslip<br> in seconds.
                         Get your data ready, customize your paystub, generate, download, email,
-                        or print it.</p>
+                         print it.</p>
                 </div>
 
-                <div class="col-md-6 text-center">
+                <div class="col-md-6 col-sm-6 justifuy-content-center text-center">
                     <h2 class="mb-5">Who can use Paystubx?</h2>
                     <div class="row">
                         <div class="col-md-6" style="border-right:1px solid black;">
@@ -72,7 +72,7 @@
 
 
                 <div class="row">
-                    <div class="col-lg-4 m-auto">
+                    <div class="col-lg-4 col-sm-4 m-auto justifuy-content-center">
                         <h2 style="font-weight: 100; font-family: avenir-lt-w01_35-light1475496,sans-serif;"
                             class="mb-4">Why should you choose Paystubx to generate pay stubs online?</h2>
 
@@ -106,7 +106,7 @@
 
 <div class="container">
 <div class="row">
-<div class="col-md-12 text-center mt-3">
+<div class="col-md-12 col-lg-4 text-center mt-3">
 <h1 style="font-family: avenir-lt-w01_35-light1475496,sans-serif;" >Generate Paystubs Using our Android or iOS App</h1>
 <p style="font-size:18px; font-family: avenir-lt-w01_35-light1475496,sans-serif;">Generate paystubs instantly by using our paystub generator app. It's simple, easy, and accurate.</p>
 

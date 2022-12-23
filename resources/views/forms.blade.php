@@ -143,14 +143,14 @@
 
     <div class="row  justify-content-center">
         <div class="col-md-1"></div>
-        <div class="col-lg-5">
+        <div class="col-lg-6 col-sm-12 col-md-12">
           <div class="container d-flex justify-content-center pb-3">
                <img class="w-100" src="images/w2form/5f7a31_51cacfb55402495080cabfc7162c18a5_mv2.webp">
             </div>
          </div>
 
      
-        <div class="col-lg-5 ">
+        <div class="col-lg-5 col-sm-12 col-md-12 ">
             <div class="container justify-content-center ">
                 <h3 class=" text-left pt-3" style="font-family:'serif;">
                     Remember that you’ll need to prepare and deliver a different W-2 form for each employee.
@@ -159,7 +159,7 @@
                 <p style="font-size:22px; font-family:'sans-serif;">Boxes A-F on a W-2 represents
                 employee/employer information:
               </p>
-            <ul>
+            <ul class="justify-content-center">
                 <li class="mt-2 text-black" style="font-size:22px; font-family:'sans-serif;">Box A – Be
                     careful to ensure your employee’s social security number is entered correctly her</li>
                 <li class="mt-2 text-black" style="font-size:22px; font-family:'sans-serif;">Box B – Enter
@@ -269,22 +269,15 @@
                 </div>
             </div>
         </div>
-        <div class="col-4">
-            <div class="row">
-                <div class="col-7">
-                    <ol>
-                        <li class="mt-2 text-black" style="font-size:22px; font-family:'sans-serif;">Box 12 is where a
-                            variety of tax-deferred compensation, benefits, and non-monetary compensation are recorded.
-                        </li>
-                    </ol>
-                </div>
-            </div>
-        </div>
+      
     </div>
 
-    <div class="row mt-5 py-5">
+    <div class="row mt-5 ">
        
         <div class="col-md-8 container">
+        <p class="text-black" style="font-size:22px; font-family:'sans-serif;">Box 12 is where a
+                            variety of tax-deferred compensation, benefits, and non-monetary compensation are recorded.
+                        </p>
             <h1 class=" text-left " style="font-family:'serif;">Common mistakes to avoid while filling out Form W-2
             </h1>
 
