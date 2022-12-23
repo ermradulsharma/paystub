@@ -2,6 +2,7 @@
 @section('content')
 <div class="paystub">
     <div class="container">
+    
         <div class="row pb-5">
             <div class="col-lg-5 mt-5 pt-5">
                 <h1 class="instant display-5">
@@ -366,5 +367,15 @@
 </div>
 
 
+
+    <script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
 
 @endsection

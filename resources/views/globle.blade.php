@@ -29,7 +29,7 @@
                                     Paystub
                                     Now</a>
                             </div>
-                            <div class="mt-5 pt-3">
+                            <div class="mt-5 pt-1 d-flex justify-content-center">
                                 <a href="{{url('/')}}"><img class="storbtn "
                                         src="images/Google_Play_Store_badge_EN.webp"></a>
                                 <a href="{{url('/')}}"><img class="storbtn ml-3"
