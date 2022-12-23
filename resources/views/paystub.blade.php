@@ -2,8 +2,8 @@
 @section('content')
 <div class="paystub">
     <div class="container">
-        <div class="row pb-5    ">
-            <div class="col-5 mt-5 pt-5">
+        <div class="row pb-5">
+            <div class="col-lg-5 mt-5 pt-5">
                 <h1 class="instant display-5">
                     Instant Online Professional PayStub Generator
                 </h1>
@@ -19,7 +19,7 @@
                             src="images/Download_on_the_App_Store_Badge.webp"></a>
                 </div>
             </div>
-            <div class="col-7" text-left>
+            <div class="col-lg-7" text-left>
                 <div class="mt-5">
                     <a href="{{url('/')}}"><img class="w-100 ml-3" src="images/paystub_image.webp"></a>
                 </div>
@@ -262,7 +262,7 @@
 
 </div>
 
-<div class="mt-5 vedios">
+<div class="vedios">
     <div class="container justify-content-center text-center pb-5">
         <div style="font-size:35px; font-family:sans-serif;" class="text-white pt-5"><b>Useful Videos for FAQ</b></div>
 
@@ -362,11 +362,7 @@
                 <a href="{{url('/')}}"><img class="w-100" src="images/2022-12-16_220238.webp"></a>
             </div>
         </div>
-
-
-
-
-    </div>
+   </div>
 </div>
 
 
