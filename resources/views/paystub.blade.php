@@ -262,7 +262,7 @@
 
 </div>
 
-<div class="mt-5 vedios">
+<div class="vedios">
     <div class="container justify-content-center text-center pb-5">
         <div style="font-size:35px; font-family:sans-serif;" class="text-white pt-5"><b>Useful Videos for FAQ</b></div>
 
@@ -362,11 +362,7 @@
                 <a href="{{url('/')}}"><img class="w-100" src="images/2022-12-16_220238.webp"></a>
             </div>
         </div>
-
-
-
-
-    </div>
+   </div>
 </div>
 
 

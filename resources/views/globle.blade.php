@@ -280,45 +280,46 @@
         <img class="w-100" src="images/globle/image3s.jpeg">
 
     </div>
-    <div class="col-lg-6 pt-5">
-        <h2 class="mt-5" style="font-family:'sans-serif">
+
+    <div class="col-lg-6 pt-2 container justify-content-center">
+        <h4  style="font-family:'sans-serif">
             <b>
                 Save Time</b>
-        </h2>
-        <p class="mt-2" style="font-size:20px; line-height:2em;">Automate payroll and concentrate on growing your
+        </h4>
+        <p style="font-size:18px; line-height:2em;">Automate payroll and concentrate on growing your
             business.</p>
-        <h2 class="mt-2" style="font-family:'sans-serif">
+        <h4  style="font-family:'sans-serif">
             <b>
                 Save Money</b>
-        </h2>
-        <p class="mt-2" style="font-size:20px; line-height:2em;">Manage payroll yourself and save while doing it.
+        </h4>
+        <p style="font-size:18px; line-height:2em;">Manage payroll yourself and save while doing it.
             See Payroll Pricing </p>
-        <h2 class="mt-2" style="font-family:'sans-serif">
+        <h4  style="font-family:'sans-serif">
             <b>
                 Happy Employees</b>
-        </h2>
-        <p class="mt-2" style="font-size:20px; line-height:2em;">Pay employees accurately and on time to increase their
+        </h4>
+        <p style="font-size:18px; line-height:2em;">Pay employees accurately and on time to increase their
             productivity.</p>
-        <h2 class="mt-2" style="font-family:'sans-serif">
+        <h4  style="font-family:'sans-serif">
             <b>
                 100% Accuracy</b>
-        </h2>
-        <p class="mt-2" style="font-size:20px; line-height:2em;">Deliver error-free paychecks, W-2s, and payroll
+        </h4>
+        <p style="font-size:18px; line-height:2em;">Deliver error-free paychecks, W-2s, and payroll
             reports.</p>
-        <h2 class="mt-2" style="font-family:'sans-serif">
+        <h4  style="font-family:'sans-serif">
             <b>
                 Simplified Compliance</b>
-        </h2>
-        <p class="mt-2" style="font-size:20px; line-height:2em;">Stay in compliance with IRS laws and reporting
+        </h4>
+        <p style="font-size:18px; line-height:2em;">Stay in compliance with IRS laws and reporting
             requirements.</p>
-        <h2 class="mt-2" style="font-family:'sans-serif">
+        <h4  style="font-family:'sans-serif">
             <b>
                 Streamline Payroll</b>
-        </h2>
-        <p class="mt-2" style="font-size:20px; line-height:2em;">Improve the efficiency of your company and employees.
+        </h4>
+        <p style="font-size:18px; line-height:1em;">Improve the efficiency of your company and employees.
         </p>
     </div>
-                                </div>
+                                
 </div>
 
 
