@@ -62,63 +62,61 @@
 
 
 <div class="row">
-    <div class="col-lg-6 justify-content-center" style="background:#e9e6e6;">
+    <div class="col-lg-6  justify-content-center" style="background:#e9e6e6;">
         
-           
-
-                <div class=" container m-auto ">
-                    <h1 class="mt-2" style="font-family:'sans-serif">
+            <div class=" container m-auto ">
+                    <h3 style="font-family:'sans-serif">
                         <b>Create Payslips For Yourself</b>
-                    </h1>
+                    </h3>
 
-                    <h2 class="mt-2" style="font-family:'sans-serif;">
+                    <h5 style="font-family:'sans-serif;">
 
-                        Create Payslips For Your Employees</h2>
+                        Create Payslips For Your Employees</h5>
 
-                    <div class="mt-2">
-                        <p>
-                            <li>Help employees qualify for loans, housing & mor</li>
-                        </p>
-                        <p>
-                            <li>Comply with UK employment la</li>
-                        </p>
-                        <p>
-                            <li>Be transparent with compensatio</li>
-                        </p>
-                        <p>
-                            <li>Trust auto-calculation for every pay sli</li>
-                        </p>
-                        <p>
-                            <li>Manage all payroll documents in one plac</li>
-                        </p>
+                    <div>
+                    
+                            <li class="mt-1">Help employees qualify for loans, housing & mor</li>
+                        
+                    
+                            <li class="mt-1">Comply with UK employment la</li>
+                        
+                    
+                            <li class="mt-1">Be transparent with compensatio</li>
+                        
+                    
+                            <li class="mt-1">Trust auto-calculation for every pay sli</li>
+                        
+                    
+                            <li class="mt-1">Manage all payroll documents in one plac</li>
+                        
                     </div>
 
-                    <h1 class="mt-2" style="font-family:'sans-serif">
+                    <h3 style="font-family:'sans-serif">
                         <b>Show proof of income.</b>
-                    </h1>
+                    </h3>
 
-                    <div class="mt-2">
+                    <div>
 
-                        <p>
-                            <li>Rent an apartmen </li>
-                        </p>
-                        <p>
-                            <li>Qualify for a mortgag </li>
-                        </p>
-                        <p>
-                            <li>Request a small business loa </li>
-                        </p>
-                        <p>
-                            <li>Verify income for child support or alimon </li>
-                        </p>
-                        <p>
-                            <li>Apply for medical insuranc </li>
-                        </p>
+                    
+                            <li class=" mt-1">Rent an apartmen </li>
+                        
+                    
+                            <li class=" mt-1">Qualify for a mortgag </li>
+                        
+                    
+                            <li class=" mt-1">Request a small business loa </li>
+                        
+                    
+                            <li class=" mt-1">Verify income for child support or alimon </li>
+                        
+                    
+                            <li class=" mt-1">Apply for medical insuranc </li>
+                        
                     </div>
 
-                    <h1 class="mt-2" style="font-family:'sans-serif">
+                    <h3 class="mt-2" style="font-family:'sans-serif">
                         <b>Online payroll No <br> software require</b>
-                    </h1>
+                    </h3>
 
                     <p class="m-auto" style="font-family:'sans-serif; font-size:50px;">Most payroll systems were
                         developed in the last century to ,<br> run on a PC. Our software works online
@@ -126,9 +124,7 @@
                         Tablet or
                         Mobile. That means no software to<br> install, no updates, backup or archive – we take care of
                         it<br>
-                        all for you. Multi-user enables any number of administrators <br>or employees to access
-                        paiyroll®
-                        simultaneously.
+                        all for you.
                     </p>
                 </div>
 
@@ -140,7 +136,8 @@
     </div>
 
     <div class="col-lg-6  justify-content-center p-0">
-        <img class="w-100 " src="images/uk/5f7a31_55ea9a38453f43069cf299e6a0617f08_mv2.jpeg">
+       
+    <img class="w-100 " src="images/uk/5f7a31_55ea9a38453f43069cf299e6a0617f08_mv2.jpeg">
 
     </div>
 </div>
