@@ -159,8 +159,112 @@ p{
     text-align: center;
     font-size: 17px;
 }
-@media only screen and (max-width: 600px) {
+
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #f8f9f9;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 26px;
+   
+  }
+  
+  .sidenav a {
+   
+    text-decoration: none;
+    font-size: 25px;
+    color: #ffffff;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  .sidebtn{
+    box-shadow: 6px 4px 2px 4px #334f7459;
+    width: 53%;
+    border-radius: 12px;
+    margin: auto;
+    /* padding: 0px 0px; */
+    text-align: center;
+    margin-bottom: 16px;
+    background-color: #252e58;
+    background-image: linear-gradient(96deg, #252e58 5%, #3f3e95 46%, #2a5960 100%);
+
+  }
+  
+  .sidebtn1{
+    box-shadow: 6px 4px 2px 4px #e9d1d3;
+    width: 53%;
+    color: white !important;
+    background: #d3230c;
+    font-size: 16px;
+    font-family: emoji;
+    /* border: 4px double; */
+    padding: 3px;
+    border-radius: 15px;
+    margin: auto;
+   
+
+  }
+  
+
+.sidebtn:hover{
+    border:1px solid black;
+}
+
+
+
+
+
+
+
+
+
+   
+  @media screen and (min-width: 1155px) {
+    .opennav{
+        display: none;
+    }
+  }
+  @media screen and (max-width: 1155px) {
+    .Payslips {
+        font-family: serif;
+        font-size: 14px;
+        line-height: 2em;
+    }
+   
+  }
+@media screen and (max-width: 1129px) {
+    .navbar {
+        display: none;
+      
+     }
+     
+   }
+
+@media screen and (max-width: 600px) {
    .pay-box1 {
      
     }
   }
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+  
