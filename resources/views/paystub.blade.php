@@ -4,16 +4,16 @@
     <div class="container">
         <div class="row pb-5    ">
             <div class="col-5 mt-5 pt-5">
-                <h1 class="instant display-4">
+                <h1 class="instant display-5">
                     Instant Online Professional PayStub Generator
                 </h1>
                 <h4 class="QUICK">
                     QUICK AND EASY. Download now.
                 </h4>
-                <div class="mt-5 pt-5">
+                <div class="mt-5 justify-content-center ">
                     <a class="btn btn-lg  mt-2 p-2 btn-danger Generate " href="{{url('/')}}">Generate Paystub Now</a>
                 </div>
-                <div class="mt-5">
+                <div class="mt-5 d-flex justify-content-center">
                     <a href="{{url('/')}}"><img class="storbtn " src="images/Google_Play_Store_badge_EN.webp"></a>
                     <a href="{{url('/')}}"><img class="storbtn ml-3"
                             src="images/Download_on_the_App_Store_Badge.webp"></a>
@@ -57,21 +57,22 @@
                         Show proof of income.
                     </h3>
                     </span>
-                    <p>
-                        <li class="proof"> Rent an apartment ✅</li>
-                    </p>
-                    <p>
-                        <li class="proof"> Qualify for a mortgage ✅</li>
-                    </p>
-                    <p>
-                        <li class="proof">Request a small business loan ✅</li>
-                    </p>
-                    <p>
-                        <li class="proof"> Verify income for child support or alimony ✅</li>
-                    </p>
-                    <p>
-                        <li class="proof"> Apply for health insurance ✅</li>
-                    </p>
+                    <ul>
+                        <li class=" mt-2 proof"> Rent an apartment ✅</li>
+
+
+                        <li class=" mt-2 proof"> Qualify for a mortgage ✅</li>
+
+
+                        <li class=" mt-2 proof">Request a small business loan ✅</li>
+
+
+                        <li class=" mt-2 proof"> Verify income for child support or alimony ✅</li>
+
+
+                        <li class=" mt-2 proof"> Apply for health insurance ✅</li>
+
+                    </ul>
                     <div>
                         <p style="font-family:sans-serif; font-size:25px;">Generate 100% Legal Pay Stubs in seconds.</p>
                         <img class="w-50" src="images/previewed.png">
@@ -91,21 +92,23 @@
                 <h3 class="Createpay">
                     Create pay stubs for your employees.
                 </h3>
-                <p>
-                    <li class="proof">Help employees qualify for loans, housing & more ✅</li>
-                </p>
-                <p>
-                    <li class="proof">Comply with state and local employment laws ✅</li>
-                </p>
-                <p>
-                    <li class="proof">RequestBe transparent with compensation ✅</li>
-                </p>
-                <p>
-                    <li class="proof">Trust auto-calculation for every pay stub, for every state ✅</li>
-                </p>
-                <p>
-                    <li class="proof">Manage all payroll documents in one place ✅</li>
-                </p>
+                <ul>
+
+
+                    <li class="mt-2 proof">Help employees qualify for loans, housing & more ✅</li>
+
+
+                    <li class="mt-2 proof">Comply with state and local employment laws ✅</li>
+
+
+                    <li class="mt-2 proof">RequestBe transparent with compensation ✅</li>
+
+
+                    <li class="mt-2 proof">Trust auto-calculation for every pay stub, for every state ✅</li>
+
+
+                    <li class="mt-2 proof">Manage all payroll documents in one place ✅</li>
+                </ul>
                 <img class="w-100" src="images/paystubx_images.png">
                 <div class="mt-5">
                     <p class="OnPaystub ml-2">On Paystub X Join thousands of satisfied independent contractors and small
@@ -258,14 +261,17 @@
 </div>
 
 <div class="mt-5 vedios">
-    <div class="container text-justify text-center pb-5">
+    <div class="container justify-content-center text-center pb-5">
         <div style="font-size:35px; font-family:sans-serif;" class="text-white pt-5"><b>Useful Videos for FAQ</b></div>
 
         <div class="row mt-5">
 
-            <div class="col-md-4 text-center">
-                <div>
-                    <div style="background-image: url('.jpg');"></div>
+            <div class="col-md-4 ">
+                <div class="justify-content-center">
+                    <iframe class="w-100 m-auto " src="https://www.youtube.com/embed/l9e8u2-zKHE"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
                 </div>
                 <p style="font-size:18px; font-family:sans-serif" class="text-white">Add your Data</p>
 
@@ -273,14 +279,26 @@
 
             </div>
 
-            <div class="col-md-4 text-center">
+            <div class="col-md-4 ">
+                <div class="justify-content-center">
+                    <iframe class="w-100 m-auto " src="https://www.youtube.com/embed/l9e8u2-zKHE"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
                 <p style="font-size:18px; font-family:sans-serif" class="text-white">Download & Email your Paystub</p>
 
 
 
             </div>
 
-            <div class="col-md-4 text-center">
+            <div class="col-md-4 ">
+                <div class="justify-content-center">
+                    <iframe class="w-100 m-auto " src="https://www.youtube.com/embed/l9e8u2-zKHE"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
                 <p style="font-size:18px; font-family:sans-serif" class="text-white">Preview Data</p>
 
 
@@ -293,37 +311,40 @@
 <div>
     <div class="container ">
         <div class="row">
-            <div class="col-6 text-left mb-5">
+            <div class="col-md-6 text-left mb-5">
                 <div class="mt-5 " style="font-size: 24px;">
                     <b> Ready to Explore our Online Paystub Generator?</b>
                 </div>
                 <div>
-                    <p>
-                        <li class="" style="font-size: 18px;"> W-2 - Efile with SSA, Distribute to Employees. ✅</li>
-                    </p>
-                    <p>
-                        <li class="" style="font-size: 18px;">1099-NEC, 1099-MISC - Efile with IRS, Distribute
+                    <ul>
+
+
+                        <li class="mt-2" style="font-size: 18px;"> W-2 - Efile with SSA, Distribute to Employees. ✅</li>
+
+
+                        <li class="mt-2" style="font-size: 18px;">1099-NEC, 1099-MISC - Efile with IRS, Distribute
                             Contractor✅</li>
-                    </p>
-                    <p>
-                        <li class="" style="font-size: 20px;">Request a small business loan ✅</li>
-                    </p>
+
+
+                        <li class="mt-2" style="font-size: 20px;">Request a small business loan ✅</li>
+                    </ul>
                 </div>
-                <div class="mt-5">
+                <div class="mt-5 d-flex">
                     <a class="btn btn-lg  btn-danger Generate " href="{{url('/')}}">Generate Paystub Now</a>
                 </div>
             </div>
 
 
-            <div class="col-6 text-left mb-5">
+            <div class="col-md-6 text-left mb-5 ">
                 <div class="mt-5 " style="font-size: 24px;">
                     <b> Generate Paystubs Using our<span class="text-danger">Android or iOS App</span></b>
                 </div>
-                <p style="font-size: 18px;" class="mt-3 ml-2">Generate paystubs instantly by using our paystub generator
+                <p style="font-size: 18px;" class="mt-3 ml-2 container">Generate paystubs instantly by using our paystub
+                    generator
                     app.It's simple, easy, and accurate.</p>
-                    <div class="mt-5 pt-5 ">
-                    <a href="{{url('/')}}"><img class="storbtn " src="images/Google_Play_Store_badge_EN.webp"></a>
-                    <a href="{{url('/')}}"><img class="storbtn ml-5"
+                <div class="mt-5 pt-4 d-flex justify-content-center">
+                    <a href="{{url('/')}}"><img class="storbtn" src="images/Google_Play_Store_badge_EN.webp"></a>
+                    <a href="{{url('/')}}"><img class="storbtn ml-2"
                             src="images/Download_on_the_App_Store_Badge.webp"></a>
                 </div>
             </div>
@@ -333,17 +354,17 @@
 </div>
 
 <div>
-<div class="container mb-5">
-    <div class="row">
-        <div class="col-lg-12">
-        <a href="{{url('/')}}"><img class="w-100" src="images/2022-12-16_220238.webp"></a>
+    <div class="container mb-5">
+        <div class="row">
+            <div class="col-lg-12">
+                <a href="{{url('/')}}"><img class="w-100" src="images/2022-12-16_220238.webp"></a>
+            </div>
         </div>
+
+
+
+
     </div>
-
-
-  
-    
-</div>
 </div>
 
 

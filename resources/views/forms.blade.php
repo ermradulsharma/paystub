@@ -4,189 +4,188 @@
 <div title="W2Forms-Header" style="background:#ff6261;">
 
     <div class="row pb-5">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-5 text-center  mt-5 pt-5 m-auto ">
 
-        <div class="col-5 text-center  mt-5 pt-5 m-auto ">
-            <div class="row m-auto content-justify-center text-center">
-                <div class="col-2"></div>
-                <div class="col-10">
-                    <div class="container-fluid">
-                        <div class="container">
-                            <div class="row text-left">
-                                <div class="col-3">
-                                    <img class="w-100" src="images/w2form/irslogo.png">
-                                </div>
-                                <div class="col-9">
-                                    <h1 class="text-white" style="font-family:'serif;"><b>
-                                            File Form W-2 Online for 2021 Tax Year</b>
-                                    </h1>
-                                </div>
-
-
-                            </div>
-
-
-
-                            <div class=" text-left pt-5">
-                                <h3 class="text-white" style="font-family:'serif;">
-                                    What is a W-2 Form?
-                                </h3>
-                                <p class="mt-2 text-white" style="font-size:20px; line-height:2em;"> A W-2, known
-                                    officially as a “Wage and Tax Statement,” is a tax form employees use
-                                    to file federal and state taxes. The form shows the amount of taxes withheld from
-                                    the employee’s paycheck for the year, and paid directly to the IRS and state
-                                    government by their employer.</p>
-
-                            </div>
-
-                            <div class="mt-4 text-left">
-                                <a class="btn btn-lg  mt-2 p-2 btn-danger Generate " href="{{url('/')}}">Create W-2
-                                    Form</a>
-                            </div>
-
-
+            <div class="container-fluid">
+                <div class="container">
+                    <div class="row text-left">
+                        <div class="col-3">
+                            <img class="w-100" src="images/w2form/irslogo.png">
+                        </div>
+                        <div class="col-9">
+                            <h1 class="text-white" style="font-family:'serif;"><b>
+                                    File Form W-2 Online for 2021 Tax Year</b>
+                            </h1>
                         </div>
 
+
                     </div>
+
+
+
+                    <div class=" text-left pt-5">
+                        <h3 class="text-white" style="font-family:'serif;">
+                            What is a W-2 Form?
+                        </h3>
+                        <p class="mt-2 text-white" style="font-size:20px; line-height:2em;"> A W-2, known
+                            officially as a “Wage and Tax Statement,” is a tax form employees use
+                            to file federal and state taxes. The form shows the amount of taxes withheld from
+                            the employee’s paycheck for the year, and paid directly to the IRS and state
+                            government by their employer.</p>
+
+                    </div>
+
+                    <div class="mt-4 text-left justify-content-center d-flex">
+                        <a class="btn btn-lg  mt-2 p-2 btn-danger Generate " href="{{url('/')}}">Create W-2
+                            Form</a>
+                    </div>
+
+
                 </div>
+
             </div>
+
+
 
         </div>
 
 
-        <div class="col-5">
+        <div class="col-lg-5 justify-content-center">
             <img class="w-100 mt-5 pt-3" src="images/w2form/5f7a31_5b45b8161f504caa982f334cd6edc821_mv2.png">
         </div>
 
-        <div class="col-2"></div>
+        <div class="col-lg-1"></div>
 
     </div>
 </div>
 
 <div style="background: #e9e6f7;">
+
     <div class="row">
-        <div class="container py-5">
+        <div class="col-lg-12 py-5  justify-content-center">
             <h2 class=" text-center " style="font-family:'serif;"><b>
                     What do you need to fill out a <span class="text-danger">W-2</span>?</b>
             </h2>
         </div>
 
-        <div class="col-6">
-            <div class="row">
-                <div class="col-6"></div>
-                <div class="col-4">
-                    <p style="font-size:24px; font-family:'sans-serif;">When you’re ready to complete your
-                        W-2s for the year, you will need the following information at your fingertips:
-                    </p>
+    </div>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-4">
+            <div class="container m-auto justify-content-center">
+                <p style="font-size:24px; font-family:'sans-serif;">When you’re ready to complete your
+                    W-2s for the year, you will need the following information at your fingertips:
+                </p>
 
+                <p style="font-size:20px; font-family:'sans-serif;">Have this information ready? File your Form W-2
+                    in less than 2 minutes.s:
+                </p>
+                <div class="my-3 justify-content-center d-flex">
+                    <a class="btn btn-lg  btn-danger Generate " href="{{url('/')}}">Create W-2
+                        Form</a>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-6"></div>
-                <div class="col-6">
-                    <p style="font-size:20px; font-family:'sans-serif;">Have this information ready? File your Form W-2
-                        in less than 2 minutes.s:
-                    </p>
-                    <div class="my-3">
-                        <a class="btn btn-lg  btn-danger Generate " href="{{url('/')}}">Create W-2
-                            Form</a>
-                    </div>
-                </div>
-            </div>
 
 
+            </div>
         </div>
-     <div class="col-6 ">
 
-        <div class="row">
-            <div class="col-10 needw2">
+        <div class="col-md-6 needw2 justify-content-center">
+
             <div class="mt-3">
                 <ul>
-                    <li class="mt-2 text-white" style="font-size:20px; font-family:'sans-serif;">Personal information
+                    <li class="mt-2 text-white" style="font-size:20px; font-family:'sans-serif;">Personal
+                        information
                         for
                         each employee, including name, address, and Social Security number</li>
-                    <li class="mt-2 text-white" style="font-size:20px; font-family:'sans-serif;">Your employer EIN
+                    <li class="mt-2 text-white" style="font-size:20px; font-family:'sans-serif;">Your employer
+                        EIN
                         numbes
                     </li>
-                    <li class="mt-2 text-white" style="font-size:20px; font-family:'sans-serif;">Total amount of wages
+                    <li class="mt-2 text-white" style="font-size:20px; font-family:'sans-serif;">Total amount of
+                        wages
                         and/or tips paid for each employe</li>
-                    <li class="mt-2 text-white" style="font-size:20px; font-family:'sans-serif;">Total federal, state,
+                    <li class="mt-2 text-white" style="font-size:20px; font-family:'sans-serif;">Total federal,
+                        state,
                         and
                         local taxes withheld for each employe
                     </li>
-                    <li class="mt-2 text-white" style="font-size:20px; font-family:'sans-serif;">Total Social Security
+                    <li class="mt-2 text-white" style="font-size:20px; font-family:'sans-serif;">Total Social
+                        Security
                         and
                         Medicare taxes withheld for each employe</li>
                     <li class="mt-2 text-white" style="font-size:20px; font-family:'sans-serif;">Deductions for
                         dependent
                         care assistance programs for each employe</li>
-                    <li class="mt-2 text-white" style="font-size:20px; font-family:'sans-serif;">Other compensation and
-                        benefits including elective deferrals for retirement plans and the cost of employer-sponsored
+                    <li class="mt-2 text-white" style="font-size:20px; font-family:'sans-serif;">Other
+                        compensation and
+                        benefits including elective deferrals for retirement plans and the cost of
+                        employer-sponsored
                         health
                         coverage for each employe</li>
 
                 </ul>
 
 
+
             </div>
-            </div>
-        </div>
 
-            
-        </div>
 
-        <div class="container py-5">
-            <h2 class=" text-center " style="font-family:'serif;"><b>
-
-                    Instructions for filling out Form <span class="text-danger">W-2</span></b>
-            </h2>
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-6 ">
-            <div class="row">
-                <div class="col-3"></div>
-                <div class="col-9">
-                    <img class="w-100" src="images/w2form/5f7a31_51cacfb55402495080cabfc7162c18a5_mv2.webp">
+    <div class="container py-5">
+        <h2 class=" text-center " style="font-family:'serif;"><b>
 
+                Instructions for filling out Form <span class="text-danger">W-2</span></b>
+        </h2>
+    </div>
+
+    <div class="row  justify-content-center">
+        <div class="col-md-1"></div>
+        <div class="col-lg-5">
+          <div class="container d-flex justify-content-center pb-3">
+               <img class="w-100" src="images/w2form/5f7a31_51cacfb55402495080cabfc7162c18a5_mv2.webp">
+            </div>
+         </div>
+
+     
+        <div class="col-lg-5 ">
+            <div class="container justify-content-center ">
+                <h3 class=" text-left pt-3" style="font-family:'serif;">
+                    Remember that you’ll need to prepare and deliver a different W-2 form for each employee.
+                </h3>
+
+                <p style="font-size:22px; font-family:'sans-serif;">Boxes A-F on a W-2 represents
+                employee/employer information:
+              </p>
+            <ul>
+                <li class="mt-2 text-black" style="font-size:22px; font-family:'sans-serif;">Box A – Be
+                    careful to ensure your employee’s social security number is entered correctly her</li>
+                <li class="mt-2 text-black" style="font-size:22px; font-family:'sans-serif;">Box B – Enter
+                    your EIN number</li>
+                <li class="mt-2 text-black" style="font-size:22px; font-family:'sans-serif;">Box C – Enter
+                    the name and address of your business</li>
+                <li class="mt-2 text-black" style="font-size:22px; font-family:'sans-serif;">Box D – This is
+                    the control number, and is not necessary to us</li>
+                <li class="mt-2 text-black" style="font-size:22px; font-family:'sans-serif;">Box E & F –
+                    Enter your employee’s name and address</li>
+                <div class="my-4">
+                    <a class="btn btn-lg  btn-danger Generate " href="{{url('/')}}">Create W-2
+                        Form</a>
                 </div>
+            </ul>
 
             </div>
-
+           
+ 
+          
+</div>
+          
         </div>
 
-        <div class="col-6">
-            <div class="row">
-                <div class="col-7">
-                    <h3 class=" text-left  " style="font-family:'serif;">
-                        Remember that you’ll need to prepare and deliver a different W-2 form for each employee.
-                    </h3>
-
-
-                    <p style="font-size:22px; font-family:'sans-serif;">Boxes A-F on a W-2 represents
-                        employee/employer information:
-                    </p>
-                    <ul>
-                        <li class="mt-2 text-black" style="font-size:22px; font-family:'sans-serif;">Box A – Be
-                            careful to ensure your employee’s social security number is entered correctly her</li>
-                        <li class="mt-2 text-black" style="font-size:22px; font-family:'sans-serif;">Box B – Enter
-                            your EIN number</li>
-                        <li class="mt-2 text-black" style="font-size:22px; font-family:'sans-serif;">Box C – Enter
-                            the name and address of your business</li>
-                        <li class="mt-2 text-black" style="font-size:22px; font-family:'sans-serif;">Box D – This is
-                            the control number, and is not necessary to us</li>
-                        <li class="mt-2 text-black" style="font-size:22px; font-family:'sans-serif;">Box E & F –
-                            Enter your employee’s name and address</li>
-                        <div class="my-4">
-                            <a class="btn btn-lg  btn-danger Generate " href="{{url('/')}}">Create W-2
-                                Form</a>
-                        </div>
-                    </ul>
-                </div>
-            </div>
-
-
-        </div>
+        <div class="col-md-1"></div>
+           
     </div>
 
     <div class="row">
@@ -284,35 +283,36 @@
     </div>
 
     <div class="row mt-5 py-5">
-        <div class="col-3"></div>
-        <div class="col-6">
+       
+        <div class="col-md-8 container">
             <h1 class=" text-left " style="font-family:'serif;">Common mistakes to avoid while filling out Form W-2
             </h1>
 
             <div class="text-left mt-3">
-            <p style="font-size:24px; font-family:'sans-serif;">Misspelling your name or SSN in the W-2 form will most
-                likely result in your employer rejecting it;<br>so make sure the information is entered correctly
-            </p>
+                <p style="font-size:24px; font-family:'sans-serif;">Misspelling your name or SSN in the W-2 form will
+                    most
+                    likely result in your employer rejecting it;<br>so make sure the information is entered correctly
+                </p>
 
-            <p style="font-size:24px; font-family:'sans-serif;">Proper entry of the wages and tips is extremely
-                important to avoid surprises during the tax season as you may end up owing money to the IRS. On the
-                other hand, if you overreport your deductions, you will end up with a smaller take-home amount in your
-                paycheck, but a larger tax refund at the end of the year which is like giving the IRS a free loan
-            </p>
+                <p style="font-size:24px; font-family:'sans-serif;">Proper entry of the wages and tips is extremely
+                    important to avoid surprises during the tax season as you may end up owing money to the IRS. On the
+                    other hand, if you overreport your deductions, you will end up with a smaller take-home amount in
+                    your
+                    paycheck, but a larger tax refund at the end of the year which is like giving the IRS a free loan
+                </p>
 
-            <p style="font-size:24px; font-family:'sans-serif;">Make sure you enter the correct value for dependent care
-                benefits as it will also affect the amount of tax withheld from your paycheck
-            </p>
+                <p style="font-size:24px; font-family:'sans-serif;">Make sure you enter the correct value for dependent
+                    care
+                    benefits as it will also affect the amount of tax withheld from your paycheck
+                </p>
             </div>
-         </div>
-
-
+        </div>
     </div>
 
 </div>
 
 <div class="row" style="background:#2c2b69;">
-    <div class="col-12 my-5 text-justify text-center text-white">
+    <div class="col-lg-12 my-5 justify-content-center  text-white">
         <div class=" text-justify text-center text-white">
             <h1>Generate 100% Legal UK Payslips</h1>
             <div class="my-3">

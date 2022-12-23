@@ -7,7 +7,7 @@
             <div class="col-lg-12 p- " style="background-color: #f75656ed;">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-lg-5 m-auto text-center" style="color:white;">
+                        <div class="col-lg-5 m-auto text-center pt-3" style="color:white;">
                             <h2>Instantly Generate your Professional<br> Canadian Pay Stubs</h2>
                             <p style="font-weight:200;">
                                 Instantly Generate your Professional Canadian Pay Stubs
@@ -18,14 +18,14 @@
                             <div class=""><button class="createbtn">Create Paystub</button>
                             </div>
                            
-                            <div class="mt-5">
+                            <div class="mt-5 d-flex justify-content-center">
                     <a href="{{url('/')}}"><img class="storbtn " src="images/Google_Play_Store_badge_EN.webp"></a>
                     <a href="{{url('/')}}"><img class="storbtn ml-3"
                             src="images/Download_on_the_App_Store_Badge.webp"></a>
                 </div>
                         </div>
 
-                        <div class="col-md-7">
+                        <div class="col-lg-7 justify-content-center">
                             <img src="images/computer.webp" class="w-100">
 
 
@@ -72,7 +72,7 @@
 
 
                 <div class="row">
-                    <div class="col-md-4 m-auto">
+                    <div class="col-lg-4 m-auto">
                         <h2 style="font-weight: 100; font-family: avenir-lt-w01_35-light1475496,sans-serif;"
                             class="mb-4">Why should you choose Paystubx to generate pay stubs online?</h2>
 
@@ -84,10 +84,10 @@
                             <li>Year to Date (YTD) Calculations</li>
                             <li>Withholding calculations </li>
                         </ul>
-                        <div class="mt-5"><button class="createbtn">Create Paystub</button></div>
+                        <div class="mt-5 d-flex justify-content-center"><button class="createbtn">Create Paystub</button></div>
 
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-lg-8  m-auto justify-content-center">
                         <img src="images/couple.png" class="w-100">
                     </div>
                 </div>
