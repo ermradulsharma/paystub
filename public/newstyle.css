@@ -24,6 +24,16 @@
     padding: 32px 19px;
     border-radius: 8px;
 }
+.box-usa1{
+    border: 3px solid #fe0f10;
+    padding: 10px;
+    background: #ffffff;
+    padding: 32px 19px;
+    border-radius: 10px;
+    margin-left: 30px
+
+}
+
 .lable{
     font-size: 12px;
     color: #1f1414cc;
@@ -222,11 +232,181 @@ p{
    
 
   }
-  
+  .earnbtn1{
+    font-size: 21px;
+    width: 100%;
+    padding: 9px 10px;
+    background: #ff0000;
+    color: #ffffff;
+    /* border: none; */
+    border-radius: 34px;
+    border: 1px solid #ffffff;
+
+  }
 
 .sidebtn:hover{
     border:1px solid black;
 }
+input:hover{
+    box-shadow: 5px 5px 1px 3px #0000002b;
+    color: black !important;
+    border: 1px solid #d82e2e !important;
+}
+ .dropdown1:hover {
+    box-shadow: 5px 5px 1px 3px #0000002b;
+    color: black !important;
+    border: 1px solid #d82e2e !important;
+    background: #df5b5b45;
+ } 
+.viewbtn:hover{
+    border: 1px solid #d1da1a;
+    background-color: white;
+    box-shadow: 5px 5px 1px 3px #4848390f;
+    color: red;
+}
+.earnbtn:hover{
+    color: white;
+    background-image: linear-gradient(45deg, #c905058a, #2c578175);
+    border: 2px solid white;
+    border-radius: 7px;
+}
+
+
+.earnbtn1:hover{
+    color: white;
+    /* background-image: linear-gradient(45deg, #88cc24f2, #090a0a75); */
+    border: 2px solid white;
+    border-radius: 36px;
+    background: #8bcc32;
+
+}
+
+.statementbtn:hover{
+    background-color: white;
+    color: #2c5781;
+    border: 2px solid #2c5781;
+    font-weight: 400;
+}
+.emailbtn:hover{
+    background: white;
+    color: #40924a;
+    border: 1px solid green;
+    box-shadow: 6px 5px 4px 0px #00000066;
+
+}
+
+
+
+.google-btn {
+    width: 203px;
+    height: 54px;
+    background-color: google-blue;
+    border-radius: 6px;
+    box-shadow: 0 3px 4px 0 rgb(0 0 0 / 25%);
+    margin: auto;
+
+}
+    .google-icon-wrapper {
+      position: absolute;
+      margin-top: 1px;
+      margin-left: 1px;
+      width: 40px;
+      height: 40px;
+      border-radius: 2px;
+      background-color: white;
+    }
+    .google-icon {
+        position: absolute;
+    margin-top: 11px;
+    margin-left: 1px;
+    width: 42px;
+    height: 31px;
+    border-right: 1px solid;
+    }
+    .btn-text {
+        float: right;
+        margin: 14px 11px 0 0;
+        color: $white;
+        font-size: 16px;
+        letter-spacing: 0.2px;
+        font-family: "Roboto";
+        margin-right: 3px;
+    }
+    &:hover {
+      box-shadow: 0 0 6px $google-blue;
+    }
+    &:active {
+      background: $button-active-blue;
+    }
+  
+
+
+
+    .singup{
+        border: 1px solid #bcd6f3;
+    padding: 10px;
+    border-radius: 9px;
+    width: 60%;
+}
+.continue{
+    padding: 10px 29px;
+    border: none;
+    border-radius: 26px;
+    background: red;
+    color: white;
+}
+.icon{
+    width: 152px;
+}
+.mail{
+    padding: 10px;
+    border-radius: 100%;
+    text-align: center;
+    width: 80px;
+    height: 76px;
+    box-shadow: 1px 2px 13px 8px #0303031a;
+    text-align: center;
+    margin: auto;
+}
+.mailpic{
+    width: 62px;
+    padding: 12px;
+    height: 65px;
+}
+.singup1{
+    border: 2px solid #ff0000;
+    padding: 10px;
+    border-radius: 9px;
+    width: 64%;
+    font-size: 13px;
+
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 12px;
+    font-size: 11px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+  @import url(https://fonts.googleapis.com/css?family=Roboto:500);
+
+
+
+
+
+
+
+
 
 
 

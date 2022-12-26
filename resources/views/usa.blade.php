@@ -25,7 +25,7 @@
 
                     <div class="row mb-3">
                         <div class="col-md-12">
-                            <label for="fname" class="lable">EMPLOYER (COMPANY) NAME *</label><br>
+                            <label for="fname" class="lable">STREET ADDRESS 1 *</label><br>
                             <input type="text" id="fname" name="fname" placeholder="Your Employer & Company Name"
                                 class="w-100 p-2 " style="font-size:14px;"><br>
                         </div>
@@ -33,7 +33,7 @@
 
                     <div class="row mb-3">
                         <div class="col-md-12">
-                            <label for="fname" class="lable">EMPLOYER (COMPANY) NAME *</label><br>
+                            <label for="fname" class="lable">STREET ADDRESS 2 *</label><br>
                             <input type="text" id="fname" name="fname" placeholder="Your Employer & Company Name"
                                 class="w-100 p-2 " style="font-size:14px;"><br>
                         </div>

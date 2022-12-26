@@ -17,12 +17,13 @@
                                 instant pay stub delivery, and free pay stub preview. Simple as ABC.</p>
                             <div class=""><button class="createbtn">Create Paystub</button>
                             </div>
-                           
+
                             <div class="mt-5 d-flex justify-content-center">
-                    <a href="{{url('/')}}"><img class="storbtn " src="images/Google_Play_Store_badge_EN.webp"></a>
-                    <a href="{{url('/')}}"><img class="storbtn ml-3"
-                            src="images/Download_on_the_App_Store_Badge.webp"></a>
-                </div>
+                                <a href="{{url('/')}}"><img class="storbtn "
+                                        src="images/Google_Play_Store_badge_EN.webp"></a>
+                                <a href="{{url('/')}}"><img class="storbtn ml-3"
+                                        src="images/Download_on_the_App_Store_Badge.webp"></a>
+                            </div>
                         </div>
 
                         <div class="col-lg-7 justify-content-center">
@@ -44,10 +45,12 @@
                         style="font-family: helvetica-w01-bold,helvetica-w02-bold,helvetica-lt-w10-bold,sans-serif;font-weight: 600;">
                         READY TO GET STARTED?</h1>
                     <p style=" font-size: 25px;
-    font-weight: 200;
-    line-height: 46px;">Very easy platform to generate your Canadian Paystub, and Payslip<br> in seconds.
+                          font-weight: 200;
+                          line-height: 46px;">Very easy platform to generate your Canadian Paystub, and Payslip<br> in
+                        seconds.
                         Get your data ready, customize your paystub, generate, download, email,
-                         print it.</p>
+                        print it.
+                    </p>
                 </div>
 
                 <div class="col-md-6 col-sm-6 justifuy-content-center text-center">
@@ -84,7 +87,8 @@
                             <li>Year to Date (YTD) Calculations</li>
                             <li>Withholding calculations </li>
                         </ul>
-                        <div class="mt-5 d-flex justify-content-center"><button class="createbtn">Create Paystub</button></div>
+                        <div class="mt-5 d-flex justify-content-center"><button class="createbtn">Create
+                                Paystub</button></div>
 
                     </div>
                     <div class="col-lg-8  m-auto justify-content-center">
@@ -104,21 +108,23 @@
 
 
 
-<div class="container">
-<div class="row">
-<div class="col-md-12 col-lg-12 text-center mt-3">
-<h1 style="font-family: avenir-lt-w01_35-light1475496,sans-serif;" >Generate Paystubs Using our Android or iOS App</h1>
-<p style="font-size:18px; font-family: avenir-lt-w01_35-light1475496,sans-serif;">Generate paystubs instantly by using our paystub generator app. It's simple, easy, and accurate.</p>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-lg-12 text-center mt-3">
+                <h1 style="font-family: avenir-lt-w01_35-light1475496,sans-serif;">Generate Paystubs Using our Android
+                    or iOS App</h1>
+                <p style="font-size:18px; font-family: avenir-lt-w01_35-light1475496,sans-serif;">Generate paystubs
+                    instantly by using our paystub generator app. It's simple, easy, and accurate.</p>
 
-<div class="my-5">
+                <div class="my-5">
                     <a href="{{url('/')}}"><img class="storbtn " src="images/Google_Play_Store_badge_EN.webp"></a>
                     <a href="{{url('/')}}"><img class="storbtn ml-3"
                             src="images/Download_on_the_App_Store_Badge.webp"></a>
                 </div>
 
-</div>
-</div>
-</div>
+            </div>
+        </div>
+    </div>
 
 
 
