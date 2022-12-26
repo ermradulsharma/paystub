@@ -15,7 +15,8 @@
                                 game.</p>
                             <p class="mb-5">Online secure web-based pay stub generator, straightforward to use,<br>
                                 instant pay stub delivery, and free pay stub preview. Simple as ABC.</p>
-                            <div class=""><button class="createbtn">Create Paystub</button>
+                            <div>
+                                <a class="createbtn btn" href="{{url('canada-paystub') }}">Create Paystub</a>
                             </div>
 
                             <div class="mt-5 d-flex justify-content-center">
@@ -87,8 +88,10 @@
                             <li>Year to Date (YTD) Calculations</li>
                             <li>Withholding calculations </li>
                         </ul>
-                        <div class="mt-5 d-flex justify-content-center"><button class="createbtn">Create
-                                Paystub</button></div>
+                        <div class="mt-5 d-flex justify-content-center">
+                        <a class="createbtn btn" href="{{url('canada-paystub') }}">Create Paystub</a>
+
+                            </div>
 
                     </div>
                     <div class="col-lg-8  m-auto justify-content-center">

@@ -19,9 +19,10 @@
 .socialicon{
     border: 2px solid white;
     border-radius: 100%;
-    padding:12px;
+    padding: 11px;
     font-size: 24px;
-    color:white;
+    color: white;
+    width: 50px;
 
 }
 .socialicon:hover{
@@ -30,11 +31,12 @@
 }
 .fbicon{
     border: 2px solid white;
-    border-radius: 80%;
-    padding:12px;
+    border-radius: 60%;
+    padding: 11px;
     font-size: 24px;
     width: 50px;
-    color:white;
+    color: white;
+    width: 50px;
 
 }
 .fbicon:hover{
@@ -53,6 +55,7 @@
     font-size: 14px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 600;
+    border: black 1px solid;
     
    
   
@@ -60,7 +63,7 @@
 .navbtn:hover{
     color: white;
     background:  #0e4991;
-    border-radius: 10px;
+   
     
 }
 .login{

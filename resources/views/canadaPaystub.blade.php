@@ -567,7 +567,7 @@
 
                         <input type="email" id="email" name="email" class="singup" placeholder="Email *"> <br><br>
 
-                        <button class="continue mt-3" data-toggle="modal" data-target="myModal">Continue</button>
+                        <button class="continue mt-3" data-toggle="modal" data-dismiss="modal" data-target="#myModal1">Continue</button>
                         <a href="#" style="text-decoration: none;color: #0000007a">
                             <p class="text-center mt-3" style="color: #0000007a;font-size: 13px;">Already have account?
                                 <u style="color:red;">

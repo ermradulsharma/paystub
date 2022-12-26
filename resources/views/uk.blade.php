@@ -29,9 +29,8 @@
                             </div>
 
                             <div class="mt-5 pt-3">
-                                <a class="btn btn-lg  mt-2 p-2 btn-danger Generate " href="{{url('/')}}">Generate
-                                    Paystub
-                                    Now</a>
+                            <a class="Generate btn-lg btn" href="{{url('uk-paystub') }}">Generate Paystub
+                    Now</a>
                             </div>
                             <div class="mt-5 pt-3 d-flex" style="margin: auto;
                                 justify-content: center;">
@@ -159,8 +158,10 @@
         <div class=" text-justify text-center text-white">
             <h1>Generate 100% Legal UK Payslips</h1>
             <div class="my-3">
-                <a class="btn btn-lg  btn-danger Generate " href="{{url('/')}}">Generate Paystub
+            <a class="Generate btn-lg btn" href="{{url('uk-paystub') }}">Generate Paystub
                     Now</a>
+
+               
             </div>
             <h2>Simple as ABC</h2>
         </div>
@@ -253,7 +254,7 @@
                 checking if you’ve been taxed correctly.</p>
 
             <div class="my-3">
-                <a class="btn btn-lg  btn-danger Generate " href="{{url('/')}}">Generate Paystub
+            <a class="Generate btn-lg btn" href="{{url('uk-paystub') }}">Generate Paystub
                     Now</a>
             </div>
         </div>

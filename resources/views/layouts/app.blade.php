@@ -187,10 +187,10 @@
 
                         <div class="container">
                             <a href="{{url('/')}}"><i class="fa fa-facebook   fbicon " aria-hidden="true"></i></a>
-                            <a href="{{url('/')}}"><i class="fa fa-instagram  socialicon" aria-hidden="true"></i></a>
-                            <a href="{{url('/')}}"><i class="fa fa-twitter  socialicon" aria-hidden="true"></i></a>
-                            <a href="{{url('/')}}"><i class="fa fa-linkedin  socialicon" aria-hidden="true"></i></a>
-                            <a href="{{url('/')}}"><i class="fa fa-youtube  socialicon" aria-hidden="true"></i></a>
+                            <a href="{{url('/')}}"><i class="fa fa-instagram ml-2 socialicon" aria-hidden="true"></i></a>
+                            <a href="{{url('/')}}"><i class="fa fa-twitter ml-2 socialicon" aria-hidden="true"></i></a>
+                            <a href="{{url('/')}}"><i class="fa fa-linkedin ml-2 socialicon" aria-hidden="true"></i></a>
+                            <a href="{{url('/')}}"><i class="fa fa-youtube ml-2 socialicon" aria-hidden="true"></i></a>
                             <!--  <a href="{{url('/')}}"><i class="fa fa-tiktok text-white socialicon" aria-hidden="true"></i></a> -->
                         </div>
                     </div>
