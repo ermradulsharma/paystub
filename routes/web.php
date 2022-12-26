@@ -42,7 +42,10 @@ Route::get('privacy', function () {
 Route::get('refund', function () {
     return view('refund');
 });
-Route::get('contact', function () {
-    return view('contact');
+Route::get('canada-paystub', function () {
+    return view('canadaPaystub');
+});
+Route::get('uk-paystub', function () {
+    return view('ukPaystub');
 });
 
