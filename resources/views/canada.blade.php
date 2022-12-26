@@ -143,3 +143,13 @@
 
 </div>
 @endsection
+
+
+<div class="container">
+               <a href="{{url('/')}}"><i class="fa fa-facebook   fbicon " aria-hidden="true"></i></a>
+               <a href="{{url('/')}}"><i class="fa fa-instagram  socialicon" aria-hidden="true"></i></a>
+               <a href="{{url('/')}}"><i class="fa fa-twitter  socialicon" aria-hidden="true"></i></a>
+               <a href="{{url('/')}}"><i class="fa fa-linkedin  socialicon" aria-hidden="true"></i></a>
+               <a href="{{url('/')}}"><i class="fa fa-youtube  socialicon" aria-hidden="true"></i></a>
+              <!--  <a href="{{url('/')}}"><i class="fa fa-tiktok text-white socialicon" aria-hidden="true"></i></a> -->
+           </div>

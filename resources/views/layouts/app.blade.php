@@ -34,7 +34,8 @@
 </head>
 
 <body>
-    <span class="opennav" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; <a href="{{url('/')}}"><img src="images/Paystub X.webp" class="w-50"></a></span>
+    <span class="opennav" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; <a href="{{url('/')}}"><img
+                src="images/Paystub X.webp" class="w-50"></a></span>
     <!-- Start Header Section -->
     <div class="row justify-content-center">
         <div class="col-md-10">
@@ -43,43 +44,45 @@
 
                 <nav class="navbar navbar-expand fixed py-5">
                     <div class="row">
-                        <div class="col-4">
+                        <div class="col-3">
                             <div class="mt-3">
                                 <a href="{{url('/')}}"><img class="w-100" src="images/Paystub X.webp"></a>
                             </div>
                         </div>
 
-                        <div class="col-8 mt-3">
+                        <div class="col-lg-7 mt-4">
 
 
-                            <div class="row">
-                                <div class="col-2">
-                                    <a class="btn btn-lg  p-2 w-100  navbtn" href="{{url('usa')}}">USA</a>
-
-                                </div>
-                                <div class="col-2">
-                                    <a class="btn btn-lg p-2 w-100 navbtn" href="{{url('canada')}}">CANADA</a>
+                            <div class="row  m-auto justify-content-center">
+                                <div class="ml-1">
+                                    <a class="btn  btn-sm p-2 w-100  navbtn" href="{{url('usa')}}">USA</a>
 
                                 </div>
-                                <div class="col-2   ">
-                                    <a class="btn btn-lg  p-2 w-100  navbtn" href="{{url('uk')}}">UK</a>
+                                <div class="ml-2">
+                                    <a class="btn btn-sm p-2 w-100 navbtn" href="{{url('canada')}}">CANADA</a>
 
                                 </div>
-                                <div class="col-2">
-                                    <a class="btn btn-lg  p-2 w-100   navbtn" href="{{url('globle')}}">GLOBLE</a>
+                                <div class="ml-2">
+                                    <a class="btn  btn-sm p-2 w-100  navbtn" href="{{url('uk')}}">UK</a>
 
                                 </div>
-                                <div class="col-2">
-                                    <a class="btn btn-lg  p-2 w-100   navbtn" href="{{url('form')}}">FORM</a>
+                                <div class="ml-2">
+                                    <a class="btn  btn-sm p-2 w-100   navbtn" href="{{url('globle')}}">GLOBLE</a>
 
                                 </div>
-                                <div class="col-2">
-                                    <a class="btn btn-md  p-2 w-100  btn-danger login" href="{{url('login')}}">Login</a>
+                                <div class="ml-2">
+                                    <a class="btn  btn-sm p-2 w-100   navbtn" href="{{url('form')}}"> W-2FORM</a>
 
                                 </div>
+
                             </div>
 
+                        </div>
 
+                        <div class="col-2 mt-4">
+                            <div class="text-right">
+                                <a class="btn  p-1 w-50  btn-danger login" href="{{url('login')}}">Login</a>
+                             </div>
 
                         </div>
 
@@ -99,30 +102,30 @@
     <div id="mySidenav" class="sidenav">
 
 
-        <a href="javascript:void(0)" class="closebtn" ></a>
+        <a href="javascript:void(0)" class="closebtn"></a>
         <div class="mt-">
             <a href="{{url('/')}}"><img class="w-100 mb-5 p-3" src="images/Paystub X.webp" onclick="closeNav()"></a>
         </div>
         <div class="sidebtn">
-            <a class="btn btn-md" href="{{url('usa')}}">USA</a>
+            <a class="btn btn-sm" href="{{url('usa')}}">USA</a>
         </div>
 
         <div class="sidebtn">
-            <a class="btn btn-md" href="{{url('canada')}}">CANADA</a>
+            <a class="btn btn-sm" href="{{url('canada')}}">CANADA</a>
         </div>
         <div class="sidebtn">
-            <a class="btn btn-md" href="{{url('uk')}}">UK</a>
+            <a class="btn btn-sm" href="{{url('uk')}}">UK</a>
         </div>
         <div class="sidebtn">
-            <a class="btn btn-md" href="{{url('globle')}}">GLOBLE</a>
+            <a class="btn btn-sm" href="{{url('globle')}}">GLOBLE</a>
         </div>
         <div class="sidebtn">
-            <a class="btn btn-md" href="{{url('form')}}">FORM</a>
+            <a class="btn btn-sm" href="{{url('form')}}">FORM</a>
         </div>
         <div class="sidebtn1">
-                                    <a class="btn btn-md     login1" href="{{url('login')}}">Login</a>
+            <a class="btn btn-sm     login1" href="{{url('login')}}">Login</a>
 
-                                </div>
+        </div>
 
 
     </div>
@@ -140,67 +143,62 @@
     <!-- Start Footer Section -->
     <div class="footerSection">
 
-        <div class="container p-5">
+        <div class="container">
 
-            <div class="row justify-content-center">
-                <div class="col-lg-3 col-sm-6 my-5 m-auto">
-                    <div>
-                        <a class="btn btn-lg  p-2 w-100 border border-white  footbtn" href="{{url('terms')}}">Terms &
-                            Conditions</a>
-                    </div>
-                    <div class="mt-3">
-                        <a class="btn btn-lg  p-2 w-100 border border-white  footbtn" href="{{url('privacy')}}">Privacy
-                            Policy</a>
-                    </div>
-                    <div class="mt-3">
-                        <a class="btn btn-lg  p-2 w-100 border border-white  footbtn" href="{{url('refund')}}">Refund
-                            Policy</a>
-                    </div>
-                    <div class="mt-3">
-                        <a class="btn btn-lg  p-2 w-100 border border-white  footbtn" href="{{url('contact')}}">Contact
-                            Us</a>
-                    </div>
-                </div>
+            <div class=" row p-5 justify-content-center">
 
+                <div class="col-lg-3 text-center m-auto">
+                    <div class="container justify-content-center text-left">
 
-
-                <div class="col-lg-3">
-                    <div class="row mt-5 pt-3 justify-content-center">
-                        <div class="col-lg-4 col-sm-2">
-                            <a href="{{url('/')}}"><img class="w-100" src="images/insta.png"></a>
+                        <div>
+                            <a class="w-100 footbtn" href="{{url('terms')}}">Terms &
+                                Conditions</a>
                         </div>
-                        <div class="col-lg-4 col-sm-2"><img class="w-100" src="images/fb.png"></a>
+                        <div class="mt-3">
+                            <a class="w-100 footbtn" href="{{url('privacy')}}">Privacy
+                                Policy</a>
                         </div>
-                        <div class="col-lg-4 col-sm-2 ">
-                            <a href="{{url('/')}}"><img class="w-100" src="images/tweet.png"></a>
+                        <div class="mt-3">
+                            <a class="w-100 footbtn" href="{{url('refund')}}">Refund
+                                Policy</a>
                         </div>
-                        <div class="col-lg-4 col-sm-2 ">
-                            <a href="{{url('/')}}"><img class="w-100" src="images/linkd.png"></a>
-                        </div>
-                        <div class="col-lg-4 col-sm-2 ">
-                            <a href="{{url('/')}}"><img class="w-100" src="images/youtube.png"></a>
-                        </div>
-                        <div class="col-lg-4 col-sm-2">
-                            <a href="{{url('/')}}"><img class="w-100" src="images/tiktok.png"></a>
+                        <div class="mt-3">
+                            <a class="w-100 footbtn" href="{{url('contact')}}">Contact
+                                Us</a>
                         </div>
 
                     </div>
                 </div>
 
+                <div class="col-lg-4 mt-3 ">
+                    <div class="container justify-content-center m-auto">
+                        <a href="{{url('/')}}"><img class="w-100" src="images/satisfaction.webp"></a>
 
-                <div class="col-lg-3 text-center m-auto ">
-                    <div class="row mt-5 text-center justify-content-center">
+                    </div>
+                </div>
+
+
+                <div class="col-lg-5 text-center m-auto ">
+                    <div class="container  justify-content-center">
+
                         <p class="text-white">COPYRIGHT © 2022 PaystubX,<br> ALL RIGHTS RESERVED.</p>
-                    </div>
-                    <div class="row mt-3 justify-content-center">
-                        <a href="{{url('/')}}"><img class="w-50" src="images/satisfaction.webp"></a>
+
+                        <div class="container">
+                            <a href="{{url('/')}}"><i class="fa fa-facebook   fbicon " aria-hidden="true"></i></a>
+                            <a href="{{url('/')}}"><i class="fa fa-instagram  socialicon" aria-hidden="true"></i></a>
+                            <a href="{{url('/')}}"><i class="fa fa-twitter  socialicon" aria-hidden="true"></i></a>
+                            <a href="{{url('/')}}"><i class="fa fa-linkedin  socialicon" aria-hidden="true"></i></a>
+                            <a href="{{url('/')}}"><i class="fa fa-youtube  socialicon" aria-hidden="true"></i></a>
+                            <!--  <a href="{{url('/')}}"><i class="fa fa-tiktok text-white socialicon" aria-hidden="true"></i></a> -->
+                        </div>
                     </div>
                 </div>
+
+
+
+
+
             </div>
-
-
-
-
         </div>
 
     </div>
