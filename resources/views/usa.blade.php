@@ -2,58 +2,59 @@
 
 @section('content')
 <div>
+>
 
-    <div class="container">
-        <div class="row mb-3">
+    <div class="container" style="max-width:1500px;">
+        <div class="row mb-2">
             <div class="col-md-12">
                 <div class=" box-usa">
                     <h4>Company Info</h4>
-                    <div class="row mb-3">
-                        <div class="col-md-6 mt-4">
-                            <label for="fname" class="lable">EMPLOYER (COMPANY) NAME *</label><br>
+                    <div class="row mb-2">
+                        <div class="col-md-6 mt-3">
+                            <label for="fname" class="lable">EMPLOYER (COMPANY) NAME <spam style="color:red;"><spam style="color:red;">*<spam><spam></label><br>
                             <input type="text" id="fname" name="fname" placeholder="Your Employer & Company Name"
-                                class="w-100 p-2 text-center" style="font-size:14px;"><br>
+                                class="w-100 p-1 text-center" style="font-size:14px;"><br>
                         </div>
 
-                        <div class="col-md-6 mt-4">
-                            <label for="fname" class="lable">EMPLOYER TELEPHONE NUMBER *</label><br>
+                        <div class="col-md-6 mt-3">
+                            <label for="fname" class="lable">EMPLOYER TELEPHONE NUMBER<spam style="color:red;"><spam style="color:red;">*<spam><spam></label><br>
                             <input type="text" id="fname" name="fname" placeholder="Your Employer & Company Name"
-                                class="w-100 p-2 text-center" style="font-size:14px;"><br>
+                                class="w-100 p-1 text-center" style="font-size:14px;"><br>
                         </div>
 
                     </div>
 
-                    <div class="row mb-3">
+                    <div class="row mb-2">
                         <div class="col-md-12">
-                            <label for="fname" class="lable">STREET ADDRESS 1 *</label><br>
+                            <label for="fname" class="lable">STREET ADDRESS 1 <spam style="color:red;"><spam style="color:red;">*<spam><spam></label><br>
                             <input type="text" id="fname" name="fname" placeholder="Your Employer & Company Name"
-                                class="w-100 p-2 " style="font-size:14px;"><br>
+                                class="w-100 p-1 " style="font-size:14px;"><br>
                         </div>
                     </div>
 
-                    <div class="row mb-3">
+                    <div class="row mb-2">
                         <div class="col-md-12">
-                            <label for="fname" class="lable">STREET ADDRESS 2 *</label><br>
+                            <label for="fname" class="lable">STREET ADDRESS 2 <spam style="color:red;"><spam style="color:red;">*<spam><spam></label><br>
                             <input type="text" id="fname" name="fname" placeholder="Your Employer & Company Name"
-                                class="w-100 p-2 " style="font-size:14px;"><br>
+                                class="w-100 p-1 " style="font-size:14px;"><br>
                         </div>
                     </div>
 
-                    <div class="row mb-3">
+                    <div class="row mb-2">
                         <div class="col-md-4">
-                            <label for="fname" class="lable">City *</label><br>
+                            <label for="fname" class="lable">City <spam style="color:red;"><spam style="color:red;">*<spam><spam></label><br>
                             <input type="text" id="fname" name="fname" placeholder="Your Employer City"
-                                class="w-100 p-2 " style="font-size:14px;"><br>
+                                class="w-100 p-1 " style="font-size:14px;"><br>
                         </div>
                         <div class="col-md-4">
-                            <label for="fname" class="lable">State*</label><br>
+                            <label for="fname" class="lable">State<spam style="color:red;"><spam style="color:red;">*<spam><spam></label><br>
                             <input type="text" id="fname" name="fname" placeholder="Your Employer Sate"
-                                class="w-100 p-2 " style="font-size:14px;"><br>
+                                class="w-100 p-1 " style="font-size:14px;"><br>
                         </div>
                         <div class="col-md-4">
-                            <label for="fname" class="lable">Zip Code *</label><br>
+                            <label for="fname" class="lable">Zip Code <spam style="color:red;"><spam style="color:red;">*<spam><spam></label><br>
                             <input type="text" id="fname" name="fname" placeholder="Your Employer Zip Code"
-                                class="w-100 p-2 " style="font-size:14px;"><br>
+                                class="w-100 p-1 " style="font-size:14px;"><br>
                         </div>
                     </div>
                 </div>
@@ -64,16 +65,17 @@
 
 
 
-    <div class="container">
+    <div class="container" style="max-width:1500px;">
         <h4>Choose Template</h4>
-        <div class="row mb-3">
+        <div class="row mb-2">
             <div class="col-md-12">
                 <div class=" box-usa">
 
-                    <div class="row mb-3">
-                        <div class="col-md-6 mt-4">
-                            <h6>BASIC TEMPLATES</h6>
+                    <div class="row mb-2">
+                        <div class="col-md-6 mt-4 text-center"style="border-right: 1px solid #00000024">
+                        <h6>BASIC TEMPLATES</h6>
                             <div class="dropdown dropdown1">
+                          
                                 <button class="btn  dropdown-toggle" type="button" data-toggle="dropdown">Reddish
                                     Magenta
                                     <span class="caret"></span></button>
@@ -85,7 +87,7 @@
                             </div>
                         </div>
 
-                        <div class="col-md-6 mt-4">
+                        <div class="col-md-6 mt-4 text-center" >
                             <h6>ADVANCED TEMPLATES</h6>
                             <div class="dropdown dropdown1">
                                 <button class="btn  dropdown-toggle" type="button" data-toggle="dropdown">PT Pink
@@ -112,63 +114,63 @@
 
 
 
-    <div class="container">
+    <div class="container" style="max-width:1500px;">
         <h4>Employee Info</h4>
-        <div class="row mb-3">
+        <div class="row mb-2">
             <div class="col-md-12">
                 <div class=" box-usa">
 
-                    <div class="row mb-3">
+                    <div class="row mb-2">
                         <div class="col-md-4 mt-4">
-                            <label for="fname" class="lable">EMPLOYEE NAME *</label><br>
+                            <label for="fname" class="lable">EMPLOYEE NAME <spam style="color:red;"><spam style="color:red;">*<spam><spam></label><br>
                             <input type="text" id="fname" name="fname" placeholder="Your Full  Name"
-                                class="w-100 p-2 text-center" style="font-size:14px;"><br>
+                                class="w-100 p-1 text-center" style="font-size:14px;"><br>
                         </div>
 
                         <div class="col-md-4 mt-4">
-                            <label for="fname" class="lable">EMPLOYER ID *</label><br>
+                            <label for="fname" class="lable">EMPLOYER ID <spam style="color:red;"><spam style="color:red;">*<spam><spam></label><br>
                             <input type="text" id="fname" name="fname" placeholder="Your Employer & Company Name"
-                                class="w-100 p-2 text-center" style="font-size:14px;"><br>
+                                class="w-100 p-1 text-center" style="font-size:14px;"><br>
                         </div>
                         <div class="col-md-4 mt-4">
-                            <label for="fname" class="lable">EMPLOYEE SSN last4*</label><br>
-                            <input type="text" id="fname" name="fname" placeholder="1224" class="w-100 p-2 text-center"
+                            <label for="fname" class="lable">EMPLOYEE SSN last4<spam style="color:red;"><spam style="color:red;">*<spam><spam></label><br>
+                            <input type="text" id="fname" name="fname" placeholder="1224" class="w-100 p-1 text-center"
                                 style="font-size:14px;"><br>
                         </div>
 
                     </div>
 
-                    <div class="row mb-3">
+                    <div class="row mb-2">
                         <div class="col-md-12">
-                            <label for="fname" class="lable">STREET 1 *</label><br>
-                            <input type="text" id="fname" name="fname" placeholder="Your Address" class="w-100 p-2 "
+                            <label for="fname" class="lable">STREET 1 <spam style="color:red;"><spam style="color:red;">*<spam><spam> </label><br>
+                            <input type="text" id="fname" name="fname" placeholder="Your Address" class="w-100 p-1 "
                                 style="font-size:14px;"><br>
                         </div>
                     </div>
 
-                    <div class="row mb-3">
+                    <div class="row mb-2">
                         <div class="col-md-12">
-                            <label for="fname" class="lable">STREET 2 *</label><br>
+                            <label for="fname" class="lable">STREET 2 <spam style="color:red;"><spam style="color:red;">*<spam><spam></label><br>
                             <input type="text" id="fname" name="fname" placeholder="Suite 101 or Apt 101(optional)"
-                                class="w-100 p-2 " style="font-size:14px;"><br>
+                                class="w-100 p-1 " style="font-size:14px;"><br>
                         </div>
                     </div>
 
-                    <div class="row mb-3">
+                    <div class="row mb-2">
                         <div class="col-md-4">
-                            <label for="fname" class="lable">City *</label><br>
+                            <label for="fname" class="lable">City <spam style="color:red;"><spam style="color:red;">*<spam><spam></label><br>
                             <input type="text" id="fname" name="fname" placeholder="Your Employer City"
-                                class="w-100 p-2 " style="font-size:14px;"><br>
+                                class="w-100 p-1 " style="font-size:14px;"><br>
                         </div>
                         <div class="col-md-4">
-                            <label for="fname" class="lable">State*</label><br>
+                            <label for="fname" class="lable">State <spam style="color:red;"><spam style="color:red;">*<spam><spam></label><br>
                             <input type="text" id="fname" name="fname" placeholder="Your Employer Sate"
-                                class="w-100 p-2 " style="font-size:14px;"><br>
+                                class="w-100 p-1 " style="font-size:14px;"><br>
                         </div>
                         <div class="col-md-4">
-                            <label for="fname" class="lable">Zip Code *</label><br>
+                            <label for="fname" class="lable">Zip Code <spam style="color:red;"><spam style="color:red;">*<spam><spam></label><br>
                             <input type="text" id="fname" name="fname" placeholder="Your Employer Zip Code"
-                                class="w-100 p-2 " style="font-size:14px;"><br>
+                                class="w-100 p-1 " style="font-size:14px;"><br>
                         </div>
                     </div>
                 </div>
@@ -177,15 +179,15 @@
 
     </div>
 
-    <div class="container">
+    <div class="container" style="max-width:1500px;">
         <h4>Employee Basic Info</h4>
-        <div class="row mb-3">
+        <div class="row mb-2">
             <div class="col-md-12">
                 <div class=" box-usa">
 
-                    <div class="row mb-3">
+                    <div class="row mb-2">
                         <div class="col-md-3 mt-4">
-                            <label for="fname" class="lable">SELECT YOUR STATE</label><br>
+                            <label for="fname" class="lable">SELECT YOUR STATE <spam style="color:red;"><spam style="color:red;">*<spam><spam></label><br>
                             <div class="dropdown dropdown1">
                                 <button class="btn  dropdown-toggle" type="button" data-toggle="dropdown">usa
                                     <span class="caret"></span></button>
@@ -198,44 +200,44 @@
                         </div>
 
                         <div class="col-md-3 mt-4">
-                            <label for="fname" class="lable">AUTO CALCULATOR*</label><br>
-                            <input type="text" id="fname" name="fname" placeholder="OFF" class="w-100 p-2 text-center"
+                            <label for="fname" class="lable">AUTO CALCULATOR<spam style="color:red;"><spam style="color:red;">*<spam><spam></label><br>
+                            <input type="text" id="fname" name="fname" placeholder="OFF" class="w-100 p-1 text-center"
                                 style="font-size:14px;"><br>
                         </div>
                         <div class="col-md-3 mt-4">
-                            <label for="fname" class="lable">MARITAL STATUS*</label><br>
+                            <label for="fname" class="lable">MARITAL STATUS<spam style="color:red;"><spam style="color:red;">*<spam><spam></label><br>
                             <input type="text" id="fname" name="fname" placeholder="single"
-                                class="w-100 p-2 text-center" style="font-size:14px;"><br>
+                                class="w-100 p-1 text-center" style="font-size:14px;"><br>
                         </div>
                         <div class="col-md-3 mt-4">
-                            <label for="fname" class="lable">HOW DO YOU GET PAID*</label><br>
+                            <label for="fname" class="lable">HOW DO YOU GET PAID<spam style="color:red;"><spam style="color:red;">*<spam><spam></label><br>
                             <input type="text" id="fname" name="fname" placeholder="Bi-Weekly"
-                                class="w-100 p-2 text-center" style="font-size:14px;"><br>
+                                class="w-100 p-1 text-center" style="font-size:14px;"><br>
                         </div>
 
                     </div>
 
-                    <div class="row mb-3">
+                    <div class="row mb-2">
                         <div class="col-md-3 mt-4">
-                            <label for="fname" class="lable">HOURLY *</label><br>
+                            <label for="fname" class="lable">HOURLY <spam style="color:red;"><spam style="color:red;">*<spam><spam></label><br>
                             <input type="text" id="fname" name="fname" placeholder="Hourly"
-                                class="w-100 p-2 text-center" style="font-size:14px;"><br>
+                                class="w-100 p-1 text-center" style="font-size:14px;"><br>
                         </div>
 
                         <div class="col-md-3 mt-4">
-                            <label for="fname" class="lable">EMPLOYMENT TYPE *</label><br>
+                            <label for="fname" class="lable">EMPLOYMENT TYPE <spam style="color:red;"><spam style="color:red;">*<spam><spam></label><br>
                             <input type="text" id="fname" name="fname" placeholder="Employee"
-                                class="w-100 p-2 text-center" style="font-size:14px;"><br>
+                                class="w-100 p-1 text-center" style="font-size:14px;"><br>
                         </div>
                         <div class="col-md-3 mt-4">
-                            <label for="fname" class="lable">EXEMPTIONS*</label><br>
-                            <input type="text" id="fname" name="fname" placeholder="0" class="w-100 p-2 text-center"
+                            <label for="fname" class="lable">EXEMPTIONS<spam style="color:red;"><spam style="color:red;">*<spam><spam></label><br>
+                            <input type="text" id="fname" name="fname" placeholder="0" class="w-100 p-1 text-center"
                                 style="font-size:14px;"><br>
                         </div>
                         <div class="col-md-3 mt-4">
-                            <label for="fname" class="lable" style="color:red;">SELECT YOUR CURRENCY *</label><br>
+                            <label for="fname" class="lable" style="color:red;">SELECT YOUR CURRENCY <spam style="color:red;"><spam style="color:red;">*<spam><spam></label><br>
                             <input type="text" id="fname" name="fname" placeholder="$(USD)"
-                                class="w-100 p-2 text-center" style="font-size:14px;"><br>
+                                class="w-100 p-1 text-center" style="font-size:14px;"><br>
                         </div>
 
                     </div>
@@ -252,35 +254,35 @@
 
 
 
-    <div class="container">
+    <div class="container" style="max-width:1500px;">
         <div class="mb- d-flex" style="justify-content: space-between;">
             <h4>Earning statement</h4>
-            <button class="createbtn mb-3">Preview Your Paystub</button>
+            <button class="createbtn mb-2">Preview Your Paystub</button>
         </div>
-        <div class="row mb-3">
+        <div class="row mb-2">
             <div class="col-md-12">
                 <div class=" box-usa">
 
-                    <div class="row mb-3">
+                    <div class="row mb-2">
                         <div class="col-md-3 mt-4">
-                            <label for="fname" class="lable">PAY START*</label><br>
-                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-2 text-center"
+                            <label for="fname" class="lable">PAY START<spam style="color:red;"><spam style="color:red;">*<spam><spam></label><br>
+                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-1 text-center"
                                 style="font-size:14px;"><br>
                         </div>
 
                         <div class="col-md-3 mt-4">
-                            <label for="fname" class="lable">PAY END *</label><br>
-                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-2 text-center"
+                            <label for="fname" class="lable">PAY END <spam style="color:red;"><spam style="color:red;">*<spam><spam></label><br>
+                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-1 text-center"
                                 style="font-size:14px;"><br>
                         </div>
                         <div class="col-md-3 mt-4">
-                            <label for="fname" class="lable">PAY DATE*</label><br>
-                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-2 text-center"
+                            <label for="fname" class="lable">PAY DATE<spam style="color:red;"><spam style="color:red;">*<spam><spam></label><br>
+                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-1 text-center"
                                 style="font-size:14px;"><br>
                         </div>
                         <div class="col-md-3 mt-4">
-                            <label for="fname" class="lable">HOW DO YOU GET PAID*</label><br>
-                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-2 text-center"
+                            <label for="fname" class="lable">HOW DO YOU GET PAID<spam style="color:red;"><spam style="color:red;">*<spam><spam></label><br>
+                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-1 text-center"
                                 style="font-size:14px;"><br>
                             <div class="text-center mt-2">
                                 <button CLASS="hourbtn">HOURLY</button> <button CLASS="salrybtn">SALARY</button>
@@ -289,7 +291,7 @@
 
                     </div>
 
-                    <div class="row mb-3">
+                    <div class="row mb-2">
                         <div class="col-md-2 mb-2">
                             <button CLASS="statementbtn">EARNING</button>
                         </div>
@@ -315,39 +317,39 @@
                         </div>
                     </div>
 
-                    <div class="row mb-3">
+                    <div class="row mb-2">
                         <div class="col-md-2">
 
-                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-2 "
+                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-1 "
                                 style="font-size:14px;"><br>
                         </div>
                         <div class="col-md-2">
 
-                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-2 "
+                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-1 "
                                 style="font-size:14px;"><br>
                         </div>
                         <div class="col-md-2">
 
-                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-2 "
+                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-1 "
                                 style="font-size:14px;"><br>
                         </div>
                         <div class="col-md-2">
 
-                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-2 "
+                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-1 "
                                 style="font-size:14px;"><br>
                         </div>
                         <div class="col-md-2">
-                            <input type="text" id="fname" name="fname" placeholder="Total Gross" class="w-100 p-2 "
+                            <input type="text" id="fname" name="fname" placeholder="Total Gross" class="w-100 p-1 "
                                 style="font-size:14px;"><br>
                         </div>
                         <div class="col-md-2">
 
-                            <input type="text" id="fname" name="fname" placeholder="YTD Total Gross" class="w-100 p-2 "
+                            <input type="text" id="fname" name="fname" placeholder="YTD Total Gross" class="w-100 p-1 "
                                 style="font-size:14px;"><br>
                         </div>
                     </div>
 
-                    <div class="row mb-3">
+                    <div class="row mb-2">
                         <div class="col-md-3">
 
                             <button CLASS="earnbtn"><i class="fa fa-plus-circle pr-2"
@@ -356,15 +358,15 @@
 
                     </div>
 
-                    <div class="row mb-3">
+                    <div class="row mb-2">
                         <div class="col-md-3">
-                            <button class="createbtn mb-3">DEDUCTION</button>
+                            <button class="createbtn mb-2">DEDUCTION</button>
                         </div>
 
                     </div>
 
 
-                    <div class="row mb-3">
+                    <div class="row mb-2">
                         <div class="col-md-3">
 
                             <button CLASS="earnbtn"><i class='fa fa-lock pr-5' style='font-size:24px'></i>FICA
@@ -381,18 +383,18 @@
 
                         </div>
                         <div class="col-md-3">
-                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-2 "
+                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-1 "
                                 style="font-size:14px;"><br>
                         </div>
                         <div class="col-md-3">
 
-                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-2 "
+                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-1 "
                                 style="font-size:14px;"><br>
                         </div>
                     </div>
 
 
-                    <div class="row mb-3">
+                    <div class="row mb-2">
                         <div class="col-md-3">
 
                             <button CLASS="earnbtn"><i class='fa fa-lock pr-4' style='font-size:24px'></i>Social
@@ -409,18 +411,18 @@
 
                         </div>
                         <div class="col-md-3">
-                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-2 "
+                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-1 "
                                 style="font-size:14px;"><br>
                         </div>
                         <div class="col-md-3">
 
-                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-2 "
+                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-1 "
                                 style="font-size:14px;"><br>
                         </div>
                     </div>
 
 
-                    <div class="row mb-3">
+                    <div class="row mb-2">
                         <div class="col-md-3">
 
                             <button CLASS="earnbtn"><i class='fa fa-lock pr-4' style='font-size:24px'></i>Federal Income
@@ -437,18 +439,18 @@
 
                         </div>
                         <div class="col-md-3">
-                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-2 "
+                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-1 "
                                 style="font-size:14px;"><br>
                         </div>
                         <div class="col-md-3">
 
-                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-2 "
+                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-1 "
                                 style="font-size:14px;"><br>
                         </div>
                     </div>
 
 
-                    <div class="row mb-3">
+                    <div class="row mb-2">
                         <div class="col-md-3">
 
                             <button CLASS="earnbtn"><i class='fa fa-lock pr-5   ' style='font-size:24px'></i>State
@@ -465,17 +467,17 @@
 
                         </div>
                         <div class="col-md-3">
-                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-2 "
+                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-1 "
                                 style="font-size:14px;"><br>
                         </div>
                         <div class="col-md-3">
 
-                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-2 "
+                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-1 "
                                 style="font-size:14px;"><br>
                         </div>
                     </div>
 
-                    <div class="row mb-3">
+                    <div class="row mb-2">
                         <div class="col-md-3">
 
                             <button CLASS="earnbtn"><i class="fa fa-plus-circle pr-2"
@@ -500,7 +502,7 @@
                         </div>
                     </div>
 
-                    <div class="row mb-3">
+                    <div class="row mb-2">
                         <div class="col-md-3">
 
                             <button CLASS="earnbtn">Taxes/ Deduction Total</button>
@@ -516,18 +518,18 @@
 
                         </div>
                         <div class="col-md-3">
-                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-2 "
+                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-1 "
                                 style="font-size:14px;"><br>
                         </div>
                         <div class="col-md-3">
-                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-2 "
+                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-1 "
                                 style="font-size:14px;"><br>
 
                         </div>
                     </div>
 
 
-                    <div class="row mb-3">
+                    <div class="row mb-2">
                         <div class="col-md-3">
                             <button CLASS="netpaybtn">Net Pay</button>
                         </div>
@@ -542,11 +544,11 @@
 
                         </div>
                         <div class="col-md-3">
-                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-2 "
+                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-1 "
                                 style="font-size:14px;"><br>
                         </div>
                         <div class="col-md-3">
-                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-2 "
+                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-1 "
                                 style="font-size:14px;"><br>
 
                         </div>
@@ -560,48 +562,48 @@
 
 
 
-    <div class="container">
+    <div class="container" style="max-width:1500px;">
        
-        <div class="row mb-3">
+        <div class="row mb-2">
             <div class="col-md-12">
                 <div class=" box-usa">
 
-                    <div class="row mb-3">
+                    <div class="row mb-2">
                       
 
                         <div class="col-md-2 mt-4">
-                            <label for="fname" class="lable">CO *</label><br>
-                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-2 text-center"
+                            <label for="fname" class="lable">CO <spam style="color:red;">*<spam></label><br>
+                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-1 text-center"
                                 style="font-size:14px;"><br>
                         </div>
                         <div class="col-md-2 mt-4">
-                            <label for="fname" class="lable">FILE *</label><br>
+                            <label for="fname" class="lable">FILE <spam style="color:red;">*<spam></label><br>
                             <input type="text" id="fname" name="fname" placeholder=""
-                                class="w-100 p-2 text-center" style="font-size:14px;"><br>
+                                class="w-100 p-1 text-center" style="font-size:14px;"><br>
                         </div>
                         <div class="col-md-2 mt-4">
-                            <label for="fname" class="lable">CLOCK VCHR *</label><br>
+                            <label for="fname" class="lable">CLOCK VCHR <spam style="color:red;">*<spam></label><br>
                             <input type="text" id="fname" name="fname" placeholder=""
-                                class="w-100 p-2 text-center" style="font-size:14px;"><br>
+                                class="w-100 p-1 text-center" style="font-size:14px;"><br>
                         </div>
 
                 
 
                   
                         <div class="col-md-2 mt-4">
-                            <label for="fname" class="lable">Advice Number *</label><br>
+                            <label for="fname" class="lable">Advice Number <spam style="color:red;">*<spam></label><br>
                             <input type="text" id="fname" name="fname" placeholder=""
-                                class="w-100 p-2 text-center" style="font-size:14px;"><br>
+                                class="w-100 p-1 text-center" style="font-size:14px;"><br>
                         </div>
 
                         <div class="col-md-2 mt-4">
-                            <label for="fname" class="lable">Acc.no Last 4 *</label><br>
+                            <label for="fname" class="lable">Acc.no Last 4 <spam style="color:red;">*<spam></label><br>
                             <input type="text" id="fname" name="fname" placeholder=""
-                                class="w-100 p-2 text-center" style="font-size:14px;"><br>
+                                class="w-100 p-1 text-center" style="font-size:14px;"><br>
                         </div>
                         <div class="col-md-2 mt-4">
-                            <label for="fname" class="lable">Transit ABA *</label><br>
-                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-2 text-center"
+                            <label for="fname" class="lable">Transit ABA <spam style="color:red;">*<spam></label><br>
+                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-1 text-center"
                                 style="font-size:14px;"><br>
                         </div>
                        

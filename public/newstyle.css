@@ -1,11 +1,11 @@
 .createbtn{
-    padding: 10px 64px;
-    border-radius: 32px;
+    padding: 5px 64px;
+    border-radius: 5px;
     background-color: red;
     color: white;
     border: 1px solid white'';
     border: 1px solid #ffffffad;
-    font-size: 20px;
+    font-size: 19px;
 }
 .netimg{
     width: 181px;
@@ -18,14 +18,14 @@
     margin-right: 10px;
 }
 .box-usa{
-    border: 3px solid #fe0f10;
+    border: 3px solid #FF6161;
     padding: 10px;
-    background: #787b7e47;
-    padding: 32px 19px;
-    border-radius: 8px;
+    background: #E8E6E6;
+    padding: 10px 12px;
+    border-radius: 2px;
 }
 .box-usa1{
-    border: 3px solid #fe0f10;
+    border: 2px solid #fe0f10;
     padding: 10px;
     background: #ffffff;
     padding: 32px 19px;
@@ -35,14 +35,24 @@
 }
 
 .lable{
-    font-size: 12px;
-    color: #1f1414cc;
+    font-size: 13px;
+    color: #000000;
+    font-weight: 400;
 }
 #fname{
     font-size: 13px;
     /* color: #ce1f1f; */
-    border-radius: 6px;
+    border-radius: 3px;
     border: 1px solid #0000004d;
+
+}
+#fname:hover{
+    box-shadow: 5px 5px 1px 3px #0000002b;
+    
+    border: 1px solid #ffffff !important;
+    background: #244b1f;
+    color: white !important;
+
 
 }
 .dropdown1{
@@ -52,19 +62,20 @@
     border-radius: 6px;
     text-align: center;
     background: #ffffff;
+    margin: auto;
 }
 .viewbtn{
-    font-size: 13px;
+    font-size: 15px;
     color: #010101;
     background: yellow;
     /* background-image: radial-gradient(white, #6bb0fd); */
     padding: 7px 20px;
     border: none;
-    border-radius: 36px;
+    border-radius: 4px;
 }
 .hourbtn{
     padding: 4px 16px;
-    border-radius: 59px;
+    border-radius: 3px;
     color: white;
     /* background: red; */
     border: none;
@@ -74,7 +85,7 @@
 }
 .salrybtn{
     padding: 4px 16px;
-    border-radius: 59px;
+    border-radius: 3px;
     color: white;
     /* background: red; */
     border: none;
@@ -88,7 +99,7 @@
     background: #2d5781;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 2px;
 }
 .earnbtn{
     font-size: 16px;
@@ -109,16 +120,7 @@
     border: none;
     border-radius: 5px;
 }
-.emailbtn{
-    font-size: 21px;
-    color: #ffffff;
-    background: #12c23a;
-    /* background-image: radial-gradient(white, #6bb0fd); */
-    padding: 10px 59px;
-    border: none;
-    border-radius: 36px;
 
-}
 #name{
     border-radius: 12px;
     border: navajowhite;
@@ -243,14 +245,26 @@ p{
     border: 1px solid #ffffff;
 
   }
+  .emailbtn {
+    font-size: 21px;
+    color: #ffffff;
+    background: #12c23a;
+    /* background-image: radial-gradient(white, #6bb0fd); */
+    padding: 6px 59px;
+    border: none;
+    border-radius: 4px;
+}
 
 .sidebtn:hover{
     border:1px solid black;
 }
 input:hover{
     box-shadow: 5px 5px 1px 3px #0000002b;
-    color: black !important;
-    border: 1px solid #d82e2e !important;
+    
+    border: 1px solid #244b1f !important;
+    background: #244b1f;
+    color: white !important;
+
 }
  .dropdown1:hover {
     box-shadow: 5px 5px 1px 3px #0000002b;
@@ -400,7 +414,11 @@ table {
   }
   @import url(https://fonts.googleapis.com/css?family=Roboto:500);
 
-
+h4{
+    font-size: 1.5rem;
+    font-weight: 900;
+    font-family: serif;
+}
 
 
 
