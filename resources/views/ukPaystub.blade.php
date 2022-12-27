@@ -4,62 +4,65 @@
 
 
 <div>
-    <div class="container" style="max-width: 1450px;">
-        <h4>Choose Template</h4>
+<div class="container" style="max-width:1450px;">
+        <h5>Choose Template</h5>
         <div class="row mb-3">
             <div class="col-md-12">
                 <div class=" box-usa">
 
                     <div class="row mb-3">
-                        <div class="col-md-6 mt-4">
+                        <div class="col-md-6 mt-4 " style="border-right: 1px solid #00000024; padding-left: 35px;">
                             <h6>BASIC TEMPLATES</h6>
                             <div class="dropdown ">
                                 <form action="/action_page.php">
 
-                                    <select name="cars" id="cars" style="border:none;" class="p-1 dropdown1">
-                                        <option value="volvo">Reddish Megneta</option>
+                                    <select name="cars" id="cars" style="" class="p- dropdown1">
+                                        <option value="volvo">Reddish Magneta  <i class="fa fa-caret-down"></i></option>
                                         <option value="saab">Saab</option>
                                         <option value="opel">Opel</option>
                                         <option value="audi">Audi</option>
                                     </select>
-                                    <i class="fa fa-eye"></i>   
+                                    <i class="fa fa-eye" style="font-size: 42px;"></i>   
                                 </form>
+                              
                             </div>
-                        </div>
+                           
 
-                        <div class="col-md-6 mt-4">
+
+
+                        </div>
+                        <div class="col-md-6 mt-4 text-center">
                             <h6>ADVANCED TEMPLATES</h6>
                             <div class="dropdown ">
                                 <form action="/action_page.php">
-
-                                    <select name="cars" id="cars" style="border:none;" class="p-1 dropdown1">
-                                        <option value="volvo">PT Pink</option>
+                               
+                                    <select name="cars" id="cars" class=" dropdown1">
+                                        <option value="volvo">PT Pink<i class="fa fa-angle-down"></i> </option> 
                                         <option value="saab">Saab</option>
                                         <option value="opel">Opel</option>
                                         <option value="audi">Audi</option>
                                     </select>
-                                    <i class="fa fa-eye"></i>   
+                                    <i class="fa fa-eye" style="font-size: 42px;"></i>   
                                 </form>
                             </div>
-                            <div class="text-right mt-5 ">
-                                <button class="viewbtn">Click to see Template Landscape view</button>
+                            <div class=" mt-3 ">
+                                <button class="viewbtn">Click to see Template Landscape view..This is not part of design</button>
                             </div>
                         </div>
 
                     </div>
-
                 </div>
+
+
             </div>
-
-
         </div>
-    </div>
-
+</div>
     <div class="container" style="max-width: 1450px;">
+    <h5>Company Info</h5>
         <div class="row mb-3">
             <div class="col-md-12">
                 <div class=" box-usa">
-                    <h4>Company Info</h4>
+              
                     <div class="row mb-3">
                         <div class="col-md-6 mt-1">
                             <label for="fname" class="lable">EMPLOYER (COMPANY) NAME <spam
@@ -96,7 +99,7 @@
 
     <div class="container" style="max-width: 1450px;">
     <div class="mb- d-flex" style="justify-content: space-between;">
-            <h4>Employee info</h4>
+            <h5>Employee info</h5>
             <button class="createbtn mb-3">Preview Your Paystub</button>
         </div>
         <div class="row mb-3">
@@ -128,7 +131,7 @@
                         </div>
 
                     </div>
-                    <h4>Year to Date</h4>
+                    <h5>Year to Date</h5>
                     <div class="row">
                         <div class=" box-usa1 col-lg-7">
 
@@ -191,7 +194,7 @@
 
                         </div>
                     </div>
-                    <h4 class=" mt-4">Payment</h4>
+                    <h5 class=" mt-4">Payment</h5>
                     <div class="row">
 
                         <div class=" box-usa1 col-lg-5">
@@ -218,7 +221,7 @@
 
                         <div class=" box-usa1 col-lg-5">
 
-                            <h4 class="text-center">Deduction</h4>
+                            <h5 class="text-center">Deduction</h5>
                             <table>
                                 <tr>
                                     <th>Basic Pay</th>
@@ -240,7 +243,7 @@
 
                         </div>
                     </div>
-                    <h4 class="mt-4">Net Pay</h4>
+                    <h5 class="mt-4">Net Pay</h5>
                     <div class="row">
                         <div class="col-lg-4">
                             <input type="text" id="fname" name="fname" placeholder=" NET PAY :  98239"
@@ -248,7 +251,7 @@
                         </div>
 
                     </div>
-                    <h4 class="mt-4">Additional Note Here</h4>
+                    <h5 class="mt-4">Additional Note Here</h5>
                     <div class="row">
                         <div class="col-lg-4">
                         <textarea id="w3review" name="w3review" rows="4" cols="50"></textarea>

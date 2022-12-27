@@ -1,57 +1,59 @@
 @extends('layouts.app')
 @section('content')
 <div>
-    <div class="container" style="max-width:1450px;">
-        <h4>Choose Template</h4>
-        <div class="row mb-2">
+<div class="container" style="max-width:1450px;">
+        <h5>Choose Template</h5>
+        <div class="row mb-3">
             <div class="col-md-12">
                 <div class=" box-usa">
 
-                    <div class="row mb-2">
-                        <div class="col-md-6 mt-4 text-center" style="border-right: 1px solid #00000024">
+                    <div class="row mb-3">
+                        <div class="col-md-6 mt-4 " style="border-right: 1px solid #00000024; padding-left: 35px;">
                             <h6>BASIC TEMPLATES</h6>
                             <div class="dropdown ">
                                 <form action="/action_page.php">
 
-                                    <select name="cars" id="cars" style="border:none;" class="p-1 dropdown1">
-                                        <option value="volvo">Reddish Magenta</option>
+                                    <select name="cars" id="cars" style="" class="p- dropdown1">
+                                        <option value="volvo">Reddish Magneta  <i class="fa fa-caret-down"></i></option>
                                         <option value="saab">Saab</option>
                                         <option value="opel">Opel</option>
                                         <option value="audi">Audi</option>
                                     </select>
-                                    <i class="fa fa-eye"></i>   
+                                    <i class="fa fa-eye" style="font-size: 42px;"></i>   
                                 </form>
+                              
                             </div>
-                        </div>
+                           
 
+
+
+                        </div>
                         <div class="col-md-6 mt-4 text-center">
                             <h6>ADVANCED TEMPLATES</h6>
                             <div class="dropdown ">
                                 <form action="/action_page.php">
-
-                                    <select name="cars" id="cars" style="border:none;" class="p-1 dropdown1">
-                                        <option value="volvo">PT Pink</option>
+                               
+                                    <select name="cars" id="cars" class=" dropdown1">
+                                        <option value="volvo">PT Pink<i class="fa fa-angle-down"></i> </option> 
                                         <option value="saab">Saab</option>
                                         <option value="opel">Opel</option>
                                         <option value="audi">Audi</option>
                                     </select>
-                                    <i class="fa fa-eye"></i>   
+                                    <i class="fa fa-eye" style="font-size: 42px;"></i>   
                                 </form>
                             </div>
-                            <div class="text-right mt-5 ">
-                                <button class="viewbtn">Click to see Template Landscape view</button>
+                            <div class=" mt-3 ">
+                                <button class="viewbtn">Click to see Template Landscape view..This is not part of design</button>
                             </div>
                         </div>
 
                     </div>
-
                 </div>
+
+
             </div>
-
-
         </div>
-    </div>
-
+</div>
     <div class="container" style="max-width: 1450px;">
         <div class="row mb-3">
             <div class="col-md-12">
@@ -61,14 +63,14 @@
                         <div class="col-md-4 mt-4">
                             <label for="fname" class="lable">EMPLOYER (COMPANY) NAME <spam style="color:red;">
                                     <spam style="color:red;">*<spam></label><br>
-                            <input type="text" id="fname" name="fname" placeholder="Your Employer & Company Name" class="w-100 p-1
+                            <input type="text" id="fname" name="fname" placeholder="Your Employer & Company Name" class="w-100 p-2
                                  " style="font-size:14px;"><br>
                         </div>
 
                         <div class="col-md-4 mt-4">
                             <label for="fname" class="lable">STREET ADDRESS 1 <spam style="color:red;">
                                     <spam style="color:red;">*<spam></label><br>
-                            <input type="text" id="fname" name="fname" placeholder="Your address Employer" class="w-100 p-1
+                            <input type="text" id="fname" name="fname" placeholder="Your address Employer" class="w-100 p-2
                                  " style="font-size:14px;"><br>
                         </div>
 
@@ -76,7 +78,7 @@
                             <label for="fname" class="lable">STREET ADDRESS 2 <spam style="color:red;">
                                     <spam style="color:red;">*<spam></label><br>
                             <input type="text" id="fname" name="fname" placeholder="Suite 101 or apt 101 (Optional)"
-                                class="w-100 p-1
+                                class="w-100 p-2
                                  " style="font-size:14px;"><br>
                         </div>
 
@@ -92,19 +94,19 @@
                         <div class="col-md-4">
                             <label for="fname" class="lable">City <spam style="color:red;">
                                     <spam style="color:red;">*<spam></label><br>
-                            <input type="text" id="fname" name="fname" placeholder="Your Employer City" class="w-100 p-1
+                            <input type="text" id="fname" name="fname" placeholder="Your Employer City" class="w-100 p-2
                                  " style="font-size:14px;"><br>
                         </div>
                         <div class="col-md-4">
                             <label for="fname" class="lable">State<spam style="color:red;">
                                     <spam style="color:red;">*<spam></label><br>
-                            <input type="text" id="fname" name="fname" placeholder="Province" class="w-100 p-1
+                            <input type="text" id="fname" name="fname" placeholder="Province" class="w-100 p-2
                              " style="font-size:14px;"><br>
                         </div>
                         <div class="col-md-4">
                             <label for="fname" class="lable">Postal Code <spam style="color:red;">
                                     <spam style="color:red;">*<spam></label><br>
-                            <input type="text" id="fname" name="fname" placeholder="KIA OG9" class="w-100 p-1
+                            <input type="text" id="fname" name="fname" placeholder="KIA OG9" class="w-100 p-2
                              " style="font-size:14px;"><br>
                         </div>
                     </div>
@@ -130,20 +132,20 @@
                         <div class="col-md-4 mt-4">
                             <label for="fname" class="lable">EMPLOYER ID <spam style="color:red;">
                                     <spam style="color:red;">*<spam></label><br>
-                            <input type="text" id="fname" name="fname" placeholder="employer Id" class="w-100 p-1
+                            <input type="text" id="fname" name="fname" placeholder="employer Id" class="w-100 p-2
                                  text-center" style="font-size:14px;"><br>
                         </div>
 
                         <div class="col-md-4 mt-4">
                             <label for="fname" class="lable">PAY START <spam style="color:red;">
                                     <spam style="color:red;">*<spam></label><br>
-                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-1
+                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-2
                              text-center" style="font-size:14px;"><br>
                         </div>
                         <div class="col-md-4 mt-4">
                             <label for="fname" class="lable">PAY DATE <spam style="color:red;">
                                     <spam style="color:red;">*<spam></label><br>
-                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-1
+                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-2
                              text-center" style="font-size:14px;"><br>
                         </div>
 
@@ -153,26 +155,26 @@
                         <div class="col-md-3">
                             <label for="fname" class="lable">Check Number <spam style="color:red;">
                                     <spam style="color:red;">*<spam></label><br>
-                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-1
+                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-2
                              " style="font-size:14px;"><br>
                         </div>
                         <div class="col-md-3">
                             <label for="fname" class="lable">Currency <spam style="color:red;">
                                     <spam style="color:red;">*<spam></label><br>
-                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-1
+                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-2
                              " style="font-size:14px;"><br>
                         </div>
                         <div class="col-md-3">
                             <label for="fname" class="lable">EMPLOYEE NAME<spam style="color:red;">
                                     <spam style="color:red;">*<spam></label><br>
-                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-1
+                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-2
                              " style="font-size:14px;"><br>
                         </div>
 
                         <div class="col-md-3">
                             <label for="fname" class="lable">EMPLOYEE ADDRESS<spam style="color:red;">
                                     <spam style="color:red;">*<spam></label><br>
-                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-1
+                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-2
                              " style="font-size:14px;"><br>
                         </div>
                     </div>
@@ -205,7 +207,7 @@
                         <div class="col-md-3 mt-4">
                             <label for="fname" class="lable">PAY START<spam style="color:red;">
                                     <spam style="color:red;">*<spam></label><br>
-                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-1
+                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-2
                              text-center"
                                 style="font-size:14px;"><br>
                         </div>
@@ -213,21 +215,21 @@
                         <div class="col-md-3 mt-4">
                             <label for="fname" class="lable">PAY END <spam style="color:red;">
                                     <spam style="color:red;">*<spam></label><br>
-                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-1
+                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-2
                              text-center"
                                 style="font-size:14px;"><br>
                         </div>
                         <div class="col-md-3 mt-4">
                             <label for="fname" class="lable">PAY DATE<spam style="color:red;">
                                     <spam style="color:red;">*<spam></label><br>
-                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-1
+                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-2
                              text-center"
                                 style="font-size:14px;"><br>
                         </div>
                         <div class="col-md-3 mt-4">
                             <label for="fname" class="lable">HOW DO YOU GET PAID<spam style="color:red;">
                                     <spam style="color:red;">*<spam></label><br>
-                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-1
+                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-2
                              text-center"
                                 style="font-size:14px;"><br>
                             <div class="text-center mt-2">
@@ -270,22 +272,22 @@
                 <div class="row mb-3">
                     <div class="col-md-2">
 
-                        <input type="text" id="fname" name="fname" placeholder="Regular" class="w-100 p-1
+                        <input type="text" id="fname" name="fname" placeholder="Regular" class="w-100 p-2
                          " style="font-size:14px;"><br>
                     </div>
                     <div class="col-md-2">
 
-                        <input type="text" id="fname" name="fname" placeholder="25.00" class="w-100 p-1
+                        <input type="text" id="fname" name="fname" placeholder="25.00" class="w-100 p-2
                          " style="font-size:14px;"><br>
                     </div>
                     <div class="col-md-2">
 
-                        <input type="text" id="fname" name="fname" placeholder="40.00" class="w-100 p-1
+                        <input type="text" id="fname" name="fname" placeholder="40.00" class="w-100 p-2
                          " style="font-size:14px;"><br>
                     </div>
                     <div class="col-md-2">
 
-                        <input type="text" id="fname" name="fname" placeholder="1,000.00" class="w-100 p-1
+                        <input type="text" id="fname" name="fname" placeholder="1,000.00" class="w-100 p-2
                          " style="font-size:14px;"><br>
                     </div>
 
@@ -311,7 +313,7 @@
                 <div class="row mb-3">
                     <div class="col-md-3">
 
-                        <button CLASS="earnbtn"><i class='fa fa-lock pr-5' style='font-size:24px'></i>CPP
+                        <button CLASS="earnbtn"><i class='fa fa-lock pr-4' style='font-size:24px'></i>CPP
                         </button>
                     </div>
 
@@ -505,32 +507,32 @@
                 <div class="row mb-3">
                     <div class="col-md-2">
 
-                        <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-1
+                        <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-2
                          " style="font-size:14px;"><br>
                     </div>
                     <div class="col-md-2">
 
-                        <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-1
+                        <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-2
                          " style="font-size:14px;"><br>
                     </div>
                     <div class="col-md-2">
 
-                        <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-1
+                        <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-2
                          " style="font-size:14px;"><br>
                     </div>
                     <div class="col-md-2">
 
-                        <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-1
+                        <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-2
                          " style="font-size:14px;"><br>
                     </div>
                     <div class="col-md-2">
 
-                        <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-1
+                        <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-2
                          " style="font-size:14px;"><br>
                     </div>
                     <div class="col-md-2">
 
-                        <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-1
+                        <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-2
                          " style="font-size:14px;"><br>
                     </div>
 
