@@ -7,50 +7,50 @@
         <div class="col-lg-6 text-center  mt-5 pt-5 m-auto ">
             <div class="row m-auto justify-content-center text-center">
 
-                
-                    <div class="container-fluid">
-                        <div class="container">
 
-                            <h1 class="text-white" style="font-family:'serif;"><b>
-                                    With PaystubX you can create Paystub for any country</b>
-                            </h1>
+                <div class="container-fluid">
+                    <div class="container">
 
-                            <div class="mt-5 pt-3">
-                                <div class="text-white Payslips" style="">
-                                    There’s no need for complex and costly desktop software. Save time and money with
-                                    Paystubx free online pay stub maker that creates pay stubs to include all companies,
-                                    employment, income, and deduction information. No software needed for creating
-                                    Global Payslip, Paystub or Payroll.
-                                </div>
+                        <h1 class="text-white" style="font-family:'serif;"><b>
+                                With PaystubX you can create Paystub for any country</b>
+                        </h1>
+
+                        <div class="mt-5 pt-3">
+                            <div class="text-white Payslips" style="">
+                                There’s no need for complex and costly desktop software. Save time and money with
+                                Paystubx free online pay stub maker that creates pay stubs to include all companies,
+                                employment, income, and deduction information. No software needed for creating
+                                Global Payslip, Paystub or Payroll.
                             </div>
+                        </div>
 
-                            <div class="mt-5 pt-3">
-                                <a class="btn btn-lg  mt-2 p-2 btn-danger Generate " href="{{url('usa')}}">Generate
-                                    Paystub
-                                    Now</a>
-                            </div>
-                            <div class="mt-5 pt-1 d-flex justify-content-center">
-                                <a href="{{url('/')}}"><img class="storbtn "
-                                        src="images/Google_Play_Store_badge_EN.webp"></a>
-                                <a href="{{url('/')}}"><img class="storbtn ml-3"
-                                        src="images/Download_on_the_App_Store_Badge.webp"></a>
-                            </div>
-
+                        <div class="mt-5 pt-3">
+                            <a class="btn btn-lg  mt-2 p-2 btn-danger Generate " href="{{url('usa')}}">Generate
+                                Paystub
+                                Now</a>
+                        </div>
+                        <div class="mt-5 pt-1 d-flex justify-content-center">
+                            <a href="{{url('/')}}"><img class="storbtn "
+                                    src="images/Google_Play_Store_badge_EN.webp"></a>
+                            <a href="{{url('/')}}"><img class="storbtn ml-3"
+                                    src="images/Download_on_the_App_Store_Badge.webp"></a>
                         </div>
 
                     </div>
+
                 </div>
             </div>
-            <div class="col-lg-6 m-auto">
+        </div>
+        <div class="col-lg-6 m-auto">
             <img class="w-100 mt-5 pt-3" src="images/globle/qewqq22.png">
         </div>
 
-        </div>
-
-
-       
-
     </div>
+
+
+
+
+</div>
 
 
 
@@ -195,11 +195,49 @@
     </div>
 
     <div class="row pb-5">
-        <div class="col-1"></div>
-        <div class="col-10">
-            <img class="w-100 mt-3" src="images/globle/Reddish.png">
+        <div class="col-2"></div>
+
+        <div class=" mt-2 col-8 box-usa">
+
+            <div class="row mb-2  p-5">
+                <div class="col-md-6 mt-2 text-center" style="border-right: 1px solid #00000024">
+                    <h6>BASIC TEMPLATES</h6>
+                    <div class="dropdown ">
+                        <form action="/action_page.php">
+
+                            <select name="cars" id="cars" style="border:none;" class="p-1 dropdown1">
+                                <option value="volvo">Reddish Magenta</option>
+                                <option value="saab">Saab</option>
+                                <option value="opel">Opel</option>
+                      
+                            </select>
+                            <i class="fa fa-eye"></i>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mt-2 text-center">
+                    <h6>ADVANCED TEMPLATES</h6>
+                    <div class="dropdown ">
+                        <form action="/action_page.php">
+
+                            <select name="cars" id="cars" style="border:none;" class="p-1 dropdown1">
+                                <option value="volvo">PT Pink</option>
+                                <option value="saab">Saab</option>
+                                <option value="opel">Opel</option>
+                               
+                            </select>
+                            <i class="fa fa-eye"></i>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
-        <div class="col-1"></div>
+
+        <div class="col-2"></div>
     </div>
 
 </div>
@@ -268,14 +306,14 @@
 
         </div>
     </div>
-                               
-                                
+
+
 
     <div class="col-lg-6">
         <img src="images/globle/yoga.gif" class="w-100">
     </div>
 </div>
-                                </diV>
+</diV>
 <div class="row saveTime">
     <div class="col-lg-6 ">
         <img class="w-100" src="images/globle/image3s.jpeg">
@@ -283,44 +321,44 @@
     </div>
 
     <div class="col-lg-6 pt-2 container justify-content-center">
-        <h4  style="font-family:'sans-serif">
+        <h4 style="font-family:'sans-serif">
             <b>
                 Save Time</b>
         </h4>
         <p style="font-size:18px; line-height:2em;">Automate payroll and concentrate on growing your
             business.</p>
-        <h4  style="font-family:'sans-serif">
+        <h4 style="font-family:'sans-serif">
             <b>
                 Save Money</b>
         </h4>
         <p style="font-size:18px; line-height:2em;">Manage payroll yourself and save while doing it.
             See Payroll Pricing </p>
-        <h4  style="font-family:'sans-serif">
+        <h4 style="font-family:'sans-serif">
             <b>
                 Happy Employees</b>
         </h4>
         <p style="font-size:18px; line-height:2em;">Pay employees accurately and on time to increase their
             productivity.</p>
-        <h4  style="font-family:'sans-serif">
+        <h4 style="font-family:'sans-serif">
             <b>
                 100% Accuracy</b>
         </h4>
         <p style="font-size:18px; line-height:2em;">Deliver error-free paychecks, W-2s, and payroll
             reports.</p>
-        <h4  style="font-family:'sans-serif">
+        <h4 style="font-family:'sans-serif">
             <b>
                 Simplified Compliance</b>
         </h4>
         <p style="font-size:18px; line-height:2em;">Stay in compliance with IRS laws and reporting
             requirements.</p>
-        <h4  style="font-family:'sans-serif">
+        <h4 style="font-family:'sans-serif">
             <b>
                 Streamline Payroll</b>
         </h4>
         <p style="font-size:18px; line-height:1em;">Improve the efficiency of your company and employees.
         </p>
     </div>
-                                
+
 </div>
 
 
