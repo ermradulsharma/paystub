@@ -36,65 +36,50 @@
 </head>
 
 <body>
-    <span class="opennav" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; <a href="{{url('/')}}"><img
-                src="images/Paystub X.webp" class="w-50"></a></span>
+    <span class="opennav" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; <a href="{{url('/')}}"</span>
     <!-- Start Header Section -->
-    <div class="row justify-content-center">
-        <div class="col-md-10">
 
-            <div class=" container ">
+    <div class="container" style="max-width:1500px">
+     
+        <ul class="nav nav-justified navbar">
+            
+            <li class="nav-item">
+               
+            <a href="{{url('/')}}"><img class="mr-3 mt-5" src="images/Paystub X.webp" style="width: 280px;"></a>
+            </li>
+            <li class="nav-item ml-3 ">
+                <a class="btn btn-lg  py-2   w-100 mt-5 navbtn" href="{{url('usa')}}">USA</a>
 
-                <nav class="navbar navbar-expand fixed py-5">
-                    <div class="row">
-                        <div class="col-3">
-                            <div class="mt-3">
-                                <a href="{{url('/')}}"><img class="w-100" src="images/Paystub X.webp"></a>
-                            </div>
-                        </div>
+            </li>
+            <li class="nav-item ml-3">
+                <a class="btn btn-lg py-2    w-100 mt-5 navbtn" href="{{url('canada')}}">CANADA</a>
+            </li>
+            <li class="nav-item ml-3">
+                <a class="btn btn-lg  py-2   w-100 mt-5 navbtn" href="{{url('uk')}}">UK</a>
+            </li>
 
-                        <div class="col-lg-7 mt-4">
+            <li class="nav-item ml-3">
+
+                <a class="btn btn-lg  py-2   w-100  mt-5 navbtn" href="{{url('globle')}}">GLOBLE</a>
+
+            </li>
+            <li class="nav-item ml-3">
+                <a class="btn btn-lg  py-2   w-100  mt-5 navbtn" href="{{url('form')}}">W<sub>-2</sub> FORM</a>
 
 
-                            <div class="row  m-auto justify-content-center">
-                                <div class="ml-1">
-                                    <a class="btn  btn-sm p-2 w-100  navbtn" href="{{url('usa')}}">USA</a>
+            </li>
+            <li class="nav-item float-rigth ml-3 ">
 
-                                </div>
-                                <div class="ml-2">
-                                    <a class="btn btn-sm p-2 w-100 navbtn" href="{{url('canada')}}">CANADA</a>
+                <a class="btn btn-md  py-2   w-100 mt-5 btn-danger login" href="{{url('login')}}">Login</a>
 
-                                </div>
-                                <div class="ml-2">
-                                    <a class="btn  btn-sm p-2 w-100  navbtn" href="{{url('uk')}}">UK</a>
+            </li>
+        </ul><br>
 
-                                </div>
-                                <div class="ml-2">
-                                    <a class="btn  btn-sm p-2 w-100   navbtn" href="{{url('globle')}}">GLOBLE</a>
-
-                                </div>
-                                <div class="ml-2">
-                                    <a class="btn  btn-sm p-2 w-100   navbtn" href="{{url('form')}}"> W-2FORM</a>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                        <div class="col-2 mt-4">
-                            <div class="text-right">
-                                <a class="btn  p-1 w-50  btn-danger login" href="{{url('login')}}">Login</a>
-                             </div>
-
-                        </div>
-
-                    </div>
-
-                </nav>
-            </div>
-        </div>
 
     </div>
+
+
+
 
 
 
@@ -187,7 +172,8 @@
 
                         <div class="container">
                             <a href="{{url('/')}}"><i class="fa fa-facebook   fbicon " aria-hidden="true"></i></a>
-                            <a href="{{url('/')}}"><i class="fa fa-instagram ml-2 socialicon" aria-hidden="true"></i></a>
+                            <a href="{{url('/')}}"><i class="fa fa-instagram ml-2 socialicon"
+                                    aria-hidden="true"></i></a>
                             <a href="{{url('/')}}"><i class="fa fa-twitter ml-2 socialicon" aria-hidden="true"></i></a>
                             <a href="{{url('/')}}"><i class="fa fa-linkedin ml-2 socialicon" aria-hidden="true"></i></a>
                             <a href="{{url('/')}}"><i class="fa fa-youtube ml-2 socialicon" aria-hidden="true"></i></a>
@@ -229,9 +215,9 @@
     </script>
     <!-- <popup link> -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-         <!-- <popup link> -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <popup link> -->
 </body>
 
 </html>
