@@ -4,7 +4,7 @@
 
 
 <div>
-    <div class="container">
+    <div class="container" style="max-width: 1450px;">
         <h4>Choose Template</h4>
         <div class="row mb-3">
             <div class="col-md-12">
@@ -50,7 +50,7 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="container" style="max-width: 1450px;">
         <div class="row mb-3">
             <div class="col-md-12">
                 <div class=" box-usa">
@@ -83,7 +83,7 @@
 
 
 
-    <div class="container">
+    <div class="container" style="max-width: 1450px;">
     <div class="mb- d-flex" style="justify-content: space-between;">
             <h4>Employee info</h4>
             <button class="createbtn mb-3">Preview Your Paystub</button>

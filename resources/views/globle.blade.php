@@ -25,7 +25,7 @@
                             </div>
 
                             <div class="mt-5 pt-3">
-                                <a class="btn btn-lg  mt-2 p-2 btn-danger Generate " href="{{url('/')}}">Generate
+                                <a class="btn btn-lg  mt-2 p-2 btn-danger Generate " href="{{url('usa')}}">Generate
                                     Paystub
                                     Now</a>
                             </div>
@@ -103,7 +103,7 @@
                         We offer a wide variety of sample paystub templates to suit your needs!
                     </h5>
                     <div class="mt-4">
-                        <a class="btn btn-lg  mt-2 p-2 btn-danger Generate " href="{{url('/')}}">Generate
+                        <a class="btn btn-lg  mt-2 p-2 btn-danger Generate " href="{{url('usa')}}">Generate
                             Paystub
                             Now</a>
                     </div>
@@ -254,7 +254,7 @@
                 <div class="row justify-content-center">
                     <div class="col-9">
                         <div class="mt-2 text-center ">
-                            <a class="btn btn-lg  mt-2 p-2 btn-danger Generate " href="{{url('/')}}">Generate
+                            <a class="btn btn-lg  mt-2 p-2 btn-danger Generate " href="{{url('usa')}}">Generate
                                 Paystub
                                 Now</a>
                         </div>
@@ -329,7 +329,7 @@
         <div class=" text-justify text-center text-white">
             <h1>Generate 100% Legal UK Payslips</h1>
             <div class="my-3">
-                <a class="btn btn-lg  btn-danger Generate " href="{{url('/')}}">Generate Paystub
+                <a class="btn btn-lg  btn-danger Generate " href="{{url('usa')}}">Generate Paystub
                     Now</a>
             </div>
             <h2>Simple as ABC</h2>

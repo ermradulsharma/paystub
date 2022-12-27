@@ -4,7 +4,7 @@
 <div>
 >
 
-    <div class="container" style="max-width:1500px;">
+    <div class="container" style="max-width:1450px;">
         <div class="row mb-2">
             <div class="col-md-12">
                 <div class=" box-usa">
@@ -65,7 +65,7 @@
 
 
 
-    <div class="container" style="max-width:1500px;">
+    <div class="container" style="max-width:1450px;">
         <h4>Choose Template</h4>
         <div class="row mb-2">
             <div class="col-md-12">
@@ -114,7 +114,7 @@
 
 
 
-    <div class="container" style="max-width:1500px;">
+    <div class="container" style="max-width:1450px;">
         <h4>Employee Info</h4>
         <div class="row mb-2">
             <div class="col-md-12">
@@ -179,7 +179,7 @@
 
     </div>
 
-    <div class="container" style="max-width:1500px;">
+    <div class="container" style="max-width:1450px;">
         <h4>Employee Basic Info</h4>
         <div class="row mb-2">
             <div class="col-md-12">
@@ -254,7 +254,7 @@
 
 
 
-    <div class="container" style="max-width:1500px;">
+    <div class="container" style="max-width:1450px;">
         <div class="mb- d-flex" style="justify-content: space-between;">
             <h4>Earning statement</h4>
             <button class="createbtn mb-2">Preview Your Paystub</button>
@@ -562,7 +562,7 @@
 
 
 
-    <div class="container" style="max-width:1500px;">
+    <div class="container" style="max-width:1450px;">
        
         <div class="row mb-2">
             <div class="col-md-12">

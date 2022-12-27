@@ -36,7 +36,7 @@
 </head>
 
 <body>
-    <span class="opennav" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; <a href="{{url('/')}}"</span>
+    <span class="opennav" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; <a href="{{url('/')}}"></a></span>
     <!-- Start Header Section -->
 
     <div class="container" style="max-width:1500px">

@@ -48,4 +48,7 @@ Route::get('canada-paystub', function () {
 Route::get('uk-paystub', function () {
     return view('ukPaystub');
 });
+Route::get('w2paystub', function () {
+    return view('w2paystub');
+});
 

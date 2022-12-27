@@ -2,7 +2,7 @@
 @section('content')
 <div>
 
-    <div class="container-fluid">
+    <div class="container-fluid" >
         <div class="row">
             <div class="col-lg-12 p- " style="background-color: #f75656ed;">
                 <div class="container-fluid">

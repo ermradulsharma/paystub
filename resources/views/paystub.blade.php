@@ -12,7 +12,7 @@
                     QUICK AND EASY. Download now.
                 </h4>
                 <div class="mt-5 justify-content-center ">
-                    <a class="btn btn-lg  mt-2 p-2 btn-danger Generate " href="{{url('/')}}">Generate Paystub Now</a>
+                    <a class="btn btn-lg  mt-2 p-2 btn-danger Generate " href="{{url('usa')}}">Generate Paystub Now</a>
                 </div>
                 <div class="mt-5 d-flex justify-content-center">
                     <a href="{{url('/')}}"><img class="storbtn " src="images/Google_Play_Store_badge_EN.webp"></a>
@@ -84,7 +84,7 @@
                     <p class="text-danger" style="font-size: 25px; font-family:sans-serif">You are at the right place!
                     </p>
                     <div class="mt-2">
-                        <a class="btn btn-lg  mt-2 p-2 btn-danger Generate " href="{{url('/')}}">Generate Paystub
+                        <a class="btn btn-lg  mt-2 p-2 btn-danger Generate " href="{{url('usa')}}">Generate Paystub
                             Now</a>
                     </div>
             </div>
@@ -333,7 +333,7 @@
                     </ul>
                 </div>
                 <div class="mt-5 d-flex">
-                    <a class="btn btn-lg  btn-danger Generate " href="{{url('/')}}">Generate Paystub Now</a>
+                    <a class="btn btn-lg  btn-danger Generate " href="{{url('usa')}}">Generate Paystub Now</a>
                 </div>
             </div>
 
