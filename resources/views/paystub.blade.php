@@ -1,28 +1,32 @@
 @extends('layouts.app')
 @section('content')
 <div class="paystub">
-    <div class="container">
-    
+    <div class="container-XL" style="">
+
         <div class="row pb-5">
-            <div class="col-lg-5 mt-5 pt-5">
-                <h1 class="instant display-5">
-                    Instant Online Professional PayStub Generator
+            <div class="col-lg-2 mt-5 pt-5"></div>
+            <div class="col-lg-3 mt-5 pt-5">
+                <h1 class="instant display-5 pt-5">
+                    Instant Online <br>Professional PayStub <br>Generator
                 </h1>
-                <h4 class="QUICK">
+                <p class="QUICK">
                     QUICK AND EASY. Download now.
-                </h4>
+                </p>
                 <div class="mt-5 justify-content-center ">
-                    <a class="btn btn-lg  mt-2 p-2 btn-danger Generate " href="{{url('usa')}}">Generate Paystub Now</a>
+                    <a class="btn btn-lg  mt-5 p-2 btn-danger Generate " href="{{url('usa')}}">Generate Paystub Now</a>
                 </div>
-                <div class="mt-5 d-flex justify-content-center">
+                <div class="mt-5 d-flex pt-3">
                     <a href="{{url('/')}}"><img class="storbtn " src="images/Google_Play_Store_badge_EN.webp"></a>
                     <a href="{{url('/')}}"><img class="storbtn ml-3"
                             src="images/Download_on_the_App_Store_Badge.webp"></a>
                 </div>
             </div>
-            <div class="col-lg-7" text-left>
+            <!-- <div class="col-lg-2"></div> -->
+            <div class="col-lg-7" style="display: flex;
+    justify-content: right;
+    text-align: ;">
                 <div class="mt-5">
-                    <a href="{{url('/')}}"><img class="w-100 ml-3" src="images/paystub_image.webp"></a>
+                    <a href="{{url('/')}}"><img class="w-75 ml-3" src="images/paystub_image.webp"></a>
                 </div>
             </div>
 
@@ -256,10 +260,10 @@
             </div>
 
         </div>
-    </div> 
-<div class="container">
-    <div class="row"></div>
-</div>
+    </div>
+    <div class="container">
+        <div class="row"></div>
+    </div>
 
 </div>
 
@@ -363,18 +367,18 @@
                 <a href="{{url('/')}}"><img class="w-100" src="images/2022-12-16_220238.webp"></a>
             </div>
         </div>
-   </div>
+    </div>
 </div>
 
 
 
-    <script>
+<script>
 function openNav() {
-  document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("mySidenav").style.width = "250px";
 }
 
 function closeNav() {
-  document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("mySidenav").style.width = "0";
 }
 </script>
 
