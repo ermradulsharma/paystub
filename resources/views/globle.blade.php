@@ -30,9 +30,9 @@
                                 Now</a>
                         </div>
                         <div class="mt-5 pt-1 d-flex justify-content-center">
-                            <a href="{{url('/')}}"><img class="storbtn "
+                            <a href="https://www.google.com/"><img class="storbtn "
                                     src="images/Google_Play_Store_badge_EN.webp"></a>
-                            <a href="{{url('/')}}"><img class="storbtn ml-3"
+                            <a href="https://www.google.com/"><img class="storbtn ml-3"
                                     src="images/Download_on_the_App_Store_Badge.webp"></a>
                         </div>
 

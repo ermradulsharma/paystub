@@ -16,8 +16,8 @@
                     <a class="btn btn-lg  mt-5 p-2 btn-danger Generate " href="{{url('usa')}}">Generate Paystub Now</a>
                 </div>
                 <div class="mt-5 d-flex pt-3">
-                    <a href="{{url('/')}}"><img class="storbtn " src="images/Google_Play_Store_badge_EN.webp"></a>
-                    <a href="{{url('/')}}"><img class="storbtn ml-3"
+                    <a href="https://www.google.com/"><img class="storbtn " src="images/Google_Play_Store_badge_EN.webp"></a>
+                    <a href="https://www.google.com/"><img class="storbtn ml-3"
                             src="images/Download_on_the_App_Store_Badge.webp"></a>
                 </div>
             </div>
@@ -350,8 +350,8 @@
                     generator
                     app.It's simple, easy, and accurate.</p>
                 <div class="mt-5 pt-4 d-flex justify-content-center">
-                    <a href="{{url('/')}}"><img class="storbtn" src="images/Google_Play_Store_badge_EN.webp"></a>
-                    <a href="{{url('/')}}"><img class="storbtn ml-2"
+                    <a href="https://www.google.com/"><img class="storbtn" src="images/Google_Play_Store_badge_EN.webp"></a>
+                    <a href="https://www.google.com/"><img class="storbtn ml-2"
                             src="images/Download_on_the_App_Store_Badge.webp"></a>
                 </div>
             </div>
