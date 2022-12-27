@@ -18,10 +18,10 @@
     margin-right: 10px;
 }
 .box-usa{
-    border: 2px solid #FF6161;
-    padding: 10px;
+    border: 3px solid #FF6161;
+    padding: 10px 155px 12px 12px;
     background: #E8E6E6;
-    padding: 10px 45px;
+  
     border-radius: 2px;
 }
 .box-usa1{
@@ -35,15 +35,13 @@
 }
 
 .lable{
-    font-size: 13px;
     color: #000000;
     font-weight: 400;
+    margin: 0;
+    font: var(--font_2);
 }
 #fname{
-    font-size: 13px;
-    /* color: #ce1f1f; */
-    border-radius: 3px;
-    border: 1px solid #0000004d;
+    border: 1px solid #00000075;
 
 }
 #fname:hover{
@@ -56,41 +54,52 @@
 
 }
 .dropdown1{
-    width: 80%;
-    padding: 2px;
-    border: 1px solid #00000036;
-    border-radius: 6px;
-    text-align: center;
+    width: 50%;
+    padding: 13px;
+    border: 1px solid #00000080;
+    /* border-radius: 6px; */
     background: #ffffff;
     margin: auto;
+    font-size: 23px;
+    font-weight: 500;
+}
+.dropdown11{
+    width: 100%;
+    padding: 9px;
+    border: 1px solid #00000080;
+    /* border-radius: 6px; */
+    background: #ffffff;
+    margin: auto;
+    font-size: 17px;
 }
 .viewbtn{
-    font-size: 15px;
+    font-size: 16px;
     color: #010101;
     background: yellow;
     /* background-image: radial-gradient(white, #6bb0fd); */
-    padding: 7px 20px;
+    padding: 5px 20px;
     border: none;
     border-radius: 4px;
-}
-.hourbtn{
-    padding: 4px 16px;
-    border-radius: 3px;
-    color: white;
-    /* background: red; */
-    border: none;
-    font-size: 13px;
-    background-image: linear-gradient(45deg, #f90000, #e7898975);
+    font-weight: 700;
 
 }
-.salrybtn{
-    padding: 4px 16px;
+.hourbtn{
+    padding: 8px 16px;
     border-radius: 3px;
     color: white;
     /* background: red; */
     border: none;
-    font-size: 13px;
-    background-image: linear-gradient(45deg, #28a745, #f0f0f00d);
+    font-size: 15px;
+    background-image: linear-gradient(45deg, #f8760ce3, #e7898975);
+}
+.salrybtn{
+    padding: 8px 16px;
+    border-radius: 3px;
+    color: white;
+    /* background: red; */
+    border: none;
+    font-size: 15px;
+    background-image: linear-gradient(45deg, #f70303, #f0f0f00d);
 }
 .statementbtn{
     font-size: 14px;
@@ -104,12 +113,13 @@
 .earnbtn{
     font-size: 16px;
     width: 100%;
-    padding: 9px 10px;
+    padding: 6px 10px;
     background: #ffffff;
     color: #0d0c0b;
     /* border: none; */
     border-radius: 5px;
     border: 3px solid red;
+    text-align: left;
 }
 .netpaybtn{
     font-size: 21px;
@@ -171,7 +181,17 @@ p{
     text-align: center;
     font-size: 17px;
 }
-
+/*style the arrow inside the select element:*/
+.select-selected:after {
+    position: absolute;
+    content: "";
+    top: 14px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: #fff transparent transparent transparent;
+  }
 
 .sidenav {
     height: 100%;
@@ -413,15 +433,20 @@ table {
   }
   @import url(https://fonts.googleapis.com/css?family=Roboto:500);
 
-h4{
+h5{
     font-size: 1.5rem;
     font-weight: 900;
     font-family: serif;
 }
 
+.recipt-box{
+    border: 1px solid red;
+}
 
-
-
+.rec-box-border{
+    padding: 1px 20px;
+    border: 1px solid red;
+}
 
 
 
