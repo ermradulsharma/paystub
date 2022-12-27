@@ -13,28 +13,33 @@
                     <div class="row mb-3">
                         <div class="col-md-6 mt-4">
                             <h6>BASIC TEMPLATES</h6>
-                            <div class="dropdown dropdown1">
-                                <button class="btn  dropdown-toggle" type="button" data-toggle="dropdown">Reddish
-                                    Magenta
-                                    <span class="caret"></span></button>
-                                <ul class="dropdown-menu p-4">
-                                    <li><a href="#">HTML</a></li>
-                                    <li><a href="#">CSS</a></li>
-                                    <li><a href="#">JavaScript</a></li>
-                                </ul>
+                            <div class="dropdown ">
+                                <form action="/action_page.php">
+
+                                    <select name="cars" id="cars" style="border:none;" class="p-1 dropdown1">
+                                        <option value="volvo">Reddish Megneta</option>
+                                        <option value="saab">Saab</option>
+                                        <option value="opel">Opel</option>
+                                        <option value="audi">Audi</option>
+                                    </select>
+                                    <i class="fa fa-eye"></i>   
+                                </form>
                             </div>
                         </div>
 
                         <div class="col-md-6 mt-4">
                             <h6>ADVANCED TEMPLATES</h6>
-                            <div class="dropdown dropdown1">
-                                <button class="btn  dropdown-toggle" type="button" data-toggle="dropdown">PT Pink
-                                    <span class="caret"></span></button>
-                                <ul class="dropdown-menu p-4">
-                                    <li><a href="#">HTML</a></li>
-                                    <li><a href="#">CSS</a></li>
-                                    <li><a href="#">JavaScript</a></li>
-                                </ul>
+                            <div class="dropdown ">
+                                <form action="/action_page.php">
+
+                                    <select name="cars" id="cars" style="border:none;" class="p-1 dropdown1">
+                                        <option value="volvo">PT Pink</option>
+                                        <option value="saab">Saab</option>
+                                        <option value="opel">Opel</option>
+                                        <option value="audi">Audi</option>
+                                    </select>
+                                    <i class="fa fa-eye"></i>   
+                                </form>
                             </div>
                             <div class="text-right mt-5 ">
                                 <button class="viewbtn">Click to see Template Landscape view</button>
@@ -56,14 +61,20 @@
                 <div class=" box-usa">
                     <h4>Company Info</h4>
                     <div class="row mb-3">
-                        <div class="col-md-6 mt-4">
-                            <label for="fname" class="lable">EMPLOYER (COMPANY) NAME *</label><br>
+                        <div class="col-md-6 mt-1">
+                            <label for="fname" class="lable">EMPLOYER (COMPANY) NAME <spam
+                                        style="color:red;">
+                                        <spam style="color:red;"><spam
+                                        style="color:red;">
+                                        <spam style="color:red;">*<spam><spam></label><br>
                             <input type="text" id="fname" name="fname" placeholder="Your Employer & Company Name"
                                 class="w-100 p-2 text-center" style="font-size:14px;"><br>
                         </div>
 
-                        <div class="col-md-6 mt-4">
-                            <label for="fname" class="lable">EMPLOYER (COMAPNY) ADDRESS *</label><br>
+                        <div class="col-md-6 mt-1">
+                            <label for="fname" class="lable">EMPLOYER (COMAPNY) ADDRESS <spam
+                                        style="color:red;">
+                                        <spam style="color:red;">*<spam></label><br>
                             <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-2 text-center"
                                 style="font-size:14px;"><br>
                         </div>
@@ -94,18 +105,24 @@
 
                     <div class="row mb-3">
                         <div class="col-md-4 mt-4">
-                            <label for="fname" class="lable">EMPLOYEE NAME *</label><br>
+                            <label for="fname" class="lable">EMPLOYEE NAME <spam
+                                        style="color:red;">
+                                        <spam style="color:red;">*<spam></label><br>
                             <input type="text" id="fname" name="fname" placeholder="Your Full  Name"
                                 class="w-100 p-2 text-center" style="font-size:14px;"><br>
                         </div>
 
                         <div class="col-md-4 mt-4">
-                            <label for="fname" class="lable">EMPLOYER ADDRESS 1 *</label><br>
+                            <label for="fname" class="lable">EMPLOYER ADDRESS 1 <spam
+                                        style="color:red;">
+                                        <spam style="color:red;">*<spam></label><br>
                             <input type="text" id="fname" name="fname" placeholder="Your Employer & Company Name"
                                 class="w-100 p-2 text-center" style="font-size:14px;"><br>
                         </div>
                         <div class="col-md-4 mt-4">
-                            <label for="fname" class="lable">POSTCODE *</label><br>
+                            <label for="fname" class="lable">POSTCODE <spam
+                                        style="color:red;">
+                                        <spam style="color:red;">*<spam></label><br>
                             <input type="text" id="fname" name="fname" placeholder="1224" class="w-100 p-2 text-center"
                                 style="font-size:14px;"><br>
                         </div>

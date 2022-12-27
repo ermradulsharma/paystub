@@ -10,30 +10,32 @@
                     <div class="row mb-2">
                         <div class="col-md-6 mt-4 text-center" style="border-right: 1px solid #00000024">
                             <h6>BASIC TEMPLATES</h6>
-                            <div class="dropdown dropdown1">
+                            <div class="dropdown ">
                                 <form action="/action_page.php">
 
-                                    <select name="cars" id="cars" style="border:none;" class="p-1">
+                                    <select name="cars" id="cars" style="border:none;" class="p-1 dropdown1">
                                         <option value="volvo">Reddish Magenta</option>
                                         <option value="saab">Saab</option>
                                         <option value="opel">Opel</option>
                                         <option value="audi">Audi</option>
                                     </select>
+                                    <i class="fa fa-eye"></i>   
                                 </form>
                             </div>
                         </div>
 
                         <div class="col-md-6 mt-4 text-center">
                             <h6>ADVANCED TEMPLATES</h6>
-                            <div class="dropdown dropdown1">
+                            <div class="dropdown ">
                                 <form action="/action_page.php">
 
-                                    <select name="cars" id="cars" style="border:none;" class="p-1">
+                                    <select name="cars" id="cars" style="border:none;" class="p-1 dropdown1">
                                         <option value="volvo">PT Pink</option>
                                         <option value="saab">Saab</option>
                                         <option value="opel">Opel</option>
                                         <option value="audi">Audi</option>
                                     </select>
+                                    <i class="fa fa-eye"></i>   
                                 </form>
                             </div>
                             <div class="text-right mt-5 ">
