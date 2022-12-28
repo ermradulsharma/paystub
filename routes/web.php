@@ -51,4 +51,7 @@ Route::get('uk-paystub', function () {
 Route::get('w2paystub', function () {
     return view('w2paystub');
 });
+Route::get('contact', function () {
+    return view('contact');
+});
 

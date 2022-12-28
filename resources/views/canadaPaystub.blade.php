@@ -1,76 +1,90 @@
 @extends('layouts.app')
 @section('content')
 <div>
-<div class="container" style="max-width:1450px;">
+    <div class="container" style="max-width:1450px;">
         <h5>Choose Template</h5>
         <div class="row mb-3">
             <div class="col-md-12">
                 <div class=" box-usa">
 
-                    <div class="row mb-3">
-                        <div class="col-md-6 mt-4 " style="border-right: 1px solid #00000024; padding-left: 35px;">
-                            <h6>BASIC TEMPLATES</h6>
-                            <div class="dropdown ">
-                                <form action="/action_page.php">
-
-                                    <select name="cars" id="cars" style="" class="p- dropdown1">
-                                        <option value="volvo">Reddish Magneta  <i class="fa fa-caret-down"></i></option>
+                    <div class="d-flex justify-content-between mb-3">
+                        <div class="col-md-5 m-auto " style="padding: 0 35px;">
+                            <h6 style="margin-left:70px;font-weight: 900;">BASIC TEMPLATES</h6>
+                            <div class="mt-4">
+                                <i class="fa fa-angle-down down"></i>
+                                <div class="input-group mmenu mb-3">
+                                    <select name="cars" id="cars" style="" class="form-control dropdown1"
+                                        style="border-right:none">
+                                        <option value="volvo">Reddish Magneta </option>
                                         <option value="saab">Saab</option>
                                         <option value="opel">Opel</option>
                                         <option value="audi">Audi</option>
                                     </select>
-                                    <i class="fa fa-eye" style="font-size: 42px;"></i>   
-                                </form>
-                              
+                                    <i class="fa fa-eye" style="font-size: 39px;margin-left: 6px;"></i>
+
+
+                                </div>
                             </div>
-                           
-
-
-
                         </div>
-                        <div class="col-md-6 mt-4 text-center">
-                            <h6>ADVANCED TEMPLATES</h6>
-                            <div class="dropdown ">
-                                <form action="/action_page.php">
-                               
-                                    <select name="cars" id="cars" class=" dropdown1">
-                                        <option value="volvo">PT Pink<i class="fa fa-angle-down"></i> </option> 
+
+                        <div class="col-md-1 text-center">
+                            <div style="height:240px;-webkit-box-shadow: 9px 0 4px -4px #999, 0px 0 4px -4px #999;">
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-5 mt-5 text-center">
+                            <h6 style="margin-left:-23px;font-weight: 900;">BASIC TEMPLATES</h6>
+                            <div class="mt-4">
+                                <i class="fa fa-angle-down down1"></i>
+                                <div class="input-group mmenu mb-3" style="margin: auto;">
+                                    <select name="cars" id="cars" style="" class="form-control dropdown1"
+                                        style="border-right:none">
+                                        <option value="volvo">Reddish Magneta </option>
                                         <option value="saab">Saab</option>
                                         <option value="opel">Opel</option>
                                         <option value="audi">Audi</option>
                                     </select>
-                                    <i class="fa fa-eye" style="font-size: 42px;"></i>   
-                                </form>
-                            </div>
-                            <div class=" mt-3 ">
-                                <button class="viewbtn">Click to see Template Landscape view..This is not part of design</button>
-                            </div>
-                        </div>
+                                    <i class="fa fa-eye" style="font-size: 39px;margin-left: 6px;"></i>
 
+
+                                </div>
+
+
+                            </div>
+                            <div class=" mt-3  float-right">
+                        <button class="viewbtn">Click to see Template Landscape view.</button>
+                        </div>
+                       
+                    </div> 
                     </div>
+                   
                 </div>
+
 
 
             </div>
         </div>
-</div>
+    </div>
+
     <div class="container" style="max-width: 1450px;">
+        <h5>Company Info</h5>
         <div class="row mb-3">
             <div class="col-md-12">
                 <div class=" box-usa">
-                    <h4>Company Info</h4>
+
                     <div class="row mb-3">
                         <div class="col-md-4 mt-4">
                             <label for="fname" class="lable">EMPLOYER (COMPANY) NAME <spam style="color:red;">
                                     <spam style="color:red;">*<spam></label><br>
-                            <input type="text" id="fname" name="fname" placeholder="Your Employer & Company Name" class="w-100 p-2
+                            <input type="text" id="fname" name="fname" placeholder="Your Employer & Company Name" class="w-100 p-2 text-center
                                  " style="font-size:14px;"><br>
                         </div>
 
                         <div class="col-md-4 mt-4">
                             <label for="fname" class="lable">STREET ADDRESS 1 <spam style="color:red;">
                                     <spam style="color:red;">*<spam></label><br>
-                            <input type="text" id="fname" name="fname" placeholder="Your address Employer" class="w-100 p-2
+                            <input type="text" id="fname" name="fname" placeholder="Your address Employer" class="w-100 p-2 text-center
                                  " style="font-size:14px;"><br>
                         </div>
 
@@ -78,7 +92,7 @@
                             <label for="fname" class="lable">STREET ADDRESS 2 <spam style="color:red;">
                                     <spam style="color:red;">*<spam></label><br>
                             <input type="text" id="fname" name="fname" placeholder="Suite 101 or apt 101 (Optional)"
-                                class="w-100 p-2
+                                class="w-100 p-2 text-center
                                  " style="font-size:14px;"><br>
                         </div>
 
@@ -94,20 +108,20 @@
                         <div class="col-md-4">
                             <label for="fname" class="lable">City <spam style="color:red;">
                                     <spam style="color:red;">*<spam></label><br>
-                            <input type="text" id="fname" name="fname" placeholder="Your Employer City" class="w-100 p-2
+                            <input type="text" id="fname" name="fname" placeholder="Your Employer City" class="w-100 p-2 text-center
                                  " style="font-size:14px;"><br>
                         </div>
                         <div class="col-md-4">
-                            <label for="fname" class="lable">State<spam style="color:red;">
+                            <label for="fname" class="lable">Province<spam style="color:red;">
                                     <spam style="color:red;">*<spam></label><br>
-                            <input type="text" id="fname" name="fname" placeholder="Province" class="w-100 p-2
+                            <input type="text" id="fname" name="fname" placeholder="Province" class="w-100 p-2 text-center
                              " style="font-size:14px;"><br>
                         </div>
                         <div class="col-md-4">
                             <label for="fname" class="lable">Postal Code <spam style="color:red;">
                                     <spam style="color:red;">*<spam></label><br>
                             <input type="text" id="fname" name="fname" placeholder="KIA OG9" class="w-100 p-2
-                             " style="font-size:14px;"><br>
+                             " style="font-size:14px;font-weight: 900;"><br>
                         </div>
                     </div>
                 </div>
@@ -123,7 +137,7 @@
 
 
     <div class="container" style="max-width: 1450px;">
-        <h4>Employee Info</h4>
+        <h5>Employee Basic Info</h5>
         <div class="row mb-3">
             <div class="col-md-12">
                 <div class=" box-usa">
@@ -132,21 +146,21 @@
                         <div class="col-md-4 mt-4">
                             <label for="fname" class="lable">EMPLOYER ID <spam style="color:red;">
                                     <spam style="color:red;">*<spam></label><br>
-                            <input type="text" id="fname" name="fname" placeholder="employer Id" class="w-100 p-2
+                            <input type="text" id="fname" name="fname" placeholder="EMPLOYEE ID" class="w-100 p-2
                                  text-center" style="font-size:14px;"><br>
                         </div>
 
                         <div class="col-md-4 mt-4">
-                            <label for="fname" class="lable">PAY START <spam style="color:red;">
+                            <label for="fname" class="lable text-center">PAY START <spam style="color:red;">
                                     <spam style="color:red;">*<spam></label><br>
-                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-2
-                             text-center" style="font-size:14px;"><br>
+                            <input type="text" id="fname" name="fname" placeholder="12-12-2023-12-19-2023" class="w-100 p-2
+                             text-center" style="font-size:14px;font-weight: 900;"><br>
                         </div>
                         <div class="col-md-4 mt-4">
                             <label for="fname" class="lable">PAY DATE <spam style="color:red;">
                                     <spam style="color:red;">*<spam></label><br>
-                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-2
-                             text-center" style="font-size:14px;"><br>
+                            <input type="text" id="fname" name="fname" placeholder="2-20-2023" class="w-100 p-2
+                             text-center" style="font-size:14px;font-weight: 900;"><br>
                         </div>
 
                     </div>
@@ -155,27 +169,28 @@
                         <div class="col-md-3">
                             <label for="fname" class="lable">Check Number <spam style="color:red;">
                                     <spam style="color:red;">*<spam></label><br>
-                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-2
-                             " style="font-size:14px;"><br>
+                            <input type="text" id="fname" name="fname" placeholder="0052398445" class="w-100 p-2 text-center
+                             " style="font-size:14px;font-weight: 900;"><br>
                         </div>
                         <div class="col-md-3">
                             <label for="fname" class="lable">Currency <spam style="color:red;">
                                     <spam style="color:red;">*<spam></label><br>
-                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-2
+                            <input type="text" id="fname" name="fname" placeholder="$(CAD USD)" class="w-100 p-2 text-center
                              " style="font-size:14px;"><br>
                         </div>
                         <div class="col-md-3">
                             <label for="fname" class="lable">EMPLOYEE NAME<spam style="color:red;">
                                     <spam style="color:red;">*<spam></label><br>
-                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-2
+                            <input type="text" id="fname" name="fname" placeholder="Your Full Name" class="w-100 p-2 text-center
                              " style="font-size:14px;"><br>
                         </div>
 
                         <div class="col-md-3">
                             <label for="fname" class="lable">EMPLOYEE ADDRESS<spam style="color:red;">
                                     <spam style="color:red;">*<spam></label><br>
-                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-2
-                             " style="font-size:14px;"><br>
+                            <input type="text" id="fname" name="fname"
+                                placeholder="234 Sexon street Ontario, Canada K1A OG9" class="w-100 p-2
+                             " style="font-size:14px;font-weight: 900;"><br>
                         </div>
                     </div>
 
@@ -196,8 +211,8 @@
 
 <div class="container" style="max-width: 1450px;">
     <div class="mb- d-flex " style="justify-content: space-between;">
-        <h4>Earning statement</h4>
-        <button class="createbtn mb-3">Preview Your Paystub</button>
+        <h5>Earning statement</h5>
+
     </div>
     <div class="row mb-3">
         <div class="col-md-12">
@@ -272,32 +287,35 @@
                 <div class="row mb-3">
                     <div class="col-md-2">
 
-                        <input type="text" id="fname" name="fname" placeholder="Regular" class="w-100 p-2
-                         " style="font-size:14px;"><br>
+
+                        <button CLASS="earnbtn text-center">Regular
+                        </button>
                     </div>
                     <div class="col-md-2">
 
-                        <input type="text" id="fname" name="fname" placeholder="25.00" class="w-100 p-2
-                         " style="font-size:14px;"><br>
+                        <button CLASS="earnbtn text-center">25.50
+                        </button>
                     </div>
                     <div class="col-md-2">
 
-                        <input type="text" id="fname" name="fname" placeholder="40.00" class="w-100 p-2
-                         " style="font-size:14px;"><br>
+                        <button CLASS="earnbtn text-center">40.50
+                        </button>
                     </div>
                     <div class="col-md-2">
 
-                        <input type="text" id="fname" name="fname" placeholder="1,000.00" class="w-100 p-2
-                         " style="font-size:14px;"><br>
+
+                        <button CLASS="earnbtn text-center">25.50
+                        </button>
                     </div>
 
                 </div>
 
-                <div class="row mb-3 mt-4">
-                    <div class="col-md-3  mb-4 mt-4">
+                <div class="row  mt-4">
+                    <div class="col-md-3  mt-4">
 
-                        <button CLASS="earnbtn1"><i class="fa fa-plus-circle pr-2"
-                                style="font-size:24px;color:white"></i>Add Earning</button>
+                        <button CLASS="earnbtn1"><i class="fa fa-plus-circle pr-2" style="font-size: 24px;
+    color: #0ec23b;
+    padding-top: 0px;"></i>Add Earning</button>
                     </div>
 
                 </div>
@@ -311,6 +329,7 @@
 
 
                 <div class="row mb-3">
+                    <div class="col-md-5"></div>
                     <div class="col-md-3">
 
                         <button CLASS="earnbtn"><i class='fa fa-lock pr-4' style='font-size:24px'></i>CPP
@@ -335,6 +354,7 @@
 
 
                 <div class="row mb-3">
+                    <div class="col-md-5"></div>
                     <div class="col-md-3">
 
                         <button CLASS="earnbtn"><i class='fa fa-lock pr-4' style='font-size:24px'></i>
@@ -361,6 +381,7 @@
 
 
                 <div class="row mb-3">
+                    <div class="col-md-5"></div>
                     <div class="col-md-3">
 
                         <button CLASS="earnbtn"><i class='fa fa-lock pr-4' style='font-size:24px'></i>
@@ -385,6 +406,7 @@
 
 
                 <div class="row mb-3">
+                    <div class="col-md-5"></div>
                     <div class="col-md-3">
 
                         <button CLASS="earnbtn"><i class='fa fa-lock pr-4' style='font-size:24px'></i>
@@ -408,6 +430,7 @@
 
 
                 <div class="row mb-3">
+                    <div class="col-md-5"></div>
                     <div class="col-md-3">
 
                         <button CLASS="earnbtn"><i class='fa fa-lock pr-4' style='font-size:24px'></i>
@@ -431,6 +454,7 @@
 
 
                 <div class="row mb-3">
+                    <div class="col-md-5"></div>
                     <div class="col-md-3">
 
                         <button CLASS="earnbtn"><i class='fa fa-lock pr-4' style='font-size:24px'></i>
@@ -453,37 +477,27 @@
                 </div>
 
                 <div class="row mb-3 ">
-                    <div class="col-md-3">
+                    <div class="col-md-5"></div>
+                    <div class="col-md-3 mb-3 mt-0">
 
-                        <button CLASS="earnbtn1"><i class="fa fa-plus-circle pr-2"
-                                style="font-size:24px;color:white"></i>Add Deduction</button>
+                        <button CLASS="earnbtn1"><i class="fa fa-plus-circle pr-2" style="font-size: 24px;
+                          color: #0ec23b;
+                           padding-top: 0px;"></i>Add Deductions</button>
                     </div>
 
-                    <div class="col-md-1">
-                    </div>
-
-                    <div class="col-md-1">
-                    </div>
-                    <div class="col-md-1">
 
 
-                    </div>
-                    <div class="col-md-3">
 
-                    </div>
-                    <div class="col-md-3">
-
-
-                    </div>
                 </div>
 
-                <div class="row mb-3">
+
+                <div class="row mb-3 mt-5">
                     <div class="col-lg-2 col-md-6 mb-2">
                         <button CLASS="statementbtn">YTD GROSS</button>
                     </div>
                     <div class="col-lg-2 col-md-6 mb-2">
 
-                        <button CLASS="statementbtn">YTD EDUCATION</button>
+                        <button CLASS="statementbtn">YTD EDUCATIONS</button>
                     </div>
                     <div class="col-lg-2 col-md-6 mb-2">
 
@@ -507,33 +521,39 @@
                 <div class="row mb-3">
                     <div class="col-md-2">
 
-                        <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-2
-                         " style="font-size:14px;"><br>
+
+                        <button CLASS="earnbtn text-center">
+                            0.00</button>
                     </div>
                     <div class="col-md-2">
 
-                        <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-2
-                         " style="font-size:14px;"><br>
+
+                        <button CLASS="earnbtn text-center">
+                            0.00</button>
                     </div>
                     <div class="col-md-2">
 
-                        <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-2
-                         " style="font-size:14px;"><br>
+
+                        <button CLASS="earnbtn text-center">
+                            0.00</button>
                     </div>
                     <div class="col-md-2">
 
-                        <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-2
-                         " style="font-size:14px;"><br>
+
+                        <button CLASS="earnbtn text-center">
+                            0.00</button>
                     </div>
                     <div class="col-md-2">
 
-                        <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-2
-                         " style="font-size:14px;"><br>
+
+                        <button CLASS="earnbtn text-center">
+                            0.00</button>
                     </div>
                     <div class="col-md-2">
 
-                        <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-2
-                         " style="font-size:14px;"><br>
+
+                        <button CLASS="earnbtn text-center">
+                            0.00</button>
                     </div>
 
                 </div>
@@ -551,12 +571,20 @@
     <div class="row mb-3">
         <div class="col-md-12">
 
-            <div class="text-right mt-3 ">
-                <button class="emailbtn" data-toggle="modal" data-target="#myModal"> <i class="fa fa-envelope mr-4"
-                        style="font-size:24px"></i>EMAIL PAYSTUB <i class="fa fa-download ml-4"
-                        style="font-size:24px"></i></button>
-            </div>
+            <div class="mb- d-flex" style="justify-content: space-between;">
 
+
+
+                <div class="text-left mt-1 ">
+                    <button class="previewbtn">
+                        Preview Your Paystub <i class="fa fa-eye"
+                            style="font-size: 30px; margin-left: 7px;"></i></button>
+                </div>
+                <div class="text-right mt-1 ">
+                    <button class="emailbtn"> <i class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL
+                        PAYSTUB <i class="fa fa-download ml-4" style="font-size:24px"></i></button>
+                </div>
+            </div>
 
         </div>
     </div>

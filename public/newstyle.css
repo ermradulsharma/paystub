@@ -1,11 +1,22 @@
 .createbtn{
-    padding: 5px 64px;
+    padding: 1px 40px;
     border-radius: 5px;
-    background-color: red;
+    background-color: #ef2d22;
     color: white;
-    border: 1px solid white'';
-    border: 1px solid #ffffffad;
-    font-size: 19px;
+    border: 1px solid rgb(232, 102, 102)'';
+    
+    font-size: 24px;
+    box-shadow: var(--shd,0 1px 4px rgba(0,0,0,.6));
+}
+.createbtn2{
+    padding: 0px 58px;
+    border-radius: 1px;
+    background-color: #178a9380;
+    color: white;
+    border: 1px black;
+    font-size: 24px;
+    box-shadow: var(--shd,0 1px 4px rgba(0,0,0,.6));
+
 }
 .netimg{
     width: 181px;
@@ -40,32 +51,64 @@
     margin: 0;
     font: var(--font_2);
 }
+
 #fname{
     border: 1px solid #00000075;
-
 }
+
 #fname:hover{
     box-shadow: 5px 5px 1px 3px #0000002b;
-    
-    border: 1px solid #ffffff !important;
     background: #244b1f;
-    color: white !important;
+}
 
+.mmenu{
+    width: 67%;
+}
 
+.ukbtn{
+    font-size: 16px;
+    width: 100%;
+    padding: 4px 10px;
+    /* background: #ffffff; */
+    color: #1608ea;
+    /* border: none; */
+    border-radius: 5px;
+    border: 2px solid #ff0000a3;
+    text-align: left;
+    box-shadow: var(--shd,0 1px 4px rgba(0,0,0,.6));
+    /* color: var(--corvid-color,rgb(var(--txt,var(--color_15)))); */
+    font-weight: 700;
 }
 .dropdown1{
-    width: 50%;
-    padding: 13px;
+    width: 50% !important;
+    padding: 6px;
     border: 1px solid #00000080;
     /* border-radius: 6px; */
     background: #ffffff;
     margin: auto;
     font-size: 23px;
     font-weight: 500;
+    position: relative !important;
+}
+.down{
+    position: absolute;
+    right: 238px;
+    top: 48px;
+    font-size: 37px;
+    font-weight: bold;
+    z-index: 1223;
+}
+.down1{
+    position: absolute;
+    right: 150px;
+    top: 48px;
+    font-size: 37px;
+    font-weight: bold;
+    z-index: 1223;
 }
 .dropdown11{
     width: 100%;
-    padding: 9px;
+    padding: 5px;
     border: 1px solid #00000080;
     /* border-radius: 6px; */
     background: #ffffff;
@@ -73,7 +116,7 @@
     font-size: 17px;
 }
 .viewbtn{
-    font-size: 16px;
+    font-size: 14px;    
     color: #010101;
     background: yellow;
     /* background-image: radial-gradient(white, #6bb0fd); */
@@ -90,7 +133,12 @@
     /* background: red; */
     border: none;
     font-size: 15px;
-    background-image: linear-gradient(45deg, #f8760ce3, #e7898975);
+    background-image: linear-gradient(45deg, #f8760ce3, #e78989);   
+    box-shadow: 0 1px 4px rgb(0 0 0 / 60%);
+}
+.hourbtn:hover{
+    color: rgb(7, 7, 7);
+    background: #eebebe;
 }
 .salrybtn{
     padding: 8px 16px;
@@ -99,13 +147,13 @@
     /* background: red; */
     border: none;
     font-size: 15px;
-    background-image: linear-gradient(45deg, #f70303, #f0f0f00d);
+    background-image: linear-gradient(45deg, #f70303, #f84d45);
 }
 .statementbtn{
     font-size: 14px;
     width: 100%;
-    padding: 9px 10px;
-    background: #2d5781;
+    padding: 5px 10px;
+    background: #074151;
     color: white;
     border: none;
     border-radius: 2px;
@@ -113,35 +161,44 @@
 .earnbtn{
     font-size: 16px;
     width: 100%;
-    padding: 6px 10px;
-    background: #ffffff;
-    color: #0d0c0b;
+    padding: 4px 10px;
+    /* background: #ffffff; */
+    color: #1608ea;
     /* border: none; */
     border-radius: 5px;
-    border: 3px solid red;
+    border: 2px solid #ff0000a3;
     text-align: left;
+    box-shadow: var(--shd,0 1px 4px rgba(0,0,0,.6));
+    /* color: var(--corvid-color,rgb(var(--txt,var(--color_15)))); */
+    font-weight: 700;
 }
 .netpaybtn{
-    font-size: 21px;
+    font-size: 28px;
     width: 100%;
-    padding: 6px 10px;
-    background: #2d5781;
+    padding: 0px 10px;
+    background: #0ec23b;
     color: white;
     border: none;
     border-radius: 5px;
+    box-shadow: var(--shd,0 1px 4px rgba(0,0,0,.6));
 }
 
 #name{
     border-radius: 12px;
     border: navajowhite;
     padding: 11px;
-    box-shadow: 6px 6px 1px 3px #e0b8b8;
+    box-shadow: 6px 6px 1px 3px #e4bfae;
+
 }
+
 .finame{
     font-size: 13px;
     padding: 0px 1px;
     margin: 5px;
     color: #000000ab;
+}
+.shd{
+    box-shadow: 5px 0px #888888;
 }
 .sendbtn{
     padding: 6px 27px;
@@ -150,10 +207,10 @@
     background: white;
     border-radius: 15px;
     /* box-shadow: 1px 2px 3px 4px; */
-    box-shadow: 6px 6px 1px 1px #d8aeae;
+    box-shadow: 6px 6px 1px 1px #e4bfae;
 }
 .sendbtn:hover{
-    background-color: #c38585;
+    background-color: #e4bfae;
 color: white;
 border: 1px solid white ;
 }
@@ -161,10 +218,19 @@ border: 1px solid white ;
     border:1px solid black;
     
 }
-
-p{
-    
+.previewbtn{
+    font-size: 23px;
+    color: #ffffff;
+    background: #ef2e21;
+    /* background-image: radial-gradient(white, #6bb0fd); */
+    padding: 2px 35px;
+    border: none;
+    border-radius: 4px;
+    box-shadow: var(--shd,0 1px 4px rgba(0,0,0,.6));
 }
+
+    
+
 .pay-box{
     border: 1px solid #0000008c;
     padding: 26px 27px;
@@ -182,16 +248,21 @@ p{
     font-size: 17px;
 }
 /*style the arrow inside the select element:*/
-.select-selected:after {
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+select:after {
     position: absolute;
-    content: "";
+    content: "\2304";
     top: 14px;
     right: 10px;
     width: 0;
     height: 0;
     border: 6px solid transparent;
     border-color: #fff transparent transparent transparent;
-  }
+}
+
 
 .sidenav {
     height: 100%;
@@ -255,14 +326,14 @@ p{
 
   }
   .earnbtn1 {
-    font-size: 21px;
-    width: 100%;
-    padding: 6px 10px;
-    background: #ff0000;
-    color: #ffffff;
+    font-size: 18px;
+    width: 60%;
+    padding: 0px 4px;
+    background: #e9e6e6;
+    color: #141212;
     /* border: none; */
     border-radius: 4px;
-    border: 1px solid #ffffff;
+    border: 2px solid #ff6261;
 }
   .emailbtn {
     font-size: 21px;
@@ -272,8 +343,18 @@ p{
     padding: 6px 59px;
     border: none;
     border-radius: 4px;
+    box-shadow: var(--shd,0 1px 4px rgba(0,0,0,.6));
 }
-
+.emailbtn2 {
+    font-size: 19px;
+    color: #ffffff;
+    background: #12c23a;
+    /* background-image: radial-gradient(white, #6bb0fd); */
+    padding: 3px 53px;
+    border: none;
+    border-radius: 4px;
+    box-shadow: var(--shd,0 1px 4px rgba(0,0,0,.6));
+}
 .sidebtn:hover{
     border:1px solid black;
 }
@@ -299,26 +380,28 @@ input:hover{
 }
 .earnbtn:hover{
     color: white;
-    background-image: linear-gradient(45deg, #c905058a, #2c578175);
-    border: 2px solid white;
-    border-radius: 7px;
+    background-image: linear-gradient(45deg, #a70404d6, #cd7570);
+    border: 2px solid #0b0a0a;
+    border-radius: 4px;
 }
-
+.fa-lock:hover{
+    color: black!important;
+}
 
 .earnbtn1:hover{
     color: white;
-    /* background-image: linear-gradient(45deg, #88cc24f2, #090a0a75); */
-    border: 2px solid white;
-    border-radius: 36px;
-    background: #8bcc32;
+    background-image: linear-gradient(45deg, #a70404d6, #cd7570);
+    border: 2px solid #0b0a0a;
+    border-radius: 4px;
 
 }
 
 .statementbtn:hover{
-    background-color: white;
-    color: #2c5781;
-    border: 2px solid #2c5781;
+    background-color: #064151a8;
+    color: #ffffff;
+    /* border: 2px solid #2c5781; */
     font-weight: 400;
+
 }
 .emailbtn:hover{
     background: white;

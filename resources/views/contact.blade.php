@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
        <div>
-        <div class="container mb-5 p-5" style="background: #f3b4b47a">
+        <div class="container mb-5 p-5" style="background:#f6ebe4;">
             <div class="row "style="justify-content: center;" >
                 <div class="col-md-6">
 <h4 class="text-center">How can we help?</h4>
