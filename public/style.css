@@ -83,10 +83,10 @@ background-image: linear-gradient(96deg, #252e58 5%, #3f3e95 46%, #2a5960 100%);
 }
 .instant{
    
- color: white;
+    color: white;
     /* font-family: sans-serif; */
     font-weight: 400;
-    font-size: 48px;
+    font-size: 60px;
 }
 .QUICK{
     
@@ -100,14 +100,18 @@ background-image: linear-gradient(96deg, #252e58 5%, #3f3e95 46%, #2a5960 100%);
 }
 .Generate{
     font-family: serif;
-    width: 280px;
-    height: 50px;
-    border-radius: 60px;
-    background-color: #dc2b13;
+    width: 312px;
+    height: 60px;
+    border-radius: 63px;
+    background-color: #FF4040;
+    display: table-cell;
+    font-weight: 700;
+    margin: auto;
+    font-size: x-large;
 }
 .storbtn{
-    width: 144px;
-    height: 47px;
+    width: 165px;
+    height: 50px;
    
 }
 
@@ -121,8 +125,8 @@ background-image: linear-gradient(135deg, #6d8507 0%, #faaa63 50%, #c9c6ff 100%)
 }
 
 .WithPaystubX{
-font-size: 48px;
-font-family:serif;
+    font-size: 55px;
+    font-weight: 500;
 
 } 
 .Show{
@@ -145,9 +149,12 @@ object-fit: fill;
     object-fit: fill;
 }  
 .OnPaystub{
-    font-family:serif;
     font-size: 25px;
-    color: #767672;
+    color: #0e0e0e;
+    position: absolute;
+    bottom: -14px;
+    left: 212px;
+    font-weight: 200;
 }
 .calculations{
     background: #42419e;
