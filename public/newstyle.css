@@ -325,6 +325,7 @@ select:after {
    
 
   }
+
   .earnbtn1 {
     font-size: 18px;
     width: 60%;
@@ -528,13 +529,37 @@ h5{
 
 .rec-box-border{
     padding: 1px 20px;
-    border: 1px solid red;
+    border: 2px solid red;
+}
+
+/* w2paystub */
+.w2p {
+    margin:0;
+    color: red;
+    font-weight: 700;
+}
+.box-p{
+    font-size: 17px;
+    margin-top: 23px;
+    position: relative;
+    
+}
+.tickbox{
+    width: 39px;
+    height: 39px;
+    position: absolute;
+    top: 12px;
+    left: 90px;
+}
+.form-no{
+    text-align: center;
+    /* margin: auto; */
+    margin-top: 24px;
 }
 
 
 
-
-
+/* w2paystub end */
 
 
 

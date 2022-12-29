@@ -101,18 +101,48 @@ background-image: linear-gradient(96deg, #252e58 5%, #3f3e95 46%, #2a5960 100%);
 .Generate{
     font-family: serif;
     width: 312px;
-    height: 60px;
+    height: 62px;
     border-radius: 63px;
     background-color: #FF4040;
-    display: table-cell;
+   display: table-cell; 
     font-weight: 700;
     margin: auto;
     font-size: x-large;
+}
+
+.Generate1{
+    font-family: serif;
+    /* width: 399px; */
+    /* height: 24px; */
+    border-radius: 63px;
+    background-color: #ff0000;
+    display: table-cell;
+    font-weight: 600;
+    /* margin: auto; */
+    font-size: x-large;
+    color: white;
+    padding: 10px 54px;
 }
 .storbtn{
     width: 165px;
     height: 50px;
    
+}
+.ukp{
+    font-size: 37px;
+    font-weight: 100;
+    font-family: ui-serif;
+    margin: 0;
+}
+.ukp1{
+    font-weight: 200;
+    /* font-family: sans-serif; */
+    font-size: 15px;
+    color: black;
+}
+.ukli{
+    font-size: 16px;
+    font-weight: 200;
 }
 
 .img2{
@@ -178,9 +208,12 @@ object-fit: fill;
 
 
 .Payslips{
-    font-family: serif ;
-    font-size: 22px;
-    line-height: 2em;
+  
+    font-size: 19px;
+    line-height: 2rem;
+    text-align: left;
+    padding: 0px 0px 0px 55px;
+    font-weight: 200;
 }
 .ukimg{
     /* Created with https://www.css-gradient.com */
@@ -200,6 +233,106 @@ background: -webkit-linear-gradient(top left, #3022AD, #D5469E);
 background: -moz-linear-gradient(top left, #3022AD, #D5469E);
 background: linear-gradient(to bottom right, #3022AD, #D5469E);
 }
+.ukimg1{
+    background-position-x: left;
+    left: -166px;  
+}
+.imguk{
+    width:1000px;
+}
+.fromimg{
+    width: 90px;
+}
+.formp{
+    font-size: 18px;
+    line-height: 1.8em;
+    /* font-family: none; */
+    font-weight: 200;
+}
+.form-main-img{
+    background-position-x: left;
+    left: -155px;
+}
 
 
+
+@media screen and (max-width: 1024px) {
+    .imguk {
+        width: 667px;
+    }
+    .form-main-img {
+        background-position-x: left;
+        left: -38px;
+    }
+    .formimg1{
+        width: 500px;
+        }
+}
+
+@media screen and (max-width: 768px) {
+    .imguk {
+        width: 305px;
+    }
+    .ukimg1 {
+        background-position-x: left;
+        left: 36px;
+    }
+}
+@media screen and (max-width: 425px) {
+    .storbtn {
+        width: 127px;
+        height: 43px;
+    }
+    .Generate {
+        font-family: serif;
+        /* width: 399px; */
+        /* height: 24px; */
+        border-radius: 63px;
+        background-color: #ff0000;
+        display: table-cell;
+        font-weight: 600;
+        margin: auto;
+        font-size: 20px;
+        color: white;
+        padding: 3px 21px;
+    }
+    .Payslips{
+        font-size: 20px;
+        line-height: 1.7em;
+        font-weight: 200;
+    }
+    .formimg1 {
+        width: 451px;
+    }
+    .formimg2 {
+        width: 353px;
+    }
+}.couple{
+    max-width: 1086px;
+}
+@media screen and (max-width:1440px) {
+   .couple{
+       max-width: 904px;
+   }
+}
+.globleImg{
+    max-width: 1325px;
+}
+@media screen and (max-width:1440) {
+    .globleImg{
+        max-width: 1000px;
+    }
+}
+
+.CreatePaystub{
+    font-family: serif;
+    width: 312px;
+    height: 64px;
+    border-radius: 63px;
+    background-color: #FF4040;
+    font-weight: 700;
+    margin: auto;
+    font-size: xx-large;
+
+}
 
