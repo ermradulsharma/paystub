@@ -19,12 +19,12 @@
                     </div>
                 </div>
 
-                <div class="mt-5 pt-3">
+                <div class="mt-5 pt-3 pl-5">
                     <a class="btn btn-lg  mt-2 p-2 btn-danger Generate " href="{{url('usa')}}">Generate
                         Paystub
                         Now</a>
                 </div>
-                <div class="mt-5 py-5" style="display:flex;">
+                <div class="mt-5 py-5 pr-5 mr-5">
                     <a href="https://www.google.com/"><img class="storbtn "
                             src="images/Google_Play_Store_badge_EN.webp"></a>
                     <a href="https://www.google.com/"><img class="storbtn ml-5"
