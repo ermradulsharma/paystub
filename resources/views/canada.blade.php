@@ -1,61 +1,61 @@
 @extends('layouts.app')
 @section('content')
-<div>
+<div style="background-color: #f75656ed;">
 
-    <div class="container-fluid" >
+    <div class="container" style="max-width: 1580px;" >
         <div class="row">
-            <div class="col-lg-12 p- " style="background-color: #f75656ed;">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-lg-5 m-auto text-center pt-3" style="color:white;">
-                            <h2>Instantly Generate your Professional<br> Canadian Pay Stubs</h2>
-                            <p style="font-weight:200;">
-                                Instantly Generate your Professional Canadian Pay Stubs
-                                Generate Your<br> Canadian Pay Stub in Seconds with Paystubx. The #1 Leading in the
-                                game.</p>
-                            <p class="mb-5">Online secure web-based pay stub generator, straightforward to use,<br>
-                                instant pay stub delivery, and free pay stub preview. Simple as ABC.</p>
-                                <div class="mt-5 justify-content-center ">
-                    <a class="btn btn-lg  mt-5 p-2 btn-danger Generate " href="{{url('canada-paystub') }}">Create Paystub</a>
-                </div>
+                <div class="col-lg-4 m-auto pt-3" style="color:white;">
+                    <div style="font-size:38px;font-weight:300;    display: flex;" class="text-center">Instantly Generate</br> your Professional<br> Canadian Pay </br> Stubs
+                    </div>
+                   
+                        <p style="font-weight: 400;font-size:21px;  ">
+                            Generate Your Canadian Pay Stub in Seconds with Paystubx. The #1 Leading in the
+                            game.
+                            game.</p>
+                        <p class="mb-5" style="font-size:larger;font-weight: 200;line-height: 2em;">Online secure
+                            web-based pay stub generator,</br> straightforward to use,
+                            instant pay stub delivery, and</br> free pay stub preview. Simple as ABC.</p>
+             
 
-                            <div class="mt-5 d-flex justify-content-center">
-                                <a href="https://www.google.com/"><img class="storbtn "
-                                        src="images/Google_Play_Store_badge_EN.webp"></a>
-                                <a href="https://www.google.com/"><img class="storbtn ml-3"
-                                        src="images/Download_on_the_App_Store_Badge.webp"></a>
-                            </div>
-                        </div>
+                    <div class="mt-5 justify-content-center ">
+                        <a class="btn btn-lg  mt-2 p-2 btn-danger CreatePaystub "
+                            href="{{url('canada-paystub') }}">Create Paystub</a>
+                    </div>
 
-                        <div class="col-lg-7 justify-content-center">
-                            <img src="images/computer.webp" class="w-100">
-
-
-                        </div>
+                    <div class="mt-5 pt-2 justify-content-center">
+                        <a href="https://www.google.com/"><img class="storbtn "
+                                src="images/Google_Play_Store_badge_EN.webp"></a>
+                        <a href="https://www.google.com/"><img class="storbtn ml-5"
+                                src="images/Download_on_the_App_Store_Badge.webp"></a>
                     </div>
                 </div>
+
+                <div class="col-lg-8" style="background-position-x:right;left:12px;">
+                    <img src="images/computer.webp" class="w-100">
+                 </div>
             </div>
-        </div>
     </div>
 
-    <div class="container-fluid p-5" style="background-color: #0b070733;">
-        <div class="container">
+
+    </div>
+
+    <div class="pt-5" style="background-color: #f8f9f9;">
+        <div class="container"  style="max-width: 1580px;"  >
             <div class="row">
                 <div class="col-md-6 col-sm-6 m-auto justifuy-content-center">
-                    <h1 class=""
+                    <h1 class="display-4"
                         style="font-family: helvetica-w01-bold,helvetica-w02-bold,helvetica-lt-w10-bold,sans-serif;font-weight: 600;">
                         READY TO GET STARTED?</h1>
                     <p style=" font-size: 25px;
                           font-weight: 200;
-                          line-height: 46px;">Very easy platform to generate your Canadian Paystub, and Payslip<br> in
-                        seconds.
-                        Get your data ready, customize your paystub, generate, download, email,
+                          line-height: 46px;">Very easy platform to generate </br> your Canadian Paystub, and </br> Payslip in
+                          Get your</br> data ready, customize your</br> paystub, generate, download,</br> email,
                         print it.
                     </p>
                 </div>
 
                 <div class="col-md-6 col-sm-6 justifuy-content-center text-center">
-                    <h2 class="mb-5">Who can use Paystubx?</h2>
+                    <h2 class="mb-5">Who can use Paystub<span class="text-danger">x</span>?</h2>
                     <div class="row">
                         <div class="col-md-6" style="border-right:1px solid black;">
                             <img src="images/employericon.webp" class="" style="width:176px;">
@@ -76,25 +76,28 @@
 
 
                 <div class="row">
-                    <div class="col-lg-4 col-sm-4 m-auto justifuy-content-center">
-                        <h2 style="font-weight: 100; font-family: avenir-lt-w01_35-light1475496,sans-serif;"
-                            class="mb-4">Why should you choose Paystubx to generate pay stubs online?</h2>
+                    <div class="col-lg-6 col-sm-4 m-auto justifuy-content-center">
+                        <div style=" font-weight: 300;font-size: xx-large;letter-spacing: 2px;"
+                            class="mb-4">Why should you choose Paystub<span class="text-danger">x</span></br> to generate pay stubs online?
+                        </div>
 
-                        <h2 style="font-weight:; font-family: avenir-lt-w01_35-light1475496,sans-serif;">Accurate
+                        <h2 style=" font-size: 40px; font-family: avenir-lt-w01_35-light1475496,sans-serif;">Accurate
                             Payroll Calculations that include </h2>
-                        <ul style="font-weight: 200; font-size: 17px;" class="mt-2">
+                        <ul style="font-weight: 200;font-size: 20px; line-height: 41px;color: #000000;" class="mt-2">
                             <li>Federal and State income tax withholdings</li>
                             <li>CPP, LE such as Income tax</li>
                             <li>Year to Date (YTD) Calculations</li>
                             <li>Withholding calculations </li>
                         </ul>
-                        <div class="mt-5 justify-content-center ">
-                    <a class="btn btn-lg  mt-5 p-2 btn-danger Generate " href="{{url('canada-paystub') }}">Create Paystub</a>
-                </div>
+                        <div class=" justify-content-center ">
+                            <a class="btn btn-lg  mt-5 p-2 btn-danger CreatePaystub "
+                                href="{{url('canada-paystub') }}">Create Paystub</a>
+                        </div>
 
                     </div>
-                    <div class="col-lg-8  m-auto justify-content-center">
-                        <img src="images/couple.png" class="w-100">
+                    <div class="col-lg-6 m-auto justify-content-center" style="background-position-x: left;
+                       left: -146px;top: -146px;">
+                        <img src="images/couple.png" class="couple">
                     </div>
                 </div>
             </div>
@@ -113,14 +116,15 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-lg-12 text-center mt-3">
-                <h1 style="font-family: avenir-lt-w01_35-light1475496,sans-serif;">Generate Paystubs Using our Android
+                <h1 style="font-size: -webkit-xxx-large;">Generate Paystubs Using our Android
                     or iOS App</h1>
-                <p style="font-size:18px; font-family: avenir-lt-w01_35-light1475496,sans-serif;">Generate paystubs
+                <p style="font-size: 25px;font-weight: 300;">Generate paystubs
                     instantly by using our paystub generator app. It's simple, easy, and accurate.</p>
 
                 <div class="my-5">
-                    <a href="https://www.google.com/"><img class="storbtn " src="images/Google_Play_Store_badge_EN.webp"></a>
-                    <a href="https://www.google.com/"><img class="storbtn ml-3"
+                    <a href="https://www.google.com/"><img class="storbtn "
+                            src="images/Google_Play_Store_badge_EN.webp"></a>
+                    <a href="https://www.google.com/"><img class="storbtn ml-5"
                             src="images/Download_on_the_App_Store_Badge.webp"></a>
                 </div>
 
@@ -149,15 +153,15 @@
 
 
 
-</div>
+
 @endsection
 
 
 <div class="container">
-               <a href="{{url('/')}}"><i class="fa fa-facebook   fbicon " aria-hidden="true"></i></a>
-               <a href="{{url('/')}}"><i class="fa fa-instagram  socialicon" aria-hidden="true"></i></a>
-               <a href="{{url('/')}}"><i class="fa fa-twitter  socialicon" aria-hidden="true"></i></a>
-               <a href="{{url('/')}}"><i class="fa fa-linkedin  socialicon" aria-hidden="true"></i></a>
-               <a href="{{url('/')}}"><i class="fa fa-youtube  socialicon" aria-hidden="true"></i></a>
-              <!--  <a href="{{url('/')}}"><i class="fa fa-tiktok text-white socialicon" aria-hidden="true"></i></a> -->
-           </div>
+    <a href="{{url('/')}}"><i class="fa fa-facebook   fbicon " aria-hidden="true"></i></a>
+    <a href="{{url('/')}}"><i class="fa fa-instagram  socialicon" aria-hidden="true"></i></a>
+    <a href="{{url('/')}}"><i class="fa fa-twitter  socialicon" aria-hidden="true"></i></a>
+    <a href="{{url('/')}}"><i class="fa fa-linkedin  socialicon" aria-hidden="true"></i></a>
+    <a href="{{url('/')}}"><i class="fa fa-youtube  socialicon" aria-hidden="true"></i></a>
+    <!--  <a href="{{url('/')}}"><i class="fa fa-tiktok text-white socialicon" aria-hidden="true"></i></a> -->
+</div>
