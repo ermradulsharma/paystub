@@ -4,7 +4,7 @@
     <div class="container" style="max-width:1500px">
         <div class="row">
 
-            <div class="col-lg-5  text-center  mt-5 pt-5 m-auto ">
+            <div class="col-lg-5  text-center m-auto ">
 
                 <div class="text-white" style="font-size: 42px;font-weight: 300;"><br>
                     With PaystubX you can create</br> Paystub for any country</b>
