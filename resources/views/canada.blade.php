@@ -37,6 +37,8 @@
     </div>
 
 
+
+
     </div>
 
     <div class="pt-5" style="background-color: #f8f9f9;">
@@ -46,9 +48,9 @@
                     <h1 class="display-4"
                         style="font-family: helvetica-w01-bold,helvetica-w02-bold,helvetica-lt-w10-bold,sans-serif;font-weight: 600;">
                         READY TO GET STARTED?</h1>
-                    <p style=" font-size: 25px;
-                          font-weight: 200;
-                          line-height: 46px;">Very easy platform to generate </br> your Canadian Paystub, and </br> Payslip in
+                    <p style=" font-size: 22px;
+    font-weight: 200;
+    line-height: 30px;">Very easy platform to generate </br> your Canadian Paystub, and </br> Payslip in
                           Get your</br> data ready, customize your</br> paystub, generate, download,</br> email,
                         print it.
                     </p>
@@ -73,8 +75,7 @@
                         </div>
                     </div>
                 </div>
-
-
+                
                 <div class="row">
                     <div class="col-lg-6 col-sm-4 m-auto justifuy-content-center">
                         <div style=" font-weight: 300;font-size: xx-large;letter-spacing: 2px;"
@@ -93,7 +94,7 @@
                             <a class="btn btn-lg  mt-5 p-2 btn-danger CreatePaystub "
                                 href="{{url('canada-paystub') }}">Create Paystub</a>
                         </div>
-
+  
                     </div>
                     <div class="col-lg-6 m-auto justify-content-center" style="background-position-x: left;
                        left: -146px;top: -146px;">
@@ -104,6 +105,7 @@
         </div>
     </div>
 
+  
 
     <div class="container-fluid" style="background-image: linear-gradient(45deg, #fdf5f4, #f2fbf7);">
         <div class="col-md-12">

@@ -87,8 +87,8 @@
                 <div class=" box-usa">
 
                     <div class="d-flex justify-content-between mb-3">
-                        <div class="col-md-5 m-auto " style="padding: 0 35px;">
-                            <h6 style="margin-left:70px;font-weight: 900;">BASIC TEMPLATES</h6>
+                        <div class="col-md-5 col-sm-12 m-auto " style="padding: 0 35px;">
+                            <h6 style="" class="base">BASIC TEMPLATES</h6>
                             <div class="mt-4">
                                 <i class="fa fa-angle-down down"></i>
                                 <div class="input-group mmenu mb-3">
@@ -99,32 +99,32 @@
                                         <option value="opel">Opel</option>
                                         <option value="audi">Audi</option>
                                     </select>
-                                    <i class="fa fa-eye" style="font-size: 39px;"></i>
+                                    <i class="fa fa-eye eyes" style="font-size: 39px;"></i>
 
 
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col-md-1 text-center">
+                        <div class="col-md-1 text-center sh">
                             <div style="height:240px;-webkit-box-shadow: 9px 0 4px -4px #999, 0px 0 4px -4px #999;">
 
                             </div>
                         </div>
 
-                        <div class="col-md-5 mt-5 text-center">
+                        <div class="col-md-5 col-sm-12 mt-5 text-center">
                         <h6 style="margin-left:-23px;font-weight: 900;">BASIC TEMPLATES</h6>
                             <div class="mt-4">
                                 <i class="fa fa-angle-down down1"></i>
                                 <div class="input-group mmenu mb-3" style="margin: auto;">
                                     <select name="cars" id="cars" style="" class="form-control dropdown1"
                                         style="border-right:none">
-                                        <option value="volvo">Reddish Magneta </option>
+                                        <option value="volvo"> PT Pink </option>
                                         <option value="saab">Saab</option>
                                         <option value="opel">Opel</option>
                                         <option value="audi">Audi</option>
                                     </select>
-                                    <i class="fa fa-eye" style="font-size: 39px;margin-left: 6px;"></i>
+                                    <i class="fa fa-eye eyes" style="font-size: 39px;margin-left: 6px;"></i>
 
 
                                 </div>
@@ -160,7 +160,7 @@
                         </div>
 
                         <div class="col-md-4 mt-4">
-                            <label for="fname" class="lable">EMPLOYER ID <spam style="color:red;">
+                            <label for="fname" class="lable">EMPLOYEE ID <spam style="color:red;">
                                     <spam style="color:red;">*<spam>
                                             <spam></label><br>
                             <input type="text" id="fname" name="fname" placeholder="Employer ID" class="w-100 p-2 r"
@@ -306,7 +306,7 @@
                                 style="font-size:14px;"><br>
                         </div>
                         <div class="col-md-3 mt-4">
-                            <label for="fname" class="lable" style="color:red;">SELECT YOUR CURRENCY <spam
+                            <label for="fname" class="lable" style="color:red;">SELECT YOUR PREFERRED CURRENCY <spam
                                     style="color:red;">
                                     <spam style="color:red;">*<spam>
                                             <spam></label><br>
@@ -367,7 +367,7 @@
                                             <spam>
                             </p>
 
-                            <div class="text-center mt-2">
+                            <div class="text-center mt-2  d-flex justify-content-center">
                                 <button CLASS="hourbtn">HOURLY</button> <button CLASS="salrybtn">SALARY</button>
                             </div>
                         </div>
@@ -714,7 +714,7 @@
                                 style="font-size: 30px; margin-left: 7px;"></i></button>
                     </div>
                     <div class="text-right mt-1 ">
-                        <button class="emailbtn"> <i class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL
+                        <button class="emailbtn" data-toggle="modal" data-target="#myModal"> <i class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL
                             PAYSTUB <i class="fa fa-download ml-4" style="font-size:24px"></i></button>
                     </div>
                 </div>
@@ -730,6 +730,122 @@
 
 
 
+
+    <div class="container" style="max-width: 1450px;">
+
+<!-- Button to Open the Modal -->
+
+
+<!-- The Modal -->
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header" style="background: #115caecf;">
+                <h4 class="modal-title"><img src="images/Paystub X.webp" class="icon"></h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div class="google-btn mt-4">
+                    <div class="google-icon-wrapper">
+                        <img class="google-icon"
+                            src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" />
+                    </div>
+                    <p class="btn-text"><b>Sign up with google</b></p>
+                </div>
+
+                <div class="text-center mt-4 mb-4">
+                    <img src="images/Group 3.png" style="width:130px;">
+                </div>
+                <h6 class="text-center" style="color: #457bbe;">Sign Up Using Email</h6>
+                <p class="text-center">
+
+                    <input type="email" id="email" name="email" class="singup" placeholder="Email *"> <br><br>
+
+                    <button class="continue mt-3" data-toggle="modal" data-dismiss="modal"
+                        data-target="#myModal1">Continue</button>
+                    <a href="#" style="text-decoration: none;color: #0000007a">
+                        <p class="text-center mt-3" style="color: #0000007a;font-size: 13px;">Already have account?
+                            <u style="color:red;">
+                                <spam style="color:red;">Sign In</spam>
+                            </u>
+                        </p>
+                    </a>
+            </div>
+            </p>
+
+            <!-- Modal footer -->
+            <div class="modal-footer" style="background: #457bbed9;">
+                <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+
+<div class="container" style="max-width: 1450px;">
+
+
+
+<div class="modal fade" id="myModal1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header" style="background: #115caecf;">
+                <h4 class="modal-title"><img src="images/Paystub X.webp" class="icon"></h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <h5 class="text-center">Verify your Email Address</h5>
+                <div class=" text-center mt-4">
+                    <div class="mail">
+                        <img src="images/email(3).png" class="mailpic">
+                    </div>
+
+                    <h5 style="color: #457bbe;" class="mt-4 text-center">Almost There!</h5>
+                    <p style="color: #02030359;font-size: 14px;font-family: serif;" class="text-center">Enter the
+                        Verification code to sent</p>
+
+                    <input type="email" id="email" name="email" class="singup1 text-center"
+                        placeholder="ABC@paystub.com">
+                    <div style="color: red;font-size: 13px; font-family: serif;">
+                        <i class="fa fa-exclamation-circle">
+                            Verification code required
+                        </i>
+                    </div>
+                    <p style="color: #0000004d; font-size: 11px;">Didn't receive an email</p>
+                    <p style="color: #04050778;font-size: 12px; font-family: cursive;">Check Your Spam folder<spam
+                            style="color:red;"> Or </spam>resend code</p>
+                    <button class="continue mt-3" data-toggle="modal" data-target="myModal">verify</button>
+                </div>
+
+
+
+
+
+
+
+            </div>
+            </p>
+
+            <!-- Modal footer -->
+            <div class="modal-footer" style="background: #457bbed9;">
+                <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+            </div>
+
+        </div>
+    </div>
+</div>
 
 
 </div>

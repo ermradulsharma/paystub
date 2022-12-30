@@ -119,10 +119,8 @@
 <div class="container pb-5" style="max-width:1750px;">
     <div class="row pb-2">
         <div class="col-lg-3">
-            <img src="images/previewed.png" style="position:relative; width:100%; top: -49px;">
-            <div style="position: absolute;
-       bottom: -84px;
-    left: 85px;">
+            <img src="images/previewed.png" style=";" class="payimg">
+            <div style="" class="paytext">
                 <p style="font-size: 22px;color: #363636;font-weight:300; line-height:1em">TAX FILING HAS NEVER BEEN
                     EASY
                 </p>
@@ -144,11 +142,7 @@
         </div>
 
         <div class="col-lg-9">
-            <img class="w-75" src="images/paystubx_images.png" style="position: relative;
-    top: -125px ;
-    width: 95%;
-    object-fit: cover;
-    object-position: 50% 50%;">
+            <img class="w-75" src="images/paystubx_images.png" style="" class="payimg2">
         <p class="OnPaystub ml-2">
              On Paystub X Join thousands of satisfied independent </br> contractors and small business owners and get the
             </br> highest quality pay stubs, W2s and 1099s — right to </br> your inbox! We make it easy. Guaranteed.
@@ -384,7 +378,7 @@
             <div class="col-md-1"></div>
             <div class="col-md-4 text-left mb-5 ">
                 <div class="mt-5">
-                    <b style="font-size: 24px;"> Generate Paystubs Using our<span class="text-danger">Android or iOS
+                    <b style="font-size: 24px;"> Generate Paystubs Using our<span class="text-danger"> Android or iOS
                             App</span></b>
                     <p style="font-size: 18px; font-weight: 200;" class="mt-3 ">Generate paystubs instantly by using our
                         paystub

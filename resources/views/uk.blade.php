@@ -12,7 +12,7 @@
                 <div class="col-lg-6  col-md-6 text-center  mt-5 pt-3 m-auto ">
                     <spam class="text-white"
                         style="font-family:futura-lt-w01-light,futura-lt-w05-light,sans-serif; font-size:31px; line-height:normal; text-align:center;font-weight: 100;">
-                        <p style="padding: 0px 214px 3px 4px;"> Generate 100% Legal UK <br>Payslips
+                        <p class="mainhead"style=""> Generate 100% Legal UK <br>Payslips
                             Instantly</p>
                     </spam>
 
