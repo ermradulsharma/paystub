@@ -260,11 +260,11 @@
 </div>
 </div>
 
-<div class="row  " style="background: #e9e6e6;">
+<div class="row" style="background: #e9e6e6;">
 
-    <div class="col-md-8 container">
+    <div class="col-md-7 mt-5 container">
        
-        <h1 class="  " style="font-family:'serif;">Common mistakes to avoid while filling out Form W-2
+        <h1 class="" style="font-family:'serif;">Common mistakes to avoid while filling out Form W-2
         </h1>
 
         <div class="text-left mt-3">
