@@ -178,11 +178,11 @@ object-fit: fill;
     width: 900px;
     object-fit: fill;
 }  
-.OnPaystub{
+.OnPaystub {
     font-size: 25px;
     color: #0e0e0e;
     position: absolute;
-    bottom: -14px;
+    bottom: -115px;
     left: 212px;
     font-weight: 200;
 }
