@@ -120,9 +120,7 @@
     <div class="row pb-2">
         <div class="col-lg-3">
             <img src="images/previewed.png" style=";" class="payimg">
-            <div style="position: absolute;
-       bottom: -84px;
-    left: 85px;">
+            <div style="" class="paytext">
                 <p style="font-size: 22px;color: #363636;font-weight:300; line-height:1em">TAX FILING HAS NEVER BEEN
                     EASY
                 </p>
@@ -144,11 +142,7 @@
         </div>
 
         <div class="col-lg-9">
-            <img class="w-75" src="images/paystubx_images.png" style="position: relative ;
-    top: -125px ;
-    width: 95%;
-    object-fit: cover;
-    object-position: 50% 50%;" class="payimg2">
+            <img class="w-75" src="images/paystubx_images.png" style="" class="payimg2">
         <p class="OnPaystub ml-2">
              On Paystub X Join thousands of satisfied independent </br> contractors and small business owners and get the
             </br> highest quality pay stubs, W2s and 1099s — right to </br> your inbox! We make it easy. Guaranteed.

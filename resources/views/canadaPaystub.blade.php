@@ -581,7 +581,7 @@
                             style="font-size: 30px; margin-left: 7px;"></i></button>
                 </div>
                 <div class="text-right mt-1 ">
-                    <button class="emailbtn"> <i class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL
+                    <button class="emailbtn " data-toggle="modal" data-target="#myModal"> <i class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL
                         PAYSTUB <i class="fa fa-download ml-4" style="font-size:24px"></i></button>
                 </div>
             </div>

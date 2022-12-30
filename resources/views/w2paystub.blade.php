@@ -2,14 +2,20 @@
 @section('content')
 
 <div>
-    <div class="container-fluid p-4" style="background-color: #ff7b7bfa; ">
-       
+    <div class="container-fluid p-4" style="background-color: #fb5e5efa; ">
+
         <div class="container" style="max-width:1450px;">
-        <div class="text-left ">
-            <h1 style="color:white;">Form W-2</h1>
-            <p style="color:white; font-size:30px;">Start entering the Form W-2 information and e-file the return. It’s super simple. Fill, Submit &
-                Download.</p>
-        </div>
+            <div class="text-left ">
+                <h1 style="color:white;">Form W-2</h1>
+                <p style="color:white; font-size:30px;">Start entering the Form W-2 information and e-file the return.
+                    It’s super simple. Fill, Submit &
+                    Download.</p>
+            </div>
+
+            <div style="text-align: -webkit-right;" class="mb-4">
+                <a class="btn btn-lg  mt-5 p-2 btn-danger Generate " href="{{url('usa')}}">Select W-2 Year</a>
+            </div>
+
             <div class="container bg-light" style="max-width:1450px; padding: 55px 115px;">
                 <div clas="recipt-box">
                     <div class="rec-box-border">
@@ -49,20 +55,21 @@
                                             class=" p-2 w-100 p-2"><br>
                                     </div>
                                     <div class="col-md-6">
-                                        <p class="w2p">Control Number</p>
+                                        <p class="w2p ">Control Number</p>
                                         <input type="text" id="fname" name="fname" placeholder="enter text"
                                             class="w-100 p-2 p-2"><br>
                                     </div>
                                     <div class="col-md-12 mt-3">
                                         <p class="w2p">Employee's Name, Address, Zipcode </p>
-                                        <textarea id="w3review" name="w3review" rows="4" cols="60"></textarea>
+                                        <textarea id="w3review" name="w3review" rows="4" cols="30"
+                                            class="w-100"></textarea>
                                     </div>
 
                                 </div>
                             </div>
 
                             <div class="col-md-6">
-                                <div class="row">
+                                <div class="row ">
 
                                     <div class="col-md-6 mt-3">
                                         <p class="w2p">Employee First Name & Initial Name</p>
@@ -76,7 +83,8 @@
                                     </div>
                                     <div class="col-md-12 mt-3">
                                         <p class="w2p">Employee's Name, Address, Zipcode </p>
-                                        <textarea id="w3review" name="w3review" rows="4" cols="60"></textarea>
+                                        <textarea id="w3review" name="w3review" rows="4" cols="30"
+                                            class="w-100"></textarea>
                                     </div>
 
                                 </div>
@@ -210,7 +218,8 @@
                             </div>
                             <div class="col-md-6 mt-3">
                                 <p class="w2p">Employee's Name, Address, Zipcode </p>
-                                <textarea id="w3review" name="w3review" rows="4" cols="60"></textarea>
+                                <textarea id="w3review" name="w3review" rows="4" cols="30"
+                                    style="width:100%;"></textarea>
                             </div>
                         </div>
 
@@ -303,28 +312,23 @@
                                 <spam style="font-size: 26px;">Wage and Tax Statement</spam>
                             </p>
                             <p class="w2p">
-                                <spam style="font-size: 18px;
-    font-weight: 900;">Copy A-For Social Security Administration.</spam>
-                                <spam style="font-weight: 500;
-    font-size: 17px;
-}"> Send this entire page with Form W-3 to the Social Security Administration; photocopies are<spam>not</spam>
+                                <spam style="font-size: 18px; font-weight: 900;">Copy A-For Social Security
+                                    Administration.</spam>
+                                <spam style="font-weight: 500; font-size: 17px;"> Send this entire page with Form W-3 to
+                                    the Social Security Administration; photocopies are<spam>not</spam>
                                     acceptable.</spam>
                             </p>
                         </div>
 
                         <div class="col-md-2">
-                            <p style="text-align: center;
-    font-size: 54px;
-    font-weight: 800;
-    font-family: emoji;">2022</p>
+                            <p style="text-align: center;font-size: 54px; font-weight: 800;font-family: emoji;">2022</p>
                         </div>
                         <div class="col-md-4">
-                            <p class="w2p" style="font-weight: 400;
-    font-size: 16px;">Department of treasury - Internal revenue service</p>
+                            <p class="w2p" style="font-weight: 400; font-size: 16px;">Department of treasury - Internal
+                                revenue service</p>
                             <p class="w2p" style="font-size: 18px;">For Privacy Act & Paperwork Reduction </p>
                             <p class="w2p" style="font-size: 18px;">Act Notice, See the Seprate Instructions</p><br>
-                            <p class="w2p" style="text-align: right;
-    font-size: 15px;">Cat.No. 10134D</p>
+                            <p class="w2p" style="text-align: right;font-size: 15px;">Cat.No. 10134D</p>
                         </div>
                     </div>
                     <div class="row">
@@ -346,18 +350,172 @@
 
                 <div class="text-left mt-4 ">
                     <button class="previewbtn">
-                        Preview Your Paystub <i class="fa fa-eye"
+                        Preview Below Check <i class="fa fa-eye"
                             style="font-size: 30px; margin-left: 7px;"></i></button>
                 </div>
                 <div class="text-right mt-4 ">
-                    <button class="emailbtn"> <i class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL
-                        PAYSTUB <i class="fa fa-download ml-4" style="font-size:24px"></i></button>
+                    <button class="emailbtn" data-toggle="modal" data-target=""> Download
+                        <i class="fa fa-download ml-4" style="font-size:24px"></i></button>
                 </div>
             </div>
         </div>
     </div>
+
+    <div class="container-fluid" style="background-color: #6d8507;
+              background-image: linear-gradient(135deg, #6d8507 0%, #faaa63 50%, #c9c6ff 100%);">
+        <div class="row py-4" style="max-width :1450px;">
+            <div class="container">
+                <div class="col-lg-5">
+                    <p class="m-1" style="font-weight: 300;">Department of the Treasury—Internal Revenue Service</p>
+                    <p class="m-1" style="font-weight: 300;">For Privacy Act and Paperwork Reduction</p>
+                    <p class="m-1" style="font-weight: 300;"> Act Notice, see the separate instructions.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div>
+
+
+
+<!-- The Modal -->
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header" style="background: #115caecf;">
+                <h4 class="modal-title"><img src="images/Paystub X.webp" class="icon"></h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div class="google-btn mt-4">
+                    <div class="google-icon-wrapper">
+                        <img class="google-icon"
+                            src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" />
+                    </div>
+                    <p class="btn-text"><b>Sign up with google</b></p>
+                </div>
+
+                <div class="text-center mt-4 mb-4">
+                    <img src="images/Group 3.png" style="width:130px;">
+                </div>
+                <h6 class="text-center" style="color: #457bbe;">Sign Up Using Email</h6>
+                <p class="text-center">
+
+                    <input type="email" id="email" name="email" class="singup" placeholder="Email *"> <br><br>
+
+                    <button class="continue mt-3" data-toggle="modal" data-dismiss="modal"
+                        data-target="#myModal1">Continue</button>
+                    <a href="#" style="text-decoration: none;color: #0000007a">
+                        <p class="text-center mt-3" style="color: #0000007a;font-size: 13px;">Already have account?
+                            <u style="color:red;">
+                                <spam style="color:red;">Sign In</spam>
+                            </u>
+                        </p>
+                    </a>
+            </div>
+            </p>
+
+            <!-- Modal footer -->
+            <div class="modal-footer" style="background: #457bbed9;">
+                <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+            </div>
+
+        </div>
+    </div>
 </div>
+
+</div>
+
+
+
+<div class="container" style="max-width: 1450px;">
+
+
+
+    <div class="modal fade" id="myModal1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header" style="background: #115caecf;">
+                    <h4 class="modal-title"><img src="images/Paystub X.webp" class="icon"></h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <h5 class="text-center">Verify your Email Address</h5>
+                    <div class=" text-center mt-4">
+                        <div class="mail">
+                            <img src="images/email(3).png" class="mailpic">
+                        </div>
+
+                        <h5 style="color: #457bbe;" class="mt-4 text-center">Almost There!</h5>
+                        <p style="color: #02030359;font-size: 14px;font-family: serif;" class="text-center">Enter the
+                            Verification code to sent</p>
+
+                        <input type="email" id="email" name="email" class="singup1 text-center"
+                            placeholder="ABC@paystub.com">
+                        <div style="color: red;font-size: 13px; font-family: serif;">
+                            <i class="fa fa-exclamation-circle">
+                                Verification code required
+                            </i>
+                        </div>
+                        <p style="color: #0000004d; font-size: 11px;">Didn't receive an email</p>
+                        <p style="color: #04050778;font-size: 12px; font-family: cursive;">Check Your Spam folder<spam
+                                style="color:red;"> Or </spam>resend code</p>
+                        <button class="continue mt-3" data-toggle="modal" data-target="myModal">verify</button>
+                    </div>
+
+
+
+
+
+
+
+                </div>
+                </p>
+
+                <!-- Modal footer -->
+                <div class="modal-footer" style="background: #457bbed9;">
+                    <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+                </div>
+
+            </div>
+        </div>
+    </div>
 </div>
 
 @endsection

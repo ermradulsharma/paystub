@@ -100,13 +100,14 @@
 .Generate{
     font-family: serif;
     width: 312px;
-    height: 62px;
+    height: 56px;
     border-radius: 63px;
-    background-color: #FF4040;
+    background-color: #f20a0a;
    display: table-cell; 
     font-weight: 700;
     margin: auto;
     font-size: x-large;
+    color: white;
 }
 
 .Generate1{
