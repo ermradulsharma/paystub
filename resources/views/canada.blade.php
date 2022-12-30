@@ -23,9 +23,9 @@
                     </div>
 
                     <div class="mt-5 pt-2 justify-content-center">
-                        <a href="https://www.google.com/"><img class="storbtn "
+                        <a href="https://www.google.com/" target="_blank"><img class="storbtn "
                                 src="images/Google_Play_Store_badge_EN.webp"></a>
-                        <a href="https://www.google.com/"><img class="storbtn ml-5"
+                        <a href="https://www.google.com/" target="_blank"><img class="storbtn ml-5"
                                 src="images/Download_on_the_App_Store_Badge.webp"></a>
                     </div>
                 </div>
@@ -109,6 +109,12 @@
         <div class="col-md-12">
             <img src="images/2022-12-14_161944.png" class="w-100">
         </div>
+
+        <div class="" style="position: relative;
+    left: 809px;
+    top: -109px;">
+                    <a class="btn btn-lg  mt-5 p-2 btn-danger Generate " href="{{url('usa')}}">Generate Paystub Now</a>
+                </div>
     </div>
 
 
@@ -122,9 +128,9 @@
                     instantly by using our paystub generator app. It's simple, easy, and accurate.</p>
 
                 <div class="my-5">
-                    <a href="https://www.google.com/"><img class="storbtn "
+                    <a href="https://www.google.com/" target="_blank"><img class="storbtn "
                             src="images/Google_Play_Store_badge_EN.webp"></a>
-                    <a href="https://www.google.com/"><img class="storbtn ml-5"
+                    <a href="https://www.google.com/" target="_blank"><img class="storbtn ml-5"
                             src="images/Download_on_the_App_Store_Badge.webp"></a>
                 </div>
 

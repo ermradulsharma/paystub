@@ -16,9 +16,9 @@
                     <a class="btn btn-lg  mt-5 p-2 btn-danger Generate " href="{{url('usa')}}">Generate Paystub Now</a>
                 </div>
                 <div class="mt-5 d-flex pt-3">
-                    <a href="https://www.google.com/"><img class="storbtn ml-1"
+                    <a href="https://www.google.com/" target="_blank"><img class="storbtn ml-1"
                             src="images/Google_Play_Store_badge_EN.webp"></a>
-                    <a href="https://www.google.com/"><img class="storbtn ml-5"
+                    <a href="https://www.google.com/" target="_blank"><img class="storbtn ml-5"
                             src="images/Download_on_the_App_Store_Badge.webp"></a>
                 </div>
             </div>
@@ -393,9 +393,9 @@
                 </div>
 
                 <div class="mt-5  d-flex pt-5">
-                    <a href="https://www.google.com/"><img class="storbtn ml-4"
+                    <a href="https://www.google.com/" target="_blank"><img class="storbtn ml-4"
                             src="images/Google_Play_Store_badge_EN.webp"></a>
-                    <a href="https://www.google.com/"><img class="storbtn ml-5 "
+                    <a href="https://www.google.com/" target="_blank"><img class="storbtn ml-5 "
                             src="images/Download_on_the_App_Store_Badge.webp"></a>
                 </div>
             </div>
