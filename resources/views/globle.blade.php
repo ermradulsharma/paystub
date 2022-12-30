@@ -19,12 +19,12 @@
                     </div>
                 </div>
 
-                <div class="mt-5 pt-3 pl-5">
+                <div class="mt-5 pt-3 pl-5 globlebtn">
                     <a class="btn btn-lg  mt-2 p-2 btn-danger Generate " href="{{url('usa')}}">Generate
                         Paystub
                         Now</a>
                 </div>
-                <div class="mt-5 py-5 pr-5 mr-5">
+                <div class="mt-5 py-5 pr-5 mr-5 globlebtn1" >
                     <a href="https://www.google.com/"><img class="storbtn "
                             src="images/Google_Play_Store_badge_EN.webp"></a>
                     <a href="https://www.google.com/"><img class="storbtn ml-5"
@@ -102,7 +102,7 @@
                         </div>
                     </div>
                     <div class="">
-                        <ul class="row d-flex" style="font-size:20px;font-weight: 200; line-height:35px;">
+                        <ul class="row d-flex globe-ul" style="font-size:20px;font-weight: 200; line-height:35px;">
                             <li>Employee contracts aren’t
                                 a legal requirement, but they protect your employees and your
                                 business. Contracts can outline everything from job descriptions and expected hours

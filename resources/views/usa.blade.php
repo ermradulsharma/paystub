@@ -99,7 +99,7 @@
                                         <option value="opel">Opel</option>
                                         <option value="audi">Audi</option>
                                     </select>
-                                    <i class="fa fa-eye" style="font-size: 39px;"></i>
+                                    <i class="fa fa-eye eyes" style="font-size: 39px;"></i>
 
 
                                 </div>
@@ -124,7 +124,7 @@
                                         <option value="opel">Opel</option>
                                         <option value="audi">Audi</option>
                                     </select>
-                                    <i class="fa fa-eye" style="font-size: 39px;margin-left: 6px;"></i>
+                                    <i class="fa fa-eye eyes" style="font-size: 39px;margin-left: 6px;"></i>
 
 
                                 </div>
@@ -367,7 +367,7 @@
                                             <spam>
                             </p>
 
-                            <div class="text-center mt-2">
+                            <div class="text-center mt-2  d-flex justify-content-center">
                                 <button CLASS="hourbtn">HOURLY</button> <button CLASS="salrybtn">SALARY</button>
                             </div>
                         </div>

@@ -92,7 +92,7 @@
 }
 .down{
     position: absolute;
-    right: 238px;
+    right: 280px;
     top: 48px;
     font-size: 37px;
     font-weight: bold;
@@ -100,7 +100,7 @@
 }
 .down1{
     position: absolute;
-    right: 150px;
+    right: 183px;
     top: 48px;
     font-size: 37px;
     font-weight: bold;
@@ -126,15 +126,16 @@
     font-weight: 700;
 
 }
-.hourbtn{
+.hourbtn {
     padding: 8px 16px;
     border-radius: 3px;
     color: white;
     /* background: red; */
     border: none;
     font-size: 15px;
-    background-image: linear-gradient(45deg, #f8760ce3, #e78989);   
+    background-image: linear-gradient(45deg, #f8760ce3, #e78989);
     box-shadow: 0 1px 4px rgb(0 0 0 / 60%);
+    margin-right: 2px;
 }
 .hourbtn:hover{
     color: rgb(7, 7, 7);
@@ -557,7 +558,18 @@ h5{
     margin-top: 24px;
 }
 
-
+.payimg{
+    position:relative; 
+    width:100%;
+     top: -49px
+}
+.payimg2{
+    position: relative ;
+    top: -125px ;
+    width: 95%;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
 
 /* w2paystub end */
 
@@ -594,17 +606,173 @@ h5{
 .create-container li{
 font-size: 10px;
 }
+.globleImg {
+    max-width: 811px;
+}
 .create-p{
     font-size: 8px;
-    }
+   
    }
-@media screen and (max-width: 600px) {
-   .pay-box1  {
-     
+   .globlebtn1{
+    display: flex;
+}
+.box-usa {
+    border: 3px solid #FF6161;
+    padding: 10px 0px 12px 12px;
+    background: #E8E6E6;
+    border-radius: 2px;
+}
+.dropdown1 {
+    width: 75% !important;
+    padding: 6px;
+    border: 1px solid #00000080;
+    /* border-radius: 6px; */
+    background: #ffffff;
+    margin: auto;
+    font-size: 23px;
+    font-weight: 500;
+    position: relative !important;
+}
+
+.dropdown1 {
+    width: 82% !important;
+    padding: 4px;
+    border: 1px solid #00000080;
+    /* border-radius: 6px; */
+    background: #ffffff;
+    margin: auto;
+    font-size: 16px;
+    font-weight: 500;
+    position: relative !important;
+}
+.down {
+    position: absolute;
+    right: 207px;
+    top: 46px;
+    font-size: 29px;
+    font-weight: bold;
+    z-index: 1223;
+}
+.down1 {
+    position: absolute;
+    right: 146px;
+    top: 47px;
+    font-size: 29px;
+    font-weight: bold;
+    z-index: 1223;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   @media screen and (max-width: 768px) {
+    .globlebtn{
+        display: flex;
+        justify-content: center;
     }
-  }
+    .globleImg {
+        max-width: 961px;
+    }
+    .globlebtn1{
+        display: flex;
+        justify-content: center;
+        margin-right: 0 !important;
+        padding-right: 0 !important;
+    }
+    .box-usa {
+        border: 3px solid #FF6161;
+        padding: 10px 0px 12px 12px;
+        background: #E8E6E6;
+        border-radius: 2px;
+    }
+    .dropdown1 {
+        width: 73% !important;
+        padding: -11px;
+        border: 1px solid #00000080;
+        /* border-radius: 6px; */
+        background: #ffffff;
+        margin: auto;
+        font-size: 12px;
+        font-weight: 500;
+        position: relative !important;
+    
+    }
+    .down {
+        position: absolute;
+        right: 144px;
+        top: 47px;
+        font-size: 19px;
+        font-weight: bold;
+        z-index: 1223;
+    }
+    .down1 {
+        position: absolute;
+        right: 110px;
+        top: 45px;
+        font-size: 21px;
+        font-weight: bold;
+        z-index: 1223;
+    }   
+    .viewbtn {
+        font-size: 11px;
+        color: #010101;
+        background: yellow;
+        /* background-image: radial-gradient(white, #6bb0fd); */
+        padding: 5px 7px;
+       
+        border-radius: 4px;
+        font-weight: 700;
+    }
+    .globe-ul{
+        margin: 0;
+    }
+    .eyes{
+        font-size: 29px !important;
+    }
+    .OnPaystub {
+        font-size: 25px;
+        color: #0e0e0e;
+        position: absolute;
+        bottom: -73px;
+        left: 115px;
+        font-weight: 200;
+    }
+.payimg{
+    position: relative;
+    width: 43%;
+    top: -49px;
+
+}
+   }
+
+
   @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
+    
   }
-  
+
+  @media screen and (max-width: 425px) {
+    .globleImg {
+        display: none;
+    }
+.globe-ul{
+    font-size: 16px!important;
+    text-align: left !important;
+    padding: 23px;
+    margin: 0;
+}
+
+  }

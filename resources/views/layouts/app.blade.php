@@ -50,7 +50,7 @@
             <a href="{{url('/')}}"><img class="mr-3 mt-5" src="images/Paystub X.webp" style="width: 280px;"></a>
             </li>
             <li class="nav-item ml-3 ">
-                <a class="btn btn-lg  py-2   w-100 mt-5 navbtn" href="{{url('usa')}}">USA</a>
+                <a class="btn btn-lg  py-2    w-100 mt-5 navbtn" href="{{url('usa')}}">USA</a>
 
             </li>
             <li class="nav-item ml-3">
@@ -67,7 +67,6 @@
             </li>
             <li class="nav-item ml-3">
                 <a class="btn btn-lg  py-2   w-100  mt-5 navbtn" href="{{url('form')}}">W<sub>-2</sub> FORM</a>
-
 
             </li>
             <li class="nav-item float-rigth ml-3 ">
