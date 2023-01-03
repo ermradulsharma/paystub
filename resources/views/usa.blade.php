@@ -87,7 +87,7 @@
                 <div class=" box-usa">
 
                     <div class="d-flex justify-content-between mb-3">
-                        <div class="col-md-5 col-sm-12 m-auto " style="padding: 0 35px;">
+                        <div class="col-md-5 col-sm-12 m-auto " style="padding: -1px 35px;">
                             <h6 style="" class="base">BASIC TEMPLATES</h6>
                             <div class="mt-4">
                                 <i class="fa fa-angle-down down"></i>
@@ -106,14 +106,14 @@
                             </div>
                         </div>
 
-                        <div class="col-md-1 text-center sh">
+                        <div class="col-md-1  text-center sh">
                             <div style="height:240px;-webkit-box-shadow: 9px 0 4px -4px #999, 0px 0 4px -4px #999;">
 
                             </div>
                         </div>
 
                         <div class="col-md-5 col-sm-12 mt-5 text-center">
-                        <h6 style="margin-left:-23px;font-weight: 900;">BASIC TEMPLATES</h6>
+                        <h6 style="margin-left:-23px;font-weight: 900;">ADVANCED TEMPLATES</h6>
                             <div class="mt-4">
                                 <i class="fa fa-angle-down down1"></i>
                                 <div class="input-group mmenu mb-3" style="margin: auto;">

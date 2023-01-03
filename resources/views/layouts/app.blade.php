@@ -47,7 +47,7 @@
             
             <li class="nav-item">
                
-            <a href="{{url('/')}}"><img class="mr-3 mt-5" src="images/Paystub X.webp" style="width: 280px;"></a>
+            <a href="{{url('/')}}"><img class="mr-3 mt-5" src="images/Paystub X.webp" style="width: 222px;"></a>
             </li>
             <li class="nav-item ml-3 ">
                 <a class="btn btn-lg  py-2    w-100 mt-5 navbtn" href="{{url('usa')}}">USA</a>

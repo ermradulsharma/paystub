@@ -53,12 +53,12 @@
 
                             </div>
                             <div class=" mt-3  float-right">
-                        <button class="viewbtn">Click to see Template Landscape view.</button>
+                                <button class="viewbtn">Click to see Template Landscape view.</button>
+                            </div>
+
                         </div>
-                       
-                    </div> 
                     </div>
-                   
+
                 </div>
 
 
@@ -285,13 +285,13 @@
                 </div>
 
                 <div class="row mb-3">
-                    <div class="col-md-2">
+                    <div class="col-md-1">
 
 
                         <button CLASS="earnbtn text-center">Regular
                         </button>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-md-1">
 
                         <button CLASS="earnbtn text-center">25.50
                         </button>
@@ -307,30 +307,7 @@
                         <button CLASS="earnbtn text-center">25.50
                         </button>
                     </div>
-
-                </div>
-
-                <div class="row  mt-4">
-                    <div class="col-md-3  mt-4">
-
-                        <button CLASS="earnbtn1"><i class="fa fa-plus-circle pr-2" style="font-size: 24px;
-    color: #0ec23b;
-    padding-top: 0px;"></i>Add Earning</button>
-                    </div>
-
-                </div>
-
-                <!-- <div class="row mb-3">
-                        <div class="col-md-3">
-                            <button class="createbtn mb-3">DEDUCTION</button>
-                        </div>
-
-                    </div> -->
-
-
-                <div class="row mb-3">
-                    <div class="col-md-5"></div>
-                    <div class="col-md-3">
+                    <div class="col-md-2">
 
                         <button CLASS="earnbtn"><i class='fa fa-lock pr-4' style='font-size:24px'></i>CPP
                         </button>
@@ -349,13 +326,15 @@
                         </button>
                     </div>
 
-
                 </div>
 
-
                 <div class="row mb-3">
-                    <div class="col-md-5"></div>
-                    <div class="col-md-3">
+                <div class="col-md-3  ">
+                        <button CLASS="earnbtn1"><i class="fa fa-plus-circle pr-2" style="font-size: 24px;
+                       color: #0ec23b;padding-top: 0px;"></i>Add Earning</button>
+                    </div>
+                    <div class="col-md-3"></div>
+                    <div class="col-md-2">
 
                         <button CLASS="earnbtn"><i class='fa fa-lock pr-4' style='font-size:24px'></i>
                             EL</button>
@@ -373,16 +352,11 @@
                         </button>
                     </div>
 
-
-
-
-
                 </div>
 
-
                 <div class="row mb-3">
-                    <div class="col-md-5"></div>
-                    <div class="col-md-3">
+                    <div class="col-md-6"></div>
+                    <div class="col-md-2">
 
                         <button CLASS="earnbtn"><i class='fa fa-lock pr-4' style='font-size:24px'></i>
                             INCOME TAX</button>
@@ -403,11 +377,9 @@
 
                 </div>
 
-
-
                 <div class="row mb-3">
-                    <div class="col-md-5"></div>
-                    <div class="col-md-3">
+                    <div class="col-md-6"></div>
+                    <div class="col-md-2">
 
                         <button CLASS="earnbtn"><i class='fa fa-lock pr-4' style='font-size:24px'></i>
                             FEDRAL TAX</button>
@@ -430,8 +402,8 @@
 
 
                 <div class="row mb-3">
-                    <div class="col-md-5"></div>
-                    <div class="col-md-3">
+                    <div class="col-md-6"></div>
+                    <div class="col-md-2">
 
                         <button CLASS="earnbtn"><i class='fa fa-lock pr-4' style='font-size:24px'></i>
                             LIFE INSURANCE</button>
@@ -454,10 +426,10 @@
 
 
                 <div class="row mb-3">
-                    <div class="col-md-5"></div>
-                    <div class="col-md-3">
+                    <div class="col-md-6"></div>
+                    <div class="col-md-2">
 
-                        <button CLASS="earnbtn"><i class='fa fa-lock pr-4' style='font-size:24px'></i>
+                        <button CLASS="earnbtn text-center"><i class='fa fa-lock pr-4' style='font-size:24px'></i>
                             CANADA SAVING BC</button>
                     </div>
 
@@ -476,9 +448,29 @@
 
                 </div>
 
+
+
+
+
+                <!-- <div class="row mb-3">
+                        <div class="col-md-3">
+                            <button class="createbtn mb-3">DEDUCTION</button>
+                        </div>
+
+                    </div> -->
+
+
+             
+
+
+             
+
+
+             
+
                 <div class="row mb-3 ">
                     <div class="col-md-5"></div>
-                    <div class="col-md-3 mb-3 mt-0">
+                    <div class="col-md-3 mb-3 mt-4">
 
                         <button CLASS="earnbtn1"><i class="fa fa-plus-circle pr-2" style="font-size: 24px;
                           color: #0ec23b;
@@ -581,7 +573,8 @@
                             style="font-size: 30px; margin-left: 7px;"></i></button>
                 </div>
                 <div class="text-right mt-1 ">
-                    <button class="emailbtn " data-toggle="modal" data-target="#myModal"> <i class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL
+                    <button class="emailbtn " data-toggle="modal" data-target="#myModal"> <i class="fa fa-envelope mr-4"
+                            style="font-size:24px"></i>EMAIL
                         PAYSTUB <i class="fa fa-download ml-4" style="font-size:24px"></i></button>
                 </div>
             </div>
