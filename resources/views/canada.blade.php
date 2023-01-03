@@ -58,20 +58,22 @@
             </div>
 
             <div class="col-md-6 col-sm-6 justifuy-content-center text-center">
-                <h2 class="mb-5">Who can use Paystub<span class="text-danger">x</span>?</h2>
+                <h2 class="mb-5" style="font-weight:600;">Who can use Paystub<span class="text-danger">x</span>?</h2>
                 <div class="row">
                     <div class="col-md-6" style="border-right:1px solid black;">
                         <img src="images/employericon.webp" class="" style="width:176px;">
-                        <p style="font-size:15px;">Paystubx is a great tool for employers who manage payroll on
-                            their own. Employers can easily create professional paystubs, with the option to
-                            download them or email them directly to their employees, contractors, and gig workers.
+                        <div style="font-size: xx-large; font-weight:bolder;">Employers</div>
+                        <p style="font-size:15px;" class="mt-3">Paystubx is a great tool for employers who</br> manage payroll on
+                            their own. Employers</br> can easily create professional paystubs,</br> with the option to
+                            download them or</br> email them directly to their employees,</br> contractors, and gig workers.
                         </p>
                     </div>
                     <div class="col-md-6">
                         <img src="images/sole-propritors.webp" class="" style="width:164px;">
-                        <p style="font-size:14px;">Sole proprietors or self-employed individuals can act as their
-                            own bosses and pay themselves whenever they want. Though they may not need to withhold
-                            taxes, they still need paystubs to show proof of income. Paystubx allows you to generate
+                        <div style="font-size: xx-large; font-weight:bolder;">Sole Proprietors</div>
+                        <p style="font-size:15px;" class="mt-3">Sole proprietors or self-employed individuals<br> can act as their
+                            own bosses and pay themselves</br> whenever they want. Though they may not need</br> to withhold
+                            taxes, they still need paystubs to</br> show proof of income. Paystubx allows you to</br> generate
                             professional paystubs instantly.</p>
                     </div>
                 </div>
@@ -79,7 +81,7 @@
 
             <div class="row">
                 <div class="col-lg-6 col-sm-4 m-auto justifuy-content-center">
-                    <div style=" font-weight: 300;font-size: xx-large;letter-spacing: 2px;" class="mb-4">Why should you
+                    <div style=" font-weight: 300;font-size:42px;letter-spacing: 2px;" class="mb-4">Why should you
                         choose Paystub<span class="text-danger">x</span></br> to generate pay stubs online?
                     </div>
 
@@ -98,7 +100,7 @@
 
                 </div>
                 <div class="col-lg-6 m-auto justify-content-center" style="background-position-x: left;
-                       left: -146px;top: -146px;">
+                       left: -146px;top: -138px;">
                     <img src="images/couple.png" class="couple">
                 </div>
             </div>

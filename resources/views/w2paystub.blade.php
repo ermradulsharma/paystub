@@ -61,7 +61,7 @@
                                     </div>
                                     <div class="col-md-12 mt-3">
                                         <p class="w2p">c  Employer's Name, Address, Zipcode </p>
-                                        <textarea id="w3review" name="w3review" rows="4" cols="30"
+                                        <textarea id="w3review" name="w3review" rows="4" cols="30" placeholder="Please Enter"
                                             class="w-100"></textarea>
                                     </div>
 
@@ -83,7 +83,7 @@
                                     </div>
                                     <div class="col-md-12 mt-3">
                                         <p class="w2p">f  Employee's Name, Address, Zipcode </p>
-                                        <textarea id="w3review" name="w3review" rows="4" cols="30"
+                                        <textarea id="w3review" name="w3review" rows="4" cols="30" placeholder="Please Enter"
                                             class="w-100"></textarea>
                                     </div>
 
@@ -140,7 +140,7 @@
                             </div>
 
                             <div class="col-md-3">
-                                <p class="w2p">8  Allocate tips</p>
+                                <p class="w2p">8  Allocated tips</p>
                                 <input type="text" id="fname" name="fname" placeholder="enter text"
                                     class="w-100 p-2"><br>
                             </div>
@@ -218,7 +218,7 @@
                             </div>
                             <div class="col-md-6 mt-3">
                                 <p class="w2p">14  Other </p>
-                                <textarea id="w3review" name="w3review" rows="4" cols="30"
+                                <textarea id="w3review" name="w3review" rows="4" cols="30" placeholder="Please Enter"
                                     style="width:100%;"></textarea>
                             </div>
                         </div>

@@ -336,3 +336,15 @@ background: linear-gradient(to bottom right, #3022AD, #D5469E);
 
 }
 
+.template-box {
+    border: 2px #a0a0a0 solid;
+}
+
+.tempangle{
+    color:#e827a5; ;
+    font-size: 50px;
+    font-weight: 800;
+  
+}
+
+

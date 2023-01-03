@@ -54,4 +54,7 @@ Route::get('w2paystub', function () {
 Route::get('contact', function () {
     return view('contact');
 });
+Route::get('template-view', function () {
+    return view('template');
+});
 

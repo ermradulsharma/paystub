@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-
+ 
 
 <div title="Uk-header" style="background: #ff6261; ">
 
@@ -9,12 +9,12 @@
     <div class="container-fluid">
         <div class="container" style="max-width: 1613px">
             <div class="row">
-                <div class="col-lg-6  col-md-6 text-center  mt-5 pt-3 m-auto ">
-                    <spam class="text-white"
-                        style="font-family:futura-lt-w01-light,futura-lt-w05-light,sans-serif; font-size:31px; line-height:normal; text-align:center;font-weight: 100;">
-                        <p class="mainhead"style=""> Generate 100% Legal UK <br>Payslips
+                <div class="col-lg-6  col-md-6   mt-5 pt-3 m-auto ">
+                    <div class="text-white"
+                        style="font-family:futura-lt-w01-light,futura-lt-w05-light,sans-serif; font-size:31px; line-height:normal; font-weight: 100;">
+                        <p class="mainhead"style="text-align:center;"> Generate 100% Legal UK <br>Payslips
                             Instantly</p>
-                    </spam>
+                    </div>
 
                     <div class="mt-3 pt-2">
                         <div class="text-white Payslips" style="">

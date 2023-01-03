@@ -136,7 +136,7 @@
 
 
         <div class="row">
-        
+
             <div class="col-lg-6 col-sm-12 col-md-12">
                 <div class=" pb-3">
                     <img class="w-100" src="images/w2form/5f7a31_51cacfb55402495080cabfc7162c18a5_mv2.webp">
@@ -178,7 +178,7 @@
 
         </div>
 
-       
+
     </div>
 </div>
 
@@ -191,7 +191,7 @@
                     Once complete, enter the following in the numbered boxes:
                 </h4>
                 <ol>
-                    <li class="mt-2 text-black" style="font-size:18px; font-weight: 200;";">Gross wages, tips, and
+                    <li class="mt-2 text-black" style="font-size:18px; font-weight: 200;" ;">Gross wages, tips, and
                         any other compensation</li>
                     <li class="mt-2 text-black" style="font-size:18px; font-weight: 200;">Total amount of federal
                         income tax withheld from employee wages for the year</li>
@@ -239,31 +239,31 @@
 
             </div>
         </div>
-      
+
     </div>
 
 
 
-<div class="container-fluid" style="background: #e9e6e6;">
-    <div class="container" style="max-width: 1452px;">
-        <div class="row">
-            <div class="col-md-8">
+    <div class="container-fluid" style="background: #e9e6e6;">
+        <div class="container" style="max-width: 1452px;">
+            <div class="row">
+                <div class="col-md-8">
 
 
 
-                <img class="formimg2" src="images/w2form/5f7a31_76101bf5bf7c4aa3906e133b06665388_mv2.webp">
+                    <img class="formimg2" src="images/w2form/5f7a31_76101bf5bf7c4aa3906e133b06665388_mv2.webp">
 
 
+                </div>
             </div>
         </div>
     </div>
-</div>
 </div>
 
 <div class="row" style="background: #e9e6e6;">
 
     <div class="col-md-7 mt-5 container">
-       
+
         <h1 class="" style="font-family:'serif;">Common mistakes to avoid while filling out Form W-2
         </h1>
 

@@ -130,8 +130,8 @@
                                 </div>
                             </div>
                             <div class=" mt-3 ">
-                                <button class="viewbtn">Click to see Template Landscape view.This is not part of
-                                    design</button>
+                                <button class="viewbtn"> <a href="{{url('template-view')}}">Click to see Template Landscape view.This is not part of
+                                    design</a></button>
                             </div>
                         </div>
 
