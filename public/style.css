@@ -59,10 +59,10 @@
     max-width: 150px;
   
 }
-/* .navbtn:hover{
+.navbtn:hover{
     color: #0B2F5B;
     background: white;
-} */
+}
 
 .active{
     color: #0B2F5B;
