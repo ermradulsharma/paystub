@@ -291,7 +291,7 @@
 
                             </div>
 
-                            <div class="col-md-4">
+                            <div class="col-md-4 mb-4">
                                 <label for="fname" class="lable w2p">20  Localitiy Name<spam style="color:red;">
                                         <spam style="color:red;">*<spam>
                                                 <spam></label><br>

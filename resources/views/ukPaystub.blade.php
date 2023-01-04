@@ -31,11 +31,13 @@
                             </div>
                         </div>
 
-                        <div class="col-md-1 text-center">
-                            <div style="height:240px;-webkit-box-shadow: 9px 0 4px -4px #999, 0px 0 4px -4px #999;">
+                        <div class="col-md-2  text-center sh">
+                            <!-- <div style="height:240px;-webkit-box-shadow: 9px 0 4px -4px #999, 0px 0 4px -4px #999;">
 
-                            </div>
+                            </div> -->
+                            <img src="images/hrpng.png" style="height: 200px;">
                         </div>
+
 
                         <div class="col-md-5 mt-5 text-center">
                             <h6 style="margin-left:-23px;font-weight: 900;">ADVANCED TEMPLATES</h6>
@@ -273,24 +275,26 @@ London" class="w-100 p-2 text-center" style="font-size:14px;"><br>
 
                                 <div class="col-md-6">
 
-                                    <button CLASS="earnbtn"><i class='fa fa-lock pr-5'
-                                            style='font-size:24px; color:black;'></i>Income Tax
-                                    </button>
+                                
+                            <i class="fa fa-lock earnbtn2"></i>
+                            <input class="earnbtn text-center" type="text" value="FICA Medicare">
+                       
                                 </div>
                                 <div class="col-md-4 ">
-                                    <button CLASS="earnbtn text-center">556.80</button>
+                                    <input CLASS="earnbtn text-center" value="556.80"></input>
                                 </div>
 
                             </div>
                             <div class="row mb-3">
                                 <div class="col-md-6">
 
-                                    <button CLASS="earnbtn"><i class='fa fa-lock pr-5'
-                                            style='font-size:24px; color:black;'></i>National Insurence
-                                    </button>
+                                <i class="fa fa-lock earnbtn2"></i>
+                            <input class="earnbtn text-center" type="text" value="National Insurence">
+                       
                                 </div>
+                                
                                 <div class="col-md-4 ">
-                                    <button CLASS="earnbtn text-center">556.80</button>
+                                    <input CLASS="earnbtn text-center" value="556.80"></input>
                                 </div>
 
                             </div>
@@ -304,8 +308,8 @@ London" class="w-100 p-2 text-center" style="font-size:14px;"><br>
                                 </div>
                                 <div class="col-md-4">
 
-                                    <button CLASS="earnbtn text-center">
-                                        7,247.29</button>
+                                    <input CLASS="earnbtn text-center" value=" 7,247.29">
+                                       </input>
                                 </div>
 
                             </div>
@@ -318,24 +322,22 @@ London" class="w-100 p-2 text-center" style="font-size:14px;"><br>
 
                                 <div class="col-md-6">
 
-                                    <button CLASS="earnbtn"><i class='fa fa-lock pr-5'
-                                            style='font-size:24px; color:black;'></i>Taxable Gross Pay
-                                    </button>
+                                <i class="fa fa-lock earnbtn2"></i>
+                            <input class="earnbtn text-center" type="text" value="Taxable Gross Pay">
                                 </div>
                                 <div class="col-md-4 ">
-                                    <button CLASS="earnbtn text-center">1,309.90</button>
+                                    <input CLASS="earnbtn text-center" value="1,309.90"></input>
                                 </div>
 
                             </div>
                             <div class="row mb-3">
                                 <div class="col-md-6">
 
-                                    <button CLASS="earnbtn"><i class='fa fa-lock pr-5'
-                                            style='font-size:24px; color:black;'></i>Income Tax
-                                    </button>
+                                <i class="fa fa-lock earnbtn2"></i>
+                            <input class="earnbtn text-center" type="text" value="Income Tax">
                                 </div>
                                 <div class="col-md-4 ">
-                                    <button CLASS="earnbtn text-center">1,058.94</button>
+                                    <input CLASS="earnbtn text-center" value="1,058.94"></input>
                                 </div>
 
                             </div>
@@ -344,15 +346,15 @@ London" class="w-100 p-2 text-center" style="font-size:14px;"><br>
                             <div class="row mb-3">
 
                                 <div class="col-md-6">
-                                <button CLASS="earnbtn"><i class='fa fa-lock pr-5'
-                                            style='font-size:24px; color:black;'></i>Employee NIC
-                                    </button>
+                                
+                                <i class="fa fa-lock earnbtn2"></i>
+                            <input class="earnbtn text-center" type="text" value="Employee NIC">
 
                                 </div>
                                 <div class="col-md-4">
 
-                                    <button CLASS="earnbtn text-center">
-                                    4,058.94</button>
+                                    <input CLASS="earnbtn text-center" value="4,058.94">
+                                 </input>
                                 </div>
 
 
@@ -361,15 +363,15 @@ London" class="w-100 p-2 text-center" style="font-size:14px;"><br>
                             <div class="row mb-5">
 
                                 <div class="col-md-6">
-                                <button CLASS="earnbtn"><i class='fa fa-lock pr-5'
-                                            style='font-size:24px; color:black;'></i>Employee NIC
-                                    </button>
+                                <i class="fa fa-lock earnbtn2"></i>
+                            <input class="earnbtn text-center" type="text" value="Employee NIC">
+
 
                                 </div>
                                 <div class="col-md-4">
 
-                                    <button CLASS="earnbtn text-center">
-                                    6,058.94</button>
+                                    <input CLASS="earnbtn text-center" value="  6,058.94">
+                                  </input>
                                 </div>
                                 
 
@@ -378,8 +380,8 @@ London" class="w-100 p-2 text-center" style="font-size:14px;"><br>
                              <div class="row">
 
                                 <div class="col-md-6">
-                                <button CLASS="earnbtn text-center">NET PAY
-                                    </button>
+                                <input CLASS="earnbtn text-center" value="NET PAY">
+                                    </input>
 
                                 </div>
                                 <div class="col-md-4">

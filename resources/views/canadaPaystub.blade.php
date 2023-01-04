@@ -20,17 +20,19 @@
                                         <option value="opel">Opel</option>
                                         <option value="audi">Audi</option>
                                     </select>
-                                    <i onclick="myFunction(this)"  class="fa fa-eye" style="font-size: 39px;margin-left: 6px;"></i>
+                                    <i onclick="myFunction(this)" class="fa fa-eye"
+                                        style="font-size: 39px;margin-left: 6px;"></i>
 
 
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col-md-1 text-center">
-                            <div style="height:240px;-webkit-box-shadow: 9px 0 4px -4px #999, 0px 0 4px -4px #999;">
+                        <div class="col-md-2  text-center sh">
+                            <!-- <div style="height:240px;-webkit-box-shadow: 9px 0 4px -4px #999, 0px 0 4px -4px #999;">
 
-                            </div>
+                            </div> -->
+                            <img src="images/hrpng.png" style="height: 200px;">
                         </div>
 
                         <div class="col-md-5 mt-5 text-center">
@@ -40,12 +42,13 @@
                                 <div class="input-group mmenu mb-3" style="margin: auto;">
                                     <select name="cars" id="cars" style="" class="form-control dropdown1"
                                         style="border-right:none">
-                                        <option value="volvo">Reddish Magneta </option>
+                                        <option value="volvo">PT Pink </option>
                                         <option value="saab">Saab</option>
                                         <option value="opel">Opel</option>
                                         <option value="audi">Audi</option>
                                     </select>
-                                    <i onclick="myFunction(this)"  class="fa fa-eye" style="font-size: 39px;margin-left: 6px;"></i>
+                                    <i onclick="myFunction(this)" class="fa fa-eye"
+                                        style="font-size: 39px;margin-left: 6px;"></i>
 
 
                                 </div>
@@ -53,7 +56,8 @@
 
                             </div>
                             <div class=" mt-3  float-right">
-                                <button class="viewbtn"><a href="{{url('template-view')}}">Click to see Template Landscape view.</a></button>
+                                <button class="viewbtn"><a href="{{url('template-view')}}">Click to see Template
+                                        Landscape view.</a></button>
                             </div>
 
                         </div>
@@ -284,95 +288,59 @@
                     </div>
                 </div>
 
-                <div class="row mb-3">
+                <div class="row mb-3 mt-">
                     <div class="col-md-1">
 
-
-                        <button CLASS="earnbtn text-center">Regular
-                        </button>
+                        <input class="earnbtn text-center" type="text" value="Regular">
                     </div>
                     <div class="col-md-1">
 
-                        <button CLASS="earnbtn text-center">25.50
-                        </button>
+                        <input class="earnbtn text-center" type="text" value="67.09">
                     </div>
-                    <div class="col-md-2">
-
-                        <button CLASS="earnbtn text-center">40.50
-                        </button>
+                    <div class="col-md-2 ">
+                        <input CLASS="earnbtn text-center" value="740.98"></input>
                     </div>
-                    <div class="col-md-2">
-
-
-                        <button CLASS="earnbtn text-center">25.50
-                        </button>
-                    </div>
-                    <div class="col-md-2">
-
-                        <button CLASS="earnbtn"><i class='fa fa-lock pr-4' style='font-size:24px'></i>CPP
-                        </button>
+                    <div class="col-md-2 ">
+                        <input CLASS="earnbtn text-center" value="455.90"></input>
                     </div>
 
                     <div class="col-md-2">
-
-                        <button CLASS="earnbtn">325.50
-                        </button>
-                    </div>
-
-
+                            <i class="fa fa-lock earnbtn2"></i>
+                            <input class="earnbtn text-center" type="text" value="CPP">
+                        </div>
                     <div class="col-md-2">
 
-                        <button CLASS="earnbtn">15,000.58
-                        </button>
+                        <input CLASS="earnbtn text-center" value="556.90"></input>
+                    </div>
+                    <div class="col-md-2">
+
+                        <input CLASS="earnbtn text-center" value="556.90"></input>
                     </div>
 
                 </div>
 
+
                 <div class="row mb-3">
-                <div class="col-md-3  ">
+                    <div class="col-md-3  ">
                         <button CLASS="earnbtn1"><i class="fa fa-plus-circle pr-2" style="font-size: 24px;
                        color: #0ec23b;padding-top: 0px;"></i>Add Earning</button>
                     </div>
                     <div class="col-md-3"></div>
                     <div class="col-md-2">
+                            <i class="fa fa-lock earnbtn2"></i>
+                            <input class="earnbtn text-center" type="text" value="EL">
+                        </div>
 
-                        <button CLASS="earnbtn"><i class='fa fa-lock pr-4' style='font-size:24px'></i>
-                            EL</button>
+                    <div class="col-md-2">
+
+                        <input CLASS="earnbtn text-center" value="25.50">
+                        </input>
                     </div>
 
                     <div class="col-md-2">
 
-                        <button CLASS="earnbtn">25.50
-                        </button>
-                    </div>
-
-                    <div class="col-md-2">
-
-                        <button CLASS="earnbtn">15,000.58
-                        </button>
-                    </div>
-
-                </div>
-
-                <div class="row mb-3">
-                    <div class="col-md-6"></div>
-                    <div class="col-md-2">
-
-                        <button CLASS="earnbtn"><i class='fa fa-lock pr-4' style='font-size:24px'></i>
-                            INCOME TAX</button>
-                    </div>
-
-
-
-                    <div class="col-md-2">
-
-                        <button CLASS="earnbtn">
-                            325.50</button>
-                    </div>
-                    <div class="col-md-2">
-
-                        <button CLASS="earnbtn">
-                            15,000.58</button>
+                        <input CLASS="earnbtn text-center" value="15,000.58">
+                        </input>
                     </div>
 
                 </div>
@@ -380,22 +348,43 @@
                 <div class="row mb-3">
                     <div class="col-md-6"></div>
                     <div class="col-md-2">
-
-                        <button CLASS="earnbtn"><i class='fa fa-lock pr-4' style='font-size:24px'></i>
-                            FEDRAL TAX</button>
-                    </div>
+                            <i class="fa fa-lock earnbtn2"></i>
+                            <input class="earnbtn text-center" type="text" value="FICA Medicare">
+                        </div>
 
 
 
                     <div class="col-md-2">
 
-                        <button CLASS="earnbtn">
-                            325.50</button>
+                        <input CLASS="earnbtn text-center" value="343" >
+                            </input>
                     </div>
                     <div class="col-md-2">
 
-                        <button CLASS="earnbtn">
-                            15,000.58</button>
+                        <input CLASS="earnbtn text-center" value="678">
+                            </input>
+                    </div>
+
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-6"></div>
+                    <div class="col-md-2">
+                            <i class="fa fa-lock earnbtn2"></i>
+                            <input class="earnbtn text-center" type="text" value="Ferderal Tax">
+                        </div>
+
+
+
+                    <div class="col-md-2">
+
+                        <input CLASS="earnbtn text-center" value=" 325.50">
+                           </input>
+                    </div>
+                    <div class="col-md-2">
+
+                        <input CLASS="earnbtn text-center" value="15,000.58">
+                            </input>
                     </div>
 
                 </div>
@@ -404,22 +393,21 @@
                 <div class="row mb-3">
                     <div class="col-md-6"></div>
                     <div class="col-md-2">
-
-                        <button CLASS="earnbtn"><i class='fa fa-lock pr-4' style='font-size:24px'></i>
-                            LIFE INSURANCE</button>
-                    </div>
+                            <i class="fa fa-lock earnbtn2"></i>
+                            <input class="earnbtn text-center" type="text" value="Life Insurance">
+                        </div>
 
 
 
                     <div class="col-md-2">
 
-                        <button CLASS="earnbtn">
-                            325.50</button>
+                        <input CLASS="earnbtn text-center" value="325.50">
+                            </input>
                     </div>
                     <div class="col-md-2">
 
-                        <button CLASS="earnbtn">
-                            15,000.58</button>
+                        <input CLASS="earnbtn text-center" value=" 15,000.58">
+                           </input>
                     </div>
 
                 </div>
@@ -428,22 +416,21 @@
                 <div class="row mb-3">
                     <div class="col-md-6"></div>
                     <div class="col-md-2">
-
-                        <button CLASS="earnbtn text-center"><i class='fa fa-lock pr-4' style='font-size:24px'></i>
-                            CANADA SAVING BC</button>
-                    </div>
+                            <i class="fa fa-lock earnbtn2"></i>
+                            <input class="earnbtn text-center" type="text" value="Canada Saving BC">
+                        </div>
 
 
 
                     <div class="col-md-2 mb-4">
 
-                        <button CLASS="earnbtn">
-                            325.50</button>
+                        <input CLASS="earnbtn text-center" value="325.50">
+                            </input>
                     </div>
                     <div class="col-md-2">
 
-                        <button CLASS="earnbtn">
-                            15,000.58</button>
+                        <input CLASS="earnbtn text-center" value=" 15,000.58">
+                           </input>
                     </div>
 
                 </div>
@@ -460,17 +447,17 @@
                     </div> -->
 
 
-             
 
 
-             
 
 
-             
+
+
+
 
                 <div class="row mb-3 ">
                     <div class="col-md-5"></div>
-                    <div class="col-md-3 mb-3 mt-4">
+                    <div class="col-md-3 mb-3 mt-1">
 
                         <button CLASS="earnbtn1"><i class="fa fa-plus-circle pr-2" style="font-size: 24px;
                           color: #0ec23b;
@@ -514,38 +501,38 @@
                     <div class="col-md-2">
 
 
-                        <button CLASS="earnbtn text-center">
-                            0.00</button>
+                        <input CLASS="earnbtn text-center" value="00.00">
+                            </input>
                     </div>
                     <div class="col-md-2">
 
 
-                        <button CLASS="earnbtn text-center">
-                            0.00</button>
+                        <input CLASS="earnbtn text-center" value="00.00">
+                            </input>
                     </div>
                     <div class="col-md-2">
 
 
-                        <button CLASS="earnbtn text-center">
-                            0.00</button>
+                        <input CLASS="earnbtn text-center" value="00.00">
+                            </input>
                     </div>
                     <div class="col-md-2">
 
 
-                        <button CLASS="earnbtn text-center">
-                            0.00</button>
+                        <input CLASS="earnbtn text-center" value="00.00">
+                            </input>
                     </div>
                     <div class="col-md-2">
 
 
-                        <button CLASS="earnbtn text-center">
-                            0.00</button>
+                        <input CLASS="earnbtn text-center" value="00.00">
+                            </input>
                     </div>
                     <div class="col-md-2">
 
 
-                        <button CLASS="earnbtn text-center">
-                            0.00</button>
+                        <input CLASS="earnbtn text-center" value="00.00">
+                            </input>
                     </div>
 
                 </div>
@@ -727,8 +714,7 @@
 @endsection
 
 <script>
-    
-    function myFunction(x) {
-      x.classList.toggle("fa-eye-slash");
-    }
-    </script>
+function myFunction(x) {
+    x.classList.toggle("fa-eye-slash");
+}
+</script>

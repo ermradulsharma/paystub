@@ -196,12 +196,12 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-md-2  text-center sh">
+                            <!-- <div style="height:240px;-webkit-box-shadow: 9px 0 4px -4px #999, 0px 0 4px -4px #999;">
 
-                    <div class="col-md-1 text-center">
-                        <div style="height:240px;-webkit-box-shadow: 9px 0 4px -4px #999, 0px 0 4px -4px #999;">
-
+                            </div> -->
+                            <img src="images/hrpng.png" style="height: 200px;">
                         </div>
-                    </div>
 
                     <div class="col-md-5 mt-5 text-center">
                         <h6 style="margin-left:-23px;font-weight: 900;">ADVANCED TEMPLATES</h6>

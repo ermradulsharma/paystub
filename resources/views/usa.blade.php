@@ -99,21 +99,22 @@
                                         <option value="opel">Opel</option>
                                         <option value="audi">Audi</option>
                                     </select>
-                                    <i onclick="myFunction(this)"  class="fa fa-eye eyes" style="font-size: 39px;"></i>
+                                    <i onclick="myFunction(this)" class="fa fa-eye eyes" style="font-size: 39px;"></i>
 
 
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col-md-1  text-center sh">
-                            <div style="height:240px;-webkit-box-shadow: 9px 0 4px -4px #999, 0px 0 4px -4px #999;">
+                        <div class="col-md-2  text-center sh">
+                            <!-- <div style="height:240px;-webkit-box-shadow: 9px 0 4px -4px #999, 0px 0 4px -4px #999;">
 
-                            </div>
+                            </div> -->
+                            <img src="images/hrpng.png" style="height: 200px;">
                         </div>
 
                         <div class="col-md-5 col-sm-12 mt-5 text-center">
-                        <h6 style="margin-left:-23px;font-weight: 900;">ADVANCED TEMPLATES</h6>
+                            <h6 style="margin-left:-23px;font-weight: 900;">ADVANCED TEMPLATES</h6>
                             <div class="mt-4">
                                 <i class="fa fa-angle-down down1"></i>
                                 <div class="input-group mmenu mb-3" style="margin: auto;">
@@ -124,14 +125,16 @@
                                         <option value="opel">Opel</option>
                                         <option value="audi">Audi</option>
                                     </select>
-                                    <i onclick="myFunction(this)"  class="fa fa-eye eyes" style="font-size: 39px;margin-left: 6px;"></i>
+                                    <i onclick="myFunction(this)" class="fa fa-eye eyes"
+                                        style="font-size: 39px;margin-left: 6px;"></i>
 
 
                                 </div>
                             </div>
                             <div class=" mt-3 ">
-                                <button class="viewbtn"> <a href="{{url('template-view')}}">Click to see Template Landscape view.This is not part of
-                                    design</a></button>
+                                <button class="viewbtn"> <a href="{{url('template-view')}}">Click to see Template
+                                        Landscape view.This is not part of
+                                        design</a></button>
                             </div>
                         </div>
 
@@ -141,7 +144,7 @@
 
             </div>
         </div>
-    </div> 
+    </div>
 
 
     <div class="container" style="max-width:1450px;">
@@ -212,7 +215,7 @@
                                 <form action="/action_page.php">
 
                                     <select name="cars" id="cars" class=" dropdown11">
-                                        <option selected >Choose your state</option>
+                                        <option selected>Choose your state</option>
                                         <option value="saab">Saab</option>
                                         <option value="opel">Opel</option>
                                         <option value="audi">Audi</option>
@@ -262,8 +265,12 @@
                             <label for="fname" class="lable">AUTO CALCULATOR<spam style="color:red;">
                                     <spam style="color:red;">*<spam>
                                             <spam></label><br>
-                            <input type="text" id="fname" name="fname" placeholder="OFF" class="w-100 p-2 "
-                                style="font-size:14px;"><br>
+                            <select name="cars" id="cars" class=" dropdown11">
+                                <option selected>Choose</option>
+                                <option value="saab">ON</option>
+                                <option value="opel">OFF</option>
+
+                            </select>
                         </div>
                         <div class="col-md-3 mt-4">
                             <label for="fname" class="lable">MARITAL STATUS<spam style="color:red;">
@@ -404,34 +411,33 @@
                         </div>
                     </div>
 
-                    <div class="row mb-3">
-                        <div class="col-md-2 ">
-                            <button CLASS="earnbtn text-center">Regular</button>
-                        </div>
+                    <div class="row mb-3 mt-">
+                        <div class="col-md-2">
 
-
-                        <div class="col-md-2 ">
-                            <button CLASS="earnbtn text-center">740.98</button>
+                            <input class="earnbtn text-center" type="text" value="Regular">
                         </div>
                         <div class="col-md-2 ">
-                            <button CLASS="earnbtn text-center">556.80</button>
+                            <input CLASS="earnbtn text-center" value="740.98"></input>
+                        </div>
+                        <div class="col-md-2 ">
+                            <input CLASS="earnbtn text-center" value="455.90"></input>
                         </div>
 
 
                         <div class="col-md-2">
-                            <button CLASS="earnbtn text-center">740.98</button>
+                            <input CLASS="earnbtn text-center" value="740.90"></input>
                         </div>
                         <div class="col-md-2">
 
-                            <button CLASS="earnbtn text-center">556.80</button>
+                            <input CLASS="earnbtn text-center" value="556.90"></input>
+                        </div>
+                        <div class="col-md-2">
+
+                            <input CLASS="earnbtn text-center" value="556.90"></input>
                         </div>
 
-
-                        <div class="col-md-2 ">
-
-                            <button CLASS="earnbtn text-center">740.98</button>
-                        </div>
                     </div>
+
 
                     <div class="row mb-3">
                         <div class="col-md-2 mt-2 mb-5">
@@ -451,12 +457,31 @@
                     </div>
 
 
+                    <div class="row mb-3 mt-4">
+                        <div class="col-md-3">
+                            <i class="fa fa-lock earnbtn2"></i>
+                            <input class="earnbtn text-center" type="text" value="FICA Medicare">
+                        </div>
+
+                        <div class="col-md-1">
+                        </div>
+
+                        <div class="col-md-3">
+                        </div>
+                        <div class="col-md-1">
+                        </div>
+                        <div class="col-md-2">
+                            <input class="earnbtn text-center" value="551.10" />
+                        </div>
+                        <div class="col-md-2">
+                            <input class="earnbtn text-center" value="845.50" />
+                        </div>
+                    </div>
+
                     <div class="row mb-3">
                         <div class="col-md-3">
-                            <p class="p-0 m-0 " style="font-family: serif;font-size: 14px;">Tap on padlock to change tex
-                            </p>
-                            <button CLASS="earnbtn"><i class='fa fa-lock pr-5' style='font-size:24px'></i>FICA
-                                Medicare</button>
+                            <i class="fa fa-lock earnbtn2"></i>
+                            <input class="earnbtn text-center" type="text" value="Social Security Tax">
                         </div>
 
                         <div class="col-md-1">
@@ -466,23 +491,19 @@
                         </div>
                         <div class="col-md-1">
                         </div>
-
-                        <div class="col-md-2 mt-4">
-                            <button CLASS="earnbtn text-center">556.80</button>
+                        <div class="col-md-2">
+                            <input class="earnbtn text-center" value="551.10" />
                         </div>
-
-
-                        <div class="col-md-2 mt-4">
-                            <button CLASS="earnbtn text-center">740.98</button>
+                        <div class="col-md-2">
+                            <input class="earnbtn text-center" value="845.50" />
                         </div>
                     </div>
 
 
                     <div class="row mb-3">
                         <div class="col-md-3">
-
-                            <button CLASS="earnbtn"><i class='fa fa-lock pr-5' style='font-size:24px'></i>Social
-                                Security Tax</button>
+                            <i class="fa fa-lock earnbtn2"></i>
+                            <input class="earnbtn text-center" type="text" value="Federal Income Tax">
                         </div>
 
                         <div class="col-md-1">
@@ -491,24 +512,20 @@
                         <div class="col-md-3">
                         </div>
                         <div class="col-md-1">
-
-
                         </div>
                         <div class="col-md-2">
-                            <button CLASS="earnbtn text-center">5,580.81</button>
+                            <input class="earnbtn text-center" value="551.10" />
                         </div>
                         <div class="col-md-2">
-                            <button CLASS="earnbtn text-center">8962.20</button>
+                            <input class="earnbtn text-center" value="845.50" />
                         </div>
                     </div>
 
 
                     <div class="row mb-3">
                         <div class="col-md-3">
-
-                            <button CLASS="earnbtn"><i class='fa fa-lock pr-5' style='font-size:24px'></i>Federal
-                                Income
-                                Tax</button>
+                            <i class="fa fa-lock earnbtn2"></i>
+                            <input class="earnbtn text-center" type="text" value="State Tax">
                         </div>
 
                         <div class="col-md-1">
@@ -517,39 +534,12 @@
                         <div class="col-md-3">
                         </div>
                         <div class="col-md-1">
-
-
                         </div>
                         <div class="col-md-2">
-                            <button CLASS="earnbtn text-center">558.58</button>
+                            <input class="earnbtn text-center" value="551.10" />
                         </div>
                         <div class="col-md-2">
-                            <button CLASS="earnbtn text-center">8,745.82</button>
-                        </div>
-                    </div>
-
-
-                    <div class="row mb-3">
-                        <div class="col-md-3">
-
-                            <button CLASS="earnbtn"><i class='fa fa-lock pr-5   ' style='font-size:24px'></i>State
-                                Tax</button>
-                        </div>
-
-                        <div class="col-md-1">
-                        </div>
-
-                        <div class="col-md-3">
-                        </div>
-                        <div class="col-md-1">
-
-
-                        </div>
-                        <div class="col-md-2">
-                            <button CLASS="earnbtn text-center">551.10</button>
-                        </div>
-                        <div class="col-md-2">
-                            <button CLASS="earnbtn text-center">845.50</button>
+                            <input class="earnbtn text-center" value="845.50" />
                         </div>
                     </div>
 
@@ -579,11 +569,10 @@
 
                         </div>
                     </div>
-
-                    <div class="row mb-3 mt-4">
+                    <div class="row mb-3">
                         <div class="col-md-3">
-
-                            <button CLASS="earnbtn">Taxes/ Deduction Total</button>
+                          
+                            <input class="earnbtn text-center" type="text" value="Taxes/Deduction Tax">
                         </div>
 
                         <div class="col-md-1">
@@ -592,18 +581,12 @@
                         <div class="col-md-3">
                         </div>
                         <div class="col-md-1">
-
-
                         </div>
                         <div class="col-md-2">
-                            <p class="p-0 m-0 text-center" style="font-family: serif;">Current Gross</p>
-                            <button CLASS="earnbtn text-center">
-                                7,247.29</button>
+                            <input class="earnbtn text-center" value="551.10" />
                         </div>
                         <div class="col-md-2">
-                            <p class="p-0 m-0 text-center" style="font-family: serif;">YTD Gross</p>
-                            <button CLASS="earnbtn text-center">
-                                19,294.5</button>
+                            <input class="earnbtn text-center" value="845.50" />
                         </div>
                     </div>
 
@@ -624,13 +607,13 @@
                         </div>
                         <div class="col-md-2">
                             <p class="p-0 m-0 text-center" style="font-family: serif;">Net Pay</p>
-                            <button CLASS="earnbtn text-center">
-                                7,247.29</button>
+                            <input CLASS="earnbtn text-center" value="7,247.29">
+                                </input>
                         </div>
                         <div class="col-md-2">
                             <p class="p-0 m-0 text-center" style="font-family: serif;">YTD Net pay</p>
-                            <button CLASS="earnbtn text-center">
-                                19,294.5</button>
+                            <input CLASS="earnbtn text-center" value="19,294.5">
+                                </input>
                         </div>
                     </div>
 
@@ -655,26 +638,26 @@
                             <p class="p-0 m-0 " style="font-family: serif;">CO <spam style="color:red;">
                                     <spam style="color:red;">*<spam>
                             </p>
-                            <button CLASS="earnbtn text-center">551.10</button>
+                            <input CLASS="earnbtn text-center " value="511"></input>
                         </div>
                         <div class="col-md-2">
-                            <p class="p-0 m-0 text-center" style="font-family: serif;">
+                            <p class="p-0 m-0 text-center " value="511" style="font-family: serif;">
                                 FILE. <spam style="color:red;">
                                     <spam style="color:red;">*<spam>
                             </p>
-                            <button CLASS="earnbtn text-center">845.50</button>
+                            <input CLASS="earnbtn text-center " value="789"></input>
                         </div>
                         <div class="col-md-2">
                             <p class="p-0 m-0 " style="font-family: serif;">CLOCK VCHR.<spam style="color:red;">
                                     <spam style="color:red;">*<spam>
                             </p>
-                            <button CLASS="earnbtn text-center">551.10</button>
+                            <input CLASS="earnbtn text-center " value="978"></input>
                         </div>
                         <div class="col-md-2">
                             <p class="p-0 m-0 " style="font-family: serif;">Advice Number: <spam style="color:red;">
                                     <spam style="color:red;">*<spam>
                             </p>
-                            <button CLASS="earnbtn text-center">845.50</button>
+                            <input CLASS="earnbtn text-center " value="908"></input>
                         </div>
 
 
@@ -684,13 +667,13 @@
                                     style="color:red;">
                                     <spam style="color:red;">*<spam>
                             </p>
-                            <button CLASS="earnbtn text-center">551.10</button>
+                            <input CLASS="earnbtn text-center " value="989"></input>
                         </div>
                         <div class="col-md-2">
                             <p class="p-0 m-0 " style="font-family: serif;">Transit ABA<spam style="color:red;">
                                     <spam style="color:red;">*<spam>
                             </p>
-                            <button CLASS="earnbtn text-center">845.50</button>
+                            <input CLASS="earnbtn text-center " value="989"></input>
                         </div>
 
 
@@ -714,7 +697,8 @@
                                 style="font-size: 30px; margin-left: 7px;"></i></button>
                     </div>
                     <div class="text-right mt-1 ">
-                        <button class="emailbtn" data-toggle="modal" data-target="#myModal"> <i class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL
+                        <button class="emailbtn" data-toggle="modal" data-target="#myModal"> <i
+                                class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL
                             PAYSTUB <i class="fa fa-download ml-4" style="font-size:24px"></i></button>
                     </div>
                 </div>
@@ -733,131 +717,133 @@
 
     <div class="container" style="max-width: 1450px;">
 
-<!-- Button to Open the Modal -->
+        <!-- Button to Open the Modal -->
 
 
-<!-- The Modal -->
-<div class="modal fade" id="myModal">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
+        <!-- The Modal -->
+        <div class="modal fade" id="myModal">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
 
-            <!-- Modal Header -->
-            <div class="modal-header" style="background: #115caecf;">
-                <h4 class="modal-title"><img src="images/Paystub X.webp" class="icon"></h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-
-            <!-- Modal body -->
-            <div class="modal-body">
-                <div class="google-btn mt-4">
-                    <div class="google-icon-wrapper">
-                        <img class="google-icon"
-                            src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" />
+                    <!-- Modal Header -->
+                    <div class="modal-header" style="background: #115caecf;">
+                        <h4 class="modal-title"><img src="images/Paystub X.webp" class="icon"></h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
-                    <p class="btn-text"><b>Sign up with google</b></p>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div class="google-btn mt-4">
+                            <div class="google-icon-wrapper">
+                                <img class="google-icon"
+                                    src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" />
+                            </div>
+                            <p class="btn-text"><b>Sign up with google</b></p>
+                        </div>
+
+                        <div class="text-center mt-4 mb-4">
+                            <img src="images/Group 3.png" style="width:130px;">
+                        </div>
+                        <h6 class="text-center" style="color: #457bbe;">Sign Up Using Email</h6>
+                        <p class="text-center">
+
+                            <input type="email" id="email" name="email" class="singup" placeholder="Email *"> <br><br>
+
+                            <button class="continue mt-3" data-toggle="modal" data-dismiss="modal"
+                                data-target="#myModal1">Continue</button>
+                            <a href="#" style="text-decoration: none;color: #0000007a">
+                                <p class="text-center mt-3" style="color: #0000007a;font-size: 13px;">Already have
+                                    account?
+                                    <u style="color:red;">
+                                        <spam style="color:red;">Sign In</spam>
+                                    </u>
+                                </p>
+                            </a>
+                    </div>
+                    </p>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer" style="background: #457bbed9;">
+                        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+                    </div>
+
                 </div>
-
-                <div class="text-center mt-4 mb-4">
-                    <img src="images/Group 3.png" style="width:130px;">
-                </div>
-                <h6 class="text-center" style="color: #457bbe;">Sign Up Using Email</h6>
-                <p class="text-center">
-
-                    <input type="email" id="email" name="email" class="singup" placeholder="Email *"> <br><br>
-
-                    <button class="continue mt-3" data-toggle="modal" data-dismiss="modal"
-                        data-target="#myModal1">Continue</button>
-                    <a href="#" style="text-decoration: none;color: #0000007a">
-                        <p class="text-center mt-3" style="color: #0000007a;font-size: 13px;">Already have account?
-                            <u style="color:red;">
-                                <spam style="color:red;">Sign In</spam>
-                            </u>
-                        </p>
-                    </a>
             </div>
-            </p>
-
-            <!-- Modal footer -->
-            <div class="modal-footer" style="background: #457bbed9;">
-                <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
-            </div>
-
         </div>
+
     </div>
-</div>
-
-</div>
 
 
 
-<div class="container" style="max-width: 1450px;">
+    <div class="container" style="max-width: 1450px;">
 
 
 
-<div class="modal fade" id="myModal1">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
+        <div class="modal fade" id="myModal1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
 
-            <!-- Modal Header -->
-            <div class="modal-header" style="background: #115caecf;">
-                <h4 class="modal-title"><img src="images/Paystub X.webp" class="icon"></h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-
-            <!-- Modal body -->
-            <div class="modal-body">
-                <h5 class="text-center">Verify your Email Address</h5>
-                <div class=" text-center mt-4">
-                    <div class="mail">
-                        <img src="images/email(3).png" class="mailpic">
+                    <!-- Modal Header -->
+                    <div class="modal-header" style="background: #115caecf;">
+                        <h4 class="modal-title"><img src="images/Paystub X.webp" class="icon"></h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
 
-                    <h5 style="color: #457bbe;" class="mt-4 text-center">Almost There!</h5>
-                    <p style="color: #02030359;font-size: 14px;font-family: serif;" class="text-center">Enter the
-                        Verification code to sent</p>
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <h5 class="text-center">Verify your Email Address</h5>
+                        <div class=" text-center mt-4">
+                            <div class="mail">
+                                <img src="images/email(3).png" class="mailpic">
+                            </div>
 
-                    <input type="email" id="email" name="email" class="singup1 text-center"
-                        placeholder="ABC@paystub.com">
-                    <div style="color: red;font-size: 13px; font-family: serif;">
-                        <i class="fa fa-exclamation-circle">
-                            Verification code required
-                        </i>
+                            <h5 style="color: #457bbe;" class="mt-4 text-center">Almost There!</h5>
+                            <p style="color: #02030359;font-size: 14px;font-family: serif;" class="text-center">Enter
+                                the
+                                Verification code to sent</p>
+
+                            <input type="email" id="email" name="email" class="singup1 text-center"
+                                placeholder="ABC@paystub.com">
+                            <div style="color: red;font-size: 13px; font-family: serif;">
+                                <i class="fa fa-exclamation-circle">
+                                    Verification code required
+                                </i>
+                            </div>
+                            <p style="color: #0000004d; font-size: 11px;">Didn't receive an email</p>
+                            <p style="color: #04050778;font-size: 12px; font-family: cursive;">Check Your Spam folder
+                                <spam style="color:red;"> Or </spam>resend code
+                            </p>
+                            <button class="continue mt-3" data-toggle="modal" data-target="myModal">verify</button>
+                        </div>
+
+
+
+
+
+
+
                     </div>
-                    <p style="color: #0000004d; font-size: 11px;">Didn't receive an email</p>
-                    <p style="color: #04050778;font-size: 12px; font-family: cursive;">Check Your Spam folder<spam
-                            style="color:red;"> Or </spam>resend code</p>
-                    <button class="continue mt-3" data-toggle="modal" data-target="myModal">verify</button>
+                    </p>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer" style="background: #457bbed9;">
+                        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+                    </div>
+
                 </div>
-
-
-
-
-
-
-
             </div>
-            </p>
-
-            <!-- Modal footer -->
-            <div class="modal-footer" style="background: #457bbed9;">
-                <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
-            </div>
-
         </div>
+
+
     </div>
-</div>
-
-
-</div>
 
 
 
 
-@endsection
+    @endsection
 
-<script>
-    
-function myFunction(x) {
-  x.classList.toggle("fa-eye-slash");
-}
-</script>
+    <script>
+    function myFunction(x) {
+        x.classList.toggle("fa-eye-slash");
+    }
+    </script>
