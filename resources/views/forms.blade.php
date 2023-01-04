@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-<div title="W2Forms-Header" style="background:#ff6261;">
+<div title="W2Forms-Header" class="mt-2" style="background:#ff6261;">
 
     <div class="container" style="max-width: 1452px;">
         <div class="row">

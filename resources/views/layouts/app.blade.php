@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css" type="text/css">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Font Awesome CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
@@ -38,43 +38,44 @@
 </head>
 
 <body>
-    <span class="opennav" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; <a href="{{url('/')}}"></a></span>
+    <span class="opennav" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; <a
+            href="{{url('/')}}"></a></span>
     <!-- Start Header Section -->
 
     <div class="container" style="max-width:1500px">
-     
+
         <ul class="nav nav-justified navbar">
-            
+
             <li class="nav-item">
-               
-            <a href="{{url('/')}}"><img class="mr-3 mt-5" src="images/Paystub X.webp" style="width: 222px;"></a>
+
+                <a href="{{url('/')}}"><img class="mr-3 mt-5" src="images/Paystub X.webp" style="width: 222px;"></a>
             </li>
             <li class="nav-item ml-3 ">
-                <a class="btn btn-lg  py-2    w-100 mt-5 navbtn" href="{{url('usa')}}">USA</a>
+                <a class="btn btn-lg  py-2    w-100 mt-5 navbtn {{request()->is('usa') ? 'active' : ''}} " href="{{url('usa')}}">USA</a>
 
             </li>
             <li class="nav-item ml-3">
-                <a class="btn btn-lg py-2    w-100 mt-5 navbtn" href="{{url('canada')}}">CANADA</a>
+                <a class="btn btn-lg py-2    w-100 mt-5 navbtn {{request()->is('canada') ? 'active' : ''}}" href="{{url('canada')}}">CANADA</a>
             </li>
             <li class="nav-item ml-3">
-                <a class="btn btn-lg  py-2   w-100 mt-5 navbtn" href="{{url('uk')}}">UK</a>
+                <a class="btn btn-lg  py-2   w-100 mt-5 navbtn {{request()->is('uk') ? 'active' : ''}}" href="{{url('uk')}}">UK</a>
             </li>
 
             <li class="nav-item ml-3">
 
-                <a class="btn btn-lg  py-2   w-100  mt-5 navbtn" href="{{url('globle')}}">GLOBLE</a>
+                <a class="btn btn-lg  py-2   w-100  mt-5 navbtn {{request()->is('globle') ? 'active' : ''}}" href="{{url('globle')}}">GLOBLE</a>
 
             </li>
             <li class="nav-item ml-3">
-                <a class="btn btn-lg  py-2   w-100  mt-5 navbtn" href="{{url('form')}}">W<sub>-2</sub> FORM</a>
+                <a class="btn btn-lg  py-2   w-100  mt-5 navbtn {{request()->is('form') ? 'active' : ''}}" href="{{url('form')}}">W<sub>-2</sub> FORM</a>
 
             </li>
             <li class="nav-item float-rigth ml-3 ">
 
-                <a class="btn btn-md  py-2   w-100 mt-5 btn-danger login" href="{{url('login')}}">Login</a>
+                <a class="btn btn-md  py-2   w-100 mt-5 btn-danger login " href="{{url('login')}}">Login</a>
 
             </li>
-        </ul><br>
+        </ul></br>
 
 
     </div>
@@ -172,12 +173,16 @@
                         <p class="text-white">COPYRIGHT © 2022 PaystubX,<br> ALL RIGHTS RESERVED.</p>
 
                         <div class="container">
-                            <a href="https://www.google.com/" target="_blank"><i class="fa fa-facebook   fbicon " aria-hidden="true"></i></a>
+                            <a href="https://www.google.com/" target="_blank"><i class="fa fa-facebook   fbicon "
+                                    aria-hidden="true"></i></a>
                             <a href="https://www.google.com/" target="_blank"><i class="fa fa-instagram ml-2 socialicon"
                                     aria-hidden="true"></i></a>
-                            <a href="https://www.google.com/" target="_blank"><i class="fa fa-twitter ml-2 socialicon" aria-hidden="true"></i></a>
-                            <a href="https://www.google.com/" target="_blank"><i class="fa fa-linkedin ml-2 socialicon" aria-hidden="true"></i></a>
-                            <a href="https://www.google.com/" target="_blank"><i class="fa fa-youtube ml-2 socialicon" aria-hidden="true"></i></a>
+                            <a href="https://www.google.com/" target="_blank"><i class="fa fa-twitter ml-2 socialicon"
+                                    aria-hidden="true"></i></a>
+                            <a href="https://www.google.com/" target="_blank"><i class="fa fa-linkedin ml-2 socialicon"
+                                    aria-hidden="true"></i></a>
+                            <a href="https://www.google.com/" target="_blank"><i class="fa fa-youtube ml-2 socialicon"
+                                    aria-hidden="true"></i></a>
                             <!--  <a href="{{url('/')}}"><i class="fa fa-tiktok text-white socialicon" aria-hidden="true"></i></a> -->
                         </div>
                     </div>
@@ -193,7 +198,7 @@
     </div>
 
     <script>
-    function openNav() {
+        function openNav() {
         document.getElementById("mySidenav").style.width = "250px";
     }
 

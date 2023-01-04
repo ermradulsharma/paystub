@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<div style="background-color: #f75656ed;">
+<div style="background-color: #f75656ed;" class="mt-2">
 
     <div class="container" style="max-width: 1580px;">
         <div class="row">
@@ -164,12 +164,3 @@
 
 @endsection
 
-
-<div class="container">
-    <a href="{{url('/')}}"><i class="fa fa-facebook   fbicon " aria-hidden="true"></i></a>
-    <a href="{{url('/')}}"><i class="fa fa-instagram  socialicon" aria-hidden="true"></i></a>
-    <a href="{{url('/')}}"><i class="fa fa-twitter  socialicon" aria-hidden="true"></i></a>
-    <a href="{{url('/')}}"><i class="fa fa-linkedin  socialicon" aria-hidden="true"></i></a>
-    <a href="{{url('/')}}"><i class="fa fa-youtube  socialicon" aria-hidden="true"></i></a>
-    <!--  <a href="{{url('/')}}"><i class="fa fa-tiktok text-white socialicon" aria-hidden="true"></i></a> -->
-</div>

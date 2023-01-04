@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<div class="paystub">
+<div class="paystub mt-2">
     <div class="container-XL" style="">
 
         <div class="row pb-5">
@@ -56,7 +56,7 @@
 <div class="container" style="max-width: 1750px;">
     <div class="row mt-5 ">
         <div class="col-lg-5">
-            <h1 class="WithPaystubX">
+            <h1 class="WithPaystubX mt-3">
                 With Paystub<span class="text-danger">X</span></h1>
             <h3 class="Show">
                 Show proof of income.

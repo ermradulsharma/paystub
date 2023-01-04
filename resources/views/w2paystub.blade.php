@@ -2,7 +2,7 @@
 @section('content')
 
 <div>
-    <div class="container-fluid p-4" style="background-color: #fb5e5efa; ">
+    <div class="container-fluid p-4 mt-2" style="background-color: #fb5e5efa; ">
 
         <div class="container" style="max-width:1450px;">
             <div class="text-left ">

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div>
-    <div class="container" style="max-width:1450px;">
+    <div class="container mt-2" style="max-width:1450px;">
         <h5>Choose Template</h5>
         <div class="row mb-3">
             <div class="col-md-12">
@@ -20,7 +20,7 @@
                                         <option value="opel">Opel</option>
                                         <option value="audi">Audi</option>
                                     </select>
-                                    <i class="fa fa-eye" style="font-size: 39px;margin-left: 6px;"></i>
+                                    <i onclick="myFunction(this)"  class="fa fa-eye" style="font-size: 39px;margin-left: 6px;"></i>
 
 
                                 </div>
@@ -34,7 +34,7 @@
                         </div>
 
                         <div class="col-md-5 mt-5 text-center">
-                            <h6 style="margin-left:-23px;font-weight: 900;">BASIC TEMPLATES</h6>
+                            <h6 style="margin-left:-23px;font-weight: 900;">ADVANCED TEMPLATES</h6>
                             <div class="mt-4">
                                 <i class="fa fa-angle-down down1"></i>
                                 <div class="input-group mmenu mb-3" style="margin: auto;">
@@ -45,7 +45,7 @@
                                         <option value="opel">Opel</option>
                                         <option value="audi">Audi</option>
                                     </select>
-                                    <i class="fa fa-eye" style="font-size: 39px;margin-left: 6px;"></i>
+                                    <i onclick="myFunction(this)"  class="fa fa-eye" style="font-size: 39px;margin-left: 6px;"></i>
 
 
                                 </div>
@@ -53,7 +53,7 @@
 
                             </div>
                             <div class=" mt-3  float-right">
-                                <button class="viewbtn">Click to see Template Landscape view.</button>
+                                <button class="viewbtn"><a href="{{url('template-view')}}">Click to see Template Landscape view.</a></button>
                             </div>
 
                         </div>
@@ -725,3 +725,10 @@
 </div>
 
 @endsection
+
+<script>
+    
+    function myFunction(x) {
+      x.classList.toggle("fa-eye-slash");
+    }
+    </script>

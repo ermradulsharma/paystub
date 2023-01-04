@@ -3,8 +3,8 @@
 <div>
 
 
-    @endsection
-    <div class="Container-fluid mb-0" style="Color:white; background-color: #010102!important;">
+
+    <div class="Container-fluid mb-0 mt-2" style="Color:white; background-color: #010102!important;">
         <div class="container">
             <div clas="row">
                 <div class="col-md-12">

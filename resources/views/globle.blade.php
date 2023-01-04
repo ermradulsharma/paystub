@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<div title="Globle-Header" style="background:#ff6261;">
+<div title="Globle-Header" style="background:#ff6261;" class="mt-2">
     <div class="container" style="max-width:1500px">
         <div class="row">
 
@@ -172,50 +172,68 @@
         </div>
     </div>
 
-    <div class="row pb-5">
-        <div class="col-2"></div>
+    <div class="row mb-3">
+        <div class="col-lg-2"></div>
+        <div class="col-md-8 my-5">
+            <div class=" box-usa">
 
-        <div class=" mt-2 col-8 box-usa">
+                <div class="d-flex justify-content-between mb-3">
+                    <div class="col-md-5 m-auto " style="padding: 0 35px;">
+                        <h6 style="margin-left:70px;font-weight: 900;">BASIC TEMPLATES</h6>
+                        <div class="mt-4">
+                            <i class="fa fa-angle-down down"></i>
+                            <div class="input-group mmenu mb-3">
+                                <select name="cars" id="cars" style="" class="form-control dropdown1"
+                                    style="border-right:none">
+                                    <option value="volvo">Reddish Magneta </option>
+                                    <option value="saab">Saab</option>
+                                    <option value="opel">Opel</option>
+                                    <option value="audi">Audi</option>
+                                </select>
+                                <i onclick="myFunction(this)"  class="fa fa-eye" style="font-size: 39px;margin-left: 6px;"></i>
 
-            <div class="row mb-2  p-5">
-                <div class="col-md-6 mt-2 text-center" style="border-right: 1px solid #00000024">
-                    <h6>BASIC TEMPLATES</h6>
-                    <div class="dropdown ">
-                        <form action="/action_page.php">
 
-                            <select name="cars" id="cars" style="border:none;" class="p-1 dropdown1">
-                                <option value="volvo">Reddish Magenta</option>
-                                <option value="saab">Saab</option>
-                                <option value="opel">Opel</option>
-
-                            </select>
-                            <i onclick="myFunction(this)" class="fa fa-eye"></i>
-                        </form>
-                    </div>
-                </div>
-
-                <div class="col-md-6 mt-2 text-center">
-                    <h6>ADVANCED TEMPLATES</h6>
-                    <div class="dropdown ">
-                        <form action="/action_page.php">
-
-                            <select name="cars" id="cars" style="border:none;" class="p-1 dropdown1">
-                                <option value="volvo">PT Pink</option>
-                                <option value="saab">Saab</option>
-                                <option value="opel">Opel</option>
-
-                            </select>
-                            <i onclick="myFunction(this)" class="fa fa-eye"></i>
-                        </form>
+                            </div>
+                        </div>
                     </div>
 
+                    <div class="col-md-1 text-center">
+                        <div style="height:240px;-webkit-box-shadow: 9px 0 4px -4px #999, 0px 0 4px -4px #999;">
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-5 mt-5 text-center">
+                        <h6 style="margin-left:-23px;font-weight: 900;">ADVANCED TEMPLATES</h6>
+                        <div class="mt-4">
+                            <i class="fa fa-angle-down down1"></i>
+                            <div class="input-group mmenu mb-3" style="margin: auto;">
+                                <select name="cars" id="cars" style="" class="form-control dropdown1"
+                                    style="border-right:none">
+                                    <option value="volvo">Reddish Magneta </option>
+                                    <option value="saab">Saab</option>
+                                    <option value="opel">Opel</option>
+                                    <option value="audi">Audi</option>
+                                </select>
+                                <i onclick="myFunction(this)"  class="fa fa-eye" style="font-size: 39px;margin-left: 6px;"></i>
+
+
+                            </div>
+
+
+                        </div>
+                      
+
+                    </div>
                 </div>
 
             </div>
 
-        </div>
 
-        <div class="col-2"></div>
+
+        </div>
+        <div class="col-lg-2"></div>
+
     </div>
 
 </div>
