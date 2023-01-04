@@ -269,14 +269,14 @@
                             <label for="fname" class="lable">MARITAL STATUS<spam style="color:red;">
                                     <spam style="color:red;">*<spam>
                                             <spam></label><br>
-                            <input type="text" id="fname" name="fname" placeholder="single" class="w-100 p-2 "
+                            <input type="text" id="fname" name="fname" placeholder="Please Enter" class="w-100 p-2 "
                                 style="font-size:14px;"><br>
                         </div>
                         <div class="col-md-3 mt-4">
                             <label for="fname" class="lable">HOW DO YOU GET PAID<spam style="color:red;">
                                     <spam style="color:red;">*<spam>
                                             <spam></label><br>
-                            <input type="text" id="fname" name="fname" placeholder="Bi-Weekly" class="w-100 p-2"
+                            <input type="text" id="fname" name="fname" placeholder="Please Enter" class="w-100 p-2"
                                 style="font-size:14px;"><br>
                         </div>
 
