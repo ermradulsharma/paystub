@@ -3,7 +3,7 @@
 
 <div class="row" style="background:#ae643f">
 
-    <div class="container">
+    <div class="container mb-5">
 
         <div class="mt-4 text-center" style="font-size:34px; font-weight: 500; color:white;letter-spacing: 1px;">
             If template format is Landscape this is how it will look.. If the template is Portrait make it portrait.

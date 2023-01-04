@@ -189,7 +189,7 @@
                                 <option value="opel">Opel</option>
 
                             </select>
-                            <i class="fa fa-eye"></i>
+                            <i onclick="myFunction(this)" class="fa fa-eye"></i>
                         </form>
                     </div>
                 </div>
@@ -205,7 +205,7 @@
                                 <option value="opel">Opel</option>
 
                             </select>
-                            <i class="fa fa-eye"></i>
+                            <i onclick="myFunction(this)" class="fa fa-eye"></i>
                         </form>
                     </div>
 
@@ -340,3 +340,9 @@
     </div>
 </div>
 @endsection
+
+<script>
+    function myFunction(x) {
+      x.classList.toggle("fa-eye-slash");
+    }
+    </script>

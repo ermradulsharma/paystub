@@ -99,7 +99,7 @@
                                         <option value="opel">Opel</option>
                                         <option value="audi">Audi</option>
                                     </select>
-                                    <i class="fa fa-eye eyes" style="font-size: 39px;"></i>
+                                    <i onclick="myFunction(this)"  class="fa fa-eye eyes" style="font-size: 39px;"></i>
 
 
                                 </div>
@@ -124,7 +124,7 @@
                                         <option value="opel">Opel</option>
                                         <option value="audi">Audi</option>
                                     </select>
-                                    <i class="fa fa-eye eyes" style="font-size: 39px;margin-left: 6px;"></i>
+                                    <i onclick="myFunction(this)"  class="fa fa-eye eyes" style="font-size: 39px;margin-left: 6px;"></i>
 
 
                                 </div>
@@ -854,3 +854,10 @@
 
 
 @endsection
+
+<script>
+    
+function myFunction(x) {
+  x.classList.toggle("fa-eye-slash");
+}
+</script>
