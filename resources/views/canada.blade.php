@@ -5,7 +5,7 @@
     <div class="container" style="max-width: 1580px;">
         <div class="row">
             <div class="col-lg-4 m-auto " style="color:white;">
-                <div style="font-size:38px;font-weight:300;    display: flex;" class="text-center">Instantly
+                <div style="font-size:38px;font-weight:300;     letter-spacing: 1.5px;  display: flex;" class="text-center">Instantly
                     Generate</br> your Professional<br> Canadian Pay </br> Stubs
                 </div>
 

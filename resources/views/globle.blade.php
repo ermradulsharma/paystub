@@ -6,7 +6,7 @@
 
             <div class="col-lg-5  text-center" style="padding: 3px 23px 0px 0px;">
 
-                <div class="text-white mt-5" style="font-size: 42px;letter-spacing: 1.2px;font-weight: 300;">
+                <div class="text-white mt-5" style="font-size: 42px;font-weight: 300;font-family: 'Outfit', sans-serif;">
                     With PaystubX you can create</br> Paystub for any country
                 </div>
 
@@ -179,7 +179,7 @@
 
                 <div class="d-flex justify-content-between mb-3">
                     <div class="col-md-5 m-auto " style="padding: 0 35px;">
-                        <h6 style="margin-left:70px;font-weight: 900;">BASIC TEMPLATES</h6>
+                        <h6  class="basic">BASIC TEMPLATES</h6>
                         <div class="mt-4">
                             <i class="fa fa-angle-down down"></i>
                             <div class="input-group mmenu mb-3">
@@ -190,7 +190,7 @@
                                     <option value="opel">Opel</option>
                                     <option value="audi">Audi</option>
                                 </select>
-                                <i onclick="myFunction(this)"  class="fa fa-eye" style="font-size: 39px;margin-left: 6px;"></i>
+                                <i onclick="myFunction(this)"  class="fa fa-eye  eyes1" ></i>
 
 
                             </div>
@@ -204,7 +204,7 @@
                         </div>
 
                     <div class="col-md-5 mt-5 text-center">
-                        <h6 style="margin-left:-23px;font-weight: 900;">ADVANCED TEMPLATES</h6>
+                        <h6  class="basic1">ADVANCED TEMPLATES</h6>
                         <div class="mt-4">
                             <i class="fa fa-angle-down down1"></i>
                             <div class="input-group mmenu mb-3" style="margin: auto;">
@@ -215,7 +215,7 @@
                                     <option value="opel">Opel</option>
                                     <option value="audi">Audi</option>
                                 </select>
-                                <i onclick="myFunction(this)"  class="fa fa-eye" style="font-size: 39px;margin-left: 6px;"></i>
+                                <i onclick="myFunction(this)"  class="fa fa-eye eyes1" ></i>
 
 
                             </div>

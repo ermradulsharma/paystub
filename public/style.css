@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;800&family=Public+Sans:wght@300&display=swap');
+
 .footerSection{
     background-color: #252e58;
     background-image: linear-gradient(92deg, #252e58 7%, #625b9e 38%, #252e58 69%, #766fe5 98%);
@@ -86,9 +88,9 @@
 .instant{
    
     color: white;
-    /* font-family: sans-serif; */
+    font-family: Futura,Trebuchet MS,Arial,sans-serif;
     font-weight: 400;
-    font-size: 60px;
+    font-size: 58px;
 }
 .QUICK{
     
@@ -157,15 +159,23 @@ background-image: linear-gradient(135deg, #6d8507 0%, #faaa63 50%, #c9c6ff 100%)
 }
 
 .WithPaystubX{
-    font-size: 59px;
+    
+    font-size: 52px;
     font-weight: 500;
+    font-family: Futura,Trebuchet MS,Arial,sans-serif;
+
 
 } 
 .Show{
-    font-size: 52px; 
+    
+    font-size: 50px;
+    font-weight: 300;
+    font-family: Futura,Trebuchet MS,Arial,sans-serif;
+
  }
 .Createpay{
     font-size: 33px;
+    font-family: Futura,Trebuchet MS,Arial,sans-serif;
 }
 .proof{
     font-size: 20px;

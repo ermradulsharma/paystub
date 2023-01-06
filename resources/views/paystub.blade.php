@@ -158,13 +158,13 @@
 
 <div class="mt-5 calculations">
     <div class="container text-justify text-center pb-5">
-        <h2 style="font-size:30px; font-family:sans-serif" class="text-white pt-5">Generate paystubs with accurate tax
+        <h2 style="font-size:30px; font-family: Futura,Trebuchet MS,Arial,sans-serif;" class="text-white pt-5">Generate paystubs with accurate tax
             calculations, W-2, 1099S Etc in Seconds</h2>
 
         <div class="row mt-5">
 
             <div class="col-md-4 text-center">
-                <h2 style="font-size:40px; font-family:sans-serif" class="text-white">Add your Data</h2>
+                <h2 style="font-size:40px;font-family: Futura,Trebuchet MS,Arial,sans-serif;" class="text-white">Add your Data</h2>
                 <p style="font-size:17px;font-weight: 200;" class="text-white">Our paystub generator accurately</br>
                     calculates your Federal and State</br> taxes, including Social security </br>and Medicare taxes so you don't
                 </p>
@@ -175,7 +175,7 @@
             </div>
 
             <div class="col-md-4 text-center">
-                <h2 style="font-size:40px; font-family:sans-serif" class="text-white">Download & Email your Paystub</h2>
+                <h2 style="font-size:40px;    font-family: Futura,Trebuchet MS,Arial,sans-serif;" class="text-white">Download & Email your Paystub</h2>
                 <p style="font-size:17px;font-weight: 200;" class="text-white">You will get to generate unlimited</br>
                     payslip, paycheck or paystub </br>according to the plan you select.
                 </p>
@@ -187,7 +187,7 @@
             </div>
 
             <div class="col-md-4 text-center">
-                <h2 style="font-size:40px; font-family:sans-serif" class="text-white">Preview Data</h2>
+                <h2 style="font-size:40px;    font-family: Futura,Trebuchet MS,Arial,sans-serif;" class="text-white">Preview Data</h2>
                 <p style="font-size:17px;font-weight: 200;" class="text-white">Generate pay stubs with accurate</br>
                     state income taxes, based on </br>state W-4, and other applicable</br> local taxes. </p>
 
@@ -202,7 +202,7 @@
 
 <div>
     <div class="container text-justify text-center pb-5">
-        <h1 style="font-size:40px; font-family:sans-serif" class="pt-5">Why do Small Businesses Love Paystub<span
+        <h1 style="font-size:38px;     font-family: Futura,Trebuchet MS,Arial,sans-serif;" class="pt-5">Why do Small Businesses Love Paystub<span
                 class="text-danger">X</span>?</h1>
 
         <div class="row mt-5">
@@ -214,7 +214,7 @@
                         <div class="Accurate container p-2 ">
                             <div class="card card-bordered border-dark pb-5">
                                 <div class="card-img-block">
-                                    <div class="info-box mt-3" style="font-size:25px; font-family:sans-serif">
+                                    <div class="info-box mt-3" style="font-size:22px;     font-family: Futura,Trebuchet MS,Arial,sans-serif;">
                                         <b>Accurate Tax Calculations </b>
                                     </div>
                                 </div>
@@ -243,7 +243,7 @@
                         <div class="Accurate container p-2 ">
                             <div class="card card-bordered border-dark pb-1">
                                 <div class="card-img-block">
-                                    <div class="info-box mt-3" style="font-size:25px; font-family:sans-serif">
+                                    <div class="info-box mt-3" style="font-size:22px;  font-family: Futura,Trebuchet MS,Arial,sans-serif;">
                                         <b> Form W-2</b>
                                     </div>
                                 </div>
@@ -269,7 +269,7 @@
                         <div class="Accurate container p-2 ">
                             <div class="card card-bordered border-dark  pb-5">
                                 <div class="card-img-block ">
-                                    <div class="info-box mt-3" style="font-size:25px; font-family:sans-serif">
+                                    <div class="info-box mt-3" style="font-size:22px;  font-family: Futura,Trebuchet MS,Arial,sans-serif;">
                                         <b>1099-MISC</b>
                                     </div>
                                 </div>
@@ -298,7 +298,7 @@
 
 <div class="vedios">
     <div class="container justify-content-center text-center pb-5">
-        <div style="font-size:35px; font-family:sans-serif;" class="text-white pt-5"><b>Useful Videos for FAQ</b></div>
+        <div style="font-size:32px;  font-family: Futura,Trebuchet MS,Arial,sans-serif;;" class="text-white pt-5"><b>Useful Videos for FAQ</b></div>
 
         <div class="row mt-5">
 
@@ -350,8 +350,8 @@
             <div class="col-md-1"></div>
 
             <div class="col-md-6 text-left mb-5">
-                <div class="mt-5 " style="font-size: 28px;">
-                    <b> Ready to Explore our Online Paystub Generator?</b>
+                <div class="mt-5 " style="font-size: 32px; font-family: Futura,Trebuchet MS,Arial,sans-serif;">
+                     Ready to Explore our Online Paystub Generator?
                 </div>
                 <div>
                     <ul>
@@ -377,7 +377,7 @@
 
             <div class="col-md-5 text-left mb-5 ">
                 <div class="mt-5">
-                    <b style="font-size: 28px; font-weight: 500;"> Generate Paystubs Using our<span class="text-danger"> Android or iOS
+                    <b style="font-size: 24px; font-weight: 500; font-family: Futura,Trebuchet MS,Arial,sans-serif;"> Generate Paystubs Using our<span class="text-danger"> Android or iOS
                             App</span></b>
                     <p style="font-size: 18px; font-weight: 300;line-height: 30.5px;" class="mt-1 ">Generate paystubs instantly by using our
                         paystub
