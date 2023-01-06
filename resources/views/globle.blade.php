@@ -4,36 +4,36 @@
     <div class="container" style="max-width:1500px">
         <div class="row">
 
-            <div class="col-lg-5  text-center m-auto ">
+            <div class="col-lg-5  text-center" style="padding: 3px 23px 0px 0px;">
 
-                <div class="text-white" style="font-size: 42px;font-weight: 300;"><br>
-                    With PaystubX you can create</br> Paystub for any country</b>
+                <div class="text-white mt-5" style="font-size: 42px;letter-spacing: 1.2px;font-weight: 300;">
+                    With PaystubX you can create</br> Paystub for any country
                 </div>
 
                 <div class="mt-5 text-left">
-                    <div class="text-white Payslips" style="">
-                        There’s no need for complex and costly desktop software. Save time and money with
-                        Paystubx free online pay stub maker that creates pay stubs to include all companies,
-                        employment, income, and deduction information. No software needed for creating
+                    <div class="text-white PayslipsGlo ml-4" >
+                        There’s no need for complex and costly desktop software. Save</br> time and money with
+                        Paystubx free online pay stub maker that </br>creates pay stubs to include all companies,
+                        employment, income,</br> and deduction information. No software needed for creating</br>
                         Global Payslip, Paystub or Payroll.
                     </div>
                 </div>
 
-                <div class="mt-5 pt-3 pl-5 globlebtn">
+                <div class="mt-5 pt-3 pl-4 globlebtn">
                     <a class="btn btn-lg  mt-2 p-2 btn-danger Generate " href="{{url('usa')}}">Generate
                         Paystub
                         Now</a>
                 </div>
-                <div class="mt-5 py-5 pr-5 mr-5">
-                    <a href="https://www.google.com/" target="_blank"><img class="storbtn "
+                <div class="mt-4 pt-5 pr-3 mr-5 ml-3 d-flex storehead">
+                    <a href="https://www.google.com/" target="_blank"><img class="storbtn mt-5"
                             src="images/Google_Play_Store_badge_EN.webp"></a>
-                    <a href="https://www.google.com/" target="_blank"><img class="storbtn ml-5"
+                    <a href="https://www.google.com/" target="_blank"><img class="storbtn mt-5 ml-5"
                             src="images/Download_on_the_App_Store_Badge.webp"></a>
                 </div>
             </div>
 
-            <div class="col-lg-7 " style="background-position-x:left; right: 224px; top: -37px;">
-                <img class="mt-5 pt-3 globleImg" src="images/globle/qewqq22.png">
+            <div class="col-lg-6 col-md-5   " style="background-position-x:left; right: -120px; top:2px;">
+                <img class=" globleImg" src="images/globle/qewqq22.png">
             </div>
 
         </div>

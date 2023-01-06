@@ -432,7 +432,7 @@ input:hover{
 
 }
 .mainhead{
-    padding: 0px 316px 3px 4px
+    padding: 0px 225px 2px 4px;
 }
 
 
@@ -646,7 +646,8 @@ h5{
 font-size: 10px;
 }
 .globleImg {
-    max-width: 811px;
+    max-width: 470px;
+    height:470px;
 }
 .storbtn {
     width: 125px;
@@ -767,6 +768,7 @@ font-size: 10px;
     }
     .globleImg {
         max-width: 961px;
+        margin-top: 30px;
     }
     .globlebtn1{
         display: flex;
@@ -839,8 +841,11 @@ font-size: 10px;
 
 }
 .storbtn {
-    width: 78px;
-    height: 29px;
+    width: 106px;
+    height: 39px;
+}
+.storehead{
+    padding: 0px 0px 0px 260px;
 }
    }
 
@@ -853,7 +858,11 @@ font-size: 10px;
 
   @media screen and (max-width: 425px) {
     .globleImg {
-        display: none;
+        max-width: 300px;
+        height: 300px;
+        position: relative;
+        top: 10px;
+        left: -57px;
     }
 .globe-ul{
     font-size: 16px!important;

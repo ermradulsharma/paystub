@@ -4,16 +4,16 @@
 
     <div class="container" style="max-width: 1580px;">
         <div class="row">
-            <div class="col-lg-4 m-auto pt-3" style="color:white;">
+            <div class="col-lg-4 m-auto " style="color:white;">
                 <div style="font-size:38px;font-weight:300;    display: flex;" class="text-center">Instantly
                     Generate</br> your Professional<br> Canadian Pay </br> Stubs
                 </div>
 
-                <p style="font-weight: 400;font-size:21px;  ">
+                <p style="font-weight: 400;font-size:21px;" class="mb-0">
                     Generate Your Canadian Pay Stub in Seconds with Paystubx. The #1 Leading in the
                     game.
                     game.</p>
-                <p class="mb-5" style="font-size:larger;font-weight: 200;line-height: 2em;">Online secure
+                <p class="mb-5 " style="font-size:larger;font-weight: 200;line-height: 2em;">Online secure
                     web-based pay stub generator,</br> straightforward to use,
                     instant pay stub delivery, and</br> free pay stub preview. Simple as ABC.</p>
 
@@ -42,7 +42,7 @@
 
 </div>
 
-<div class="pt-5" style="background-color: #f8f9f9;">
+<div class="pt-5" style="background-color: #E9E6E6;">
     <div class="container" style="max-width: 1580px;">
         <div class="row">
             <div class="col-md-6 col-sm-6 m-auto justifuy-content-center">
@@ -80,12 +80,12 @@
             </div>
 
             <div class="row">
-                <div class="col-lg-6 col-sm-4 m-auto justifuy-content-center">
-                    <div style=" font-weight: 300;font-size:42px;letter-spacing: 2px;" class="mb-4">Why should you
+                <div class="col-lg-6 col-sm-4 m-auto pl-0">
+                    <div style=" font-weight: 300;font-size:42px;letter-spacing: 1.5px;" class="mb-4">Why should you
                         choose Paystub<span class="text-danger">x</span></br> to generate pay stubs online?
                     </div>
 
-                    <h2 style=" font-size: 40px; font-family: avenir-lt-w01_35-light1475496,sans-serif;">Accurate
+                    <h2 style=" font-size: 40px; font-family: avenir-lt-w01_35-light1475496,sans-serif;" class="ml-3">Accurate
                         Payroll Calculations that include </h2>
                     <ul style="font-weight: 200;font-size: 20px; line-height: 41px;color: #000000;" class="mt-2">
                         <li>Federal and State income tax withholdings</li>

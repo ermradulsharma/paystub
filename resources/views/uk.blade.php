@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
- 
+
 
 <div title="Uk-header" style="background: #ff6261; " class="mt-2">
 
@@ -9,10 +9,10 @@
     <div class="container-fluid">
         <div class="container" style="max-width: 1613px">
             <div class="row">
-                <div class="col-lg-6  col-md-6   mt-5 pt-3 m-auto ">
+                <div class="col-lg-6  col-md-6 mt-3">
                     <div class="text-white"
-                        style="font-family:futura-lt-w01-light,futura-lt-w05-light,sans-serif; font-size:31px; line-height:normal; font-weight: 100;">
-                        <p class="mainhead"style="text-align:center;"> Generate 100% Legal UK <br>Payslips
+                        style="font-family:futura-lt-w01-light,futura-lt-w05-light,sans-serif; font-size:39px; line-height:60.5px; font-weight: 100;">
+                        <p class="mainhead" style="text-align:center;"> Generate 100% Legal UK <br>Payslips
                             Instantly</p>
                     </div>
 
@@ -44,7 +44,7 @@
 
                 <div class="col-lg-6 col-md-6 ukimg1">
                     <div class="">
-                        <img class=" mt-2 pt-3 imguk" src="images/uk/payslip_uk.png ">
+                        <img class=" my-2 pt-1 imguk" src="images/uk/payslip_uk.png ">
                     </div>
 
                 </div>
@@ -56,20 +56,18 @@
 
 
 <div class="row">
-    <div class="col-lg-6  justify-content-center create-container" style="background:#e9e6e6;">
+    <div class="col-lg-6  " style="background:#e9e6e6;">
 
-        <div class=" container  mt-5  " style="justify-content: center;
-    display: grid; padding: 50px;">
-            <h3 style="font-family:'sans-serif" class="mb-0">
-                <p class="ukp">Create Payslips For Yourself</p>
-            </h3>
+        <div class=" container  mt-3  " style="display: inline-table; padding: 0px 0px 0px 240px;">
 
-            <h3 style="font-family:'sans-serif;">
+            <div class="ukp">Create Payslips For Yourself</div>
 
-                Create Payslips For Your Employees</h3>
 
-            <div>
+            <div style="font-size: 32px;font-weight: 300;">
+                Create Payslips For Your Employees</div>
 
+
+            <ul class="mt-4">
                 <li class="mt-1 ukli">Help employees qualify for loans, housing & mor</li>
 
 
@@ -83,14 +81,13 @@
 
 
                 <li class="mt-1  ukli">Manage all payroll documents in one plac</li>
+            </ul>
 
-            </div>
 
-            <h3 style="font-family:'sans-serif">
-                <p class="ukp">Show proof of income.</p>
-            </h3>
+            <div style="font-size:44px;">Show proof of income.</div>
 
-            <div>
+
+            <ul>
 
 
                 <li class=" mt-1 ukli">Rent an apartmen </li>
@@ -107,21 +104,20 @@
 
                 <li class=" mt-1 ukli">Apply for medical insuranc </li>
 
-            </div>
+            </ul>
 
-            <h3 class="mt-2" style="font-family:'sans-serif">
-                <p class="ukp">Online payroll No <br> software require</p>
-            </h3>
 
-            <p class="m-auto create-p ukli" style=";">Most payroll systems
+            <div class="ml-3" style="font-size: 44px;">Online payroll No <br> software require</div>
+
+
+            <div class="m-auto create-p " style="font-size: 15px;font-weight: 200;">Most payroll systems
                 were
                 developed in the last century to ,<br> run on a PC. Our software works online
                 (aka cloud or SaaS)<br> and is accessed with any web browser on any device e.g.<br> Mac, PC,
                 Tablet or
-                Mobile. That means no software to<br> install, no updates, backup or archive – we take care of
-                it<br>
-                all for you.
-            </p>
+                Mobile. That means no software to install,<br> no updates, backup or archive – we take care of
+                it all for you.<br>Multi-user enables any number of administrators or employees.</br>
+            </div>
         </div>
 
 
@@ -151,28 +147,24 @@
 </div>
 
 
-    <div class="row" style="background:#2c2b69;">
-        <div class="col-12 my-5 text-justify text-center text-white">
-            <div class=" text-justify text-center text-white">
-                <h1>Generate 100% Legal UK Payslips</h1>
-                <div class="my-3 d-flex">
-                    <a class="Generate btn-lg btn" href="{{url('uk-paystub') }}">Generate Paystub
-                        Now</a>
+<div class="row" style="background:#2c2b69;">
+    <div class="col-12 my-5 text-justify text-center text-white">
+        <div class=" text-justify text-center text-white">
+            <h1>Generate 100% Legal UK Payslips</h1>
+            <div class="my-3 d-flex">
+                <a class="Generate btn-lg btn" href="{{url('uk-paystub') }}">Generate Paystub
+                    Now</a>
 
 
-                </div>
-                <h2>Simple as ABC</h2>
             </div>
-
+            <h2>Simple as ABC</h2>
         </div>
-</div>
 
-        <div class="container" style="max-width: 1550px;">
-<div class="row">
-    <div class="col-12">
-        <img class="w-100 " src="images/uk/paystubx_uk_picture.png">
     </div>
 </div>
+
+<div class="container-xxl" style="background: #f7f9ff;" >
+   <img class="w-100 " src="images/uk/paystubx_uk_picture.png">   
 </div>
 
 <div class="container">
@@ -194,8 +186,9 @@
             </p>
 
 
-            <h1>Personal information</h1>
-            <p class="ukp1">Your payroll number: some companies use payroll numbers to help them identify employees on their
+            <h1 style="font-size: 46px;">Personal information</h1>
+            <p class="ukp1">Your payroll number: some companies use payroll numbers to help them identify employees on
+                their
                 payroll.<br>
 
                 Your tax code: This code normally starts with a number and ends with a letter. It tells your
@@ -206,8 +199,9 @@
                 the
                 correct amount. It never changes, so it should be exactly the same on all your payslips.</p>
 
-            <h1>Earnings</h1>
-            <p class="ukp1">Your payslip must show the total amount you’ve earned. Sometimes, your employer breaks this down
+            <h1 style="font-size: 46px;">Earnings</h1>
+            <p class="ukp1">Your payslip must show the total amount you’ve earned. Sometimes, your employer breaks this
+                down
                 into
                 categories, such as:
 
@@ -239,38 +233,38 @@
 
 
 
-                <h1>Deductions</h1>
+            <h1 style="font-size: 46px;">Deductions</h1>
             <p class="ukp1">A deduction is money taken off your earnings before you’re paid.<br>
 
-Income tax: this may also appear as ‘PAYE tax’ on your payslip. How much income tax you should
-pay
-depends on your tax code.<br>
+                Income tax: this may also appear as ‘PAYE tax’ on your payslip. How much income tax you should
+                pay
+                depends on your tax code.<br>
 
-Pension contributions: some employees give up part of their salary to be paid into a workplace
-pension.
-Pension contributions from your employer may also be shown.<br>
+                Pension contributions: some employees give up part of their salary to be paid into a workplace
+                pension.
+                Pension contributions from your employer may also be shown.<br>
 
-Student loan payments: if you’re repaying a student loan, your employer will take the money
-directly
-out
-of your salary to give to the Student Loans Company.<br>
+                Student loan payments: if you’re repaying a student loan, your employer will take the money
+                directly
+                out
+                of your salary to give to the Student Loans Company.<br>
 
-Court orders and child maintenance: your employer may be asked to take money directly from your
-pay
-packet for things like unpaid fines, debt repayments and child maintenance.<br>
+                Court orders and child maintenance: your employer may be asked to take money directly from your
+                pay
+                packet for things like unpaid fines, debt repayments and child maintenance.<br>
 
-Repayments for workplace benefits: some employers offer loans for things like rail season
-tickets.
-They’ll usually take the repayments directly from your earnings.<br>
+                Repayments for workplace benefits: some employers offer loans for things like rail season
+                tickets.
+                They’ll usually take the repayments directly from your earnings.<br>
 
-Payroll Giving: this is a scheme that allows employees to donate to charity directly from their
-pay.</p>
+                Payroll Giving: this is a scheme that allows employees to donate to charity directly from their
+                pay.</p>
 
 
-           
+
             <p class="ukp1"></p>
             </p>
-            <h1>Other information</h1>
+            <h1 style="font-size: 46px;">Other information</h1>
             <p class="ukp1">Pay date: this is the date the money should be paid into your bank account.<br>
 
                 Pay method: this is how you’ll be paid, for example by BACS (i.e. directly into your bank
@@ -286,7 +280,7 @@ pay.</p>
                 for
                 checking if you’ve been taxed correctly.</p>
 
-            <div class="my-3">
+            <div class="my-4 mb-5">
                 <a class="Generate btn-lg btn" href="{{url('uk-paystub') }}">Generate Paystub
                     Now</a>
             </div>

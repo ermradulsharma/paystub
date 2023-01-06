@@ -62,7 +62,7 @@
                 Show proof of income.
             </h3>
 
-            <ul style="font-weight: 200; font-size: 21px; line-height:1.5em;">
+            <ul style="font-weight: 200; font-size: 21px; line-height:1.5em;" class="mt-4">
                 <li class=" mt-2 proof"> Rent an apartment ✅</li>
 
 
@@ -79,7 +79,7 @@
 
             </ul>
 
-            <p style="font-family:sans-serif; font-size:25px;">Generate 100% Legal Pay Stubs in seconds.</p>
+            <p style="font-weight: 200; font-size:25px;" class="mt-3">Generate 100% Legal Pay Stubs in seconds.</p>
 
 
 
@@ -92,7 +92,7 @@
             <h3 class="Createpay">
                 Create pay stubs for your employees.
             </h3>
-            <ul style="font-weight: 200; font-size: 21px; line-height:1.5em;">
+            <ul style="font-weight: 200; font-size: 21px; line-height:1.5em;" class="mt-4">
 
 
                 <li class="mt-2 proof">Help employees qualify for loans, housing & more ✅</li>
@@ -143,7 +143,7 @@
 
         <div class="col-lg-9" style="position: relative;top: -136px;">
             <img class="w-75" src="images/paystubx_images.png"  class="payimg2">
-            <p class="OnPaystub ml-2">
+            <p class="OnPaystub ml-2 ">
              On Paystub X Join thousands of satisfied independent </br> contractors and small business owners and get the
             </br> highest quality pay stubs, W2s and 1099s — right to </br> your inbox! We make it easy. Guaranteed.
             .</p>
@@ -165,8 +165,8 @@
 
             <div class="col-md-4 text-center">
                 <h2 style="font-size:40px; font-family:sans-serif" class="text-white">Add your Data</h2>
-                <p style="font-size:18px; font-family:sans-serif" class="text-white">Our paystub generator accurately
-                    calculates your Federal and State taxes, including Social security and Medicare taxes so you don't
+                <p style="font-size:17px;font-weight: 200;" class="text-white">Our paystub generator accurately</br>
+                    calculates your Federal and State</br> taxes, including Social security </br>and Medicare taxes so you don't
                 </p>
                 <img src="images/1.webp"
                     style=" width: 94px; height: 94px; object-fit: cover; object-position: 50% 50%;">
@@ -176,8 +176,8 @@
 
             <div class="col-md-4 text-center">
                 <h2 style="font-size:40px; font-family:sans-serif" class="text-white">Download & Email your Paystub</h2>
-                <p style="font-size:18px; font-family:sans-serif" class="text-white">You will get to generate unlimited
-                    payslip, paycheck or paystub according to the plan you select.
+                <p style="font-size:17px;font-weight: 200;" class="text-white">You will get to generate unlimited</br>
+                    payslip, paycheck or paystub </br>according to the plan you select.
                 </p>
 
                 <img src="images/2.webp"
@@ -188,8 +188,8 @@
 
             <div class="col-md-4 text-center">
                 <h2 style="font-size:40px; font-family:sans-serif" class="text-white">Preview Data</h2>
-                <p style="font-size:18px; font-family:sans-serif" class="text-white">Generate pay stubs with accurate
-                    state income taxes, based on state W-4, and other applicable local taxes. </p>
+                <p style="font-size:17px;font-weight: 200;" class="text-white">Generate pay stubs with accurate</br>
+                    state income taxes, based on </br>state W-4, and other applicable</br> local taxes. </p>
 
                 <img src="images/3.webp"
                     style=" width: 94px; height: 94px; object-fit: cover; object-position: 50% 50%;">
@@ -375,12 +375,11 @@
                 </div>
             </div>
 
-            <div class="col-md-1"></div>
-            <div class="col-md-4 text-left mb-5 ">
+            <div class="col-md-5 text-left mb-5 ">
                 <div class="mt-5">
-                    <b style="font-size: 24px;"> Generate Paystubs Using our<span class="text-danger"> Android or iOS
+                    <b style="font-size: 28px; font-weight: 500;"> Generate Paystubs Using our<span class="text-danger"> Android or iOS
                             App</span></b>
-                    <p style="font-size: 18px; font-weight: 200;" class="mt-3 ">Generate paystubs instantly by using our
+                    <p style="font-size: 18px; font-weight: 300;line-height: 30.5px;" class="mt-1 ">Generate paystubs instantly by using our
                         paystub
                         generator app.</br>
                         It's simple, easy, and accurate.</p>
@@ -393,6 +392,8 @@
                             src="images/Download_on_the_App_Store_Badge.webp"></a>
                 </div>
             </div>
+           
+
 
         </div>
     </div>
