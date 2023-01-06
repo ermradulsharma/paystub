@@ -190,12 +190,13 @@ object-fit: fill;
     object-fit: fill;
 }  
 .OnPaystub {
-    font-size: 18px;
+    font-size: 20px;
     color: #0e0e0e;
     position: absolute;
-    bottom: -159px;
-    left: 260px;
+    bottom: -156px;
+    left: 272px;
     font-weight: 200;
+    line-height: 35.5px;
 }
 .calculations{
     background: #42419e;
