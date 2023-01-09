@@ -2,6 +2,7 @@
 
 
 use Illuminate\Support\Facades\Route;
+use Symfony\Component\Routing\Router;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,4 +58,34 @@ Route::get('contact', function () {
 Route::get('template-view', function () {
     return view('template');
 });
+
+
+Route::name('admin')->prefix('backend')->group(function() {
+
+
+    Route::get('/', function () {
+        return view('Admin/login');
+    });
+    Route::get('welcome', function () {
+        return view('Admin/layouts/default');
+    });
+
+   Route::get('dashboard', function () {
+        return view('Admin/dashboard');
+    });
+    Route::get('template', function () {
+        return view('Admin/template');
+    });
+    Route::get('color', function () {
+        return view('Admin/color-codes');
+    });
+
+});
+
+
+
+
+
+
+
 
