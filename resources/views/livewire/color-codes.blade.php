@@ -20,8 +20,11 @@
 
             <div class="card">
                 <div class="card-body">
+                    
+                    <div style="float:right;">
+                        <a class="btn btn-block btn-primary my-3 " wire:click="addColor">{{$page_title}}</a>
+                    </div>
 
-                    <a class="btn btn-block btn-primary my-3 " wire:click="addColor">{{$page_title}}</a>
 
                     <!--Table -->
                     <table class="table table-bordered">
@@ -42,8 +45,11 @@
                                 <td>{{$key+1}}</td>
                                 <td>{{$color->name}}</td>
                                 <td>{{$color->code}}</td>
-                                <td><button type="button" class="btn btn-primary" wire:click="editColor({{$color->id}})">Edit</button>
-                                    <button type="button" class="btn btn-danger" wire:click="deleteColor({{$color->id}})">Delete</button></td>
+                                <td><button type="button" class="btn btn-primary"
+                                        wire:click="editColor({{$color->id}})">Edit</button>
+                                    <button type="button" class="btn btn-danger"
+                                        wire:click="deleteColor({{$color->id}})">Delete</button>
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>
@@ -80,7 +86,8 @@
                                     </div>
                                     <div class="text-center">
                                         <button type="submit" class="btn btn-primary">Submit</button>
-                                        <button type="reset" wire:click="resetForm" class="btn btn-secondary">Reset</button>
+                                        <button type="reset" wire:click="resetForm"
+                                            class="btn btn-secondary">Reset</button>
                                     </div>
                                 </form><!-- End Horizontal Form -->
 
