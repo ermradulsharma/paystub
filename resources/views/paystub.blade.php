@@ -142,7 +142,7 @@
         </div>
 
         <div class="col-lg-9" style="position: relative;top: -136px;">
-            <img class="w-75" src="images/paystubx_images.png"  class="payimg2">
+            <img class="payimg2" src="images/paystubx_images.png"  class="">
             <p class="OnPaystub ml-2 ">
              On Paystub X Join thousands of satisfied independent </br> contractors and small business owners and get the
             </br> highest quality pay stubs, W2s and 1099s — right to </br> your inbox! We make it easy. Guaranteed.
@@ -165,7 +165,7 @@
 
             <div class="col-md-4 text-center">
                 <h2 style="font-size:40px;font-family: Futura,Trebuchet MS,Arial,sans-serif;" class="text-white">Add your Data</h2>
-                <p style="font-size:17px;font-weight: 200;" class="text-white">Our paystub generator accurately</br>
+                <p style="font-size:17px;font-weight: 200;" class="text-white pay-p">Our paystub generator accurately</br>
                     calculates your Federal and State</br> taxes, including Social security </br>and Medicare taxes so you don't
                 </p>
                 <img src="images/1.webp"
@@ -175,8 +175,8 @@
             </div>
 
             <div class="col-md-4 text-center">
-                <h2 style="font-size:40px;    font-family: Futura,Trebuchet MS,Arial,sans-serif;" class="text-white">Download & Email your Paystub</h2>
-                <p style="font-size:17px;font-weight: 200;" class="text-white">You will get to generate unlimited</br>
+                <h2 style="font-size:40px;    font-family: Futura,Trebuchet MS,Arial,sans-serif;" class="text-white pay-h2">Download & Email your Paystub</h2>
+                <p style="font-size:17px;font-weight: 200;" class="text-white pay-p">You will get to generate unlimited</br>
                     payslip, paycheck or paystub </br>according to the plan you select.
                 </p>
 
@@ -188,7 +188,7 @@
 
             <div class="col-md-4 text-center">
                 <h2 style="font-size:40px;    font-family: Futura,Trebuchet MS,Arial,sans-serif;" class="text-white">Preview Data</h2>
-                <p style="font-size:17px;font-weight: 200;" class="text-white">Generate pay stubs with accurate</br>
+                <p style="font-size:17px;font-weight: 200;" class="text-white pay-p">Generate pay stubs with accurate</br>
                     state income taxes, based on </br>state W-4, and other applicable</br> local taxes. </p>
 
                 <img src="images/3.webp"
@@ -207,7 +207,7 @@
 
         <div class="row mt-5">
 
-            <div class="col-sm-12 col-md-4 col-lg-4  mt-4">
+            <div class="col-sm-12 col-md-6 col-lg-4  mt-4">
 
                 <div class="  border border-dark">
                     <div class="boxAccurate border border-dark p-1">
@@ -236,7 +236,7 @@
                 </div>
             </div>
 
-            <div class="col-sm-12 col-md-4 col-lg-4  mt-4">
+            <div class="col-sm-12 col-md-6 col-lg-4  mt-4">
 
                 <div class="  border border-dark">
                     <div class="boxAccurate border border-dark p-1">
@@ -263,7 +263,7 @@
                 </div>
             </div>
 
-            <div class="col-sm-12 col-md-4 col-lg-4  mt-4 ">
+            <div class="col-sm-12 col-md-6 col-lg-4  mt-4 ">
                 <div class=" border border-dark">
                     <div class="boxAccurate border border-dark p-1">
                         <div class="Accurate container p-2 ">

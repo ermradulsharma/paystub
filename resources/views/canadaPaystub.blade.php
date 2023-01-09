@@ -1,15 +1,15 @@
 @extends('layouts.app')
 @section('content')
 <div>
-    <div class="container mt-2" style="max-width:1450px;">
+<div class="container" style="max-width:1450px;">
         <h5>Choose Template</h5>
         <div class="row mb-3">
             <div class="col-md-12">
                 <div class=" box-usa">
 
                     <div class="d-flex justify-content-between mb-3">
-                        <div class="col-md-5 m-auto " style="padding: 0 35px;">
-                            <h6 style="margin-left:70px;font-weight: 900;">BASIC TEMPLATES</h6>
+                        <div class="col-md-5 col-sm-12 m-auto " style="padding: -1px 35px;">
+                            <h6 style="" class="base">BASIC TEMPLATES</h6>
                             <div class="mt-4">
                                 <i class="fa fa-angle-down down"></i>
                                 <div class="input-group mmenu mb-3">
@@ -20,8 +20,7 @@
                                         <option value="opel">Opel</option>
                                         <option value="audi">Audi</option>
                                     </select>
-                                    <i onclick="myFunction(this)" class="fa fa-eye"
-                                        style="font-size: 39px;margin-left: 6px;"></i>
+                                    <i onclick="myFunction(this)" class="fa fa-eye eyes" style="font-size: 39px;"></i>
 
 
                                 </div>
@@ -35,41 +34,39 @@
                             <img src="images/hrpng.png" style="height: 200px;">
                         </div>
 
-                        <div class="col-md-5 mt-5 text-center">
+                        <div class="col-md-5 col-sm-12 mt-5 text-center">
                             <h6 style="margin-left:-23px;font-weight: 900;">ADVANCED TEMPLATES</h6>
                             <div class="mt-4">
                                 <i class="fa fa-angle-down down1"></i>
                                 <div class="input-group mmenu mb-3" style="margin: auto;">
                                     <select name="cars" id="cars" style="" class="form-control dropdown1"
                                         style="border-right:none">
-                                        <option value="volvo">PT Pink </option>
+                                        <option value="volvo"> PT Pink </option>
                                         <option value="saab">Saab</option>
                                         <option value="opel">Opel</option>
                                         <option value="audi">Audi</option>
                                     </select>
-                                    <i onclick="myFunction(this)" class="fa fa-eye"
+                                    <i onclick="myFunction(this)" class="fa fa-eye eyes"
                                         style="font-size: 39px;margin-left: 6px;"></i>
 
 
                                 </div>
-
-
                             </div>
-                            <div class=" mt-3  float-right">
-                                <button class="viewbtn"><a href="{{url('template-view')}}">Click to see Template
-                                        Landscape view.</a></button>
+                            <div class=" mt-3 ">
+                                <button class="viewbtn"> <a href="{{url('template-view')}}">Click to see Template
+                                        Landscape view.This is not part of
+                                        design</a></button>
                             </div>
-
                         </div>
+
                     </div>
-
                 </div>
-
 
 
             </div>
         </div>
     </div>
+
 
     <div class="container" style="max-width: 1450px;">
         <h5>Company Info</h5>
@@ -336,7 +333,7 @@
                         <input CLASS="earnbtn text-center" value="25.50">
                         </input>
                     </div>
-
+ . 
                     <div class="col-md-2">
 
                         <input CLASS="earnbtn text-center" value="15,000.58">

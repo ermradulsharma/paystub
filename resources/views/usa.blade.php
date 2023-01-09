@@ -276,15 +276,26 @@
                             <label for="fname" class="lable">MARITAL STATUS<spam style="color:red;">
                                     <spam style="color:red;">*<spam>
                                             <spam></label><br>
-                            <input type="text" id="fname" name="fname" placeholder="Please Enter" class="w-100 p-2 "
-                                style="font-size:14px;"><br>
+                                            <select name="cars" id="cars" class=" dropdown11">
+                                <option selected>choose</option>
+                                <option value="saab">Single</option>
+                                <option value="opel">Married</option>
+                                <option value="opel">Prefered top not say</option>
+
+                            </select>
                         </div>
                         <div class="col-md-3 mt-4">
                             <label for="fname" class="lable">HOW DO YOU GET PAID<spam style="color:red;">
                                     <spam style="color:red;">*<spam>
                                             <spam></label><br>
-                            <input type="text" id="fname" name="fname" placeholder="Please Enter" class="w-100 p-2"
-                                style="font-size:14px;"><br>
+                                            <select name="cars" id="cars" class=" dropdown11">
+                                <option selected>choose</option>
+                                <option value="saab">Monthly</option>
+                                <option value="opel">Weekly</option>
+                                <option value="opel">By Monthly</option>
+                                <option value="opel">By Weekly</option>
+
+                            </select>
                         </div>
 
                     </div>
@@ -302,15 +313,29 @@
                             <label for="fname" class="lable">EMPLOYMENT TYPE <spam style="color:red;">
                                     <spam style="color:red;">*<spam>
                                             <spam></label><br>
-                            <input type="text" id="fname" name="fname" placeholder="Employee" class="w-100 p-2 "
-                                style="font-size:14px;"><br>
+                                            <select name="cars" id="cars" class=" dropdown11">
+                                <option selected>choose</option>
+                                <option value="saab">Temporary</option>
+                                <option value="opel">Permanent</option>
+                            </select>
                         </div>
                         <div class="col-md-3 mt-4">
                             <label for="fname" class="lable">EXEMPTIONS<spam style="color:red;">
                                     <spam style="color:red;">*<spam>
                                             <spam></label><br>
-                            <input type="text" id="fname" name="fname" placeholder="0" class="w-100 p-2 "
-                                style="font-size:14px;"><br>
+                                            <select name="cars" id="cars" class=" dropdown11">
+                                <option selected>choose</option>
+                                <option value="saab">0</option>
+                                <option value="opel">1</option>
+                                <option value="opel">2</option>
+                                <option value="opel">3</option>
+                                <option value="opel">4</option>
+                                <option value="opel">5</option>
+                                <option value="opel">6</option>
+                                <option value="opel">7</option>
+                                <option value="opel">8</option>
+                                <option value="opel">9</option>
+                            </select>
                         </div>
                         <div class="col-md-3 mt-4">
                             <label for="fname" class="lable" style="color:red;">SELECT YOUR PREFERRED CURRENCY <spam
