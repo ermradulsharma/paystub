@@ -483,28 +483,28 @@
 
 
                     <div class="row mb-3 mt-4">
-                        <div class="col-md-3">
+                        <div class="col-md-4 col-lg-3">
                             <i class="fa fa-lock earnbtn2"></i>
                             <input class="earnbtn text-center" type="text" value="FICA Medicare">
                         </div>
 
-                        <div class="col-md-1">
+                        <div class="col-md-1 col-lg-1">
                         </div>
 
-                        <div class="col-md-3">
+                        <div class="col-md-2 col-lg-3">
                         </div>
-                        <div class="col-md-1">
+                        <div class="col-md-1 col-lg-1">
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-md-2 col-lg-2">
                             <input class="earnbtn text-center" value="551.10" />
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-md-2 col-lg-2">
                             <input class="earnbtn text-center" value="845.50" />
                         </div>
                     </div>
 
                     <div class="row mb-3">
-                        <div class="col-md-3">
+                        <div class="col-md-4 col-lg-3">
                             <i class="fa fa-lock earnbtn2"></i>
                             <input class="earnbtn text-center" type="text" value="Social Security Tax">
                         </div>
@@ -512,7 +512,7 @@
                         <div class="col-md-1">
                         </div>
 
-                        <div class="col-md-3">
+                        <div class="col-md-2 col-lg-3">
                         </div>
                         <div class="col-md-1">
                         </div>
@@ -526,7 +526,7 @@
 
 
                     <div class="row mb-3">
-                        <div class="col-md-3">
+                        <div class="col-md-4 col-lg-3">
                             <i class="fa fa-lock earnbtn2"></i>
                             <input class="earnbtn text-center" type="text" value="Federal Income Tax">
                         </div>
@@ -534,7 +534,7 @@
                         <div class="col-md-1">
                         </div>
 
-                        <div class="col-md-3">
+                        <div class="col-md-2 col-lg-3">
                         </div>
                         <div class="col-md-1">
                         </div>
@@ -548,7 +548,7 @@
 
 
                     <div class="row mb-3">
-                        <div class="col-md-3">
+                        <div class="col-md-4 col-lg-3">
                             <i class="fa fa-lock earnbtn2"></i>
                             <input class="earnbtn text-center" type="text" value="State Tax">
                         </div>
@@ -556,7 +556,7 @@
                         <div class="col-md-1">
                         </div>
 
-                        <div class="col-md-3">
+                        <div class="col-md-2 col-lg-3">
                         </div>
                         <div class="col-md-1">
                         </div>
@@ -569,7 +569,7 @@
                     </div>
 
                     <div class="row mb-3">
-                        <div class="col-md-3">
+                        <div class="col-md-4 col-lg-3">
 
                             <button CLASS="earnbtn"><i class="fa fa-plus-circle pr-5"
                                     style="font-size:24px;color:green"></i>Add Deduction</button>
@@ -579,7 +579,7 @@
                         <div class="col-md-1">
                         </div>
 
-                        <div class="col-md-3">
+                        <div class="col-md-2 col-lg-3">
                         </div>
                         <div class="col-md-1">
 
@@ -595,7 +595,7 @@
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <div class="col-md-3">
+                        <div class="col-md-4 col-lg-3">
                           
                             <input class="earnbtn text-center" type="text" value="Taxes/Deduction Tax">
                         </div>
@@ -603,7 +603,7 @@
                         <div class="col-md-1">
                         </div>
 
-                        <div class="col-md-3">
+                        <div class="col-md-2 col-lg-3">
                         </div>
                         <div class="col-md-1">
                         </div>
@@ -617,14 +617,14 @@
 
 
                     <div class="row mb-3 mt-5">
-                        <div class="col-md-3">
+                        <div class="col-md-4 col-lg-3">
                             <button CLASS="netpaybtn">Net Pay</button>
                         </div>
 
                         <div class="col-md-1">
                         </div>
 
-                        <div class="col-md-3">
+                        <div class="col-md-2 col-lg-3">
                         </div>
                         <div class="col-md-1">
 
@@ -659,26 +659,26 @@
                     <div class="row mb-3">
 
 
-                        <div class="col-md-2">
+                        <div class="col-lg-2 col-md-4 col-sm-6">
                             <p class="p-0 m-0 " style="font-family: serif;">CO <spam style="color:red;">
                                     <spam style="color:red;">*<spam>
                             </p>
                             <input CLASS="earnbtn text-center " value="511"></input>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-lg-2 col-md-4 col-sm-6">
                             <p class="p-0 m-0 text-center " value="511" style="font-family: serif;">
                                 FILE. <spam style="color:red;">
                                     <spam style="color:red;">*<spam>
                             </p>
                             <input CLASS="earnbtn text-center " value="789"></input>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-lg-2 col-md-4 col-sm-6">
                             <p class="p-0 m-0 " style="font-family: serif;">CLOCK VCHR.<spam style="color:red;">
                                     <spam style="color:red;">*<spam>
                             </p>
                             <input CLASS="earnbtn text-center " value="978"></input>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-lg-2 col-md-4 col-sm-6">
                             <p class="p-0 m-0 " style="font-family: serif;">Advice Number: <spam style="color:red;">
                                     <spam style="color:red;">*<spam>
                             </p>
@@ -687,14 +687,14 @@
 
 
 
-                        <div class="col-md-2">
+                        <div class="col-lg-2 col-md-4 col-sm-6">
                             <p class="p-0 m-0 " style="font-family: serif;">Account Number LAST <spam
                                     style="color:red;">
                                     <spam style="color:red;">*<spam>
                             </p>
                             <input CLASS="earnbtn text-center " value="989"></input>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-lg-2 col-md-4 col-sm-6">
                             <p class="p-0 m-0 " style="font-family: serif;">Transit ABA<spam style="color:red;">
                                     <spam style="color:red;">*<spam>
                             </p>

@@ -9,7 +9,7 @@
     <div class="container-fluid">
         <div class="container" style="max-width: 1613px">
             <div class="row">
-                <div class="col-lg-6  col-md-6 mt-3">
+                <div class="col-lg-6  col-md-12 mt-3">
                     <div class="text-white"
                         style="font-family:futura-lt-w01-light,futura-lt-w05-light,sans-serif; font-size:39px; line-height:60.5px; font-weight: 100;">
                         <p class="mainhead" style="text-align:center;"> Generate 100% Legal UK <br>Payslips
@@ -56,14 +56,14 @@
 
 
 <div class="row">
-    <div class="col-lg-6  " style="background:#e9e6e6;">
+    <div class="col-lg-5" style="background:#e9e6e6;">
 
-        <div class=" container  mt-3  " style="display: inline-table; padding: 0px 0px 0px 240px;">
+        <div class=" container  mt-3  paddingleft" style="">
 
             <div class="ukp">Create Payslips For Yourself</div>
 
 
-            <div style="font-size: 32px;font-weight: 300;">
+            <div class="uktext">
                 Create Payslips For Your Employees</div>
 
 
@@ -84,7 +84,7 @@
             </ul>
 
 
-            <div style="font-size:44px;">Show proof of income.</div>
+            <div class="uktext">Show proof of income.</div>
 
 
             <ul>
@@ -107,10 +107,10 @@
             </ul>
 
 
-            <div class="ml-3" style="font-size: 44px;">Online payroll No <br> software require</div>
+            <div class="uktext">Online payroll No software require</div>
 
 
-            <div class="m-auto create-p " style="font-size: 15px;font-weight: 200;">Most payroll systems
+            <div class="m-auto create-p ">Most payroll systems
                 were
                 developed in the last century to ,<br> run on a PC. Our software works online
                 (aka cloud or SaaS)<br> and is accessed with any web browser on any device e.g.<br> Mac, PC,
@@ -127,7 +127,7 @@
 
     </div>
 
-    <div class="col-lg-6  justify-content-center p-0">
+    <div class="col-lg-7 justify-content-center p-0">
 
         <img class="w-100 " src="images/uk/5f7a31_55ea9a38453f43069cf299e6a0617f08_mv2.jpeg">
 
@@ -186,7 +186,7 @@
             </p>
 
 
-            <h1 style="font-size: 46px;">Personal information</h1>
+            <h1 class="ukh1">Personal information</h1>
             <p class="ukp1">Your payroll number: some companies use payroll numbers to help them identify employees on
                 their
                 payroll.<br>
@@ -199,7 +199,7 @@
                 the
                 correct amount. It never changes, so it should be exactly the same on all your payslips.</p>
 
-            <h1 style="font-size: 46px;">Earnings</h1>
+            <h1 class="ukh1">Earnings</h1>
             <p class="ukp1">Your payslip must show the total amount you’ve earned. Sometimes, your employer breaks this
                 down
                 into
@@ -233,7 +233,7 @@
 
 
 
-            <h1 style="font-size: 46px;">Deductions</h1>
+            <h1 class="ukh1">Deductions</h1>
             <p class="ukp1">A deduction is money taken off your earnings before you’re paid.<br>
 
                 Income tax: this may also appear as ‘PAYE tax’ on your payslip. How much income tax you should
@@ -264,7 +264,7 @@
 
             <p class="ukp1"></p>
             </p>
-            <h1 style="font-size: 46px;">Other information</h1>
+            <h1 class="ukh1">Other information</h1>
             <p class="ukp1">Pay date: this is the date the money should be paid into your bank account.<br>
 
                 Pay method: this is how you’ll be paid, for example by BACS (i.e. directly into your bank

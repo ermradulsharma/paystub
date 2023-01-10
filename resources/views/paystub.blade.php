@@ -5,7 +5,7 @@
 
         <div class="row pb-5">
             <div class="col-lg-2 mt-5 pt-5"></div>
-            <div class="col-lg-4 mt-5 pt-5">
+            <div class="col-lg-4 col-md-6 banner-left-content payhead">
                 <h1 class="instant display-5 pt-5">
                     Instant Online <br>Professional PayStub <br>Generator
                 </h1>
@@ -23,7 +23,7 @@
                 </div>
             </div>
             <!-- <div class="col-lg-1"></div> -->
-            <div class="col-lg-5" style="display: flex;
+            <div class="col-lg-5 col-md-6" style="display: flex;
                 justify-content: right;">
                 <div class="mt-5">
                     <a href="{{url('/')}}"><img class="w-100 pr-4" src="images/paystub_image.webp"></a>
@@ -164,7 +164,7 @@
         <div class="row mt-5">
 
             <div class="col-md-4 text-center">
-                <h2 style="font-size:40px;font-family: Futura,Trebuchet MS,Arial,sans-serif;" class="text-white">Add your Data</h2>
+                <h2 style="font-size:40px;font-family: Futura,Trebuchet MS,Arial,sans-serif;" class="text-white calcheading">Add your Data</h2>
                 <p style="font-size:17px;font-weight: 200;" class="text-white pay-p">Our paystub generator accurately</br>
                     calculates your Federal and State</br> taxes, including Social security </br>and Medicare taxes so you don't
                 </p>
@@ -175,7 +175,7 @@
             </div>
 
             <div class="col-md-4 text-center">
-                <h2 style="font-size:40px;    font-family: Futura,Trebuchet MS,Arial,sans-serif;" class="text-white pay-h2">Download & Email your Paystub</h2>
+                <h2 style="font-size:40px;    font-family: Futura,Trebuchet MS,Arial,sans-serif;" class="text-white pay-h2 calcheading">Download & Email your Paystub</h2>
                 <p style="font-size:17px;font-weight: 200;" class="text-white pay-p">You will get to generate unlimited</br>
                     payslip, paycheck or paystub </br>according to the plan you select.
                 </p>
@@ -187,7 +187,7 @@
             </div>
 
             <div class="col-md-4 text-center">
-                <h2 style="font-size:40px;    font-family: Futura,Trebuchet MS,Arial,sans-serif;" class="text-white">Preview Data</h2>
+                <h2 style="font-size:40px;    font-family: Futura,Trebuchet MS,Arial,sans-serif;" class="text-white calcheading">Preview Data</h2>
                 <p style="font-size:17px;font-weight: 200;" class="text-white pay-p">Generate pay stubs with accurate</br>
                     state income taxes, based on </br>state W-4, and other applicable</br> local taxes. </p>
 

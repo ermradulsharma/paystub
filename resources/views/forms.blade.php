@@ -69,7 +69,7 @@
                         W-2s for the year, you will<br> need the following information at<br> your fingertips:
                     </p>
 
-                    <p style="font-size:17px;margin-top: 114px;" class="pt-5">Have this information ready? File your Form W-2
+                    <p style="" class="pt-5 formp1">Have this information ready? File your Form W-2
                         in less than 2 minutes.
                     </p>
                     <div class=" mt-5 justify-content-center d-flex">
@@ -264,7 +264,7 @@
 
 <div class="row" style="background: #e9e6e6;">
 
-    <div class="col-md-7 mt-5 py-5 container">
+    <div class="col-md-7 mt-5 py-5 pl-5 container">
 
         <h1 class="" style="font-family:'serif;">Common mistakes to avoid while filling out Form W-2
         </h1>

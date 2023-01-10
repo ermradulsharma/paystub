@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<div title="Globle-Header" style="background:#ff6261;" class="mt-2">
+<div title="Globle-Header" style="background:#ff6261;padding:50px 0px;" class="mt-2">
     <div class="container" style="max-width:1500px">
         <div class="row">
 
@@ -24,7 +24,7 @@
                         Paystub
                         Now</a>
                 </div>
-                <div class="mt-4 pt-5 pr-3 mr-5 ml-3 d-flex storehead">
+                <div class="mt-2 pr-3 mr-5 ml-3 d-flex storehead">
                     <a href="https://www.google.com/" target="_blank"><img class="storbtn mt-5"
                             src="images/Google_Play_Store_badge_EN.webp"></a>
                     <a href="https://www.google.com/" target="_blank"><img class="storbtn mt-5 ml-5"
@@ -32,7 +32,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-6 col-md-5   " style="background-position-x:left; right: -120px; top:2px;">
+            <div class="col-lg-6 col-md-12   " style="background-position-x:left;">
                 <img class=" globleImg" src="images/globle/qewqq22.png">
             </div>
 
@@ -50,9 +50,9 @@
     <div class="row">
         <div class="col-lg-6">
             <div class="row">
-                <div class="col-3"></div>
-                <div class="col-9">
-                    <div class="mt-5" style="font-size:30px;font-family: serif;">
+                <div class="col-lg-3 col-md-1"></div>
+                <div class="col-lg-9 col-md-12 pl-5">
+                    <div class="mt-5">
 
                         Use Paystubx for end-to-end Global Payroll</br> Process Management
                     </div>
@@ -101,7 +101,7 @@
                             More Time For You. Less Time on Payroll and Taxes.
                         </div>
                     </div>
-                    <div class="">
+                    <div class="px-5">
                         <ul class="row d-flex globe-ul" style="font-size:20px;font-weight: 200; line-height:35px;">
                             <li>Employee contracts aren’t
                                 a legal requirement, but they protect your employees and your
@@ -172,17 +172,17 @@
         </div>
     </div>
 
-    <div class="row mb-3">
+    <div class="row mb-3 justify-content-center">
         <div class="col-lg-2"></div>
         <div class="col-md-8 my-5">
             <div class=" box-usa">
 
                 <div class="d-flex justify-content-between mb-3">
-                    <div class="col-md-5 m-auto " style="padding: 0 35px;">
-                        <h6  class="basic">BASIC TEMPLATES</h6>
+                <div class="col-md-5 mt-5 text-center">
+                        <h6  class="basic1">BASIC TEMPLATES</h6>
                         <div class="mt-4">
-                            <i class="fa fa-angle-down down"></i>
-                            <div class="input-group mmenu mb-3">
+                            <i class="fa fa-angle-down down1"></i>
+                            <div class="input-group mmenu mb-3" style="margin: auto;">
                                 <select name="cars" id="cars" style="" class="form-control dropdown1"
                                     style="border-right:none">
                                     <option value="volvo">Reddish Magneta </option>
@@ -190,11 +190,15 @@
                                     <option value="opel">Opel</option>
                                     <option value="audi">Audi</option>
                                 </select>
-                                <i onclick="myFunction(this)"  class="fa fa-eye  eyes1" ></i>
+                                <i onclick="myFunction(this)"  class="fa fa-eye eyes1" ></i>
 
 
                             </div>
+
+
                         </div>
+                      
+
                     </div>
                     <div class="col-md-2  text-center sh">
                             <!-- <div style="height:240px;-webkit-box-shadow: 9px 0 4px -4px #999, 0px 0 4px -4px #999;">
@@ -210,7 +214,7 @@
                             <div class="input-group mmenu mb-3" style="margin: auto;">
                                 <select name="cars" id="cars" style="" class="form-control dropdown1"
                                     style="border-right:none">
-                                    <option value="volvo">Reddish Magneta </option>
+                                    <option value="volvo">PT Pink    </option>
                                     <option value="saab">Saab</option>
                                     <option value="opel">Opel</option>
                                     <option value="audi">Audi</option>
@@ -241,7 +245,7 @@
 <div class="container" style="max-width:1500px;">
 <div class="row">
     <div class="col-lg-7 justify-content-center">
-        <div class="mt-5" style="font-size:xxx-large; font-weight:700;">
+        <div class="mt-5 stubheading">
                 How to use the Pay</br> Stub Generator
         </div>
 
@@ -287,7 +291,7 @@
     <div class="col-lg-5">
         <img src="images/globle/yoga.gif" class="w-100">
         <div class="mt-2 d-flex ">
-                <a class="btn btn-lg  mt-2 p-2 btn-danger Generate " href="{{url('usa')}}">Generate
+                <a class="btn btn-lg  mt-2 mb-4 p-2 btn-danger Generate " href="{{url('usa')}}">Generate
                     Paystub
                     Now</a>
             </div>
@@ -302,7 +306,7 @@
 
     </div>
 
-    <div class="col-lg-6 pt-2 container justify-content-center">
+    <div class="col-lg-6 pt-2 container justify-content-center pl-5">
         <h4 style="font-family:'sans-serif">
             <b>
                 Save Time</b>

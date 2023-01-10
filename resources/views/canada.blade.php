@@ -5,8 +5,8 @@
     <div class="container" style="max-width: 1580px;">
         <div class="row">
             <div class="col-lg-4 m-auto " style="color:white;">
-                <div style="font-size:38px;font-weight:300;     letter-spacing: 1.5px;  display: flex;" class="text-center">Instantly
-                    Generate</br> your Professional<br> Canadian Pay </br> Stubs
+                <div style="" class="text-center canadaheading">Instantly
+                    Generate your Professional Canadian Pay Stubs
                 </div>
 
                 <p style="font-weight: 400;font-size:21px;" class="mb-0">
@@ -81,11 +81,11 @@
 
             <div class="row">
                 <div class="col-lg-6 col-sm-4 m-auto pl-0">
-                    <div style=" font-weight: 300;font-size:42px;letter-spacing: 1.5px;" class="mb-4">Why should you
+                    <div style=" " class="mb-4 canadah4">Why should you
                         choose Paystub<span class="text-danger">x</span></br> to generate pay stubs online?
                     </div>
 
-                    <h2 style=" font-size: 40px; font-family: avenir-lt-w01_35-light1475496,sans-serif;" class="ml-3">Accurate
+                    <h2 style=" " class="ml-3 canadah2">Accurate
                         Payroll Calculations that include </h2>
                     <ul style="font-weight: 200;font-size: 20px; line-height: 41px;color: #000000;" class="mt-2">
                         <li>Federal and State income tax withholdings</li>
@@ -124,9 +124,9 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12 col-lg-12 text-center mt-3">
-            <h1 style="font-size: -webkit-xxx-large;">Generate Paystubs Using our Android
+            <h1 style="" class="canadah1">Generate Paystubs Using our Android
                 or iOS App</h1>
-            <p style="font-size: 25px;font-weight: 300;">Generate paystubs
+            <p style="" class="canadap">Generate paystubs
                 instantly by using our paystub generator app. It's simple, easy, and accurate.</p>
 
             <div class="my-5">

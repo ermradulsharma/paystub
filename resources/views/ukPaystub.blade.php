@@ -171,54 +171,50 @@ London" class="w-100 p-2 text-center" style="font-size:14px;"><br>
 
 
                     <div class="row mb-3">
-                        <div class="col-md-2 mt-4">
+                        <div class="col-lg-2 col-md-4 mt-4">
                             <label for="fname" class="lable">Pay Type<spam style="color:red;">
                                     <spam style="color:red;">*<spam></label><br>
                             <input type="text" id="fname1" name="fname" placeholder="2-20-2023" class="w-100 p-2
                                  " style="font-size:14px;"><br>
                         </div>
 
-                        <div class="col-md-2 mt-4">
+                        <div class="col-lg-2 col-md-4 mt-4">
                             <label for="fname" class="lable text-center"> Payment method <spam style="color:red;">
                                     <spam style="color:red;">*<spam></label><br>
                             <input type="text" id="fname" name="fname" placeholder="12-12-2023" class="w-100 p-2
                             " style="font-size:14px;"><br>
                         </div>
-                        <div class="col-md-2 mt-4">
+                        <div class="col-lg-2 col-md-4 mt-4">
                             <label for="fname" class="lable">Tax Code <spam style="color:red;">
                                     <spam style="color:red;">*<spam></label><br>
                             <input type="text" id="fname" name="fname" placeholder="2-20-2023" class="w-100 p-2
                             r" style="font-size:14px;"><br>
                         </div>
-                        <div class="col-md-2 mt-4">
+                        <div class="col-lg-2 col-md-4 mt-4">
                             <label for="fname" class="lable">NI Number<spam style="color:red;">
                                     <spam style="color:red;">*<spam></label><br>
                             <input type="text" id="fname" name="fname" placeholder="2-20-2023" class="w-100 p-2
                             r" style="font-size:14px;"><br>
                         </div>
-                        <div class="col-md-2 mt-4">
+                        <div class="col-lg-2 col-md-4 mt-4">
                             <label for="fname" class="lable">NI Table Letter<spam style="color:red;">
                                     <spam style="color:red;">*<spam></label><br>
                             <input type="text" id="fname" name="fname" placeholder="2-20-2023" class="w-100 p-2
                             r" style="font-size:14px;"><br>
                         </div>
-                        <div class="col-md-2 mt-2">
-                            <p class="text-center mb-0" style="font-size:18px;">How do you get paid<spam
+                        <div class="col-lg-2 col-md-4 mt-2">
+                            <p class="text-center mb-0 ukpaystubtext">How do you get paid<spam
                                     style="color:red;">
                                     <spam style="color:red;">*<spam>
                                             <spam>
                             </p>
-
-                            <div class="text-center mt-2  d-flex">
+                            <div class="text-center mt-2  d-flex justifycenter ">
                                 <button CLASS="hourbtn mr-2">HOURLY</button> <button CLASS="salrybtn">SALARY</button>
                             </div>
                         </div>
-
                     </div>
-
                     <h5 class="mt-5">PAYMENTS</h5>
                     <div class="row ">
-
 
                     </div>
 
@@ -402,7 +398,7 @@ London" class="w-100 p-2 text-center" style="font-size:14px;"><br>
                     <h5 class="mt-4">Additional Information Here (Note)</h5>
                     <div class="row">
                         <div class="col-lg-6">
-                            <textarea id="w3review" name="w3review" rows="4" cols="60" placeholder="Note Here (Optional)" class="p-2"></textarea>
+                            <textarea id="w3review" name="w3review" rows="4" cols="60" placeholder="Note Here (Optional)" class="p-2 textarea"></textarea>
                         </div>
 
                     </div>

@@ -138,6 +138,9 @@
     font-weight: 400;
     margin: 0;
 }
+.ukh1 {
+    font-size: 46px;
+}
 .ukp1{
     font-weight: 200;
     /* font-family: sans-serif; */
@@ -261,7 +264,7 @@ background: linear-gradient(to bottom right, #3022AD, #D5469E);
     left: -166px;  
 }
 .imguk{
-    width:1000px;
+    width:800px;
 }
 .fromimg{
     width: 115px;
@@ -290,15 +293,24 @@ background: linear-gradient(to bottom right, #3022AD, #D5469E);
     .formimg1{
         width: 500px;
         }
+        .QUICK {
+            line-height: 1;
+        }
+        .instant {  
+            font-size: 30px;
+        }
 }
 
 @media screen and (max-width: 768px) {
     .imguk {
-        width: 305px;
+        width: 500px;
     }
     .ukimg1 {
         background-position-x: left;
-        left: 36px;
+        left: 0px;
+    }
+    .PayslipsGlo {
+        text-align: center;
     }
 }
 @media screen and (max-width: 425px) {
@@ -330,23 +342,36 @@ background: linear-gradient(to bottom right, #3022AD, #D5469E);
     .formimg2 {
         width: 353px;
     }
-}.couple{
+    .imguk {
+        width: 355px;
+    }
+}
+@media screen and (max-width: 375px) {
+    .imguk {
+        width: 260px;
+    }
+}
+.couple{
     max-width: 1086px;
 }
 @media screen and (max-width:1440px) {
    .couple{
        max-width: 904px;
    }
-}
+
 .globleImg{
     max-width: 1500px;
     height: 700px;
 }
-@media screen and (max-width:1440px) {
-    .globleImg{
-        max-width: 700px;
-    }
+.ukp {
+    font-size: 30px;
+
 }
+.ukh1 {
+    font-size: 30px;
+}
+}
+
 
 .CreatePaystub{
     font-family: serif;
