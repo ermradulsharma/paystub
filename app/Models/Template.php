@@ -10,7 +10,7 @@ class Template extends Model
     use HasFactory;
     public function images()
     {
-        return $this->morphMany(Image::class, 'module');
+        return $this->morphOne(Image::class, 'module');
     }
     static function getTemplate($request)
     {
