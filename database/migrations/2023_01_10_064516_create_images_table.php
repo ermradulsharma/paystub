@@ -13,11 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('templates', function (Blueprint $table) {
+        Schema::create('images', function (Blueprint $table) {
             $table->id();
-            $table->string('title')->default()->nullable();
-            $table->string('type')->default()->nullable();
-            $table->string('discription')->default()->nullable();
+            $table->string('file')->nullable()->default("");
+            $table->string('file_type')->nullable()->default("");
+            $table->string('file_extension')->nullable()->default("");
+            $table->string('thumbnail')->nullable()->default("");
+            $table->morphs('module');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
@@ -29,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('templates');
+        Schema::dropIfExists('images');
     }
 };

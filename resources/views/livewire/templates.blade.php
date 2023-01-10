@@ -15,6 +15,7 @@
         @endif
 
         @if($next==1)
+
         <div class="pagetitle">
             <h1>Template Table</h1>
 
@@ -30,7 +31,10 @@
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">Name</th>
+                                <th scope="col">Title</th>
+                                <th scope="col">Type</th>
+                                <th scope="col">Discription</th>
+
                                 <th scope="col">Action</th>
 
 
@@ -41,7 +45,10 @@
                             @foreach ($templatecollection as $key => $template)
                             <tr>
                                 <td>{{$key+1}}</td>
-                                <td>{{$template->name}}</td>
+                                <td>{{$template->title}}</td>
+                                <td>{{$template->type}}</td>
+                                <td>{{$template->discription}}</td>
+
                                 <td><button type="button" class="btn btn-primary"
                                         wire:click="editTemplate({{$template->id}})">Edit</button>
                                     <button type="button" class="btn btn-danger"
@@ -57,42 +64,89 @@
 
                 </div>
             </div>
+        </div>
 
+        @else()
 
-            @else()
-            <div class="row">
-                <div class="col-lg-8">
-                    <div class="container">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title"> {{$page_title}}</h5>
+        <div class="container">
+            <section class="section  min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-6 col-md-6 d-flex flex-column align-items-center justify-content-center">
 
-                                <!-- Horizontal Form -->
-                                <form wire:submit.prevent="StoreTemplate">
-                                    <div class="row mb-3">
-                                        <label for="inputEmail3" class="col-sm-2 col-form-label">Your Name</label>
-                                        <div class="col-sm-8">
-                                            <input type="text" class="form-control" id="name" wire:model="name">
-                                        </div>
+                            <div class="container">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h2 class="card-title"> {{$page_title}}</h2>
+
                                     </div>
-                                    <div class="text-center">
-                                        <button type="submit" class="btn btn-primary">Submit</button>
-                                        <button type="reset" wire:click="resetForm"
-                                            class="btn btn-secondary">Reset</button>
-                                    </div>
-                                </form><!-- End Horizontal Form -->
+                                    <div class="card-body mt-5">
 
+                                        <!-- Horizontal Form -->
+                                        <form wire:submit.prevent="StoreTemplate">
+                                            <div class="row mb-3">
+                                                <label class="col-sm-3 col-form-label">
+                                                    Title</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control" id="title"
+                                                        wire:model="title">
+                                                    @error('title')
+                                                    <div class="mt-3 text-danger">* {{$message}}</div>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                            <div class="row mb-3">
+                                                <label class="col-sm-3 col-form-label">
+                                                    Type</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control" id="type" wire:model="type">
+                                                    @error('type')
+                                                    <div class="mt-3 text-danger">* {{$message}}</div>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                            <div class="row mb-3">
+                                                <label class="col-sm-3 col-form-label">
+                                                    Discription</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control" id="discription"
+                                                        wire:model="discription">
+                                                    @error('discription')
+                                                    <div class="mt-3 text-danger">* {{$message}}</div>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                            <div class="row mb-3">
+                                                <label class="col-sm-3 col-form-label">
+                                                    File Upload</label>
+
+                                                 <div class="col-sm-8">
+                                                    <input class="form-control"  wire:model="file" type="file" id="file" multiple>
+                                                    @error('file')
+                                                    <div class="mt-3 text-danger">* {{$message}}</div>
+                                                    @enderror
+                                                </div>
+
+                                            </div>
+                                            <div class="text-center mt-5">
+                                                <button type="submit" class="btn btn-primary"
+                                                    style="float:right;">Submit</button>
+                                                <button type="reset" wire:click="resetForm" class="btn btn-secondary"
+                                                    style="float:right; margin-right: 12px;">Reset</button>
+                                            </div>
+                                        </form><!-- End Horizontal Form -->
+
+                                    </div>
+                                </div>
                             </div>
-                        </div>
 
+                        </div>
                     </div>
                 </div>
-            </div>
-            @endif()
+            </section>
+        </div>
+
+        @endif
     </main>
-
-
-
-
 
 </div>
