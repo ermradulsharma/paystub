@@ -7,13 +7,13 @@ function uploadImage($module, $module_id, $files, $path = "images")
     $path =  IMAGE_UPLOAD_PATH . $path;
     if (is_object($files)) {
         $file = $files;
-        //dd($file);
+        // dd($file);
         $extension = $file->extension();
         $fileName = date('dmY-his-') . uniqid() . '.' . $extension;
         $fileName = str_replace(" ", "_", $fileName);
         //$file->move($path, $fileName);
         $file->storeAs($path, $fileName);
-        $mime = $file->getClientMimeType();
+        $mime = $file->getMimeType();
 
         $fileType = "";
         if (strstr($mime, "video/")) {
@@ -46,11 +46,11 @@ function uploadImage($module, $module_id, $files, $path = "images")
 
 function deleteImage($module, $id, $path = null)
 {
-   $images = Image::where(['module_type' => $module, 'module_id' => $id])->get();
+    $images = Image::where(['module_type' => $module, 'module_id' => $id])->get();
 
     foreach ($images as $img) {
         try {
-            $path = STORAGE_UPLOAD_PATH.$path;
+            $path = STORAGE_UPLOAD_PATH . $path;
             unlink($path . '/' . basename($img->file));
         } catch (Exception $e) {
             return $e;

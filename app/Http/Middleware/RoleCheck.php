@@ -16,6 +16,10 @@ class RoleCheck
      */
     public function handle(Request $request, Closure $next)
     {
+        $userObj = $request->user();
+        if ($userObj->role_id != 1) {
+            return redirect(route('stories.index'));
+        }
         return $next($request);
     }
 }

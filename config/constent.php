@@ -20,10 +20,18 @@ defined('DEVELOPER_LAST_NAME') or define("DEVELOPER_LAST_NAME", 'Account');
 // ======================================== App Details ========================================================
 defined('APP_NAME') or define("APP_NAME", 'Social App');
 defined('APP_URL') or define("APP_URL", 'http://www.socialapp.com');
-defined('MAIL_FROM_EMAIL') or define("MAIL_FROM_EMAIL", 'developerspbs@gmail.com');
-defined('CONTACT_MAIL_FROM_EMAIL') or define("CONTACT_MAIL_FROM_EMAIL", 'contact@socialapp.com');
-defined('PUSH_NOTIFICATION_SERVER_KEY') or define("PUSH_NOTIFICATION_SERVER_KEY", 'AAAAOrJ9guI:APA91bHNWHnrMohXSiyw0BV0zknsKaixfKiprwSlsqg0uanBqpiM49sTLJ3wJNp2s0-D1m0QS0RJgssnID3v31kyjmABTJX4jPyMIfRgSLIw39A6JSX3FBAcysO5kwB7aeKo87CiBoBs');
-
 
 define('IMAGE_UPLOAD_PATH', 'public/');
 define('STORAGE_UPLOAD_PATH', storage_path('public/'));
+
+defined('STATUS_OK') or define("STATUS_OK", 200);
+defined('STATUS_CREATED') or define("STATUS_CREATED", 201);
+defined('STATUS_BAD_REQUEST') or define("STATUS_BAD_REQUEST", 400);
+defined('STATUS_UNAUTHORIZED') or define("STATUS_UNAUTHORIZED", 401);
+defined('STATUS_FORBIDDEN') or define("STATUS_FORBIDDEN", 403);
+defined('STATUS_NOT_FOUND') or define("STATUS_NOT_FOUND", 404);
+defined('STATUS_METHOD_NOT_ALLOWED') or define("STATUS_METHOD_NOT_ALLOWED", 405);
+defined('STATUS_ALREADY_EXIST') or define("STATUS_ALREADY_EXIST", 409);
+defined('UNPROCESSABLE_ENTITY') or define("UNPROCESSABLE_ENTITY", 422);
+defined('STATUS_GENERAL_ERROR') or define("STATUS_GENERAL_ERROR", 500);
+defined('DEFAULT_ERROR_MESSAGE') or define("DEFAULT_ERROR_MESSAGE", "Oops! some error occured, please try again");

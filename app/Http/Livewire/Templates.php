@@ -43,7 +43,7 @@ class Templates extends Component
             'title' => 'required',
             'type' => 'required',
             'description' => 'required',
-            'file' => 'required|image|max:1024|mimes:png,jpg,jpeg,webp', // 1MB Max
+            'file' => 'required|image|max:2048|mimes:png,jpg,jpeg,webp', // 1MB Max
          ]);
         $this->back();
         $tempObj = Template::find($this->tempId);

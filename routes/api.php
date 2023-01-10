@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\TemplatesController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -16,4 +17,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+Route::group(['namespace' => 'Api', 'middleware' => ['\App\Http\Middleware\LogAfterRequest::class']], function () {
+    Route::get('get-templates', [TemplatesController::class, 'getTemplate']);
+    Route::group(['middleware' => ['auth:api']], function () {
+    });
 });
