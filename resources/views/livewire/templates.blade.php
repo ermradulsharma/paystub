@@ -34,6 +34,7 @@
                                 <th scope="col">Title</th>
                                 <th scope="col">Type</th>
                                 <th scope="col">Discription</th>
+                                <th scope="col">Image</th>
 
                                 <th scope="col">Action</th>
 
@@ -48,6 +49,7 @@
                                 <td>{{$template->title}}</td>
                                 <td>{{$template->type}}</td>
                                 <td>{{$template->discription}}</td>
+                                <td><a href="{{asset($template->image->file ?? "")}}" target="blank"><img width="200px" height="150px" src="{{$template->image->file ?? "" }} " /></a></td>
 
                                 <td><button type="button" class="btn btn-primary"
                                         wire:click="editTemplate({{$template->id}})">Edit</button>
@@ -121,10 +123,11 @@
                                                     File Upload</label>
 
                                                  <div class="col-sm-8">
-                                                    <input class="form-control"  wire:model="file" type="file" id="file" multiple>
+                                                    <input class="form-control"  wire:model="file" type="file" id="file" >
                                                     @error('file')
                                                     <div class="mt-3 text-danger">* {{$message}}</div>
                                                     @enderror
+
                                                 </div>
 
                                             </div>

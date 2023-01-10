@@ -17,7 +17,7 @@ class Templates extends Component
     public function render()
     {
 
-        $templatecollection = Template::orderBy('id','asc')->get();
+        $templatecollection = Template::orderBy('id','asc')->with('image')->get();
         return view('livewire.templates',compact('templatecollection'));
     }
 
