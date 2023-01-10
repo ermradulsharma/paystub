@@ -1,3 +1,3 @@
-<?php 
+<?php
 define('IMAGE_UPLOAD_PATH', 'public/');
-define('STORAGE_UPLOAD_PATH', 'storage/');
+define('STORAGE_UPLOAD_PATH', storage_path('public/'));

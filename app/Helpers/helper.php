@@ -47,14 +47,15 @@ function uploadImage($module, $module_id, $files, $path = "images")
 function deleteImage($module, $id, $path = null)
 {
    $images = Image::where(['module_type' => $module, 'module_id' => $id])->get();
+
     foreach ($images as $img) {
         try {
-            $path = STORAGE_UPLOAD_PATH.'/'.$path;
+            $path = STORAGE_UPLOAD_PATH.$path;
             unlink($path . '/' . basename($img->file));
         } catch (Exception $e) {
             return $e;
         }
     }
-    $images = Image::where(['module_type' => $module, 'module_id' => $id])->forceDelete();
+    Image::where(['module_type' => $module, 'module_id' => $id])->delete();
     return "success";
 }

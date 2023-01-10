@@ -15,12 +15,11 @@ return new class extends Migration
     {
         Schema::create('images', function (Blueprint $table) {
             $table->id();
-            $table->string('file')->nullable()->default("");
-            $table->string('file_type')->nullable()->default("");
-            $table->string('file_extension')->nullable()->default("");
-            $table->string('thumbnail')->nullable()->default("");
+            $table->string('file')->nullable();
+            $table->string('file_type')->nullable();
+            $table->string('file_extension')->nullable();
+            $table->string('thumbnail')->nullable();
             $table->morphs('module');
-            $table->softDeletes();
             $table->timestamps();
         });
     }
