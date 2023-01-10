@@ -15,10 +15,20 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('username')->nullable();
+            $table->string('social_id')->nullable();
+            $table->string('first_name')->nullable();
+            $table->string('last_name')->nullable();
+            $table->string('name')->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('country_code')->default('+1')->nullable();
+            $table->string('mobile')->nullable();
+            $table->string('image')->nullable();
+            $table->string('device_type')->nullable();
+            $table->text('device_token')->nullable();
+            $table->integer('role_id')->default(2)->comment('1-admin, 2-users');
             $table->rememberToken();
             $table->timestamps();
         });
