@@ -15,8 +15,9 @@ return new class extends Migration
     {
         Schema::create('templates', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->string('state');
             $table->string('type');
+            $table->string('title');
             $table->string('description')->nullable();
             $table->timestamps();
         });

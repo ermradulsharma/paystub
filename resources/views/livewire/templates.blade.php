@@ -28,21 +28,23 @@
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Title</th>
-                                    <th scope="col">Type</th>
-                                    <th scope="col">Description</th>
-                                    <th scope="col">Image</th>
-                                    <th scope="col">Action</th>
+                                    <th>#</th>
+                                    <th>State</th>
+                                    <th>Type</th>
+                                    <th>Title</th>
+                                {{--     <th>Description</th> --}}
+                                    <th>Image</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($templateCollection as $key => $template)
                                     <tr>
                                         <td>{{ $key + 1 }}</td>
-                                        <td>{{ $template->title }}</td>
+                                        <td>{{ $template->state }}</td>
                                         <td>{{ $template->type }}</td>
-                                        <td>{{ $template->discription }}</td>
+                                        <td>{{ $template->title }}</td>
+                                   {{--      <td>{{ $template->discription }}</td> --}}
 
                                         <td><a href="{{ asset($template->images->file ?? '') }}" target="blank"><img
                                                     width="200px" height="150px"
@@ -77,29 +79,51 @@
                                         <div class="card-body mt-5">
 
                                             <!-- Horizontal Form -->
+
                                             <form wire:submit.prevent="StoreTemplate">
+                                                <div class="row mb-3">
+                                                    <label class="col-sm-3 col-form-label">State</label>
+                                                    <div class="col-sm-8">
+                                                      <select class="form-select" aria-label="Default select example" type="text" wire:model="state">
+                                                        <option selected="">Open this select State</option>
+                                                        <option value="usa">USA</option>
+                                                        <option value="canada">CANADA</option>
+                                                        <option value="uk">UK</option>
+                                                        <option value="globle">GLOBLE</option>
+                                               
+                                                      </select>
+                                                    </div>
+                                                    @error('state')
+                                                    <div class="mt-3 text-danger">* {{ $message }}</div>
+                                                   @enderror
+                                                  </div>
+                                               
+                                                  <div class="row mb-3">
+                                                    <label class="col-sm-3 col-form-label">Type</label>
+                                                    <div class="col-sm-8">
+                                                      <select class="form-select" aria-label="Default select example" type="text" wire:model="type">
+                                                        <option selected="">Open this select Type</option>
+                                                        <option value="basic">BASIC</option>
+                                                        <option value="advance">ADVANCE</option>
+                                                     </select>
+                                                    </div>
+                                                    @error('type')
+                                                    <div class="mt-3 text-danger">* {{ $message }}</div>
+                                                    @enderror
+                                                  </div>
+                                              
                                                 <div class="row mb-3">
                                                     <label class="col-sm-3 col-form-label">
                                                         Title</label>
                                                     <div class="col-sm-8">
                                                         <input type="text" class="form-control" id="title"
-                                                            wire:model="title">
+                                                            wire:model="title"> 
                                                         @error('title')
                                                             <div class="mt-3 text-danger">* {{ $message }}</div>
                                                         @enderror
                                                     </div>
                                                 </div>
-                                                <div class="row mb-3">
-                                                    <label class="col-sm-3 col-form-label">
-                                                        Type</label>
-                                                    <div class="col-sm-8">
-                                                        <input type="text" class="form-control" id="type"
-                                                            wire:model="type">
-                                                        @error('type')
-                                                            <div class="mt-3 text-danger">* {{ $message }}</div>
-                                                        @enderror
-                                                    </div>
-                                                </div>
+                                             
 
                                                 <div class="row mb-3">
                                                     <label class="col-sm-3 col-form-label">
