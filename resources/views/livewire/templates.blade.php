@@ -43,13 +43,14 @@
                             </thead>
                             <tbody>
 
-                            @foreach ($templatecollection as $key => $template)
+                            @foreach ($templateCollection as $key => $template)
                             <tr>
                                 <td>{{$key+1}}</td>
                                 <td>{{$template->title}}</td>
                                 <td>{{$template->type}}</td>
                                 <td>{{$template->discription}}</td>
-                                <td><a href="{{asset($template->image->file ?? "")}}" target="blank"><img width="200px" height="150px" src="{{$template->image->file ?? "" }} " /></a></td>
+                                
+                                <td><a href="{{asset($template->images->file ?? "")}}" target="blank"><img width="200px" height="150px" src="{{$template->images->file ?? "" }} " /></a></td>
 
                                         <td><button type="button" class="btn btn-primary"
                                                 wire:click="editTemplate({{ $template->id }})">Edit</button>
