@@ -8,15 +8,15 @@
                 <div class=" box-usa">
 
                     <div class="d-flex justify-content-between mb-3">
-                        <div class="col-md-5 col-sm-12 m-auto " style="padding: -1px 35px;">
+                        <div class="col-md-5 col-sm-12 m-auto  text-center" style="padding: -1px 35px;">
                             <h6 style="" class="base">BASIC TEMPLATES</h6>
                             <div class="mt-4">
                                 <i class="fa fa-angle-down down"></i>
                                 <div class="input-group mmenu mb-3">
                                     <select name="cars" id="cars" style="" class="form-control dropdown1"
                                         style="border-right:none">
-                                        <option value="volvo">Reddish Magneta </option>
-                                        <option value="saab">Saab</option>
+                                        <option value="volvo">---Select--- </option>
+                                        <option value="saab">Reddish Magenta</option></option>
                                         <option value="opel">Opel</option>
                                         <option value="audi">Audi</option>
                                     </select>
@@ -41,8 +41,8 @@
                                 <div class="input-group mmenu mb-3" style="margin: auto;">
                                     <select name="cars" id="cars" style="" class="form-control dropdown1"
                                         style="border-right:none">
-                                        <option value="volvo"> PT Pink </option>
-                                        <option value="saab">Saab</option>
+                                        <option value="volvo"> ---Select--- </option>
+                                        <option value="saab">PT Pink</option>
                                         <option value="opel">Opel</option>
                                         <option value="audi">Audi</option>
                                     </select>
@@ -67,143 +67,6 @@
         </div>
     </div>
 
-
-    <div class="container" style="max-width: 1450px;">
-        <h5>Company Info</h5>
-        <div class="row mb-3">
-            <div class="col-md-12">
-                <div class=" box-usa">
-
-                    <div class="row mb-3">
-                        <div class="col-md-4 mt-4">
-                            <label for="fname" class="lable">EMPLOYER (COMPANY) NAME <spam style="color:red;">
-                                    <spam style="color:red;">*<spam></label><br>
-                            <input type="text" id="fname" name="fname" placeholder="Your Employer & Company Name" class="w-100 p-2 text-center
-                                 " style="font-size:14px;"><br>
-                        </div>
-
-                        <div class="col-md-4 mt-4">
-                            <label for="fname" class="lable">STREET ADDRESS 1 <spam style="color:red;">
-                                    <spam style="color:red;">*<spam></label><br>
-                            <input type="text" id="fname" name="fname" placeholder="Your address Employer" class="w-100 p-2 text-center
-                                 " style="font-size:14px;"><br>
-                        </div>
-
-                        <div class="col-md-4 mt-4">
-                            <label for="fname" class="lable">STREET ADDRESS 2 <spam style="color:red;">
-                                    <spam style="color:red;">*<spam></label><br>
-                            <input type="text" id="fname" name="fname" placeholder="Suite 101 or apt 101 (Optional)"
-                                class="w-100 p-2 text-center
-                                 " style="font-size:14px;"><br>
-                        </div>
-
-
-                    </div>
-
-                    <div class="row mb-3">
-
-                    </div>
-
-
-                    <div class="row mb-3">
-                        <div class="col-md-4">
-                            <label for="fname" class="lable">City <spam style="color:red;">
-                                    <spam style="color:red;">*<spam></label><br>
-                            <input type="text" id="fname" name="fname" placeholder="Your Employer City" class="w-100 p-2 text-center
-                                 " style="font-size:14px;"><br>
-                        </div>
-                        <div class="col-md-4">
-                            <label for="fname" class="lable">Province<spam style="color:red;">
-                                    <spam style="color:red;">*<spam></label><br>
-                            <input type="text" id="fname" name="fname" placeholder="Province" class="w-100 p-2 text-center
-                             " style="font-size:14px;"><br>
-                        </div>
-                        <div class="col-md-4">
-                            <label for="fname" class="lable">Postal Code <spam style="color:red;">
-                                    <spam style="color:red;">*<spam></label><br>
-                            <input type="text" id="fname" name="fname" placeholder="KIA OG9" class="w-100 p-2
-                             " style="font-size:14px;font-weight: 900;"><br>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-
-
-
-
-
-
-    <div class="container" style="max-width: 1450px;">
-        <h5>Employee Basic Info</h5>
-        <div class="row mb-3">
-            <div class="col-md-12">
-                <div class=" box-usa">
-
-                    <div class="row mb-3">
-                        <div class="col-md-4 mt-4">
-                            <label for="fname" class="lable">EMPLOYER ID <spam style="color:red;">
-                                    <spam style="color:red;">*<spam></label><br>
-                            <input type="text" id="fname" name="fname" placeholder="EMPLOYEE ID" class="w-100 p-2
-                                 text-center" style="font-size:14px;"><br>
-                        </div>
-
-                        <div class="col-md-4 mt-4">
-                            <label for="fname" class="lable text-center">PAY START <spam style="color:red;">
-                                    <spam style="color:red;">*<spam></label><br>
-                            <input type="text" id="fname" name="fname" placeholder="12-12-2023-12-19-2023" class="w-100 p-2
-                             text-center" style="font-size:14px;font-weight: 900;"><br>
-                        </div>
-                        <div class="col-md-4 mt-4">
-                            <label for="fname" class="lable">PAY DATE <spam style="color:red;">
-                                    <spam style="color:red;">*<spam></label><br>
-                            <input type="text" id="fname" name="fname" placeholder="2-20-2023" class="w-100 p-2
-                             text-center" style="font-size:14px;font-weight: 900;"><br>
-                        </div>
-
-                    </div>
-
-                    <div class="row mb-3">
-                        <div class="col-md-3">
-                            <label for="fname" class="lable">Check Number <spam style="color:red;">
-                                    <spam style="color:red;">*<spam></label><br>
-                            <input type="text" id="fname" name="fname" placeholder="0052398445" class="w-100 p-2 text-center
-                             " style="font-size:14px;font-weight: 900;"><br>
-                        </div>
-                        <div class="col-md-3">
-                            <label for="fname" class="lable">Currency <spam style="color:red;">
-                                    <spam style="color:red;">*<spam></label><br>
-                            <input type="text" id="fname" name="fname" placeholder="$(CAD USD)" class="w-100 p-2 text-center
-                             " style="font-size:14px;"><br>
-                        </div>
-                        <div class="col-md-3">
-                            <label for="fname" class="lable">EMPLOYEE NAME<spam style="color:red;">
-                                    <spam style="color:red;">*<spam></label><br>
-                            <input type="text" id="fname" name="fname" placeholder="Your Full Name" class="w-100 p-2 text-center
-                             " style="font-size:14px;"><br>
-                        </div>
-
-                        <div class="col-md-3">
-                            <label for="fname" class="lable">EMPLOYEE ADDRESS<spam style="color:red;">
-                                    <spam style="color:red;">*<spam></label><br>
-                            <input type="text" id="fname" name="fname"
-                                placeholder="234 Sexon street Ontario, Canada K1A OG9" class="w-100 p-2
-                             " style="font-size:14px;font-weight: 900;"><br>
-                        </div>
-                    </div>
-
-
-                </div>
-
-
-            </div>
-        </div>
-    </div>
-
-</div>
 
 
 

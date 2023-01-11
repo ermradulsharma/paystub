@@ -12,15 +12,15 @@
                 <div class=" box-usa">
 
                     <div class="d-flex justify-content-between mb-3">
-                        <div class="col-md-5 col-sm-12 m-auto " style="padding: -1px 35px;">
+                        <div class="col-md-5 col-sm-12 m-auto  text-center" style="padding: -1px 35px;">
                             <h6 style="" class="base">BASIC TEMPLATES</h6>
                             <div class="mt-4">
                                 <i class="fa fa-angle-down down"></i>
                                 <div class="input-group mmenu mb-3">
                                     <select name="cars" id="cars" style="" class="form-control dropdown1"
                                         style="border-right:none">
-                                        <option value="volvo">Reddish Magneta </option>
-                                        <option value="saab">Saab</option>
+                                        <option value="volvo">---Select--- </option>
+                                        <option value="saab">Reddish Magenta</option></option>
                                         <option value="opel">Opel</option>
                                         <option value="audi">Audi</option>
                                     </select>
@@ -45,8 +45,8 @@
                                 <div class="input-group mmenu mb-3" style="margin: auto;">
                                     <select name="cars" id="cars" style="" class="form-control dropdown1"
                                         style="border-right:none">
-                                        <option value="volvo"> PT Pink </option>
-                                        <option value="saab">Saab</option>
+                                        <option value="volvo"> ---Select--- </option>
+                                        <option value="saab">PT Pink</option>
                                         <option value="opel">Opel</option>
                                         <option value="audi">Audi</option>
                                     </select>

@@ -215,7 +215,7 @@
                                 <form action="/action_page.php">
 
                                     <select name="cars" id="cars" class=" dropdown11">
-                                        <option selected>Choose your state</option>
+                                        <option selected>---Select---</option>
                                         <option value="saab">Saab</option>
                                         <option value="opel">Opel</option>
                                         <option value="audi">Audi</option>
