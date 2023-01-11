@@ -33,13 +33,12 @@ class Templates extends Component
     {
         $this->title = "";
         $this->type = "";
-        $this->description = null;
+        $this->description = "";
         $this->tempId = null;
     }
 
     public function StoreTemplate()
     {
-        // dd($this->file);
         $this->validate([
             'title' => 'required',
             'type' => 'required',
@@ -52,16 +51,15 @@ class Templates extends Component
         }
         $tempObj->title = $this->title;
         $tempObj->type = $this->type;
-        $tempObj->description = $this->description ?? "";
+        $tempObj->description = $this->description;
 
         $tempObj->save();
-       
         if ($this->file) {
             deleteImage('App\Models\Template', $this->tempId ?? 0, 'templates');
             uploadImage("App\Models\Template", $tempObj->id, $this->file, 'templates');
         }
         $this->resetForm();
-        session()->flash('success', 'Template save successfully.');
+        session()->flash('success', 'template save successfully.');
     }
 
     public function editTemplate($id)
