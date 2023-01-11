@@ -24,9 +24,9 @@ function uploadImage($module, $module_id, $files, $path = "images")
         } else if (strstr($mime, "audio/")) {
             $fileType = "audio";
         }
-        if($fileType == "image"){
-            $pdf = PDF::loadView('myPDF', $data);
-        }
+        // if($fileType == "image"){
+        //     $pdf = PDF::loadView('myPDF', $data);
+        // }
         if ($fileType == "video") {
             $thumbnail = $path . "/thumbnail/";
             if (!is_dir($thumbnail)) {

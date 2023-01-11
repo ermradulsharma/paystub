@@ -15,42 +15,40 @@
         @endif
 
         @if ($next == 1)
-
-            <div class="pagetitle">
+            <div class="pageTitle">
                 <h1>Template Table</h1>
 
                 <div class="card">
                     <div class="card-body">
                         <div style="float:right;">
                             <a class="btn btn-block btn-primary my-3" wire:click="addTemplate">{{ $page_title }}</a>
-
                         </div>
 
-                    <!--Table -->
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Title</th>
-                                <th scope="col">Type</th>
-                                <th scope="col">Discription</th>
-                                <th scope="col">Image</th>
-
-                                    <th scope="col">Action</th>
-
-
+                        <!--Table -->
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>State</th>
+                                    <th>Type</th>
+                                    <th>Title</th>
+                                {{--     <th>Description</th> --}}
+                                    <th>Image</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($templateCollection as $key => $template)
+                                    <tr>
+                                        <td>{{ $key + 1 }}</td>
+                                        <td>{{ $template->state }}</td>
+                                        <td>{{ $template->type }}</td>
+                                        <td>{{ $template->title }}</td>
+                                   {{--      <td>{{ $template->discription }}</td> --}}
 
-                            @foreach ($templateCollection as $key => $template)
-                            <tr>
-                                <td>{{$key+1}}</td>
-                                <td>{{$template->title}}</td>
-                                <td>{{$template->type}}</td>
-                                <td>{{$template->discription}}</td>
-                                
-                                <td><a href="{{asset($template->images->file ?? "")}}" target="blank"><img width="200px" height="150px" src="{{$template->images->file ?? "" }} " /></a></td>
+                                        <td><a href="{{ asset($template->images->file ?? '') }}" target="blank"><img
+                                                    width="200px" height="150px"
+                                                    src="{{ $template->images->file ?? '' }} " /></a></td>
 
                                         <td><button type="button" class="btn btn-primary"
                                                 wire:click="editTemplate({{ $template->id }})">Edit</button>
@@ -62,13 +60,10 @@
                             </tbody>
                         </table>
                         <!-- End Table -->
-
-
-
                     </div>
                 </div>
             </div>
-        @else()
+        @else
             <div class="container">
                 <section class="section  min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
                     <div class="container">
@@ -84,73 +79,82 @@
                                         <div class="card-body mt-5">
 
                                             <!-- Horizontal Form -->
+
                                             <form wire:submit.prevent="StoreTemplate">
+                                                <div class="row mb-3">
+                                                    <label class="col-sm-3 col-form-label">State</label>
+                                                    <div class="col-sm-8">
+                                                      <select class="form-select" aria-label="Default select example" type="text" wire:model="state">
+                                                        <option selected="">Open this select State</option>
+                                                        <option value="usa">USA</option>
+                                                        <option value="canada">CANADA</option>
+                                                        <option value="uk">UK</option>
+                                                        <option value="globle">GLOBLE</option>
+                                               
+                                                      </select>
+                                                      @error('state')
+                                                      <div class="mt-3 text-danger">* {{ $message }}</div>
+                                                      @enderror
+                                                    </div>
+                                                    
+                                                </div>
+                                               
+                                                <div class="row mb-3">
+                                                    <label class="col-sm-3 col-form-label">Type</label>
+                                                    <div class="col-sm-8">
+                                                      <select class="form-select" aria-label="Default select example" type="text" wire:model="type">
+                                                        <option selected="">Open this select Type</option>
+                                                        <option value="basic">BASIC</option>
+                                                        <option value="advance">ADVANCE</option>
+                                                     </select>
+                                                     @error('type')
+                                                     <div class="mt-3 text-danger">* {{ $message }}</div>
+                                                     @enderror
+                                                    </div>
+                                                   
+                                                </div>
+                                              
                                                 <div class="row mb-3">
                                                     <label class="col-sm-3 col-form-label">
                                                         Title</label>
                                                     <div class="col-sm-8">
                                                         <input type="text" class="form-control" id="title"
-                                                            wire:model="title">
+                                                            wire:model="title"> 
                                                         @error('title')
                                                             <div class="mt-3 text-danger">* {{ $message }}</div>
                                                         @enderror
                                                     </div>
                                                 </div>
-                                                <div class="row mb-3">
-                                                    <label class="col-sm-3 col-form-label">
-                                                        Type</label>
-                                                    <div class="col-sm-8">
-                                                        <input type="text" class="form-control" id="type"
-                                                            wire:model="type">
-                                                        @error('type')
-                                                            <div class="mt-3 text-danger">* {{ $message }}</div>
-                                                        @enderror
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row mb-3">
-                                                <label class="col-sm-3 col-form-label">
-                                                    File Upload</label>
+                                             
 
-                                                 <div class="col-sm-8">
-                                                    <input class="form-control"  wire:model="file" type="file" id="file" >
-                                                    @error('file')
-                                                    <div class="mt-3 text-danger">* {{$message}}</div>
-                                                    @enderror
-
-                                                </div>
                                                 <div class="row mb-3">
                                                     <label class="col-sm-3 col-form-label">
                                                         File Upload</label>
 
-                                                    <div class="col-sm-8">
-                                                        <input class="form-control" wire:model="file" type="file"
-                                                            id="file">
-                                                        @error('file')
-                                                            <div class="mt-3 text-danger">* {{ $message }}</div>
-                                                        @enderror
-                                                    </div>
-
+                                                <div class="col-sm-8">
+                                                    <input class="form-control" wire:model="file" type="file" id="file">
+                                                    @error('file')
+                                                    <div class="mt-3 text-danger">* {{ $message }}</div>
+                                                    @enderror
                                                 </div>
-                                                <div class="text-center mt-5">
-                                                    <button type="submit" class="btn btn-primary"
-                                                        style="float:right;">Submit</button>
-                                                    <button type="reset" wire:click="resetForm"
-                                                        class="btn btn-secondary"
-                                                        style="float:right; margin-right: 12px;">Reset</button>
-                                                </div>
-                                            </form><!-- End Horizontal Form -->
 
-                                        </div>
+                                            </div>
+                                            <div class="text-center mt-5">
+                                                <button type="submit" class="btn btn-primary"
+                                                    style="float:right;">Submit</button>
+                                                <button type="reset" wire:click="resetForm" class="btn btn-secondary"
+                                                    style="float:right; margin-right: 12px;">Reset</button>
+                                            </div>
+                                        </form><!-- End Horizontal Form -->
                                     </div>
                                 </div>
-
                             </div>
                         </div>
-                    </div>
-                </section>
-            </div>
 
+                    </div>
+                </div>
+            </section>
+        </div>
         @endif
     </main>
 

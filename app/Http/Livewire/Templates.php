@@ -9,7 +9,7 @@ use Livewire\WithFileUploads;
 class Templates extends Component
 {
     use WithFileUploads;
-    public $title, $type, $description, $tempId;
+    public $title, $type, $state, $description, $tempId;
     public $next=1;
     public $file;
     public $page_title = "Add Template";
@@ -33,8 +33,8 @@ class Templates extends Component
     {
         $this->title = "";
         $this->type = "";
-        $this->description = "";
-        $this->tempId = null;
+        $this->state = "";
+       $this->tempId = null;
     }
 
     public function StoreTemplate()
@@ -42,7 +42,7 @@ class Templates extends Component
         $this->validate([
             'title' => 'required',
             'type' => 'required',
-            'description' => 'required',
+            'state' => 'required',
             'file' => 'required|image|max:2048|mimes:png,jpg,jpeg,webp', // 1MB Max
          ]);
         $this->back();
@@ -52,8 +52,8 @@ class Templates extends Component
         }
         $tempObj->title = $this->title;
         $tempObj->type = $this->type;
-        $tempObj->description = $this->description;
-
+        $tempObj->state = $this->state;
+      
         $tempObj->save();
         if ($this->file) {
             deleteImage('App\Models\Template', $this->tempId ?? 0, 'templates');
@@ -68,8 +68,8 @@ class Templates extends Component
         $tempObj = Template::find($id);
         $this->title = $tempObj->title;
         $this->type = $tempObj->type;
-        $this->description = $tempObj->description;
-
+        $this->state = $tempObj->state;
+      
         $this->tempId = $id;
         $this->next();
         $this->page_title = "Edit Template";

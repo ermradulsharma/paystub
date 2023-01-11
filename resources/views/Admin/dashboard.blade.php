@@ -1,12 +1,12 @@
 @extends('Admin.layouts.default')
 @section('content')
-  
+
 <!-- Start #main -->
 <main id="main" class="main">
 
-  <div class="pagetitle">
+  <div class="pageTitle">
     <h1>Dashboard</h1>
-   
+
   </div><!-- End Page Title -->
 
   <section class="section dashboard">
@@ -123,8 +123,8 @@
 
           </div><!-- End Customers Card -->
 
-     
-          
+
+
 
         </div>
       </div><!-- End Left side columns -->

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\TemplatesController;
+use App\Http\Controllers\API\DeductionController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -21,6 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::group(['namespace' => 'Api', 'middleware' => ['\App\Http\Middleware\LogAfterRequest::class']], function () {
     Route::get('get-templates', [TemplatesController::class, 'getTemplate']);
+    Route::get('get-deduction', [DeductionController::class, 'getDeduction']);
     Route::group(['middleware' => ['auth:api']], function () {
     });
 });

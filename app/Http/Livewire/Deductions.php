@@ -1,6 +1,6 @@
 <?php
 
-titlespace App\Http\Livewire;
+namespace App\Http\Livewire;
 
 use App\Models\Deduction;
 use Livewire\Component;
@@ -8,14 +8,14 @@ use Livewire\Component;
 class Deductions extends Component
 {
    
-    public $title,$price, $deductionId; 
+    public $title,$price,$type ,$deductionId; 
     public $next=1;
     public $page_title = "Add Deduction";
 
     public function render()
     {
-        $colors = Deduction::orderBy('id','asc')->get();
-        return view('livewire.deductions',compact('colors'));
+        $deductions = Deduction::orderBy('id','asc')->get();
+        return view('livewire.deductions',compact('deductions'));
     }
 
     public function addDeduction()
@@ -30,6 +30,7 @@ class Deductions extends Component
     {
         $this->title = "";
         $this->price = "";
+        $this->type = "";
         $this->deductionId = null;
     }
 
@@ -38,30 +39,32 @@ class Deductions extends Component
         $this->validate([
             'title' => 'required',
             'price' => 'required',
-        
+            'type' => 'required',
 
         ]);
         $this->back();
-        $colorObj = Deduction::find($this->deductionId);
-        if(!$colorObj){
-            $colorObj = new Deduction();
+        $deductionObj = Deduction::find($this->deductionId);
+        if(!$deductionObj){
+            $deductionObj = new Deduction();
         }
-        $colorObj->title = $this->title;
-        $colorObj->code = $this->code;
-        $colorObj->save();
+        $deductionObj->title = $this->title;
+        $deductionObj->price = $this->price;
+        $deductionObj->type = $this->type;
+        $deductionObj->save();
         $this->resetForm();
-        session()->flash('success', 'color save successfully.');
+        session()->flash('success', 'Deduction save successfully.');
     }
 
     public function editDeduction($id)
     {
-        $colorObj = Deduction::find($id);
-        $this->title = $colorObj->title;
-        $this->code = $colorObj->code;
+        $deductionObj = Deduction::find($id);
+        $this->title = $deductionObj->title;
+        $this->price = $deductionObj->price;
+        $this->type = $deductionObj->type;
         
         $this->deductionId = $id;
         $this->next();
-        $this->page_title = "Edit Color";
+        $this->page_title = "Edit Deduction";
     }
 
     public function next()
@@ -77,6 +80,6 @@ class Deductions extends Component
     public function deleteDeduction($id)
     {
         Deduction::find($id)->delete();
-        session()->flash('success', 'Color delete successfully.');
+        session()->flash('success', 'Deduction delete successfully.');
     }
 }

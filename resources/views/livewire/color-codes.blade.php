@@ -15,7 +15,7 @@
         @endif
 
         @if($next==1)
-        <div class="pagetitle">
+        <div class="pageTitle">
             <h1>Colors Table</h1>
 
             <div class="card">
@@ -75,7 +75,7 @@
                                         <h2 class="card-title"> {{$page_title}}</h2>
                                     </div>
                                     <div class="card-body mt-5">
-                                        
+
 
                                         <!-- Horizontal Form -->
                                         <form wire:submit.prevent="StoreColor">
