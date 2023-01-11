@@ -1,7 +1,7 @@
 <?php
 
 use App\Models\Image;
-use PDF;
+// use PDF;
 
 function uploadImage($module, $module_id, $files, $path = "images")
 {

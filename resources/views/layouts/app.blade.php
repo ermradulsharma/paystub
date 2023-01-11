@@ -31,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="newstyle.css">
 
     <!-- Responsive CSS Style -->
-    <link rel="stylesheet" type="text/css" href="css/responsive.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('user') }}/css/style.css">
 
 
     <script src="js/modernizrr.js"></script>
