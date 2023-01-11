@@ -59,33 +59,24 @@
         <div class="row mb-3">
             <div class="col-md-12">
                 <div class=" box-usa">
-
                     <div class="d-flex justify-content-between mb-3">
                         <div class="col-md-5 col-sm-12 m-auto  text-center" style="padding: -1px 35px;">
                             <h6 style="" class="base">BASIC TEMPLATES</h6>
                             <div class="mt-4">
                                 <i class="fa fa-angle-down down"></i>
                                 <div class="input-group mmenu mb-3">
-                                    <select name="cars" id="cars" style="" class="form-control dropdown1"
-                                        style="border-right:none">
+                                    <select name="cars" id="cars" style="" class="form-control dropdown1" style="border-right:none">
                                         <option selected="">---Select---</option>
                                         @foreach ($basicType as $data)
                                         <option value={{$data->title}}>{{$data->title}}</option>
                                         @endforeach
-                                        
-                                      
                                     </select>
                                     <i onclick="myFunction(this)" class="fa fa-eye eyes" style="font-size: 39px;"></i>
-
-
                                 </div>
                             </div>
                         </div>
 
                         <div class="col-md-2  text-center sh">
-                            <!-- <div style="height:240px;-webkit-box-shadow: 9px 0 4px -4px #999, 0px 0 4px -4px #999;">
-
-                            </div> -->
                             <img src="images/hrpng.png" style="height: 200px;">
                         </div>
 
@@ -94,29 +85,21 @@
                             <div class="mt-4">
                                 <i class="fa fa-angle-down down1"></i>
                                 <div class="input-group mmenu mb-3" style="margin: auto;">
-                                    <select name="cars" id="cars" style="" class="form-control dropdown1"
-                                        style="border-right:none">
+                                    <select name="cars" id="cars" style="" class="form-control dropdown1" style="border-right:none">
                                         <option selected=""> ---Select--- </option>
                                         @foreach ($advanceType as $data)
                                         <option value={{$data->title}}>{{$data->title}}</option>
                                         @endforeach
                                     </select>
                                     <i onclick="myFunction(this)" class="fa fa-eye eyes" style="font-size: 39px;margin-left: 6px;"></i>
-
-
                                 </div>
                             </div>
                             <div class=" mt-3 ">
-                                <button class="viewbtn"> <a href="{{url('template-view')}}">Click to see Template
-                                        Landscape view.This is not part of
-                                        design</a></button>
+                                <button class="viewbtn"> <a href="{{url('template-view')}}">Click to see Template Landscape view.This is not part of design</a></button>
                             </div>
                         </div>
-
                     </div>
                 </div>
-
-
             </div>
         </div>
     </div>
@@ -598,4 +581,5 @@
     function myFunction(x) {
         x.classList.toggle("fa-eye-slash");
     }
+
 </script>
