@@ -33,16 +33,16 @@ class Templates extends Component
     {
         $this->title = "";
         $this->type = "";
-        $this->description = "";
+        $this->description = null;
         $this->tempId = null;
     }
 
     public function StoreTemplate()
     {
+        // dd($this->file);
         $this->validate([
             'title' => 'required',
             'type' => 'required',
-            'description' => 'required',
             'file' => 'required|image|max:2048|mimes:png,jpg,jpeg,webp', // 1MB Max
          ]);
         $this->back();
@@ -52,7 +52,7 @@ class Templates extends Component
         }
         $tempObj->title = $this->title;
         $tempObj->type = $this->type;
-        $tempObj->description = $this->description;
+        $tempObj->description = $this->description ?? "";
 
         $tempObj->save();
        
