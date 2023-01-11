@@ -32,6 +32,7 @@
                             <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">Title</th>
+                                <th scope="col">Type</th>
                                 <th scope="col">Price</th>
                                 <th scope="col">Action</th>
 
@@ -44,6 +45,7 @@
                             <tr>
                                 <td>{{$key+1}}</td>
                                 <td>{{$item->title}}</td>
+                                <td>{{$item->type}}</td>
                                 <td>{{$item->price}}</td>
                                 <td><button type="button" class="btn btn-primary"
                                         wire:click="editDeduction({{$item->id}})">Edit</button>
@@ -85,6 +87,16 @@
                                                 <div class="col-sm-8">
                                                     <input type="text" class="form-control" id="title" wire:model="title">
                                                     @error('title')
+                                                    <div class="mt-3 text-danger">* {{$message}}</div>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                            <div class="row mb-3">
+                                                <label  class="col-sm-3 col-form-label">Type
+                                                  </label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control" id="type" wire:model="type">
+                                                    @error('type')
                                                     <div class="mt-3 text-danger">* {{$message}}</div>
                                                     @enderror
                                                 </div>

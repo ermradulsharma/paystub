@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->float('price',8 ,2)->default('0.00');
+            $table->string('type');
             $table->timestamps();
         });
     }

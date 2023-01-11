@@ -8,7 +8,7 @@ use Livewire\Component;
 class Deductions extends Component
 {
    
-    public $title,$price, $deductionId; 
+    public $title,$price,$type ,$deductionId; 
     public $next=1;
     public $page_title = "Add Deduction";
 
@@ -30,6 +30,7 @@ class Deductions extends Component
     {
         $this->title = "";
         $this->price = "";
+        $this->type = "";
         $this->deductionId = null;
     }
 
@@ -38,7 +39,7 @@ class Deductions extends Component
         $this->validate([
             'title' => 'required',
             'price' => 'required',
-        
+            'type' => 'required',
 
         ]);
         $this->back();
@@ -48,6 +49,7 @@ class Deductions extends Component
         }
         $deductionObj->title = $this->title;
         $deductionObj->price = $this->price;
+        $deductionObj->type = $this->type;
         $deductionObj->save();
         $this->resetForm();
         session()->flash('success', 'Deduction save successfully.');
@@ -58,6 +60,7 @@ class Deductions extends Component
         $deductionObj = Deduction::find($id);
         $this->title = $deductionObj->title;
         $this->price = $deductionObj->price;
+        $this->type = $deductionObj->type;
         
         $this->deductionId = $id;
         $this->next();
