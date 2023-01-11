@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Models\Deduction;
 use App\Models\Template;
 use Illuminate\Http\Request;
 
@@ -15,9 +15,10 @@ class UsaController extends Controller
      */
     public function templateChoose()
     {  
+        $dedutions = Deduction::orderBy('id','asc')->get();
         $basicType = Template::where('type','basic')->get();
         $advanceType = Template::where('type','advance')->get();
-        return view('usa' , compact('basicType','advanceType'));
+        return view('usa' , compact('basicType','advanceType','dedutions'));
     }
 
     public function templateGloble()
@@ -26,6 +27,8 @@ class UsaController extends Controller
         $advanceType = Template::where('type','advance')->get();
         return view('globle' ,compact('basicType','advanceType'));
     }
+
+
 
     /**
      * Show the form for creating a new resource.
