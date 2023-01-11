@@ -92,13 +92,14 @@
                                                         <option value="globle">GLOBLE</option>
                                                
                                                       </select>
+                                                      @error('state')
+                                                      <div class="mt-3 text-danger">* {{ $message }}</div>
+                                                      @enderror
                                                     </div>
-                                                    @error('state')
-                                                    <div class="mt-3 text-danger">* {{ $message }}</div>
-                                                   @enderror
-                                                  </div>
+                                                    
+                                                </div>
                                                
-                                                  <div class="row mb-3">
+                                                <div class="row mb-3">
                                                     <label class="col-sm-3 col-form-label">Type</label>
                                                     <div class="col-sm-8">
                                                       <select class="form-select" aria-label="Default select example" type="text" wire:model="type">
@@ -106,11 +107,12 @@
                                                         <option value="basic">BASIC</option>
                                                         <option value="advance">ADVANCE</option>
                                                      </select>
+                                                     @error('type')
+                                                     <div class="mt-3 text-danger">* {{ $message }}</div>
+                                                     @enderror
                                                     </div>
-                                                    @error('type')
-                                                    <div class="mt-3 text-danger">* {{ $message }}</div>
-                                                    @enderror
-                                                  </div>
+                                                   
+                                                </div>
                                               
                                                 <div class="row mb-3">
                                                     <label class="col-sm-3 col-form-label">
