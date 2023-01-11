@@ -1,6 +1,7 @@
 <?php
 
-
+use App\Http\Controllers\CanadaPaystubController;
+use App\Http\Controllers\UsaController;
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\Routing\Router;
 
@@ -18,9 +19,10 @@ use Symfony\Component\Routing\Router;
 Route::get('/', function () {
     return view('paystub');
 });
-Route::get('usa', function () {
-    return view('usa');
-});
+
+Route::get('usa', [UsaController::class, 'templateChoose']);
+Route::get('canada-paystub', [CanadaPaystubController::class, 'templateChoose']);
+
 Route::get('canada', function () {
     return view('canada');
 });
@@ -43,9 +45,7 @@ Route::get('privacy', function () {
 Route::get('refund', function () {
     return view('refund');
 });
-Route::get('canada-paystub', function () {
-    return view('canadaPaystub');
-});
+
 Route::get('uk-paystub', function () {
     return view('ukPaystub');
 });
