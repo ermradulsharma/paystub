@@ -87,7 +87,7 @@
                 <div class=" box-usa">
 
                     <div class="d-flex justify-content-between mb-3">
-                        <div class="col-md-5 col-sm-12 m-auto " style="padding: -1px 35px;">
+                        <div class="col-md-5 col-sm-12 m-auto  text-center" style="padding: -1px 35px;">
                             <h6 style="" class="base">BASIC TEMPLATES</h6>
                             <div class="mt-4">
                                 <i class="fa fa-angle-down down"></i>
@@ -266,7 +266,7 @@
                                     <spam style="color:red;">*<spam>
                                             <spam></label><br>
                             <select name="cars" id="cars" class=" dropdown11">
-                                <option selected>Choose</option>
+                                <option selected>---Select---</option>
                                 <option value="saab">ON</option>
                                 <option value="opel">OFF</option>
 
@@ -277,7 +277,7 @@
                                     <spam style="color:red;">*<spam>
                                             <spam></label><br>
                                             <select name="cars" id="cars" class=" dropdown11">
-                                <option selected>choose</option>
+                                <option selected>---Select---</option>
                                 <option value="saab">Single</option>
                                 <option value="opel">Married</option>
                                 <option value="opel">Prefered top not say</option>
@@ -288,8 +288,8 @@
                             <label for="fname" class="lable">HOW DO YOU GET PAID<spam style="color:red;">
                                     <spam style="color:red;">*<spam>
                                             <spam></label><br>
-                                            <select name="cars" id="cars" class=" dropdown11">
-                                <option selected>choose</option>
+                                            <select name="cars" id="cars" class=" dropdown11" value="">
+                                <option selected>---Select---</option>
                                 <option value="saab">Monthly</option>
                                 <option value="opel">Weekly</option>
                                 <option value="opel">By Monthly</option>
@@ -314,7 +314,7 @@
                                     <spam style="color:red;">*<spam>
                                             <spam></label><br>
                                             <select name="cars" id="cars" class=" dropdown11">
-                                <option selected>choose</option>
+                                <option selected>---Select---</option>
                                 <option value="saab">Temporary</option>
                                 <option value="opel">Permanent</option>
                             </select>
@@ -324,7 +324,7 @@
                                     <spam style="color:red;">*<spam>
                                             <spam></label><br>
                                             <select name="cars" id="cars" class=" dropdown11">
-                                <option selected>choose</option>
+                                <option selected>---Select---</option>
                                 <option value="saab">0</option>
                                 <option value="opel">1</option>
                                 <option value="opel">2</option>

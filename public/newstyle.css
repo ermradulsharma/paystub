@@ -63,6 +63,7 @@
 
 .mmenu{
     width: 67%;
+    margin: auto;
 }
 
 .ukbtn{
@@ -92,8 +93,8 @@
 }
 .down{
     position: absolute;
-    right: 256px;
-    top: 48px;
+    right: 167px;
+    top: 45px;
     font-size: 37px;
     font-weight: bold;
     z-index: 1223;
@@ -929,8 +930,8 @@ font-size: 10px;
     }
     .down {
         position: absolute;
-        right: 144px;
-        top: 47px;
+        right: 68px;
+        top: 46px;
         font-size: 19px;
         font-weight: bold;
         z-index: 1223;
@@ -1066,7 +1067,7 @@ font-size: 10px;
 }
 .down {
     position: absolute;
-    right: 69px;
+    right: 58px;
     top: 48px;
     font-size: 15px;
     font-weight: bold;
@@ -1074,8 +1075,8 @@ font-size: 10px;
 }
 .down1 {
     position: absolute;
-    right: 85px;
-    top: 48px;
+    right: 69px;
+    top: 66px;
     font-size: 16px;
     font-weight: bold;
     z-index: 1223;
@@ -1196,8 +1197,8 @@ font-size: 10px;
     }
     .down {
         position: absolute;
-        right: 45px;
-        top: 46px;
+        right: 39px;
+        top: 63px;
         font-size: 15px;
         font-weight: bold;
         z-index: 1223;
