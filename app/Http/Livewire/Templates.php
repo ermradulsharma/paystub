@@ -55,12 +55,13 @@ class Templates extends Component
         $tempObj->description = $this->description;
 
         $tempObj->save();
+       
         if ($this->file) {
             deleteImage('App\Models\Template', $this->tempId ?? 0, 'templates');
             uploadImage("App\Models\Template", $tempObj->id, $this->file, 'templates');
         }
         $this->resetForm();
-        session()->flash('success', 'template save successfully.');
+        session()->flash('success', 'Template save successfully.');
     }
 
     public function editTemplate($id)

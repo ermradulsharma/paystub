@@ -115,10 +115,10 @@
                                                 <div class="col-sm-8">
                                                     <input class="form-control" wire:model="file" type="file" id="file">
                                                     @error('file')
-                                                    <div class="mt-3 text-danger">* {{$message}}</div>
+                                                    <div class="mt-3 text-danger">* {{ $message }}</div>
                                                     @enderror
-
                                                 </div>
+
                                             </div>
                                             <div class="text-center mt-5">
                                                 <button type="submit" class="btn btn-primary"
@@ -127,17 +127,15 @@
                                                     style="float:right; margin-right: 12px;">Reset</button>
                                             </div>
                                         </form><!-- End Horizontal Form -->
-
                                     </div>
                                 </div>
                             </div>
-
                         </div>
+
                     </div>
                 </div>
             </section>
         </div>
-
         @endif
     </main>
 
