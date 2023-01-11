@@ -58,6 +58,14 @@
         </a>
       </li>
 
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="{{('deduction')}}">
+          <i class="bi bi-brush-fill"></i>
+
+          <span>Deduction</span>
+        </a>
+      </li>
+
 
      
 

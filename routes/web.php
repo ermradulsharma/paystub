@@ -79,6 +79,10 @@ Route::name('admin')->prefix('backend')->group(function() {
     Route::get('color', function () {
         return view('Admin/color-codes');
     });
+    Route::get('deduction', function () {
+        return view('Admin/deduction');
+    });
+
 
 });
 
