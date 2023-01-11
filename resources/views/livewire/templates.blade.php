@@ -105,7 +105,6 @@
                                                     <label class="col-sm-3 col-form-label">
                                                         File Upload</label>
 
-<<<<<<< HEAD
                                                 <div class="col-sm-8">
                                                     <input class="form-control" wire:model="file" type="file" id="file">
                                                     @error('file')
@@ -123,42 +122,13 @@
                                         </form><!-- End Horizontal Form -->
                                     </div>
                                 </div>
-=======
-                                                    <div class="col-sm-8">
-                                                        <input class="form-control" wire:model="file" type="file"
-                                                            id="file">
-                                                        @error('file')
-                                                            <div class="mt-3 text-danger">* {{ $message }}</div>
-                                                        @enderror
-
-                                                    </div>
-                                                </div>
-                                                <div class="text-center mt-5">
-                                                    <button type="submit" class="btn btn-primary"
-                                                        style="float:right;">Submit</button>
-                                                    <button type="reset" wire:click="resetForm"
-                                                        class="btn btn-secondary"
-                                                        style="float:right; margin-right: 12px;">Reset</button>
-                                                </div>
-                                            </form><!-- End Horizontal Form -->
-
-                                        </div>
-                                    </div>
-                                </div>
-
->>>>>>> 305ae86 (template)
                             </div>
                         </div>
 
                     </div>
-<<<<<<< HEAD
                 </div>
             </section>
         </div>
-=======
-                </section>
-            </div>
->>>>>>> 305ae86 (template)
         @endif
     </main>
 
