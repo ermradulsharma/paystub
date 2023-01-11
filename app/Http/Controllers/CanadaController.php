@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Template;
 use Illuminate\Http\Request;
 
-class CanadaPaystubController extends Controller
+class CanadaController extends Controller
 {
     /**
      * Display a listing of the resource.

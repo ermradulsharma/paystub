@@ -185,10 +185,10 @@
                             <div class="input-group mmenu mb-3" style="margin: auto;">
                                 <select name="cars" id="cars" style="" class="form-control dropdown1"
                                     style="border-right:none">
-                                    <option value="volvo">Reddish Magneta </option>
-                                    <option value="saab">Saab</option>
-                                    <option value="opel">Opel</option>
-                                    <option value="audi">Audi</option>
+                                    <option selected="">---Select---</option>
+                                        @foreach ($basicType as $data)
+                                        <option value={{$data->title}}>{{$data->title}}</option>
+                                        @endforeach
                                 </select>
                                 <i onclick="myFunction(this)"  class="fa fa-eye eyes1" ></i>
 
@@ -214,10 +214,10 @@
                             <div class="input-group mmenu mb-3" style="margin: auto;">
                                 <select name="cars" id="cars" style="" class="form-control dropdown1"
                                     style="border-right:none">
-                                    <option value="volvo">PT Pink    </option>
-                                    <option value="saab">Saab</option>
-                                    <option value="opel">Opel</option>
-                                    <option value="audi">Audi</option>
+                                    <option selected=""> ---Select--- </option>
+                                    @foreach ($advanceType as $data)
+                                    <option value={{$data->title}}>{{$data->title}}</option>
+                                    @endforeach
                                 </select>
                                 <i onclick="myFunction(this)"  class="fa fa-eye eyes1" ></i>
 

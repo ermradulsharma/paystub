@@ -2,29 +2,27 @@
 
 namespace App\Http\Controllers;
 
-
 use App\Models\Template;
 use Illuminate\Http\Request;
 
-class UsaController extends Controller
+class UkController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function templateChoose()
-    {  
-        $basicType = Template::where('type','basic')->get();
-        $advanceType = Template::where('type','advance')->get();
-        return view('usa' , compact('basicType','advanceType'));
-    }
 
-    public function templateGloble()
+     public function templateChoose()
+     {
+         $basicType = Template::where('type','basic')->get();
+         $advanceType = Template::where('type','advance')->get();
+         return view('ukPaystub',compact('basicType','advanceType'));
+     }
+
+    public function index()
     {
-        $basicType = Template::where('type','basic')->get();
-        $advanceType = Template::where('type','advance')->get();
-        return view('globle' ,compact('basicType','advanceType'));
+        //
     }
 
     /**
