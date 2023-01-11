@@ -8,8 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" >
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" >
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
@@ -52,6 +52,102 @@
 
     @yield('content')
 
+    <!-- The Modal -->
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header" style="background: #115caecf;">
+                    <h4 class="modal-title"><img src="images/Paystub X.webp" class="icon"></h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="google-btn mt-4">
+                        <div class="google-icon-wrapper">
+                            <img class="google-icon"
+                                src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" />
+                        </div>
+                        <p class="btn-text"><b>Sign up with google</b></p>
+                    </div>
+
+                    <div class="text-center mt-4 mb-4">
+                        <img src="images/Group 3.png" style="width:130px;">
+                    </div>
+                    <h6 class="text-center" style="color: #457bbe;">Sign Up Using Email</h6>
+                    <p class="text-center">
+
+                        <input type="email" id="email" name="email" class="singup" placeholder="Email *">
+                        <br><br>
+
+                        <button class="continue mt-3" data-toggle="modal" data-dismiss="modal"
+                            data-target="#myModal1">Continue</button>
+                        <a href="#" style="text-decoration: none;color: #0000007a">
+                            <p class="text-center mt-3" style="color: #0000007a;font-size: 13px;">Already have
+                                account?
+                                <u style="color:red;">
+                                    <span style="color:red;">Sign In</span>
+                                </u>
+                            </p>
+                        </a>
+                </div>
+                </p>
+
+                <!-- Modal footer -->
+                <div class="modal-footer" style="background: #457bbed9;">
+                    <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="myModal1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header" style="background: #115caecf;">
+                    <h4 class="modal-title"><img src="images/Paystub X.webp" class="icon"></h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <h5 class="text-center">Verify your Email Address</h5>
+                    <div class=" text-center mt-4">
+                        <div class="mail">
+                            <img src="images/email(3).png" class="mailpic">
+                        </div>
+
+                        <h5 style="color: #457bbe;" class="mt-4 text-center">Almost There!</h5>
+                        <p style="color: #02030359;font-size: 14px;font-family: serif;" class="text-center">Enter the
+                            Verification code to sent</p>
+
+                        <input type="email" id="email" name="email" class="singup1 text-center"
+                            placeholder="ABC@paystub.com">
+                        <div style="color: red;font-size: 13px; font-family: serif;">
+                            <i class="fa fa-exclamation-circle">
+                                Verification code required
+                            </i>
+                        </div>
+                        <p style="color: #0000004d; font-size: 11px;">Didn't receive an email</p>
+                        <p style="color: #04050778;font-size: 12px; font-family: cursive;">Check Your Spanspan
+                            folder<span style="color:red;"> Or </span>resend code</p>
+                        <button class="continue mt-3" data-toggle="modal" data-target="myModal">verify</button>
+                    </div>
+                </div>
+                </p>
+
+                <!-- Modal footer -->
+                <div class="modal-footer" style="background: #457bbed9;">
+                    <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+                </div>
+
+            </div>
+        </div>
+    </div>
     <!-- Start Footer Section -->
     <div class="footerSection">
         <div class="container">
@@ -101,6 +197,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- <popup link> -->
+    @yield('script')
 </body>
 
 </html>

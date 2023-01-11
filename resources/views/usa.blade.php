@@ -189,29 +189,29 @@
 
                         <div class="col-md-3 mt-4">
                             <label for="fname" class="lable">AUTO CALCULATOR <span class="redColor">*</span> </label>
-                            <select name="cars" id="cars" class=" dropdown11">
+                            <select name="cars" id="cars" class="dropdown11 auto_calculate">
                                 <option selected>---Select---</option>
-                                <option value="saab">ON</option>
-                                <option value="opel">OFF</option>
+                                <option value="on">ON</option>
+                                <option value="off">OFF</option>
                             </select>
                         </div>
                         <div class="col-md-3 mt-4">
                             <label for="fname" class="lable">MARITAL STATUS <span class="redColor">*</span> </label>
                             <select name="cars" id="cars" class=" dropdown11">
                                 <option selected>---Select---</option>
-                                <option value="saab">Single</option>
-                                <option value="opel">Married</option>
-                                <option value="opel">Prefered top not say</option>
+                                <option value="single">Single</option>
+                                <option value="married">Married</option>
+                                <option value="other">Prefered top not say</option>
                             </select>
                         </div>
                         <div class="col-md-3 mt-4">
                             <label for="fname" class="lable">HOW DO YOU GET PAID <span class="redColor">*</span> </label>
                             <select name="cars" id="cars" class=" dropdown11" value="">
                                 <option selected>---Select---</option>
-                                <option value="saab">Monthly</option>
                                 <option value="opel">Weekly</option>
-                                <option value="opel">By Monthly</option>
-                                <option value="opel">By Weekly</option>
+                                <option value="opel">Bi-Weekly</option>
+                                <option value="saab">Monthly</option>
+                                <option value="opel">Bi-Monthly</option>
                             </select>
                         </div>
 
@@ -266,22 +266,22 @@
                 <div class=" box-usa">
                     <div class="row mb-3">
                         <div class="col-md-3 mt-4">
-                            <label for="fname" class="lable">PAY START< <span class="redColor">*</span> </label>
-                            <input type="text" id="fname" name="fname" placeholder="12-11-2022" class="w-100 p-2  textInputFontSize">
+                            <label for="pay_start" class="lable">PAY START<span class="redColor">*</span> </label>
+                            <input type="date" id="pay_start" name="pay_start" placeholder="12-11-2022" class="w-100 p-2 textInputFontSize pay_start" data-id="pay_start">
                         </div>
 
                         <div class="col-md-3 mt-4">
-                            <label for="fname" class="lable">PAY END <span class="redColor">*</span> </label>
-                            <input type="text" id="fname" name="fname" placeholder="12-17-2022" class="w-100 p-2  textInputFontSize">
+                            <label for="pay_end" class="lable">PAY END <span class="redColor">*</span> </label>
+                            <input type="date" id="pay_end" name="pay_end" placeholder="12-17-2022" class="w-100 p-2 textInputFontSize pay_end" data-id="pay_end">
                         </div>
                         <div class="col-md-3 mt-4">
-                            <label for="fname" class="lable">PAY DATE <span class="redColor">*</span> </label>
-                            <input type="text" id="fname" name="fname" placeholder="12-19-2022" class="w-100 p-2  textInputFontSize">
+                            <label for="pay_date" class="lable">PAY DATE <span class="redColor">*</span> </label>
+                            <input type="date" id="pay_date" name="pay_date" placeholder="12-19-2022" class="w-100 p-2 textInputFontSize pay_date" data-id="pay_date">
                         </div>
                         <div class="col-md-3 mt-4">
                             <p class="text-center mb-0" style="font-size:18px;">How do you get paid <span class="redColor">*</span> <span> </p>
                             <div class="text-center mt-2  d-flex justify-content-center">
-                                <button CLASS="hourbtn">HOURLY</button> <button CLASS="salrybtn">SALARY</button>
+                                <button class="hourbtn date_select">HOURLY</button> <button class="salrybtn">SALARY</button>
                             </div>
                         </div>
 
@@ -289,56 +289,55 @@
 
                     <div class="row ">
                         <div class="col-md-2 ">
-                            <button CLASS="statementbtn">EARNING</button>
+                            <button class="statementbtn">EARNING</button>
                         </div>
                         <div class="col-md-2 ">
-                            <button CLASS="statementbtn">RATE</button>
+                            <button class="statementbtn">RATE</button>
                         </div>
                         <div class="col-md-2 ">
-                            <button CLASS="statementbtn">HOURS</button>
+                            <button class="statementbtn">HOURS</button>
                         </div>
                         <div class="col-md-2 ">
 
-                            <button CLASS="statementbtn">TOTAL</button>
+                            <button class="statementbtn">TOTAL</button>
                         </div>
                         <div class="col-md-2">
-                            <button CLASS="statementbtn">THIS PERIOD</button>
+                            <button class="statementbtn">THIS PERIOD</button>
                             <p class="p-0 m-0 text-center" style="font-family: serif;font-size: 14px;"> Total Gross
                             </p>
                         </div>
                         <div class="col-md-2 ">
-                            <button CLASS="statementbtn">YTD TOTAL</button>
+                            <button class="statementbtn">YTD TOTAL</button>
                             <p class="p-0 m-0 text-center" style="font-family: serif;font-size:14px; 14px;">YTD Total Gross</p>
                         </div>
                     </div>
 
                     <div class="row mb-3 mt-">
                         <div class="col-md-2">
-                            <input class="earnbtn text-center" type="text" value="Regular">
+                            <input class="earnbtn text-center" type="text" value="Regular" id="earning_0" data-id="0" required>
                         </div>
                         <div class="col-md-2 ">
-                            <input CLASS="earnbtn text-center" value="740.98"></input>
+                            <input type="number" step="0.01" class="earnbtn text-center calculation" value="" id="rate_0" data-id="0" required>
                         </div>
                         <div class="col-md-2 ">
-                            <input CLASS="earnbtn text-center" value="455.90"></input>
+                            <input type="number" step="0.01" class="earnbtn text-center hours calculation" value="" id="hours_0" data-id="0" required>
                         </div>
 
                         <div class="col-md-2">
-                            <input CLASS="earnbtn text-center" value="740.90"></input>
+                            <input type="number" step="0.01" class="earnbtn text-center" value="" id="total_0" data-id="0" required>
                         </div>
                         <div class="col-md-2">
-                            <input CLASS="earnbtn text-center" value="556.90"></input>
+                            <input type="number" step="0.01" class="earnbtn text-center" value="" id="period_0" data-id="0" required>
                         </div>
                         <div class="col-md-2">
-                            <input CLASS="earnbtn text-center" value="556.90"></input>
+                            <input type="number" step="0.01" class="earnbtn text-center" value="" id="ytd_total_0" data-id="0" required>
                         </div>
-
                     </div>
-
+                    <div class="field_wrapper"> </div>
 
                     <div class="row mb-3">
                         <div class="col-md-2 mt-2 mb-5">
-                            <button CLASS="earnbtn"><i class="fa fa-plus-circle pr-2" style="font-size:24px;color:green"></i>Add Earning</button>
+                            <button class="add_button earnbtn"><i class="fa fa-plus-circle pr-2" style="font-size:24px;color:green"></i>Add Earning</button>
                         </div>
                     </div>
 
@@ -410,10 +409,11 @@
                             <input class="earnbtn text-center" value="845.50" />
                         </div>
                     </div>
-
+                    <div id="add_deduction">
+                    </div>
                     <div class="row mb-3">
                         <div class="col-md-4 col-lg-3">
-                            <button CLASS="earnbtn"><i class="fa fa-plus-circle pr-5" style="font-size:24px;color:green"></i>Add Deduction</button>
+                            <button class="add_deduction earnbtn"><i class="fa fa-plus-circle pr-5" style="font-size:24px;color:green"></i>Add Deduction</button>
                         </div>
 
                         <div class="col-md-1"></div>
@@ -438,18 +438,18 @@
                     </div>
                     <div class="row mb-3 mt-5">
                         <div class="col-md-4 col-lg-3">
-                            <button CLASS="netpaybtn">Net Pay</button>
+                            <button class="netpaybtn">Net Pay</button>
                         </div>
                         <div class="col-md-1"></div>
                         <div class="col-md-2 col-lg-3"></div>
                         <div class="col-md-1"></div>
                         <div class="col-md-2">
                             <p class="p-0 m-0 text-center" style="font-family: serif;">Net Pay</p>
-                            <input CLASS="earnbtn text-center" value="7,247.29">
+                            <input class="earnbtn text-center" value="7,247.29">
                         </div>
                         <div class="col-md-2">
                             <p class="p-0 m-0 text-center" style="font-family: serif;">YTD Net pay</p>
-                            <input CLASS="earnbtn text-center" value="19,294.5">
+                            <input class="earnbtn text-center" value="19,294.5">
                         </div>
                     </div>
                 </div>
@@ -465,121 +465,169 @@
                     <div class="row mb-3">
                         <div class="col-lg-2 col-md-4 col-sm-6">
                             <p class="p-0 m-0 " style="font-family: serif;">CO<span class="redColor">*</span></p>
-                            <input CLASS="earnbtn text-center " value="511"></input>
+                            <input class="earnbtn text-center " value="511"></input>
                         </div>
                         <div class="col-lg-2 col-md-4 col-sm-6">
                             <p class="p-0 m-0 text-center " value="511" style="font-family: serif;">FILE.<span class="redColor">*</span></p>
-                            <input CLASS="earnbtn text-center " value="789"></input>
+                            <input class="earnbtn text-center " value="789"></input>
                         </div>
                         <div class="col-lg-2 col-md-4 col-sm-6">
                             <p class="p-0 m-0 " style="font-family: serif;">CLOCK VCHR.<span class="redColor">*</span></p>
-                            <input CLASS="earnbtn text-center " value="978"></input>
+                            <input class="earnbtn text-center " value="978"></input>
                         </div>
                         <div class="col-lg-2 col-md-4 col-sm-6">
                             <p class="p-0 m-0 " style="font-family: serif;">Advice Number:<span class="redColor">*</span></p>
-                            <input CLASS="earnbtn text-center " value="908"></input>
+                            <input class="earnbtn text-center " value="908"></input>
                         </div>
                         <div class="col-lg-2 col-md-4 col-sm-6">
                             <p class="p-0 m-0 " style="font-family: serif;">Account Number LAST<span class="redColor">*</span></p>
-                            <input CLASS="earnbtn text-center " value="989"></input>
+                            <input class="earnbtn text-center " value="989"></input>
                         </div>
                         <div class="col-lg-2 col-md-4 col-sm-6">
                             <p class="p-0 m-0 " style="font-family: serif;">Transit ABA<span class="redColor">*</span></p>
-                            <input CLASS="earnbtn text-center " value="989"></input>
+                            <input class="earnbtn text-center " value="989"></input>
                         </div>
                     </div>
                 </div>
-                <div class="mb- d-flex" style="justify-content: space-between;">
-                    <div class="text-left mt-1 ">
-                        <button class="previewbtn">Preview Your Paystub <i class="fa fa-eye" style="font-size: 30px; margin-left: 7px;"></i></button>
-                    </div>
-                    <div class="text-right mt-1 ">
-                        <button class="emailbtn" data-toggle="modal" data-target="#myModal"> <i class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL PAYSTUB <i class="fa fa-download ml-4" style="font-size:24px"></i></button>
-                    </div>
-                </div>
+
             </div>
         </div>
     </div>
-
-    <div>
-        <div class="modal fade" id="myModal">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <!-- Modal Header -->
-                    <div class="modal-header" style="background: #115caecf;">
-                        <h4 class="modal-title"><img src="images/Paystub X.webp" class="icon"></h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
-
-                    <!-- Modal body -->
-                    <div class="modal-body">
-                        <div class="google-btn mt-4">
-                            <div class="google-icon-wrapper">
-                                <img class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" />
-                            </div>
-                            <p class="btn-text"><b>Sign up with google</b></p>
-                        </div>
-
-                        <div class="text-center mt-4 mb-4">
-                            <img src="images/Group 3.png" style="width:130px;">
-                        </div>
-                        <h6 class="text-center" style="color: #457bbe;">Sign Up Using Email</h6>
-                        <p class="text-center">
-                            <input type="email" id="email" name="email" class="singup" placeholder="Email *">
-                            <button class="continue mt-3" data-toggle="modal" data-dismiss="modal" data-target="#myModal1">Continue</button>
-                            <a href="#" style="text-decoration: none;color: #0000007a">
-                                <p class="text-center mt-3" style="color: #0000007a;font-size: 13px;">Already have account?
-                                    <u class="redColor">
-                                        <span class="redColor">Sign In</span>
-                                    </u>
-                                </p>
-                            </a>
-                        </p>
-                    </div>
-                    <!-- Modal footer -->
-                    <div class="modal-footer" style="background: #457bbed9;">
-                        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
-                    </div>
-                </div>
-            </div>
+    <div class="mb-4 d-flex" style="justify-content: space-between;">
+        <div class="text-left mt-1">
+            <button class="previewbtn text-capitalize">Preview Your Paystub <i class="fa fa-eye" style="font-size: 30px; margin-left: 7px;"></i></button>
         </div>
-    </div>
-    <div class="modal fade" id="myModal1">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <!-- Modal Header -->
-                <div class="modal-header" style="background: #115caecf;">
-                    <h4 class="modal-title"><img src="images/Paystub X.webp" class="icon"></h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <!-- Modal body -->
-                <div class="modal-body">
-                    <h5 class="text-center">Verify your Email Address</h5>
-                    <div class=" text-center mt-4">
-                        <div class="mail">
-                            <img src="images/email(3).png" class="mailpic">
-                        </div>
-                        <h5 style="color: #457bbe;" class="mt-4 text-center">Almost There!</h5>
-                        <p style="color: #02030359;font-size: 14px;font-family: serif;" class="text-center">Enter the Verification code to sent</p>
-                        <input type="email" id="email" name="email" class="singup1 text-center" placeholder="ABC@paystub.com">
-                        <div style="color: red;font-size: 13px; font-family: serif;">
-                            <i class="fa fa-exclamation-circle"> Verification code required </i>
-                        </div>
-                        <p style="color: #0000004d; font-size: 11px;">Didn't receive an email</p>
-                        <p style="color: #04050778;font-size: 12px; font-family: cursive;">Check Your Spanspan folder <span class="redColor"> Or </span> resend code </p>
-                        <button class="continue mt-3" data-toggle="modal" data-target="myModal">verify</button>
-                    </div>
-                </div>
-                <!-- Modal footer -->
-                <div class="modal-footer" style="background: #457bbed9;"></div>
-            </div>
+        <div class="text-right mt-1">
+            <button class="emailbtn text-capitalize" data-toggle="modal" data-target="#myModal"> <i class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL PAYSTUB <i class="fa fa-download ml-4" style="font-size:24px"></i></button>
         </div>
     </div>
 </div>
 @endsection
-<script>
-    function myFunction(x) {
-        x.classList.toggle("fa-eye-slash");
-    }
+@section('script')
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var maxField = 12;
+            var addButton = $('.add_button');
+            var wrapper = $('.field_wrapper');
+            var x = 1;
+            var i = 1;
 
-</script>
+            $(addButton).click(function() {
+                var fieldHTML =
+                    '<div class="row mb-3">' +
+                        '<div class="col-md-2 ">' +
+                            '<input  id="earning_' + i + '" data-id="' + i + '" class="earnbtn text-center" value="">' +
+                        '</div>' +
+                        '<div class="col-md-2 ">' +
+                            '<input type="number" step="0.01" id="rate_' + i + '" data-id="' + i + '" class="earnbtn calculation text-center" value="">' +
+                        '</div>' +
+                        '<div class="col-md-2 ">' +
+                            '<input type="number" step="0.01" id="hours_' + i + '" data-id="' + i + '" class="earnbtn calculation text-center hours" value="">' +
+                        '</div>' +
+                        '<div class="col-md-2">' +
+                            '<input type="number" step="0.01" id="total_' + i + '" data-id="' + i + '" class="earnbtn text-center" value="">' +
+                        '</div>' +
+                        '<div class="col-md-2">' +
+                            '<input type="number" step="0.01" id="period_' + i + '" data-id="' + i + '" class="earnbtn text-center" value="">' +
+                        '</div>' +
+                        '<div class="col-md-2 ">' +
+                            '<input type="number" step="0.01" id="ytd_total_' + i + '" data-id="' + i + '" class="earnbtn text-center" value="">' +
+                        '</div>' +
+                    '</div>';
+                if (x < maxField) {
+                    x++;
+                    $(wrapper).append(fieldHTML);
+                }
+                i++;
+                $('.calculation').keyup(function() {
+                    var id = $(this).data('id');
+                    calculation(id);
+                });
+            });
+
+            $('.calculation').keyup(function() {
+                var id = $(this).data('id');
+                calculation(id);
+            });
+
+            function calculation(id) {
+                var rate = parseFloat($('#rate_' + id).val()).toFixed(2);
+                var hours = parseFloat($('#hours_' + id).val()).toFixed(2);
+                var total = rate * hours;
+                var ytd_total = total * 365;
+                $('#total_' + id).val(total);
+                $('#period_' + id).val(total);
+                $('#ytd_total_' + id).val(ytd_total);
+            }
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('.date_select').click(function() {
+                var pay_start = $(".pay_start").val();
+                var pay_end = $(".pay_end").val();
+
+                if ((pay_start == "") || (pay_end == "")) {
+                    alert("Please enter two dates");
+                    return false
+                }
+                var dt1 = new Date(pay_start);
+                var dt2 = new Date(pay_end);
+
+                var mBetween = dt2.getTime() - dt1.getTime();
+                var days = (mBetween / (1000 * 3600 * 24));
+                var hour = ((days + 1) * 8);
+                var result = Math.round(Math.abs(hour));
+                $('.hours').val(result);
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            var maxField = 12;
+            var addDeduction = $('.add_deduction');
+            var wrapper = $('#add_deduction');
+            var x = 1;
+            var i = 1;
+            $(addDeduction).click(function() {
+                var fieldHTML =
+                    '<div class="row mb-3">' +
+                        '<div class="col-md-3">' +
+                            '<i class="fa fa-lock earnbtn2"></i>' +
+                            '<input class="earnbtn" type="text" value="">' +
+                        '</div>' +
+                        '<div class="col-md-1"> </div>' +
+                        '<div class="col-md-3"> </div>' +
+                        '<div class="col-md-1"> </div>' +
+                        '<div class="col-md-2">'+
+                            '<input class="earnbtn text-center tax" value=""/>' +
+                        '</div>' +
+                        '<div class="col-md-2">' +
+                            '<input class="earnbtn text-center tax" value=""/>' +
+                        '</div>' +
+                    '</div>';
+                if (x < maxField) {
+                    x++;
+                    $(wrapper).append(fieldHTML);
+                }
+            });
+        });
+    </script>
+    <script>
+        $('.auto_calculate').keyup(function() {
+            var id = $(this).val();
+            if(id == 'off'){
+                $('.tax').val("");
+            }else{
+                $('.tax').val();
+            }
+        });
+    </script>
+    <script>
+        function myFunction(x) {
+            x.classList.toggle("fa-eye-slash");
+        }
+
+    </script>
+@endsection
+
