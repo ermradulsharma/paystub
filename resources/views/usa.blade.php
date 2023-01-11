@@ -590,10 +590,7 @@
         </div>
     </div>
 </div>
-
-
 @endsection
-
 <script>
     function myFunction(x) {
         x.classList.toggle("fa-eye-slash");
