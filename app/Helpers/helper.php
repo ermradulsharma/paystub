@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Image;
+use PDF;
 
 function uploadImage($module, $module_id, $files, $path = "images")
 {
@@ -22,6 +23,9 @@ function uploadImage($module, $module_id, $files, $path = "images")
             $fileType = "image";
         } else if (strstr($mime, "audio/")) {
             $fileType = "audio";
+        }
+        if($fileType == "image"){
+            $pdf = PDF::loadView('myPDF', $data);
         }
         if ($fileType == "video") {
             $thumbnail = $path . "/thumbnail/";
