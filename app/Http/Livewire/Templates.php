@@ -32,6 +32,7 @@ class Templates extends Component
     public function resetForm()
     {
         $this->title = "";
+        $this->file = "";
         $this->type = "";
         $this->state = "";
        $this->tempId = null;
