@@ -44,7 +44,7 @@ class Templates extends Component
             'title' => 'required',
             'type' => 'required',
             'state' => 'required',
-            'file' => 'required|mimes:png,jpg,jpeg,webp,pdf', // 1MB Max
+            'file' => 'required', // 1MB Max
          ]);
         $this->back();
         $tempObj = Template::find($this->tempId);
@@ -58,7 +58,7 @@ class Templates extends Component
 
         $tempObj->save();
         if ($this->file) {
-            deleteImage('App\Models\Template', $this->tempId ?? 0, 'templates');
+            deleteImage('App\Models\Template', $tempObj->id ?? 0, 'templates');
             uploadImage("App\Models\Template", $tempObj->id, $this->file, 'templates');
         }
         $msg="Template Updated successfully.";
