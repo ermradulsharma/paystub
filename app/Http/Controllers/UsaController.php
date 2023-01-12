@@ -13,9 +13,9 @@ class UsaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function templateChoose()
+    public function index()
     {  
-        $dedutions = Deduction::orderBy('id','asc')->get();
+        $dedutions = Deduction::where('state','usa')->get();
         $basicType = Template::where('type','basic')->get();
         $advanceType = Template::where('type','advance')->get();
         return view('usa' , compact('basicType','advanceType','dedutions'));

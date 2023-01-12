@@ -68,7 +68,7 @@
                                     <select name="cars" id="cars" style="" class="form-control dropdown1" style="border-right:none">
                                         <option selected="">---Select---</option>
                                         @foreach ($basicType as $data)
-                                        <option value={{$data->title}}>{{$data->title}}</option>
+                                        <option value="{{$data->title}}">"{{$data->title}}"</option>
                                         @endforeach
                                     </select>
                                     <i onclick="myFunction(this)" class="fa fa-eye eyes" style="font-size: 39px;"></i>
@@ -88,7 +88,7 @@
                                     <select name="cars" id="cars" style="" class="form-control dropdown1" style="border-right:none">
                                         <option selected=""> ---Select--- </option>
                                         @foreach ($advanceType as $data)
-                                        <option value={{$data->title}}>{{$data->title}}</option>
+                                        <option value="{{$data->title}}">"{{$data->title}}"</option>
                                         @endforeach
                                     </select>
                                     <i onclick="myFunction(this)" class="fa fa-eye eyes" style="font-size: 39px;margin-left: 6px;"></i>
@@ -347,68 +347,27 @@
                         </div>
 
                     </div>
-                    <div class="row mb-3 mt-4">
+
+                    @foreach ($dedutions as $item)
+                     <div class="row mb-3 mt-4">
                         <div class="col-md-4 col-lg-3">
                             <i class="fa fa-lock earnbtn2"></i>
-                            <input class="earnbtn text-center" type="text" value="FICA Medicare">
+                            <input class="earnbtn text-center" type="text" value="{{$item->title}}">
                         </div>
                         <div class="col-md-1 col-lg-1"></div>
                         <div class="col-md-2 col-lg-3"></div>
                         <div class="col-md-1 col-lg-1"></div>
                         <div class="col-md-2 col-lg-2">
-                            <input class="earnbtn text-center" value="551.10" />
+                            <input class="earnbtn text-center" value=" " />
                         </div>
                         <div class="col-md-2 col-lg-2">
-                            <input class="earnbtn text-center" value="845.50" />
+                            <input class="earnbtn text-center" value=" " />
                         </div>
-                    </div>
+                     </div>
+                    @endforeach
 
-                    <div class="row mb-3">
-                        <div class="col-md-4 col-lg-3">
-                            <i class="fa fa-lock earnbtn2"></i>
-                            <input class="earnbtn text-center" type="text" value="Social Security Tax">
-                        </div>
-                        <div class="col-md-1"></div>
-                        <div class="col-md-2 col-lg-3"></div>
-                        <div class="col-md-1"></div>
-                        <div class="col-md-2">
-                            <input class="earnbtn text-center" value="551.10" />
-                        </div>
-                        <div class="col-md-2">
-                            <input class="earnbtn text-center" value="845.50" />
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col-md-4 col-lg-3">
-                            <i class="fa fa-lock earnbtn2"></i>
-                            <input class="earnbtn text-center" type="text" value="Federal Income Tax">
-                        </div>
-                        <div class="col-md-1"></div>
-                        <div class="col-md-2 col-lg-3"></div>
-                        <div class="col-md-1"></div>
-                        <div class="col-md-2">
-                            <input class="earnbtn text-center" value="551.10" />
-                        </div>
-                        <div class="col-md-2">
-                            <input class="earnbtn text-center" value="845.50" />
-                        </div>
-                    </div>
-
-                    <div class="row mb-3">
-                        <div class="col-md-4 col-lg-3">
-                            <i class="fa fa-lock earnbtn2"></i>
-                            <input class="earnbtn text-center" type="text" value="State Tax">
-                        </div>
-                        <div class="col-md-1"></div>
-                        <div class="col-md-2 col-lg-3"></div>
-                        <div class="col-md-1"></div>
-                        <div class="col-md-2">
-                            <input class="earnbtn text-center" value="551.10" />
-                        </div>
-                        <div class="col-md-2">
-                            <input class="earnbtn text-center" value="845.50" />
-                        </div>
-                    </div>
+                 
+               
                     <div id="add_deduction">
                     </div>
                     <div class="row mb-3">

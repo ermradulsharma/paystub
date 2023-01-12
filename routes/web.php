@@ -21,9 +21,9 @@ Route::get('/', function () {
     return view('paystub');
 });
 
-Route::get('usa', [UsaController::class, 'templateChoose']);
-Route::get('canada-paystub', [CanadaController::class, 'templateChoose']);
-Route::get('uk-paystub', [UkController::class, 'templateChoose']);
+Route::get('usa', [UsaController::class, 'index']);
+Route::get('canada-paystub', [CanadaController::class, 'index']);
+Route::get('uk-paystub', [UkController::class, 'index']);
 Route::get('globle', [UsaController::class, 'templateGloble']);
 
 

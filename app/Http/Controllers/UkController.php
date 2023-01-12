@@ -13,16 +13,13 @@ class UkController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-     public function templateChoose()
-     {
-         $basicType = Template::where('type','basic')->get();
-         $advanceType = Template::where('type','advance')->get();
-         return view('ukPaystub',compact('basicType','advanceType'));
-     }
+   
 
     public function index()
     {
-        //
+        $basicType = Template::where('type','basic')->get();
+         $advanceType = Template::where('type','advance')->get();
+         return view('ukPaystub',compact('basicType','advanceType'));
     }
 
     /**

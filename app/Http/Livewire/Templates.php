@@ -49,6 +49,7 @@ class Templates extends Component
         $tempObj = Template::find($this->tempId);
         if(!$tempObj){
             $tempObj = new Template();
+            $msg="Template saved successfully.";
         }
         $tempObj->title = $this->title;
         $tempObj->type = $this->type;
@@ -59,8 +60,10 @@ class Templates extends Component
             deleteImage('App\Models\Template', $this->tempId ?? 0, 'templates');
             uploadImage("App\Models\Template", $tempObj->id, $this->file, 'templates');
         }
+        $msg="Template Updated successfully.";
+
         $this->resetForm();
-        session()->flash('success', 'template save successfully.');
+        session()->flash('success', $msg);
     }
 
     public function editTemplate($id)
@@ -89,7 +92,7 @@ class Templates extends Component
     {
          deleteImage('App\Models\Template',  $id ?? 0, 'templates');
          Template::find($id)->delete();
-         session()->flash('success', 'Template delete successfully.');
+         session()->flash('success', 'Template deleted successfully.');
     }
 
 }

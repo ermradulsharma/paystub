@@ -149,162 +149,65 @@
                     </div>
                 </div>
 
-                <div class="row mb-3 mt-">
-                    <div class="col-lg-1 col-md-2">
-
-                        <input class="earnbtn text-center" type="text" value="Regular">
-                    </div>
-                    <div class="col-lg-1 col-md-2">
-
-                        <input class="earnbtn text-center" type="text" value="67.09">
-                    </div>
-                    <div class="col-lg-2 col-md-2 ">
-                        <input CLASS="earnbtn text-center" value="740.98"></input>
-                    </div>
-                    <div class="col-lg-2 col-md-2">
-                        <input CLASS="earnbtn text-center" value="455.90"></input>
+                <div class="row mb-3 mt-2">
+                    <div class="col-lg-1 col-md-1 ">
+                       <input class="earnbtn text-center" type="text" value="Regular">
                     </div>
 
-                    <div class="col-lg-2 col-md-2">
-                            <i class="fa fa-lock earnbtn2"></i>
-                            <input class="earnbtn text-center" type="text" value="CPP">
+                        <div class="col-lg-5">
+                            <div class=" m-auto d-inline-flex justify-content-between">
+                             
+                                  <input class="earnbtn text-center" type="text" value="67.09">
+                              
+                              
+                                    <input class="earnbtn text-center" type="text" value="740.98"></input>
+                              
+                               
+                                    <input class="earnbtn text-center" type="text" value="455.90"></input>
+                                
+                            </div>
                         </div>
-                    <div class="col-lg-2 col-md-2">
+                  
+                        <div class="col-lg-6 ">
+                            @foreach ($dedutions as $item)
+                            <div class="row m-auto">
+                         
+                                <div class="col-md-4">
+                                        <i class="fa fa-lock earnbtn2"></i>
+                                        <input class="earnbtn text-center" type="text" value="{{$item->title}}">
+                                    </div>
+        
+                                <div class="col-md-4">
+        
+                                    <input class="earnbtn text-center" value="">
+                                    </input>
+                                </div>
+                                <div class="col-md-4">
+        
+                                    <input class="earnbtn text-center" value="">
+                                    </input>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+                   
+           
 
-                        <input CLASS="earnbtn text-center" value="556.90"></input>
-                    </div>
-                    <div class="col-lg-2 col-md-2">
-
-                        <input CLASS="earnbtn text-center" value="556.90"></input>
-                    </div>
+                 
 
                 </div>
 
 
-                <div class="row mb-3">
-                    <div class="col-md-5 col-lg-3 ">
-                        <button CLASS="earnbtn1"><i class="fa fa-plus-circle pr-2" style="font-size: 24px;
-                       color: #0ec23b;padding-top: 0px;"></i>Add Earning</button>
-                    </div>
-                    <div class="col-md-1 col-lg-3"></div>
-                    <div class="col-md-2">
-                            <i class="fa fa-lock earnbtn2"></i>
-                            <input class="earnbtn text-center" type="text" value="EL">
-                        </div>
+    
+            
+              
 
-                    <div class="col-md-2">
-
-                        <input CLASS="earnbtn text-center" value="25.50">
-                        </input>
-                    </div>
-                    <div class="col-md-2">
-
-                        <input CLASS="earnbtn text-center" value="15,000.58">
-                        </input>
-                    </div>
-
-                </div>
-
-                <div class="row mb-3">
-                    <div class="col-md-3 col-lg-6"></div>
-                    <div class="col-md-3 col-lg-2">
-                            <i class="fa fa-lock earnbtn2"></i>
-                            <input class="earnbtn text-center" type="text" value="FICA Medicare">
-                        </div>
-
-
-
-                    <div class="col-md-3 col-lg-2" >
-
-                        <input CLASS="earnbtn text-center" value="343" >
-                            </input>
-                    </div>
-                    <div class="col-lg-2 col-md-3">
-
-                        <input CLASS="earnbtn text-center" value="678">
-                            </input>
-                    </div>
-
-                </div>
-
-                <div class="row mb-3">
-                <div class="col-md-3 col-lg-6"></div>
-                    <div class="col-md-3 col-lg-2">
-                            <i class="fa fa-lock earnbtn2"></i>
-                            <input class="earnbtn text-center" type="text" value="Ferderal Tax">
-                        </div>
-
-
-
-                    <div class="col-lg-2 col-md-3">
-
-                        <input CLASS="earnbtn text-center" value=" 325.50">
-                           </input>
-                    </div>
-                    <div class="col-lg-2 col-md-3">
-
-                        <input CLASS="earnbtn text-center" value="15,000.58">
-                            </input>
-                    </div>
-
-                </div>
-
-
-                <div class="row mb-3">
-                    <div class="col-lg-6 col-md-3"></div>
-                    <div class="col-lg-2 col-md-3">
-                            <i class="fa fa-lock earnbtn2"></i>
-                            <input class="earnbtn text-center" type="text" value="Life Insurance">
-                        </div>
-
-
-
-                    <div class="col-lg-2 col-md-3">
-
-                        <input CLASS="earnbtn text-center" value="325.50">
-                            </input>
-                    </div>
-                    <div class="col-lg-2 col-md-3">
-
-                        <input CLASS="earnbtn text-center" value=" 15,000.58">
-                           </input>
-                    </div>
-
-                </div>
-
-
-                <div class="row mb-3">
-                    <div class="col-lg-6 col-md-3"></div>
-                    <div class="col-lg-2 col-md-3">
-                            <i class="fa fa-lock earnbtn2"></i>
-                            <input class="earnbtn text-center" type="text" value="Canada Saving BC">
-                        </div>
-
-
-
-                    <div class="col-lg-2 col-md-3 mb-4">
-
-                        <input CLASS="earnbtn text-center" value="325.50">
-                            </input>
-                    </div>
-                    <div class="col-lg-2 col-md-3">
-
-                        <input CLASS="earnbtn text-center" value=" 15,000.58">
-                           </input>
-                    </div>
-
-                </div>
+              
 
 
 
 
 
-                <!-- <div class="row mb-3">
-                        <div class="col-md-3">
-                            <button class="createbtn mb-3">DEDUCTION</button>
-                        </div>
-
-                    </div> -->
 
 
 
@@ -316,7 +219,12 @@
 
 
                 <div class="row mb-3 ">
-                    <div class="col-md-3"></div>
+                    <div class="col-lg-3 col-md-6">
+                       
+                            <button CLASS="earnbtn1"><i class="fa fa-plus-circle pr-2" style="font-size: 24px;
+                           color: #0ec23b;padding-top: 0px;"></i>Add Earning</button>
+                   
+                    </div>
                     <div class="col-lg-3 col-md-6 mb-3 mt-1">
 
                         <button CLASS="earnbtn1"><i class="fa fa-plus-circle pr-2" style="font-size: 24px;

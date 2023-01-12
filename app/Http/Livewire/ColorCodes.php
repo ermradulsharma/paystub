@@ -45,12 +45,16 @@ class ColorCodes extends Component
         $colorObj = ColorCode::find($this->colorId);
         if(!$colorObj){
             $colorObj = new ColorCode();
+        $msg="Color saved successfully.";
+
         }
         $colorObj->name = $this->name;
         $colorObj->code = $this->code;
         $colorObj->save();
+        $msg="Color Updated successfully.";
+
         $this->resetForm();
-        session()->flash('success', 'color save successfully.');
+        session()->flash('success',  $msg);
     }
 
     public function editColor($id)
@@ -77,6 +81,6 @@ class ColorCodes extends Component
     public function deleteColor($id)
     {
         ColorCode::find($id)->delete();
-        session()->flash('success', 'Color delete successfully.');
+        session()->flash('success', 'Color deleted successfully.');
     }
 }

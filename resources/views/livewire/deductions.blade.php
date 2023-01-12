@@ -30,11 +30,12 @@
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Title</th>
-                                <th scope="col">Type</th>
-                                <th scope="col">Price</th>
-                                <th scope="col">Action</th>
+                                <th>#</th>
+                                <th>State</th>
+                                <th>Type</th>
+                                <th>Title</th>
+                                <th>Price</th>
+                                <th>Action</th>
 
 
                             </tr>
@@ -44,8 +45,9 @@
                             @foreach ($deductions as $key => $item)
                             <tr>
                                 <td>{{$key+1}}</td>
-                                <td>{{$item->title}}</td>
+                                <td>{{$item->state}}</td>
                                 <td>{{$item->type}}</td>
+                                <td>{{$item->title}}</td>
                                 <td>{{$item->price}}</td>
                                 <td><button type="button" class="btn btn-primary"
                                         wire:click="editDeduction({{$item->id}})">Edit</button>
@@ -80,7 +82,35 @@
 
 
                                         <!-- Horizontal Form -->
+
                                         <form wire:submit.prevent="StoreDeduction">
+                                            <div class="row mb-3">
+                                                <label class="col-sm-3 col-form-label">State</label>
+                                                <div class="col-sm-8">
+                                                  <select class="form-select" aria-label="Default select example" type="text" wire:model="state">
+                                                    <option selected="">Open this select State</option>
+                                                    <option value="usa">USA</option>
+                                                    <option value="canada">CANADA</option>
+                                                    <option value="uk">UK</option>
+                                                    <option value="globle">GLOBLE</option>
+                                           
+                                                  </select>
+                                                  @error('state')
+                                                  <div class="mt-3 text-danger">* {{ $message }}</div>
+                                                  @enderror
+                                                </div>
+                                                
+                                            </div>
+                                             <div class="row mb-3">
+                                                <label  class="col-sm-3 col-form-label">Type
+                                                  </label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control" id="type" wire:model="type">
+                                                    @error('type')
+                                                    <div class="mt-3 text-danger">* {{$message}}</div>
+                                                    @enderror
+                                                </div>
+                                            </div>
                                             <div class="row mb-3">
                                                 <label  class="col-sm-3 col-form-label">Title
                                                   </label>
@@ -91,16 +121,7 @@
                                                     @enderror
                                                 </div>
                                             </div>
-                                            <div class="row mb-3">
-                                                <label  class="col-sm-3 col-form-label">Type
-                                                  </label>
-                                                <div class="col-sm-8">
-                                                    <input type="text" class="form-control" id="type" wire:model="type">
-                                                    @error('type')
-                                                    <div class="mt-3 text-danger">* {{$message}}</div>
-                                                    @enderror
-                                                </div>
-                                            </div>
+                                          
                                             <div class="row mb-3">
                                                 <label  class="col-sm-3 col-form-label">Price
                                                     </label>
