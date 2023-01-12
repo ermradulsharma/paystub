@@ -4,7 +4,7 @@
 
   <!-- Modal Start -->
   <div class="modal fade" id="openEye" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Template</h5>
@@ -13,7 +13,7 @@
           </button>
         </div>
         <div class="modal-body">
-            <img src=" " class="setImage" alt="">
+            <img src=" " class="setImage w-100" alt="">
         </div>
      
         
@@ -91,10 +91,10 @@
                                         <option selected=""> --- Select Basic Templates --- </option>
                                         @foreach ($basicType as $data)
                                         <option value="{{$data->title}}" data-src="{{$data->images->file}}">{{$data->title}}</option>
-                                    
+                                        @endforeach
                                     </select>
                                     <i onclick="myFunction(this)"  data-src="{{$data->images->file}}" class="fa fa-eye-slash" data-target="#openEye" data-toggle="modal" style="font-size: 39px;"></i>
-                                    @endforeach
+                                   
                                 </div>
                               
                             </div>
@@ -115,7 +115,7 @@
                                         <option value="{{$data->title}}">{{$data->title}}</option>
                                         @endforeach
                                     </select>
-                                    <i onclick="myFunction(this)" class="fa fa-eye-slash" data-target="#openEye" data-toggle="modal" style="font-size: 39px;margin-left: 6px;"></i>
+                                    <i onclick="myFunction(this)" class="fa fa-eye-slash" data-src="{{$data->images->file}}" data-target="#openEye" data-toggle="modal" style="font-size: 39px;margin-left: 6px;"></i>
                                 </div>
                             </div>
                             <div class=" mt-3 ">
