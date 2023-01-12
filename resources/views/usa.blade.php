@@ -349,7 +349,7 @@
                     </div>
 
                     @foreach ($dedutions as $item)
-                     <div class="row mb-3 mt-4">
+                    <div class="row mb-3 mt-4">
                         <div class="col-md-4 col-lg-3">
                             <i class="fa fa-lock earnbtn2"></i>
                             <input class="earnbtn text-center" type="text" value="{{$item->title}}">
@@ -363,11 +363,11 @@
                         <div class="col-md-2 col-lg-2">
                             <input class="earnbtn text-center" value=" " />
                         </div>
-                     </div>
+                    </div>
                     @endforeach
 
-                 
-               
+
+
                     <div id="add_deduction">
                     </div>
                     <div class="row mb-3">
@@ -534,36 +534,30 @@
         function dayCalculate() {
             var pay_start = $(".pay_start").val();
             var time_period = $(".time_period").val();
+            var dt1 = new Date(pay_start);
+            var month = dt1.getMonth() + 1;
             if (time_period == "weekly") {
-                var dt1 = new Date(pay_start);
-                var number = 7;
-                dt1.setDate(dt1.getDate() + number);
-                var date = dt1.getMonth() + '/' + dt1.getDate() + '/' + dt1.getFullYear();
-                $('.pay_end').val(date);
-                console.log("dt1", dt1);
-                console.log("number", number);
-                console.log("date", date);
-                // console.log();
+                var day = dt1.getDate() + 6;
             }
             if (time_period == "bi-weekly") {
-                var dt1 = new Date(pay_start);
-                alert(time_period)
+                var day = dt1.getDate() + 13;
             }
             if (time_period == "monthly") {
-                var dt1 = new Date(pay_start);
-                alert(time_period)
+                var day = dt1.getDate() + 29;
             }
             if (time_period == "bi-monthly") {
-                var dt1 = new Date(pay_start);
-                alert(time_period)
+                var day = dt1.getDate() + 61;
             }
+            var output = dt1.getFullYear() + '-' + (('' + month).length < 2 ? '0' : '') + month + '-' + (('' + day).length < 2 ? '0' : '') + day;
+            setTimeout(() => {
+                $(".pay_end").val(output)
+            }, 400);
 
         }
 
         $('.date_select').click(function() {
-
+            var pay_start = $(".pay_start").val();
             var pay_end = $(".pay_end").val();
-
             if ((pay_start == "") || (pay_end == "")) {
                 alert("Please enter two dates");
                 return false
@@ -573,7 +567,7 @@
 
             var mBetween = dt2.getTime() - dt1.getTime();
             var days = (mBetween / (1000 * 3600 * 24));
-            var hour = ((days + 1) * 8);
+            var hour = ((days - 1) * 8);
             var result = Math.round(Math.abs(hour));
             $('.hours').val(result);
         });
