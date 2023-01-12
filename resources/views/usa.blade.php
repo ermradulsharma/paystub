@@ -2,8 +2,8 @@
 
 @section('content')
 
-  <!-- Modal Start -->
-  <div class="modal fade" id="openEye" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- Modal Start -->
+<div class="modal fade" id="openEye" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -19,12 +19,11 @@
         
          
         </div>
-      </div>
     </div>
-  </div>
-  <!-- Modal End -->
+</div>
+<!-- Modal End -->
 <div class="container mt-2" style="max-width:1450px;">
- <div>
+    <div>
         <div class="row mb-3">
             <div class="col-md-12">
                 <div class=" box-usa">
@@ -96,7 +95,7 @@
                                     <i data-src="{{$data->images->file}}" class="fa fa-eye-slash basicTem" data-target="#openEye" data-toggle="modal" style="font-size: 39px;"></i>
                                    
                                 </div>
-                              
+
                             </div>
                         </div>
 
@@ -383,10 +382,10 @@
                         <div class="col-md-2 col-lg-3"></div>
                         <div class="col-md-1 col-lg-1"></div>
                         <div class="col-md-2 col-lg-2">
-                            <input class="earnbtn text-center" value="" />
+                            <input type="number" step="0.01" class="earnbtn text-center" value="" />
                         </div>
                         <div class="col-md-2 col-lg-2">
-                            <input class="earnbtn text-center" value="" />
+                            <input type="number" step="0.01" class="earnbtn text-center" value="" />
                         </div>
                     </div>
                     @endforeach
@@ -411,10 +410,10 @@
                         <div class="col-md-2 col-lg-3"></div>
                         <div class="col-md-1"></div>
                         <div class="col-md-2">
-                            <input class="earnbtn deduction_tax text-center" value="" />
+                            <input type="number" step="0.01" class="earnbtn deduction_tax text-center" value="" />
                         </div>
                         <div class="col-md-2">
-                            <input class="earnbtn ytd_deduction_tax text-center" value="" />
+                            <input type="number" step="0.01" class="earnbtn ytd_deduction_tax text-center" value="" />
                         </div>
                     </div>
                     <div class="row mb-3 mt-5">
@@ -638,10 +637,10 @@
                 '<div class="col-md-3"> </div>' +
                 '<div class="col-md-1"> </div>' +
                 '<div class="col-md-2">' +
-                '<input class="earnbtn text-center tax_deduction tax" value=""/>' +
+                '<input type="number" step="0.01" class="earnbtn text-center tax_deduction tax" value=""/>' +
                 '</div>' +
                 '<div class="col-md-2">' +
-                '<input class="earnbtn text-center ytd_tax tax" value=""/>' +
+                '<input type="number" step="0.01" class="earnbtn text-center ytd_tax tax" value=""/>' +
                 '</div>' +
                 '</div>';
             if (x < maxField) {
@@ -675,7 +674,7 @@
 </script>
 
 <script>
-   
+
 </script>
 <script>
    /* $('body').click(function(){
