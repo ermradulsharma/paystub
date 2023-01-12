@@ -11,7 +11,6 @@
 
      <nav class="header-nav ms-auto">
          <ul class="d-flex align-items-center">
-
              <li class="nav-item d-block d-lg-none">
                  <a class="nav-link nav-icon search-bar-toggle " href="#">
                      <i class="bi bi-search"></i>
@@ -30,9 +29,6 @@
                          <h6>Kevin Anderson</h6>
                          <span>Web Designer</span>
                      </li>
-
-
-
                      <li>
                          <hr class="dropdown-divider">
                      </li>

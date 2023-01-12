@@ -71,7 +71,7 @@
                                         <option value={{$data->title}}>{{$data->title}}</option>
                                         @endforeach
                                     </select>
-                                    <i onclick="myFunction(this)" class="fa fa-eye eyes" style="font-size: 39px;"></i>
+                                    <i onclick="myFunction(this)" class="fa fa-eye-slash" style="font-size: 39px;"></i>
                                 </div>
                             </div>
                         </div>
@@ -91,7 +91,7 @@
                                         <option value={{$data->title}}>{{$data->title}}</option>
                                         @endforeach
                                     </select>
-                                    <i onclick="myFunction(this)" class="fa fa-eye eyes" style="font-size: 39px;margin-left: 6px;"></i>
+                                    <i onclick="myFunction(this)" class="fa fa-eye-slash" style="font-size: 39px;margin-left: 6px;"></i>
                                 </div>
                             </div>
                             <div class=" mt-3 ">
@@ -150,7 +150,7 @@
                             <label for="fname" class="lable">State <span class="redColor">*</span> </label>
                             <div class="dropdown ">
                                 <select name="cars" id="cars" class=" dropdown11">
-                                    <option selected>--- Select ---</option>
+                                    <option selected> --- Select --- </option>
                                     <option value="saab">Saab</option>
                                     <option value="opel">Opel</option>
                                     <option value="audi">Audi</option>
@@ -190,28 +190,28 @@
                         <div class="col-md-3 mt-4">
                             <label for="fname" class="lable">AUTO CALCULATOR <span class="redColor">*</span> </label>
                             <select name="cars" id="cars" class="dropdown11 auto_calculate">
-                                <option selected>---Select---</option>
+                                <option selected> ---Select--- </option>
                                 <option value="on">ON</option>
                                 <option value="off">OFF</option>
                             </select>
                         </div>
                         <div class="col-md-3 mt-4">
-                            <label for="fname" class="lable">MARITAL STATUS <span class="redColor">*</span> </label>
-                            <select name="cars" id="cars" class=" dropdown11">
-                                <option selected>---Select---</option>
+                            <label for="marital_status" class="lable">MARITAL STATUS <span class="redColor">*</span> </label>
+                            <select name="marital_status" id="marital_status" class="dropdown11 marital_status">
+                                <option selected> ---Select--- </option>
                                 <option value="single">Single</option>
                                 <option value="married">Married</option>
                                 <option value="other">Prefered top not say</option>
                             </select>
                         </div>
                         <div class="col-md-3 mt-4">
-                            <label for="fname" class="lable">HOW DO YOU GET PAID <span class="redColor">*</span> </label>
-                            <select name="cars" id="cars" class=" dropdown11" value="">
+                            <label for="time_period" class="lable">HOW DO YOU GET PAID <span class="redColor">*</span> </label>
+                            <select name="time_period" id="time_period" class="dropdown11 time_period">
                                 <option selected>---Select---</option>
-                                <option value="opel">Weekly</option>
-                                <option value="opel">Bi-Weekly</option>
-                                <option value="saab">Monthly</option>
-                                <option value="opel">Bi-Monthly</option>
+                                <option value="weekly">Weekly</option>
+                                <option value="bi-weekly">Bi-Weekly</option>
+                                <option value="monthly">Monthly</option>
+                                <option value="bi-monthly">Bi-Monthly</option>
                             </select>
                         </div>
 
@@ -489,7 +489,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
@@ -504,130 +503,172 @@
 </div>
 @endsection
 @section('script')
-    <script type="text/javascript">
-        $(document).ready(function() {
-            var maxField = 12;
-            var addButton = $('.add_button');
-            var wrapper = $('.field_wrapper');
-            var x = 1;
-            var i = 1;
+<script type="text/javascript">
+    $(document).ready(function() {
+        var maxField = 12;
+        var addButton = $('.add_button');
+        var wrapper = $('.field_wrapper');
+        var x = 1;
+        var i = 1;
 
-            $(addButton).click(function() {
-                var fieldHTML =
-                    '<div class="row mb-3">' +
-                        '<div class="col-md-2 ">' +
-                            '<input  id="earning_' + i + '" data-id="' + i + '" class="earnbtn text-center" value="">' +
-                        '</div>' +
-                        '<div class="col-md-2 ">' +
-                            '<input type="number" step="0.01" id="rate_' + i + '" data-id="' + i + '" class="earnbtn calculation text-center" value="">' +
-                        '</div>' +
-                        '<div class="col-md-2 ">' +
-                            '<input type="number" step="0.01" id="hours_' + i + '" data-id="' + i + '" class="earnbtn calculation text-center hours" value="">' +
-                        '</div>' +
-                        '<div class="col-md-2">' +
-                            '<input type="number" step="0.01" id="total_' + i + '" data-id="' + i + '" class="earnbtn text-center" value="">' +
-                        '</div>' +
-                        '<div class="col-md-2">' +
-                            '<input type="number" step="0.01" id="period_' + i + '" data-id="' + i + '" class="earnbtn text-center" value="">' +
-                        '</div>' +
-                        '<div class="col-md-2 ">' +
-                            '<input type="number" step="0.01" id="ytd_total_' + i + '" data-id="' + i + '" class="earnbtn text-center" value="">' +
-                        '</div>' +
-                    '</div>';
-                if (x < maxField) {
-                    x++;
-                    $(wrapper).append(fieldHTML);
-                }
-                i++;
-                $('.calculation').keyup(function() {
-                    var id = $(this).data('id');
-                    calculation(id);
-                });
-            });
-
+        $(addButton).click(function() {
+            var fieldHTML =
+                '<div class="row mb-3">' +
+                '<div class="col-md-2 ">' +
+                '<input  id="earning_' + i + '" data-id="' + i + '" class="earnbtn text-center" value="">' +
+                '</div>' +
+                '<div class="col-md-2 ">' +
+                '<input type="number" step="0.01" id="rate_' + i + '" data-id="' + i + '" class="earnbtn calculation text-center" value="">' +
+                '</div>' +
+                '<div class="col-md-2 ">' +
+                '<input type="number" step="0.01" id="hours_' + i + '" data-id="' + i + '" class="earnbtn calculation text-center hours" value="">' +
+                '</div>' +
+                '<div class="col-md-2">' +
+                '<input type="number" step="0.01" id="total_' + i + '" data-id="' + i + '" class="earnbtn text-center" value="">' +
+                '</div>' +
+                '<div class="col-md-2">' +
+                '<input type="number" step="0.01" id="period_' + i + '" data-id="' + i + '" class="earnbtn text-center" value="">' +
+                '</div>' +
+                '<div class="col-md-2 ">' +
+                '<input type="number" step="0.01" id="ytd_total_' + i + '" data-id="' + i + '" class="earnbtn text-center" value="">' +
+                '</div>' +
+                '</div>';
+            if (x < maxField) {
+                x++;
+                $(wrapper).append(fieldHTML);
+            }
+            i++;
             $('.calculation').keyup(function() {
                 var id = $(this).data('id');
                 calculation(id);
             });
-
-            function calculation(id) {
-                var rate = parseFloat($('#rate_' + id).val()).toFixed(2);
-                var hours = parseFloat($('#hours_' + id).val()).toFixed(2);
-                var total = rate * hours;
-                var ytd_total = total * 365;
-                $('#total_' + id).val(total);
-                $('#period_' + id).val(total);
-                $('#ytd_total_' + id).val(ytd_total);
-            }
         });
-    </script>
-    <script>
-        $(document).ready(function() {
-            $('.date_select').click(function() {
-                var pay_start = $(".pay_start").val();
-                var pay_end = $(".pay_end").val();
 
-                if ((pay_start == "") || (pay_end == "")) {
-                    alert("Please enter two dates");
-                    return false
-                }
+        $('.calculation').keyup(function() {
+            var id = $(this).data('id');
+            calculation(id);
+        });
+
+        function calculation(id) {
+            var rate = parseFloat($('#rate_' + id).val()).toFixed(2);
+            var hours = parseFloat($('#hours_' + id).val()).toFixed(2);
+            var total = rate * hours;
+            var ytd_total = total * 365;
+            $('#total_' + id).val(total);
+            $('#period_' + id).val(total);
+            $('#ytd_total_' + id).val(ytd_total);
+        }
+    });
+
+</script>
+<script>
+    $(document).ready(function() {
+
+        $('.time_period').change(function() {
+            dayCalculate();
+        });
+        $('.pay_start').change(function() {
+
+            dayCalculate();
+        });
+
+        function dayCalculate() {
+            var pay_start = $(".pay_start").val();
+            var time_period = $(".time_period").val();
+            if (time_period == "weekly") {
                 var dt1 = new Date(pay_start);
-                var dt2 = new Date(pay_end);
-
-                var mBetween = dt2.getTime() - dt1.getTime();
-                var days = (mBetween / (1000 * 3600 * 24));
-                var hour = ((days + 1) * 8);
-                var result = Math.round(Math.abs(hour));
-                $('.hours').val(result);
-            });
-        });
-    </script>
-    <script>
-        $(document).ready(function() {
-            var maxField = 12;
-            var addDeduction = $('.add_deduction');
-            var wrapper = $('#add_deduction');
-            var x = 1;
-            var i = 1;
-            $(addDeduction).click(function() {
-                var fieldHTML =
-                    '<div class="row mb-3">' +
-                        '<div class="col-md-3">' +
-                            '<i class="fa fa-lock earnbtn2"></i>' +
-                            '<input class="earnbtn" type="text" value="">' +
-                        '</div>' +
-                        '<div class="col-md-1"> </div>' +
-                        '<div class="col-md-3"> </div>' +
-                        '<div class="col-md-1"> </div>' +
-                        '<div class="col-md-2">'+
-                            '<input class="earnbtn text-center tax" value=""/>' +
-                        '</div>' +
-                        '<div class="col-md-2">' +
-                            '<input class="earnbtn text-center tax" value=""/>' +
-                        '</div>' +
-                    '</div>';
-                if (x < maxField) {
-                    x++;
-                    $(wrapper).append(fieldHTML);
-                }
-            });
-        });
-    </script>
-    <script>
-        $('.auto_calculate').keyup(function() {
-            var id = $(this).val();
-            if(id == 'off'){
-                $('.tax').val("");
-            }else{
-                $('.tax').val();
+                var number = 7;
+                dt1.setDate(dt1.getDate() + number);
+                var date = dt1.getMonth() + '/' + dt1.getDate() + '/' + dt1.getFullYear();
+                $('.pay_end').val(date);
+                console.log("dt1", dt1);
+                console.log("number", number);
+                console.log("date", date);
+                // console.log();
             }
-        });
-    </script>
-    <script>
-        function myFunction(x) {
-            x.classList.toggle("fa-eye-slash");
+            if (time_period == "bi-weekly") {
+                var dt1 = new Date(pay_start);
+                alert(time_period)
+            }
+            if (time_period == "monthly") {
+                var dt1 = new Date(pay_start);
+                alert(time_period)
+            }
+            if (time_period == "bi-monthly") {
+                var dt1 = new Date(pay_start);
+                alert(time_period)
+            }
+
         }
 
-    </script>
-@endsection
+        $('.date_select').click(function() {
 
+            var pay_end = $(".pay_end").val();
+
+            if ((pay_start == "") || (pay_end == "")) {
+                alert("Please enter two dates");
+                return false
+            }
+            var dt1 = new Date(pay_start);
+            var dt2 = new Date(pay_end);
+
+            var mBetween = dt2.getTime() - dt1.getTime();
+            var days = (mBetween / (1000 * 3600 * 24));
+            var hour = ((days + 1) * 8);
+            var result = Math.round(Math.abs(hour));
+            $('.hours').val(result);
+        });
+    });
+
+</script>
+<script>
+    $(document).ready(function() {
+        var maxField = 12;
+        var addDeduction = $('.add_deduction');
+        var wrapper = $('#add_deduction');
+        var x = 1;
+        var i = 1;
+        $(addDeduction).click(function() {
+            var fieldHTML =
+                '<div class="row mb-3">' +
+                '<div class="col-md-3">' +
+                '<i class="fa fa-lock earnbtn2"></i>' +
+                '<input class="earnbtn" type="text" value="">' +
+                '</div>' +
+                '<div class="col-md-1"> </div>' +
+                '<div class="col-md-3"> </div>' +
+                '<div class="col-md-1"> </div>' +
+                '<div class="col-md-2">' +
+                '<input class="earnbtn text-center tax" value=""/>' +
+                '</div>' +
+                '<div class="col-md-2">' +
+                '<input class="earnbtn text-center tax" value=""/>' +
+                '</div>' +
+                '</div>';
+            if (x < maxField) {
+                x++;
+                $(wrapper).append(fieldHTML);
+            }
+        });
+    });
+
+</script>
+<script>
+    $('.auto_calculate').change(function() {
+        var id = $(this).val();
+        console.log("id====", id);
+        if (id == 'off') {
+            $('.tax').val("");
+        } else {
+            $('.tax').val();
+        }
+    });
+
+</script>
+<script>
+    function myFunction(x) {
+        x.classList.toggle("fa fa-eye");
+    }
+
+</script>
+@endsection
