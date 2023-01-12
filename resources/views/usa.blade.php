@@ -7,7 +7,7 @@
     <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
       <div class="modal-content">
         <div class="modal-header">
-      
+
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -15,9 +15,9 @@
         <div class="modal-body">
             <img src=" " class="setImage w-100" alt="">
         </div>
-     
-        
-         
+
+
+
         </div>
     </div>
 </div>
@@ -92,8 +92,8 @@
                                         <option value="{{$data->title}}"  data-src="{{$data->images->file}}">{{$data->title}}</option>
                                         @endforeach
                                     </select>
-                                    <i data-src="{{$data->images->file}}" class="fa fa-eye-slash basicTem" data-target="#openEye" data-toggle="modal" style="font-size: 39px;"></i>
-                                   
+                                    <i data-src="{{$data->images->file}}" class="fa fa-eye-slash basicTem" style="font-size: 39px;" role="button"></i>
+
                                 </div>
 
                             </div>
@@ -114,7 +114,7 @@
                                         <option value="{{$data->title}}" data-src="{{$data->images->file}}">{{$data->title}}</option>
                                         @endforeach
                                     </select>
-                                    <i data-src="{{$data->images->file}}" class="fa fa-eye-slash advanceTem" data-target="#openEye" data-toggle="modal" style="font-size: 39px;"></i>
+                                    <i data-src="{{$data->images->file}}" class="fa fa-eye-slash advanceTem" style="font-size: 39px;" role="button"></i>
 
                                 </div>
                             </div>
@@ -686,6 +686,9 @@
        // $(this).addClass("fa-eye");
        var imageattr = $('option:selected', '.bt_id').attr('data-src');
          $('.setImage').attr('src', imageattr);
+         if(imageattr != null && imageattr != undefined){
+            $('#openEye').modal('show');
+         }
     });
 
     $('.advanceTem').click(function() {
@@ -693,8 +696,12 @@
        // $(this).addClass("fa-eye");
        var imageattr = $('option:selected', '.at_id').attr('data-src');
          $('.setImage').attr('src', imageattr);
+         if(imageattr != null && imageattr != undefined){
+            $('#openEye').modal('show');
+         }
+
     });
 
-    
+
 </script>
 @endsection
