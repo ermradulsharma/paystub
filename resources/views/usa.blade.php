@@ -327,7 +327,7 @@
                             <input type="number" step="0.01" class="earnbtn text-center" value="" id="total_0" data-id="0" required>
                         </div>
                         <div class="col-md-2">
-                            <input type="number" step="0.01" class="earnbtn text-center" value="" id="period_0" data-id="0" required>
+                            <input type="number" step="0.01" class="earnbtn text-center gross_total" value="" id="period_0" data-id="0" required>
                         </div>
                         <div class="col-md-2">
                             <input type="number" step="0.01" class="earnbtn text-center" value="" id="ytd_total_0" data-id="0" required>
@@ -486,7 +486,7 @@
                 '<input type="number" step="0.01" id="total_' + i + '" data-id="' + i + '" class="earnbtn text-center" value="">' +
                 '</div>' +
                 '<div class="col-md-2">' +
-                '<input type="number" step="0.01" id="period_' + i + '" data-id="' + i + '" class="earnbtn text-center" value="">' +
+                '<input type="number" step="0.01" id="period_' + i + '" data-id="' + i + '" class="earnbtn gross_total text-center" value="">' +
                 '</div>' +
                 '<div class="col-md-2 ">' +
                 '<input type="number" step="0.01" id="ytd_total_' + i + '" data-id="' + i + '" class="earnbtn text-center" value="">' +
@@ -516,18 +516,25 @@
             $('#total_' + id).val(total);
             $('#period_' + id).val(total);
             $('#ytd_total_' + id).val(ytd_total);
+            gross_total();
+        }
+
+        function gross_total() {
+            var total = 0;
+            $('.gross_total').each(function(){
+                total += parseFloat(this.value);
+            });
+            console.log(total);
         }
     });
 
 </script>
 <script>
     $(document).ready(function() {
-
         $('.time_period').change(function() {
             dayCalculate();
         });
         $('.pay_start').change(function() {
-
             dayCalculate();
         });
 
@@ -536,6 +543,7 @@
             var time_period = $(".time_period").val();
             var dt1 = new Date(pay_start);
             var month = dt1.getMonth() + 1;
+
             if (time_period == "weekly") {
                 var day = dt1.getDate() + 6;
             }
@@ -552,12 +560,12 @@
             setTimeout(() => {
                 $(".pay_end").val(output)
             }, 400);
-
         }
 
         $('.date_select').click(function() {
             var pay_start = $(".pay_start").val();
             var pay_end = $(".pay_end").val();
+
             if ((pay_start == "") || (pay_end == "")) {
                 alert("Please enter two dates");
                 return false
