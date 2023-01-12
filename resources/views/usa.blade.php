@@ -7,7 +7,7 @@
     <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Template</h5>
+      
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -87,13 +87,13 @@
                             <div class="mt-4">
                                 {{-- <i class="fa fa-angle-down down"></i> --}}
                                 <div class="input-group mmenu mb-3 text-center">
-                                    <select name="cars" id="cars" style="" class="form-control dropdown1 text-center" style="border-right:none">
+                                    <select name="cars" id="" style="" class="form-control dropdown1 text-center bt_id" style="border-right:none">
                                         <option selected=""> --- Select Basic Templates --- </option>
                                         @foreach ($basicType as $data)
-                                        <option value="{{$data->title}}" data-src="{{$data->images->file}}">{{$data->title}}</option>
+                                        <option value="{{$data->title}}"  data-src="{{$data->images->file}}">{{$data->title}}</option>
                                         @endforeach
                                     </select>
-                                    <i onclick="myFunction(this)"  data-src="{{$data->images->file}}" class="fa fa-eye-slash" data-target="#openEye" data-toggle="modal" style="font-size: 39px;"></i>
+                                    <i data-src="{{$data->images->file}}" class="fa fa-eye-slash basicTem" data-target="#openEye" data-toggle="modal" style="font-size: 39px;"></i>
                                    
                                 </div>
                               
@@ -109,13 +109,14 @@
                             <div class="mt-4">
                                 {{-- <i class="fa fa-angle-down down1"></i> --}}
                                 <div class="input-group mmenu mb-3">
-                                    <select name="cars" id="cars" style="" class="form-control text-center dropdown1" style="border-right:none">
+                                    <select name="cars" id="bt_id" style="" class="form-control text-center dropdown1 at_id" style="border-right:none">
                                         <option selected=""> --- Select Advance Template --- </option>
                                         @foreach ($advanceType as $data)
-                                        <option value="{{$data->title}}">{{$data->title}}</option>
+                                        <option value="{{$data->title}}" data-src="{{$data->images->file}}">{{$data->title}}</option>
                                         @endforeach
                                     </select>
-                                    <i onclick="myFunction(this)" class="fa fa-eye-slash" data-src="{{$data->images->file}}" data-target="#openEye" data-toggle="modal" style="font-size: 39px;margin-left: 6px;"></i>
+                                    <i data-src="{{$data->images->file}}" class="fa fa-eye-slash advanceTem" data-target="#openEye" data-toggle="modal" style="font-size: 39px;"></i>
+
                                 </div>
                             </div>
                             <div class=" mt-3 ">
@@ -677,12 +678,24 @@
    
 </script>
 <script>
-   
-    function myFunction(x) {
-       var imageattr = x.getAttribute('data-src');
-        $('.setImage').attr('src', imageattr);
-        
-    }
+   /* $('body').click(function(){
+        $('.basicTem').addClass("fa-eye-slash");
+        $('.basicTem').removeClass("fa-eye");
+    }); */
+    $('.basicTem').click(function() {
+        //$(this).removeClass("fa-eye-slash");
+       // $(this).addClass("fa-eye");
+       var imageattr = $('option:selected', '.bt_id').attr('data-src');
+         $('.setImage').attr('src', imageattr);
+    });
 
+    $('.advanceTem').click(function() {
+        //$(this).removeClass("fa-eye-slash");
+       // $(this).addClass("fa-eye");
+       var imageattr = $('option:selected', '.at_id').attr('data-src');
+         $('.setImage').attr('src', imageattr);
+    });
+
+    
 </script>
 @endsection
