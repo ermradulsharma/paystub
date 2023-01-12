@@ -24,10 +24,8 @@
                 </div>
 
                 <div class="mt-5 pt-2 justify-content-center">
-                    <a href="https://www.google.com/" target="_blank"><img class="storbtn "
-                            src="images/Google_Play_Store_badge_EN.webp"></a>
-                    <a href="https://www.google.com/" target="_blank"><img class="storbtn ml-5"
-                            src="images/Download_on_the_App_Store_Badge.webp"></a>
+                    <a href="https://www.google.com/" target="_blank"><img class="storbtn " src="images/Google_Play_Store_badge_EN.webp"></a>
+                    <a href="https://www.google.com/" target="_blank"><img class="storbtn ml-5" src="images/Download_on_the_App_Store_Badge.webp"></a>
                 </div>
             </div>
 
@@ -46,8 +44,7 @@
     <div class="container" style="max-width: 1580px;">
         <div class="row">
             <div class="col-md-6 col-sm-6 m-auto justifuy-content-center">
-                <h1 class="display-4"
-                    style="font-family: helvetica-w01-bold,helvetica-w02-bold,helvetica-lt-w10-bold,sans-serif;font-weight: 600;">
+                <h1 class="display-4" style="font-family: helvetica-w01-bold,helvetica-w02-bold,helvetica-lt-w10-bold,sans-serif;font-weight: 600;">
                     READY TO GET STARTED?</h1>
                 <p style=" font-size: 22px;
     font-weight: 200;
@@ -94,8 +91,7 @@
                         <li>Withholding calculations </li>
                     </ul>
                     <div class=" justify-content-center ">
-                        <a class="btn btn-lg  mt-5 p-2 btn-danger CreatePaystub "
-                            href="{{url('canada-paystub') }}">Create Paystub</a>
+                        <a class="btn btn-lg  mt-5 p-2 btn-danger CreatePaystub " href="{{url('canada-paystub') }}">Create Paystub</a>
                     </div>
 
                 </div>
@@ -116,9 +112,9 @@
     </div>
 
 </div>
-<div class="container-fluid pb-5 d-flex "  style="background-image: linear-gradient(45deg, #fdf5f4, #f2fbf7);">
-                    <a class="btn btn-lg  mt-5 p-2 btn-danger Generate " href="{{url('usa')}}">Generate Paystub Now</a>
-                </div>
+<div class="container-fluid pb-5 d-flex " style="background-image: linear-gradient(45deg, #fdf5f4, #f2fbf7);">
+    <a class="btn btn-lg  mt-5 p-2 btn-danger Generate " href="{{url('usa')}}">Generate Paystub Now</a>
+</div>
 
 
 <div class="container">
@@ -130,10 +126,8 @@
                 instantly by using our paystub generator app. It's simple, easy, and accurate.</p>
 
             <div class="my-5">
-                <a href="https://www.google.com/" target="_blank"><img class="storbtn "
-                        src="images/Google_Play_Store_badge_EN.webp"></a>
-                <a href="https://www.google.com/" target="_blank"><img class="storbtn ml-5"
-                        src="images/Download_on_the_App_Store_Badge.webp"></a>
+                <a href="https://www.google.com/" target="_blank"><img class="storbtn " src="images/Google_Play_Store_badge_EN.webp"></a>
+                <a href="https://www.google.com/" target="_blank"><img class="storbtn ml-5" src="images/Download_on_the_App_Store_Badge.webp"></a>
             </div>
 
         </div>
@@ -163,4 +157,3 @@
 
 
 @endsection
-
