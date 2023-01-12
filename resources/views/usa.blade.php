@@ -1,8 +1,30 @@
 @extends('layouts.app')
 
 @section('content')
+
+  <!-- Modal Start -->
+  <div class="modal fade" id="openEye" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Template</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <img src=" " class="setImage" alt="">
+        </div>
+     
+        
+         
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal End -->
 <div class="container mt-2" style="max-width:1450px;">
-    <div>
+ <div>
         <div class="row mb-3">
             <div class="col-md-12">
                 <div class=" box-usa">
@@ -68,11 +90,13 @@
                                     <select name="cars" id="cars" style="" class="form-control dropdown1" style="border-right:none">
                                         <option selected="">---Select---</option>
                                         @foreach ($basicType as $data)
-                                        <option value="{{$data->title}}">"{{$data->title}}"</option>
-                                        @endforeach
+                                        <option value="{{$data->title}}" data-src="{{$data->images->file}}">{{$data->title}}</option>
+                                    
                                     </select>
-                                    <i onclick="myFunction(this)" class="fa fa-eye-slash" style="font-size: 39px;"></i>
+                                    <i onclick="myFunction(this)"  data-src="{{$data->images->file}}" class="fa fa-eye-slash" data-target="#openEye" data-toggle="modal" style="font-size: 39px;"></i>
+                                    @endforeach
                                 </div>
+                              
                             </div>
                         </div>
 
@@ -88,10 +112,10 @@
                                     <select name="cars" id="cars" style="" class="form-control dropdown1" style="border-right:none">
                                         <option selected=""> ---Select--- </option>
                                         @foreach ($advanceType as $data)
-                                        <option value="{{$data->title}}">"{{$data->title}}"</option>
+                                        <option value="{{$data->title}}">{{$data->title}}</option>
                                         @endforeach
                                     </select>
-                                    <i onclick="myFunction(this)" class="fa fa-eye-slash" style="font-size: 39px;margin-left: 6px;"></i>
+                                    <i onclick="myFunction(this)" class="fa fa-eye-slash" data-target="#openEye" data-toggle="modal" style="font-size: 39px;margin-left: 6px;"></i>
                                 </div>
                             </div>
                             <div class=" mt-3 ">
@@ -626,9 +650,16 @@
     });
 
 </script>
+
 <script>
+   
+</script>
+<script>
+   
     function myFunction(x) {
-        x.classList.toggle("fa fa-eye");
+       var imageattr = x.getAttribute('data-src');
+        $('.setImage').attr('src', imageattr);
+        
     }
 
 </script>

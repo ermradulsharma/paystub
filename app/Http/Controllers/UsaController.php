@@ -16,8 +16,8 @@ class UsaController extends Controller
     public function index()
     {  
         $dedutions = Deduction::where('state','usa')->get();
-        $basicType = Template::where('type','basic')->get();
-        $advanceType = Template::where('type','advance')->get();
+        $basicType = Template::where('type','basic')->with('images')->get();
+        $advanceType = Template::where('type','advance')->with('images')->get();
         return view('usa' , compact('basicType','advanceType','dedutions'));
     }
 
