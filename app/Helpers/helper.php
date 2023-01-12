@@ -23,6 +23,8 @@ function uploadImage($module, $module_id, $files, $path = "images")
             $fileType = "image";
         } else if (strstr($mime, "audio/")) {
             $fileType = "audio";
+        } else if (strstr($extension, "pdf")) {
+            $fileType = "pdf";
         }
         // if($fileType == "image"){
         //     $pdf = PDF::loadView('myPDF', $data);

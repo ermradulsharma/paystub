@@ -43,7 +43,7 @@ class Templates extends Component
             'title' => 'required',
             'type' => 'required',
             'state' => 'required',
-            'file' => 'required|image|max:2048|mimes:png,jpg,jpeg,webp', // 1MB Max
+            'file' => 'required|max:2048|mimes:png,jpg,jpeg,webp,pdf', // 1MB Max
          ]);
         $this->back();
         $tempObj = Template::find($this->tempId);
@@ -53,7 +53,7 @@ class Templates extends Component
         $tempObj->title = $this->title;
         $tempObj->type = $this->type;
         $tempObj->state = $this->state;
-      
+
         $tempObj->save();
         if ($this->file) {
             deleteImage('App\Models\Template', $this->tempId ?? 0, 'templates');
@@ -69,7 +69,7 @@ class Templates extends Component
         $this->title = $tempObj->title;
         $this->type = $tempObj->type;
         $this->state = $tempObj->state;
-      
+
         $this->tempId = $id;
         $this->next();
         $this->page_title = "Edit Template";
