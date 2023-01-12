@@ -63,10 +63,10 @@
                         <div class="col-md-5 col-sm-12 m-auto  text-center" style="padding: -1px 35px;">
                             <h6 style="" class="base">BASIC TEMPLATES</h6>
                             <div class="mt-4">
-                                <i class="fa fa-angle-down down"></i>
-                                <div class="input-group mmenu mb-3">
-                                    <select name="cars" id="cars" style="" class="form-control dropdown1" style="border-right:none">
-                                        <option selected="">---Select---</option>
+                                {{-- <i class="fa fa-angle-down down"></i> --}}
+                                <div class="input-group mmenu mb-3 text-center">
+                                    <select name="cars" id="cars" style="" class="form-control dropdown1 text-center" style="border-right:none">
+                                        <option selected=""> --- Select Basic Templates --- </option>
                                         @foreach ($basicType as $data)
                                         <option value="{{$data->title}}">"{{$data->title}}"</option>
                                         @endforeach
@@ -83,10 +83,10 @@
                         <div class="col-md-5 col-sm-12 mt-5 text-center">
                             <h6 style="margin-left:-23px;font-weight: 900;">ADVANCED TEMPLATES</h6>
                             <div class="mt-4">
-                                <i class="fa fa-angle-down down1"></i>
-                                <div class="input-group mmenu mb-3" style="margin: auto;">
-                                    <select name="cars" id="cars" style="" class="form-control dropdown1" style="border-right:none">
-                                        <option selected=""> ---Select--- </option>
+                                {{-- <i class="fa fa-angle-down down1"></i> --}}
+                                <div class="input-group mmenu mb-3">
+                                    <select name="cars" id="cars" style="" class="form-control text-center dropdown1" style="border-right:none">
+                                        <option selected=""> --- Select Advance Template --- </option>
                                         @foreach ($advanceType as $data)
                                         <option value="{{$data->title}}">"{{$data->title}}"</option>
                                         @endforeach
@@ -190,7 +190,7 @@
                         <div class="col-md-3 mt-4">
                             <label for="fname" class="lable">AUTO CALCULATOR <span class="redColor">*</span> </label>
                             <select name="cars" id="cars" class="dropdown11 auto_calculate">
-                                <option selected> ---Select--- </option>
+                                <option selected> --- Select Calculator --- </option>
                                 <option value="on">ON</option>
                                 <option value="off">OFF</option>
                             </select>
@@ -198,7 +198,7 @@
                         <div class="col-md-3 mt-4">
                             <label for="marital_status" class="lable">MARITAL STATUS <span class="redColor">*</span> </label>
                             <select name="marital_status" id="marital_status" class="dropdown11 marital_status">
-                                <option selected> ---Select--- </option>
+                                <option selected> --- Select Marital Status--- </option>
                                 <option value="single">Single</option>
                                 <option value="married">Married</option>
                                 <option value="other">Prefered top not say</option>
@@ -207,7 +207,7 @@
                         <div class="col-md-3 mt-4">
                             <label for="time_period" class="lable">HOW DO YOU GET PAID <span class="redColor">*</span> </label>
                             <select name="time_period" id="time_period" class="dropdown11 time_period">
-                                <option selected>---Select---</option>
+                                <option selected> --- Select --- </option>
                                 <option value="weekly">Weekly</option>
                                 <option value="bi-weekly">Bi-Weekly</option>
                                 <option value="monthly">Monthly</option>
@@ -226,7 +226,7 @@
                         <div class="col-md-3 mt-4">
                             <label for="fname" class="lable">EMPLOYMENT TYPE <span class="redColor">*</span> </label>
                             <select name="cars" id="cars" class=" dropdown11">
-                                <option selected>---Select---</option>
+                                <option selected> --- Select Employment Type --- </option>
                                 <option value="saab">Temporary</option>
                                 <option value="opel">Permanent</option>
                             </select>
@@ -234,7 +234,7 @@
                         <div class="col-md-3 mt-4">
                             <label for="fname" class="lable">EXEMPTIONS <span class="redColor">*</span> </label>
                             <select name="cars" id="cars" class=" dropdown11">
-                                <option selected>---Select---</option>
+                                <option selected> --- Select Exemptions --- </option>
                                 <option value="saab">0</option>
                                 <option value="opel">1</option>
                                 <option value="opel">2</option>
@@ -330,7 +330,7 @@
                             <input type="number" step="0.01" class="earnbtn text-center gross_total" value="" id="period_0" data-id="0" required>
                         </div>
                         <div class="col-md-2">
-                            <input type="number" step="0.01" class="earnbtn text-center" value="" id="ytd_total_0" data-id="0" required>
+                            <input type="number" step="0.01" class="earnbtn text-center ytd_total" value="" id="ytd_total_0" data-id="0" required>
                         </div>
                     </div>
                     <div class="field_wrapper"> </div>
@@ -358,17 +358,14 @@
                         <div class="col-md-2 col-lg-3"></div>
                         <div class="col-md-1 col-lg-1"></div>
                         <div class="col-md-2 col-lg-2">
-                            <input class="earnbtn text-center" value=" " />
+                            <input class="earnbtn text-center" value="" />
                         </div>
                         <div class="col-md-2 col-lg-2">
-                            <input class="earnbtn text-center" value=" " />
+                            <input class="earnbtn text-center" value="" />
                         </div>
                     </div>
                     @endforeach
-
-
-
-                    <div id="add_deduction">
+                    <div id="add_deduction" class="my-3">
                     </div>
                     <div class="row my-3">
                         <div class="col-md-4 col-lg-3">
@@ -389,10 +386,10 @@
                         <div class="col-md-2 col-lg-3"></div>
                         <div class="col-md-1"></div>
                         <div class="col-md-2">
-                            <input class="earnbtn text-center" value="551.10" />
+                            <input class="earnbtn deduction_tax text-center" value="" />
                         </div>
                         <div class="col-md-2">
-                            <input class="earnbtn text-center" value="845.50" />
+                            <input class="earnbtn ytd_deduction_tax text-center" value="" />
                         </div>
                     </div>
                     <div class="row mb-3 mt-5">
@@ -464,6 +461,16 @@
 @section('script')
 <script type="text/javascript">
     $(document).ready(function() {
+        $('.auto_calculate').change(function() {
+            var id = $(this).val();
+            console.log("id====", id);
+            if (id == 'off') {
+                $('.tax').val("");
+            } else {
+                $('.tax').val();
+            }
+        });
+
         var maxField = 12;
         var addButton = $('.add_button');
         var wrapper = $('.field_wrapper');
@@ -489,7 +496,7 @@
                 '<input type="number" step="0.01" id="period_' + i + '" data-id="' + i + '" class="earnbtn gross_total text-center" value="">' +
                 '</div>' +
                 '<div class="col-md-2 ">' +
-                '<input type="number" step="0.01" id="ytd_total_' + i + '" data-id="' + i + '" class="earnbtn text-center" value="">' +
+                '<input type="number" step="0.01" id="ytd_total_' + i + '" data-id="' + i + '" class="earnbtn ytd_total text-center" value="">' +
                 '</div>' +
                 '</div>';
             if (x < maxField) {
@@ -517,13 +524,19 @@
             $('#period_' + id).val(total);
             $('#ytd_total_' + id).val(ytd_total);
             gross_total();
+            // ytd_total();
         }
 
         function gross_total() {
             var total = 0;
-            $('.gross_total').each(function(){
+            $('.gross_total').each(function() {
                 total += parseFloat(this.value);
             });
+            var ytd_total = 0;
+            $('.ytd_total').each(function() {
+                ytd_total += parseFloat(this.value);
+            });
+            console.log(ytd_total);
             console.log(total);
         }
     });
@@ -600,29 +613,38 @@
                 '<div class="col-md-3"> </div>' +
                 '<div class="col-md-1"> </div>' +
                 '<div class="col-md-2">' +
-                '<input class="earnbtn text-center tax" value=""/>' +
+                '<input class="earnbtn text-center tax_deduction tax" value=""/>' +
                 '</div>' +
                 '<div class="col-md-2">' +
-                '<input class="earnbtn text-center tax" value=""/>' +
+                '<input class="earnbtn text-center ytd_tax tax" value=""/>' +
                 '</div>' +
                 '</div>';
             if (x < maxField) {
                 x++;
                 $(wrapper).append(fieldHTML);
             }
+            $('.tax_deduction').keyup(function() {
+                var total = 0;
+                $('.tax_deduction').each(function() {
+                    total += parseFloat(this.value);
+                });
+                $(".deduction_tax").val(total);
+            });
+
+            $('.ytd_tax').keyup(function() {
+                var ytd_tax = 0;
+                $('.ytd_tax').each(function() {
+                    ytd_tax += parseFloat(this.value);
+                });
+                $(".ytd_deduction_tax").val(ytd_tax);
+            });
         });
     });
 
 </script>
 <script>
-    $('.auto_calculate').change(function() {
-        var id = $(this).val();
-        console.log("id====", id);
-        if (id == 'off') {
-            $('.tax').val("");
-        } else {
-            $('.tax').val();
-        }
+    $(document).ready(function() {
+
     });
 
 </script>
