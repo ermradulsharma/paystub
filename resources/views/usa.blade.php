@@ -370,7 +370,7 @@
 
                     <div id="add_deduction">
                     </div>
-                    <div class="row mb-3">
+                    <div class="row my-3">
                         <div class="col-md-4 col-lg-3">
                             <button class="add_deduction earnbtn"><i class="fa fa-plus-circle pr-5" style="font-size:24px;color:green"></i>Add Deduction</button>
                         </div>

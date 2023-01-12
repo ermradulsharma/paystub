@@ -13,7 +13,8 @@
                             <div class="mt-4">
                                 <i class="fa fa-angle-down down"></i>
                                 <div class="input-group mmenu mb-3">
-                                    <select name="cars" id="cars" style="" class="form-control dropdown1" style="border-right:none">
+                                    <select name="cars" id="cars" style="" class="form-control dropdown1"
+                                        style="border-right:none">
                                         <option selected="">---Select---</option>
                                         @foreach ($basicType as $data)
                                         <option value={{$data->title}}>{{$data->title}}</option>
@@ -33,18 +34,21 @@
                             <div class="mt-4">
                                 <i class="fa fa-angle-down down1"></i>
                                 <div class="input-group mmenu mb-3" style="margin: auto;">
-                                    <select name="cars" id="cars" style="" class="form-control dropdown1" style="border-right:none">
+                                    <select name="cars" id="cars" style="" class="form-control dropdown1"
+                                        style="border-right:none">
                                         <option selected=""> ---Select--- </option>
                                         @foreach ($advanceType as $data)
                                         <option value={{$data->title}}>{{$data->title}}</option>
                                         @endforeach
                                     </select>
-                                    <i onclick="myFunction(this)" class="fa fa-eye eyes" style="font-size: 39px;margin-left: 6px;"></i>
+                                    <i onclick="myFunction(this)" class="fa fa-eye eyes"
+                                        style="font-size: 39px;margin-left: 6px;"></i>
                                 </div>
                             </div>
                             <div class=" mt-3 ">
                                 <button class="viewbtn">
-                                    <a href="{{url('template-view')}}">Click to see Template Landscape view.This is not part of design</a>
+                                    <a href="{{url('template-view')}}">Click to see Template Landscape view.This is not
+                                        part of design</a>
                                 </button>
                             </div>
                         </div>
@@ -106,114 +110,98 @@
                     </div> -->
 
                     <div class="row mb-3 pt-4">
-                        <div class="col-lg-1 col-md-6 mb-2">
+                        <div class="col-lg-1 col-md-6 mb-2 pr-0">
                             <button CLASS="statementbtn">INCOME</button>
                         </div>
-                        <div class="col-lg-1 col-md-6 mb-2">
+                        <div class="col-lg-1 col-md-6 mb-2 pr-0">
 
                             <button CLASS="statementbtn">RATE</button>
                         </div>
-                        <div class="col-lg-2 col-md-6 mb-2">
+                        <div class="col-lg-2 col-md-6 mb-2 pr-0">
 
                             <button CLASS="statementbtn">HOURS</button>
                         </div>
-                        <div class="col-lg-2 col-md-6 mb-2">
+                        <div class="col-lg-2 col-md-6 mb-2 pr-0">
 
                             <button CLASS="statementbtn"> CURRENT TOTAL</button>
                         </div>
-                        <div class="col-lg-2  col-md-6 mb-2">
+                        <div class="col-lg-2  col-md-6 mb-2 pr-0">
 
                             <button CLASS="statementbtn">DEDUCTION</button>
                         </div>
-                        <div class="col-lg-2 col-md-6 mb-2">
+                        <div class="col-lg-2 col-md-6 mb-2 pr-0">
 
                             <button CLASS="statementbtn">CURRENT TOTAL</button>
                         </div>
-                        <div class="col-lg-2 col-md-6 mb-2">
+                        <div class="col-lg-2 col-md-6 mb-2 pr-0">
 
                             <button CLASS="statementbtn">YTD TOTAL</button>
                         </div>
                     </div>
 
-                <div class="row mb-3 mt-2">
-                    <div class="col-lg-1 col-md-1 ">
-                       <input class="earnbtn text-center" type="text" value="Regular">
-                    </div>
+                    <div class="row mb-3 mt-2">
 
-                        <div class="col-lg-5">
-                            <div class=" m-auto d-inline-flex justify-content-between">
-                             
-                                  <input class="earnbtn text-center" type="text" value="67.09">
-                              
-                              
-                                    <input class="earnbtn text-center" type="text" value="740.98"></input>
-                              
-                               
-                                    <input class="earnbtn text-center" type="text" value="455.90"></input>
-                                
+
+                        <div class="col-lg-6 ">
+                            <div class=" m-auto d-inline-flex">
+
+                                <div class="col-lg-2 mt-2 p-0">
+                                    <input class="earnbtn text-center " type="text" value="Regular">
+                                </div>
+                                <div class="col-lg-2 mt-2 ">
+                                    <input class="earnbtn text-center " type="text" value="67.09">
+                                </div>
+
+                                <div class="col-lg-4 mt-2 pr-0">
+                                    <input class="earnbtn text-center " type="text" value="455.90">
+                                </div>
+                                <div class="col-lg-4 mt-2 p-0">
+                                    <input class="earnbtn text-center ml-3 " type="text" value="455.90">
+
+                                </div>
+
                             </div>
                         </div>
-                  
-                        <div class="col-lg-6 ">
+
+                        <div class="col-lg-6 p-0 ">
                             @foreach ($dedutions as $item)
-                            <div class="row m-auto">
-                         
-                                <div class="col-md-4">
-                                        <i class="fa fa-lock earnbtn2"></i>
-                                        <input class="earnbtn text-center" type="text" value="{{$item->title}}">
-                                    </div>
-        
-                                <div class="col-md-4">
-        
-                                    <input class="earnbtn text-center" value="">
+                            <div class="d-inline-flex m-auto ">
+
+                                <div class="col-lg-4 mt-2 ml-2 p-0">
+                                    <i class="fa fa-lock earnbtn2"></i>
+                                    <input class="earnbtn text-center " type="text" value="{{$item->title}}">
+                                </div>
+
+                                <div class="col-lg-4 mt-2 p-0 ml-3">
+                                    <input class="earnbtn text-center " value="">
                                     </input>
                                 </div>
-                                <div class="col-md-4">
-        
-                                    <input class="earnbtn text-center" value="">
+
+                                <div class="col-lg-4 mt-2 p-0 ml-3">
+                                    <input class="earnbtn text-center " value="">
                                     </input>
                                 </div>
+
+
                             </div>
                             @endforeach
                         </div>
-                   
-           
-
-                 
-
                     </div>
 
 
-    
-            
-              
 
-              
+                    <div class="row mb-3 align-item-start">
 
+                        <div class="col-lg-3 mt-1">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-                <div class="row mb-3 ">
-                    <div class="col-lg-3 col-md-6">
-                       
-                            <button CLASS="earnbtn1"><i class="fa fa-plus-circle pr-2" style="font-size: 24px;
+                            <button class="earnbtn1"><i class="fa fa-plus-circle pr-2" style="font-size: 24px;
                            color: #0ec23b;padding-top: 0px;"></i>Add Earning</button>
-                   
-                    </div>
-                    <div class="col-lg-3 col-md-6 mb-3 mt-1">
 
-                            <button CLASS="earnbtn1"><i class="fa fa-plus-circle pr-2" style="font-size: 24px;
+                        </div>
+                        <div class="col-lg-3"></div>
+
+                        <div class=" col-md-3 mb-3 mt-1 ">
+                            <button class="earnbtn1"><i class="fa fa-plus-circle pr-2" style="font-size: 24px;
                           color: #0ec23b;
                            padding-top: 0px;"></i>Add Deductions</button>
                         </div>
@@ -310,10 +298,12 @@
 
                     <div class="text-left mt-1 ">
                         <button class="previewbtn">
-                            Preview Your Paystub <i class="fa fa-eye" style="font-size: 30px; margin-left: 7px;"></i></button>
+                            Preview Your Paystub <i class="fa fa-eye"
+                                style="font-size: 30px; margin-left: 7px;"></i></button>
                     </div>
                     <div class="text-right mt-1 ">
-                        <button class="emailbtn " data-toggle="modal" data-target="#myModal"> <i class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL
+                        <button class="emailbtn " data-toggle="modal" data-target="#myModal"> <i
+                                class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL
                             PAYSTUB <i class="fa fa-download ml-4" style="font-size:24px"></i></button>
                     </div>
                 </div>
@@ -347,7 +337,8 @@
                     <div class="modal-body">
                         <div class="google-btn mt-4">
                             <div class="google-icon-wrapper">
-                                <img class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" />
+                                <img class="google-icon"
+                                    src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" />
                             </div>
                             <p class="btn-text"><b>Sign up with google</b></p>
                         </div>
@@ -360,9 +351,11 @@
 
                             <input type="email" id="email" name="email" class="singup" placeholder="Email *"> <br><br>
 
-                            <button class="continue mt-3" data-toggle="modal" data-dismiss="modal" data-target="#myModal1">Continue</button>
+                            <button class="continue mt-3" data-toggle="modal" data-dismiss="modal"
+                                data-target="#myModal1">Continue</button>
                             <a href="#" style="text-decoration: none;color: #0000007a">
-                                <p class="text-center mt-3" style="color: #0000007a;font-size: 13px;">Already have account?
+                                <p class="text-center mt-3" style="color: #0000007a;font-size: 13px;">Already have
+                                    account?
                                     <u style="color:red;">
                                         <spam style="color:red;">Sign In</spam>
                                     </u>
@@ -407,17 +400,21 @@
                             </div>
 
                             <h5 style="color: #457bbe;" class="mt-4 text-center">Almost There!</h5>
-                            <p style="color: #02030359;font-size: 14px;font-family: serif;" class="text-center">Enter the
+                            <p style="color: #02030359;font-size: 14px;font-family: serif;" class="text-center">Enter
+                                the
                                 Verification code to sent</p>
 
-                            <input type="email" id="email" name="email" class="singup1 text-center" placeholder="ABC@paystub.com">
+                            <input type="email" id="email" name="email" class="singup1 text-center"
+                                placeholder="ABC@paystub.com">
                             <div style="color: red;font-size: 13px; font-family: serif;">
                                 <i class="fa fa-exclamation-circle">
                                     Verification code required
                                 </i>
                             </div>
                             <p style="color: #0000004d; font-size: 11px;">Didn't receive an email</p>
-                            <p style="color: #04050778;font-size: 12px; font-family: cursive;">Check Your Spam folder<spam style="color:red;"> Or </spam>resend code</p>
+                            <p style="color: #04050778;font-size: 12px; font-family: cursive;">Check Your Spam folder
+                                <spam style="color:red;"> Or </spam>resend code
+                            </p>
                             <button class="continue mt-3" data-toggle="modal" data-target="myModal">verify</button>
                         </div>
 
