@@ -10,23 +10,22 @@ class Templates extends Component
 {
     use WithFileUploads;
     public $title, $type, $state, $description, $tempId;
-    public $next=1;
+    public $next = 1;
     public $file;
     public $page_title = "Add Template";
 
     public function render()
     {
 
-        $templateCollection = Template::orderBy('id','asc')->get();
-        return view('livewire.templates',compact('templateCollection'));
+        $templateCollection = Template::orderBy('id', 'asc')->get();
+        return view('livewire.templates', compact('templateCollection'));
     }
 
     public function addTemplate()
     {
-            $this->next();
-            $this->resetForm();
-            $this->page_title = "Add Template";
-
+        $this->next();
+        $this->resetForm();
+        $this->page_title = "Add Template";
     }
 
     public function resetForm()
@@ -35,7 +34,7 @@ class Templates extends Component
         $this->file = "";
         $this->type = "";
         $this->state = "";
-       $this->tempId = null;
+        $this->tempId = null;
     }
 
     public function StoreTemplate()
@@ -45,12 +44,12 @@ class Templates extends Component
             'type' => 'required',
             'state' => 'required',
             'file' => 'required', // 1MB Max
-         ]);
+        ]);
         $this->back();
         $tempObj = Template::find($this->tempId);
-        if(!$tempObj){
+        if (!$tempObj) {
             $tempObj = new Template();
-            $msg="Template saved successfully.";
+            $msg = "Template saved successfully.";
         }
         $tempObj->title = $this->title;
         $tempObj->type = $this->type;
@@ -58,10 +57,10 @@ class Templates extends Component
 
         $tempObj->save();
         if ($this->file) {
-            deleteImage('App\Models\Template', $tempObj->id ?? 0, 'templates');
+            deleteImage('App\Models\Template', $this->tempId ?? 0, 'templates');
             uploadImage("App\Models\Template", $tempObj->id, $this->file, 'templates');
         }
-        $msg="Template Updated successfully.";
+        $msg = "Template Updated successfully.";
 
         $this->resetForm();
         session()->flash('success', $msg);
@@ -91,9 +90,8 @@ class Templates extends Component
 
     public function deleteTemplate($id)
     {
-         deleteImage('App\Models\Template',  $id ?? 0, 'templates');
-         Template::find($id)->delete();
-         session()->flash('success', 'Template deleted successfully.');
+        deleteImage('App\Models\Template',  $id ?? 0, 'templates');
+        Template::find($id)->delete();
+        session()->flash('success', 'Template deleted successfully.');
     }
-
 }
