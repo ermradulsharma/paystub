@@ -1,5 +1,21 @@
 @extends('layouts.app')
 @section('content')
+<!-- Modal Start -->
+<div class="modal fade" id="openEye" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <img src=" " class="setImage w-100">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal End -->
 <div>
     <div class="container" style="max-width:1450px;">
         <h5>Choose Template</h5>
@@ -11,16 +27,18 @@
                         <div class="col-md-5 col-sm-12 m-auto  text-center" style="padding: -1px 35px;">
                             <h6 style="" class="base">BASIC TEMPLATES</h6>
                             <div class="mt-4">
-                                <i class="fa fa-angle-down down"></i>
+                                {{-- <i class="fa fa-angle-down down"></i> --}}
                                 <div class="input-group mmenu mb-3">
-                                    <select name="cars" id="cars" style="" class="form-control dropdown1"
-                                        style="border-right:none">
-                                        <option selected="">---Select---</option>
+                                    <select class="form-control dropdown1 bt_id" style="border-right:none">
+                                        <option selected=""> --- Select Basic Templates --- </option>
                                         @foreach ($basicType as $data)
-                                        <option value={{$data->title}}>{{$data->title}}</option>
+                                        <option value="{{$data->title}}" data-src="{{$data->images->file}}">
+                                            {{$data->title}}
+                                        </option>
                                         @endforeach
                                     </select>
-                                    <i onclick="myFunction(this)" class="fa fa-eye eyes" style="font-size: 39px;"></i>
+                                    <i class="fa fa-eye-slash basicTem" data-target="#openEye" data-toggle="modal"
+                                        style="font-size: 39px;"></i>
                                 </div>
                             </div>
                         </div>
@@ -32,17 +50,18 @@
                         <div class="col-md-5 col-sm-12 mt-5 text-center">
                             <h6 style="margin-left:-23px;font-weight: 900;">ADVANCED TEMPLATES</h6>
                             <div class="mt-4">
-                                <i class="fa fa-angle-down down1"></i>
+                                {{-- <i class="fa fa-angle-down down1"></i> --}}
                                 <div class="input-group mmenu mb-3" style="margin: auto;">
-                                    <select name="cars" id="cars" style="" class="form-control dropdown1"
-                                        style="border-right:none">
-                                        <option selected=""> ---Select--- </option>
+                                    <select class="form-control dropdown1 at_id" style="border-right:none">
+                                        <option selected=""> --- Select Advance Template --- </option>
                                         @foreach ($advanceType as $data)
-                                        <option value={{$data->title}}>{{$data->title}}</option>
+                                        <option value="{{$data->title}}" data-src="{{$data->images->file}}">
+                                            {{$data->title}}
+                                        </option>
                                         @endforeach
                                     </select>
-                                    <i onclick="myFunction(this)" class="fa fa-eye eyes"
-                                        style="font-size: 39px;margin-left: 6px;"></i>
+                                    <i class="fa fa-eye-slash advanceTem" data-target="#openEye" data-toggle="modal"
+                                        style="font-size: 39px;"></i>
                                 </div>
                             </div>
                             <div class=" mt-3 ">
@@ -456,11 +475,17 @@
 
 </div>
 
-@endsection
-
 <script>
-    function myFunction(x) {
-        x.classList.toggle("fa-eye-slash");
-    }
+    $('.basicTem').click(function() {
+      var imageattr = $('option:selected', '.bt_id').attr('data-src');
+         $('.setImage').attr('src', imageattr);
+    });
+
+    $('.advanceTem').click(function() {
+        var imageattr = $('option:selected', '.at_id').attr('data-src');
+         $('.setImage').attr('src', imageattr);
+    });
+
 
 </script>
+@endsection

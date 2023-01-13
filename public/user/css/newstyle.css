@@ -4,7 +4,7 @@
     background-color: #ef2d22;
     color: white;
     border: 1px solid rgb(232, 102, 102)'';
-    
+
     font-size: 24px;
     box-shadow: var(--shd,0 1px 4px rgba(0,0,0,.6));
 }
@@ -32,7 +32,7 @@
     border: 3px solid #FF6161;
     padding: 10px 12px 12px 12px;
     background: #E8E6E6;
-  
+
     border-radius: 2px;
 }
 .box-usa1{
@@ -117,7 +117,7 @@
     font-size: 17px;
 }
 .viewbtn{
-    font-size: 14px;    
+    font-size: 14px;
     color: #010101;
     background: yellow;
     /* background-image: radial-gradient(white, #6bb0fd); */
@@ -177,7 +177,7 @@
 .earnbtn {
     font-size: 16px;
     width: 100%;
-    padding: 5px 3px;
+    padding: 6px 22px 5px 35px;
     color: #1608ea;
     border-radius: 5px;
     border: 2px solid #ff0000a3;
@@ -237,7 +237,7 @@ border: 1px solid white ;
 }
 #name:hover{
     border:1px solid black;
-    
+
 }
 .previewbtn{
     font-size: 23px;
@@ -250,7 +250,7 @@ border: 1px solid white ;
     box-shadow: var(--shd,0 1px 4px rgba(0,0,0,.6));
 }
 
-    
+
 
 .pay-box{
     border: 1px solid #0000008c;
@@ -296,22 +296,22 @@ select:after {
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 26px;
-   
+
   }
-  
+
   .sidenav a {
-   
+
     text-decoration: none;
     font-size: 25px;
     color: #ffffff;
     display: block;
     transition: 0.3s;
   }
-  
+
   .sidenav a:hover {
     color: #f1f1f1;
   }
-  
+
   .sidenav .closebtn {
     position: absolute;
     top: 0;
@@ -331,7 +331,7 @@ select:after {
     background-image: linear-gradient(96deg, #252e58 5%, #3f3e95 46%, #2a5960 100%);
 
   }
-  
+
   .sidebtn1{
     box-shadow: 6px 4px 2px 4px #e9d1d3;
     width: 53%;
@@ -343,7 +343,7 @@ select:after {
     padding: 3px;
     border-radius: 15px;
     margin: auto;
-   
+
 
   }
 
@@ -382,7 +382,7 @@ select:after {
 }
 input:hover{
     box-shadow: 5px 5px 1px 3px #0000002b;
-    
+
     border: 1px solid #244b1f !important;
     background: #244b1f;
     color: white !important;
@@ -393,7 +393,7 @@ input:hover{
     color: black !important;
     border: 1px solid #d82e2e !important;
     background: #df5b5b45;
- } 
+ }
 .viewbtn:hover{
     border: 1px solid #d1da1a;
     background-color: white;
@@ -478,7 +478,7 @@ input:hover{
     &:active {
       background: $button-active-blue;
     }
-  
+
     .singup{
         border: 1px solid #bcd6f3;
     padding: 10px;
@@ -524,16 +524,16 @@ table {
     border-collapse: collapse;
     width: 100%;
   }
-  
+
   td, th {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 12px;
     font-size: 11px;
   }
-  
+
   tr:nth-child(even) {
-   
+
   }
   @import url(https://fonts.googleapis.com/css?family=Roboto:500);
 
@@ -563,7 +563,7 @@ h5{
     font-size: 17px;
     margin-top: 23px;
     position: relative;
-    
+
 }
 .tickbox{
     width: 39px;
@@ -579,7 +579,7 @@ h5{
 }
 
 .payimg{
-    position:relative; 
+    position:relative;
     width:100%;
      top: -49px
 }
@@ -607,7 +607,7 @@ h5{
     letter-spacing: 1.5px;
 }
 .canadah2{
-    font-size: 40px; 
+    font-size: 40px;
     font-family: avenir-lt-w01_35-light1475496,sans-serif;
 }
 .canadah1{
@@ -625,7 +625,7 @@ h5{
     max-width: 312px;
 }
 .paddingleft {
-    display: inline-table; 
+    display: inline-table;
     padding: 0px 0px 0px 240px;
 
 }
@@ -649,7 +649,7 @@ h5{
 
 }
 .formp1{
-    font-size:17px; 
+    font-size:17px;
     margin-top: 114px;
     font-weight: 400;
 }
@@ -700,7 +700,7 @@ select{
     }
     .paddingleft {
         padding: 0px 0px 0px 80px;
-    
+
     }
     .uktext {
         font-size: 25px;
@@ -709,7 +709,7 @@ select{
 
 
 
-   
+
   @media screen and (min-width: 1155px) {
     .opennav{
         display: none;
@@ -721,14 +721,14 @@ select{
         font-size: 14px;
         line-height: 2em;
     }
-   
+
   }
 @media screen and (max-width: 1129px) {
     .navbar {
         display: none;
-      
+
      }
-     
+
    }
 
 .eyes1{
@@ -762,7 +762,7 @@ font-size: 10px;
 }
 .create-p{
     font-size: 8px;
-   
+
    }
    .tickbox {
     width: 20px;
@@ -886,7 +886,7 @@ font-size: 10px;
     .mainhead{
         padding: 0px 0px 0px 0px;
         text-align: left !important;
-    
+
     }
     .earnbtn {
         font-size: 12px;
@@ -929,7 +929,7 @@ font-size: 10px;
         font-size: 12px;
         font-weight: 500;
         position: relative !important;
-    
+
     }
     .down {
         position: absolute;
@@ -953,7 +953,7 @@ font-size: 10px;
         background: yellow;
         /* background-image: radial-gradient(white, #6bb0fd); */
         padding: 5px 7px;
-       
+
         border-radius: 4px;
         font-weight: 700;
     }
@@ -1017,7 +1017,7 @@ font-size: 10px;
 }
 .w-100 {
     width: 100%!important;
-  
+
     margin: 0 auto;
     display: flex;
     justify-content: center;
@@ -1036,7 +1036,7 @@ font-size: 10px;
   @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
-    
+
   }
 
   @media screen and (max-width: 425px) {
@@ -1214,7 +1214,7 @@ font-size: 10px;
         font-weight: bold;
         z-index: 1223;
     }
-    
+
     .eyes {
         font-size: 20px !important;
     }
@@ -1249,7 +1249,7 @@ font-size: 10px;
     padding-left: 26px;
     }
     .canadah2{
-        font-size: 34px; 
+        font-size: 34px;
         font-family: avenir-lt-w01_35-light1475496,sans-serif;
         padding-left: 6px;
     }
@@ -1268,7 +1268,7 @@ font-size: 10px;
     .earnbtn {
         /* margin-top: 1px; */
         margin-bottom: 10px;
-    
+
   }
   .earnbtn2 {
     font-size: 24px;
@@ -1284,7 +1284,7 @@ font-size: 10px;
 .Generate {
     font-family: serif;
     width:none;
-    
+
     border-radius: 63px;
     background-color: #ff0000;
     display: table-cell;

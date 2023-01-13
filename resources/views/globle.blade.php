@@ -1,17 +1,34 @@
 @extends('layouts.app')
 @section('content')
+<!-- Modal Start -->
+<div class="modal fade" id="openEye" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <img src=" " class="setImage w-100">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal End -->
 <div title="Globle-Header" style="background:#ff6261;padding:50px 0px;" class="mt-2">
     <div class="container" style="max-width:1500px">
         <div class="row">
 
             <div class="col-lg-5  text-center" style="padding: 3px 23px 0px 0px;">
 
-                <div class="text-white mt-5" style="font-size: 42px;font-weight: 300;font-family: 'Outfit', sans-serif;">
+                <div class="text-white mt-5"
+                    style="font-size: 42px;font-weight: 300;font-family: 'Outfit', sans-serif;">
                     With PaystubX you can create</br> Paystub for any country
                 </div>
 
                 <div class="mt-5 text-left">
-                    <div class="text-white PayslipsGlo ml-4" >
+                    <div class="text-white PayslipsGlo ml-4">
                         There’s no need for complex and costly desktop software. Save</br> time and money with
                         Paystubx free online pay stub maker that </br>creates pay stubs to include all companies,
                         employment, income,</br> and deduction information. No software needed for creating</br>
@@ -178,55 +195,59 @@
             <div class=" box-usa">
 
                 <div class="d-flex justify-content-between mb-3">
-                <div class="col-md-5 mt-5 text-center">
-                        <h6  class="basic1">BASIC TEMPLATES</h6>
+                    <div class="col-md-5 mt-5 text-center">
+                        <h6 class="basic1">BASIC TEMPLATES</h6>
                         <div class="mt-4">
-                            <i class="fa fa-angle-down down1"></i>
+                            {{-- <i class="fa fa-angle-down down1"></i> --}}
                             <div class="input-group mmenu mb-3" style="margin: auto;">
-                                <select name="cars" id="cars" style="" class="form-control dropdown1"
-                                    style="border-right:none">
-                                    <option selected="">---Select---</option>
-                                        @foreach ($basicType as $data)
-                                        <option value="{{$data->title}}">{{$data->title}}</option>
-                                        @endforeach
+                                <select class="form-control dropdown1 bt_id" style="border-right:none">
+                                    <option selected=""> --- Select Basic Templates --- </option>
+                                    @foreach ($basicType as $data)
+                                    <option value="{{$data->title}}" data-src="{{$data->images->file}}">{{$data->title}}
+                                    </option>
+                                    @endforeach
                                 </select>
-                                <i onclick="myFunction(this)"  class="fa fa-eye eyes1" ></i>
+                                <i class="fa fa-eye-slash basicTem" data-target="#openEye" data-toggle="modal"
+                                    style="font-size: 39px;"></i>
+
 
 
                             </div>
 
 
                         </div>
-                      
+
 
                     </div>
                     <div class="col-md-2  text-center sh">
-                            <!-- <div style="height:240px;-webkit-box-shadow: 9px 0 4px -4px #999, 0px 0 4px -4px #999;">
+                        <!-- <div style="height:240px;-webkit-box-shadow: 9px 0 4px -4px #999, 0px 0 4px -4px #999;">
 
                             </div> -->
-                            <img src="images/hrpng.png" style="height: 200px;">
-                        </div>
+                        <img src="images/hrpng.png" style="height: 200px;">
+                    </div>
 
                     <div class="col-md-5 mt-5 text-center">
-                        <h6  class="basic1">ADVANCED TEMPLATES</h6>
+                        <h6 class="basic1">ADVANCED TEMPLATES</h6>
                         <div class="mt-4">
-                            <i class="fa fa-angle-down down1"></i>
+                            {{-- <i class="fa fa-angle-down down1"></i> --}}
                             <div class="input-group mmenu mb-3" style="margin: auto;">
-                                <select name="cars" id="cars" style="" class="form-control dropdown1"
-                                    style="border-right:none">
-                                    <option selected=""> ---Select--- </option>
+                                <select class="form-control dropdown1 at_id" style="border-right:none">
+                                    <option selected=""> --- Select Advance Template --- </option>
                                     @foreach ($advanceType as $data)
-                                    <option value="{{$data->title}}">{{$data->title}}</option>
+                                    <option value="{{$data->title}}" data-src="{{$data->images->file}}">{{$data->title}}
+                                    </option>
                                     @endforeach
                                 </select>
-                                <i onclick="myFunction(this)"  class="fa fa-eye eyes1" ></i>
+                                <i class="fa fa-eye-slash advanceTem" data-target="#openEye" data-toggle="modal"
+                                    style="font-size: 39px;"></i>
+
 
 
                             </div>
 
 
                         </div>
-                      
+
 
                     </div>
                 </div>
@@ -243,61 +264,61 @@
 </div>
 
 <div class="container" style="max-width:1500px;">
-<div class="row">
-    <div class="col-lg-7 justify-content-center">
-        <div class="mt-5 stubheading">
+    <div class="row">
+        <div class="col-lg-7 justify-content-center">
+            <div class="mt-5 stubheading">
                 How to use the Pay</br> Stub Generator
-        </div>
+            </div>
 
-        <div style="font-size: 20px;font-weight:300;">To create a pay stub with our free pay stub generator, follow
-            these instructions and you'll quickly have a professional pay stub to provide to your employee.
-        </div>
-        <div class="mt-2">
-            <ol style=" font-size: 18px;font-weight:300;">
-                <li class=" mt-3">Upload
-                    your company logo (optional)</li>
+            <div style="font-size: 20px;font-weight:300;">To create a pay stub with our free pay stub generator, follow
+                these instructions and you'll quickly have a professional pay stub to provide to your employee.
+            </div>
+            <div class="mt-2">
+                <ol style=" font-size: 18px;font-weight:300;">
+                    <li class=" mt-3">Upload
+                        your company logo (optional)</li>
 
-                <li class=" mt-3">Enter your company's
-                    information,
-                    including its business name and physical address,
-                    then click "Continue.</li>
+                    <li class=" mt-3">Enter your company's
+                        information,
+                        including its business name and physical address,
+                        then click "Continue.</li>
 
-                <li class=" mt-3">Enter your employee's
-                    information,
-                    including their name, employee ID, and address,
-                    then click "Continue.</li>
-                <li class=" mt-3">Enter the corresponding
-                    pay stub
-                    information for your employee, including the date
-                    of payment, the pay period, and frequency, along with their annual income and an
-                    associated paycheque number</li>
-                <li class=" mt-3">If you there are any
-                    deductions to the
-                    payment of your employee for this pay period,
-                    include that along with the total amount so that it's deducted from the pay tallied
-                    on the pay stub</li>
-                <li class=" mt-3">If there is more than one
-                    deduction to
-                    be made, click "Add new item" to include it
-                </li>
-                <li class=" mt-3">Once the above steps are
-                    complete,
-                    click "Generate pay stub" to receive your free
-                    pay stub</li>
-            </ol>
-           
+                    <li class=" mt-3">Enter your employee's
+                        information,
+                        including their name, employee ID, and address,
+                        then click "Continue.</li>
+                    <li class=" mt-3">Enter the corresponding
+                        pay stub
+                        information for your employee, including the date
+                        of payment, the pay period, and frequency, along with their annual income and an
+                        associated paycheque number</li>
+                    <li class=" mt-3">If you there are any
+                        deductions to the
+                        payment of your employee for this pay period,
+                        include that along with the total amount so that it's deducted from the pay tallied
+                        on the pay stub</li>
+                    <li class=" mt-3">If there is more than one
+                        deduction to
+                        be made, click "Add new item" to include it
+                    </li>
+                    <li class=" mt-3">Once the above steps are
+                        complete,
+                        click "Generate pay stub" to receive your free
+                        pay stub</li>
+                </ol>
+
+            </div>
         </div>
-    </div>
-    <div class="col-lg-5">
-        <img src="images/globle/yoga.gif" class="w-100">
-        <div class="mt-2 d-flex ">
+        <div class="col-lg-5">
+            <img src="images/globle/yoga.gif" class="w-100">
+            <div class="mt-2 d-flex ">
                 <a class="btn btn-lg  mt-2 mb-4 p-2 btn-danger Generate " href="{{url('usa')}}">Generate
                     Paystub
                     Now</a>
             </div>
+        </div>
+
     </div>
-    
-</div>
 </div>
 
 <div class="row saveTime">
@@ -361,10 +382,19 @@
 
     </div>
 </div>
-@endsection
+
 
 <script>
-    function myFunction(x) {
-      x.classList.toggle("fa-eye-slash");
-    }
-    </script>
+    $('.basicTem').click(function() {
+      var imageattr = $('option:selected', '.bt_id').attr('data-src');
+         $('.setImage').attr('src', imageattr);
+    });
+
+    $('.advanceTem').click(function() {
+        var imageattr = $('option:selected', '.at_id').attr('data-src');
+         $('.setImage').attr('src', imageattr);
+    });
+
+
+</script>
+@endsection

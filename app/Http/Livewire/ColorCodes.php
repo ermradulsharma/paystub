@@ -8,7 +8,7 @@ use Livewire\Component;
 class ColorCodes extends Component
 {
 
-    public $name,$code, $colorId; 
+    public $name,$code, $colorId ,$confirming;
     public $next=1;
     public $page_title = "Add Color";
 
@@ -23,7 +23,7 @@ class ColorCodes extends Component
             $this->next();
             $this->resetForm();
             $this->page_title = "Add Color";
-       
+
     }
 
     public function resetForm()
@@ -38,7 +38,7 @@ class ColorCodes extends Component
         $this->validate([
             'name' => 'required',
             'code' => 'required',
-        
+
 
         ]);
         $this->back();
@@ -62,7 +62,7 @@ class ColorCodes extends Component
         $colorObj = ColorCode::find($id);
         $this->name = $colorObj->name;
         $this->code = $colorObj->code;
-        
+
         $this->colorId = $id;
         $this->next();
         $this->page_title = "Edit Color";
@@ -78,6 +78,10 @@ class ColorCodes extends Component
         $this->next--;
     }
 
+    public function confirmDelete($id)
+    {
+        $this->confirming = $id;
+    }
     public function deleteColor($id)
     {
         ColorCode::find($id)->delete();

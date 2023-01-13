@@ -39,10 +39,10 @@
                 <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{request()->is('uk') ? 'active' : ''}}" href="{{url('uk')}}">UK</a>
             </li>
             <li class="nav-item ml-3">
-                <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{request()->is('globle') ? 'active' : ''}}" href="{{url('globle')}}">GLOBLE</a>
+                <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{request()->is('globle') ? 'active' : ''}}" href="{{url('globle')}}">BLOBEL</a>
             </li>
             <li class="nav-item ml-3">
-                <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{request()->is('form') ? 'active' : ''}}" href="{{url('form')}}">W<sub>-2</sub> FORM</a>
+                <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{request()->is('form') ? 'active' : ''}}" href="{{url('form')}}">W-2 FORM</a>
             </li>
             <li class="nav-item float-rigth ml-3 ">
                 <a class="btn btn-lg py-2 w-100 mt-5 btn-danger login " href="{{url('login')}}">Login</a>

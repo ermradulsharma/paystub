@@ -47,8 +47,14 @@
                                 <td>{{$color->code}}</td>
                                 <td><button type="button" class="btn btn-primary"
                                         wire:click="editColor({{$color->id}})">Edit</button>
-                                    <button type="button" class="btn btn-danger"
-                                        wire:click="deleteColor({{$color->id}})">Delete</button>
+                                    @if($confirming===$color->id)
+                                    <button wire:click="deleteColor({{$color->id}})"
+                                        class="btn btn-warning text-white w-32 ">Sure?</button>
+                                    @else
+                                    <button wire:click="confirmDelete({{ $color->id }})"
+                                        class="btn btn-danger">Delete</button>
+                                    @endif
+
                                 </td>
                             </tr>
                             @endforeach
@@ -80,7 +86,7 @@
                                         <!-- Horizontal Form -->
                                         <form wire:submit.prevent="StoreColor">
                                             <div class="row mb-3">
-                                                <label  class="col-sm-3 col-form-label">Color
+                                                <label class="col-sm-3 col-form-label">Color
                                                     Name</label>
                                                 <div class="col-sm-8">
                                                     <input type="text" class="form-control" id="name" wire:model="name">
@@ -90,7 +96,7 @@
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
-                                                <label  class="col-sm-3 col-form-label">Color
+                                                <label class="col-sm-3 col-form-label">Color
                                                     Code</label>
                                                 <div class="col-sm-8">
                                                     <input type="text" class="form-control" id="code" wire:model="code">
@@ -100,9 +106,10 @@
                                                 </div>
                                             </div>
                                             <div class="text-center mt-5">
-                                                <button type="submit" class="btn btn-primary " style="float:right; ">Submit</button>
-                                                <button type="reset" wire:click="resetForm"
-                                                    class="btn btn-secondary  " style="float:right; margin-right: 12px;">Reset</button>
+                                                <button type="submit" class="btn btn-primary "
+                                                    style="float:right; ">Submit</button>
+                                                <button type="reset" wire:click="resetForm" class="btn btn-secondary  "
+                                                    style="float:right; margin-right: 12px;">Reset</button>
                                             </div>
                                         </form><!-- End Horizontal Form -->
 
