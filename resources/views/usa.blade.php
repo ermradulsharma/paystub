@@ -28,15 +28,13 @@
                         <div class="col-md-6 mt-1">
                             <label for="cname" class="lable">EMPLOYER (COMPANY) NAME <span class="redColor">*</span>
                             </label>
-                            <input type="text" id="cname" name="cname" placeholder="Your Employer & Company Name"
-                                class="w-100 p-2 text-center textInputFontSize">
+                            <input type="text" id="cname" name="cname" placeholder="Your Employer & Company Name" class="w-100 p-2 text-center textInputFontSize">
                         </div>
 
                         <div class="col-md-6 mt-1">
                             <label for="tel" class="lable">EMPLOYER TELEPHONE NUMBER <span class="redColor">*</span>
                             </label>
-                            <input type="tel" id="tel" name="tel" placeholder="123-234-4565"
-                                class="w-100 p-2 text-center textInputFontSize">
+                            <input type="tel" id="tel" name="tel" placeholder="123-234-4565" class="w-100 p-2 text-center textInputFontSize">
                         </div>
 
                     </div>
@@ -45,8 +43,7 @@
                         <div class="col-md-12">
                             <label for="address_1" class="lable">STREET ADDRESS 1 <span class="redColor">*</span>
                             </label>
-                            <input type="text" id="address_1" name="address_1" placeholder="Your Employer Address"
-                                class="w-100 p-2  textInputFontSize">
+                            <input type="text" id="address_1" name="address_1" placeholder="Your Employer Address" class="w-100 p-2  textInputFontSize">
                         </div>
                     </div>
 
@@ -54,26 +51,22 @@
                         <div class="col-md-12">
                             <label for="address_2" class="lable">STREET ADDRESS 2 <span class="redColor">*</span>
                             </label>
-                            <input type="text" id="address_2" name="address_2"
-                                placeholder="Suite 101 or Apt 101 (optional)" class="w-100 p-2  textInputFontSize">
+                            <input type="text" id="address_2" name="address_2" placeholder="Suite 101 or Apt 101 (optional)" class="w-100 p-2  textInputFontSize">
                         </div>
                     </div>
 
                     <div class="row mb-3">
                         <div class="col-md-4">
                             <label for="city" class="lable">City <span class="redColor">*</span> </label>
-                            <input type="text" id="city" name="city" placeholder="Your Employer City"
-                                class="w-100 p-2  textInputFontSize">
+                            <input type="text" id="city" name="city" placeholder="Your Employer City" class="w-100 p-2  textInputFontSize">
                         </div>
                         <div class="col-md-4">
                             <label for="state" class="lable">State <span class="redColor">*</span> </label>
-                            <input type="text" id="state" name="state" placeholder=" Choose Your Employer State"
-                                class="w-100 p-2   textInputFontSize">
+                            <input type="text" id="state" name="state" placeholder=" Choose Your Employer State" class="w-100 p-2   textInputFontSize">
                         </div>
                         <div class="col-md-4">
                             <label for="zip_code" class="lable">Zip Code <span class="redColor">*</span> </label>
-                            <input type="text" id="zip_code" name="zip_code" placeholder=" Zip Code"
-                                class="w-100 p-2  textInputFontSize">
+                            <input type="text" id="zip_code" name="zip_code" placeholder=" Zip Code" class="w-100 p-2  textInputFontSize">
                         </div>
                     </div>
                 </div>
@@ -96,11 +89,11 @@
                                     <select class="form-control dropdown1 text-center bt_id" style="border-right:none">
                                         <option selected=""> --- Select Basic Templates --- </option>
                                         @foreach ($basicType as $data)
-                                        <option value="{{$data->title}}" data-src="{{$data->images->file}}">
+                                        <option value="{{$data->title ?? ''}}" data-src="{{$data->images->file ?? ''}}">
                                             {{$data->title}}</option>
                                         @endforeach
                                     </select>
-                                    <i data-src="{{$data->images->file}}" class="fa fa-eye-slash basicTem" style="font-size: 39px;" role="button"></i>
+                                    <i data-src="{{$data->images->file ?? ''}}" class="fa fa-eye-slash basicTem" style="font-size: 39px;" role="button"></i>
 
                                 </div>
 
@@ -119,12 +112,11 @@
                                     <select class="form-control text-center dropdown1 at_id" style="border-right:none">
                                         <option selected=""> --- Select Advance Template --- </option>
                                         @foreach ($advanceType as $data)
-                                        <option value="{{$data->title}}" data-src="{{$data->images->file}}">
-                                            {{$data->title}}</option>
+                                        <option value="{{$data->title ?? ''}}" data-src="{{$data->images->file ?? ''}}">
+                                            {{$data->title ?? ''}}</option>
                                         @endforeach
                                     </select>
-                                    <i data-src="{{$data->images->file}}" class="fa fa-eye-slash advanceTem" role="button"
-                                        style="font-size: 39px;"></i>
+                                    <i data-src="{{$data->images->file ?? ''}}" class="fa fa-eye-slash advanceTem" role="button" style="font-size: 39px;"></i>
 
                                 </div>
                             </div>
@@ -147,19 +139,16 @@
                     <div class="row mb-3">
                         <div class="col-md-4 mt-4">
                             <label for="fname" class="lable">EMPLOYEE NAME <span class="redColor">*</span> </label>
-                            <input type="text" id="fname" name="fname" placeholder="Your Full  Name"
-                                class="w-100 p-2  textInputFontSize">
+                            <input type="text" id="fname" name="fname" placeholder="Your Full  Name" class="w-100 p-2  textInputFontSize">
                         </div>
 
                         <div class="col-md-4 mt-4">
                             <label for="fname" class="lable">EMPLOYEE ID <span class="redColor">*</span> </label>
-                            <input type="text" id="fname" name="fname" placeholder="Employer ID"
-                                class="w-100 p-2 r textInputFontSize">
+                            <input type="text" id="fname" name="fname" placeholder="Employer ID" class="w-100 p-2 r textInputFontSize">
                         </div>
                         <div class="col-md-4 mt-4">
                             <label for="fname" class="lable">EMPLOYEE SSN last4 <span class="redColor">*</span> </label>
-                            <input type="text" id="fname" name="fname" placeholder="1224"
-                                class="w-100 p-2  textInputFontSize">
+                            <input type="text" id="fname" name="fname" placeholder="1224" class="w-100 p-2  textInputFontSize">
                         </div>
 
                     </div>
@@ -167,24 +156,21 @@
                     <div class="row mb-3">
                         <div class="col-md-12">
                             <label for="fname" class="lable">STREET 1 <span class="redColor">*</span></label>
-                            <input type="text" id="fname" name="fname" placeholder="Your Address"
-                                class="w-100 p-2  textInputFontSize">
+                            <input type="text" id="fname" name="fname" placeholder="Your Address" class="w-100 p-2  textInputFontSize">
                         </div>
                     </div>
 
                     <div class="row mb-3">
                         <div class="col-md-12">
                             <label for="fname" class="lable">STREET 2 <span class="redColor">*</span> </label>
-                            <input type="text" id="fname" name="fname" placeholder="Suite 101 or Apt 101(optional)"
-                                class="w-100 p-2  textInputFontSize">
+                            <input type="text" id="fname" name="fname" placeholder="Suite 101 or Apt 101(optional)" class="w-100 p-2  textInputFontSize">
                         </div>
                     </div>
 
                     <div class="row mb-3">
                         <div class="col-md-4">
                             <label for="fname" class="lable">City <span class="redColor">*</span> </label>
-                            <input type="text" id="fname" name="fname" placeholder="Your City"
-                                class="w-100 p-2  textInputFontSize">
+                            <input type="text" id="fname" name="fname" placeholder="Your City" class="w-100 p-2  textInputFontSize">
                         </div>
                         <div class="col-md-4">
                             <label for="fname" class="lable">State <span class="redColor">*</span> </label>
@@ -199,8 +185,7 @@
                         </div>
                         <div class="col-md-4">
                             <label for="fname" class="lable">Zip Code <span class="redColor">*</span> </label>
-                            <input type="text" id="fname" name="fname" placeholder=" 1234"
-                                class="w-100 p-2  textInputFontSize">
+                            <input type="text" id="fname" name="fname" placeholder=" 1234" class="w-100 p-2  textInputFontSize">
                         </div>
                     </div>
                 </div>
@@ -263,8 +248,7 @@
                     <div class="row mb-3">
                         <div class="col-md-3 mt-4">
                             <label for="fname" class="lable">HOURLY <span class="redColor">*</span> </label>
-                            <input type="text" id="fname" name="fname" placeholder="Hourly"
-                                class="w-100 p-2  textInputFontSize">
+                            <input type="text" id="fname" name="fname" placeholder="Hourly" class="w-100 p-2  textInputFontSize">
                         </div>
 
                         <div class="col-md-3 mt-4">
@@ -292,10 +276,8 @@
                             </select>
                         </div>
                         <div class="col-md-3 mt-4">
-                            <label for="fname" class="lable" class="redColor">SELECT YOUR PREFERRED CURRENCY <span
-                                    class="redColor">*</span> </label>
-                            <input type="text" id="fname" name="fname" placeholder="$(USD)"
-                                class="w-100 p-2  textInputFontSize">
+                            <label for="fname" class="lable" class="redColor">SELECT YOUR PREFERRED CURRENCY <span class="redColor">*</span> </label>
+                            <input type="text" id="fname" name="fname" placeholder="$(USD)" class="w-100 p-2  textInputFontSize">
                         </div>
                     </div>
                 </div>
@@ -313,26 +295,21 @@
                     <div class="row mb-3">
                         <div class="col-md-3 mt-4">
                             <label for="pay_start" class="lable">PAY START<span class="redColor">*</span> </label>
-                            <input type="date" id="pay_start" name="pay_start" placeholder="12-11-2022"
-                                class="w-100 p-2 textInputFontSize pay_start" data-id="pay_start">
+                            <input type="date" id="pay_start" name="pay_start" placeholder="12-11-2022" class="w-100 p-2 textInputFontSize pay_start" data-id="pay_start">
                         </div>
 
                         <div class="col-md-3 mt-4">
                             <label for="pay_end" class="lable">PAY END <span class="redColor">*</span> </label>
-                            <input type="date" id="pay_end" name="pay_end" placeholder="12-17-2022"
-                                class="w-100 p-2 textInputFontSize pay_end" data-id="pay_end">
+                            <input type="date" id="pay_end" name="pay_end" placeholder="12-17-2022" class="w-100 p-2 textInputFontSize pay_end" data-id="pay_end">
                         </div>
                         <div class="col-md-3 mt-4">
                             <label for="pay_date" class="lable">PAY DATE <span class="redColor">*</span> </label>
-                            <input type="date" id="pay_date" name="pay_date" placeholder="12-19-2022"
-                                class="w-100 p-2 textInputFontSize pay_date" data-id="pay_date">
+                            <input type="date" id="pay_date" name="pay_date" placeholder="12-19-2022" class="w-100 p-2 textInputFontSize pay_date" data-id="pay_date">
                         </div>
                         <div class="col-md-3 mt-4">
-                            <p class="text-center mb-0" style="font-size:18px;">How do you get paid <span
-                                    class="redColor">*</span> <span> </p>
+                            <p class="text-center mb-0" style="font-size:18px;">How do you get paid <span class="redColor">*</span> <span> </p>
                             <div class="text-center mt-2  d-flex justify-content-center">
-                                <button class="hourbtn date_select">HOURLY</button> <button
-                                    class="salrybtn">SALARY</button>
+                                <button class="hourbtn date_select">HOURLY</button> <button class="salrybtn">SALARY</button>
                             </div>
                         </div>
 
@@ -366,37 +343,30 @@
 
                     <div class="row mb-3 mt-">
                         <div class="col-md-2">
-                            <input class="earnbtn text-center" type="text" value="Regular" id="earning_0" data-id="0"
-                                required>
+                            <input class="earnbtn text-center" type="text" value="Regular" id="earning_0" data-id="0" required>
                         </div>
                         <div class="col-md-2 ">
-                            <input type="number" step="0.01" class="earnbtn text-center calculation" value=""
-                                id="rate_0" data-id="0" required>
+                            <input type="number" step="0.01" class="earnbtn text-center calculation" value="" id="rate_0" data-id="0" required>
                         </div>
                         <div class="col-md-2 ">
-                            <input type="number" step="0.01" class="earnbtn text-center hours calculation" value=""
-                                id="hours_0" data-id="0" required>
+                            <input type="number" step="0.01" class="earnbtn text-center hours calculation" value="" id="hours_0" data-id="0" required>
                         </div>
 
                         <div class="col-md-2">
-                            <input type="number" step="0.01" class="earnbtn text-center" value="" id="total_0"
-                                data-id="0" required>
+                            <input type="number" step="0.01" class="earnbtn text-center" value="" id="total_0" data-id="0" required>
                         </div>
                         <div class="col-md-2">
-                            <input type="number" step="0.01" class="earnbtn text-center gross_total" value=""
-                                id="period_0" data-id="0" required>
+                            <input type="number" step="0.01" class="earnbtn text-center gross_total" value="" id="period_0" data-id="0" required>
                         </div>
                         <div class="col-md-2">
-                            <input type="number" step="0.01" class="earnbtn text-center ytd_total" value=""
-                                id="ytd_total_0" data-id="0" required>
+                            <input type="number" step="0.01" class="earnbtn text-center ytd_total" value="" id="ytd_total_0" data-id="0" required>
                         </div>
                     </div>
                     <div class="field_wrapper"> </div>
 
                     <div class="row mb-3">
                         <div class="col-md-2 mt-2 mb-5">
-                            <button class="add_button earnbtn"><i class="fa fa-plus-circle pr-2"
-                                    style="font-size:24px;color:green"></i>Add Earning</button>
+                            <button class="add_button earnbtn"><i class="fa fa-plus-circle pr-2" style="font-size:24px;color:green"></i>Add Earning</button>
                         </div>
                     </div>
 
@@ -428,8 +398,7 @@
                     </div>
                     <div class="row my-3">
                         <div class="col-md-4 col-lg-3">
-                            <button class="add_deduction earnbtn"><i class="fa fa-plus-circle pr-5"
-                                    style="font-size:24px;color:green"></i>Add Deduction</button>
+                            <button class="add_deduction earnbtn"><i class="fa fa-plus-circle pr-5" style="font-size:24px;color:green"></i>Add Deduction</button>
                         </div>
 
                         <div class="col-md-1"></div>
@@ -484,8 +453,7 @@
                             <input class="earnbtn text-center " value="511"></input>
                         </div>
                         <div class="col-lg-2 col-md-4 col-sm-6">
-                            <p class="p-0 m-0 text-center " value="511" style="font-family: serif;">FILE.<span
-                                    class="redColor">*</span></p>
+                            <p class="p-0 m-0 text-center " value="511" style="font-family: serif;">FILE.<span class="redColor">*</span></p>
                             <input class="earnbtn text-center " value="789"></input>
                         </div>
                         <div class="col-lg-2 col-md-4 col-sm-6">
@@ -494,13 +462,11 @@
                             <input class="earnbtn text-center " value="978"></input>
                         </div>
                         <div class="col-lg-2 col-md-4 col-sm-6">
-                            <p class="p-0 m-0 " style="font-family: serif;">Advice Number:<span
-                                    class="redColor">*</span></p>
+                            <p class="p-0 m-0 " style="font-family: serif;">Advice Number:<span class="redColor">*</span></p>
                             <input class="earnbtn text-center " value="908"></input>
                         </div>
                         <div class="col-lg-2 col-md-4 col-sm-6">
-                            <p class="p-0 m-0 " style="font-family: serif;">Account Number LAST<span
-                                    class="redColor">*</span></p>
+                            <p class="p-0 m-0 " style="font-family: serif;">Account Number LAST<span class="redColor">*</span></p>
                             <input class="earnbtn text-center " value="989"></input>
                         </div>
                         <div class="col-lg-2 col-md-4 col-sm-6">
@@ -515,13 +481,10 @@
     </div>
     <div class="mb-4 d-flex" style="justify-content: space-between;">
         <div class="text-left mt-1">
-            <button class="previewbtn text-capitalize">Preview Your Paystub <i class="fa fa-eye"
-                    style="font-size: 30px; margin-left: 7px;"></i></button>
+            <button class="previewbtn text-capitalize">Preview Your Paystub <i class="fa fa-eye" style="font-size: 30px; margin-left: 7px;"></i></button>
         </div>
         <div class="text-right mt-1">
-            <button class="emailbtn text-capitalize" data-toggle="modal" data-target="#myModal"> <i
-                    class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL PAYSTUB <i class="fa fa-download ml-4"
-                    style="font-size:24px"></i></button>
+            <button class="emailbtn text-capitalize" data-toggle="modal" data-target="#myModal"> <i class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL PAYSTUB <i class="fa fa-download ml-4" style="font-size:24px"></i></button>
         </div>
     </div>
 </div>
@@ -715,22 +678,21 @@
 
 <script>
     $('.basicTem').click(function() {
-         var imageattr = $('option:selected', '.bt_id').attr('data-src');
-         $('.setImage').attr('src', imageattr);
-         if(imageattr != null && imageattr != undefined){
+        var imageattr = $('option:selected', '.bt_id').attr('data-src');
+        $('.setImage').attr('src', imageattr);
+        if (imageattr != null && imageattr != undefined) {
             $('#openEye').modal('show');
-         }
+        }
     });
 
     $('.advanceTem').click(function() {
-         var imageattr = $('option:selected', '.at_id').attr('data-src');
-         $('.setImage').attr('src', imageattr);
-         if(imageattr != null && imageattr != undefined){
+        var imageattr = $('option:selected', '.at_id').attr('data-src');
+        $('.setImage').attr('src', imageattr);
+        if (imageattr != null && imageattr != undefined) {
             $('#openEye').modal('show');
-         }
+        }
 
     });
-
 
 </script>
 
