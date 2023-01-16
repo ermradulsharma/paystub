@@ -580,16 +580,16 @@ h5{
 
 .payimg{
     position:relative; 
-    width:100%;
+    width:75%;
      top: -49px
 }
-.payimg2{
-    position: relative ;
-    top:95px;
-    width: 75%;
+.payimg2 {
+    position: relative;
+    top: 36px;
+    width: 80%;
     object-fit: cover;
     object-position: 50% 50%;
-    padding-bottom: 140px;
+    padding-bottom: 10px;
 }
 .base{
     margin-left:70px;
@@ -598,7 +598,7 @@ h5{
 
 .paytext{
     position: absolute;
-       bottom: -84px;
+       bottom: -92px;
     /* left: 85px; */
 }
 .canadah4{
@@ -663,8 +663,69 @@ h5{
 select{
     text-align: center;
 }
-
+.frame1{
+    width: 405px;
+    height: 229px;
+}
+.payp{
+    font-size: 14px;
+    color: white;
+    background: #537b9d;
+    border: none;
+    padding: 6px 4px;
+    border-radius: 4px;
+    font-weight: 200;
+}
+.payp:hover{
+    font-size: 14px;
+    color: black;
+    background:none;
+    border: none;
+    padding: 6px 4px;
+    border-radius: 4px;
+    font-weight: 200;
+}
+.OnPaystub {
+    font-size: 20px;
+    color: #0e0e0e;
+    position: absolute;
+    bottom: -156px;
+    left: 179px;
+    font-weight: 200;
+    line-height: 35.5px;
+}
+.footimg{
+    width: 100%;
+}
 /* w2paystub end */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -704,6 +765,20 @@ select{
     }
     .uktext {
         font-size: 25px;
+    }
+    .payimg {
+        position: relative;
+        width: 60%;
+        top: -49px;
+    }
+    .OnPaystub {
+        font-size: 20px;
+        color: #0e0e0e;
+        position: absolute;
+        bottom: -194px;
+        left: 179px;
+        font-weight: 200;
+        line-height: 35.5px;
     }
 }
 
@@ -748,6 +823,10 @@ select{
    @media screen and (max-width: 1024px) {
 .create-container li{
 font-size: 10px;
+}
+.frame1 {
+    width: 316px;
+    height: 176px;
 }
 .paytext {
     display: none;
@@ -829,9 +908,10 @@ font-size: 10px;
     font-size: 19px;
     color: #0e0e0e;
     position: absolute;
-    bottom: -116px;
-    left: 212px;
+    bottom: -232px;
+    left: 55px;
     font-weight: 200;
+ font-weight: 200;
 }
 .couple {
     max-width: 646px;
@@ -882,6 +962,13 @@ font-size: 10px;
     .globlebtn{
         display: flex;
         justify-content: center;
+    }
+    .footimg {
+        width: 55%;
+    }
+    .frame1 {
+        width: 238px;
+        height: 134px;
     }
     .mainhead{
         padding: 0px 0px 0px 0px;
