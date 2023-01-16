@@ -40,7 +40,7 @@ class Deductions extends Component
         $this->validate([
             'title' => 'required',
             'price' => 'required',
-            'type' => 'required',
+            //'type' => 'required',
             'state' => 'required',
 
         ]);
@@ -52,7 +52,7 @@ class Deductions extends Component
         }
         $deductionObj->title = $this->title;
         $deductionObj->price = $this->price;
-        $deductionObj->type = $this->type;
+        $deductionObj->type = "deduction";
         $deductionObj->state = $this->state;
         $deductionObj->save();
         $msg="Deduction Updated successfully.";

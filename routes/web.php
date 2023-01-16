@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\CanadaController;
+use App\Http\Controllers\TemplateFormController;
 use App\Http\Controllers\UkController;
 use App\Http\Controllers\UsaController;
+use App\Http\Controllers\W2FormController;
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\Routing\Router;
 
@@ -20,7 +22,9 @@ use Symfony\Component\Routing\Router;
 Route::get('/', function () {
     return view('paystub');
 });
-
+Route::get('generate-pdf', [W2FormController::class, 'generatePDF']);
+Route::get('preview-pdf', [W2FormController::class, 'previewPDF']);
+Route::get('tempBasic-pdf', [TemplateFormController::class, 'BasicPaystubPDF']);
 Route::get('usa', [UsaController::class, 'index']);
 Route::get('canada-paystub', [CanadaController::class, 'index']);
 Route::get('uk-paystub', [UkController::class, 'index']);
@@ -60,7 +64,7 @@ Route::get('template-view', function () {
 });
 
 
-Route::name('admin')->prefix('backend')->group(function() {
+Route::name('admin')->prefix('backend')->group(function () {
 
 
     Route::get('/', function () {
@@ -70,7 +74,7 @@ Route::name('admin')->prefix('backend')->group(function() {
         return view('Admin/layouts/default');
     });
 
-   Route::get('dashboard', function () {
+    Route::get('dashboard', function () {
         return view('Admin/dashboard');
     });
     Route::get('template', function () {
@@ -82,14 +86,4 @@ Route::name('admin')->prefix('backend')->group(function() {
     Route::get('deduction', function () {
         return view('Admin/deduction');
     });
-
-
 });
-
-
-
-
-
-
-
-

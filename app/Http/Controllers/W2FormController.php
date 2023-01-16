@@ -3,17 +3,41 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-class W2Form extends Controller
+use PDF;
+class W2FormController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+    public function generatePDF()
+    {
+        $data = [
+            'title' => 'Welcome to paystubx',
+            'date' => date('m/d/Y')
+        ];
+          
+         $pdf = PDF::loadView('allForms.w2Pdf', $data);
+    
+         return $pdf->download('W2Paystubx.pdf');
+    }
+
+    public function previewPDF()
+    {
+        $data = [
+            'title' => 'Welcome to paystubx',
+            'date' => date('m/d/Y')
+        ];
+          
+         $pdf = PDF::loadView('allForms.w2Pdf', $data);
+         
+         return $pdf->stream('W2Paystubx.pdf');
+    
+     
+    }
     public function index()
     {
-        //
     }
 
     /**
