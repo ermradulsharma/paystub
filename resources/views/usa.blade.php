@@ -421,11 +421,11 @@
                         <div class="col-md-1"></div>
                         <div class="col-md-2">
                             <p class="p-0 m-0 text-center" style="font-family: serif;">Net Pay</p>
-                            <input class="earnbtn text-center" value="7,247.29">
+                            <input class="earnbtn text-center" value="">
                         </div>
                         <div class="col-md-2">
                             <p class="p-0 m-0 text-center" style="font-family: serif;">YTD Net pay</p>
-                            <input class="earnbtn text-center" value="19,294.5">
+                            <input class="earnbtn text-center" value="">
                         </div>
                     </div>
                 </div>
@@ -441,29 +441,29 @@
                     <div class="row mb-3">
                         <div class="col-lg-2 col-md-4 col-sm-6">
                             <p class="p-0 m-0 " style="font-family: serif;">CO<span class="redColor">*</span></p>
-                            <input class="earnbtn text-center " value="511"></input>
+                            <input class="earnbtn text-center " value=""></input>
                         </div>
                         <div class="col-lg-2 col-md-4 col-sm-6">
-                            <p class="p-0 m-0 text-center " value="511" style="font-family: serif;">FILE.<span class="redColor">*</span></p>
-                            <input class="earnbtn text-center " value="789"></input>
+                            <p class="p-0 m-0 text-center" style="font-family: serif;">FILE.<span class="redColor">*</span></p>
+                            <input class="earnbtn text-center " value=""></input>
                         </div>
                         <div class="col-lg-2 col-md-4 col-sm-6">
                             <p class="p-0 m-0 " style="font-family: serif;">CLOCK VCHR.<span class="redColor">*</span>
                             </p>
-                            <input class="earnbtn text-center " value="978"></input>
+                            <input class="earnbtn text-center " value=""></input>
                         </div>
                         <div class="col-lg-2 col-md-4 col-sm-6">
                             <p class="p-0 m-0 " style="font-family: serif;">Advice Number:<span class="redColor">*</span></p>
-                            <input class="earnbtn text-center " value="908"></input>
+                            <input class="earnbtn text-center " value=""></input>
                         </div>
                         <div class="col-lg-2 col-md-4 col-sm-6">
                             <p class="p-0 m-0 " style="font-family: serif;">Account Number LAST<span class="redColor">*</span></p>
-                            <input class="earnbtn text-center " value="989"></input>
+                            <input class="earnbtn text-center " value=""></input>
                         </div>
                         <div class="col-lg-2 col-md-4 col-sm-6">
                             <p class="p-0 m-0 " style="font-family: serif;">Transit ABA<span class="redColor">*</span>
                             </p>
-                            <input class="earnbtn text-center " value="989"></input>
+                            <input class="earnbtn text-center " value=""></input>
                         </div>
                     </div>
                 </div>
@@ -545,24 +545,24 @@
         $(addButton).click(function() {
             var fieldHTML =
                 '<div class="row mb-3">' +
-                    '<div class="col-md-2 ">' +
-                        '<input  id="earning_' + i + '" data-id="' + i + '" class="earnbtn text-center" value="">' +
-                    '</div>' +
-                    '<div class="col-md-2 ">' +
-                        '<input type="number" step="0.01" id="rate_' + i + '" data-id="' + i + '" class="earnbtn calculation text-center" value="">' +
-                    '</div>' +
-                    '<div class="col-md-2 ">' +
-                        '<input type="number" step="0.01" id="hours_' + i + '" data-id="' + i + '" class="earnbtn calculation text-center hours" value="">' +
-                    '</div>' +
-                    '<div class="col-md-2">' +
-                        '<input type="number" step="0.01" id="total_' + i + '" data-id="' + i + '" class="earnbtn text-center" value="">' +
-                    '</div>' +
-                    '<div class="col-md-2">' +
-                        '<input type="number" step="0.01" id="period_' + i + '" data-id="' + i + '" class="earnbtn gross_total text-center" value="">' +
-                    '</div>' +
-                    '<div class="col-md-2 ">' +
-                        '<input type="number" step="0.01" id="ytd_total_' + i + '" data-id="' + i + '" class="earnbtn ytd_total text-center" value="">' +
-                    '</div>' +
+                '<div class="col-md-2 ">' +
+                '<input  id="earning_' + i + '" data-id="' + i + '" class="earnbtn text-center" value="">' +
+                '</div>' +
+                '<div class="col-md-2 ">' +
+                '<input type="number" step="0.01" id="rate_' + i + '" data-id="' + i + '" class="earnbtn calculation text-center" value="">' +
+                '</div>' +
+                '<div class="col-md-2 ">' +
+                '<input type="number" step="0.01" id="hours_' + i + '" data-id="' + i + '" class="earnbtn calculation text-center hours" value="">' +
+                '</div>' +
+                '<div class="col-md-2">' +
+                '<input type="number" step="0.01" id="total_' + i + '" data-id="' + i + '" class="earnbtn text-center" value="">' +
+                '</div>' +
+                '<div class="col-md-2">' +
+                '<input type="number" step="0.01" id="period_' + i + '" data-id="' + i + '" class="earnbtn gross_total text-center" value="">' +
+                '</div>' +
+                '<div class="col-md-2 ">' +
+                '<input type="number" step="0.01" id="ytd_total_' + i + '" data-id="' + i + '" class="earnbtn ytd_total text-center" value="">' +
+                '</div>' +
                 '</div>';
             if (x < maxField) {
                 x++;
