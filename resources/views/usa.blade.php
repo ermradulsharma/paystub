@@ -100,8 +100,7 @@
                                             {{$data->title}}</option>
                                         @endforeach
                                     </select>
-                                    <i class="fa fa-eye-slash basicTem" data-target="#openEye" data-toggle="modal"
-                                        style="font-size: 39px;"></i>
+                                    <i data-src="{{$data->images->file}}" class="fa fa-eye-slash basicTem" style="font-size: 39px;" role="button"></i>
 
                                 </div>
 
@@ -124,14 +123,13 @@
                                             {{$data->title}}</option>
                                         @endforeach
                                     </select>
-                                    <i class="fa fa-eye-slash advanceTem" data-target="#openEye" data-toggle="modal"
+                                    <i data-src="{{$data->images->file}}" class="fa fa-eye-slash advanceTem" role="button"
                                         style="font-size: 39px;"></i>
 
                                 </div>
                             </div>
                             <div class=" mt-3 ">
-                                <button class="viewbtn"> <a href="{{url('template-view')}}">Click to see Template
-                                        Landscape view.This is not part of design</a></button>
+                                <button class="viewbtn"> <a href="{{url('template-view')}}">Click to see Template Landscape view.This is not part of design</a></button>
                             </div>
                         </div>
                     </div>
