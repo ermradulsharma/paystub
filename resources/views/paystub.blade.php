@@ -91,8 +91,7 @@
                 </p>
 
                 <div class="mt-3">
-                    <a class="btn btn-lg  mt-2 p-2 btn-danger Generate " href="{{url('usa')}}">Generate Paystub
-                        Now</a>
+                    <a class="btn btn-lg  mt-2 p-2 btn-danger Generate " href="{{url('usa')}}">Generate Paystub Now</a>
                 </div>
             </div>
         </div>
@@ -109,84 +108,52 @@
         </div>
     </div>
 </div>
+<div class="calculations mt-4">
+    <div class="container pt-5" style="max-width: 1750px;">
+        <div class="">
+            <div class="text-justify text-center pb-5">
+                <h2 style="font-size:30px; font-family: Futura,Trebuchet MS,Arial,sans-serif;" class="text-white pt-5">Generate paystubs with accurate tax
+                    calculations, W-2, 1099S Etc in Seconds</h2>
+
+                <div class="row mt-5">
+
+                    <div class="col-md-4 text-center">
+                        <h2 style="font-size:40px;font-family: Futura,Trebuchet MS,Arial,sans-serif;" class="text-white calcheading">Add your Data</h2>
+                        <p style="font-size:17px;font-weight: 200;" class="text-white pay-p">Our paystub generator accurately</br>
+                            calculates your Federal and State</br> taxes, including Social security </br>and Medicare taxes so you don't
+                        </p>
+                        <img src="images/1.webp" style=" width: 94px; height: 94px; object-fit: cover; object-position: 50% 50%;">
 
 
-<div class="container" style="max-width: 1750px;">
-    <div class="row mt-5 ">
-        <div class="col-lg-5">
+                    </div>
 
-        </div>
-        <div class="col-lg-2"></div>
-        <div class="col-lg-5">
+                    
+                    <div class="col-md-4 text-center">
+                        <h2 style="font-size:40px;    font-family: Futura,Trebuchet MS,Arial,sans-serif;" class="text-white calcheading">Preview Data</h2>
+                        <p style="font-size:17px;font-weight: 200;" class="text-white pay-p">Generate pay stubs with accurate</br>
+                            state income taxes, based on </br>state W-4, and other applicable</br> local taxes. </p>
 
-        </div>
-    </div>
-</div>
-
-<div class="container pb-5" style="max-width:1750px;">
-    <div class="row pb-2">
-        <div class="col-lg-3">
+                        <img src="images/2.webp" style=" width: 94px; height: 94px; object-fit: cover; object-position: 50% 50%;">
 
 
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <h2 style="font-size:40px;    font-family: Futura,Trebuchet MS,Arial,sans-serif;" class="text-white pay-h2 calcheading">Download & Email your Paystub</h2>
+                        <p style="font-size:17px;font-weight: 200;" class="text-white pay-p">You will get to generate unlimited</br>
+                            payslip, paycheck or paystub </br>according to the plan you select.
+                        </p>
+
+                        <img src="images/3.webp" style=" width: 94px; height: 94px; object-fit: cover; object-position: 50% 50%;">
 
 
+                    </div>
 
-        </div>
-
-        <!-- <div class="col-lg-6" style="position: relative;top: -136px;">
-            <p class="OnPaystub ml-2 ">
-                On Paystub X Join thousands of satisfied independent </br> contractors and small business owners and get the
-                </br> highest quality pay stubs, W2s and 1099s — right to </br> your inbox! We make it easy. Guaranteed.
-                .</p>
-        </div> -->
-        <div class="col-lg-3"></div>
-
-
-    </div>
-</div>
-
-
-
-<div class="mt-5 calculations">
-    <div class="container text-justify text-center pb-5">
-        <h2 style="font-size:30px; font-family: Futura,Trebuchet MS,Arial,sans-serif;" class="text-white pt-5">Generate paystubs with accurate tax
-            calculations, W-2, 1099S Etc in Seconds</h2>
-
-        <div class="row mt-5">
-
-            <div class="col-md-4 text-center">
-                <h2 style="font-size:40px;font-family: Futura,Trebuchet MS,Arial,sans-serif;" class="text-white calcheading">Add your Data</h2>
-                <p style="font-size:17px;font-weight: 200;" class="text-white pay-p">Our paystub generator accurately</br>
-                    calculates your Federal and State</br> taxes, including Social security </br>and Medicare taxes so you don't
-                </p>
-                <img src="images/1.webp" style=" width: 94px; height: 94px; object-fit: cover; object-position: 50% 50%;">
-
-
-            </div>
-
-            <div class="col-md-4 text-center">
-                <h2 style="font-size:40px;    font-family: Futura,Trebuchet MS,Arial,sans-serif;" class="text-white pay-h2 calcheading">Download & Email your Paystub</h2>
-                <p style="font-size:17px;font-weight: 200;" class="text-white pay-p">You will get to generate unlimited</br>
-                    payslip, paycheck or paystub </br>according to the plan you select.
-                </p>
-
-                <img src="images/2.webp" style=" width: 94px; height: 94px; object-fit: cover; object-position: 50% 50%;">
-
-
-            </div>
-
-            <div class="col-md-4 text-center">
-                <h2 style="font-size:40px;    font-family: Futura,Trebuchet MS,Arial,sans-serif;" class="text-white calcheading">Preview Data</h2>
-                <p style="font-size:17px;font-weight: 200;" class="text-white pay-p">Generate pay stubs with accurate</br>
-                    state income taxes, based on </br>state W-4, and other applicable</br> local taxes. </p>
-
-                <img src="images/3.webp" style=" width: 94px; height: 94px; object-fit: cover; object-position: 50% 50%;">
-
-
+                </div>
             </div>
         </div>
     </div>
 </div>
+
 
 <div>
     <div class="container text-justify text-center pb-5">
@@ -274,53 +241,48 @@
 
         </div>
     </div>
-    <div class="container">
-        <div class="row"></div>
-    </div>
+
 
 </div>
-
 <div class="vedios">
-    <div class="container justify-content-center text-center pb-5">
-        <div style="font-size:32px;  font-family: Futura,Trebuchet MS,Arial,sans-serif;;" class="text-white pt-5"><b>Useful Videos for FAQ</b></div>
+    <div class="container py-5 justify-content-center " style=" max-width: 1394px;">
+        <div class="row justify-content-center  ">
+            <h2 class="text-center text-light pb-3" style="font-weight: 800;">
+                Useful Videos for FAQ
+            </h2>
+        </div>
+        <div class="row">
 
-        <div class="row mt-5">
-
-            <div class="col-md-4 ">
+            <div class="col-md-4 text-center">
                 <div class="justify-content-center">
-                    <iframe class="w-100 m-auto " src="https://www.youtube.com/embed/l9e8u2-zKHE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe class="mr-2 " style=" width:418px; height:234px;" src="https://www.youtube.com/embed/TrnLCFsN5i8" title="Plane Overhead" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <button class="text-white payp">Generate Paystubs with Accurate Tax Calculations</button>
                 </div>
-                <p style="font-size:18px; font-family:sans-serif" class="text-white">Add your Data</p>
-
-
 
             </div>
 
-            <div class="col-md-4 ">
+            <div class="col-md-4 text-center ">
                 <div class="justify-content-center">
-                    <iframe class="w-100 m-auto " src="https://www.youtube.com/embed/l9e8u2-zKHE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe class="mr-2 " style=" width:418px; height:234px;" src="https://www.youtube.com/embed/TrnLCFsN5i8" title="Plane Overhead" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <button class="text-white payp">How to Create PayStubs for Independent Contractors</button>
                 </div>
-                <p style="font-size:18px; font-family:sans-serif" class="text-white">Download & Email your Paystub</p>
-
-
 
             </div>
 
-            <div class="col-md-4 ">
+            <div class="col-md-4 text-center">
                 <div class="justify-content-center">
-                    <iframe class="w-100 m-auto " src="https://www.youtube.com/embed/l9e8u2-zKHE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe class="mr-2 " style=" width:418px; height:234px;" src="https://www.youtube.com/embed/TrnLCFsN5i8" title="Plane Overhead" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <button class="text-white payp">Select your Preferred Template</button>
                 </div>
-                <p style="font-size:18px; font-family:sans-serif" class="text-white">Preview Data</p>
-
-
 
             </div>
         </div>
     </div>
 </div>
 
+
 <div style="background:#fafafa;">
-    <div class="container " style="max-width:1800px">
+    <div class="container" style="max-width:1800px">
         <div class="row">
             <div class="col-md-1"></div>
 

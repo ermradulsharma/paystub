@@ -169,14 +169,9 @@
                     </div>
                 </div>
                 <div class="col-lg-4 mt-3 ">
-<<<<<<< HEAD
                     <div class="container justify-content-center m-auto text-center">
                         <a href="{{url('/')}}"><img class="footimg" src="images/satisfaction.webp"></a>
 
-=======
-                    <div class="container justify-content-center m-auto">
-                        <a href="{{url('/')}}"><img class="w-100" src="images/satisfaction.webp"></a>
->>>>>>> bfca4e67607c19862456e440a75fe3ab9edf8f45
                     </div>
                 </div>
                 <div class="col-lg-5 text-center m-auto ">

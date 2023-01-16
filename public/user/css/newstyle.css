@@ -647,7 +647,7 @@ h5 {
 }
 
 .paytext {
-    position: absolute;
+   
     bottom: -92px;
     /* left: 85px; */
 }
@@ -1102,7 +1102,7 @@ select {
     }
 
     .paytext {
-        position: absolute;
+     
         bottom: 261px;
         left: 328px;
     }
