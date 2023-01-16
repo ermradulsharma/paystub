@@ -26,14 +26,12 @@
                     <h5>Company Info</h5>
                     <div class="row mb-3 ">
                         <div class="col-md-6 mt-1">
-                            <label for="cname" class="lable">EMPLOYER (COMPANY) NAME <span class="redColor">*</span>
-                            </label>
+                            <label for="cname" class="lable">EMPLOYER (COMPANY) NAME <span class="redColor">*</span> </label>
                             <input type="text" id="cname" name="cname" placeholder="Your Employer & Company Name" class="w-100 p-2 text-center textInputFontSize">
                         </div>
 
                         <div class="col-md-6 mt-1">
-                            <label for="tel" class="lable">EMPLOYER TELEPHONE NUMBER <span class="redColor">*</span>
-                            </label>
+                            <label for="tel" class="lable">EMPLOYER TELEPHONE NUMBER <span class="redColor">*</span> </label>
                             <input type="tel" id="tel" name="tel" placeholder="123-234-4565" class="w-100 p-2 text-center textInputFontSize">
                         </div>
 
@@ -41,16 +39,14 @@
 
                     <div class="row mb-3">
                         <div class="col-md-12">
-                            <label for="address_1" class="lable">STREET ADDRESS 1 <span class="redColor">*</span>
-                            </label>
+                            <label for="address_1" class="lable">STREET ADDRESS 1 <span class="redColor">*</span> </label>
                             <input type="text" id="address_1" name="address_1" placeholder="Your Employer Address" class="w-100 p-2  textInputFontSize">
                         </div>
                     </div>
 
                     <div class="row mb-3">
                         <div class="col-md-12">
-                            <label for="address_2" class="lable">STREET ADDRESS 2 <span class="redColor">*</span>
-                            </label>
+                            <label for="address_2" class="lable">STREET ADDRESS 2 <span class="redColor">*</span> </label>
                             <input type="text" id="address_2" name="address_2" placeholder="Suite 101 or Apt 101 (optional)" class="w-100 p-2  textInputFontSize">
                         </div>
                     </div>
@@ -72,7 +68,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 
     <div>
@@ -94,16 +89,13 @@
                                         @endforeach
                                     </select>
                                     <i data-src="{{$data->images->file ?? ''}}" class="fa fa-eye-slash basicTem" style="font-size: 39px;" role="button"></i>
-
                                 </div>
-
                             </div>
                         </div>
 
                         <div class="col-md-2  text-center sh">
                             <img src="images/hrpng.png" style="height: 200px;">
                         </div>
-
                         <div class="col-md-5 col-sm-12 mt-5 text-center">
                             <h6 style="margin-left:-23px;font-weight: 900;">ADVANCED TEMPLATES</h6>
                             <div class="mt-4">
@@ -117,7 +109,6 @@
                                         @endforeach
                                     </select>
                                     <i data-src="{{$data->images->file ?? ''}}" class="fa fa-eye-slash advanceTem" role="button" style="font-size: 39px;"></i>
-
                                 </div>
                             </div>
                             <div class=" mt-3 ">
@@ -135,7 +126,6 @@
         <div class="row mb-3">
             <div class="col-md-12">
                 <div class=" box-usa">
-
                     <div class="row mb-3">
                         <div class="col-md-4 mt-4">
                             <label for="fname" class="lable">EMPLOYEE NAME <span class="redColor">*</span> </label>
@@ -150,7 +140,6 @@
                             <label for="fname" class="lable">EMPLOYEE SSN last4 <span class="redColor">*</span> </label>
                             <input type="text" id="fname" name="fname" placeholder="1224" class="w-100 p-2  textInputFontSize">
                         </div>
-
                     </div>
 
                     <div class="row mb-3">
@@ -191,7 +180,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 
     <div>
@@ -199,7 +187,6 @@
         <div class="row mb-3">
             <div class="col-md-12">
                 <div class=" box-usa">
-
                     <div class="row mb-3">
                         <div class="col-md-3 mt-4">
                             <label for="fname" class="lable">SELECT YOUR STATE <span class="redColor">*</span> </label>
@@ -221,6 +208,7 @@
                                 <option value="off">OFF</option>
                             </select>
                         </div>
+
                         <div class="col-md-3 mt-4">
                             <label for="marital_status" class="lable">MARITAL STATUS <span class="redColor">*</span>
                             </label>
@@ -231,6 +219,7 @@
                                 <option value="other">Prefered top not say</option>
                             </select>
                         </div>
+
                         <div class="col-md-3 mt-4">
                             <label for="time_period" class="lable">HOW DO YOU GET PAID <span class="redColor">*</span>
                             </label>
@@ -242,7 +231,6 @@
                                 <option value="bi-monthly">Bi-Monthly</option>
                             </select>
                         </div>
-
                     </div>
 
                     <div class="row mb-3">
@@ -259,6 +247,7 @@
                                 <option value="opel">Permanent</option>
                             </select>
                         </div>
+
                         <div class="col-md-3 mt-4">
                             <label for="fname" class="lable">EXEMPTIONS <span class="redColor">*</span> </label>
                             <select name="cars" id="cars" class=" dropdown11">
@@ -275,6 +264,7 @@
                                 <option value="opel">9</option>
                             </select>
                         </div>
+
                         <div class="col-md-3 mt-4">
                             <label for="fname" class="lable" class="redColor">SELECT YOUR PREFERRED CURRENCY <span class="redColor">*</span> </label>
                             <input type="text" id="fname" name="fname" placeholder="$(USD)" class="w-100 p-2  textInputFontSize">
@@ -302,17 +292,18 @@
                             <label for="pay_end" class="lable">PAY END <span class="redColor">*</span> </label>
                             <input type="date" id="pay_end" name="pay_end" placeholder="12-17-2022" class="w-100 p-2 textInputFontSize pay_end" data-id="pay_end">
                         </div>
+
                         <div class="col-md-3 mt-4">
                             <label for="pay_date" class="lable">PAY DATE <span class="redColor">*</span> </label>
                             <input type="date" id="pay_date" name="pay_date" placeholder="12-19-2022" class="w-100 p-2 textInputFontSize pay_date" data-id="pay_date">
                         </div>
+
                         <div class="col-md-3 mt-4">
                             <p class="text-center mb-0" style="font-size:18px;">How do you get paid <span class="redColor">*</span> <span> </p>
                             <div class="text-center mt-2  d-flex justify-content-center">
                                 <button class="hourbtn date_select">HOURLY</button> <button class="salrybtn">SALARY</button>
                             </div>
                         </div>
-
                     </div>
 
                     <div class="row ">
@@ -326,18 +317,15 @@
                             <button class="statementbtn">HOURS</button>
                         </div>
                         <div class="col-md-2 ">
-
                             <button class="statementbtn">TOTAL</button>
                         </div>
                         <div class="col-md-2">
                             <button class="statementbtn">THIS PERIOD</button>
-                            <p class="p-0 m-0 text-center" style="font-family: serif;font-size: 14px;"> Total Gross
-                            </p>
+                            <p class="p-0 m-0 text-center" style="font-family: serif;font-size: 14px;"> Total Gross </p>
                         </div>
                         <div class="col-md-2 ">
                             <button class="statementbtn">YTD TOTAL</button>
-                            <p class="p-0 m-0 text-center" style="font-family: serif;font-size:14px; 14px;">YTD Total
-                                Gross</p>
+                            <p class="p-0 m-0 text-center" style="font-family: serif;font-size:14px; 14px;">YTD Total Gross</p>
                         </div>
                     </div>
 
@@ -345,9 +333,11 @@
                         <div class="col-md-2">
                             <input class="earnbtn text-center" type="text" value="Regular" id="earning_0" data-id="0" required>
                         </div>
+
                         <div class="col-md-2 ">
                             <input type="number" step="0.01" class="earnbtn text-center calculation" value="" id="rate_0" data-id="0" required>
                         </div>
+
                         <div class="col-md-2 ">
                             <input type="number" step="0.01" class="earnbtn text-center hours calculation" value="" id="hours_0" data-id="0" required>
                         </div>
@@ -355,9 +345,11 @@
                         <div class="col-md-2">
                             <input type="number" step="0.01" class="earnbtn text-center" value="" id="total_0" data-id="0" required>
                         </div>
+
                         <div class="col-md-2">
                             <input type="number" step="0.01" class="earnbtn text-center gross_total" value="" id="period_0" data-id="0" required>
                         </div>
+
                         <div class="col-md-2">
                             <input type="number" step="0.01" class="earnbtn text-center ytd_total" value="" id="ytd_total_0" data-id="0" required>
                         </div>
@@ -374,14 +366,13 @@
                         <div class="col-md-3">
                             <button class="createbtn ">DEDUCTIONS</button>
                         </div>
-
                     </div>
 
-                    @foreach ($dedutions as $item)
+                    @foreach ($dedutions as $key => $item)
                     <div class="row mb-3 mt-4">
                         <div class="col-md-4 col-lg-3">
                             <i class="fa fa-lock earnbtn2"></i>
-                            <input class="earnbtn text-center" type="text" value="{{$item->title}}">
+                            <input class="earnbtn text-center tax_{{$key+1}}" value="{{$item->title}}">
                         </div>
                         <div class="col-md-1 col-lg-1"></div>
                         <div class="col-md-2 col-lg-3"></div>
@@ -490,89 +481,6 @@
 </div>
 @endsection
 @section('script')
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('.auto_calculate').change(function() {
-            var id = $(this).val();
-            console.log("id====", id);
-            if (id == 'off') {
-                $('.tax').val("");
-            } else {
-                $('.tax').val();
-            }
-        });
-
-        var maxField = 12;
-        var addButton = $('.add_button');
-        var wrapper = $('.field_wrapper');
-        var x = 1;
-        var i = 1;
-
-        $(addButton).click(function() {
-            var fieldHTML =
-                '<div class="row mb-3">' +
-                '<div class="col-md-2 ">' +
-                '<input  id="earning_' + i + '" data-id="' + i + '" class="earnbtn text-center" value="">' +
-                '</div>' +
-                '<div class="col-md-2 ">' +
-                '<input type="number" step="0.01" id="rate_' + i + '" data-id="' + i + '" class="earnbtn calculation text-center" value="">' +
-                '</div>' +
-                '<div class="col-md-2 ">' +
-                '<input type="number" step="0.01" id="hours_' + i + '" data-id="' + i + '" class="earnbtn calculation text-center hours" value="">' +
-                '</div>' +
-                '<div class="col-md-2">' +
-                '<input type="number" step="0.01" id="total_' + i + '" data-id="' + i + '" class="earnbtn text-center" value="">' +
-                '</div>' +
-                '<div class="col-md-2">' +
-                '<input type="number" step="0.01" id="period_' + i + '" data-id="' + i + '" class="earnbtn gross_total text-center" value="">' +
-                '</div>' +
-                '<div class="col-md-2 ">' +
-                '<input type="number" step="0.01" id="ytd_total_' + i + '" data-id="' + i + '" class="earnbtn ytd_total text-center" value="">' +
-                '</div>' +
-                '</div>';
-            if (x < maxField) {
-                x++;
-                $(wrapper).append(fieldHTML);
-            }
-            i++;
-            $('.calculation').keyup(function() {
-                var id = $(this).data('id');
-                calculation(id);
-            });
-        });
-
-        $('.calculation').keyup(function() {
-            var id = $(this).data('id');
-            calculation(id);
-        });
-
-        function calculation(id) {
-            var rate = parseFloat($('#rate_' + id).val()).toFixed(2);
-            var hours = parseFloat($('#hours_' + id).val()).toFixed(2);
-            var total = rate * hours;
-            var ytd_total = total * 365;
-            $('#total_' + id).val(total);
-            $('#period_' + id).val(total);
-            $('#ytd_total_' + id).val(ytd_total);
-            gross_total();
-            // ytd_total();
-        }
-
-        function gross_total() {
-            var total = 0;
-            $('.gross_total').each(function() {
-                total += parseFloat(this.value);
-            });
-            var ytd_total = 0;
-            $('.ytd_total').each(function() {
-                ytd_total += parseFloat(this.value);
-            });
-            console.log(ytd_total);
-            console.log(total);
-        }
-    });
-
-</script>
 <script>
     $(document).ready(function() {
         $('.time_period').change(function() {
@@ -626,6 +534,78 @@
     });
 
 </script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        var maxField = 12;
+        var addButton = $('.add_button');
+        var wrapper = $('.field_wrapper');
+        var x = 1;
+        var i = 1;
+
+        $(addButton).click(function() {
+            var fieldHTML =
+                '<div class="row mb-3">' +
+                    '<div class="col-md-2 ">' +
+                        '<input  id="earning_' + i + '" data-id="' + i + '" class="earnbtn text-center" value="">' +
+                    '</div>' +
+                    '<div class="col-md-2 ">' +
+                        '<input type="number" step="0.01" id="rate_' + i + '" data-id="' + i + '" class="earnbtn calculation text-center" value="">' +
+                    '</div>' +
+                    '<div class="col-md-2 ">' +
+                        '<input type="number" step="0.01" id="hours_' + i + '" data-id="' + i + '" class="earnbtn calculation text-center hours" value="">' +
+                    '</div>' +
+                    '<div class="col-md-2">' +
+                        '<input type="number" step="0.01" id="total_' + i + '" data-id="' + i + '" class="earnbtn text-center" value="">' +
+                    '</div>' +
+                    '<div class="col-md-2">' +
+                        '<input type="number" step="0.01" id="period_' + i + '" data-id="' + i + '" class="earnbtn gross_total text-center" value="">' +
+                    '</div>' +
+                    '<div class="col-md-2 ">' +
+                        '<input type="number" step="0.01" id="ytd_total_' + i + '" data-id="' + i + '" class="earnbtn ytd_total text-center" value="">' +
+                    '</div>' +
+                '</div>';
+            if (x < maxField) {
+                x++;
+                $(wrapper).append(fieldHTML);
+            }
+            i++;
+            $('.calculation').keyup(function() {
+                var id = $(this).data('id');
+                calculation(id);
+            });
+        });
+
+        $('.calculation').keyup(function() {
+            var id = $(this).data('id');
+            calculation(id);
+        });
+
+        function calculation(id) {
+            var rate = parseFloat($('#rate_' + id).val()).toFixed(2);
+            var hours = parseFloat($('#hours_' + id).val()).toFixed(2);
+            var total = rate * hours;
+            var ytd_total = total * 52;
+            $('#total_' + id).val(total);
+            $('#period_' + id).val(total);
+            $('#ytd_total_' + id).val(ytd_total);
+            gross_total();
+            // ytd_total();
+        }
+
+        function gross_total() {
+            var total = 0;
+            $('.gross_total').each(function() {
+                total += parseFloat(this.value);
+            });
+            var ytd_total = 0;
+            $('.ytd_total').each(function() {
+                ytd_total += parseFloat(this.value);
+            });
+        }
+    });
+
+</script>
+
 <script>
     $(document).ready(function() {
         var maxField = 12;
@@ -638,7 +618,7 @@
                 '<div class="row mb-3">' +
                 '<div class="col-md-3">' +
                 '<i class="fa fa-lock earnbtn2"></i>' +
-                '<input class="earnbtn" type="text" value="">' +
+                '<input class="earnbtn text-center" type="text" value="">' +
                 '</div>' +
                 '<div class="col-md-1"> </div>' +
                 '<div class="col-md-3"> </div>' +

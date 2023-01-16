@@ -34,7 +34,7 @@
                                 <th>State</th>
                                 <th>Type</th>
                                 <th>Title</th>
-                                <th>Price</th>
+                                <th>Percent</th>
                                 <th>Action</th>
 
 
@@ -48,15 +48,12 @@
                                 <td>{{$item->state}}</td>
                                 <td>{{$item->type}}</td>
                                 <td>{{$item->title}}</td>
-                                <td>{{$item->price}}</td>
-                                <td><button type="button" class="btn btn-primary"
-                                        wire:click="editDeduction({{$item->id}})">Edit</button>
+                                <td>{{$item->price}} %</td>
+                                <td><button type="button" class="btn btn-primary" wire:click="editDeduction({{$item->id}})">Edit</button>
                                     @if($confirming===$item->id)
-                                    <button wire:click="deleteDeduction({{$item->id}})"
-                                        class="btn btn-warning text-white w-32 ">Sure?</button>
+                                    <button wire:click="deleteDeduction({{$item->id}})" class="btn btn-warning text-white w-32 ">Sure?</button>
                                     @else
-                                    <button wire:click="confirmDelete({{ $item->id }})"
-                                        class="btn btn-danger">Delete</button>
+                                    <button wire:click="confirmDelete({{ $item->id }})" class="btn btn-danger">Delete</button>
                                     @endif
                                 </td>
                             </tr>
@@ -64,9 +61,6 @@
                         </tbody>
                     </table>
                     <!-- End Table -->
-
-
-
                 </div>
             </div>
         </div>
