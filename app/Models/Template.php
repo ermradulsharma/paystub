@@ -14,8 +14,10 @@ class Template extends Model
     }
     static function getTemplate($request)
     {
-        $basic = Template::with('images')->where('type', 'basic')->get();
-        $advance = Template::with('images')->where('type', 'advance')->get();
+
+
+        $basic = Template::with('images')->where('state', $request->state)->where('type', 'basic')->get();
+        $advance = Template::with('images')->where('state', $request->state)->where('type', 'advance')->get();
         $response['basic'] = $basic;
         $response['advance'] = $advance;
         $response['status'] = STATUS_OK;

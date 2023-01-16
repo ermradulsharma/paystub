@@ -15,9 +15,10 @@ return new class extends Migration
     {
         Schema::create('deductions', function (Blueprint $table) {
             $table->id();
+            $table->string('state');
+            $table->string('type');
             $table->string('title');
             $table->double('price',8 ,2)->default('0.00');
-            $table->string('type');
             $table->timestamps();
         });
     }

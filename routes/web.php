@@ -1,6 +1,8 @@
 <?php
 
-
+use App\Http\Controllers\CanadaController;
+use App\Http\Controllers\UkController;
+use App\Http\Controllers\UsaController;
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\Routing\Router;
 
@@ -18,18 +20,20 @@ use Symfony\Component\Routing\Router;
 Route::get('/', function () {
     return view('paystub');
 });
-Route::get('usa', function () {
-    return view('usa');
-});
+
+Route::get('usa', [UsaController::class, 'index']);
+Route::get('canada-paystub', [CanadaController::class, 'index']);
+Route::get('uk-paystub', [UkController::class, 'index']);
+Route::get('globle', [UsaController::class, 'templateGloble']);
+
+
 Route::get('canada', function () {
     return view('canada');
 });
 Route::get('uk', function () {
     return view('uk');
 });
-Route::get('globle', function () {
-    return view('globle');
-});
+
 Route::get('form', function () {
     return view('forms');
 });
@@ -43,12 +47,8 @@ Route::get('privacy', function () {
 Route::get('refund', function () {
     return view('refund');
 });
-Route::get('canada-paystub', function () {
-    return view('canadaPaystub');
-});
-Route::get('uk-paystub', function () {
-    return view('ukPaystub');
-});
+
+
 Route::get('w2paystub', function () {
     return view('w2paystub');
 });

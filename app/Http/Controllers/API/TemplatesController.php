@@ -17,8 +17,8 @@ class TemplatesController extends Controller
         $response['status'] = STATUS_BAD_REQUEST;
         $response['success'] = FALSE;
         try {
-            $dataObj = Template::getTemplate($request);
-            if($dataObj['status'] == 200){
+             $dataObj = Template::getTemplate($request);
+            if ($dataObj['status'] == 200) {
                 $response['basic'] = $dataObj['basic'];
                 $response['advance'] = $dataObj['advance'];
 
@@ -26,7 +26,6 @@ class TemplatesController extends Controller
                 $response['status'] = STATUS_OK;
                 $response['success'] = TRUE;
             }
-
         } catch (Exception $e) {
             $response['message'] = $e->getMessage() . ' Line No ' . $e->getLine() . ' in File' . $e->getFile();
             Log::error($e->getTraceAsString());

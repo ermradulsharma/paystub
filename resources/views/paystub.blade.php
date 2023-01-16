@@ -64,25 +64,20 @@
 
             <ul style="font-weight: 200; font-size: 21px; line-height:1.5em;" class="mt-4">
                 <li class=" mt-2 proof"> Rent an apartment ✅</li>
-
-
                 <li class=" mt-2 proof"> Qualify for a mortgage ✅</li>
-
-
                 <li class=" mt-2 proof">Request a small business loan ✅</li>
-
-
                 <li class=" mt-2 proof"> Verify income for child support or alimony ✅</li>
-
-
                 <li class=" mt-2 proof"> Apply for health insurance ✅</li>
-
             </ul>
+<<<<<<< HEAD
 
             <p style="font-weight: 200; font-size:23px; margin-left: 22px;" class="mt-3">Generate 100% Legal Pay Stubs in seconds.</p>
 
 
 
+=======
+            <p style="font-weight: 200; font-size:25px;" class="mt-3">Generate 100% Legal Pay Stubs in seconds.</p>
+>>>>>>> bfca4e67607c19862456e440a75fe3ab9edf8f45
         </div>
 
 
@@ -93,20 +88,10 @@
                 Create pay stubs for your employees.
             </h3>
             <ul style="font-weight: 200; font-size: 21px; line-height:1.5em;" class="mt-4">
-
-
                 <li class="mt-2 proof">Help employees qualify for loans, housing & more ✅</li>
-
-
                 <li class="mt-2 proof">Comply with state and local employment laws ✅</li>
-
-
                 <li class="mt-2 proof">RequestBe transparent with compensation ✅</li>
-
-
                 <li class="mt-2 proof">Trust auto-calculation for every pay stub, for every state ✅</li>
-
-
                 <li class="mt-2 proof">Manage all payroll documents in one place ✅</li>
             </ul>
 
@@ -124,8 +109,7 @@
                 <p style="font-size: 22px;color: #363636;font-weight:300; line-height:1em">TAX FILING HAS NEVER BEEN
                     EASY
                 </p>
-                <p class="text-black" style="font-size: 30px;font-weight: 300;line-height:1em;">Handling Payroll
-                    Yourself?
+                <p class="text-black" style="font-size: 30px;font-weight: 300;line-height:1em;">Handling Payroll Yourself?
                 </p>
                 <p class="text-danger" style="font-size: 30px;font-weight: 300;line-height:1.5em;">You are at the right
                     place!
@@ -151,6 +135,10 @@
         </div>
 <div class="col-lg-3"></div>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> bfca4e67607c19862456e440a75fe3ab9edf8f45
 
     </div>
 </div>

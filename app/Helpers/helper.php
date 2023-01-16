@@ -8,33 +8,17 @@ function uploadImage($module, $module_id, $files, $path = "images")
     $path =  IMAGE_UPLOAD_PATH . $path;
     if (is_object($files)) {
         $file = $files;
-        // dd($file);
         $extension = $file->extension();
         $fileName = date('dmY-his-') . uniqid() . '.' . $extension;
         $fileName = str_replace(" ", "_", $fileName);
-        //$file->move($path, $fileName);
         $file->storeAs($path, $fileName);
         $mime = $file->getMimeType();
 
         $fileType = "";
-        if (strstr($mime, "video/")) {
-            $fileType = "video";
-        } else if (strstr($mime, "image/")) {
+        if (strstr($mime, "image/")) {
             $fileType = "image";
-        } else if (strstr($mime, "audio/")) {
-            $fileType = "audio";
-        }
-        // if($fileType == "image"){
-        //     $pdf = PDF::loadView('myPDF', $data);
-        // }
-        if ($fileType == "video") {
-            $thumbnail = $path . "/thumbnail/";
-            if (!is_dir($thumbnail)) {
-                mkdir($thumbnail);
-            }
-            $videoUrl = $path . '/' . $fileName;
-            $storageUrl = $thumbnail;
-            $thumbnailName = date('dmY-his-') . uniqid() . '.png';
+        } else if (strstr($extension, "pdf")) {
+            $fileType = "pdf";
         }
         $image = new Image();
         $image->module_type = $module;

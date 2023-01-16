@@ -30,13 +30,12 @@
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Title</th>
-                                <th scope="col">Type</th>
-                                <th scope="col">Price</th>
-                                <th scope="col">Action</th>
-
-
+                                <th>#</th>
+                                <th>State</th>
+                                <th>Type</th>
+                                <th>Title</th>
+                                <th>Percent</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -44,22 +43,22 @@
                             @foreach ($deductions as $key => $item)
                             <tr>
                                 <td>{{$key+1}}</td>
-                                <td>{{$item->title}}</td>
+                                <td>{{$item->state}}</td>
                                 <td>{{$item->type}}</td>
-                                <td>{{$item->price}}</td>
-                                <td><button type="button" class="btn btn-primary"
-                                        wire:click="editDeduction({{$item->id}})">Edit</button>
-                                    <button type="button" class="btn btn-danger"
-                                        wire:click="deleteDeduction({{$item->id}})">Delete</button>
+                                <td>{{$item->title}}</td>
+                                <td>{{$item->price}} %</td>
+                                <td><button type="button" class="btn btn-primary" wire:click="editDeduction({{$item->id}})">Edit</button>
+                                    @if($confirming===$item->id)
+                                    <button wire:click="deleteDeduction({{$item->id}})" class="btn btn-warning text-white w-32 ">Sure?</button>
+                                    @else
+                                    <button wire:click="confirmDelete({{ $item->id }})" class="btn btn-danger">Delete</button>
+                                    @endif
                                 </td>
                             </tr>
                             @endforeach
                         </tbody>
                     </table>
                     <!-- End Table -->
-
-
-
                 </div>
             </div>
         </div>
@@ -80,20 +79,29 @@
 
 
                                         <!-- Horizontal Form -->
+
                                         <form wire:submit.prevent="StoreDeduction">
                                             <div class="row mb-3">
-                                                <label  class="col-sm-3 col-form-label">Title
-                                                  </label>
+                                                <label class="col-sm-3 col-form-label">State</label>
                                                 <div class="col-sm-8">
-                                                    <input type="text" class="form-control" id="title" wire:model="title">
-                                                    @error('title')
-                                                    <div class="mt-3 text-danger">* {{$message}}</div>
+                                                    <select class="form-select" aria-label="Default select example"
+                                                        type="text" wire:model="state">
+                                                        <option selected="">Open this select State</option>
+                                                        <option value="usa">USA</option>
+                                                        <option value="canada">CANADA</option>
+                                                        <option value="uk">UK</option>
+                                                        <option value="globle">GLOBLE</option>
+
+                                                    </select>
+                                                    @error('state')
+                                                    <div class="mt-3 text-danger">* {{ $message }}</div>
                                                     @enderror
                                                 </div>
+
                                             </div>
                                             <div class="row mb-3">
-                                                <label  class="col-sm-3 col-form-label">Type
-                                                  </label>
+                                                <label class="col-sm-3 col-form-label">Type
+                                                </label>
                                                 <div class="col-sm-8">
                                                     <input type="text" class="form-control" id="type" wire:model="type">
                                                     @error('type')
@@ -102,19 +110,33 @@
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
-                                                <label  class="col-sm-3 col-form-label">Price
-                                                    </label>
+                                                <label class="col-sm-3 col-form-label">Title
+                                                </label>
                                                 <div class="col-sm-8">
-                                                    <input type="text" class="form-control" id="price" wire:model="price">
+                                                    <input type="text" class="form-control" id="title"
+                                                        wire:model="title">
+                                                    @error('title')
+                                                    <div class="mt-3 text-danger">* {{$message}}</div>
+                                                    @enderror
+                                                </div>
+                                            </div>
+
+                                            <div class="row mb-3">
+                                                <label class="col-sm-3 col-form-label">Price
+                                                </label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control" id="price"
+                                                        wire:model="price">
                                                     @error('price')
                                                     <div class="mt-3 text-danger">* {{$message}}</div>
                                                     @enderror
                                                 </div>
                                             </div>
                                             <div class="text-center mt-5">
-                                                <button type="submit" class="btn btn-primary " style="float:right; ">Submit</button>
-                                                <button type="reset" wire:click="resetForm"
-                                                    class="btn btn-secondary  " style="float:right; margin-right: 12px;">Reset</button>
+                                                <button type="submit" class="btn btn-primary "
+                                                    style="float:right; ">Submit</button>
+                                                <button type="reset" wire:click="resetForm" class="btn btn-secondary  "
+                                                    style="float:right; margin-right: 12px;">Reset</button>
                                             </div>
                                         </form><!-- End Horizontal Form -->
 

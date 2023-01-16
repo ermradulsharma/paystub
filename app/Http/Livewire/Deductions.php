@@ -7,8 +7,8 @@ use Livewire\Component;
 
 class Deductions extends Component
 {
-   
-    public $title,$price,$type ,$deductionId; 
+
+    public $title,$price,$type ,$state,$deductionId ,$confirming;
     public $next=1;
     public $page_title = "Add Deduction";
 
@@ -23,11 +23,12 @@ class Deductions extends Component
             $this->next();
             $this->resetForm();
             $this->page_title = "Add Deduction";
-       
+
     }
 
     public function resetForm()
     {
+        $this->state = "";
         $this->title = "";
         $this->price = "";
         $this->type = "";
@@ -40,19 +41,23 @@ class Deductions extends Component
             'title' => 'required',
             'price' => 'required',
             'type' => 'required',
+            'state' => 'required',
 
         ]);
         $this->back();
         $deductionObj = Deduction::find($this->deductionId);
         if(!$deductionObj){
             $deductionObj = new Deduction();
+            $msg="Deduction saved successfully.";
         }
         $deductionObj->title = $this->title;
         $deductionObj->price = $this->price;
         $deductionObj->type = $this->type;
+        $deductionObj->state = $this->state;
         $deductionObj->save();
+        $msg="Deduction Updated successfully.";
         $this->resetForm();
-        session()->flash('success', 'Deduction save successfully.');
+        session()->flash('success', $msg);
     }
 
     public function editDeduction($id)
@@ -61,7 +66,8 @@ class Deductions extends Component
         $this->title = $deductionObj->title;
         $this->price = $deductionObj->price;
         $this->type = $deductionObj->type;
-        
+        $this->state = $deductionObj->state;
+
         $this->deductionId = $id;
         $this->next();
         $this->page_title = "Edit Deduction";
@@ -76,10 +82,13 @@ class Deductions extends Component
     {
         $this->next--;
     }
-
+    public function confirmDelete($id)
+    {
+        $this->confirming = $id;
+    }
     public function deleteDeduction($id)
     {
         Deduction::find($id)->delete();
-        session()->flash('success', 'Deduction delete successfully.');
+        session()->flash('success', 'Deduction deleted successfully.');
     }
 }

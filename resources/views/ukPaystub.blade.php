@@ -1,11 +1,7 @@
 `@extends('layouts.app')
 @section('content')
-
-
-
-
 <div>
-<div class="container" style="max-width:1450px;">
+    <div class="container" style="max-width:1450px;">
         <h5>Choose Template</h5>
         <div class="row mb-3">
             <div class="col-md-12">
@@ -15,14 +11,14 @@
                         <div class="col-md-5 col-sm-12 m-auto  text-center" style="padding: -1px 35px;">
                             <h6 style="" class="base">BASIC TEMPLATES</h6>
                             <div class="mt-4">
-                                <i class="fa fa-angle-down down"></i>
+                                {{-- <i class="fa fa-angle-down down"></i> --}}
                                 <div class="input-group mmenu mb-3">
                                     <select name="cars" id="cars" style="" class="form-control dropdown1"
                                         style="border-right:none">
-                                        <option value="volvo">---Select--- </option>
-                                        <option value="saab">Reddish Magenta</option></option>
-                                        <option value="opel">Opel</option>
-                                        <option value="audi">Audi</option>
+                                        <option selected=""> --- Select Basic Templates --- </option>
+                                        @foreach ($basicType as $data)
+                                        <option value={{$data->title}}>{{$data->title}}</option>
+                                        @endforeach
                                     </select>
                                     <i onclick="myFunction(this)" class="fa fa-eye eyes" style="font-size: 39px;"></i>
 
@@ -41,14 +37,13 @@
                         <div class="col-md-5 col-sm-12 mt-5 text-center">
                             <h6 style="margin-left:-23px;font-weight: 900;">ADVANCED TEMPLATES</h6>
                             <div class="mt-4">
-                                <i class="fa fa-angle-down down1"></i>
+                                {{-- <i class="fa fa-angle-down down1"></i> --}}
                                 <div class="input-group mmenu mb-3" style="margin: auto;">
-                                    <select name="cars" id="cars" style="" class="form-control dropdown1"
-                                        style="border-right:none">
-                                        <option value="volvo"> ---Select--- </option>
-                                        <option value="saab">PT Pink</option>
-                                        <option value="opel">Opel</option>
-                                        <option value="audi">Audi</option>
+                                    <select name="cars" id="cars" style="" class="form-control dropdown1" <option
+                                        selected=""> --- Select Advance Template --- </option>
+                                        @foreach ($advanceType as $data)
+                                        <option value={{$data->title}}>{{$data->title}}</option>
+                                        @endforeach
                                     </select>
                                     <i onclick="myFunction(this)" class="fa fa-eye eyes"
                                         style="font-size: 39px;margin-left: 6px;"></i>
@@ -80,16 +75,16 @@
 
                     <div class="row mb-3">
                         <div class="col-md-6 mt-1">
-                            <label for="fname" class="lable">EMPLOYER (COMPANY) NAME        
-                                          <span style="color:red;">*</span>
-                                                  </label><br>
+                            <label for="fname" class="lable">EMPLOYER (COMPANY) NAME
+                                <span style="color:red;">*</span>
+                            </label><br>
                             <input type="text" id="fname" name="fname" placeholder="Your Employer & Company Name"
                                 class="w-100 p-2 text-center" style="font-size:14px;"><br>
                         </div>
 
                         <div class="col-md-6 mt-1">
-                            <label for="fname" class="lable text-center">EMPLOYER (COMAPNY) ADDRESS 
-                                    <span style="color:red;">*</span></label><br>
+                            <label for="fname" class="lable text-center">EMPLOYER (COMAPNY) ADDRESS
+                                <span style="color:red;">*</span></label><br>
                             <input type="text" id="fname" name="fname"
                                 placeholder="5 Throgmorton St, London EC2N 2AD, United Kingdom"
                                 class="w-100 p-2 text-center" style="font-size:14px;"><br>
@@ -128,15 +123,14 @@
                         </div>
 
                         <div class="col-md-4 mt-4">
-                            <label for="fname" class="lable">EMPLOYER ADDRESS 1 
-                                   <span style="color:red;">*</span></label><br>
-                            <input type="text" id="fname" name="fname" placeholder="
- 5 Throgmorton St,
-London" class="w-100 p-2 text-center" style="font-size:14px;"><br>
+                            <label for="fname" class="lable">EMPLOYER ADDRESS 1
+                                <span style="color:red;">*</span></label><br>
+                            <input type="text" id="fname" name="fname" placeholder="5 Throgmorton St,London"
+                                class="w-100 p-2 text-center" style="font-size:14px;"><br>
                         </div>
                         <div class="col-md-4 mt-4">
-                            <label for="fname" class="lable">POSTCODE 
-                                  <span style="color:red;">*</span></label><br>
+                            <label for="fname" class="lable">POSTCODE
+                                <span style="color:red;">*</span></label><br>
                             <input type="text" id="fname" name="fname" placeholder="1224" class="w-100 p-2 text-center"
                                 style="font-size:14px;"><br>
                         </div>
@@ -145,20 +139,20 @@ London" class="w-100 p-2 text-center" style="font-size:14px;"><br>
                     <h5 class="mt-5 mb-2">EARNINGS STATEMENT</h5>
                     <div class="row mb-3">
                         <div class="col-md-4 ">
-                            <label for="fname" class="lable">PAY START 
-                                  <span style="color:red;">*</span></label><br>
+                            <label for="fname" class="lable">PAY START
+                                <span style="color:red;">*</span></label><br>
                             <input type="text" id="fname1" name="fname" placeholder="2-20-2023" class="w-100 p-2
                                  " style="font-size:14px;"><br>
                         </div>
 
                         <div class="col-md-4 ">
-                            <label for="fname" class="lable text-center"> PAY DATE 
+                            <label for="fname" class="lable text-center"> PAY DATE
                                 <span style="color:red;">*</span></label><br>
                             <input type="text" id="fname" name="fname" placeholder="12-12-2023" class="w-100 p-2
                             " style="font-size:14px;"><br>
                         </div>
                         <div class="col-md-4 ">
-                            <label for="fname" class="lable">PAY END 
+                            <label for="fname" class="lable">PAY END
                                 <span style="color:red;">*</span></label><br>
                             <input type="text" id="fname" name="fname" placeholder="2-20-2023" class="w-100 p-2
                             r" style="font-size:14px;"><br>
@@ -170,40 +164,39 @@ London" class="w-100 p-2 text-center" style="font-size:14px;"><br>
                     <div class="row mb-3">
                         <div class="col-lg-2 col-md-4 mt-4">
                             <label for="fname" class="lable">Pay Type
-                                 <span style="color:red;">*</span></label><br>
+                                <span style="color:red;">*</span></label><br>
                             <input type="text" id="fname1" name="fname" placeholder="2-20-2023" class="w-100 p-2
                                  " style="font-size:14px;"><br>
                         </div>
 
                         <div class="col-lg-2 col-md-4 mt-4">
-                            <label for="fname" class="lable text-center"> Payment method 
-                                 <span style="color:red;">*</span></label><br>
+                            <label for="fname" class="lable text-center"> Payment method
+                                <span style="color:red;">*</span></label><br>
                             <input type="text" id="fname" name="fname" placeholder="12-12-2023" class="w-100 p-2
                             " style="font-size:14px;"><br>
                         </div>
                         <div class="col-lg-2 col-md-4 mt-4">
-                            <label for="fname" class="lable">Tax Code 
-                                 <span style="color:red;">*</span></label><br>
+                            <label for="fname" class="lable">Tax Code
+                                <span style="color:red;">*</span></label><br>
                             <input type="text" id="fname" name="fname" placeholder="2-20-2023" class="w-100 p-2
                             r" style="font-size:14px;"><br>
                         </div>
                         <div class="col-lg-2 col-md-4 mt-4">
                             <label for="fname" class="lable">NI Number
-                                 <span style="color:red;">*</span></label><br>
+                                <span style="color:red;">*</span></label><br>
                             <input type="text" id="fname" name="fname" placeholder="2-20-2023" class="w-100 p-2
                             r" style="font-size:14px;"><br>
                         </div>
                         <div class="col-lg-2 col-md-4 mt-4">
                             <label for="fname" class="lable">NI Table Lette
-                                 <span style="color:red;">*</span></label><br>
+                                <span style="color:red;">*</span></label><br>
                             <input type="text" id="fname" name="fname" placeholder="2-20-2023" class="w-100 p-2
                             r" style="font-size:14px;"><br>
                         </div>
                         <div class="col-lg-2 col-md-4 mt-2">
-                            <p class="text-center mb-0 ukpaystubtext">How do you get paid<spam
-                                    style="color:red;">
+                            <p class="text-center mb-0 ukpaystubtext">How do you get paid<spam style="color:red;">
                                     <span style="color:red;">*</span>
-                                            <spam>
+                                    <spam>
                             </p>
                             <div class="text-center mt-2  d-flex justifycenter ">
                                 <button CLASS="hourbtn mr-2">HOURLY</button> <button CLASS="salrybtn">SALARY</button>
@@ -268,10 +261,10 @@ London" class="w-100 p-2 text-center" style="font-size:14px;"><br>
 
                                 <div class="col-md-6">
 
-                                
-                            <i class="fa fa-lock earnbtn2"></i>
-                            <input class="earnbtn text-center" type="text" value="FICA Medicare">
-                       
+
+                                    <i class="fa fa-lock earnbtn2"></i>
+                                    <input class="earnbtn text-center" type="text" value="FICA Medicare">
+
                                 </div>
                                 <div class="col-md-4 ">
                                     <input CLASS="earnbtn text-center" value="556.80"></input>
@@ -281,11 +274,11 @@ London" class="w-100 p-2 text-center" style="font-size:14px;"><br>
                             <div class="row mb-3">
                                 <div class="col-md-6">
 
-                                <i class="fa fa-lock earnbtn2"></i>
-                            <input class="earnbtn text-center" type="text" value="National Insurence">
-                       
+                                    <i class="fa fa-lock earnbtn2"></i>
+                                    <input class="earnbtn text-center" type="text" value="National Insurence">
+
                                 </div>
-                                
+
                                 <div class="col-md-4 ">
                                     <input CLASS="earnbtn text-center" value="556.80"></input>
                                 </div>
@@ -302,7 +295,7 @@ London" class="w-100 p-2 text-center" style="font-size:14px;"><br>
                                 <div class="col-md-4">
 
                                     <input CLASS="earnbtn text-center" value=" 7,247.29">
-                                       </input>
+                                    </input>
                                 </div>
 
                             </div>
@@ -315,8 +308,8 @@ London" class="w-100 p-2 text-center" style="font-size:14px;"><br>
 
                                 <div class="col-md-6">
 
-                                <i class="fa fa-lock earnbtn2"></i>
-                            <input class="earnbtn text-center" type="text" value="Taxable Gross Pay">
+                                    <i class="fa fa-lock earnbtn2"></i>
+                                    <input class="earnbtn text-center" type="text" value="Taxable Gross Pay">
                                 </div>
                                 <div class="col-md-4 ">
                                     <input CLASS="earnbtn text-center" value="1,309.90"></input>
@@ -326,8 +319,8 @@ London" class="w-100 p-2 text-center" style="font-size:14px;"><br>
                             <div class="row mb-3">
                                 <div class="col-md-6">
 
-                                <i class="fa fa-lock earnbtn2"></i>
-                            <input class="earnbtn text-center" type="text" value="Income Tax">
+                                    <i class="fa fa-lock earnbtn2"></i>
+                                    <input class="earnbtn text-center" type="text" value="Income Tax">
                                 </div>
                                 <div class="col-md-4 ">
                                     <input CLASS="earnbtn text-center" value="1,058.94"></input>
@@ -339,15 +332,15 @@ London" class="w-100 p-2 text-center" style="font-size:14px;"><br>
                             <div class="row mb-3">
 
                                 <div class="col-md-6">
-                                
-                                <i class="fa fa-lock earnbtn2"></i>
-                            <input class="earnbtn text-center" type="text" value="Employee NIC">
+
+                                    <i class="fa fa-lock earnbtn2"></i>
+                                    <input class="earnbtn text-center" type="text" value="Employee NIC">
 
                                 </div>
                                 <div class="col-md-4">
 
                                     <input CLASS="earnbtn text-center" value="4,058.94">
-                                 </input>
+                                    </input>
                                 </div>
 
 
@@ -356,33 +349,33 @@ London" class="w-100 p-2 text-center" style="font-size:14px;"><br>
                             <div class="row mb-5">
 
                                 <div class="col-md-6">
-                                <i class="fa fa-lock earnbtn2"></i>
-                            <input class="earnbtn text-center" type="text" value="Employee NIC">
+                                    <i class="fa fa-lock earnbtn2"></i>
+                                    <input class="earnbtn text-center" type="text" value="Employee NIC">
 
 
                                 </div>
                                 <div class="col-md-4">
 
                                     <input CLASS="earnbtn text-center" value="  6,058.94">
-                                  </input>
+                                    </input>
                                 </div>
-                                
+
 
                             </div>
 
-                             <div class="row">
+                            <div class="row">
 
                                 <div class="col-md-6">
-                                <input CLASS="earnbtn text-center" value="NET PAY">
+                                    <input CLASS="earnbtn text-center" value="NET PAY">
                                     </input>
 
                                 </div>
                                 <div class="col-md-4">
 
                                     <button CLASS="emailbtn2 text-center">
-                                    6,058.94</button>
+                                        6,058.94</button>
                                 </div>
-                                
+
 
                             </div>
 
@@ -395,7 +388,8 @@ London" class="w-100 p-2 text-center" style="font-size:14px;"><br>
                     <h5 class="mt-4">Additional Information Here (Note)</h5>
                     <div class="row">
                         <div class="col-lg-6">
-                            <textarea id="w3review" name="w3review" rows="4" cols="60" placeholder="Note Here (Optional)" class="p-2 textarea"></textarea>
+                            <textarea id="w3review" name="w3review" rows="4" cols="60"
+                                placeholder="Note Here (Optional)" class="p-2 textarea"></textarea>
                         </div>
 
                     </div>
@@ -412,16 +406,16 @@ London" class="w-100 p-2 text-center" style="font-size:14px;"><br>
 
 
 
-<div class="text-left mt-1 ">
-    <button class="previewbtn">
-        Preview Your Paystub <i class="fa fa-eye"
-            style="font-size: 30px; margin-left: 7px;"></i></button>
-</div>
-<div class="text-right mt-1 mb-4 ">
-    <button class="emailbtn" data-toggle="modal" data-target="#myModal"> <i class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL
-        PAYSTUB <i class="fa fa-download ml-4" style="font-size:24px"></i></button>
-</div>
-</div>
+            <div class="text-left mt-1 ">
+                <button class="previewbtn">
+                    Preview Your Paystub <i class="fa fa-eye" style="font-size: 30px; margin-left: 7px;"></i></button>
+            </div>
+            <div class="text-right mt-1 mb-4 ">
+                <button class="emailbtn" data-toggle="modal" data-target="#myModal"> <i class="fa fa-envelope mr-4"
+                        style="font-size:24px"></i>EMAIL
+                    PAYSTUB <i class="fa fa-download ml-4" style="font-size:24px"></i></button>
+            </div>
+        </div>
 
     </div>
 
@@ -490,58 +484,58 @@ London" class="w-100 p-2 text-center" style="font-size:14px;"><br>
 
 
 
-<div class="modal fade" id="myModal1">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
+    <div class="modal fade" id="myModal1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
 
-            <!-- Modal Header -->
-            <div class="modal-header" style="background: #115caecf;">
-                <h4 class="modal-title"><img src="images/Paystub X.webp" class="icon"></h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-
-            <!-- Modal body -->
-            <div class="modal-body">
-                <h5 class="text-center">Verify your Email Address</h5>
-                <div class=" text-center mt-4">
-                    <div class="mail">
-                        <img src="images/email(3).png" class="mailpic">
-                    </div>
-
-                    <h5 style="color: #457bbe;" class="mt-4 text-center">Almost There!</h5>
-                    <p style="color: #02030359;font-size: 14px;font-family: serif;" class="text-center">Enter the
-                        Verification code to sent</p>
-
-                    <input type="email" id="email" name="email" class="singup1 text-center"
-                        placeholder="ABC@paystub.com">
-                    <div style="color: red;font-size: 13px; font-family: serif;">
-                        <i class="fa fa-exclamation-circle">
-                            Verification code required
-                        </i>
-                    </div>
-                    <p style="color: #0000004d; font-size: 11px;">Didn't receive an email</p>
-                    <p style="color: #04050778;font-size: 12px; font-family: cursive;">Check Your Spam folder<span
-                            style="color:red;"> Or </span>resend code</p>
-                    <button class="continue mt-3" data-toggle="modal" data-target="myModal">verify</button>
+                <!-- Modal Header -->
+                <div class="modal-header" style="background: #115caecf;">
+                    <h4 class="modal-title"><img src="images/Paystub X.webp" class="icon"></h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
 
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <h5 class="text-center">Verify your Email Address</h5>
+                    <div class=" text-center mt-4">
+                        <div class="mail">
+                            <img src="images/email(3).png" class="mailpic">
+                        </div>
+
+                        <h5 style="color: #457bbe;" class="mt-4 text-center">Almost There!</h5>
+                        <p style="color: #02030359;font-size: 14px;font-family: serif;" class="text-center">Enter the
+                            Verification code to sent</p>
+
+                        <input type="email" id="email" name="email" class="singup1 text-center"
+                            placeholder="ABC@paystub.com">
+                        <div style="color: red;font-size: 13px; font-family: serif;">
+                            <i class="fa fa-exclamation-circle">
+                                Verification code required
+                            </i>
+                        </div>
+                        <p style="color: #0000004d; font-size: 11px;">Didn't receive an email</p>
+                        <p style="color: #04050778;font-size: 12px; font-family: cursive;">Check Your Spam folder<span
+                                style="color:red;"> Or </span>resend code</p>
+                        <button class="continue mt-3" data-toggle="modal" data-target="myModal">verify</button>
+                    </div>
 
 
 
 
 
+
+
+                </div>
+                </p>
+
+                <!-- Modal footer -->
+                <div class="modal-footer" style="background: #457bbed9;">
+                    <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+                </div>
 
             </div>
-            </p>
-
-            <!-- Modal footer -->
-            <div class="modal-footer" style="background: #457bbed9;">
-                <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
-            </div>
-
         </div>
     </div>
-</div>
 
 
 
@@ -568,8 +562,16 @@ London" class="w-100 p-2 text-center" style="font-size:14px;"><br>
 @endsection
 
 <script>
-    
-    function myFunction(x) {
-      x.classList.toggle("fa-eye-slash");
-    }
-    </script>
+    $('.basicTem').click(function() {
+      var imageattr = $('option:selected', '.bt_id').attr('data-src');
+         $('.setImage').attr('src', imageattr);
+    });
+
+    $('.advanceTem').click(function() {
+
+       var imageattr = $('option:selected', '.at_id').attr('data-src');
+         $('.setImage').attr('src', imageattr);
+    });
+
+
+</script>

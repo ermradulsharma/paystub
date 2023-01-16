@@ -1,0 +1,98 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Deduction;
+use App\Models\Template;
+use Illuminate\Http\Request;
+
+class UsaController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $dedutions = Deduction::where('state','usa')->get();
+        $basicType = Template::where('type','basic')->with('images')->get();
+        $advanceType = Template::where('type','advance')->with('images')->get();
+        return view('usa' , compact('basicType','advanceType','dedutions'));
+    }
+
+    public function templateGloble()
+    {
+        $basicType = Template::where('type','basic')->get();
+        $advanceType = Template::where('type','advance')->get();
+        return view('globle' ,compact('basicType','advanceType'));
+    }
+
+
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        //
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
+    }
+}
