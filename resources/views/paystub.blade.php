@@ -50,16 +50,11 @@
     </div>
 </div>
 
-
-<div class="container" style="max-width: 1750px;">
-    <div class="row mt-5 ">
-        <div class="col-lg-5">
-            <h1 class="WithPaystubX mt-3">
-                With Paystub<span class="text-danger">X</span></h1>
-            <h3 class="Show">
-                Show proof of income.
-            </h3>
-
+<div class="container pt-5" style="max-width: 1750px;">
+    <div class="row">
+        <div class="col-lg-4">
+            <h1 class="WithPaystubX mt-3"> With Paystub<span class="text-danger">X</span></h1>
+            <h3 class="Show"> Show proof of income. </h3>
             <ul style="font-weight: 200; font-size: 21px; line-height:1.5em;" class="mt-4">
                 <li class=" mt-2 proof"> Rent an apartment ✅</li>
                 <li class=" mt-2 proof"> Qualify for a mortgage ✅</li>
@@ -67,17 +62,11 @@
                 <li class=" mt-2 proof"> Verify income for child support or alimony ✅</li>
                 <li class=" mt-2 proof"> Apply for health insurance ✅</li>
             </ul>
-
-            <p style="font-weight: 200; font-size:23px; margin-left: 22px;" class="mt-3">Generate 100% Legal Pay Stubs in seconds.</p>
+            <p style="font-weight: 200; font-size:25px;" class="mt-3">Generate 100% Legal Pay Stubs in seconds.</p>
         </div>
-
-
-
-        <div class="col-lg-2"></div>
-        <div class="col-lg-5">
-            <h3 class="Createpay">
-                Create pay stubs for your employees.
-            </h3>
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4">
+            <h3 class="Createpay"> Create pay stubs for your employees. </h3>
             <ul style="font-weight: 200; font-size: 21px; line-height:1.5em;" class="mt-4">
                 <li class="mt-2 proof">Help employees qualify for loans, housing & more ✅</li>
                 <li class="mt-2 proof">Comply with state and local employment laws ✅</li>
@@ -87,17 +76,15 @@
             </ul>
         </div>
     </div>
-</div>
-
-<div class="container pb-5" style="max-width:1750px;">
-    <div class="row pb-2">
-        <div class="col-lg-3">
+    <div class="row">
+        <div class="col-lg-4">
             <img src="images/previewed.png" class="payimg">
             <div class="paytext">
-                <p style="font-size: 22px;color: #363636;font-weight:300; line-height:1em">TAX FILING HAS NEVER BEEN
+                <p style="font-size: 22px;color: #363636;font-weight:300; line-height:1em ">TAX FILING HAS NEVER BEEN
                     EASY
                 </p>
-                <p class="text-black" style="font-size: 30px;font-weight: 300;line-height:1em;">Handling Payroll Yourself?
+                <p class="text-black text-capitalize" style="font-size: 30px;font-weight: 300;line-height:1em;">Handling Payroll
+                    Yourself?
                 </p>
                 <p class="text-danger" style="font-size: 30px;font-weight: 300;line-height:1.5em;">You are at the right
                     place!
@@ -108,19 +95,50 @@
                         Now</a>
                 </div>
             </div>
+        </div>
+        <div class="col-lg-4">
+            <img class="payimg2" src="images/paystubx_images.png" class="">
+            <div>
+                <p class="img2-p">
+                    On Paystub X Join thousands of satisfied independent </br> contractors and small business owners and get the
+                    </br> highest quality pay stubs, W2s and 1099s — right to </br> your inbox! We make it easy. Guaranteed.
+                    .</p>
+            </div>
+        </div>
+        <div class="col-lg-4">
+        </div>
+    </div>
+</div>
+
+
+<div class="container" style="max-width: 1750px;">
+    <div class="row mt-5 ">
+        <div class="col-lg-5">
+
+        </div>
+        <div class="col-lg-2"></div>
+        <div class="col-lg-5">
+
+        </div>
+    </div>
+</div>
+
+<div class="container pb-5" style="max-width:1750px;">
+    <div class="row pb-2">
+        <div class="col-lg-3">
+
+
 
 
 
         </div>
 
-        <div class="col-lg-6" style="position: relative;top: -136px;">
-            <img class="payimg2" src="images/paystubx_images.png" class="">
+        <!-- <div class="col-lg-6" style="position: relative;top: -136px;">
             <p class="OnPaystub ml-2 ">
-                On Paystub X Join thousands of satisfied independent </br> contractors and small business owners and get
-                the
+                On Paystub X Join thousands of satisfied independent </br> contractors and small business owners and get the
                 </br> highest quality pay stubs, W2s and 1099s — right to </br> your inbox! We make it easy. Guaranteed.
                 .</p>
-        </div>
+        </div> -->
         <div class="col-lg-3"></div>
 
 
@@ -131,28 +149,26 @@
 
 <div class="mt-5 calculations">
     <div class="container text-justify text-center pb-5">
-        <h2 style="font-size:30px; font-family: Futura,Trebuchet MS,Arial,sans-serif;" class="text-white pt-5">Generate
-            paystubs with accurate tax
+        <h2 style="font-size:30px; font-family: Futura,Trebuchet MS,Arial,sans-serif;" class="text-white pt-5">Generate paystubs with accurate tax
             calculations, W-2, 1099S Etc in Seconds</h2>
 
         <div class="row mt-5">
 
             <div class="col-md-4 text-center">
                 <h2 style="font-size:40px;font-family: Futura,Trebuchet MS,Arial,sans-serif;" class="text-white calcheading">Add your Data</h2>
-                <p style="font-size:17px;font-weight: 200;" class="text-white pay-p">Our paystub generator
-                    accurately</br>
-                    calculates your Federal and State</br> taxes, including Social security </br>and Medicare taxes so
-                    you don't
+                <p style="font-size:17px;font-weight: 200;" class="text-white pay-p">Our paystub generator accurately</br>
+                    calculates your Federal and State</br> taxes, including Social security </br>and Medicare taxes so you don't
                 </p>
                 <img src="images/1.webp" style=" width: 94px; height: 94px; object-fit: cover; object-position: 50% 50%;">
 
 
             </div>
+
             <div class="col-md-4 text-center">
-                <h2 style="font-size:40px;    font-family: Futura,Trebuchet MS,Arial,sans-serif;" class="text-white calcheading">Preview Data</h2>
-                <p style="font-size:17px;font-weight: 200;" class="text-white pay-p">Generate pay stubs with
-                    accurate</br>
-                    state income taxes, based on </br>state W-4, and other applicable</br> local taxes. </p>
+                <h2 style="font-size:40px;    font-family: Futura,Trebuchet MS,Arial,sans-serif;" class="text-white pay-h2 calcheading">Download & Email your Paystub</h2>
+                <p style="font-size:17px;font-weight: 200;" class="text-white pay-p">You will get to generate unlimited</br>
+                    payslip, paycheck or paystub </br>according to the plan you select.
+                </p>
 
                 <img src="images/2.webp" style=" width: 94px; height: 94px; object-fit: cover; object-position: 50% 50%;">
 
@@ -160,25 +176,21 @@
             </div>
 
             <div class="col-md-4 text-center">
-                <h2 style="font-size:40px;    font-family: Futura,Trebuchet MS,Arial,sans-serif;" class="text-white pay-h2 calcheading">Download & Email your Paystub</h2>
-                <p style="font-size:17px;font-weight: 200;" class="text-white pay-p">You will get to generate
-                    unlimited</br>
-                    payslip, paycheck or paystub </br>according to the plan you select.
-                </p>
+                <h2 style="font-size:40px;    font-family: Futura,Trebuchet MS,Arial,sans-serif;" class="text-white calcheading">Preview Data</h2>
+                <p style="font-size:17px;font-weight: 200;" class="text-white pay-p">Generate pay stubs with accurate</br>
+                    state income taxes, based on </br>state W-4, and other applicable</br> local taxes. </p>
 
                 <img src="images/3.webp" style=" width: 94px; height: 94px; object-fit: cover; object-position: 50% 50%;">
 
 
             </div>
-
         </div>
     </div>
 </div>
 
 <div>
     <div class="container text-justify text-center pb-5">
-        <h1 style="font-size:38px;     font-family: Futura,Trebuchet MS,Arial,sans-serif;" class="pt-5">Why do Small
-            Businesses Love Paystub<span class="text-danger">X</span>?</h1>
+        <h1 style="font-size:38px;     font-family: Futura,Trebuchet MS,Arial,sans-serif;" class="pt-5">Why do Small Businesses Love Paystub<span class="text-danger">X</span>?</h1>
 
         <div class="row mt-5">
 
@@ -269,47 +281,39 @@
 </div>
 
 <div class="vedios">
-    <div class="container justify-content-center text-center pb-5" style="max-width: 1350px;">
-        <div style="font-size:32px;  font-family: Futura,Trebuchet MS,Arial,sans-serif;;" class="text-white pt-5">
-            <b>Useful Videos for FAQ</b>
-        </div>
+    <div class="container justify-content-center text-center pb-5">
+        <div style="font-size:32px;  font-family: Futura,Trebuchet MS,Arial,sans-serif;;" class="text-white pt-5"><b>Useful Videos for FAQ</b></div>
 
         <div class="row mt-5">
 
-            <div class="col-md-4  d-flex justify-content-center">
+            <div class="col-md-4 ">
                 <div class="justify-content-center">
-                    <iframe class=" m-auto frame1" src="https://www.youtube.com/embed/TrnLCFsN5i8" title="Plane Overhead" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
-                    </iframe>
-                    <div class="">
-                        <button class="text-white mt-2 mb-4 payp">Generate Paystubs with Accurate Tax Calculations</button>
-
-                    </div>
+                    <iframe class="w-100 m-auto " src="https://www.youtube.com/embed/l9e8u2-zKHE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
-
+                <p style="font-size:18px; font-family:sans-serif" class="text-white">Add your Data</p>
 
 
 
             </div>
 
-            <div class="col-md-4 d-flex justify-content-center">
+            <div class="col-md-4 ">
                 <div class="justify-content-center">
-                    <iframe class=" m-auto frame1" src="https://www.youtube.com/embed/TrnLCFsN5i8" title="Plane Overhead" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
-                    </iframe>
-                    <div class="">
-                        <button class="text-white mt-2 mb-4 payp">How to Create Paystubs for IndependentContractors</button>
-                    </div>
+                    <iframe class="w-100 m-auto " src="https://www.youtube.com/embed/l9e8u2-zKHE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
+                <p style="font-size:18px; font-family:sans-serif" class="text-white">Download & Email your Paystub</p>
+
+
+
             </div>
-            <div class="col-md-4 d-flex justify-content-center">
+
+            <div class="col-md-4 ">
                 <div class="justify-content-center">
-                    <iframe class=" m-auto frame1 " src="https://www.youtube.com/embed/TrnLCFsN5i8" title="Plane Overhead" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
-                    </iframe>
-                    <div class="">
-                        <div class="">
-                            <button class="text-white mt-2 mb-4 payp">How to Create Paystubs for IndependentContractors</button>
-                        </div>
-                    </div>
+                    <iframe class="w-100 m-auto " src="https://www.youtube.com/embed/l9e8u2-zKHE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
+                <p style="font-size:18px; font-family:sans-serif" class="text-white">Preview Data</p>
+
+
+
             </div>
         </div>
     </div>
@@ -326,11 +330,17 @@
                 </div>
                 <div>
                     <ul>
+
+
                         <li class="mt-2" style="font-weight: 200; font-size: 21px; line-height:1.5em;"> W-2 - Efile with
                             SSA, Distribute to Employees. ✅</li>
+
+
                         <li class="mt-2" style="font-weight: 200; font-size: 21px; line-height:1.5em;">1099-NEC,
                             1099-MISC - Efile with IRS, Distribute
                             Contractor✅</li>
+
+
                         <li class="mt-2" style="font-weight: 200; font-size: 21px; line-height:1.5em;">Request a small
                             business loan ✅</li>
                     </ul>
@@ -342,11 +352,9 @@
 
             <div class="col-md-5 text-left mb-5 ">
                 <div class="mt-5">
-                    <b style="font-size: 24px; font-weight: 500; font-family: Futura,Trebuchet MS,Arial,sans-serif;">
-                        Generate Paystubs Using our<span class="text-danger"> Android or iOS
+                    <b style="font-size: 24px; font-weight: 500; font-family: Futura,Trebuchet MS,Arial,sans-serif;"> Generate Paystubs Using our<span class="text-danger"> Android or iOS
                             App</span></b>
-                    <p style="font-size: 18px; font-weight: 300;line-height: 30.5px;" class="mt-1 ">Generate paystubs
-                        instantly by using our
+                    <p style="font-size: 18px; font-weight: 300;line-height: 30.5px;" class="mt-1 ">Generate paystubs instantly by using our
                         paystub
                         generator app.</br>
                         It's simple, easy, and accurate.</p>

@@ -85,7 +85,8 @@
                                         <option selected=""> --- Select Basic Templates --- </option>
                                         @foreach ($basicType as $data)
                                         <option value="{{$data->title ?? ''}}" data-src="{{$data->images->file ?? ''}}">
-                                            {{$data->title}}</option>
+                                            {{$data->title}}
+                                        </option>
                                         @endforeach
                                     </select>
                                     <i data-src="{{$data->images->file ?? ''}}" class="fa fa-eye-slash basicTem" style="font-size: 39px;" role="button"></i>
@@ -105,7 +106,8 @@
                                         <option selected=""> --- Select Advance Template --- </option>
                                         @foreach ($advanceType as $data)
                                         <option value="{{$data->title ?? ''}}" data-src="{{$data->images->file ?? ''}}">
-                                            {{$data->title ?? ''}}</option>
+                                            {{$data->title ?? ''}}
+                                        </option>
                                         @endforeach
                                     </select>
                                     <i data-src="{{$data->images->file ?? ''}}" class="fa fa-eye-slash advanceTem" role="button" style="font-size: 39px;"></i>
@@ -325,7 +327,7 @@
                         </div>
                         <div class="col-md-2 ">
                             <button class="statementbtn">YTD TOTAL</button>
-                            <p class="p-0 m-0 text-center" style="font-family: serif;font-size:14px; 14px;">YTD Total Gross</p>
+                            <p class="p-0 m-0 text-center" style="font-family: serif;font-size:14px;">YTD Total Gross</p>
                         </div>
                     </div>
 
@@ -532,7 +534,6 @@
             $('.hours').val(result);
         });
     });
-
 </script>
 <script type="text/javascript">
     $(document).ready(function() {
@@ -603,7 +604,6 @@
             });
         }
     });
-
 </script>
 
 <script>
@@ -651,7 +651,6 @@
             });
         });
     });
-
 </script>
 
 
@@ -673,7 +672,6 @@
         }
 
     });
-
 </script>
 
 @endsection

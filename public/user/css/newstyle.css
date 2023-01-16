@@ -1,4 +1,4 @@
-.createbtn{
+.createbtn {
     padding: 1px 40px;
     border-radius: 5px;
     background-color: #ef2d22;
@@ -6,67 +6,71 @@
     border: 1px solid rgb(232, 102, 102)'';
 
     font-size: 24px;
-    box-shadow: var(--shd,0 1px 4px rgba(0,0,0,.6));
+    box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, .6));
 }
-.createbtn2{
+
+.createbtn2 {
     padding: 0px 58px;
     border-radius: 1px;
     background-color: #178a9380;
     color: white;
     border: 1px black;
     font-size: 24px;
-    box-shadow: var(--shd,0 1px 4px rgba(0,0,0,.6));
+    box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, .6));
 
 }
-.netimg{
+
+.netimg {
     width: 181px;
     height: 172px;
     margin-right: 10px;
 }
-.netimg1{
+
+.netimg1 {
     width: 181px;
     height: 172px;
     margin-right: 10px;
 }
-.box-usa{
+
+.box-usa {
     border: 3px solid #FF6161;
     padding: 10px 12px 12px 12px;
     background: #E8E6E6;
 
     border-radius: 2px;
 }
-.box-usa1{
+
+.box-usa1 {
     border: 2px solid #fe0f10;
     padding: 10px;
     background: #ffffff;
     padding: 32px 19px;
     border-radius: 10px;
     margin-left: 30px
-
 }
 
-.lable{
+.lable {
     color: #000000;
     font-weight: 400;
     margin: 0;
     font: var(--font_2);
 }
 
-#fname{
+#fname {
     border: 1px solid #00000075;
 }
 
-#fname:hover{
+#fname:hover {
     box-shadow: 5px 5px 1px 3px #0000002b;
     background: #244b1f;
 }
 
-.mmenu{
+.mmenu {
     width: 67%;
     margin: auto;
 }
 
-.ukbtn{
+.ukbtn {
     font-size: 16px;
     width: 100%;
     padding: 4px 10px;
@@ -76,11 +80,12 @@
     border-radius: 5px;
     border: 2px solid #ff0000a3;
     text-align: left;
-    box-shadow: var(--shd,0 1px 4px rgba(0,0,0,.6));
+    box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, .6));
     /* color: var(--corvid-color,rgb(var(--txt,var(--color_15)))); */
     font-weight: 700;
 }
-.dropdown1{
+
+.dropdown1 {
     width: 50% !important;
     padding: 6px;
     border: 1px solid #00000080;
@@ -91,7 +96,8 @@
     font-weight: 500;
     position: relative !important;
 }
-.down{
+
+.down {
     position: absolute;
     right: 167px;
     top: 45px;
@@ -99,7 +105,8 @@
     font-weight: bold;
     z-index: 1223;
 }
-.down1{
+
+.down1 {
     position: absolute;
     right: 183px;
     top: 48px;
@@ -107,7 +114,8 @@
     font-weight: bold;
     z-index: 1223;
 }
-.dropdown11{
+
+.dropdown11 {
     width: 100%;
     padding: 5px;
     border: 1px solid #00000080;
@@ -116,7 +124,8 @@
     margin: auto;
     font-size: 17px;
 }
-.viewbtn{
+
+.viewbtn {
     font-size: 14px;
     color: #010101;
     background: yellow;
@@ -127,6 +136,7 @@
     font-weight: 700;
 
 }
+
 .hourbtn {
     padding: 8px 16px;
     border-radius: 3px;
@@ -138,11 +148,13 @@
     box-shadow: 0 1px 4px rgb(0 0 0 / 60%);
     margin-right: 5px;
 }
-.hourbtn:hover{
+
+.hourbtn:hover {
     color: rgb(7, 7, 7);
     background: #eebebe;
 }
-.salrybtn{
+
+.salrybtn {
     padding: 8px 16px;
     border-radius: 3px;
     color: white;
@@ -152,7 +164,8 @@
     background-image: linear-gradient(45deg, #f70303, #f84d45);
     box-shadow: 0 1px 4px rgb(0 0 0 / 60%);
 }
-.statementbtn{
+
+.statementbtn {
     font-size: 14px;
     width: 100%;
     padding: 5px 10px;
@@ -161,6 +174,7 @@
     border: none;
     border-radius: 2px;
 }
+
 /* .earnbtn{
     font-size: 16px;
     width: 100%;
@@ -193,7 +207,8 @@
     padding-left: 2px;
     color: blue;
 }
-.netpaybtn{
+
+.netpaybtn {
     font-size: 28px;
     width: 100%;
     padding: 0px 10px;
@@ -201,10 +216,10 @@
     color: white;
     border: none;
     border-radius: 5px;
-    box-shadow: var(--shd,0 1px 4px rgba(0,0,0,.6));
+    box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, .6));
 }
 
-#name{
+#name {
     border-radius: 12px;
     border: navajowhite;
     padding: 11px;
@@ -212,16 +227,18 @@
 
 }
 
-.finame{
+.finame {
     font-size: 13px;
     padding: 0px 1px;
     margin: 5px;
     color: #000000ab;
 }
-.shd{
+
+.shd {
     box-shadow: 5px 0px #888888;
 }
-.sendbtn{
+
+.sendbtn {
     padding: 6px 27px;
     border: none;
     margin-top: 30px;
@@ -230,16 +247,19 @@
     /* box-shadow: 1px 2px 3px 4px; */
     box-shadow: 6px 6px 1px 1px #e4bfae;
 }
-.sendbtn:hover{
+
+.sendbtn:hover {
     background-color: #e4bfae;
-color: white;
-border: 1px solid white ;
+    color: white;
+    border: 1px solid white;
 }
-#name:hover{
-    border:1px solid black;
+
+#name:hover {
+    border: 1px solid black;
 
 }
-.previewbtn{
+
+.previewbtn {
     font-size: 23px;
     color: #ffffff;
     background: #ef2e21;
@@ -247,12 +267,12 @@ border: 1px solid white ;
     padding: 2px 35px;
     border: none;
     border-radius: 4px;
-    box-shadow: var(--shd,0 1px 4px rgba(0,0,0,.6));
+    box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, .6));
 }
 
 
 
-.pay-box{
+.pay-box {
     border: 1px solid #0000008c;
     padding: 26px 27px;
     background: white;
@@ -260,7 +280,8 @@ border: 1px solid white ;
     text-align: center;
     font-size: 19px;
 }
-.pay-box1{
+
+.pay-box1 {
     border: 1px solid #0000008c;
     padding: 11px;
     background: white;
@@ -268,11 +289,13 @@ border: 1px solid white ;
     text-align: center;
     font-size: 17px;
 }
+
 /*style the arrow inside the select element:*/
 select {
     -webkit-appearance: none;
     -moz-appearance: none;
-  }
+}
+
 select:after {
     position: absolute;
     content: "\2304";
@@ -297,29 +320,30 @@ select:after {
     transition: 0.5s;
     padding-top: 26px;
 
-  }
+}
 
-  .sidenav a {
+.sidenav a {
 
     text-decoration: none;
     font-size: 25px;
     color: #ffffff;
     display: block;
     transition: 0.3s;
-  }
+}
 
-  .sidenav a:hover {
+.sidenav a:hover {
     color: #f1f1f1;
-  }
+}
 
-  .sidenav .closebtn {
+.sidenav .closebtn {
     position: absolute;
     top: 0;
     right: 25px;
     font-size: 36px;
     margin-left: 50px;
-  }
-  .sidebtn{
+}
+
+.sidebtn {
     box-shadow: 6px 4px 2px 4px #334f7459;
     width: 53%;
     border-radius: 12px;
@@ -330,9 +354,9 @@ select:after {
     background-color: #252e58;
     background-image: linear-gradient(96deg, #252e58 5%, #3f3e95 46%, #2a5960 100%);
 
-  }
+}
 
-  .sidebtn1{
+.sidebtn1 {
     box-shadow: 6px 4px 2px 4px #e9d1d3;
     width: 53%;
     color: white !important;
@@ -345,9 +369,9 @@ select:after {
     margin: auto;
 
 
-  }
+}
 
-  .earnbtn1 {
+.earnbtn1 {
     font-size: 18px;
     width: 60%;
     padding: 0px 4px;
@@ -357,7 +381,8 @@ select:after {
     border-radius: 4px;
     border: 2px solid #ff6261;
 }
-  .emailbtn {
+
+.emailbtn {
     font-size: 21px;
     color: #ffffff;
     background: #12c23a;
@@ -365,8 +390,9 @@ select:after {
     padding: 6px 59px;
     border: none;
     border-radius: 4px;
-    box-shadow: var(--shd,0 1px 4px rgba(0,0,0,.6));
+    box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, .6));
 }
+
 .emailbtn2 {
     font-size: 19px;
     color: #ffffff;
@@ -375,12 +401,14 @@ select:after {
     padding: 3px 53px;
     border: none;
     border-radius: 4px;
-    box-shadow: var(--shd,0 1px 4px rgba(0,0,0,.6));
+    box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, .6));
 }
-.sidebtn:hover{
-    border:1px solid black;
+
+.sidebtn:hover {
+    border: 1px solid black;
 }
-input:hover{
+
+input:hover {
     box-shadow: 5px 5px 1px 3px #0000002b;
 
     border: 1px solid #244b1f !important;
@@ -388,29 +416,33 @@ input:hover{
     color: white !important;
 
 }
- .dropdown1:hover {
+
+.dropdown1:hover {
     box-shadow: 5px 5px 1px 3px #0000002b;
     color: black !important;
     border: 1px solid #d82e2e !important;
     background: #df5b5b45;
- }
-.viewbtn:hover{
+}
+
+.viewbtn:hover {
     border: 1px solid #d1da1a;
     background-color: white;
     box-shadow: 5px 5px 1px 3px #4848390f;
     color: red;
 }
-.earnbtn:hover{
+
+.earnbtn:hover {
     color: white;
     background-image: linear-gradient(45deg, #a70404d6, #cd7570);
     border: 2px solid #0b0a0a;
     border-radius: 4px;
 }
-.fa-lock:hover{
-    color: black!important;
+
+.fa-lock:hover {
+    color: black !important;
 }
 
-.earnbtn1:hover{
+.earnbtn1:hover {
     color: white;
     background-image: linear-gradient(45deg, #a70404d6, #cd7570);
     border: 2px solid #0b0a0a;
@@ -418,21 +450,23 @@ input:hover{
 
 }
 
-.statementbtn:hover{
+.statementbtn:hover {
     background-color: #064151a8;
     color: #ffffff;
     /* border: 2px solid #2c5781; */
     font-weight: 400;
 
 }
-.emailbtn:hover{
+
+.emailbtn:hover {
     background: white;
     color: #40924a;
     border: 1px solid green;
     box-shadow: 6px 5px 4px 0px #00000066;
 
 }
-.mainhead{
+
+.mainhead {
     padding: 0px 225px 2px 4px;
 }
 
@@ -446,56 +480,64 @@ input:hover{
     margin: auto;
 
 }
-    .google-icon-wrapper {
-      position: absolute;
-      margin-top: 1px;
-      margin-left: 1px;
-      width: 40px;
-      height: 40px;
-      border-radius: 2px;
-      background-color: white;
-    }
-    .google-icon {
-        position: absolute;
+
+.google-icon-wrapper {
+    position: absolute;
+    margin-top: 1px;
+    margin-left: 1px;
+    width: 40px;
+    height: 40px;
+    border-radius: 2px;
+    background-color: white;
+}
+
+.google-icon {
+    position: absolute;
     margin-top: 11px;
     margin-left: 1px;
     width: 42px;
     height: 31px;
     border-right: 1px solid;
-    }
-    .btn-text {
-        float: right;
-        margin: 14px 11px 0 0;
-        color: $white;
-        font-size: 16px;
-        letter-spacing: 0.2px;
-        font-family: "Roboto";
-        margin-right: 3px;
-    }
-    &:hover {
-      box-shadow: 0 0 6px $google-blue;
-    }
-    &:active {
-      background: $button-active-blue;
-    }
+}
 
-    .singup{
-        border: 1px solid #bcd6f3;
+.btn-text {
+    float: right;
+    margin: 14px 11px 0 0;
+    color: white;
+    font-size: 16px;
+    letter-spacing: 0.2px;
+    font-family: "Roboto";
+    margin-right: 3px;
+}
+
+:hover {
+    box-shadow: 0 0 6px google-blue;
+}
+
+:active {
+    background: button-active-blue;
+}
+
+.singup {
+    border: 1px solid #bcd6f3;
     padding: 10px;
     border-radius: 9px;
     width: 60%;
 }
-.continue{
+
+.continue {
     padding: 10px 29px;
     border: none;
     border-radius: 26px;
     background: red;
     color: white;
 }
-.icon{
+
+.icon {
     width: 152px;
 }
-.mail{
+
+.mail {
     padding: 10px;
     border-radius: 100%;
     text-align: center;
@@ -505,12 +547,14 @@ input:hover{
     text-align: center;
     margin: auto;
 }
-.mailpic{
+
+.mailpic {
     width: 62px;
     padding: 12px;
     height: 65px;
 }
-.singup1{
+
+.singup1 {
     border: 2px solid #ff0000;
     padding: 10px;
     border-radius: 9px;
@@ -523,156 +567,174 @@ table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
-  }
+}
 
-  td, th {
+td,
+th {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 12px;
     font-size: 11px;
-  }
+}
 
-  tr:nth-child(even) {
+@import url(https://fonts.googleapis.com/css?family=Roboto:500);
 
-  }
-  @import url(https://fonts.googleapis.com/css?family=Roboto:500);
-
-h5{
+h5 {
     font-size: 1.5rem;
     font-weight: 900;
     font-family: serif;
 }
 
-.recipt-box{
+.recipt-box {
     border: 1px solid red;
 }
 
-.rec-box-border{
+.rec-box-border {
     padding: 1px 20px;
     border: 2px solid red;
 }
 
 /* w2paystub */
 .w2p {
-    margin:0;
+    margin: 0;
     color: red;
     font-weight: 700;
     font-size: 13px;
 }
-.box-p{
+
+.box-p {
     font-size: 17px;
     margin-top: 23px;
     position: relative;
 
 }
-.tickbox{
+
+.tickbox {
     width: 39px;
     height: 39px;
     position: absolute;
     top: 12px;
     left: 90px;
 }
-.form-no{
+
+.form-no {
     text-align: center;
     /* margin: auto; */
     margin-top: 24px;
 }
 
-.payimg{
-<<<<<<< HEAD:public/newstyle.css
-    position:relative; 
-    width:75%;
-=======
-    position:relative;
-    width:100%;
->>>>>>> bfca4e67607c19862456e440a75fe3ab9edf8f45:public/user/css/newstyle.css
-     top: -49px
+.payimg {
+    width: 288px;
+    margin-top: -41px;
 }
+
 .payimg2 {
-    position: relative;
-    top: 36px;
-    width: 80%;
-    object-fit: cover;
-    object-position: 50% 50%;
-    padding-bottom: 10px;
+    width: 741px;
+    margin-bottom: 28px;
+    /* padding-left: 0px; */
+    margin-left: -166px;
+    margin-top: -123px;
+   
 }
-.base{
-    margin-left:70px;
+.img2-p{
+    font-size: 17px;
+    font-weight: 200;
+}
+
+.base {
+    margin-left: 70px;
     font-weight: 900;
 }
 
-.paytext{
+.paytext {
     position: absolute;
-       bottom: -92px;
+    bottom: -92px;
     /* left: 85px; */
 }
-.canadah4{
+
+.canadah4 {
     font-weight: 300;
-    font-size:42px;
+    font-size: 42px;
     letter-spacing: 1.5px;
 }
-.canadah2{
+
+.canadah2 {
     font-size: 40px;
-    font-family: avenir-lt-w01_35-light1475496,sans-serif;
+    font-family: avenir-lt-w01_35-light1475496, sans-serif;
 }
-.canadah1{
+
+.canadah1 {
     font-size: -webkit-xxx-large;
 }
-.canadap{
+
+.canadap {
     font-size: 25px;
     font-weight: 300;
 }
-.canadaheading{
+
+.canadaheading {
     font-size: 34px;
     font-weight: 300;
     letter-spacing: 1.5px;
     display: flex;
     max-width: 312px;
 }
+
 .paddingleft {
     display: inline-table;
     padding: 0px 0px 0px 240px;
 
 }
+
 .uktext {
     font-size: 42px;
     font-weight: 300;
 }
-.create-p{
+
+.create-p {
     font-size: 15px;
     font-weight: 200;
     padding: 0px 0px 20px;
 }
+
 .ukpaystubtext {
     font-size: 18px;
 }
+
 .globleImg {
     width: 100%;
 }
+
 .stubheading {
-    font-size:48px;
+    font-size: 48px;
 
 }
-.formp1{
-    font-size:17px;
+
+.formp1 {
+    font-size: 17px;
     margin-top: 114px;
     font-weight: 400;
 }
-.row{
+
+.row {
     width: 100%;
 }
-.payhead{
+
+.payhead {
     margin-top: 30px;
     padding-top: 30px;
 }
-select{
+
+select {
     text-align: center;
 }
-.frame1{
+
+.frame1 {
     width: 405px;
     height: 229px;
 }
-.payp{
+
+.payp {
     font-size: 14px;
     color: white;
     background: #537b9d;
@@ -681,15 +743,17 @@ select{
     border-radius: 4px;
     font-weight: 200;
 }
-.payp:hover{
+
+.payp:hover {
     font-size: 14px;
     color: black;
-    background:none;
+    background: none;
     border: none;
     padding: 6px 4px;
     border-radius: 4px;
     font-weight: 200;
 }
+
 .OnPaystub {
     font-size: 20px;
     color: #0e0e0e;
@@ -699,9 +763,11 @@ select{
     font-weight: 200;
     line-height: 35.5px;
 }
-.footimg{
+
+.footimg {
     width: 100%;
 }
+
 /* w2paystub end */
 
 
@@ -758,24 +824,29 @@ select{
         z-index: 1223;
     }
 
-    .Payslips{
+    .Payslips {
         padding: 0px;
     }
+
     .storbtn {
         margin-bottom: 19px;
     }
+
     .paddingleft {
         padding: 0px 0px 0px 80px;
 
     }
+
     .uktext {
         font-size: 25px;
     }
+
     .payimg {
         position: relative;
         width: 60%;
-        top: -49px;
+        top: 2px;
     }
+
     .OnPaystub {
         font-size: 20px;
         color: #0e0e0e;
@@ -790,199 +861,238 @@ select{
 
 
 
-  @media screen and (min-width: 1155px) {
-    .opennav{
+@media screen and (min-width: 1155px) {
+    .opennav {
         display: none;
     }
-  }
-  @media screen and (max-width: 1155px) {
+}
+
+@media screen and (max-width: 1155px) {
     .Payslips {
         font-family: serif;
         font-size: 14px;
         line-height: 2em;
     }
 
-  }
+}
+
 @media screen and (max-width: 1129px) {
     .navbar {
         display: none;
 
-     }
+    }
 
-   }
+}
 
-.eyes1{
+.eyes1 {
     font-size: 39px;
     margin-left: 6px;
 }
-.basic{
+
+.basic {
     margin-left: 70px;
     font-weight: 900;
 }
 
-.basic1{
-    margin-left:-23px;
+.basic1 {
+    margin-left: -23px;
     font-weight: 400;
 }
 
-   @media screen and (max-width: 1024px) {
-.create-container li{
-font-size: 10px;
-}
-.frame1 {
-    width: 316px;
-    height: 176px;
-}
-.paytext {
-    display: none;
-}
-.globleImg {
-    max-width: 470px;
-    height:auto;
-}
-.storbtn {
-    width: 125px;
-    height: 44px;
-}
-.create-p{
-    font-size: 8px;
+@media screen and (max-width: 1024px) {
+    .create-container li {
+        font-size: 10px;
+    }
+    .payimg2 {
+        width: 399px;
+        margin-bottom: 28px;
+        /* padding-left: 0px; */
+        margin-left: -10px;
+        margin-top: -55px;
+    
+    }
 
-   }
-   .tickbox {
-    width: 20px;
-    height: 39px;
-    position: absolute;
-    top: 16px;
-    left: 77px;
-}
-   .globlebtn1{
-    display: flex;
-}
-.w2p {
-    margin: 0;
-    color: red;
-    font-weight: 700;
-    font-size: 11px;
-}
-.box-usa {
-    border: 3px solid #FF6161;
-    padding: 10px 0px 12px 12px;
-    background: #E8E6E6;
-    border-radius: 2px;
-}
-.dropdown1 {
-    width: 75% !important;
-    padding: 6px;
-    border: 1px solid #00000080;
-    /* border-radius: 6px; */
-    background: #ffffff;
-    margin: auto;
-    font-size: 23px;
-    font-weight: 500;
-    position: relative !important;
+    .frame1 {
+        width: 316px;
+        height: 176px;
+    }
+
+    .paytext {
+        display:;
+    }
+
+    .globleImg {
+        max-width: 470px;
+        height: auto;
+    }
+
+    .storbtn {
+        width: 125px;
+        height: 44px;
+    }
+
+    .create-p {
+        font-size: 8px;
+
+    }
+
+    .tickbox {
+        width: 20px;
+        height: 39px;
+        position: absolute;
+        top: 16px;
+        left: 77px;
+    }
+
+    .globlebtn1 {
+        display: flex;
+    }
+
+    .w2p {
+        margin: 0;
+        color: red;
+        font-weight: 700;
+        font-size: 11px;
+    }
+
+    .box-usa {
+        border: 3px solid #FF6161;
+        padding: 10px 0px 12px 12px;
+        background: #E8E6E6;
+        border-radius: 2px;
+    }
+
+    .dropdown1 {
+        width: 75% !important;
+        padding: 6px;
+        border: 1px solid #00000080;
+        /* border-radius: 6px; */
+        background: #ffffff;
+        margin: auto;
+        font-size: 23px;
+        font-weight: 500;
+        position: relative !important;
+    }
+
+    .dropdown1 {
+        width: 82% !important;
+        padding: 4px;
+        border: 1px solid #00000080;
+        /* border-radius: 6px; */
+        background: #ffffff;
+        margin: auto;
+        font-size: 16px;
+        font-weight: 500;
+        position: relative !important;
+    }
+
+    .down {
+        position: absolute;
+        right: 84px;
+        top: 46px;
+        font-size: 26px;
+        font-weight: bold;
+        z-index: 1223;
+    }
+
+    .down1 {
+        position: absolute;
+        right: 67px;
+        top: 46px;
+        font-size: 29px;
+        font-weight: bold;
+        z-index: 1223;
+    }
+
+    .OnPaystub {
+        font-size: 19px;
+        color: #0e0e0e;
+        position: absolute;
+        bottom: -232px;
+        left: 55px;
+        font-weight: 200;
+        font-weight: 200;
+    }
+
+    .couple {
+        max-width: 646px;
+    }
+
+    .basic {
+        margin-left: 25px;
+        font-weight: 900;
+        font-size: 14px;
+    }
+
+    .eyes1 {
+        font-size: 25px;
+        margin-left: 6px;
+    }
+
+    .basic {
+        margin-left: 27px;
+        font-weight: 900;
+    }
+
+    .basic1 {
+        margin-left: -23px;
+        font-weight: 900;
+    }
+
+    .paddingleft {
+        padding: 0px 0px 0px 35px;
+
+    }
+
+    .hourbtn {
+        padding: 7px;
+        font-size: 11px;
+    }
+
+    .salrybtn {
+        padding: 7px;
+        font-size: 11px;
+    }
+
+    .calcheading {
+        font-size: 28px !important;
+    }
+
+    .WithPaystubX {
+        font-size: 30px;
+    }
+
+    .Show {
+        font-size: 30px;
+    }
 }
 
-.dropdown1 {
-    width: 82% !important;
-    padding: 4px;
-    border: 1px solid #00000080;
-    /* border-radius: 6px; */
-    background: #ffffff;
-    margin: auto;
-    font-size: 16px;
-    font-weight: 500;
-    position: relative !important;
-}
-.down {
-    position: absolute;
-    right: 84px;
-    top: 46px;
-    font-size: 26px;
-    font-weight: bold;
-    z-index: 1223;
-}
-.down1 {
-    position: absolute;
-    right: 67px;
-    top: 46px;
-    font-size: 29px;
-    font-weight: bold;
-    z-index: 1223;
-}
-.OnPaystub {
-    font-size: 19px;
-    color: #0e0e0e;
-    position: absolute;
-    bottom: -232px;
-    left: 55px;
-    font-weight: 200;
- font-weight: 200;
-}
-.couple {
-    max-width: 646px;
-}
 
-.basic{
-    margin-left: 25px;
-    font-weight: 900;
-    font-size: 14px;
-}
-.eyes1{
-    font-size: 25px;
-    margin-left: 6px;
-}
-.basic{
-    margin-left: 27px;
-    font-weight: 900;
-}
-.basic1{
-    margin-left:-23px;
-    font-weight: 900;
-}
-.paddingleft {
-    padding: 0px 0px 0px 35px;
-
-}
-.hourbtn {
-    padding: 7px;
-    font-size: 11px;
-}
-.salrybtn {
-    padding: 7px;
-    font-size: 11px;
-}
-.calcheading{
-    font-size:28px !important;
-}
-.WithPaystubX{
-    font-size: 30px;
-}
-.Show {
-    font-size: 30px;
-}
-}
-
-
- @media screen and (max-width: 768px) {
-    .globlebtn{
+@media screen and (max-width: 768px) {
+    .globlebtn {
         display: flex;
         justify-content: center;
     }
+
     .footimg {
         width: 55%;
     }
+
     .frame1 {
         width: 238px;
         height: 134px;
     }
-    .mainhead{
+
+    .mainhead {
         padding: 0px 0px 0px 0px;
         text-align: left !important;
 
     }
+
     .earnbtn {
         font-size: 12px;
     }
+
     .lable {
         color: #000000;
         /* font-weight: 400; */
@@ -990,27 +1100,31 @@ font-size: 10px;
         /* font: var(--font_2); */
         font-size: 12px;
     }
+
     .paytext {
         position: absolute;
         bottom: 261px;
         left: 328px;
     }
-        /* .globleImg {
+
+    /* .globleImg {
             max-width: 961px;
             margin-top: 30px;
         } */
-    .globlebtn1{
+    .globlebtn1 {
         display: flex;
         justify-content: center;
         margin-right: 0 !important;
         padding-right: 0 !important;
     }
+
     .box-usa {
         border: 3px solid #FF6161;
         padding: 10px 0px 12px 12px;
         background: #E8E6E6;
         border-radius: 2px;
     }
+
     .dropdown1 {
         width: 73% !important;
         padding: -11px;
@@ -1023,6 +1137,7 @@ font-size: 10px;
         position: relative !important;
 
     }
+
     .down {
         position: absolute;
         right: 68px;
@@ -1031,6 +1146,7 @@ font-size: 10px;
         font-weight: bold;
         z-index: 1223;
     }
+
     .down1 {
         position: absolute;
         right: 61px;
@@ -1039,6 +1155,7 @@ font-size: 10px;
         font-weight: bold;
         z-index: 1223;
     }
+
     .viewbtn {
         font-size: 11px;
         color: #010101;
@@ -1049,12 +1166,15 @@ font-size: 10px;
         border-radius: 4px;
         font-weight: 700;
     }
-    .globe-ul{
+
+    .globe-ul {
         margin: 0;
     }
-    .eyes{
+
+    .eyes {
         font-size: 29px !important;
     }
+
     .OnPaystub {
         font-size: 18px;
         color: #0e0e0e;
@@ -1063,75 +1183,91 @@ font-size: 10px;
         left: 115px;
         font-weight: 200;
     }
+
     .payimg {
         position: relative;
         width: 37%;
-        top: -49px;
+        top: -10px;
     }
-.payimg2 {
-    position: relative;
-    top: -47px;
-    width: 54%;
-    object-fit: cover;
-    object-position: 50% 50%;
-    left: 224px;
+
+    .payimg2 {
+        position: relative;
+        top: 0px;
+        width: 54%;
+        object-fit: cover;
+        object-position: 50% 50%;
+        left: 30px;
+    }
+    .storbtn {
+        width: 106px;
+        height: 39px;
+    }
+
+    .storehead {
+        padding: 0px 0px 0px 260px;
+    }
+
+    .pay-p {
+        font-size: 13px !important;
+    }
+
+    .pay-h2 {
+        font-size: 30px !important;
+    }
+
+    .hourbtn {
+        padding: 8px;
+        border-radius: 3px;
+    }
+
+    .salrybtn {
+        padding: 8px;
+        border-radius: 3px;
+    }
+
+    .justifycenter {
+        justify-content: center;
+    }
+
+    .stubheading {
+        font-size: 35px;
+
+    }
+
+    .banner-left-content {
+        padding: 0px 50px;
+    }
+
+    .w-100 {
+        width: 100% !important;
+
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    .formp1 {
+        font-size: 15px;
+        margin-top: 20px;
+        font-weight: 400;
+    }
+
+    
 }
-.storbtn {
-    width: 106px;
-    height: 39px;
-}
-.storehead{
-    padding: 0px 0px 0px 260px;
-}
-.pay-p{
-    font-size: 13px !important;
-}
-.pay-h2{
-    font-size: 30px !important;
-}
-.hourbtn {
-    padding: 8px;
-    border-radius: 3px;
-}
-.salrybtn {
-    padding: 8px;
-    border-radius: 3px;
-}
-.justifycenter {
-    justify-content: center;
-}
-.stubheading {
-    font-size:35px;
+
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
 
 }
-.banner-left-content{
-    padding: 0px 50px;
-}
-.w-100 {
-    width: 100%!important;
 
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-}
-.formp1 {
-    font-size: 15px;
-    margin-top: 20px;
-    font-weight: 400;
-}
-.payimg2 {
-    padding-bottom: 30px;
-}
-   }
-
-
-  @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-
-  }
-
-  @media screen and (max-width: 425px) {
+@media screen and (max-width: 425px) {
     .globleImg {
         max-width: 300px;
         height: 300px;
@@ -1139,140 +1275,168 @@ font-size: 10px;
         top: 10px;
         left: 0px;
     }
+
     .payimg {
         top: 0px;
     }
-.globe-ul{
-    font-size: 16px!important;
-    text-align: left !important;
-    padding: 23px;
-    margin: 0;
-}
-.mmenu {
-    width: 100%;
-}
-.sh{
-    display: none;
-}
-.base{
-    margin-left: -16px;
-}
-.dropdown1{
-    font-size: 9px;
-}
-.down {
-    position: absolute;
-    right: 58px;
-    top: 48px;
-    font-size: 15px;
-    font-weight: bold;
-    z-index: 1223;
-}
-.down1 {
-    position: absolute;
-    right: 69px;
-    top: 66px;
-    font-size: 16px;
-    font-weight: bold;
-    z-index: 1223;
-}
-.viewbtn {
-    font-size: 8px;
-    color: #010101;
-    background: yellow;
-    /* background-image: radial-gradient(white, #6bb0fd); */
-    padding: 4px 0px;
-    border-radius: 4px;
-    font-weight: 700;
-}
-.previewbtn {
-    font-size: 13px;
-    color: #ffffff;
-    background: #ef2e21;
-    /* background-image: radial-gradient(white, #6bb0fd); */
-    padding: 2px 3px;
-    border: none;
-    border-radius: 4px;
-    box-shadow: var(--shd,0 1px 4px rgba(0,0,0,.6));
-}
-.emailbtn {
-    font-size: 14px;
-    color: #ffffff;
-    background: #12c23a;
-    /* background-image: radial-gradient(white, #6bb0fd); */
-    padding: 4px 5px;
-    border: none;
-    border-radius: 4px;
-    box-shadow: var(--shd,0 1px 4px rgba(0,0,0,.6));
-}
-.OnPaystub {
-    font-size: 13px;
-    color: #0e0e0e;
-    position: absolute;
-    bottom: -252px;
-    left: 52px;
-    font-weight: 200;
-}
-.paytext{
-    position: absolute;
-    /* bottom: -136px; */
-    left: 161px;
-    font-size: 15px;
-    top: -17px;
-}
-.payimg2 {
-    position: relative;
-    top: 106px;
-    width: 53%;
-    object-fit: cover;
-    object-position: 50% 50%;
-    left: 0;
-}
-.Payslips {
-    font-family: serif;
-    font-size: 14px;
-    line-height: 2em;
-    padding: 0;
-}
-.CreatePaystub {
-    font-family: serif;
-    width: 210px;
-    height: 47px;
-    border-radius: 63px;
-    background-color: #FF4040;
-    font-weight: 700;
-    margin: auto;
-    font-size: 20px;
-}
-.couple {
-    max-width: 372px;
-    background-position-x: 0;
-    left: 0;
-    top: 0;
-    margin-top: -7px;
-    margin-top: 104px;
-    margin-left: 61px;
-}
-.textarea {
-    max-width: 300px;
-}
-.storehead{
-    padding: 0px 0px 0px 75px;
-}
-.payhead {
-    margin-top: -52px;
+
+    .globe-ul {
+        font-size: 16px !important;
+        text-align: left !important;
+        padding: 23px;
+        margin: 0;
+    }
+
+    .mmenu {
+        width: 100%;
+    }
+
+    .sh {
+        display: none;
+    }
+
+    .base {
+        margin-left: -16px;
+    }
+
+    .dropdown1 {
+        font-size: 9px;
+    }
+
+    .down {
+        position: absolute;
+        right: 58px;
+        top: 48px;
+        font-size: 15px;
+        font-weight: bold;
+        z-index: 1223;
+    }
+
+    .down1 {
+        position: absolute;
+        right: 69px;
+        top: 66px;
+        font-size: 16px;
+        font-weight: bold;
+        z-index: 1223;
+    }
+
+    .viewbtn {
+        font-size: 8px;
+        color: #010101;
+        background: yellow;
+        /* background-image: radial-gradient(white, #6bb0fd); */
+        padding: 4px 0px;
+        border-radius: 4px;
+        font-weight: 700;
+    }
+
+    .previewbtn {
+        font-size: 13px;
+        color: #ffffff;
+        background: #ef2e21;
+        /* background-image: radial-gradient(white, #6bb0fd); */
+        padding: 2px 3px;
+        border: none;
+        border-radius: 4px;
+        box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, .6));
+    }
+
+    .emailbtn {
+        font-size: 14px;
+        color: #ffffff;
+        background: #12c23a;
+        /* background-image: radial-gradient(white, #6bb0fd); */
+        padding: 4px 5px;
+        border: none;
+        border-radius: 4px;
+        box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, .6));
+    }
+
+    .OnPaystub {
+        font-size: 13px;
+        color: #0e0e0e;
+        position: absolute;
+        bottom: -252px;
+        left: 52px;
+        font-weight: 200;
+    }
+
+    .paytext {
+        position: absolute;
+        /* bottom: -136px; */
+        left: 161px;
+        font-size: 15px;
+        top: -17px;
+    }
+
+    .payimg2 {
+        position: relative;
+        top: 106px;
+        width: 100%;
+        object-fit: cover;
+        object-position: 50% 50%;
+        left: 0;
+    }
+    .img2-p {
+        font-size: 17px;
+        font-weight: 200;
+        margin-top: 83px;
+    }
+
+    .Payslips {
+        font-family: serif;
+        font-size: 14px;
+        line-height: 2em;
+        padding: 0;
+    }
+
+    .CreatePaystub {
+        font-family: serif;
+        width: 210px;
+        height: 47px;
+        border-radius: 63px;
+        background-color: #FF4040;
+        font-weight: 700;
+        margin: auto;
+        font-size: 20px;
+    }
+
+    .couple {
+        max-width: 372px;
+        background-position-x: 0;
+        left: 0;
+        top: 0;
+        margin-top: -7px;
+        margin-top: 104px;
+        margin-left: 61px;
+    }
+
+    .textarea {
+        max-width: 300px;
+    }
+
+    .storehead {
+        padding: 0px 0px 0px 75px;
+    }
+
+    .payhead {
+        margin-top: -52px;
 
 
-  }
-  .formimg1 {
-    width: 448px;
+    }
+
+    .formimg1 {
+        width: 448px;
+    }
+
+    .Generate {
+        padding: 11px 21px;
+        margin-bottom: 10px;
+    }
 }
-.Generate {
-    padding: 11px 21px;
-    margin-bottom: 10px;
-}
-}
-  @media screen and (max-width: 375px) {
+
+@media screen and (max-width: 375px) {
     .OnPaystub {
         font-size: 13px;
         color: #0e0e0e;
@@ -1281,15 +1445,21 @@ font-size: 10px;
         left: 4px;
         font-weight: 200;
     }
+
     .payimg {
         position: relative;
         width: 30%;
         top: -30px;
         z-index: 122;
     }
-    .payimg2{
-        width: 44%;
+
+    .payimg {
+        position: relative;
+        width: 50%;
+        top: 43px;
+        z-index: 122;
     }
+
     .down {
         position: absolute;
         right: 39px;
@@ -1298,6 +1468,7 @@ font-size: 10px;
         font-weight: bold;
         z-index: 1223;
     }
+
     .down1 {
         position: absolute;
         right: 53px;
@@ -1310,6 +1481,7 @@ font-size: 10px;
     .eyes {
         font-size: 20px !important;
     }
+
     .statementbtn {
         font-size: 14px;
         width: 100%;
@@ -1320,9 +1492,11 @@ font-size: 10px;
         border-radius: 2px;
         margin-top: 6px;
     }
+
     .earnbtn {
         margin-top: 8px;
     }
+
     .emailbtn {
         font-size: 14px;
         color: #ffffff;
@@ -1331,60 +1505,89 @@ font-size: 10px;
         padding: 1px 0px;
         border: none;
         border-radius: 4px;
-        box-shadow: var(--shd,0 1px 4px rgba(0,0,0,.6));
+        box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, .6));
         margin-left: 6px;
     }
-    .canadah4{
+
+    .canadah4 {
         font-weight: 300;
-    font-size: 31px;
-    letter-spacing: 1.5px;
-    padding-left: 26px;
+        font-size: 31px;
+        letter-spacing: 1.5px;
+        padding-left: 26px;
     }
-    .canadah2{
+
+    .canadah2 {
         font-size: 34px;
-        font-family: avenir-lt-w01_35-light1475496,sans-serif;
+        font-family: avenir-lt-w01_35-light1475496, sans-serif;
         padding-left: 6px;
     }
-    .canadah1{
+
+    .canadah1 {
         font-size: 26px;
-    font-weight: 600;
+        font-weight: 600;
 
     }
-    .canadap{
+
+    .canadap {
         font-size: 18px;
-    font-weight: none;
+        font-weight: none;
     }
+
     .statementbtn {
         margin-top: 7px;
     }
+
     .earnbtn {
         /* margin-top: 1px; */
         margin-bottom: 10px;
 
-  }
-  .earnbtn2 {
-    font-size: 24px;
-    margin: 12px;
-    position: absolute;
-    padding-left: 2px;
-    color: blue;
-}
-.formimg1 {
-    width: 382px;
-    margin-left: 16px;
-}
-.Generate {
-    font-family: serif;
-    width:none;
+    }
 
-    border-radius: 63px;
-    background-color: #ff0000;
-    display: table-cell;
-    font-weight: 600;
-    margin: auto;
-    font-size: 20px;
-    color: white;
-    padding: 11px 21px;
-    margin-bottom: 10px;
-}
+    .earnbtn2 {
+        font-size: 24px;
+        margin: 12px;
+        position: absolute;
+        padding-left: 2px;
+        color: blue;
+    }
+
+    .formimg1 {
+        width: 382px;
+        margin-left: 16px;
+    }
+
+    .Generate {
+        font-family: serif;
+        width: none;
+
+        border-radius: 63px;
+        background-color: #ff0000;
+        display: table-cell;
+        font-weight: 600;
+        margin: auto;
+        font-size: 20px;
+        color: white;
+        padding: 11px 21px;
+        margin-bottom: 10px;
+    }
+    .payimg2 {
+        position: relative;
+        top: 237px;
+        width: 389px;
+        object-fit: cover;
+        object-position: 50% 50%;
+        left: 0;
+    }
+    .img2-p {
+        font-size: 17px;
+        font-weight: 200;
+        margin-top: 210px;
+    }
+    .paytext {
+        position: absolute;
+        /* bottom: -136px; */
+        left: 163px;
+        /* font-size: 9px; */
+        top: 33px;
+    }
 }
