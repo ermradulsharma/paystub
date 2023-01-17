@@ -243,8 +243,8 @@
 
                     <div class="row mb-3">
                         <div class="col-md-3 mt-4">
-                            <label for="fname" class="lable">HOURLY <span class="redColor">*</span> </label>
-                            <input type="text" id="fname" name="fname" placeholder="Hourly" class="w-100 p-2  textInputFontSize">
+                            <label for="hourly" class="lable">HOURLY <span class="redColor">*</span> </label>
+                            <input type="number" step="0.5" id="hourly" name="hourly" placeholder="Hourly" class="w-100 p-2  textInputFontSize hourly" value="">
                         </div>
 
                         <div class="col-md-3 mt-4">
@@ -429,18 +429,18 @@
                     </div>
                     <div class="row mb-3 mt-5">
                         <div class="col-md-4 col-lg-3">
-                            <button class="netpaybtn">Net Pay</button>
+                            <button class="netpaybtn net_pay">Net Pay</button>
                         </div>
                         <div class="col-md-1"></div>
                         <div class="col-md-2 col-lg-3"></div>
                         <div class="col-md-1"></div>
                         <div class="col-md-2">
                             <p class="p-0 m-0 text-center" style="font-family: serif;">Net Pay</p>
-                            <input class="earnbtn text-center" value="">
+                            <input class="earnbtn text-center total_net_pay" value="">
                         </div>
                         <div class="col-md-2">
                             <p class="p-0 m-0 text-center" style="font-family: serif;">YTD Net pay</p>
-                            <input class="earnbtn text-center" value="">
+                            <input class="earnbtn text-center total_ytd_net_pay" value="">
                         </div>
                     </div>
                 </div>
@@ -545,20 +545,21 @@
             var hour = ((days - 1) * 8);
             var result = Math.round(Math.abs(hour));
             setTimeout(function() {
+
                 $('.hours').val(result);
+                calculation(0)
             }, 300);
 
         });
-    });
 
-</script>
-<script>
-    $(document).ready(function() {
+
+
         var maxField = 12;
         var addButton = $('.add_button');
         var wrapper_1 = $('.field_wrapper');
         var addDeduction = $('.add_deduction');
         var wrapper_2 = $('#add_deduction');
+        var net_pay = $('.net_pay');
         var x = 1;
         var i = 1;
 
@@ -589,6 +590,7 @@
                 $(wrapper_1).append(fieldHTML);
             }
             i++;
+
             $('.calculation').keyup(function() {
                 var id = $(this).data('id');
                 setTimeout(function() {
@@ -715,6 +717,22 @@
             var taxes = parseFloat(tax_total) + parseFloat(value);
             $(".deduction_tax").val(taxes);
         }
+
+        $('.net_pay').click(function() {
+            var period_gross_total = $("#period_gross_total").val();
+            var ytd_gross_total = $("#ytd_gross_total").val();
+            var deduction_tax = $(".deduction_tax").val();
+            var ytd_deduction_tax = $(".ytd_deduction_tax").val();
+
+            var total_net_pay = parseFloat(period_gross_total) - parseFloat(deduction_tax);
+            var total_ytd_net_pay = parseFloat(ytd_gross_total) - parseFloat(ytd_deduction_tax);
+            $(".total_net_pay").val(total_net_pay);
+            $(".total_ytd_net_pay").val(total_ytd_net_pay);
+        })
+        $('.hourly').keyup(function() {
+            var id = $(this).val();
+            $('#rate_0').val(id);
+        })
     });
 
 </script>
