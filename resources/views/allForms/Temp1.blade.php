@@ -12,8 +12,7 @@
 
 <body>
 
-    <div class="container-fluid d-flex  text-white   justify-content-between"
-        style="background-color: #a9a9a9; display:flex; justify-content:space-between;">
+    <div class="container-fluid d-flex  text-white   justify-content-between" style="background-color: #a9a9a9;">
 
         <h3>
             # 152148

@@ -50,7 +50,7 @@
                                     <a href="{{ asset($template->images->file ?? '') }}" target="blank">
                                         @if(!empty($template->images->file_type))
                                         @if($template->images->file_type != "pdf")
-                                        <img width="200px" height="150px" src="{{ $template->images->file ?? '' }} " />
+                                        <img width="200px" height="150px" src="{{$template->images->file ?? '' }}" />
                                         @else
                                         <i class="fa fa-file-pdf-o" style="font-size:48px;color:red"></i>
                                         @endif
@@ -58,14 +58,11 @@
                                     </a>
                                 </td>
 
-                                <td><button type="button" class="btn btn-primary"
-                                        wire:click="editTemplate({{ $template->id }})">Edit</button>
+                                <td><button type="button" class="btn btn-primary" wire:click="editTemplate({{ $template->id }})">Edit</button>
                                     @if($confirming===$template->id)
-                                    <button wire:click="deleteTemplate({{$template->id}})"
-                                        class="btn btn-warning text-white w-32 ">Sure?</button>
+                                    <button wire:click="deleteTemplate({{$template->id}})" class="btn btn-warning text-white w-32 ">Sure?</button>
                                     @else
-                                    <button wire:click="confirmDelete({{ $template->id }})"
-                                        class="btn btn-danger">Delete</button>
+                                    <button wire:click="confirmDelete({{ $template->id }})" class="btn btn-danger">Delete</button>
                                     @endif
                                 </td>
                             </tr>
@@ -97,8 +94,7 @@
                                             <div class="row mb-3">
                                                 <label class="col-sm-3 col-form-label">State</label>
                                                 <div class="col-sm-8">
-                                                    <select class="form-select" aria-label="Default select example"
-                                                        type="text" wire:model="state">
+                                                    <select class="form-select" aria-label="Default select example" type="text" wire:model="state">
                                                         <option selected="">Open this select State</option>
                                                         <option value="usa">USA</option>
                                                         <option value="canada">CANADA</option>
@@ -116,8 +112,7 @@
                                             <div class="row mb-3">
                                                 <label class="col-sm-3 col-form-label">Type</label>
                                                 <div class="col-sm-8">
-                                                    <select class="form-select" aria-label="Default select example"
-                                                        type="text" wire:model="type">
+                                                    <select class="form-select" aria-label="Default select example" type="text" wire:model="type">
                                                         <option selected="">Open this select Type</option>
                                                         <option value="basic">BASIC</option>
                                                         <option value="advance">ADVANCE</option>
@@ -133,8 +128,7 @@
                                                 <label class="col-sm-3 col-form-label">
                                                     Title</label>
                                                 <div class="col-sm-8">
-                                                    <input type="text" class="form-control" id="title"
-                                                        wire:model="title">
+                                                    <input type="text" class="form-control" id="title" wire:model="title">
                                                     @error('title')
                                                     <div class="mt-3 text-danger">* {{ $message }}</div>
                                                     @enderror
@@ -155,10 +149,8 @@
 
                                             </div>
                                             <div class="text-center mt-5">
-                                                <button type="submit" class="btn btn-primary"
-                                                    style="float:right;">Submit</button>
-                                                <button type="reset" wire:click="resetForm" class="btn btn-secondary"
-                                                    style="float:right; margin-right: 12px;">Reset</button>
+                                                <button type="submit" class="btn btn-primary" style="float:right;">Submit</button>
+                                                <button type="reset" wire:click="resetForm" class="btn btn-secondary" style="float:right; margin-right: 12px;">Reset</button>
                                             </div>
                                         </form><!-- End Horizontal Form -->
                                     </div>

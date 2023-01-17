@@ -169,8 +169,9 @@
                     </div>
                 </div>
                 <div class="col-lg-4 mt-3 ">
-                    <div class="container justify-content-center m-auto">
-                        <a href="{{url('/')}}"><img class="w-100" src="images/satisfaction.webp"></a>
+                    <div class="container justify-content-center m-auto text-center">
+                        <a href="{{url('/')}}"><img class="footimg" src="images/satisfaction.webp"></a>
+
                     </div>
                 </div>
                 <div class="col-lg-5 text-center m-auto ">

@@ -270,13 +270,6 @@
     box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, .6));
 }
 
-.previewbtn:hover {
-    background: white;
-    color: #ef2e21;
-    border: 1px solid #ef2e21;
-    box-shadow: 6px 5px 4px 0px #00000066;
-}
-
 
 
 .pay-box {
@@ -510,19 +503,19 @@ input:hover {
 .btn-text {
     float: right;
     margin: 14px 11px 0 0;
-    color: $white;
+    color: white;
     font-size: 16px;
     letter-spacing: 0.2px;
     font-family: "Roboto";
     margin-right: 3px;
 }
 
-&:hover {
-    box-shadow: 0 0 6px $google-blue;
+:hover {
+    box-shadow: 0 0 6px google-blue;
 }
 
-&:active {
-    background: $button-active-blue;
+:active {
+    background: button-active-blue;
 }
 
 .singup {
@@ -584,8 +577,6 @@ th {
     font-size: 11px;
 }
 
-tr:nth-child(even) {}
-
 @import url(https://fonts.googleapis.com/css?family=Roboto:500);
 
 h5 {
@@ -633,18 +624,21 @@ h5 {
 }
 
 .payimg {
-    position: relative;
-    width: 100%;
-    top: -49px
+    width: 288px;
+    margin-top: -41px;
 }
 
 .payimg2 {
-    position: relative;
-    top: 95px;
-    width: 75%;
-    object-fit: cover;
-    object-position: 50% 50%;
-    padding-bottom: 140px;
+    width: 741px;
+    margin-bottom: 28px;
+    /* padding-left: 0px; */
+    margin-left: -166px;
+    margin-top: -123px;
+   
+}
+.img2-p{
+    font-size: 17px;
+    font-weight: 200;
 }
 
 .base {
@@ -653,8 +647,8 @@ h5 {
 }
 
 .paytext {
-    position: absolute;
-    bottom: -84px;
+   
+    bottom: -92px;
     /* left: 85px; */
 }
 
@@ -735,7 +729,74 @@ select {
     text-align: center;
 }
 
+.frame1 {
+    width: 405px;
+    height: 229px;
+}
+
+.payp {
+    font-size: 14px;
+    color: white;
+    background: #537b9d;
+    border: none;
+    padding: 6px 4px;
+    border-radius: 4px;
+    font-weight: 200;
+}
+
+.payp:hover {
+    font-size: 14px;
+    color: black;
+    background: none;
+    border: none;
+    padding: 6px 4px;
+    border-radius: 4px;
+    font-weight: 200;
+}
+
+.OnPaystub {
+    font-size: 20px;
+    color: #0e0e0e;
+    position: absolute;
+    bottom: -156px;
+    left: 179px;
+    font-weight: 200;
+    line-height: 35.5px;
+}
+
+.footimg {
+    width: 100%;
+}
+
 /* w2paystub end */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -778,6 +839,22 @@ select {
 
     .uktext {
         font-size: 25px;
+    }
+
+    .payimg {
+        position: relative;
+        width: 60%;
+        top: 2px;
+    }
+
+    .OnPaystub {
+        font-size: 20px;
+        color: #0e0e0e;
+        position: absolute;
+        bottom: -194px;
+        left: 179px;
+        font-weight: 200;
+        line-height: 35.5px;
     }
 }
 
@@ -826,9 +903,22 @@ select {
     .create-container li {
         font-size: 10px;
     }
+    .payimg2 {
+        width: 399px;
+        margin-bottom: 28px;
+        /* padding-left: 0px; */
+        margin-left: -10px;
+        margin-top: -55px;
+    
+    }
+
+    .frame1 {
+        width: 316px;
+        height: 176px;
+    }
 
     .paytext {
-        display: none;
+        display:;
     }
 
     .globleImg {
@@ -918,8 +1008,9 @@ select {
         font-size: 19px;
         color: #0e0e0e;
         position: absolute;
-        bottom: -116px;
-        left: 212px;
+        bottom: -232px;
+        left: 55px;
+        font-weight: 200;
         font-weight: 200;
     }
 
@@ -976,6 +1067,8 @@ select {
     }
 }
 
+    .create-p {
+        font-size: 8px;
 
 @media screen and (max-width: 768px) {
     .globlebtn {
@@ -983,10 +1076,25 @@ select {
         justify-content: center;
     }
 
+    .footimg {
+        width: 55%;
+    }
+
+    .frame1 {
+        width: 238px;
+        height: 134px;
+    }
+
     .mainhead {
         padding: 0px 0px 0px 0px;
         text-align: left !important;
 
+    .tickbox {
+        width: 20px;
+        height: 39px;
+        position: absolute;
+        top: 16px;
+        left: 77px;
     }
 
     .earnbtn {
@@ -1002,7 +1110,7 @@ select {
     }
 
     .paytext {
-        position: absolute;
+     
         bottom: 261px;
         left: 328px;
     }
@@ -1087,18 +1195,17 @@ select {
     .payimg {
         position: relative;
         width: 37%;
-        top: -49px;
+        top: -10px;
     }
 
     .payimg2 {
         position: relative;
-        top: -47px;
+        top: 0px;
         width: 54%;
         object-fit: cover;
         object-position: 50% 50%;
-        left: 224px;
+        left: 30px;
     }
-
     .storbtn {
         width: 106px;
         height: 39px;
@@ -1153,9 +1260,7 @@ select {
         font-weight: 400;
     }
 
-    .payimg2 {
-        padding-bottom: 30px;
-    }
+    
 }
 
 
@@ -1276,10 +1381,15 @@ select {
     .payimg2 {
         position: relative;
         top: 106px;
-        width: 53%;
+        width: 100%;
         object-fit: cover;
         object-position: 50% 50%;
         left: 0;
+    }
+    .img2-p {
+        font-size: 17px;
+        font-weight: 200;
+        margin-top: 83px;
     }
 
     .Payslips {
@@ -1351,8 +1461,11 @@ select {
         z-index: 122;
     }
 
-    .payimg2 {
-        width: 44%;
+    .payimg {
+        position: relative;
+        width: 50%;
+        top: 43px;
+        z-index: 122;
     }
 
     .down {
@@ -1464,5 +1577,25 @@ select {
         color: white;
         padding: 11px 21px;
         margin-bottom: 10px;
+    }
+    .payimg2 {
+        position: relative;
+        top: 237px;
+        width: 389px;
+        object-fit: cover;
+        object-position: 50% 50%;
+        left: 0;
+    }
+    .img2-p {
+        font-size: 17px;
+        font-weight: 200;
+        margin-top: 210px;
+    }
+    .paytext {
+        position: absolute;
+        /* bottom: -136px; */
+        left: 163px;
+        /* font-size: 9px; */
+        top: 33px;
     }
 }

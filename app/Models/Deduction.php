@@ -11,7 +11,7 @@ class Deduction extends Model
     static function getDeduction($request)
     {
 
-        $dataObj = Deduction::where('type', $request->type)->get();
+        $dataObj = Deduction::where('state', $request->type)->get();
         $response['data'] = $dataObj;
         $response['status'] = STATUS_OK;
 
