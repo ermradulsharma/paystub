@@ -84,7 +84,8 @@
                                         <option selected=""> --- Select Basic Templates --- </option>
                                         @foreach ($basicType as $data)
                                         <option value="{{$data->title ?? ''}}" data-src="{{$data->images->file ?? ''}}">
-                                            {{$data->title}}</option>
+                                            {{$data->title}}
+                                        </option>
                                         @endforeach
                                     </select>
                                     <i data-src="{{$data->images->file ?? ''}}" class="fa fa-eye-slash basicTem" style="font-size: 39px;" role="button"></i>
@@ -104,7 +105,8 @@
                                         <option selected=""> --- Select Advance Template --- </option>
                                         @foreach ($advanceType as $data)
                                         <option value="{{$data->title ?? ''}}" data-src="{{$data->images->file ?? ''}}">
-                                            {{$data->title ?? ''}}</option>
+                                            {{$data->title ?? ''}}
+                                        </option>
                                         @endforeach
                                     </select>
                                     <i data-src="{{$data->images->file ?? ''}}" class="fa fa-eye-slash advanceTem" role="button" style="font-size: 39px;"></i>
@@ -367,13 +369,6 @@
                             <button class="add_button earnbtn"><i class="fa fa-plus-circle pr-2" style="font-size:24px;color:green"></i>Add Earning</button>
                         </div>
                     </div>
-                    {{-- <div class="field_wrapper"> </div> --}}
-
-                    {{-- <div class="row mb-3">
-                            <div class="col-md-2 mt-2 mb-5">
-                                <button class="add_button earnbtn"><i class="fa fa-plus-circle pr-2" style="font-size:24px;color:green"></i>Add Earning</button>
-                            </div>
-                        </div> --}}
 
                     <div class="row">
                         <div class="col-md-3">
@@ -492,7 +487,6 @@
         </div>
     </div>
 </div>
-
 @endsection
 @section('script')
 <script>
@@ -592,116 +586,115 @@
                     calculation(id);
                 }, 300);
             });
+        });
 
-            $('.calculation').keyup(function() {
-                var id = $(this).data('id');
-                setTimeout(function() {
-                    calculation(id);
-                }, 300);
+        $('.calculation').keyup(function() {
+            var id = $(this).data('id');
+            setTimeout(function() {
+                calculation(id);
+            }, 300);
 
 
+        });
+
+        function calculation(id) {
+            var rate = parseFloat($('#rate_' + id).val()).toFixed(2);
+            var hours = parseFloat($('#hours_' + id).val()).toFixed(2);
+            var total = rate * hours;
+            var ytd_total = total * 52;
+            setTimeout(function() {
+                $('#total_' + id).val(total);
+                $('#period_' + id).val(total);
+                $('#ytd_total_' + id).val(ytd_total);
+                gross_total();
+            }, 300);
+        }
+
+        function gross_total() {
+            var total = 0;
+            $('.gross_total').each(function() {
+                total += parseFloat(this.value);
+            });
+            var ytd_total = 0;
+            $('.ytd_total').each(function() {
+                ytd_total += parseFloat(this.value);
             });
 
-            function calculation(id) {
-                var rate = parseFloat($('#rate_' + id).val()).toFixed(2);
-                var hours = parseFloat($('#hours_' + id).val()).toFixed(2);
-                var total = rate * hours;
-                var ytd_total = total * 52;
-                setTimeout(function() {
-                    $('#total_' + id).val(total);
-                    $('#period_' + id).val(total);
-                    $('#ytd_total_' + id).val(ytd_total);
-                    gross_total();
-                }, 300);
-            }
+            setTimeout(function() {
+                $("#period_gross_total").val(total);
+                $("#ytd_gross_total").val(ytd_total);
+                default_tax();
+            }, 300);
+        }
 
-            function gross_total() {
-                var total = 0;
-                $('.gross_total').each(function() {
-                    total += parseFloat(this.value);
-                });
-                $('.pay_start').change(function() {
-                    dayCalculate();
-                });
-
-                setTimeout(function() {
-                    $("#period_gross_total").val(total);
-                    $("#ytd_gross_total").val(ytd_total);
-                    default_tax();
-                }, 300);
-            }
-
-            function default_tax() {
-                var period_gross_total = $("#period_gross_total").val();
-                var ytd_gross_total = $("#ytd_gross_total").val();
-                console.log("period_gross_total", period_gross_total);
-                console.log("ytd_gross_total", ytd_gross_total);
-                $('.taxes').each(function() {
-                    var taxes_ids = $(this).data('id');
-                    var taxes_values = $(this).data('value');
-                    period_tax_price = period_gross_total * (taxes_values / 100);
-                    period_ytd_tax_price = ytd_gross_total * (taxes_values / 100);
-                    $('#taxes_' + taxes_ids).val(period_tax_price);
-                    $('#taxes_ytd_' + taxes_ids).val(period_ytd_tax_price);
-                });
-            }
-        });
+        function default_tax() {
+            var period_gross_total = $("#period_gross_total").val();
+            var ytd_gross_total = $("#ytd_gross_total").val();
+            console.log("period_gross_total", period_gross_total);
+            console.log("ytd_gross_total", ytd_gross_total);
+            $('.taxes').each(function() {
+                var taxes_ids = $(this).data('id');
+                var taxes_values = $(this).data('value');
+                period_tax_price = period_gross_total * (taxes_values / 100);
+                period_ytd_tax_price = ytd_gross_total * (taxes_values / 100);
+                $('#taxes_' + taxes_ids).val(period_tax_price);
+                $('#taxes_ytd_' + taxes_ids).val(period_ytd_tax_price);
+            });
+        }
     });
 
 </script>
 
 <script>
     $(document).ready(function() {
-    var maxField = 12;
-    var addDeduction = $('.add_deduction');
-    var wrapper = $('#add_deduction');
-    var x = 1;
-    var i = 1;
-    $(addDeduction).click(function() {
-        var fieldHTML =
-            '<div class="row mb-3">' +
-            '<div class="col-md-3">' +
-            '<i class="fa fa-lock earnbtn2"></i>' +
-            '<input class="earnbtn text-center" type="text" value="">' +
-            '</div>' +
-            '<div class="col-md-1"> </div>' +
-            '<div class="col-md-3"> </div>' +
-            '<div class="col-md-1"> </div>' +
-            '<div class="col-md-2">' +
-            '<input type="number" step="0.01" class="earnbtn text-center tax_deduction tax" value=""/>' +
-            '</div>' +
-            '<div class="col-md-2">' +
-            '<input type="number" step="0.01" class="earnbtn text-center ytd_tax tax" value=""/>' +
-            '</div>' +
-            '</div>';
-        if (x < maxField) {
-            x++;
-            $(wrapper).append(fieldHTML);
-        }
-        $('.tax_deduction').keyup(function() {
-            var total = 0;
-            $('.tax_deduction').each(function() {
-                total += parseFloat(this.value);
+        var maxField = 12;
+        var addDeduction = $('.add_deduction');
+        var wrapper = $('#add_deduction');
+        var x = 1;
+        var i = 1;
+        $(addDeduction).click(function() {
+            var fieldHTML =
+                '<div class="row mb-3">' +
+                '<div class="col-md-3">' +
+                '<i class="fa fa-lock earnbtn2"></i>' +
+                '<input class="earnbtn text-center" type="text" value="">' +
+                '</div>' +
+                '<div class="col-md-1"> </div>' +
+                '<div class="col-md-3"> </div>' +
+                '<div class="col-md-1"> </div>' +
+                '<div class="col-md-2">' +
+                '<input type="number" step="0.01" class="earnbtn text-center tax_deduction tax" value=""/>' +
+                '</div>' +
+                '<div class="col-md-2">' +
+                '<input type="number" step="0.01" class="earnbtn text-center ytd_tax tax" value=""/>' +
+                '</div>' +
+                '</div>';
+            if (x < maxField) {
+                x++;
+                $(wrapper).append(fieldHTML);
+            }
+            $('.tax_deduction').keyup(function() {
+                var total = 0;
+                $('.tax_deduction').each(function() {
+                    total += parseFloat(this.value);
+                });
+                setTimeout(function() {
+                    $(".deduction_tax").val(total);
+                }, 300);
+
             });
-            setTimeout(function() {
-                $(".deduction_tax").val(total);
-            }, 300);
 
-        });
+            $('.ytd_tax').keyup(function() {
+                var ytd_tax = 0;
+                $('.ytd_tax').each(function() {
+                    ytd_tax += parseFloat(this.value);
+                });
+                setTimeout(function() {
+                    $(".ytd_deduction_tax").val(ytd_tax);
+                }, 300);
 
-        $('.ytd_tax').keyup(function() {
-            var ytd_tax = 0;
-            $('.ytd_tax').each(function() {
-                ytd_tax += parseFloat(this.value);
             });
-            $(".ytd_deduction_tax").val(ytd_tax);
         });
-        setTimeout(function() {
-            $(".ytd_deduction_tax").val(ytd_tax);
-        }, 300);
-
-    });
-    });
     });
 
 </script>
@@ -726,6 +719,4 @@
 
 </script>
 
-});
-</script>
 @endsection
