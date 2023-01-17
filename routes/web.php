@@ -30,7 +30,7 @@ Route::get('canada-paystub', [CanadaController::class, 'index']);
 Route::get('uk-paystub', [UkController::class, 'index']);
 Route::get('globle', [UsaController::class, 'templateGloble']);
 
-
+Route::get('html', [TemplateFormController::class, 'PayStubPDF']);
 Route::get('canada', function () {
     return view('canada');
 });
