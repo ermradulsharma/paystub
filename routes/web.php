@@ -37,7 +37,7 @@ Route::get('prior-pdf', [TemplateFormController::class, 'BasicPriorUsaPDF']);
 Route::get('check-pdf', [TemplateFormController::class, 'AdvanceCheckUsaPDF']);
 Route::get('pin_blue-pdf', [TemplateFormController::class, 'BasicPinBlueUkPDF']);
 
-
+Route::get('html', [TemplateFormController::class, 'PayStubPDF']);
 Route::get('canada', function () {
     return view('canada');
 });

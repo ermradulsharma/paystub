@@ -23,6 +23,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::group(['namespace' => 'Api', 'middleware' => ['\App\Http\Middleware\LogAfterRequest::class']], function () {
     Route::get('get-templates', [TemplatesController::class, 'getTemplate']);
     Route::get('get-deduction', [DeductionController::class, 'getDeduction']);
+    Route::get('get-state-taxes', [DeductionController::class, 'getStateTaxes']);
     Route::group(['middleware' => ['auth:api']], function () {
     });
 });
