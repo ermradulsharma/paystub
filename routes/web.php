@@ -97,11 +97,4 @@ Route::name('admin')->prefix('backend')->group(function () {
     Route::get('deduction', function () {
         return view('Admin/deduction');
     });
-<<<<<<< HEAD
-
-
-
 });
-=======
-});
->>>>>>> fa626b79d9e055af3aa288047b04989fe898b8be
