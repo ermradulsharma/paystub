@@ -91,7 +91,7 @@
                                         <option selected=""> --- Select Basic Templates --- </option>
 
                                         @foreach ($basicType as $data)
-                                        @if($basicType->state == 'usa')
+                                        @if($data->state == 'usa' && $data->type == 'basic')
                                         <option value="{{$data->title ?? ''}}" data-src="{{$data->images->file ?? ''}}">
                                             {{$data->title}}
                                         </option>
