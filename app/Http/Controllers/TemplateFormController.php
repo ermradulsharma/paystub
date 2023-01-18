@@ -22,4 +22,47 @@ class TemplateFormController extends Controller
     
      
     }
+    public function AdvanceBlueBoxUsaPDF()
+    {
+        $data = [
+            
+            'date' => date('m/d/Y')
+        ];
+          
+        // return view('allForms.bluebox');
+       
+         $pdf = PDF::loadView('allForms.bluebox', $data);
+         return $pdf->stream('BlueboxTemp.pdf');
+    
+     
+    }
+
+      public function AdvanceglobleUsaPDF()
+    {
+        $data = [
+            
+            'date' => date('m/d/Y')
+        ];
+          
+        // return view('allForms.globleusa');
+       
+       $pdf = PDF::loadView('allForms.globleusa', $data);
+         return $pdf->stream('GlobleTemp.pdf');
+    
+     
+    }
+    public function AdvanceModernUsaPDF()
+    {
+        $data = [
+            
+            'date' => date('m/d/Y')
+        ];
+          
+        // return view('allForms.modernusa');
+       
+       $pdf = PDF::loadView('allForms.modernusa', $data);
+         return $pdf->stream('ModernTemp.pdf');
+    
+     
+    }
 }
