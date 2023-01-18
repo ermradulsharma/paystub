@@ -98,7 +98,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-8">
             <img class="payimg2" src="images/paystubx_images.png" class="">
             <div>
                 <p class="img2-p">
@@ -109,8 +109,7 @@
                     .</p>
             </div>
         </div>
-        <div class="col-lg-4">
-        </div>
+       
     </div>
 </div>
 <div class="calculations mt-4">
@@ -284,7 +283,7 @@
 
             <div class="col-md-4 text-center">
                 <div class="justify-content-center">
-                    <iframe class="mr-2 " style=" width:418px; height:234px;"
+                    <iframe class="mr-2 youtubeimg" style=" "
                         src="https://www.youtube.com/embed/TrnLCFsN5i8" title="Plane Overhead" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen></iframe>
@@ -295,7 +294,7 @@
 
             <div class="col-md-4 text-center ">
                 <div class="justify-content-center">
-                    <iframe class="mr-2 " style=" width:418px; height:234px;"
+                    <iframe class="mr-2 youtubeimg" style=" "
                         src="https://www.youtube.com/embed/TrnLCFsN5i8" title="Plane Overhead" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen></iframe>
@@ -306,7 +305,7 @@
 
             <div class="col-md-4 text-center">
                 <div class="justify-content-center">
-                    <iframe class="mr-2 " style=" width:418px; height:234px;"
+                    <iframe class="mr-2  youtubeimg" style=" "
                         src="https://www.youtube.com/embed/TrnLCFsN5i8" title="Plane Overhead" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen></iframe>

@@ -13,11 +13,12 @@
                             <div class="mt-4">
                                 {{-- <i class="fa fa-angle-down down"></i> --}}
                                 <div class="input-group mmenu mb-3">
-                                    <select name="cars" id="cars" style="" class="form-control dropdown1"
-                                        style="border-right:none">
+                                    <select name="cars" id="cars" style="" class="form-control dropdown1" style="border-right:none">
                                         <option selected=""> --- Select Basic Templates --- </option>
                                         @foreach ($basicType as $data)
+                                        @if($data->state == 'uk' && $data->type == 'basic')
                                         <option value={{$data->title}}>{{$data->title}}</option>
+                                        @endif
                                         @endforeach
                                     </select>
                                     <i onclick="myFunction(this)" class="fa fa-eye eyes" style="font-size: 39px;"></i>
@@ -39,14 +40,14 @@
                             <div class="mt-4">
                                 {{-- <i class="fa fa-angle-down down1"></i> --}}
                                 <div class="input-group mmenu mb-3" style="margin: auto;">
-                                    <select name="cars" id="cars" style="" class="form-control dropdown1" <option
-                                        selected=""> --- Select Advance Template --- </option>
+                                    <select name="cars" id="cars" style="" class="form-control dropdown1" <option selected=""> --- Select Advance Template --- </option>
                                         @foreach ($advanceType as $data)
+                                        @if($data->state == 'uk' && $data->type == 'advance')
                                         <option value={{$data->title}}>{{$data->title}}</option>
+                                        @endif
                                         @endforeach
                                     </select>
-                                    <i onclick="myFunction(this)" class="fa fa-eye eyes"
-                                        style="font-size: 39px;margin-left: 6px;"></i>
+                                    <i onclick="myFunction(this)" class="fa fa-eye eyes" style="font-size: 39px;margin-left: 6px;"></i>
 
 
                                 </div>
@@ -78,16 +79,13 @@
                             <label for="fname" class="lable">EMPLOYER (COMPANY) NAME
                                 <span style="color:red;">*</span>
                             </label><br>
-                            <input type="text" id="fname" name="fname" placeholder="Your Employer & Company Name"
-                                class="w-100 p-2 text-center" style="font-size:14px;"><br>
+                            <input type="text" id="fname" name="fname" placeholder="Your Employer & Company Name" class="w-100 p-2 text-center" style="font-size:14px;"><br>
                         </div>
 
                         <div class="col-md-6 mt-1">
                             <label for="fname" class="lable text-center">EMPLOYER (COMAPNY) ADDRESS
                                 <span style="color:red;">*</span></label><br>
-                            <input type="text" id="fname" name="fname"
-                                placeholder="5 Throgmorton St, London EC2N 2AD, United Kingdom"
-                                class="w-100 p-2 text-center" style="font-size:14px;"><br>
+                            <input type="text" id="fname" name="fname" placeholder="5 Throgmorton St, London EC2N 2AD, United Kingdom" class="w-100 p-2 text-center" style="font-size:14px;"><br>
                         </div>
 
                     </div>
@@ -118,21 +116,18 @@
                         <div class="col-md-4 mt-4">
                             <label for="fname" class="lable">EMPLOYEE NAME >
                                 <span style="color:red;">*</span></label><br>
-                            <input type="text" id="fname" name="fname" placeholder="Your Full  Name"
-                                class="w-100 p-2 text-center" style="font-size:14px;"><br>
+                            <input type="text" id="fname" name="fname" placeholder="Your Full  Name" class="w-100 p-2 text-center" style="font-size:14px;"><br>
                         </div>
 
                         <div class="col-md-4 mt-4">
                             <label for="fname" class="lable">EMPLOYER ADDRESS 1
                                 <span style="color:red;">*</span></label><br>
-                            <input type="text" id="fname" name="fname" placeholder="5 Throgmorton St,London"
-                                class="w-100 p-2 text-center" style="font-size:14px;"><br>
+                            <input type="text" id="fname" name="fname" placeholder="5 Throgmorton St,London" class="w-100 p-2 text-center" style="font-size:14px;"><br>
                         </div>
                         <div class="col-md-4 mt-4">
                             <label for="fname" class="lable">POSTCODE
                                 <span style="color:red;">*</span></label><br>
-                            <input type="text" id="fname" name="fname" placeholder="1224" class="w-100 p-2 text-center"
-                                style="font-size:14px;"><br>
+                            <input type="text" id="fname" name="fname" placeholder="1224" class="w-100 p-2 text-center" style="font-size:14px;"><br>
                         </div>
 
                     </div>
@@ -249,8 +244,7 @@
 
                         <div class="col-md-2 mt-2 mb-5">
 
-                            <button CLASS="earnbtn"><i class="fa fa-plus-circle pr-2"
-                                    style="font-size:24px;color:green"></i>Add Earning</button>
+                            <button CLASS="earnbtn"><i class="fa fa-plus-circle pr-2" style="font-size:24px;color:green"></i>Add Earning</button>
                         </div>
 
                     </div>
@@ -388,8 +382,7 @@
                     <h5 class="mt-4">Additional Information Here (Note)</h5>
                     <div class="row">
                         <div class="col-lg-6">
-                            <textarea id="w3review" name="w3review" rows="4" cols="60"
-                                placeholder="Note Here (Optional)" class="p-2 textarea"></textarea>
+                            <textarea id="w3review" name="w3review" rows="4" cols="60" placeholder="Note Here (Optional)" class="p-2 textarea"></textarea>
                         </div>
 
                     </div>
@@ -411,8 +404,7 @@
                     Preview Your Paystub <i class="fa fa-eye" style="font-size: 30px; margin-left: 7px;"></i></button>
             </div>
             <div class="text-right mt-1 mb-4 ">
-                <button class="emailbtn" data-toggle="modal" data-target="#myModal"> <i class="fa fa-envelope mr-4"
-                        style="font-size:24px"></i>EMAIL
+                <button class="emailbtn" data-toggle="modal" data-target="#myModal"> <i class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL
                     PAYSTUB <i class="fa fa-download ml-4" style="font-size:24px"></i></button>
             </div>
         </div>
@@ -441,8 +433,7 @@
             <div class="modal-body">
                 <div class="google-btn mt-4">
                     <div class="google-icon-wrapper">
-                        <img class="google-icon"
-                            src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" />
+                        <img class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" />
                     </div>
                     <p class="btn-text"><b>Sign up with google</b></p>
                 </div>
@@ -455,8 +446,7 @@
 
                     <input type="email" id="email" name="email" class="singup" placeholder="Email *"> <br><br>
 
-                    <button class="continue mt-3" data-toggle="modal" data-dismiss="modal"
-                        data-target="#myModal1">Continue</button>
+                    <button class="continue mt-3" data-toggle="modal" data-dismiss="modal" data-target="#myModal1">Continue</button>
                     <a href="#" style="text-decoration: none;color: #0000007a">
                         <p class="text-center mt-3" style="color: #0000007a;font-size: 13px;">Already have account?
                             <u style="color:red;">
@@ -506,16 +496,14 @@
                         <p style="color: #02030359;font-size: 14px;font-family: serif;" class="text-center">Enter the
                             Verification code to sent</p>
 
-                        <input type="email" id="email" name="email" class="singup1 text-center"
-                            placeholder="ABC@paystub.com">
+                        <input type="email" id="email" name="email" class="singup1 text-center" placeholder="ABC@paystub.com">
                         <div style="color: red;font-size: 13px; font-family: serif;">
                             <i class="fa fa-exclamation-circle">
                                 Verification code required
                             </i>
                         </div>
                         <p style="color: #0000004d; font-size: 11px;">Didn't receive an email</p>
-                        <p style="color: #04050778;font-size: 12px; font-family: cursive;">Check Your Spam folder<span
-                                style="color:red;"> Or </span>resend code</p>
+                        <p style="color: #04050778;font-size: 12px; font-family: cursive;">Check Your Spam folder<span style="color:red;"> Or </span>resend code</p>
                         <button class="continue mt-3" data-toggle="modal" data-target="myModal">verify</button>
                     </div>
 
@@ -563,15 +551,14 @@
 
 <script>
     $('.basicTem').click(function() {
-      var imageattr = $('option:selected', '.bt_id').attr('data-src');
-         $('.setImage').attr('src', imageattr);
+        var imageattr = $('option:selected', '.bt_id').attr('data-src');
+        $('.setImage').attr('src', imageattr);
     });
 
     $('.advanceTem').click(function() {
 
-       var imageattr = $('option:selected', '.at_id').attr('data-src');
-         $('.setImage').attr('src', imageattr);
+        var imageattr = $('option:selected', '.at_id').attr('data-src');
+        $('.setImage').attr('src', imageattr);
     });
-
 
 </script>

@@ -21,6 +21,13 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('user') }}/css/newstyle.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <style>
+        select,
+        select option {
+            text-transform: capitalize
+        }
+
+    </style>
 </head>
 
 <body>
@@ -67,8 +74,7 @@
                 <div class="modal-body">
                     <div class="google-btn mt-4">
                         <div class="google-icon-wrapper">
-                            <img class="google-icon"
-                                src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" />
+                            <img class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" />
                         </div>
                         <p class="btn-text"><b>Sign up with google</b></p>
                     </div>
@@ -82,8 +88,7 @@
                         <input type="email" id="email" name="email" class="singup" placeholder="Email *">
                         <br><br>
 
-                        <button class="continue mt-3" data-toggle="modal" data-dismiss="modal"
-                            data-target="#myModal1">Continue</button>
+                        <button class="continue mt-3" data-toggle="modal" data-dismiss="modal" data-target="#myModal1">Continue</button>
                         <a href="#" style="text-decoration: none;color: #0000007a">
                             <p class="text-center mt-3" style="color: #0000007a;font-size: 13px;">Already have
                                 account?
@@ -125,8 +130,7 @@
                         <p style="color: #02030359;font-size: 14px;font-family: serif;" class="text-center">Enter the
                             Verification code to sent</p>
 
-                        <input type="email" id="email" name="email" class="singup1 text-center"
-                            placeholder="ABC@paystub.com">
+                        <input type="email" id="email" name="email" class="singup1 text-center" placeholder="ABC@paystub.com">
                         <div style="color: red;font-size: 13px; font-family: serif;">
                             <i class="fa fa-exclamation-circle">
                                 Verification code required

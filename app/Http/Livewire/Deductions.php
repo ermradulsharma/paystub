@@ -8,22 +8,21 @@ use Livewire\Component;
 class Deductions extends Component
 {
 
-    public $title,$price,$type ,$state,$deductionId ,$confirming;
-    public $next=1;
+    public $title, $price, $type, $state, $deductionId, $confirming;
+    public $next = 1;
     public $page_title = "Add Deduction";
 
     public function render()
     {
-        $deductions = Deduction::orderBy('id','asc')->get();
-        return view('livewire.deductions',compact('deductions'));
+        $deductions = Deduction::orderBy('id', 'asc')->get();
+        return view('livewire.deductions', compact('deductions'));
     }
 
     public function addDeduction()
     {
-            $this->next();
-            $this->resetForm();
-            $this->page_title = "Add Deduction";
-
+        $this->next();
+        $this->resetForm();
+        $this->page_title = "Add Deduction";
     }
 
     public function resetForm()
@@ -46,16 +45,16 @@ class Deductions extends Component
         ]);
         $this->back();
         $deductionObj = Deduction::find($this->deductionId);
-        if(!$deductionObj){
+        if (!$deductionObj) {
             $deductionObj = new Deduction();
-            $msg="Deduction saved successfully.";
+            $msg = "Deduction saved successfully.";
         }
         $deductionObj->title = $this->title;
         $deductionObj->price = $this->price;
         $deductionObj->type = "deduction";
         $deductionObj->state = $this->state;
         $deductionObj->save();
-        $msg="Deduction Updated successfully.";
+        $msg = "Deduction Updated successfully.";
         $this->resetForm();
         session()->flash('success', $msg);
     }
