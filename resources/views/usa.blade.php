@@ -115,9 +115,11 @@
                                     <select class="form-control text-center dropdown1 at_id" style="border-right:none">
                                         <option selected=""> --- Select Advance Template --- </option>
                                         @foreach ($advanceType as $data)
+                                        @if($data->state == 'usa' && $data->type == 'advance')
                                         <option value="{{$data->title ?? ''}}" data-src="{{$data->images->file ?? ''}}">
                                             {{$data->title ?? ''}}
                                         </option>
+                                        @endif
                                         @endforeach
                                     </select>
                                     <i data-src="{{$data->images->file ?? ''}}" class="fa fa-eye-slash advanceTem" role="button" style="font-size: 39px;"></i>
