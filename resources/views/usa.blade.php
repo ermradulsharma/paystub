@@ -207,9 +207,9 @@
                             <div class="dropdown ">
                                 <select name="cars" id="cars" class=" dropdown11">
                                     <option selected>Choose your State</option>
-                                    <option value="saab">Saab</option>
-                                    <option value="opel">Opel</option>
-                                    <option value="audi">Audi</option>
+                                    @foreach ($stateTaxes as $stateTax )
+                                    <option value="{{ $stateTax->state }}" data-tax="{{ $stateTax->rate }}">{{ $stateTax->state }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
