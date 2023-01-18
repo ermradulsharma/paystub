@@ -4,11 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use PDF;
-<<<<<<< HEAD
 use File;
-=======
 
->>>>>>> 91ba0f2d69090fe5d0657aae36e98f332b0f06ac
 class TemplateFormController extends Controller
 {
     public function BasicPaystubPDF()
