@@ -25,6 +25,13 @@ Route::get('/', function () {
 Route::get('generate-pdf', [W2FormController::class, 'generatePDF']);
 Route::get('preview-pdf', [W2FormController::class, 'previewPDF']);
 Route::get('tempBasic-pdf', [TemplateFormController::class, 'BasicPaystubPDF']);
+
+// shubham
+Route::get('cerulean-pdf', [TemplateFormController::class, 'advanceCeruleanUsa']);
+Route::get('district-pdf', [TemplateFormController::class, 'advanceDistrictUsa']);
+// shubham end
+
+
 Route::get('usa', [UsaController::class, 'index']);
 Route::get('canada-paystub', [CanadaController::class, 'index']);
 Route::get('uk-paystub', [UkController::class, 'index']);
@@ -64,6 +71,10 @@ Route::get('template-view', function () {
 });
 
 
+
+
+
+
 Route::name('admin')->prefix('backend')->group(function () {
 
 
@@ -86,4 +97,7 @@ Route::name('admin')->prefix('backend')->group(function () {
     Route::get('deduction', function () {
         return view('Admin/deduction');
     });
+
+
+
 });
