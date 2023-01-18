@@ -24,7 +24,11 @@ Route::get('/', function () {
 });
 Route::get('generate-pdf', [W2FormController::class, 'generatePDF']);
 Route::get('preview-pdf', [W2FormController::class, 'previewPDF']);
+
 Route::get('tempBasic-pdf', [TemplateFormController::class, 'BasicPaystubPDF']);
+Route::get('paystubBlue-pdf', [TemplateFormController::class, 'BasicpatstubBluePDF']);
+
+
 Route::get('usa', [UsaController::class, 'index']);
 Route::get('canada-paystub', [CanadaController::class, 'index']);
 Route::get('uk-paystub', [UkController::class, 'index']);
