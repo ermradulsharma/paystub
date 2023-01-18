@@ -28,13 +28,30 @@ Route::get('preview-pdf', [W2FormController::class, 'previewPDF']);
 Route::get('tempBasic-pdf', [TemplateFormController::class, 'BasicPaystubPDF']);
 Route::get('paystubBlue-pdf', [TemplateFormController::class, 'BasicpatstubBluePDF']);
 
+// shubham
+Route::get('cerulean-pdf', [TemplateFormController::class, 'advanceCeruleanUsa']);
+Route::get('district-pdf', [TemplateFormController::class, 'advanceDistrictUsa']);
+// shubham end
+
 
 Route::get('usa', [UsaController::class, 'index']);
 Route::get('canada-paystub', [CanadaController::class, 'index']);
 Route::get('uk-paystub', [UkController::class, 'index']);
 Route::get('globle', [UsaController::class, 'templateGloble']);
+// payal //
+Route::get('pt_green-pdf', [TemplateFormController::class, 'AdvancePtGreenPaystubPDF']);
+Route::get('pt_blue-pdf', [TemplateFormController::class, 'AdvancePtBlueUsaPDF']);
+Route::get('pt_brown-pdf', [TemplateFormController::class, 'AdvancePtBrownUsaPDF']);
+Route::get('prior-pdf', [TemplateFormController::class, 'BasicPriorUsaPDF']);
+Route::get('check-pdf', [TemplateFormController::class, 'AdvanceCheckUsaPDF']);
+Route::get('pin_blue-pdf', [TemplateFormController::class, 'BasicPinBlueUkPDF']);
 
+// gurvinder 
+Route::get('bluebox-pdf', [TemplateFormController::class, 'AdvanceBlueBoxUsaPDF']);
+Route::get('globle-pdf', [TemplateFormController::class, 'AdvanceglobleUsaPDF']);
+Route::get('modern-pdf', [TemplateFormController::class, 'AdvanceModernUsaPDF']);
 
+Route::get('html', [TemplateFormController::class, 'PayStubPDF']);
 Route::get('canada', function () {
     return view('canada');
 });
@@ -66,6 +83,10 @@ Route::get('contact', function () {
 Route::get('template-view', function () {
     return view('template');
 });
+
+
+
+
 
 
 Route::name('admin')->prefix('backend')->group(function () {

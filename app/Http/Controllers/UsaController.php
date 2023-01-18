@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Deduction;
+use App\Models\StateTax;
 use App\Models\Template;
 use Illuminate\Http\Request;
 
@@ -15,10 +16,11 @@ class UsaController extends Controller
      */
     public function index()
     {
-        $dedutions = Deduction::where('state','usa')->get();
+        $deduction = Deduction::where('state','usa')->get();
         $basicType = Template::where('type','basic')->with('images')->get();
         $advanceType = Template::where('type','advance')->with('images')->get();
-        return view('usa' , compact('basicType','advanceType','dedutions'));
+        $stateTaxes = StateTax::get();
+        return view('usa' , compact('basicType','advanceType','deduction','stateTaxes'));
     }
 
     public function templateGloble()

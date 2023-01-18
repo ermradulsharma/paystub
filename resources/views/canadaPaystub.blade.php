@@ -32,9 +32,11 @@
                                     <select class="form-control dropdown1 bt_id" style="border-right:none">
                                         <option selected=""> --- Select Basic Templates --- </option>
                                         @foreach ($basicType as $data)
+                                        @if($data->state == 'canada' && $data->type == 'basic')
                                         <option value="{{$data->title}}" data-src="{{$data->images->file}}">
                                             {{$data->title}}
                                         </option>
+                                        @endif
                                         @endforeach
                                     </select>
                                     <i class="fa fa-eye-slash basicTem" data-target="#openEye" data-toggle="modal"
@@ -55,9 +57,11 @@
                                     <select class="form-control dropdown1 at_id" style="border-right:none">
                                         <option selected=""> --- Select Advance Template --- </option>
                                         @foreach ($advanceType as $data)
+                                        @if($data->state == 'canada' && $data->type == 'advance')
                                         <option value="{{$data->title}}" data-src="{{$data->images->file}}">
                                             {{$data->title}}
                                         </option>
+                                        @endif
                                         @endforeach
                                     </select>
                                     <i class="fa fa-eye-slash advanceTem" data-target="#openEye" data-toggle="modal"

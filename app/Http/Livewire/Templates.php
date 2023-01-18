@@ -9,7 +9,7 @@ use Livewire\WithFileUploads;
 class Templates extends Component
 {
     use WithFileUploads;
-    public $title, $type, $state, $description, $tempId ,$confirming;
+    public $title, $type, $state, $description, $tempId, $confirming;
     public $next = 1;
     public $file;
     public $page_title = "Add Template";

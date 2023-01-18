@@ -56,8 +56,15 @@
                             <input type="text" id="city" name="city" placeholder="Your Employer City" class="w-100 p-2  textInputFontSize">
                         </div>
                         <div class="col-md-4">
-                            <label for="state" class="lable">State <span class="redColor">*</span> </label>
-                            <input type="text" id="state" name="state" placeholder=" Choose Your Employer State" class="w-100 p-2   textInputFontSize">
+                            <label for="fname" class="lable">State <span class="redColor">*</span> </label>
+                            <div class="dropdown ">
+                                <select name="cars" id="cars" class="dropdown11">
+                                    <option selected> --- Select --- </option>
+                                    @foreach ($stateTaxes as $stateTax )
+                                    <option value="{{ $stateTax->state }}">{{ $stateTax->state }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
                         </div>
                         <div class="col-md-4">
                             <label for="zip_code" class="lable">Zip Code <span class="redColor">*</span> </label>
@@ -82,11 +89,15 @@
                                 <div class="input-group mmenu mb-3 text-center">
                                     <select class="form-control dropdown1 text-center bt_id" style="border-right:none">
                                         <option selected=""> --- Select Basic Templates --- </option>
+
                                         @foreach ($basicType as $data)
+                                        @if($data->state == 'usa' && $data->type == 'basic')
                                         <option value="{{$data->title ?? ''}}" data-src="{{$data->images->file ?? ''}}">
                                             {{$data->title}}
                                         </option>
+                                        @endif
                                         @endforeach
+
                                     </select>
                                     <i data-src="{{$data->images->file ?? ''}}" class="fa fa-eye-slash basicTem" style="font-size: 39px;" role="button"></i>
                                 </div>
@@ -104,9 +115,11 @@
                                     <select class="form-control text-center dropdown1 at_id" style="border-right:none">
                                         <option selected=""> --- Select Advance Template --- </option>
                                         @foreach ($advanceType as $data)
+                                        @if($data->state == 'usa' && $data->type == 'advance')
                                         <option value="{{$data->title ?? ''}}" data-src="{{$data->images->file ?? ''}}">
                                             {{$data->title ?? ''}}
                                         </option>
+                                        @endif
                                         @endforeach
                                     </select>
                                     <i data-src="{{$data->images->file ?? ''}}" class="fa fa-eye-slash advanceTem" role="button" style="font-size: 39px;"></i>
@@ -165,11 +178,11 @@
                         <div class="col-md-4">
                             <label for="fname" class="lable">State <span class="redColor">*</span> </label>
                             <div class="dropdown ">
-                                <select name="cars" id="cars" class=" dropdown11">
+                                <select name="cars" id="cars" class=" dropdown11 tax_rate">
                                     <option selected> --- Select --- </option>
-                                    <option value="saab">Saab</option>
-                                    <option value="opel">Opel</option>
-                                    <option value="audi">Audi</option>
+                                    @foreach ($stateTaxes as $stateTax )
+                                    <option value="{{ $stateTax->state }}" data-tax="{{ $stateTax->rate }}">{{ $stateTax->state }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
@@ -236,8 +249,8 @@
 
                     <div class="row mb-3">
                         <div class="col-md-3 mt-4">
-                            <label for="fname" class="lable">HOURLY <span class="redColor">*</span> </label>
-                            <input type="text" id="fname" name="fname" placeholder="Hourly" class="w-100 p-2  textInputFontSize">
+                            <label for="hourly" class="lable">HOURLY <span class="redColor">*</span> </label>
+                            <input type="number" step="0.5" id="hourly" name="hourly" placeholder="Hourly" class="w-100 p-2  textInputFontSize hourly" value="">
                         </div>
 
                         <div class="col-md-3 mt-4">
@@ -376,7 +389,7 @@
                         </div>
                     </div>
 
-                    @foreach ($dedutions as $key => $item)
+                    @foreach ($deduction as $key => $item)
                     <div class="row mb-3 mt-4">
                         <div class="col-md-4 col-lg-3">
                             <i class="fa fa-lock earnbtn2"></i>
@@ -422,18 +435,18 @@
                     </div>
                     <div class="row mb-3 mt-5">
                         <div class="col-md-4 col-lg-3">
-                            <button class="netpaybtn">Net Pay</button>
+                            <button class="netpaybtn net_pay">Net Pay</button>
                         </div>
                         <div class="col-md-1"></div>
                         <div class="col-md-2 col-lg-3"></div>
                         <div class="col-md-1"></div>
                         <div class="col-md-2">
                             <p class="p-0 m-0 text-center" style="font-family: serif;">Net Pay</p>
-                            <input class="earnbtn text-center" value="">
+                            <input class="earnbtn text-center total_net_pay" value="">
                         </div>
                         <div class="col-md-2">
                             <p class="p-0 m-0 text-center" style="font-family: serif;">YTD Net pay</p>
-                            <input class="earnbtn text-center" value="">
+                            <input class="earnbtn text-center total_ytd_net_pay" value="">
                         </div>
                     </div>
                 </div>
@@ -538,18 +551,21 @@
             var hour = ((days - 1) * 8);
             var result = Math.round(Math.abs(hour));
             setTimeout(function() {
+
                 $('.hours').val(result);
+                calculation(0)
             }, 300);
 
         });
-    });
 
-</script>
-<script>
-    $(document).ready(function() {
+
+
         var maxField = 12;
         var addButton = $('.add_button');
-        var wrapper = $('.field_wrapper');
+        var wrapper_1 = $('.field_wrapper');
+        var addDeduction = $('.add_deduction');
+        var wrapper_2 = $('#add_deduction');
+        var net_pay = $('.net_pay');
         var x = 1;
         var i = 1;
 
@@ -577,14 +593,55 @@
                 '</div>';
             if (x < maxField) {
                 x++;
-                $(wrapper).append(fieldHTML);
+                $(wrapper_1).append(fieldHTML);
             }
             i++;
+
             $('.calculation').keyup(function() {
                 var id = $(this).data('id');
                 setTimeout(function() {
                     calculation(id);
                 }, 300);
+            });
+        });
+
+        $(addDeduction).click(function() {
+            var fieldHTML =
+                '<div class="row mb-3">' +
+                '<div class="col-md-3">' +
+                '<i class="fa fa-lock earnbtn2"></i>' +
+                '<input class="earnbtn text-center" type="text" value="">' +
+                '</div>' +
+                '<div class="col-md-1"> </div>' +
+                '<div class="col-md-3"> </div>' +
+                '<div class="col-md-1"> </div>' +
+                '<div class="col-md-2">' +
+                '<input type="number" step="0.01" class="earnbtn text-center tax_deduction tax" value=""/>' +
+                '</div>' +
+                '<div class="col-md-2">' +
+                '<input type="number" step="0.01" class="earnbtn text-center ytd_tax tax" value=""/>' +
+                '</div>' +
+                '</div>';
+            if (x < maxField) {
+                x++;
+                $(wrapper_2).append(fieldHTML);
+            }
+
+
+            $('.tax_deduction').keyup(function() {
+                var value = $(this).val();
+                tax_deduction(value);
+            });
+
+            $('.ytd_tax').keyup(function() {
+                var ytd_tax = 0;
+                $('.ytd_tax').each(function() {
+                    ytd_tax += parseFloat(this.value);
+                });
+                setTimeout(function() {
+                    $(".ytd_deduction_tax").val(ytd_tax);
+                }, 300);
+
             });
         });
 
@@ -630,71 +687,58 @@
         function default_tax() {
             var period_gross_total = $("#period_gross_total").val();
             var ytd_gross_total = $("#ytd_gross_total").val();
-            console.log("period_gross_total", period_gross_total);
-            console.log("ytd_gross_total", ytd_gross_total);
+            var tax_state = $('option:selected', '.tax_rate').attr('data-tax');
+            period_deduction_tax = 0;
+            period_ytd_deduction_tax = 0;
             $('.taxes').each(function() {
                 var taxes_ids = $(this).data('id');
                 var taxes_values = $(this).data('value');
+                var tax_name = $(this).val();
+
+                if (tax_name == 'State Tax') {
+                    taxes_values = parseFloat(tax_state);
+                }
                 period_tax_price = period_gross_total * (taxes_values / 100);
                 period_ytd_tax_price = ytd_gross_total * (taxes_values / 100);
-                $('#taxes_' + taxes_ids).val(period_tax_price);
-                $('#taxes_ytd_' + taxes_ids).val(period_ytd_tax_price);
+
+                $('#taxes_' + taxes_ids).val(parseFloat(period_tax_price).toFixed(2));
+                $('#taxes_ytd_' + taxes_ids).val(parseFloat(period_ytd_tax_price).toFixed(2));
+
+                period_deduction_tax += period_tax_price;
+                period_ytd_deduction_tax += period_ytd_tax_price
+                setTimeout(function() {
+                    $(".deduction_tax").val(parseFloat(period_deduction_tax).toFixed(2));
+                    $(".ytd_deduction_tax").val(parseFloat(period_ytd_deduction_tax).toFixed(2));
+                }, 300);
             });
         }
-    });
 
-</script>
-
-<script>
-    $(document).ready(function() {
-        var maxField = 12;
-        var addDeduction = $('.add_deduction');
-        var wrapper = $('#add_deduction');
-        var x = 1;
-        var i = 1;
-        $(addDeduction).click(function() {
-            var fieldHTML =
-                '<div class="row mb-3">' +
-                '<div class="col-md-3">' +
-                '<i class="fa fa-lock earnbtn2"></i>' +
-                '<input class="earnbtn text-center" type="text" value="">' +
-                '</div>' +
-                '<div class="col-md-1"> </div>' +
-                '<div class="col-md-3"> </div>' +
-                '<div class="col-md-1"> </div>' +
-                '<div class="col-md-2">' +
-                '<input type="number" step="0.01" class="earnbtn text-center tax_deduction tax" value=""/>' +
-                '</div>' +
-                '<div class="col-md-2">' +
-                '<input type="number" step="0.01" class="earnbtn text-center ytd_tax tax" value=""/>' +
-                '</div>' +
-                '</div>';
-            if (x < maxField) {
-                x++;
-                $(wrapper).append(fieldHTML);
+        function tax_deduction(value) {
+            // default_tax();
+            var tax_total = $(".deduction_tax").val();
+            console.log(value);
+            if (value == '') {
+                value = 0;
             }
-            $('.tax_deduction').keyup(function() {
-                var total = 0;
-                $('.tax_deduction').each(function() {
-                    total += parseFloat(this.value);
-                });
-                setTimeout(function() {
-                    $(".deduction_tax").val(total);
-                }, 300);
+            var taxes = parseFloat(tax_total) + parseFloat(value);
+            $(".deduction_tax").val(taxes);
+        }
 
-            });
+        $('.net_pay').click(function() {
+            var period_gross_total = $("#period_gross_total").val();
+            var ytd_gross_total = $("#ytd_gross_total").val();
+            var deduction_tax = $(".deduction_tax").val();
+            var ytd_deduction_tax = $(".ytd_deduction_tax").val();
 
-            $('.ytd_tax').keyup(function() {
-                var ytd_tax = 0;
-                $('.ytd_tax').each(function() {
-                    ytd_tax += parseFloat(this.value);
-                });
-                setTimeout(function() {
-                    $(".ytd_deduction_tax").val(ytd_tax);
-                }, 300);
-
-            });
-        });
+            var total_net_pay = parseFloat(period_gross_total) - parseFloat(deduction_tax);
+            var total_ytd_net_pay = parseFloat(ytd_gross_total) - parseFloat(ytd_deduction_tax);
+            $(".total_net_pay").val(total_net_pay);
+            $(".total_ytd_net_pay").val(total_ytd_net_pay);
+        })
+        $('.hourly').keyup(function() {
+            var id = $(this).val();
+            $('#rate_0').val(id);
+        })
     });
 
 </script>
