@@ -89,11 +89,13 @@
                                 <div class="input-group mmenu mb-3 text-center">
                                     <select class="form-control dropdown1 text-center bt_id" style="border-right:none">
                                         <option selected=""> --- Select Basic Templates --- </option>
+                                        @if($basicType->state == 'usa')
                                         @foreach ($basicType as $data)
                                         <option value="{{$data->title ?? ''}}" data-src="{{$data->images->file ?? ''}}">
                                             {{$data->title}}
                                         </option>
                                         @endforeach
+                                        @endif
                                     </select>
                                     <i data-src="{{$data->images->file ?? ''}}" class="fa fa-eye-slash basicTem" style="font-size: 39px;" role="button"></i>
                                 </div>
