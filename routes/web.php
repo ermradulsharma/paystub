@@ -36,6 +36,13 @@ Route::get('usa', [UsaController::class, 'index']);
 Route::get('canada-paystub', [CanadaController::class, 'index']);
 Route::get('uk-paystub', [UkController::class, 'index']);
 Route::get('globle', [UsaController::class, 'templateGloble']);
+// payal //
+Route::get('pt_green-pdf', [TemplateFormController::class, 'AdvancePtGreenPaystubPDF']);
+Route::get('pt_blue-pdf', [TemplateFormController::class, 'AdvancePtBlueUsaPDF']);
+Route::get('pt_brown-pdf', [TemplateFormController::class, 'AdvancePtBrownUsaPDF']);
+Route::get('prior-pdf', [TemplateFormController::class, 'BasicPriorUsaPDF']);
+Route::get('check-pdf', [TemplateFormController::class, 'AdvanceCheckUsaPDF']);
+Route::get('pin_blue-pdf', [TemplateFormController::class, 'BasicPinBlueUkPDF']);
 
 Route::get('html', [TemplateFormController::class, 'PayStubPDF']);
 Route::get('canada', function () {

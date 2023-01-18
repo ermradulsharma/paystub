@@ -628,13 +628,13 @@ h5 {
     margin-top: -41px;
 }
 
-.payimg2 {
-    width: 741px;
+.payimg2{
+    width: 686px;
     margin-bottom: 28px;
     /* padding-left: 0px; */
     margin-left: -166px;
     margin-top: -123px;
-   
+    height: 564px;
 }
 .img2-p{
     font-size: 17px;
@@ -647,9 +647,11 @@ h5 {
 }
 
 .paytext {
-   
-    bottom: -92px;
-    /* left: 85px; */
+    position: absolute;
+    /* bottom: -136px; */
+    left: 54px !important;
+    font-size: 7px;
+    top: 475px !important;
 }
 
 .canadah4 {
@@ -767,7 +769,11 @@ select {
 .footimg {
     width: 100%;
 }
-
+.youtubeimg{
+    width:418px;
+     height:234px;
+   
+}
 /* w2paystub end */
 
 
@@ -909,7 +915,12 @@ select {
         /* padding-left: 0px; */
         margin-left: -10px;
         margin-top: -55px;
+        height: 443px;
     
+    }
+    .youtubeimg {
+        width: 320px;
+        height: 180px;
     }
 
     .frame1 {
@@ -918,9 +929,12 @@ select {
     }
 
     .paytext {
-        display:;
+        position: absolute;
+        /* bottom: -136px; */
+        left: 54px !important;
+        font-size: 7px;
+        top: 310px !important;
     }
-
     .globleImg {
         max-width: 470px;
         height: auto;
@@ -1069,6 +1083,7 @@ select {
 
     .create-p {
         font-size: 8px;
+    }
 
 @media screen and (max-width: 768px) {
     .globlebtn {
@@ -1088,6 +1103,7 @@ select {
     .mainhead {
         padding: 0px 0px 0px 0px;
         text-align: left !important;
+    }
 
     .tickbox {
         width: 20px;
@@ -1109,11 +1125,16 @@ select {
         font-size: 12px;
     }
 
-    .paytext {
-     
-        bottom: 261px;
-        left: 328px;
-    }
+ 
+        .paytext {
+            position: absolute;
+            /* bottom: -136px; */
+            left: 411px !important;
+            font-size: 7px !important;
+            /* top: 200px; */
+            bottom: 262px;
+        }
+    
 
     /* .globleImg {
             max-width: 961px;
@@ -1194,7 +1215,7 @@ select {
 
     .payimg {
         position: relative;
-        width: 37%;
+        width: 60%;
         top: -10px;
     }
 
@@ -1205,6 +1226,11 @@ select {
         object-fit: cover;
         object-position: 50% 50%;
         left: 30px;
+        height: 307px;
+    }
+    .youtubeimg {
+        width: 230px;
+        height: 131px;
     }
     .storbtn {
         width: 106px;
@@ -1385,6 +1411,8 @@ select {
         object-fit: cover;
         object-position: 50% 50%;
         left: 0;
+        height: 300px;
+}
     }
     .img2-p {
         font-size: 17px;
@@ -1441,6 +1469,13 @@ select {
     .Generate {
         padding: 11px 21px;
         margin-bottom: 10px;
+    }
+    .paytext {
+        position: absolute;
+        /* bottom: -136px; */
+        left: 213px;
+        font-size: 7px;
+        top: 36px;
     }
 }
 
@@ -1597,5 +1632,10 @@ select {
         left: 163px;
         /* font-size: 9px; */
         top: 33px;
+    }
+    .youtubeimg{
+        width: 361px;
+        height: 204px;
+       
     }
 }
