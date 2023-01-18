@@ -8,22 +8,21 @@ use Livewire\Component;
 class ColorCodes extends Component
 {
 
-    public $name,$code, $colorId ,$confirming;
-    public $next=1;
+    public $name, $code, $colorId, $confirming;
+    public $next = 1;
     public $page_title = "Add Color";
 
     public function render()
     {
-        $colors = ColorCode::orderBy('id','asc')->get();
-        return view('livewire.color-codes',compact('colors'));
+        $colors = ColorCode::orderBy('id', 'asc')->get();
+        return view('livewire.color-codes', compact('colors'));
     }
 
     public function addColor()
     {
-            $this->next();
-            $this->resetForm();
-            $this->page_title = "Add Color";
-
+        $this->next();
+        $this->resetForm();
+        $this->page_title = "Add Color";
     }
 
     public function resetForm()
@@ -43,15 +42,14 @@ class ColorCodes extends Component
         ]);
         $this->back();
         $colorObj = ColorCode::find($this->colorId);
-        if(!$colorObj){
+        if (!$colorObj) {
             $colorObj = new ColorCode();
-        $msg="Color saved successfully.";
-
+            $msg = "Color saved successfully.";
         }
         $colorObj->name = $this->name;
         $colorObj->code = $this->code;
         $colorObj->save();
-        $msg="Color Updated successfully.";
+        $msg = "Color Updated successfully.";
 
         $this->resetForm();
         session()->flash('success',  $msg);
