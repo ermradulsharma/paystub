@@ -52,10 +52,11 @@ class Deductions extends Component
         $deductionObj->title = $this->title;
         $deductionObj->price = $this->price;
         $deductionObj->state = $this->state;
+        $deductionObj->type = "deduction_";
         $deductionObj->save();
         $deductionObj->type = "deduction_" . $deductionObj->id;
         $deductionObj->save();
-        
+
         $msg = "Deduction Updated successfully.";
         $this->resetForm();
         session()->flash('success', $msg);
