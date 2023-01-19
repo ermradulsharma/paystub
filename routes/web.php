@@ -51,6 +51,7 @@ Route::get('pin_blue-pdf', [TemplateFormController::class, 'BasicPinBlueUkPDF'])
 Route::get('bluebox-pdf', [TemplateFormController::class, 'AdvanceBlueBoxUsaPDF']);
 Route::get('globle-pdf', [TemplateFormController::class, 'AdvanceglobleUsaPDF']);
 Route::get('modern-pdf', [TemplateFormController::class, 'AdvanceModernUsaPDF']);
+Route::get('sageblue-pdf', [TemplateFormController::class, 'BasicUkPDF']);
 
 Route::get('canada', function () {
     return view('canada');
