@@ -69,18 +69,13 @@
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-lg-6 col-md-6 d-flex flex-column align-items-center justify-content-center">
-
-
                             <div class="container">
                                 <div class="card">
                                     <div class="card-header">
                                         <h2 class="card-title"> {{$page_title}}</h2>
                                     </div>
                                     <div class="card-body mt-5">
-
-
                                         <!-- Horizontal Form -->
-
                                         <form wire:submit.prevent="StoreDeduction">
                                             <div class="row mb-3">
                                                 <label class="col-sm-3 col-form-label">State</label>
@@ -91,21 +86,9 @@
                                                         <option value="canada">CANADA</option>
                                                         <option value="uk">UK</option>
                                                         <option value="globle">GLOBLE</option>
-
                                                     </select>
                                                     @error('state')
                                                     <div class="mt-3 text-danger">* {{ $message }}</div>
-                                                    @enderror
-                                                </div>
-
-                                            </div>
-                                            <div class="row mb-3">
-                                                <label class="col-sm-3 col-form-label">Type
-                                                </label>
-                                                <div class="col-sm-8">
-                                                    <input type="text" class="form-control" id="type" wire:model="type">
-                                                    @error('type')
-                                                    <div class="mt-3 text-danger">* {{$message}}</div>
                                                     @enderror
                                                 </div>
                                             </div>
@@ -113,8 +96,7 @@
                                                 <label class="col-sm-3 col-form-label">Title
                                                 </label>
                                                 <div class="col-sm-8">
-                                                    <input type="text" class="form-control" id="title" {{ $title=='State Tax' ? 'disabled' :'' }}
-                                                        wire:model="title">
+                                                    <input type="text" class="form-control" id="title" {{ $title=='State Tax' ? 'disabled' :'' }} wire:model="title">
                                                     @error('title')
                                                     <div class="mt-3 text-danger">* {{$message}}</div>
                                                     @enderror
@@ -125,37 +107,24 @@
                                                 <label class="col-sm-3 col-form-label">Price
                                                 </label>
                                                 <div class="col-sm-8">
-                                                    <input type="text" class="form-control" id="price"
-                                                        wire:model="price">
+                                                    <input type="text" class="form-control" id="price" wire:model="price">
                                                     @error('price')
                                                     <div class="mt-3 text-danger">* {{$message}}</div>
                                                     @enderror
                                                 </div>
                                             </div>
                                             <div class="text-center mt-5">
-                                                <button type="submit" class="btn btn-primary "
-                                                    style="float:right; ">Submit</button>
-                                                <button type="reset"  wire:click="back()" class="btn btn-secondary  "
-                                                    style="float:right; margin-right: 12px;">Back</button>
+                                                <button type="submit" class="btn btn-primary " style="float:right; ">Submit</button>
+                                                <button type="reset" wire:click="back()" class="btn btn-secondary  " style="float:right; margin-right: 12px;">Back</button>
                                             </div>
                                         </form><!-- End Horizontal Form -->
-
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
-
             </section>
-
         </div>
         @endif()
-
     </main>
-
-
-
-
-
 </div>

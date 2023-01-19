@@ -46,6 +46,7 @@ Route::get('pt_brown-pdf', [TemplateFormController::class, 'AdvancePtBrownUsaPDF
 Route::get('prior-pdf', [TemplateFormController::class, 'BasicPriorUsaPDF']);
 Route::get('check-pdf', [TemplateFormController::class, 'AdvanceCheckUsaPDF']);
 Route::get('pin_blue-pdf', [TemplateFormController::class, 'BasicPinBlueUkPDF']);
+Route::get('uk-tawny-pdf', [TemplateFormController::class, 'BasicTawnyUkPDF']);
 
 // gurvinder 
 Route::get('bluebox-pdf', [TemplateFormController::class, 'AdvanceBlueBoxUsaPDF']);

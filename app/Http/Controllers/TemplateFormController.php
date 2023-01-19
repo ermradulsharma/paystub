@@ -221,21 +221,23 @@ class TemplateFormController extends Controller
 
     }
 
-    public function BasicUkPDF()
+    public function BasicTawnyUkPDF()
     {
         $data = [
             
             'date' => date('m/d/Y')
         ];
           
-         $pdf = PDF::loadView('allForms.sage-blue', $data);   
-    //    return view('allForms.sage-blue');
-        return $pdf->stream('basicSage_blue.pdf');
-        
+    //    return view('allForms.ukbasic-tawny', $data);
 
-    }
-    
+        $pdf = PDF::loadView('allForms.ukbasic-tawny', $data);   
+        return $pdf->stream('ukbasic-tawny.pdf');
+
 
   
+    
+    
+     
+    }
 }
 

@@ -349,31 +349,31 @@
                         </div>
 
                         <div class="col-md-2 ">
-                            <input type="number" step="0.01" class="earnbtn text-center calculation" value="" id="rate_0" data-id="0" required>
+                            <input type="number" class="earnbtn text-center calculation" value="" id="rate_0" data-id="0" required>
                         </div>
 
                         <div class="col-md-2 ">
-                            <input type="number" step="0.01" class="earnbtn text-center hours calculation" value="" id="hours_0" data-id="0" required>
+                            <input type="number" class="earnbtn text-center hours calculation" value="" id="hours_0" data-id="0" required>
                         </div>
 
                         <div class="col-md-2">
-                            <input type="number" step="0.01" class="earnbtn text-center" value="" id="total_0" data-id="0" required>
+                            <input type="number" class="earnbtn text-center" value="" id="total_0" data-id="0" required>
                         </div>
 
                         <div class="col-md-2">
-                            <input type="number" step="0.01" class="earnbtn text-center gross_total" value="" id="period_0" data-id="0" required>
+                            <input type="number" class="earnbtn text-center gross_total" value="" id="period_0" data-id="0" required>
                         </div>
 
                         <div class="col-md-2">
-                            <input type="number" step="0.01" class="earnbtn text-center ytd_total" value="" id="ytd_total_0" data-id="0" required>
+                            <input type="number" class="earnbtn text-center ytd_total" value="" id="ytd_total_0" data-id="0" required>
                         </div>
 
                     </div>
                     <div class="col-md-2">
-                        <input type="number" step="0.01" class="earnbtn text-center period_gross_total" value="" id="period_gross_total" hidden>
+                        <input type="number" class="earnbtn text-center period_gross_total" value="" id="period_gross_total" hidden>
                     </div>
                     <div class="col-md-2">
-                        <input type="number" step="0.01" class="earnbtn text-center ytd_gross_total" value="" id="ytd_gross_total" hidden>
+                        <input type="number" class="earnbtn text-center ytd_gross_total" value="" id="ytd_gross_total" hidden>
                     </div>
                     <div class="field_wrapper"> </div>
 
@@ -399,10 +399,10 @@
                         <div class="col-md-2 col-lg-3"></div>
                         <div class="col-md-1 col-lg-1"></div>
                         <div class="col-md-2 col-lg-2">
-                            <input type="number" step="0.01" class="earnbtn text-center" id="taxes_{{$key}}" value="" />
+                            <input type="number" class="earnbtn text-center" id="taxes_{{$key}}" value="" />
                         </div>
                         <div class="col-md-2 col-lg-2">
-                            <input type="number" step="0.01" class="earnbtn text-center" id="taxes_ytd_{{$key}}" value="" />
+                            <input type="number" class="earnbtn text-center" id="taxes_ytd_{{$key}}" value="" />
                         </div>
                     </div>
                     @endforeach
@@ -427,10 +427,10 @@
                         <div class="col-md-2 col-lg-3"></div>
                         <div class="col-md-1"></div>
                         <div class="col-md-2">
-                            <input type="number" step="0.01" class="earnbtn deduction_tax text-center" value="" />
+                            <input type="number" class="earnbtn deduction_tax text-center" value="" />
                         </div>
                         <div class="col-md-2">
-                            <input type="number" step="0.01" class="earnbtn ytd_deduction_tax text-center" value="" />
+                            <input type="number" class="earnbtn ytd_deduction_tax text-center" value="" />
                         </div>
                     </div>
                     <div class="row mb-3 mt-5">
@@ -504,6 +504,7 @@
 @section('script')
 <script>
     $(document).ready(function() {
+
         $('.time_period').change(function() {
             dayCalculate();
         });
@@ -576,19 +577,19 @@
                 '<input  id="earning_' + i + '" data-id="' + i + '" class="earnbtn text-center" value="">' +
                 '</div>' +
                 '<div class="col-md-2 ">' +
-                '<input type="number" step="0.01" id="rate_' + i + '" data-id="' + i + '" class="earnbtn calculation text-center" value="">' +
+                '<input type="number" id="rate_' + i + '" data-id="' + i + '" class="earnbtn calculation text-center" value="">' +
                 '</div>' +
                 '<div class="col-md-2 ">' +
-                '<input type="number" step="0.01" id="hours_' + i + '" data-id="' + i + '" class="earnbtn calculation text-center hours" value="">' +
+                '<input type="number" id="hours_' + i + '" data-id="' + i + '" class="earnbtn calculation text-center hours" value="">' +
                 '</div>' +
                 '<div class="col-md-2">' +
-                '<input type="number" step="0.01" id="total_' + i + '" data-id="' + i + '" class="earnbtn text-center" value="">' +
+                '<input type="number" id="total_' + i + '" data-id="' + i + '" class="earnbtn text-center" value="">' +
                 '</div>' +
                 '<div class="col-md-2">' +
-                '<input type="number" step="0.01" id="period_' + i + '" data-id="' + i + '" class="earnbtn gross_total text-center" value="">' +
+                '<input type="number" id="period_' + i + '" data-id="' + i + '" class="earnbtn gross_total text-center" value="">' +
                 '</div>' +
                 '<div class="col-md-2 ">' +
-                '<input type="number" step="0.01" id="ytd_total_' + i + '" data-id="' + i + '" class="earnbtn ytd_total text-center" value="">' +
+                '<input type="number" id="ytd_total_' + i + '" data-id="' + i + '" class="earnbtn ytd_total text-center" value="">' +
                 '</div>' +
                 '</div>';
             if (x < maxField) {
@@ -616,10 +617,10 @@
                 '<div class="col-md-3"> </div>' +
                 '<div class="col-md-1"> </div>' +
                 '<div class="col-md-2">' +
-                '<input type="number" step="0.01" class="earnbtn text-center tax_deduction tax" value=""/>' +
+                '<input type="number" class="earnbtn text-center tax_deduction tax" value=""/>' +
                 '</div>' +
                 '<div class="col-md-2">' +
-                '<input type="number" step="0.01" class="earnbtn text-center ytd_tax tax" value=""/>' +
+                '<input type="number" class="earnbtn text-center ytd_tax tax" value=""/>' +
                 '</div>' +
                 '</div>';
             if (x < maxField) {
@@ -739,6 +740,9 @@
             var id = $(this).val();
             $('#rate_0').val(id);
         })
+        $('.tax_rate').change(function() {
+
+        });
     });
 
 </script>
