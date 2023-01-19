@@ -225,6 +225,23 @@ class TemplateFormController extends Controller
 
     }
 
+    public function BasicTawnyUkPDF()
+    {
+        $data = [
+            
+            'date' => date('m/d/Y')
+        ];
+          
+    //    return view('allForms.ukbasic-tawny', $data);
+
+        $pdf = PDF::loadView('allForms.ukbasic-tawny', $data);   
+        return $pdf->stream('ukbasic-tawny.pdf');
+
+
   
+    
+    
+     
+    }
 }
 
