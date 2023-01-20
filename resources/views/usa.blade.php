@@ -179,7 +179,7 @@
                             <label for="fname" class="lable">State <span class="redColor">*</span> </label>
                             <div class="dropdown ">
                                 <select name="cars" id="cars" class=" dropdown11 tax_rate">
-                                    <option selected> --- Select --- </option>
+                                    <option selected value="" data-tax=""> --- Select --- </option>
                                     @foreach ($stateTaxes as $stateTax )
                                     <option value="{{ $stateTax->state }}" data-tax="{{ $stateTax->rate }}">{{ $stateTax->state }}</option>
                                     @endforeach
@@ -299,7 +299,7 @@
                     <div class="row mb-3">
                         <div class="col-md-3 mt-4">
                             <label for="pay_start" class="lable">PAY START<span class="redColor">*</span> </label>
-                            <input type="date" id="pay_start" name="pay_start" placeholder="12-11-2022" class="w-100 p-2 textInputFontSize pay_start" data-id="pay_start">
+                            <input type="date" id="pay_start" name="pay_start" placeholder="12-11-2022" class="w-100 p-2 textInputFontSize pay_start datepicker" data-id="pay_start">
                         </div>
 
                         <div class="col-md-3 mt-4">
@@ -503,18 +503,29 @@
 @endsection
 @section('script')
 <script>
+    var days_number;
     $(document).ready(function() {
 
         $('.time_period').change(function() {
+            var tax_rate = $('.tax_rate').find(":selected").data('tax');
+            tax_rate_1 = parseFloat(tax_rate).toFixed(2);
+            if (tax_rate_1 == '') {
+                alert("Please Select State First.");
+            }
             dayCalculate();
         });
-        
+
         $('.pay_start').change(function() {
             dayCalculate();
         });
 
         function dayCalculate() {
-            var pay_start = $(".pay_start").val();
+            var pay_start = new Date($('.pay_start').val());
+            var day = pay_start.getDate();
+            var month = pay_start.getMonth() + 1;
+            var year = pay_start.getFullYear();
+            var pay_start_1 = year + '-' + (('' + month).length < 2 ? '0' : '') + month + '-' + (('' + day).length < 2 ? '0' : '') + day;
+
             var time_period = $(".time_period").val();
             var dt1 = new Date(pay_start);
             var month = dt1.getMonth() + 1;
@@ -531,13 +542,65 @@
             if (time_period == "bi-monthly") {
                 var day = dt1.getDate() + 61;
             }
+            $('#rate_0').val('');
+            $('#total_0').val();
+            $('#period_0').val('');
+            $('#ytd_total_0').val('');
             var output = dt1.getFullYear() + '-' + (('' + month).length < 2 ? '0' : '') + month + '-' + (('' + day).length < 2 ? '0' : '') + day;
             setTimeout(() => {
                 $(".pay_end").val(output)
             }, 400);
         }
 
-        $('.date_select').click(function() {
+        $('.pay_date').change(function() {
+            var pay_start = new Date($(".pay_start").val());
+            var date = pay_start.getDate();
+            var month = pay_start.getMonth() + 1;
+            var year = pay_start.getFullYear();
+            var pay_start_1 = year + '-' + (('' + month).length < 2 ? '0' : '') + month + '-' + (('' + date).length < 2 ? '0' : '') + date;
+
+            var pay_end = new Date($(".pay_end").val());
+            var date = pay_end.getDate();
+            var month = pay_end.getMonth() + 1;
+            var year = pay_end.getFullYear();
+            var pay_end_1 = year + '-' + (('' + month).length < 2 ? '0' : '') + month + '-' + (('' + date).length < 2 ? '0' : '') + date;
+
+            var pay_date = new Date($(".pay_date").val());
+            var weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            var day = pay_date.getDay();
+            var day_name = weekday[pay_date.getDay()];
+
+            var date = pay_date.getDate();
+            var month = pay_date.getMonth() + 1;
+            var year = pay_date.getFullYear();
+            var pay_date_1 = year + '-' + (('' + month).length < 2 ? '0' : '') + month + '-' + (('' + date).length < 2 ? '0' : '') + date;
+
+            if (pay_date_1 <= pay_end_1) {
+                $('#ytd_total_0').val(parseFloat(0).toFixed(2));
+            } else {
+                var time_period = $(".time_period").val();
+                var dt3 = new Date(pay_start_1);
+                var dt2 = new Date(pay_end_1);
+                var dt1 = new Date(pay_date_1);
+                var mBetween = dt1.getTime() - dt3.getTime();
+                var days = (mBetween / (1000 * 3600 * 24));
+                if (time_period == "weekly") {
+                    days_number = days / 7;
+                }
+                if (time_period == "bi-weekly") {
+                    days_number = days / 14;
+                }
+                if (time_period == "monthly") {
+                    days_number = days / 30;
+                }
+                if (time_period == "bi-monthly") {
+                    days_number = days / 61;
+                }
+                calculation(0);
+            }
+        });
+
+        /* $('.date_select').click(function() {
             var pay_start = $(".pay_start").val();
             var pay_end = $(".pay_end").val();
 
@@ -550,15 +613,14 @@
 
             var mBetween = dt2.getTime() - dt1.getTime();
             var days = (mBetween / (1000 * 3600 * 24));
-            var hour = ((days - 1) * 8);
+            // var hour = ((days - 1) * 8);
             var result = Math.round(Math.abs(hour));
             setTimeout(function() {
-
                 $('.hours').val(result);
                 calculation(0)
             }, 300);
 
-        });
+        }); */
 
 
 
@@ -660,7 +722,7 @@
             var rate = parseFloat($('#rate_' + id).val()).toFixed(2);
             var hours = parseFloat($('#hours_' + id).val()).toFixed(2);
             var total = rate * hours;
-            var ytd_total = total * 52;
+            var ytd_total = total * parseInt(days_number);
             setTimeout(function() {
                 $('#total_' + id).val(parseFloat(total).toFixed(2));
                 $('#period_' + id).val(parseFloat(total).toFixed(2));
@@ -747,8 +809,8 @@
         }
         $('.hourly').keyup(function() {
             var id = $(this).val();
-            $('#rate_0').val(id);
-        })
+            $('#rate_0').val(parseFloat(id).toFixed(2));
+        });
         $('.tax_rate').change(function() {
             calculation(0);
         });
