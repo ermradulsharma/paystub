@@ -26,50 +26,69 @@
                         <h5>Company Info</h5>
                         <div class="row mb-3 ">
                             <div class="col-md-6 mt-1">
-                                <label for="cname" class="lable">EMPLOYER (COMPANY) NAME <span class="redColor">*</span> </label>
-                                <input type="text" id="cname" name="cname" placeholder="Your Employer & Company Name" class="w-100 p-2 text-center textInputFontSize" required>
+                                <div>
+                                    <label for="cname" class="lable">EMPLOYER (COMPANY) NAME <span class="redColor">*</span> </label>
+                                    <input type="text" id="cname" name="cname" placeholder="Your Employer & Company Name" class="w-100 p-2 text-center textInputFontSize" required>
+                                </div>
                             </div>
 
                             <div class="col-md-6 mt-1">
-                                <label for="tel" class="lable">EMPLOYER TELEPHONE NUMBER <span class="redColor">*</span> </label>
-                                <input type="tel" id="tel" name="tel" placeholder="123-234-4565" class="w-100 p-2 text-center textInputFontSize" required>
-                            </div>
-
-                        </div>
-
-                        <div class="row mb-3">
-                            <div class="col-md-12">
-                                <label for="address_1" class="lable">STREET ADDRESS 1 <span class="redColor">*</span> </label>
-                                <input type="text" id="address_1" name="address_1" placeholder="Your Employer Address" class="w-100 p-2  textInputFontSize" required>
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <div class="col-md-12">
-                                <label for="address_2" class="lable">STREET ADDRESS 2 <span class="redColor">*</span> </label>
-                                <input type="text" id="address_2" name="address_2" placeholder="Suite 101 or Apt 101 (optional)" class="w-100 p-2  textInputFontSize" required>
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <div class="col-md-4">
-                                <label for="city" class="lable">City <span class="redColor">*</span> </label>
-                                <input type="text" id="city" name="city" placeholder="Your Employer City" class="w-100 p-2  textInputFontSize" required>
-                            </div>
-                            <div class="col-md-4">
-                                <label for="state" class="lable">State <span class="redColor">*</span> </label>
-                                <div class="dropdown ">
-                                    <select name="cars" id="state" class="state dropdown11">
-                                        <option selected> --- Select --- </option>
-                                        @foreach ($stateTaxes as $stateTax )
-                                        <option value="{{ $stateTax->state }}">{{ $stateTax->state }}</option>
-                                        @endforeach
-                                    </select>
+                                <div>
+                                    <label for="tel" class="lable">EMPLOYER TELEPHONE NUMBER <span class="redColor">*</span> </label>
+                                    <input type="tel" id="tel" name="tel" placeholder="123-234-4565" class="w-100 p-2 text-center textInputFontSize" required>
                                 </div>
                             </div>
+
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-12">
+                                <div>
+                                    <label for="address_1" class="lable">STREET ADDRESS 1 <span class="redColor">*</span> </label>
+                                    <input type="text" id="address_1" name="address_1" placeholder="Your Employer Address" class="w-100 p-2  textInputFontSize" required>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-12">
+                                <div>
+                                    <label for="address_2" class="lable">STREET ADDRESS 2 <span class="redColor">*</span> </label>
+                                    <input type="text" id="address_2" name="address_2" placeholder="Suite 101 or Apt 101 (optional)" class="w-100 p-2  textInputFontSize" required>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
                             <div class="col-md-4">
-                                <label for="zip_code" class="lable">Zip Code <span class="redColor">*</span> </label>
-                                <input type="text" id="zip_code" name="zip_code" placeholder=" Zip Code" class="w-100 p-2  textInputFontSize" required>
+                                <div>
+                                    <label for="city" class="lable">City <span class="redColor">*</span> </label>
+                                    <input type="text" id="city" name="city" placeholder="Your Employer City" class="w-100 p-2  textInputFontSize" required>
+                                </div>
+
+                            </div>
+                            <div class="col-md-4">
+                                <div>
+                                    <label for="state" class="lable">State <span class="redColor">*</span> </label>
+                                    <div class="dropdown ">
+                                        <select name="cars" id="state" class="state dropdown11" required>
+                                            <option> --- Select --- </option>
+                                            @foreach ($stateTaxes as $stateTax )
+                                            <option value="{{ $stateTax->state }}">{{ $stateTax->state }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-4">
+                                <div>
+                                    <label for="zip_code" class="lable">Zip Code <span class="redColor">*</span> </label>
+                                    <input type="text" id="zip_code" name="zip_code" placeholder=" Zip Code" class="w-100 p-2  textInputFontSize" required>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -88,7 +107,7 @@
                                 <div class="mt-4">
                                     <div class="input-group mmenu mb-3 text-center">
                                         <select class="form-control dropdown1 text-center bt_id small-font basicTemp" style="margin-right:10px; font-size:18px;">
-                                            <option selected> --- Select Basic Templates --- </option>
+                                            <option> --- Select Basic Templates --- </option>
                                             @foreach ($basicType as $data)
                                             @if($data->state == 'usa' && $data->type == 'basic')
                                             <option value="{{$data->title ?? ''}}" data-src="{{$data->images->file ?? ''}}">
@@ -110,7 +129,7 @@
                                 <div class="mt-4">
                                     <div class="input-group mmenu mb-3">
                                         <select class="form-control text-center dropdown1 at_id small-font advanceTemp" style="margin-right:10px; font-size:18px;">
-                                            <option selected=""> --- Select Advance Template --- </option>
+                                            <option> --- Select Advance Template --- </option>
                                             @foreach ($advanceType as $data)
                                             @if($data->state == 'usa' && $data->type == 'advance')
                                             <option value="{{$data->title ?? ''}}" data-src="{{$data->images->file ?? ''}}">
@@ -139,54 +158,78 @@
                     <div class=" box-usa">
                         <div class="row mb-3">
                             <div class="col-md-4 mt-4">
-                                <label for="emp_name" class="lable">EMPLOYEE NAME <span class="redColor">*</span> </label>
-                                <input type="text" id="emp_name" name="emp_name" placeholder="Your Full  Name" class="w-100 p-2  textInputFontSize" required>
-                            </div>
-
-                            <div class="col-md-4 mt-4">
-                                <label for="emp_id" class="lable">EMPLOYEE ID <span class="redColor">*</span> </label>
-                                <input type="text" id="emp_id" name="emp_id" placeholder="Employer ID" class="w-100 p-2 r textInputFontSize" required>
-                            </div>
-                            <div class="col-md-4 mt-4">
-                                <label for="emp_ssn" class="lable">EMPLOYEE SSN last4 <span class="redColor">*</span> </label>
-                                <input type="text" id="emp_ssn" name="emp_ssn" placeholder="1224" class="w-100 p-2  textInputFontSize" required>
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <div class="col-md-12">
-                                <label for="emp_street_1" class="lable">STREET 1 <span class="redColor">*</span></label>
-                                <input type="text" id="emp_street_1" name="emp_street_1" placeholder="Your Address" class="w-100 p-2  textInputFontSize" required>
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <div class="col-md-12">
-                                <label for="emp_street_2" class="lable">STREET 2 <span class="redColor">*</span> </label>
-                                <input type="text" id="emp_street_2" name="emp_street_2" placeholder="Suite 101 or Apt 101(optional)" class="w-100 p-2  textInputFontSize" required>
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <div class="col-md-4">
-                                <label for="emp_city" class="lable">City <span class="redColor">*</span> </label>
-                                <input type="text" id="emp_city" name="emp_city" placeholder="Your City" class="w-100 p-2  textInputFontSize" required>
-                            </div>
-                            <div class="col-md-4">
-                                <label for="emp_state" class="lable">State <span class="redColor">*</span> </label>
-                                <div class="dropdown ">
-                                    <select name="emp_state" id="emp_state" class=" dropdown11 tax_rate">
-                                        <option selected value="" data-tax=""> --- Select --- </option>
-                                        @foreach ($stateTaxes as $stateTax )
-                                        <option value="{{ $stateTax->state }}" data-tax="{{ $stateTax->rate }}">{{ $stateTax->state }}</option>
-                                        @endforeach
-                                    </select>
-                                    <span class="d-none text-center redColor">Please Select State</span>
+                                <div>
+                                    <label for="emp_name" class="lable">EMPLOYEE NAME <span class="redColor">*</span> </label>
+                                    <input type="text" id="emp_name" name="emp_name" placeholder="Your Full  Name" class="w-100 p-2  textInputFontSize" required>
                                 </div>
+
+                            </div>
+
+                            <div class="col-md-4 mt-4">
+                                <div>
+                                    <label for="emp_id" class="lable">EMPLOYEE ID <span class="redColor">*</span> </label>
+                                    <input type="text" id="emp_id" name="emp_id" placeholder="Employer ID" class="w-100 p-2 r textInputFontSize" required>
+                                </div>
+
+                            </div>
+                            <div class="col-md-4 mt-4">
+                                <div>
+                                    <label for="emp_ssn" class="lable">EMPLOYEE SSN last4 <span class="redColor">*</span> </label>
+                                    <input type="text" id="emp_ssn" name="emp_ssn" placeholder="1224" class="w-100 p-2  textInputFontSize" required>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-12">
+                                <div>
+                                    <label for="emp_street_1" class="lable">STREET 1 <span class="redColor">*</span></label>
+                                    <input type="text" id="emp_street_1" name="emp_street_1" placeholder="Your Address" class="w-100 p-2  textInputFontSize" required>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-12">
+                                <div>
+                                    <label for="emp_street_2" class="lable">STREET 2 <span class="redColor">*</span> </label>
+                                    <input type="text" id="emp_street_2" name="emp_street_2" placeholder="Suite 101 or Apt 101(optional)" class="w-100 p-2  textInputFontSize" required>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-4">
+                                <div>
+                                    <label for="emp_city" class="lable">City <span class="redColor">*</span> </label>
+                                    <input type="text" id="emp_city" name="emp_city" placeholder="Your City" class="w-100 p-2  textInputFontSize" required>
+                                </div>
+
                             </div>
                             <div class="col-md-4">
-                                <label for="emp_zip_code" class="lable">Zip Code <span class="redColor">*</span> </label>
-                                <input type="text" id="emp_zip_code" name="emp_zip_code" placeholder=" 1234" class="w-100 p-2  textInputFontSize" required>
+                                <div>
+                                    <label for="emp_state" class="lable">State <span class="redColor">*</span> </label>
+                                    <div class="dropdown ">
+                                        <select name="emp_state" id="emp_state" class=" dropdown11 tax_rate" required>
+                                            <option value="" data-tax=""> --- Select --- </option>
+                                            @foreach ($stateTaxes as $stateTax )
+                                            <option value="{{ $stateTax->state }}" data-tax="{{ $stateTax->rate }}">{{ $stateTax->state }}</option>
+                                            @endforeach
+                                        </select>
+                                        <span class="d-none text-center redColor">Please Select State</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-4">
+                                <div>
+                                    <label for="emp_zip_code" class="lable">Zip Code <span class="redColor">*</span> </label>
+                                    <input type="text" id="emp_zip_code" name="emp_zip_code" placeholder=" 1234" class="w-100 p-2  textInputFontSize" required>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -201,85 +244,107 @@
                     <div class=" box-usa">
                         <div class="row mb-3">
                             <div class="col-md-3 mt-4">
-                                <label for="emp_your_state" class="lable">SELECT YOUR STATE <span class="redColor">*</span> </label>
-                                <div class="dropdown ">
-                                    <select name="emp_your_state" id="emp_your_state" class=" dropdown11">
-                                        <option selected>Choose your State</option>
-                                        @foreach ($stateTaxes as $stateTax )
-                                        <option value="{{ $stateTax->state }}" data-tax="{{ $stateTax->rate }}">{{ $stateTax->state }}</option>
-                                        @endforeach
+                                <div>
+                                    <label for="emp_your_state" class="lable">SELECT YOUR STATE <span class="redColor">*</span> </label>
+                                    <div class="dropdown ">
+                                        <select name="emp_your_state" id="emp_your_state" class=" dropdown11" required>
+                                            <option>Choose your State</option>
+                                            @foreach ($stateTaxes as $stateTax )
+                                            <option value="{{ $stateTax->state }}" data-tax="{{ $stateTax->rate }}">{{ $stateTax->state }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-3 mt-4">
+                                <div>
+                                    <label for="auto_cal" class="lable">AUTO CALCULATOR <span class="redColor">*</span> </label>
+                                    <select name="auto_cal" id="auto_cal" class="dropdown11 auto_calculate">
+                                        <option> --- Select Calculator --- </option>
+                                        <option value="on">ON</option>
+                                        <option value="off">OFF</option>
                                     </select>
                                 </div>
+
                             </div>
 
                             <div class="col-md-3 mt-4">
-                                <label for="auto_cal" class="lable">AUTO CALCULATOR <span class="redColor">*</span> </label>
-                                <select name="auto_cal" id="auto_cal" class="dropdown11 auto_calculate">
-                                    <option selected> --- Select Calculator --- </option>
-                                    <option value="on">ON</option>
-                                    <option value="off">OFF</option>
-                                </select>
+                                <div>
+                                    <label for="marital_status" class="lable">MARITAL STATUS <span class="redColor">*</span> </label>
+                                    <select name="marital_status" id="marital_status" class="dropdown11 marital_status">
+                                        <option> --- Select Marital Status--- </option>
+                                        <option value="single">Single</option>
+                                        <option value="married">Married</option>
+                                        <option value="other">Prefered top not say</option>
+                                    </select>
+                                </div>
+
                             </div>
 
                             <div class="col-md-3 mt-4">
-                                <label for="marital_status" class="lable">MARITAL STATUS <span class="redColor">*</span>
-                                </label>
-                                <select name="marital_status" id="marital_status" class="dropdown11 marital_status">
-                                    <option selected> --- Select Marital Status--- </option>
-                                    <option value="single">Single</option>
-                                    <option value="married">Married</option>
-                                    <option value="other">Prefered top not say</option>
-                                </select>
-                            </div>
+                                <div>
+                                    <label for="time_period" class="lable">HOW DO YOU GET PAID <span class="redColor">*</span> </label>
+                                    <select name="time_period" id="time_period" class="dropdown11 time_period" required>
+                                        <option> --- Select --- </option>
+                                        <option value="weekly">Weekly</option>
+                                        <option value="bi-weekly">Bi-Weekly</option>
+                                        <option value="monthly">Monthly</option>
+                                        <option value="bi-monthly">Bi-Monthly</option>
+                                    </select>
+                                </div>
 
-                            <div class="col-md-3 mt-4">
-                                <label for="time_period" class="lable">HOW DO YOU GET PAID <span class="redColor">*</span>
-                                </label>
-                                <select name="time_period" id="time_period" class="dropdown11 time_period">
-                                    <option selected> --- Select --- </option>
-                                    <option value="weekly">Weekly</option>
-                                    <option value="bi-weekly">Bi-Weekly</option>
-                                    <option value="monthly">Monthly</option>
-                                    <option value="bi-monthly">Bi-Monthly</option>
-                                </select>
                             </div>
                         </div>
 
                         <div class="row mb-3">
                             <div class="col-md-3 mt-4">
-                                <label for="hourly" class="lable">HOURLY <span class="redColor">*</span> </label>
-                                <input type="number" step="0.5" id="hourly" name="hourly" placeholder="Hourly" class="w-100 p-2  textInputFontSize hourly" value="">
+                                <div>
+                                    <label for="hourly" class="lable">HOURLY <span class="redColor">*</span> </label>
+                                    <input type="number" step="0.5" id="hourly" name="hourly" placeholder="Hourly" class="w-100 p-2  textInputFontSize hourly" value="" required>
+                                </div>
+
                             </div>
 
                             <div class="col-md-3 mt-4">
-                                <label for="emp_type" class="lable">EMPLOYMENT TYPE <span class="redColor">*</span> </label>
-                                <select name="emp_type" id="emp_type" class=" dropdown11">
-                                    <option selected> --- Select Employment Type --- </option>
-                                    <option value="saab">Temporary</option>
-                                    <option value="opel">Permanent</option>
-                                </select>
+                                <div>
+                                    <label for="emp_type" class="lable">EMPLOYMENT TYPE <span class="redColor">*</span> </label>
+                                    <select name="emp_type" id="emp_type" class=" dropdown11" required>
+                                        <option> --- Select Employment Type --- </option>
+                                        <option value="saab">Temporary</option>
+                                        <option value="opel">Permanent</option>
+                                    </select>
+                                </div>
+
                             </div>
 
                             <div class="col-md-3 mt-4">
-                                <label for="exemptions" class="lable">EXEMPTIONS <span class="redColor">*</span> </label>
-                                <select name="exemptions" id="exemptions" class=" dropdown11">
-                                    <option selected> --- Select Exemptions --- </option>
-                                    <option value="saab">0</option>
-                                    <option value="opel">1</option>
-                                    <option value="opel">2</option>
-                                    <option value="opel">3</option>
-                                    <option value="opel">4</option>
-                                    <option value="opel">5</option>
-                                    <option value="opel">6</option>
-                                    <option value="opel">7</option>
-                                    <option value="opel">8</option>
-                                    <option value="opel">9</option>
-                                </select>
+                                <div>
+                                    <label for="exemptions" class="lable">EXEMPTIONS <span class="redColor">*</span> </label>
+                                    <select name="exemptions" id="exemptions" class=" dropdown11" required>
+                                        <option> --- Select Exemptions --- </option>
+                                        <option value="saab">0</option>
+                                        <option value="opel">1</option>
+                                        <option value="opel">2</option>
+                                        <option value="opel">3</option>
+                                        <option value="opel">4</option>
+                                        <option value="opel">5</option>
+                                        <option value="opel">6</option>
+                                        <option value="opel">7</option>
+                                        <option value="opel">8</option>
+                                        <option value="opel">9</option>
+                                    </select>
+                                </div>
+
                             </div>
 
                             <div class="col-md-3 mt-4">
-                                <label for="currency" class="lable" class="redColor">SELECT YOUR PREFERRED CURRENCY <span class="redColor">*</span> </label>
-                                <input type="text" id="currency" name="currency" placeholder="$(USD)" class="w-100 p-2  textInputFontSize" required>
+                                <div>
+                                    <label for="currency" class="lable" class="redColor">SELECT YOUR PREFERRED CURRENCY <span class="redColor">*</span> </label>
+                                    <input type="text" id="currency" name="currency" placeholder="$(USD)" class="w-100 p-2  textInputFontSize" required>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -296,18 +361,27 @@
                     <div class=" box-usa">
                         <div class="row mb-3">
                             <div class="col-md-3 mt-4">
-                                <label for="pay_start" class="lable">PAY START<span class="redColor">*</span> </label>
-                                <input type="date" id="pay_start" name="pay_start" placeholder="12-11-2022" class="w-100 p-2 textInputFontSize pay_start datepicker" data-id="pay_start" required>
+                                <div>
+                                    <label for="pay_start" class="lable">PAY START<span class="redColor">*</span> </label>
+                                    <input type="date" id="pay_start" name="pay_start" placeholder="12-11-2022" class="w-100 p-2 textInputFontSize pay_start datepicker" data-id="pay_start" required>
+                                </div>
+
                             </div>
 
                             <div class="col-md-3 mt-4">
-                                <label for="pay_end" class="lable">PAY END <span class="redColor">*</span> </label>
-                                <input type="date" id="pay_end" name="pay_end" placeholder="12-17-2022" class="w-100 p-2 textInputFontSize pay_end" data-id="pay_end" required>
+                                <div>
+                                    <label for="pay_end" class="lable">PAY END <span class="redColor">*</span> </label>
+                                    <input type="date" id="pay_end" name="pay_end" placeholder="12-17-2022" class="w-100 p-2 textInputFontSize pay_end" data-id="pay_end" required>
+                                </div>
+
                             </div>
 
                             <div class="col-md-3 mt-4">
-                                <label for="pay_date" class="lable">PAY DATE <span class="redColor">*</span> </label>
-                                <input type="date" id="pay_date" name="pay_date" placeholder="12-19-2022" class="w-100 p-2 textInputFontSize pay_date" data-id="pay_date" required>
+                                <div>
+                                    <label for="pay_date" class="lable">PAY DATE <span class="redColor">*</span> </label>
+                                    <input type="date" id="pay_date" name="pay_date" placeholder="12-19-2022" class="w-100 p-2 textInputFontSize pay_date" data-id="pay_date" required>
+                                </div>
+
                             </div>
 
                             <div class="col-md-3 mt-4">
@@ -489,20 +563,20 @@
                 </div>
             </div>
         </div>
-    </form>
 
-    <div>
-        <div class="mb-4 d-flex" style="justify-content: space-between; align-items: center;">
-            <div class="text-left mt-1">
-                <button class="previewbtn text-capitalize">Preview Your Paystub <i class="fa fa-eye" style="font-size: 30px; margin-left: 7px;"></i></button>
-            </div>
-            <div class="text-right mt-1" style="margin-right:30px;">
-                <button class="emailbtn text-capitalize" data-toggle="modal" data-target="#myModal"> <i class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL PAYSTUB <i class="fa fa-download ml-4" style="font-size:24px"></i></button>
+
+        <div>
+            <div class="mb-4 d-flex" style="justify-content: space-between; align-items: center;">
+                <div class="text-left mt-1">
+                    <button class="previewbtn text-capitalize" type="submit">Preview Your Paystub <i class="fa fa-eye" style="font-size: 30px; margin-left: 7px;"></i></button>
+                </div>
+                <div class="text-right mt-1" style="margin-right:30px;">
+                    <button class="emailbtn text-capitalize" data-toggle="modal" data-target="#myModal"> <i class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL PAYSTUB <i class="fa fa-download ml-4" style="font-size:24px"></i></button>
+                </div>
             </div>
         </div>
-    </div>
 
-
+    </form>
 </div>
 @endsection
 @section('script')
@@ -512,83 +586,98 @@
     $("#usa_paystubx").validate({
         rules: {
             cname: {
-                required:true,
+                required: true,
             },
             tel: {
+                required: true
+            , }
+            , address_1: {
+                required: true
+            , }
+            , address_2: {
+                required: true
+            , }
+            , city: {
+                required: true
+            , }
+            , emp_name: {
+                required: true
+            , }
+            , emp_id: {
+                required: true
+            , }
+            , emp_ssn: {
+                required: true
+            , }
+            , emp_street_1: {
+                required: true
+            , }
+            , emp_street_2: {
+                required: true
+            , }
+            , emp_city: {
+                required: true
+            , },
+            state:{
                 required:true,
             },
-            address_1: {
+            emp_state:{
                 required:true,
-            },
-            address_2:{
-                required:true,
-            },
-            city:{
-                required:true,
-            },
-            emp_name:{
-                required:true,
-            },
-            emp_id:{
-                required:true,
-            },
-            emp_ssn:{
-                required:true,
-            },
-            emp_street_1:{
-                required:true,
-            },
-            emp_street_2:{
-                required:true,
-            },
-            emp_city:{
-                required:true,
-            },
-        },
-        messages: {
+            }
+        , }
+        , messages: {
             cname: {
-                required:"This field is requierd.",
+                required: "This field is requierd."
+            }
+            , tel: {
+                required: "This field is requierd."
+            }
+            , address_1: {
+                required: "This field is requierd."
+            }
+            , address_2: {
+                required: "This field is requierd."
+            }
+            , city: {
+                required: "This field is requierd."
+            }
+            , emp_name: {
+                required: "This field is requierd."
+            }
+            , emp_id: {
+                required: "This field is requierd."
+            }
+            , emp_ssn: {
+                required: "This field is requierd."
+            }
+            , emp_street_1: {
+                required: "This field is requierd."
+            }
+            , emp_street_2: {
+                required: "This field is requierd."
+            }
+            , emp_city: {
+                required: "This field is requierd."
             },
-            tel: {
-                required:"This field is requierd.",
+            state:{
+                required:"This field is requierd."
             },
-            address_1: {
-                required:"This field is requierd.",
-            },
-            address_2:{
-                required:"This field is requierd.",
-            },
-            city:{
-                required:"This field is requierd.",
-            },
-            emp_name:{
-                required:"This field is requierd.",
-            },
-            emp_id:{
-                required:"This field is requierd.",
-            },
-            emp_ssn:{
-                required:"This field is requierd.",
-            },
-            emp_street_1:{
-                required:"This field is requierd.",
-            },
-            emp_street_2:{
-                required:"This field is requierd.",
-            },
-            emp_city:{
-                required:"This field is requierd.",
-            },
-        },
-        // debug: false, errorElement: 'small', errorPlacement: function(error, element) {
-        //     console.log(error);
-        //     error.insertBefore(element.parent().parent().children("div"));
-        // },
-        // errorClass: 'error text-danger', submitHandler: function(form) {
-        //     console.log(form.validator);
-        //     //form.submit();
-        //     return false;
-        // }
+            emp_state:{
+                required:"This field is requierd."
+            }
+        , }
+        , debug: false
+        , errorElement: 'small'
+        , errorPlacement: function(error, element) {
+            console.log(error);
+            error.insertAfter(element.parent().parent().children('div'));
+        }
+        , errorClass: 'error text-danger'
+        , submitHandler: function(form) {
+            console.log(form.validator);
+            //form.submit();
+            return false;
+        }
     });
 
 </script>
