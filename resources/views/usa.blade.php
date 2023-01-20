@@ -82,12 +82,12 @@
             <div class="row mb-3">
                 <div class="col-md-12">
                     <div class=" box-usa">
-                        <div class="d-flex justify-content-between mb-3">
-                            <div class="col-md-5 col-lg-5 col-sm-12 m-auto  text-center" style="padding: -1px 35px;">
+                        <div class="d-flex justify-content-between mb-3 flex">
+                            <div class="col-md-5 col-lg-6 col-sm-12 mt-5  text-center">
                                 <h6 style="" class="base">BASIC TEMPLATES</h6>
                                 <div class="mt-4">
                                     <div class="input-group mmenu mb-3 text-center">
-                                        <select class="form-control dropdown1 text-center bt_id " style="border-right:none">
+                                        <select class="form-control dropdown1 text-center bt_id" style="margin-right:10px; font-size:18px;">
                                             <option selected> --- Select Basic Templates --- </option>
                                             @foreach ($basicType as $data)
                                             @if($data->state == 'usa' && $data->type == 'basic')
@@ -102,14 +102,14 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-2  text-center sh">
+                            <div class="text-center sh">
                                 <img src="images/hrpng.png" style="height: 200px;">
                             </div>
-                            <div class="col-md-5 col-sm-12 mt-5 text-center">
+                            <div class="col-md-5 col-lg-6 col-sm-12 mt-5 text-center">
                                 <h6 style="margin-left:-23px;font-weight: 900;">ADVANCED TEMPLATES</h6>
                                 <div class="mt-4">
                                     <div class="input-group mmenu mb-3">
-                                        <select class="form-control text-center dropdown1 at_id" style="border-right:none">
+                                        <select class="form-control text-center dropdown1 at_id" style="margin-right:10px; font-size:18px;">
                                             <option selected=""> --- Select Advance Template --- </option>
                                             @foreach ($advanceType as $data)
                                             @if($data->state == 'usa' && $data->type == 'advance')

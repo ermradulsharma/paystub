@@ -644,7 +644,7 @@ h5 {
 }
 
 .base {
-    margin-left: 70px;
+    /* margin-left: 70px; */
     font-weight: 900;
 }
 
@@ -1497,6 +1497,9 @@ select {
         left: 213px;
         font-size: 7px;
         top: 36px;
+    }
+    .flex {
+        display: inline-block !important;
     }
 }
 
