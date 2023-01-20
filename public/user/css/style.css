@@ -1,179 +1,7 @@
-@font-face {
-    font-family: 'Futura Md BT';
-    src: url('FONT/FuturaBT-BoldItalic.woff2') format('woff2'),
-        url('FONT/FuturaBT-BoldItalic.woff') format('woff');
-    font-weight: bold;
-    font-style: italic;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Futura Hv BT';
-    src: url('FONT/FuturaBT-Heavy.woff2') format('woff2'),
-        url('FONT/FuturaBT-Heavy.woff') format('woff');
-    font-weight: 900;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Futura XBlk BT';
-    src: url('FONT/FuturaBT-ExtraBlack.woff2') format('woff2'),
-        url('FONT/FuturaBT-ExtraBlack.woff') format('woff');
-    font-weight: 900;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Futura BdCn BT';
-    src: url('FONT/FuturaBT-BoldCondensed.woff2') format('woff2'),
-        url('FONT/FuturaBT-BoldCondensed.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Futura Lt BT';
-    src: url('FONT/FuturaBT-Light.woff2') format('woff2'),
-        url('FONT/FuturaBT-Light.woff') format('woff');
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Futura Bk BT';
-    src: url('FONT/FuturaBT-BookItalic.woff2') format('woff2'),
-        url('FONT/FuturaBT-BookItalic.woff') format('woff');
-    font-weight: normal;
-    font-style: italic;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Futura Hv BT';
-    src: url('FONT/FuturaBT-HeavyItalic.woff2') format('woff2'),
-        url('FONT/FuturaBT-HeavyItalic.woff') format('woff');
-    font-weight: 900;
-    font-style: italic;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Futura';
-    src: url('FONT/Futura-Bold.woff2') format('woff2'),
-        url('FONT/Futura-Bold.woff') format('woff');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Futura Bk BT';
-    src: url('FONT/FuturaBT-Book.woff2') format('woff2'),
-        url('FONT/FuturaBT-Book.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Futura';
-    src: url('FONT/Futura-CondensedLight.woff2') format('woff2'),
-        url('FONT/Futura-CondensedLight.woff') format('woff');
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Futura Lt BT';
-    src: url('FONT/FuturaBT-LightItalic.woff2') format('woff2'),
-        url('FONT/FuturaBT-LightItalic.woff') format('woff');
-    font-weight: 300;
-    font-style: italic;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Futura LtCn BT';
-    src: url('FONT/FuturaBT-LightCondensed.woff2') format('woff2'),
-        url('FONT/FuturaBT-LightCondensed.woff') format('woff');
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Futura XBlk BT';
-    src: url('FONT/FuturaBT-ExtraBlack.woff2') format('woff2'),
-        url('FONT/FuturaBT-ExtraBlack.woff') format('woff');
-    font-weight: 900;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Futura Md BT';
-    src: url('FONT/FuturaBT-Medium.woff2') format('woff2'),
-        url('FONT/FuturaBT-Medium.woff') format('woff');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Futura Md BT';
-    src: url('FONT/FuturaBT-MediumItalic.woff2') format('woff2'),
-        url('FONT/FuturaBT-MediumItalic.woff') format('woff');
-    font-weight: 500;
-    font-style: italic;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Futura MdCn BT';
-    src: url('FONT/FuturaBT-MediumCondensed.woff2') format('woff2'),
-        url('FONT/FuturaBT-MediumCondensed.woff') format('woff');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Futura';
-    src: url('FONT/Futura-Black-Bold.woff2') format('woff2'),
-        url('FONT/Futura-Black-Bold.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Futura XBlkCnIt BT';
-    src: url('FONT/FuturaBT-ExtraBlackCondItalic.woff2') format('woff2'),
-        url('FONT/FuturaBT-ExtraBlackCondItalic.woff') format('woff');
-    font-weight: 900;
-    font-style: italic;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Futura';
-    src: url('FONT/Futura-Bold.woff2') format('woff2'),
-        url('FONT/Futura-Bold.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-}
 
 
-body {
-    font-family: 'Futura';
 
-}
+
 
 .redColor {
     
@@ -283,8 +111,7 @@ body {
 .instant {
 
     color: white;
-    font-family: Futura, Trebuchet MS, Arial, sans-serif;
-    font-weight: 400;
+    font-family: 'Futura LT';
     font-size: 58px;
 }
 
@@ -296,11 +123,10 @@ body {
     word-spacing: 1px;
     letter-spacing: 1px;
     font-weight: 200;
+    font-family: 'Futura LT';
 
 }
-
 .Generate {
-    font-family: serif;
     width: 312px;
     height: 56px;
     border-radius: 63px;
@@ -310,20 +136,18 @@ body {
     margin: auto;
     font-size: x-large;
     color: white;
+    font-family: 'Futura LT';
 }
 
-.Generate1 {
-    font-family: serif;
-    /* width: 399px; */
-    /* height: 24px; */
+.Generate1 {    
     border-radius: 63px;
     background-color: #ff0000;
     display: table-cell;
     font-weight: 600;
-    /* margin: auto; */
     font-size: x-large;
     color: white;
     padding: 10px 54px;
+    font-family: 'Futura LT';
 }
 
 .storbtn {
@@ -336,22 +160,24 @@ body {
     font-size: 42px;
     font-weight: 400;
     margin: 0;
+    font-family: 'Futura LT';
 }
-
 .ukh1 {
     font-size: 46px;
+    font-family: 'Futura LT';
 }
 
 .ukp1 {
     font-weight: 200;
-    /* font-family: sans-serif; */
     font-size: 16px;
     color: black;
+    font-family: 'Futura LT';
 }
 
 .ukli {
     font-size: 20px;
     font-weight: 200;
+    font-family: 'Futura LT';
 }
 
 .img2 {
@@ -365,25 +191,23 @@ body {
 }
 
 .WithPaystubX {
-
     font-size: 52px;
-    font-weight: 500;
-    font-family: Futura, Trebuchet MS, Arial, sans-serif;
-
-
+    font-weight: 600;
+    font-family: 'Futura LT';
 }
 
 .Show {
 
     font-size: 50px;
-    font-weight: 300;
-    font-family: Futura, Trebuchet MS, Arial, sans-serif;
+    font-weight: 500;
+    font-family: 'Futura LT';
 
 }
 
 .Createpay {
     font-size: 33px;
-    font-family: Futura, Trebuchet MS, Arial, sans-serif;
+    font-family: 'Futura LT';
+    font-weight: 600;
 }
 
 .proof {
@@ -613,7 +437,6 @@ body {
 
 
 .CreatePaystub {
-    font-family: serif;
     width: 312px;
     height: 64px;
     border-radius: 63px;
@@ -621,7 +444,7 @@ body {
     font-weight: 700;
     margin: auto;
     font-size: xx-large;
-
+    font-family: 'Futura LT';
 }
 
 .template-box {
