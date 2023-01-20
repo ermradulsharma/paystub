@@ -36,7 +36,7 @@
 
 <body>
     <div class="container" style="max-width:1500px">
-        <ul class="nav nav-justified navbar">
+        <ul class="nav nav-justified navbar" style="max-width: 1445px;">
             <li class="nav-item">
                 <a href="{{ url('/') }}"><img class="mr-3 mt-5" src="images/Paystub X.webp"
                         style="width: 222px;"></a>
@@ -61,7 +61,7 @@
                 <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('form') ? 'active' : '' }}"
                     href="{{ url('form') }}">W-2 FORM</a>
             </li>
-            <li class="nav-item float-rigth ml-3 ">
+            <li class="nav-item  ml-3 ">
                 <a class="btn btn-lg py-2 w-100 mt-5 btn-danger login " href="{{ url('login') }}">Login</a>
             </li>
         </ul>

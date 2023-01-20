@@ -1398,7 +1398,7 @@ select {
     }
 
     .emailbtn {
-        font-size: 14px;
+        font-size: 10px;
         color: #ffffff;
         background: #12c23a;
         /* background-image: radial-gradient(white, #6bb0fd); */
@@ -1562,11 +1562,11 @@ select {
     }
 
     .emailbtn {
-        font-size: 14px;
+        font-size: 10px;
         color: #ffffff;
         background: #12c23a;
         /* background-image: radial-gradient(white, #6bb0fd); */
-        padding: 1px 0px;
+        padding: 2px 0px;
         border: none;
         border-radius: 4px;
         box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, .6));
