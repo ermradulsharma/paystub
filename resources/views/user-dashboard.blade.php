@@ -4,6 +4,7 @@
 
 
 <div>
+<div>
     <div class="container mt-5" style="max-width: 1500px;">
         <div class="row">
             <div class="col-lg-12 d-flex justify-content-end">
@@ -111,5 +112,6 @@
         <p style="margin-top: 0;" class="">Click on Continue, to  complete your order</p>
         </div>
     </div>
+</div>
 </div>
 @endsection
