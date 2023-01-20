@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CanadaController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\TemplateFormController;
 use App\Http\Controllers\UkController;
 use App\Http\Controllers\UsaController;
@@ -22,6 +23,11 @@ use Symfony\Component\Routing\Router;
 Route::get('/', function () {
     return view('paystub');
 });
+// Route::get('auth/google', 'redirectToGoogle')->name('auth.google');
+// Route::get('auth/google/callback', 'handleGoogleCallback');
+Route::get('Login', [LoginController::class, 'loginWithGoogle'])->name('login.google');
+Route::any('callback', [LoginController::class, 'callbackFromGoogle'])->name('callback');
+
 Route::get('generate-pdf', [W2FormController::class, 'generatePDF']);
 Route::get('preview-pdf', [W2FormController::class, 'previewPDF']);
 
@@ -48,7 +54,7 @@ Route::get('check-pdf', [TemplateFormController::class, 'AdvanceCheckUsaPDF']);
 Route::get('pin_blue-pdf', [TemplateFormController::class, 'BasicPinBlueUkPDF']);
 Route::get('uk-tawny-pdf', [TemplateFormController::class, 'BasicTawnyUkPDF']);
 
-// gurvinder 
+// gurvinder
 Route::get('bluebox-pdf', [TemplateFormController::class, 'AdvanceBlueBoxUsaPDF']);
 Route::get('globle-pdf', [TemplateFormController::class, 'AdvanceglobleUsaPDF']);
 Route::get('modern-pdf', [TemplateFormController::class, 'AdvanceModernUsaPDF']);
@@ -94,6 +100,7 @@ Route::get('userDashboard', function () {
 
 
 
+
 Route::name('admin')->prefix('backend')->group(function () {
 
 
@@ -116,5 +123,9 @@ Route::name('admin')->prefix('backend')->group(function () {
     Route::get('deduction', function () {
         return view('Admin/deduction');
     });
- 
+
 });
+
+
+
+
