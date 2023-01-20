@@ -628,16 +628,16 @@ h5 {
     margin-top: -41px;
 }
 
-.payimg2{
+.payimg2 {
     width: 686px;
-    margin-bottom: 28px;
+    margin-bottom: 32px;
     /* padding-left: 0px; */
     margin-left: -166px;
     margin-top: -123px;
     height: 564px;
 }
 .img2-p{
-    font-size: 17px;
+    font-size: 18px;
     font-weight: 200;
 }
 
@@ -652,6 +652,8 @@ h5 {
     left: 54px !important;
     font-size: 7px;
     top: 475px !important;
+    margin-top: -47px;
+
 }
 
 .canadah4 {
@@ -861,6 +863,14 @@ select {
         left: 179px;
         font-weight: 200;
         line-height: 35.5px;
+    }
+    .payimg2 {
+        width: 686px;
+        /* margin-bottom: 32px; */
+        /* padding-left: 0px; */
+        margin-left: -166px;
+        margin-top: -136px;
+        height: 564px;
     }
 }
 
