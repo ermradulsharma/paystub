@@ -37,13 +37,13 @@
         }
 
         .section_2 {
-            padding-top: 15px;
+            padding-top: 5px;
             background: #a9a9a9;
             color: white;
-            height: 62px;
+            height: 35px;
         }
-        
-        
+
+
 
 
 
@@ -69,7 +69,15 @@
 
         .hadding1 {
             padding-left: 20px;
-            font-size: 13px;
+            font-size: 14px;
+        }
+
+        td {
+            font-size: 16px;
+        }
+
+        th {
+            font-size: 15px;
         }
     </style>
 </head>
@@ -80,11 +88,11 @@
     <div class="section_2">
         <table style="width: 100%;">
             <thead style="background-color: #a9a9a9;">
-                <th style="padding-left:20px;" >#767767</th>
-                
+                <th style="padding-left:20px;">#767767</th>
+
                 <th style="text-align:right; padding-right:20px; font-size:larger;">
-               
-                Earning Statement</th>
+
+                    Earning Statement</th>
 
             </thead>
         </table>
@@ -93,16 +101,16 @@
     <section class="infomation">
         <div class="row">
             <div class="col">
-                <table>
+                <table style="margin-left: 26px;margin-top:12px;">
 
                     <tr>
-                        <th colspan="4">Paystubx ,Inc </th>
+                        <th style="font-size: 22px;" colspan="4">Paystubx ,Inc </th>
 
 
                     </tr>
                     <tr>
 
-                        <td colspan="4">
+                        <td colspan="4" style="font-size: 18px;">
                             235 Austin Hwy <br>
                             Jaimaika NY.11433,
                             USA
@@ -112,13 +120,14 @@
 
 
                     <tr>
-                        <th style=" padding-top: 10px; " colspan="4">Marital Status: <span> single </span> </th>
+                        <th style=" padding-top: 10px; " colspan="4">Marital Status: <span style="font-weight: 300;">
+                                single </span> </th>
 
 
                     </tr>
 
                     <tr>
-                        <th colspan="4">Exemptions: <span> 0 </span> </th>
+                        <th colspan="4">Exemptions: <span style="font-weight: 300;"> 0 </span> </th>
 
 
                     </tr>
@@ -139,7 +148,8 @@
                 <table style=" padding-top: 0px; padding-left: 70%;">
 
                     <tr>
-                        <th style=" padding-top: 10px; ">Pay Period: 3/3/2022 </th>
+                        <th style=" padding-top: 10px; ">Pay Period: <span style="font-weight: 300;">3/3/2022</span>
+                        </th>
                         <th></th>
                         <th></th>
                         <th> </th>
@@ -148,7 +158,7 @@
                     </tr>
 
                     <tr>
-                        <th>Pay Date:: <span> 0 </span> </th>
+                        <th>Pay Date: <span style="font-weight: 300;"> 0 </span> </th>
                         <th></th>
                         <th></th>
                         <th> </th>
@@ -167,8 +177,8 @@
                     </tr>
 
                     <tr>
-                        <th>Employee #: 2214 </th>
-                        <th></th>
+                        <th>Employee #: <span style="font-weight: 300;">2214</span> </th>
+                        <th> </th>
                         <th></th>
                         <th> </th>
                         <th></th>
@@ -184,11 +194,15 @@
                             Jamaica, NY. 45641 <br> USA
                         </td>
                         <td></td>
-                        <td></td>
+
                         <td>
 
                         </td>
                         <td></td>
+                    </tr>
+
+                    <tr>
+                        <th>Social Security#: <span style="font-weight:200;">***_**_5546</span></th>
                     </tr>
 
                 </table>

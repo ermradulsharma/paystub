@@ -8,25 +8,20 @@ use File;
 
 class TemplateFormController extends Controller
 {
-    public function BasicPaystubPDF()
+    public function BasicPaystubUsaPDF()
     {
         $data = [
 
             'date' => date('m/d/Y')
         ];
           
-        // return view('allForms.Temp1');
-         
+      
+        // return view('allForms.Temp1', $data);
        
-         $pdf = PDF::loadView('allForms.Temp1', $data);
+      
+     $pdf = PDF::loadView('allForms.Temp1', $data);
          
-         return $pdf->stream('W2Paystubx.pdf');
-        return view('allForms.Temp1', $data);
-         
-       
-        //  $pdf = PDF::loadView('allForms.Temp1', $data);
-         
-        //  return $pdf->stream('W2Paystubx.pdf');
+         return $pdf->stream('BasicPaystubx.pdf');
     
      
     }
