@@ -83,14 +83,12 @@
                 <div class="col-md-12">
                     <div class=" box-usa">
                         <div class="d-flex justify-content-between mb-3">
-                            <div class="col-md-5 col-sm-12 m-auto  text-center" style="padding: -1px 35px;">
+                            <div class="col-md-5 col-lg-5 col-sm-12 m-auto  text-center" style="padding: -1px 35px;">
                                 <h6 style="" class="base">BASIC TEMPLATES</h6>
                                 <div class="mt-4">
-                                    {{-- <i class="fa fa-angle-down down"></i> --}}
                                     <div class="input-group mmenu mb-3 text-center">
-                                        <select class="form-control dropdown1 text-center bt_id" style="border-right:none">
-                                            <option selected=""> --- Select Basic Templates --- </option>
-
+                                        <select class="form-control dropdown1 text-center bt_id " style="border-right:none">
+                                            <option selected> --- Select Basic Templates --- </option>
                                             @foreach ($basicType as $data)
                                             @if($data->state == 'usa' && $data->type == 'basic')
                                             <option value="{{$data->title ?? ''}}" data-src="{{$data->images->file ?? ''}}">
@@ -98,7 +96,6 @@
                                             </option>
                                             @endif
                                             @endforeach
-
                                         </select>
                                         <i data-src="{{$data->images->file ?? ''}}" class="fa fa-eye-slash basicTem" style="font-size: 39px;" role="button"></i>
                                     </div>
@@ -111,7 +108,6 @@
                             <div class="col-md-5 col-sm-12 mt-5 text-center">
                                 <h6 style="margin-left:-23px;font-weight: 900;">ADVANCED TEMPLATES</h6>
                                 <div class="mt-4">
-                                    {{-- <i class="fa fa-angle-down down1"></i> --}}
                                     <div class="input-group mmenu mb-3">
                                         <select class="form-control text-center dropdown1 at_id" style="border-right:none">
                                             <option selected=""> --- Select Advance Template --- </option>
@@ -519,6 +515,7 @@
             var tax_rate = $('.tax_rate').find(":selected").data('tax');
             if (tax_rate == '') {
                 $("span").removeClass("d-none");
+                $('.tax_rate').focus();
             }
             dayCalculate();
         });
