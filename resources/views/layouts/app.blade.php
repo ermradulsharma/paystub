@@ -159,16 +159,16 @@
                 <div class="col-lg-3 text-center m-auto">
                     <div class="container justify-content-center text-left">
                         <div>
-                            <a class="w-100 footbtn" style="font-family: Futura,Trebuchet MS,Arial,sans-serif; font-size:20px;" href="{{url('terms')}}">Terms & Conditions</a>
+                            <a class="w-100 footbtn" style="font-family: 'Futura LT'; font-size:20px;" href="{{url('terms')}}">Terms & Conditions</a>
                         </div>
                         <div class="mt-3">
-                            <a class="w-100 footbtn" style="font-family: Futura,Trebuchet MS,Arial,sans-serif; font-size:20px;" href="{{url('privacy')}}">Privacy Policy</a>
+                            <a class="w-100 footbtn" style="font-family: 'Futura LT'; font-size:20px;" href="{{url('privacy')}}">Privacy Policy</a>
                         </div>
                         <div class="mt-3">
-                            <a class="w-100 footbtn" style="font-family: Futura,Trebuchet MS,Arial,sans-serif; font-size:20px;" href="{{url('refund')}}">Refund Policy</a>
+                            <a class="w-100 footbtn" style="font-family: 'Futura LT'; font-size:20px;" href="{{url('refund')}}">Refund Policy</a>
                         </div>
                         <div class="mt-3">
-                            <a class="w-100 footbtn" style="font-family: Futura,Trebuchet MS,Arial,sans-serif; font-size:20px;" href="{{url('contact')}}">Contact Us</a>
+                            <a class="w-100 footbtn" style="font-family: 'Futura LT'; font-size:20px;" href="{{url('contact')}}">Contact Us</a>
                         </div>
                     </div>
                 </div>
@@ -180,7 +180,7 @@
                 </div>
                 <div class="col-lg-5 text-center m-auto ">
                     <div class="container  justify-content-center">
-                        <p class="text-white" style="font-family: Futura,Trebuchet MS,Arial,sans-serif; font-size:20px;">COPYRIGHT © 2022 PaystubX,<br> ALL RIGHTS RESERVED.</p>
+                        <p class="text-white" style="font-family: 'Futura LT'; font-size:20px;">COPYRIGHT © 2022 PaystubX,<br> ALL RIGHTS RESERVED.</p>
                         <div class="container">
                             <a href="https://www.google.com/" target="_blank"><i class="fa fa-facebook   fbicon " aria-hidden="true"></i></a>
                             <a href="https://www.google.com/" target="_blank"><i class="fa fa-instagram ml-2 socialicon" aria-hidden="true"></i></a>

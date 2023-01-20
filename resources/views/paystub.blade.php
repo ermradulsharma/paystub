@@ -57,19 +57,19 @@
         <div class="col-lg-4">
             <h1 class="WithPaystubX mt-3"> With Paystub<span class="text-danger">X</span></h1>
             <h3 class="Show"> Show proof of income. </h3>
-            <ul style="font-weight: 200; font-size: 21px; line-height:1.5em;" class="mt-4">
+            <ul style="font-size: 20px;line-height:1.5em;font-family: 'Futura LT';" class="mt-4">
                 <li class=" mt-2 proof"> Rent an apartment ✅</li>
                 <li class=" mt-2 proof"> Qualify for a mortgage ✅</li>
                 <li class=" mt-2 proof">Request a small business loan ✅</li>
                 <li class=" mt-2 proof"> Verify income for child support or alimony ✅</li>
                 <li class=" mt-2 proof"> Apply for health insurance ✅</li>
             </ul>
-            <p style="font-weight: 200; font-size:25px;" class="mt-3">Generate 100% Legal Pay Stubs in seconds.</p>
+            <p style="font-size:25px; font-family: 'Futura LT';" class="mt-3">Generate 100% Legal Pay Stubs in seconds.</p>
         </div>
         <div class="col-lg-4"></div>
         <div class="col-lg-4">
             <h3 class="Createpay"> Create pay stubs for your employees. </h3>
-            <ul style="font-weight: 200; font-size: 21px; line-height:1.5em;" class="mt-4">
+            <ul style="font-size: 20px;line-height:1.5em;font-family: 'Futura LT';" class="mt-4">
                 <li class="mt-2 proof">Help employees qualify for loans, housing & more ✅</li>
                 <li class="mt-2 proof">Comply with state and local employment laws ✅</li>
                 <li class="mt-2 proof">RequestBe transparent with compensation ✅</li>
@@ -82,14 +82,14 @@
         <div class="col-lg-4">
             <img src="images/previewed.png" class="payimg">
             <div class="paytext">
-                <p style="font-size: 22px;color: #363636;font-weight:300; line-height:1em ">TAX FILING HAS NEVER BEEN
+                <p style="font-size: 22px;color: #363636; line-height:1em; font-family: 'Futura LT'; ">TAX FILING HAS NEVER BEEN
                     EASY
                 </p>
-                <p class="text-black text-capitalize" style="font-size: 30px;font-weight: 300;line-height:1em;">Handling
+                <p class="text-black text-capitalize" style="font-size: 30px;line-height:1em; font-family: 'Futura LT';">Handling
                     Payroll
                     Yourself?
                 </p>
-                <p class="text-danger" style="font-size: 30px;font-weight: 300;line-height:1.5em;">You are at the right
+                <p class="text-danger" style="font-size: 30px;line-height:1.5em; font-family: 'Futura LT';">You are at the right
                     place!
                 </p>
 
@@ -116,39 +116,39 @@
     <div class="container pt-5" style="max-width: 1750px;">
         <div class="">
             <div class="text-justify text-center pb-5">
-                <h2 style="font-size:30px; font-family: Futura,Trebuchet MS,Arial,sans-serif;" class="text-white pt-5">
+                <h2 style="font-size:30px; font-family: 'Futura LT';" class="text-white pt-5">
                     Generate paystubs with accurate tax
                     calculations, W-2, 1099S Etc in Seconds</h2>
                 <div class="row mt-5">
                     <div class="col-md-4 text-center">
-                        <h2 style="font-size:37px;font-family: Futura,Trebuchet MS,Arial,sans-serif;"
+                        <h2 style="font-size:37px;font-family: 'Futura LT'"
                             class="text-white calcheading">Add your Data</h2>
                     </div>
                     <div class="col-md-4 text-center">
-                        <h2 style="font-size:37px;    font-family: Futura,Trebuchet MS,Arial,sans-serif;"
+                        <h2 style="font-size:37px;font-family: 'Futura LT'"
                             class="text-white calcheading">Preview Data</h2>
                     </div>
                     <div class="col-md-4 text-center">
-                        <h2 style="font-size:37px;    font-family: Futura,Trebuchet MS,Arial,sans-serif;"
+                        <h2 style="font-size:37px;font-family: 'Futura LT'"
                             class="text-white pay-h2 calcheading">Download & Email your Paystub</h2>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-lg-4 col-md-4">
-                        <p style="font-size:17px;font-weight: 200;" class="text-white pay-p">Our paystub generator
+                        <p style="font-size:17px;font-weight: 200;font-family: 'Futura LT';line-height:1.8;" class="text-white pay-p">Our paystub generator
                             accurately</br>
                             calculates your Federal and State</br> taxes, including Social security </br>and Medicare
                             taxes so you don't
                         </p>
                     </div>
                     <div class="col-lg-4 col-md-4">
-                        <p style="font-size:17px;font-weight: 200;" class="text-white pay-p">Generate pay stubs with
+                        <p style="font-size:17px;font-weight: 200;font-family: 'Futura LT'; line-height:1.8;" class="text-white pay-p">Generate pay stubs with
                             accurate</br>
                             state income taxes, based on </br>state W-4, and other applicable</br> local taxes. </p>
                     </div>
                     <div class="col-lg-4 col-md-4">
-                        <p style="font-size:17px;font-weight: 200;" class="text-white pay-p">You will get to generate
+                        <p style="font-size:17px;font-weight: 200;font-family: 'Futura LT'; line-height:1.8;" class="text-white pay-p">You will get to generate
                             unlimited</br>
                             payslip, paycheck or paystub </br>according to the plan you select.
                         </p>
@@ -178,7 +178,7 @@
 
 <div>
     <div class="container text-justify text-center pb-5">
-        <h1 style="font-size:38px;     font-family: Futura,Trebuchet MS,Arial,sans-serif;" class="pt-5">Why do Small
+        <h1 style="font-size:30px;font-family: font-family: 'Futura'; font-weight:600;" class="pt-5">Why do Small
             Businesses Love Paystub<span class="text-danger">X</span>?</h1>
 
         <div class="row mt-5">
@@ -191,14 +191,14 @@
                             <div class="card card-bordered border-dark pb-5">
                                 <div class="card-img-block">
                                     <div class="info-box mt-3"
-                                        style="font-size:22px;     font-family: Futura,Trebuchet MS,Arial,sans-serif;">
+                                        style="font-size:20px;font-family: 'Futura'; font-weight:300;">
                                         <b>Accurate Tax Calculations </b>
                                     </div>
                                 </div>
                                 <div class="card-body pt-5 pb-5">
                                     <img src="images/salary.webp" class="salary">
                                     <p class="card-text text-center mt-5 pb-4"
-                                        style=" color:#767672; font-size:20px; line-height:2em; font-family:sans-serif">
+                                        style=" color:#767672; font-size:20px; line-height:2em; font-family: 'Futura LT';">
                                         Keeping
                                         payroll records is a complex task. Once you set everything up, we take care of
                                         it
@@ -221,14 +221,14 @@
                             <div class="card card-bordered border-dark pb-1">
                                 <div class="card-img-block">
                                     <div class="info-box mt-3"
-                                        style="font-size:22px;  font-family: Futura,Trebuchet MS,Arial,sans-serif;">
+                                        style="font-size:25px;font-family: 'Futura'; font-weight:300;">
                                         <b> Form W-2</b>
                                     </div>
                                 </div>
                                 <div class="card-body pt-5">
                                     <img src="images/NYCFreeTaxPrep-Documents-W2.webp" class="salary">
                                     <p class="card-text text-center mt-4"
-                                        style=" color:#767672; font-size:20px; line-height:2em; font-family:sans-serif">
+                                        style=" color:#767672; font-size:21.5px; line-height:2em; font-family: 'Futura LT';">
                                         A W-2 tax form shows important information about the income you've earned from
                                         your employer, amount of taxes withheld from your paycheck, benefits provided
                                         and other information for the year. You use this form to file your federal and
@@ -248,14 +248,14 @@
                             <div class="card card-bordered border-dark  pb-5">
                                 <div class="card-img-block ">
                                     <div class="info-box mt-3"
-                                        style="font-size:22px;  font-family: Futura,Trebuchet MS,Arial,sans-serif;">
+                                        style="font-size:25px;font-family:'Futura'; font-weight:300;">
                                         <b>1099-MISC</b>
                                     </div>
                                 </div>
                                 <div class="card-body pt-5 pb-5">
                                     <img src="images/2573180.webp" class="salary mb-3">
                                     <p class="card-text text-center mt-4 pb-5 mb-4"
-                                        style=" color:#767672; font-size:20px; line-height:2em; font-family:sans-serif; ">
+                                        style="  color:#767672; font-size:23px; line-height:2em; font-family: 'Futura LT'; ">
 
                                         Form 1099-MISC reports payments other than nonemployee compensation made by a
                                         trade or business to others.
@@ -324,23 +324,23 @@
             <div class="col-md-1"></div>
 
             <div class="col-md-6 text-left mb-5">
-                <div class="mt-5 " style="font-size: 32px; font-family: Futura,Trebuchet MS,Arial,sans-serif;">
+                <div class="mt-5 " style="font-size: 32px; font-family: 'Futura LT'; font-weight:600;">
                     Ready to Explore our Online Paystub Generator?
                 </div>
                 <div>
                     <ul>
 
 
-                        <li class="mt-2" style="font-weight: 200; font-size: 21px; line-height:1.5em;"> W-2 - Efile with
+                        <li class="mt-2" style="font-weight: 200; font-size: 20px; line-height:1.5em; font-family: 'Futura LT';"> W-2 - Efile with
                             SSA, Distribute to Employees. ✅</li>
 
 
-                        <li class="mt-2" style="font-weight: 200; font-size: 21px; line-height:1.5em;">1099-NEC,
+                        <li class="mt-2" style="font-weight: 200; font-size: 20px; line-height:1.5em; font-family: 'Futura LT';">1099-NEC,
                             1099-MISC - Efile with IRS, Distribute
                             Contractor✅</li>
 
 
-                        <li class="mt-2" style="font-weight: 200; font-size: 21px; line-height:1.5em;">Request a small
+                        <li class="mt-2" style="font-weight: 200; font-size: 20px; line-height:1.5em; font-family: 'Futura LT';">Request a small
                             business loan ✅</li>
                     </ul>
                 </div>
@@ -351,10 +351,10 @@
 
             <div class="col-md-5 text-left mb-5 ">
                 <div class="mt-5">
-                    <b style="font-size: 24px; font-weight: 500; font-family: Futura,Trebuchet MS,Arial,sans-serif;">
+                    <b style="font-size: 24px; font-weight: 600; font-family: 'Futura LT';">
                         Generate Paystubs Using our<span class="text-danger"> Android or iOS
                             App</span></b>
-                    <p style="font-size: 18px; font-weight: 300;line-height: 30.5px;" class="mt-1 ">Generate paystubs
+                    <p style="font-size: 20px;line-height: 35px;font-family: 'Futura LT';" class="mt-1 ">Generate paystubs
                         instantly by using our
                         paystub
                         generator app.</br>

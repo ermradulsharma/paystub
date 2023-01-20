@@ -636,9 +636,11 @@ h5 {
     margin-top: -123px;
     height: 564px;
 }
-.img2-p{
-    font-size: 18px;
-    font-weight: 200;
+.img2-p {
+    font-size: 20px;
+    font-family: 'Futura LT';
+    color: rgba(0, 0, 0,0.7);
+    line-height: 1.8;
 }
 
 .base {
@@ -682,6 +684,7 @@ h5 {
     letter-spacing: 1.5px;
     display: flex;
     max-width: 312px;
+    font-family: 'Futura LT';
 }
 
 .paddingleft {
@@ -746,6 +749,7 @@ select {
     padding: 6px 4px;
     border-radius: 4px;
     font-weight: 200;
+    font-family: 'Futura LT';
 }
 
 .payp:hover {
