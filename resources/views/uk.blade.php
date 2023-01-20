@@ -63,7 +63,7 @@
             <div class="ukp">Create Payslips For Yourself</div>
 
 
-            <div class="uktext">
+            <div style="font-size:34px" class="uktext">
                 Create Payslips For Your Employees</div>
 
 
@@ -150,14 +150,14 @@
 <div class="row" style="background:#2c2b69;">
     <div class="col-12 my-5 text-justify text-center text-white">
         <div class=" text-justify text-center text-white">
-            <h1>Generate 100% Legal UK Payslips</h1>
+            <h1 style="font-family: 'Futura LT';">Generate 100% Legal UK Payslips</h1>
             <div class="my-3 d-flex">
                 <a class="Generate btn-lg btn" href="{{url('uk-paystub') }}">Generate Paystub
                     Now</a>
 
 
             </div>
-            <h2>Simple as ABC</h2>
+            <h2 style="font-family: 'Futura LT';">Simple as ABC</h2>
         </div>
 
     </div>

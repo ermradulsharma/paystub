@@ -61,7 +61,7 @@ Route::get('check-pdf', [TemplateFormController::class, 'AdvanceCheckUsaPDF']);
 Route::get('pin_blue-pdf', [TemplateFormController::class, 'BasicPinBlueUkPDF']);
 Route::get('uk-tawny-pdf', [TemplateFormController::class, 'BasicTawnyUkPDF']);
 
-// gurvinder 
+// gurvinder
 Route::get('bluebox-pdf', [TemplateFormController::class, 'AdvanceBlueBoxUsaPDF']);
 Route::get('globle-pdf', [TemplateFormController::class, 'AdvanceglobleUsaPDF']);
 Route::get('modern-pdf', [TemplateFormController::class, 'AdvanceModernUsaPDF']);
@@ -101,6 +101,9 @@ Route::get('template-view', function () {
 Route::get('userDashboard', function () {
     return view('user-dashboard');
 });
+Route::get('prizing', function () {
+    return view('prizing');
+});
 
 
 
@@ -130,9 +133,9 @@ Route::name('admin')->prefix('backend')->group(function () {
     Route::get('deduction', function () {
         return view('Admin/deduction');
     });
- 
+
 });
 
 
-   
+
 

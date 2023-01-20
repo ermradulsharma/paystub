@@ -468,8 +468,8 @@ input:hover {
 
 .mainhead {
     padding: 0px 225px 2px 4px;
+    font-family: 'Futura LT';
 }
-
 
 .google-btn {
     width: 203px;
@@ -644,7 +644,7 @@ h5 {
 }
 
 .base {
-    margin-left: 70px;
+    /* margin-left: 70px; */
     font-weight: 900;
 }
 
@@ -662,15 +662,18 @@ h5 {
     font-weight: 300;
     font-size: 42px;
     letter-spacing: 1.5px;
+    font-family: 'Futura LT';
 }
 
 .canadah2 {
     font-size: 40px;
-    font-family: avenir-lt-w01_35-light1475496, sans-serif;
+    font-family: 'Futura LT';
+    font-weight: 600;
 }
 
 .canadah1 {
     font-size: -webkit-xxx-large;
+    font-family: 'Futura LT';
 }
 
 .canadap {
@@ -696,6 +699,7 @@ h5 {
 .uktext {
     font-size: 42px;
     font-weight: 300;
+    font-family: 'Futura LT';
 }
 
 .create-p {
@@ -1095,9 +1099,11 @@ select {
     }
 }
 
-    .create-p {
-        font-size: 8px;
-    }
+.create-p {
+    font-family: 'Futura LT';
+    font-size: 16px;
+    line-height: 1.8;
+}
 
 @media screen and (max-width: 768px) {
     .globlebtn {
@@ -1392,7 +1398,7 @@ select {
     }
 
     .emailbtn {
-        font-size: 14px;
+        font-size: 10px;
         color: #ffffff;
         background: #12c23a;
         /* background-image: radial-gradient(white, #6bb0fd); */
@@ -1492,6 +1498,12 @@ select {
         font-size: 7px;
         top: 36px;
     }
+    .flex {
+        display: inline-block !important;
+    }
+    .small-font {
+        font-size: 14px;
+    }
 }
 
 @media screen and (max-width: 375px) {
@@ -1502,6 +1514,9 @@ select {
         bottom: -253px;
         left: 4px;
         font-weight: 200;
+    }
+    .small-font {
+        font-size: 14px !important;
     }
 
     .payimg {
@@ -1556,11 +1571,11 @@ select {
     }
 
     .emailbtn {
-        font-size: 14px;
+        font-size: 10px;
         color: #ffffff;
         background: #12c23a;
         /* background-image: radial-gradient(white, #6bb0fd); */
-        padding: 1px 0px;
+        padding: 2px 0px;
         border: none;
         border-radius: 4px;
         box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, .6));
