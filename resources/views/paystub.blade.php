@@ -135,19 +135,19 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-lg-4">
+                    <div class="col-lg-4 col-md-4">
                         <p style="font-size:17px;font-weight: 200;" class="text-white pay-p">Our paystub generator
                             accurately</br>
                             calculates your Federal and State</br> taxes, including Social security </br>and Medicare
                             taxes so you don't
                         </p>
                     </div>
-                    <div class="col-lg-4">
+                    <div class="col-lg-4 col-md-4">
                         <p style="font-size:17px;font-weight: 200;" class="text-white pay-p">Generate pay stubs with
                             accurate</br>
                             state income taxes, based on </br>state W-4, and other applicable</br> local taxes. </p>
                     </div>
-                    <div class="col-lg-4">
+                    <div class="col-lg-4 col-md-4">
                         <p style="font-size:17px;font-weight: 200;" class="text-white pay-p">You will get to generate
                             unlimited</br>
                             payslip, paycheck or paystub </br>according to the plan you select.
@@ -156,15 +156,15 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-lg-4">
+                    <div class="col-lg-4 col-md-4">
                         <img src="images/1.webp"
                             style=" width: 94px; height: 94px; object-fit: cover; object-position: 50% 50%;">
                     </div>
-                    <div class="col-lg-4">
+                    <div class="col-lg-4 col-md-4">
                         <img src="images/2.webp"
                             style=" width: 94px; height: 94px; object-fit: cover; object-position: 50% 50%;">
                     </div>
-                    <div class="col-lg-4">
+                    <div class="col-lg-4 col-md-4">
                         <img src="images/3.webp"
                             style=" width: 94px; height: 94px; object-fit: cover; object-position: 50% 50%;">
                     </div>

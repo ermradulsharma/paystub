@@ -647,7 +647,7 @@ h5 {
 }
 
 .paytext {
-    position: absolute;
+    /* position: absolute; */
     /* bottom: -136px; */
     left: 54px !important;
     font-size: 7px;
@@ -929,7 +929,7 @@ select {
     }
 
     .paytext {
-        position: absolute;
+        /* position: absolute; */
         /* bottom: -136px; */
         left: 54px !important;
         font-size: 7px;
@@ -1090,7 +1090,10 @@ select {
         display: flex;
         justify-content: center;
     }
-
+    
+    .pay-h2 {
+        font-size: 23px !important;
+    }   
     .footimg {
         width: 55%;
     }
@@ -1127,7 +1130,7 @@ select {
 
  
         .paytext {
-            position: absolute;
+            /* position: absolute; */
             /* bottom: -136px; */
             left: 411px !important;
             font-size: 7px !important;
@@ -1215,8 +1218,8 @@ select {
 
     .payimg {
         position: relative;
-        width: 60%;
-        top: -10px;
+        width: 30%;
+        top: 19px;
     }
 
     .payimg2 {
@@ -1227,6 +1230,7 @@ select {
         object-position: 50% 50%;
         left: 30px;
         height: 307px;
+        margin-top: 1px;
     }
     .youtubeimg {
         width: 230px;
@@ -1245,10 +1249,7 @@ select {
         font-size: 13px !important;
     }
 
-    .pay-h2 {
-        font-size: 30px !important;
-    }
-
+   
     .hourbtn {
         padding: 8px;
         border-radius: 3px;
@@ -1397,7 +1398,7 @@ select {
     }
 
     .paytext {
-        position: absolute;
+        /* position: absolute; */
         /* bottom: -136px; */
         left: 161px;
         font-size: 15px;
@@ -1412,7 +1413,7 @@ select {
         object-position: 50% 50%;
         left: 0;
         height: 300px;
-}
+
     }
     .img2-p {
         font-size: 17px;
@@ -1471,7 +1472,7 @@ select {
         margin-bottom: 10px;
     }
     .paytext {
-        position: absolute;
+        /* position: absolute; */
         /* bottom: -136px; */
         left: 213px;
         font-size: 7px;
@@ -1627,7 +1628,7 @@ select {
         margin-top: 210px;
     }
     .paytext {
-        position: absolute;
+        /* position: absolute; */
         /* bottom: -136px; */
         left: 163px;
         /* font-size: 9px; */
