@@ -23,7 +23,8 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('google_id')->nullable();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
+            $table->string('code')->nullable();
+            $table->string('password')->nullable();
             $table->string('country_code')->default('+1')->nullable();
             $table->string('mobile')->nullable();
             $table->string('image')->nullable();

@@ -23,10 +23,17 @@ use Symfony\Component\Routing\Router;
 Route::get('/', function () {
     return view('paystub');
 });
-Route::get('auth/google', 'redirectToGoogle')->name('auth.google');
-Route::get('auth/google/callback', 'handleGoogleCallback');
-Route::get('Login', [LoginController::class, 'loginWithGoogle'])->name('login.google');
-Route::any('callback', [LoginController::class, 'callbackFromGoogle'])->name('callback');
+
+Route::get('auth/Login', [LoginController::class, 'loginWithGoogle'])->name('login.google');
+Route::any('auth/callback', [LoginController::class, 'callbackFromGoogle'])->name('callback');
+//Route::post('login', 'LoginController@login')->name('newlogin');
+
+Route::post('loginWithOtp', [LoginController::class, 'loginWithOtp'])->name('loginWithOtp');
+Route::get('loginWithOtp', function () {
+    return view('auth/OtpLogin');
+})->name('loginWithOtp');
+
+Route::any('sendOtp', [LoginController::class,'sendOtp']);
 
 Route::get('generate-pdf', [W2FormController::class, 'generatePDF']);
 Route::get('preview-pdf', [W2FormController::class, 'previewPDF']);

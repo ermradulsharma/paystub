@@ -18,7 +18,7 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;800&family=Public+Sans:wght@300&display=swap">
 
- 
+
     <!-- Responsive CSS Style -->
     <link rel="stylesheet" type="text/css" href="{{ asset('user') }}/css/style.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('user') }}/css/newstyle.css">
@@ -86,7 +86,7 @@
                             <img class="google-icon"
                                 src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" />
                         </div>
-                        <a class="btn-text pr-1" href="{{ route('auth.google') }}">Sign up with google</a>
+                        <a class="btn-text pr-1" href="{{ route('login.google') }}">Sign up with google</a>
 
                     </div>
 
@@ -96,11 +96,11 @@
                     <h6 class="text-center" style="color: #457bbe;">Sign Up Using Email</h6>
                     <p class="text-center">
 
+                    <form id="sendOTPForm" action="{{ url('sendOtp') }}" method="POST" class="text-center">
+                        @csrf
                         <input type="email" id="email" name="email" class="singup" placeholder="Email *">
                         <br><br>
-
-                        <button class="continue mt-3" data-toggle="modal" data-dismiss="modal"
-                            data-target="#myModal1">Continue</button>
+                        <button class="continue mt-3" type="submit">Continue</button>
                         <a href="#" style="text-decoration: none;color: #0000007a">
                             <p class="text-center mt-3" style="color: #0000007a;font-size: 13px;">Already have
                                 account?
@@ -109,14 +109,9 @@
                                 </u>
                             </p>
                         </a>
-                </div>
-                </p>
+                    </form>
 
-                <!-- Modal footer -->
-                <div class="modal-footer" style="background: #457bbed9;">
-                    <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
                 </div>
-
             </div>
         </div>
     </div>
@@ -139,28 +134,28 @@
                         </div>
 
                         <h5 style="color: #457bbe;" class="mt-4 text-center">Almost There!</h5>
-                        <p style="color: #02030359;font-size: 14px;font-family: serif;" class="text-center">Enter the
+                        <p style="color: #02030359;font-size: 14px;font-family: serif;" class="text-center">Enter
+                            the
                             Verification code to sent</p>
-
-                        <input type="email" id="email" name="email" class="singup1 text-center"
-                            placeholder="ABC@paystub.com">
-                        <div style="color: red;font-size: 13px; font-family: serif;">
-                            <i class="fa fa-exclamation-circle">
-                                Verification code required
-                            </i>
-                        </div>
-                        <p style="color: #0000004d; font-size: 11px;">Didn't receive an email</p>
-                        <p style="color: #04050778;font-size: 12px; font-family: cursive;">Check Your Spanspan
-                            folder<span style="color:red;"> Or </span>resend code</p>
-                        <button class="continue mt-3" data-toggle="modal" data-target="myModal">verify</button>
+                        <form action="" method="GET">
+                            <input type="email" id="email" name="email" class="singup1 text-center"
+                                placeholder="ABC@paystub.com">
+                            <div style="color: red;font-size: 13px; font-family: serif;">
+                                <i class="fa fa-exclamation-circle">
+                                    Verification code required
+                                </i>
+                            </div>
+                            <p style="color: #0000004d; font-size: 11px;">Didn't receive an email</p>
+                            <p style="color: #04050778;font-size: 12px; font-family: cursive;">Check Your Spanspan
+                                folder<span style="color:red;"> Or </span>resend code</p>
+                            <a class="continue mt-3 text-white " type="submit"data-toggle="modal"
+                                data-target="myModal">verify</a>
+                        </form>
                     </div>
                 </div>
                 </p>
 
-                <!-- Modal footer -->
-                <div class="modal-footer" style="background: #457bbed9;">
-                    <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
-                </div>
+
 
             </div>
         </div>
@@ -172,8 +167,7 @@
                 <div class="col-lg-3 text-center m-auto">
                     <div class="container justify-content-center text-left">
                         <div>
-<<<<<<< HEAD
-                            <a class="w-100 footbtn"
+                            <<<<<<< HEAD <a class="w-100 footbtn"
                                 style="font-family: Futura,Trebuchet MS,Arial,sans-serif; font-size:20px;"
                                 href="{{ url('terms') }}">Terms & Conditions</a>
                         </div>
@@ -191,18 +185,22 @@
                             <a class="w-100 footbtn"
                                 style="font-family: Futura,Trebuchet MS,Arial,sans-serif; font-size:20px;"
                                 href="{{ url('contact') }}">Contact Us</a>
-=======
-                            <a class="w-100 footbtn" style="font-family: 'Futura LT'; font-size:20px;" href="{{url('terms')}}">Terms & Conditions</a>
+                            =======
+                            <a class="w-100 footbtn" style="font-family: 'Futura LT'; font-size:20px;"
+                                href="{{ url('terms') }}">Terms & Conditions</a>
                         </div>
                         <div class="mt-3">
-                            <a class="w-100 footbtn" style="font-family: 'Futura LT'; font-size:20px;" href="{{url('privacy')}}">Privacy Policy</a>
+                            <a class="w-100 footbtn" style="font-family: 'Futura LT'; font-size:20px;"
+                                href="{{ url('privacy') }}">Privacy Policy</a>
                         </div>
                         <div class="mt-3">
-                            <a class="w-100 footbtn" style="font-family: 'Futura LT'; font-size:20px;" href="{{url('refund')}}">Refund Policy</a>
+                            <a class="w-100 footbtn" style="font-family: 'Futura LT'; font-size:20px;"
+                                href="{{ url('refund') }}">Refund Policy</a>
                         </div>
                         <div class="mt-3">
-                            <a class="w-100 footbtn" style="font-family: 'Futura LT'; font-size:20px;" href="{{url('contact')}}">Contact Us</a>
->>>>>>> 1199f7560daacf3c7e50bdb7de9a4c51372b038c
+                            <a class="w-100 footbtn" style="font-family: 'Futura LT'; font-size:20px;"
+                                href="{{ url('contact') }}">Contact Us</a>
+                            >>>>>>> 1199f7560daacf3c7e50bdb7de9a4c51372b038c
                         </div>
                     </div>
                 </div>
@@ -214,25 +212,27 @@
                 </div>
                 <div class="col-lg-5 text-center m-auto ">
                     <div class="container  justify-content-center">
-<<<<<<< HEAD
-                        <p class="text-white"
-                            style="font-family: Futura,Trebuchet MS,Arial,sans-serif; font-size:20px;">COPYRIGHT © 2022
+                        <<<<<<< HEAD <p class="text-white"
+                            style="font-family: Futura,Trebuchet MS,Arial,sans-serif; font-size:20px;">COPYRIGHT ©
+                            2022
                             PaystubX,<br> ALL RIGHTS RESERVED.</p>
-=======
-                        <p class="text-white" style="font-family: 'Futura LT'; font-size:20px;">COPYRIGHT © 2022 PaystubX,<br> ALL RIGHTS RESERVED.</p>
->>>>>>> 1199f7560daacf3c7e50bdb7de9a4c51372b038c
-                        <div class="container">
-                            <a href="https://www.google.com/" target="_blank"><i class="fa fa-facebook   fbicon "
-                                    aria-hidden="true"></i></a>
-                            <a href="https://www.google.com/" target="_blank"><i
-                                    class="fa fa-instagram ml-2 socialicon" aria-hidden="true"></i></a>
-                            <a href="https://www.google.com/" target="_blank"><i
-                                    class="fa fa-twitter ml-2 socialicon" aria-hidden="true"></i></a>
-                            <a href="https://www.google.com/" target="_blank"><i
-                                    class="fa fa-linkedin ml-2 socialicon" aria-hidden="true"></i></a>
-                            <a href="https://www.google.com/" target="_blank"><i
-                                    class="fa fa-youtube ml-2 socialicon" aria-hidden="true"></i></a>
-                        </div>
+                            =======
+                            <p class="text-white" style="font-family: 'Futura LT'; font-size:20px;">COPYRIGHT ©
+                                2022
+                                PaystubX,<br> ALL RIGHTS RESERVED.</p>
+                            >>>>>>> 1199f7560daacf3c7e50bdb7de9a4c51372b038c
+                            <div class="container">
+                                <a href="https://www.google.com/" target="_blank"><i class="fa fa-facebook   fbicon "
+                                        aria-hidden="true"></i></a>
+                                <a href="https://www.google.com/" target="_blank"><i
+                                        class="fa fa-instagram ml-2 socialicon" aria-hidden="true"></i></a>
+                                <a href="https://www.google.com/" target="_blank"><i
+                                        class="fa fa-twitter ml-2 socialicon" aria-hidden="true"></i></a>
+                                <a href="https://www.google.com/" target="_blank"><i
+                                        class="fa fa-linkedin ml-2 socialicon" aria-hidden="true"></i></a>
+                                <a href="https://www.google.com/" target="_blank"><i
+                                        class="fa fa-youtube ml-2 socialicon" aria-hidden="true"></i></a>
+                            </div>
                     </div>
                 </div>
             </div>
@@ -248,6 +248,28 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- <popup link> -->
     @yield('script')
+
+    <script>
+        $('#sendOTPForm').on('submit', function() {
+
+            $.ajax({
+                url: "{{ url('sendOtp') }}",
+                type: "POST",
+                data: $('#sendOTPForm').serialize(),
+                success: function(response) {
+                    console.log('response ', response);
+
+                },
+                error: function(err) {
+                    error = err.responseJSON;
+                    console.log('err ', error);
+
+                }
+            });
+
+            return false;
+        });
+    </script>
 </body>
 
 </html>
