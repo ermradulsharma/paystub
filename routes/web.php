@@ -88,6 +88,9 @@ Route::get('template-view', function () {
 Route::get('userDashboard', function () {
     return view('user-dashboard');
 });
+Route::get('prizing', function () {
+    return view('prizing');
+});
 
 
 
