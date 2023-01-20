@@ -468,8 +468,8 @@ input:hover {
 
 .mainhead {
     padding: 0px 225px 2px 4px;
+    font-family: 'Futura LT';
 }
-
 
 .google-btn {
     width: 203px;
@@ -662,15 +662,18 @@ h5 {
     font-weight: 300;
     font-size: 42px;
     letter-spacing: 1.5px;
+    font-family: 'Futura LT';
 }
 
 .canadah2 {
     font-size: 40px;
-    font-family: avenir-lt-w01_35-light1475496, sans-serif;
+    font-family: 'Futura LT';
+    font-weight: 600;
 }
 
 .canadah1 {
     font-size: -webkit-xxx-large;
+    font-family: 'Futura LT';
 }
 
 .canadap {
@@ -696,6 +699,7 @@ h5 {
 .uktext {
     font-size: 42px;
     font-weight: 300;
+    font-family: 'Futura LT';
 }
 
 .create-p {
@@ -1095,9 +1099,11 @@ select {
     }
 }
 
-    .create-p {
-        font-size: 8px;
-    }
+.create-p {
+    font-family: 'Futura LT';
+    font-size: 16px;
+    line-height: 1.8;
+}
 
 @media screen and (max-width: 768px) {
     .globlebtn {

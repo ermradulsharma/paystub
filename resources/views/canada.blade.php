@@ -57,16 +57,16 @@
                 <div class="row">
                     <div class="col-md-6" style="border-right:1px solid black;">
                         <img src="images/employericon.webp" class="" style="width:176px;">
-                        <div style="font-size: xx-large; font-weight:bolder;">Employers</div>
-                        <p style="font-size:15px;" class="mt-3">Paystubx is a great tool for employers who</br> manage payroll on
+                        <div style="font-size: xx-large;font-weight:600;font-family: Futura Md BT;">Employers</div>
+                        <p style="font-size:15px;font-family: 'Futura lt';" class="mt-3">Paystubx is a great tool for employers who</br> manage payroll on
                             their own. Employers</br> can easily create professional paystubs,</br> with the option to
                             download them or</br> email them directly to their employees,</br> contractors, and gig workers.
                         </p>
                     </div>
                     <div class="col-md-6">
                         <img src="images/sole-propritors.webp" class="" style="width:164px;">
-                        <div style="font-size: xx-large; font-weight:bolder;">Sole Proprietors</div>
-                        <p style="font-size:15px;" class="mt-3">Sole proprietors or self-employed individuals<br> can act as their
+                        <div style="font-size: xx-large;font-weight:600;font-family: Futura Md BT;">Sole Proprietors</div>
+                        <p style="font-size:15px;font-family: 'Futura lt';" class="mt-3">Sole proprietors or self-employed individuals<br> can act as their
                             own bosses and pay themselves</br> whenever they want. Though they may not need</br> to withhold
                             taxes, they still need paystubs to</br> show proof of income. Paystubx allows you to</br> generate
                             professional paystubs instantly.</p>
@@ -82,14 +82,14 @@
 
                     <h2 style=" " class="ml-3 canadah2">Accurate
                         Payroll Calculations that include </h2>
-                    <ul style="font-weight: 200;font-size: 20px; line-height: 41px;color: #000000;" class="mt-2">
+                    <ul style="font-weight: 200;font-size: 20px;line-height: 41px;color: #000000;font-family: 'Futura LT';" class="mt-2">
                         <li>Federal and State income tax withholdings</li>
                         <li>CPP, LE such as Income tax</li>
                         <li>Year to Date (YTD) Calculations</li>
                         <li>Withholding calculations </li>
                     </ul>
                     <div class=" justify-content-center ">
-                        <a class="btn btn-lg  mt-5 p-2 btn-danger CreatePaystub " href="{{url('canada-paystub') }}">Create Paystub</a>
+                        <a style=""class="btn btn-lg  mt-5 p-2 btn-danger CreatePaystub " href="{{url('canada-paystub') }}">Create Paystub</a>
                     </div>
 
                 </div>

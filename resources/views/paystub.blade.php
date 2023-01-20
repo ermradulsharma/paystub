@@ -1,5 +1,9 @@
 @extends('layouts.app')
+@section('style')
+<link rel="stylesheet" type="text/css" href="{{ asset('user') }}/css/font-face.css">
+@endsection
 @section('content')
+
 <div class="paystub mt-2">
     <div class="container-XL" style="">
 
