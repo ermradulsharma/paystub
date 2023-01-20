@@ -272,10 +272,8 @@
     <div class="container" style=" margin-top:50px; width:100%;">
         <div class="row" style="display: flex;justify-content: space-between;padding: 0px 14px;">
             <div style="width: 50%;float:left;">
-                <h6 style="font-size: 17px; margin-bottom: 0;">Paystubs Company, INC</h6>
-                <p style="font-size: 10px; margin: 0;">55 NORTHERN BLVD</p>
-                <P style="font-size: 10px; margin: 0;">SUIT 206</P>
-                <P style="font-size: 10px; margin: 0;">GREAT NECK, FAIRFIELD 45014</P>
+                <h6 style="font-size: 17px; margin-bottom: 10px;">Paystubs Company, INC</h6>
+                <p style="font-size: 13px;">55 NORTHERN BLVD<br>SUIT 206<br>GREAT NECK, FAIRFIELD 45014</p>
             </div>
             <div style="width: 50%;float:right;text-align:right;">
                 <h6 style="font-size: 14px; margin-bottom: 0;">Advice Number: <span>00000422598</span>
@@ -285,7 +283,7 @@
                 </p>
             </div>
         </div>
-        <table style="width: 100%; margin: 100px 0 0 auto;">
+        <table style="width: 100%; margin: 140px 0 0 auto;">
             <tr style="border-bottom: 1px solid;">
                 <td colspan="4"></td>
                 <td>Deposite to the Account off</td>
@@ -293,7 +291,6 @@
                 <td style="text-align: right;">Transit ABA </td>
                 <td style="text-align: right;">Account number</td>
             </tr>
-
             <tr>
                 <td colspan="4"></td>
                 <td>Erza Moore</td>

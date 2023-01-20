@@ -132,12 +132,8 @@ class TemplateFormController extends Controller
     
      
 
-        //return view('allForms.Temp1', $data);
-
-
-        $pdf = PDF::loadHtml('allForms.Temp1', $data);
-
-        return $pdf->stream('W2Paystubx.pdf');
+       
+       
     }
 
     public function PaystubPDF()
@@ -164,7 +160,7 @@ class TemplateFormController extends Controller
 
      
     }
-    public function advanceDistrictUsa(){
+    public function AdvanceBlueBoxUsaPDF(){
         $data = [
             
             'date' => date('m/d/Y')
@@ -173,7 +169,7 @@ class TemplateFormController extends Controller
         // return view('allForms.bluebox');
        
          $pdf = PDF::loadView('allForms.bluebox', $data);
-         return $pdf->stream('BlueboxTemp.pdf');
+         return $pdf->stream('blueboxTemp.pdf');
     
      
     }
@@ -220,6 +216,23 @@ class TemplateFormController extends Controller
 
     }
 
+    public function BasicTawnyUkPDF()
+    {
+        $data = [
+            
+            'date' => date('m/d/Y')
+        ];
+          
+    //    return view('allForms.ukbasic-tawny', $data);
+
+        $pdf = PDF::loadView('allForms.ukbasic-tawny', $data);   
+        return $pdf->stream('ukbasic-tawny.pdf');
+
+
   
+    
+    
+     
+    }
 }
 

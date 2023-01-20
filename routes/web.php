@@ -46,11 +46,13 @@ Route::get('pt_brown-pdf', [TemplateFormController::class, 'AdvancePtBrownUsaPDF
 Route::get('prior-pdf', [TemplateFormController::class, 'BasicPriorUsaPDF']);
 Route::get('check-pdf', [TemplateFormController::class, 'AdvanceCheckUsaPDF']);
 Route::get('pin_blue-pdf', [TemplateFormController::class, 'BasicPinBlueUkPDF']);
+Route::get('uk-tawny-pdf', [TemplateFormController::class, 'BasicTawnyUkPDF']);
 
 // gurvinder 
 Route::get('bluebox-pdf', [TemplateFormController::class, 'AdvanceBlueBoxUsaPDF']);
 Route::get('globle-pdf', [TemplateFormController::class, 'AdvanceglobleUsaPDF']);
 Route::get('modern-pdf', [TemplateFormController::class, 'AdvanceModernUsaPDF']);
+Route::get('sageblue-pdf', [TemplateFormController::class, 'BasicUkPDF']);
 
 Route::get('canada', function () {
     return view('canada');

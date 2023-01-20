@@ -46,14 +46,17 @@ class Deductions extends Component
         $this->back();
         $deductionObj = Deduction::find($this->deductionId);
         if (!$deductionObj) {
-            $deductionObj = new Deduction();
+            $deductionObj = new Deduction;
             $msg = "Deduction saved successfully.";
         }
         $deductionObj->title = $this->title;
         $deductionObj->price = $this->price;
-        $deductionObj->type = "deduction";
         $deductionObj->state = $this->state;
+        $deductionObj->type = "deduction_";
         $deductionObj->save();
+        $deductionObj->type = "deduction_" . $deductionObj->id;
+        $deductionObj->save();
+
         $msg = "Deduction Updated successfully.";
         $this->resetForm();
         session()->flash('success', $msg);

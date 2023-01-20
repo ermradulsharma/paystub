@@ -115,6 +115,12 @@
         </tr>
         <tr>
             <td></td>
+            <td>DAYTON, OH 45001</td>
+            <td style="border-bottom: 2px solid #000;"><b>04/28/2020 - 05/04/2023</b></td>
+
+        </tr>
+        <tr>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -124,9 +130,12 @@
         </tr>
         <tr>
             <td></td>
-            <td>DAYTON, OH 45001</td>
-            <td style="border-bottom: 2px solid #000;"><b>04/28/2020 - 05/04/2023</b></td>
-
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
         </tr>
     </table>
     <section>
@@ -323,10 +332,10 @@
     <div class="container" style=" margin-top:100px; width:100%;">
         <div class="row" style="display: flex;justify-content: space-between;padding: 0px 14px;">
             <div style="width: 50%;float:left;">
-                <h6 style="font-size: 17px; margin-bottom: 0;">Paystubs Company, INC</h6>
-                <p style="font-size: 10px; margin: 0;">55 NORTHERN BLVD</p>
-                <P style="font-size: 10px; margin: 0;">SUIT 206</P>
-                <P style="font-size: 10px; margin: 0;">GREAT NECK, FAIRFIELD 45014</P>
+                <h6 style="font-size: 17px; margin-bottom: 10px;">Paystubs Company, INC</h6>
+                <p style="font-size: 13px; margin: 0;">55 NORTHERN BLVD</p>
+                <P style="font-size: 13px; margin: 0;">SUIT 206</P>
+                <P style="font-size: 13px; margin: 0;">GREAT NECK, FAIRFIELD 45014</P>
             </div>
             <div style="width: 50%;float:right;text-align:right;">
                 <h6 style="font-size: 14px; margin-bottom: 0;">Advice Number: <span>00000422598</span>
@@ -336,7 +345,7 @@
                 </p>
             </div>
         </div>
-        <table style="width: 100%; margin: 100px 0 0 auto;">
+        <table style="width: 100%; margin: 140px 0 0 auto;">
             <tr style="border-bottom: 1px solid;">
                 <td colspan="4"></td>
                 <td>Deposite to the Account off</td>
@@ -353,9 +362,6 @@
                 <td style="text-align: right;">XXXX5677</td>
             </tr>
         </table>
-
-
-
     </div>
 
 </body>

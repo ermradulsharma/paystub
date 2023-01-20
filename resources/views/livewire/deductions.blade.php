@@ -32,7 +32,6 @@
                             <tr>
                                 <th>#</th>
                                 <th>State</th>
-                                <th>Type</th>
                                 <th>Title</th>
                                 <th>Percent</th>
                                 <th>Action</th>
@@ -44,15 +43,17 @@
                             <tr>
                                 <td>{{$key+1}}</td>
                                 <td>{{$item->state}}</td>
-                                <td>{{$item->type}}</td>
                                 <td>{{$item->title}}</td>
                                 <td>{{$item->price}} %</td>
-                                <td><button type="button" class="btn btn-primary" wire:click="editDeduction({{$item->id}})">Edit</button>
-                                    @if($confirming===$item->id)
+                                <td>
+                                    @if($item->title != 'State Tax')
+                                    <button type="button" class="btn btn-primary" wire:click="editDeduction({{$item->id}})">Edit</button>
+                                    @endif
+                                    {{-- @if($confirming===$item->id)
                                     <button wire:click="deleteDeduction({{$item->id}})" class="btn btn-warning text-white w-32 ">Sure?</button>
                                     @else
                                     <button wire:click="confirmDelete({{ $item->id }})" class="btn btn-danger">Delete</button>
-                                    @endif
+                                    @endif --}}
                                 </td>
                             </tr>
                             @endforeach
@@ -62,50 +63,32 @@
                 </div>
             </div>
         </div>
-        @else()
+        @else
         <div class="container">
             <section class="section  min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-lg-6 col-md-6 d-flex flex-column align-items-center justify-content-center">
-
-
                             <div class="container">
                                 <div class="card">
                                     <div class="card-header">
                                         <h2 class="card-title"> {{$page_title}}</h2>
                                     </div>
                                     <div class="card-body mt-5">
-
-
                                         <!-- Horizontal Form -->
-
                                         <form wire:submit.prevent="StoreDeduction">
                                             <div class="row mb-3">
                                                 <label class="col-sm-3 col-form-label">State</label>
                                                 <div class="col-sm-8">
-                                                    <select class="form-select" aria-label="Default select example"
-                                                        type="text" wire:model="state">
+                                                    <select class="form-select" aria-label="Default select example" type="text" wire:model="state">
                                                         <option selected="">Open this select State</option>
                                                         <option value="usa">USA</option>
                                                         <option value="canada">CANADA</option>
                                                         <option value="uk">UK</option>
                                                         <option value="globle">GLOBLE</option>
-
                                                     </select>
                                                     @error('state')
                                                     <div class="mt-3 text-danger">* {{ $message }}</div>
-                                                    @enderror
-                                                </div>
-
-                                            </div>
-                                            <div class="row mb-3">
-                                                <label class="col-sm-3 col-form-label">Type
-                                                </label>
-                                                <div class="col-sm-8">
-                                                    <input type="text" class="form-control" id="type" wire:model="type">
-                                                    @error('type')
-                                                    <div class="mt-3 text-danger">* {{$message}}</div>
                                                     @enderror
                                                 </div>
                                             </div>
@@ -113,8 +96,7 @@
                                                 <label class="col-sm-3 col-form-label">Title
                                                 </label>
                                                 <div class="col-sm-8">
-                                                    <input type="text" class="form-control" id="title"
-                                                        wire:model="title">
+                                                    <input type="text" class="form-control" id="title" {{ $title=='State Tax' ? 'disabled' :'' }} wire:model="title">
                                                     @error('title')
                                                     <div class="mt-3 text-danger">* {{$message}}</div>
                                                     @enderror
@@ -125,37 +107,24 @@
                                                 <label class="col-sm-3 col-form-label">Price
                                                 </label>
                                                 <div class="col-sm-8">
-                                                    <input type="text" class="form-control" id="price"
-                                                        wire:model="price">
+                                                    <input type="text" class="form-control" id="price" wire:model="price">
                                                     @error('price')
                                                     <div class="mt-3 text-danger">* {{$message}}</div>
                                                     @enderror
                                                 </div>
                                             </div>
                                             <div class="text-center mt-5">
-                                                <button type="submit" class="btn btn-primary "
-                                                    style="float:right; ">Submit</button>
-                                                <button type="reset" wire:click="resetForm" class="btn btn-secondary  "
-                                                    style="float:right; margin-right: 12px;">Reset</button>
+                                                <button type="submit" class="btn btn-primary " style="float:right; ">Submit</button>
+                                                <button type="reset" wire:click="back()" class="btn btn-secondary  " style="float:right; margin-right: 12px;">Back</button>
                                             </div>
                                         </form><!-- End Horizontal Form -->
-
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
-
             </section>
-
         </div>
         @endif()
-
     </main>
-
-
-
-
-
 </div>

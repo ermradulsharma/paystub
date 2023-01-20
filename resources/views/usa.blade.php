@@ -207,9 +207,9 @@
                             <div class="dropdown ">
                                 <select name="cars" id="cars" class=" dropdown11">
                                     <option selected>Choose your State</option>
-                                    <option value="saab">Saab</option>
-                                    <option value="opel">Opel</option>
-                                    <option value="audi">Audi</option>
+                                    @foreach ($stateTaxes as $stateTax )
+                                    <option value="{{ $stateTax->state }}" data-tax="{{ $stateTax->rate }}">{{ $stateTax->state }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
@@ -349,31 +349,31 @@
                         </div>
 
                         <div class="col-md-2 ">
-                            <input type="number" step="0.01" class="earnbtn text-center calculation" value="" id="rate_0" data-id="0" required>
+                            <input type="number" class="earnbtn text-center calculation" value="" id="rate_0" data-id="0" required>
                         </div>
 
                         <div class="col-md-2 ">
-                            <input type="number" step="0.01" class="earnbtn text-center hours calculation" value="" id="hours_0" data-id="0" required>
+                            <input type="number" class="earnbtn text-center hours calculation" value="" id="hours_0" data-id="0" required>
                         </div>
 
                         <div class="col-md-2">
-                            <input type="number" step="0.01" class="earnbtn text-center" value="" id="total_0" data-id="0" required>
+                            <input type="number" class="earnbtn text-center" value="" id="total_0" data-id="0" required>
                         </div>
 
                         <div class="col-md-2">
-                            <input type="number" step="0.01" class="earnbtn text-center gross_total" value="" id="period_0" data-id="0" required>
+                            <input type="number" class="earnbtn text-center gross_total" value="" id="period_0" data-id="0" required>
                         </div>
 
                         <div class="col-md-2">
-                            <input type="number" step="0.01" class="earnbtn text-center ytd_total" value="" id="ytd_total_0" data-id="0" required>
+                            <input type="number" class="earnbtn text-center ytd_total" value="" id="ytd_total_0" data-id="0" required>
                         </div>
 
                     </div>
                     <div class="col-md-2">
-                        <input type="number" step="0.01" class="earnbtn text-center period_gross_total" value="" id="period_gross_total" hidden>
+                        <input type="number" class="earnbtn text-center period_gross_total" value="" id="period_gross_total" hidden>
                     </div>
                     <div class="col-md-2">
-                        <input type="number" step="0.01" class="earnbtn text-center ytd_gross_total" value="" id="ytd_gross_total" hidden>
+                        <input type="number" class="earnbtn text-center ytd_gross_total" value="" id="ytd_gross_total" hidden>
                     </div>
                     <div class="field_wrapper"> </div>
 
@@ -399,10 +399,10 @@
                         <div class="col-md-2 col-lg-3"></div>
                         <div class="col-md-1 col-lg-1"></div>
                         <div class="col-md-2 col-lg-2">
-                            <input type="number" step="0.01" class="earnbtn text-center" id="taxes_{{$key}}" value="" />
+                            <input type="number" class="earnbtn text-center" id="taxes_{{$key}}" value="" />
                         </div>
                         <div class="col-md-2 col-lg-2">
-                            <input type="number" step="0.01" class="earnbtn text-center" id="taxes_ytd_{{$key}}" value="" />
+                            <input type="number" class="earnbtn text-center" id="taxes_ytd_{{$key}}" value="" />
                         </div>
                     </div>
                     @endforeach
@@ -427,10 +427,10 @@
                         <div class="col-md-2 col-lg-3"></div>
                         <div class="col-md-1"></div>
                         <div class="col-md-2">
-                            <input type="number" step="0.01" class="earnbtn deduction_tax text-center" value="" />
+                            <input type="number" class="earnbtn deduction_tax text-center" value="" />
                         </div>
                         <div class="col-md-2">
-                            <input type="number" step="0.01" class="earnbtn ytd_deduction_tax text-center" value="" />
+                            <input type="number" class="earnbtn ytd_deduction_tax text-center" value="" />
                         </div>
                     </div>
                     <div class="row mb-3 mt-5">
@@ -504,9 +504,11 @@
 @section('script')
 <script>
     $(document).ready(function() {
+
         $('.time_period').change(function() {
             dayCalculate();
         });
+        
         $('.pay_start').change(function() {
             dayCalculate();
         });
@@ -576,19 +578,19 @@
                 '<input  id="earning_' + i + '" data-id="' + i + '" class="earnbtn text-center" value="">' +
                 '</div>' +
                 '<div class="col-md-2 ">' +
-                '<input type="number" step="0.01" id="rate_' + i + '" data-id="' + i + '" class="earnbtn calculation text-center" value="">' +
+                '<input type="number" id="rate_' + i + '" data-id="' + i + '" class="earnbtn calculation text-center" value="">' +
                 '</div>' +
                 '<div class="col-md-2 ">' +
-                '<input type="number" step="0.01" id="hours_' + i + '" data-id="' + i + '" class="earnbtn calculation text-center hours" value="">' +
+                '<input type="number" id="hours_' + i + '" data-id="' + i + '" class="earnbtn calculation text-center hours" value="">' +
                 '</div>' +
                 '<div class="col-md-2">' +
-                '<input type="number" step="0.01" id="total_' + i + '" data-id="' + i + '" class="earnbtn text-center" value="">' +
+                '<input type="number" id="total_' + i + '" data-id="' + i + '" class="earnbtn text-center" value="">' +
                 '</div>' +
                 '<div class="col-md-2">' +
-                '<input type="number" step="0.01" id="period_' + i + '" data-id="' + i + '" class="earnbtn gross_total text-center" value="">' +
+                '<input type="number" id="period_' + i + '" data-id="' + i + '" class="earnbtn gross_total text-center" value="">' +
                 '</div>' +
                 '<div class="col-md-2 ">' +
-                '<input type="number" step="0.01" id="ytd_total_' + i + '" data-id="' + i + '" class="earnbtn ytd_total text-center" value="">' +
+                '<input type="number" id="ytd_total_' + i + '" data-id="' + i + '" class="earnbtn ytd_total text-center" value="">' +
                 '</div>' +
                 '</div>';
             if (x < maxField) {
@@ -616,10 +618,10 @@
                 '<div class="col-md-3"> </div>' +
                 '<div class="col-md-1"> </div>' +
                 '<div class="col-md-2">' +
-                '<input type="number" step="0.01" class="earnbtn text-center tax_deduction tax" value=""/>' +
+                '<input type="number" class="earnbtn text-center tax_deduction tax" value=""/>' +
                 '</div>' +
                 '<div class="col-md-2">' +
-                '<input type="number" step="0.01" class="earnbtn text-center ytd_tax tax" value=""/>' +
+                '<input type="number" class="earnbtn text-center ytd_tax tax" value=""/>' +
                 '</div>' +
                 '</div>';
             if (x < maxField) {
@@ -660,9 +662,9 @@
             var total = rate * hours;
             var ytd_total = total * 52;
             setTimeout(function() {
-                $('#total_' + id).val(total);
-                $('#period_' + id).val(total);
-                $('#ytd_total_' + id).val(ytd_total);
+                $('#total_' + id).val(parseFloat(total).toFixed(2));
+                $('#period_' + id).val(parseFloat(total).toFixed(2));
+                $('#ytd_total_' + id).val(parseFloat(ytd_total).toFixed(2));
                 gross_total();
             }, 300);
         }
@@ -678,8 +680,8 @@
             });
 
             setTimeout(function() {
-                $("#period_gross_total").val(total);
-                $("#ytd_gross_total").val(ytd_total);
+                $("#period_gross_total").val(parseFloat(total).toFixed(2));
+                $("#ytd_gross_total").val(parseFloat(ytd_total).toFixed(2));
                 default_tax();
             }, 300);
         }
@@ -690,16 +692,17 @@
             var tax_state = $('option:selected', '.tax_rate').attr('data-tax');
             period_deduction_tax = 0;
             period_ytd_deduction_tax = 0;
+            var time = 200;
             $('.taxes').each(function() {
                 var taxes_ids = $(this).data('id');
                 var taxes_values = $(this).data('value');
                 var tax_name = $(this).val();
 
                 if (tax_name == 'State Tax') {
-                    taxes_values = parseFloat(tax_state);
+                    taxes_values = parseFloat(tax_state).toFixed(2);
                 }
-                period_tax_price = period_gross_total * (taxes_values / 100);
-                period_ytd_tax_price = ytd_gross_total * (taxes_values / 100);
+                period_tax_price = parseFloat(period_gross_total).toFixed(2) * (taxes_values / 100);
+                period_ytd_tax_price = parseFloat(ytd_gross_total).toFixed(2) * (taxes_values / 100);
 
                 $('#taxes_' + taxes_ids).val(parseFloat(period_tax_price).toFixed(2));
                 $('#taxes_ytd_' + taxes_ids).val(parseFloat(period_ytd_tax_price).toFixed(2));
@@ -709,22 +712,27 @@
                 setTimeout(function() {
                     $(".deduction_tax").val(parseFloat(period_deduction_tax).toFixed(2));
                     $(".ytd_deduction_tax").val(parseFloat(period_ytd_deduction_tax).toFixed(2));
-                }, 300);
+
+                }, 200);
+                time += 200;
             });
+            setTimeout(() => {
+                netPay();
+            }, time);
+
         }
 
         function tax_deduction(value) {
-            // default_tax();
             var tax_total = $(".deduction_tax").val();
             console.log(value);
             if (value == '') {
                 value = 0;
             }
             var taxes = parseFloat(tax_total) + parseFloat(value);
-            $(".deduction_tax").val(taxes);
+            $(".deduction_tax").val(parseFloat(taxes).toFixed(2));
         }
 
-        $('.net_pay').click(function() {
+        function netPay() {
             var period_gross_total = $("#period_gross_total").val();
             var ytd_gross_total = $("#ytd_gross_total").val();
             var deduction_tax = $(".deduction_tax").val();
@@ -732,13 +740,22 @@
 
             var total_net_pay = parseFloat(period_gross_total) - parseFloat(deduction_tax);
             var total_ytd_net_pay = parseFloat(ytd_gross_total) - parseFloat(ytd_deduction_tax);
-            $(".total_net_pay").val(total_net_pay);
-            $(".total_ytd_net_pay").val(total_ytd_net_pay);
-        })
+            setTimeout(function() {
+                $(".total_net_pay").val(parseFloat(total_net_pay).toFixed(2));
+                $(".total_ytd_net_pay").val(parseFloat(total_ytd_net_pay).toFixed(2));
+            }, 300);
+        }
         $('.hourly').keyup(function() {
             var id = $(this).val();
             $('#rate_0').val(id);
         })
+        $('.tax_rate').change(function() {
+            calculation(0);
+        });
+
+        function empty_free() {
+
+        }
     });
 
 </script>
