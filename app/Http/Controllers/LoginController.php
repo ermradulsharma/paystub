@@ -73,7 +73,7 @@ class LoginController extends Controller
 
     public function loginWithOtp(Request $request){
         Log::info($request);
-        $user  = User::where(['email' => request('email'),'otp' => request('otp')])->first();
+        $user  = User::where(['email' => request('email'),'code' => request('code')])->first();
         if(!$user){
             $response['message'] = "Entered wrong verification code.";
             return response()->json($response, 201);

@@ -31,7 +31,7 @@
             text-transform: capitalize
         }
     </style>
-   @yield('style')
+    @yield('style')
 </head>
 
 <body>
@@ -84,7 +84,8 @@
                 <div class="modal-body">
                     <div class="google-btn mt-4">
                         <div class="google-icon-wrapper">
-                            <img class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" />
+                            <img class="google-icon"
+                                src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" />
                         </div>
                         <a class="btn-text pr-1" href="{{ route('login.google') }}">Sign up with google</a>
 
@@ -100,14 +101,14 @@
                         @csrf
                         <input type="email" id="email" name="email" class="singup" placeholder="Email *">
                         <br><br>
-                        <button class="continue mt-3" type="submit">Continue</button>
+                        <button class="continue mt-2" type="submit">Continue</button>
                         <a href="#" style="text-decoration: none;color: #0000007a">
-                            <p class="text-center mt-3" style="color: #0000007a;font-size: 13px;">Already have
+                            {{--  <p class="text-center mt-3" style="color: #0000007a;font-size: 13px;">Already have
                                 account?
                                 <u style="color:red;">
                                     <span style="color:red;">Sign In</span>
                                 </u>
-                            </p>
+                            </p> --}}
                         </a>
                     </form>
 
@@ -137,19 +138,20 @@
                         <p style="color: #02030359;font-size: 14px;font-family: serif;" class="text-center">Enter
                             the
                             Verification code to sent</p>
-                        <form action="" method="GET">
-                            <input type="email" id="email" name="email" class="singup1 text-center"
-                                placeholder="ABC@paystub.com">
-                            <div style="color: red;font-size: 13px; font-family: serif;">
+                        <form id="loginOtp" action="{{ url('loginWithOtp') }}" method="post">
+                            @csrf
+                            <input type="text" id="code" name="code" class="singup1 text-center"
+                                placeholder="enter otp">
+                            <div style="color: red;font-size: 13px; font-family: serif;display:none;">
                                 <i class="fa fa-exclamation-circle">
                                     Verification code required
                                 </i>
                             </div>
-                            <p style="color: #0000004d; font-size: 11px;">Didn't receive an email</p>
+                            <div></div>
+                            {{-- <p style="color: #0000004d; font-size: 11px;">Didn't receive an email</p>
                             <p style="color: #04050778;font-size: 12px; font-family: cursive;">Check Your Spanspan
-                                folder<span style="color:red;"> Or </span>resend code</p>
-                            <a class="continue mt-3 text-white " type="submit"data-toggle="modal"
-                                data-target="myModal">verify</a>
+                                folder<span style="color:red;"> Or </span>resend code</p> --}}
+                            <button class="continue mt-3" type="submit">verify</button>
                         </form>
                     </div>
                 </div>
@@ -167,7 +169,8 @@
                 <div class="col-lg-3 text-center m-auto">
                     <div class="container justify-content-center text-left">
                         <div>
-                            <a class="w-100 footbtn" style="font-family: 'Futura LT'; font-size:20px;" href="{{url('terms')}}">Terms & Conditions</a>
+                            <a class="w-100 footbtn" style="font-family: 'Futura LT'; font-size:20px;"
+                                href="{{ url('terms') }}">Terms & Conditions</a>
                         </div>
                         <div class="mt-3">
                             <a class="w-100 footbtn" style="font-family: 'Futura LT'; font-size:20px;"
@@ -178,7 +181,8 @@
                                 href="{{ url('refund') }}">Refund Policy</a>
                         </div>
                         <div class="mt-3">
-                            <a class="w-100 footbtn" style="font-family: 'Futura LT'; font-size:20px;" href="{{url('contact')}}">Contact Us</a>
+                            <a class="w-100 footbtn" style="font-family: 'Futura LT'; font-size:20px;"
+                                href="{{ url('contact') }}">Contact Us</a>
                         </div>
                     </div>
                 </div>
@@ -190,7 +194,8 @@
                 </div>
                 <div class="col-lg-5 text-center m-auto ">
                     <div class="container  justify-content-center">
-                        <p class="text-white" style="font-family: 'Futura LT'; font-size:20px;">COPYRIGHT © 2022 PaystubX,<br> ALL RIGHTS RESERVED.</p>
+                        <p class="text-white" style="font-family: 'Futura LT'; font-size:20px;">COPYRIGHT © 2022
+                            PaystubX,<br> ALL RIGHTS RESERVED.</p>
                         <div class="container">
                             <a href="https://www.google.com/" target="_blank"><i class="fa fa-facebook   fbicon "
                                     aria-hidden="true"></i></a>
@@ -209,6 +214,12 @@
         </div>
     </div>
     <!-- End Footer Section -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.js"
+        integrity="sha512-nO7wgHUoWPYGCNriyGzcFwPSF+bPDOR+NvtOYy2wMcWkrnCNPKBcFEkU80XIN14UVja0Gdnff9EmydyLlOL7mQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"
+        integrity="sha512-1/RvZTcCDEUjY/CypiMz+iqqtaoQfAITmNSJY17Myp4Ms5mdxPS5UV7iOfdZoxcGhzFbOm6sntTKJppjvuhg4g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
@@ -228,7 +239,8 @@
                 data: $('#sendOTPForm').serialize(),
                 success: function(response) {
                     console.log('response ', response);
-
+                    $('#myModal').modal('hide');
+                    $('#myModal1').modal('show');
                 },
                 error: function(err) {
                     error = err.responseJSON;
@@ -237,6 +249,26 @@
                 }
             });
 
+            return false;
+        });
+    </script>
+
+    <script>
+        $('#loginOtp').on('submit', function() {
+            $.ajax({
+                url: "{{ url('loginWithOtp') }}",
+                type: "POST",
+                data: $('#loginOtp').serialize(),
+                success: function(response) {
+                    console.log('response ', response);
+                    $('#myModal1').modal('hide');
+                    alert('login successfully');
+                },
+                error: function(err) {
+                    error = err.responseJSON;
+                    console.log('err ', error);
+                }
+            });
             return false;
         });
     </script>
