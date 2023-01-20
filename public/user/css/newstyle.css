@@ -628,17 +628,19 @@ h5 {
     margin-top: -41px;
 }
 
-.payimg2{
+.payimg2 {
     width: 686px;
-    margin-bottom: 28px;
+    margin-bottom: 32px;
     /* padding-left: 0px; */
     margin-left: -166px;
     margin-top: -123px;
     height: 564px;
 }
-.img2-p{
-    font-size: 17px;
-    font-weight: 200;
+.img2-p {
+    font-size: 20px;
+    font-family: 'Futura LT';
+    color: rgba(0, 0, 0,0.7);
+    line-height: 1.8;
 }
 
 .base {
@@ -647,11 +649,13 @@ h5 {
 }
 
 .paytext {
-    position: absolute;
+    /* position: absolute; */
     /* bottom: -136px; */
     left: 54px !important;
     font-size: 7px;
     top: 475px !important;
+    margin-top: -47px;
+
 }
 
 .canadah4 {
@@ -680,6 +684,7 @@ h5 {
     letter-spacing: 1.5px;
     display: flex;
     max-width: 312px;
+    font-family: 'Futura LT';
 }
 
 .paddingleft {
@@ -744,6 +749,7 @@ select {
     padding: 6px 4px;
     border-radius: 4px;
     font-weight: 200;
+    font-family: 'Futura LT';
 }
 
 .payp:hover {
@@ -862,6 +868,14 @@ select {
         font-weight: 200;
         line-height: 35.5px;
     }
+    .payimg2 {
+        width: 686px;
+        /* margin-bottom: 32px; */
+        /* padding-left: 0px; */
+        margin-left: -166px;
+        margin-top: -136px;
+        height: 564px;
+    }
 }
 
 
@@ -929,7 +943,7 @@ select {
     }
 
     .paytext {
-        position: absolute;
+        /* position: absolute; */
         /* bottom: -136px; */
         left: 54px !important;
         font-size: 7px;
@@ -1090,7 +1104,10 @@ select {
         display: flex;
         justify-content: center;
     }
-
+    
+    .pay-h2 {
+        font-size: 23px !important;
+    }   
     .footimg {
         width: 55%;
     }
@@ -1127,7 +1144,7 @@ select {
 
  
         .paytext {
-            position: absolute;
+            /* position: absolute; */
             /* bottom: -136px; */
             left: 411px !important;
             font-size: 7px !important;
@@ -1215,8 +1232,8 @@ select {
 
     .payimg {
         position: relative;
-        width: 60%;
-        top: -10px;
+        width: 30%;
+        top: 19px;
     }
 
     .payimg2 {
@@ -1227,6 +1244,7 @@ select {
         object-position: 50% 50%;
         left: 30px;
         height: 307px;
+        margin-top: 1px;
     }
     .youtubeimg {
         width: 230px;
@@ -1245,10 +1263,7 @@ select {
         font-size: 13px !important;
     }
 
-    .pay-h2 {
-        font-size: 30px !important;
-    }
-
+   
     .hourbtn {
         padding: 8px;
         border-radius: 3px;
@@ -1397,7 +1412,7 @@ select {
     }
 
     .paytext {
-        position: absolute;
+        /* position: absolute; */
         /* bottom: -136px; */
         left: 161px;
         font-size: 15px;
@@ -1412,7 +1427,7 @@ select {
         object-position: 50% 50%;
         left: 0;
         height: 300px;
-}
+
     }
     .img2-p {
         font-size: 17px;
@@ -1471,7 +1486,7 @@ select {
         margin-bottom: 10px;
     }
     .paytext {
-        position: absolute;
+        /* position: absolute; */
         /* bottom: -136px; */
         left: 213px;
         font-size: 7px;
@@ -1627,7 +1642,7 @@ select {
         margin-top: 210px;
     }
     .paytext {
-        position: absolute;
+        /* position: absolute; */
         /* bottom: -136px; */
         left: 163px;
         /* font-size: 9px; */

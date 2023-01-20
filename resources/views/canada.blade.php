@@ -9,17 +9,17 @@
                     Generate your Professional Canadian Pay Stubs
                 </div>
 
-                <p style="font-weight: 400;font-size:21px;" class="mb-0">
+                <p style="font-weight: 400;font-size:21px;font-family: 'Futura LT';" class="mb-0">
                     Generate Your Canadian Pay Stub in Seconds with Paystubx. The #1 Leading in the
                     game.
                     game.</p>
-                <p class="mb-5 " style="font-size:larger;font-weight: 200;line-height: 2em;">Online secure
+                <p class="mb-5 " style="font-size:larger;font-weight: 200;line-height: 2em;font-family: 'Futura LT';">Online secure
                     web-based pay stub generator,</br> straightforward to use,
                     instant pay stub delivery, and</br> free pay stub preview. Simple as ABC.</p>
 
 
                 <div class="mt-5 justify-content-center ">
-                    <a class="btn btn-lg  mt-2 p-2 btn-danger CreatePaystub " href="{{url('canada-paystub') }}">Create
+                    <a style="font-family: 'Futura LT';"class="btn btn-lg  mt-2 p-2 btn-danger CreatePaystub " href="{{url('canada-paystub') }}">Create
                         Paystub</a>
                 </div>
 
@@ -46,9 +46,7 @@
             <div class="col-md-6 col-sm-6 m-auto justifuy-content-center">
                 <h1 class="display-4" style="font-family: helvetica-w01-bold,helvetica-w02-bold,helvetica-lt-w10-bold,sans-serif;font-weight: 600;">
                     READY TO GET STARTED?</h1>
-                <p style=" font-size: 22px;
-    font-weight: 200;
-    line-height: 30px;">Very easy platform to generate </br> your Canadian Paystub, and </br> Payslip in
+                <p style=" font-size: 22px; font-weight: 200;line-height: 30px; font-family: 'Futura LT';">Very easy platform to generate </br> your Canadian Paystub, and </br> Payslip in
                     Get your</br> data ready, customize your</br> paystub, generate, download,</br> email,
                     print it.
                 </p>

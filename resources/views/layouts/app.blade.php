@@ -18,9 +18,11 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;800&family=Public+Sans:wght@300&display=swap">
 
+ 
     <!-- Responsive CSS Style -->
     <link rel="stylesheet" type="text/css" href="{{ asset('user') }}/css/style.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('user') }}/css/newstyle.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('user') }}/css/user-dashboard.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <style>
@@ -170,6 +172,7 @@
                 <div class="col-lg-3 text-center m-auto">
                     <div class="container justify-content-center text-left">
                         <div>
+<<<<<<< HEAD
                             <a class="w-100 footbtn"
                                 style="font-family: Futura,Trebuchet MS,Arial,sans-serif; font-size:20px;"
                                 href="{{ url('terms') }}">Terms & Conditions</a>
@@ -188,6 +191,18 @@
                             <a class="w-100 footbtn"
                                 style="font-family: Futura,Trebuchet MS,Arial,sans-serif; font-size:20px;"
                                 href="{{ url('contact') }}">Contact Us</a>
+=======
+                            <a class="w-100 footbtn" style="font-family: 'Futura LT'; font-size:20px;" href="{{url('terms')}}">Terms & Conditions</a>
+                        </div>
+                        <div class="mt-3">
+                            <a class="w-100 footbtn" style="font-family: 'Futura LT'; font-size:20px;" href="{{url('privacy')}}">Privacy Policy</a>
+                        </div>
+                        <div class="mt-3">
+                            <a class="w-100 footbtn" style="font-family: 'Futura LT'; font-size:20px;" href="{{url('refund')}}">Refund Policy</a>
+                        </div>
+                        <div class="mt-3">
+                            <a class="w-100 footbtn" style="font-family: 'Futura LT'; font-size:20px;" href="{{url('contact')}}">Contact Us</a>
+>>>>>>> 1199f7560daacf3c7e50bdb7de9a4c51372b038c
                         </div>
                     </div>
                 </div>
@@ -199,9 +214,13 @@
                 </div>
                 <div class="col-lg-5 text-center m-auto ">
                     <div class="container  justify-content-center">
+<<<<<<< HEAD
                         <p class="text-white"
                             style="font-family: Futura,Trebuchet MS,Arial,sans-serif; font-size:20px;">COPYRIGHT © 2022
                             PaystubX,<br> ALL RIGHTS RESERVED.</p>
+=======
+                        <p class="text-white" style="font-family: 'Futura LT'; font-size:20px;">COPYRIGHT © 2022 PaystubX,<br> ALL RIGHTS RESERVED.</p>
+>>>>>>> 1199f7560daacf3c7e50bdb7de9a4c51372b038c
                         <div class="container">
                             <a href="https://www.google.com/" target="_blank"><i class="fa fa-facebook   fbicon "
                                     aria-hidden="true"></i></a>

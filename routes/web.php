@@ -91,6 +91,9 @@ Route::get('contact', function () {
 Route::get('template-view', function () {
     return view('template');
 });
+Route::get('userDashboard', function () {
+    return view('user-dashboard');
+});
 
 
 
@@ -120,6 +123,7 @@ Route::name('admin')->prefix('backend')->group(function () {
     Route::get('deduction', function () {
         return view('Admin/deduction');
     });
+ 
 });
 
 

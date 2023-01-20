@@ -1,4 +1,71 @@
+
+
+
+@font-face {
+    font-family: 'Futura';
+    src: url('FONT/Futura-Bold.woff2') format('woff2'),
+        url('FONT/Futura-Bold.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Futura Bk BT';
+    src: url('FONT/FuturaBT-Book.woff2') format('woff2'),
+        url('FONT/FuturaBT-Book.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Futura LT';
+    src: url('FONT/FuturaLT-Book.woff2') format('woff2'),
+        url('FONT/FuturaLT-Book.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+@font-face {
+    font-family: 'Futura Md BT';
+    src: url('FONT/FuturaBT-Medium.woff2') format('woff2'),
+        url('FONT/FuturaBT-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'Futura';
+    src: url('FONT/Futura-Black-Bold.woff2') format('woff2'),
+        url('FONT/Futura-Black-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Futura XBlkCnIt BT';
+    src: url('FONT/FuturaBT-ExtraBlackCondItalic.woff2') format('woff2'),
+        url('FONT/FuturaBT-ExtraBlackCondItalic.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+
+
+body {
+    font-family: 'Futura';
+
+}
+
 .redColor {
+    
     color: red;
 }
 
@@ -105,8 +172,7 @@
 .instant {
 
     color: white;
-    font-family: Futura, Trebuchet MS, Arial, sans-serif;
-    font-weight: 400;
+    font-family: 'Futura LT';
     font-size: 58px;
 }
 
@@ -118,6 +184,7 @@
     word-spacing: 1px;
     letter-spacing: 1px;
     font-weight: 200;
+    font-family: 'Futura LT';
 
 }
 
@@ -187,25 +254,23 @@
 }
 
 .WithPaystubX {
-
     font-size: 52px;
-    font-weight: 500;
-    font-family: Futura, Trebuchet MS, Arial, sans-serif;
-
-
+    font-weight: 600;
+    font-family: 'Futura LT';
 }
 
 .Show {
 
     font-size: 50px;
-    font-weight: 300;
-    font-family: Futura, Trebuchet MS, Arial, sans-serif;
+    font-weight: 500;
+    font-family: 'Futura LT';
 
 }
 
 .Createpay {
     font-size: 33px;
-    font-family: Futura, Trebuchet MS, Arial, sans-serif;
+    font-family: 'Futura LT';
+    font-weight: 600;
 }
 
 .proof {
