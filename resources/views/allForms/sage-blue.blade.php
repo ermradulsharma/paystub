@@ -20,28 +20,80 @@ th {
 .center {
     text-align: center;
 }
+
+table.std {
+    margin-top: 0.2cm;
+    border: 0.03cm solid #4a50b2;
+    border-spacing: 0;
+    border-radius: 15px 15px 15px 15px;
+    font-size: 10pt;
+   
+}
+
+table.std thead {
+    text-align: left;
+    background-color: #4a50b2;
+    height: 25px;
+    color: white;
+}
+
+table.std thead tr th:first-child {
+
+    border-radius: 15px 15px 0px 0px;
+}
+
+table.ltd {
+    margin-top: 0.2cm;
+    border: 0.03cm solid #4a50b2;
+    border-spacing: 0;
+    border-radius: 15px 15px 15px 15px;
+    font-size: 10pt;
+    height: 200px;
+}
+
+table.ltd thead {
+    text-align: left;
+    background-color: #4a50b2;
+    height: 25px;
+    color: white;
+}
+
+table.ltd thead tr th:first-child {
+
+    border-radius: 15px 0px 0px 0px;
+}
+
+table.ltd thead tr th:last-child {
+
+    border-radius: 0px 15px 0px 0px;
+}
+
+table.ltd thead tr th {
+    text-align: center;
+    padding: 0px 10px;
+}
+
+table.ltd tr td {
+    text-align: center;
+}
 </style>
 
 <body>
 
-    <section style="border:1px solid #4a50b2; border-radius: 20px;">
-        <table style="width:100%; border-radius:20px 20px 20px 20px; border-top:none; margin: -3px 3px 0px 5px; ">
-            <thead style=" border-radius:20px 20px 0px 0px; border-bottom:0; background-color:#4a50b2;">
-            <tr style="background-color:red;">
-            <td class="center"
-                    style="font-weight:500; color:#fff; background-color:#4a50b2; border:1px solid #fff; border-radius:20px 0px 0px 0px;">
-                    Employee No</td>
-                <td class="center"
-                    style="font-weight:500; color:#fff; background-color:#4a50b2; border:1px solid #fff;">Employee Name
-                </td>
-                <td class="center"
-                    style="font-weight:500; color:#fff; background-color:#4a50b2; border:1px solid #fff;">Process Date
-                </td>
-                <td class="center"
-                    style="font-weight:500; color:#fff; background-color:#4a50b2; border:1px solid #fff; border-radius:0px 20px 0px 0px;">
-                    National Insurance Number</td>
-            </tr>
-               
+    <section>
+        <table style="width:100%; height:50px;" class="ltd">
+            <thead>
+                <tr>
+                    <th>Employee No</th>
+                    <th>Employee Name
+                    </th>
+                    <th>Process
+                        Date
+                    </th>
+                    <th>
+                        National Insurance Number</th>
+                </tr>
+
             </thead>
             <tr>
 
@@ -55,18 +107,21 @@ th {
 
     </section>
 
-    <section style="margin-top:10px;">
+    <section style="margin-top:1px;">
 
-        <table style="width:59.8%; float:left; border:1px solid #4a50b2; border-radius:10px; height:300px;background-color:#e7e8f7">
+        <table style="width:59.8%; float:left; height:200px;" class="ltd">
 
-            <tr>
-                <td style="font-weight:600; color:#fff; background-color:#4a50b2; border:1px solid #fff;">Payments</td>
-                <td style="font-weight:600; color:#fff; background-color:#4a50b2; border:1px solid #fff;">Units</td>
-                <td style="font-weight:600; color:#fff; background-color:#4a50b2; border:1px solid #fff;">Rate</td>
-                <td style="font-weight:600; color:#fff; background-color:#4a50b2; border:1px solid #fff;">Amount</td>
+            <thead>
+                <tr>
+                    <th>Payments</th>
+                    <th>Units</th>
+                    <th>Rate</th>
+                    <th>Amount</th>
+                </tr>
 
 
-            </tr>
+
+            </thead>
             <tr>
                 <td>Salary</td>
                 <td></td>
@@ -101,74 +156,65 @@ th {
 
         </table>
 
-        <table style="width:39.8%; float:right; border:1px solid #4a50b2; border-radius:10px;height:300px;background-color:#e7e8f7">
+        <table style="width:39.8%; float:right; height:200px;" class="ltd">
 
+            <thead>
+                <tr>
+                    <th colspan="4">Deductions</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
 
-            <tr>
-                <td style="font-weight:600; color:#fff; background-color:#4a50b2; border:1px solid #fff;">Deductions</td>
-                <td style="font-weight:600; color:#fff; background-color:#4a50b2; border:1px solid #fff;">Amount</td>
-            </tr>
-
-            <tr>
-                <td>Period Pay</td>
-                <td>3350</td>
-            </tr>
-            <tr>
-                <td>PAYE Tax</td>
-                <td>500</td>
-            </tr>
+            <tbody>
+                <tr>
+                    <td colspan="4">Period Pay</td>
+                    <td>3350</td>
+                </tr>
+                <tr>
+                    <td colspan="4">PAYE Tax</td>
+                    <td>500</td>
+                </tr>
             </tbody>
 
             <tbody>
                 <tr>
-                    <td>Nat Insurance</td>
+                    <td colspan="4">Nat Insurance</td>
                     <td>1390</td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td colspan="5"></td>
+                    
                 </tr>
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td colspan="5"></td>
+                    
                 </tr>
                 <tr>
-                    <td>Healthcare</td>
+                    <td colspan="4">Healthcare</td>
                     <td>2345</td>
                 </tr>
             </tbody>
 
             <tbody>
                 <tr>
-                    <td>Student Loan</td>
+                    <td colspan="4">Student Loan</td>
                     <td>456</td>
                 </tr>
+             
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td colspan="5"></td>
+                    
                 </tr>
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td colspan="5"></td>
+                    
                 </tr>
                 <tr>
-                    <td>EE Pension</td>
+                    <td colspan="4">EE Pension</td>
                     <td>800</td>
                 </tr>
                 <tr>
-                    <td>EE Pension</td>
+                    <td colspan="4">EE Pension</td>
                     <td>1350</td>
                 </tr>
 
@@ -176,9 +222,9 @@ th {
         </table>
     </section>
 
-    <section style="margin-top:310px; padding-bottom:0.5px; ">
+    <section style="margin-top:210px; padding-bottom:0.5px; ">
 
-        <table style="width:40%; float:left; border:1px solid #4a50b2; border-radius:10px; height:200px;">
+        <table style="width:40%; float:left; border:1px solid #4a50b2; border-radius:10px; height: 195px; margin-top:10px;">
             <tr>
                 <td>Sally James</td>
             </tr>
@@ -202,48 +248,13 @@ th {
             </tr>
         </table>
 
-        <table
-            style="width:29.5%; float:right; border:1px solid #4a50b2; border-radius:10px;height:200px; margin-left:4px;">
+        <table class="std" style="float:right; width:29.5%;  height:200px; margin-left:4px;">
+            <thead>
+                <tr>
+                    <th colspan=2>This Period</th>
+                </tr>
+            </thead>
             <tbody>
-                <tr>
-                    <th colspan="2"style="color:#fff; background-color:#4a50b2; border:1px solid #fff;">Year to date</th>
-                </tr>
-                <tr>
-                    <td class="center">Pay</td>
-                    <td>23140</td>
-                </tr>
-                <tr>
-
-                    <td class="center">Pay Tax</td>
-                    <td>23140</td>
-                </tr>
-            </tbody>
-
-            <tbody>
-                <tr>
-                    <td class="center">Net insurance</td>
-                    <td>23140</td>
-                </tr>
-                <tr>
-                    <td class="center">EE Pension</td>
-                    <td>23140</td>
-                </tr>
-            </tbody>
-
-            <tbody>
-                <tr>
-                    <td class="center">EE Pension</td>
-                    <td>23140</td>
-                </tr>
-            </tbody>
-
-        </table>
-
-        <table style="width:29.5%; float:right; border:1px solid #4a50b2; border-radius:10px;height:200px;">
-            <tbody>
-                <tr>
-                    <th colspan="2" style="color:#fff; background-color:#4a50b2; border:1px solid #fff;">This Period</th>
-                </tr>
                 <tr>
                     <td class="center">Pay</td>
                     <td>23140</td>
@@ -273,9 +284,48 @@ th {
                 </tr>
             </tbody>
         </table>
+
+
+        <table class="std" style="float:right; height:200px; width:29.5%;">
+            <thead>
+                <tr>
+                    <th colspan=2>This Period</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="center">Pay</td>
+                    <td>23140</td>
+                </tr>
+                <tr>
+
+                    <td class="center">Pay Tax</td>
+                    <td>23140</td>
+                </tr>
+            </tbody>
+
+            <tbody>
+                <tr>
+                    <td class="center">Net insurance</td>
+                    <td>23140</td>
+                </tr>
+                <tr>
+                    <td class="center">EE Pension</td>
+                    <td>23140</td>
+                </tr>
+            </tbody>
+
+            <tbody>
+                <tr>
+                    <td class="center">EE Pension</td>
+                    <td>23140</td>
+                </tr>
+            </tbody>
+        </table>
+
     </section>
 
-    <section style="width: 100%; margin-top:210px;">
+    <section style="width: 100%; margin-top:220px;">
         <table style="width:69.7%; border:1px solid #4a50b2; border-radius:10px;">
             <tr>
                 <td style="font-size:13px; padding:5px 10px;line-height:1.5;">Jolly Little Co Limited, Unit 12, The
@@ -292,6 +342,8 @@ th {
             </tr>
         </table>
     </section>
+
+
 
 
 
