@@ -508,6 +508,7 @@
         $('.time_period').change(function() {
             dayCalculate();
         });
+        
         $('.pay_start').change(function() {
             dayCalculate();
         });
@@ -661,9 +662,9 @@
             var total = rate * hours;
             var ytd_total = total * 52;
             setTimeout(function() {
-                $('#total_' + id).val(total);
-                $('#period_' + id).val(total);
-                $('#ytd_total_' + id).val(ytd_total);
+                $('#total_' + id).val(parseFloat(total).toFixed(2));
+                $('#period_' + id).val(parseFloat(total).toFixed(2));
+                $('#ytd_total_' + id).val(parseFloat(ytd_total).toFixed(2));
                 gross_total();
             }, 300);
         }
@@ -679,8 +680,8 @@
             });
 
             setTimeout(function() {
-                $("#period_gross_total").val(total);
-                $("#ytd_gross_total").val(ytd_total);
+                $("#period_gross_total").val(parseFloat(total).toFixed(2));
+                $("#ytd_gross_total").val(parseFloat(ytd_total).toFixed(2));
                 default_tax();
             }, 300);
         }
@@ -691,16 +692,17 @@
             var tax_state = $('option:selected', '.tax_rate').attr('data-tax');
             period_deduction_tax = 0;
             period_ytd_deduction_tax = 0;
+            var time = 200;
             $('.taxes').each(function() {
                 var taxes_ids = $(this).data('id');
                 var taxes_values = $(this).data('value');
                 var tax_name = $(this).val();
 
                 if (tax_name == 'State Tax') {
-                    taxes_values = parseFloat(tax_state);
+                    taxes_values = parseFloat(tax_state).toFixed(2);
                 }
-                period_tax_price = period_gross_total * (taxes_values / 100);
-                period_ytd_tax_price = ytd_gross_total * (taxes_values / 100);
+                period_tax_price = parseFloat(period_gross_total).toFixed(2) * (taxes_values / 100);
+                period_ytd_tax_price = parseFloat(ytd_gross_total).toFixed(2) * (taxes_values / 100);
 
                 $('#taxes_' + taxes_ids).val(parseFloat(period_tax_price).toFixed(2));
                 $('#taxes_ytd_' + taxes_ids).val(parseFloat(period_ytd_tax_price).toFixed(2));
@@ -710,22 +712,27 @@
                 setTimeout(function() {
                     $(".deduction_tax").val(parseFloat(period_deduction_tax).toFixed(2));
                     $(".ytd_deduction_tax").val(parseFloat(period_ytd_deduction_tax).toFixed(2));
-                }, 300);
+
+                }, 200);
+                time += 200;
             });
+            setTimeout(() => {
+                netPay();
+            }, time);
+
         }
 
         function tax_deduction(value) {
-            // default_tax();
             var tax_total = $(".deduction_tax").val();
             console.log(value);
             if (value == '') {
                 value = 0;
             }
             var taxes = parseFloat(tax_total) + parseFloat(value);
-            $(".deduction_tax").val(taxes);
+            $(".deduction_tax").val(parseFloat(taxes).toFixed(2));
         }
 
-        $('.net_pay').click(function() {
+        function netPay() {
             var period_gross_total = $("#period_gross_total").val();
             var ytd_gross_total = $("#ytd_gross_total").val();
             var deduction_tax = $(".deduction_tax").val();
@@ -733,16 +740,22 @@
 
             var total_net_pay = parseFloat(period_gross_total) - parseFloat(deduction_tax);
             var total_ytd_net_pay = parseFloat(ytd_gross_total) - parseFloat(ytd_deduction_tax);
-            $(".total_net_pay").val(total_net_pay);
-            $(".total_ytd_net_pay").val(total_ytd_net_pay);
-        })
+            setTimeout(function() {
+                $(".total_net_pay").val(parseFloat(total_net_pay).toFixed(2));
+                $(".total_ytd_net_pay").val(parseFloat(total_ytd_net_pay).toFixed(2));
+            }, 300);
+        }
         $('.hourly').keyup(function() {
             var id = $(this).val();
             $('#rate_0').val(id);
         })
         $('.tax_rate').change(function() {
-
+            calculation(0);
         });
+
+        function empty_free() {
+
+        }
     });
 
 </script>
