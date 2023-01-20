@@ -16,9 +16,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;800&family=Public+Sans:wght@300&display=swap">
 
+ 
     <!-- Responsive CSS Style -->
     <link rel="stylesheet" type="text/css" href="{{ asset('user') }}/css/style.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('user') }}/css/newstyle.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('user') }}/css/user-dashboard.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <style>

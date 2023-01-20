@@ -1,0 +1,55 @@
+.usericon{
+        border: 1px solid black;
+        border-radius: 100px;
+        width: 57px;
+    
+        text-align: center;
+        /* margin: auto; */
+        padding-top: 0px;
+        font-size: 34px;
+    
+}
+
+td, th {
+    border: none;
+    text-align: left;
+    padding: 12px;
+    font-size: 16px;
+}
+.userbtn {
+    border: 2px solid #795548;
+    border-radius: 100px;
+    padding: 5px 21px 5px 21px;
+    background: white;
+    color: #795548;
+}
+.pen{
+    border: 1px solid #2196f3bd;
+    font-size: 28px;
+    border-radius: 100px;
+    width: 47px;
+    height: 47px;
+    margin: auto;
+    text-align: center;
+}
+.delbtn{
+    padding: 2px 25px 2px 25px;
+    font-size: 23px;
+    background: red;
+    color: white;
+    border: none;
+
+}
+.delpdf{
+    padding-left: 40px;
+}
+.user-checkbtn{
+    background: red;
+    color: white;
+    border: none;
+    padding: 10px 40px 10px 40px;
+    font-size: 20px;
+    border-radius: 100px;
+    margin-bottom: 9px;
+
+}
