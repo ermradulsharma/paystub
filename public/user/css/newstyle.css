@@ -823,6 +823,54 @@ select {
     font-family: 'Futura LT';
     font-size:19px;
 }
+
+.three-box-section {
+    padding: 0px 0px 60px;
+}
+.box-wrapper {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0px 20px;
+}
+.box-row {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.box-border-outer {
+    width: calc(33.33% - 14px);
+    margin-right: 20px;
+    border: 7px solid #000;
+}
+.box-border-outer:last-child {
+    margin-right: 0;
+}
+.box {
+    padding: 65px 30px;
+    border: 9px solid #b3dade;
+    height: 100%;
+}
+.box-content h6 {
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+    padding: 0px 0px 35px;
+}
+.bottom-content p {
+    font-size: 20px;
+    font-weight: 600;
+    color: #767672;
+    text-align: center;
+    line-height: 1.9;
+}
+.box-icon img {
+    width: 100%;
+}
+.box-icon {
+    max-width: 117px;
+    margin: 0 auto;
+    padding: 0px 0px 35px;
+}
 /* w2paystub end */
 
 
@@ -1369,6 +1417,14 @@ select {
         margin-top: 20px;
         font-weight: 400;
     }
+    .box-border-outer {
+        width: 55%;
+        margin-bottom: 20px;
+        margin-right: 0px;
+    }
+    .box-row {
+        justify-content: center;
+    }
 
     
 }
@@ -1382,6 +1438,7 @@ select {
     .sidenav a {
         font-size: 18px;
     }
+    
 
 }
 
@@ -1392,6 +1449,9 @@ select {
         position: relative;
         top: 10px;
         left: 0px;
+    }
+    .box-border-outer {
+        width: 100%;
     }
 
 

@@ -183,98 +183,46 @@
     <div class="container text-justify text-center pb-5">
         <h1 style="font-size:30px;font-family: font-family: 'Futura'; font-weight:600;" class="pt-5">Why do Small
             Businesses Love Paystub<span class="text-danger">X</span>?</h1>
-
-        <div class="row mt-5">
-
-            <div class="col-sm-12 col-md-6 col-lg-4  mt-4">
-
-                <div class="  border border-dark">
-                    <div class="boxAccurate border border-dark p-1">
-                        <div class="Accurate container p-2 ">
-                            <div class="card card-bordered border-dark pb-5">
-                                <div class="card-img-block">
-                                    <div class="info-box mt-3"
-                                        style="font-size:20px;font-family: 'Futura'; font-weight:300;">
-                                        <b>Accurate Tax Calculations </b>
-                                    </div>
-                                </div>
-                                <div class="card-body pt-5 pb-5">
-                                    <img src="images/salary.webp" class="salary">
-                                    <p class="card-text text-center mt-5 pb-4"
-                                        style=" color:#767672; font-size:20px; line-height:2em; font-family: 'Futura LT';">
-                                        Keeping
-                                        payroll records is a complex task. Once you set everything up, we take care of
-                                        it
-                                        for
-                                        you. Our reliable online service removes the human error of payroll record
-                                        keeping.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-12 col-md-6 col-lg-4  mt-4">
-
-                <div class="  border border-dark">
-                    <div class="boxAccurate border border-dark p-1">
-                        <div class="Accurate container p-2 ">
-                            <div class="card card-bordered border-dark pb-1">
-                                <div class="card-img-block">
-                                    <div class="info-box mt-3"
-                                        style="font-size:25px;font-family: 'Futura'; font-weight:300;">
-                                        <b> Form W-2</b>
-                                    </div>
-                                </div>
-                                <div class="card-body pt-5">
-                                    <img src="images/NYCFreeTaxPrep-Documents-W2.webp" class="salary">
-                                    <p class="card-text text-center mt-4"
-                                        style=" color:#767672; font-size:21.5px; line-height:2em; font-family: 'Futura LT';">
-                                        A W-2 tax form shows important information about the income you've earned from
-                                        your employer, amount of taxes withheld from your paycheck, benefits provided
-                                        and other information for the year. You use this form to file your federal and
-                                        state taxes.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-12 col-md-6 col-lg-4  mt-4 ">
-                <div class=" border border-dark">
-                    <div class="boxAccurate border border-dark p-1">
-                        <div class="Accurate container p-2 ">
-                            <div class="card card-bordered border-dark  pb-5">
-                                <div class="card-img-block ">
-                                    <div class="info-box mt-3"
-                                        style="font-size:25px;font-family:'Futura'; font-weight:300;">
-                                        <b>1099-MISC</b>
-                                    </div>
-                                </div>
-                                <div class="card-body pt-5 pb-5">
-                                    <img src="images/2573180.webp" class="salary mb-3">
-                                    <p class="card-text text-center mt-4 pb-5 mb-4"
-                                        style="  color:#767672; font-size:23px; line-height:2em; font-family: 'Futura LT'; ">
-
-                                        Form 1099-MISC reports payments other than nonemployee compensation made by a
-                                        trade or business to others.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
     </div>
 
 
 </div>
+<section class="three-box-section">
+    <div class="box-wrapper">
+        <div class="box-row">
+            <div class="box-border-outer">
+                <div class="box">
+                    <div class="box-content">
+                        <h6>Accurate Tax Calculations</h6>
+                    </div>
+                    <div class="box-icon"> <img src="images/salary.webp" class="salary"></div>
+                    <div class="bottom-content"><p>Keeping payroll records is a complex task. Once you set everything up, we take care of it for you. Our reliable online service removes the human error of payroll record keeping.</p></div>
+                </div>
+
+            </div>
+            <div class="box-border-outer">
+                <div class="box">
+                    <div class="box-content">
+                        <h6>Form W-2</h6>
+                    </div>
+                    <div class="box-icon"> <img src="images/NYCFreeTaxPrep-Documents-W2.webp" class="salary"></div>
+                    <div class="bottom-content"><p>A W-2 tax form shows important information about the income you've earned from your employer, amount of taxes withheld from your paycheck, benefits provided and other information for the year. You use this form to file your federal and state taxes.</p></div>
+                </div>
+
+            </div>
+            <div class="box-border-outer">
+                <div class="box">
+                    <div class="box-content">
+                        <h6>1099-MISC</h6>
+                    </div>
+                    <div class="box-icon"><img src="images/2573180.webp" class="salary mb-3"></div>
+                    <div class="bottom-content"><p>Form 1099-MISC reports payments other than nonemployee compensation made by a trade or business to others.</p></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
 <div class="vedios">
     <div class="container py-5 justify-content-center " style=" max-width: 1394px;">
         <div class="row justify-content-center  ">
