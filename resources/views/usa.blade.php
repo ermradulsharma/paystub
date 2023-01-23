@@ -482,7 +482,7 @@
                         @foreach ($deduction as $key => $item)
                         <div class="row mb-3 mt-4">
                             <div class="col-md-4 col-lg-3">
-                                <img src="images/lock.png">
+                                <img src="{{asset('images/lock.png')}}" class="earnbtn2">
                                 <input class="earnbtn text-center taxes" data-id="{{$key}}" data-value="{{ $item->price }}" value="{{$item->title}}">
                             </div>
                             <div class="col-md-1 col-lg-1"></div>
@@ -906,7 +906,7 @@
             var fieldHTML =
                 '<div class="row mb-3">' +
                 '<div class="col-md-3">' +
-                '<i class="fa fa-lock earnbtn2"></i>' +
+                ' <img src="{{asset("images/lock.png")}}" class="earnbtn2">' +
                 '<input class="earnbtn text-center" type="text" value="">' +
                 '</div>' +
                 '<div class="col-md-1"> </div>' +
