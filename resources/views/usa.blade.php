@@ -607,7 +607,7 @@
             $('option:selected', '.basicTemplate').prop("selected", false);
         });
         $('.basicTemplate').change(function() {
-            $('option:selected', '.basicTemplate').prop("selected", false);
+            $('option:selected', '.advanceTemplate').prop("selected", false);
         });
     });
 
