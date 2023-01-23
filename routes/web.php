@@ -39,7 +39,7 @@ Route::get('generate-pdf', [W2FormController::class, 'generatePDF']);
 Route::get('preview-pdf', [W2FormController::class, 'previewPDF']);
 
 Route::get('tempBasic-pdf', [TemplateFormController::class, 'BasicPaystubUsaPDF']);
-Route::get('paystubBlue-pdf', [TemplateFormController::class, 'BasicpatstubBluePDF']);
+Route::get('paystubBlue-pdf', [TemplateFormController::class, 'BasicPayStubBluePDF']);
 
 // shubham
 Route::get('cerulean-pdf', [TemplateFormController::class, 'advanceCeruleanUsa']);

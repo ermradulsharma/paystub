@@ -64,6 +64,7 @@
         #fica {
             font-size: 14px;
         }
+
     </style>
 </head>
 
@@ -72,8 +73,7 @@
         <table style="width:100%;">
             <thead style="border:none;color:white; background-color:darkgrey;">
                 <th style="font-size: 16px;text-align: left;padding-left: 25px;">BankApp</th>
-                <th
-                    style="font-size: 20px;padding-top:10px;text-align: right;padding-right: 12px;padding-bottom: none;">
+                <th style="font-size: 20px;padding-top:10px;text-align: right;padding-right: 12px;padding-bottom: none;">
                     Earnings Statement</th>
 
             </thead>
@@ -95,28 +95,17 @@
 
             </thead>
             <thead id="colourborder">
-                <th class="padding" colspan="2">
-                    EMPLOYEE ID
-                </th>
-                <th class="padding" colspan="2">
-                    PERIOD ENDING
-                </th>
-                <th class="padding">
-                    PAY DATE
-                </th>
-                <th class="padding" colspan="2">CHECK NUMBER</th>
-
-
-
+                <th class="padding" colspan="2"> EMPLOYEE ID </th>
+                <th class="padding" colspan="3"> PERIOD ENDING </th>
+                <th class="padding"> PAY DATE </th>
+                <th class="padding">CHECK NUMBER</th>
             </thead>
-            <thead>
-                <th class="padding" id="colsborder" style="border:2px solid  #464646;">575785</th>
-                <th class="padding" style="border:2px solid  #464646;" colspan="2">23/1/2023 - 24/1/2023</th>
-                <th class="padding" style="border:2px solid  #464646;" colspan="2">25/1/2023</th>
-                <th class="padding" style="border:2px solid  #464646;" colspan="2">254236</th>
-
-
-            </thead>
+            <tr>
+                <td class="padding" id="colsborder" colspan="2" style="border:2px solid  #464646; text-align:center;">575785</td>
+                <td class="padding" style="border:2px solid  #464646; text-align:center;" colspan="3">23/1/2023 - 24/1/2023</td>
+                <td class="padding" style="border:2px solid  #464646; text-align:center;">25/1/2023</td>
+                <td class="padding" style="border:2px solid  #464646; text-align:center;">254236</td>
+            </tr>
             <thead id="colourborder">
                 <th class="padding">INCOME</th>
                 <th class="padding">RATE</th>
@@ -183,7 +172,7 @@
 
                     </tr>
                     <tr>
-                        <td style="text-transform: uppercase;"id="fica">state-tax</td>
+                        <td style="text-transform: uppercase;" id="fica">state-tax</td>
                         <td>50.00</td>
                         <td>45.00</td>
 
@@ -205,24 +194,23 @@
 
 
 
-            <table id="bottomtable"
-                style="width:100%; margin-top:135px; border:1px solid  #464646; background-color:white;">
+            <table id="bottomtable" style="width:100%; margin-top:135px; border:1px solid  #464646; background-color:white;">
                 <tr class="">
-                    <th id="cols"class="head1">YTD GROSS</th>
-                    <th id="cols"class="head1">YTD EDUCATION</th>
-                    <th id="cols"class="head1">NET PAY</th>
-                    <th id="cols"class="head1">CURRENT TOTAL</th>
-                    <th id="cols"class="head1">DEDUCTION</th>
-                    <th id="cols"class="head1">NET PAY</th>
+                    <th id="cols" class="head1">YTD GROSS</th>
+                    <th id="cols" class="head1">YTD EDUCATION</th>
+                    <th id="cols" class="head1">NET PAY</th>
+                    <th id="cols" class="head1">CURRENT TOTAL</th>
+                    <th id="cols" class="head1">DEDUCTION</th>
+                    <th id="cols" class="head1">NET PAY</th>
                 </tr>
 
                 <tr class="ytd">
-                    <td id="cols"class="head2">39,565</td>
-                    <td id="cols"class="head2">23,455</td>
-                    <td id="cols"class="head2">53,454</td>
-                    <td id="cols"class="head2">34,533</td>
-                    <td id="cols"class="head2">23,455</td>
-                    <td id="cols"class="head2">56,664</td>
+                    <td id="cols" class="head2">39,565</td>
+                    <td id="cols" class="head2">23,455</td>
+                    <td id="cols" class="head2">53,454</td>
+                    <td id="cols" class="head2">34,533</td>
+                    <td id="cols" class="head2">23,455</td>
+                    <td id="cols" class="head2">56,664</td>
                 </tr>
             </table>
 
