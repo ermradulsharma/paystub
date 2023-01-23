@@ -417,41 +417,47 @@
                         </div>
 
                         <div class="row mb-3 mt-">
-                            <div>
-                                <div class="col-md-2">
+                            <div class="col-md-2">
+                                <div>
                                     <input class="earnbtn text-center" type="text" name="earning_0" value="Regular" id="earning_0" data-id="0" required>
                                 </div>
+
                             </div>
 
-                            <div>
-                                <div class="col-md-2 ">
+                            <div class="col-md-2 ">
+                                <div>
                                     <input type="text" name="rate_0" class="earnbtn text-center calculation" value="" id="rate_0" data-id="0" required>
                                 </div>
+
                             </div>
 
-                            <div>
-                                <div class="col-md-2 ">
+                            <div class="col-md-2 ">
+                                <div>
                                     <input type="text" name="hours_0" class="earnbtn text-center hours calculation" value="" id="hours_0" data-id="0" required>
                                 </div>
+
                             </div>
 
-                            <div>
-                                <div class="col-md-2">
+                            <div class="col-md-2">
+                                <div>
                                     <input type="text" name="total_0" class="earnbtn text-center" value="" id="total_0" data-id="0" required>
                                 </div>
+
                             </div>
 
-                            <div>
-                                <div class="col-md-2">
+                            <div class="col-md-2">
+                                <div>
                                     <input type="text" name="period_0" class="earnbtn text-center gross_total" value="" id="period_0" data-id="0" required>
                                 </div>
+
                             </div>
 
-                            <div>
-                                <div class="col-md-2">
+                            <div class="col-md-2">
+                                <div>
                                     <input type="text" name="ytd_total_0" class="earnbtn text-center ytd_total" value="" id="ytd_total_0" data-id="0" required>
                                 </div>
                             </div>
+
                         </div>
                         <div class="col-md-2">
                             <input type="text" name="" class="earnbtn text-center period_gross_total" value="" id="period_gross_total" hidden>
