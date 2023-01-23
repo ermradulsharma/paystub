@@ -106,7 +106,7 @@
                                 <h6 style="" class="base">BASIC TEMPLATES</h6>
                                 <div class="mt-4">
                                     <div class="input-group mmenu mb-3 text-center">
-                                        <select class="form-control dropdown1 text-center bt_id small-font basicTemp" style="margin-right:10px; font-size:18px;">
+                                        <select class="form-control dropdown1 text-center bt_id small-font" style="margin-right:10px; font-size:18px;">
                                             <option> --- Select Basic Templates --- </option>
                                             @foreach ($basicType as $data)
                                             @if($data->state == 'usa' && $data->type == 'basic')
@@ -128,7 +128,7 @@
                                 <h6 style="margin-left:-23px;font-weight: 900;">ADVANCED TEMPLATES</h6>
                                 <div class="mt-4">
                                     <div class="input-group mmenu mb-3">
-                                        <select class="form-control text-center dropdown1 at_id small-font advanceTemp" style="margin-right:10px; font-size:18px;">
+                                        <select class="form-control text-center dropdown1 at_id small-font" style="margin-right:10px; font-size:18px;">
                                             <option> --- Select Advance Template --- </option>
                                             @foreach ($advanceType as $data)
                                             @if($data->state == 'usa' && $data->type == 'advance')
@@ -589,11 +589,11 @@
                 required: true,
             },
             tel: {
-                required: true
-            , }
-            , address_1: {
-                required: true
-            , }
+                required: true,
+            },
+            address_1: {
+                required: true,
+            }
             , address_2: {
                 required: true
             , }
