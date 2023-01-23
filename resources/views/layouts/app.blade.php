@@ -158,7 +158,7 @@
     <!-- Start Footer Section -->
     <div class="footerSection">
         <div class="container" style="max-width:1550px; margin:0 auto; padding:0px 20px;">
-            <div class=" row py-5 justify-content-center">
+            <div class=" row py-5 justify-content-center" style="margin:0 auto;">
                 <div class="col-lg-3 text-center m-auto">
                     <div class="container justify-content-center text-left">
                         <div class="flex-row">
