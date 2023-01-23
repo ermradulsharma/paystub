@@ -57,7 +57,7 @@
 </div>
 
 <div class="container pt-5 wrapper">
-    <div class="row space-between">
+    <div class="row space-between" style="margin:0 auto;">
         <div class="col-lg-5">
             <h1 class="WithPaystubX mt-3"> With Paystub<span class="text-danger">X</span></h1>
             <h3 class="Show"> Show proof of income. </h3>
