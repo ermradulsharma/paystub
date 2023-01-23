@@ -29,14 +29,14 @@
                             <div class="col-md-6 mt-1">
                                 <div>
                                     <label for="cname" class="lable">EMPLOYER (COMPANY) NAME <span class="redColor">*</span> </label>
-                                    <input type="text" id="cname" name="cname" placeholder="Your Employer & Company Name" class="w-100 p-2 text-center textInputFontSize" required>
+                                    <input type="text" id="cname" name="cname" placeholder="Your Employer & Company Name" class="w-100 p-2 text-center textInputFontSize">
                                 </div>
                             </div>
 
                             <div class="col-md-6 mt-1">
                                 <div>
                                     <label for="tel" class="lable">EMPLOYER TELEPHONE NUMBER <span class="redColor">*</span> </label>
-                                    <input type="tel" id="tel" name="tel" placeholder="123-234-4565" class="w-100 p-2 text-center textInputFontSize" required>
+                                    <input type="tel" id="tel" name="tel" placeholder="123-234-4565" class="w-100 p-2 text-center textInputFontSize">
                                 </div>
                             </div>
 
@@ -46,7 +46,7 @@
                             <div class="col-md-12">
                                 <div>
                                     <label for="address_1" class="lable">STREET ADDRESS 1 <span class="redColor">*</span> </label>
-                                    <input type="text" id="address_1" name="address_1" placeholder="Your Employer Address" class="w-100 p-2  textInputFontSize" required>
+                                    <input type="text" id="address_1" name="address_1" placeholder="Your Employer Address" class="w-100 p-2  textInputFontSize">
                                 </div>
 
                             </div>
@@ -56,7 +56,7 @@
                             <div class="col-md-12">
                                 <div>
                                     <label for="address_2" class="lable">STREET ADDRESS 2 <span class="redColor">*</span> </label>
-                                    <input type="text" id="address_2" name="address_2" placeholder="Suite 101 or Apt 101 (optional)" class="w-100 p-2  textInputFontSize" required>
+                                    <input type="text" id="address_2" name="address_2" placeholder="Suite 101 or Apt 101 (optional)" class="w-100 p-2  textInputFontSize">
                                 </div>
 
                             </div>
@@ -66,7 +66,7 @@
                             <div class="col-md-4">
                                 <div>
                                     <label for="city" class="lable">City <span class="redColor">*</span> </label>
-                                    <input type="text" id="city" name="city" placeholder="Your Employer City" class="w-100 p-2  textInputFontSize" required>
+                                    <input type="text" id="city" name="city" placeholder="Your Employer City" class="w-100 p-2  textInputFontSize">
                                 </div>
 
                             </div>
@@ -74,7 +74,7 @@
                                 <div>
                                     <label for="state" class="lable">State <span class="redColor">*</span> </label>
                                     <div class="dropdown ">
-                                        <select name="state" id="state" class="state dropdown11" required>
+                                        <select name="state" id="state" class="state dropdown11">
                                             <option> --- Select --- </option>
                                             @foreach ($stateTaxes as $stateTax )
                                             <option value="{{ $stateTax->state }}">{{ $stateTax->state }}</option>
@@ -87,7 +87,7 @@
                             <div class="col-md-4">
                                 <div>
                                     <label for="zip_code" class="lable">Zip Code <span class="redColor">*</span> </label>
-                                    <input type="text" id="zip_code" name="zip_code" placeholder=" Zip Code" class="w-100 p-2  textInputFontSize" required>
+                                    <input type="text" id="zip_code" name="zip_code" placeholder=" Zip Code" class="w-100 p-2  textInputFontSize">
                                 </div>
 
                             </div>
@@ -161,7 +161,7 @@
                             <div class="col-md-4 mt-4">
                                 <div>
                                     <label for="emp_name" class="lable">EMPLOYEE NAME <span class="redColor">*</span> </label>
-                                    <input type="text" id="emp_name" name="emp_name" placeholder="Your Full  Name" class="w-100 p-2  textInputFontSize" required>
+                                    <input type="text" id="emp_name" name="emp_name" placeholder="Your Full  Name" class="w-100 p-2  textInputFontSize">
                                 </div>
 
                             </div>
@@ -169,14 +169,14 @@
                             <div class="col-md-4 mt-4">
                                 <div>
                                     <label for="emp_id" class="lable">EMPLOYEE ID <span class="redColor">*</span> </label>
-                                    <input type="text" id="emp_id" name="emp_id" placeholder="Employer ID" class="w-100 p-2 r textInputFontSize" required>
+                                    <input type="text" id="emp_id" name="emp_id" placeholder="Employer ID" class="w-100 p-2 r textInputFontSize">
                                 </div>
 
                             </div>
                             <div class="col-md-4 mt-4">
                                 <div>
                                     <label for="emp_ssn" class="lable">EMPLOYEE SSN last4 <span class="redColor">*</span> </label>
-                                    <input type="text" id="emp_ssn" name="emp_ssn" placeholder="1224" class="w-100 p-2  textInputFontSize" required>
+                                    <input type="text" id="emp_ssn" name="emp_ssn" placeholder="1224" class="w-100 p-2  textInputFontSize">
                                 </div>
 
                             </div>
@@ -186,7 +186,7 @@
                             <div class="col-md-12">
                                 <div>
                                     <label for="emp_street_1" class="lable">STREET 1 <span class="redColor">*</span></label>
-                                    <input type="text" id="emp_street_1" name="emp_street_1" placeholder="Your Address" class="w-100 p-2  textInputFontSize" required>
+                                    <input type="text" id="emp_street_1" name="emp_street_1" placeholder="Your Address" class="w-100 p-2  textInputFontSize">
                                 </div>
 
                             </div>
@@ -196,7 +196,7 @@
                             <div class="col-md-12">
                                 <div>
                                     <label for="emp_street_2" class="lable">STREET 2 <span class="redColor">*</span> </label>
-                                    <input type="text" id="emp_street_2" name="emp_street_2" placeholder="Suite 101 or Apt 101(optional)" class="w-100 p-2  textInputFontSize" required>
+                                    <input type="text" id="emp_street_2" name="emp_street_2" placeholder="Suite 101 or Apt 101(optional)" class="w-100 p-2  textInputFontSize">
                                 </div>
 
                             </div>
@@ -206,7 +206,7 @@
                             <div class="col-md-4">
                                 <div>
                                     <label for="emp_city" class="lable">City <span class="redColor">*</span> </label>
-                                    <input type="text" id="emp_city" name="emp_city" placeholder="Your City" class="w-100 p-2  textInputFontSize" required>
+                                    <input type="text" id="emp_city" name="emp_city" placeholder="Your City" class="w-100 p-2  textInputFontSize">
                                 </div>
 
                             </div>
@@ -214,7 +214,7 @@
                                 <div>
                                     <label for="emp_state" class="lable">State <span class="redColor">*</span> </label>
                                     <div class="dropdown ">
-                                        <select name="emp_state" id="emp_state" class=" dropdown11 tax_rate" required>
+                                        <select name="emp_state" id="emp_state" class=" dropdown11 tax_rate">
                                             <option value="" data-tax=""> --- Select --- </option>
                                             @foreach ($stateTaxes as $stateTax )
                                             <option value="{{ $stateTax->state }}" data-tax="{{ $stateTax->rate }}">{{ $stateTax->state }}</option>
@@ -228,7 +228,7 @@
                             <div class="col-md-4">
                                 <div>
                                     <label for="emp_zip_code" class="lable">Zip Code <span class="redColor">*</span> </label>
-                                    <input type="text" id="emp_zip_code" name="emp_zip_code" placeholder=" 1234" class="w-100 p-2  textInputFontSize" required>
+                                    <input type="text" id="emp_zip_code" name="emp_zip_code" placeholder=" 1234" class="w-100 p-2  textInputFontSize">
                                 </div>
 
                             </div>
@@ -248,7 +248,7 @@
                                 <div>
                                     <label for="emp_your_state" class="lable">SELECT YOUR STATE <span class="redColor">*</span> </label>
                                     <div class="dropdown ">
-                                        <select name="emp_your_state" id="emp_your_state" class=" dropdown11" required>
+                                        <select name="emp_your_state" id="emp_your_state" class=" dropdown11">
                                             <option>Choose your State</option>
                                             @foreach ($stateTaxes as $stateTax )
                                             <option value="{{ $stateTax->state }}" data-tax="{{ $stateTax->rate }}">{{ $stateTax->state }}</option>
@@ -287,7 +287,7 @@
                             <div class="col-md-3 mt-4">
                                 <div>
                                     <label for="time_period" class="lable">HOW DO YOU GET PAID <span class="redColor">*</span> </label>
-                                    <select name="time_period" id="time_period" class="dropdown11 time_period" required>
+                                    <select name="time_period" id="time_period" class="dropdown11 time_period">
                                         <option> --- Select --- </option>
                                         <option value="weekly">Weekly</option>
                                         <option value="bi-weekly">Bi-Weekly</option>
@@ -303,7 +303,7 @@
                             <div class="col-md-3 mt-4">
                                 <div>
                                     <label for="hourly" class="lable">HOURLY <span class="redColor">*</span> </label>
-                                    <input type="text" step="0.5" id="hourly" name="hourly" placeholder="Hourly" class="w-100 p-2  textInputFontSize hourly" value="" required>
+                                    <input type="text" step="0.5" id="hourly" name="hourly" placeholder="Hourly" class="w-100 p-2  textInputFontSize hourly" value="">
                                 </div>
 
                             </div>
@@ -311,7 +311,7 @@
                             <div class="col-md-3 mt-4">
                                 <div>
                                     <label for="emp_type" class="lable">EMPLOYMENT TYPE <span class="redColor">*</span> </label>
-                                    <select name="emp_type" id="emp_type" class=" dropdown11" required>
+                                    <select name="emp_type" id="emp_type" class=" dropdown11">
                                         <option> --- Select Employment Type --- </option>
                                         <option value="saab">Temporary</option>
                                         <option value="opel">Permanent</option>
@@ -323,7 +323,7 @@
                             <div class="col-md-3 mt-4">
                                 <div>
                                     <label for="exemptions" class="lable">EXEMPTIONS <span class="redColor">*</span> </label>
-                                    <select name="exemptions" id="exemptions" class=" dropdown11" required>
+                                    <select name="exemptions" id="exemptions" class=" dropdown11">
                                         <option> --- Select Exemptions --- </option>
                                         <option value="saab">0</option>
                                         <option value="opel">1</option>
@@ -343,7 +343,7 @@
                             <div class="col-md-3 mt-4">
                                 <div>
                                     <label for="currency" class="lable" class="redColor">SELECT YOUR PREFERRED CURRENCY <span class="redColor">*</span> </label>
-                                    <input type="text" id="currency" name="currency" placeholder="$(USD)" class="w-100 p-2  textInputFontSize" required>
+                                    <input type="text" id="currency" name="currency" placeholder="$(USD)" class="w-100 p-2  textInputFontSize">
                                 </div>
 
                             </div>
@@ -364,7 +364,7 @@
                             <div class="col-md-3 mt-4">
                                 <div>
                                     <label for="pay_start" class="lable">PAY START<span class="redColor">*</span> </label>
-                                    <input type="date" id="pay_start" name="pay_start" placeholder="12-11-2022" class="w-100 p-2 textInputFontSize pay_start datepicker" data-id="pay_start" required>
+                                    <input type="date" id="pay_start" name="pay_start" placeholder="12-11-2022" class="w-100 p-2 textInputFontSize pay_start datepicker" data-id="pay_start">
                                 </div>
 
                             </div>
@@ -372,7 +372,7 @@
                             <div class="col-md-3 mt-4">
                                 <div>
                                     <label for="pay_end" class="lable">PAY END <span class="redColor">*</span> </label>
-                                    <input type="date" id="pay_end" name="pay_end" placeholder="12-17-2022" class="w-100 p-2 textInputFontSize pay_end" data-id="pay_end" required>
+                                    <input type="date" id="pay_end" name="pay_end" placeholder="12-17-2022" class="w-100 p-2 textInputFontSize pay_end" data-id="pay_end">
                                 </div>
 
                             </div>
@@ -380,7 +380,7 @@
                             <div class="col-md-3 mt-4">
                                 <div>
                                     <label for="pay_date" class="lable">PAY DATE <span class="redColor">*</span> </label>
-                                    <input type="date" id="pay_date" name="pay_date" placeholder="12-19-2022" class="w-100 p-2 textInputFontSize pay_date" data-id="pay_date" required>
+                                    <input type="date" id="pay_date" name="pay_date" placeholder="12-19-2022" class="w-100 p-2 textInputFontSize pay_date" data-id="pay_date">
                                 </div>
 
                             </div>
@@ -419,42 +419,42 @@
                         <div class="row mb-3 mt-">
                             <div class="col-md-2">
                                 <div>
-                                    <input class="earnbtn text-center" type="text" name="earning_0" value="Regular" id="earning_0" data-id="0" required>
+                                    <input class="earnbtn text-center" type="text" name="earning_0" value="Regular" id="earning_0" data-id="0">
                                 </div>
 
                             </div>
 
                             <div class="col-md-2 ">
                                 <div>
-                                    <input type="text" name="rate_0" class="earnbtn text-center calculation" value="" id="rate_0" data-id="0" required>
+                                    <input type="text" name="rate_0" class="earnbtn text-center calculation" value="" id="rate_0" data-id="0">
                                 </div>
 
                             </div>
 
                             <div class="col-md-2 ">
                                 <div>
-                                    <input type="text" name="hours_0" class="earnbtn text-center hours calculation" value="" id="hours_0" data-id="0" required>
+                                    <input type="text" name="hours_0" class="earnbtn text-center hours calculation" value="" id="hours_0" data-id="0">
                                 </div>
 
                             </div>
 
                             <div class="col-md-2">
                                 <div>
-                                    <input type="text" name="total_0" class="earnbtn text-center" value="" id="total_0" data-id="0" required>
+                                    <input type="text" name="total_0" class="earnbtn text-center" value="" id="total_0" data-id="0">
                                 </div>
 
                             </div>
 
                             <div class="col-md-2">
                                 <div>
-                                    <input type="text" name="period_0" class="earnbtn text-center gross_total" value="" id="period_0" data-id="0" required>
+                                    <input type="text" name="period_0" class="earnbtn text-center gross_total" value="" id="period_0" data-id="0">
                                 </div>
 
                             </div>
 
                             <div class="col-md-2">
                                 <div>
-                                    <input type="text" name="ytd_total_0" class="earnbtn text-center ytd_total" value="" id="ytd_total_0" data-id="0" required>
+                                    <input type="text" name="ytd_total_0" class="earnbtn text-center ytd_total" value="" id="ytd_total_0" data-id="0">
                                 </div>
                             </div>
 
@@ -469,7 +469,7 @@
 
                         <div class="row mb-3">
                             <div class="col-md-2 mt-2 mb-5">
-                                <button class="add_button earnbtn"><i class="fa fa-plus-circle pr-2" style="font-size:24px;color:green"></i>Add Earning</button>
+                                <button class="add_button earnbtn" type="add_earning" id="add_earning"><i class="fa fa-plus-circle pr-2" style="font-size:24px;color:green"></i>Add Earning</button>
                             </div>
                         </div>
 
@@ -500,7 +500,7 @@
                         </div>
                         <div class="row my-3">
                             <div class="col-md-4 col-lg-3">
-                                <button class="add_deduction earnbtn"><i class="fa fa-plus-circle pr-5" style="font-size:24px;color:green"></i>Add Deduction</button>
+                                <button class="add_deduction earnbtn" type="add_deduction" id="add_deduction"><i class="fa fa-plus-circle pr-5" style="font-size:24px;color:green"></i>Add Deduction</button>
                             </div>
 
                             <div class="col-md-1"></div>
@@ -586,7 +586,7 @@
         <div>
             <div class="mb-4 d-flex" style="justify-content: space-between; align-items: center;">
                 <div class="text-left mt-1">
-                    <button class="previewbtn text-capitalize" type="submit">Preview Your Paystub <i class="fa fa-eye" style="font-size: 30px; margin-left: 7px;"></i></button>
+                    <button class="previewbtn text-capitalize" type="submit" id="button1">Preview Your Paystub <i class="fa fa-eye" style="font-size: 30px; margin-left: 7px;"></i></button>
                 </div>
                 <div class="text-right mt-1" style="margin-right:30px;">
                     <button class="emailbtn text-capitalize" data-toggle="modal" data-target="#myModal"> <i class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL PAYSTUB <i class="fa fa-download ml-4" style="font-size:24px"></i></button>
@@ -601,123 +601,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" crossorigin="anonymous"></script>
-<script>
-    $("#usa_paystubx").validate({
-        rules: {
-            cname: {
-                required: true
-            , }
-            , tel: {
-                required: true
-            , }
-            , address_1: {
-                required: true
-            , }
-            , address_2: {
-                required: true
-            , }
-            , city: {
-                required: true
-            , }
-            , emp_name: {
-                required: true
-            , }
-            , emp_id: {
-                required: true
-            , }
-            , emp_ssn: {
-                required: true
-            , }
-            , emp_street_1: {
-                required: true
-            , }
-            , emp_street_2: {
-                required: true
-            , }
-            , emp_city: {
-                required: true
-            , }
-            , state: {
-                required: true
-            , }
-            , emp_state: {
-                required: true
-            , }
-        , }
-        , messages: {
-            cname: {
-                required: "This field is requierd."
-            }
-            , tel: {
-                required: "This field is requierd."
-            }
-            , address_1: {
-                required: "This field is requierd."
-            }
-            , address_2: {
-                required: "This field is requierd."
-            }
-            , city: {
-                required: "This field is requierd."
-            }
-            , emp_name: {
-                required: "This field is requierd."
-            }
-            , emp_id: {
-                required: "This field is requierd."
-            }
-            , emp_ssn: {
-                required: "This field is requierd."
-            }
-            , emp_street_1: {
-                required: "This field is requierd."
-            }
-            , emp_street_2: {
-                required: "This field is requierd."
-            }
-            , emp_city: {
-                required: "This field is requierd."
-            }
-            , state: {
-                required: "This field is requierd."
-            }
-            , emp_state: {
-                required: "This field is requierd."
-            }
-        , }
-        , debug: false
-        , errorElement: 'small'
-        , errorPlacement: function(error, element) {
-            console.log(error);
-            error.insertAfter(element.parent().parent().children('div'));
-        }
-        , errorClass: 'error text-danger'
-        , submitHandler: function(form) {
-            console.log(form.validator);
-            //form.submit();
-            $.ajax({
-                url: "{{ route('template') }}"
-                , type: 'post'
-                , data: $('#usa_paystubx').serialize()
-                , success: function(response) {
-                    console.log('response ', response);
-                }
-                , error: function(err) {
-                    data = err.responseJSON;
-                    console.log('err ', data);
-                    Swal.fire({
-                        icon: 'warning'
-                        , title: data.message
-                        , showCancelButton: false
-                        , showConfirmButton: true
-                    });
-                }
-            });
-            return false;
-        }
-    });
 
-</script>
 <script>
     var days_number;
     $(document).ready(function() {
@@ -858,7 +742,7 @@
         }
 
         var maxField = 12;
-        var addButton = $('.add_button');
+        var addButton = $('#add_earning');
         var wrapper_1 = $('.field_wrapper');
         var addDeduction = $('.add_deduction');
         var wrapper_2 = $('#add_deduction');
@@ -900,6 +784,7 @@
                     calculation(id);
                 }, 300);
             });
+            return false;
         });
 
         $(addDeduction).click(function() {
@@ -940,6 +825,7 @@
                 }, 300);
 
             });
+            return false;
         });
 
         $('.calculation').keyup(function() {
@@ -1040,17 +926,6 @@
                 $(".total_ytd_net_pay").val(parseFloat(total_ytd_net_pay).toFixed(2));
             }, 300);
         }
-
-
-
-        // $('.tax_rate').change(function() {
-        //     calculation(0);
-        // });
-
-        function empty_free() {
-
-        }
-
     });
 
 </script>
@@ -1075,133 +950,125 @@
 
 </script>
 
-{{-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpavHXELJMJvIHifFPN6tBBiFSXKGpy2g&callback=initMap&v=weekly&callback=initMap&libraries=places"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/geocomplete/1.7.0/jquery.geocomplete.min.js"></script>
 <script>
-    var map, infoWindow;
-    var geocoder;
-    var latitude = null;
-    var longitude = null;
-
-    function setLocation(obj) {
-        $("#address_1").val(obj.sublocality);
-        $("#city").val(obj.administrative_area_level_3);
-        $("#state").val(obj.administrative_area_level_1);
-        $("#country").val(obj.country);
-        $("#zip").val(obj.postal_code);
-        $("#latitude").val(obj.lat);
-        $("#longitude").val(obj.lng);
-    }
-
-    function initMap(latitude, longitude) {
-        geocoder = new google.maps.Geocoder();
-        map = new google.maps.Map(document.getElementById('map'), {
-            center: {
-                lat: 30.7046,
-                lng: 76.7179
-            },
-            zoom: 17,
-            mapTypeId: 'roadmap'
-        });
-        infoWindow = new google.maps.InfoWindow;
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function(position) {
-                if (latitude == null && longitude == null) {
-                    var pos = {
-                        lat: parseFloat(position.coords.latitude),
-                        lng: parseFloat(position.coords.longitude)
-                    };
-                } else {
-                    console.log("4543345");
-                    var pos = {
-                        lat: parseFloat(latitude),
-                        lng: parseFloat(longitude)
-                    };
-                }
-                var marker = new google.maps.Marker({
-                    position: pos,
-                    map: map,
-                    draggable: true,
-                    title: 'Your position'
-                });
-                infoWindow.setPosition(pos);
-                infoWindow.setContent('Your position');
-                marker.addListener('click', function() {
-                    infoWindow.open(map, marker);
-                });
-                infoWindow.open(map, marker);
-                map.setCenter(pos);
-
-                geocodePosition(pos);
-
-                // Add dragging event listeners.
-                google.maps.event.addListener(marker, 'dragstart', function() {
-                    updateMarkerAddress('Dragging...');
-                });
-
-                google.maps.event.addListener(marker, 'dragend', function() {
-                    geocodePosition(marker.getPosition());
-                    map.panTo(marker.getPosition());
-                });
-
-                google.maps.event.addListener(map, 'click', function(e) {
-                    geocodePosition(marker.getPosition());
-                    marker.setPosition(e.latLng);
-                    map.panTo(marker.getPosition());
-                });
-
-            }, function() {
-                handleLocationError(true, infoWindow, map.getCenter());
-            });
-        } else {
-            // Browser doesn't support Geolocation
-            handleLocationError(false, infoWindow, map.getCenter());
-        }
-
-    }
-
-    function geocodePosition(pos) {
-        geocoder.geocode({
-            latLng: pos
-        }, function(responses) {
-            if (responses && responses.length > 0) {
-                var obj = pos;
-
-                for (var i = 0; i < responses[0].address_components.length; i++) {
-                    for (var j = 0; j < responses[0].address_components[i].types.length; j++) {
-                        obj[responses[0].address_components[i].types[j]] = responses[0].address_components[i].long_name;
-                    }
-                }
-                updateMarkerAddress(responses[0].formatted_address);
-                setLocation(obj);
-            } else {
-                updateMarkerAddress('Cannot determine address at this location.');
-            }
-        });
-    }
-
-    function updateMarkerAddress(str) {
-        document.getElementById('address_line_1').value = str;
-    }
-
-    function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-        infoWindow.setPosition(pos);
-        infoWindow.setContent(browserHasGeolocation ?
-            'Error: The Geolocation service failed.' :
-            'Error: Your browser doesn\'t support geolocation.');
-        infoWindow.open(map);
-    }
-
     $(document).ready(function() {
-        $("#address_line_1").geocomplete({
-            details: "form"
-        }).bind("geocode:result", function(event, result) {
-            var latitude = result.geometry.location.lat();
-            var longitude = result.geometry.location.lng();
-            var address = result.formatted_address;
-            var formatted_address = result.formatted_address;
-            initMap(latitude, longitude);
+        $('#button1').click(function() {
+            $("#usa_paystubx").validate({
+                rules: {
+                    cname: {
+                        required: true
+                    , }
+                    , tel: {
+                        required: true
+                    , }
+                    , address_1: {
+                        required: true
+                    , }
+                    , address_2: {
+                        required: true
+                    , }
+                    , city: {
+                        required: true
+                    , }
+                    , emp_name: {
+                        required: true
+                    , }
+                    , emp_id: {
+                        required: true
+                    , }
+                    , emp_ssn: {
+                        required: true
+                    , }
+                    , emp_street_1: {
+                        required: true
+                    , }
+                    , emp_street_2: {
+                        required: true
+                    , }
+                    , emp_city: {
+                        required: true
+                    , }
+                    , state: {
+                        required: true
+                    , }
+                    , emp_state: {
+                        required: true
+                    , }
+                , }
+                , messages: {
+                    cname: {
+                        required: "This field is requierd."
+                    }
+                    , tel: {
+                        required: "This field is requierd."
+                    }
+                    , address_1: {
+                        required: "This field is requierd."
+                    }
+                    , address_2: {
+                        required: "This field is requierd."
+                    }
+                    , city: {
+                        required: "This field is requierd."
+                    }
+                    , emp_name: {
+                        required: "This field is requierd."
+                    }
+                    , emp_id: {
+                        required: "This field is requierd."
+                    }
+                    , emp_ssn: {
+                        required: "This field is requierd."
+                    }
+                    , emp_street_1: {
+                        required: "This field is requierd."
+                    }
+                    , emp_street_2: {
+                        required: "This field is requierd."
+                    }
+                    , emp_city: {
+                        required: "This field is requierd."
+                    }
+                    , state: {
+                        required: "This field is requierd."
+                    }
+                    , emp_state: {
+                        required: "This field is requierd."
+                    }
+                , }
+                , debug: false
+                , errorElement: 'small'
+                , errorPlacement: function(error, element) {
+                    console.log(error);
+                    error.insertAfter(element.parent().parent().children('div'));
+                }
+                , errorClass: 'error text-danger'
+                , submitHandler: function(form) {
+                    console.log(form.validator);
+                    //form.submit();
+                    $.ajax({
+                        url: "{{ route('template') }}"
+                        , type: 'post'
+                        , data: $('#usa_paystubx').serialize()
+                        , success: function(response) {
+                            console.log('response ', response);
+                        }
+                        , error: function(err) {
+                            data = err.responseJSON;
+                            console.log('err ', data);
+                            Swal.fire({
+                                icon: 'warning'
+                                , title: data.message
+                                , showCancelButton: false
+                                , showConfirmButton: true
+                            });
+                        }
+                    });
+                    return false;
+                }
+            });
         });
     });
-</script> --}}
+
+</script>
 @endsection
