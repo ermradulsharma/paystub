@@ -164,38 +164,33 @@
     </div>
     <!-- Start Footer Section -->
     <div class="footerSection">
-        <div class="container">
-            <div class=" row p-5 justify-content-center">
+        <div class="container" style="max-width:1550px; margin:0 auto; padding:0px 20px;">
+            <div class=" row py-5 justify-content-center">
                 <div class="col-lg-3 text-center m-auto">
                     <div class="container justify-content-center text-left">
-                        <div>
-                            <a class="w-100 footbtn" style="font-family: 'Futura LT'; font-size:20px;"
+                        <div class="flex-row">
+                        <div style="padding:12px; border:1px solid #fff; border-radius:5px;max-width:220px; text-align:center; margin-bottom:15px;">
+                            <a class="w-100 footbtn font"
                                 href="{{ url('terms') }}">Terms & Conditions</a>
                         </div>
-                        <div class="mt-3">
-                            <a class="w-100 footbtn" style="font-family: 'Futura LT'; font-size:20px;"
+                        <div class="mt-3 " style="padding:12px; border:1px solid #fff; border-radius:5px;max-width:220px; text-align:center; margin-bottom:15px;">
+                            <a class="w-100 footbtn font"
                                 href="{{ url('privacy') }}">Privacy Policy</a>
                         </div>
-                        <div class="mt-3">
-                            <a class="w-100 footbtn" style="font-family: 'Futura LT'; font-size:20px;"
+                        <div class="mt-3 "style="padding:12px; border:1px solid #fff; border-radius:5px;max-width:220px; text-align:center; margin-bottom:15px;">
+                            <a class="w-100 footbtn font"
                                 href="{{ url('refund') }}">Refund Policy</a>
                         </div>
-                        <div class="mt-3">
-                            <a class="w-100 footbtn" style="font-family: 'Futura LT'; font-size:20px;"
+                        <div class="mt-3 "style="padding:12px; border:1px solid #fff; border-radius:5px;max-width:220px; text-align:center;">
+                            <a class="w-100 footbtn font"
                                 href="{{ url('contact') }}">Contact Us</a>
                         </div>
+                        </div>
+                       
                     </div>
                 </div>
-                <div class="col-lg-4 mt-3 ">
-                    <div class="container justify-content-center m-auto text-center">
-                        <a href="{{ url('/') }}"><img class="footimg" src="images/satisfaction.webp"></a>
-
-                    </div>
-                </div>
-                <div class="col-lg-5 text-center m-auto ">
+                <div class="col-lg-5 text-center" style="margin-top:15px;">
                     <div class="container  justify-content-center">
-                        <p class="text-white" style="font-family: 'Futura LT'; font-size:20px;">COPYRIGHT © 2022
-                            PaystubX,<br> ALL RIGHTS RESERVED.</p>
                         <div class="container">
                             <a href="https://www.google.com/" target="_blank"><i class="fa fa-facebook   fbicon "
                                     aria-hidden="true"></i></a>
@@ -210,6 +205,15 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-lg-4 mt-3 ">
+                <p class="text-white">COPYRIGHT © 2022
+                            PaystubX, ALL RIGHTS RESERVED.</p>
+                    <div class="container justify-content-center m-auto text-center">
+                        <a href="{{ url('/') }}"><img class="footimg" src="images/satisfaction.webp"></a>
+
+                    </div>
+                </div>
+                
             </div>
         </div>
     </div>

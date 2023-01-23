@@ -56,9 +56,9 @@
     </div>
 </div>
 
-<div class="container pt-5" style="max-width: 1750px;">
-    <div class="row">
-        <div class="col-lg-4">
+<div class="container pt-5 wrapper">
+    <div class="row space-between">
+        <div class="col-lg-5">
             <h1 class="WithPaystubX mt-3"> With Paystub<span class="text-danger">X</span></h1>
             <h3 class="Show"> Show proof of income. </h3>
             <ul style="font-size: 20px;line-height:1.5em;font-family: 'Futura LT';" class="mt-4">
@@ -70,8 +70,7 @@
             </ul>
             <p style="" class="mt-3 smallfont">Generate 100% Legal Pay Stubs in seconds.</p>
         </div>
-        <div class="col-lg-4"></div>
-        <div class="col-lg-4">
+        <div class="col-lg-5">
             <h3 class="Createpay"> Create pay stubs for your employees. </h3>
             <ul style="font-size: 20px;line-height:1.5em;font-family: 'Futura LT';" class="mt-4">
                 <li class="mt-2 proof">Help employees qualify for loans, housing & more ✅</li>
@@ -83,7 +82,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-4">
+        <div class="col-lg-5">
             <img src="images/previewed.png" class="payimg">
             <div class="paytext">
                 <p style="" class="smallfont1">TAX FILING HAS NEVER BEEN
@@ -102,7 +101,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-8">
+        <div class="col-lg-7">
             <img class="payimg2" src="images/paystubx_images.png" class="">
             <div>
                 <p class="img2-p">

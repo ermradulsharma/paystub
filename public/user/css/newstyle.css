@@ -624,17 +624,16 @@ h5 {
 }
 
 .payimg {
-    width: 288px;
-    margin-top: -41px;
+    width: 315px;
+    padding-bottom: 65px;
+
 }
 
 .payimg2 {
-    width: 686px;
-    margin-bottom: 15px;
-    /* padding-left: 0px; */
-    margin-left: -166px;
+    width: 100%;
+    padding-bottom: 90px;
+    margin-left: -195px;
     margin-top: -100px;
-    height: 564px;
 }
 .img2-p {
     font-size: 20px;
@@ -731,6 +730,12 @@ h5 {
     width: 100%;
     margin: 0 auto;
 }
+.space-between {
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
 
 .payhead {
     margin-top: 30px;
@@ -779,6 +784,7 @@ select {
 
 .footimg {
     width: 100%;
+    max-width: 260px;
 }
 .youtubeimg{
     width:418px;
@@ -804,6 +810,18 @@ select {
     font-size: 30px;
     line-height:1.5em;
      font-family: 'Futura LT';
+}
+.wrapper {
+    max-width: 1500px;
+}
+.font  {
+    font-family: 'Futura LT';
+     font-size:20px;
+
+}
+.text-white {
+    font-family: 'Futura LT';
+    font-size:19px;
 }
 /* w2paystub end */
 
@@ -880,9 +898,17 @@ select {
 
     .payimg {
         position: relative;
-        width: 60%;
-        top: 2px;
-        padding-bottom: 30px;
+        top: 40px;
+        padding-bottom: 85px;
+        width: 250px;
+        left: 130px;
+    }
+    .paytext {
+        margin-top: 0;
+        margin-left: 80px;
+    }
+    .img2-p {
+        margin-left: 80px;
     }
 
     .OnPaystub {
@@ -895,12 +921,13 @@ select {
         line-height: 35.5px;
     }
     .payimg2 {
-        width: 686px;
-        /* margin-bottom: 32px; */
-        /* padding-left: 0px; */
-        margin-left: -166px;
-        margin-top: -136px;
-        height: 564px;
+        width: 100%;
+        padding-bottom: 40px;
+        margin-left: -60px;
+        margin-top: -95px;
+    }
+    .space-between {
+        justify-content: center;
     }
 }
 
@@ -950,13 +977,13 @@ select {
         font-size: 10px;
     }
     .payimg2 {
-        width: 420px;
+
         margin-bottom: 28px;
-        /* padding-left: 0px; */
-        margin-left: -10px;
-        margin-top: -55px;
-        height: 330px;
-    
+       margin-top: 0;
+    }
+    .payimg {
+        width: 195px;
+        left:100px;
     }
     .smallfont {
         font-size: 20px;
@@ -1132,6 +1159,15 @@ select {
     .Show {
         font-size: 30px;
     }
+    .font {
+        font-size: 18px;
+    }
+    .text-white {
+        font-size:17px;
+    }
+    .footimg {
+        max-width: 200px;
+    }
 }
 
 .create-p {
@@ -1183,28 +1219,19 @@ select {
         font-size: 12px;
     }
 
- 
-        .paytext {
-            /* position: absolute; */
-            /* bottom: -136px; */
-            left: 411px !important;
-            font-size: 7px !important;
-            /* top: 200px; */
-            bottom: 262px;
-        }
-    
-
-    /* .globleImg {
-            max-width: 961px;
-            margin-top: 30px;
-        } */
     .globlebtn1 {
         display: flex;
         justify-content: center;
         margin-right: 0 !important;
         padding-right: 0 !important;
     }
-
+.text-white {
+    text-align: center;
+}
+.flex-row {
+    max-width: 210px;
+    margin: 0 auto;
+}
     .box-usa {
         border: 3px solid #FF6161;
         padding: 10px 0px 12px 12px;
@@ -1278,14 +1305,15 @@ select {
     }
 
     .payimg2 {
-        position: relative;
-        top: 0px;
-        width: 54%;
-        object-fit: contain;
-        object-position: 50% 50%;
-        left: 30px;
-        height: 307px;
-        margin-top: 1px;
+        margin-top: 0px;
+        width: 60%;
+        margin: 40px auto 0px 85px;
+    }
+    .paytext {
+        margin-left: 85px;
+    }
+    .payimg {
+        padding-bottom: 50px;
     }
     .youtubeimg {
         width: 230px;
@@ -1366,9 +1394,6 @@ select {
         left: 0px;
     }
 
-    .payimg {
-        top: 15px;
-    }
 
     .globe-ul {
         font-size: 16px !important;
@@ -1392,7 +1417,12 @@ select {
     .dropdown1 {
         font-size: 9px;
     }
-
+    .payimg {
+        position: relative;
+        width: 85%;
+        top: 19px;
+        left: 20px;
+    }
     .down {
         position: absolute;
         right: 58px;
@@ -1460,7 +1490,7 @@ select {
         top: -17px;
     }
 
-    .payimg2 {
+    /* .payimg2 {
         position: relative;
         top: 50px;
         width: 100%;
@@ -1469,11 +1499,12 @@ select {
         left: 0;
         height: 300px;
 
-    }
+    } */
     .img2-p {
         font-size: 17px;
         font-weight: 200;
-        margin-top: 83px;
+        margin-top: 0px;
+        margin-left: 0;
     }
 
     .Payslips {
@@ -1527,17 +1558,18 @@ select {
         margin-bottom: 10px;
     }
     .paytext {
-        /* position: absolute; */
-        /* bottom: -136px; */
-        left: 213px;
-        font-size: 7px;
-        top: 36px;
+        margin-left: 0;
     }
     .flex {
         display: inline-block !important;
     }
     .small-font {
         font-size: 14px;
+    }
+    .payimg2 {
+        width: 100%;
+        margin: 40px auto 0px 0px;
+        height: 60%;
     }
 }
 
@@ -1555,12 +1587,12 @@ select {
     }
 
 
-    .payimg {
+    /* .payimg {
         position: relative;
         width: 50%;
         top: 15px;
         z-index: 122;
-    }
+    } */
 
     .down {
         position: absolute;
@@ -1674,15 +1706,14 @@ select {
     }
     .payimg2 {
         position: relative;
-        width: 330px;
-        object-fit: contain;
-        object-position: 50% 50%;
-        left: 0;
+        width: 100%;
+        left: 0px;
+        height: 50%;
     }
     .img2-p {
         font-size: 17px;
         font-weight: 200;
-        margin-top: 50px;
+        margin-top: 20px;
     }
     .paytext {
         /* position: absolute; */
