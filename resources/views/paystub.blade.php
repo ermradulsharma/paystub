@@ -68,7 +68,7 @@
                 <li class=" mt-2 proof"> Verify income for child support or alimony ✅</li>
                 <li class=" mt-2 proof"> Apply for health insurance ✅</li>
             </ul>
-            <p style="font-size:25px; font-family: 'Futura LT';" class="mt-3">Generate 100% Legal Pay Stubs in seconds.</p>
+            <p style="" class="mt-3 smallfont">Generate 100% Legal Pay Stubs in seconds.</p>
         </div>
         <div class="col-lg-4"></div>
         <div class="col-lg-4">
@@ -86,14 +86,14 @@
         <div class="col-lg-4">
             <img src="images/previewed.png" class="payimg">
             <div class="paytext">
-                <p style="font-size: 22px;color: #363636; line-height:1em; font-family: 'Futura LT'; ">TAX FILING HAS NEVER BEEN
+                <p style="" class="smallfont1">TAX FILING HAS NEVER BEEN
                     EASY
                 </p>
-                <p class="text-black text-capitalize" style="font-size: 30px;line-height:1em; font-family: 'Futura LT';">Handling
+                <p class="text-black text-capitalize smallfont2" style="">Handling
                     Payroll
                     Yourself?
                 </p>
-                <p class="text-danger" style="font-size: 30px;line-height:1.5em; font-family: 'Futura LT';">You are at the right
+                <p class="text-danger smallfont3" style="">You are at the right
                     place!
                 </p>
 
@@ -160,11 +160,11 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-lg-4 col-md-4">
+                    <div class="col-lg-4 col-md-4" style="margin-bottom:20px;">
                         <img src="images/1.webp"
                             style=" width: 94px; height: 94px; object-fit: cover; object-position: 50% 50%;">
                     </div>
-                    <div class="col-lg-4 col-md-4">
+                    <div class="col-lg-4 col-md-4"  style="margin-bottom:20px;">
                         <img src="images/2.webp"
                             style=" width: 94px; height: 94px; object-fit: cover; object-position: 50% 50%;">
                     </div>
