@@ -665,15 +665,15 @@
             emp_state:{
                 required:"This field is requierd."
             }
-        , }
-        , debug: false
-        , errorElement: 'small'
-        , errorPlacement: function(error, element) {
+        , },
+        debug: false,
+        errorElement: 'small',
+        errorPlacement: function(error, element) {
             console.log(error);
             error.insertAfter(element.parent().parent().children('div'));
-        }
-        , errorClass: 'error text-danger'
-        , submitHandler: function(form) {
+        },
+        errorClass: 'error text-danger',
+        submitHandler: function(form) {
             console.log(form.validator);
             //form.submit();
             return false;
