@@ -159,4 +159,9 @@ class TemplateFormController extends Controller
         $pdf = PDF::loadView('allForms.sage-blue', $data);
         return $pdf->stream('ukbasicsage.pdf');
     }
+
+    public function template(Request $request)
+    {
+       return $request;
+    }
 }

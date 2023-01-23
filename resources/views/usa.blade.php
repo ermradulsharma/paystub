@@ -19,6 +19,7 @@
 <!-- Modal End -->
 <div class="container mt-2" style="max-width:1450px;">
     <form id="usa_paystubx" action="" method="post">
+        @csrf
         <div>
             <div class="row mb-3">
                 <div class="col-md-12">
@@ -40,7 +41,7 @@
                             </div>
 
                         </div>
-
+                        <div id="map" hidden></div>
                         <div class="row mb-3">
                             <div class="col-md-12">
                                 <div>
@@ -73,7 +74,7 @@
                                 <div>
                                     <label for="state" class="lable">State <span class="redColor">*</span> </label>
                                     <div class="dropdown ">
-                                        <select name="cars" id="state" class="state dropdown11" required>
+                                        <select name="state" id="state" class="state dropdown11" required>
                                             <option> --- Select --- </option>
                                             @foreach ($stateTaxes as $stateTax )
                                             <option value="{{ $stateTax->state }}">{{ $stateTax->state }}</option>
@@ -106,7 +107,7 @@
                                 <h6 style="" class="base">BASIC TEMPLATES</h6>
                                 <div class="mt-4">
                                     <div class="input-group mmenu mb-3 text-center">
-                                        <select class="form-control dropdown1 text-center bt_id small-font" style="margin-right:10px; font-size:18px;">
+                                        <select name="basic_temp" class="form-control dropdown1 text-center bt_id small-font" style="margin-right:10px; font-size:18px;">
                                             <option> --- Select Basic Templates --- </option>
                                             @foreach ($basicType as $data)
                                             @if($data->state == 'usa' && $data->type == 'basic')
@@ -128,7 +129,7 @@
                                 <h6 style="margin-left:-23px;font-weight: 900;">ADVANCED TEMPLATES</h6>
                                 <div class="mt-4">
                                     <div class="input-group mmenu mb-3">
-                                        <select class="form-control text-center dropdown1 at_id small-font" style="margin-right:10px; font-size:18px;">
+                                        <select name="advance_temp" class="form-control text-center dropdown1 at_id small-font" style="margin-right:10px; font-size:18px;">
                                             <option> --- Select Advance Template --- </option>
                                             @foreach ($advanceType as $data)
                                             @if($data->state == 'usa' && $data->type == 'advance')
@@ -302,7 +303,7 @@
                             <div class="col-md-3 mt-4">
                                 <div>
                                     <label for="hourly" class="lable">HOURLY <span class="redColor">*</span> </label>
-                                    <input type="number" step="0.5" id="hourly" name="hourly" placeholder="Hourly" class="w-100 p-2  textInputFontSize hourly" value="" required>
+                                    <input type="text" step="0.5" id="hourly" name="hourly" placeholder="Hourly" class="w-100 p-2  textInputFontSize hourly" value="" required>
                                 </div>
 
                             </div>
@@ -417,35 +418,35 @@
 
                         <div class="row mb-3 mt-">
                             <div class="col-md-2">
-                                <input class="earnbtn text-center" type="text" value="Regular" id="earning_0" data-id="0" required>
+                                <input class="earnbtn text-center" type="text" name="earning_0" value="Regular" id="earning_0" data-id="0" required>
                             </div>
 
                             <div class="col-md-2 ">
-                                <input type="number" class="earnbtn text-center calculation" value="" id="rate_0" data-id="0" required>
+                                <input type="text" name="rate_0" class="earnbtn text-center calculation" value="" id="rate_0" data-id="0" required>
                             </div>
 
                             <div class="col-md-2 ">
-                                <input type="number" class="earnbtn text-center hours calculation" value="" id="hours_0" data-id="0" required>
+                                <input type="text" name="hours_0" class="earnbtn text-center hours calculation" value="" id="hours_0" data-id="0" required>
                             </div>
 
                             <div class="col-md-2">
-                                <input type="number" class="earnbtn text-center" value="" id="total_0" data-id="0" required>
+                                <input type="text" name="total_0" class="earnbtn text-center" value="" id="total_0" data-id="0" required>
                             </div>
 
                             <div class="col-md-2">
-                                <input type="number" class="earnbtn text-center gross_total" value="" id="period_0" data-id="0" required>
+                                <input type="text" name="period_0" class="earnbtn text-center gross_total" value="" id="period_0" data-id="0" required>
                             </div>
 
                             <div class="col-md-2">
-                                <input type="number" class="earnbtn text-center ytd_total" value="" id="ytd_total_0" data-id="0" required>
+                                <input type="text" name="ytd_total_0" class="earnbtn text-center ytd_total" value="" id="ytd_total_0" data-id="0" required>
                             </div>
 
                         </div>
                         <div class="col-md-2">
-                            <input type="number" class="earnbtn text-center period_gross_total" value="" id="period_gross_total" hidden>
+                            <input type="text" name="" class="earnbtn text-center period_gross_total" value="" id="period_gross_total" hidden>
                         </div>
                         <div class="col-md-2">
-                            <input type="number" class="earnbtn text-center ytd_gross_total" value="" id="ytd_gross_total" hidden>
+                            <input type="text" name="" class="earnbtn text-center ytd_gross_total" value="" id="ytd_gross_total" hidden>
                         </div>
                         <div class="field_wrapper"> </div>
 
@@ -471,10 +472,10 @@
                             <div class="col-md-2 col-lg-3"></div>
                             <div class="col-md-1 col-lg-1"></div>
                             <div class="col-md-2 col-lg-2">
-                                <input type="number" class="earnbtn text-center" id="taxes_{{$key}}" value="" />
+                                <input type="text" name="taxes_{{$key}}" class="earnbtn text-center" id="taxes_{{$key}}" value="" />
                             </div>
                             <div class="col-md-2 col-lg-2">
-                                <input type="number" class="earnbtn text-center" id="taxes_ytd_{{$key}}" value="" />
+                                <input type="text" name="taxes_ytd_{{$key}}" class="earnbtn text-center" id="taxes_ytd_{{$key}}" value="" />
                             </div>
                         </div>
                         @endforeach
@@ -499,10 +500,10 @@
                             <div class="col-md-2 col-lg-3"></div>
                             <div class="col-md-1"></div>
                             <div class="col-md-2">
-                                <input type="number" class="earnbtn deduction_tax text-center" value="" />
+                                <input type="text" name="deduction_tax" class="earnbtn deduction_tax text-center" value="" />
                             </div>
                             <div class="col-md-2">
-                                <input type="number" class="earnbtn ytd_deduction_tax text-center" value="" />
+                                <input type="text" name="ytd_deduction_tax" class="earnbtn ytd_deduction_tax text-center" value="" />
                             </div>
                         </div>
                         <div class="row mb-3 mt-5">
@@ -582,18 +583,19 @@
 @section('script')
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" crossorigin="anonymous"></script>
 <script>
     $("#usa_paystubx").validate({
         rules: {
             cname: {
-                required: true,
-            },
-            tel: {
-                required: true,
-            },
-            address_1: {
-                required: true,
-            }
+                required: true
+            , }
+            , tel: {
+                required: true
+            , }
+            , address_1: {
+                required: true
+            , }
             , address_2: {
                 required: true
             , }
@@ -617,13 +619,13 @@
             , }
             , emp_city: {
                 required: true
-            , },
-            state:{
-                required:true,
-            },
-            emp_state:{
-                required:true,
-            }
+            , }
+            , state: {
+                required: true
+            , }
+            , emp_state: {
+                required: true
+            , }
         , }
         , messages: {
             cname: {
@@ -658,24 +660,42 @@
             }
             , emp_city: {
                 required: "This field is requierd."
-            },
-            state:{
-                required:"This field is requierd."
-            },
-            emp_state:{
-                required:"This field is requierd."
             }
-        , },
-        debug: false,
-        errorElement: 'small',
-        errorPlacement: function(error, element) {
+            , state: {
+                required: "This field is requierd."
+            }
+            , emp_state: {
+                required: "This field is requierd."
+            }
+        , }
+        , debug: false
+        , errorElement: 'small'
+        , errorPlacement: function(error, element) {
             console.log(error);
             error.insertAfter(element.parent().parent().children('div'));
-        },
-        errorClass: 'error text-danger',
-        submitHandler: function(form) {
+        }
+        , errorClass: 'error text-danger'
+        , submitHandler: function(form) {
             console.log(form.validator);
             //form.submit();
+            $.ajax({
+                url: "{{ route('template') }}"
+                , type: 'post'
+                , data: $('#usa_paystubx').serialize()
+                , success: function(response) {
+                    console.log('response ', response);
+                }
+                , error: function(err) {
+                    data = err.responseJSON;
+                    console.log('err ', data);
+                    Swal.fire({
+                        icon: 'warning'
+                        , title: data.message
+                        , showCancelButton: false
+                        , showConfirmButton: true
+                    });
+                }
+            });
             return false;
         }
     });
@@ -684,52 +704,37 @@
 <script>
     var days_number;
     $(document).ready(function() {
-
-        $('.time_period').change(function() {
+        $('.tax_rate').change(function() {
             var tax_rate = $('.tax_rate').find(":selected").data('tax');
             if (tax_rate == '') {
                 $("span").removeClass("d-none");
                 $('.tax_rate').focus();
             }
-            dayCalculate();
+            console.log('tax_rate', tax_rate);
         });
 
-        $('.pay_start').change(function() {
-            dayCalculate();
-        });
-
-        function dayCalculate() {
+        $('.time_period').change(function() {
+            var tax_rate = $('.tax_rate').find(":selected").data('tax');
             var pay_start = new Date($('.pay_start').val());
-            var day = pay_start.getDate();
-            var month = pay_start.getMonth() + 1;
-            var year = pay_start.getFullYear();
-            var pay_start_1 = year + '-' + (('' + month).length < 2 ? '0' : '') + month + '-' + (('' + day).length < 2 ? '0' : '') + day;
+            var pay_start_1 = $('.pay_start').val();
+            if (pay_start != "" && pay_start != 'Invalid Date') {
+                alert("qwertyuiop")
+                dayCalculate();
+            } else {
+                //
+            }
+            if (tax_rate == '') {
+                $("span").removeClass("d-none");
+                $('.tax_rate').focus();
+            }
+            console.log('pay_start', pay_start);
+            console.log('pay_start_1', pay_start_1);
+        });
 
-            var time_period = $(".time_period").val();
-            var dt1 = new Date(pay_start);
-            var month = dt1.getMonth() + 1;
-
-            if (time_period == "weekly") {
-                var day = dt1.getDate() + 6;
-            }
-            if (time_period == "bi-weekly") {
-                var day = dt1.getDate() + 13;
-            }
-            if (time_period == "monthly") {
-                var day = dt1.getDate() + 29;
-            }
-            if (time_period == "bi-monthly") {
-                var day = dt1.getDate() + 61;
-            }
-            $('#rate_0').val('');
-            $('#total_0').val();
-            $('#period_0').val('');
-            $('#ytd_total_0').val('');
-            var output = dt1.getFullYear() + '-' + (('' + month).length < 2 ? '0' : '') + month + '-' + (('' + day).length < 2 ? '0' : '') + day;
-            setTimeout(() => {
-                $(".pay_end").val(output)
-            }, 400);
-        }
+        $('.hourly').keyup(function() {
+            var id = $(this).val();
+            $('#rate_0').val(parseFloat(id).toFixed(2));
+        });
 
         $('.pay_date').change(function() {
             var pay_start = new Date($(".pay_start").val());
@@ -756,7 +761,10 @@
 
             if (pay_date_1 <= pay_end_1) {
                 $('#ytd_total_0').val(parseFloat(0).toFixed(2));
+
             } else {
+
+
                 var time_period = $(".time_period").val();
                 var dt3 = new Date(pay_start_1);
                 var dt2 = new Date(pay_end_1);
@@ -775,9 +783,62 @@
                 if (time_period == "bi-monthly") {
                     days_number = days / 61;
                 }
-                calculation(0);
+                var hours = $('#hours_0').val();
+                if (hours == '' && hours == 0) {
+                    $('#total_0').val(parseFloat(0).toFixed(2));
+                    $('#period_0').val(parseFloat(0).toFixed(2));
+                    $('#ytd_total_0').val(parseFloat(0).toFixed(2));
+                    // return false;
+                } else {
+                    calculation(0);
+                }
+                console.log('hours', hours);
             }
         });
+
+        $('.pay_start').change(function() {
+            dayCalculate();
+        });
+
+        function dayCalculate() {
+            var pay_start = new Date($('.pay_start').val());
+            var day = pay_start.getDate();
+            var month = pay_start.getMonth() + 1;
+            var year = pay_start.getFullYear();
+            var pay_start_1 = year + '-' + (('' + month).length < 2 ? '0' : '') + month + '-' + (('' + day).length < 2 ? '0' : '') + day;
+
+            var time_period = $(".time_period").val();
+
+
+            if (time_period == "weekly") {
+                var dt1 = new Date(pay_start);
+                var newDate = moment(dt1).add(1, 'weeks').format('YYYY-MM-DD');
+            }
+            if (time_period == "bi-weekly") {
+                var dt1 = new Date(pay_start);
+                var newDate = moment(dt1).add(2, 'weeks').format('YYYY-MM-DD');
+            }
+            if (time_period == "monthly") {
+                var dt1 = new Date(pay_start);
+                var newDate = moment(dt1).add(1, 'months').format('YYYY-MM-DD');
+            }
+            if (time_period == "bi-monthly") {
+                var dt1 = new Date(pay_start);
+                var newDate = moment(dt1).add(2, 'months').format('YYYY-MM-DD');
+            }
+
+            if (pay_start == '') {
+                $('#rate_0').val(parseFloat(0).toFixed(2));
+                $('#total_0').val(parseFloat(0).toFixed(2));
+                $('#period_0').val(parseFloat(0).toFixed(2));
+                $('#ytd_total_0').val(parseFloat(0).toFixed(2));
+            }
+
+            var newDate_1 = moment(newDate).subtract(1, 'days').format('YYYY-MM-DD');
+            setTimeout(() => {
+                $(".pay_end").val(newDate_1)
+            }, 400);
+        }
 
         var maxField = 12;
         var addButton = $('.add_button');
@@ -795,19 +856,19 @@
                 '<input  id="earning_' + i + '" data-id="' + i + '" class="earnbtn text-center" value="">' +
                 '</div>' +
                 '<div class="col-md-2 ">' +
-                '<input type="number" id="rate_' + i + '" data-id="' + i + '" class="earnbtn calculation text-center" value="">' +
+                '<input type="text" id="rate_' + i + '" data-id="' + i + '" class="earnbtn calculation text-center" value="">' +
                 '</div>' +
                 '<div class="col-md-2 ">' +
-                '<input type="number" id="hours_' + i + '" data-id="' + i + '" class="earnbtn calculation text-center hours" value="">' +
+                '<input type="text" id="hours_' + i + '" data-id="' + i + '" class="earnbtn calculation text-center hours" value="">' +
                 '</div>' +
                 '<div class="col-md-2">' +
-                '<input type="number" id="total_' + i + '" data-id="' + i + '" class="earnbtn text-center" value="">' +
+                '<input type="text" id="total_' + i + '" data-id="' + i + '" class="earnbtn text-center" value="">' +
                 '</div>' +
                 '<div class="col-md-2">' +
-                '<input type="number" id="period_' + i + '" data-id="' + i + '" class="earnbtn gross_total text-center" value="">' +
+                '<input type="text" id="period_' + i + '" data-id="' + i + '" class="earnbtn gross_total text-center" value="">' +
                 '</div>' +
                 '<div class="col-md-2 ">' +
-                '<input type="number" id="ytd_total_' + i + '" data-id="' + i + '" class="earnbtn ytd_total text-center" value="">' +
+                '<input type="text" id="ytd_total_' + i + '" data-id="' + i + '" class="earnbtn ytd_total text-center" value="">' +
                 '</div>' +
                 '</div>';
             if (x < maxField) {
@@ -835,10 +896,10 @@
                 '<div class="col-md-3"> </div>' +
                 '<div class="col-md-1"> </div>' +
                 '<div class="col-md-2">' +
-                '<input type="number" class="earnbtn text-center tax_deduction tax" value=""/>' +
+                '<input type="text" class="earnbtn text-center tax_deduction tax" value=""/>' +
                 '</div>' +
                 '<div class="col-md-2">' +
-                '<input type="number" class="earnbtn text-center ytd_tax tax" value=""/>' +
+                '<input type="text" class="earnbtn text-center ytd_tax tax" value=""/>' +
                 '</div>' +
                 '</div>';
             if (x < maxField) {
@@ -963,18 +1024,16 @@
             }, 300);
         }
 
-        $('.hourly').keyup(function() {
-            var id = $(this).val();
-            $('#rate_0').val(parseFloat(id).toFixed(2));
-        });
 
-        $('.tax_rate').change(function() {
-            calculation(0);
-        });
+
+        // $('.tax_rate').change(function() {
+        //     calculation(0);
+        // });
 
         function empty_free() {
 
         }
+
     });
 
 </script>
@@ -999,4 +1058,133 @@
 
 </script>
 
+{{-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpavHXELJMJvIHifFPN6tBBiFSXKGpy2g&callback=initMap&v=weekly&callback=initMap&libraries=places"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/geocomplete/1.7.0/jquery.geocomplete.min.js"></script>
+<script>
+    var map, infoWindow;
+    var geocoder;
+    var latitude = null;
+    var longitude = null;
+
+    function setLocation(obj) {
+        $("#address_1").val(obj.sublocality);
+        $("#city").val(obj.administrative_area_level_3);
+        $("#state").val(obj.administrative_area_level_1);
+        $("#country").val(obj.country);
+        $("#zip").val(obj.postal_code);
+        $("#latitude").val(obj.lat);
+        $("#longitude").val(obj.lng);
+    }
+
+    function initMap(latitude, longitude) {
+        geocoder = new google.maps.Geocoder();
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: {
+                lat: 30.7046,
+                lng: 76.7179
+            },
+            zoom: 17,
+            mapTypeId: 'roadmap'
+        });
+        infoWindow = new google.maps.InfoWindow;
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                if (latitude == null && longitude == null) {
+                    var pos = {
+                        lat: parseFloat(position.coords.latitude),
+                        lng: parseFloat(position.coords.longitude)
+                    };
+                } else {
+                    console.log("4543345");
+                    var pos = {
+                        lat: parseFloat(latitude),
+                        lng: parseFloat(longitude)
+                    };
+                }
+                var marker = new google.maps.Marker({
+                    position: pos,
+                    map: map,
+                    draggable: true,
+                    title: 'Your position'
+                });
+                infoWindow.setPosition(pos);
+                infoWindow.setContent('Your position');
+                marker.addListener('click', function() {
+                    infoWindow.open(map, marker);
+                });
+                infoWindow.open(map, marker);
+                map.setCenter(pos);
+
+                geocodePosition(pos);
+
+                // Add dragging event listeners.
+                google.maps.event.addListener(marker, 'dragstart', function() {
+                    updateMarkerAddress('Dragging...');
+                });
+
+                google.maps.event.addListener(marker, 'dragend', function() {
+                    geocodePosition(marker.getPosition());
+                    map.panTo(marker.getPosition());
+                });
+
+                google.maps.event.addListener(map, 'click', function(e) {
+                    geocodePosition(marker.getPosition());
+                    marker.setPosition(e.latLng);
+                    map.panTo(marker.getPosition());
+                });
+
+            }, function() {
+                handleLocationError(true, infoWindow, map.getCenter());
+            });
+        } else {
+            // Browser doesn't support Geolocation
+            handleLocationError(false, infoWindow, map.getCenter());
+        }
+
+    }
+
+    function geocodePosition(pos) {
+        geocoder.geocode({
+            latLng: pos
+        }, function(responses) {
+            if (responses && responses.length > 0) {
+                var obj = pos;
+
+                for (var i = 0; i < responses[0].address_components.length; i++) {
+                    for (var j = 0; j < responses[0].address_components[i].types.length; j++) {
+                        obj[responses[0].address_components[i].types[j]] = responses[0].address_components[i].long_name;
+                    }
+                }
+                updateMarkerAddress(responses[0].formatted_address);
+                setLocation(obj);
+            } else {
+                updateMarkerAddress('Cannot determine address at this location.');
+            }
+        });
+    }
+
+    function updateMarkerAddress(str) {
+        document.getElementById('address_line_1').value = str;
+    }
+
+    function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+            'Error: The Geolocation service failed.' :
+            'Error: Your browser doesn\'t support geolocation.');
+        infoWindow.open(map);
+    }
+
+    $(document).ready(function() {
+        $("#address_line_1").geocomplete({
+            details: "form"
+        }).bind("geocode:result", function(event, result) {
+            var latitude = result.geometry.location.lat();
+            var longitude = result.geometry.location.lng();
+            var address = result.formatted_address;
+            var formatted_address = result.formatted_address;
+            initMap(latitude, longitude);
+        });
+    });
+</script> --}}
 @endsection

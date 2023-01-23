@@ -24,6 +24,8 @@ Route::get('/', function () {
     return view('paystub');
 });
 
+Route::post('template', [TemplateFormController::class, 'template'])->name('template');
+
 Route::get('auth/Login', [LoginController::class, 'loginWithGoogle'])->name('login.google');
 Route::any('auth/callback', [LoginController::class, 'callbackFromGoogle'])->name('callback');
 //Route::post('login', 'LoginController@login')->name('newlogin');
@@ -33,7 +35,7 @@ Route::get('loginWithOtp', function () {
     return view('auth/OtpLogin');
 })->name('loginWithOtp');
 
-Route::any('sendOtp', [LoginController::class,'sendOtp']);
+Route::any('sendOtp', [LoginController::class, 'sendOtp']);
 
 Route::get('generate-pdf', [W2FormController::class, 'generatePDF']);
 Route::get('preview-pdf', [W2FormController::class, 'previewPDF']);
@@ -47,7 +49,7 @@ Route::get('district-pdf', [TemplateFormController::class, 'advanceDistrictUsa']
 // shubham end
 
 
-Route::get('usa', [UsaController::class, 'index']);
+Route::match(['get', 'post'], 'usa', [UsaController::class, 'index']);
 Route::get('canada-paystub', [CanadaController::class, 'index']);
 Route::get('uk-paystub', [UkController::class, 'index']);
 Route::get('globle', [UsaController::class, 'templateGloble']);
@@ -133,9 +135,4 @@ Route::name('admin')->prefix('backend')->group(function () {
     Route::get('deduction', function () {
         return view('Admin/deduction');
     });
-
 });
-
-
-
-
