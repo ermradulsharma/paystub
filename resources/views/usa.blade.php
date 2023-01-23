@@ -601,7 +601,14 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" crossorigin="anonymous"></script>
+<script>
+    function phoneMask() {
+        var num = $(this).val().replace(/\D/g, '');
+        $(this).val(num.substring(0, 1) + '-' + num.substring(1, 4) + '-' + num.substring(4, 7) + '-' + num.substring(7, 11));
+    }
+    $('[type="tel"]').keyup(phoneMask);
 
+</script>
 <script>
     var days_number;
     $(document).ready(function() {
