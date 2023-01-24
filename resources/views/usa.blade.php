@@ -398,81 +398,81 @@
                         </div>
 
                         <div class="row ">
-                            <div class="col-md-2 ">
+                            <div class=" col-lg-2 col-md-2 margin-bottom ">
                                 <button class="statementbtn">EARNING</button>
                             </div>
-                            <div class="col-md-2 ">
+                            <div class=" col-lg-2  col-md-2 margin-bottom ">
                                 <button class="statementbtn">RATE</button>
                             </div>
-                            <div class="col-md-2 ">
+                            <div class=" col-lg-2  col-md-2 margin-bottom ">
                                 <button class="statementbtn">HOURS</button>
                             </div>
-                            <div class="col-md-2 ">
+                            <div class=" col-lg-2 col-md-2 margin-bottom ">
                                 <button class="statementbtn">TOTAL</button>
                             </div>
-                            <div class="col-md-2">
+                            <div class=" col-lg-2  col-md-2 margin-bottom">
                                 <button class="statementbtn">THIS PERIOD</button>
                                 <p class="p-0 m-0 text-center" style="font-family: serif;font-size: 14px;"> Total Gross </p>
                             </div>
-                            <div class="col-md-2 ">
+                            <div class=" col-lg-2  col-md-2 margin-bottom ">
                                 <button class="statementbtn">YTD TOTAL</button>
                                 <p class="p-0 m-0 text-center" style="font-family: serif;font-size:14px;">YTD Total Gross</p>
                             </div>
                         </div>
 
                         <div class="row mb-3 mt-">
-                            <div class="col-md-2">
+                            <div class=" col-lg-2 col-md-2 margin-bottom">
                                 <div>
                                     <input class="earnbtn text-center" type="text" name="earning_0" value="Regular" id="earning_0" data-id="0">
                                 </div>
 
                             </div>
 
-                            <div class="col-md-2 ">
+                            <div class=" col-lg-2 col-md-2 margin-bottom ">
                                 <div>
                                     <input type="text" name="rate_0" class="earnbtn text-center calculation" value="" id="rate_0" data-id="0">
                                 </div>
 
                             </div>
 
-                            <div class="col-md-2 ">
+                            <div class=" col-lg-2  col-md-2 margin-bottom ">
                                 <div>
                                     <input type="text" name="hours_0" class="earnbtn text-center hours calculation" value="" id="hours_0" data-id="0">
                                 </div>
 
                             </div>
 
-                            <div class="col-md-2">
+                            <div class=" col-lg-2  col-md-2 margin-bottom">
                                 <div>
                                     <input type="text" name="total_0" class="earnbtn text-center" value="" id="total_0" data-id="0">
                                 </div>
 
                             </div>
 
-                            <div class="col-md-2">
+                            <div class=" col-lg-2 col-md-2 margin-bottom">
                                 <div>
                                     <input type="text" name="period_0" class="earnbtn text-center gross_total" value="" id="period_0" data-id="0">
                                 </div>
 
                             </div>
 
-                            <div class="col-md-2">
+                            <div class=" col-lg-2 col-md-2 margin-bottom">
                                 <div>
                                     <input type="text" name="ytd_total_0" class="earnbtn text-center ytd_total" value="" id="ytd_total_0" data-id="0">
                                 </div>
                             </div>
 
                         </div>
-                        <div class="col-md-2">
+                        <div class=" col-lg-2 col-md-2 margin-bottom">
                             <input type="text" name="" class="earnbtn text-center period_gross_total" value="" id="period_gross_total" hidden>
                         </div>
-                        <div class="col-md-2">
+                        <div class=" col-lg-2 col-md-2 margin-bottom">
                             <input type="text" name="" class="earnbtn text-center ytd_gross_total" value="" id="ytd_gross_total" hidden>
                         </div>
                         <div class="field_wrapper"> </div>
 
                         <div class="row mb-3">
-                            <div class="col-md-4 mt-2 mb-5">
+                            <div class=" col-lg-2  col-md-4 mt-2 margin-bottom">
                                 <button class="add_button earnbtn" type="add_earning" id="add_earning"><i class="fa fa-plus-circle pr-2" style="font-size:24px;color:green"></i>Add Earning</button>
                             </div>
                         </div>
@@ -503,7 +503,7 @@
                         <div id="add_deduction" class="my-3">
                         </div>
                         <div class="row my-3">
-                            <div class="col-md-5 col-lg-3">
+                            <div class="col-md-4 col-lg-3">
                                 <button class="add_deduction earnbtn" type="add_deduction" id="add_deduction"><i class="fa fa-plus-circle pr-5" style="font-size:24px;color:green"></i>Add Deduction</button>
                             </div>
 
