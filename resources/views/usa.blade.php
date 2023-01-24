@@ -36,7 +36,7 @@
                             <div class="col-md-6 mt-1">
                                 <div>
                                     <label for="tel" class="lable">EMPLOYER TELEPHONE NUMBER <span class="redColor">*</span> </label>
-                                    <input type="tel" id="tel" name="tel" placeholder="123-234-4565" class="w-100 p-2 text-center textInputFontSize">
+                                    <input type="tel" id="tel" name="tel" placeholder="123-234-4565" class="w-100 p-2 text-center textInputFontSize" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                 </div>
                             </div>
 
@@ -613,13 +613,18 @@
         $('.basicTemplate').change(function() {
             $('option:selected', '.advanceTemplate').prop("selected", false);
         });
-        
-        function phoneMask() {
-            var num = $(this).val().replace(/\D/g, '');
-            $(this).val(num.substring(0, 1) + '-' + num.substring(1, 4) + '-' + num.substring(4, 7) + '-' + num.substring(7, 11));
-        }
-        $('[type="tel"]').keyup(phoneMask);
 
+        $('#tel').keyup(function() {
+        var val = this.value.replace(/\D/g, '');
+        var newVal = '';
+        while (val.length > 3) {
+          newVal += val.substr(0, 3) + '-';
+          val = val.substr(3);
+        }
+        newVal += val;
+      
+        this.value = newVal;
+    });
     });
 
 </script>
