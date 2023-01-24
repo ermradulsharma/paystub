@@ -208,7 +208,7 @@
                                     @endforeach
                                 </select>
                                 <i class="fa fa-eye-slash basicTem" data-target="#openEye" data-toggle="modal"
-                                    style="font-size: 39px;"></i>
+                                    style="font-size: 39px; position:relative;left:10px;"></i>
 
 
 
@@ -239,7 +239,7 @@
                                     @endforeach
                                 </select>
                                 <i class="fa fa-eye-slash advanceTem" data-target="#openEye" data-toggle="modal"
-                                    style="font-size: 39px;"></i>
+                                    style="font-size: 39px; position:relative;left:10px;"></i>
 
 
 
@@ -385,16 +385,14 @@
 
 
 <script>
-    $('.basicTem').click(function() {
-      var imageattr = $('option:selected', '.bt_id').attr('data-src');
-         $('.setImage').attr('src', imageattr);
-    });
+$('.basicTem').click(function() {
+    var imageattr = $('option:selected', '.bt_id').attr('data-src');
+    $('.setImage').attr('src', imageattr);
+});
 
-    $('.advanceTem').click(function() {
-        var imageattr = $('option:selected', '.at_id').attr('data-src');
-         $('.setImage').attr('src', imageattr);
-    });
-
-
+$('.advanceTem').click(function() {
+    var imageattr = $('option:selected', '.at_id').attr('data-src');
+    $('.setImage').attr('src', imageattr);
+});
 </script>
 @endsection
