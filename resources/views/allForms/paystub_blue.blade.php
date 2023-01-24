@@ -9,66 +9,69 @@
     <title>Paystub_blue</title>
 
     <style>
-        * {
-            padding: 0px;
-            margin: 0px;
-            box-sizing: border-box;
-        }
+    * {
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+    }
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-        }
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
 
-        table,
-        thead,
-        th #colsborder {
-            border: 1px solid #464646;
-            border-collapse: collapse;
-        }
+    table,
+    thead,
+    th #colsborder {
+        border: 1px solid #464646;
+        border-collapse: collapse;
+    }
 
-        #regular {
-            border-bottom: none;
-        }
+    #regular {
+        border-bottom: none;
+    }
 
-        th {
-            font-size: 13px;
-        }
+    th {
+        font-size: 13px;
+    }
 
-        td {
-            font-size: 15px;
-            padding: 2px;
-        }
+    td {
+        font-size: 15px;
+        padding: 2px;
+    }
 
-        #cols {
-            border-right: 1px solid #464646;
-            border-collapse: collapse;
-            text-align: center;
-        }
+    #cols {
+        border-right: 1px solid #464646;
+        border-collapse: collapse;
+        text-align: center;
+    }
 
-        .head1 {
-            padding-top: 5px;
-        }
+    .head1 {
+        padding-top: 5px;
+    }
 
-        .head2 {
-            padding-bottom: 10px;
-        }
+    .head2 {
+        padding-bottom: 10px;
+    }
 
-        .padding {
-            padding: 5px 3px;
-        }
+    .padding {
+        padding: 5px 3px;
+        text-align: center;
+    }
 
-        #colourborder {
-            background-color: #264fab;
-        }
+    #colourborder {
+        background-color: #264fab;
+        color: white;
+    }
 
-        #fica {
-            font-size: 14px;
-        }
+    #fica {
+        font-size: 14px;
+  
+    }
     </style>
 </head>
 
 <body>
-    <div style="max-width: 1000px; margin: auto; padding: 0px 20px; ">
+    <div style="max-width: 100%; margin: auto; padding: 0px 20px;">
         <table style="width:100%;">
             <thead style="border:none;color:white; background-color:darkgrey;">
                 <th style="font-size: 16px;text-align: left;padding-left: 25px;">BankApp</th>
@@ -77,8 +80,8 @@
                     Earnings Statement</th>
 
             </thead>
-            <tr style="color:white; background-color:darkgrey;">
-                <td style="font-size: 16px;padding-left: 24px;padding-bottom: 12px;" colspan="2">255 Esters Rd,
+            <tr style="color:white; background-color:darkgrey; ">
+                <td style="font-size: 16px;padding-left: 24px;padding-bottom: 12px; " colspan="2">255 Esters Rd,
                     Fairfield, OH 45014</td>
             </tr>
         </table>
@@ -88,20 +91,20 @@
                 <th class="padding" colspan="2" style="text-align: center;">
                     MIKE MOOR
                 </th>
-                <td class="padding" colspan="5" style="text-align: center;">
+                <td class="padding" colspan="6" style="text-align: center; border-right:1px solid black;">
                     255 Esters Rd, Fairfield, OH 45014
                 </td>
 
 
             </thead>
             <thead id="colourborder">
-                <th class="padding" colspan="2">
+                <th class="padding" colspan="2 ">
                     EMPLOYEE ID
                 </th>
                 <th class="padding" colspan="2">
                     PERIOD ENDING
                 </th>
-                <th class="padding">
+                <th class="padding" colspan="2">
                     PAY DATE
                 </th>
                 <th class="padding" colspan="2">CHECK NUMBER</th>
@@ -110,21 +113,27 @@
 
             </thead>
             <thead>
-                <th class="padding" id="colsborder" style="border:2px solid  #464646;">575785</th>
-                <th class="padding" style="border:2px solid  #464646;" colspan="2">23/1/2023 - 24/1/2023</th>
-                <th class="padding" style="border:2px solid  #464646;" colspan="2">25/1/2023</th>
-                <th class="padding" style="border:2px solid  #464646;" colspan="2">254236</th>
 
 
+                <tr>
+                    <td class="padding" colspan="2" id="colsborder"
+                        style="border:2px solid  #464646;text-align:center;"> 575785</td>
+                    <td class="padding" colspan="2" id="colsborder"
+                        style="border:2px solid  #464646; text-align:center;"> 575785</td>
+                    <td class="padding" colspan="2" id="colsborder"
+                        style="border:2px solid  #464646;text-align:center;"> 575785</td>
+                    <td class="padding" colspan="2" id="colsborder"
+                        style="border:2px solid  #464646;text-align:center;"> 575785</td>
+                </tr>
             </thead>
             <thead id="colourborder">
                 <th class="padding">INCOME</th>
-                <th class="padding">RATE</th>
+                <th class="padding" >RATE</th>
                 <th class="padding">HOURS</th>
                 <th class="padding">CURRENT TOTAL</th>
                 <th class="padding">DEDUCTION</th>
                 <th class="padding">CURRENT TOTAL</th>
-                <th class="padding">YEAR TO DATE</th>
+                <th class="padding" colspan="2">YEAR TO DATE</th>
             </thead>
         </table>
 
@@ -142,8 +151,8 @@
 
                     </tr>
                     <tr>
-                        <td id="fica">Overtime</td>
-                        <td>50.00</td>
+                        <td id="fica" style="">Overtime</td>
+                        <td style="text-align:left;">50.00</td>
 
                         <td>45.00</td>
                         <td>$ 2250.00</td>
@@ -183,7 +192,7 @@
 
                     </tr>
                     <tr>
-                        <td style="text-transform: uppercase;"id="fica">state-tax</td>
+                        <td style="text-transform: uppercase;" id="fica">state-tax</td>
                         <td>50.00</td>
                         <td>45.00</td>
 
@@ -208,21 +217,21 @@
             <table id="bottomtable"
                 style="width:100%; margin-top:135px; border:1px solid  #464646; background-color:white;">
                 <tr class="">
-                    <th id="cols"class="head1">YTD GROSS</th>
-                    <th id="cols"class="head1">YTD EDUCATION</th>
-                    <th id="cols"class="head1">NET PAY</th>
-                    <th id="cols"class="head1">CURRENT TOTAL</th>
-                    <th id="cols"class="head1">DEDUCTION</th>
-                    <th id="cols"class="head1">NET PAY</th>
+                    <th id="cols" class="head1">YTD GROSS</th>
+                    <th id="cols" class="head1">YTD EDUCATION</th>
+                    <th id="cols" class="head1"> YTD<BR>NET PAY</th>
+                    <th id="cols" class="head1">CURRENT TOTAL</th>
+                    <th id="cols" class="head1">DEDUCTION</th>
+                    <th id="cols" class="head1">NET PAY</th>
                 </tr>
 
                 <tr class="ytd">
-                    <td id="cols"class="head2">39,565</td>
-                    <td id="cols"class="head2">23,455</td>
-                    <td id="cols"class="head2">53,454</td>
-                    <td id="cols"class="head2">34,533</td>
-                    <td id="cols"class="head2">23,455</td>
-                    <td id="cols"class="head2">56,664</td>
+                    <td id="cols" class="head2">39,565</td>
+                    <td id="cols" class="head2">23,455</td>
+                    <td id="cols" class="head2">53,454</td>
+                    <td id="cols" class="head2">34,533</td>
+                    <td id="cols" class="head2">23,455</td>
+                    <td id="cols" class="head2">56,664</td>
                 </tr>
             </table>
 

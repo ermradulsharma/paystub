@@ -67,7 +67,7 @@ class TemplateFormController extends Controller
             'date' => date('m/d/Y')
         ];
           
-       // return view('allForms.pt-blue');
+    //    return view('allForms.pt-brown');
          
        
           $pdf = PDF::loadView('allForms.pt-brown', $data);
@@ -101,9 +101,9 @@ class TemplateFormController extends Controller
             'date' => date('m/d/Y')
         ];
           
-        $pdf = PDF::loadView('allForms.Temp1', $data);   
-       // return view('allForms.Temp1', $data);
-        return $pdf->stream('Paystubx.pdf');
+    //     $pdf = PDF::loadView('allForms.Temp1', $data);   
+    //    // return view('allForms.Temp1', $data);
+    //     return $pdf->stream('Paystubx.pdf');
 
 
   
@@ -144,6 +144,7 @@ class TemplateFormController extends Controller
         // return view('allForms.htmlTemp', $data);
        return $options = PDF::getOptions();
         return PDF::loadView('allForms.htmlTemp')->stream('W2Paystubx.pdf');
+
     }
     public function advanceCeruleanUsa(){
         $data = [
@@ -160,6 +161,24 @@ class TemplateFormController extends Controller
 
      
     }
+
+    public function advanceDistrictUsa(){
+        $data = [
+            
+            'date' => date('m/d/Y')
+        ];
+          
+        //   return view('allForms.advance');
+         
+       
+          $pdf = PDF::loadView('allForms.advance', $data);
+         
+         return $pdf->stream('W2Paystubx.pdf');
+
+     
+    }
+
+
     public function AdvanceBlueBoxUsaPDF(){
         $data = [
             
@@ -210,10 +229,9 @@ class TemplateFormController extends Controller
         ];
           
          $pdf = PDF::loadView('allForms.paystub_blue', $data);   
-    //    return view('allForms.paystub_blue');
         return $pdf->stream('basictemp_blue.pdf');
         
-
+//    return view('allForms.paystub_blue');
     }
 
     public function BasicTawnyUkPDF()
@@ -223,15 +241,13 @@ class TemplateFormController extends Controller
             'date' => date('m/d/Y')
         ];
           
-        return view('allForms.ukbasic-tawny', $data);
+        // return view('allForms.ukbasic-tawny', $data);
 
         $pdf = PDF::loadView('allForms.ukbasic-tawny', $data);   
         return $pdf->stream('ukbasic-tawny.pdf');
 
 
-  
-    
-    
+
      
     }
 
@@ -242,7 +258,7 @@ class TemplateFormController extends Controller
             'date' => date('m/d/Y')
         ];
           
-      // return view('allForms.sage-blue', $data);
+    //   return view('allForms.sage-blue', $data);
 
         $pdf = PDF::loadView('allForms.sage-blue', $data);   
         return $pdf->stream('ukbasicsage.pdf');

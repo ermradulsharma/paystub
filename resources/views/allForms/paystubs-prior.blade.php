@@ -64,7 +64,7 @@
 <table style="width: 100%; padding: top 40px;">
     <tr style="">
         <td style="font-weight: 800; font-size:14px; margin-top:200px;">Paystubs</td>
-        <td>sharp, Dana</td>
+        <td style="font-weight: 800;">sharp, Dana</td>
         <td>SSN</td>
         <td>XXX-XX-1234</td>
         <td>Period Beginning</td>
@@ -99,7 +99,7 @@
 
 
 <table style="width: 100%;">
-    <tr style="border: 1px solid;">
+    <tr style="border-top: 1px solid; border-bottom:1px solid;">
         <td>Earning</td>
         <td>Hours/Rate</td>
         <td>Amount</td>

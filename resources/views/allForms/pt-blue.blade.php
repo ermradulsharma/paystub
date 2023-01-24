@@ -33,7 +33,7 @@
     margin-top: 80px;
    
    }
- th, tr, td {
+ th, tr {
   border: 1px solid black;
   border-collapse: collapse;
 }
@@ -202,7 +202,7 @@
         <td >AMOUNT<br> YEAR-TO-DATE</td>
         <td>DEDUCTIONS & TAXES</td>
         <td > AMOUNT<br> THIS CHECK</td>
-        <td style="border-right: 1px solid white;">AMOUNT <br>YEAR-TO-DATE</td>
+        <td style="border-right: none">AMOUNT <br>YEAR-TO-DATE</td>
         <td ></td>
     </tr>
     <tr>

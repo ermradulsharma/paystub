@@ -140,7 +140,7 @@
     </table>
     <section>
         <table class="table-data">
-            <tr>
+            <tr style="border-bottom: 1px solid red;">
                 <th style="border-bottom: 2px solid #000;" class="">EARNINGS</th>
                 <th style="border-bottom: 2px solid #000;" class="">RATE</th>
                 <th style="border-bottom: 2px solid #000;" class="">HOURS</th>
@@ -293,34 +293,39 @@
                 </tr>
                 <tr>
                     <td></td>
-                    <td style="text-align: left;">Net Pay</td>
-                    <td>616.07</td>
-                    <td>11705.33</td>
+                    <td style="text-align: left;  border-top:2px solid black; border-bottom:2px solid black ;border-left:1px solid black; background-color:#98919145;">Net Pay</td>
+                    <td style="border-top:2px solid black; border-bottom:2px solid black ;  background-color:#98919145;">616.07</td>
+                    <td style="border-top:2px solid black; border-bottom:2px solid black; border-right:1px solid black ;  background-color:#98919145;">11705.33</td>
                 </tr>
             </table>
         </section>
         <section style="position:absolute; top:18px; right:0;">
-            <table style="border:1px solid #000; padding:10px;">
+            <table style="border:1px solid #000; padding:px;">
                 <tr>
-                    <th style="text-align: left;">YTD GROSS</th>
-                    <td style="padding: 0px 0 10px;">15200.00</td>
+                    <th style="text-align: left;  ">YTD GROSS</th>
+                    <td style="padding:0">15200.00</td>
                 </tr>
+                <td style="border-bottom: 1px solid black;" colspan="17"></td>
                 <tr>
                     <th style="text-align: left;">YTD DEDUCTIONS</th>
                     <td style="padding: 10px;">3494.67</td>
                 </tr>
+                <td style="border-bottom: 1px solid black;" colspan="17"></td>
                 <tr>
                     <th style="text-align: left;">YTD NET PAY</th>
                     <td style="padding: 10px;">11705.33</td>
                 </tr>
+                <td style="border-bottom: 1px solid black;" colspan="17"></td>
                 <tr>
                     <th style="text-align: left;">GROSS PAY</th>
                     <td style="padding: 10px;">800.00</td>
                 </tr>
+                <td style="border-bottom: 1px solid black;" colspan="17"></td>
                 <tr>
                     <th style="text-align: left;">DEDUCTIONS</th>
                     <td style="padding: 10px;">183.93</td>
                 </tr>
+                <td style="border-bottom: 1px solid black;" colspan="17"></td>
                 <tr>
                     <th style="text-align: left;">NET PAY</th>
                     <td style="padding: 10px 0 0;">616.07</td>
@@ -353,7 +358,7 @@
                 <td style="text-align: right;">Transit ABA </td>
                 <td style="text-align: right;">Account number</td>
             </tr>
-
+            <td style="border-bottom: 1px solid black;" colspan="17"></td>
             <tr>
                 <td colspan="4"></td>
                 <td>Erza Moore</td>

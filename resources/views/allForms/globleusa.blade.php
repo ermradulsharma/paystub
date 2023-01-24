@@ -10,45 +10,51 @@
 
 
     <style>
-    body {
-        color: #000;
-        font-size: 14px;
+        body {
+            color: #000;
+            font-size: 14px;
 
-    }
+        }
 
-    .table {
-        /* max-width: 1200px; */
-        margin: 0 auto;
-        width: 100%;
-    }
+        .earn {
+            border-bottom: 1px solid red;
+        }
 
-    .text {
-        margin-right: 10px;
+        .table {
+            /* max-width: 1200px; */
+            margin: 0 auto;
+            width: 100%;
+        }
 
-    }
+        .text {
+            margin-right: 10px;
 
-    .employee-box {
-        border: 1px solid #000;
-        /* width:75%; */
-        background-image: linear-gradient(#fff, rgba(0, 0, 0, 0.3));
-    }
+        }
 
-    .table-data tr {
-        text-align: center;
+        .employee-box {
+            border: 1px solid #000;
+            /* width:75%; */
+            background-image: linear-gradient(#fff, rgba(0, 0, 0, 0.3));
+        }
 
-    }
+        .table-data tr {
+            text-align: center;
 
-    .td {
-        text-align: left !important;
-    }
+        }
 
-    .table-data th {
-        padding: 0px 20px 0 0;
-    }
+        .td {
+            text-align: left !important;
+        }
 
-    .statutory {
-        text-align: left;
-    }
+        .table-data th {
+            padding: 0px 20px 0 0;
+        }
+
+        .statutory {
+            text-align: left;
+        }
+
+      
     </style>
 </head>
 
@@ -139,7 +145,7 @@
     </table>
     <section>
         <table class="table-data">
-            <tr>
+            <tr class="earn">
                 <th style="border-bottom: 2px solid #000;" class="">EARNINGS</th>
                 <th style="border-bottom: 2px solid #000;" class="">rate</th>
                 <th style="border-bottom: 2px solid #000;" class="">hours</th>
@@ -182,12 +188,10 @@
             <tr></tr>
             <tr></tr>
             <tr></tr>
-
-            <tr>
-                <td style="font-size: 17px;"><b>Gross Pay</b></td>
+            <tr class="border_bottom">
                 <td></td>
-                <td></td>
-                <td style="font-size: 17px;"><b>$440.85</b></td>
+                <td style="font-size: 17px; text-align:left;" colspan="3"><hr><b>Gross Pay</b><hr></td>
+                <td style="font-size: 17px; text-align:left;"><hr><b>$440.85</b><hr></td>
             </tr>
             <tr></tr>
             <tr></tr>
@@ -232,10 +236,8 @@
                 <br>
                 <thead style="border-bottom: 2px solid #000;">
                     <th></th>
-                    <th class="td">OTHER</th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
+                    <th class="td" colspan="3" style="border-top: 2px solid black;">OTHER</th>
+                    
                 </thead>
                 <tr>
                     <td></td>
@@ -256,9 +258,9 @@
                     <td></td>
                 </tr>
                 <tr>
-                    <td style="text-align: left; font-size:17px;"><b>Net Pay</b< /td>
-                    <td></td>
-                    <td style="font-size:17px;"><b>251.80</b></td>
+                    <td style="text-align: left; font-size:17px; border-bottom:2px solid black;" colspan="2"><b>Net Pay</b></td>
+                 
+                    <td style="font-size:17px; border-bottom:2px solid black;"><b>251.80</b></td>
                 </tr>
             </table>
         </section>
@@ -283,7 +285,7 @@
                 </p>
             </div>
         </div>
-        <table style="width: 100%; margin: 140px 0 0 auto;">
+        <table style="width: 100%; margin: 140px 0 0 auto; ">
             <tr style="border-bottom: 1px solid;">
                 <td colspan="4"></td>
                 <td>Deposite to the Account off</td>
@@ -291,6 +293,7 @@
                 <td style="text-align: right;">Transit ABA </td>
                 <td style="text-align: right;">Account number</td>
             </tr>
+         <td style="border-bottom: 1px solid black;" colspan="17"></td>
             <tr>
                 <td colspan="4"></td>
                 <td>Erza Moore</td>
@@ -298,6 +301,7 @@
                 <td style="text-align: right;">XXX567</td>
                 <td style="text-align: right;">XXXX5677</td>
             </tr>
+        
         </table>
 
 

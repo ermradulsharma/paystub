@@ -107,9 +107,9 @@
                 <p style="margin: 6px 0 0 0;font-size: 10px;">CENTER MORICHES, NY 11218</p>
             </div>
         </div>
-        <div style="width: 100%;   text-align:center; color: aliceblue; font-size: 14px;">
-            <p style="margin: 0; background-color:red;">THE FACE OF THIS DOCUMNET HAS A COLOURED BACKGROUND-NOT A WHITE BACKGROUND</p>
-        </div>
+        <section style="width: 100%;   text-align:center; color: aliceblue; font-size: 14px;  background-color:#693E52; ">
+            <p style="margin: 0; background-color:#693E52;;">THE FACE OF THIS DOCUMNET HAS A COLOURED BACKGROUND-NOT A WHITE BACKGROUND</p>
+        </section>
     </div>
 
     <table class="top">
@@ -121,7 +121,7 @@
 
     </table>
 
-    <table class="top">
+    <table class="top" style="background-color: #693E52;">
         <tr>
             <th colspan="">EMPLOYEE NAME</th>
             <th>COMPANY NAME</th>
@@ -129,10 +129,10 @@
             <th>EMP NO.</th>
             <th>SOCIAL SECURITY NO.</th>
             <th>CHECK DATE</th>
-            <th style="border-right: 1px solid white;">CHECK NO.</th>
-            <th style="border-right: 1px solid white;"></th>
-           
-          
+            <th style="border-right:1px solid  #3c807b;">CHECK NO.</th>
+            <th style=""></th>
+
+
         </tr>
 
         <tr>
@@ -142,13 +142,13 @@
             <td>18</td>
             <td>xxx-xx-1234</td>
             <td>01/01/2023</td>
-            <td style="border-right: 1px solid white;">1877</td>
-            <td style="border-right: 1px solid white;"></td>
+            <td style="border-right:1px solid white;">1877</td>
+            <td style=""></td>
         </tr>
     </table>
 
     <table>
-        <tr>
+        <tr style="background-color: #693E52;">
             <th class="hadding" style="colspan: 3;"></th>
             <th class="hadding">GROSS PAY</th>
             <th class="hadding">TIPS & NON-PAY</th>
@@ -184,93 +184,93 @@
     </table>
     <table>
         <tr>
-            
-           <td>Erza Moore 102 Main St. Cincinnati, OH 4501</td>
-         
 
-           <td>Pay Period:01/01/2023 </td>
-           <td> thru 01/01/2023</td>
+            <td>Erza Moore 102 Main St. Cincinnati, OH 4501</td>
+
+
+            <td>Pay Period:01/01/2023 </td>
+            <td> thru 01/01/2023</td>
         </tr>
     </table>
 
-<table>
-    <tr style="background: #43407a47;">
-        <td>WAGES</td>
-        <td>HOURS</td>
-        <td>RATE</td>
-        <td> AMOUNT <br>THIS CHECK</td>
-        <td >AMOUNT<br> YEAR-TO-DATE</td>
-        <td>DEDUCTIONS & TAXES</td>
-        <td > AMOUNT<br> THIS CHECK</td>
-        <td style="border-right: 1px solid white;">AMOUNT <br>YEAR-TO-DATE</td>
-        <td ></td>
-    </tr>
-    <tr>
-        <td>Regular</td>
-        <td>40.00</td>
-        <td>$15.00</td>
+    <table >
+        <tr>
+            <td>WAGES</td>
+            <td>HOURS</td>
+            <td>RATE</td>
+            <td> AMOUNT <br>THIS CHECK</td>
+            <td>AMOUNT<br> YEAR-TO-DATE</td>
+            <td>DEDUCTIONS & TAXES</td>
+            <td> AMOUNT<br> THIS CHECK</td>
+            <td style="border-right: 1px solid white;">AMOUNT <br>YEAR-TO-DATE</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Regular</td>
+            <td>40.00</td>
+            <td>$15.00</td>
 
-        <td>$2,40.000</td>
-        <td>$2,40.000</td>
-        <td>fedral Withholding</td>
-        <td >$396.83</td>
-        <td style="border-right: 1px solid white;">$396.83</td>
-        <td></td>
-        
-    </tr>
-    <tr >
-        <td>Total Wages</td>
-        <td>40.00</td>
-        <td>$15.00</td>
+            <td>$2,40.000</td>
+            <td>$2,40.000</td>
+            <td>fedral Withholding</td>
+            <td>$396.83</td>
+            <td style="border-right: 1px solid white;">$396.83</td>
+            <td></td>
 
-        <td>$2,40.000</td>
-        <td>$2,40.000</td>
-        <td>FICA Withholding</td>
-        <td >$396.83</td>
-        <td style="border-right: 1px solid white;">$396.83</td>
-        <td></td>
-        
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
+        </tr>
+        <tr>
+            <td>Total Wages</td>
+            <td>40.00</td>
+            <td>$15.00</td>
 
-        <td></td>
-        <td></td>
-        <td>Medicare Withholding</td>
-        <td >$396.83</td>
-        <td style="border-right: 1px solid white;">$396.83</td>
-        <td></td>
-        
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
+            <td>$2,40.000</td>
+            <td>$2,40.000</td>
+            <td>FICA Withholding</td>
+            <td>$396.83</td>
+            <td style="border-right: 1px solid white;">$396.83</td>
+            <td></td>
 
-        <td></td>
-        <td></td>
-        <td>state Withholding</td>
-        <td>$396.83</td>
-        <td style="border-right: 1px solid white;">$396.83</td>
-        <td></td>
-        
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
 
-        <td></td>
-        <td></td>
-        <td>Total Taxes</td>
-        <td>$396.83</td>
-        <td style="border-right: 1px solid white;">$396.83</td>
-        <td></td>
-        
-    </tr>
-</table>
+            <td></td>
+            <td></td>
+            <td>Medicare Withholding</td>
+            <td>$396.83</td>
+            <td style="border-right: 1px solid white;">$396.83</td>
+            <td></td>
+
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+
+            <td></td>
+            <td></td>
+            <td>state Withholding</td>
+            <td>$396.83</td>
+            <td style="border-right: 1px solid white;">$396.83</td>
+            <td></td>
+
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+
+            <td></td>
+            <td></td>
+            <td>Total Taxes</td>
+            <td>$396.83</td>
+            <td style="border-right: 1px solid white;">$396.83</td>
+            <td></td>
+
+        </tr>
+    </table>
     <!--     
             <div>
             <div class="container" style="border-right: 1px solid #6787dc; margin: auto;border-top: 1px solid #6787dc; border-left: 1px solid #6787dc;padding: 0 0px 0px 0px;">
