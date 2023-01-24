@@ -867,9 +867,9 @@
             var rate = $('#rate_' + id).val();
             var hours = $('#hours_' + id).val();
             if (rate == '') {
-                var total = 1 * hours;
+                var total = 0.00;
             } else if (hours == '') {
-                var total = rate * 1;
+                var total = 0.00;
             } else {
                 var total = rate * hours;
             }
@@ -916,12 +916,12 @@
 
                 if (tax_name == 'State Tax') {
                     var tax_rate = $('.tax_rate').find(":selected").data('tax');
-                    if (tax_rate == null) {
-                        taxes_values = 0.00;
-                    } else {
+                    if (tax_rate != null) {
                         taxes_values = parseFloat(tax_state).toFixed(2);
+                    } else {
+                        taxes_values = 0.00;
                     }
-
+                    taxes_values = taxes_values;
                 }
                 period_tax_price = parseFloat(period_gross_total).toFixed(2) * (taxes_values / 100);
                 period_ytd_tax_price = parseFloat(ytd_gross_total).toFixed(2) * (taxes_values / 100);
@@ -1113,4 +1113,3 @@
     });
 
 </script>
-
