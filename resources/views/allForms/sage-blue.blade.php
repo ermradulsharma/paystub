@@ -48,13 +48,13 @@ table.ltd {
     border-spacing: 0;
     border-radius: 15px 15px 15px 15px;
     font-size: 10pt;
-    height: 200px;
+    height:;
 }
 
 table.ltd thead {
     text-align: left;
     background-color: #4a50b2;
-    height: 25px;
+    height: ;
     color: white;
 }
 
@@ -81,13 +81,13 @@ table.ltd tr td {
 <body>
 
     <section>
-        <table style="width:100%; height:50px;" class="ltd">
+        <table style="width:100%; height:px;" class="ltd">
             <thead>
                 <tr>
-                    <th>Employee No</th>
-                    <th>Employee Name
+                    <th style="border-right:1px solid blue;">Employee No</th>
+                    <th style="border-right:1px solid blue;" >Employee Name
                     </th>
-                    <th>Process
+                    <th style="border-right:1px solid blue;">Process
                         Date
                     </th>
                     <th>
@@ -97,10 +97,10 @@ table.ltd tr td {
             </thead>
             <tr>
 
-                <td class="center">12345</td>
+                <td class="center" style="border-right:1px solid blue;">12345</td>
 
-                <td class="center">Saily James</td>
-                <td class="center">31/01/22</td>
+                <td class="center" style="border-right:1px solid blue;">Saily James</td>
+                <td class="center" style="border-right:1px solid blue;">31/01/22</td>
                 <td class="center">NHOOFFFF1</td>
             </tr>
         </table>
@@ -251,7 +251,7 @@ table.ltd tr td {
         <table class="std" style="float:right; width:29.5%;  height:200px; margin-left:4px;">
             <thead>
                 <tr>
-                    <th colspan=2>This Period</th>
+                    <th colspan=2>Year to Date</th>
                 </tr>
             </thead>
             <tbody>

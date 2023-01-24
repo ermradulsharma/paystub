@@ -45,9 +45,15 @@ class TemplateFormController extends Controller
         $data = [
             'date' => date('m/d/Y')
         ];
-        // return view('allForms.pt-blue');
-        $pdf = PDF::loadView('allForms.pt-brown', $data);
-        return $pdf->setPaper('A4')->stream('pt-brownPaystubx.pdf');
+          
+    //    return view('allForms.pt-brown');
+         
+       
+          $pdf = PDF::loadView('allForms.pt-brown', $data);
+         
+          return $pdf->setPaper('A4')->stream('pt-brownPaystubx.pdf');
+    
+     
     }
 
     public function BasicPriorUsaPDF()
@@ -66,9 +72,9 @@ class TemplateFormController extends Controller
             'date' => date('m/d/Y')
         ];
 
-        $pdf = PDF::loadView('allForms.Temp1', $data);
-        // return view('allForms.Temp1', $data);
-        return $pdf->stream('Paystubx.pdf');
+       
+       
+     
         // return view('allForms.paystub-check');
         $pdf = PDF::loadView('allForms.paystub-check', $data);
         return $pdf->setPaper('A4')->stream('paystub-check.pdf');
@@ -91,6 +97,7 @@ class TemplateFormController extends Controller
         // return view('allForms.htmlTemp', $data);
         return $options = PDF::getOptions();
         return PDF::loadView('allForms.htmlTemp')->stream('W2Paystubx.pdf');
+
     }
     public function advanceCeruleanUsa()
     {
@@ -101,6 +108,18 @@ class TemplateFormController extends Controller
         $pdf = PDF::loadView('allForms.paybill', $data);
         return $pdf->stream('W2Paystubx.pdf');
     }
+
+    public function advanceDistrictUsa()
+    {
+        $data = [
+            'date' => date('m/d/Y')
+        ];
+        //   return view('allForms.advance');
+        $pdf = PDF::loadView('allForms.advance', $data);
+        return $pdf->stream('W2Paystubx.pdf');
+    }
+
+
     public function AdvanceBlueBoxUsaPDF()
     {
         $data = [
@@ -145,7 +164,7 @@ class TemplateFormController extends Controller
         $data = [
             'date' => date('m/d/Y')
         ];
-        return view('allForms.ukbasic-tawny', $data);
+        // return view('allForms.ukbasic-tawny', $data);
         $pdf = PDF::loadView('allForms.ukbasic-tawny', $data);
         return $pdf->stream('ukbasic-tawny.pdf');
     }

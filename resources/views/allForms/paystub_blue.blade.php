@@ -32,6 +32,7 @@
 
         th {
             font-size: 13px;
+            color: white;
         }
 
         td {
@@ -47,6 +48,7 @@
 
         .head1 {
             padding-top: 5px;
+            color: black;
         }
 
         .head2 {
@@ -69,7 +71,7 @@
 </head>
 
 <body>
-    <div style="max-width: 1000px; margin: auto; padding: 0px 20px; ">
+    <div style="max-width: 100%; margin: auto; padding: 0px 20px;">
         <table style="width:100%;">
             <thead style="border:none;color:white; background-color:darkgrey;">
                 <th style="font-size: 16px;text-align: left;padding-left: 25px;">BankApp</th>
@@ -77,18 +79,18 @@
                     Earnings Statement</th>
 
             </thead>
-            <tr style="color:white; background-color:darkgrey;">
-                <td style="font-size: 16px;padding-left: 24px;padding-bottom: 12px;" colspan="2">255 Esters Rd,
+            <tr style="color:white; background-color:darkgrey; ">
+                <td style="font-size: 16px;padding-left: 24px;padding-bottom: 12px; " colspan="2">255 Esters Rd,
                     Fairfield, OH 45014</td>
             </tr>
         </table>
         <table style="width:100%;">
 
             <thead>
-                <th class="padding" colspan="2" style="text-align: center;">
-                    MIKE MOOR
+                <th class="padding" colspan="2" style="text-align: center; color:black;">
+                    MIKE MOORE
                 </th>
-                <td class="padding" colspan="5" style="text-align: center;">
+                <td class="padding" colspan="6" style="text-align: center; border-right:1px solid black;">
                     255 Esters Rd, Fairfield, OH 45014
                 </td>
 
@@ -98,22 +100,22 @@
                 <th class="padding" colspan="2"> EMPLOYEE ID </th>
                 <th class="padding" colspan="3"> PERIOD ENDING </th>
                 <th class="padding"> PAY DATE </th>
-                <th class="padding">CHECK NUMBER</th>
+                <th class="padding" colspan="2">CHECK NUMBER</th>
             </thead>
             <tr>
                 <td class="padding" id="colsborder" colspan="2" style="border:2px solid  #464646; text-align:center;">575785</td>
                 <td class="padding" style="border:2px solid  #464646; text-align:center;" colspan="3">23/1/2023 - 24/1/2023</td>
                 <td class="padding" style="border:2px solid  #464646; text-align:center;">25/1/2023</td>
-                <td class="padding" style="border:2px solid  #464646; text-align:center;">254236</td>
+                <td class="padding" colspan="2"  style="border:2px solid  #464646; text-align:center;">254236</td>
             </tr>
             <thead id="colourborder">
                 <th class="padding">INCOME</th>
-                <th class="padding">RATE</th>
+                <th class="padding" >RATE</th>
                 <th class="padding">HOURS</th>
                 <th class="padding">CURRENT TOTAL</th>
                 <th class="padding">DEDUCTION</th>
                 <th class="padding">CURRENT TOTAL</th>
-                <th class="padding">YEAR TO DATE</th>
+                <th class="padding" colspan="2">YEAR TO DATE</th>
             </thead>
         </table>
 
@@ -131,8 +133,8 @@
 
                     </tr>
                     <tr>
-                        <td id="fica">Overtime</td>
-                        <td>50.00</td>
+                        <td id="fica" style="">Overtime</td>
+                        <td style="text-align:left;">50.00</td>
 
                         <td>45.00</td>
                         <td>$ 2250.00</td>
@@ -198,7 +200,7 @@
                 <tr class="">
                     <th id="cols" class="head1">YTD GROSS</th>
                     <th id="cols" class="head1">YTD EDUCATION</th>
-                    <th id="cols" class="head1">NET PAY</th>
+                    <th id="cols" class="head1"> YTD<BR>NET PAY</th>
                     <th id="cols" class="head1">CURRENT TOTAL</th>
                     <th id="cols" class="head1">DEDUCTION</th>
                     <th id="cols" class="head1">NET PAY</th>

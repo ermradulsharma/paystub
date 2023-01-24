@@ -64,15 +64,15 @@
 <table style="width: 100%; padding: top 40px;">
     <tr style="">
         <td style="font-weight: 800; font-size:14px; margin-top:200px;">Paystubs</td>
-        <td>sharp, Dana</td>
+        <td style="font-weight: 800;">sharp, Dana</td>
         <td>SSN</td>
         <td>XXX-XX-1234</td>
         <td>Period Beginning</td>
         <td>11/12/202</td>
     </tr>
     <tr>
-        <td>1701 Legacy Dr</td>
-        <td>3773 Rockdale Dr</td>
+        <td style="margin: 0; padding:0;">1701 Legacy Dr</td>
+        <td style="margin: 0; padding:0;">3773 Rockdale Dr</td>
         <td>Gross Pay</td>
         <td>$9.928.00</td>
         <td>Period Ending</td>
@@ -99,7 +99,7 @@
 
 
 <table style="width: 100%;">
-    <tr style="border: 1px solid;">
+    <tr style="border-top: 1px solid; border-bottom:1px solid;">
         <td>Earning</td>
         <td>Hours/Rate</td>
         <td>Amount</td>

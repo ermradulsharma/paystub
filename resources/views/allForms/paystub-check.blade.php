@@ -162,7 +162,7 @@
     <table style="width:100%;margin-top:30px;">
         <thead>
             <th>Deductions</th>
-            <th colspan="4">Statuory</th>
+            <th colspan="3">Statuory</th>
         </thead>
         <tr>
             <td></td>
@@ -207,7 +207,7 @@
 
 
 
-    <div class="container" style=" margin-top:100px;padding: 0 0px 0px 0px;">
+    <table class="container" style=" margin-top:100px;padding: 0 0px 0px 0px;width:100%; ">
         <div class="row" style="display: flex; display: flex;justify-content: space-between;padding: 0px 14px;">
             <div style="width: 50%;float:left;">
                 <h6 style="font-size: 17px; margin-bottom: 0;">Paystubs Company, INC</h6>
@@ -233,9 +233,10 @@
        
       
         
-    </div>
+    </table>
 
-    <table style="width: 80%; margin: 100px 0 0 auto;">
+
+    <table style="width: 100%; margin: 100px 0 0 auto;">
         <tr style="border-bottom: 1px solid black;">
         <td colspan="4"></td>
         <td style="">Deposite to the Account off</td>

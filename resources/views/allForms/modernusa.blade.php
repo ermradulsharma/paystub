@@ -195,45 +195,40 @@
         </tr>
     </table>
     <section>
-        <table class="table-data">
-            <tr>
-                <th style="border-bottom: 2px solid #000;" class="">Earnings</th>
-                <th style="border-bottom: 2px solid #000;" class="">rate</th>
-                <th style="border-bottom: 2px solid #000;" class="">hours</th>
-                <th style="border-bottom: 2px solid #000;" class="">this period</th>
-                <th style="border-bottom: 2px solid #000;" class="">year to date</th>
+        <table style="width: 100%; margin-top: 60px;">
+            <tr style="text-align:left ;">
+                <th style="text-align:left ;" >Earning</th>
+                <th style="width: 15%;text-align:left;">Rate</th>
+                <th style="text-align:left ;">Hours</th>
+                <th style="text-align:left ;">This Period</th>
+                <th  style="text-align:left ;">Year-to-date</th>
+                <th style="border-bottom: 2px solid black;text-align:left;s">Important Note</th>
             </tr>
             <tr>
-                <td class="td">Regular</td>
-                <td>15.00</td>
-                <td>40.00</td>
-                <td>600.00</td>
-                <td>7200.00</td>
+                <td>Regular</td>
+                <td>10</td>
+                <td>40</td>
+                <td>400</td>
+                <td>5.600.00</td>
+                <td style="font-size: 10px;">Company telephone No: 12345678456</td>
             </tr>
             <tr>
-                <td class="td">Overtime</td>
-                <td>22.50</td>
+                <td>Overtime</td>
                 <td>0.00</td>
                 <td>0.00</td>
                 <td>0.00</td>
-
-
-            </tr>
-            <tr>
-                <td class="td">Bonus</td>
-                <td>-</td>
-                <td>-</td>
                 <td>0.00</td>
-                <td>0.00</td>
-
-            </tr>
-            <tr>
                 <td></td>
+            </tr>
+           
+           
+            <tr>
+                <td>Bonus</td>
                 <td>-</td>
                 <td>-</td>
                 <td>0.00</td>
                 <td>0.00</td>
-
+                <td></td>
             </tr>
             <tr>
                 <td></td>
@@ -241,54 +236,34 @@
                 <td>-</td>
                 <td>0.00</td>
                 <td>0.00</td>
-
+                <td></td>
             </tr>
             <tr>
-                <td class="td">Commission</td>
-                <td>-</td>
-                <td>-</td>
+                <td>commissions</td>
+                <td></td>
+                <td></td>
                 <td>0.00</td>
                 <td>0.00</td>
-
+                <td></td>
             </tr>
-            <tr></tr>
-            <tr></tr>
-            <tr></tr>
-            <tr></tr>
-            <tr></tr>
-            <tr></tr>
-            <tr></tr>
-
-            <tr>
-                <td></td>
-                <td style="font-size: 15px;"><button
-                        style="padding:0px 0px 0 50px; position:relative; left:20px; border:1px solid #000; border-left:none; border-right:none;"><b
-                            style="padding-right: 50px;">Gross Pay</b><b style="font-size: 13px;">$600.00</b></button>
-                </td>
+            <tr style="font-weight: 800;">
                 <td></td>
                 <td></td>
-                <td><b>7200</b></td>
+                <td style="border-top: 2px solid black; border-bottom:2px solid black; background-color:#98919145;" colspan="">GROSS PAY</td>
+                <td style="border-top: 2px solid black; border-bottom:2px solid black; background-color:#98919145;">400.00</td>
+                <td >5.600.00</td>
             </tr>
-            <tr></tr>
-            <tr></tr>
-            <tr></tr>
-            <tr></tr>
-            <tr></tr>
-            <tr></tr>
-            <tr></tr>
-            <tr></tr>
-            <tr></tr>
-            <tr></tr>
+            
         </table>
     </section>
     <section style="position: relative;">
         <section>
             <table class="table-data">
                 <thead>
-                    <th style="border-bottom: 2px solid #000;" class="">Deductions</th>
-                    <th style="border-bottom: 2px solid #000;" class="statutory">statutory</th>
+                    <th  class="">Deductions</th>
+                    <th  class="statutory">statutory</th>
                 </thead>
-
+<td style="border-top:2px solid black;" colspan="17"></td>
                 <tr>
                     <td></td>
                     <td class="td" colspan="2">Federal income Tax
@@ -374,24 +349,16 @@
                 </tr>
                 <tr>
                     <td></td>
-                    <td style="text-align: left; font-size:17px;"><b>Net Pay</b></td>
+                    <td style="text-align: left; font-size:17px; border-top:2px solid black; border-bottom:2px solid black; background-color:#98919145; " colspan=""><b>Net Pay</b></td>
                     <td></td>
-                    <td style="font-size:17px;"><b>251.80</b></td>
+                    <td style="font-size:17px; border-top:2px solid black; border-bottom:2px solid black; background-color:#98919145;" ><b>251.80</b></td>
                     <td></td>
                     <td>5669.58</td>
                 </tr>
+         
             </table>
         </section>
-        <table style="position: absolute; right:0; top:0px;">
-            <tr>
-                <th style="text-align: left;">Important Notes</th>
-            </tr>
-            <tr>
-                <td>EFFECTIVE THIS PAY PERIOD - REGUIAR<br>
-                    CURRENT PAY RATE IS: $15.00 PER HOUF<br>
-                    COMPANY'S TELEPHONE NUMBER: 513-557-0000</td>
-            </tr>
-        </table>
+   
     </section>
     <table style="padding-top:10px; font-size:15px; font-weight:500; margin:0 auto 0 200px;">
         <tr>
@@ -423,7 +390,7 @@
                 <td colspan="3"></td>
                 <td>This amount:</td>
                 <td><button
-                        style="padding: 3px 80px 3px 0px; border-left:none; border-right:1px solid #000; border-top:1px solid #000; border-bottom:1px solid #000;">Four
+                        style="padding: 3px 80px 3px 0px; border-left:none; border-right:1px solid #000; border-top:1px solid #000; border-bottom:1px solid #000; font-size:10px:">Four
                         hundered seavnty two dollar fourty seavan cents</button></td>
                 <td style="text-align: right;">472.47</td>
             </tr>

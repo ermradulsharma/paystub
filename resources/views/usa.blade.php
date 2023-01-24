@@ -105,7 +105,7 @@
                                 <h6 style="" class="base">BASIC TEMPLATES</h6>
                                 <div class="mt-4">
                                     <div class="input-group mmenu mb-3 text-center">
-                                        <select name="basic_temp" class="form-control dropdown1 text-center bt_id small-font" style="margin-right:10px; font-size:18px;">
+                                        <select name="basic_temp" class="form-control dropdown1 text-center bt_id small-font basicTemplate" style="margin-right:10px; font-size:18px;">
                                             <option> --- Select Basic Templates --- </option>
                                             @foreach ($basicType as $data)
                                             @if($data->state == 'usa' && $data->type == 'basic')
@@ -127,7 +127,7 @@
                                 <h6 style="margin-left:-23px;font-weight: 900;">ADVANCED TEMPLATES</h6>
                                 <div class="mt-4">
                                     <div class="input-group mmenu mb-3">
-                                        <select name="advance_temp" class="form-control text-center dropdown1 at_id small-font" style="margin-right:10px; font-size:18px;">
+                                        <select name="advance_temp" class="form-control text-center dropdown1 at_id small-font advanceTemplate" style="margin-right:10px; font-size:18px;">
                                             <option> --- Select Advance Template --- </option>
                                             @foreach ($advanceType as $data)
                                             @if($data->state == 'usa' && $data->type == 'advance')
@@ -605,7 +605,24 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function() {
+        $('.advanceTemplate').change(function() {
+            $('option:selected', '.basicTemplate').prop("selected", false);
+        });
+        $('.basicTemplate').change(function() {
+            $('option:selected', '.advanceTemplate').prop("selected", false);
+        });
+    });
 
+
+    function phoneMask() {
+        var num = $(this).val().replace(/\D/g, '');
+        $(this).val(num.substring(0, 1) + '-' + num.substring(1, 4) + '-' + num.substring(4, 7) + '-' + num.substring(7, 11));
+    }
+    $('[type="tel"]').keyup(phoneMask);
+
+</script>
 <script>
     var days_number;
     $(document).ready(function() {
@@ -944,6 +961,7 @@
     });
 
     $('.advanceTem').click(function() {
+
         var imageattr = $('option:selected', '.at_id').attr('data-src');
         $('.setImage').attr('src', imageattr);
         if (imageattr != null && imageattr != undefined) {

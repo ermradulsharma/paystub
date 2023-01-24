@@ -9,57 +9,57 @@
     <title>Document</title>
 
     <style>
-        .grid-container {
-            display: grid;
-            grid-template-columns: 50% 50%;
-            grid-template-rows: 100px 100px;
+    .grid-container {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 100px 100px;
 
-            padding-top: 30px;
-        }
+        padding-top: 30px;
+    }
 
-        .grid-container>div {
+    .grid-container>div {
 
-            text-align: center;
-            /* padding: 20px 0; */
-            font-size: 30px;
-        }
+        text-align: center;
+        /* padding: 20px 0; */
+        font-size: 30px;
+    }
 
 
-        .gridcontainer {
-            display: grid;
-            grid-template-columns: 50% 50%;
-            grid-template-rows: 100px;
-            gap: 10px;
-            padding: 10px;
-        }
+    .gridcontainer {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 100px;
+        gap: 10px;
+        padding: 10px;
+    }
 
-        .gridcontainer>div {
+    .gridcontainer>div {
 
-            text-align: center;
-            padding: 20px 0;
-            font-size: 22px;
-        }
+        text-align: center;
+        padding: 20px 0;
+        font-size: 22px;
+    }
 
-        .invoiceborder {
-            /* border: 1px solid black; */
-            /* padding-left: 20px; */
-            padding-top: 20px;
-            padding-bottom: 20px;
-            /* padding-right: 20px; */
-            /* border-width:20px */
-            /* margin: 200px 200px 200px 200px; */
-        }
+    .invoiceborder {
+        /* border: 1px solid black; */
+        /* padding-left: 20px; */
+        padding-top: 20px;
+        padding-bottom: 20px;
+        /* padding-right: 20px; */
+        /* border-width:20px */
+        /* margin: 200px 200px 200px 200px; */
+    }
 
-        .section_2 {
+    .section_2 {
 
-            background: #D8E3F7;
-            color: black;
-            height: 62px;
-            overflow: hidden;
-            padding-top: 15px;
-        }
+        background: #D8E3F7;
+        color: black;
+        height: 62px;
+        overflow: hidden;
+        padding-top: 15px;
+    }
 
-        /* .text1 {
+    /* .text1 {
             margin-right: 69%;
 
             font-size: 20px;
@@ -72,90 +72,90 @@
 
         } */
 
-        table {
+    table {
 
-            font-family: arial, sans-serif;
-            border-collapse: collapse;
-            width: 100%;
-        }
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
 
 
-        th {
-            text-align: left;
-            padding: 8px;
-        }
+    th {
+        text-align: left;
+        padding: 8px;
+    }
 
-        .heading1 {
-            margin-top: 20px;
-            border-top: 1px solid black;
-            border-bottom: 1px solid black;
-            background-color: #264FAB;
-            color: white;
-            text-align: left;
-            /* padding: 8px; */
-        }
+    .heading1 {
+        margin-top: 20px;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        background-color: #264FAB;
+        color: white;
+        text-align: left;
+        /* padding: 8px; */
+    }
 
-        .data:nth-child(6) {
-            background-color: #edededc4;
-            padding: 10px;
-        }
+    .data:nth-child(6) {
+        background-color: #edededc4;
+        padding: 10px;
+    }
 
-        .tablesection {
-            /* padding: 26px; */
-            padding-top: 25px;
-            /* height: 90px; */
-            /* overflow: hidden; */
-        }
+    .tablesection {
+        /* padding: 26px; */
+        padding-top: 25px;
+        /* height: 90px; */
+        /* overflow: hidden; */
+    }
 
-        p {
-            font-size: 18px;
-            font-family: none;
-            margin-top: -2px;
-        }
+    p {
+        font-size: 18px;
+        font-family: none;
+        margin-top: -2px;
+    }
 
-        .tfooter {
-            margin-bottom: 20px;
-        }
+    .tfooter {
+        margin-bottom: 20px;
+    }
 
-        .info {
+    .info {
 
-            margin-top: 20px;
-        }
+        margin-top: 20px;
+    }
 
-        .earning {
-            text-align: right;
-            padding-right: 22px;
-        }
+    .earning {
+        text-align: right;
+        padding-right: 22px;
+    }
 
-        .row {
-            display: flex;
-        }
+    .row {
+        display: flex;
+    }
 
-        .col {
-            display: inline-block;
-         
-        }
+    .col {
+        display: inline-block;
 
-        .section {
-            background: #D8E3F7;
-        }
+    }
 
-        .data:nth-child(2) {
-            background-color: #edededc4;
-        }
+    .section {
+        background: #D8E3F7;
+    }
 
-        .tabl3,
-        .hadding,
-        .hadding {
-            border: 1px solid black;
-            border-collapse: collapse;
-        }
+    .data:nth-child(2) {
+        background-color: #edededc4;
+    }
 
-        .hadding,
-        .hadding {
-            padding: 5px;
-            text-align: left;
-        }
+    .tabl3,
+    .hadding,
+    .hadding {
+
+        border-collapse: collapse;
+    }
+
+    .hadding,
+    .hadding {
+        padding: 5px;
+        text-align: left;
+    }
     </style>
 
 </head>
@@ -234,22 +234,36 @@
         </section>
 
 
-        <section style="padding-top: 16px;">
-            <div class="row">
-                <div class="col">
-                    <table>
-                        <tr>
-                            <td colspan="4" style=" padding-top: 22px;">
-                                Pay to the order of
-                            </td>
-                        </tr>
-                    </table>
-                </div>
+        <section style="padding-top: 16px; width:400px;">
+            <table>
+                <tr>
+                    <td>Pay to the order of</td>
+                    <td>
+                        Gary Stingley</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td> 3368 Hillview Drive
+
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td> Santa Rosa, CA 95407</td>
+                </tr>
+            </table>
+
+
+            <!-- <div class="row">
+               
                 <div class="col">
 
                     <table>
                         <tr>
-                            <td >
+                        <td>Pay to the order of</td>
+                            <td>
                                 Gary Stingley <br>
                                 3368 Hillview Drive <br>
                                 Santa Rosa, CA 95407
@@ -264,7 +278,7 @@
 
                     </table>
                 </div>
-            </div>
+            </div> -->
         </section>
 
 
@@ -365,12 +379,12 @@
                         2.307.69
                     </td>
                     <td class="data">
-                        <p>
+                      
                             Fica - Medicare <br>
                             Fica - Social Security <br>
                             Federal Tax <br>
                             State Tax
-                        </p>
+                   
                     </td>
                     <td>
 
@@ -409,7 +423,7 @@
                     <tr>
                         <th style="
     background: #264FAB;
-">Gross Earninas</th>
+">Gross Earnings</th>
                         <th class="section" style="font-weight: 100;"></th>
                         <th class="section" style="font-weight: 100;"></th>
                         <th class="section" style="font-weight: 100;">$4000.00</th>
@@ -423,49 +437,49 @@
                 </tfoot>
             </table>
 
-        
-                
-           
-                
+
+
+
+
         </section>
 
     </section>
 
-    <table  class="tabl3" style="width:30%;float: right;">
+    <table class="tabl3" style="width:30%;float: right;">
 
-<tr>
-    <th class="hadding" style="
-    background: #264FAB;
-    color:white;
-"> Check No</th>
-    <td class="hadding section" style="
-    text-align: right;
-">2023558</td>
+        <tr style="">
+            <th class="hadding" style="
+                background: #264FAB;
+                color:white;
+            "> Check No.</th>
+            <td class="hadding section" style="
+                    text-align: right;
+                ">2023558</td>
 
-<tr>
+        <tr>
 
-<tr>
-    <th class="hadding " style="
-    background: #264FAB;
-    color:white;
-"> Net Pav</th>
-    <td class="hadding section" style="
-    text-align: right;
-">$ 1.676.01</td>
-</tr>
-<tr>
-    <th class="hadding" style="
-    background: #264FAB;
-    color:white;
-"> YTD Net Pav</th>
-    <td class="hadding section" style="
-    text-align: right;
-">2023558</td>
-</tr>
+        <tr style="border-top: 2px solid white;">
+            <th class="hadding " style="
+                background: #264FAB;
+                color:white;
+            "> Net Pay</th>
+            <td class="hadding section" style="
+                text-align: right;
+            ">$ 1.676.01</td>
+        </tr>
+        <tr style="border-top: 2px solid white;">
+            <th class="hadding" style="
+                    background: #264FAB;
+                    color:white;
+                "> YTD Net Pay</th>
+            <td class="hadding section" style="
+                    text-align: right;
+                ">2023558</td>
+        </tr>
 
 
 
-</table>
+    </table>
 </body>
 
 </html>
