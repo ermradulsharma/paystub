@@ -167,7 +167,7 @@
    <img class="w-100 " src="images/uk/paystubx_uk_picture.png">   
 </div>
 
-<div class="container">
+<div class="container" style="max-width:1613px;">
     <div class="row">
         <div class="col-lg-10 mt-3">
             <p class="ukp1">

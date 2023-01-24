@@ -124,34 +124,34 @@
                     calculations, W-2, 1099S Etc in Seconds</h2>
                 <div class="row mt-5">
                     <div class="col-md-4 text-center">
-                        <h2 style="font-size:30px;font-family: 'Futura LT'"
-                            class="text-white calcheading">Add your Data</h2>
+                        <h2
+                            class="text-white calcheading head-font">Add your Data</h2>
                     </div>
                     <div class="col-md-4 text-center">
-                        <h2 style="font-size:30px;font-family: 'Futura LT'"
-                            class="text-white calcheading">Preview Data</h2>
+                        <h2
+                            class="text-white calcheading head-font">Preview Data</h2>
                     </div>
                     <div class="col-md-4 text-center">
-                        <h2 style="font-size:30px;font-family: 'Futura LT'"
-                            class="text-white pay-h2 calcheading">Download & Email your Paystub</h2>
+                        <h2
+                            class="text-white pay-h2 calcheading head-font">Download & Email your Paystub</h2>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-lg-4 col-md-4">
-                        <p style="font-size:17px;font-weight: 200;font-family: 'Futura LT';line-height:1.8;" class="text-white pay-p">Our paystub generator
+                        <p style="font-size:17px;font-weight: 200;font-family: 'Futura LT';line-height:1.8;" class="text-white pay-p head-font">Our paystub generator
                             accurately</br>
                             calculates your Federal and State</br> taxes, including Social security </br>and Medicare
                             taxes so you don't
                         </p>
                     </div>
                     <div class="col-lg-4 col-md-4">
-                        <p style="font-size:17px;font-weight: 200;font-family: 'Futura LT'; line-height:1.8;" class="text-white pay-p">Generate pay stubs with
+                        <p style="font-size:17px;font-weight: 200;font-family: 'Futura LT'; line-height:1.8;" class="text-white pay-p head-font">Generate pay stubs with
                             accurate</br>
                             state income taxes, based on </br>state W-4, and other applicable</br> local taxes. </p>
                     </div>
                     <div class="col-lg-4 col-md-4">
-                        <p style="font-size:17px;font-weight: 200;font-family: 'Futura LT'; line-height:1.8;" class="text-white pay-p">You will get to generate
+                        <p style="font-size:17px;font-weight: 200;font-family: 'Futura LT'; line-height:1.8;" class="text-white pay-p head-font">You will get to generate
                             unlimited</br>
                             payslip, paycheck or paystub </br>according to the plan you select.
                         </p>

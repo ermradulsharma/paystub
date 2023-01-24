@@ -866,7 +866,7 @@ select {
     display: none;
 }
 .openbtn {
-    display: none;
+    display: none ;
 }
 
 .text-center2 {
@@ -893,6 +893,10 @@ select {
     font-size: 39px;
      position:relative; 
      left:10px;;
+}
+.head-font{
+    font-size:30px;
+    font-family: 'Futura LT';
 }
 
 
@@ -1514,6 +1518,9 @@ select {
     .dropdown11 {
         font-size: 9px;
     }
+    .earnbtn {
+        padding: 6px 13px 5px 13px;
+    }
     
     
 }
@@ -1542,6 +1549,10 @@ select {
         position: relative;
         top: 10px;
         left: 0px;
+    }
+    .text-white {
+        font-size: 11px;
+        margin-bottom: 10px;
     }
     .box-border-outer {
         width: 100%;
@@ -1733,6 +1744,13 @@ select {
         position: absolute;
         top: -8px;
         left: 77px;
+    }
+    .earnbtn {
+        margin-bottom: 10px;
+
+    }
+    .head-font{
+        text-align: center;
     }
 }
 
