@@ -213,12 +213,12 @@
                                     <label for="emp_state" class="lable">State <span class="redColor">*</span> </label>
                                     <div class="dropdown ">
                                         <select name="emp_state" id="emp_state" class=" dropdown11 tax_rate">
-                                            <option value="" data-tax=""> --- Select --- </option>
+                                            <option value="" data-tax="null"> --- Select --- </option>
                                             @foreach ($stateTaxes as $stateTax )
                                             <option value="{{ $stateTax->state }}" data-tax="{{ $stateTax->rate }}">{{ $stateTax->state }}</option>
                                             @endforeach
                                         </select>
-                                        <span class="d-none text-center redColor">Please Select State</span>
+                                        <span class="d-none text-center error redColor">Please Select State</span>
                                     </div>
                                 </div>
 
@@ -624,13 +624,15 @@
 
 </script>
 <script>
-    var days_number;
+    var days_number = 0;
     $(document).ready(function() {
         $('.tax_rate').change(function() {
             var tax_rate = $('.tax_rate').find(":selected").data('tax');
-            if (tax_rate == '') {
-                $("span").removeClass("d-none");
+            if (tax_rate == null) {
+                $(".error").removeClass("d-none");
                 $('.tax_rate').focus();
+            } else {
+                $(".error").addClass("d-none");
             }
             console.log('tax_rate', tax_rate);
         });
@@ -640,12 +642,11 @@
             var pay_start = new Date($('.pay_start').val());
             var pay_start_1 = $('.pay_start').val();
             if (pay_start != "" && pay_start != 'Invalid Date') {
-                alert("qwertyuiop")
                 dayCalculate();
             } else {
                 //
             }
-            if (tax_rate == '') {
+            if (tax_rate == null) {
                 $("span").removeClass("d-none");
                 $('.tax_rate').focus();
             }
@@ -686,7 +687,6 @@
 
             } else {
 
-
                 var time_period = $(".time_period").val();
                 var dt3 = new Date(pay_start_1);
                 var dt2 = new Date(pay_end_1);
@@ -717,6 +717,10 @@
                 console.log('hours', hours);
             }
         });
+
+        function is_empty() {
+
+        }
 
         $('.pay_start').change(function() {
             dayCalculate();
@@ -801,6 +805,7 @@
 
             $('.calculation').keyup(function() {
                 var id = $(this).data('id');
+                console.log('id', id);
                 setTimeout(function() {
                     calculation(id);
                 }, 300);
@@ -859,9 +864,18 @@
         });
 
         function calculation(id) {
+            var rate = $('#rate_' + id).val();
+            var hours = $('#hours_' + id).val();
+            if (rate == '') {
+                var total = 0.00;
+            } else if (hours == '') {
+                var total = 0.00;
+            } else {
+                var total = rate * hours;
+            }
             var rate = parseFloat($('#rate_' + id).val()).toFixed(2);
             var hours = parseFloat($('#hours_' + id).val()).toFixed(2);
-            var total = rate * hours;
+            //
             var ytd_total = total * parseInt(days_number);
             setTimeout(function() {
                 $('#total_' + id).val(parseFloat(total).toFixed(2));
@@ -901,7 +915,13 @@
                 var tax_name = $(this).val();
 
                 if (tax_name == 'State Tax') {
-                    taxes_values = parseFloat(tax_state).toFixed(2);
+                    var tax_rate = $('.tax_rate').find(":selected").data('tax');
+                    if (tax_rate != null) {
+                        taxes_values = parseFloat(tax_state).toFixed(2);
+                    } else {
+                        taxes_values = 0.00;
+                    }
+                    taxes_values = taxes_values;
                 }
                 period_tax_price = parseFloat(period_gross_total).toFixed(2) * (taxes_values / 100);
                 period_ytd_tax_price = parseFloat(ytd_gross_total).toFixed(2) * (taxes_values / 100);
@@ -1093,4 +1113,3 @@
     });
 
 </script>
-
