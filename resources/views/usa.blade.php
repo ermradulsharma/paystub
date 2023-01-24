@@ -616,11 +616,11 @@
     });
 
 
-    function phoneMask() {
-        var num = $(this).val().replace(/\D/g, '');
-        $(this).val(num.substring(0, 1) + '-' + num.substring(1, 4) + '-' + num.substring(4, 7) + '-' + num.substring(7, 11));
-    }
-    $('[type="tel"]').keyup(phoneMask);
+    // function phoneMask() {
+    //     var num = $(this).val().replace(/\D/g, '');
+    //     $(this).val(num.substring(0, 1) + '-' + num.substring(1, 4) + '-' + num.substring(4, 7) + '-' + num.substring(7, 11));
+    // }
+    // $('[type="tel"]').keyup(phoneMask);
 
 </script>
 <script>
@@ -972,20 +972,23 @@
 </script>
 
 <script>
-    $('.basicTem').click(function() {
-        var imageattr = $('option:selected', '.bt_id').attr('data-src');
-        $('.setImage').attr('src', imageattr);
-        if (imageattr != null && imageattr != undefined) {
-            $('#openEye').modal('show');
-        }
-    });
+    $(document).ready(function() {
+        $('.basicTem').click(function() {
+            var imageattr = $('option:selected', '.bt_id').attr('data-src');
+            console.log('imageattr', imageattr);
+            $('.setImage').attr('src', imageattr);
+            if (imageattr != null && imageattr != undefined) {
+                $('#openEye').modal('show');
+            }
+        });
 
-    $('.advanceTem').click(function() {
-        var imageattr = $('option:selected', '.at_id').attr('data-src');
-        $('.setImage').attr('src', imageattr);
-        if (imageattr != null && imageattr != undefined) {
-            $('#openEye').modal('show');
-        }
+        $('.advanceTem').click(function() {
+            var imageattr = $('option:selected', '.at_id').attr('data-src');
+            $('.setImage').attr('src', imageattr);
+            if (imageattr != null && imageattr != undefined) {
+                $('#openEye').modal('show');
+            }
+        });
     });
 
 </script>
