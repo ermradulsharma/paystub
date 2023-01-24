@@ -21,7 +21,7 @@
                                         @endif
                                         @endforeach
                                     </select>
-                                    <i onclick="myFunction(this)" class="fa fa-eye eyes" style="font-size: 39px;"></i>
+                                    <i onclick="myFunction(this)" class="fa fa-eye eyes" style="font-size: 39px; position:relative; left:10px;"></i>
 
 
                                 </div>
@@ -40,14 +40,15 @@
                             <div class="mt-4">
                                 {{-- <i class="fa fa-angle-down down1"></i> --}}
                                 <div class="input-group mmenu mb-3" style="margin: auto;">
-                                    <select name="cars" id="cars" style="" class="form-control dropdown1" <option selected=""> --- Select Advance Template --- </option>
+                                <select name="cars" id="cars" style="" class="form-control dropdown1" style="border-right:none">
+                                        <option selected="" > --- Select Advance Templates --- </option>
                                         @foreach ($advanceType as $data)
                                         @if($data->state == 'uk' && $data->type == 'advance')
                                         <option value={{$data->title}}>{{$data->title}}</option>
                                         @endif
                                         @endforeach
                                     </select>
-                                    <i onclick="myFunction(this)" class="fa fa-eye eyes" style="font-size: 39px;margin-left: 6px;"></i>
+                                    <i onclick="myFunction(this)" class="fa fa-eye eyes" style="font-size: 39px; position:relative; left:10px;"></i>
 
 
                                 </div>
@@ -114,7 +115,7 @@
 
                     <div class="row mb-3">
                         <div class="col-md-4 mt-4">
-                            <label for="fname" class="lable">EMPLOYEE NAME >
+                            <label for="fname" class="lable">EMPLOYEE NAME 
                                 <span style="color:red;">*</span></label><br>
                             <input type="text" id="fname" name="fname" placeholder="Your Full  Name" class="w-100 p-2 text-center" style="font-size:14px;"><br>
                         </div>
@@ -242,7 +243,7 @@
                     </div>
                     <div class="row mb-3">
 
-                        <div class="col-md-2 mt-2 mb-5">
+                        <div class="col-lg-2 col-md-4 mt-2 mb-5">
 
                             <button CLASS="earnbtn"><i class="fa fa-plus-circle pr-2" style="font-size:24px;color:green"></i>Add Earning</button>
                         </div>

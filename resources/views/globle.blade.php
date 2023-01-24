@@ -22,7 +22,7 @@
 
             <div class="col-lg-5  text-center" style="padding: 3px 23px 0px 0px;">
 
-                <div class="text-white mt-5"
+                <div class="text-white mt-5 text-padding"
                     style="font-size: 42px;font-weight: 300;font-family: 'Outfit', sans-serif;">
                     With PaystubX you can create</br> Paystub for any country
                 </div>

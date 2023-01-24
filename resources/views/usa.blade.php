@@ -82,14 +82,12 @@
                                         </select>
                                     </div>
                                 </div>
-
                             </div>
                             <div class="col-md-4">
                                 <div>
                                     <label for="zip_code" class="lable">Zip Code <span class="redColor">*</span> </label>
                                     <input type="text" id="zip_code" name="zip_code" placeholder=" Zip Code" class="w-100 p-2  textInputFontSize">
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -343,7 +341,13 @@
                             <div class="col-md-3 mt-4">
                                 <div>
                                     <label for="currency" class="lable" class="redColor">SELECT YOUR PREFERRED CURRENCY <span class="redColor">*</span> </label>
-                                    <input type="text" id="currency" name="currency" placeholder="$(USD)" class="w-100 p-2  textInputFontSize">
+                                    <select name="exemptions" id="exemptions" class=" dropdown11">
+                                        <option> --- Select currency --- </option>
+                                        <option value="saab">Dollar $</option>
+                                        <option value="opel">Euro €</option>
+                                        <option value="opel">Pound £</option>
+                                        <option value="opel">Yen ¥</option>
+                                    </select>
                                 </div>
 
                             </div>
@@ -468,7 +472,7 @@
                         <div class="field_wrapper"> </div>
 
                         <div class="row mb-3">
-                            <div class="col-md-2 mt-2 mb-5">
+                            <div class="col-md-4 mt-2 mb-5">
                                 <button class="add_button earnbtn" type="add_earning" id="add_earning"><i class="fa fa-plus-circle pr-2" style="font-size:24px;color:green"></i>Add Earning</button>
                             </div>
                         </div>
@@ -499,7 +503,7 @@
                         <div id="add_deduction" class="my-3">
                         </div>
                         <div class="row my-3">
-                            <div class="col-md-4 col-lg-3">
+                            <div class="col-md-5 col-lg-3">
                                 <button class="add_deduction earnbtn" type="add_deduction" id="add_deduction"><i class="fa fa-plus-circle pr-5" style="font-size:24px;color:green"></i>Add Deduction</button>
                             </div>
 
@@ -1071,4 +1075,4 @@
     });
 
 </script>
-@endsection
+

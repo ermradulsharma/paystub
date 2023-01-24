@@ -124,15 +124,15 @@
                     calculations, W-2, 1099S Etc in Seconds</h2>
                 <div class="row mt-5">
                     <div class="col-md-4 text-center">
-                        <h2 style="font-size:37px;font-family: 'Futura LT'"
+                        <h2 style="font-size:30px;font-family: 'Futura LT'"
                             class="text-white calcheading">Add your Data</h2>
                     </div>
                     <div class="col-md-4 text-center">
-                        <h2 style="font-size:37px;font-family: 'Futura LT'"
+                        <h2 style="font-size:30px;font-family: 'Futura LT'"
                             class="text-white calcheading">Preview Data</h2>
                     </div>
                     <div class="col-md-4 text-center">
-                        <h2 style="font-size:37px;font-family: 'Futura LT'"
+                        <h2 style="font-size:30px;font-family: 'Futura LT'"
                             class="text-white pay-h2 calcheading">Download & Email your Paystub</h2>
                     </div>
                 </div>

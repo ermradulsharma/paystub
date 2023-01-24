@@ -39,8 +39,7 @@
                                         @endif
                                         @endforeach
                                     </select>
-                                    <i class="fa fa-eye-slash basicTem" data-target="#openEye" data-toggle="modal"
-                                        style="font-size: 39px;"></i>
+                                    <i class="fa fa-eye-slash basicTem flash-icon" data-target="#openEye" data-toggle="modal"></i>
                                 </div>
                             </div>
                         </div>
@@ -50,7 +49,7 @@
                         </div>
 
                         <div class="col-md-5 col-sm-12 mt-5 text-center">
-                            <h6 style="margin-left:-23px;font-weight: 900;">ADVANCED TEMPLATES</h6>
+                            <h6 style="margin-left:-23px;font-weight: 900;" class="small">ADVANCED TEMPLATES</h6>
                             <div class="mt-4">
                                 {{-- <i class="fa fa-angle-down down1"></i> --}}
                                 <div class="input-group mmenu mb-3" style="margin: auto;">
@@ -64,8 +63,7 @@
                                         @endif
                                         @endforeach
                                     </select>
-                                    <i class="fa fa-eye-slash advanceTem" data-target="#openEye" data-toggle="modal"
-                                        style="font-size: 39px;"></i>
+                                    <i class="fa fa-eye-slash advanceTem flash-icon" data-target="#openEye" data-toggle="modal"></i>
                                 </div>
                             </div>
                             <div class=" mt-3 ">
@@ -223,7 +221,7 @@
                         </div>
                         <div class="col-lg-3"></div>
 
-                        <div class=" col-md-3 mb-3 mt-1 ">
+                        <div class=" col-lg-3 mt-1 ">
                             <button class="earnbtn1"><i class="fa fa-plus-circle pr-2" style="font-size: 24px;
                           color: #0ec23b;
                            padding-top: 0px;"></i>Add Deductions</button>

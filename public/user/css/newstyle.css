@@ -92,7 +92,7 @@
     /* border-radius: 6px; */
     background: #ffffff;
     margin: auto;
-    font-size: 23px;
+    font-size: 20px;
     font-weight: 500;
     position: relative !important;
 }
@@ -307,69 +307,58 @@ select:after {
     border-color: #fff transparent transparent transparent;
 }
 
-
-.sidenav {
+   .sidenav {
     height: 100%;
     width: 0;
     position: fixed;
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #f8f9f9;
+    background-color: #fff;
     overflow-x: hidden;
     transition: 0.5s;
-    padding-top: 26px;
-
-}
-
-.sidenav a {
-
+    padding-top: 60px;
+  }
+  
+  .sidenav a {
     text-decoration: none;
-    font-size: 25px;
-    color: #ffffff;
+    font-size: 20px;
     display: block;
     transition: 0.3s;
-}
-
-.sidenav a:hover {
+  }
+  
+  .sidenav a:hover {
     color: #f1f1f1;
-}
-
-.sidenav .closebtn {
+  }
+  
+  .sidenav .closebtn {
     position: absolute;
     top: 0;
     right: 25px;
     font-size: 36px;
     margin-left: 50px;
-}
-
-.sidebtn {
-    box-shadow: 6px 4px 2px 4px #334f7459;
-    width: 53%;
-    border-radius: 12px;
-    margin: auto;
-    /* padding: 0px 0px; */
-    text-align: center;
-    margin-bottom: 16px;
-    background-color: #252e58;
-    background-image: linear-gradient(96deg, #252e58 5%, #3f3e95 46%, #2a5960 100%);
-
-}
-
-.sidebtn1 {
-    box-shadow: 6px 4px 2px 4px #e9d1d3;
-    width: 53%;
+    color:#0C2F62;
+  }
+  .nav-btn {
+    box-shadow: 4px 4px 2px 1px #e9d1d3;
+    width: 55%;
     color: white !important;
-    background: #d3230c;
+    background: #0B2F5B;
     font-size: 16px;
     font-family: emoji;
-    /* border: 4px double; */
     padding: 3px;
-    border-radius: 15px;
-    margin: auto;
-
-
+    border-radius: 5px;
+    margin: 0 auto 20px !important;
+    text-align: center;
 }
+.toggle-logo {
+    max-width: 170px;
+    padding-bottom: 30px;
+    margin: 0 0 0 10px !important;
+}
+
+
+
 
 .earnbtn1 {
     font-size: 18px;
@@ -821,7 +810,7 @@ select {
 }
 .text-white {
     font-family: 'Futura LT';
-    font-size:19px;
+    font-size:17px;
 }
 
 .three-box-section {
@@ -873,23 +862,38 @@ select {
 }
 /* w2paystub end */
 
+.sidenav {
+    display: none;
+}
+.openbtn {
+    display: none;
+}
 
+.text-center2 {
+    color: white;
+}
+.employee-font{
+    font-size: xx-large;
+    font-weight:600;
+    font-family: Futura Md BT;
+}
+.emp-img {
+    max-width: 176px;
+}
 
+.text-right {
+    margin-right: 30px;
+}
 
+.redcon{
+    padding: 55px 115px;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+.flash-icon {
+    font-size: 39px;
+     position:relative; 
+     left:10px;;
+}
 
 
 
@@ -977,6 +981,9 @@ select {
     .space-between {
         justify-content: center;
     }
+    .padding {
+        padding: 0px 20px !important;
+    }
 }
 
 
@@ -998,11 +1005,13 @@ select {
 }
 
 @media screen and (max-width: 1129px) {
-    .navbar {
+    /* .navbar {
         display: none;
 
+    } */
+    .navbtn {
+        font-size: 14px;
     }
-
 }
 
 .eyes1 {
@@ -1216,6 +1225,11 @@ select {
     .footimg {
         max-width: 200px;
     }
+    .createbtn2 {
+        padding: 0px 6px;
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
 }
 
 .create-p {
@@ -1264,7 +1278,7 @@ select {
         /* font-weight: 400; */
         margin: 0;
         /* font: var(--font_2); */
-        font-size: 12px;
+        font-size: 7px;
     }
 
     .globlebtn1 {
@@ -1274,6 +1288,15 @@ select {
         padding-right: 0 !important;
     }
 .text-white {
+    text-align: left;
+}.text-padding {
+    padding:0px 0px 0px 30px
+}
+
+.formimg1{
+    margin-left: 10px;
+}
+.footer-text{
     text-align: center;
 }
 .flex-row {
@@ -1294,7 +1317,7 @@ select {
         /* border-radius: 6px; */
         background: #ffffff;
         margin: auto;
-        font-size: 12px;
+        font-size: 12px !important;
         font-weight: 500;
         position: relative !important;
 
@@ -1425,7 +1448,73 @@ select {
     .box-row {
         justify-content: center;
     }
-
+    .navbar {
+        display: none;
+    }
+    .sidenav {
+        display: block;
+    }
+    .openbtn {
+        display: block;
+    }
+    .canadaheading {
+        text-align: center !important;
+        max-width: 100%;
+    }
+    .text-center2 {
+        text-align: center;
+    }
+    .display-4 {
+        font-size: 1.5rem;
+    }
+    .employee-font {
+        font-size: 20px;
+    }
+    .emp-img {
+        max-width: 150px;
+    }
+    .couple {
+        margin-top: 100px;
+    }
+    .canadah4 {
+        font-size: 25px;
+    }
+    .canadah2 {
+        font-size: 25px;
+        margin-left: 0 !important;
+    }
+    .canadah1 {
+        font-size: 30px;
+    }
+    .mainhead {
+        text-align: left !important;
+    }
+    .createbtn2 {
+        padding:0px 62px;
+    }
+    .redcon{
+        padding:unset;
+    }
+    .tickbox {
+        width: 20px;
+        height: 39px;
+        position: absolute;
+        top: -3px;
+        left: 77px;
+    }
+    .flash-icon  {
+        font-size: 20px;
+    }
+    .small {
+        font-size: 14px;
+    }
+    .base {
+        font-size: 14px;
+    }
+    .dropdown11 {
+        font-size: 9px;
+    }
+    
     
 }
 
@@ -1441,6 +1530,10 @@ select {
     
 
 }
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
 
 @media screen and (max-width: 425px) {
     .globleImg {
@@ -1452,6 +1545,9 @@ select {
     }
     .box-border-outer {
         width: 100%;
+    }
+    .createbtn2 {
+        padding:0px 57px;
     }
 
 
@@ -1600,7 +1696,7 @@ select {
     }
 
     .storehead {
-        padding: 0px 0px 0px 75px;
+        padding: 0px 0px 0px 30px;
     }
 
     .payhead {
@@ -1631,6 +1727,13 @@ select {
         margin: 40px auto 0px 0px;
         height: 60%;
     }
+    .tickbox {
+        width: 20px;
+        height: 39px;
+        position: absolute;
+        top: -8px;
+        left: 77px;
+    }
 }
 
 @media screen and (max-width: 375px) {
@@ -1645,14 +1748,6 @@ select {
     .small-font {
         font-size: 14px !important;
     }
-
-
-    /* .payimg {
-        position: relative;
-        width: 50%;
-        top: 15px;
-        z-index: 122;
-    } */
 
     .down {
         position: absolute;
@@ -1786,5 +1881,19 @@ select {
         width: 361px;
         height: 204px;
        
+    }
+    .earnbtn1{
+        width: 100%;
+        
+    }
+    .earnbtn{
+        padding: 6px 22px 5px 27px;
+
+    }
+    .createbtn2 {
+        padding: 0px 32px;
+    }
+    .textarea {
+        max-width: 275px;
     }
 }

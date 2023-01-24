@@ -16,7 +16,8 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;800&family=Public+Sans:wght@300&display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;800&family=Public+Sans:wght@300&display=swap">
 
 
     <!-- Responsive CSS Style -->
@@ -26,11 +27,10 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <style>
-        select,
-        select option {
-            text-transform: capitalize
-        }
-
+    select,
+    select option {
+        text-transform: capitalize
+    }
     </style>
     @yield('style')
 </head>
@@ -42,19 +42,24 @@
                 <a href="{{ url('/') }}"><img class="mr-3 mt-5" src="images/Paystub X.webp" style="width: 222px;"></a>
             </li>
             <li class="nav-item ml-3 ">
-                <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('usa') ? 'active' : '' }} " href="{{ url('usa') }}">USA</a>
+                <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('usa') ? 'active' : '' }} "
+                    href="{{ url('usa') }}">USA</a>
             </li>
             <li class="nav-item ml-3">
-                <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('canada') ? 'active' : '' }}" href="{{ url('canada') }}">CANADA</a>
+                <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('canada') ? 'active' : '' }}"
+                    href="{{ url('canada') }}">CANADA</a>
             </li>
             <li class="nav-item ml-3">
-                <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('uk') ? 'active' : '' }}" href="{{ url('uk') }}">UK</a>
+                <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('uk') ? 'active' : '' }}"
+                    href="{{ url('uk') }}">UK</a>
             </li>
             <li class="nav-item ml-3">
-                <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('globle') ? 'active' : '' }}" href="{{ url('globle') }}">BLOBEL</a>
+                <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('globle') ? 'active' : '' }}"
+                    href="{{ url('globle') }}">GLOBEL</a>
             </li>
             <li class="nav-item ml-3">
-                <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('form') ? 'active' : '' }}" href="{{ url('form') }}">W-2 FORM</a>
+                <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('form') ? 'active' : '' }}"
+                    href="{{ url('form') }}">W-2 FORM</a>
             </li>
             <li class="nav-item  ml-3 ">
                 <a class="btn btn-lg py-2 w-100 mt-5 btn-danger login " href="{{ url('login') }}">Login</a>
@@ -62,7 +67,35 @@
         </ul>
     </div>
 
+    <div id="mySidenav" class="sidenav">
+        <a href="{{ url('/') }}"><img class="mr-3 mt-5 toggle-logo" src="images/Paystub X.webp"
+                style="width: 222px;"></a>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('usa') ? 'active' : '' }} "
+            href="{{ url('usa') }}">USA</a>
+        <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('canada') ? 'active' : '' }}"
+            href="{{ url('canada') }}">CANADA</a>
+        <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('uk') ? 'active' : '' }}"
+            href="{{ url('uk') }}">UK</a>
+        <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('globle') ? 'active' : '' }}"
+            href="{{ url('globle') }}">GLOBEL</a>
+        <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('form') ? 'active' : '' }}"
+            href="{{ url('form') }}">W-2 FORM</a>
+    </div>
+    <span style="font-size:30px;cursor:pointer" class="openbtn" onclick="openNav()">&#9776;</span>
+
+
+
     @yield('content')
+
+
+
+
+
+
+
+
+
 
     <!-- The Modal -->
     <div class="modal fade" id="myModal">
@@ -79,7 +112,8 @@
                 <div class="modal-body">
                     <div class="google-btn mt-4">
                         <div class="google-icon-wrapper">
-                            <img class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" />
+                            <img class="google-icon"
+                                src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" />
                         </div>
                         <a class="btn-text pr-1" href="{{ route('login.google') }}">Sign up with google</a>
 
@@ -91,20 +125,20 @@
                     <h6 class="text-center" style="color: #457bbe;">Sign Up Using Email</h6>
                     <p class="text-center">
 
-                        <form id="sendOTPForm" action="{{ url('sendOtp') }}" method="POST" class="text-center">
-                            @csrf
-                            <input type="email" id="email" name="email" class="singup" placeholder="Email *">
-                            <br><br>
-                            <button class="continue mt-2" type="submit">Continue</button>
-                            <a href="#" style="text-decoration: none;color: #0000007a">
-                                {{-- <p class="text-center mt-3" style="color: #0000007a;font-size: 13px;">Already have
+                    <form id="sendOTPForm" action="{{ url('sendOtp') }}" method="POST" class="text-center">
+                        @csrf
+                        <input type="email" id="email" name="email" class="singup" placeholder="Email *">
+                        <br><br>
+                        <button class="continue mt-2" type="submit">Continue</button>
+                        <a href="#" style="text-decoration: none;color: #0000007a">
+                            {{-- <p class="text-center mt-3" style="color: #0000007a;font-size: 13px;">Already have
                                 account?
                                 <u style="color:red;">
                                     <span style="color:red;">Sign In</span>
                                 </u>
                             </p> --}}
-                            </a>
-                        </form>
+                        </a>
+                    </form>
 
                 </div>
             </div>
@@ -134,7 +168,8 @@
                             Verification code to sent</p>
                         <form id="loginOtp" action="{{ url('loginWithOtp') }}" method="post">
                             @csrf
-                            <input type="text" id="code" name="code" class="singup1 text-center" placeholder="enter otp">
+                            <input type="text" id="code" name="code" class="singup1 text-center"
+                                placeholder="enter otp">
                             <div style="color: red;font-size: 13px; font-family: serif;display:none;">
                                 <i class="fa fa-exclamation-circle">
                                     Verification code required
@@ -162,22 +197,22 @@
                 <div class="col-lg-3 text-center m-auto">
                     <div class="container justify-content-center text-left">
                         <div class="flex-row">
-                        <div style="padding:12px; border:1px solid #fff; border-radius:5px;max-width:220px; text-align:center; margin-bottom:15px;">
-                            <a class="w-100 footbtn font"
-                                href="{{ url('terms') }}">Terms & Conditions</a>
-                        </div>
-                        <div class="mt-3 " style="padding:12px; border:1px solid #fff; border-radius:5px;max-width:220px; text-align:center; margin-bottom:15px;">
-                            <a class="w-100 footbtn font"
-                                href="{{ url('privacy') }}">Privacy Policy</a>
-                        </div>
-                        <div class="mt-3 "style="padding:12px; border:1px solid #fff; border-radius:5px;max-width:220px; text-align:center; margin-bottom:15px;">
-                            <a class="w-100 footbtn font"
-                                href="{{ url('refund') }}">Refund Policy</a>
-                        </div>
-                        <div class="mt-3 "style="padding:12px; border:1px solid #fff; border-radius:5px;max-width:220px; text-align:center;">
-                            <a class="w-100 footbtn font"
-                                href="{{ url('contact') }}">Contact Us</a>
-                        </div>
+                            <div
+                                style="padding:12px; border:1px solid #fff; border-radius:5px;max-width:220px; text-align:center; margin-bottom:15px;">
+                                <a class="w-100 footbtn font" href="{{ url('terms') }}">Terms & Conditions</a>
+                            </div>
+                            <div class="mt-3 "
+                                style="padding:12px; border:1px solid #fff; border-radius:5px;max-width:220px; text-align:center; margin-bottom:15px;">
+                                <a class="w-100 footbtn font" href="{{ url('privacy') }}">Privacy Policy</a>
+                            </div>
+                            <div class="mt-3 "
+                                style="padding:12px; border:1px solid #fff; border-radius:5px;max-width:220px; text-align:center; margin-bottom:15px;">
+                                <a class="w-100 footbtn font" href="{{ url('refund') }}">Refund Policy</a>
+                            </div>
+                            <div class="mt-3 "
+                                style="padding:12px; border:1px solid #fff; border-radius:5px;max-width:220px; text-align:center;">
+                                <a class="w-100 footbtn font" href="{{ url('contact') }}">Contact Us</a>
+                            </div>
                         </div>
 
                     </div>
@@ -185,17 +220,22 @@
                 <div class="col-lg-5 text-center" style="margin-top:15px;">
                     <div class="container  justify-content-center">
                         <div class="container">
-                            <a href="https://www.google.com/" target="_blank"><i class="fa fa-facebook   fbicon " aria-hidden="true"></i></a>
-                            <a href="https://www.google.com/" target="_blank"><i class="fa fa-instagram ml-2 socialicon" aria-hidden="true"></i></a>
-                            <a href="https://www.google.com/" target="_blank"><i class="fa fa-twitter ml-2 socialicon" aria-hidden="true"></i></a>
-                            <a href="https://www.google.com/" target="_blank"><i class="fa fa-linkedin ml-2 socialicon" aria-hidden="true"></i></a>
-                            <a href="https://www.google.com/" target="_blank"><i class="fa fa-youtube ml-2 socialicon" aria-hidden="true"></i></a>
+                            <a href="https://www.google.com/" target="_blank"><i class="fa fa-facebook   fbicon "
+                                    aria-hidden="true"></i></a>
+                            <a href="https://www.google.com/" target="_blank"><i class="fa fa-instagram ml-2 socialicon"
+                                    aria-hidden="true"></i></a>
+                            <a href="https://www.google.com/" target="_blank"><i class="fa fa-twitter ml-2 socialicon"
+                                    aria-hidden="true"></i></a>
+                            <a href="https://www.google.com/" target="_blank"><i class="fa fa-linkedin ml-2 socialicon"
+                                    aria-hidden="true"></i></a>
+                            <a href="https://www.google.com/" target="_blank"><i class="fa fa-youtube ml-2 socialicon"
+                                    aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 mt-3 ">
-                <p class="text-white">COPYRIGHT © 2022
-                            PaystubX, ALL RIGHTS RESERVED.</p>
+                    <p class="text-white footer-text">COPYRIGHT © 2022
+                        PaystubX, ALL RIGHTS RESERVED.</p>
                     <div class="container justify-content-center m-auto text-center">
                         <a href="{{ url('/') }}"><img class="footimg" src="images/satisfaction.webp"></a>
 
@@ -206,8 +246,12 @@
         </div>
     </div>
     <!-- End Footer Section -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.js" integrity="sha512-nO7wgHUoWPYGCNriyGzcFwPSF+bPDOR+NvtOYy2wMcWkrnCNPKBcFEkU80XIN14UVja0Gdnff9EmydyLlOL7mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js" integrity="sha512-1/RvZTcCDEUjY/CypiMz+iqqtaoQfAITmNSJY17Myp4Ms5mdxPS5UV7iOfdZoxcGhzFbOm6sntTKJppjvuhg4g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.js"
+        integrity="sha512-nO7wgHUoWPYGCNriyGzcFwPSF+bPDOR+NvtOYy2wMcWkrnCNPKBcFEkU80XIN14UVja0Gdnff9EmydyLlOL7mQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"
+        integrity="sha512-1/RvZTcCDEUjY/CypiMz+iqqtaoQfAITmNSJY17Myp4Ms5mdxPS5UV7iOfdZoxcGhzFbOm6sntTKJppjvuhg4g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
@@ -219,49 +263,57 @@
     @yield('script')
 
     <script>
-        $('#sendOTPForm').on('submit', function() {
+    $('#sendOTPForm').on('submit', function() {
 
-            $.ajax({
-                url: "{{ url('sendOtp') }}"
-                , type: "POST"
-                , data: $('#sendOTPForm').serialize()
-                , success: function(response) {
-                    console.log('response ', response);
-                    $('#myModal').modal('hide');
-                    $('#myModal1').modal('show');
-                }
-                , error: function(err) {
-                    error = err.responseJSON;
-                    console.log('err ', error);
+        $.ajax({
+            url: "{{ url('sendOtp') }}",
+            type: "POST",
+            data: $('#sendOTPForm').serialize(),
+            success: function(response) {
+                console.log('response ', response);
+                $('#myModal').modal('hide');
+                $('#myModal1').modal('show');
+            },
+            error: function(err) {
+                error = err.responseJSON;
+                console.log('err ', error);
 
-                }
-            });
-
-            return false;
+            }
         });
 
+        return false;
+    });
     </script>
 
     <script>
-        $('#loginOtp').on('submit', function() {
-            $.ajax({
-                url: "{{ url('loginWithOtp') }}"
-                , type: "POST"
-                , data: $('#loginOtp').serialize()
-                , success: function(response) {
-                    console.log('response ', response);
-                    $('#myModal1').modal('hide');
-                    alert('login successfully');
-                }
-                , error: function(err) {
-                    error = err.responseJSON;
-                    console.log('err ', error);
-                }
-            });
-            return false;
+    $('#loginOtp').on('submit', function() {
+        $.ajax({
+            url: "{{ url('loginWithOtp') }}",
+            type: "POST",
+            data: $('#loginOtp').serialize(),
+            success: function(response) {
+                console.log('response ', response);
+                $('#myModal1').modal('hide');
+                alert('login successfully');
+            },
+            error: function(err) {
+                error = err.responseJSON;
+                console.log('err ', error);
+            }
         });
-
+        return false;
+    });
     </script>
+    <script>
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+    </script>
+
 </body>
 
 </html>

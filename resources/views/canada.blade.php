@@ -3,8 +3,8 @@
 <div style="background-color: #f75656ed;" class="mt-2">
 
     <div class="container" style="max-width: 1580px;">
-        <div class="row">
-            <div class="col-lg-4 m-auto " style="color:white;">
+        <div class="row" style="margin:0 auto;">
+            <div class="col-lg-4 m-auto text-center2">
                 <div style="" class="text-center canadaheading">Instantly
                     Generate your Professional Canadian Pay Stubs
                 </div>
@@ -42,7 +42,7 @@
 
 <div class="pt-5" style="background-color: #E9E6E6;">
     <div class="container" style="max-width: 1580px;">
-        <div class="row">
+        <div class="row" style="margin:0 auto;">
             <div class="col-md-6 col-sm-6 m-auto justifuy-content-center">
                 <h1 class="display-4" style="font-family: helvetica-w01-bold,helvetica-w02-bold,helvetica-lt-w10-bold,sans-serif;font-weight: 600;">
                     READY TO GET STARTED?</h1>
@@ -56,16 +56,16 @@
                 <h2 class="mb-5" style="font-weight:600;">Who can use Paystub<span class="text-danger">x</span>?</h2>
                 <div class="row">
                     <div class="col-md-6" style="border-right:1px solid black;">
-                        <img src="images/employericon.webp" class="" style="width:176px;">
-                        <div style="font-size: xx-large;font-weight:600;font-family: Futura Md BT;">Employers</div>
+                        <img src="images/employericon.webp" class="emp-img">
+                        <div class="employee-font">Employers</div>
                         <p style="font-size:15px;font-family: 'Futura lt';" class="mt-3">Paystubx is a great tool for employers who</br> manage payroll on
                             their own. Employers</br> can easily create professional paystubs,</br> with the option to
                             download them or</br> email them directly to their employees,</br> contractors, and gig workers.
                         </p>
                     </div>
                     <div class="col-md-6">
-                        <img src="images/sole-propritors.webp" class="" style="width:164px;">
-                        <div style="font-size: xx-large;font-weight:600;font-family: Futura Md BT;">Sole Proprietors</div>
+                        <img src="images/sole-propritors.webp" class="emp-img">
+                        <div class="employee-font">Sole Proprietors</div>
                         <p style="font-size:15px;font-family: 'Futura lt';" class="mt-3">Sole proprietors or self-employed individuals<br> can act as their
                             own bosses and pay themselves</br> whenever they want. Though they may not need</br> to withhold
                             taxes, they still need paystubs to</br> show proof of income. Paystubx allows you to</br> generate
@@ -75,7 +75,7 @@
             </div>
 
             <div class="row">
-                <div class="col-lg-6 col-sm-4 m-auto pl-0">
+                <div class="col-lg-6 col-sm-12 m-auto pl-0 padding">
                     <div style=" " class="mb-4 canadah4">Why should you
                         choose Paystub<span class="text-danger">x</span></br> to generate pay stubs online?
                     </div>

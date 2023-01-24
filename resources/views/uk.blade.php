@@ -9,7 +9,7 @@
     <div class="container-fluid">
         <div class="container" style="max-width: 1613px">
             <div class="row">
-                <div class="col-lg-6  col-md-12 mt-3">
+                <div class="col-lg-6  col-md-12 mt-3 text-center2">
                     <div class="text-white"
                         style="font-family:futura-lt-w01-light,futura-lt-w05-light,sans-serif; font-size:39px; line-height:60.5px; font-weight: 100;">
                         <p class="mainhead" style="text-align:center;"> Generate 100% Legal UK <br>Payslips
@@ -127,7 +127,7 @@
 
     </div>
 
-    <div class="col-lg-7 justify-content-center p-0">
+    <div class="col-lg-7 justify-content-center p-0"  style="background: #473b8f;"   >
 
         <img class="w-100 " src="images/uk/5f7a31_55ea9a38453f43069cf299e6a0617f08_mv2.jpeg">
 

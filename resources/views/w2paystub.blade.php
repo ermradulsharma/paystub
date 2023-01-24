@@ -16,7 +16,7 @@
                 <a class="btn btn-lg  mt-5 p-2 btn-danger Generate " href="{{url('usa')}}">Select W-2 Year</a>
             </div>
 
-            <div class="container bg-light" style="max-width:1450px; padding: 55px 115px;">
+            <div class="container bg-light  redcon" style="max-width:1450px;">
                 <div clas="recipt-box">
                     <div class="rec-box-border">
                         <div class="row">
