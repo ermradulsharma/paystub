@@ -198,11 +198,7 @@
                 <tr class="">
                     <th id="cols" class="head1">YTD GROSS</th>
                     <th id="cols" class="head1">YTD EDUCATION</th>
-<<<<<<< HEAD
                     <th id="cols" class="head1"> YTD<BR>NET PAY</th>
-=======
-                    <th id="cols" class="head1">NET PAY</th>
->>>>>>> dc01a9fda6cc84051e16eb3c79c51ee84422ed1a
                     <th id="cols" class="head1">CURRENT TOTAL</th>
                     <th id="cols" class="head1">DEDUCTION</th>
                     <th id="cols" class="head1">NET PAY</th>
