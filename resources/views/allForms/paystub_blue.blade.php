@@ -9,64 +9,62 @@
     <title>Paystub_blue</title>
 
     <style>
-    * {
-        padding: 0px;
-        margin: 0px;
-        box-sizing: border-box;
-    }
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
 
-    body {
-        font-family: Arial, Helvetica, sans-serif;
-    }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
 
-    table,
-    thead,
-    th #colsborder {
-        border: 1px solid #464646;
-        border-collapse: collapse;
-    }
+        table,
+        thead,
+        th #colsborder {
+            border: 1px solid #464646;
+            border-collapse: collapse;
+        }
 
-    #regular {
-        border-bottom: none;
-    }
+        #regular {
+            border-bottom: none;
+        }
 
-    th {
-        font-size: 13px;
-    }
+        th {
+            font-size: 13px;
+        }
 
-    td {
-        font-size: 15px;
-        padding: 2px;
-    }
+        td {
+            font-size: 15px;
+            padding: 2px;
+        }
 
-    #cols {
-        border-right: 1px solid #464646;
-        border-collapse: collapse;
-        text-align: center;
-    }
+        #cols {
+            border-right: 1px solid #464646;
+            border-collapse: collapse;
+            text-align: center;
+        }
 
-    .head1 {
-        padding-top: 5px;
-    }
+        .head1 {
+            padding-top: 5px;
+        }
 
-    .head2 {
-        padding-bottom: 10px;
-    }
+        .head2 {
+            padding-bottom: 10px;
+        }
 
-    .padding {
-        padding: 5px 3px;
-        text-align: center;
-    }
+        .padding {
+            padding: 5px 3px;
+        }
 
-    #colourborder {
-        background-color: #264fab;
-        color: white;
-    }
+        #colourborder {
+            background-color: #264fab;
+        }
 
-    #fica {
-        font-size: 14px;
-  
-    }
+        #fica {
+            font-size: 14px;
+        }
+
     </style>
 </head>
 
@@ -75,8 +73,7 @@
         <table style="width:100%;">
             <thead style="border:none;color:white; background-color:darkgrey;">
                 <th style="font-size: 16px;text-align: left;padding-left: 25px;">BankApp</th>
-                <th
-                    style="font-size: 20px;padding-top:10px;text-align: right;padding-right: 12px;padding-bottom: none;">
+                <th style="font-size: 20px;padding-top:10px;text-align: right;padding-right: 12px;padding-bottom: none;">
                     Earnings Statement</th>
 
             </thead>
@@ -98,34 +95,17 @@
 
             </thead>
             <thead id="colourborder">
-                <th class="padding" colspan="2 ">
-                    EMPLOYEE ID
-                </th>
-                <th class="padding" colspan="2">
-                    PERIOD ENDING
-                </th>
-                <th class="padding" colspan="2">
-                    PAY DATE
-                </th>
-                <th class="padding" colspan="2">CHECK NUMBER</th>
-
-
-
+                <th class="padding" colspan="2"> EMPLOYEE ID </th>
+                <th class="padding" colspan="3"> PERIOD ENDING </th>
+                <th class="padding"> PAY DATE </th>
+                <th class="padding">CHECK NUMBER</th>
             </thead>
-            <thead>
-
-
-                <tr>
-                    <td class="padding" colspan="2" id="colsborder"
-                        style="border:2px solid  #464646;text-align:center;"> 575785</td>
-                    <td class="padding" colspan="2" id="colsborder"
-                        style="border:2px solid  #464646; text-align:center;"> 575785</td>
-                    <td class="padding" colspan="2" id="colsborder"
-                        style="border:2px solid  #464646;text-align:center;"> 575785</td>
-                    <td class="padding" colspan="2" id="colsborder"
-                        style="border:2px solid  #464646;text-align:center;"> 575785</td>
-                </tr>
-            </thead>
+            <tr>
+                <td class="padding" id="colsborder" colspan="2" style="border:2px solid  #464646; text-align:center;">575785</td>
+                <td class="padding" style="border:2px solid  #464646; text-align:center;" colspan="3">23/1/2023 - 24/1/2023</td>
+                <td class="padding" style="border:2px solid  #464646; text-align:center;">25/1/2023</td>
+                <td class="padding" style="border:2px solid  #464646; text-align:center;">254236</td>
+            </tr>
             <thead id="colourborder">
                 <th class="padding">INCOME</th>
                 <th class="padding" >RATE</th>
@@ -214,12 +194,15 @@
 
 
 
-            <table id="bottomtable"
-                style="width:100%; margin-top:135px; border:1px solid  #464646; background-color:white;">
+            <table id="bottomtable" style="width:100%; margin-top:135px; border:1px solid  #464646; background-color:white;">
                 <tr class="">
                     <th id="cols" class="head1">YTD GROSS</th>
                     <th id="cols" class="head1">YTD EDUCATION</th>
+<<<<<<< HEAD
                     <th id="cols" class="head1"> YTD<BR>NET PAY</th>
+=======
+                    <th id="cols" class="head1">NET PAY</th>
+>>>>>>> dc01a9fda6cc84051e16eb3c79c51ee84422ed1a
                     <th id="cols" class="head1">CURRENT TOTAL</th>
                     <th id="cols" class="head1">DEDUCTION</th>
                     <th id="cols" class="head1">NET PAY</th>
