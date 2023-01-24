@@ -930,7 +930,7 @@
                 $('#taxes_ytd_' + taxes_ids).val(parseFloat(period_ytd_tax_price).toFixed(2));
 
                 period_deduction_tax += period_tax_price;
-                period_ytd_deduction_tax += period_ytd_tax_price
+                period_ytd_deduction_tax += period_ytd_tax_price;
                 setTimeout(function() {
                     $(".deduction_tax").val(parseFloat(period_deduction_tax).toFixed(2));
                     $(".ytd_deduction_tax").val(parseFloat(period_ytd_deduction_tax).toFixed(2));
@@ -981,13 +981,11 @@
     });
 
     $('.advanceTem').click(function() {
-
         var imageattr = $('option:selected', '.at_id').attr('data-src');
         $('.setImage').attr('src', imageattr);
         if (imageattr != null && imageattr != undefined) {
             $('#openEye').modal('show');
         }
-
     });
 
 </script>
