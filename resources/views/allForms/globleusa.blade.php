@@ -288,18 +288,21 @@
         <table style="width: 100%; margin: 140px 0 0 auto; ">
             <tr style="border-bottom: 1px solid;">
                 <td colspan="4"></td>
-                <td>Deposite to the Account off</td>
+                <td >Deposite to the Account off</td>
+                <td style="text-align: right;"  >Account number</td>
                 <td style="text-align: right;">Amount</td>
-                <td style="text-align: right;">Transit ABA </td>
-                <td style="text-align: right;">Account number</td>
+        
+               
             </tr>
          <td style="border-bottom: 1px solid black;" colspan="17"></td>
-            <tr>
+         <tr style="border-bottom: 1px solid;">
                 <td colspan="4"></td>
-                <td>Erza Moore</td>
-                <td style="text-align: right;">XX567</td>
-                <td style="text-align: right;">XXX567</td>
-                <td style="text-align: right;">XXXX5677</td>
+                <td >Jane K.Doe</td>
+               
+                <td style="text-align: right;"colspan="" >XXXX123</td>
+                <td style="text-align: right;">$23456</td>
+        
+               
             </tr>
         
         </table>

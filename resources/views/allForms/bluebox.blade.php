@@ -295,7 +295,7 @@
                     <td></td>
                     <td style="text-align: left;  border-top:2px solid black; border-bottom:2px solid black ;border-left:1px solid black; background-color:#98919145;">Net Pay</td>
                     <td style="border-top:2px solid black; border-bottom:2px solid black ;  background-color:#98919145;">616.07</td>
-                    <td style="border-top:2px solid black; border-bottom:2px solid black; border-right:1px solid black ;  background-color:#98919145;">11705.33</td>
+                    <td style="">11705.33</td>
                 </tr>
             </table>
         </section>
@@ -337,7 +337,7 @@
     <div class="container" style=" margin-top:100px; width:100%;">
         <div class="row" style="display: flex;justify-content: space-between;padding: 0px 14px;">
             <div style="width: 50%;float:left;">
-                <h6 style="font-size: 17px; margin-bottom: 10px;">Paystubs Company, INC</h6>
+                <h6 style="font-size: 17px; margin-bottom: 10px;">JAMES MOORE</h6>
                 <p style="font-size: 13px; margin: 0;">55 NORTHERN BLVD</p>
                 <P style="font-size: 13px; margin: 0;">SUIT 206</P>
                 <P style="font-size: 13px; margin: 0;">GREAT NECK, FAIRFIELD 45014</P>
@@ -354,17 +354,17 @@
             <tr style="border-bottom: 1px solid;">
                 <td colspan="4"></td>
                 <td>Deposite to the Account off</td>
-                <td style="text-align: right;">Amount</td>
-                <td style="text-align: right;">Transit ABA </td>
                 <td style="text-align: right;">Account number</td>
+                <td style="text-align: right;">Transit ABA </td>
+                <td style="text-align: right;">Amount</td>
             </tr>
             <td style="border-bottom: 1px solid black;" colspan="17"></td>
             <tr>
                 <td colspan="4"></td>
                 <td>Erza Moore</td>
-                <td style="text-align: right;">XX567</td>
-                <td style="text-align: right;">XXX567</td>
                 <td style="text-align: right;">XXXX5677</td>
+                <td style="text-align: right;">XXX567</td>
+                <td style="text-align: right;">$1234</td>
             </tr>
         </table>
     </div>

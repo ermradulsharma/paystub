@@ -162,7 +162,7 @@
     <table style="width:100%;margin-top:30px;">
         <thead>
             <th>Deductions</th>
-            <th colspan="4">Statuory</th>
+            <th colspan="3">Statuory</th>
         </thead>
         <tr>
             <td></td>

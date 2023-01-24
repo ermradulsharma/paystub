@@ -80,22 +80,22 @@
         </div> -->
       
         <div style="width: 100%; display: flex; justify-content: flex-end;justify-content: space-between;margin: 200px 0 0 auto;font-size: 15px; font-weight: 900;padding: 0 0px    ;">
-        <span style="margin: 0; float:right;">Account Number</span>
+        <span style="margin: 0; float:right;">Amount</span>
 
 
 <span style="margin: 0; float:right; padding-left:10px; margin-right: 11px;">Transit ABA</span>
 
 
-<span style="margin: 0; float:right;padding-left:10px; margin-right: 11px;">Amount</span>
+<span style="margin: 0; float:right;padding-left:10px; margin-right: 11px;">Account Number</span>
 <hr style="margin-top: 20px;">
 
-            <span style="margin: 0;float:right; margin-right: 23px; ">XXXXX1517</span>
+            <span style="margin: 0;float:right; margin-right: 23px; ">$1,234</span>
 
 
-            <span style="margin: 0;float:right; margin-right: 23px;">XXXXX8452</span>
+            <span style="margin: 0;float:right; margin-right: 40px;">xxx233</span>
 
 
-            <span style="margin: 0;float:right; margin-right: 20px;">$1,811.10</span>
+            <span style="margin: 0;float:right; margin-right: 40px;">xxx233</span>
 
         </div>
         <div style="width: 50%; display: flex; justify-content: flex-end;justify-content: space-between; FONT-SIZE: 17px; margin: 0px 0 0 151px;">

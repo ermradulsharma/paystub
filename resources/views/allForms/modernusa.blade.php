@@ -196,13 +196,13 @@
     </table>
     <section>
         <table style="width: 100%; margin-top: 60px;">
-            <tr>
-                <th>Earning</th>
-                <th style="width: 15%;">Rate</th>
-                <th>Hours</th>
-                <th>This Period</th>
-                <th >Year-to-date</th>
-                <th style="border-bottom: 2px solid black;">Important Note</th>
+            <tr style="text-align:left ;">
+                <th style="text-align:left ;" >Earning</th>
+                <th style="width: 15%;text-align:left;">Rate</th>
+                <th style="text-align:left ;">Hours</th>
+                <th style="text-align:left ;">This Period</th>
+                <th  style="text-align:left ;">Year-to-date</th>
+                <th style="border-bottom: 2px solid black;text-align:left;s">Important Note</th>
             </tr>
             <tr>
                 <td>Regular</td>
@@ -220,34 +220,28 @@
                 <td>0.00</td>
                 <td></td>
             </tr>
-            <tr>
-                <td>Holiday</td>
-                <td>0.00</td>
-                <td>0.00</td>
-                <td>0.00</td>
-                <td>0.00</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>Vaction</td>
-                <td>0.00</td>
-                <td>0.00</td>
-                <td>0.00</td>
-                <td>0.00</td>
-                <td></td>
-            </tr>
+           
+           
             <tr>
                 <td>Bonus</td>
-                <td>0.00</td>
-                <td>0.00</td>
+                <td>-</td>
+                <td>-</td>
                 <td>0.00</td>
                 <td>0.00</td>
                 <td></td>
             </tr>
             <tr>
-                <td>float</td>
+                <td></td>
+                <td></td>
+                <td>-</td>
                 <td>0.00</td>
                 <td>0.00</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>commissions</td>
+                <td></td>
+                <td></td>
                 <td>0.00</td>
                 <td>0.00</td>
                 <td></td>
@@ -255,20 +249,21 @@
             <tr style="font-weight: 800;">
                 <td></td>
                 <td></td>
-                <td>GROSS PAY</td>
-                <td>400.00</td>
-                <td>5.600.00</td>
+                <td style="border-top: 2px solid black; border-bottom:2px solid black; background-color:#98919145;" colspan="">GROSS PAY</td>
+                <td style="border-top: 2px solid black; border-bottom:2px solid black; background-color:#98919145;">400.00</td>
+                <td >5.600.00</td>
             </tr>
+            
         </table>
     </section>
     <section style="position: relative;">
         <section>
             <table class="table-data">
                 <thead>
-                    <th style="border-bottom: 2px solid #000;" class="">Deductions</th>
-                    <th style="border-bottom: 2px solid #000;" class="statutory">statutory</th>
+                    <th  class="">Deductions</th>
+                    <th  class="statutory">statutory</th>
                 </thead>
-
+<td style="border-top:2px solid black;" colspan="17"></td>
                 <tr>
                     <td></td>
                     <td class="td" colspan="2">Federal income Tax
@@ -360,6 +355,7 @@
                     <td></td>
                     <td>5669.58</td>
                 </tr>
+         
             </table>
         </section>
    
@@ -394,7 +390,7 @@
                 <td colspan="3"></td>
                 <td>This amount:</td>
                 <td><button
-                        style="padding: 3px 80px 3px 0px; border-left:none; border-right:1px solid #000; border-top:1px solid #000; border-bottom:1px solid #000;">Four
+                        style="padding: 3px 80px 3px 0px; border-left:none; border-right:1px solid #000; border-top:1px solid #000; border-bottom:1px solid #000; font-size:10px:">Four
                         hundered seavnty two dollar fourty seavan cents</button></td>
                 <td style="text-align: right;">472.47</td>
             </tr>

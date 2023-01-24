@@ -71,8 +71,8 @@
         <td>11/12/202</td>
     </tr>
     <tr>
-        <td>1701 Legacy Dr</td>
-        <td>3773 Rockdale Dr</td>
+        <td style="margin: 0; padding:0;">1701 Legacy Dr</td>
+        <td style="margin: 0; padding:0;">3773 Rockdale Dr</td>
         <td>Gross Pay</td>
         <td>$9.928.00</td>
         <td>Period Ending</td>

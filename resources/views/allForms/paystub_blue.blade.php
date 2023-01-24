@@ -32,6 +32,7 @@
 
         th {
             font-size: 13px;
+            color: white;
         }
 
         td {
@@ -47,6 +48,7 @@
 
         .head1 {
             padding-top: 5px;
+            color: black;
         }
 
         .head2 {
@@ -85,8 +87,8 @@
         <table style="width:100%;">
 
             <thead>
-                <th class="padding" colspan="2" style="text-align: center;">
-                    MIKE MOOR
+                <th class="padding" colspan="2" style="text-align: center; color:black;">
+                    MIKE MOORE
                 </th>
                 <td class="padding" colspan="6" style="text-align: center; border-right:1px solid black;">
                     255 Esters Rd, Fairfield, OH 45014
@@ -98,13 +100,13 @@
                 <th class="padding" colspan="2"> EMPLOYEE ID </th>
                 <th class="padding" colspan="3"> PERIOD ENDING </th>
                 <th class="padding"> PAY DATE </th>
-                <th class="padding">CHECK NUMBER</th>
+                <th class="padding" colspan="2">CHECK NUMBER</th>
             </thead>
             <tr>
                 <td class="padding" id="colsborder" colspan="2" style="border:2px solid  #464646; text-align:center;">575785</td>
                 <td class="padding" style="border:2px solid  #464646; text-align:center;" colspan="3">23/1/2023 - 24/1/2023</td>
                 <td class="padding" style="border:2px solid  #464646; text-align:center;">25/1/2023</td>
-                <td class="padding" style="border:2px solid  #464646; text-align:center;">254236</td>
+                <td class="padding" colspan="2"  style="border:2px solid  #464646; text-align:center;">254236</td>
             </tr>
             <thead id="colourborder">
                 <th class="padding">INCOME</th>
