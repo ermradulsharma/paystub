@@ -254,13 +254,8 @@ var days_number = 0;
                 dayCalculate();
         }
 
-        function is_empty(){
-            $('#rate_0').val('');
-            $('#hours_0').val('');
-            $('#total_0').val('');
-            $('#period_0').val('');
-            $('#ytd_total_0').val('');
-        }
+
+
         function dayCalculate() {
             var tax_rate = $('.tax_rate').find(":selected").data('tax');
             var pay_start = new Date($('.pay_start').val());
@@ -371,13 +366,12 @@ var days_number = 0;
             }
 
         }
+
         function calculation(id) {
             var rate = parseFloat($('#rate_' + id).val()).toFixed(2);
             var hours = parseFloat($('#hours_' + id).val()).toFixed(2);
             var total = rate * hours || 0.00;
-            console.log('total', total);
             var ytd_total = total * parseInt(days_number) || 0.00;
-            console.log('ytd_total', ytd_total);
             setTimeout(function() {
                     $('#total_' + id).val(parseFloat(total).toFixed(2));
                     $('#period_' + id).val(parseFloat(total).toFixed(2));
@@ -406,8 +400,6 @@ var days_number = 0;
         function default_tax() {
             var period_gross_total = $("#period_gross_total").val();
             var ytd_gross_total = $("#ytd_gross_total").val();
-            console.log('ytd_gross_total_12345678',ytd_gross_total);
-            console.log('period_gross_total_12345678',period_gross_total);
             var tax_state = $('option:selected', '.tax_rate').attr('data-tax');
             period_deduction_tax = 0;
             period_ytd_deduction_tax = 0;
@@ -470,5 +462,22 @@ var days_number = 0;
                 $(".total_net_pay").val(parseFloat(total_net_pay).toFixed(2));
                 $(".total_ytd_net_pay").val(parseFloat(total_ytd_net_pay).toFixed(2));
             }, 300);
+        }
+
+        function is_empty(){
+            $('#rate_0').val('');
+            $('#hours_0').val('');
+            $('#total_0').val('');
+            $('#period_0').val('');
+            $('#ytd_total_0').val('');
+            $(".deduction_tax").val('');
+            $(".ytd_deduction_tax").val('');
+            $(".total_net_pay").val('');
+            $(".total_ytd_net_pay").val('');
+            $('.taxes').each(function() {
+                var taxes_ids = $(this).data('id');
+                $('#taxes_' + taxes_ids).val('');
+                $('#taxes_ytd_' + taxes_ids).val('');
+            });
         }
     });
