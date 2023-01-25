@@ -170,7 +170,7 @@ var deduction_tax = 0;
             var fieldHTML =
                 '<div class="row mb-3">' +
                 '<div class="col-md-3">' +
-                '<img src="http://http://44.202.105.74/images/lock.png" class="earnbtn2">' +
+                '<img src="http://44.202.105.74/images/lock.png" class="earnbtn2">' +
                 '<input class="earnbtn text-center tax_deduction_'+ i +' " data-id="' + i + '" type="text" value="">' +
                 '</div>' +
                 '<div class="col-md-1"> </div>' +
