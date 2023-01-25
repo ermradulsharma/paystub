@@ -242,7 +242,7 @@ var days_number = 0;
             } else {
                 $(".error").addClass("d-none");
             }
-            calculation(0);
+            
         }
 
         function time_period(){
