@@ -116,6 +116,7 @@ $('#button1').click(function() {
 });
 
 var days_number = 0;
+var deduction_tax = 0;
     $(document).ready(function() {
         var maxField = 12;
         var addButton = $('#add_earning');
@@ -164,28 +165,34 @@ var days_number = 0;
             return false;
         });
 
+        i = 11;
         $(addDeduction).click(function() {
             var fieldHTML =
                 '<div class="row mb-3">' +
                 '<div class="col-md-3">' +
-                ' <img src="{{asset("images/lock.png")}}" class="earnbtn2">' +
-                '<input class="earnbtn text-center" type="text" value="">' +
+                '<img src="http://http://44.202.105.74/images/lock.png" class="earnbtn2">' +
+                '<input class="earnbtn text-center tax_deduction_'+ i +' " data-id="' + i + '" type="text" value="">' +
                 '</div>' +
                 '<div class="col-md-1"> </div>' +
                 '<div class="col-md-3"> </div>' +
                 '<div class="col-md-1"> </div>' +
                 '<div class="col-md-2">' +
-                '<input type="text" class="earnbtn text-center tax_deduction tax" value=""/>' +
+                '<input type="text" class="earnbtn text-center tax_deduction tax add_deduction" id="taxes_'+ i +'" value="" data-id="'+ i +'"/>' +
                 '</div>' +
                 '<div class="col-md-2">' +
-                '<input type="text" class="earnbtn text-center ytd_tax tax" value=""/>' +
+                '<input type="text" class="earnbtn text-center ytd_tax tax add_deduction" id="taxes_ytd_'+ i +'" value="" data-id="'+ i +'"/>' +
                 '</div>' +
                 '</div>';
             if (x < maxField) {
                 x++;
+
                 $(wrapper_2).append(fieldHTML);
             }
-
+            i++
+            /* $('.add_deduction').keyup(function(){
+                var id = $(this).data('id');
+                add_deduction(id);
+            }); */
 
             $('.tax_deduction').keyup(function() {
                 var value = $(this).val();
@@ -194,17 +201,35 @@ var days_number = 0;
 
             $('.ytd_tax').keyup(function() {
                 var ytd_tax = 0;
+                var total_ytd_tax = 0;
                 $('.ytd_tax').each(function() {
                     ytd_tax += parseFloat(this.value);
                 });
                 setTimeout(function() {
-                    $(".ytd_deduction_tax").val(ytd_tax);
+                    var ytd_deduct = $(".ytd_deduction_tax").val();
+                    var ytd = parseFloat(ytd_deduct).toFixed(2);
+                    var td = parseFloat(ytd_tax).toFixed(2);
+                    total_ytd_tax = $.add(ytd,td);
+
+                    $(".ytd_deduction_tax").val(total_ytd_tax);
                 }, 300);
 
             });
+
+            /* function add_deduction(id){
+                var taxes = parseFloat($('#taxes_' + id).val()).toFixed(2);
+                var taxes_ytd = parseFloat($('#taxes_ytd_' + id).val()).toFixed(2);
+                $(".deduction_tax").val(parseFloat(period_deduction_tax).toFixed(2));
+                $(".ytd_deduction_tax").val(parseFloat(period_ytd_deduction_tax).toFixed(2));
+
+                $("#deduction_period_tax").val(parseFloat(period_deduction_tax).toFixed(2));
+                $("#ytd_deduction_period_tax").val(parseFloat(period_ytd_deduction_tax).toFixed(2));
+                console.log('taxes', taxes);
+                console.log('taxes_ytd', taxes_ytd);
+            }
+ */
             return false;
         });
-
         $('.tax_rate').change(function() {
             tax_rate();
         });
@@ -234,11 +259,17 @@ var days_number = 0;
             var id = $(this).data('id');
             console.log('id', id);
             setTimeout(function() {
-
                 calculation(id);
             }, 300);
         });
 
+
+        // $('.auto_calculate').change(function() {
+        //     gross_total();
+        // })
+        function auto_calculate(){
+            var auto_calculate = $('.auto_calculate').find(":selected").val();
+        }
         function tax_rate(){
             var tax_rate = $('.tax_rate').find(":selected").data('tax');
             if (tax_rate == null) {
@@ -253,8 +284,6 @@ var days_number = 0;
         function time_period(){
                 dayCalculate();
         }
-
-
 
         function dayCalculate() {
             var tax_rate = $('.tax_rate').find(":selected").data('tax');
@@ -376,6 +405,18 @@ var days_number = 0;
                     $('#total_' + id).val(parseFloat(total).toFixed(2));
                     $('#period_' + id).val(parseFloat(total).toFixed(2));
                     $('#ytd_total_' + id).val(parseFloat(ytd_total).toFixed(2));
+                    var auto_calculate = $('.auto_calculate').find(":selected").val();
+                    /* if(auto_calculate == 'on'){
+                        gross_total();
+                    }else{
+                        $('.taxes').each(function() {
+                            var taxes_ids = $(this).data('id');
+                            var auto_tax = $('#taxes_' + taxes_ids).val();
+                            var auto_ytd_tax = $('#taxes_ytd_' + taxes_ids).val();
+                            console.log('auto_tax'+taxes_ids, auto_tax);
+                            console.log('auto_ytd_tax'+taxes_ids, auto_ytd_tax);
+                        })
+                    } */
                     gross_total();
             }, 300);
         }
@@ -405,8 +446,11 @@ var days_number = 0;
             period_ytd_deduction_tax = 0;
             var time = 200;
             if(period_gross_total != 'NaN' || ytd_gross_total != 'NaN'){
+
                 $('.taxes').each(function() {
                     var taxes_ids = $(this).data('id');
+
+                    console.log('taxes_ids', taxes_ids);
                     var taxes_values = $(this).data('value');
                     var tax_name = $(this).val();
 
@@ -434,6 +478,8 @@ var days_number = 0;
                     }, 200);
                     time += 200;
                 });
+
+
                 setTimeout(() => {
                     netPay();
                 }, time);
@@ -441,13 +487,7 @@ var days_number = 0;
         }
 
         function tax_deduction(value) {
-            var tax_total = $(".deduction_tax").val();
-            // console.log(value);
-            if (value == '') {
-                value = 0;
-            }
-            var taxes = parseFloat(tax_total) + parseFloat(value);
-            $(".deduction_tax").val(parseFloat(taxes).toFixed(2));
+
         }
 
         function netPay() {
