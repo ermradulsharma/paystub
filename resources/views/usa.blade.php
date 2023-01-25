@@ -212,13 +212,13 @@
                                 <div>
                                     <label for="emp_state" class="lable">State <span class="redColor">*</span> </label>
                                     <div class="dropdown ">
-                                        <select name="emp_state" id="emp_state" class=" dropdown11 tax_rate">
+                                        <select name="emp_state" id="emp_state" class=" dropdown11 ">
                                             <option value="" data-tax="null"> --- Select --- </option>
                                             @foreach ($stateTaxes as $stateTax )
                                             <option value="{{ $stateTax->state }}" data-tax="{{ $stateTax->rate }}">{{ $stateTax->state }}</option>
                                             @endforeach
                                         </select>
-                                        <span class="d-none text-center error redColor">Please Select State</span>
+
                                     </div>
                                 </div>
 
@@ -246,12 +246,13 @@
                                 <div>
                                     <label for="emp_your_state" class="lable">SELECT YOUR STATE <span class="redColor">*</span> </label>
                                     <div class="dropdown ">
-                                        <select name="emp_your_state" id="emp_your_state" class=" dropdown11">
+                                        <select name="emp_your_state" id="emp_your_state" class=" dropdown11 tax_rate">
                                             <option>Choose your State</option>
                                             @foreach ($stateTaxes as $stateTax )
                                             <option value="{{ $stateTax->state }}" data-tax="{{ $stateTax->rate }}">{{ $stateTax->state }}</option>
                                             @endforeach
                                         </select>
+                                        <span class="d-none text-center error redColor">Please Select State</span>
                                     </div>
                                 </div>
 
@@ -605,6 +606,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" crossorigin="anonymous"></script>
+<script src="{{ asset('user') }}/js/calculations.js"></script>
 <script>
     $(document).ready(function() {
         $('.advanceTemplate').change(function() {
@@ -622,13 +624,14 @@
           val = val.substr(3);
         }
         newVal += val;
-      
+
         this.value = newVal;
     });
     });
 
 </script>
-<script>
+
+{{-- <script>
     var days_number = 0;
     $(document).ready(function() {
         $('.tax_rate').change(function() {
@@ -648,6 +651,7 @@
             var pay_start_1 = $('.pay_start').val();
             if (pay_start != "" && pay_start != 'Invalid Date') {
                 dayCalculate();
+                calculation(0);
             } else {
                 //
             }
@@ -974,7 +978,7 @@
         }
     });
 
-</script>
+</script> --}}
 
 <script>
     $(document).ready(function() {
