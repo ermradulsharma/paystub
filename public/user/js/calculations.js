@@ -220,7 +220,10 @@ var days_number = 0;
 
         $('.hourly').keyup(function() {
             var id = $(this).val();
-            $('#rate_0').val(parseFloat(id).toFixed(2));
+            if(id != 'NaN'){
+                $('#rate_0').val(parseFloat(id).toFixed(2));
+            }
+            calculation(0);
         });
 
         $('.pay_date').change(function() {
@@ -229,7 +232,9 @@ var days_number = 0;
 
         $('.calculation').keyup(function() {
             var id = $(this).data('id');
+            console.log('id', id);
             setTimeout(function() {
+
                 calculation(id);
             }, 300);
         });
@@ -242,13 +247,20 @@ var days_number = 0;
             } else {
                 $(".error").addClass("d-none");
             }
-            
+            is_empty();
         }
 
         function time_period(){
                 dayCalculate();
         }
 
+        function is_empty(){
+            $('#rate_0').val('');
+            $('#hours_0').val('');
+            $('#total_0').val('');
+            $('#period_0').val('');
+            $('#ytd_total_0').val('');
+        }
         function dayCalculate() {
             var tax_rate = $('.tax_rate').find(":selected").data('tax');
             var pay_start = new Date($('.pay_start').val());
@@ -315,69 +327,73 @@ var days_number = 0;
             var month = pay_date.getMonth() + 1;
             var year = pay_date.getFullYear();
             var pay_date_1 = year + '-' + (('' + month).length < 2 ? '0' : '') + month + '-' + (('' + date).length < 2 ? '0' : '') + date;
-            if (pay_date_1 <= pay_end_1) {
-                setTimeout(function() {
-                    console.log('pay_date_1', pay_date_1);
-                    if(pay_date_1 != 'NaN-NaN-NaN'){
-                        $('#ytd_total_0').val(parseFloat(0).toFixed(2));
-                        gross_total();
-                    }
-                }, 300);
-            } else {
-                var time_period = $(".time_period").val();
-                var dt3 = new Date(pay_start_1);
-                var dt2 = new Date(pay_end_1);
-                var dt1 = new Date(pay_date_1);
+            console.log('pay_date_1', pay_date_1);
+            if(pay_date_1 != 'NaN-NaN-NaN'){
+                if (pay_date_1 <= pay_end_1) {
+                    setTimeout(function() {
+                        console.log('pay_date_1', pay_date_1);
+                        if(pay_date_1 != 'NaN-NaN-NaN'){
+                            $('#ytd_total_0').val(parseFloat(0).toFixed(2));
+                            gross_total();
+                        }
+                    }, 300);
+                } else {
+                    var time_period = $(".time_period").val();
+                    var dt3 = new Date(pay_start_1);
+                    var dt2 = new Date(pay_end_1);
+                    var dt1 = new Date(pay_date_1);
 
-                var newDate_1 = moment(dt1).add(1, 'weeks').format('YYYY-MM-DD');
-                var newDate_2 = moment(dt1).add(2, 'weeks').format('YYYY-MM-DD');
-                var newDate_3 = moment(dt1).add(1, 'months').format('YYYY-MM-DD');
-                var newDate_4 = moment(dt1).add(2, 'months').format('YYYY-MM-DD');
-                var mBetween = dt1.getTime() - dt3.getTime();
-                var days = (mBetween / (1000 * 3600 * 24));
-                if (time_period == "weekly") {
-                    days_number = days / 7;
+                    var newDate_1 = moment(dt1).add(1, 'weeks').format('YYYY-MM-DD');
+                    var newDate_2 = moment(dt1).add(2, 'weeks').format('YYYY-MM-DD');
+                    var newDate_3 = moment(dt1).add(1, 'months').format('YYYY-MM-DD');
+                    var newDate_4 = moment(dt1).add(2, 'months').format('YYYY-MM-DD');
+                    var mBetween = dt1.getTime() - dt3.getTime();
+                    var days = (mBetween / (1000 * 3600 * 24));
+                    if (time_period == "weekly") {
+                        days_number = days / 7;
+                    }
+                    if (time_period == "bi-weekly") {
+                        days_number = days / 14;
+                    }
+                    if (time_period == "monthly") {
+                        days_number = days / 30;
+                    }
+                    if (time_period == "bi-monthly") {
+                        days_number = days / 61;
+                    }
+                    var hours = $('#hours_0').val();
+                    if (hours != '') {
+                        calculation(0);
+                    }
                 }
-                if (time_period == "bi-weekly") {
-                    days_number = days / 14;
-                }
-                if (time_period == "monthly") {
-                    days_number = days / 30;
-                }
-                if (time_period == "bi-monthly") {
-                    days_number = days / 61;
-                }
-                var hours = $('#hours_0').val();
-                if (hours != '') {
-                    calculation(0);
-                }
+            } else {
+                return false;
             }
+
         }
         function calculation(id) {
-            var rate = $('#rate_' + id).val();
-            var hours = $('#hours_' + id).val();
             var rate = parseFloat($('#rate_' + id).val()).toFixed(2);
             var hours = parseFloat($('#hours_' + id).val()).toFixed(2);
-            var total = rate * hours;
-            var ytd_total = total * parseInt(days_number);
-            console.log('rate',rate);
-            console.log('hours',hours);
+            var total = rate * hours || 0.00;
+            console.log('total', total);
+            var ytd_total = total * parseInt(days_number) || 0.00;
+            console.log('ytd_total', ytd_total);
             setTimeout(function() {
-                $('#total_' + id).val(parseFloat(total).toFixed(2));
-                $('#period_' + id).val(parseFloat(total).toFixed(2));
-                $('#ytd_total_' + id).val(parseFloat(ytd_total).toFixed(2));
-                gross_total();
+                    $('#total_' + id).val(parseFloat(total).toFixed(2));
+                    $('#period_' + id).val(parseFloat(total).toFixed(2));
+                    $('#ytd_total_' + id).val(parseFloat(ytd_total).toFixed(2));
+                    gross_total();
             }, 300);
         }
 
         function gross_total() {
             var total = 0;
             $('.gross_total').each(function() {
-                total += parseFloat(this.value);
+                total += parseFloat(this.value) || 0.00;
             });
             var ytd_total = 0;
             $('.ytd_total').each(function() {
-                ytd_total += parseFloat(this.value);
+                ytd_total += parseFloat(this.value) || 0.00;
             });
 
             setTimeout(function() {
@@ -396,7 +412,7 @@ var days_number = 0;
             period_deduction_tax = 0;
             period_ytd_deduction_tax = 0;
             var time = 200;
-            if(period_gross_total != 'NaN' || ytd_gross_total != 0.00){
+            if(period_gross_total != 'NaN' || ytd_gross_total != 'NaN'){
                 $('.taxes').each(function() {
                     var taxes_ids = $(this).data('id');
                     var taxes_values = $(this).data('value');
