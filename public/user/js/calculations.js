@@ -189,39 +189,40 @@ var deduction_tax = 0;
             }
             i++
 
-            $('.add_deduction').keyup(function(){
-                var id = $(this).data('id');
-                add_deduction_cal(id);
-            });
-
-
-            function add_deduction_cal(id){
-                var deduction_period_tax = $('#deduction_period_tax').val();
-                var ytd_deduction_period_tax = $('#ytd_deduction_period_tax').val();
-                var taxes = parseFloat($('#taxes_' + id).val()).toFixed(2);
-                var taxes_ytd = parseFloat($('#taxes_ytd_' + id).val()).toFixed(2);
-            }
             $('.tax_deduction').keyup(function() {
                 var deduction_period_tax = $('#deduction_period_tax').val();
-                var tax_deduction = 0;
+                var tax_deduction = 0.00;
                 $('.tax_deduction').each(function() {
                     tax_deduction += parseFloat(this.value);
                 });
                 setTimeout(function() {
+                    if(tax_deduction == 'NaN'){
+                        tax_deduction = 0.00;
+                    }
                     var sum = parseFloat(tax_deduction) + parseFloat(deduction_period_tax);
+                    if(isNaN(sum)){
+                        sum = parseFloat(ytd_deduction_period_tax).toFixed(2);
+                    }
                     $(".deduction_tax").val(sum);
                 }, 300);
             });
 
             $('.ytd_tax').keyup(function() {
                 var ytd_deduction_period_tax = $('#ytd_deduction_period_tax').val();
-                var ytd_tax = 0;
+                var ytd_tax = 0.00;
                 $('.ytd_tax').each(function() {
                     ytd_tax += parseFloat(this.value);
                 });
                 setTimeout(function() {
-                    var sum = parseFloat(ytd_tax) + parseFloat(ytd_deduction_period_tax);
-                    $(".ytd_deduction_tax").val(sum);
+                    if(ytd_tax == 'NaN'){
+                        ytd_tax = 0.00;
+                    }
+                    ytd_tax = ytd_tax;
+                    var sum = parseFloat(ytd_deduction_period_tax) + parseFloat(ytd_tax);
+                    if(isNaN(sum)){
+                        sum = parseFloat(ytd_deduction_period_tax).toFixed(2);
+                    }
+                    $(".ytd_deduction_tax").val(parseFloat(sum).toFixed(2));
                 }, 300);
 
             });
