@@ -189,11 +189,6 @@ var deduction_tax = 0;
                 $(wrapper_2).append(fieldHTML);
             }
             i++
-            /* $('.add_deduction').keyup(function(){
-                var id = $(this).data('id');
-                add_deduction(id);
-            }); */
-
             $('.tax_deduction').keyup(function() {
                 var value = $(this).val();
                 tax_deduction(value);
@@ -215,21 +210,9 @@ var deduction_tax = 0;
                 }, 300);
 
             });
-
-            /* function add_deduction(id){
-                var taxes = parseFloat($('#taxes_' + id).val()).toFixed(2);
-                var taxes_ytd = parseFloat($('#taxes_ytd_' + id).val()).toFixed(2);
-                $(".deduction_tax").val(parseFloat(period_deduction_tax).toFixed(2));
-                $(".ytd_deduction_tax").val(parseFloat(period_ytd_deduction_tax).toFixed(2));
-
-                $("#deduction_period_tax").val(parseFloat(period_deduction_tax).toFixed(2));
-                $("#ytd_deduction_period_tax").val(parseFloat(period_ytd_deduction_tax).toFixed(2));
-                console.log('taxes', taxes);
-                console.log('taxes_ytd', taxes_ytd);
-            }
- */
             return false;
         });
+        
         $('.tax_rate').change(function() {
             tax_rate();
         });
