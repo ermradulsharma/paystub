@@ -208,6 +208,7 @@ var arr = [];
                         total = parseFloat(deduction_period_tax).toFixed(2);
                     }
                     $(".deduction_tax").val(parseFloat(total).toFixed(2));
+                    netPay();
                 }, 300);
             });
 
@@ -224,6 +225,7 @@ var arr = [];
                         sum = parseFloat(ytd_deduction_period_tax).toFixed(2);
                     }
                     $(".ytd_deduction_tax").val(parseFloat(sum).toFixed(2));
+                    netPay();
                 }, 300);
 
             });
