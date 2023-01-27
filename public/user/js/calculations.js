@@ -235,6 +235,7 @@ var arr = [];
 
         $('.tax_rate').change(function() {
             tax_rate();
+            netPay();
         });
 
         $('.time_period').change(function() {
@@ -491,8 +492,8 @@ var arr = [];
             var ytd_gross_total = $("#ytd_gross_total").val();
             var deduction_tax = $(".deduction_tax").val();
             var ytd_deduction_tax = $(".ytd_deduction_tax").val();
-            var total_net_pay = parseFloat(period_gross_total) - parseFloat(deduction_tax);
-            var total_ytd_net_pay = parseFloat(ytd_gross_total) - parseFloat(ytd_deduction_tax);
+            var total_net_pay = parseFloat(period_gross_total) - parseFloat(deduction_tax) || 0.00;
+            var total_ytd_net_pay = parseFloat(ytd_gross_total) - parseFloat(ytd_deduction_tax) || 0.00;
             setTimeout(function() {
                 $(".total_net_pay").val(parseFloat(total_net_pay).toFixed(2));
                 $(".total_ytd_net_pay").val(parseFloat(total_ytd_net_pay).toFixed(2));
