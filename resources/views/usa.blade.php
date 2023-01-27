@@ -431,7 +431,7 @@
 
                             <div class=" col-lg-2 col-md-2 margin-bottom ">
                                 <div>
-                                    <input type="text" name="rate_0" class="earnbtn text-center calculation" value="" id="rate_0" data-id="0">
+                                    <input type="text" name="rate_0" class="earnbtn text-center calculation rate" value="" id="rate_0" data-id="0">
                                 </div>
 
                             </div>
