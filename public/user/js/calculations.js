@@ -180,39 +180,54 @@ var deduction_tax = 0;
                 '<input type="text" class="earnbtn text-center tax_deduction tax add_deduction" id="taxes_'+ i +'" value="" data-id="'+ i +'"/>' +
                 '</div>' +
                 '<div class="col-md-2">' +
-                '<input type="text" class="earnbtn text-center ytd_tax tax add_deduction" id="taxes_ytd_'+ i +'" value="" data-id="'+ i +'"/>' +
+                '<input type="text" class="earnbtn text-center ytd_tax tax add_ytd_deduction" id="taxes_ytd_'+ i +'" value="" data-id="'+ i +'"/>' +
                 '</div>' +
                 '</div>';
             if (x < maxField) {
                 x++;
-
                 $(wrapper_2).append(fieldHTML);
             }
             i++
+
+            $('.add_deduction').keyup(function(){
+                var id = $(this).data('id');
+                add_deduction_cal(id);
+            });
+
+
+            function add_deduction_cal(id){
+                var deduction_period_tax = $('#deduction_period_tax').val();
+                var ytd_deduction_period_tax = $('#ytd_deduction_period_tax').val();
+                var taxes = parseFloat($('#taxes_' + id).val()).toFixed(2);
+                var taxes_ytd = parseFloat($('#taxes_ytd_' + id).val()).toFixed(2);
+            }
             $('.tax_deduction').keyup(function() {
-                var value = $(this).val();
-                tax_deduction(value);
+                var deduction_period_tax = $('#deduction_period_tax').val();
+                var tax_deduction = 0;
+                $('.tax_deduction').each(function() {
+                    tax_deduction += parseFloat(this.value);
+                });
+                setTimeout(function() {
+                    var sum = parseFloat(tax_deduction) + parseFloat(deduction_period_tax);
+                    $(".deduction_tax").val(sum);
+                }, 300);
             });
 
             $('.ytd_tax').keyup(function() {
+                var ytd_deduction_period_tax = $('#ytd_deduction_period_tax').val();
                 var ytd_tax = 0;
-                var total_ytd_tax = 0;
                 $('.ytd_tax').each(function() {
                     ytd_tax += parseFloat(this.value);
                 });
                 setTimeout(function() {
-                    var ytd_deduct = $(".ytd_deduction_tax").val();
-                    var ytd = parseFloat(ytd_deduct).toFixed(2);
-                    var td = parseFloat(ytd_tax).toFixed(2);
-                    total_ytd_tax = $.add(ytd,td);
-
-                    $(".ytd_deduction_tax").val(total_ytd_tax);
+                    var sum = parseFloat(ytd_tax) + parseFloat(ytd_deduction_period_tax);
+                    $(".ytd_deduction_tax").val(sum);
                 }, 300);
 
             });
             return false;
         });
-        
+
         $('.tax_rate').change(function() {
             tax_rate();
         });
@@ -240,19 +255,23 @@ var deduction_tax = 0;
 
         $('.calculation').keyup(function() {
             var id = $(this).data('id');
-            console.log('id', id);
+            // console.log('id', id);
             setTimeout(function() {
                 calculation(id);
             }, 300);
         });
 
 
-        // $('.auto_calculate').change(function() {
-        //     gross_total();
-        // })
+        /* $('.auto_calculate').change(function() {
+            auto_calculate();
+        });
         function auto_calculate(){
             var auto_calculate = $('.auto_calculate').find(":selected").val();
-        }
+            if(auto_calculate == 'on'){
+
+            }
+        } */
+
         function tax_rate(){
             var tax_rate = $('.tax_rate').find(":selected").data('tax');
             if (tax_rate == null) {
@@ -334,11 +353,11 @@ var deduction_tax = 0;
             var month = pay_date.getMonth() + 1;
             var year = pay_date.getFullYear();
             var pay_date_1 = year + '-' + (('' + month).length < 2 ? '0' : '') + month + '-' + (('' + date).length < 2 ? '0' : '') + date;
-            console.log('pay_date_1', pay_date_1);
+            // console.log('pay_date_1', pay_date_1);
             if(pay_date_1 != 'NaN-NaN-NaN'){
                 if (pay_date_1 <= pay_end_1) {
                     setTimeout(function() {
-                        console.log('pay_date_1', pay_date_1);
+                        // console.log('pay_date_1', pay_date_1);
                         if(pay_date_1 != 'NaN-NaN-NaN'){
                             $('#ytd_total_0').val(parseFloat(0).toFixed(2));
                             gross_total();
@@ -432,8 +451,6 @@ var deduction_tax = 0;
 
                 $('.taxes').each(function() {
                     var taxes_ids = $(this).data('id');
-
-                    console.log('taxes_ids', taxes_ids);
                     var taxes_values = $(this).data('value');
                     var tax_name = $(this).val();
 
@@ -457,7 +474,8 @@ var deduction_tax = 0;
                     setTimeout(function() {
                         $(".deduction_tax").val(parseFloat(period_deduction_tax).toFixed(2));
                         $(".ytd_deduction_tax").val(parseFloat(period_ytd_deduction_tax).toFixed(2));
-
+                        $(".deduction_period_tax").val(parseFloat(period_deduction_tax).toFixed(2));
+                       $(".ytd_deduction_period_tax").val(parseFloat(period_ytd_deduction_tax).toFixed(2));
                     }, 200);
                     time += 200;
                 });
@@ -478,7 +496,6 @@ var deduction_tax = 0;
             var ytd_gross_total = $("#ytd_gross_total").val();
             var deduction_tax = $(".deduction_tax").val();
             var ytd_deduction_tax = $(".ytd_deduction_tax").val();
-
             var total_net_pay = parseFloat(period_gross_total) - parseFloat(deduction_tax);
             var total_ytd_net_pay = parseFloat(ytd_gross_total) - parseFloat(ytd_deduction_tax);
             setTimeout(function() {

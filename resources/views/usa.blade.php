@@ -511,7 +511,7 @@
                         </div>
                         <div class="row my-3">
                             <div class="col-md-4 col-lg-3">
-                                <button class="add_deduction earnbtn" type="add_deduction" id="add_deduction" disabled><i class="fa fa-plus-circle pr-5" style="font-size:24px;color:green"></i>Add Deduction</button>
+                                <button class="add_deduction earnbtn" type="add_deduction" id="add_deduction"><i class="fa fa-plus-circle pr-5" style="font-size:24px;color:green"></i>Add Deduction</button>
                             </div>
 
                             <div class="col-md-1"></div>
@@ -658,7 +658,7 @@
 
 </script>
 
-<script>
+{{-- <script>
     $(document).ready(function() {
         $('#button1').click(function() {
             $("#usa_paystubx").validate({
@@ -778,4 +778,4 @@
         });
     });
 
-</script>
+</script> --}}
