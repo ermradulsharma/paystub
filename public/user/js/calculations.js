@@ -196,9 +196,9 @@ var deduction_tax = 0;
                     tax_deduction += parseFloat(this.value);
                 });
                 setTimeout(function() {
-                    var sum = parseFloat(tax_deduction) + parseFloat(deduction_period_tax);
+                    var sum = parseFloat(deduction_period_tax) + parseFloat(tax_deduction);
                     if(isNaN(sum)){
-                        sum = parseFloat(ytd_deduction_period_tax).toFixed(2);
+                        sum = parseFloat(deduction_period_tax).toFixed(2);
                     }
                     $(".deduction_tax").val(parseFloat(sum).toFixed(2));
                 }, 300);
