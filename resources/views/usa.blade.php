@@ -91,7 +91,7 @@
                                     <label for="state" class="lable">State <span class="redColor">*</span> </label>
                                     <div class="dropdown ">
                                         <select name="state" id="state" class="state dropdown11">
-                                            <option> --- Select --- </option>
+                                            <option value=""> --- Select --- </option>
                                             @foreach ($stateTaxes as $stateTax )
                                             <option value="{{ $stateTax->state }}">{{ $stateTax->state }}</option>
                                             @endforeach
@@ -122,7 +122,7 @@
                                 <div class="mt-4">
                                     <div class="input-group mmenu mb-3 text-center">
                                         <select name="basic_temp" class="form-control dropdown1 text-center bt_id small-font basicTemplate" style="margin-right:10px; font-size:18px;">
-                                            <option> --- Select Basic Templates --- </option>
+                                            <option value=""> --- Select Basic Templates --- </option>
                                             @foreach ($basicType as $data)
                                             @if($data->state == 'usa' && $data->type == 'basic')
                                             <option value="{{$data->title ?? ''}}" data-src="{{$data->images->file ?? ''}}">
@@ -144,7 +144,7 @@
                                 <div class="mt-4">
                                     <div class="input-group mmenu mb-3">
                                         <select name="advance_temp" class="form-control text-center dropdown1 at_id small-font advanceTemplate" style="margin-right:10px; font-size:18px;">
-                                            <option> --- Select Advance Template --- </option>
+                                            <option value=""> --- Select Advance Template --- </option>
                                             @foreach ($advanceType as $data)
                                             @if($data->state == 'usa' && $data->type == 'advance')
                                             <option value="{{$data->title ?? ''}}" data-src="{{$data->images->file ?? ''}}">
@@ -263,7 +263,7 @@
                                     <label for="emp_your_state" class="lable">SELECT YOUR STATE <span class="redColor">*</span> </label>
                                     <div class="dropdown ">
                                         <select name="emp_your_state" id="emp_your_state" class=" dropdown11 tax_rate">
-                                            <option>Choose your State</option>
+                                            <option value="">Choose your State</option>
                                             @foreach ($stateTaxes as $stateTax )
                                             <option value="{{ $stateTax->state }}" data-tax="{{ $stateTax->rate }}">{{ $stateTax->state }}</option>
                                             @endforeach
@@ -278,7 +278,7 @@
                                 <div>
                                     <label for="auto_cal" class="lable">AUTO CALCULATOR <span class="redColor">*</span> </label>
                                     <select name="auto_cal" id="auto_cal" class="dropdown11 auto_calculate">
-                                        <option> --- Select Calculator --- </option>
+                                        <option value=""> --- Select Calculator --- </option>
                                         <option value="on">ON</option>
                                         <option value="off">OFF</option>
                                     </select>
@@ -290,7 +290,7 @@
                                 <div>
                                     <label for="marital_status" class="lable">MARITAL STATUS <span class="redColor">*</span> </label>
                                     <select name="marital_status" id="marital_status" class="dropdown11 marital_status">
-                                        <option> --- Select Marital Status--- </option>
+                                        <option value=""> --- Select Marital Status--- </option>
                                         <option value="single">Single</option>
                                         <option value="married">Married</option>
                                         <option value="other">Prefered top not say</option>
@@ -303,7 +303,7 @@
                                 <div>
                                     <label for="time_period" class="lable">HOW DO YOU GET PAID <span class="redColor">*</span> </label>
                                     <select name="time_period" id="time_period" class="dropdown11 time_period">
-                                        <option> --- Select --- </option>
+                                        <option value=""> --- Select --- </option>
                                         <option value="weekly">Weekly</option>
                                         <option value="bi-weekly">Bi-Weekly</option>
                                         <option value="monthly">Monthly</option>
@@ -327,7 +327,7 @@
                                 <div>
                                     <label for="emp_type" class="lable">EMPLOYMENT TYPE <span class="redColor">*</span> </label>
                                     <select name="emp_type" id="emp_type" class=" dropdown11">
-                                        <option> --- Select Employment Type --- </option>
+                                        <option value=""> --- Select Employment Type --- </option>
                                         <option value="saab">Temporary</option>
                                         <option value="opel">Permanent</option>
                                     </select>
@@ -339,7 +339,7 @@
                                 <div>
                                     <label for="exemptions" class="lable">EXEMPTIONS <span class="redColor">*</span> </label>
                                     <select name="exemptions" id="exemptions" class=" dropdown11">
-                                        <option> --- Select Exemptions --- </option>
+                                        <option value=""> --- Select Exemptions --- </option>
                                         <option value="saab">0</option>
                                         <option value="opel">1</option>
                                         <option value="opel">2</option>
@@ -359,7 +359,7 @@
                                 <div>
                                     <label for="currency" class="lable" class="redColor">SELECT YOUR PREFERRED CURRENCY <span class="redColor">*</span> </label>
                                     <select name="currency" id="currency" class=" dropdown11">
-                                        <option> --- Select currency --- </option>
+                                        <option value=""> --- Select currency --- </option>
                                         <option value="$">Dollar $</option>
                                         <option value="€">Euro €</option>
                                         <option value="£">Pound £</option>
