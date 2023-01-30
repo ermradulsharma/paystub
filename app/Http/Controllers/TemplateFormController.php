@@ -45,15 +45,9 @@ class TemplateFormController extends Controller
         $data = [
             'date' => date('m/d/Y')
         ];
-          
     //    return view('allForms.pt-brown');
-         
-       
           $pdf = PDF::loadView('allForms.pt-brown', $data);
-         
           return $pdf->setPaper('A4')->stream('pt-brownPaystubx.pdf');
-    
-     
     }
 
     public function BasicPriorUsaPDF()
@@ -71,10 +65,6 @@ class TemplateFormController extends Controller
         $data = [
             'date' => date('m/d/Y')
         ];
-
-       
-       
-     
         // return view('allForms.paystub-check');
         $pdf = PDF::loadView('allForms.paystub-check', $data);
         return $pdf->setPaper('A4')->stream('paystub-check.pdf');
@@ -179,8 +169,12 @@ class TemplateFormController extends Controller
         return $pdf->stream('ukbasicsage.pdf');
     }
 
-    public function template(Request $request)
+    public function templates(Request $request)
     {
-       return $request;
+        $requestData = $request->all();
+
+        return view('allForms.'.$requestData['advance_temp'], compact('requestData'));
+        $pdf = PDF::loadView('allForms.'.$requestData['advance_temp'], $requestData);
+        return $pdf->stream($requestData['advance_temp'].''.'.pdf');
     }
 }

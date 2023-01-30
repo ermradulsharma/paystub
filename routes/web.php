@@ -24,7 +24,7 @@ Route::get('/', function () {
     return view('paystub');
 });
 
-Route::post('template', [TemplateFormController::class, 'template'])->name('template');
+Route::post('templates', [TemplateFormController::class, 'templates'])->name('templates');
 
 Route::get('auth/Login', [LoginController::class, 'loginWithGoogle'])->name('login.google');
 Route::any('auth/callback', [LoginController::class, 'callbackFromGoogle'])->name('callback');

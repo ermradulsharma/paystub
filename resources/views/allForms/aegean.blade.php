@@ -57,20 +57,6 @@
         height: 90px;
         overflow: hidden;
     }
-
-    /* .text1 {
-            margin-right: 69%;
-
-            font-size: 20px;
-        }
-
-        .text2 {
-            margin-left: 69%;
-            font-size: 20px;
-
-
-        } */
-
     table {
 
         font-family: arial, sans-serif;
@@ -129,18 +115,16 @@
 </head>
 
 <body>
-
+{{-- {{ $requestData['pay_start'] }} --}}
     <section class="invoiceborder">
         <table>
             <tr>
-                <th style="padding-left: 31px;"> Paystub Inc</th>
+                <th style="padding-left: 31px;"> {{ $requestData['cname'] }}</th>
                 <th></th>
                 <th></th>
                 <th></th>
                 <th></th>
             </tr>
-
-
             <tr>
                 <td class="address" style="padding-left: 31px;">
                     5528 Austin HWY <br>
@@ -170,9 +154,7 @@
                 <td></td>
                 <td></td>
                 <td>
-                    <p class="earning">
-                        pay period:may 15,2023 to may 25,2023 <br>
-                        pay date:may 26,2023
+                    <p class="earning"> pay period: {{ date('M d, Y', strtotime($requestData['pay_start'])) }} to {{ date('M d, Y', strtotime($requestData['pay_end'])) }} <br> pay date: {{ date('M d, Y', strtotime($requestData['pay_date'])) }}
                     </p>
                 </td>
 
@@ -353,7 +335,7 @@
 
         </section>
 
-      
+
 
 
         <div class="container" style=" margin-top:100px; width:100%; border:1px solid black;">
