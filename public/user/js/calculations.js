@@ -148,7 +148,7 @@ $(document).ready(function() {
         }, 300);
     });
 
-    $('.auto_calculate').change(function() {
+    /* $('.auto_calculate').change(function() {
         auto_calculate();
     });
 
@@ -159,7 +159,7 @@ $(document).ready(function() {
         }else{
             alert("Auto Calculation is" + auto_calculate);
         }
-    }
+    } */
 
     function tax_rate(){
         var tax_rate = $('.tax_rate').find(":selected").data('tax');
