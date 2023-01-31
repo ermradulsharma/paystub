@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Template;
 use Illuminate\Http\Request;
 use PDF;
 use File;
@@ -170,6 +171,7 @@ class TemplateFormController extends Controller
 
     public function templates(Request $request)
     {
+        $template = Template::where('title',$request->template)->first();
         $requestData = $request->all();
         if ($requestData['advance_temp']) {
             $requestObj = $requestData['advance_temp'];
@@ -177,7 +179,5 @@ class TemplateFormController extends Controller
             $requestObj = $requestData['basic_temp'];
         }
         return view('allForms.' . $requestObj, compact('requestData'));
-        // $pdf = PDF::loadView('allForms.'.$requestData['advance_temp'], $requestData);
-        // return $pdf->stream($requestData['advance_temp'].''.'.pdf');
     }
 }

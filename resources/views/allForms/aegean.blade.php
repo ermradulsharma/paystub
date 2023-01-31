@@ -1,6 +1,4 @@
-@php
-$petani = DB::table('templates')->pluck('color_code');
-@endphp
+
 <!DOCTYPE html>
 <html lang="en">
 
