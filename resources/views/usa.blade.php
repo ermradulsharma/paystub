@@ -16,7 +16,8 @@
         </div>
     </div>
 </div>
-
+<!-- Modal End -->
+<!-- Modal Start -->
 <div class="modal fade" id="tempViewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
         <div class="modal-content">
@@ -90,7 +91,7 @@
                                     <label for="state" class="lable">State <span class="redColor">*</span> </label>
                                     <div class="dropdown ">
                                         <select name="state" id="state" class="state dropdown11">
-                                            <option> --- Select --- </option>
+                                            <option value=""> --- Select --- </option>
                                             @foreach ($stateTaxes as $stateTax )
                                             <option value="{{ $stateTax->state }}">{{ $stateTax->state }}</option>
                                             @endforeach
@@ -121,7 +122,7 @@
                                 <div class="mt-4">
                                     <div class="input-group mmenu mb-3 text-center">
                                         <select name="basic_temp" class="form-control dropdown1 text-center bt_id small-font basicTemplate" style="margin-right:10px; font-size:18px;">
-                                            <option> --- Select Basic Templates --- </option>
+                                            <option value=""> --- Select Basic Templates --- </option>
                                             @foreach ($basicType as $data)
                                             @if($data->state == 'usa' && $data->type == 'basic')
                                             <option value="{{$data->title ?? ''}}" data-src="{{$data->images->file ?? ''}}">
@@ -143,7 +144,7 @@
                                 <div class="mt-4">
                                     <div class="input-group mmenu mb-3">
                                         <select name="advance_temp" class="form-control text-center dropdown1 at_id small-font advanceTemplate" style="margin-right:10px; font-size:18px;">
-                                            <option> --- Select Advance Template --- </option>
+                                            <option value=""> --- Select Advance Template --- </option>
                                             @foreach ($advanceType as $data)
                                             @if($data->state == 'usa' && $data->type == 'advance')
                                             <option value="{{$data->title ?? ''}}" data-src="{{$data->images->file ?? ''}}">
@@ -262,7 +263,7 @@
                                     <label for="emp_your_state" class="lable">SELECT YOUR STATE <span class="redColor">*</span> </label>
                                     <div class="dropdown ">
                                         <select name="emp_your_state" id="emp_your_state" class=" dropdown11 tax_rate">
-                                            <option>Choose your State</option>
+                                            <option value="">Choose your State</option>
                                             @foreach ($stateTaxes as $stateTax )
                                             <option value="{{ $stateTax->state }}" data-tax="{{ $stateTax->rate }}">{{ $stateTax->state }}</option>
                                             @endforeach
@@ -277,7 +278,7 @@
                                 <div>
                                     <label for="auto_cal" class="lable">AUTO CALCULATOR <span class="redColor">*</span> </label>
                                     <select name="auto_cal" id="auto_cal" class="dropdown11 auto_calculate">
-                                        <option> --- Select Calculator --- </option>
+                                        <option value=""> --- Select Calculator --- </option>
                                         <option value="on">ON</option>
                                         <option value="off">OFF</option>
                                     </select>
@@ -289,7 +290,7 @@
                                 <div>
                                     <label for="marital_status" class="lable">MARITAL STATUS <span class="redColor">*</span> </label>
                                     <select name="marital_status" id="marital_status" class="dropdown11 marital_status">
-                                        <option> --- Select Marital Status--- </option>
+                                        <option value=""> --- Select Marital Status--- </option>
                                         <option value="single">Single</option>
                                         <option value="married">Married</option>
                                         <option value="other">Prefered top not say</option>
@@ -302,7 +303,7 @@
                                 <div>
                                     <label for="time_period" class="lable">HOW DO YOU GET PAID <span class="redColor">*</span> </label>
                                     <select name="time_period" id="time_period" class="dropdown11 time_period">
-                                        <option> --- Select --- </option>
+                                        <option value=""> --- Select --- </option>
                                         <option value="weekly">Weekly</option>
                                         <option value="bi-weekly">Bi-Weekly</option>
                                         <option value="monthly">Monthly</option>
@@ -326,7 +327,7 @@
                                 <div>
                                     <label for="emp_type" class="lable">EMPLOYMENT TYPE <span class="redColor">*</span> </label>
                                     <select name="emp_type" id="emp_type" class=" dropdown11">
-                                        <option> --- Select Employment Type --- </option>
+                                        <option value=""> --- Select Employment Type --- </option>
                                         <option value="saab">Temporary</option>
                                         <option value="opel">Permanent</option>
                                     </select>
@@ -338,7 +339,7 @@
                                 <div>
                                     <label for="exemptions" class="lable">EXEMPTIONS <span class="redColor">*</span> </label>
                                     <select name="exemptions" id="exemptions" class=" dropdown11">
-                                        <option> --- Select Exemptions --- </option>
+                                        <option value=""> --- Select Exemptions --- </option>
                                         <option value="saab">0</option>
                                         <option value="opel">1</option>
                                         <option value="opel">2</option>
@@ -357,12 +358,12 @@
                             <div class="col-md-3 mt-4">
                                 <div>
                                     <label for="currency" class="lable" class="redColor">SELECT YOUR PREFERRED CURRENCY <span class="redColor">*</span> </label>
-                                    <select name="exemptions" id="exemptions" class=" dropdown11">
-                                        <option> --- Select currency --- </option>
-                                        <option value="saab">Dollar $</option>
-                                        <option value="opel">Euro €</option>
-                                        <option value="opel">Pound £</option>
-                                        <option value="opel">Yen ¥</option>
+                                    <select name="currency" id="currency" class=" dropdown11">
+                                        <option value=""> --- Select currency --- </option>
+                                        <option value="$">Dollar $</option>
+                                        <option value="€">Euro €</option>
+                                        <option value="£">Pound £</option>
+                                        <option value="¥">Yen ¥</option>
                                     </select>
                                 </div>
 
@@ -439,51 +440,51 @@
                         <div class="row mb-3 mt-">
                             <div class=" col-lg-2 col-md-2 margin-bottom">
                                 <div>
-                                    <input class="earnbtn text-center" type="text" name="earning_0" value="Regular" id="earning_0" data-id="0">
+                                    <input class="earnbtn text-center" type="text" name="earning[]" value="Regular" id="earning_0" data-id="0">
                                 </div>
 
                             </div>
 
                             <div class=" col-lg-2 col-md-2 margin-bottom ">
                                 <div>
-                                    <input type="text" name="rate_0" class="earnbtn text-center calculation rate" value="" id="rate_0" data-id="0">
+                                    <input type="text" name="rate[]" class="earnbtn text-center calculation rate" value="" id="rate_0" data-id="0">
                                 </div>
 
                             </div>
 
                             <div class=" col-lg-2  col-md-2 margin-bottom ">
                                 <div>
-                                    <input type="text" name="hours_0" class="earnbtn text-center hours calculation" value="" id="hours_0" data-id="0">
+                                    <input type="text" name="hours[]" class="earnbtn text-center hours calculation" value="" id="hours_0" data-id="0">
                                 </div>
 
                             </div>
 
                             <div class=" col-lg-2  col-md-2 margin-bottom">
                                 <div>
-                                    <input type="text" name="total_0" class="earnbtn text-center" value="" id="total_0" data-id="0">
+                                    <input type="text" name="total[]" class="earnbtn text-center" value="" id="total_0" data-id="0">
                                 </div>
 
                             </div>
 
                             <div class=" col-lg-2 col-md-2 margin-bottom">
                                 <div>
-                                    <input type="text" name="period_0" class="earnbtn text-center gross_total" value="" id="period_0" data-id="0">
+                                    <input type="text" name="period[]" class="earnbtn text-center gross_total" value="" id="period_0" data-id="0">
                                 </div>
 
                             </div>
 
                             <div class=" col-lg-2 col-md-2 margin-bottom">
                                 <div>
-                                    <input type="text" name="ytd_total_0" class="earnbtn text-center ytd_total" value="" id="ytd_total_0" data-id="0">
+                                    <input type="text" name="ytd_total[]" class="earnbtn text-center ytd_total" value="" id="ytd_total_0" data-id="0">
                                 </div>
                             </div>
 
                         </div>
                         <div class=" col-lg-2 col-md-2 margin-bottom">
-                            <input type="text" name="" class="earnbtn text-center period_gross_total" value="" id="period_gross_total" hidden>
+                            <input type="text" name="period_gross_total" class="earnbtn text-center period_gross_total" value="" id="period_gross_total" hidden>
                         </div>
                         <div class=" col-lg-2 col-md-2 margin-bottom">
-                            <input type="text" name="" class="earnbtn text-center ytd_gross_total" value="" id="ytd_gross_total" hidden>
+                            <input type="text" name="ytd_gross_total" class="earnbtn text-center ytd_gross_total" value="" id="ytd_gross_total" hidden>
                         </div>
                         <div class="field_wrapper"> </div>
 
@@ -503,16 +504,16 @@
                         <div class="row mb-3 mt-4">
                             <div class="col-md-4 col-lg-3">
                                 <img src="{{asset('images/lock.png')}}" class="earnbtn2">
-                                <input class="earnbtn text-center taxes" data-id="{{$key}}" data-value="{{ $item->price }}" value="{{$item->title}}">
+                                <input class="earnbtn text-center taxes" name="taxes[]" data-id="{{$key}}" data-value="{{ $item->price }}" value="{{$item->title}}">
                             </div>
                             <div class="col-md-1 col-lg-1"></div>
                             <div class="col-md-2 col-lg-3"></div>
                             <div class="col-md-1 col-lg-1"></div>
                             <div class="col-md-2 col-lg-2">
-                                <input type="text" name="taxes_{{$key}}" class="earnbtn text-center" id="taxes_{{$key}}" value="" />
+                                <input type="text" name="taxes_rate[]" class="earnbtn text-center" id="taxes_{{$key}}" value="" />
                             </div>
                             <div class="col-md-2 col-lg-2">
-                                <input type="text" name="taxes_ytd_{{$key}}" class="earnbtn text-center" id="taxes_ytd_{{$key}}" value="" />
+                                <input type="text" name="taxes_ytd[]" class="earnbtn text-center" id="taxes_ytd_{{$key}}" value="" />
                             </div>
                         </div>
                         @endforeach
@@ -558,11 +559,11 @@
                             <div class="col-md-1"></div>
                             <div class="col-md-2">
                                 <p class="p-0 m-0 text-center" style="font-family: serif;">Net Pay</p>
-                                <input class="earnbtn text-center total_net_pay" value="">
+                                <input name="total_net_pay" class="earnbtn text-center total_net_pay" value="">
                             </div>
                             <div class="col-md-2">
                                 <p class="p-0 m-0 text-center" style="font-family: serif;">YTD Net pay</p>
-                                <input class="earnbtn text-center total_ytd_net_pay" value="">
+                                <input name="total_ytd_net_pay" class="earnbtn text-center total_ytd_net_pay" value="">
                             </div>
                         </div>
                     </div>

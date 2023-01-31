@@ -45,9 +45,9 @@ class TemplateFormController extends Controller
         $data = [
             'date' => date('m/d/Y')
         ];
-    //    return view('allForms.pt-brown');
-          $pdf = PDF::loadView('allForms.pt-brown', $data);
-          return $pdf->setPaper('A4')->stream('pt-brownPaystubx.pdf');
+        //    return view('allForms.pt-brown');
+        $pdf = PDF::loadView('allForms.pt-brown', $data);
+        return $pdf->setPaper('A4')->stream('pt-brownPaystubx.pdf');
     }
 
     public function BasicPriorUsaPDF()
@@ -87,7 +87,6 @@ class TemplateFormController extends Controller
         // return view('allForms.htmlTemp', $data);
         return $options = PDF::getOptions();
         return PDF::loadView('allForms.htmlTemp')->stream('W2Paystubx.pdf');
-
     }
     public function advanceCeruleanUsa()
     {
@@ -172,9 +171,13 @@ class TemplateFormController extends Controller
     public function templates(Request $request)
     {
         $requestData = $request->all();
-
-        return view('allForms.'.$requestData['advance_temp'], compact('requestData'));
-        $pdf = PDF::loadView('allForms.'.$requestData['advance_temp'], $requestData);
-        return $pdf->stream($requestData['advance_temp'].''.'.pdf');
+        if ($requestData['advance_temp']) {
+            $requestObj = $requestData['advance_temp'];
+        } else {
+            $requestObj = $requestData['basic_temp'];
+        }
+        return view('allForms.' . $requestObj, compact('requestData'));
+        // $pdf = PDF::loadView('allForms.'.$requestData['advance_temp'], $requestData);
+        // return $pdf->stream($requestData['advance_temp'].''.'.pdf');
     }
 }

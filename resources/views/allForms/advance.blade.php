@@ -217,9 +217,7 @@
         <section class="section_2">
             <table>
                 <tr>
-                    <th style="
-    font-weight: 100;
-">Pay One Thousand Six Hundred Seventy-six And One Cents</th>
+                    <th style="font-weight: 100;">Pay One Thousand Six Hundred Seventy-six And One Cents</th>
                     <th class="earning">$ 1,676.01</th>
                 </tr>
                 <tr>
@@ -238,8 +236,7 @@
             <table>
                 <tr>
                     <td>Pay to the order of</td>
-                    <td>
-                        Gary Stingley</td>
+                    <td>Gary Stingley</td>
                 </tr>
                 <tr>
                     <td></td>
@@ -257,7 +254,7 @@
 
 
             <!-- <div class="row">
-               
+
                 <div class="col">
 
                     <table>
@@ -379,12 +376,12 @@
                         2.307.69
                     </td>
                     <td class="data">
-                      
+
                             Fica - Medicare <br>
                             Fica - Social Security <br>
                             Federal Tax <br>
                             State Tax
-                   
+
                     </td>
                     <td>
 
