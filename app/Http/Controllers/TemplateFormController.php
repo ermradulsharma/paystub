@@ -13,8 +13,8 @@ class TemplateFormController extends Controller
         $data = [
             'date' => date('m/d/Y')
         ];
-        // return view('allForms.Temp1', $data);
-        $pdf = PDF::loadView('allForms.Temp1', $data);
+        // return view('allForms.paystubx_basic', $data);
+        $pdf = PDF::loadView('allForms.paystubx_basic', $data);
         return $pdf->stream('BasicPaystubx.pdf');
     }
 
@@ -143,8 +143,8 @@ class TemplateFormController extends Controller
         $data = [
             'date' => date('m/d/Y')
         ];
-        $pdf = PDF::loadView('allForms.paystub_blue', $data);
-        //    return view('allForms.paystub_blue');
+        $pdf = PDF::loadView('allForms.paystubx_blue', $data);
+        //    return view('allForms.paystubx_blue');
         return $pdf->stream('basic_temp_blue.pdf');
     }
 
