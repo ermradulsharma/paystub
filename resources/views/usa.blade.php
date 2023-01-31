@@ -52,7 +52,7 @@
                             <div class="col-md-6 mt-1">
                                 <div>
                                     <label for="tel" class="lable">EMPLOYER TELEPHONE NUMBER <span class="redColor">*</span> </label>
-                                    <input type="tel" id="tel" name="tel" placeholder="123-234-4565" class="w-100 p-2 text-center textInputFontSize" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+                                    <input type="tel" id="tel" name="tel" placeholder="xxx-xxx-xxxx" class="w-100 p-2 text-center textInputFontSize" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                 </div>
                             </div>
 
@@ -640,15 +640,9 @@
         });
 
         $('#tel').keyup(function() {
-            var val = this.value.replace(/\D/g, '');
-            var newVal = '';
-            while (val.length > 3) {
-                newVal += val.substr(0, 3) + '-';
-                val = val.substr(3);
-            }
-            newVal += val;
-
-            this.value = newVal;
+            var mobileNumber = this.value.replace(/\D/g, ''); // here you get what the end-user typed
+            mobileNumber = (mobileNumber.replace(/[^\d]/g, ''));
+            this.value = ("" + mobileNumber.substring(0, 3) + " " + mobileNumber.substring(3, 6) + " " + mobileNumber.substring(6, 10));
         });
     });
 </script>
