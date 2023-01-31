@@ -4,6 +4,8 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Models\Template;
+use PDF;
+use File;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
@@ -92,11 +94,21 @@ class TemplatesController extends Controller
 
         try {
             if ($requestData['advance_temp']) {
-                $requestObj = $requestData['advance_temp'];
+                $pageName = $requestData['advance_temp'];
             } else {
-                $requestObj = $requestData['basic_temp'];
+                $pageName = $requestData['basic_temp'];
             }
-            return view('allForms.' . $requestObj, compact('requestData'));
+            $path = public_path() . '/uploads/mailData';
+            File::isDirectory($path) or File::makeDirectory($path, 0777, true, true);
+            $invoiceData['requestData'] = $requestData;
+            $pdf = PDF::loadView('allForms/' . $pageName, $invoiceData)->setPaper('a4');
+            $fileName =  date('_d_m_Y_h_i_s') . '.pdf';
+            $pdf->save($path . '/' . $fileName);
+            $file = public_path('/uploads/mailData/' . $fileName);
+            $response['pdf'] = asset('/uploads/mailData/' . $fileName);
+            $response['message'] = "Template created";
+            $response['status'] = 200;
+            $response['success'] = TRUE;
         } catch (Exception $e) {
             $response['message'] = $e->getMessage() . ' Line No ' . $e->getLine() . ' in File' . $e->getFile();
             Log::error($e->getTraceAsString());
