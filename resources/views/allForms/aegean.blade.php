@@ -1,6 +1,4 @@
-@php
-$petani = DB::table('templates')->pluck('color_code');
-@endphp
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -98,6 +96,7 @@ $petani = DB::table('templates')->pluck('color_code');
 
 <body>
     <section class="invoiceborder">
+
         <table>
             <tr>
                 <th style="padding-left: 31px;"> {{ $requestData['cname'] }}</th>
