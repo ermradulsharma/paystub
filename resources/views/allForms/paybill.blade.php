@@ -43,8 +43,11 @@
     .invoiceborder {
         padding-top: 20px;
         padding-bottom: 20px;
-       
-
+        background: url('{{asset('images/img_check.png')}}') !important;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100%;
+        width: 100%;
     }
 
     .section_2 {
@@ -52,9 +55,8 @@
         background: #5AA6BA;
         color: white;
         height: 90px;
-        overflow: hidden;   
+        overflow: hidden;
     }
-
     table {
 
         font-family: arial, sans-serif;
@@ -113,12 +115,11 @@
 </head>
 
 <body>
-    {{-- {{ $requestData['pay_start'] }} --}}
+    <img src="{{public_path('images/img_check.jpg')}}" style="width:100%;position: absolute;z-index: -111;bottom:0;">
     <section class="invoiceborder">
-
         <table>
             <tr>
-                <th style="padding-left: 31px;"> {{ $requestData['cname'] }}</th>
+                <th style="padding-left: 31px;"> qwertyui</th>
                 <th></th>
                 <th></th>
                 <th></th>
@@ -153,9 +154,7 @@
                 <td></td>
                 <td></td>
                 <td>
-                    <p class="earning"> pay period: {{ date('M d, Y', strtotime($requestData['pay_start'])) }} to
-                        {{ date('M d, Y', strtotime($requestData['pay_end'])) }} <br> pay date:
-                        {{ date('M d, Y', strtotime($requestData['pay_date'])) }}
+                    <p class="earning"> pay period: Jan 01, 2021 toJan 07, 2021 <br> pay date: Jan 31, 2021
                     </p>
                 </td>
 
@@ -330,9 +329,9 @@
                     </tr>
                 </tfoot>
             </table>
-            <p>
-                Your Taxes and deductions for this period are $5454.54
-            </p>
+  <p>
+            Your Taxes and deductions for this period are $5454.54
+        </p>
 
         </section>
 
@@ -361,7 +360,7 @@
                     <td>Deposite to the Account off</td>
                     <td style="text-align: right;">Account Number</td>
                     <td style="text-align: right;">Transit ABA </td>
-                    <td style="text-align: right;">Amount </td>
+                    <td style="text-align: right;">Amount   </td>
                 </tr>
 
                 <tr>

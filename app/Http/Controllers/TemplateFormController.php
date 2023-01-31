@@ -94,9 +94,9 @@ class TemplateFormController extends Controller
         $data = [
             'date' => date('m/d/Y')
         ];
-        //   return view('allForms.paybill');
+           //return view('allForms.paybill');
         $pdf = PDF::loadView('allForms.paybill', $data);
-        return $pdf->stream('W2Paystubx.pdf');
+        return $pdf->stream('paybill.pdf');
     }
 
     public function advanceDistrictUsa()
