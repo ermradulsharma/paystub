@@ -24,6 +24,7 @@ Route::group(['namespace' => 'Api', 'middleware' => ['\App\Http\Middleware\LogAf
     Route::get('get-templates', [TemplatesController::class, 'getTemplate']);
     Route::get('get-deduction', [DeductionController::class, 'getDeduction']);
     Route::get('get-state-taxes', [DeductionController::class, 'getStateTaxes']);
+    Route::post('template-preview', [TemplatesController::class, 'templatesPreview']);
     Route::group(['middleware' => ['auth:api']], function () {
     });
 });

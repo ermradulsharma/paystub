@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Template;
 use Illuminate\Http\Request;
 use PDF;
 use File;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class TemplateFormController extends Controller
 {
@@ -93,9 +96,9 @@ class TemplateFormController extends Controller
         $data = [
             'date' => date('m/d/Y')
         ];
-        //   return view('allForms.paybill');
+           //return view('allForms.paybill');
         $pdf = PDF::loadView('allForms.paybill', $data);
-        return $pdf->stream('W2Paystubx.pdf');
+        return $pdf->stream('paybill.pdf');
     }
 
     public function advanceDistrictUsa()
@@ -170,6 +173,7 @@ class TemplateFormController extends Controller
 
     public function templates(Request $request)
     {
+        $template = Template::where('title',$request->template)->first();
         $requestData = $request->all();
         if ($requestData['advance_temp']) {
             $requestObj = $requestData['advance_temp'];
@@ -177,7 +181,40 @@ class TemplateFormController extends Controller
             $requestObj = $requestData['basic_temp'];
         }
         return view('allForms.' . $requestObj, compact('requestData'));
-        // $pdf = PDF::loadView('allForms.'.$requestData['advance_temp'], $requestData);
-        // return $pdf->stream($requestData['advance_temp'].''.'.pdf');
+    }
+
+    public function sendPDF(Request $request)
+    {
+        $requestData = $request->all();
+        if ($requestData['advance_temp']) {
+            $pageName = $requestData['advance_temp'];
+        } else {
+            $pageName = $requestData['basic_temp'];
+        }
+
+        $path = public_path() . '/uploads/mailData';
+        File::isDirectory($path) or File::makeDirectory($path, 0777, true, true);
+        $invoiceData['requestData'] = $requestData;
+        $pdf = PDF::loadView('allForms/' . $pageName, $invoiceData)->setPaper('a4');
+        $fileName =  date('_d_m_Y_h_i_s') . '.pdf';
+        $pdf->save($path . '/' . $fileName);
+        $maildata = [
+            'email' => Auth::user()->email,
+            'title' => ''
+        ];
+        $moreData = [];
+        $file = public_path('/uploads/mailData/' . $fileName);
+        try {
+            Mail::send('mail.invoice_mail', $moreData, function ($message) use ($maildata, $file) {
+                $message->to($maildata['email']);
+                $message->subject($maildata['title']);
+                $message->attach($file);
+            });
+        } catch (\Exception $e) {
+            $response['message'] = $e->getMessage() . ' Line No ' . $e->getLine() . ' in File' . $e->getFile();
+        }
+        $response['pdf'] = asset('/uploads/mailData/' . $fileName);
+        $response['message'] = "Mail send successfully.";
+        return response()->json($response, 200);
     }
 }
