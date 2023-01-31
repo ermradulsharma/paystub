@@ -126,7 +126,7 @@
                                             @foreach ($basicType as $data)
                                             @if($data->state == 'usa' && $data->type == 'basic')
                                             <option value="{{$data->title ?? ''}}" data-src="{{$data->images->file ?? ''}}">
-                                                {{$data->title}}
+                                                {{$data->name ?? ""}}
                                             </option>
                                             @endif
                                             @endforeach
@@ -148,7 +148,7 @@
                                             @foreach ($advanceType as $data)
                                             @if($data->state == 'usa' && $data->type == 'advance')
                                             <option value="{{$data->title ?? ''}}" data-src="{{$data->images->file ?? ''}}">
-                                                {{$data->title ?? ''}}
+                                                {{$data->name ?? ""}}
                                             </option>
                                             @endif
                                             @endforeach
