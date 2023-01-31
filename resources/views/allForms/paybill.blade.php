@@ -45,25 +45,31 @@
         padding-bottom: 20px;
         
     }
+    .bg-img2 {
+        position: relative;
+    }
     .bg-img {
         position: relative;
     }
     .bg-img:before {
-        background: url("{{ asset('assets/img/check.png') }}")  !important;
+        background: url('http://44.202.105.74/images/check.png')  !important;
         background-repeat: no-repeat !important;
         background-size: contain !important;
         height: 100%;
-        width: 100%;    
+        width:700px;   
         content:"";
-        top: 200px;
+        top:0px;
         left: 0px;
-        right: 0;
+        right: 0px;
         position:absolute;
+        z-index: -1;
 
     }
     .container {
     position: absolute;
-    bottom: 0;
+    top:30px;
+    z-index: 3;
+    height:300px;
 }
 
     .section_2 {
@@ -131,7 +137,7 @@
 </head>
 
 <body>
-    <main class="bg-img">
+    <main class="bg-img2">
     <section class="invoiceborder">
         <table>
             <tr>
@@ -346,48 +352,50 @@
                 </tfoot>
             </table>
   <p>
-            Your Taxes and deductions for this period are $5454.54
+    Your Taxes and deductions for this period are $5454.54
         </p>
 
         </section>
 
 
 
-
-        <div class="container" style=" margin-top:100px; width:100%; border:1px solid black;">
+<section class="bg-img">
+<div class="container" style=" margin-top:0px; width:100%;">
             <div class="row" style="display: flex;justify-content: space-between;padding: 0px 14px;">
-                <div style="width: 50%;float:left;">
+                <div style="width: 50%;float:left; position:relative;10px; bottom:20px; left:15px;">
                     <h6 style="font-size: 17px; margin-bottom: 10px;">Paystubs Company, INC</h6>
                     <p style="font-size: 13px; margin: 0;">55 NORTHERN BLVD</p>
                     <P style="font-size: 13px; margin: 0;">SUIT 206</P>
                     <P style="font-size: 13px; margin: 0;">GREAT NECK, FAIRFIELD 45014</P>
                 </div>
                 <div style="width: 50%;float:right;text-align:right;">
-                    <h6 style="font-size: 14px; margin-bottom: 0;">Advice Number: <span>00000422598</span>
+                    <h6 style="font-size: 14px; margin-bottom: 0; position:relative; bottom:5px; right:10px;"> <span>00000422598</span>
                     </h6>
-                    <p>
-                        <span style="font-weight:800;">Pay Day:</span> 04/04/20
+                    <p style=" position:relative; right:10px;">
+                        <span style="font-weight:800;"></span> 04/04/20
                     </p>
                 </div>
             </div>
             <table style="width: 100%; margin: 140px 0 0 auto;">
-                <tr style="border-bottom: 1px solid;">
+                <tr style="">
                     <td colspan="4"></td>
-                    <td>Deposite to the Account off</td>
-                    <td style="text-align: right;">Account Number</td>
-                    <td style="text-align: right;">Transit ABA </td>
-                    <td style="text-align: right;">Amount   </td>
+                    <td></td>
+                    <td style="text-align: right;"></td>
+                    <td style="text-align: right;"> </td>
+                    <td style="text-align: right;">   </td>
                 </tr>
 
                 <tr>
                     <td colspan="4"></td>
-                    <td>Erza Moore</td>
-                    <td style="text-align: right;">XX567</td>
-                    <td style="text-align: right;">XXX567</td>
-                    <td style="text-align: right;"></td>
+                    <td style="text-align:center;margin-right:5px;">Erza Moore</td>
+                    <td style="text-align: right;">xxxxxxx</td>
+                    <td style="text-align: right;">xxxxx</td>
+                    <td style="text-align:center;">xxxx</td>
                 </tr>
             </table>
         </div>
+</section>
+        
     </section>
 </main>
 </body>
