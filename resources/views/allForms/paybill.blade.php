@@ -43,12 +43,28 @@
     .invoiceborder {
         padding-top: 20px;
         padding-bottom: 20px;
-        background: url('{{asset('images/img_check.png')}}') !important;
-        background-repeat: no-repeat;
-        background-size: cover;
-        height: 100%;
-        width: 100%;
+        
     }
+    .bg-img {
+        position: relative;
+    }
+    .bg-img:before {
+        background: url("{{ asset('assets/img/check.png') }}")  !important;
+        background-repeat: no-repeat !important;
+        background-size: contain !important;
+        height: 100%;
+        width: 100%;    
+        content:"";
+        top: 200px;
+        left: 0px;
+        right: 0;
+        position:absolute;
+
+    }
+    .container {
+    position: absolute;
+    bottom: 0;
+}
 
     .section_2 {
 
@@ -115,7 +131,7 @@
 </head>
 
 <body>
-    <img src="{{public_path('images/img_check.jpg')}}" style="width:100%;position: absolute;z-index: -111;bottom:0;">
+    <main class="bg-img">
     <section class="invoiceborder">
         <table>
             <tr>
@@ -373,6 +389,7 @@
             </table>
         </div>
     </section>
+</main>
 </body>
 
 </html>
