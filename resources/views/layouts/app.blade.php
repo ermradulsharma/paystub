@@ -249,7 +249,6 @@
                     $('.registerBtn').addClass('d-none');
                     $('.sendMailButton').removeClass('d-none');
                     $('.sendMailButton').addClass('d-block');
-                    sendPdf();
                 },
                 error: function(err) {
                     error = err.responseJSON;
@@ -267,6 +266,51 @@
 
         function closeNav() {
             document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+    <script>
+        $('.viewTempTemplate').click(function() {
+            viewPDF();
+        });
+
+
+        $('.sendMailButton').click(function() {
+            sendPdf();
+        });
+
+        function viewPDF() {
+            $.ajax({
+                url: "{{ route('templates') }}",
+                type: 'post',
+                data: $('#usa_paystubx').serialize(),
+                success: function(response) {
+                    console.log('response ', response);
+                    $('#tempView').html(response);
+                    $('#tempViewModal').modal('show');
+                },
+                error: function(err) {
+                    data = err.responseJSON;
+                    console.log('err ', data);
+                }
+            });
+            return false;
+        }
+
+        function sendPdf() {
+            $.ajax({
+                url: "{{ route('sendPDF') }}",
+                type: 'post',
+                data: $('#usa_paystubx').serialize(),
+                success: function(response) {
+                    console.log('response ', response);
+                    toastr.success(response.message);
+                },
+                error: function(err) {
+                    error = err.responseJSON;
+                    toastr.error(error.message);
+                }
+            });
+            return false;
         }
     </script>
     @yield('script')
