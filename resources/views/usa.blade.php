@@ -409,30 +409,30 @@
                             <div class="col-md-3 mt-4">
                                 <p class="text-center mb-0" style="font-size:18px;">How do you get paid <span class="redColor">*</span> <span> </p>
                                 <div class="text-center mt-2  d-flex justify-content-center">
-                                    <button class="hourbtn date_select">HOURLY</button> <button class="salrybtn">SALARY</button>
+                                    <button type="button" class="hourbtn date_select">HOURLY</button> <button type="button" class="salrybtn">SALARY</button>
                                 </div>
                             </div>
                         </div>
 
                         <div class="row ">
                             <div class=" col-lg-2 col-md-2 margin-bottom ">
-                                <button class="statementbtn">EARNING</button>
+                                <button type="button" class="statementbtn">EARNING</button>
                             </div>
                             <div class=" col-lg-2  col-md-2 margin-bottom ">
-                                <button class="statementbtn">RATE</button>
+                                <button type="button" class="statementbtn">RATE</button>
                             </div>
                             <div class=" col-lg-2  col-md-2 margin-bottom ">
-                                <button class="statementbtn">HOURS</button>
+                                <button type="button" class="statementbtn">HOURS</button>
                             </div>
                             <div class=" col-lg-2 col-md-2 margin-bottom ">
-                                <button class="statementbtn">TOTAL</button>
+                                <button type="button" class="statementbtn">TOTAL</button>
                             </div>
                             <div class=" col-lg-2  col-md-2 margin-bottom">
-                                <button class="statementbtn">THIS PERIOD</button>
+                                <button type="button" class="statementbtn">THIS PERIOD</button>
                                 <p class="p-0 m-0 text-center" style="font-family: serif;font-size: 14px;"> Total Gross </p>
                             </div>
                             <div class=" col-lg-2  col-md-2 margin-bottom ">
-                                <button class="statementbtn">YTD TOTAL</button>
+                                <button type="button" class="statementbtn">YTD TOTAL</button>
                                 <p class="p-0 m-0 text-center" style="font-family: serif;font-size:14px;">YTD Total Gross</p>
                             </div>
                         </div>
@@ -490,13 +490,13 @@
 
                         <div class="row mb-3">
                             <div class=" col-lg-2  col-md-4 mt-2 margin-bottom">
-                                <button class="add_button earnbtn" type="add_earning" id="add_earning"><i class="fa fa-plus-circle pr-2" style="font-size:24px;color:green"></i>Add Earning</button>
+                                <button type="button" class="add_button earnbtn" type="add_earning" id="add_earning"><i class="fa fa-plus-circle pr-2" style="font-size:24px;color:green"></i>Add Earning</button>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-md-3">
-                                <button class="createbtn ">DEDUCTIONS</button>
+                                <button type="button" class="createbtn ">DEDUCTIONS</button>
                             </div>
                         </div>
 
@@ -527,7 +527,7 @@
                         </div>
                         <div class="row my-3">
                             <div class="col-md-4 col-lg-3">
-                                <button class="add_deduction earnbtn" type="add_deduction" id="add_deduction"><i class="fa fa-plus-circle pr-5" style="font-size:24px;color:green"></i>Add Deduction</button>
+                                <button type="button" class="add_deduction earnbtn" type="add_deduction" id="add_deduction"><i class="fa fa-plus-circle pr-5" style="font-size:24px;color:green"></i>Add Deduction</button>
                             </div>
 
                             <div class="col-md-1"></div>
@@ -552,7 +552,7 @@
                         </div>
                         <div class="row mb-3 mt-5">
                             <div class="col-md-4 col-lg-3">
-                                <button class="netpaybtn net_pay">Net Pay</button>
+                                <button type="button" class="netpaybtn net_pay">Net Pay</button>
                             </div>
                             <div class="col-md-1"></div>
                             <div class="col-md-2 col-lg-3"></div>
@@ -613,10 +613,11 @@
         <div>
             <div class="mb-4 d-flex" style="justify-content: space-between; align-items: center;">
                 <div class="text-left mt-1">
-                    <button class="previewbtn text-capitalize" type="button" id="button1">Preview Your Paystub <i class="fa fa-eye" style="font-size: 30px; margin-left: 7px;"></i></button>
+                    <button class="previewbtn text-capitalize viewTempTemplate" type="button" id="button1">Preview Your Paystub <i class="fa fa-eye" style="font-size: 30px; margin-left: 7px;"></i></button>
                 </div>
                 <div class="text-right mt-1" style="margin-right:30px;">
-                    <button class="emailbtn text-capitalize" data-toggle="modal" data-target="#myModal"> <i class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL PAYSTUB <i class="fa fa-download ml-4" style="font-size:24px"></i></button>
+                    <button type="button" class="emailbtn text-capitalize registerBtn {{Auth::user() ? 'd-none' : 'd-block'}}"> <i class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL PAYSTUB <i class="fa fa-download ml-4" style="font-size:24px"></i></button>
+                    <button type="button" class="emailbtn text-capitalize sendMailButton {{Auth::user() ? 'd-block' : 'd-none'}}"> <i class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL PAYSTUB <i class="fa fa-download ml-4" style="font-size:24px"></i></button>
                 </div>
             </div>
         </div>
@@ -625,8 +626,8 @@
 </div>
 @endsection
 @section('script')
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" crossorigin="anonymous"></script>
 <script src="{{ asset('user') }}/js/calculations.js"></script>
 <script>
@@ -650,7 +651,6 @@
             this.value = newVal;
         });
     });
-
 </script>
 <script>
     $(document).ready(function() {
@@ -671,28 +671,6 @@
             }
         });
     });
-
 </script>
 
-<script>
-    $(document).ready(function() {
-        $('#button1').click(function() {
-            $.ajax({
-                url: "{{ route('templates') }}",
-                type: 'post',
-                data: $('#usa_paystubx').serialize(),
-                success: function(response) {
-                    console.log('response ', response);
-                    $('#tempView').html(response);
-                    $('#tempViewModal').modal('show');
-                },
-                error: function(err) {
-                    data = err.responseJSON;
-                    console.log('err ', data);
-                }
-            });
-            return false;
-        });
-    });
-
-</script>
+@endsection

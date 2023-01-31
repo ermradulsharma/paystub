@@ -1,7 +1,7 @@
 <?php
-  
+
 namespace App\Http\Controllers;
-  
+
 use Illuminate\Http\Request;
 use Laravel\Socialite\Facades\Socialite;
 use Exception;
@@ -10,6 +10,7 @@ use App\Models\verifiedEmail;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Validator;
 
 class LoginController extends Controller
 {
@@ -24,7 +25,7 @@ class LoginController extends Controller
     {
         return Socialite::driver('google')->redirect();
     }
-          
+
     /**
      * Create a new controller instance.
      *
@@ -33,35 +34,33 @@ class LoginController extends Controller
     public function callbackFromGoogle()
     {
         try {
-        
+
             $user = Socialite::driver('google')->user();
-         
+
             $finduser = User::where('google_id', $user->id)->first();
-         
-            if($finduser){
-         
+
+            if ($finduser) {
+
                 Auth::login($finduser);
-        
+
                 return redirect()->intended('userDashboard');
-         
-            }else{
-                $newUser = User::updateOrCreate(['email' => $user->email],[
-                        'name' => $user->name,
-                        'google_id'=> $user->id,
-                        'password' => encrypt('123456dummy')
-                    ]);
-         
+            } else {
+                $newUser = User::updateOrCreate(['email' => $user->email], [
+                    'name' => $user->name,
+                    'google_id' => $user->id,
+                    'password' => encrypt('123456dummy')
+                ]);
+
                 Auth::login($newUser);
-        
+
                 return redirect()->intended('userDashboard');
             }
-        
         } catch (Exception $e) {
             dd($e->getMessage());
         }
     }
 
-  /*   public function login(Request $request){
+    /*   public function login(Request $request){
         Log::info($request);
         if(Auth::attempt(['email' => request('email'), 'password' => request('password')])){
             return view('home');
@@ -71,12 +70,29 @@ class LoginController extends Controller
         }
     } */
 
-    public function loginWithOtp(Request $request){
+    public function loginWithOtp(Request $request)
+    {
         Log::info($request);
-        $user  = User::where(['email' => request('email'),'code' => request('code')])->first();
-        if(!$user){
+        $rules = [
+            'email' => 'required|email:rfc,dns',
+            'code' => 'required|min:4'
+        ];
+
+        $messages = [
+            'email.required' => 'The email cannot be empty.',
+            'email.email' => 'Please enter valid email.',
+            'code.required' => 'The Varification code cannot be empty',
+            'code.min' => 'Varification code has at least 4 digit',
+        ];
+        $validator = Validator::make($request->all(), $rules, $messages);
+        if ($validator->fails()) {
+            $response['message'] = $validator->errors()->first();
+            return response()->json($response, 301);
+        }
+        $user  = User::where(['email' => $request->email, 'code' => $request->code])->first();
+        if (!$user) {
             $response['message'] = "Entered wrong verification code.";
-            return response()->json($response, 201);
+            return response()->json($response, 301);
         }
         $user->code = null;
         $user->email_verified_at = Carbon::now();
@@ -85,19 +101,20 @@ class LoginController extends Controller
         $response['message'] = "Login successfully";
         return response()->json($response, 200);
     }
-    
-    public function sendOtp(Request $request){
-    
-        $code = '1234' ?? rand(1000,9999);
-        $user  = User::where('email',request('email'))->first();
-        if(!$user){
+
+    public function sendOtp(Request $request)
+    {
+        $code = 1234; // ?? rand(1000, 9999);
+        $user  = User::where('email', request('email'))->first();
+        if (!$user) {
             $user = new User;
             $user->email = $request->email;
         }
-        
+
         $user->code = $code;
         $user->save();
         $response['message'] = "Verification code sent successfully";
+        $response['email'] = $user->email;
         return response()->json($response, 200);
     }
 }

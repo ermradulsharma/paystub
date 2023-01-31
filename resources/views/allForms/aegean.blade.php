@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -90,7 +89,6 @@
             text-align: right;
             padding-right: 22px;
         }
-
     </style>
 </head>
 
@@ -197,7 +195,7 @@
                     <th class="heading1">This Period</th>
                     <th class="heading1">YTD</th>
                 </tr>
-                @foreach ($requestData['taxes'] as $key => $taxes )
+                @foreach ($requestData['taxes'] ?? [] as $key => $taxes )
                 <tr>
                     <td></td>
                     <td class="data">{{ $taxes }}</td>
