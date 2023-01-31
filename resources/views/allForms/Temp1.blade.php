@@ -83,8 +83,6 @@
 </head>
 
 <body>
-
-
     <div class="section_2">
         <table style="width: 100%;">
             <thead style="background-color: #a9a9a9;">
@@ -105,8 +103,6 @@
 
                     <tr>
                         <th style="font-size: 22px;" colspan="4">Paystubx ,Inc </th>
-
-
                     </tr>
                     <tr>
 
@@ -115,21 +111,13 @@
                             Jaimaika NY.11433,
                             USA
                         </td>
-
                     </tr>
-
-
                     <tr>
-                        <th style=" padding-top: 10px; " colspan="4">Marital Status: <span style="font-weight: 300;">
-                                single </span> </th>
-
-
+                        <th style=" padding-top: 10px; " colspan="4">Marital Status: <span style="font-weight: 300;">single </span> </th>
                     </tr>
 
                     <tr>
                         <th colspan="4">Exemptions: <span style="font-weight: 300;"> 0 </span> </th>
-
-
                     </tr>
 
 
