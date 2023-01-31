@@ -25,6 +25,8 @@ Route::get('/', function () {
 });
 
 Route::post('templates', [TemplateFormController::class, 'templates'])->name('templates');
+Route::post('sendPDF', [TemplateFormController::class, 'sendPDF'])->name('sendPDF');
+
 
 Route::get('auth/Login', [LoginController::class, 'loginWithGoogle'])->name('login.google');
 Route::any('auth/callback', [LoginController::class, 'callbackFromGoogle'])->name('callback');

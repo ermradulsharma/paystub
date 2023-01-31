@@ -616,7 +616,8 @@
                     <button class="previewbtn text-capitalize" type="button" id="button1">Preview Your Paystub <i class="fa fa-eye" style="font-size: 30px; margin-left: 7px;"></i></button>
                 </div>
                 <div class="text-right mt-1" style="margin-right:30px;">
-                    <button class="emailbtn text-capitalize" data-toggle="modal" data-target="#myModal"> <i class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL PAYSTUB <i class="fa fa-download ml-4" style="font-size:24px"></i></button>
+                    <button type="button" class="emailbtn text-capitalize registerBtn {{Auth::user() ? 'd-none' : 'd-block'}}"> <i class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL PAYSTUB <i class="fa fa-download ml-4" style="font-size:24px"></i></button>
+                    <button type="button" class="emailbtn text-capitalize sendMailButton {{Auth::user() ? 'd-block' : 'd-none'}}"> <i class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL PAYSTUB <i class="fa fa-download ml-4" style="font-size:24px"></i></button>
                 </div>
             </div>
         </div>
@@ -625,9 +626,8 @@
 </div>
 @endsection
 @section('script')
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="{{ asset('user') }}/js/calculations.js"></script>
 <script>
     $(document).ready(function() {
@@ -650,7 +650,6 @@
             this.value = newVal;
         });
     });
-
 </script>
 <script>
     $(document).ready(function() {
@@ -671,12 +670,20 @@
             }
         });
     });
-
 </script>
 
 <script>
     $(document).ready(function() {
         $('#button1').click(function() {
+            viewPDF();
+        });
+
+
+        $('.sendMailButton').click(function() {
+            sendPdf();
+        });
+
+        function viewPDF() {
             $.ajax({
                 url: "{{ route('templates') }}",
                 type: 'post',
@@ -692,7 +699,24 @@
                 }
             });
             return false;
-        });
-    });
+        }
 
+        function sendPdf() {
+            $.ajax({
+                url: "{{ route('sendPDF') }}",
+                type: 'post',
+                data: $('#usa_paystubx').serialize(),
+                success: function(response) {
+                    console.log('response ', response);
+                    $('#tempView').html(response);
+                    $('#tempViewModal').modal('show');
+                },
+                error: function(err) {
+                    data = err.responseJSON;
+                    console.log('err ', data);
+                }
+            });
+            return false;
+        }
+    });
 </script>
