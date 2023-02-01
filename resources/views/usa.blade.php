@@ -131,7 +131,7 @@
                                             @foreach ($basicType as $data)
                                             @if($data->state == 'usa' && $data->type == 'basic')
                                             <option value="{{$data->title ?? ''}}" data-src="{{$data->images->file ?? ''}}">
-                                                {{$data->name ?? ""}}
+                                                {{$data->title}}
                                             </option>
                                             @endif
                                             @endforeach
@@ -139,27 +139,30 @@
                                         <i data-src="{{$data->images->file ?? ''}}" class="fa fa-eye-slash basicTem" style="font-size: 39px;" role="button"></i>
                                     </div>
                                 </div>
+                            </div>
 
-                                <div class="text-center sh">
-                                    <img src="images/hrpng.png" style="height: 200px;">
-                                </div>
-                                <div class="col-md-5 col-lg-6 col-sm-12 mt-5 text-center">
-                                    <h6 style="margin-left:-23px;font-weight: 900;">ADVANCED TEMPLATES</h6>
-                                    <div class="mt-4">
-                                        <div class="input-group mmenu mb-3">
-                                            <select name="advance_temp" class="form-control text-center dropdown1 at_id small-font advanceTemplate" style="margin-right:10px; font-size:18px;">
-                                                <option value=""> --- Select Advance Template --- </option>
-                                                @foreach ($advanceType as $data)
-                                                @if($data->state == 'usa' && $data->type == 'advance')
-                                                <option value="{{$data->title ?? ''}}" data-src="{{$data->images->file ?? ''}}">
-                                                    {{$data->name ?? ""}}
-                                                </option>
-                                                @endif
-                                                @endforeach
-                                            </select>
-                                            <i data-src="{{$data->images->file ?? ''}}" class="fa fa-eye-slash advanceTem" role="button" style="font-size: 39px;"></i>
-                                        </div>
+                            <div class="text-center sh">
+                                <img src="images/hrpng.png" style="height: 200px;">
+                            </div>
+                            <div class="col-md-5 col-lg-6 col-sm-12 mt-5 text-center">
+                                <h6 style="margin-left:-23px;font-weight: 900;">ADVANCED TEMPLATES</h6>
+                                <div class="mt-4">
+                                    <div class="input-group mmenu mb-3">
+                                        <select name="advance_temp" class="form-control text-center dropdown1 at_id small-font advanceTemplate" style="margin-right:10px; font-size:18px;">
+                                            <option value=""> --- Select Advance Template --- </option>
+                                            @foreach ($advanceType as $data)
+                                            @if($data->state == 'usa' && $data->type == 'advance')
+                                            <option value="{{$data->title ?? ''}}" data-src="{{$data->images->file ?? ''}}">
+                                                {{$data->title ?? ''}}
+                                            </option>
+                                            @endif
+                                            @endforeach
+                                        </select>
+                                        <i data-src="{{$data->images->file ?? ''}}" class="fa fa-eye-slash advanceTem" role="button" style="font-size: 39px;"></i>
                                     </div>
+                                </div>
+                                <div class=" mt-3 ">
+                                    <button class="viewbtn"> <a href="{{url('template-view')}}">Click to see Template Landscape view.This is not part of design</a></button>
                                 </div>
                             </div>
                         </div>
