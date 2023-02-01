@@ -187,10 +187,6 @@ class TemplateFormController extends Controller
         $pdf = PDF::loadView('allForms/' . $pageName, $invoiceData)->setPaper('a4');
         $fileName =  date('_d_m_Y_h_i_s') . '.pdf';
         $pdf->save($path . '/' . $fileName);
-
-        // $file = public_path('/uploads/mailData/' . $fileName);
-        // $pdfUrl = asset('/uploads/mailData/' . $fileName);
-        // return $pdfUrl;
         $response['pdf'] = asset('/uploads/mailData/' . $fileName);
         $response['message'] = "Mail send successfully.";
         return response()->json($response, 200);
@@ -233,5 +229,5 @@ class TemplateFormController extends Controller
         $response['message'] = "Mail send successfully.";
         return response()->json($response, 200);
     }
-    
+
 }

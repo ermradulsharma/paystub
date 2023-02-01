@@ -182,15 +182,12 @@
 
             <tr>
                 <td class="address" style="padding-left: 31px;">
-
                     {{ $requestData['address_1'] }}
                     {{ $requestData['address_2'] }}
                     {{ $requestData['city'] }}</br>
                     {{ $requestData['state'] }},
                     {{ $requestData['zip_code'] }}
-
                 </td>
-
                 <td></td>
                 <td></td>
                 <td></td>
