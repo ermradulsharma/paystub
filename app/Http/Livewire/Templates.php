@@ -16,7 +16,6 @@ class Templates extends Component
 
     public function render()
     {
-
         $templateCollection = Template::orderBy('id', 'asc')->get();
         return view('livewire.templates', compact('templateCollection'));
     }
@@ -51,7 +50,8 @@ class Templates extends Component
             $tempObj = new Template();
             $msg = "Template saved successfully.";
         }
-        $tempObj->title = $this->title;
+        $tempObj->name = $this->title;
+        $tempObj->title = strtolower(str_replace(' ', '_',$this->title));
         $tempObj->type = $this->type;
         $tempObj->state = $this->state;
 
@@ -69,7 +69,7 @@ class Templates extends Component
     public function editTemplate($id)
     {
         $tempObj = Template::find($id);
-        $this->title = $tempObj->title;
+        $this->title = $tempObj->name;
         $this->type = $tempObj->type;
         $this->state = $tempObj->state;
 
