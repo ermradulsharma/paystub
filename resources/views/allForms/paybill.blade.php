@@ -48,6 +48,18 @@
     .bg-img2 {
         position: relative;
     }
+    .bg-img2:before {
+        position:absolute;
+        background-image:url("images/side-bar.png");
+        background-repeat:no-repeat;
+        background-size:contain;
+        width:100%;
+        height:100%;
+        content:"";
+        right:0;
+        top:195px;
+        left:26px;
+    }
     .bg-img {
         position: relative;
     }
@@ -58,7 +70,7 @@
         height: 100%;
         width:700px;   
         content:"";
-        top:0px;
+        top:-10px;
         left: 0px;
         right: 0px;
         position:absolute;
@@ -76,7 +88,7 @@
 
         background: #5AA6BA;
         color: white;
-        height: 90px;
+        padding:20px 0px;
         overflow: hidden;
     }
     table {
@@ -351,7 +363,7 @@
                     </tr>
                 </tfoot>
             </table>
-  <p>
+  <p style="font-size:14px;">
     Your Taxes and deductions for this period are $5454.54
         </p>
 
