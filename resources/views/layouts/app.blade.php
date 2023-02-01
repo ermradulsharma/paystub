@@ -297,7 +297,8 @@
                 data: $('#usa_paystubx').serialize(),
                 success: function(response) {
                     console.log('response ', response);
-                    $('#tempView').attr('src',response.pdf);
+                    $('#tempView').attr('src',response.pdf+'?embedded=true#toolbar=0');
+                    // $('#tempView').html(response.data);
                     $('#tempViewModal').modal('show');
                 },
                 error: function(err) {

@@ -2,6 +2,7 @@
 /public/build
 /public/hot
 /public/storage
+/public/upload/mailData/
 /storage/*.key
 /vendor
 .env
@@ -16,3 +17,11 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+
+# Large media files
+*.pdf
+*.tiff
+*.avi
+*.flv
+*.mov
+*.wmv
