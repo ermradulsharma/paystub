@@ -41,7 +41,7 @@
         .section_2 {
             background: #5AA6BA;
             color: white;
-            height: 90px;
+           padding:20px 0px;
             overflow: hidden;
         }
 
@@ -93,7 +93,7 @@
 </head>
 
 <body>
-    <section class="invoiceborder">
+    <section class="invoiceborder"> 
 
         <table>
             <tr>

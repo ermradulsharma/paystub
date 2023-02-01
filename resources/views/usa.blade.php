@@ -16,6 +16,7 @@
         </div>
     </div>
 </div>
+</div>
 <!-- Modal End -->
 <!-- Modal Start -->
 <div class="modal fade" id="tempViewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -26,8 +27,11 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body" id="tempView">
-
+            <div class="modal-body">
+                <object data="your_url_to_pdf" type="application/pdf">
+                    <iframe src="" id="tempView" width="100%" height="800px" frameborder="0"></iframe>
+                </object>
+                {{-- <iframe  height="800px" frameborder="0" controls="false"></iframe> --}}
             </div>
         </div>
     </div>
@@ -92,7 +96,7 @@
                                     <div class="dropdown ">
                                         <select name="state" id="state" class="state dropdown11">
                                             <option value=""> --- Select --- </option>
-                                            @foreach ($stateTaxes as $stateTax )
+                                            @foreach ($stateTaxes as $stateTax)
                                             <option value="{{ $stateTax->state }}">{{ $stateTax->state }}</option>
                                             @endforeach
                                         </select>
@@ -101,7 +105,8 @@
                             </div>
                             <div class="col-md-4">
                                 <div>
-                                    <label for="zip_code" class="lable">Zip Code <span class="redColor">*</span> </label>
+                                    <label for="zip_code" class="lable">Zip Code <span class="redColor">*</span>
+                                    </label>
                                     <input type="text" id="zip_code" name="zip_code" placeholder=" Zip Code" class="w-100 p-2  textInputFontSize">
                                 </div>
                             </div>
@@ -126,7 +131,7 @@
                                             @foreach ($basicType as $data)
                                             @if($data->state == 'usa' && $data->type == 'basic')
                                             <option value="{{$data->title ?? ''}}" data-src="{{$data->images->file ?? ''}}">
-                                                {{$data->name ?? ""}}
+                                                {{$data->title}}
                                             </option>
                                             @endif
                                             @endforeach
@@ -148,7 +153,7 @@
                                             @foreach ($advanceType as $data)
                                             @if($data->state == 'usa' && $data->type == 'advance')
                                             <option value="{{$data->title ?? ''}}" data-src="{{$data->images->file ?? ''}}">
-                                                {{$data->name ?? ""}}
+                                                {{$data->title ?? ''}}
                                             </option>
                                             @endif
                                             @endforeach
@@ -165,7 +170,6 @@
                 </div>
             </div>
         </div>
-
         <div>
             <h5>Employee Info</h5>
             <div class="row mb-3">
@@ -182,7 +186,8 @@
 
                             <div class="col-md-4 mt-4">
                                 <div>
-                                    <label for="emp_id" class="lable">EMPLOYEE ID <span class="redColor">*</span> </label>
+                                    <label for="emp_id" class="lable">EMPLOYEE ID <span class="redColor">*</span>
+                                    </label>
                                     <input type="text" id="emp_id" name="emp_id" placeholder="Employer ID" class="w-100 p-2 r textInputFontSize">
                                 </div>
 
@@ -209,7 +214,8 @@
                         <div class="row mb-3">
                             <div class="col-md-12">
                                 <div>
-                                    <label for="emp_street_2" class="lable">STREET 2 <span class="redColor">*</span> </label>
+                                    <label for="emp_street_2" class="lable">STREET 2 <span class="redColor">*</span>
+                                    </label>
                                     <input type="text" id="emp_street_2" name="emp_street_2" placeholder="Suite 101 or Apt 101(optional)" class="w-100 p-2  textInputFontSize">
                                 </div>
 
@@ -219,18 +225,20 @@
                         <div class="row mb-3">
                             <div class="col-md-4">
                                 <div>
-                                    <label for="emp_city" class="lable">City <span class="redColor">*</span> </label>
+                                    <label for="emp_city" class="lable">City <span class="redColor">*</span>
+                                    </label>
                                     <input type="text" id="emp_city" name="emp_city" placeholder="Your City" class="w-100 p-2  textInputFontSize">
                                 </div>
 
                             </div>
                             <div class="col-md-4">
                                 <div>
-                                    <label for="emp_state" class="lable">State <span class="redColor">*</span> </label>
+                                    <label for="emp_state" class="lable">State <span class="redColor">*</span>
+                                    </label>
                                     <div class="dropdown ">
                                         <select name="emp_state" id="emp_state" class=" dropdown11 ">
                                             <option value="" data-tax="null"> --- Select --- </option>
-                                            @foreach ($stateTaxes as $stateTax )
+                                            @foreach ($stateTaxes as $stateTax)
                                             <option value="{{ $stateTax->state }}" data-tax="{{ $stateTax->rate }}">{{ $stateTax->state }}</option>
                                             @endforeach
                                         </select>
@@ -241,7 +249,8 @@
                             </div>
                             <div class="col-md-4">
                                 <div>
-                                    <label for="emp_zip_code" class="lable">Zip Code <span class="redColor">*</span> </label>
+                                    <label for="emp_zip_code" class="lable">Zip Code <span class="redColor">*</span>
+                                    </label>
                                     <input type="text" id="emp_zip_code" name="emp_zip_code" placeholder=" 1234" class="w-100 p-2  textInputFontSize">
                                 </div>
 
@@ -264,7 +273,7 @@
                                     <div class="dropdown ">
                                         <select name="emp_your_state" id="emp_your_state" class=" dropdown11 tax_rate">
                                             <option value="">Choose your State</option>
-                                            @foreach ($stateTaxes as $stateTax )
+                                            @foreach ($stateTaxes as $stateTax)
                                             <option value="{{ $stateTax->state }}" data-tax="{{ $stateTax->rate }}">{{ $stateTax->state }}</option>
                                             @endforeach
                                         </select>
@@ -317,7 +326,8 @@
                         <div class="row mb-3">
                             <div class="col-md-3 mt-4">
                                 <div>
-                                    <label for="hourly" class="lable">HOURLY <span class="redColor">*</span> </label>
+                                    <label for="hourly" class="lable">HOURLY <span class="redColor">*</span>
+                                    </label>
                                     <input type="text" step="0.5" id="hourly" name="hourly" placeholder="Hourly" class="w-100 p-2  textInputFontSize hourly" value="">
                                 </div>
 
@@ -337,7 +347,8 @@
 
                             <div class="col-md-3 mt-4">
                                 <div>
-                                    <label for="exemptions" class="lable">EXEMPTIONS <span class="redColor">*</span> </label>
+                                    <label for="exemptions" class="lable">EXEMPTIONS <span class="redColor">*</span>
+                                    </label>
                                     <select name="exemptions" id="exemptions" class=" dropdown11">
                                         <option value=""> --- Select Exemptions --- </option>
                                         <option value="saab">0</option>
@@ -357,7 +368,8 @@
 
                             <div class="col-md-3 mt-4">
                                 <div>
-                                    <label for="currency" class="lable" class="redColor">SELECT YOUR PREFERRED CURRENCY <span class="redColor">*</span> </label>
+                                    <label for="currency" class="lable" class="redColor">SELECT YOUR PREFERRED
+                                        CURRENCY <span class="redColor">*</span> </label>
                                     <select name="currency" id="currency" class=" dropdown11">
                                         <option value=""> --- Select currency --- </option>
                                         <option value="$">Dollar $</option>
@@ -384,7 +396,8 @@
                         <div class="row mb-3">
                             <div class="col-md-3 mt-4">
                                 <div>
-                                    <label for="pay_start" class="lable">PAY START<span class="redColor">*</span> </label>
+                                    <label for="pay_start" class="lable">PAY START<span class="redColor">*</span>
+                                    </label>
                                     <input type="date" id="pay_start" name="pay_start" placeholder="12-11-2022" class="w-100 p-2 textInputFontSize pay_start datepicker" data-id="pay_start">
                                 </div>
 
@@ -392,7 +405,8 @@
 
                             <div class="col-md-3 mt-4">
                                 <div>
-                                    <label for="pay_end" class="lable">PAY END <span class="redColor">*</span> </label>
+                                    <label for="pay_end" class="lable">PAY END <span class="redColor">*</span>
+                                    </label>
                                     <input type="date" id="pay_end" name="pay_end" placeholder="12-17-2022" class="w-100 p-2 textInputFontSize pay_end" data-id="pay_end">
                                 </div>
 
@@ -400,7 +414,8 @@
 
                             <div class="col-md-3 mt-4">
                                 <div>
-                                    <label for="pay_date" class="lable">PAY DATE <span class="redColor">*</span> </label>
+                                    <label for="pay_date" class="lable">PAY DATE <span class="redColor">*</span>
+                                    </label>
                                     <input type="date" id="pay_date" name="pay_date" placeholder="12-19-2022" class="w-100 p-2 textInputFontSize pay_date" data-id="pay_date">
                                 </div>
 
@@ -429,11 +444,13 @@
                             </div>
                             <div class=" col-lg-2  col-md-2 margin-bottom">
                                 <button type="button" class="statementbtn">THIS PERIOD</button>
-                                <p class="p-0 m-0 text-center" style="font-family: serif;font-size: 14px;"> Total Gross </p>
+                                <p class="p-0 m-0 text-center" style="font-family: serif;font-size: 14px;"> Total
+                                    Gross </p>
                             </div>
                             <div class=" col-lg-2  col-md-2 margin-bottom ">
                                 <button type="button" class="statementbtn">YTD TOTAL</button>
-                                <p class="p-0 m-0 text-center" style="font-family: serif;font-size:14px;">YTD Total Gross</p>
+                                <p class="p-0 m-0 text-center" style="font-family: serif;font-size:14px;">YTD Total
+                                    Gross</p>
                             </div>
                         </div>
 
@@ -503,17 +520,17 @@
                         @foreach ($deduction as $key => $item)
                         <div class="row mb-3 mt-4">
                             <div class="col-md-4 col-lg-3">
-                                <img src="{{asset('images/lock.png')}}" class="earnbtn2">
-                                <input class="earnbtn text-center taxes" name="taxes[]" data-id="{{$key}}" data-value="{{ $item->price }}" value="{{$item->title}}">
+                                <img src="{{ asset('images/lock.png') }}" class="earnbtn2">
+                                <input class="earnbtn text-center taxes" name="taxes[]" data-id="{{ $key }}" data-value="{{ $item->price }}" value="{{ $item->title }}">
                             </div>
                             <div class="col-md-1 col-lg-1"></div>
                             <div class="col-md-2 col-lg-3"></div>
                             <div class="col-md-1 col-lg-1"></div>
                             <div class="col-md-2 col-lg-2">
-                                <input type="text" name="taxes_rate[]" class="earnbtn text-center" id="taxes_{{$key}}" value="" />
+                                <input type="text" name="taxes_rate[]" class="earnbtn text-center" id="taxes_{{ $key }}" value="" />
                             </div>
                             <div class="col-md-2 col-lg-2">
-                                <input type="text" name="taxes_ytd[]" class="earnbtn text-center" id="taxes_ytd_{{$key}}" value="" />
+                                <input type="text" name="taxes_ytd[]" class="earnbtn text-center" id="taxes_ytd_{{ $key }}" value="" />
                             </div>
                         </div>
                         @endforeach
@@ -613,11 +630,12 @@
         <div>
             <div class="mb-4 d-flex" style="justify-content: space-between; align-items: center;">
                 <div class="text-left mt-1">
-                    <button class="previewbtn text-capitalize viewTempTemplate" type="button" id="button1">Preview Your Paystub <i class="fa fa-eye" style="font-size: 30px; margin-left: 7px;"></i></button>
+                    <button class="previewbtn text-capitalize viewTempTemplate" type="button" id="button1">Preview
+                        Your Paystub <i class="fa fa-eye" style="font-size: 30px; margin-left: 7px;"></i></button>
                 </div>
                 <div class="text-right mt-1" style="margin-right:30px;">
-                    <button type="button" class="emailbtn text-capitalize registerBtn {{Auth::user() ? 'd-none' : 'd-block'}}"> <i class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL PAYSTUB <i class="fa fa-download ml-4" style="font-size:24px"></i></button>
-                    <button type="button" class="emailbtn text-capitalize sendMailButton {{Auth::user() ? 'd-block' : 'd-none'}}"> <i class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL PAYSTUB <i class="fa fa-download ml-4" style="font-size:24px"></i></button>
+                    <button type="button" class="emailbtn text-capitalize registerBtn {{ Auth::user() ? 'd-none' : 'd-block' }}"> <i class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL PAYSTUB <i class="fa fa-download ml-4" style="font-size:24px"></i></button>
+                    <button type="button" class="emailbtn text-capitalize sendMailButton {{ Auth::user() ? 'd-block' : 'd-none' }}"> <i class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL PAYSTUB <i class="fa fa-download ml-4" style="font-size:24px"></i></button>
                 </div>
             </div>
         </div>
@@ -626,7 +644,6 @@
 </div>
 @endsection
 @section('script')
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" crossorigin="anonymous"></script>
 <script src="{{ asset('user') }}/js/calculations.js"></script>
@@ -642,9 +659,11 @@
         $('#tel').keyup(function() {
             var mobileNumber = this.value.replace(/\D/g, ''); // here you get what the end-user typed
             mobileNumber = (mobileNumber.replace(/[^\d]/g, ''));
-            this.value = ("" + mobileNumber.substring(0, 3) + " " + mobileNumber.substring(3, 6) + " " + mobileNumber.substring(6, 10));
+            this.value = ("" + mobileNumber.substring(0, 3) + " " + mobileNumber.substring(3, 6) + " " +
+                mobileNumber.substring(6, 10));
         });
     });
+
 </script>
 <script>
     $(document).ready(function() {
@@ -665,6 +684,28 @@
             }
         });
     });
+
+</script>
+<script>
+    $(document).ready(function() {
+        $('.basicTem').click(function() {
+            var imageattr = $('option:selected', '.bt_id').attr('data-src');
+            console.log('imageattr', imageattr);
+            $('.setImage').attr('src', imageattr);
+            if (imageattr != null && imageattr != undefined) {
+                $('#openEye').modal('show');
+            }
+        });
+
+        $('.advanceTem').click(function() {
+            var imageattr = $('option:selected', '.at_id').attr('data-src');
+            $('.setImage').attr('src', imageattr);
+            if (imageattr != null && imageattr != undefined) {
+                $('#openEye').modal('show');
+            }
+        });
+    });
+
 </script>
 
 @endsection
