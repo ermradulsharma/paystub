@@ -130,9 +130,7 @@
                                             <option value=""> --- Select Basic Templates --- </option>
                                             @foreach ($basicType as $data)
                                             @if($data->state == 'usa' && $data->type == 'basic')
-                                            <option value="{{$data->title ?? ''}}" data-src="{{$data->images->file ?? ''}}">
-                                                {{$data->title}}
-                                            </option>
+                                            <option value="{{$data->title ?? ''}}" data-src="{{$data->images->file ?? ''}}"> {{$data->name}} </option>
                                             @endif
                                             @endforeach
                                         </select>
@@ -152,9 +150,7 @@
                                             <option value=""> --- Select Advance Template --- </option>
                                             @foreach ($advanceType as $data)
                                             @if($data->state == 'usa' && $data->type == 'advance')
-                                            <option value="{{$data->title ?? ''}}" data-src="{{$data->images->file ?? ''}}">
-                                                {{$data->title ?? ''}}
-                                            </option>
+                                            <option value="{{$data->title ?? ''}}" data-src="{{$data->images->file ?? ''}}"> {{$data->name ?? ''}} </option>
                                             @endif
                                             @endforeach
                                         </select>
