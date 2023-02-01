@@ -269,72 +269,72 @@
         </tr>
     </table>
 
-
-    <table style="width: 60%; float:left;">
-        <thead id="backcolor">
-            <td>WAGES</td>
-            <td>HOURS</td>
-            <td>RATE</td>
-            <td> AMOUNT <br>THIS CHECK</td>
-            <td>AMOUNT<br> YEAR-TO-DATE</td>
-        </thead>
-        <tbody>
-            @foreach ($requestData['earning'] as $key => $earn)
+    <section style="">
+        <table style="width: 60%; float:left;">
+            <thead id="backcolor">
+                <td>WAGES</td>
+                <td>HOURS</td>
+                <td>RATE</td>
+                <td> AMOUNT <br>THIS CHECK</td>
+                <td>AMOUNT<br> YEAR-TO-DATE</td>
+            </thead>
+            <tbody>
+                @foreach ($requestData['earning'] as $key => $earn)
+                    <tr style="border: none;">
+                        <td>{{ $earn }}</td>
+                        <td>{{ $requestData['currency'] }} {{ $requestData['rate'][$key] }}</td>
+                        <td>{{ $requestData['hours'][$key] }}</td>
+                        <td>{{ $requestData['currency'] }} {{ $requestData['period'][$key] }}</td>
+                        <td>{{ $requestData['currency'] }} {{ $requestData['ytd_total'][$key] }}</td>
+                    </tr>
+                @endforeach
                 <tr style="border: none;">
-                    <td>{{ $earn }}</td>
-                    <td>{{ $requestData['currency'] }} {{ $requestData['rate'][$key] }}</td>
-                    <td>{{ $requestData['hours'][$key] }}</td>
-                    <td>{{ $requestData['currency'] }} {{ $requestData['period'][$key] }}</td>
-                    <td>{{ $requestData['currency'] }} {{ $requestData['ytd_total'][$key] }}</td>
+                    <td colspan="3" style="text-align:center;">Total Wages</td>
+                    <td>{{ $requestData['period_gross_total'] }}</td>
+                    <td>{{ $requestData['ytd_gross_total'] }}</td>
+
                 </tr>
-            @endforeach
-            <tr style="border: none;">
-                <td colspan="3" style="text-align:center;">Total Wages</td>
-                <td>{{ $requestData['period_gross_total'] }}</td>
-                <td>{{ $requestData['ytd_gross_total'] }}</td>
+            </tbody>
 
-            </tr>
-        </tbody>
+        </table>
 
-    </table>
-
-    <table style="width: 40%; float:right;">
+        <table style="width: 40%; float:right;">
 
 
-        <thead id="backcolor">
-            <td>DEDUCTIONS & TAXES</td>
-            <td>AMOUNT<br>THIS CHECK</td>
-            <td style="border-right: none">AMOUNT <br>YEAR-TO-DATE</td>
-        </thead>
+            <thead id="backcolor">
+                <td>DEDUCTIONS & TAXES</td>
+                <td>AMOUNT<br>THIS CHECK</td>
+                <td style="border-right: none">AMOUNT <br>YEAR-TO-DATE</td>
+            </thead>
 
-        <tbody style="border-left: 2px solid #afaec5; ">
-            @foreach ($requestData['taxes'] ?? [] as $key => $taxes)
+            <tbody style="border-left: 2px solid #afaec5; ">
+                @foreach ($requestData['taxes'] ?? [] as $key => $taxes)
+                    <tr style="border:none;">
+                        <td>{{ $taxes }}</td>
+                        <td>{{ $requestData['currency'] }} {{ $requestData['taxes_rate'][$key] }}</td>
+                        <td>{{ $requestData['currency'] }}
+                            {{ $requestData['taxes_ytd'][$key] }}</td>
+                    </tr>
+                @endforeach
+
+                @foreach ($requestData['tax_deduction'] ?? [] as $key => $tax_deduction)
+                    <tr style="border:none;">
+                        <td>{{ $tax_deduction }}</td>
+                        <td>{{ $requestData['currency'] }} {{ $requestData['period_tax_deduction'][$key] }}</td>
+                        <td>{{ $requestData['currency'] }}
+                            {{ $requestData['ytd_tax_deduction'][$key] }}</td>
+                    </tr>
+                @endforeach
                 <tr style="border:none;">
-                    <td>{{ $taxes }}</td>
-                    <td>{{ $requestData['currency'] }} {{ $requestData['taxes_rate'][$key] }}</td>
-                    <td>{{ $requestData['currency'] }}
-                        {{ $requestData['taxes_ytd'][$key] }}</td>
+                    <td>Total Taxes</td>
+                    <td>{{ $requestData['deduction_tax'] }}</td>
+                    <td>{{ $requestData['ytd_deduction_tax'] }}</td>
                 </tr>
-            @endforeach
+            </tbody>
 
-            @foreach ($requestData['tax_deduction'] ?? [] as $key => $tax_deduction)
-                <tr style="border:none;">
-                    <td>{{ $tax_deduction }}</td>
-                    <td>{{ $requestData['currency'] }} {{ $requestData['period_tax_deduction'][$key] }}</td>
-                    <td>{{ $requestData['currency'] }}
-                        {{ $requestData['ytd_tax_deduction'][$key] }}</td>
-                </tr>
-            @endforeach
-            <tr style="border:none;">
-                <td>Total Taxes</td>
-                <td>{{ $requestData['deduction_tax'] }}</td>
-                <td>{{ $requestData['ytd_deduction_tax'] }}</td>
-            </tr>
-        </tbody>
+        </table>
 
-    </table>
-
-
+    </section>
 
 
 
