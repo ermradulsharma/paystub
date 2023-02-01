@@ -16,20 +16,22 @@
             </div>
         </div>
     </div>
-    <!-- Modal End -->
-    <!-- Modal Start -->
-    <div class="modal fade" id="tempViewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="btn btn-secondary close" data-bs-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body" id="tempView">
-
-                </div>
+</div>
+<!-- Modal End -->
+<!-- Modal Start -->
+<div class="modal fade" id="tempViewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn btn-secondary close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <object data="your_url_to_pdf" type="application/pdf">
+                    <iframe src="" id="tempView" width="100%" height="800px" frameborder="0"></iframe>
+                </object>
+                {{-- <iframe  height="800px" frameborder="0" controls="false"></iframe> --}}
             </div>
         </div>
     </div>
@@ -126,63 +128,48 @@
                 </div>
             </div>
 
-            <div>
-                <h5>Choose Template</h5>
-                <div class="row mb-3">
-                    <div class="col-md-12">
-                        <div class=" box-usa">
-                            <div class="d-flex justify-content-between mb-3 flex">
-                                <div class="col-md-5 col-lg-6 col-sm-12 mt-5  text-center">
-                                    <h6 style="" class="base">BASIC TEMPLATES</h6>
-                                    <div class="mt-4">
-                                        <div class="input-group mmenu mb-3 text-center">
-                                            <select name="basic_temp"
-                                                class="form-control dropdown1 text-center bt_id small-font basicTemplate"
-                                                style="margin-right:10px; font-size:18px;">
-                                                <option value=""> --- Select Basic Templates --- </option>
-                                                @foreach ($basicType as $data)
-                                                    @if ($data->state == 'usa' && $data->type == 'basic')
-                                                        <option value="{{ $data->title ?? '' }}"
-                                                            data-src="{{ $data->images->file ?? '' }}">
-                                                            {{ $data->title }}
-                                                        </option>
-                                                    @endif
-                                                @endforeach
-                                            </select>
-                                            <i data-src="{{ $data->images->file ?? '' }}" class="fa fa-eye-slash basicTem"
-                                                style="font-size: 39px;" role="button"></i>
-                                        </div>
+        <div>
+            <h5>Choose Template</h5>
+            <div class="row mb-3">
+                <div class="col-md-12">
+                    <div class=" box-usa">
+                        <div class="d-flex justify-content-between mb-3 flex">
+                            <div class="col-md-5 col-lg-6 col-sm-12 mt-5  text-center">
+                                <h6 style="" class="base">BASIC TEMPLATES</h6>
+                                <div class="mt-4">
+                                    <div class="input-group mmenu mb-3 text-center">
+                                        <select name="basic_temp" class="form-control dropdown1 text-center bt_id small-font basicTemplate" style="margin-right:10px; font-size:18px;">
+                                            <option value=""> --- Select Basic Templates --- </option>
+                                            @foreach ($basicType as $data)
+                                            @if($data->state == 'usa' && $data->type == 'basic')
+                                            <option value="{{$data->title ?? ''}}" data-src="{{$data->images->file ?? ''}}">
+                                                {{$data->name ?? ""}}
+                                            </option>
+                                            @endif
+                                            @endforeach
+                                        </select>
+                                        <i data-src="{{$data->images->file ?? ''}}" class="fa fa-eye-slash basicTem" style="font-size: 39px;" role="button"></i>
                                     </div>
                                 </div>
 
-                                <div class="text-center sh">
-                                    <img src="images/hrpng.png" style="height: 200px;">
-                                </div>
-                                <div class="col-md-5 col-lg-6 col-sm-12 mt-5 text-center">
-                                    <h6 style="margin-left:-23px;font-weight: 900;">ADVANCED TEMPLATES</h6>
-                                    <div class="mt-4">
-                                        <div class="input-group mmenu mb-3">
-                                            <select name="advance_temp"
-                                                class="form-control text-center dropdown1 at_id small-font advanceTemplate"
-                                                style="margin-right:10px; font-size:18px;">
-                                                <option value=""> --- Select Advance Template --- </option>
-                                                @foreach ($advanceType as $data)
-                                                    @if ($data->state == 'usa' && $data->type == 'advance')
-                                                        <option value="{{ $data->title ?? '' }}"
-                                                            data-src="{{ $data->images->file ?? '' }}">
-                                                            {{ $data->title ?? '' }}
-                                                        </option>
-                                                    @endif
-                                                @endforeach
-                                            </select>
-                                            <i data-src="{{ $data->images->file ?? '' }}"
-                                                class="fa fa-eye-slash advanceTem" role="button"
-                                                style="font-size: 39px;"></i>
-                                        </div>
-                                    </div>
-                                    <div class=" mt-3 ">
-                                        <button class="viewbtn"> <a href="{{ url('template-view') }}">Click to see
-                                                Template Landscape view.This is not part of design</a></button>
+                            <div class="text-center sh">
+                                <img src="images/hrpng.png" style="height: 200px;">
+                            </div>
+                            <div class="col-md-5 col-lg-6 col-sm-12 mt-5 text-center">
+                                <h6 style="margin-left:-23px;font-weight: 900;">ADVANCED TEMPLATES</h6>
+                                <div class="mt-4">
+                                    <div class="input-group mmenu mb-3">
+                                        <select name="advance_temp" class="form-control text-center dropdown1 at_id small-font advanceTemplate" style="margin-right:10px; font-size:18px;">
+                                            <option value=""> --- Select Advance Template --- </option>
+                                            @foreach ($advanceType as $data)
+                                            @if($data->state == 'usa' && $data->type == 'advance')
+                                            <option value="{{$data->title ?? ''}}" data-src="{{$data->images->file ?? ''}}">
+                                                {{$data->name ?? ""}}
+                                            </option>
+                                            @endif
+                                            @endforeach
+                                        </select>
+                                        <i data-src="{{$data->images->file ?? ''}}" class="fa fa-eye-slash advanceTem" role="button" style="font-size: 39px;"></i>
                                     </div>
                                 </div>
                             </div>
@@ -767,5 +754,29 @@
                 }
             });
         });
-    </script>
+    });
+
+</script>
+<script>
+    $(document).ready(function() {
+        $('.basicTem').click(function() {
+            var imageattr = $('option:selected', '.bt_id').attr('data-src');
+            console.log('imageattr', imageattr);
+            $('.setImage').attr('src', imageattr);
+            if (imageattr != null && imageattr != undefined) {
+                $('#openEye').modal('show');
+            }
+        });
+
+        $('.advanceTem').click(function() {
+            var imageattr = $('option:selected', '.at_id').attr('data-src');
+            $('.setImage').attr('src', imageattr);
+            if (imageattr != null && imageattr != undefined) {
+                $('#openEye').modal('show');
+            }
+        });
+    });
+
+</script>
+
 @endsection
