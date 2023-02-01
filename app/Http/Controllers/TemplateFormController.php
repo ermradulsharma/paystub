@@ -68,9 +68,9 @@ class TemplateFormController extends Controller
         $data = [
             'date' => date('m/d/Y')
         ];
-        // return view('allForms.paystub-check');
-        $pdf = PDF::loadView('allForms.paystub-check', $data);
-        return $pdf->setPaper('A4')->stream('paystub-check.pdf');
+        // return view('allForms.paystubx');
+        $pdf = PDF::loadView('allForms.paystubx', $data);
+        return $pdf->setPaper('A4')->stream('paystubx.pdf');
     }
     public function BasicPinBlueUkPDF()
     {
@@ -106,8 +106,8 @@ class TemplateFormController extends Controller
         $data = [
             'date' => date('m/d/Y')
         ];
-        //   return view('allForms.advance');
-        $pdf = PDF::loadView('allForms.advance', $data);
+        //   return view('allForms.paystubx_district');
+        $pdf = PDF::loadView('allForms.paystubx_district', $data);
         return $pdf->stream('W2Paystubx.pdf');
     }
 
@@ -117,8 +117,8 @@ class TemplateFormController extends Controller
         $data = [
             'date' => date('m/d/Y')
         ];
-        // return view('allForms.bluebox');
-        $pdf = PDF::loadView('allForms.bluebox', $data);
+        // return view('allForms.box_blue');
+        $pdf = PDF::loadView('allForms.box_blue', $data);
         return $pdf->stream('blueboxTemp.pdf');
     }
 
@@ -128,8 +128,8 @@ class TemplateFormController extends Controller
             'date' => date('m/d/Y')
         ];
 
-        // return view('allForms.globleusa');
-        $pdf = PDF::loadView('allForms.globleusa', $data);
+        // return view('allForms.global_white');
+        $pdf = PDF::loadView('allForms.global_white', $data);
         return $pdf->stream('GlobleTemp.pdf');
     }
     public function AdvanceModernUsaPDF()
@@ -217,4 +217,5 @@ class TemplateFormController extends Controller
         $response['message'] = "Mail send successfully.";
         return response()->json($response, 200);
     }
+    
 }
