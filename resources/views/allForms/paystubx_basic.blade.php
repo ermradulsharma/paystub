@@ -11,7 +11,7 @@
 
     <style>
         .infomation {
-            border: 1px solid black;
+        border: 2px solid darkgrey;
             border-top: none;
             font-size: 15px;
         }
@@ -20,7 +20,10 @@
         .bodertop {
             border: 1px solid black;
             width: 100%;
-            height: 300px;
+        display:flex;
+        flex-wrap:wrap;
+        border: 2px solid darkgrey;
+        border-top:none;
         }
 
 
@@ -81,6 +84,8 @@
 </head>
 
 <body>
+
+
     <div class="section_2">
         <table style="width: 100%;">
             <thead style="background-color: #a9a9a9;">
@@ -111,7 +116,10 @@
                             {{ $requestData['address_2'] }}
                             {{ $requestData['city'] }} {{ $requestData['state'] }}, {{ $requestData['zip_code'] }}USA
                         </td>
+
                     </tr>
+
+
                     <tr>
                         <th style=" padding-top: 10px; " colspan="4">Marital Status: <span style="font-weight: 300;">
                                 {{ $requestData['marital_status'] }} </span> </th>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\PaySlip;
 use App\Models\Template;
+use Dompdf\Dompdf;
 use Illuminate\Http\Request;
 use PDF;
 use File;
@@ -14,12 +15,12 @@ class TemplateFormController extends Controller
 {
     public function BasicPaystubUsaPDF()
     {
-        $data = [
+        $requestData = [
             'date' => date('m/d/Y')
         ];
-        // return view('allForms.paystubx_basic', $data);
-        $pdf = PDF::loadView('allForms.paystubx_basic', $data);
-        return $pdf->stream('BasicPaystubx.pdf');
+
+        $pdf = PDF::loadView('allForms.paystubx_basic', $requestData);
+        return $pdf->download('paystubx_basic.pdf');
     }
 
     public function AdvancePtGreenPaystubPDF()
@@ -69,9 +70,9 @@ class TemplateFormController extends Controller
         $data = [
             'date' => date('m/d/Y')
         ];
-        // return view('allForms.paystub-check');
-        $pdf = PDF::loadView('allForms.paystub-check', $data);
-        return $pdf->setPaper('A4')->stream('paystub-check.pdf');
+        // return view('allForms.paystubx');
+        $pdf = PDF::loadView('allForms.paystubx', $data);
+        return $pdf->setPaper('A4')->stream('paystubx.pdf');
     }
     public function BasicPinBlueUkPDF()
     {
@@ -107,8 +108,8 @@ class TemplateFormController extends Controller
         $data = [
             'date' => date('m/d/Y')
         ];
-        //   return view('allForms.advance');
-        $pdf = PDF::loadView('allForms.advance', $data);
+        //   return view('allForms.paystubx_district');
+        $pdf = PDF::loadView('allForms.paystubx_district', $data);
         return $pdf->stream('W2Paystubx.pdf');
     }
 
@@ -118,8 +119,8 @@ class TemplateFormController extends Controller
         $data = [
             'date' => date('m/d/Y')
         ];
-        // return view('allForms.bluebox');
-        $pdf = PDF::loadView('allForms.bluebox', $data);
+        // return view('allForms.box_blue');
+        $pdf = PDF::loadView('allForms.box_blue', $data);
         return $pdf->stream('blueboxTemp.pdf');
     }
 
@@ -129,8 +130,8 @@ class TemplateFormController extends Controller
             'date' => date('m/d/Y')
         ];
 
-        // return view('allForms.globleusa');
-        $pdf = PDF::loadView('allForms.globleusa', $data);
+        // return view('allForms.global_white');
+        $pdf = PDF::loadView('allForms.global_white', $data);
         return $pdf->stream('GlobleTemp.pdf');
     }
     public function AdvanceModernUsaPDF()
@@ -174,14 +175,23 @@ class TemplateFormController extends Controller
 
     public function templates(Request $request)
     {
-        $template = Template::where('title', $request->template)->first();
         $requestData = $request->all();
         if ($requestData['advance_temp']) {
-            $requestObj = $requestData['advance_temp'];
+            $pageName = $requestData['advance_temp'];
         } else {
-            $requestObj = $requestData['basic_temp'];
+            $pageName = $requestData['basic_temp'];
         }
-        return view('allForms.' . $requestObj, compact('requestData'));
+
+        $path = public_path() . '/uploads/mailData';
+        File::isDirectory($path) or File::makeDirectory($path, 0777, true, true);
+        $invoiceData['requestData'] = $requestData;
+        $pdf = PDF::loadView('allForms/' . $pageName, $invoiceData)->setPaper('a4');
+        $fileName =  date('_d_m_Y_h_i_s') . '.pdf';
+        $pdf->save($path . '/' . $fileName);
+        $response['pdf'] = asset('/uploads/mailData/' . $fileName);
+        $response['message'] = "Mail send successfully.";
+        return response()->json($response, 200);
+        //return view('allForms.' . $requestObj, compact('requestData'));
     }
 
     //======= usa store data =========
@@ -227,10 +237,12 @@ class TemplateFormController extends Controller
         ];
         $moreData = [];
         $file = public_path('/uploads/mailData/' . $fileName);
+        $pdfUrl = asset('/uploads/mailData/' . $fileName);
+        return redirect($pdfUrl);
         try {
-            Mail::send('mail.invoice_mail', $moreData, function ($message) use ($maildata, $file) {
-                $message->to($maildata['email']);
-                $message->subject($maildata['title']);
+            Mail::send('mail.invoice_mail', $moreData, function ($message) use ($mailData, $file) {
+                $message->to($mailData['email']);
+                $message->subject($mailData['title']);
                 $message->attach($file);
             });
         } catch (\Exception $e) {

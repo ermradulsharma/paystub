@@ -36,16 +36,13 @@
             font-size: 22px;
         }
 
-        .invoiceborder {
-            padding-top: 20px;
-            padding-bottom: 20px;
-        }
 
         .section_2 {
             background: #b62ebd;
             color: white;
-            height: 90px;
+            padding:15px 15px 30px;
             overflow: hidden;
+            margin-top:10px;
         }
 
         table {
@@ -56,7 +53,6 @@
 
         th {
             text-align: left;
-            padding: 8px;
         }
 
         .heading1 {
@@ -90,7 +86,7 @@
 
         .earning {
             text-align: right;
-            padding-right: 22px;
+
         }
     </style>
 </head>
@@ -99,14 +95,15 @@
     <section class="invoiceborder">
         <table>
             <tr>
-                <th style="padding-left: 31px;"> {{ $requestData['cname'] }}</th>
+                <th style="font-size:30px; padding:0px;"> {{ $requestData['cname'] }}</th>
                 <th></th>
                 <th></th>
                 <th></th>
                 <th></th>
+                <th class="earning" style="font-size:25px; padding:0;">Earning statement</th>
             </tr>
             <tr>
-                <td class="address" style="padding-left: 31px;">
+                <td class="address" style="font-size:23px; padding:0px;line-height:1.2;">
                     {{ $requestData['address_1'] }} <br>
                     {{ $requestData['city'] }} {{ $requestData['state'] }}, {{ $requestData['zip_code'] }} <br>
                     USA
@@ -116,39 +113,25 @@
                 <td></td>
                 <td></td>
                 <td></td>
-            </tr>
-
-            <tr>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th class="earning">Earning statement</th>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
                 <td>
                     <p class="earning"> pay period: {{ date('M d, Y', strtotime($requestData['pay_start'])) }} to
                         {{ date('M d, Y', strtotime($requestData['pay_end'])) }} <br> pay date:
                         {{ date('M d, Y', strtotime($requestData['pay_date'])) }}</p>
                 </td>
-
             </tr>
+
         </table>
         <section class="section_2">
             <table>
                 <tr style=" color:white;">
-                    <th>SSN: XXX-XX-{{ $requestData['emp_ssn'] }}</th>
-                    <th class="earning">{{ $requestData['emp_name'] }}</th>
+                    <th style="padding:0 !important;">SSN: XXX-XX-{{ $requestData['emp_ssn'] }}</th>
+                    <th class="earning"style="padding:0; font-weight:400;">{{ $requestData['emp_name'] }}</th>
                 </tr>
                 <tr style="color:white">
-                    <td style=" padding: 9px;">
+                    <td style=" padding: 0px;">
                         Stub no: 1112
                     </td>
-                    <td class="earning">
+                    <td class="earning" style="padding:0;">
                         Emp Id :{{ $requestData['emp_id'] }} <br>
                         {{ $requestData['emp_street_1'] }},{{ $requestData['emp_street_2'] }}
                         {{ $requestData['emp_city'] }} {{ $requestData['emp_state'] }}
@@ -185,7 +168,7 @@
                 </tr>
 
                 <tfoot class="tfooter" style="background:#b62ebd;">
-                    <tr style=" color:white;">
+                    <tr style=" color:white; height:50px;">
                         <th colspan="3"></th>
                         <th style="font-weight: 100;">{{ $requestData['currency'] }}
                             {{ $requestData['period_gross_total'] }}</th>
@@ -228,7 +211,7 @@
                     @endforeach
                 @endif
                 <tfoot class="tfooter " style="background:#b62ebd;">
-                    <tr style="color:white;">
+                    <tr style="color:white; height:50px;">
                         <th colspan="2">Net Pay</th>
                         <th style="font-weight: 100;">{{ $requestData['currency'] }}
                             {{ $requestData['total_net_pay'] }}</th>
@@ -237,7 +220,7 @@
                     </tr>
                 </tfoot>
             </table>
-            <p>Your Taxes and deductions for this period are {{ $requestData['currency'] }}
+            <p style="margin-top:10px;">Your Taxes and deductions for this period are {{ $requestData['currency'] }}
                 {{ $requestData['deduction_tax'] }}</p>
         </section>
 
