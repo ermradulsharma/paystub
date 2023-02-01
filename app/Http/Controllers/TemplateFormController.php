@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\PaySlip;
 use App\Models\Template;
 use Illuminate\Http\Request;
 use PDF;
@@ -96,7 +97,7 @@ class TemplateFormController extends Controller
         $data = [
             'date' => date('m/d/Y')
         ];
-           //return view('allForms.paybill');
+        //return view('allForms.paybill');
         $pdf = PDF::loadView('allForms.paybill', $data);
         return $pdf->stream('paybill.pdf');
     }
@@ -173,7 +174,7 @@ class TemplateFormController extends Controller
 
     public function templates(Request $request)
     {
-        $template = Template::where('title',$request->template)->first();
+        $template = Template::where('title', $request->template)->first();
         $requestData = $request->all();
         if ($requestData['advance_temp']) {
             $requestObj = $requestData['advance_temp'];
@@ -183,7 +184,8 @@ class TemplateFormController extends Controller
         return view('allForms.' . $requestObj, compact('requestData'));
     }
 
-    public function sendPDF(Request $request)
+    //======= usa store data =========
+    public function usaStoreData(Request $request)
     {
         $requestData = $request->all();
         if ($requestData['advance_temp']) {
@@ -198,7 +200,28 @@ class TemplateFormController extends Controller
         $pdf = PDF::loadView('allForms/' . $pageName, $invoiceData)->setPaper('a4');
         $fileName =  date('_d_m_Y_h_i_s') . '.pdf';
         $pdf->save($path . '/' . $fileName);
-        $maildata = [
+
+        $slip = new PaySlip;
+        $slip->user_id = Auth::user()->id;
+        $slip->data = json_encode($requestData);
+        $slip->title = $requestData['cname'];
+        $slip->reference = "PayStubx-" . rand(100000, 999999);
+        $slip->pdf = $fileName;
+        $slip->save();
+        $response['message'] = "Data saved successfully successfully.";
+        return response()->json($response, 200);
+    }
+
+    //======invoice list ==========
+
+    public function invoiceList(Request $request)
+    {
+        $invoiceList = PaySlip::where('user_id', Auth::user()->id)->orderBy('id', 'desc')->get();
+        return view('lists.invoiceList', compact('invoiceList'));
+    }
+
+    //======================== mail logic =======
+    /* $maildata = [
             'email' => Auth::user()->email,
             'title' => ''
         ];
@@ -212,9 +235,5 @@ class TemplateFormController extends Controller
             });
         } catch (\Exception $e) {
             $response['message'] = $e->getMessage() . ' Line No ' . $e->getLine() . ' in File' . $e->getFile();
-        }
-        $response['pdf'] = asset('/uploads/mailData/' . $fileName);
-        $response['message'] = "Mail send successfully.";
-        return response()->json($response, 200);
-    }
+        } */
 }

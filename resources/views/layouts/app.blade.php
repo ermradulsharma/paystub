@@ -59,6 +59,17 @@
             <li class="nav-item  ml-3 ">
                 @guest
                 <a class="btn btn-lg py-2 w-100 mt-5 btn-danger login registerBtn" href="javascript:void(0);">Login</a>
+                <div class="d-none logoutDiv">
+                    <a class="btn btn-lg py-2 w-100 mt-5 btn-danger " href="javascript:void(0);" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i class="fa fa-sign-out"></i> Log out</a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        {{csrf_field()}}
+                    </form>
+                </div>
+                @else
+                <a class="btn btn-lg py-2 w-100 mt-5 btn-danger " href="javascript:void(0);" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i class="fa fa-sign-out"></i> Log out</a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    {{csrf_field()}}
+                </form>
                 @endguest
             </li>
 
@@ -249,6 +260,7 @@
                     $('.registerBtn').addClass('d-none');
                     $('.sendMailButton').removeClass('d-none');
                     $('.sendMailButton').addClass('d-block');
+                    $('.logoutDiv').removeClass('d-none');
                 },
                 error: function(err) {
                     error = err.responseJSON;
@@ -275,7 +287,7 @@
 
 
         $('.sendMailButton').click(function() {
-            sendPdf();
+            usaStoreData();
         });
 
         function viewPDF() {
@@ -296,21 +308,24 @@
             return false;
         }
 
-        function sendPdf() {
+        function usaStoreData() {
             $.ajax({
-                url: "{{ route('sendPDF') }}",
+                url: "{{ route('usaStoreData') }}",
                 type: 'post',
                 data: $('#usa_paystubx').serialize(),
                 success: function(response) {
                     console.log('response ', response);
                     toastr.success(response.message);
+                    setTimeout(function() {
+                        window.location.href = "{{route('invoiceList')}}";
+                    }, 1000);
                 },
                 error: function(err) {
                     error = err.responseJSON;
                     toastr.error(error.message);
                 }
             });
-            return false;
+
         }
     </script>
     @yield('script')
