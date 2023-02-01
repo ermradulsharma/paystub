@@ -26,8 +26,11 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body" id="tempView">
-
+            <div class="modal-body">
+                <object data="your_url_to_pdf" type="application/pdf">
+                    <iframe src="" id="tempView" width="100%" height="800px" frameborder="0"></iframe>
+                </object>
+                {{-- <iframe  height="800px" frameborder="0" controls="false"></iframe> --}}
             </div>
         </div>
     </div>
@@ -645,6 +648,7 @@
             this.value = ("" + mobileNumber.substring(0, 3) + " " + mobileNumber.substring(3, 6) + " " + mobileNumber.substring(6, 10));
         });
     });
+
 </script>
 <script>
     $(document).ready(function() {
@@ -665,6 +669,7 @@
             }
         });
     });
+
 </script>
 
 @endsection
