@@ -210,7 +210,7 @@ $(document).ready(function() {
             if (pay_start != '') {
                 $(".pay_end").val(newDate_1);
                 date_calculate();
-                $(".pay_end").attr('disabled', true)
+                $(".pay_end").attr('readonly', true)
             } else if(pay_start == 'Invalid date') {
                 for (let i = 0; i < finalArray.length; i++) {
                     $('#rate_' + i).val('');
@@ -303,10 +303,10 @@ $(document).ready(function() {
     $('.auto_calculate').change(function(){
         var value = $(this).val();
         if(value == "on"){
-            $('.manualTaxTotal').attr('disabled', true);
+            $('.manualTaxTotal').attr('readonly', true);
             // $('.manualTaxTotal').addClass('style1');
         }else{
-            $('.manualTaxTotal').attr('disabled', false);
+            $('.manualTaxTotal').attr('readonly', false);
         }
     })
     $('.manualTaxTotal').keyup(function(){
