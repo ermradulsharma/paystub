@@ -10,84 +10,83 @@
 
 
     <style>
-        .infomation {
-            border: 2px solid darkgrey;
-            border-top: none;
-        }
+    .infomation {
+        border: 2px solid darkgrey;
+        border-top: none;
+    }
 
 
-        .bodertop {
-            border: 1px solid black;
-            width: 100%;
-            display: flex;
-            flex-wrap: wrap;
-            border: 2px solid darkgrey;
-            border-top: none;
-        }
+    .bodertop {
+        border: 1px solid black;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        border: 2px solid darkgrey;
+        border-top: none;
+    }
 
 
-        .hiddden {
-            visibility: hidden;
-        }
+    .hiddden {
+        visibility: hidden;
+    }
 
-        .main {
-            display: inline-flexbox;
+    .main {
+        display: inline-flexbox;
 
-        }
+    }
 
-        .section_2 {
-            padding-top: 5px;
-            background: #a9a9a9;
-            color: white;
-            height: 35px;
-        }
-
-
+    .section_2 {
+        padding-top: 5px;
+        background: #a9a9a9;
+        color: white;
+        height: 35px;
+    }
 
 
 
-        .earning {
-            text-align: right;
 
-            font-size: 20px;
-        }
 
-        .row::after {
-            content: "";
-            clear: both;
-            display: table;
-        }
+    .earning {
+        text-align: right;
 
-        .col1 {
-            float: left;
-            width: 40%;
-        }
+        font-size: 20px;
+    }
 
-        .col2 {
-            float: left;
-            width: 60%;
-        }
+    .row::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
 
-        .row1::after {
-            content: "";
-            clear: both;
-            display: table;
-        }
+    .col1 {
+        float: left;
+        width: 40%;
+    }
 
-        .tablewidth {
-            width: 100%;
-            text-align: center;
-        }
+    .col2 {
+        float: left;
+        width: 60%;
+    }
 
-        .column1 {
-            float: left;
-            width: 60%;
-        }
+    .row1::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+    .tablewidth{
+        width:100%;
+        text-align: center;
+    }
 
-        .column2 {
-            float: left;
-            width: 40%;
-        }
+    .column1 {
+        float: left;
+        width: 60%;
+    }
+
+    .column2 {
+        float: left;
+        width: 40%;
+    }
 
         .hadding {
 
@@ -232,15 +231,15 @@
                     <tbody>
 
 
-                        @foreach ($requestData['earning'] as $key => $earn)
-                            <tr>
-                                <td style="text-align: left;">{{ $earn }}</td>
-                                <td>{{ $requestData['currency'] }} {{ $requestData['rate'][$key] }}</td>
-                                <td style="text-align:center;">{{ $requestData['hours'][$key] }}</td>
-                                <td>{{ $requestData['currency'] }} {{ $requestData['period'][$key] }}</td>
-                                <td>{{ $requestData['currency'] }} {{ $requestData['ytd_total'][$key] }}</td>
-                            </tr>
-                        @endforeach
+                    @foreach ($requestData['earning'] as $key => $earn)
+                    <tr>
+                        <td style="text-align: left;">{{ $earn }}</td>
+                        <td>{{ $requestData['currency'] }} {{ $requestData['rate'][$key] }}</td>
+                        <td style="text-align:center;">{{ $requestData['hours'][$key] }}</td>
+                        <td>{{ $requestData['currency'] }} {{ $requestData['period'][$key] }}</td>
+                        <td>{{ $requestData['currency'] }} {{ $requestData['ytd_total'][$key] }}</td>
+                    </tr>
+                    @endforeach
                     </tbody>
 
 
@@ -260,13 +259,13 @@
                     <tbody>
 
 
-                        @foreach ($requestData['taxes'] ?? [] as $key => $taxes)
-                            <tr>
-                                <td style="text-align: left;">{{ $taxes }}</td>
-                                <td>{{ $requestData['currency'] }} {{ $requestData['taxes_rate'][$key] }}</td>
-                                <td>{{ $requestData['currency'] }} {{ $requestData['taxes_ytd'][$key] }}</td>
-                            </tr>
-                        @endforeach
+                    @foreach ($requestData['taxes'] ?? [] as $key => $taxes)
+                    <tr>
+                        <td style="text-align: left;">{{ $taxes }}</td>
+                        <td>{{ $requestData['currency'] }} {{ $requestData['taxes_rate'][$key] }}</td>
+                        <td>{{ $requestData['currency'] }} {{ $requestData['taxes_ytd'][$key] }}</td>
+                    </tr>
+                    @endforeach
 
                         @foreach ($requestData['tax_deduction'] ?? [] as $key => $tax_deduction)
                             <tr>
@@ -285,18 +284,18 @@
         <table style="width:100%;">
             <tr>
                 <th colspan="4" style="text-align: right;">DEDUCTION TOTAL</th>
-                <td style="text-align: right;">{{ $requestData['period_gross_total'] }}</td>
-                <td style="text-align: center;">{{ $requestData['ytd_gross_total'] }}</td>
+                <td style="text-align: right;">{{ $requestData['currency'] }} {{ $requestData['period_gross_total'] }}</td>
+                <td style="text-align: center;">{{ $requestData['currency'] }} {{ $requestData['ytd_gross_total'] }}</td>
             </tr>
 
             <tr>
                 <th style="text-align: right;">GROSS PAY </th>
-                <td style="text-align: right;">{{ $requestData['deduction_tax'] }}</td>
-                <td style="text-align: right;">{{ $requestData['ytd_deduction_tax'] }}</td>
+                <td style="text-align: right;">{{ $requestData['currency'] }} {{ $requestData['deduction_tax'] }}</td>
+                <td style="text-align: right;">{{ $requestData['currency'] }} {{ $requestData['ytd_deduction_tax'] }}</td>
 
-                <th style="text-align: right;">Net Pay</th>
-                <td style="text-align: right;">{{ $requestData['total_net_pay'] }}</td>
-                <td style="text-align: center;">{{ $requestData['total_ytd_net_pay'] }}</td>
+                <th style="text-align: right;" >Net Pay</th>
+                <td style="text-align: right;">{{ $requestData['currency'] }} {{ $requestData['total_net_pay'] }}</td>
+                <td style="text-align: center;">{{ $requestData['currency'] }} {{ $requestData['total_ytd_net_pay'] }}</td>
             </tr>
 
         </table>
@@ -318,3 +317,4 @@
 </body>
 
 </html>
+
