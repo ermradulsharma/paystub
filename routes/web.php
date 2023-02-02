@@ -31,6 +31,10 @@ Route::post('templates', [TemplateFormController::class, 'templates'])->name('te
 Route::post('usaStoreData', [TemplateFormController::class, 'usaStoreData'])->name('usaStoreData');
 Route::get('invoiceList', [TemplateFormController::class, 'invoiceList'])->name('invoiceList');
 Route::post('invoiceDelete/{id}', [TemplateFormController::class, 'invoiceDelete'])->name('invoiceDelete');
+Route::get('invoiceMail/{id}', [TemplateFormController::class, 'invoiceMail'])->name('invoiceMail');
+Route::get('usa/edit/{id}', [UsaController::class, 'edit'])->name('invoice-Usa-Edit');
+Route::get('prizing', [UsaController::class, 'prizing'])->name('prizing');
+
 
 Route::get('auth/Login', [LoginController::class, 'loginWithGoogle'])->name('login.google');
 Route::any('auth/callback', [LoginController::class, 'callbackFromGoogle'])->name('callback');
@@ -108,9 +112,9 @@ Route::get('template-view', function () {
 Route::get('userDashboard', function () {
     return view('user-dashboard');
 });
-Route::get('prizing', function () {
+/* Route::get('prizing', function () {
     return view('prizing');
-});
+}); */
 
 Route::name('admin')->prefix('backend')->group(function () {
     Route::get('/', function () {
