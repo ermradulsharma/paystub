@@ -147,13 +147,9 @@
                     <td>{{ $requestData['currency'] }} {{ $requestData['ytd_total'][$key] }}</td>
                 </tr>
             @endforeach
-            <tr></tr>
-            <tr></tr>
-            <tr></tr>
-            <tr></tr>
-            <tr></tr>
-            <tr></tr>
-            <tr></tr>
+            </br> </br>
+
+
             <tr>
                 <td></td>
                 <td>Gross Pay</td>
@@ -161,16 +157,8 @@
                 <td>{{ $requestData['deduction_tax'] }}</td>
                 <td>{{ $requestData['ytd_deduction_tax'] }}</td>
             </tr>
-            <tr></tr>
-            <tr></tr>
-            <tr></tr>
-            <tr></tr>
-            <tr></tr>
-            <tr></tr>
-            <tr></tr>
-            <tr></tr>
-            <tr></tr>
-            <tr></tr>
+            </br> </br> </br> </br>
+
         </table>
     </section>
     <section style="position: relative;">
@@ -213,15 +201,8 @@
                     </tr>
                 @endforeach
 
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
+                </br> </br> </br>
+
                 <tr>
                     <td></td>
                     <td
