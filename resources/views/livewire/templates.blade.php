@@ -17,7 +17,6 @@
         @if ($next == 1)
         <div class="pageTitle">
             <h1>Template Table</h1>
-
             <div class="card">
                 <div class="card-body">
                     <div style="float:right;">
@@ -32,7 +31,6 @@
                                 <th>State</th>
                                 <th>Type</th>
                                 <th>Title</th>
-                                {{-- <th>Description</th> --}}
                                 <th>Image</th>
                                 <th>Action</th>
                             </tr>
@@ -41,28 +39,26 @@
                             @foreach ($templateCollection as $key => $template)
                             <tr>
                                 <td>{{ $key + 1 }}</td>
-                                <td>{{ $template->state }}</td>
-                                <td>{{ $template->type }}</td>
-                                <td>{{ $template->title }}</td>
-                                {{-- <td>{{ $template->discription }}</td> --}}
-
+                                <td class="text-uppercase">{{ $template->state }}</td>
+                                <td class="text-uppercase">{{ $template->type }}</td>
+                                <td>{{ $template->name }}</td>
                                 <td>
                                     <a href="{{ asset($template->images->file ?? '') }}" target="blank">
                                         @if(!empty($template->images->file_type))
-                                        @if($template->images->file_type != "pdf")
-                                        <img width="200px" height="150px" src="{{$template->images->file ?? '' }}" />
-                                        @else
-                                        <i class="fa fa-file-pdf-o" style="font-size:48px;color:red"></i>
-                                        @endif
+                                            @if($template->images->file_type != "pdf")
+                                                <img width="200px" height="150px" src="{{$template->images->file ?? '' }}" />
+                                            @else
+                                                <i class="fa fa-file-pdf-o" style="font-size:48px;color:red"></i>
+                                            @endif
                                         @endif
                                     </a>
                                 </td>
 
                                 <td><button type="button" class="btn btn-primary" wire:click="editTemplate({{ $template->id }})">Edit</button>
                                     @if($confirming===$template->id)
-                                    <button wire:click="deleteTemplate({{$template->id}})" class="btn btn-warning text-white w-32 ">Sure?</button>
+                                        <button wire:click="deleteTemplate({{$template->id}})" class="btn btn-warning text-white w-32 ">Sure?</button>
                                     @else
-                                    <button wire:click="confirmDelete({{ $template->id }})" class="btn btn-danger">Delete</button>
+                                        <button wire:click="confirmDelete({{ $template->id }})" class="btn btn-danger">Delete</button>
                                     @endif
                                 </td>
                             </tr>
@@ -79,17 +75,13 @@
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-lg-6 col-md-6 d-flex flex-column align-items-center justify-content-center">
-
                             <div class="container">
                                 <div class="card">
                                     <div class="card-header">
                                         <h2 class="card-title"> {{ $page_title }}</h2>
-
                                     </div>
                                     <div class="card-body mt-5">
-
                                         <!-- Horizontal Form -->
-
                                         <form wire:submit.prevent="StoreTemplate">
                                             <div class="row mb-3">
                                                 <label class="col-sm-3 col-form-label">State</label>
@@ -100,13 +92,11 @@
                                                         <option value="canada">CANADA</option>
                                                         <option value="uk">UK</option>
                                                         <option value="globle">GLOBLE</option>
-
                                                     </select>
                                                     @error('state')
                                                     <div class="mt-3 text-danger">* {{ $message }}</div>
                                                     @enderror
                                                 </div>
-
                                             </div>
 
                                             <div class="row mb-3">
@@ -121,7 +111,6 @@
                                                     <div class="mt-3 text-danger">* {{ $message }}</div>
                                                     @enderror
                                                 </div>
-
                                             </div>
 
                                             <div class="row mb-3">
@@ -135,18 +124,14 @@
                                                 </div>
                                             </div>
 
-
                                             <div class="row mb-3">
-                                                <label class="col-sm-3 col-form-label">
-                                                    File Upload</label>
-
+                                                <label class="col-sm-3 col-form-label">File Upload</label>
                                                 <div class="col-sm-8">
                                                     <input class="form-control" wire:model="file" type="file" id="file">
                                                     @error('file')
                                                     <div class="mt-3 text-danger">* {{ $message }}</div>
                                                     @enderror
                                                 </div>
-
                                             </div>
                                             <div class="text-center mt-5">
                                                 <button type="submit" class="btn btn-primary" style="float:right;">Submit</button>
@@ -157,12 +142,10 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </section>
         </div>
         @endif
     </main>
-
 </div>

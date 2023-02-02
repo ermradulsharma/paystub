@@ -28,10 +28,8 @@
                 </button>
             </div>
             <div class="modal-body">
-                <object data="your_url_to_pdf" type="application/pdf">
-                    <iframe src="" id="tempView" width="100%" height="800px" frameborder="0"></iframe>
-                </object>
-                {{-- <iframe  height="800px" frameborder="0" controls="false"></iframe> --}}
+                <embed src="" type="" id="tempView" allowtransparency="false" style="background-color : transparent;" frameborder="0" width="100%" height="800">
+                {{-- <iframe src="" id="tempView" allowtransparency="false" style="background-color : transparent;" frameborder="0" width="100%" height="800"></iframe> --}}
             </div>
         </div>
     </div>
@@ -517,16 +515,16 @@
                         <div class="row mb-3 mt-4">
                             <div class="col-md-4 col-lg-3">
                                 <img src="{{ asset('images/lock.png') }}" class="earnbtn2">
-                                <input class="earnbtn text-center taxes" name="taxes[]" data-id="{{ $key }}" data-value="{{ $item->price }}" value="{{ $item->title }}">
+                                <input class="earnbtn text-center taxes" name="taxes[]" data-id="{{ $key }}" data-value="{{ $item->price }}" value="{{ $item->title }}" data-value="{{ $item->title }}">
                             </div>
                             <div class="col-md-1 col-lg-1"></div>
                             <div class="col-md-2 col-lg-3"></div>
                             <div class="col-md-1 col-lg-1"></div>
                             <div class="col-md-2 col-lg-2">
-                                <input type="text" name="taxes_rate[]" class="earnbtn text-center" id="taxes_{{ $key }}" value="" />
+                                <input type="text" name="taxes_rate[]" class="earnbtn text-center manualTaxTotal" id="taxes_{{ $key }}" value="" data-value=""/>
                             </div>
                             <div class="col-md-2 col-lg-2">
-                                <input type="text" name="taxes_ytd[]" class="earnbtn text-center" id="taxes_ytd_{{ $key }}" value="" />
+                                <input type="text" name="taxes_ytd[]" class="earnbtn text-center" id="taxes_ytd_{{ $key }}" value="" data-value=""/>
                             </div>
                         </div>
                         @endforeach

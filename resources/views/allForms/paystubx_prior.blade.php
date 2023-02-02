@@ -23,51 +23,44 @@
 
 <body>
 
-    <table style="width: 100%;">
+    <table style="width:100%;">
         <tr style="">
-            <td style="font-size:38px; font-weight:800; padding-left:90px;">{{ $requestData['cname'] }}</td>
+            <td style="font-size:38px; font-weight:800; padding-left:90px;">{{ $requestData['cname'] ?? '' }}</td>
             <td></td>
-            <td style="font-size:18px; padding-right:90px;font-weight:800;">No: {{ $requestData['emp_ssn'] }}</td>
-        </tr>
-        <tr>   <br>
-             
-            <td style="padding-left:90px; padding-top:0px; font-weight:800;">  
-            {{ $requestData['address_1'] }}
-            <!-- 1701 leagacy Dr Ste 470 -->
-        </td>
+            <td style="font-size:18px; padding-right:30px;font-weight:800;">No: {{ $requestData['emp_ssn']?? '' }}</td>
         </tr>
         <tr>
-            <td style="padding-left:90px;padding-top:0px; font-weight:800;"> 
-            {{ $requestData['city'] }} {{ $requestData['state'] }}, {{ $requestData['zip_code'] }}
-            <!-- Frisco, TX 75034 -->
+            <td style="padding-left:90px; padding-top:0px; font-weight:800;"> {{ $requestData['address_1'] }} <br>
+                {{ $requestData['city'] }}
+            </td>
+        </tr>
+        <tr>
+            <td style="padding-left:90px;padding-top:0px; font-weight:800;"> {{ $requestData['state'] }}, {{ $requestData['zip_code'] }}
             <td>
             <td style="font-size:18px;">Date: 12/13/2023</td>
         </tr>
         <tr style="padding-top:4px;">
 
-            <td style="font-size: 23px;"    >
+            <td style="font-size:13px;">
                 <h5>
-                    Pay TO The <br>Order Of <span style="border-bottom: 1px solid black;  padding-left:90px;   height:20px">{{$requestData['emp_name']}}</span>
+                    Pay TO The <br>Order Of <span style="border-bottom: 1px solid black;  padding-left:90px;   height:20px">{{$requestData['emp_name'] ?? ''}}</span>
                 </h5>
                 <span style="border-bottom: 1px solid black;  padding-left:90px;">Seven Thousand One Hundred Forty-Five and 63/100</span>
             </td>
-            <td style="
-    font-size: 22px;
-">$ **7.145.63</td>
-        
+            <td>
+                $ **7.145.63
+            </td>
+        </tr>
     </table>
 
 
     <table style="width: 100%;padding-top:60px;margin-top: 30px;">
 
         <tr>
-            
+
             <td style="font-size:18px;">Memo: </td>
-            <td colspan="2" style="
-    font-size: 24px;
-    font-family: sans-serif;
-">FOR RECORDS PURPOSES ONLY</td>
-            <td>-----------------------------------------------------------------------------------------------------</td>
+            <td colspan="2" style="font-size: 15px;">FOR RECORDS PURPOSES ONLY</td>
+            <td>-----------------------------------------------------------------</td>
         </tr>
         <tr>
             <td></td>
@@ -76,36 +69,35 @@
     </table>
 
 
-    <table style="width: 100%; padding: top 40px; margin-top: 30px;">
+
+    <table style="width: 100%; padding: top 40px;">
         <tr style="">
-            <td style="font-weight: 800; font-size:14px; margin-top:200px;">
-            <!-- Paystubs -->
-            {{ $requestData['cname'] }}
-        </td>
-            <td style="font-weight: 800;">{{ $requestData['emp_name'] }}</td>
+            <td style="font-weight: 800; font-size:14px; margin-top:200px;"> {{ $requestData['cname'] ?? '' }}</td>
+            <td style="font-weight: 800;">sharp, Dana</td>
             <td>SSN</td>
-            <td>XXX-XX-{{ $requestData['emp_ssn'] }}</td>
+            <td>XXX-XX-{{ $requestData['emp_ssn']?? '' }}</td>
             <td>Period Beginning</td>
-            <td>11/12/202</td>
+            <td> {{ $requestData['pay_start'] ?? '' }}</td>
+
         </tr>
         <tr>
-            <td style="margin: 0; padding:0;"> {{ $requestData['address_1'] }}</td>
-            <td style="margin: 0; padding:0;">{{ $requestData['emp_street_1'] }}</td>
+            <td style="margin: 0; padding:0;">{{ $requestData['address_1'] ?? '' }}</td>
+            <td style="margin: 0; padding:0;">3773 Rockdale Dr</td>
             <td>Gross Pay</td>
-            <td>$9.928.00</td>
+            <td>{{ $requestData['currency'] ?? '' }} {{ $requestData['period_gross_total'] ?? ''}}</td>
             <td>Period Ending</td>
-            <td>11/12/202</td>
+            <td> {{ $requestData['pay_end'] ?? '' }}</td>
         </tr>
         <tr>
-            <td>{{ $requestData['address_2'] }}</td>
-            <td>{{ $requestData['emp_street_1'] }}</td>
+            <td> {{ $requestData['city'] ?? '' }}, {{ $requestData['state'] ?? '' }}, {{ $requestData['zip_code'] ?? '' }}</td>
+            <td>Dallas, TX750220</td>
             <td>Net Pay</td>
-            <td>$7.928.00</td>
+            <td>{{ $requestData['currency'] ?? '' }} {{ $requestData['total_net_pay'] ?? ''}}</td>
             <td>Check Date</td>
-            <td>11/25/202</td>
+            <td> {{$requestData['pay_date']}}</td>
         </tr>
         <tr>
-            <td>{{ $requestData['tel'] }}</td>
+            <td>{{ $requestData['tel'] ?? '' }}</td>
             <td></td>
             <td>Filling Status</td>
             <td>$3.00</td>
@@ -126,16 +118,18 @@
             <td>Amount</td>
             <td>YTD Amt</td>
         </tr>
+        @foreach ($requestData['earning'] as $key => $earn )
+
         <tr>
-            <td>Salary</td>
-            <td></td>
-            <td>$9.28.00</td>
-            <td>$567.28.00</td>
+            <td> {{$earn}}</td>
+            <td>{{ $requestData['hours'][$key]  }}</td>
+            <td>{{ $requestData['currency'] ?? '' }} {{ $requestData['period'][$key] ?? '' }}</td>
+            <td>{{ $requestData['currency'] ?? '' }} {{ $requestData['ytd_total'][$key] ?? '' }}</td>
             <td>Fed Income Tax</td>
             <td>$9.28.00</td>
             <td>$567.28.00</td>
         </tr>
-
+        @endforeach
         <tr>
             <td>Regular Hourly Pay</td>
             <td>0.00</td>
@@ -231,6 +225,33 @@
         </tr>
     </table>
 
+    <!-- <table>
+
+
+        <tr>
+            <th>Taxes/Deductions</th>
+            <td>Amount</td>
+            <td>YTD Amt</td>
+        </tr>
+
+
+
+        <tr>
+
+            <td> Social Security Tax</td>
+            <td>Medicare Tax</td>
+            <td>State Income Tax</td>
+            <td>Health Insurance</td>
+            <td>Pre Tax Dental</td>
+            <td>401K</td>
+            <td>Local Income Tax</td>
+            <td>Accl Deatd Dismemb</td>
+        </tr>
+    </table> -->
+
+
 </body>
 
 </html>
+
+<!--  +++++++++++++++++++++++++++++++++++++++++    +++++++++++++++++++++++++++++++++++++++++    +++++++++++++++++++++++++++++++++++++++++    +++++++++++++++++++++++++++++++++++++++++ -->
