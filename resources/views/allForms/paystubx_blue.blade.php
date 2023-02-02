@@ -70,12 +70,12 @@
 
         .column1 {
             float: left;
-            width: 55%;
+            width: 54%;
         }
 
         .column2 {
             float: left;
-            width: 45%;
+            width: 46%;
 
 
         }
@@ -96,7 +96,7 @@
         }
 
         .colortable {
-            background-color: #dce6f1;
+           
         }
 
         #borderleft {
@@ -136,10 +136,10 @@
 
             </thead>
             <thead id="colourborder">
-                <th class="padding" style="text-align:center;" colspan="2"> EMPLOYEE ID </th>
-                <th class="padding" style="text-align:center;"colspan="3"> PERIOD ENDING </th>
-                <th class="padding"style="text-align:center;"> PAY DATE </th>
-                <th class="padding"style="text-align:center;" colspan="2">CHECK NUMBER</th>
+                <th class="padding" style="text-align:center; font-size:11px;" colspan="2"> EMPLOYEE ID </th>
+                <th class="padding" style="text-align:center; font-size:11px;"colspan="3"> PERIOD ENDING </th>
+                <th class="padding"style="text-align:center; font-size:11px;"> PAY DATE </th>
+                <th class="padding"style="text-align:center; font-size:11px;" colspan="2">CHECK NUMBER</th>
             </thead>
             <tr>
                 <td class="padding" id="colsborder" colspan="2"
@@ -161,16 +161,16 @@
         </table>
 
         <section style="border: 1px solid black;">
-            <div class="row">
-                <div class="column1">
+            <div class="row"style=" background-color: #dce6f1;">
+                <div class="column1" >
                     <table class="colortable">
                         <thead id="colourborder">
-                            <th class="padding" style="text-align: left;padding-left:4px;">INCOME</th>
-                            <th class="padding">RATE</th>
-                            <th class="padding">HOURS</th>
-                            <th class="padding">CURRENT TOTAL</th>
+                            <th class="padding" style="text-align: left;padding-left:4px; font-size:11px;">INCOME</th>
+                            <th class="padding" style="font-size:11px;">RATE</th>
+                            <th class="padding" style="font-size:11px;">HOURS</th>
+                            <th class="padding" style="font-size:11px;">CURRENT TOTAL</th>
                         </thead>
-                        <tbody>
+                        <tbody >
 
                             @foreach ($requestData['earning'] as $key => $earn)
                                 <tr>
@@ -192,9 +192,9 @@
                     <table class="colortable">
 
                         <thead id="colourborder">
-                            <th class="padding" style="text-align: left;padding-left:4px;">DEDUCTION</th>
-                            <th class="padding" style="padding-right:2px;">CURRENT TOTAL</th>
-                            <th class="padding">YEAR TO DATE</th>
+                            <th class="padding" style="text-align: left;padding-left:4px; font-size:11px;">DEDUCTION</th>
+                            <th class="padding" style="padding-right:2px; font-size:11px;" >CURRENT TOTAL</th>
+                            <th class="padding" style="font-size:11px;">YEAR TO DATE</th>
                         </thead>
 
                         <tbody id="borderleft">
