@@ -15,6 +15,12 @@ return new class extends Migration
     {
         Schema::create('pay_slips', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->string('reference')->nullable()->default("");
+            $table->string('title')->nullable()->default("");
+            $table->string('pdf')->nullable()->default("");
+            $table->longText('data')->nullable();
             $table->timestamps();
         });
     }

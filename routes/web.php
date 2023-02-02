@@ -20,13 +20,17 @@ use Symfony\Component\Routing\Router;
 |
 */
 
+Route::post('logout', [LoginController::class, 'logout'])->name('logout');
+
+
 Route::get('/', function () {
     return view('paystub');
 });
 
 Route::post('templates', [TemplateFormController::class, 'templates'])->name('templates');
-Route::post('sendPDF', [TemplateFormController::class, 'sendPDF'])->name('sendPDF');
-
+Route::post('usaStoreData', [TemplateFormController::class, 'usaStoreData'])->name('usaStoreData');
+Route::get('invoiceList', [TemplateFormController::class, 'invoiceList'])->name('invoiceList');
+Route::post('invoiceDelete/{id}', [TemplateFormController::class, 'invoiceDelete'])->name('invoiceDelete');
 
 Route::get('auth/Login', [LoginController::class, 'loginWithGoogle'])->name('login.google');
 Route::any('auth/callback', [LoginController::class, 'callbackFromGoogle'])->name('callback');
@@ -50,7 +54,6 @@ Route::get('cerulean-pdf', [TemplateFormController::class, 'advanceCeruleanUsa']
 Route::get('district-pdf', [TemplateFormController::class, 'advanceDistrictUsa']);
 Route::get('aegean-pdf', [TemplateFormController::class, 'advanceAegeanUsa']);
 // shubham end
-
 
 Route::match(['get', 'post'], 'usa', [UsaController::class, 'index']);
 Route::get('canada-paystub', [CanadaController::class, 'index']);
@@ -93,7 +96,6 @@ Route::get('refund', function () {
     return view('refund');
 });
 
-
 Route::get('w2paystub', function () {
     return view('w2paystub');
 });
@@ -110,15 +112,7 @@ Route::get('prizing', function () {
     return view('prizing');
 });
 
-
-
-
-
-
-
 Route::name('admin')->prefix('backend')->group(function () {
-
-
     Route::get('/', function () {
         return view('Admin/login');
     });

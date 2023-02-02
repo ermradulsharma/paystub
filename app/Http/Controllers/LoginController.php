@@ -10,6 +10,7 @@ use App\Models\verifiedEmail;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 
 class LoginController extends Controller
@@ -60,15 +61,11 @@ class LoginController extends Controller
         }
     }
 
-    /*   public function login(Request $request){
-        Log::info($request);
-        if(Auth::attempt(['email' => request('email'), 'password' => request('password')])){
-            return view('home');
-        }
-        else{
-            return Redirect::back ();
-        }
-    } */
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        return Redirect::back();
+    }
 
     public function loginWithOtp(Request $request)
     {

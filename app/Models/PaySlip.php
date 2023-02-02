@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class PaySlip extends Model
 {
     use HasFactory;
+
+    public function getPdfAttribute($pdf = null)
+    {
+        return asset('uploads/mailData/' . $pdf);
+    }
 }

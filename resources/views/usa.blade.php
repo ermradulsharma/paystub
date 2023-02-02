@@ -28,10 +28,8 @@
                 </button>
             </div>
             <div class="modal-body">
-                <object data="your_url_to_pdf" type="application/pdf">
-                    <iframe src="" id="tempView" width="100%" height="800px" frameborder="0"></iframe>
-                </object>
-                {{-- <iframe  height="800px" frameborder="0" controls="false"></iframe> --}}
+                <embed src="" type="" id="tempView" allowtransparency="false" style="background-color : transparent;" frameborder="0" width="100%" height="800">
+                {{-- <iframe src="" id="tempView" allowtransparency="false" style="background-color : transparent;" frameborder="0" width="100%" height="800"></iframe> --}}
             </div>
         </div>
     </div>

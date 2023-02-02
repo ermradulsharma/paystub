@@ -155,7 +155,7 @@
             <table>
                 <tr>
                     <th class="heading1">Earnings</th>
-                    <th class="heading1"> Rate</th>
+                    <th class="heading1">Rate</th>
                     <th class="heading1">Hours</th>
                     <th class="heading1">This Period</th>
                     <th class="heading1">YTD</th>
