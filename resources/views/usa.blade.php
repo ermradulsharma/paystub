@@ -590,29 +590,29 @@
                         <div class="row mb-3">
                             <div class="col-lg-2 col-md-4 col-sm-6">
                                 <p class="p-0 m-0 " style="font-family: serif;">CO<span class="redColor">*</span></p>
-                                <input class="earnbtn text-center " value=""></input>
+                                <input name="co_number" class="earnbtn text-center " value=""></input>
                             </div>
                             <div class="col-lg-2 col-md-4 col-sm-6">
                                 <p class="p-0 m-0 text-center" style="font-family: serif;">FILE.<span class="redColor">*</span></p>
-                                <input class="earnbtn text-center " value=""></input>
+                                <input name="file_number" class="earnbtn text-center " value=""></input>
                             </div>
                             <div class="col-lg-2 col-md-4 col-sm-6">
                                 <p class="p-0 m-0 " style="font-family: serif;">CLOCK VCHR.<span class="redColor">*</span>
                                 </p>
-                                <input class="earnbtn text-center " value=""></input>
+                                <input name="clock_vchr_number" class="earnbtn text-center " value=""></input>
                             </div>
                             <div class="col-lg-2 col-md-4 col-sm-6">
                                 <p class="p-0 m-0 " style="font-family: serif;">Advice Number:<span class="redColor">*</span></p>
-                                <input class="earnbtn text-center " value=""></input>
+                                <input name="advice_number" class="earnbtn text-center " value=""></input>
                             </div>
                             <div class="col-lg-2 col-md-4 col-sm-6">
                                 <p class="p-0 m-0 " style="font-family: serif;">Account Number LAST<span class="redColor">*</span></p>
-                                <input class="earnbtn text-center " value=""></input>
+                                <input name="account_number_last_4" class="earnbtn text-center " value=""></input>
                             </div>
                             <div class="col-lg-2 col-md-4 col-sm-6">
                                 <p class="p-0 m-0 " style="font-family: serif;">Transit ABA<span class="redColor">*</span>
                                 </p>
-                                <input class="earnbtn text-center " value=""></input>
+                                <input name="transit_aba_number" class="earnbtn text-center " value=""></input>
                             </div>
                         </div>
                     </div>
