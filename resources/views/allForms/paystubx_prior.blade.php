@@ -29,7 +29,6 @@
     .column1 {
         float: left;
         width: 58%;
-
         padding-right: 5px;
     }
 
@@ -45,7 +44,7 @@
 
     <table style="width:100%;">
         <tr style="">
-            <td style="font-size:38px; font-weight:800; padding-left:90px;">{{ $requestData['cname'] ?? '' }}</td>
+            <td style="font-size:25px; font-weight:800; padding-left:90px;">{{ $requestData['cname'] ?? '' }}</td>
             <td></td>
             <td style="font-size:18px; padding-right:30px;font-weight:800;">No: {{ $requestData['emp_ssn'] ?? '' }}</td>
         </tr>
@@ -65,7 +64,7 @@
             <td style="font-size:13px;">
                 <h5>
                     Pay TO The <br>Order Of <span
-                        style="border-bottom: 1px solid black;  padding-left:90px;   height:20px">{{ $requestData['emp_name'] ?? '' }}</span>
+                        style="border-bottom: 1px solid black;  padding-left:90px; text-align:center; margin:auto;  height:20px">{{ $requestData['emp_name'] ?? '' }}</span>
                 </h5>
                 <span style="border-bottom: 1px solid black;  padding-left:90px;">Seven Thousand One Hundred Forty-Five
                     and 63/100</span>
@@ -92,10 +91,9 @@
     </table>
 
 
-
-    <table style="width: 100%; padding: top 40px;">
-        <tr style="">
-            <td style="font-weight: 800; font-size:14px; margin-top:200px;"> {{ $requestData['cname'] ?? '' }}</td>
+    <table style="width:100%; padding: top 40px; text-align:left;">
+        <tr>
+            <td style="font-weight: 800; font-size:13px; margin-top:200px;"> {{ $requestData['cname'] ?? '' }}</td>
             <td style="font-weight: 800;">sharp, Dana</td>
             <td>SSN</td>
             <td>XXX-XX-{{ $requestData['emp_ssn'] ?? '' }}</td>
@@ -104,7 +102,7 @@
 
         </tr>
         <tr>
-            <td style="margin: 0; padding:0;">{{ $requestData['address_1'] ?? '' }}</td>
+            <td style="margin: 0; padding:0; font-size:12px;">{{ $requestData['address_1'] ?? '' }}</td>
             <td style="margin: 0; padding:0;">3773 Rockdale Dr</td>
             <td>Gross Pay</td>
             <td>{{ $requestData['currency'] ?? '' }} {{ $requestData['period_gross_total'] ?? '' }}</td>
@@ -129,7 +127,7 @@
             <td>12345</td>
         </tr>
     </table>
-
+  
     <div class="row1">
         <div class="column1">
             <table style="width: 100%;">
