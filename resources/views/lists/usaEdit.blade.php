@@ -518,6 +518,8 @@
                         </div>
 
                         @foreach ($deduction as $key => $item)
+                        @php(@$deduction_period_tax += $invoice->taxes_rate[$key] ?? 0)
+                        @php(@$ytd_deduction_period_tax += $invoice->taxes_rate[$key] ?? 0)
                         <div class="row mb-3 mt-4">
                             <div class="col-md-4 col-lg-3">
                                 <img src="{{ asset('images/lock.png') }}" class="earnbtn2">
@@ -527,17 +529,19 @@
                             <div class="col-md-2 col-lg-3"></div>
                             <div class="col-md-1 col-lg-1"></div>
                             <div class="col-md-2 col-lg-2">
-                                <input type="text" name="taxes_rate[]" value="{{$invoice->taxes_rate[$key] ?? 0}}" class="earnbtn text-center" id="taxes_{{ $key }}" />
+                                <input type="text" name="taxes_rate[]" value="{{$invoice->taxes_rate[$key] ?? 0}}" class="earnbtn text-center manualTaxTotal" id="taxes_{{ $key }}" />
                             </div>
                             <div class="col-md-2 col-lg-2">
-                                <input type="text" name="taxes_ytd[]" value="{{$invoice->taxes_ytd[$key] ?? 0}}" class="earnbtn text-center" id="taxes_ytd_{{ $key }}" />
+                                <input type="text" name="taxes_ytd[]" value="{{$invoice->taxes_ytd[$key] ?? 0}}" class="earnbtn text-center manualTaxTotal" id="taxes_ytd_{{ $key }}" />
                             </div>
                         </div>
                         @endforeach
                         <div id="add_deduction" class="my-3">
                             @foreach ($invoice->tax_deduction ?? [] as $key => $tax_deduction)
+                            @php(@$deduction_period_tax_other += $invoice->period_tax_deduction[$key] ?? 0)
+                            @php(@$ytd_deduction_period_tax_other += $invoice->ytd_tax_deduction[$key] ?? 0)
                             <div class="row mb-3">
-                                <div class="col-md-3"><img src="{{ asset('images/lock.png') }}" class="earnbtn2"><input name="tax_deduction[]" value="{{$tax_deduction ?? 0}}" class="earnbtn text-center tax_deduction_00{{$key+1}} tax_deduction_00{{$key+1}} " data-id="00{{$key+1}}" type="text"></div>
+                                <div class="col-md-3"><img src="{{ asset('images/lock.png') }}" class="earnbtn2"><input name="tax_deduction[]" value="{{$tax_deduction ?? ''}}" class="earnbtn text-center tax_deduction_00{{$key+1}} tax_deduction_00{{$key+1}} " data-id="00{{$key+1}}" type="text"></div>
                                 <div class="col-md-1"> </div>
                                 <div class="col-md-3"> </div>
                                 <div class="col-md-1"> </div>
@@ -547,10 +551,12 @@
                             @endforeach
                         </div>
                         <div class=" col-lg-2 col-md-2 margin-bottom">
-                            <input type="text" name="" class="earnbtn text-center deduction_period_tax" value="" id="deduction_period_tax" hidden>
+                            <input type="text" name="" class="earnbtn text-center deduction_period_tax" value="{{$deduction_period_tax ?? 0}}" id="deduction_period_tax" hidden>
+                            <input type="text" name="" class="earnbtn text-center deduction_period_tax_other" value="{{$deduction_period_tax_other ?? 0}}" id="deduction_period_tax_other" hidden>
                         </div>
                         <div class=" col-lg-2 col-md-2 margin-bottom">
-                            <input type="text" name="" class="earnbtn text-center ytd_deduction_period_tax" value="" id="ytd_deduction_period_tax" hidden>
+                            <input type="text" name="" class="earnbtn text-center ytd_deduction_period_tax" value="{{$ytd_deduction_period_tax ?? 0}}" id="ytd_deduction_period_tax" hidden>
+                            <input type="text" name="" class="earnbtn text-center ytd_deduction_period_tax_other" value="{{$ytd_deduction_period_tax_other ?? 0}}" id="ytd_deduction_period_tax_other" hidden>
                         </div>
                         <div class="row my-3">
                             <div class="col-md-4 col-lg-3">

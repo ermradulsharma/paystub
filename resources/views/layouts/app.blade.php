@@ -215,6 +215,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
     <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    @yield('script')
     <script>
         $('.registerBtn').click(function() {
             $('#loginModal').modal('show');
@@ -296,7 +297,7 @@
                 data: $('#usa_paystubx').serialize(),
                 success: function(response) {
                     console.log('response ', response);
-                    $('#tempView').attr('src',response.pdf+'?embedded=true#toolbar=0');
+                    $('#tempView').attr('src', response.pdf + '?embedded=true#toolbar=0');
                     // $('#tempView').html(response.data);
                     $('#tempViewModal').modal('show');
                 },
@@ -328,7 +329,7 @@
 
         }
     </script>
-    @yield('script')
+
 </body>
 
 </html>

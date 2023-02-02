@@ -521,10 +521,10 @@
                             <div class="col-md-2 col-lg-3"></div>
                             <div class="col-md-1 col-lg-1"></div>
                             <div class="col-md-2 col-lg-2">
-                                <input type="text" name="taxes_rate[]" class="earnbtn text-center manualTaxTotal" id="taxes_{{ $key }}" value="" data-value=""/>
+                                <input type="text" name="taxes_rate[]" class="earnbtn text-center manualTaxTotal" id="taxes_{{ $key }}" value="" data-value="" />
                             </div>
                             <div class="col-md-2 col-lg-2">
-                                <input type="text" name="taxes_ytd[]" class="earnbtn text-center" id="taxes_ytd_{{ $key }}" value="" data-value=""/>
+                                <input type="text" name="taxes_ytd[]" class="earnbtn text-center manualTaxTotal" id="taxes_ytd_{{ $key }}" value="" data-value="" />
                             </div>
                         </div>
                         @endforeach
@@ -532,9 +532,11 @@
                         </div>
                         <div class=" col-lg-2 col-md-2 margin-bottom">
                             <input type="text" name="" class="earnbtn text-center deduction_period_tax" value="" id="deduction_period_tax" hidden>
+                            <input type="text" name="" class="earnbtn text-center deduction_period_tax_other" value="" id="deduction_period_tax_other" hidden>
                         </div>
                         <div class=" col-lg-2 col-md-2 margin-bottom">
                             <input type="text" name="" class="earnbtn text-center ytd_deduction_period_tax" value="" id="ytd_deduction_period_tax" hidden>
+                            <input type="text" name="" class="earnbtn text-center ytd_deduction_period_tax_other" value="" id="ytd_deduction_period_tax_other" hidden>
                         </div>
                         <div class="row my-3">
                             <div class="col-md-4 col-lg-3">
@@ -657,7 +659,6 @@
                 mobileNumber.substring(6, 10));
         });
     });
-
 </script>
 <script>
     $(document).ready(function() {
@@ -678,7 +679,6 @@
             }
         });
     });
-
 </script>
 <script>
     $(document).ready(function() {
@@ -699,7 +699,6 @@
             }
         });
     });
-
 </script>
 
 @endsection
