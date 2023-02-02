@@ -38,7 +38,7 @@
     <div class="container" style="max-width:1500px">
         <ul class="nav nav-justified navbar" style="max-width: 1445px;">
             <li class="nav-item">
-                <a href="{{ url('/') }}"><img class="mr-3 mt-5" src="images/Paystub X.webp" style="width: 222px;"></a>
+                <a href="{{ url('/') }}"><img class="mr-3 mt-5" src="{{asset('images/Paystub X.webp')}}" style="width: 222px;"></a>
             </li>
             <li class="nav-item ml-3 ">
                 <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('usa') ? 'active' : '' }} " href="{{ url('usa') }}">USA</a>
@@ -77,7 +77,7 @@
     </div>
 
     <div id="mySidenav" class="sidenav">
-        <a href="{{ url('/') }}"><img class="mr-3 mt-5 toggle-logo" src="images/Paystub X.webp" style="width: 222px;"></a>
+        <a href="{{ url('/') }}"><img class="mr-3 mt-5 toggle-logo" src="{{asset('images/Paystub X.webp')}}" style="width: 222px;"></a>
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('usa') ? 'active' : '' }} " href="{{ url('usa') }}">USA</a>
         <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('canada') ? 'active' : '' }}" href="{{ url('canada') }}">CANADA</a>
@@ -96,7 +96,7 @@
 
                 <!-- Modal Header -->
                 <div class="modal-header" style="background: #115caecf;">
-                    <h4 class="modal-title"><img src="images/Paystub X.webp" class="icon"></h4>
+                    <h4 class="modal-title"><img src="{{asset('images/Paystub X.webp')}}" class="icon"></h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
 
@@ -111,7 +111,7 @@
                     </div>
 
                     <div class="text-center mt-4 mb-4">
-                        <img src="images/Group 3.png" style="width:130px;">
+                        <img src="{{asset('images/Group 3.png')}}" style="width:130px;">
                     </div>
                     <h6 class="text-center" style="color: #457bbe;">Sign Up Using Email</h6>
                     <p class="text-center"></p>
@@ -201,8 +201,7 @@
                     <p class="text-white footer-text">COPYRIGHT © 2022
                         PaystubX, ALL RIGHTS RESERVED.</p>
                     <div class="container justify-content-center m-auto text-center">
-                        <a href="{{ url('/') }}"><img class="footimg" src="images/satisfaction.webp"></a>
-
+                        <a href="{{ url('/') }}"><img class="footimg" src="{{asset('images/satisfaction.webp')}}"></a>
                     </div>
                 </div>
 

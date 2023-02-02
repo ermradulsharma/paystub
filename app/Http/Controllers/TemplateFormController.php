@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\PaySlip;
 use App\Models\Template;
 use Dompdf\Dompdf;
+use Exception;
 use Illuminate\Http\Request;
 use PDF;
 use File;
@@ -211,12 +212,20 @@ class TemplateFormController extends Controller
         $pdf = PDF::loadView('allForms/' . $pageName, $invoiceData)->setPaper('a4','portrait');
         $fileName =  date('_d_m_Y_h_i_s') . '.pdf';
         $pdf->save($path . '/' . $fileName);
-
-        $slip = new PaySlip;
-        $slip->user_id = Auth::user()->id;
+        $invoice_id = $request->invoice_id ?? 0;
+        $slip = PaySlip::where(['user_id' => Auth::user()->id, 'id' => $invoice_id])->first();
+        if (!$slip) {
+            $slip = new PaySlip;
+            $slip->user_id = Auth::user()->id;
+            $slip->reference = "PayStubx-" . rand(100000, 999999);
+        } else {
+            try {
+                unlink(public_path('/uploads/mailData/' . basename($slip->pdf)));
+            } catch (Exception $e) {
+            }
+        }
         $slip->data = json_encode($requestData);
         $slip->title = $requestData['cname'];
-        $slip->reference = "PayStubx-" . rand(100000, 999999);
         $slip->pdf = $fileName;
         $slip->save();
         $response['message'] = "Data saved successfully successfully.";
@@ -231,22 +240,42 @@ class TemplateFormController extends Controller
         return view('lists.invoiceList', compact('invoiceList'));
     }
 
-    //======================== mail logic =======
-    /* $maildata = [
-            'email' => Auth::user()->email,
-            'title' => ''
-        ];
-        $moreData = [];
-        $file = public_path('/uploads/mailData/' . $fileName);
-        $pdfUrl = asset('/uploads/mailData/' . $fileName);
-        return redirect($pdfUrl);
-        try {
-            Mail::send('mail.invoice_mail', $moreData, function ($message) use ($mailData, $file) {
-                $message->to($mailData['email']);
-                $message->subject($mailData['title']);
-                $message->attach($file);
-            });
-        } catch (\Exception $e) {
-            $response['message'] = $e->getMessage() . ' Line No ' . $e->getLine() . ' in File' . $e->getFile();
-        } */
+    public function invoiceDelete(Request $request, $id)
+    {
+        $invoice = PaySlip::where(['user_id' => Auth::user()->id, 'id' => $id])->first();
+        if ($invoice) {
+            try {
+                unlink(public_path('/uploads/mailData/' . basename($invoice->pdf)));
+            } catch (Exception $e) {
+            }
+            $invoice->delete();
+        }
+
+        return redirect()->back()->with('success', 'Invoice has been deleted successfully.');
+    }
+
+    public function invoiceMail($id)
+    {
+        $invoice = PaySlip::where(['user_id' => Auth::user()->id, 'id' => $id])->first();
+        if ($invoice) {
+            $mailData = [
+                'email' => Auth::user()->email,
+                'title' => 'Please find atteched file'
+            ];
+            $moreData = [];
+            $file = public_path('/uploads/mailData/' . basename($invoice->pdf));
+            try {
+                Mail::send('mail.invoice_mail', $moreData, function ($message) use ($mailData, $file) {
+                    $message->to($mailData['email']);
+                    $message->subject($mailData['title']);
+                    $message->attach($file);
+                });
+            } catch (\Exception $e) {
+                $response['message'] = $e->getMessage() . ' Line No ' . $e->getLine() . ' in File' . $e->getFile();
+            }
+        }
+
+        return redirect()->back()->with('success', 'Mail has been sent successfully.');
+    }
+    
 }

@@ -1,21 +1,23 @@
-.usericon{
-        border: 1px solid black;
-        border-radius: 100px;
-        width: 57px;
-    
-        text-align: center;
-        /* margin: auto; */
-        padding-top: 0px;
-        font-size: 34px;
-    
+.usericon {
+    border: 1px solid black;
+    border-radius: 100px;
+    width: 57px;
+
+    text-align: center;
+    /* margin: auto; */
+    padding-top: 0px;
+    font-size: 34px;
+
 }
 
-td, th {
+td,
+th {
     border: none;
     text-align: left;
     padding: 12px;
     font-size: 16px;
 }
+
 .userbtn {
     border: 2px solid #795548;
     border-radius: 100px;
@@ -23,7 +25,8 @@ td, th {
     background: white;
     color: #795548;
 }
-.pen{
+
+.pen {
     border: 1px solid #2196f3bd;
     font-size: 28px;
     border-radius: 100px;
@@ -32,19 +35,30 @@ td, th {
     margin: auto;
     text-align: center;
 }
-.delbtn{
-    padding: 2px 25px 2px 25px;
+
+.delbtn {
+    padding: 7px 13px;
     font-size: 23px;
     background: red;
     color: white;
     border: none;
+    text-transform: uppercase;
+    letter-spacing: 3px;
 
 }
-.delpdf{
+
+.delbtn:hover {
+    background: rgb(60, 109, 141);
+    color: white;
+    text-decoration: none;
+}
+
+.delpdf {
     padding-left: 40px;
 }
-.user-checkbtn{
-    background: red;
+
+.user-checkbtn {
+    background: #FF0000;
     color: white;
     border: none;
     padding: 10px 40px 10px 40px;
@@ -53,32 +67,52 @@ td, th {
     margin-bottom: 8px;
 
 }
-.fa-download:hover{
-   
+
+.user-checkbtn:hover {
+    text-decoration: none;
+    color: #fff;
+    background: #5c4343;
+}
+
+.previewbtn {
+    background-image: linear-gradient(#e7a0a0, red);
+
+}
+
+.previewbtn:hover {
+    text-decoration: none;
+    color: white;
+}
+
+.fa-download:hover {
+
     font-size: 18px;
 }
+
 .prizebox {
     border-radius: 95px 2px 95px 0;
     text-align: center;
     position: relative;
     z-index: 4;
-    height: 442px;
-    width: 251px;
+    height: 520px;
+    width: 300px;
     margin-bottom: 34px;
     background-color: white;
 }
+
 .prizebox::before {
     position: absolute;
     content: "";
     width: 343px;
     height: 70px;
     background-image: url(/images/tag.png);
-    left: 157px;
+    left: 205px;
     top: 100px;
     border-radius: 4px;
     background-repeat: no-repeat;
     background-size: contain;
 }
+
 .prizebox::after {
     position: absolute;
     content: "";
@@ -86,35 +120,38 @@ td, th {
     height: 73px;
     background-image: url(/images/sel.png);
     width: 60%;
-    left: -19px;
+    left: -21px;
     border-radius: 4px;
     bottom: 27px;
     background-repeat: no-repeat;
     background-size: contain;
 }
+
 .prizebox1 {
     border-radius: 95px 2px 95px 0;
     text-align: center;
     position: relative;
     z-index: 4;
-    height: 442px;
-    width: 251px;
+    height: 520px;
+    width: 300px;
     margin-bottom: 34px;
     background-color: white;
 }
+
 .prizebox1::before {
     position: absolute;
     content: "";
     width: 343px;
     height: 70px;
     background-image: url(/images/blue1.png);
-    left: 157px;
+    left: 205px;
     top: 100px;
     border-radius: 4px;
     background-repeat: no-repeat;
     background-size: contain;
-   
+
 }
+
 .prizebox1::after {
     position: absolute;
     content: "";
@@ -122,7 +159,7 @@ td, th {
     height: 73px;
     background-image: url(/images/blue2.png);
     width: 60%;
-    left: -19px;
+    left: -21px;
     border-radius: 4px;
     bottom: 27px;
     background-repeat: no-repeat;
@@ -134,24 +171,26 @@ td, th {
     text-align: center;
     position: relative;
     z-index: 4;
-    height: 442px;
-    width: 251px;
+    height: 520px;
+    width: 300px;
     margin-bottom: 34px;
     background-color: white;
 }
+
 .prizebox2::before {
     position: absolute;
     content: "";
     width: 343px;
     height: 70px;
     background-image: url(/images/green1.png);
-    left: 157px;
+    left: 205px;
     top: 100px;
     border-radius: 4px;
     background-repeat: no-repeat;
     background-size: contain;
-   
+
 }
+
 .prizebox2::after {
     position: absolute;
     content: "";
@@ -159,24 +198,46 @@ td, th {
     height: 73px;
     background-image: url(/images/green2.png);
     width: 60%;
-    left: -19px;
+    left: -21px;
     border-radius: 4px;
     bottom: 27px;
     background-repeat: no-repeat;
     background-size: contain;
 }
-.prize-p{
+
+.prize-p {
     padding-left: 10px;
     font-size: 16px;
     font-weight: 700;
 }
-.priceicon{
+
+.priceicon {
     font-size: 30px;
     color: green;
-   
+
 }
-.prizeh3{
+
+.prizeh3 {
     font-size: 35px;
     font-weight: 800;
     color: #e6363b;
+}
+
+.text-light {
+    color: #f8f9fa !important;
+    padding: 4px;
+    font-weight: 600;
+}
+
+.prizeHeader {
+    background: linear-gradient(to bottom, rgba(64, 150, 238, 1) 0%, rgba(64, 150, 238, 1) 48%, rgba(66, 123, 247, 1) 50%, rgba(66, 123, 247, 1) 99%);
+}
+
+.prizeHeader:hover {
+    background: linear-gradient(to bottom, rgb(57 191 33) 0%, rgb(41 177 7) 48%, rgb(40 193 11) 50%, rgb(61 195 18) 99%)
+}
+
+.listItem {
+    border-bottom: 1px solid #b39a9a;
+    margin-bottom: 0.9em;
 }

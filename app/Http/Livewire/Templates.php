@@ -38,12 +38,21 @@ class Templates extends Component
 
     public function StoreTemplate()
     {
-        $this->validate([
-            'title' => 'required',
-            'type' => 'required',
-            'state' => 'required',
-            'file' => 'required', // 1MB Max
-        ]);
+        if ($this->tempId != null) {
+            $this->validate([
+                'title' => 'required',
+                'type' => 'required',
+                'state' => 'required'
+            ]);
+        } else {
+            $this->validate([
+                'title' => 'required',
+                'type' => 'required',
+                'state' => 'required',
+                'file' => 'required', // 1MB Max
+            ]);
+        }
+
         $this->back();
         $tempObj = Template::find($this->tempId);
         if (!$tempObj) {
@@ -51,7 +60,7 @@ class Templates extends Component
             $msg = "Template saved successfully.";
         }
         $tempObj->name = $this->title;
-        $tempObj->title = strtolower(str_replace(' ', '_',$this->title));
+        $tempObj->title = strtolower(str_replace(' ', '_', $this->title));
         $tempObj->type = $this->type;
         $tempObj->state = $this->state;
 
