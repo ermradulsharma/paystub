@@ -76,7 +76,7 @@ $(document).ready(function() {
         i++
 
         $('.tax_deduction').keyup(function() {
-            var deduction_period_tax = $('#deduction_period_tax').val();
+            var deduction_period_tax = $('#deduction_period_tax').val() || 0.00;
             console.log('deduction_period_tax', deduction_period_tax);
             var tax_deduction = 0.00;
             $('.tax_deduction').each(function() {
@@ -96,7 +96,7 @@ $(document).ready(function() {
         });
 
         $('.ytd_tax').keyup(function() {
-            var ytd_deduction_period_tax = $('#ytd_deduction_period_tax').val();
+            var ytd_deduction_period_tax = $('#ytd_deduction_period_tax').val() || 0.00;
             var ytd_tax = 0.00;
             $('.ytd_tax').each(function() {
                 ytd_tax += parseFloat(this.value);
@@ -130,10 +130,14 @@ $(document).ready(function() {
 
     $('.hourly').keyup(function() {
         var id = $(this).val();
+        console.log("id", id);
         if(id != 'NaN'){
-            $("#rate_"+ids).val(parseFloat(id).toFixed(2));
+            $('#rate_0').val(parseFloat(id).toFixed(2));
+            $('#total_' + i).val('');
+            $('#period_' + i).val('');
+            $('#ytd_total_' + i).val('');
         }
-        calculation(ids);
+
     });
 
     $('.pay_date').change(function() {
@@ -148,18 +152,13 @@ $(document).ready(function() {
         }, 300);
     });
 
-    /* $('.auto_calculate').change(function() {
+    $('.auto_calculate').change(function() {
         auto_calculate();
     });
 
     function auto_calculate(){
-        var auto_calculate = $('.auto_calculate').find(":selected").val();
-        if(auto_calculate == 'on'){
-            alert("Auto Calculation is" + auto_calculate);
-        }else{
-            alert("Auto Calculation is" + auto_calculate);
-        }
-    } */
+        $('.auto_calculate').find(":selected").val();
+    }
 
     function tax_rate(){
         var tax_rate = $('.tax_rate').find(":selected").data('tax');
@@ -209,8 +208,9 @@ $(document).ready(function() {
         var newDate_1 = moment(newDate).subtract(1, 'days').format('YYYY-MM-DD');
         setTimeout(() => {
             if (pay_start != '') {
-                $(".pay_end").val(newDate_1)
+                $(".pay_end").val(newDate_1);
                 date_calculate();
+                $(".pay_end").attr('disabled', true)
             } else if(pay_start == 'Invalid date') {
                 for (let i = 0; i < finalArray.length; i++) {
                     $('#rate_' + i).val('');
@@ -287,6 +287,7 @@ $(document).ready(function() {
     }
 
     function calculation(ids) {
+        var auto_calculate = $('.auto_calculate').find(":selected").val();
         var rate = parseFloat($('#rate_' + ids).val()).toFixed(2);
         var hours = parseFloat($('#hours_' + ids).val()).toFixed(2);
         var total = rate * hours || 0.00;
@@ -295,23 +296,25 @@ $(document).ready(function() {
                 $('#total_' + ids).val(parseFloat(total).toFixed(2));
                 $('#period_' + ids).val(parseFloat(total).toFixed(2));
                 $('#ytd_total_' + ids).val(parseFloat(ytd_total).toFixed(2));
-                var auto_calculate = $('.auto_calculate').find(":selected").val();
-                /* if(auto_calculate == 'on'){
-                    gross_total();
-                }else{
-                    $('.taxes').each(function() {
-                        var taxes_ids = $(this).data('id');
-                        var auto_tax = $('#taxes_' + taxes_ids).val();
-                        var auto_ytd_tax = $('#taxes_ytd_' + taxes_ids).val();
-                        console.log('auto_tax'+taxes_ids, auto_tax);
-                        console.log('auto_ytd_tax'+taxes_ids, auto_ytd_tax);
-                    })
-                } */
                 gross_total();
         }, 300);
     }
 
+    $('.auto_calculate').change(function(){
+        var value = $(this).val();
+        if(value == "on"){
+            $('.manualTaxTotal').attr('disabled', true);
+            // $('.manualTaxTotal').addClass('style1');
+        }else{
+            $('.manualTaxTotal').attr('disabled', false);
+        }
+    })
+    $('.manualTaxTotal').keyup(function(){
+
+    })
+
     function gross_total() {
+        var auto_calculate = $('.auto_calculate').find(":selected").val();
         var total = 0;
         $('.gross_total').each(function() {
             total += parseFloat(this.value) || 0.00;
@@ -324,7 +327,9 @@ $(document).ready(function() {
         setTimeout(function() {
             $("#period_gross_total").val(parseFloat(total).toFixed(2));
             $("#ytd_gross_total").val(parseFloat(ytd_total).toFixed(2));
-            default_tax();
+            if(auto_calculate == "on"){
+                default_tax();
+            }
         }, 300);
     }
 
@@ -373,10 +378,10 @@ $(document).ready(function() {
     }
 
     function netPay() {
-        var period_gross_total = $("#period_gross_total").val();
-        var ytd_gross_total = $("#ytd_gross_total").val();
-        var deduction_tax = $(".deduction_tax").val();
-        var ytd_deduction_tax = $(".ytd_deduction_tax").val();
+        var period_gross_total = $("#period_gross_total").val() || 0.00;
+        var ytd_gross_total = $("#ytd_gross_total").val()|| 0.00;
+        var deduction_tax = $(".deduction_tax").val()|| 0.00;
+        var ytd_deduction_tax = $(".ytd_deduction_tax").val()|| 0.00;
         var total_net_pay = parseFloat(period_gross_total) - parseFloat(deduction_tax) || 0.00;
         var total_ytd_net_pay = parseFloat(ytd_gross_total) - parseFloat(ytd_deduction_tax) || 0.00;
         setTimeout(function() {
