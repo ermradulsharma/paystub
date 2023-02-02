@@ -164,7 +164,7 @@
             <div class="row">
                 <div class="column1">
                     <table class="colortable">
-                        <thead id="colourborder">
+                        <thead id="colourborder" style="text-align:left;">
                             <th class="padding">INCOME</th>
                             <th class="padding">RATE</th>
                             <th class="padding">HOURS</th>
@@ -191,7 +191,7 @@
                 <div class="column2">
                     <table class="colortable">
 
-                        <thead id="colourborder">
+                        <thead id="colourborder" style="text-align:left;">
                             <th class="padding">DEDUCTION</th>
                             <th class="padding" style="padding-right:3px;">CURRENT TOTAL</th>
                             <th class="padding">YEAR TO DATE</th>
