@@ -345,16 +345,16 @@
                                     </label>
                                     <select name="exemptions" id="exemptions" class=" dropdown11">
                                         <option value=""> --- Select Exemptions --- </option>
-                                        <option value="saab">0</option>
-                                        <option value="opel">1</option>
-                                        <option value="opel">2</option>
-                                        <option value="opel">3</option>
-                                        <option value="opel">4</option>
-                                        <option value="opel">5</option>
-                                        <option value="opel">6</option>
-                                        <option value="opel">7</option>
-                                        <option value="opel">8</option>
-                                        <option value="opel">9</option>
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
                                     </select>
                                 </div>
 

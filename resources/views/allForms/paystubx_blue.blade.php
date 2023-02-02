@@ -70,6 +70,11 @@
             border-collapse: collapse;
             border-spacing: 0;
         }
+
+        .colortable {
+
+        }
+
         #borderleft {
             border-left: 2px solid black;
         }
@@ -196,13 +201,13 @@
                     <th id="cols" class="head1" style="border-right:none;">NET PAY</th>
                 </tr>
                 <tr class="ytd">
-                    <td id="cols" class="head2">{{ $requestData['ytd_gross_total'] }}</td>
-                    <td id="cols" class="head2">{{ $requestData['ytd_deduction_tax'] }}</td>
-                    <td id="cols" class="head2">{{ $requestData['total_ytd_net_pay'] }}</td>
-                    <td id="cols" class="head2">{{ $requestData['period_gross_total'] }}</td>
-                    <td id="cols" class="head2">{{ $requestData['deduction_tax'] }}</td>
+                    <td id="cols" class="head2">{{ $requestData['currency'] }} {{ $requestData['ytd_gross_total'] }}</td>
+                    <td id="cols" class="head2">{{ $requestData['currency'] }} {{ $requestData['ytd_deduction_tax'] }}</td>
+                    <td id="cols" class="head2">{{ $requestData['currency'] }} {{ $requestData['total_ytd_net_pay'] }}</td>
+                    <td id="cols" class="head2">{{ $requestData['currency'] }} {{ $requestData['period_gross_total'] }}</td>
+                    <td id="cols" class="head2">{{ $requestData['currency'] }} {{ $requestData['deduction_tax'] }}</td>
                     <td id="cols" class="head2" style="border-right: none !important;">
-                        {{ $requestData['total_net_pay'] }}</td>
+                        {{ $requestData['currency'] }} {{ $requestData['total_net_pay'] }}</td>
                 </tr>
             </table>
         </section>
