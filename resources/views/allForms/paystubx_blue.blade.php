@@ -165,7 +165,7 @@
                 <div class="column1">
                     <table class="colortable">
                         <thead id="colourborder">
-                            <th class="padding">INCOME</th>
+                            <th class="padding" style="text-align: left;padding-left:4px;">INCOME</th>
                             <th class="padding">RATE</th>
                             <th class="padding">HOURS</th>
                             <th class="padding">CURRENT TOTAL</th>
@@ -192,8 +192,8 @@
                     <table class="colortable">
 
                         <thead id="colourborder">
-                            <th class="padding">DEDUCTION</th>
-                            <th class="padding" style="padding-right:3px;">CURRENT TOTAL</th>
+                            <th class="padding" style="text-align: left;padding-left:4px;">DEDUCTION</th>
+                            <th class="padding" style="padding-right:2px;">CURRENT TOTAL</th>
                             <th class="padding">YEAR TO DATE</th>
                         </thead>
 
@@ -211,7 +211,7 @@
                             @foreach ($requestData['tax_deduction'] ?? [] as $key => $tax_deduction)
                                 <tr>
 
-                                    <td>{{ $tax_deduction }}</td>
+                                    <td id="fica">{{ $tax_deduction }}</td>
 
                                     <td style="text-align: center;">{{ $requestData['currency'] }}
                                         {{ $requestData['period_tax_deduction'][$key] }}
