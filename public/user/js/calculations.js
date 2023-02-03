@@ -63,7 +63,7 @@ $(document).ready(function() {
         '<div class="col-md-3"> </div>' +
         '<div class="col-md-1"> </div>' +
         '<div class="col-md-2">' +
-        '<input type="text" name="period_tax_deduction[]" class="earnbtn text-center tax_deduction tax add_deduction" id="taxes_0'+ i +'" value="" data-id="'+ i +'"/>' +
+        '<input type="text" name="period_tax_deduction[]" class="earnbtn text-center tax_deduction tax" id="taxes_0'+ i +'" value="" data-id="'+ i +'"/>' +
         '</div>' +
         '<div class="col-md-2">' +
         '<input type="text" name="ytd_tax_deduction[]" class="earnbtn text-center ytd_tax tax add_ytd_deduction" id="taxes_ytd_0'+ i +'" value="" data-id="'+ i +'"/>' +
@@ -76,11 +76,11 @@ $(document).ready(function() {
         i++
 
         $('.tax_deduction').keyup(function() {
-            var deduction_period_tax = $('#deduction_period_tax').val();
+            var deduction_period_tax = $('#deduction_period_tax').val() || 0.00;
             console.log('deduction_period_tax', deduction_period_tax);
             var tax_deduction = 0.00;
             $('.tax_deduction').each(function() {
-                tax_deduction += parseFloat(this.value);
+                tax_deduction += parseFloat(this.value || 0.00);
             });
             console.log('tax_deduction', tax_deduction);
             setTimeout(function() {
@@ -90,16 +90,17 @@ $(document).ready(function() {
                 if(isNaN(total)){
                     total = parseFloat(deduction_period_tax).toFixed(2);
                 }
+                $(".deduction_period_tax_other").val(parseFloat(tax_deduction).toFixed(2));
                 $(".deduction_tax").val(parseFloat(total).toFixed(2));
                 netPay();
             }, 300);
         });
 
         $('.ytd_tax').keyup(function() {
-            var ytd_deduction_period_tax = $('#ytd_deduction_period_tax').val();
+            var ytd_deduction_period_tax = $('#ytd_deduction_period_tax').val() || 0.00;
             var ytd_tax = 0.00;
             $('.ytd_tax').each(function() {
-                ytd_tax += parseFloat(this.value);
+                ytd_tax += parseFloat(this.value || 0.00);
             });
             setTimeout(function() {
                 ytd_tax = ytd_tax;
@@ -107,12 +108,53 @@ $(document).ready(function() {
                 if(isNaN(sum)){
                     sum = parseFloat(ytd_deduction_period_tax).toFixed(2);
                 }
+                $(".ytd_deduction_period_tax_other").val(parseFloat(ytd_tax).toFixed(2));
                 $(".ytd_deduction_tax").val(parseFloat(sum).toFixed(2));
                 netPay();
             }, 300);
 
         });
         return false;
+    });
+
+    $('.tax_deduction').keyup(function() {
+        var deduction_period_tax = $('#deduction_period_tax').val() || 0.00;
+        console.log('deduction_period_tax', deduction_period_tax);
+        var tax_deduction = 0.00;
+        $('.tax_deduction').each(function() {
+            tax_deduction += parseFloat(this.value || 0.00);
+        });
+        console.log('tax_deduction', tax_deduction);
+        setTimeout(function() {
+            tax_deduction = tax_deduction;
+            console.log('tax_deduction', tax_deduction);
+            var total = parseFloat(deduction_period_tax) + parseFloat(tax_deduction);
+            if(isNaN(total)){
+                total = parseFloat(deduction_period_tax).toFixed(2);
+            }
+            $(".deduction_period_tax_other").val(parseFloat(tax_deduction).toFixed(2));
+            $(".deduction_tax").val(parseFloat(total).toFixed(2));
+            netPay();
+        }, 300);
+    });
+
+    $('.ytd_tax').keyup(function() {
+        var ytd_deduction_period_tax = $('#ytd_deduction_period_tax').val() || 0.00;
+        var ytd_tax = 0.00;
+        $('.ytd_tax').each(function() {
+            ytd_tax += parseFloat(this.value || 0.00);
+        });
+        setTimeout(function() {
+            ytd_tax = ytd_tax;
+            var sum = parseFloat(ytd_deduction_period_tax) + parseFloat(ytd_tax);
+            if(isNaN(sum)){
+                sum = parseFloat(ytd_deduction_period_tax).toFixed(2);
+            }
+            $(".ytd_deduction_period_tax_other").val(parseFloat(ytd_tax).toFixed(2));
+            $(".ytd_deduction_tax").val(parseFloat(sum).toFixed(2));
+            netPay();
+        }, 300);
+
     });
 
     $('.tax_rate').change(function() {
@@ -130,10 +172,14 @@ $(document).ready(function() {
 
     $('.hourly').keyup(function() {
         var id = $(this).val();
+        console.log("id", id);
         if(id != 'NaN'){
-            $("#rate_"+ids).val(parseFloat(id).toFixed(2));
+            $('#rate_0').val(parseFloat(id).toFixed(2));
+            $('#total_' + i).val('');
+            $('#period_' + i).val('');
+            $('#ytd_total_' + i).val('');
         }
-        calculation(ids);
+
     });
 
     $('.pay_date').change(function() {
@@ -148,18 +194,13 @@ $(document).ready(function() {
         }, 300);
     });
 
-    /* $('.auto_calculate').change(function() {
+    $('.auto_calculate').change(function() {
         auto_calculate();
     });
 
     function auto_calculate(){
-        var auto_calculate = $('.auto_calculate').find(":selected").val();
-        if(auto_calculate == 'on'){
-            alert("Auto Calculation is" + auto_calculate);
-        }else{
-            alert("Auto Calculation is" + auto_calculate);
-        }
-    } */
+        $('.auto_calculate').find(":selected").val();
+    }
 
     function tax_rate(){
         var tax_rate = $('.tax_rate').find(":selected").data('tax');
@@ -209,8 +250,9 @@ $(document).ready(function() {
         var newDate_1 = moment(newDate).subtract(1, 'days').format('YYYY-MM-DD');
         setTimeout(() => {
             if (pay_start != '') {
-                $(".pay_end").val(newDate_1)
+                $(".pay_end").val(newDate_1);
                 date_calculate();
+                $(".pay_end").attr('readonly', true)
             } else if(pay_start == 'Invalid date') {
                 for (let i = 0; i < finalArray.length; i++) {
                     $('#rate_' + i).val('');
@@ -287,6 +329,7 @@ $(document).ready(function() {
     }
 
     function calculation(ids) {
+        var auto_calculate = $('.auto_calculate').find(":selected").val();
         var rate = parseFloat($('#rate_' + ids).val()).toFixed(2);
         var hours = parseFloat($('#hours_' + ids).val()).toFixed(2);
         var total = rate * hours || 0.00;
@@ -295,23 +338,61 @@ $(document).ready(function() {
                 $('#total_' + ids).val(parseFloat(total).toFixed(2));
                 $('#period_' + ids).val(parseFloat(total).toFixed(2));
                 $('#ytd_total_' + ids).val(parseFloat(ytd_total).toFixed(2));
-                var auto_calculate = $('.auto_calculate').find(":selected").val();
-                /* if(auto_calculate == 'on'){
-                    gross_total();
-                }else{
-                    $('.taxes').each(function() {
-                        var taxes_ids = $(this).data('id');
-                        var auto_tax = $('#taxes_' + taxes_ids).val();
-                        var auto_ytd_tax = $('#taxes_ytd_' + taxes_ids).val();
-                        console.log('auto_tax'+taxes_ids, auto_tax);
-                        console.log('auto_ytd_tax'+taxes_ids, auto_ytd_tax);
-                    })
-                } */
                 gross_total();
         }, 300);
     }
 
+    $('.auto_calculate').change(function(){
+        var value = $(this).val();
+        if(value == "on"){
+            $('.manualTaxTotal').attr('readonly', true);
+            setTimeout(function() {
+            gross_total();
+            }, 200);
+        }else{
+            $('.manualTaxTotal').attr('readonly', false);
+        }
+    })
+    $('.manualTaxTotal').keyup(function(){
+        manualTaxTotal();
+    });
+
+    function manualTaxTotal(){
+        var period_gross_total = $("#period_gross_total").val();
+        var ytd_gross_total = $("#ytd_gross_total").val();
+        var deduction_period_tax_other = parseFloat($('#deduction_period_tax_other').val() || 0.00);
+        var ytd_deduction_period_tax_other = parseFloat($('#ytd_deduction_period_tax_other').val() || 0.00);
+        period_deduction_tax = 0;
+        period_ytd_deduction_tax = 0;
+        var time = 0;
+        if(period_gross_total != 'NaN' || ytd_gross_total != 'NaN'){
+            $('.taxes').each( function() {
+                var taxes_ids = $(this).data('id');
+                $('#taxes_'+taxes_ids).each(function() {
+                    var taxes_value = this.value || 0.00;
+                    period_deduction_tax += parseFloat(taxes_value);
+                });
+
+                $('#taxes_ytd_'+taxes_ids).each(function() {
+                    var taxes_ytd_value = this.value || 0.00;
+                    period_ytd_deduction_tax += parseFloat(taxes_ytd_value);
+                });
+                time += 100;
+            });
+            setTimeout(function() {
+                $(".deduction_tax").val(parseFloat(period_deduction_tax + deduction_period_tax_other).toFixed(2));
+                $(".ytd_deduction_tax").val(parseFloat(period_ytd_deduction_tax + ytd_deduction_period_tax_other).toFixed(2));
+                $(".deduction_period_tax").val(parseFloat(period_deduction_tax).toFixed(2));
+                $(".ytd_deduction_period_tax").val(parseFloat(period_ytd_deduction_tax).toFixed(2));
+            }, 200);
+            setTimeout(() => {
+                netPay();
+            }, time);
+        }
+    }
+
     function gross_total() {
+        var auto_calculate = $('.auto_calculate').find(":selected").val();
         var total = 0;
         $('.gross_total').each(function() {
             total += parseFloat(this.value) || 0.00;
@@ -324,13 +405,17 @@ $(document).ready(function() {
         setTimeout(function() {
             $("#period_gross_total").val(parseFloat(total).toFixed(2));
             $("#ytd_gross_total").val(parseFloat(ytd_total).toFixed(2));
-            default_tax();
+            if(auto_calculate == "on"){
+                default_tax();
+            }
         }, 300);
     }
 
     function default_tax() {
         var period_gross_total = $("#period_gross_total").val();
         var ytd_gross_total = $("#ytd_gross_total").val();
+        var deduction_period_tax_other = parseFloat($('#deduction_period_tax_other').val() || 0.00);
+        var ytd_deduction_period_tax_other = parseFloat($('#ytd_deduction_period_tax_other').val() || 0.00);
         var tax_state = $('option:selected', '.tax_rate').attr('data-tax');
         period_deduction_tax = 0;
         period_ytd_deduction_tax = 0;
@@ -359,8 +444,8 @@ $(document).ready(function() {
                 period_deduction_tax += period_tax_price;
                 period_ytd_deduction_tax += period_ytd_tax_price;
                 setTimeout(function() {
-                    $(".deduction_tax").val(parseFloat(period_deduction_tax).toFixed(2));
-                    $(".ytd_deduction_tax").val(parseFloat(period_ytd_deduction_tax).toFixed(2));
+                    $(".deduction_tax").val(parseFloat(period_deduction_tax+deduction_period_tax_other).toFixed(2));
+                    $(".ytd_deduction_tax").val(parseFloat(period_ytd_deduction_tax+ytd_deduction_period_tax_other).toFixed(2));
                     $(".deduction_period_tax").val(parseFloat(period_deduction_tax).toFixed(2));
                     $(".ytd_deduction_period_tax").val(parseFloat(period_ytd_deduction_tax).toFixed(2));
                 }, 200);
@@ -373,16 +458,40 @@ $(document).ready(function() {
     }
 
     function netPay() {
-        var period_gross_total = $("#period_gross_total").val();
-        var ytd_gross_total = $("#ytd_gross_total").val();
-        var deduction_tax = $(".deduction_tax").val();
-        var ytd_deduction_tax = $(".ytd_deduction_tax").val();
+        var period_gross_total = $("#period_gross_total").val() || 0.00;
+        var ytd_gross_total = $("#ytd_gross_total").val()|| 0.00;
+        var deduction_tax = $(".deduction_tax").val()|| 0.00;
+        var ytd_deduction_tax = $(".ytd_deduction_tax").val()|| 0.00;
         var total_net_pay = parseFloat(period_gross_total) - parseFloat(deduction_tax) || 0.00;
         var total_ytd_net_pay = parseFloat(ytd_gross_total) - parseFloat(ytd_deduction_tax) || 0.00;
         setTimeout(function() {
             $(".total_net_pay").val(parseFloat(total_net_pay).toFixed(2));
             $(".total_ytd_net_pay").val(parseFloat(total_ytd_net_pay).toFixed(2));
         }, 300);
+    }
+
+    function toFixValue(){
+        $('.taxes').each( function() {
+            var taxes_ids = $(this).data('id');
+            $('#taxes_'+taxes_ids).each(function() {
+                var taxes_value = this.value || 0.00;
+                $(this).val(parseFloat(taxes_value).toFixed(2))
+            });
+
+            $('#taxes_ytd_'+taxes_ids).each(function() {
+                var taxes_ytd_value = this.value || 0.00;
+                $(this).val(parseFloat(taxes_ytd_value).toFixed(2))
+            });
+        });
+
+        $('.tax_deduction').each(function() {
+            var tax_deduction = this.value || 0.00;
+                $(this).val(parseFloat(tax_deduction).toFixed(2))
+        });
+        $('.ytd_tax').each(function() {
+            var ytd_tax = this.value || 0.00;
+                $(this).val(parseFloat(ytd_tax).toFixed(2))
+        });
     }
 
     function is_empty(){

@@ -38,7 +38,7 @@
     <div class="container" style="max-width:1500px">
         <ul class="nav nav-justified navbar" style="max-width: 1445px;">
             <li class="nav-item">
-                <a href="{{ url('/') }}"><img class="mr-3 mt-5" src="images/Paystub X.webp" style="width: 222px;"></a>
+                <a href="{{ url('/') }}"><img class="mr-3 mt-5" src="{{asset('images/Paystub X.webp')}}" style="width: 222px;"></a>
             </li>
             <li class="nav-item ml-3 ">
                 <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('usa') ? 'active' : '' }} " href="{{ url('usa') }}">USA</a>
@@ -59,6 +59,17 @@
             <li class="nav-item  ml-3 ">
                 @guest
                 <a class="btn btn-lg py-2 w-100 mt-5 btn-danger login registerBtn" href="javascript:void(0);">Login</a>
+                <div class="d-none logoutDiv">
+                    <a class="btn btn-lg py-2 w-100 mt-5 btn-danger " href="javascript:void(0);" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i class="fa fa-sign-out"></i> Log out</a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        {{csrf_field()}}
+                    </form>
+                </div>
+                @else
+                <a class="btn btn-lg py-2 w-100 mt-5 btn-danger " href="javascript:void(0);" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i class="fa fa-sign-out"></i> Log out</a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    {{csrf_field()}}
+                </form>
                 @endguest
             </li>
 
@@ -66,7 +77,7 @@
     </div>
 
     <div id="mySidenav" class="sidenav">
-        <a href="{{ url('/') }}"><img class="mr-3 mt-5 toggle-logo" src="images/Paystub X.webp" style="width: 222px;"></a>
+        <a href="{{ url('/') }}"><img class="mr-3 mt-5 toggle-logo" src="{{asset('images/Paystub X.webp')}}" style="width: 222px;"></a>
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('usa') ? 'active' : '' }} " href="{{ url('usa') }}">USA</a>
         <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('canada') ? 'active' : '' }}" href="{{ url('canada') }}">CANADA</a>
@@ -85,7 +96,7 @@
 
                 <!-- Modal Header -->
                 <div class="modal-header" style="background: #115caecf;">
-                    <h4 class="modal-title"><img src="images/Paystub X.webp" class="icon"></h4>
+                    <h4 class="modal-title"><img src="{{asset('images/Paystub X.webp')}}" class="icon"></h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
 
@@ -100,7 +111,7 @@
                     </div>
 
                     <div class="text-center mt-4 mb-4">
-                        <img src="images/Group 3.png" style="width:130px;">
+                        <img src="{{asset('images/Group 3.png')}}" style="width:130px;">
                     </div>
                     <h6 class="text-center" style="color: #457bbe;">Sign Up Using Email</h6>
                     <p class="text-center"></p>
@@ -190,8 +201,7 @@
                     <p class="text-white footer-text">COPYRIGHT © 2022
                         PaystubX, ALL RIGHTS RESERVED.</p>
                     <div class="container justify-content-center m-auto text-center">
-                        <a href="{{ url('/') }}"><img class="footimg" src="images/satisfaction.webp"></a>
-
+                        <a href="{{ url('/') }}"><img class="footimg" src="{{asset('images/satisfaction.webp')}}"></a>
                     </div>
                 </div>
 
@@ -205,6 +215,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
     <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    @yield('script')
     <script>
         $('.registerBtn').click(function() {
             $('#loginModal').modal('show');
@@ -249,6 +260,7 @@
                     $('.registerBtn').addClass('d-none');
                     $('.sendMailButton').removeClass('d-none');
                     $('.sendMailButton').addClass('d-block');
+                    $('.logoutDiv').removeClass('d-none');
                 },
                 error: function(err) {
                     error = err.responseJSON;
@@ -275,7 +287,7 @@
 
 
         $('.sendMailButton').click(function() {
-            sendPdf();
+            usaStoreData();
         });
 
         function viewPDF() {
@@ -285,7 +297,8 @@
                 data: $('#usa_paystubx').serialize(),
                 success: function(response) {
                     console.log('response ', response);
-                    $('#tempView').attr('src',response.pdf);
+                    $('#tempView').attr('src', response.pdf + '?embedded=true#toolbar=0');
+                    // $('#tempView').html(response.data);
                     $('#tempViewModal').modal('show');
                 },
                 error: function(err) {
@@ -296,24 +309,27 @@
             return false;
         }
 
-        function sendPdf() {
+        function usaStoreData() {
             $.ajax({
-                url: "{{ route('sendPDF') }}",
+                url: "{{ route('usaStoreData') }}",
                 type: 'post',
                 data: $('#usa_paystubx').serialize(),
                 success: function(response) {
                     console.log('response ', response);
                     toastr.success(response.message);
+                    setTimeout(function() {
+                        window.location.href = "{{route('invoiceList')}}";
+                    }, 1000);
                 },
                 error: function(err) {
                     error = err.responseJSON;
                     toastr.error(error.message);
                 }
             });
-            return false;
+
         }
     </script>
-    @yield('script')
+
 </body>
 
 </html>
