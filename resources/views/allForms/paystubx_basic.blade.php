@@ -196,8 +196,7 @@
                     </tr>
 
                     <tr>
-                        <td> <span style="font-weight: 500;">Pay
-                                Date:</span><span>{{ date('m/d/Y', strtotime($requestData['pay_date'])) }} </span></td>
+                        <td> <span style="font-weight: 500;">Pay Date:</span><span> {{ date('m/d/Y', strtotime($requestData['pay_date'])) }} </span></td>
                     </tr>
                     <tr>
                         <td><span style="font-weight: 500;">Employee #: </span> <span>
@@ -254,7 +253,6 @@
                         <br>
                         <br>
                         <br>
-                        <br>
                         <tr>
                             <td></td>
                             <th style="text-align: right;">GROSS PAY </th>
@@ -292,7 +290,6 @@
                     </tbody>
                 </table>
                 <br>
-                <br>
                 <table class="tablewidth">
                     <tr>
                         <td class="hadding" style="text-align: left; font-weight:800;">DEDUCTION TOTAL</td>
@@ -309,17 +306,6 @@
                 </table>
             </div>
         </div>
-
-        {{-- <table style="width:100%;">
-            <tbody>
-                <tr>
-                    <td></td>
-                    <th style="text-align: right;">GROSS PAY </th>
-                    <td style="text-align: right;">{{ $requestData['currency'] }} {{ $requestData['deduction_tax'] }}</td>
-                    <td style="text-align: right;">{{ $requestData['currency'] }} {{ $requestData['ytd_deduction_tax'] }}</td>
-                </tr>
-            </tbody>
-        </table> --}}
     </section>
 </body>
 
