@@ -18,7 +18,6 @@
 
         .table {
             /* max-width: 1200px; */
-            margin: 0 auto;
             width: 100%;
         }
 
@@ -74,7 +73,7 @@
 
         .container {
             position: absolute;
-            top: 30px;
+            top: 80px;
             z-index: 3;
             height: 300px;
         }
@@ -104,14 +103,14 @@
             background-image: url('http://44.202.105.74/images/check.jpg') !important;
             background-size: contain;
             background-repeat: no-repeat;
-            height: 300px;
             content: "";
             top: 100px;
-            left: 0;
-            right: 250px;
+            left: 0px;
+            right:100px !important;
             position: absolute;
             z-index: -1;
-            width: 750px;
+            width: 700px;
+            height:100%;
         }
     </style>
 </head>
@@ -356,38 +355,38 @@
         <section class="bg-img">
             <div class="container" style=" margin-top:40px; width:100%;">
                 <div class="row" style="display: flex;justify-content: space-between;padding: 0px 14px;">
-                    <div style="width: 50%;float:left;">
+                    <div style="width: 50%;float:left;position: relative; left:20px;">
                         <h6 style="font-size: 17px; margin-bottom: 10px;">{{ $requestData['emp_name'] }}</h6>
                         <p style="font-size: 13px; margin: 0;"> {{ $requestData['emp_street_1'] }}VD</p>
                         <P style="font-size: 13px; margin: 0;">{{ $requestData['emp_city'] }}</P>
                         <P style="font-size: 13px; margin: 0;">{{ $requestData['emp_state'] }},
                             {{ $requestData['emp_zip_code'] }}</P>
                     </div>
-                    <div style="width: 50%;float:right;text-align:right;">
-                        <h6 style="font-size: 14px; margin-bottom: 0;">Advice Number:
-                            <span>{{ $requestData['advice_number'] }}</span>
+                    <div style="width: 50%;float:right;text-align:right;position: relative; right:20px;">
+                        <h6 style="font-size: 14px; margin-bottom: 0;">
+                            <span style="">{{ $requestData['advice_number'] }}</span>
                         </h6>
                         <p>
-                            <span style="font-weight:800;">Pay Day:</span>
+                            <span style="font-weight:800;"></span>
                             {{ date('m/d/y', strtotime($requestData['pay_date'])) }}
                         </p>
                     </div>
                 </div>
                 <table style="width: 100%; margin: 140px 0 0 auto;">
-                    <tr style="border-bottom: 1px solid;">
+                    <tr style="">
                         <td colspan="4"></td>
-                        <td>Deposite to the Account off</td>
-                        <td style="text-align: right;">Account number</td>
-                        <td style="text-align: right;">Transit ABA </td>
-                        <td style="text-align: right;">Amount</td>
+                        <td></td>
+                        <td style="text-align: right;"></td>
+                        <td style="text-align: right;"> </td>
+                        <td style="text-align: right;"></td>
                     </tr>
-                    <td style="border-bottom: 1px solid black;" colspan="17"></td>
+                    <td style="" colspan="17"></td>
                     <tr>
                         <td colspan="4"></td>
-                        <td>{{ $requestData['emp_name'] }}</td>
+                        <td style="max-width:50px; margin:0 auto; text-align:center;position: relative; left:30px;">{{ $requestData['emp_name'] }}</td>
                         <td style="text-align: right;">{{ $requestData['account_number_last_4'] }}</td>
                         <td style="text-align: right;">{{ $requestData['transit_aba_number'] }}</td>
-                        <td style="text-align: right;">{{ $requestData['total_net_pay'] }}</td>
+                        <td style="text-align: center;">{{ $requestData['total_net_pay'] }}</td>
                         </td>
                     </tr>
                 </table>

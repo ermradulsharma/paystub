@@ -89,7 +89,8 @@
 
 
     <div class="row2">
-        <h3 style="text-align: left; max-width:215px; margin:0 0 0 auto; padding-bottom:25px; font-size:23px;">Earnings Statement</h3>
+        <h3 style="text-align: left; max-width:215px; margin:0 0 0 auto; padding-bottom:25px; font-size:23px;">Earnings
+            Statement</h3>
         <div class="col0">
         </div>
         <div class="col1">
@@ -231,9 +232,9 @@
             <td></td>
             <th>NET PAY</th>
             <td><b>{{ $requestData['currency'] }}
-                {{ $requestData['total_net_pay'] }}</b></td>
+                    {{ $requestData['total_net_pay'] }}</b></td>
             <td><b>{{ $requestData['currency'] }}
-                {{ $requestData['total_ytd_net_pay'] }}</b></td>
+                    {{ $requestData['total_ytd_net_pay'] }}</b></td>
         </tr>
 
     </table>
