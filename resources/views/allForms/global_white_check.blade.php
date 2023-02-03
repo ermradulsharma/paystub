@@ -183,8 +183,8 @@
         </tr>
     </table>
 
-    
- 
+
+
     <section>
         <div class="row" style="width: 100%;">
             <div class="column1">
@@ -210,7 +210,7 @@
                                     {{ $requestData['ytd_total'][$key] }}</td>
                             </tr>
                         @endforeach
-                        
+
                     </tbody>
                     <tr>
                     <td style="text-align:right; font-size:14px; border-bottom:2px solid black; border-top:2px solid black;" colspan="3"><b>Net
@@ -254,7 +254,7 @@
         <section>
             <table class="table-data" style="width: 50%;">
                 <thead style="font-size:14px;">
-                  
+
                     <th style="border-bottom: 2px solid #000;">DEDUCTIONS</th>
                     <th style="border-bottom: 2px solid #000; text-align:center;" colspan="" class="">STATUTORY</th>
                     <th class="sat" style="border-bottom: 2px solid #000; text-align:right; width: 40%"></th>
@@ -310,7 +310,7 @@
     </table>
         </section>
     </section>
-   
+
     <div class="container" style=" margin-top:50px; width:100%;">
         <div class="row" style="display: flex;justify-content: space-between;padding: 0px 14px;">
             <div style="width: 50%;float:left;">
