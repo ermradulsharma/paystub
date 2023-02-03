@@ -120,7 +120,7 @@ class TemplateFormController extends Controller
         $data = [
             'date' => date('m/d/Y')
         ];
-        // return view('allForms.box_blue');
+         return view('allForms.box_blue');
         $pdf = PDF::loadView('allForms.box_blue', $data);
         return $pdf->stream('blueboxTemp.pdf');
     }
@@ -277,5 +277,5 @@ class TemplateFormController extends Controller
 
         return redirect()->back()->with('success', 'Mail has been sent successfully.');
     }
-    
+
 }
