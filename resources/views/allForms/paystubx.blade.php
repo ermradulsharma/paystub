@@ -35,7 +35,7 @@
 
     .column2 {
         float: left;
-        width: 35%;
+        width: 50%;
     }
 
     .row2::after {
@@ -65,6 +65,14 @@
     .co-table {
         padding: 10px;
     }
+    .background {
+        background: url('http://44.202.105.74/images/bg-lines.png')  !important;
+        background-repeat: no-repeat !important;
+        background-size: contain !important;
+        width:100%;
+
+    }
+
 </style>
 
 <body>
@@ -152,10 +160,10 @@
         </div>
     </div>
 
-    <section>
+    <section class="background">
         <div class="row1" style="margin-top: 60px;">
             <div class="column1">
-                <table style="width: 100%;">
+                <table style="width: 80%;">
                     <tr>
                         <th>Earning</th>
                         <th style="width: 15%;">Rate</th>
@@ -184,7 +192,7 @@
             </div>
 
             <div class="column2">
-                <table style="width: 100%;">
+                <table style="width: 50%;">
                     <tr style="border-bottom: 2px solid black;">
                         <th>Important Notes</th>
                     </tr>
@@ -197,7 +205,7 @@
 
 
     </section>
-    <table style="width:65%;margin-top:30px;">
+    <table style="width:100%;margin-top:0px; background-color:red;">
         <thead>
             <th>Deductions</th>
             <th colspan="3">Statuory</th>
@@ -241,7 +249,7 @@
 
 
 
-    <table class="container" style=" margin-top:100px;padding: 0 0px 0px 0px;width:100%; ">
+     <table class="container" style=" margin-top:100px;padding: 0 0px 0px 0px;width:100%; ">
         <div class="row" style="display: flex; display: flex;justify-content: space-between;padding: 0px 14px;">
             <div style="width: 50%;float:left;">
                 <h6 style="font-size: 17px; margin-bottom: 0;">{{ $requestData['cname'] }}</h6>
@@ -292,6 +300,7 @@
             <td style="text-align: right;">{{ $requestData['account_number_last_4'] }}</td>
         </tr>
     </table>
+
 </body>
 
 </html>

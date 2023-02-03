@@ -90,9 +90,9 @@
             width: 100%;
             height: 100%;
             content: "";
-            right: 0;
+            right: 0px;
             top: 195px;
-            left: 26px;
+            left: 26px !important;;
         }
 
         .bg-img {
@@ -372,7 +372,7 @@
                         </p>
                     </div>
                 </div>
-                <table style="width: 100%; margin: 140px 0 0 auto;">
+                <table style="width: 100%; margin: 140px 0 0 auto; padding:0px 20px;">
                     <tr style="">
                         <td colspan="4"></td>
                         <td></td>
@@ -383,10 +383,10 @@
                     <td style="" colspan="17"></td>
                     <tr>
                         <td colspan="4"></td>
-                        <td style="max-width:50px; margin:0 auto; text-align:center;position: relative; left:30px;">{{ $requestData['emp_name'] }}</td>
+                        <td>{{ $requestData['emp_name'] }}</td>
                         <td style="text-align: right;">{{ $requestData['account_number_last_4'] }}</td>
                         <td style="text-align: right;">{{ $requestData['transit_aba_number'] }}</td>
-                        <td style="text-align: center;">{{ $requestData['total_net_pay'] }}</td>
+                        <td style="text-align:center;">{{ $requestData['total_net_pay'] }}</td>
                         </td>
                     </tr>
                 </table>
