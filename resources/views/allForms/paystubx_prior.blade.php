@@ -5,6 +5,15 @@
     <title>paystubs-prior</title>
 </head>
 <style>
+    @font-face {
+    font-family: 'MICR';
+    src: url('FONT/MICR-Plain.woff2') format('woff2'),
+        url('FONT/MICR-Plain.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
     table {
         border-collapse: collapse;
         width: 100%;
@@ -61,6 +70,9 @@
     .shrapdana {
         max-width: 100%;
     }
+    .font-face {
+        font-family:'MICR';
+    }
 </style>
 
 <body>
@@ -115,7 +127,7 @@
                 <td>-----------------------------------------------------------------</td>
             </tr>
             <tr>
-                <td colspan="3"style="padding-top:30px; font-size:20px; text-align:right; font-family: cursive;">
+                <td class="font-face" colspan="3"style="padding-top:30px; font-size:20px; text-align:right; ">
                     98745687T58T43098584598</td>
             </tr>
         </table>
