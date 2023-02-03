@@ -53,20 +53,20 @@
                 <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('globle') ? 'active' : '' }}" href="{{ url('globle') }}">GLOBEL</a>
             </li>
             <li class="nav-item ml-3">
-                <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('form') ? 'active' : '' }}" href="{{ url('form') }}">W-2 FORM</a>
+                <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('form') ? 'active' : '' }}" href="{{ url('form') }}" style="width: 143px !important;">W-2 FORM</a>
             </li>
 
             <li class="nav-item  ml-3 ">
                 @guest
                 <a class="btn btn-lg py-2 w-100 mt-5 btn-danger login registerBtn" href="javascript:void(0);">Login</a>
                 <div class="d-none logoutDiv">
-                    <a class="btn btn-lg py-2 w-100 mt-5 btn-danger " href="javascript:void(0);" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i class="fa fa-sign-out"></i> Log out</a>
+                    <a class="btn btn-lg py-2 w-100 mt-5 btn-danger " style="width: 120px !important;padding: 6px 0 !important;" href="javascript:void(0);" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i class="fa fa-sign-out"></i> Log out</a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         {{csrf_field()}}
                     </form>
                 </div>
                 @else
-                <a class="btn btn-lg py-2 w-100 mt-5 btn-danger " href="javascript:void(0);" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i class="fa fa-sign-out"></i> Log out</a>
+                <a class="btn btn-lg py-2 w-100 mt-5 btn-danger" style="width: 120px !important;padding: 6px 0 !important;" href="javascript:void(0);" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i class="fa fa-sign-out"></i> Log out</a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     {{csrf_field()}}
                 </form>
@@ -85,7 +85,12 @@
         <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('globle') ? 'active' : '' }}" href="{{ url('globle') }}">GLOBEL</a>
         <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('form') ? 'active' : '' }}" href="{{ url('form') }}">W-2 FORM</a>
     </div>
-    <span style="font-size:30px;cursor:pointer" class="openbtn" onclick="openNav()">&#9776;</span>
+    <div class="openbtn">
+        <div class=" pt-4 d-flex justify-content-between">
+            <a href="{{ url('/') }}"><img class="mr-3 mt-5 toggle-logo" src="{{asset('images/Paystub X.webp')}}" style="width: 222px;"></a>
+            <span style="font-size:30px;cursor:pointer;" class="" onclick="openNav()">&#9776;</span>
+        </div>
+    </div>
 
     @yield('content')
 
