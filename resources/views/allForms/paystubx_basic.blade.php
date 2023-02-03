@@ -233,10 +233,10 @@
                         @foreach ($requestData['earning'] as $key => $earn)
                             <tr>
                                 <td style="text-align: left;">{{ $earn }}</td>
-                                <td>{{ $requestData['currency'] }} {{ $requestData['rate'][$key] }}</td>
+                                <td>{{ $requestData['rate'][$key] }}</td>
                                 <td style="text-align:center;">{{ $requestData['hours'][$key] }}</td>
-                                <td>{{ $requestData['currency'] }} {{ $requestData['period'][$key] }}</td>
-                                <td>{{ $requestData['currency'] }} {{ $requestData['ytd_total'][$key] }}</td>
+                                <td>{{ number_format($requestData['period'][$key],2) }}</td>
+                                <td>{{ number_format($requestData['ytd_total'][$key],2) }}</td>
                             </tr>
                         @endforeach
                     </tbody>
@@ -256,8 +256,8 @@
                         <tr>
                             <td></td>
                             <th style="text-align: right;">GROSS PAY </th>
-                            <td>{{ $requestData['currency'] }} {{ $requestData['deduction_tax'] }}</td>
-                            <td>{{ $requestData['currency'] }} {{ $requestData['ytd_deduction_tax'] }}</td>
+                            <td>{{ number_format($requestData['deduction_tax'],2) }}</td>
+                            <td>{{ number_format($requestData['ytd_deduction_tax'],2) }}</td>
                         </tr>
                         <br>
                     </tbody>
@@ -274,16 +274,16 @@
                         @foreach ($requestData['taxes'] ?? [] as $key => $taxes)
                             <tr>
                                 <td style="text-align: left;">{{ $taxes }}</td>
-                                <td>{{ $requestData['currency'] }} {{ $requestData['taxes_rate'][$key] }}</td>
-                                <td>{{ $requestData['currency'] }} {{ $requestData['taxes_ytd'][$key] }}</td>
+                                <td>{{ number_format($requestData['taxes_rate'][$key],2) }}</td>
+                                <td>{{ number_format($requestData['taxes_ytd'][$key],2) }}</td>
                             </tr>
                         @endforeach
 
                         @foreach ($requestData['tax_deduction'] ?? [] as $key => $tax_deduction)
                             <tr>
                                 <td style="text-align: left;">{{ $tax_deduction }}</td>
-                                <td>{{ $requestData['currency'] }} {{ $requestData['period_tax_deduction'][$key] }}</td>
-                                <td>{{ $requestData['currency'] }} {{ $requestData['ytd_tax_deduction'][$key] }}</td>
+                                <td>{{ number_format($requestData['period_tax_deduction'][$key],2) }}</td>
+                                <td>{{ number_format($requestData['ytd_tax_deduction'][$key],2) }}</td>
                             </tr>
                         @endforeach
                     </tbody>
@@ -292,15 +292,13 @@
                 <table class="tablewidth">
                     <tr>
                         <td class="hadding" style="text-align: left; font-weight:800;">DEDUCTION TOTAL</td>
-                        <td>{{ $requestData['currency'] }} {{ $requestData['period_gross_total'] }}</td>
-                        <td>{{ $requestData['currency'] }} {{ $requestData['ytd_gross_total'] }}</td>
+                        <td>{{ number_format($requestData['period_gross_total'],2) }}</td>
+                        <td>{{ number_format($requestData['ytd_gross_total'],2) }}</td>
                     </tr>
                     <tr>
                         <th class="hadding" style="text-align: right; font-weight:800;">Net Pay</th>
-                        <td style="text-align: right;">{{ $requestData['currency'] }}
-                            {{ $requestData['total_net_pay'] }}</td>
-                        <td style="text-align: center;">{{ $requestData['currency'] }}
-                            {{ $requestData['total_ytd_net_pay'] }}</td>
+                        <td style="text-align: right;">{{ number_format($requestData['total_net_pay'],2) }}</td>
+                        <td style="text-align: center;">{{ number_format($requestData['total_ytd_net_pay'],2) }}</td>
                     </tr>
                 </table>
             </div>
