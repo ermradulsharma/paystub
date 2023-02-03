@@ -6,71 +6,72 @@
     <title>pt_green Document</title>
 </head>
 <style>
-table {
-    border-collapse: collapse;
-    width: 100%;
-    font-size: 10px;
-}
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        font-size: 10px;
+    }
 
-th,
-td {
-    text-align: left;
-    padding: 2px;
-}
+    th,
+    td {
+        text-align: left;
+        padding: 2px;
+    }
 
-.bb {
-    border: 1px solid red;
-}
+    .bb {
+        border: 1px solid red;
+    }
 
-th {
-    background-color: #43407a;
-    color: white;
-}
+    th {
+        background-color: #43407a;
+        color: white;
+    }
 
-.hadding {
-    background-color: #43407A;
-    font-size: 9px;
-    padding: 4px;
-}
+    .hadding {
+        background-color: #43407A;
+        font-size: 9px;
+        padding: 4px;
+    }
 
-.top {
-    margin-top: 80px;
+    .top {
+        margin-top: 80px;
 
-}
+    }
 
-th,
-tr {
-    border: 1px solid #afaec5;
-    border-collapse: collapse;
-}
+    th,
+    tr {
+        border: 1px solid #afaec5;
+        border-collapse: collapse;
+    }
 
-thead {
-    border: 2px solid #afaec5;
-}
+    thead {
+        border: 2px solid #afaec5;
+    }
 
-#backcolor {
-    background-color: #43407a47;
+    #backcolor {
+        background-color: #43407a47;
 
-}
+    }
 
-.row::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-.roww{
-    border:1px solid #43407a47;
-}
+    .row::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
 
-.col1 {
-    float: left;
-    width: 60%;
-}
+    .roww {
+        border: 1px solid #43407a47;
+    }
 
-.col2 {
-    float: left;
-    width: 40%;
-}
+    .col1 {
+        float: left;
+        width: 60%;
+    }
+
+    .col2 {
+        float: left;
+        width: 40%;
+    }
 </style>
 
 <body>
@@ -130,13 +131,14 @@ thead {
             <span style="margin: 0; float:right;padding-left:10px; margin-right: 11px;">Account Number</span>
             <hr style="margin-top: 20px;">
 
-            <span style="margin: 0;float:right; margin-right: 23px; ">$1,234</span>
+            <span
+                style="margin: 0;float:right; margin-right: 23px; ">{{ $requestData['currency'] }}{{ $requestData['total_net_pay'] }}</span>
 
 
-            <span style="margin: 0;float:right; margin-right: 40px;">xxx233</span>
+            <span style="margin: 0;float:right; margin-right: 40px;">{{ $requestData['transit_aba_number'] }}</span>
 
 
-            <span style="margin: 0;float:right; margin-right: 40px;">xxx233</span>
+            <span style="margin: 0;float:right; margin-right: 40px;">{{ $requestData['account_number_last_4'] }}</span>
 
         </div>
         <div
@@ -185,19 +187,22 @@ thead {
 
         <tr>
             <td> {{ $requestData['emp_name'] }}</td>
-            <td style="
+            <td
+                style="
                 border-right: 1px solid #afaec5;
                 border-left: 1px solid #afaec5;
             ">
                 {{ $requestData['cname'] }}</td>
             <td>{{ $requestData['emp_ssn'] }} </td>
-            <td style="
+            <td
+                style="
                 border-right: 1px solid #afaec5;
                 border-left: 1px solid #afaec5;
             ">
                 {{ $requestData['emp_id'] }}</td>
             <td>{{ $requestData['emp_ssn'] }} </td>
-            <td style="
+            <td
+                style="
                 border-right: 1px solid #afaec5;
                 border-left: 1px solid #afaec5;
             ">
@@ -222,19 +227,22 @@ thead {
         <tr style="background-color: #f2f2f2;">
             <td style="color: #545464;border-right: 1px solid #afaec5;">THIS CHECK</td>
             <td>${{ $requestData['period_gross_total'] }}</td>
-            <td style="
+            <td
+                style="
                 border-right: 1px solid #afaec5;
                 border-left: 1px solid #afaec5;
             ">
                 0.00</td>
             <td>{{ $requestData['deduction_tax'] }}</td>
-            <td style="
+            <td
+                style="
                 border-right: 1px solid #afaec5;
                 border-left: 1px solid #afaec5;
             ">
                 0.00</td>
             <td>${{ $requestData['total_net_pay'] }}</td>
-            <td style="
+            <td
+                style="
                 border-right: 1px solid #afaec5;
                 border-left: 1px solid #afaec5;
             ">
@@ -247,19 +255,22 @@ thead {
         <tr>
             <td style="color: #545464;border-right: 1px solid #afaec5;">YEAR-TO-DATE</td>
             <td> {{ $requestData['ytd_gross_total'] }}</td>
-            <td style="
+            <td
+                style="
                 border-right: 1px solid #afaec5;
                 border-left: 1px solid #afaec5;
             ">
                 0.00</td>
             <td>{{ $requestData['ytd_deduction_tax'] }}</td>
-            <td style="
+            <td
+                style="
                 border-right: 1px solid #afaec5;
                 border-left: 1px solid #afaec5;
             ">
                 0.00</td>
             <td>${{ $requestData['total_ytd_net_pay'] }}</td>
-            <td style="
+            <td
+                style="
                 border-right: 1px solid #afaec5;
                 border-left: 1px solid #afaec5;
             ">
@@ -301,13 +312,13 @@ thead {
                     </thead>
                     <tbody>
                         @foreach ($requestData['earning'] as $key => $earn)
-                        <tr style="border: none;">
-                            <td>{{ $earn }}</td>
-                            <td>{{ $requestData['currency'] }} {{ $requestData['rate'][$key] }}</td>
-                            <td>{{ $requestData['hours'][$key] }}</td>
-                            <td>{{ $requestData['currency'] }} {{ $requestData['period'][$key] }}</td>
-                            <td>{{ $requestData['currency'] }} {{ $requestData['ytd_total'][$key] }}</td>
-                        </tr>
+                            <tr style="border: none;">
+                                <td>{{ $earn }}</td>
+                                <td>{{ $requestData['currency'] }} {{ $requestData['rate'][$key] }}</td>
+                                <td>{{ $requestData['hours'][$key] }}</td>
+                                <td>{{ $requestData['currency'] }} {{ $requestData['period'][$key] }}</td>
+                                <td>{{ $requestData['currency'] }} {{ $requestData['ytd_total'][$key] }}</td>
+                            </tr>
                         @endforeach
                         <!-- <tr style="border: none;">
                     <td colspan="3" style="text-align:center;">Total Wages</td>
@@ -327,26 +338,28 @@ thead {
                         <td style="font-size:9px;">DEDUCTIONS & TAXES</td>
                         <td style="font-size:9px;">AMOUNT<br>THIS CHECK</td>
                         <td style="border-right: none !important;   border-collapse: collapse;font-size:9px;">AMOUNT
-                            <br>YEAR-TO-DATE</td>
+                            <br>YEAR-TO-DATE
+                        </td>
                     </thead>
 
                     <tbody style="border-left: 2px solid #afaec5; ">
                         @foreach ($requestData['taxes'] ?? [] as $key => $taxes)
-                        <tr style="border:none;">
-                            <td>{{ $taxes }}</td>
-                            <td>{{ $requestData['currency'] }} {{ $requestData['taxes_rate'][$key] }}</td>
-                            <td>{{ $requestData['currency'] }}
-                                {{ $requestData['taxes_ytd'][$key] }}</td>
-                        </tr>
+                            <tr style="border:none;">
+                                <td>{{ $taxes }}</td>
+                                <td>{{ $requestData['currency'] }} {{ $requestData['taxes_rate'][$key] }}</td>
+                                <td>{{ $requestData['currency'] }}
+                                    {{ $requestData['taxes_ytd'][$key] }}</td>
+                            </tr>
                         @endforeach
 
                         @foreach ($requestData['tax_deduction'] ?? [] as $key => $tax_deduction)
-                        <tr style="border:none;">
-                            <td>{{ $tax_deduction }}</td>
-                            <td>{{ $requestData['currency'] }} {{ $requestData['period_tax_deduction'][$key] }}</td>
-                            <td>{{ $requestData['currency'] }}
-                                {{ $requestData['ytd_tax_deduction'][$key] }}</td>
-                        </tr>
+                            <tr style="border:none;">
+                                <td>{{ $tax_deduction }}</td>
+                                <td>{{ $requestData['currency'] }} {{ $requestData['period_tax_deduction'][$key] }}
+                                </td>
+                                <td>{{ $requestData['currency'] }}
+                                    {{ $requestData['ytd_tax_deduction'][$key] }}</td>
+                            </tr>
                         @endforeach
                         <tr style="border:none;">
                             <td><b>Total Taxes</b></td>
