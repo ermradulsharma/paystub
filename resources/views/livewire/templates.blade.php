@@ -32,6 +32,7 @@
                                 <th>Type</th>
                                 <th>Title</th>
                                 <th>Image</th>
+                                <th>Status</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -45,20 +46,25 @@
                                 <td>
                                     <a href="{{ asset($template->images->file ?? '') }}" target="blank">
                                         @if(!empty($template->images->file_type))
-                                            @if($template->images->file_type != "pdf")
-                                                <img width="200px" height="150px" src="{{$template->images->file ?? '' }}" />
-                                            @else
-                                                <i class="fa fa-file-pdf-o" style="font-size:48px;color:red"></i>
-                                            @endif
+                                        @if($template->images->file_type != "pdf")
+                                        <img width="200px" height="150px" src="{{$template->images->file ?? '' }}" />
+                                        @else
+                                        <i class="fa fa-file-pdf-o" style="font-size:48px;color:red"></i>
+                                        @endif
                                         @endif
                                     </a>
                                 </td>
-
+                                <td>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" wire:click="changeStatus({{ $template->id }})" type="checkbox" role="switch" id="flexSwitchCheckChecked_{{$key}}" {{$template->status == 1 ? 'checked' : ''}}>
+                                        <label class="form-check-label" for="flexSwitchCheckChecked_{{$key}}"></label>
+                                    </div>
+                                </td>
                                 <td><button type="button" class="btn btn-primary" wire:click="editTemplate({{ $template->id }})">Edit</button>
                                     @if($confirming===$template->id)
-                                        <button wire:click="deleteTemplate({{$template->id}})" class="btn btn-warning text-white w-32 ">Sure?</button>
+                                    <button wire:click="deleteTemplate({{$template->id}})" class="btn btn-warning text-white w-32 ">Sure?</button>
                                     @else
-                                        <button wire:click="confirmDelete({{ $template->id }})" class="btn btn-danger">Delete</button>
+                                    <button wire:click="confirmDelete({{ $template->id }})" class="btn btn-danger">Delete</button>
                                     @endif
                                 </td>
                             </tr>

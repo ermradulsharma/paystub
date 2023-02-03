@@ -88,6 +88,13 @@ class Templates extends Component
         $this->page_title = "Edit Template";
     }
 
+    public function changeStatus($id)
+    {
+        $tempObj = Template::find($id);
+        $tempObj->status = $tempObj->status == 1 ? 2 : 1;
+        $tempObj->save();
+    }
+
     public function next()
     {
         $this->next++;

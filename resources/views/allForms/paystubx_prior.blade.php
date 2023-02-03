@@ -84,8 +84,8 @@
         </tr>
         <tr style="padding-top:4px;">
             @php
-                $digit = new NumberFormatter('en', NumberFormatter::SPELLOUT);
-                $word = $digit->format((int) $requestData['total_net_pay']);
+                $digit = Terbilang::make((int) $requestData['total_net_pay']);
+                $word = $digit;
             @endphp
             @php
                 $n = $requestData['total_net_pay'];

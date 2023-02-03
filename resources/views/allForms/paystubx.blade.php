@@ -35,7 +35,7 @@
 
     .column2 {
         float: left;
-        width: 20%;
+        width: 35%;
     }
 
     .row2::after {
@@ -89,7 +89,7 @@
 
 
     <div class="row2">
-        <h3 style="text-align: right;">Earnings Statement</h3>
+        <h3 style="text-align: left; max-width:215px; margin:0 0 0 auto; padding-bottom:25px; font-size:23px;">Earnings Statement</h3>
         <div class="col0">
         </div>
         <div class="col1">
@@ -175,8 +175,8 @@
                     </br>
                     <tr>
                         <th colspan="3" style="text-align:right; padding-right:25px;">GROSS PAY</th>
-                        <td>{{ $requestData['currency'] }} {{ $requestData['deduction_tax'] }}</td>
-                        <td>{{ $requestData['currency'] }} {{ $requestData['ytd_deduction_tax'] }}</td>
+                        <td><b>{{ $requestData['currency'] }} {{ $requestData['deduction_tax'] }}</b></td>
+                        <td><b>{{ $requestData['currency'] }} {{ $requestData['ytd_deduction_tax'] }}</b></td>
                     </tr>
 
                 </table>
@@ -188,7 +188,7 @@
                         <th>Important Notes</th>
                     </tr>
                     <tr>
-                        <td>Companv Telephone Number:{{ $requestData['tel'] }}</td>
+                        <td>Company Telephone Number:{{ $requestData['tel'] }}</td>
                     </tr>
                 </table>
             </div>
@@ -196,14 +196,7 @@
 
 
     </section>
-
-
-
-
-
-
-
-    <table style="width:100%;margin-top:30px;">
+    <table style="width:65%;margin-top:30px;">
         <thead>
             <th>Deductions</th>
             <th colspan="3">Statuory</th>
@@ -230,17 +223,17 @@
         <tr>
             <td></td>
             <td>Total Deduction</td>
-            <td>{{ $requestData['currency'] }} {{ $requestData['period_gross_total'] }}</td>
-            <td>{{ $requestData['currency'] }} {{ $requestData['ytd_gross_total'] }}</td>
+            <td><b>{{ $requestData['currency'] }} {{ $requestData['period_gross_total'] }}</b></td>
+            <td><b>{{ $requestData['currency'] }} {{ $requestData['ytd_gross_total'] }}</b></td>
         </tr>
         </br>
         <tr>
             <td></td>
-            <th>Net Pay</th>
-            <td>{{ $requestData['currency'] }}
-                {{ $requestData['total_net_pay'] }}</td>
-            <td>{{ $requestData['currency'] }}
-                {{ $requestData['total_ytd_net_pay'] }}</td>
+            <th>NET PAY</th>
+            <td><b>{{ $requestData['currency'] }}
+                {{ $requestData['total_net_pay'] }}</b></td>
+            <td><b>{{ $requestData['currency'] }}
+                {{ $requestData['total_ytd_net_pay'] }}</b></td>
         </tr>
 
     </table>

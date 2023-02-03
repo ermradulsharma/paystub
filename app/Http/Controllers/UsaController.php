@@ -19,16 +19,16 @@ class UsaController extends Controller
     public function index()
     {
         $deduction = Deduction::where('state', 'usa')->get();
-        $basicType = Template::where('type', 'basic')->with('images')->get();
-        $advanceType = Template::where('type', 'advance')->with('images')->get();
+        $basicType = Template::where(['type' => 'basic', 'status' => 1])->with('images')->get();
+        $advanceType = Template::where(['type' => 'advance', 'status' => 1])->with('images')->get();
         $stateTaxes = StateTax::get();
         return view('usa', compact('basicType', 'advanceType', 'deduction', 'stateTaxes'));
     }
 
     public function templateGloble()
     {
-        $basicType = Template::where('type', 'basic')->get();
-        $advanceType = Template::where('type', 'advance')->get();
+        $basicType = Template::where(['type' => 'basic', 'status' => 1])->get();
+        $advanceType = Template::where(['type' => 'advance', 'status' => 1])->get();
         return view('globle', compact('basicType', 'advanceType'));
     }
 
@@ -79,8 +79,8 @@ class UsaController extends Controller
     {
         $invoiceData = PaySlip::where(['user_id' => Auth::user()->id, 'id' => $id])->first() ?? [];
         $deduction = Deduction::where('state', 'usa')->orderBy('id', 'asc')->get();
-        $basicType = Template::where('type', 'basic')->with('images')->get();
-        $advanceType = Template::where('type', 'advance')->with('images')->get();
+        $basicType = Template::where(['type' => 'basic', 'status' => 1])->with('images')->get();
+        $advanceType = Template::where(['type' => 'advance', 'status' => 1])->with('images')->get();
         $stateTaxes = StateTax::get();
         return view('lists.usaEdit', compact('basicType', 'advanceType', 'deduction', 'stateTaxes', 'invoiceData'));
     }
