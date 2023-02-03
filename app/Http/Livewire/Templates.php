@@ -57,17 +57,18 @@ class Templates extends Component
         $tempObj = Template::find($this->tempId);
         if (!$tempObj) {
             $tempObj = new Template();
+            $tempObj->title = strtolower(str_replace(' ', '_', $this->title));
             $msg = "Template saved successfully.";
         }
         $tempObj->name = $this->title;
-        $tempObj->title = strtolower(str_replace(' ', '_', $this->title));
+
         $tempObj->type = $this->type;
         $tempObj->state = $this->state;
 
         $tempObj->save();
         if ($this->file) {
             deleteImage('App\Models\Template', $this->tempId ?? 0, 'templates');
-            uploadImage("App\Models\Template", $tempObj->id, $this->file, 'templates');
+            uploadImage("App\Models\Template", $tempObj->id, $this->file, 'templates', $tempObj->title);
         }
         $msg = "Template Updated successfully.";
 

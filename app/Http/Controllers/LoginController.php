@@ -9,6 +9,7 @@ use App\Models\User;
 use App\Models\verifiedEmail;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
@@ -35,26 +36,19 @@ class LoginController extends Controller
     public function callbackFromGoogle()
     {
         try {
-
             $user = Socialite::driver('google')->user();
-
             $finduser = User::where('google_id', $user->id)->first();
-
             if ($finduser) {
-
                 Auth::login($finduser);
-
-                return redirect()->intended('userDashboard');
+                return redirect(route('invoiceList'));
             } else {
                 $newUser = User::updateOrCreate(['email' => $user->email], [
                     'name' => $user->name,
                     'google_id' => $user->id,
-                    'password' => encrypt('123456dummy')
+                    'password' => Hash::make('123456dummy')
                 ]);
-
                 Auth::login($newUser);
-
-                return redirect()->intended('userDashboard');
+                return redirect(route('invoiceList'));
             }
         } catch (Exception $e) {
             dd($e->getMessage());
@@ -64,7 +58,7 @@ class LoginController extends Controller
     public function logout(Request $request)
     {
         Auth::logout();
-        return Redirect::back();
+        return redirect(route('welcome'));
     }
 
     public function loginWithOtp(Request $request)

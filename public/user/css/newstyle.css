@@ -307,7 +307,7 @@ select:after {
     border-color: #fff transparent transparent transparent;
 }
 
-   .sidenav {
+.sidenav {
     height: 100%;
     width: 0;
     position: fixed;
@@ -318,28 +318,29 @@ select:after {
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
-  }
-  
-  .sidenav a {
+}
+
+.sidenav a {
     text-decoration: none;
     font-size: 20px;
     display: block;
     transition: 0.3s;
-  }
-  
-  .sidenav a:hover {
+}
+
+.sidenav a:hover {
     color: #f1f1f1;
-  }
-  
-  .sidenav .closebtn {
+}
+
+.sidenav .closebtn {
     position: absolute;
     top: 0;
     right: 25px;
     font-size: 36px;
     margin-left: 50px;
-    color:#0C2F62;
-  }
-  .nav-btn {
+    color: #0C2F62;
+}
+
+.nav-btn {
     box-shadow: 4px 4px 2px 1px #e9d1d3;
     width: 55%;
     color: white !important;
@@ -351,6 +352,7 @@ select:after {
     margin: 0 auto 20px !important;
     text-align: center;
 }
+
 .toggle-logo {
     max-width: 170px;
     padding-bottom: 30px;
@@ -624,10 +626,11 @@ h5 {
     margin-left: -195px;
     margin-top: -100px;
 }
+
 .img2-p {
     font-size: 20px;
     font-family: 'Futura LT';
-    color: rgba(0, 0, 0,0.7);
+    color: rgba(0, 0, 0, 0.7);
     line-height: 1.8;
 }
 
@@ -719,6 +722,7 @@ h5 {
     width: 100%;
     /* margin: 0 auto; */
 }
+
 .space-between {
     justify-content: space-between;
     display: flex;
@@ -775,76 +779,91 @@ select {
     width: 100%;
     max-width: 260px;
 }
-.youtubeimg{
-    width:418px;
-     height:234px;
-   
+
+.youtubeimg {
+    width: 418px;
+    height: 234px;
+
 }
+
 .smallfont {
-    font-size:25px; 
+    font-size: 25px;
     font-family: 'Futura LT';
 }
+
 .smallfont1 {
     font-size: 22px;
-    color: #363636; 
-    line-height:1em; 
-    font-family: 'Futura LT'; 
-}
-.smallfont2 {
-    font-size: 30px;
-    line-height:1em;
+    color: #363636;
+    line-height: 1em;
     font-family: 'Futura LT';
 }
+
+.smallfont2 {
+    font-size: 30px;
+    line-height: 1em;
+    font-family: 'Futura LT';
+}
+
 .smallfont3 {
     font-size: 30px;
-    line-height:1.5em;
-     font-family: 'Futura LT';
+    line-height: 1.5em;
+    font-family: 'Futura LT';
 }
+
 .wrapper {
     max-width: 1500px;
 }
-.font  {
+
+.font {
     font-family: 'Futura LT';
-     font-size:20px;
+    font-size: 20px;
 
 }
+
 .text-white {
     font-family: 'Futura LT';
-    font-size:17px;
+    font-size: 17px;
 }
 
 .three-box-section {
     padding: 0px 0px 60px;
 }
+
 .box-wrapper {
     max-width: 1180px;
     margin: 0 auto;
     padding: 0px 20px;
 }
+
 .box-row {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
 }
+
 .box-border-outer {
     width: calc(33.33% - 14px);
     margin-right: 20px;
     border: 7px solid #000;
 }
+
 .box-border-outer:last-child {
     margin-right: 0;
 }
+
 .box {
     padding: 65px 30px;
     border: 9px solid #b3dade;
     height: 100%;
 }
+
 .box-content h6 {
     font-size: 22px;
     font-weight: 600;
     text-align: center;
     padding: 0px 0px 35px;
 }
+
 .bottom-content p {
     font-size: 20px;
     font-weight: 600;
@@ -852,31 +871,37 @@ select {
     text-align: center;
     line-height: 1.9;
 }
+
 .box-icon img {
     width: 100%;
 }
+
 .box-icon {
     max-width: 117px;
     margin: 0 auto;
     padding: 0px 0px 35px;
 }
+
 /* w2paystub end */
 
 .sidenav {
     display: none;
 }
+
 .openbtn {
-    display: none ;
+    display: none;
 }
 
 .text-center2 {
     color: white;
 }
-.employee-font{
+
+.employee-font {
     font-size: xx-large;
-    font-weight:600;
+    font-weight: 600;
     font-family: Futura Md BT;
 }
+
 .emp-img {
     max-width: 176px;
 }
@@ -885,17 +910,19 @@ select {
     margin-right: 30px;
 }
 
-.redcon{
+.redcon {
     padding: 55px 115px;
 }
 
 .flash-icon {
     font-size: 39px;
-     position:relative; 
-     left:10px;;
+    position: relative;
+    left: 10px;
+    ;
 }
-.head-font{
-    font-size:30px;
+
+.head-font {
+    font-size: 30px;
     font-family: 'Futura LT';
 }
 
@@ -959,10 +986,12 @@ select {
         width: 250px;
         left: 130px;
     }
+
     .paytext {
         margin-top: 0;
         margin-left: 80px;
     }
+
     .img2-p {
         margin-left: 80px;
     }
@@ -976,15 +1005,18 @@ select {
         font-weight: 200;
         line-height: 35.5px;
     }
+
     .payimg2 {
         width: 100%;
         padding-bottom: 40px;
         margin-left: -60px;
         margin-top: -95px;
     }
+
     .space-between {
         justify-content: center;
     }
+
     .padding {
         padding: 0px 20px !important;
     }
@@ -1009,6 +1041,7 @@ select {
 }
 
 @media screen and (max-width: 1129px) {
+
     /* .navbar {
         display: none;
 
@@ -1037,28 +1070,35 @@ select {
     .create-container li {
         font-size: 10px;
     }
+
     .payimg2 {
 
         margin-bottom: 28px;
-       margin-top: 0;
+        margin-top: 0;
     }
+
     .payimg {
         width: 195px;
-        left:100px;
+        left: 100px;
     }
+
     .smallfont {
         font-size: 20px;
     }
+
     .smallfont1 {
         font-size: 17px;
         margin-top: 25px;
     }
+
     .smallfont2 {
         font-size: 24px;
     }
+
     .smallfont3 {
         font-size: 24px;
     }
+
     .youtubeimg {
         width: 320px;
         height: 180px;
@@ -1076,6 +1116,7 @@ select {
         font-size: 7px;
         top: 310px !important;
     }
+
     .globleImg {
         max-width: 470px;
         height: auto;
@@ -1220,15 +1261,19 @@ select {
     .Show {
         font-size: 30px;
     }
+
     .font {
         font-size: 18px;
     }
+
     .text-white {
-        font-size:17px;
+        font-size: 17px;
     }
+
     .footimg {
         max-width: 200px;
     }
+
     .createbtn2 {
         padding: 0px 6px;
         font-size: 24px;
@@ -1247,10 +1292,11 @@ select {
         display: flex;
         justify-content: center;
     }
-    
+
     .pay-h2 {
         font-size: 23px !important;
-    }   
+    }
+
     .footimg {
         width: 55%;
     }
@@ -1291,22 +1337,28 @@ select {
         margin-right: 0 !important;
         padding-right: 0 !important;
     }
-.text-white {
-    text-align: left;
-}.text-padding {
-    padding:0px 0px 0px 30px
-}
 
-.formimg1{
-    margin-left: 10px;
-}
-.footer-text{
-    text-align: center;
-}
-.flex-row {
-    max-width: 210px;
-    margin: 0 auto;
-}
+    .text-white {
+        text-align: left;
+    }
+
+    .text-padding {
+        padding: 0px 0px 0px 30px
+    }
+
+    .formimg1 {
+        margin-left: 10px;
+    }
+
+    .footer-text {
+        text-align: center;
+    }
+
+    .flex-row {
+        max-width: 210px;
+        margin: 0 auto;
+    }
+
     .box-usa {
         border: 3px solid #FF6161;
         padding: 10px 0px 12px 12px;
@@ -1384,16 +1436,20 @@ select {
         width: 60%;
         margin: 40px auto 0px 85px;
     }
+
     .paytext {
         margin-left: 85px;
     }
+
     .payimg {
         padding-bottom: 50px;
     }
+
     .youtubeimg {
         width: 230px;
         height: 131px;
     }
+
     .storbtn {
         width: 106px;
         height: 39px;
@@ -1407,7 +1463,7 @@ select {
         font-size: 13px !important;
     }
 
-   
+
     .hourbtn {
         padding: 8px;
         border-radius: 3px;
@@ -1444,61 +1500,79 @@ select {
         margin-top: 20px;
         font-weight: 400;
     }
+
     .box-border-outer {
         width: 55%;
         margin-bottom: 20px;
         margin-right: 0px;
     }
+
     .box-row {
         justify-content: center;
     }
+
     .navbar {
         display: none;
     }
+
     .sidenav {
         display: block;
     }
+
     .openbtn {
         display: block;
     }
+
     .canadaheading {
         text-align: center !important;
         max-width: 100%;
     }
+
     .text-center2 {
         text-align: center;
     }
+
     .display-4 {
         font-size: 1.5rem;
     }
+
     .employee-font {
         font-size: 20px;
     }
+
     .emp-img {
         max-width: 150px;
     }
+
     .couple {
         margin-top: 100px;
     }
+
     .canadah4 {
         font-size: 25px;
     }
+
     .canadah2 {
         font-size: 25px;
         margin-left: 0 !important;
     }
+
     .canadah1 {
         font-size: 30px;
     }
+
     .mainhead {
         text-align: left !important;
     }
+
     .createbtn2 {
-        padding:0px 62px;
+        padding: 0px 62px;
     }
-    .redcon{
-        padding:unset;
+
+    .redcon {
+        padding: unset;
     }
+
     .tickbox {
         width: 20px;
         height: 39px;
@@ -1506,23 +1580,28 @@ select {
         top: -3px;
         left: 77px;
     }
-    .flash-icon  {
+
+    .flash-icon {
         font-size: 20px;
     }
+
     .small {
         font-size: 14px;
     }
+
     .base {
         font-size: 14px;
     }
+
     .dropdown11 {
         font-size: 9px;
     }
+
     .earnbtn {
         padding: 6px 13px 5px 13px;
     }
-    
-    
+
+
 }
 
 
@@ -1534,13 +1613,19 @@ select {
     .sidenav a {
         font-size: 18px;
     }
-    
+
 
 }
+
 @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-  }
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+}
 
 @media screen and (max-width: 425px) {
     .globleImg {
@@ -1550,15 +1635,18 @@ select {
         top: 10px;
         left: 0px;
     }
+
     .text-white {
         font-size: 11px;
         margin-bottom: 10px;
     }
+
     .box-border-outer {
         width: 100%;
     }
+
     .createbtn2 {
-        padding:0px 57px;
+        padding: 0px 57px;
     }
 
 
@@ -1584,12 +1672,14 @@ select {
     .dropdown1 {
         font-size: 9px;
     }
+
     .payimg {
         position: relative;
         width: 85%;
         top: 19px;
         left: 20px;
     }
+
     .down {
         position: absolute;
         right: 58px;
@@ -1724,20 +1814,25 @@ select {
         padding: 11px 21px;
         margin-bottom: 10px;
     }
+
     .paytext {
         margin-left: 0;
     }
+
     .flex {
         display: inline-block !important;
     }
+
     .small-font {
         font-size: 14px;
     }
+
     .payimg2 {
         width: 100%;
         margin: 40px auto 0px 0px;
         height: 60%;
     }
+
     .tickbox {
         width: 20px;
         height: 39px;
@@ -1745,11 +1840,13 @@ select {
         top: -8px;
         left: 77px;
     }
+
     .earnbtn {
         margin-bottom: 10px;
 
     }
-    .head-font{
+
+    .head-font {
         text-align: center;
     }
 }
@@ -1763,6 +1860,7 @@ select {
         left: 4px;
         font-weight: 200;
     }
+
     .small-font {
         font-size: 14px !important;
     }
@@ -1877,17 +1975,20 @@ select {
         padding: 11px 21px;
         margin-bottom: 10px;
     }
+
     .payimg2 {
         position: relative;
         width: 100%;
         left: 0px;
         height: 50%;
     }
+
     .img2-p {
         font-size: 17px;
         font-weight: 200;
         margin-top: 20px;
     }
+
     .paytext {
         /* position: absolute; */
         /* bottom: -136px; */
@@ -1895,22 +1996,27 @@ select {
         /* font-size: 9px; */
         top: 33px;
     }
-    .youtubeimg{
+
+    .youtubeimg {
         width: 361px;
         height: 204px;
-       
+
     }
-    .earnbtn1{
+
+    .earnbtn1 {
         width: 100%;
-        
+
     }
-    .earnbtn{
+
+    .earnbtn {
         padding: 6px 22px 5px 27px;
 
     }
+
     .createbtn2 {
         padding: 0px 32px;
     }
+
     .textarea {
         max-width: 275px;
     }

@@ -38,13 +38,34 @@ th {
 
 .delbtn {
     padding: 7px 13px;
-    font-size: 23px;
+    font-size: 21px;
     background: red;
     color: white;
     border: none;
     text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: 1px;
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: var(--label-align);
+    min-width: 100%;
+    width: -moz-max-content;
+    width: max-content;
+}
 
+.downloiadBtn {
+    color: #8B6755;
+    border-style: outside;
+    background: #FFFFFF;
+    border-radius: 50px;
+    border: 2px solid rgb(139, 103, 85);
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: var(--label-align);
+    min-width: 100%;
+    width: -moz-max-content;
+    width: max-content;
 }
 
 .delbtn:hover {
@@ -76,7 +97,15 @@ th {
 
 .previewbtn {
     background-image: linear-gradient(#e7a0a0, red);
-
+    font-size: 20px !important;
+    padding: 7px 12px !important;
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: var(--label-align);
+    min-width: 100%;
+    width: -moz-max-content;
+    width: max-content;
 }
 
 .previewbtn:hover {
