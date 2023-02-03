@@ -133,7 +133,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('usaStoreData', [TemplateFormController::class, 'usaStoreData'])->name('usaStoreData');
     Route::get('invoiceList', [TemplateFormController::class, 'invoiceList'])->name('invoiceList');
     Route::post('invoiceDelete/{id}', [TemplateFormController::class, 'invoiceDelete'])->name('invoiceDelete');
-    Route::get('invoiceMail/{id}', [TemplateFormController::class, 'invoiceMail'])->name('invoiceMail');
+    Route::get('invoiceMail/{id}', [TemplateFormController::class, 'invoiceMail'])->name('invoiceMailId');
+    Route::get('invoiceMail', [TemplateFormController::class, 'invoiceMail'])->name('invoiceMail');
     Route::get('usa/edit/{id}', [UsaController::class, 'edit'])->name('invoice-Usa-Edit');
     Route::get('prizing', [UsaController::class, 'prizing'])->name('prizing');
+    Route::get('subscription', [TemplateFormController::class, 'subscription'])->name('subscription');
 });

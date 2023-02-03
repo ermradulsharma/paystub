@@ -18,8 +18,8 @@
         <div class="mx-lg-5 px-lg-5">
             <div class="m-lg-5 px-lg-5">
                 <div class="row">
-                    <div class="col-lg-4 d-flex justify-content-center" role="button">
-                        <div class="prizebox">
+                    <div class="col-lg-4 d-flex justify-content-center">
+                        <div class="prizebox suscription" role="button">
                             <h3 class="my-5 pb-5 prizeh3">1 Month</h3>
                             <div class="mx-4">
                                 <div class="d-flex listItem">
@@ -45,8 +45,8 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-4 d-flex justify-content-center" role="button">
-                        <div class="prizebox1">
+                    <div class="col-lg-4 d-flex justify-content-center">
+                        <div class="prizebox1 suscription" role="button">
                             <h3 class="my-5 pb-5 prizeh3">3 Month</h3>
                             <div class="mx-4">
                                 <div class="d-flex listItem">
@@ -72,8 +72,8 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-4 d-flex justify-content-center" role="button">
-                        <div class="prizebox2">
+                    <div class="col-lg-4 d-flex justify-content-center">
+                        <div class="prizebox2 suscription" role="button">
                             <h3 class="my-5 pb-5 prizeh3">6 Month</h3>
                             <div class="mx-4">
                                 <div class="d-flex listItem">
@@ -103,4 +103,102 @@
         </div>
     </div>
 </div>
+<style>
+    /* Center the loader */
+    #loader {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        z-index: 9999;
+        width: 120px;
+        height: 120px;
+        margin: -76px 0 0 -76px;
+        border: 16px solid #f3f3f3;
+        border-radius: 50%;
+        border-top: 16px solid #3498db;
+        -webkit-animation: spin 2s linear infinite;
+        animation: spin 2s linear infinite;
+    }
+
+    @-webkit-keyframes spin {
+        0% {
+            -webkit-transform: rotate(0deg);
+        }
+
+        100% {
+            -webkit-transform: rotate(360deg);
+        }
+    }
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    /* Add animation to "page content" */
+    .animate-bottom {
+        position: relative;
+        -webkit-animation-name: animatebottom;
+        -webkit-animation-duration: 1s;
+        animation-name: animatebottom;
+        animation-duration: 5s
+    }
+
+    @-webkit-keyframes animatebottom {
+        from {
+            bottom: -100px;
+            opacity: 0
+        }
+
+        to {
+            bottom: 0px;
+            opacity: 1
+        }
+    }
+
+    @keyframes animatebottom {
+        from {
+            bottom: -100px;
+            opacity: 0
+        }
+
+        to {
+            bottom: 0;
+            opacity: 1
+        }
+    }
+
+    #loaderDiv {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        background: #00000054;
+        z-index: 999;
+    }
+</style>
+<div id="loaderDiv" style="display: none;">
+    <div id="loader"></div>
+</div>
+@endsection
+
+@section('script')
+<script>
+    $('.suscription').click(function() {
+        document.getElementById("loaderDiv").style.display = "block";
+        setTimeout(function() {
+            toastr.success("Subscription has been purchased successfully.");
+        }, 1000);
+        setTimeout(function() {
+            document.getElementById("loaderDiv").style.display = "none";
+            window.location.href = "{{route('subscription')}}";
+        }, 2000);
+    });
+</script>
 @endsection
