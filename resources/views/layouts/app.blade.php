@@ -119,7 +119,7 @@
                     <form id="sendOTPForm" action="{{ url('sendOtp') }}" method="POST" class="text-center">
                         @csrf
                         <div class="px-lg-5">
-                            <input type="email" id="email" name="email" class="form-control py-4" placeholder="Email *">
+                            <input type="email" id="email" name="email" class="form-control formm  py-4" placeholder="Email *">
                         </div>
 
                         <button class="previewbtn mt-5" type="submit">Continue</button>
@@ -153,7 +153,7 @@
                             @csrf
                             <div class="px-lg-5">
                                 <input type="hidden" id="hidden_email" name="email" class="d-none">
-                                <input type="text" id="Verificationcode" name="code" class="form-control py-4" placeholder="Verification code *">
+                                <input type="text" id="Verificationcode" name="code" class="form-control formm py-4" placeholder="Verification code *">
                             </div>
 
                             <button class="previewbtn mt-5" type="submit">Verify</button>
