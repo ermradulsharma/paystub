@@ -37,35 +37,38 @@
         float: left;
         width: 20%;
     }
+    .co-table{
+        padding: 10px;
+    }
 </style>
 
 <body>
 
-    <table>
+    <table class="co-table">
         <tr>
-            <td>CO</td>
-            <td>FILE</td>
-            <td>DEPT.</td>
-            <td>CLOCK VCHR</td>
+            <td style="padding-right: 20px;">CO</td>
+            <td style="padding-right: 20px;">FILE</td>
+            <td style="padding-right: 20px;">DEPT.</td>
+            <td style="padding-right: 20px;">CLOCK VCHR</td>
         </tr>
         <tr>
             <td>{{ $requestData['co_number'] }}</td>
             <td>{{ $requestData['file_number'] }}</td>
             <td>201094</td>
-            <td>{{ $requestData['clock_vchr_number'] }}</td>
+            <td style="padding-right: 10px;">{{ $requestData['clock_vchr_number'] }}</td>
         </tr>
     </table>
     <table style="width: 100%;">
         <tr>
             <td style="font-weight: 800;">{{ $requestData['cname'] }}</td>
             <td></td>
-            <th>Earnings Statement</th>
+            <th style="font-size: 20px; text-align:center;">Earnings Statement</th>
         </tr>
     </table>
     <table style="width: 100%;">
         <tr>
             <td>{{ $requestData['address_1'] }}</td>
-            <td>Period Beginning:</td>
+            <td style="text-align: left;"><b>Period Beginning:</b></td>
             <td> {{ date('m/d/y', strtotime($requestData['pay_start'])) }}</td>
         </tr>
 
@@ -73,21 +76,21 @@
             <td> {{ $requestData['city'] }}
                 {{ $requestData['state'] }},
                 {{ $requestData['zip_code'] }}</td>
-            <td>Period Ending:</td>
+            <td style="text-align: left;"><b>Period Ending:</b></td>
             <td> {{ date('m/d/y', strtotime($requestData['pay_end'])) }}</td>
         </tr>
 
         <tr>
             <td>USA</td>
-            <td>Pay Date:</td>
+            <td style="text-align:left;"><b>Pay Date:</b></td>
             <td>{{ date('m/d/y', strtotime($requestData['pay_date'])) }}</td>
         </tr>
     </table>
     <table style="width: 100%; margin-top: 60px;">
         <tr>
             <td>Social Security Number:</td>
-            <td {{ $requestData['emp_ssn'] }}</td>
-            <td style="font-weight: 800;">{{ $requestData['emp_name'] }}</td>
+            <td>{{ $requestData['emp_ssn'] }}</td>
+            <td style="font-weight: 800; font-size:16px;">{{ $requestData['emp_name'] }}</td>
         </tr>
 
         <tr>
