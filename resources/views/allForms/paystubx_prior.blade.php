@@ -80,7 +80,7 @@
             <td style="padding-left:90px;padding-top:0px; font-weight:800;"> {{ $requestData['state'] }},
                 {{ $requestData['zip_code'] }}
             <td>
-            <td style="font-size:18px;">Date: {{ date('m/d/y', strtotime($requestData['pay_date'])) }}</td>
+            <td style="font-size:18px;">Date: {{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</td>
         </tr>
         <tr style="padding-top:4px;">
             @php
@@ -143,8 +143,8 @@
 
                 </tr>
                 <tr>
-                    <td>{{ $requestData['tel'] }}</td>
-                    <td></td>
+                    <td colspan="2" style="font-size:11px;">{{ $requestData['tel'] }}</td>
+
                 </tr>
             </table>
         </div>
@@ -155,20 +155,20 @@
                     <td>SSN</td>
                     <td>{{ $requestData['emp_ssn'] }}</td>
                     <td>Period Beginning</td>
-                    <td>{{ date('m/d/y', strtotime($requestData['pay_start'])) }}</td>
+                    <td>{{ date('m/d/Y', strtotime($requestData['pay_start'])) }}</td>
                 </tr>
                 <tr>
                     <td>Gross Pay</td>
                     <td>{{ $requestData['currency'] }} {{ $requestData['deduction_tax'] }}</td>
                     <td>Period Ending</td>
-                    <td>{{ date('m/d/y', strtotime($requestData['pay_end'])) }}</td>
+                    <td>{{ date('m/d/Y', strtotime($requestData['pay_end'])) }}</td>
                 </tr>
                 <tr>
                     <td>Net Pay</td>
                     <td>{{ $requestData['currency'] }}
                         {{ $requestData['total_net_pay'] }}</td>
                     <td>Check Date</td>
-                    <td>{{ date('m/d/y', strtotime($requestData['pay_date'])) }}</td>
+                    <td>{{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</td>
                 </tr>
                 <tr>
                     <td>Filling Status</td>
@@ -179,6 +179,7 @@
             </table>
         </div>
     </div>
+    </br>
     <div class="row1">
         <div class="column1">
             <table style="width:100%;">
@@ -201,7 +202,7 @@
                         </tr>
                     @endforeach
                     <tr style="border-top: 1px solid black;">
-                        <td colspan="2" style="font-weight: bold;">GROSS PAY </td>
+                        <td colspan="2">GROSS PAY </td>
                         <td>{{ $requestData['deduction_tax'] }}</td>
                         <td>{{ $requestData['ytd_deduction_tax'] }}</td>
                     </tr>
@@ -234,7 +235,7 @@
                         </tr>
                     @endforeach
                     <tr style="border-top: 1px solid black;">
-                        <td style="font-weight: bold;">Net Pay</td>
+                        <td>Net Pay</td>
                         <td>{{ $requestData['currency'] }}{{ $requestData['total_net_pay'] }}</td>
                         <td>{{ $requestData['total_ytd_net_pay'] }}</td>
                     </tr>
