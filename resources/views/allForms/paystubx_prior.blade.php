@@ -69,17 +69,17 @@
     <table style="width:100%;">
         <tr style="">
             <td style="font-size:25px; font-weight:800; padding-left:90px;">{{ $requestData['cname'] ?? '' }}</td>
-            <td></td>
-            <td style="font-size:18px; padding-right:30px;font-weight:800;">No: {{ $requestData['emp_ssn'] ?? '' }}</td>
+            <td style="font-size:18px;">No: {{ $requestData['emp_ssn'] ?? '' }}</td>
         </tr>
         <tr>
             <td style="padding-left:90px; padding-top:0px; font-weight:800;"> {{ $requestData['address_1'] }} {{ $requestData['city'] }}</td>
+            <td></td>
         </tr>
         <tr>
             <td style="padding-left:90px;padding-top:0px; font-weight:800;"> {{ $requestData['state'] }}, {{ $requestData['zip_code'] }}<td>
             <td style="font-size:18px;">Date: {{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</td>
         </tr>
-        <tr style="padding-top:4px;">
+        <tr>
             @php
             $digit = Terbilang::make((int) $requestData['total_net_pay']);
             $word = $digit;
@@ -92,7 +92,7 @@
                 <h5> Pay To The <br>Order Of <span style="border-bottom: 1px solid black;  padding-left:90px; text-align:center; margin:auto;  height:20px">{{ $requestData['emp_name'] ?? '' }}</span></h5>
                 <span style="border-bottom: 1px solid black;  padding-left:90px;">{{ $word }} and {{ (int) $decimal }}/100 </span>
             </td>
-            <td>{{ $requestData['currency'] ?? '' }} **{{ $requestData['total_net_pay'] }} </td>
+            <td style="font-size:18px;">{{ $requestData['currency'] ?? '' }} **{{ $requestData['total_net_pay'] }} </td>
         </tr>
     </table>
 
