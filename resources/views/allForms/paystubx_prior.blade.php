@@ -41,6 +41,7 @@
     .shrapdana {
         max-width: 100%;
     }
+
 </style>
 
 <body>
@@ -63,17 +64,21 @@
             <td style="font-size:18px;">Date: {{ date('m/d/y', strtotime($requestData['pay_date'])) }}</td>
         </tr>
         <tr style="padding-top:4px;">
-
+            @php
+            $digit = new NumberFormatter("en", NumberFormatter::SPELLOUT);
+            $word = $digit->format((int)$requestData['total_net_pay']);
+            @endphp
+            @php
+            $n = $requestData['total_net_pay'];
+            list($whole, $decimal) = sscanf($n, '%d.%d');
+            @endphp
             <td style="font-size:13px;">
                 <h5>
                     Pay TO The <br>Order Of <span style="border-bottom: 1px solid black;  padding-left:90px; text-align:center; margin:auto;  height:20px">{{ $requestData['emp_name'] ?? '' }}</span>
                 </h5>
-                <span style="border-bottom: 1px solid black;  padding-left:90px;">Seven Thousand One Hundred Forty-Five
-                    and 63/100</span>
+                <span style="border-bottom: 1px solid black;  padding-left:90px;">{{$word}} and {{ (int)$decimal }}/100 </span>
             </td>
-            <td>
-                $ **7.145.63
-            </td>
+            <td>{{ $requestData['currency'] ?? '' }} **{{ $requestData['total_net_pay'] }} </td>
         </tr>
     </table>
 
@@ -89,7 +94,7 @@
                 <td>-----------------------------------------------------------------</td>
             </tr>
             <tr>
-                
+
                 <td style="padding-top:30px; font-family: cursive;">98745687T58T43098584598</td>
             </tr>
         </table>
@@ -115,7 +120,7 @@
                 <td style="font-size:12px;"> {{ $requestData['city'] ?? '' }}, {{ $requestData['state'] ?? '' }},
                     {{ $requestData['zip_code'] ?? '' }}
                 </td>
-                <td style="font-size: 12px;" >Dallas, TX750220</td>
+                <td style="font-size: 12px;">Dallas, TX750220</td>
                 <td style="font-size: 12px;">Net Pay</td>
                 <td style="font-size: 12px;">{{ $requestData['currency'] ?? '' }} {{ $requestData['total_net_pay'] ?? '' }}</td>
                 <td style="font-size: 12px;">Check Date</td>
