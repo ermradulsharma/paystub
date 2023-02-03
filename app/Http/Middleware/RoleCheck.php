@@ -18,7 +18,7 @@ class RoleCheck
     {
         $userObj = $request->user();
         if ($userObj->role_id != 1) {
-            return redirect(route('stories.index'));
+            return redirect(route('welcome'));
         }
         return $next($request);
     }

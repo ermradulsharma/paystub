@@ -23,20 +23,7 @@ use Symfony\Component\Routing\Router;
 
 
 
-Route::get('/', function () {
-    return view('paystub');
-})->name('welcome');
 
-Route::get('auth/Login', [LoginController::class, 'loginWithGoogle'])->name('login.google');
-Route::match(['get', 'post'], 'google/callback', [LoginController::class, 'callbackFromGoogle'])->name('google.callback');
-//Route::post('login', 'LoginController@login')->name('newlogin');
-
-Route::post('loginWithOtp', [LoginController::class, 'loginWithOtp'])->name('loginWithOtp');
-Route::get('loginWithOtp', function () {
-    return view('auth/OtpLogin');
-})->name('loginWithOtp');
-
-Route::any('sendOtp', [LoginController::class, 'sendOtp']);
 
 Route::get('generate-pdf', [W2FormController::class, 'generatePDF']);
 Route::get('preview-pdf', [W2FormController::class, 'previewPDF']);
@@ -107,18 +94,28 @@ Route::get('userDashboard', function () {
     return view('prizing');
 }); */
 
-Route::post('templates', [TemplateFormController::class, 'templates'])->name('templates');
+Route::get('/', function () {
+    return view('paystub');
+})->name('welcome');
 
+Route::get('auth/Login', [LoginController::class, 'loginWithGoogle'])->name('login.google');
+Route::match(['get', 'post'], 'google/callback', [LoginController::class, 'callbackFromGoogle'])->name('google.callback');
+Route::post('loginWithOtp', [LoginController::class, 'loginWithOtp'])->name('loginWithOtp');
+Route::get('loginWithOtp', function () {
+    return view('auth/OtpLogin');
+})->name('loginWithOtp');
+Route::any('sendOtp', [LoginController::class, 'sendOtp']);
+
+Route::post('templates', [TemplateFormController::class, 'templates'])->name('templates');
 Route::group(['middleware' => ['auth']], function () {
     Route::post('logout', [LoginController::class, 'logout'])->name('logout');
-    Route::group(['prefix' => 'admin', 'middleware' => ['admin']], function () {
+    Route::group(['prefix' => 'admin', 'middleware' => ['userCheck']], function () {
         Route::get('/', function () {
-            return view('Admin/login');
+            return view('Admin/dashboard');
         });
         Route::get('welcome', function () {
             return view('Admin/layouts/default');
         });
-
         Route::get('dashboard', function () {
             return view('Admin/dashboard');
         });
