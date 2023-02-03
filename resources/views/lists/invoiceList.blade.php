@@ -34,7 +34,7 @@
                                 <a class="btn btn-outline-dark py-2 downloiadBtn" href="{{$invoice->pdf}}" download>Dounload &nbsp;<i class="fa fa-arrow-circle-down 2x" aria-hidden="true"></i></a>
                             </th>
                             <th class="text-center" style="padding: 1em .5em;border:none;">
-                                <a href="{{ route('invoiceMail', $invoice->id) }}">
+                                <a href="{{ route('invoiceMailId', $invoice->id) }}">
                                     <img src="{{asset('images/emaillogo.png')}}" alt="" width="45px">
                                 </a>
                             </th>
@@ -50,7 +50,7 @@
                                 </form>
                             </th>
                             <th class="text-center" style="padding: 1em .5em;border:none;">
-                                <a href="javascript:void(0);" class="previewbtnInvoice text-capitalize">
+                                <a href="javascript:void(0);" class="previewbtnInvoice text-capitalize" data-pdf="{{$invoice->pdf}}">
                                     Preview Your Paystub &nbsp;<i class="fa fa-eye"></i></a>
                             </th>
                         </tr>
@@ -59,10 +59,37 @@
                 </table>
             </div>
             <div class="w-100" style="text-align: right;">
-                <a href="{{ route('prizing') }}" class="user-checkbtn"><b>Continue to Checkout</b></a>
+                <a href="{{Auth::user()->expiryDate == null ? route('prizing') : route('invoiceMail')}}" class="user-checkbtn"><b>Continue to Checkout</b></a>
                 <h6 class="mt-3 font-weight-bold">Click on Continue, to complete your order</h6>
             </div>
         </div>
     </div>
 </div>
+@endsection
+@section('script')
+
+<div class="modal fade" id="tempViewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn btn-secondary close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <embed src="" type="" id="tempView" allowtransparency="false" style="background-color : transparent;" frameborder="0" width="100%" height="800">
+                {{-- <iframe src="" id="tempView" allowtransparency="false" style="background-color : transparent;" frameborder="0" width="100%" height="800"></iframe> --}}
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('.previewbtnInvoice').click(function() {
+        var pdf = $(this).data('pdf');
+        $('#tempView').attr('src', pdf + '?embedded=true#toolbar=0');
+        // $('#tempView').html(response.data);
+        $('#tempViewModal').modal('show');
+    })
+</script>
 @endsection

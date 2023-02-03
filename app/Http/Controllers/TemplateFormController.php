@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\PaySlip;
 use App\Models\Template;
+use App\Models\User;
+use Carbon\Carbon;
 use Dompdf\Dompdf;
 use Exception;
 use Illuminate\Http\Request;
@@ -416,18 +418,29 @@ class TemplateFormController extends Controller
             $invoice->delete();
         }
 
-        return redirect()->back()->with('success', 'Invoice has been deleted successfully.');
+        return redirect()->back()->with('message', 'Invoice has been deleted successfully.');
     }
 
-    public function invoiceMail($id)
+    public function subscription()
     {
-        $invoice = PaySlip::where(['user_id' => Auth::user()->id, 'id' => $id])->first();
+        User::where('id', Auth::user()->id)->update(['expiryDate' => Carbon::now()]);
+        $this->invoiceMail();
+        return redirect(route('welcome'))->with('message', 'Mail has been sent successfully.');
+    }
+    public function invoiceMail($id = null)
+    {
+        $invoice = PaySlip::where(['user_id' => Auth::user()->id]);
+        if ($id != null) {
+            $invoice = $invoice->where('id', $id);
+        }
+        $invoice = $invoice->orderBy('id', 'desc')->first();
         if ($invoice) {
             $mailData = [
                 'email' => Auth::user()->email,
                 'title' => 'Please find atteched file'
             ];
             $moreData = [];
+
             $file = public_path('/uploads/mailData/' . basename($invoice->pdf));
             try {
                 Mail::send('mail.invoice_mail', $moreData, function ($message) use ($mailData, $file) {
@@ -439,7 +452,8 @@ class TemplateFormController extends Controller
                 $response['message'] = $e->getMessage() . ' Line No ' . $e->getLine() . ' in File' . $e->getFile();
             }
         }
-
-        return redirect()->back()->with('success', 'Mail has been sent successfully.');
+        if ($id != null) {
+            return redirect(route('invoiceList'))->with('message', 'Mail has been sent successfully.');
+        }
     }
 }
