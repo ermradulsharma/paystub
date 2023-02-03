@@ -13,7 +13,6 @@
         body {
             color: #000;
             font-size: 14px;
-
         }
 
         .table {
@@ -23,18 +22,14 @@
 
         .text {
             margin-right: 10px;
-
         }
 
         .employee-box {
             border: 2px solid #000;
-            /* width:75%; */
-            /* background-image: linear-gradient(#fff, rgba(0, 0, 0, 0.2)); */
         }
 
         .table-data tr {
             text-align: center;
-
         }
 
         .td {
@@ -194,13 +189,8 @@
                     </tr>
                     <tr>
                         <td></td>
-                        <td> <b>{{ $requestData['city'] }}
-                                {{ $requestData['state'] }},
-                                {{ $requestData['zip_code'] }}</b></td>
-                        <td style="border-bottom: 2px solid #000;">
-                            </b>{{ date('m/d/y', strtotime($requestData['pay_start'])) }} -
-                            {{ date('m/d/y', strtotime($requestData['pay_end'])) }}</b></td>
-
+                        <td> <b>{{ $requestData['city'] }} {{ $requestData['state'] }}, {{ $requestData['zip_code'] }}</b></td>
+                        <td style="border-bottom: 2px solid #000;"> </b>{{ date('m/d/y', strtotime($requestData['pay_start'])) }} - {{ date('m/d/y', strtotime($requestData['pay_end'])) }}</b></td>
                     </tr>
                     <tr>
                         <td colspan="7"></td>
