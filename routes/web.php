@@ -107,6 +107,8 @@ Route::get('userDashboard', function () {
     return view('prizing');
 }); */
 
+Route::post('templates', [TemplateFormController::class, 'templates'])->name('templates');
+
 Route::group(['middleware' => ['auth']], function () {
     Route::post('logout', [LoginController::class, 'logout'])->name('logout');
     Route::group(['prefix' => 'admin', 'middleware' => ['admin']], function () {
@@ -131,7 +133,6 @@ Route::group(['middleware' => ['auth']], function () {
         });
     });
 
-    Route::post('templates', [TemplateFormController::class, 'templates'])->name('templates');
     Route::post('usaStoreData', [TemplateFormController::class, 'usaStoreData'])->name('usaStoreData');
     Route::get('invoiceList', [TemplateFormController::class, 'invoiceList'])->name('invoiceList');
     Route::post('invoiceDelete/{id}', [TemplateFormController::class, 'invoiceDelete'])->name('invoiceDelete');
