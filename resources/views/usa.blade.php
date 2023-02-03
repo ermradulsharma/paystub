@@ -630,8 +630,7 @@
                         Your Paystub <i class="fa fa-eye" style="font-size: 30px; margin-left: 7px;"></i></button>
                 </div>
                 <div class="text-right mt-1" style="margin-right:30px;">
-                    <button type="button" class="emailbtn text-capitalize registerBtn {{ Auth::user() ? 'd-none' : 'd-block' }}"> <i class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL PAYSTUB <i class="fa fa-download ml-4" style="font-size:24px"></i></button>
-                    <button type="button" class="emailbtn text-capitalize sendMailButton {{ Auth::user() ? 'd-block' : 'd-none' }}"> <i class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL PAYSTUB <i class="fa fa-download ml-4" style="font-size:24px"></i></button>
+                    <button type="button" class="emailbtn text-capitalize sendMailButton"> <i class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL PAYSTUB <i class="fa fa-download ml-4" style="font-size:24px"></i></button>
                 </div>
             </div>
         </div>

@@ -86,18 +86,19 @@
         }
 
         .heading1 {
-            margin-top: 20px;
+            margin-top: 10px;
             border-top: 1px solid black;
             border-bottom: 1px solid black;
             background-color: #264FAB;
             color: white;
             text-align: left;
+            font-size: 12px;
             /* padding: 8px; */
         }
 
         .data:nth-child(6) {
             background-color: #edededc4;
-            padding: 10px;
+            padding: ;
         }
 
         .tablesection {
@@ -190,7 +191,7 @@
     <section class="invoiceborder">
         <table>
             <tr>
-                <th style="padding-left: 31px;font-size: 27px;"> {{ $requestData['cname'] }}</th>
+                <th style="padding-left: 13px;font-size: 16px;"> {{ $requestData['cname'] }}</th>
                 <th></th>
                 <th></th>
                 <th></th>
@@ -199,7 +200,7 @@
 
 
             <tr>
-                <td class="address" style="padding-left: 31px;">
+                <td class="address" style="padding-left: 14px;">
                     {{ $requestData['address_1'] }}
                     {{ $requestData['address_2'] }}
                     {{ $requestData['city'] }}</br>
@@ -227,7 +228,7 @@
                 <td></td>
                 <td></td>
                 <td>
-                    <p class="earning">
+                    <p class="earning" style="font-size: 16px">
                         {{ date('l m/d/y', strtotime($requestData['pay_date'])) }}
                     </p>
                 </td>
@@ -359,7 +360,7 @@
         <section class="tablesection">
             <table>
                 <tr>
-                    <th class="heading1">Employee Information</th>
+                    <th class="heading1 padding:0;">Employee Information</th>
                     <th class="heading1"> Social Sec.</th>
                     <th class="heading1">EmployeeID</th>
                     <th class="heading1">Start Date</th>
