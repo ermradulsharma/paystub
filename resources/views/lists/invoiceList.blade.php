@@ -50,7 +50,7 @@
                                 </form>
                             </th>
                             <th class="text-center" style="padding: 1em .5em;border:none;">
-                                <a href="javascript:void(0);" class="previewbtn text-capitalize">
+                                <a href="javascript:void(0);" class="previewbtnInvoice text-capitalize">
                                     Preview Your Paystub &nbsp;<i class="fa fa-eye"></i></a>
                             </th>
                         </tr>

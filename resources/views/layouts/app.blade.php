@@ -290,7 +290,6 @@
             viewPDF();
         });
 
-
         $('.sendMailButton').click(function() {
             usaStoreData();
         });
@@ -307,8 +306,8 @@
                     $('#tempViewModal').modal('show');
                 },
                 error: function(err) {
-                    data = err.responseJSON;
-                    console.log('err ', data);
+                    error = err.responseJSON;
+                    toastr.error(error.message);
                 }
             });
             return false;
@@ -328,10 +327,14 @@
                 },
                 error: function(err) {
                     error = err.responseJSON;
-                    toastr.error(error.message);
+                    if (error.message == "Unauthenticated.") {
+                        toastr.warning("PLease login first, Then you create invoice.");
+                        $('#loginModal').modal('show');
+                    } else {
+                        toastr.error(error.message);
+                    }
                 }
             });
-
         }
     </script>
 

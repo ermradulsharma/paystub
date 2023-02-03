@@ -95,6 +95,19 @@ class LoginController extends Controller
 
     public function sendOtp(Request $request)
     {
+        $rules = [
+            'email' => 'required|email:rfc,dns',
+        ];
+
+        $messages = [
+            'email.required' => 'The email cannot be empty.',
+            'email.email' => 'Please enter valid email.'
+        ];
+        $validator = Validator::make($request->all(), $rules, $messages);
+        if ($validator->fails()) {
+            $response['message'] = $validator->errors()->first();
+            return response()->json($response, 301);
+        }
         $code = 1234; // ?? rand(1000, 9999);
         $user  = User::where('email', request('email'))->first();
         if (!$user) {
