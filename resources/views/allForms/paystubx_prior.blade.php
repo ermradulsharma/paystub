@@ -5,6 +5,15 @@
     <title>paystubs-prior</title>
 </head>
 <style>
+    @font-face {
+    font-family: 'MICR';
+    src: url('FONT/MICR-Plain.woff2') format('woff2'),
+        url('FONT/MICR-Plain.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
     table {
         border-collapse: collapse;
         width: 100%;
@@ -61,7 +70,6 @@
     .shrapdana {
         max-width: 100%;
     }
-
 </style>
 
 <body>

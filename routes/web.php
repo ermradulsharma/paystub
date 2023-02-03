@@ -110,15 +110,12 @@ Route::post('templates', [TemplateFormController::class, 'templates'])->name('te
 Route::group(['middleware' => ['auth']], function () {
     Route::post('logout', [LoginController::class, 'logout'])->name('logout');
     Route::group(['name' => 'admin', 'prefix' => 'admin', 'middleware' => ['userCheck']], function () {
-        Route::get('/', function () {
-            return view('Admin/dashboard');
-        });
         Route::get('welcome', function () {
             return view('Admin/layouts/default');
         });
         Route::get('dashboard', function () {
             return view('Admin/dashboard');
-        });
+        })->name('admin.dashboard');
         Route::get('template', function () {
             return view('Admin/template');
         });

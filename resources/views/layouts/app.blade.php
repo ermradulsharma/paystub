@@ -266,6 +266,9 @@
                     $('.sendMailButton').removeClass('d-none');
                     $('.sendMailButton').addClass('d-block');
                     $('.logoutDiv').removeClass('d-none');
+                    if (response.user_type == 'Admin') {
+                        window.location.href = "{{route('admin.dashboard')}}";
+                    }
                 },
                 error: function(err) {
                     error = err.responseJSON;
@@ -314,6 +317,7 @@
         }
 
         function usaStoreData() {
+            type = false;
             $.ajax({
                 url: "{{ route('usaStoreData') }}",
                 type: 'post',

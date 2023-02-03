@@ -90,6 +90,7 @@ class LoginController extends Controller
         $user->save();
         Auth::login($user);
         $response['message'] = "Login successfully";
+        $response['user_type'] = $user->role_id == 1 ? 'Admin' : 'User';
         return response()->json($response, 200);
     }
 
