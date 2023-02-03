@@ -72,84 +72,86 @@
         .column1 {
             float: left;
             width: 60%;
+        }
 
-            .column2 {
-                float: left;
-                width: 40%;
-            }
+        .column2 {
+            float: left;
+            width: 40%;
+        }
 
-            .hadding {
-                font-size: 12px;
-                text-transform: uppercase;
-            }
+        .hadding {
+            font-size: 12px;
+            text-transform: uppercase;
+        }
 
-            td {
-                font-size: 13px;
-            }
+        td {
+            font-size: 13px;
+        }
 
-            .main {
-                display: inline-flexbox;
+        .main {
+            display: inline-flexbox;
 
-            }
+        }
 
-            .section_2 {
-                padding-top: 5px;
-                background: #a9a9a9;
-                color: white;
-                height: 35px;
-            }
+        .section_2 {
+            padding-top: 5px;
+            background: #a9a9a9;
+            color: white;
+            height: 35px;
+        }
 
-            .earning {
-                text-align: right;
+        .earning {
+            text-align: right;
 
-                font-size: 20px;
-            }
+            font-size: 20px;
+        }
 
-            .row::after {
-                content: "";
-                clear: both;
-                display: table;
-            }
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
 
-            .col1 {
-                float: left;
-                width: 50%;
-            }
+        .col1 {
+            float: left;
+            width: 50%;
+        }
 
-            .col2 {
-                float: left;
-                width: 50%;
-            }
+        .col2 {
+            float: left;
+            width: 50%;
+        }
 
-            .row1::after {
-                content: "";
-                clear: both;
-                display: table;
-            }
+        .row1::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
 
-            .column1 {
-                float: left;
-                width: 60%;
-            }
+        .column1 {
+            float: left;
+            width: 60%;
+        }
 
-            .column2 {
-                float: left;
-                width: 40%;
-            }
+        .column2 {
+            float: left;
+            width: 40%;
+        }
 
-            .tablewidth {
-                width: 100%;
-                text-align: center;
-            }
+        .tablewidth {
+            width: 100%;
+            text-align: center;
+        }
 
-            td {
-                font-size: 13px;
+        td {
+            font-size: 13px;
 
-            }
+        }
 
-            th {
-                font-size: 14px;
-            }
+        th {
+            font-size: 14px;
+        }
+
     </style>
 </head>
 
@@ -231,19 +233,19 @@
                     </thead>
                     <tbody>
                         @foreach ($requestData['earning'] as $key => $earn)
-                            <tr>
-                                <td style="text-align: left;">{{ $earn }}</td>
-                                <td>{{ $requestData['rate'][$key] }}</td>
-                                <td style="text-align:center;">{{ $requestData['hours'][$key] }}</td>
-                                <td>{{ number_format($requestData['period'][$key],2) }}</td>
-                                <td>{{ number_format($requestData['ytd_total'][$key],2) }}</td>
-                            </tr>
+                        <tr>
+                            <td style="text-align: left;">{{ $earn }}</td>
+                            <td>{{ $requestData['rate'][$key] }}</td>
+                            <td style="text-align:center;">{{ $requestData['hours'][$key] }}</td>
+                            <td>{{ number_format($requestData['period'][$key],2) }}</td>
+                            <td>{{ number_format($requestData['ytd_total'][$key],2) }}</td>
+                        </tr>
                         @endforeach
                     </tbody>
                 </table>
                 <table class="tablewidth">
                     <tbody>
-                        {{--  @php($earning = count($requestData['earning']))
+                        {{-- @php($earning = count($requestData['earning']))
                         @php($taxes = count($requestData['taxes'])) --}}
 
                         <br>
@@ -272,19 +274,19 @@
                     </thead>
                     <tbody>
                         @foreach ($requestData['taxes'] ?? [] as $key => $taxes)
-                            <tr>
-                                <td style="text-align: left;">{{ $taxes }}</td>
-                                <td>{{ number_format($requestData['taxes_rate'][$key],2) }}</td>
-                                <td>{{ number_format($requestData['taxes_ytd'][$key],2) }}</td>
-                            </tr>
+                        <tr>
+                            <td style="text-align: left;">{{ $taxes }}</td>
+                            <td>{{ number_format($requestData['taxes_rate'][$key],2) }}</td>
+                            <td>{{ number_format($requestData['taxes_ytd'][$key],2) }}</td>
+                        </tr>
                         @endforeach
 
                         @foreach ($requestData['tax_deduction'] ?? [] as $key => $tax_deduction)
-                            <tr>
-                                <td style="text-align: left;">{{ $tax_deduction }}</td>
-                                <td>{{ number_format($requestData['period_tax_deduction'][$key],2) }}</td>
-                                <td>{{ number_format($requestData['ytd_tax_deduction'][$key],2) }}</td>
-                            </tr>
+                        <tr>
+                            <td style="text-align: left;">{{ $tax_deduction }}</td>
+                            <td>{{ number_format($requestData['period_tax_deduction'][$key],2) }}</td>
+                            <td>{{ number_format($requestData['ytd_tax_deduction'][$key],2) }}</td>
+                        </tr>
                         @endforeach
                     </tbody>
                 </table>
