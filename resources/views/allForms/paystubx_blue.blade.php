@@ -47,7 +47,7 @@
         }
 
         #cols {
-            border-right: 2px solid #464646;
+            /* border-right: 2px solid #464646; */
             border-collapse: collapse;
             text-align: center;
         }
@@ -58,7 +58,7 @@
         }
 
         .head2 {
-            padding-bottom: 10px;
+            /* padding-bottom: 10px; */
         }
 
         .padding {
@@ -188,7 +188,7 @@
 
 
             <table id="bottomtable"
-                style="width:100%; border:2px solid  #464646; background-color:white;border-left:none;border-right:none !important;">
+                style="width:100%; border:2px solid  #464646; background-color:white;border-left:none;border-right:none !important; background-color:red;">
                 <tr class="">
                     <th id="cols" class="head1">YTD GROSS</th>
                     <th id="cols" class="head1">YTD EDUCATION</th>

@@ -189,7 +189,7 @@
                 @foreach ($requestData['taxes'] ?? [] as $key => $taxes)
                     <tr>
                         <td></td>
-                        <td class="data">{{ $taxes }}</td>
+                        <td class="data" style="background-color:rgba(212, 212, 208,0.3);">{{ $taxes }}</td>
                         <td>{{ $requestData['currency'] }} {{ $requestData['taxes_rate'][$key] }}</td>
                         <td>{{ $requestData['currency'] }} {{ $requestData['taxes_ytd'][$key] }}</td>
                     </tr>
@@ -197,14 +197,14 @@
                 @if (count($requestData['tax_deduction'] ?? []) > 0)
                     <tr>
                         <td></td>
-                        <td class="data"> <strong>Employer Taxes </strong> </td>
+                        <td class="data" style="background-color:rgba(212, 212, 208,0.3);"> <strong>Employer Taxes </strong> </td>
                         <td></td>
                         <td></td>
                     </tr>
                     @foreach ($requestData['tax_deduction'] ?? [] as $key => $tax_deduction)
                         <tr>
                             <td></td>
-                            <td class="data">{{ $tax_deduction }}</td>
+                            <td class="data" style="background-color:rgba(212, 212, 208,0.3);">{{ $tax_deduction }}</td>
                             <td>{{ $requestData['currency'] }} {{ $requestData['period_tax_deduction'][$key] }}</td>
                             <td>{{ $requestData['currency'] }} {{ $requestData['ytd_tax_deduction'][$key] }}</td>
                         </tr>
