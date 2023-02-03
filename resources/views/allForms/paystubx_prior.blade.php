@@ -13,7 +13,6 @@
     td {
 
         font-size: 13px;
-        padding: 6px;
     }
 
     th {
@@ -37,6 +36,12 @@
         width: 38%;
 
         padding-left: 5px;
+    }
+
+    .rowonly {
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
     }
 </style>
 
@@ -90,44 +95,21 @@
         </tr>
     </table>
 
+    <div class="rowonly">
+        <table style="width:100%; padding-top:40px; text-align:left;">
+            <tr>
+                <td style="font-weight:bold;">
+                    {{ $requestData['cname'] ?? '' }}</td>
+                <td style="font-weight:bold;">sharp, Dana</td>
+                <td>SSN</td>
+                <td>XXX-XX-{{ $requestData['emp_ssn'] ?? '' }}</td>
+                <td>Period Beginning</td>
+                <td> {{ $requestData['pay_start'] ?? '' }}</td>
 
-    <table style="width:100%; padding: top 40px; text-align:left;">
-        <tr>
-            <td style="font-weight: 800; font-size:13px; margin-top:200px;"> {{ $requestData['cname'] ?? '' }}</td>
-            <td style="font-weight: 800;">sharp, Dana</td>
-            <td>SSN</td>
-            <td>XXX-XX-{{ $requestData['emp_ssn'] ?? '' }}</td>
-            <td>Period Beginning</td>
-            <td> {{ $requestData['pay_start'] ?? '' }}</td>
+            </tr>
 
-        </tr>
-        <tr>
-            <td style="margin: 0; padding:0; font-size:12px;">{{ $requestData['address_1'] ?? '' }}</td>
-            <td style="margin: 0; padding:0;">3773 Rockdale Dr</td>
-            <td>Gross Pay</td>
-            <td>{{ $requestData['currency'] ?? '' }} {{ $requestData['period_gross_total'] ?? '' }}</td>
-            <td>Period Ending</td>
-            <td> {{ $requestData['pay_end'] ?? '' }}</td>
-        </tr>
-        <tr>
-            <td> {{ $requestData['city'] ?? '' }}, {{ $requestData['state'] ?? '' }},
-                {{ $requestData['zip_code'] ?? '' }}</td>
-            <td>Dallas, TX750220</td>
-            <td>Net Pay</td>
-            <td>{{ $requestData['currency'] ?? '' }} {{ $requestData['total_net_pay'] ?? '' }}</td>
-            <td>Check Date</td>
-            <td> {{ $requestData['pay_date'] }}</td>
-        </tr>
-        <tr>
-            <td>{{ $requestData['tel'] ?? '' }}</td>
-            <td></td>
-            <td>Filling Status</td>
-            <td>$3.00</td>
-            <td>Check No</td>
-            <td>12345</td>
-        </tr>
-    </table>
-  
+        </table>
+    </div>
     <div class="row1">
         <div class="column1">
             <table style="width: 100%;">
