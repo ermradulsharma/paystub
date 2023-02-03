@@ -282,8 +282,7 @@
                         @foreach ($requestData['tax_deduction'] ?? [] as $key => $tax_deduction)
                             <tr>
                                 <td style="text-align: left;">{{ $tax_deduction }}</td>
-                                <td>{{ $requestData['currency'] }} {{ $requestData['period_tax_deduction'][$key] }}
-                                </td>
+                                <td>{{ $requestData['currency'] }} {{ $requestData['period_tax_deduction'][$key] }}</td>
                                 <td>{{ $requestData['currency'] }} {{ $requestData['ytd_tax_deduction'][$key] }}</td>
                             </tr>
                         @endforeach

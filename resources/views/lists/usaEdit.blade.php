@@ -612,29 +612,29 @@
                         <div class="row mb-3">
                             <div class="col-lg-2 col-md-4 col-sm-6">
                                 <p class="p-0 m-0 " style="font-family: serif;">CO<span class="redColor">*</span></p>
-                                <input class="earnbtn text-center " value="{{$invoice->co ?? ''}}" name="co"></input>
+                                <input class="earnbtn text-center " value="{{$invoice->co_number ?? ''}}" name="co_number"></input>
                             </div>
                             <div class="col-lg-2 col-md-4 col-sm-6">
                                 <p class="p-0 m-0 text-center" style="font-family: serif;">FILE.<span class="redColor">*</span></p>
-                                <input class="earnbtn text-center " value="{{$invoice->file ?? ''}}" name="file"></input>
+                                <input class="earnbtn text-center " value="{{$invoice->file_number ?? ''}}" name="file_number"></input>
                             </div>
                             <div class="col-lg-2 col-md-4 col-sm-6">
                                 <p class="p-0 m-0 " style="font-family: serif;">CLOCK VCHR.<span class="redColor">*</span>
                                 </p>
-                                <input class="earnbtn text-center " value="{{$invoice->clockVchr ?? ''}}" name="clockVchr"></input>
+                                <input class="earnbtn text-center " value="{{$invoice->clock_vchr_number ?? ''}}" name="clock_vchr_number"></input>
                             </div>
                             <div class="col-lg-2 col-md-4 col-sm-6">
                                 <p class="p-0 m-0 " style="font-family: serif;">Advice Number:<span class="redColor">*</span></p>
-                                <input class="earnbtn text-center " value="{{$invoice->adviceNumber ?? ''}}" name="adviceNumber"></input>
+                                <input class="earnbtn text-center " value="{{$invoice->advice_number ?? ''}}" name="advice_number"></input>
                             </div>
                             <div class="col-lg-2 col-md-4 col-sm-6">
                                 <p class="p-0 m-0 " style="font-family: serif;">Account Number LAST<span class="redColor">*</span></p>
-                                <input class="earnbtn text-center " value="{{$invoice->accountNumberLast ?? ''}}" name="accountNumberLast"></input>
+                                <input class="earnbtn text-center " value="{{$invoice->account_number_last_4 ?? ''}}" name="account_number_last_4"></input>
                             </div>
                             <div class="col-lg-2 col-md-4 col-sm-6">
                                 <p class="p-0 m-0 " style="font-family: serif;">Transit ABA<span class="redColor">*</span>
                                 </p>
-                                <input class="earnbtn text-center " value="{{$invoice->transitAba ?? ''}}" name="transitAba"></input>
+                                <input class="earnbtn text-center " value="{{$invoice->transit_aba_number ?? ''}}" name="transit_aba_number"></input>
                             </div>
                         </div>
                     </div>

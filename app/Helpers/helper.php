@@ -3,14 +3,14 @@
 use App\Models\Image;
 // use PDF;
 
-function uploadImage($module, $module_id, $files, $path = "images")
+function uploadImage($module, $module_id, $files, $path = "images", $name = null)
 {
     $path =  IMAGE_UPLOAD_PATH . $path;
     if (is_object($files)) {
         $file = $files;
         $extension = $file->extension();
         $fileName = date('dmY-his-') . uniqid() . '.' . $extension;
-        $fileName = str_replace(" ", "_", $fileName);
+        $fileName = $name != null ? $name : str_replace(" ", "_", $fileName);
         $file->storeAs($path, $fileName);
         $mime = $file->getMimeType();
 

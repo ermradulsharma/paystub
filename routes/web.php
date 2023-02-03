@@ -20,32 +20,10 @@ use Symfony\Component\Routing\Router;
 |
 */
 
-Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 
 
-Route::get('/', function () {
-    return view('paystub');
-});
-
-Route::post('templates', [TemplateFormController::class, 'templates'])->name('templates');
-Route::post('usaStoreData', [TemplateFormController::class, 'usaStoreData'])->name('usaStoreData');
-Route::get('invoiceList', [TemplateFormController::class, 'invoiceList'])->name('invoiceList');
-Route::post('invoiceDelete/{id}', [TemplateFormController::class, 'invoiceDelete'])->name('invoiceDelete');
-Route::get('invoiceMail/{id}', [TemplateFormController::class, 'invoiceMail'])->name('invoiceMail');
-Route::get('usa/edit/{id}', [UsaController::class, 'edit'])->name('invoice-Usa-Edit');
-Route::get('prizing', [UsaController::class, 'prizing'])->name('prizing');
 
 
-Route::get('auth/Login', [LoginController::class, 'loginWithGoogle'])->name('login.google');
-Route::any('auth/callback', [LoginController::class, 'callbackFromGoogle'])->name('callback');
-//Route::post('login', 'LoginController@login')->name('newlogin');
-
-Route::post('loginWithOtp', [LoginController::class, 'loginWithOtp'])->name('loginWithOtp');
-Route::get('loginWithOtp', function () {
-    return view('auth/OtpLogin');
-})->name('loginWithOtp');
-
-Route::any('sendOtp', [LoginController::class, 'sendOtp']);
 
 Route::get('generate-pdf', [W2FormController::class, 'generatePDF']);
 Route::get('preview-pdf', [W2FormController::class, 'previewPDF']);
@@ -116,24 +94,46 @@ Route::get('userDashboard', function () {
     return view('prizing');
 }); */
 
-Route::name('admin')->prefix('backend')->group(function () {
-    Route::get('/', function () {
-        return view('Admin/login');
-    });
-    Route::get('welcome', function () {
-        return view('Admin/layouts/default');
+Route::get('/', function () {
+    return view('paystub');
+})->name('welcome');
+
+Route::get('auth/Login', [LoginController::class, 'loginWithGoogle'])->name('login.google');
+Route::match(['get', 'post'], 'google/callback', [LoginController::class, 'callbackFromGoogle'])->name('google.callback');
+Route::post('loginWithOtp', [LoginController::class, 'loginWithOtp'])->name('loginWithOtp');
+Route::get('loginWithOtp', function () {
+    return view('auth/OtpLogin');
+})->name('loginWithOtp');
+Route::any('sendOtp', [LoginController::class, 'sendOtp']);
+
+Route::post('templates', [TemplateFormController::class, 'templates'])->name('templates');
+Route::group(['middleware' => ['auth']], function () {
+    Route::post('logout', [LoginController::class, 'logout'])->name('logout');
+    Route::group(['prefix' => 'admin', 'middleware' => ['userCheck']], function () {
+        Route::get('/', function () {
+            return view('Admin/dashboard');
+        });
+        Route::get('welcome', function () {
+            return view('Admin/layouts/default');
+        });
+        Route::get('dashboard', function () {
+            return view('Admin/dashboard');
+        });
+        Route::get('template', function () {
+            return view('Admin/template');
+        });
+        Route::get('color', function () {
+            return view('Admin/color-codes');
+        });
+        Route::get('deduction', function () {
+            return view('Admin/deduction');
+        });
     });
 
-    Route::get('dashboard', function () {
-        return view('Admin/dashboard');
-    });
-    Route::get('template', function () {
-        return view('Admin/template');
-    });
-    Route::get('color', function () {
-        return view('Admin/color-codes');
-    });
-    Route::get('deduction', function () {
-        return view('Admin/deduction');
-    });
+    Route::post('usaStoreData', [TemplateFormController::class, 'usaStoreData'])->name('usaStoreData');
+    Route::get('invoiceList', [TemplateFormController::class, 'invoiceList'])->name('invoiceList');
+    Route::post('invoiceDelete/{id}', [TemplateFormController::class, 'invoiceDelete'])->name('invoiceDelete');
+    Route::get('invoiceMail/{id}', [TemplateFormController::class, 'invoiceMail'])->name('invoiceMail');
+    Route::get('usa/edit/{id}', [UsaController::class, 'edit'])->name('invoice-Usa-Edit');
+    Route::get('prizing', [UsaController::class, 'prizing'])->name('prizing');
 });
