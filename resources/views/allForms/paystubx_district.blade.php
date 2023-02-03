@@ -183,6 +183,26 @@
 
         }
 
+        .row1::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .col1 {
+            float: left;
+            width: 50%;
+
+        }
+
+        .col2 {
+            float: left;
+            width: 30%;
+            margin-left: 28%;
+            margin-top: 15%;
+
+        }
+
         td {
             font-size: 13px;
             padding: 3px;
@@ -196,7 +216,7 @@
     <section class="invoiceborder">
         <table>
             <tr>
-                <th style="padding-left: 13px;font-size: 16px;"> {{ $requestData['cname'] }}</th>
+                <th style="padding-left: 13px;font-size: 20px;"> {{ $requestData['cname'] }}</th>
                 <th></th>
                 <th></th>
                 <th></th>
@@ -212,19 +232,13 @@
                     {{ $requestData['state'] }},
                     {{ $requestData['zip_code'] }}
                 </td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td colspan="4"></td>
+
 
             </tr>
 
             <tr>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th class="earning"></th>
+                <th colspan="5" class="earning"></th>
             </tr>
             <tr>
                 <td></td>
@@ -315,51 +329,41 @@
 
 
         <section>
+            <div class="row1">
+                <div class="col1">
+                    <table style="width:100%;">
+                        <tr>
+                            <th colspan="4" style="padding-top: 41px;">Company Intormation</th>
 
-            <table>
-                <tr>
-                    <th colspan="4" style="padding-top: 41px;">Company Intormation</th>
-
-                </tr>
-
-
-                <tr>
-                    <td colspan="4" class="address" style="padding-left: 11px;">
-                        {{ $requestData['cname'] }} <br>
-                        {{ $requestData['address_1'] }}</br>
-                        {{ $requestData['address_2'] }}</br>
-                        {{ $requestData['city'] }}
-                        {{ $requestData['state'] }},
-                        {{ $requestData['zip_code'] }} <br>
-                        {{ $requestData['tel'] }}
-                    </td>
-                </tr>
-
-                <tr>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th class="earning"></th>
-                </tr>
-                <tr>
-                    <td></td>
-
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <p class="earning" style="
-    color: #0000b6;
-">
-                            Earnings Statement
-                        </p>
-                    </td>
-
-                </tr>
+                        </tr>
 
 
-            </table>
+                        <tr>
+                            <td colspan="4" class="address" style="padding-left: 11px;">
+                                {{ $requestData['cname'] }} <br>
+                                {{ $requestData['address_1'] }} </br>
+                                {{ $requestData['address_2'] }}</br>
+                                {{ $requestData['city'] }}
+                                {{ $requestData['state'] }},
+                                {{ $requestData['zip_code'] }} <br>
+                                {{ $requestData['tel'] }}
+                            </td>
+                        </tr>
+
+                    </table>
+                </div>
+
+                <div class="col2">
+                    <table style="width:100%;">
+                        <tr>
+                            <td style="color:#0000b6; font-size:16px;"> Earnings Statement
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+
         </section>
 
         <section class="tablesection">
