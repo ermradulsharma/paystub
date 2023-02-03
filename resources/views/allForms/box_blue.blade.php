@@ -56,7 +56,7 @@
     <table class="table">
 
         <tr>
-            <td>barcode</td>
+            <td><img src="images/barcode.jpeg"></td>
             <td class="table-data" rowspan="2">
                 <button class="employee-box" style=" border:1px solid 000; padding:5px 10px 5px 5px;"><span
                         class="text">EMPLOYEE ID:
@@ -130,13 +130,16 @@
     </table>
     <section>
         <table class="table-data">
-            <tr style="border-bottom: 1px solid red;">
-                <th style="border-bottom: 2px solid #000;" class="">EARNINGS</th>
-                <th style="border-bottom: 2px solid #000;" class="">RATE</th>
-                <th style="border-bottom: 2px solid #000;" class="">HOURS</th>
-                <th style="border-bottom: 2px solid #000;" class="">CURRENT</th>
-                <th style="border-bottom: 2px solid #000;" class="">YTD</th>
-            </tr>
+            <thead style="border-bottom: 2px solid black">
+                <th class="">EARNINGS</th>
+                <th  class="">RATE</th>
+                <th  class="">HOURS</th>
+                <th class="">CURRENT</th>
+                <th  class="">YTD</th>
+            </thead>
+
+
+
 
             @foreach ($requestData['earning'] as $key => $earn)
                 <tr>
@@ -164,15 +167,17 @@
     <section style="position: relative;">
         <section>
             <table class="table-data">
-                <thead>
-                    <th style="border-bottom: 2px solid #000;" class="">DEDUCTIONS</th>
-                    <th style="border-bottom: 2px solid #000;" class="statutory">STATUTORY</th>
-                    <th style="border-bottom: 2px solid #000;" class="">CURRENT</th>
-                    <th style="border-bottom: 2px solid #000;" class="">YTD</th>
+                <thead style="border-bottom:2px solid black;">
+                    <th style="" class="">DEDUCTIONS</th>
+                    <th style="" class="statutory">STATUTORY</th>
+                    <th></th>
+                    <th style="" class="">CURRENT</th>
+                    <th style="" class="">YTD</th>
                 </thead>
 
                 @foreach ($requestData['taxes'] ?? [] as $key => $taxes)
                     <tr>
+                        <td></td>
                         <td style="text-align: left;" colspan="2">{{ $taxes }}</td>
                         <td>{{ $requestData['currency'] }} {{ $requestData['taxes_rate'][$key] }}</td>
                         <td>{{ $requestData['currency'] }} {{ $requestData['taxes_ytd'][$key] }}</td>
@@ -181,6 +186,7 @@
 
                 @foreach ($requestData['tax_deduction'] ?? [] as $key => $tax_deduction)
                     <tr>
+                        <td></td>
                         <td style="text-align: left;" colspan="2">{{ $tax_deduction }}</td>
                         <td>{{ $requestData['currency'] }} {{ $requestData['period_tax_deduction'][$key] }}
                         </td>
@@ -194,6 +200,7 @@
                 </thead>
                 @foreach ($requestData['tax_deduction'] ?? [] as $key => $tax_deduction)
                     <tr>
+                        <td></td>
                         <td style="text-align: left;" colspan="2">{{ $tax_deduction }}</td>
                         <td>{{ $requestData['currency'] }} {{ $requestData['period_tax_deduction'][$key] }}
                         </td>
