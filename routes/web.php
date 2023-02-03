@@ -109,7 +109,7 @@ Route::any('sendOtp', [LoginController::class, 'sendOtp']);
 Route::post('templates', [TemplateFormController::class, 'templates'])->name('templates');
 Route::group(['middleware' => ['auth']], function () {
     Route::post('logout', [LoginController::class, 'logout'])->name('logout');
-    Route::group(['prefix' => 'admin', 'middleware' => ['userCheck']], function () {
+    Route::group(['name' => 'admin', 'prefix' => 'admin', 'middleware' => ['userCheck']], function () {
         Route::get('/', function () {
             return view('Admin/dashboard');
         });
