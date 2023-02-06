@@ -47,8 +47,8 @@
                                 <div class="mt-4">
                                     {{-- <i class="fa fa-angle-down down"></i> --}}
                                     <div class="input-group mmenu mb-3">
-                                        <select class="form-control dropdown1 bt_id" style="border-right:none">
-                                            <option selected=""> --- Select Basic Templates --- </option>
+                                        <select name="basic_temp" class="form-control dropdown1 text-center bt_id small-font basicTemplate" style="margin-right:10px; font-size:18px;">
+                                            <option value=""> --- Select Basic Templates --- </option>
                                             @foreach ($basicType as $data)
                                             @if($data->state == 'canada' && $data->type == 'basic')
                                             <option value="{{$data->title}}" data-src="{{$data->images->file}}">{{$data->name}}</option>
@@ -69,12 +69,11 @@
                                 <div class="mt-4">
                                     {{-- <i class="fa fa-angle-down down1"></i> --}}
                                     <div class="input-group mmenu mb-3" style="margin: auto;">
-                                        <select class="form-control dropdown1 at_id" style="border-right:none">
-                                            <option selected=""> --- Select Advance Template --- </option>
+                                        <select name="advance_temp" class="form-control text-center dropdown1 at_id small-font advanceTemplate" style="margin-right:10px; font-size:18px;">
+                                            <option value=""> --- Select Advance Template --- </option>
                                             @foreach ($advanceType as $data)
                                             @if($data->state == 'canada' && $data->type == 'advance')
-                                            <option value="{{$data->title}}" data-src="{{$data->images->file}}">{{$data->title}}
-                                            </option>
+                                            <option value="{{$data->title}}" data-src="{{$data->images->file}}">{{$data->name}}</option>
                                             @endif
                                             @endforeach
                                         </select>
@@ -172,23 +171,23 @@
                         <div class="row mb-3">
                             <div class="col-md-4 mt-4">
                                 <div>
-                                    <label for="emp_name" class="lable">EMPLOYEE ID <span class="redColor">*</span> </label>
-                                    <input type="text" id="emp_name" name="emp_name" placeholder="Your Full  Name" class="w-100 p-2  textInputFontSize">
+                                    <label for="emp_id" class="lable">EMPLOYEE ID <span class="redColor">*</span> </label>
+                                    <input type="text" id="emp_id" name="emp_id" placeholder="Employer ID" class="w-100 p-2  textInputFontSize">
                                 </div>
                             </div>
 
                             <div class="col-md-4 mt-4">
                                 <div>
-                                    <label for="emp_id" class="lable">PAY START <span class="redColor">*</span>
+                                    <label for="pay_start" class="lable">PAY START <span class="redColor">*</span>
                                     </label>
-                                    <input type="text" id="emp_id" name="emp_id" placeholder="Employer ID" class="w-100 p-2 r textInputFontSize">
+                                    <input type="date" id="pay_start" name="pay_start" placeholder="12-11-2022" class="w-100 p-2 textInputFontSize pay_start datepicker" data-id="pay_start">
                                 </div>
 
                             </div>
                             <div class="col-md-4 mt-4">
                                 <div>
-                                    <label for="emp_ssn" class="lable">PAY DATE <span class="redColor">*</span> </label>
-                                    <input type="text" id="emp_ssn" name="emp_ssn" placeholder="1224" class="w-100 p-2  textInputFontSize">
+                                    <label for="pay_date" class="lable">PAY DATE <span class="redColor">*</span> </label>
+                                    <input type="date" id="pay_date" name="pay_date" placeholder="12-19-2022" class="w-100 p-2 textInputFontSize pay_date" data-id="pay_date">
                                 </div>
 
                             </div>
@@ -197,9 +196,9 @@
                         <div class="row mb-3">
                             <div class="col-md-4">
                                 <div>
-                                    <label for="emp_city" class="lable">CHECK NUMBER <span class="redColor">*</span>
+                                    <label for="check_number" class="lable">CHECK NUMBER <span class="redColor">*</span>
                                     </label>
-                                    <input type="text" id="emp_city" name="emp_city" placeholder="Your City" class="w-100 p-2  textInputFontSize">
+                                    <input type="number" id="check_number" name="check_number" placeholder="EMPLOYEE CHECK NUMBER" class="w-100 p-2  textInputFontSize">
                                 </div>
 
                             </div>
@@ -217,9 +216,9 @@
                             </div>
                             <div class="col-md-4">
                                 <div>
-                                    <label for="emp_zip_code" class="lable">EMPLOYER NAME <span class="redColor">*</span>
+                                    <label for="emp_name" class="lable">EMPLOYER NAME <span class="redColor">*</span>
                                     </label>
-                                    <input type="text" id="emp_zip_code" name="emp_zip_code" placeholder=" 1234" class="w-100 p-2  textInputFontSize">
+                                    <input type="text" id="emp_name" name="emp_name" placeholder="EMPLOYER NAME" class="w-100 p-2  textInputFontSize">
                                 </div>
 
                             </div>
@@ -227,9 +226,9 @@
                         <div class="row mb-3">
                             <div class="col-md-12">
                                 <div>
-                                    <label for="emp_street_2" class="lable">EMPLOYER ADDRESS <span class="redColor">*</span>
+                                    <label for="emp_address" class="lable">EMPLOYER ADDRESS <span class="redColor">*</span>
                                     </label>
-                                    <input type="text" id="emp_street_2" name="emp_street_2" placeholder="Suite 101 or Apt 101(optional)" class="w-100 p-2  textInputFontSize">
+                                    <input type="text" id="emp_address" name="emp_address" placeholder="Suite 101 or Apt 101(optional)" class="w-100 p-2  textInputFontSize">
                                 </div>
                             </div>
                         </div>
@@ -273,17 +272,17 @@
                             <div class="col-lg-6 ">
                                 <div class=" m-auto d-inline-flex">
                                     <div class="col-lg-2 mt-2 p-0 bg-danger">
-                                        <input class="earnbtn text-center " type="text" value="Regular">
+                                        <input class="earnbtn text-center " type="text" name="earning[]" value="Regular" id="earning_0" data-id="0">
                                     </div>
                                     <div class="col-lg-2 mt-2 ">
-                                        <input class="earnbtn text-center " type="text" value="67.09">
+                                        <input type="text" name="rate[]" class="earnbtn text-center calculation rate" value="" id="rate_0" data-id="0">
                                     </div>
 
                                     <div class="col-lg-4 mt-2 pr-0">
-                                        <input class="earnbtn text-center " type="text" value="455.90">
+                                        <input type="text" name="hours[]" class="earnbtn text-center hours calculation" value="" id="hours_0" data-id="0">
                                     </div>
                                     <div class="col-lg-4 mt-2 p-0">
-                                        <input class="earnbtn text-center ml-3 " type="text" value="455.90">
+                                        <input type="text" name="total[]" class="earnbtn text-center ml-3" value="" id="total_0" data-id="0">
                                     </div>
                                 </div>
                                 <div class="col-lg-6 mt-3 p-0">
