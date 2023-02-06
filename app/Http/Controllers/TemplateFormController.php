@@ -437,7 +437,7 @@ class TemplateFormController extends Controller
         if ($invoice) {
             $mailData = [
                 'email' => Auth::user()->email,
-                'title' => 'Please find atteched file'
+                'title' => 'Please find attachment file'
             ];
             $moreData = [];
 
@@ -455,5 +455,6 @@ class TemplateFormController extends Controller
         if ($id != null) {
             return redirect(route('invoiceList'))->with('message', 'Mail has been sent successfully.');
         }
+        return back()->with('message', 'Mail has been sent successfully.');
     }
 }

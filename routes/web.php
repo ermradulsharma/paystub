@@ -105,6 +105,7 @@ Route::get('loginWithOtp', function () {
     return view('auth/OtpLogin');
 })->name('loginWithOtp');
 Route::any('sendOtp', [LoginController::class, 'sendOtp']);
+Route::post('login', [LoginController::class, 'login']);
 
 Route::post('templates', [TemplateFormController::class, 'templates'])->name('templates');
 Route::group(['middleware' => ['auth']], function () {

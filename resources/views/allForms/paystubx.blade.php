@@ -77,7 +77,7 @@
         height: 100%;
         width: 700px;
         content: "";
-        top: 50px;
+        top: 180px;
         left: 0px;
         right: 0px;
         position: absolute;
@@ -98,8 +98,25 @@
         height: 100%;
         content: "";
         right: 0;
-        top: -20px;
-        left: 26px;
+        top: 150px;
+        left: 33px;
+    }
+    .background:before{
+        background: url('http://44.202.105.74/images/bg-lines1.png') !important;
+        background-repeat: no-repeat;
+        background-size: contain;
+        width:100%;
+        max-width: 700px;
+        height: 400px;
+        content: "";
+        position: absolute;
+        top:0;
+        left: 0px;
+        right: 0;
+
+    }
+    .background{
+        position: relative;
     }
 </style>
 
@@ -189,8 +206,8 @@
             </div>
         </div>
 
-        <section class="background">
-            <div class="row1" style="margin-top: 60px;">
+        <section class="">
+            <div class="row1 background" style="margin-top: 60px;">
                 <div class="column1">
                     <table style="width: 100%;">
                         <tr>
@@ -276,7 +293,7 @@
 
         </table>
         <section class="bg-img">
-            <table class="container" style=" margin-top:100px;padding: 0 0px 0px 0px;width:100%; ">
+            <table class="container" style=" margin-top:230px;padding: 0 0px 0px 0px;width:100%; ">
                 <div class="row"
                     style="display: flex; display: flex;justify-content: space-between;padding: 0px 14px;">
                     <div style="width: 50%;float:left;padding-left:30px;">
