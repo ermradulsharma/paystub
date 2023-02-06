@@ -287,6 +287,12 @@
     border-radius: 4px;
     box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, .6));
 }
+.previewbtn:hover{
+    background: white;
+    color: #ef2e21;
+    border: 1px solid #ef2e21;
+    box-shadow: 6px 5px 4px 0px #00000066;
+}
 
 
 

@@ -31,6 +31,15 @@ Route::get('preview-pdf', [W2FormController::class, 'previewPDF']);
 Route::get('tempBasic-pdf', [TemplateFormController::class, 'BasicPaystubUsaPDF']);
 Route::get('paystubBlue-pdf', [TemplateFormController::class, 'BasicPayStubBluePDF']);
 
+// ----- CANADA ----- //
+Route::get('cerulean1-pdf', [TemplateFormController::class, 'basicCerulean1']);
+Route::get('stone-pdf', [TemplateFormController::class, 'basicStone']);
+Route::get('paystubx_blue_fiot_d-pdf', [TemplateFormController::class, 'basicPaystubx_blue_fiot_d']);
+Route::get('jam-pdf', [TemplateFormController::class, 'basicJam']);
+Route::get('fog-pdf', [TemplateFormController::class, 'basicFog']);
+Route::get('emerald-pdf', [TemplateFormController::class, 'basicEmerald']);
+// ----- CANADA ----- //
+
 // shubham
 Route::get('cerulean-pdf', [TemplateFormController::class, 'advanceCeruleanUsa']);
 Route::get('district-pdf', [TemplateFormController::class, 'advanceDistrictUsa']);
@@ -43,9 +52,7 @@ Route::get('uk-paystub', [UkController::class, 'index']);
 Route::get('globle', [UsaController::class, 'templateGloble']);
 
 // payal //
-Route::get('pt_green-pdf', [TemplateFormController::class, 'AdvancePtGreenPaystubPDF']);
-Route::get('pt_blue-pdf', [TemplateFormController::class, 'AdvancePtBlueUsaPDF']);
-Route::get('pt_brown-pdf', [TemplateFormController::class, 'AdvancePtBrownUsaPDF']);
+
 Route::get('prior-pdf', [TemplateFormController::class, 'BasicPriorUsaPDF']);
 Route::get('check-pdf', [TemplateFormController::class, 'AdvanceCheckUsaPDF']);
 Route::get('pin_blue-pdf', [TemplateFormController::class, 'BasicPinBlueUkPDF']);
@@ -107,7 +114,10 @@ Route::get('loginWithOtp', function () {
 Route::any('sendOtp', [LoginController::class, 'sendOtp']);
 Route::post('login', [LoginController::class, 'login']);
 
+
 Route::post('templates', [TemplateFormController::class, 'templates'])->name('templates');
+Route::post('canada/templates', [TemplateFormController::class, 'canadaTemplates'])->name('canada.templates');
+
 Route::group(['middleware' => ['auth']], function () {
     Route::post('logout', [LoginController::class, 'logout'])->name('logout');
     Route::group(['name' => 'admin', 'prefix' => 'admin', 'middleware' => ['userCheck']], function () {
