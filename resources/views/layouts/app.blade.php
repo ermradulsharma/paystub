@@ -259,6 +259,89 @@
     <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     @yield('script')
+    <style>
+        /* Center the loader */
+        #loader {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            z-index: 9999;
+            width: 120px;
+            height: 120px;
+            margin: -76px 0 0 -76px;
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid #3498db;
+            -webkit-animation: spin 2s linear infinite;
+            animation: spin 2s linear infinite;
+        }
+
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Add animation to "page content" */
+        .animate-bottom {
+            position: relative;
+            -webkit-animation-name: animatebottom;
+            -webkit-animation-duration: 1s;
+            animation-name: animatebottom;
+            animation-duration: 5s
+        }
+
+        @-webkit-keyframes animatebottom {
+            from {
+                bottom: -100px;
+                opacity: 0
+            }
+
+            to {
+                bottom: 0px;
+                opacity: 1
+            }
+        }
+
+        @keyframes animatebottom {
+            from {
+                bottom: -100px;
+                opacity: 0
+            }
+
+            to {
+                bottom: 0;
+                opacity: 1
+            }
+        }
+
+        #loaderDiv {
+            position: fixed;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            background: #00000054;
+            z-index: 999;
+        }
+    </style>
+    <div id="loaderDiv" style="display: none;">
+        <div id="loader"></div>
+    </div>
     <script>
         $('.registerBtn').click(function() {
             $('#loginModal').modal('show');
@@ -363,6 +446,7 @@
         });
 
         function viewPDF() {
+            document.getElementById("loaderDiv").style.display = "block";
             $.ajax({
                 url: $('#usa_paystubx').attr('action'),
                 type: 'post',
@@ -372,17 +456,20 @@
                     $('#tempView').attr('src', response.pdf + '?embedded=true#toolbar=0');
                     // $('#tempView').html(response.data);
                     $('#tempViewModal').modal('show');
+                    document.getElementById("loaderDiv").style.display = "none";
                 },
                 error: function(err) {
                     error = err.responseJSON;
                     toastr.error(error.message);
+                    document.getElementById("loaderDiv").style.display = "none";
                 }
             });
             return false;
         }
 
         function usaStoreData() {
-            type = false;
+
+            document.getElementById("loaderDiv").style.display = "block";
             $.ajax({
                 url: $('#usa_paystubx').data('action'),
                 type: 'post',
@@ -393,6 +480,7 @@
                     setTimeout(function() {
                         window.location.href = "{{route('invoiceList')}}";
                     }, 1000);
+                    document.getElementById("loaderDiv").style.display = "none";
                 },
                 error: function(err) {
                     error = err.responseJSON;
@@ -402,6 +490,7 @@
                     } else {
                         toastr.error(error.message);
                     }
+                    document.getElementById("loaderDiv").style.display = "none";
                 }
             });
         }

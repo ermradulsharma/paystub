@@ -41,7 +41,6 @@
             <div class="row mb-3">
                 <div class="col-md-12">
                     <div class=" box-usa">
-
                         <div class="d-flex justify-content-between mb-3">
                             <div class="col-md-5 col-sm-12 m-auto  text-center" style="padding: -1px 35px;">
                                 <h6 style="" class="base">BASIC TEMPLATES</h6>
