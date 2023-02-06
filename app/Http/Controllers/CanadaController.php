@@ -15,14 +15,14 @@ class CanadaController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-   
+
     public function index()
     {
-        $dedutions = Deduction::where('state','canada')->get();
-        $basicType = Template::where('type','basic')->get();
-        $advanceType = Template::where('type','advance')->get();
+        $dedutions = Deduction::where('state', 'canada')->get();
+        $basicType = Template::where(['state' => 'canada', 'type' => 'basic', 'status' => 1])->get();
+        $advanceType = Template::where(['state' => 'canada', 'type' => 'advance', 'status' => 1])->get();
         $stateTaxes = StateTax::get();
-        return view('canadaPaystub',compact('basicType','advanceType','dedutions','stateTaxes'));
+        return view('canadaPaystub', compact('basicType', 'advanceType', 'dedutions', 'stateTaxes'));
     }
 
     /**
