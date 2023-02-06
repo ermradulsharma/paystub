@@ -259,7 +259,8 @@
                     <td>{{ $requestData['emp_name'] }}</td>
                     <td style="text-align: right;">XX567</td>
                     <td style="text-align: right;">XXX567</td>
-                    <td style="text-align: right;"></td>
+                    <td style="text-align: right;">{{ $requestData['currency'] }}{{ $requestData['total_net_pay'] }}
+                    </td>
                 </tr>
             </table>
         </div>
