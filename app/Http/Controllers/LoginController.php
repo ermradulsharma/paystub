@@ -61,6 +61,34 @@ class LoginController extends Controller
         return redirect(route('welcome'));
     }
 
+    public function login(Request $request)
+    {
+        $rules = [
+            'email' => 'required|email:rfc,dns',
+            'password' => 'required'
+        ];
+
+        $messages = [
+            'email.required' => 'The email cannot be empty.',
+            'email.email' => 'Please enter valid email.',
+            'password.required' => 'The password cannot be empty'
+        ];
+        $validator = Validator::make($request->all(), $rules, $messages);
+        if ($validator->fails()) {
+            $response['message'] = $validator->errors()->first();
+            return response()->json($response, 301);
+        }
+        if (Auth::attempt(array('email' => $request->email, 'password' => $request->password))) {
+            $user = User::where('email', $request->email)->first();
+            $response['user'] = $user;
+            $response['message'] = 'Login successfully';
+            return response()->json($response, 200);
+        } else {
+            $response['message'] = 'Incorrect password';
+            return response()->json($response, 301);
+        }
+    }
+
     public function loginWithOtp(Request $request)
     {
         Log::info($request);
@@ -120,6 +148,7 @@ class LoginController extends Controller
         $user->save();
         $response['message'] = "Verification code sent successfully";
         $response['email'] = $user->email;
+        $response['type'] = $user->role_id;
         return response()->json($response, 200);
     }
 }
