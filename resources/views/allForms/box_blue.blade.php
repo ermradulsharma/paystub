@@ -68,7 +68,7 @@
 
         .container {
             position: absolute;
-            top: 80px;
+            top: 55px;
             z-index: 3;
             height: 300px;
         }
@@ -100,7 +100,7 @@
             background-size: contain;
             background-repeat: no-repeat;
             content: "";
-            top: 100px;
+            top: 70px;
             left: 0px;
             right: 100px !important;
             position: absolute;
