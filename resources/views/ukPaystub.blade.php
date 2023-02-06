@@ -17,7 +17,7 @@
                                         <option selected=""> --- Select Basic Templates --- </option>
                                         @foreach ($basicType as $data)
                                         @if($data->state == 'uk' && $data->type == 'basic')
-                                        <option value={{$data->title}}>{{$data->title}}</option>
+                                        <option value={{$data->title}}>{{$data->name}}</option>
                                         @endif
                                         @endforeach
                                     </select>
@@ -44,7 +44,7 @@
                                         <option selected=""> --- Select Advance Templates --- </option>
                                         @foreach ($advanceType as $data)
                                         @if($data->state == 'uk' && $data->type == 'advance')
-                                        <option value={{$data->title}}>{{$data->title}}</option>
+                                        <option value={{$data->title}}>{{$data->name}}</option>
                                         @endif
                                         @endforeach
                                     </select>
@@ -120,7 +120,7 @@
                             <input type="text" id="fname" name="fname" placeholder="Your Full  Name" class="w-100 p-2 text-center" style="font-size:14px;"><br>
                         </div>
 
-                       
+
                         <div class="col-md-6 mt-4">
                             <label for="fname" class="lable">POSTCODE
                                 <span style="color:red;">*</span></label><br>
