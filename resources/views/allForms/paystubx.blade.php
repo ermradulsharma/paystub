@@ -105,8 +105,7 @@
         background: url('http://44.202.105.74/images/bg-lines1.png') !important;
         background-repeat: no-repeat;
         background-size: contain;
-        width:100%;
-        max-width: 700px;
+        width:300px;
         height: 400px;
         content: "";
         position: absolute;

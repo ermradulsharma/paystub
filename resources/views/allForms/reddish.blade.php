@@ -90,176 +90,223 @@
             text-align: right;
             padding-right: 22px;
         }
+        .bg-img2 {
+            position: relative;
+        }
+
+        .bg-img2:before {
+            position: absolute;
+            background-image: url("images/side-bar.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 100%;
+            height: 100%;
+            content: "";
+            right: 0px;
+            top: 170px;
+            left: 30px !important;;
+        }
+
+        .bg-img {
+            position: relative;
+        }
+
+        .bg-img::before {
+            background-image: url('http://44.202.105.74/images/check.jpg') !important;
+            background-size: contain;
+            background-repeat: no-repeat;
+            content: "";
+            top: 50px;
+            left: 0px;
+            right: 100px !important;
+            position: absolute;
+            z-index: -1;
+            width: 700px;
+            height: 100%;
+        }
+
+        .container {
+            position: absolute;
+            top: 0px;
+            z-index: 3;
+            height: 300px;
+        }
     </style>
 </head>
 
 <body>
-    <section class="invoiceborder">
+    <main class="bg-img2">
+        <section class="invoiceborder">
 
 
-        <table>
-            <tr>
-                <th style="padding-left: 31px;"> {{ $requestData['cname'] }}</th>
-                <th></th>
-
-            </tr>
-            <tr>
-                <td class="address" style="padding-left: 31px;">
-                    {{ $requestData['address_1'] }} <br>
-                    {{ $requestData['city'] }} {{ $requestData['state'] }}, {{ $requestData['zip_code'] }}, USA
-                </td>
-                <td style="font-weight:600; font-size:18px;" class="earning">Earning statement</td>
-            </tr>
-
-
-            <tr>
-                <td></td>
-
-                <td>
-                    <p class="earning"> pay period: {{ date('M d, Y', strtotime($requestData['pay_start'])) }} to
-                        {{ date('M d, Y', strtotime($requestData['pay_end'])) }} <br> pay date:
-                        {{ date('M d, Y', strtotime($requestData['pay_date'])) }}</p>
-                </td>
-
-            </tr>
-        </table>
-        <section class="section_2">
             <table>
                 <tr>
-                    <th style="width: 40%;">SSN: XXX-XX-{{ $requestData['emp_ssn'] }}</th>
-                    <th class="earning" style="width: 60%;">{{ $requestData['emp_name'] }}</th>
+                    <th style="padding-left: 31px;"> {{ $requestData['cname'] }}</th>
+                    <th></th>
+
                 </tr>
                 <tr>
-                    <td style=" padding: 9px;"> Stub no: 1112 </td>
-                    <td class="earning"> Emp Id :{{ $requestData['emp_id'] }} <br>
-                        {{ $requestData['emp_street_1'] }},{{ $requestData['emp_street_2'] }}
-                        {{ $requestData['emp_city'] }} {{ $requestData['emp_state'] }}
-                        {{ $requestData['emp_zip_code'] }}
+                    <td class="address" style="padding-left: 31px;">
+                        {{ $requestData['address_1'] }} <br>
+                        {{ $requestData['city'] }} {{ $requestData['state'] }}, {{ $requestData['zip_code'] }}, USA
                     </td>
-                </tr>
-            </table>
-        </section>
-        <section class="tablesection">
-            <table>
-                <tr>
-                    <th class="heading1">Earnings</th>
-                    <th class="heading1">Rate</th>
-                    <th class="heading1">Hours</th>
-                    <th class="heading1">This Period</th>
-                    <th class="heading1">YTD</th>
-                </tr>
-                @foreach ($requestData['earning'] as $key => $earn)
-                    <tr>
-                        <td>{{ $earn }}</td>
-                        <td>{{ $requestData['currency'] }} {{ $requestData['rate'][$key] }}</td>
-                        <td>{{ $requestData['hours'][$key] }}</td>
-                        <td>{{ $requestData['currency'] }} {{ $requestData['period'][$key] }}</td>
-                        <td>{{ $requestData['currency'] }} {{ $requestData['ytd_total'][$key] }}</td>
-                    </tr>
-                @endforeach
-
-                <tr style="padding-top: -200px;">
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td style="font-weight:600; font-size:18px;" class="earning">Earning statement</td>
                 </tr>
 
-                <tfoot class="tfooter" style="background:#bd2e40; color:white">
-                    <tr>
-                        <th colspan="3"></th>
-                        <th style="font-weight: 100;">{{ $requestData['currency'] }}
-                            {{ $requestData['period_gross_total'] }}</th>
-                        <th style=" font-weight: 100;">{{ $requestData['currency'] }}
-                            {{ $requestData['ytd_gross_total'] }}</th>
-                    </tr>
-                </tfoot>
-            </table>
-        </section>
-        <section class="tablesection">
-            <table class="heading">
+
                 <tr>
-                    <th class="heading1">Taxes / Deduction</th>
-                    <th class="heading1"> Type</th>
-                    <th class="heading1">This Period</th>
-                    <th class="heading1">YTD</th>
+                    <td></td>
+
+                    <td>
+                        <p class="earning"> pay period: {{ date('M d, Y', strtotime($requestData['pay_start'])) }} to
+                            {{ date('M d, Y', strtotime($requestData['pay_end'])) }} <br> pay date:
+                            {{ date('M d, Y', strtotime($requestData['pay_date'])) }}</p>
+                    </td>
+
                 </tr>
-                @foreach ($requestData['taxes'] ?? [] as $key => $taxes)
+            </table>
+            <section class="section_2">
+                <table>
                     <tr>
-                        <td></td>
-                        <td class="data">{{ $taxes }}</td>
-                        <td>{{ $requestData['currency'] }} {{ $requestData['taxes_rate'][$key] }}</td>
-                        <td>{{ $requestData['currency'] }} {{ $requestData['taxes_ytd'][$key] }}</td>
+                        <th style="width: 40%;">SSN: XXX-XX-{{ $requestData['emp_ssn'] }}</th>
+                        <th class="earning" style="width: 60%;">{{ $requestData['emp_name'] }}</th>
                     </tr>
-                @endforeach
-                @if (count($requestData['tax_deduction'] ?? []) > 0)
                     <tr>
-                        <td></td>
-                        <td class="data"> <strong>Employer Taxes </strong> </td>
-                        <td></td>
-                        <td></td>
+                        <td style=" padding: 9px;"> Stub no: 1112 </td>
+                        <td class="earning"> Emp Id :{{ $requestData['emp_id'] }} <br>
+                            {{ $requestData['emp_street_1'] }},{{ $requestData['emp_street_2'] }}
+                            {{ $requestData['emp_city'] }} {{ $requestData['emp_state'] }}
+                            {{ $requestData['emp_zip_code'] }}
+                        </td>
                     </tr>
-                    @foreach ($requestData['tax_deduction'] ?? [] as $key => $tax_deduction)
+                </table>
+            </section>
+            <section class="tablesection">
+                <table>
+                    <tr>
+                        <th class="heading1">Earnings</th>
+                        <th class="heading1">Rate</th>
+                        <th class="heading1">Hours</th>
+                        <th class="heading1">This Period</th>
+                        <th class="heading1">YTD</th>
+                    </tr>
+                    @foreach ($requestData['earning'] as $key => $earn)
                         <tr>
-                            <td></td>
-                            <td class="data">{{ $tax_deduction }}</td>
-                            <td>{{ $requestData['currency'] }} {{ $requestData['period_tax_deduction'][$key] }}</td>
-                            <td>{{ $requestData['currency'] }} {{ $requestData['ytd_tax_deduction'][$key] }}</td>
+                            <td>{{ $earn }}</td>
+                            <td>{{ $requestData['currency'] }} {{ $requestData['rate'][$key] }}</td>
+                            <td>{{ $requestData['hours'][$key] }}</td>
+                            <td>{{ $requestData['currency'] }} {{ $requestData['period'][$key] }}</td>
+                            <td>{{ $requestData['currency'] }} {{ $requestData['ytd_total'][$key] }}</td>
                         </tr>
                     @endforeach
-                @endif
-                <tfoot class="tfooter " style="background:#bd2e40; color:white">
-                    <tr>
-                        <th colspan="2">Net Pay</th>
-                        <th style="font-weight: 100;">{{ $requestData['currency'] }}
-                            {{ $requestData['total_net_pay'] }}</th>
-                        <th style=" font-weight: 100;">{{ $requestData['currency'] }}
-                            {{ $requestData['total_ytd_net_pay'] }}</th>
+
+                    <tr style="padding-top: -200px;">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                     </tr>
-                </tfoot>
-            </table>
-            <p>Your Taxes and deductions for this period are {{ $requestData['currency'] }}
-                {{ $requestData['deduction_tax'] }}</p>
+
+                    <tfoot class="tfooter" style="background:#bd2e40; color:white">
+                        <tr>
+                            <th colspan="3"></th>
+                            <th style="font-weight: 100;">{{ $requestData['currency'] }}
+                                {{ $requestData['period_gross_total'] }}</th>
+                            <th style=" font-weight: 100;">{{ $requestData['currency'] }}
+                                {{ $requestData['ytd_gross_total'] }}</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </section>
+            <section class="tablesection">
+                <table class="heading">
+                    <tr>
+                        <th class="heading1">Taxes / Deduction</th>
+                        <th class="heading1"> Type</th>
+                        <th class="heading1">This Period</th>
+                        <th class="heading1">YTD</th>
+                    </tr>
+                    @foreach ($requestData['taxes'] ?? [] as $key => $taxes)
+                        <tr>
+                            <td></td>
+                            <td class="data">{{ $taxes }}</td>
+                            <td>{{ $requestData['currency'] }} {{ $requestData['taxes_rate'][$key] }}</td>
+                            <td>{{ $requestData['currency'] }} {{ $requestData['taxes_ytd'][$key] }}</td>
+                        </tr>
+                    @endforeach
+                    @if (count($requestData['tax_deduction'] ?? []) > 0)
+                        <tr>
+                            <td></td>
+                            <td class="data"> <strong>Employer Taxes </strong> </td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        @foreach ($requestData['tax_deduction'] ?? [] as $key => $tax_deduction)
+                            <tr>
+                                <td></td>
+                                <td class="data">{{ $tax_deduction }}</td>
+                                <td>{{ $requestData['currency'] }} {{ $requestData['period_tax_deduction'][$key] }}</td>
+                                <td>{{ $requestData['currency'] }} {{ $requestData['ytd_tax_deduction'][$key] }}</td>
+                            </tr>
+                        @endforeach
+                    @endif
+                    <tfoot class="tfooter " style="background:#bd2e40; color:white">
+                        <tr>
+                            <th colspan="2">Net Pay</th>
+                            <th style="font-weight: 100;">{{ $requestData['currency'] }}
+                                {{ $requestData['total_net_pay'] }}</th>
+                            <th style=" font-weight: 100;">{{ $requestData['currency'] }}
+                                {{ $requestData['total_ytd_net_pay'] }}</th>
+                        </tr>
+                    </tfoot>
+                </table>
+                <p style="margin-top:30px;">Your Taxes and deductions for this period are {{ $requestData['currency'] }}
+                    {{ $requestData['deduction_tax'] }}</p>
+            </section>
+
+            <section class="bg-img">
+                <div class="container" style=" margin-top:70px; width:95%; padding:0px 20px;">
+                    <div class="row" style="display: flex;justify-content: space-between;padding: 0px 14px;">
+                        <div style="width: 50%;float:left;">
+                            <h6 style="font-size: 17px; margin-bottom: 10px;">{{ $requestData['cname'] }}</h6>
+                            <p style="font-size: 13px; margin: 0;">{{ $requestData['address_1'] }}</p>
+                            <P style="font-size: 13px; margin: 0;">{{ $requestData['address_2'] }}</P>
+                            <P style="font-size: 13px; margin: 0;">{{ $requestData['city'] }}
+                                {{ $requestData['state'] }},
+                                {{ $requestData['zip_code'] }}</P>
+                        </div>
+                        <div style="width: 50%;float:right;text-align:right; margin-top:4px;">
+                            <h6 style="font-size: 14px; margin-bottom: 6px;"> <span>00000422598</span>
+                            </h6>
+                            <p>
+                                <span style="font-weight:800;"></span>
+                                {{ date('m/d/y', strtotime($requestData['pay_date'])) }}
+                            </p>
+                        </div>
+                    </div>
+                    <table style="width: 90%; margin: 160px auto 0px;">
+                        <tr style="">
+                            <td colspan="4"></td>
+                            <td></td>
+                            <td style="text-align: right;"></td>
+                            <td style="text-align: right;"> </td>
+                            <td style="text-align: right;"> </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="4"></td>
+                            <td style="font-size:14px; text-align:left;">{{ $requestData['emp_name'] }}</td>
+                            <td style="text-align: right; font-size:13px;">XX567</td>
+                            <td style="text-align: right;font-size:13px;">XXX567</td>
+                            <td style="text-align: right;font-size:13px;">12345</td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
         </section>
+    </main>
 
-        <div class="container" style=" margin-top:100px; width:100%; border:1px solid black;">
-            <div class="row" style="display: flex;justify-content: space-between;padding: 0px 14px;">
-                <div style="width: 50%;float:left;">
-                    <h6 style="font-size: 17px; margin-bottom: 10px;">{{ $requestData['cname'] }}</h6>
-                    <p style="font-size: 13px; margin: 0;">{{ $requestData['address_1'] }}</p>
-                    <P style="font-size: 13px; margin: 0;">{{ $requestData['address_2'] }}</P>
-                    <P style="font-size: 13px; margin: 0;">{{ $requestData['city'] }} {{ $requestData['state'] }},
-                        {{ $requestData['zip_code'] }}</P>
-                </div>
-                <div style="width: 50%;float:right;text-align:right;">
-                    <h6 style="font-size: 14px; margin-bottom: 0;">Advice Number: <span>00000422598</span>
-                    </h6>
-                    <p>
-                        <span style="font-weight:800;">Pay Day:</span>
-                        {{ date('m/d/y', strtotime($requestData['pay_date'])) }}
-                    </p>
-                </div>
-            </div>
-            <table style="width: 100%; margin: 140px 0 0 auto;">
-                <tr style="border-bottom: 1px solid;">
-                    <td colspan="4"></td>
-                    <td>Deposite to the Account off</td>
-                    <td style="text-align: right;">Account Number</td>
-                    <td style="text-align: right;">Transit ABA </td>
-                    <td style="text-align: right;">Amount </td>
-                </tr>
-
-                <tr>
-                    <td colspan="4"></td>
-                    <td>{{ $requestData['emp_name'] }}</td>
-                    <td style="text-align: right;">XX567</td>
-                    <td style="text-align: right;">XXX567</td>
-                    <td style="text-align: right;"></td>
-                </tr>
-            </table>
-        </div>
-    </section>
 </body>
 
 </html>
