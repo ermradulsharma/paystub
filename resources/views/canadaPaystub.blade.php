@@ -59,11 +59,10 @@
                                     <i class="fa fa-eye-slash basicTem flash-icon" data-target="#openEye" data-toggle="modal"></i>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="col-md-2  text-center sh">
-                            <img src="images/hrpng.png" style="height: 200px;">
-                        </div>
+                            <div class="col-md-2  text-center sh">
+                                <img src="images/hrpng.png" style="height: 200px;">
+                            </div>
 
                         <div class="col-md-5 col-sm-12 mt-5 text-center">
                             <h6 style="margin-left:-23px;font-weight: 900;" class="small">ADVANCED TEMPLATES</h6>
@@ -83,18 +82,11 @@
                                     <i class="fa fa-eye-slash advanceTem flash-icon" data-target="#openEye" data-toggle="modal"></i>
                                 </div>
                             </div>
-                            <div class=" mt-3 ">
-                                <button class="viewbtn">
-                                    <a href="{{url('template-view')}}">Click to see Template Landscape view.This is not
-                                        part of design</a>
-                                </button>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
     <div class="container" style="max-width: 1450px;">
         <div class="row mb-3">
@@ -110,11 +102,13 @@
                                 <input type="text" id="cname" name="cname" placeholder="Your Employer & Company Name" class="w-100 p-2 text-center textInputFontSize">
                             </div>
                         </div>
-
-                        <!-- <div class="col-md-6 mt-1">
+                        <div id="map" hidden></div>
+                        <div class="row mb-3">
+                            <div class="col-md-12">
                                 <div>
-                                    <label for="tel" class="lable">EMPLOYER TELEPHONE NUMBER <span class="redColor">*</span> </label>
-                                    <input type="tel" id="tel" name="tel" placeholder="xxx-xxx-xxxx" class="w-100 p-2 text-center textInputFontSize" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+                                    <label for="address_1" class="lable">STREET ADDRESS 1 <span class="redColor">*</span>
+                                    </label>
+                                    <input type="text" id="address_1" name="address_1" placeholder="Your Employer Address" class="w-100 p-2  textInputFontSize">
                                 </div>
                             </div> -->
 
@@ -127,9 +121,7 @@
                                 </label>
                                 <input type="text" id="address_1" name="address_1" placeholder="Your Employer Address" class="w-100 p-2  textInputFontSize">
                             </div>
-
                         </div>
-                    </div>
 
                     <div class="row mb-3">
                         <div class="col-md-12">
@@ -139,8 +131,8 @@
                                 <input type="text" id="address_2" name="address_2" placeholder="Suite 101 or Apt 101 (optional)" class="w-100 p-2  textInputFontSize">
                             </div>
 
+                            </div>
                         </div>
-                    </div>
 
                     <div class="row mb-3">
                         <div class="col-md-4">
@@ -149,17 +141,18 @@
                                 <input type="text" id="city" name="city" placeholder="Your Employer City" class="w-100 p-2  textInputFontSize">
                             </div>
 
-                        </div>
-                        <div class="col-md-4">
-                            <div>
-                                <label for="state" class="lable">Province <span class="redColor">*</span> </label>
-                                <div class="dropdown ">
-                                    <select name="state" id="state" class="state dropdown11">
-                                        <option value=""> --- Select --- </option>
-                                        @foreach ($stateTaxes as $stateTax)
-                                        <option value="{{ $stateTax->state }}">{{ $stateTax->state }}</option>
-                                        @endforeach
-                                    </select>
+                            </div>
+                            <div class="col-md-4">
+                                <div>
+                                    <label for="state" class="lable">Province <span class="redColor">*</span> </label>
+                                    <div class="dropdown ">
+                                        <select name="state" id="state" class="state dropdown11">
+                                            <option value=""> --- Select --- </option>
+                                            @foreach ($stateTaxes as $stateTax)
+                                            <option value="{{ $stateTax->state }}">{{ $stateTax->state }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -174,7 +167,6 @@
                 </div>
             </div>
         </div>
-    </div>
 
     <div class="container" style="max-width:1450px;">
         <h5>Employee Basic Info</h5>
@@ -379,9 +371,7 @@
                         <div class="col-md-2">
                             <input CLASS="earnbtn text-center" value="00.00">
                         </div>
-
                     </div>
-
                 </div>
             </div>
         </div>
@@ -425,6 +415,7 @@
                 mobileNumber.substring(6, 10));
         });
     });
+
 </script>
 <script>
     $(document).ready(function() {
@@ -445,8 +436,8 @@
             }
         });
     });
-</script>
 
+</script>
 
 
 @endsection

@@ -36,7 +36,7 @@
 </div>
 <!-- Modal End -->
 <div class="container mt-2" style="max-width:1450px;">
-    <form id="usa_paystubx" action="" method="post">
+    <form id="usa_paystubx" action="{{ route('templates') }}" method="post" data-action="{{ route('usaStoreData') }}">
         @csrf
         <div>
             <div class="row mb-3">
@@ -164,6 +164,7 @@
                 </div>
             </div>
         </div>
+
         <div>
             <h5>Employee Info</h5>
             <div class="row mb-3">
@@ -180,8 +181,7 @@
 
                             <div class="col-md-4 mt-4">
                                 <div>
-                                    <label for="emp_id" class="lable">EMPLOYEE ID <span class="redColor">*</span>
-                                    </label>
+                                    <label for="emp_id" class="lable">EMPLOYEE ID <span class="redColor">*</span> </label>
                                     <input type="text" id="emp_id" name="emp_id" placeholder="Employer ID" class="w-100 p-2 r textInputFontSize">
                                 </div>
 
@@ -219,16 +219,14 @@
                         <div class="row mb-3">
                             <div class="col-md-4">
                                 <div>
-                                    <label for="emp_city" class="lable">City <span class="redColor">*</span>
-                                    </label>
+                                    <label for="emp_city" class="lable">City <span class="redColor">*</span> </label>
                                     <input type="text" id="emp_city" name="emp_city" placeholder="Your City" class="w-100 p-2  textInputFontSize">
                                 </div>
 
                             </div>
                             <div class="col-md-4">
                                 <div>
-                                    <label for="emp_state" class="lable">State <span class="redColor">*</span>
-                                    </label>
+                                    <label for="emp_state" class="lable">State <span class="redColor">*</span> </label>
                                     <div class="dropdown ">
                                         <select name="emp_state" id="emp_state" class=" dropdown11 ">
                                             <option value="" data-tax="null"> --- Select --- </option>
@@ -236,15 +234,12 @@
                                             <option value="{{ $stateTax->state }}" data-tax="{{ $stateTax->rate }}">{{ $stateTax->state }}</option>
                                             @endforeach
                                         </select>
-
                                     </div>
                                 </div>
-
                             </div>
                             <div class="col-md-4">
                                 <div>
-                                    <label for="emp_zip_code" class="lable">Zip Code <span class="redColor">*</span>
-                                    </label>
+                                    <label for="emp_zip_code" class="lable">Zip Code <span class="redColor">*</span></label>
                                     <input type="text" id="emp_zip_code" name="emp_zip_code" placeholder=" 1234" class="w-100 p-2  textInputFontSize">
                                 </div>
 
@@ -390,8 +385,7 @@
                         <div class="row mb-3">
                             <div class="col-md-3 mt-4">
                                 <div>
-                                    <label for="pay_start" class="lable">PAY START<span class="redColor">*</span>
-                                    </label>
+                                    <label for="pay_start" class="lable">PAY START<span class="redColor">*</span> </label>
                                     <input type="date" id="pay_start" name="pay_start" placeholder="12-11-2022" class="w-100 p-2 textInputFontSize pay_start datepicker" data-id="pay_start">
                                 </div>
 
@@ -399,8 +393,7 @@
 
                             <div class="col-md-3 mt-4">
                                 <div>
-                                    <label for="pay_end" class="lable">PAY END <span class="redColor">*</span>
-                                    </label>
+                                    <label for="pay_end" class="lable">PAY END <span class="redColor">*</span> </label>
                                     <input type="date" id="pay_end" name="pay_end" placeholder="12-17-2022" class="w-100 p-2 textInputFontSize pay_end" data-id="pay_end">
                                 </div>
 
@@ -408,8 +401,7 @@
 
                             <div class="col-md-3 mt-4">
                                 <div>
-                                    <label for="pay_date" class="lable">PAY DATE <span class="redColor">*</span>
-                                    </label>
+                                    <label for="pay_date" class="lable">PAY DATE <span class="redColor">*</span> </label>
                                     <input type="date" id="pay_date" name="pay_date" placeholder="12-19-2022" class="w-100 p-2 textInputFontSize pay_date" data-id="pay_date">
                                 </div>
 

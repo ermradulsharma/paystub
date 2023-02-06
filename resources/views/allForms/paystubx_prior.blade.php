@@ -70,24 +70,28 @@
     .shrapdana {
         max-width: 100%;
     }
+
 </style>
 
 <body>
 
     <table style="width:100%;">
         <tr style="width:100%;">
-        <td style="padding-left:90px;padding-top:0px; font-weight:800;"> {{ $requestData['state'] }}, {{ $requestData['zip_code'] }}<td>
-            <td style="font-size:14px;">No: {{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</td>
+            <td colspan="" style=" padding-left:50px; padding-top:0px; padding-bottom:0px; padding-right:0px; font-weight:800; font-size:25px;"> {{ $requestData['cname'] }}<td>
+            <td style="font-size:14px;text-align:right;">No: 17658</td>
         </tr>
         <tr>
-            <td style="padding-left:90px; padding-top:0px; font-weight:800; "> {{ $requestData['address_1'] }} {{ $requestData['city'] }}</td>
+            <td style="padding-left:50px; padding-top:0px; padding-bottom:30px; padding-right:0px; font-size:14px;"> {{ $requestData['address_1'] }} {{ $requestData['city'] }} <br> {{ $requestData['state'] }}, {{ $requestData['zip_code'] }}</td>
             <td></td>
+
+            <td style="font-size:14px; text-align:right; width:250px;">Date: {{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</td>
         </tr>
         <tr>
-            <td style="padding-left:90px;padding-top:0px; font-weight:800;"> {{ $requestData['state'] }}, {{ $requestData['zip_code'] }}<td>
-            <td style="font-size:14px;">Date: {{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</td>
+            <td></td>
+
+
         </tr>
-        <tr>
+    {{-- <tr>
             @php
                 $digit = Terbilang::make((int) $requestData['total_net_pay']);
                 $word = $digit;
@@ -97,31 +101,45 @@
                 [$whole, $decimal] = sscanf($n, '%d.%d');
             @endphp
             <td style="font-size:13px;">
-                <h5> Pay To The <br>Order Of <span
-                        style="border-bottom: 1px solid black;  padding-left:90px; text-align:center; margin:auto;  height:20px">{{ $requestData['emp_name'] ?? '' }}</span>
-                </h5>
-                <span style="border-bottom: 1px solid black;  padding-left:90px;">{{ $word }} and
-                    {{ (int) $decimal }}/100 </span>
+                <div style="">
+                    <h5 style=""> Pay To The <br>Order Of <p style="border-bottom: 1px solid black; text-align:center;">{{ $requestData['emp_name'] ?? '' }}</p></h5>
+                <p style="border-bottom: 1px solid black; text-align:center;">{{ $word }} and {{ (int) $decimal }}/100 </p>
+                </div>
+
             </td>
-            <td style="font-size:18px;">{{ $requestData['currency'] ?? '' }} **{{ $requestData['total_net_pay'] }}
-            </td>
-        </tr>
+            <td style="font-size:18px;text-align:right;">{{ $requestData['currency'] ?? '' }} **{{ $requestData['total_net_pay'] }}</td>
+        </tr>--}}
     </table>
+
+    <div>
+        <table class="table1"style="width:100%;">
+            <tr style="width:100%;">
+                <td style=" width:10%;font-size:14px;">Pay To The<br>
+                    Order Of
+                </td>
+                    <td style=" font-size:14px;text-align:left; width:100%; margin:0 auto;"><b>Ezra Pinkett</b></td>
+                    <td style="width:25%; text-align:right; margin-top:20px;font-size:12px;"><b>$
+                        **7.145.63</b></td>
+            </tr>
+            <tr style=" ">
+                <td style="width:100%; text-align:center; margin-top:50px;font-size:14px;">Seven Thousand One Hundred Forty-Five and 63/100</td>
+
+            </tr>
+            <tr>
+        </table>
+    </div>
 
 
 
     <div class="shrapdana">
         <table style="padding-top:60px;margin-top: 30px;">
-
             <tr>
-
                 <td style="font-size:18px;">Memo: </td>
                 <td colspan="2" style="font-size: 22px;">FOR RECORDS PURPOSES ONLY</td>
                 <td>-----------------------------------------------------------------</td>
             </tr>
             <tr>
-                <td colspan="3" style="padding-top:30px; font-size:20px; text-align:right; font-family: cursive;">
-                    98745687T58T43098584598</td>
+                <td colspan="3" style="padding-top:30px; font-size:20px; text-align:right; font-family: cursive;">98745687T58T43098584598</td>
             </tr>
         </table>
     </div>

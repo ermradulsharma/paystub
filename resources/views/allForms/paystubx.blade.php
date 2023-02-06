@@ -77,7 +77,7 @@
         height: 100%;
         width: 700px;
         content: "";
-        top: 180px;
+        top: 150px;
         left: 0px;
         right: 0px;
         position: absolute;
@@ -292,7 +292,7 @@
 
         </table>
         <section class="bg-img">
-            <table class="container" style=" margin-top:230px;padding: 0 0px 0px 0px;width:100%; ">
+            <table class="container" style=" margin-top:200px;padding: 0 0px 0px 0px;width:100%; ">
                 <div class="row"
                     style="display: flex; display: flex;justify-content: space-between;padding: 0px 14px;">
                     <div style="width: 50%;float:left;padding-left:30px;">
@@ -339,7 +339,7 @@
 
                 <tr>
                     <td colspan="4"></td>
-                    <td style="padding-left:30px;"></td>
+                    <td style=""></td>
                     <td style="padding-left:30px;">{{ $requestData['emp_name'] }}</td>
                     <td style="text-align: left;">{{ $requestData['account_number_last_4'] }}</td>
                     <td style="text-align: left;">{{ $requestData['transit_aba_number'] }}</td>
