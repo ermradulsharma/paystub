@@ -76,16 +76,17 @@
 
     <table style="width:100%;">
         <tr style="width:100%;">
-        <td style="padding-left:90px;padding-top:0px; font-weight:800;"> {{ $requestData['state'] }}, {{ $requestData['zip_code'] }}<td>
-            <td style="font-size:14px;">No: {{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</td>
+            <td style="padding-left:90px; padding-top:0px; font-weight:800; font-size:25px;"> {{ $requestData['cname'] }}<td>
+            <td style="font-size:14px;">No: 17658</td>
         </tr>
         <tr>
-            <td style="padding-left:90px; padding-top:0px; font-weight:800; "> {{ $requestData['address_1'] }} {{ $requestData['city'] }}</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td style="padding-left:90px;padding-top:0px; font-weight:800;"> {{ $requestData['state'] }}, {{ $requestData['zip_code'] }}<td>
+            <td style="padding-left:90px; font-size:14px;"> {{ $requestData['address_1'] }} {{ $requestData['city'] }} <br> {{ $requestData['state'] }}, {{ $requestData['zip_code'] }}</td>
             <td style="font-size:14px;">Date: {{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="font-size:14px;">Date: {{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</td>
+
         </tr>
         <tr>
             @php
@@ -97,14 +98,10 @@
                 [$whole, $decimal] = sscanf($n, '%d.%d');
             @endphp
             <td style="font-size:13px;">
-                <h5> Pay To The <br>Order Of <span
-                        style="border-bottom: 1px solid black;  padding-left:90px; text-align:center; margin:auto;  height:20px">{{ $requestData['emp_name'] ?? '' }}</span>
-                </h5>
-                <span style="border-bottom: 1px solid black;  padding-left:90px;">{{ $word }} and
-                    {{ (int) $decimal }}/100 </span>
+                <h5> Pay To The <br>Order Of <span style="border-bottom: 1px solid black;  padding-left:90px; text-align:center; margin:auto;  height:20px">{{ $requestData['emp_name'] ?? '' }}</span></h5>
+                <span style="border-bottom: 1px solid black;  padding-left:90px;">{{ $word }} and {{ (int) $decimal }}/100 </span>
             </td>
-            <td style="font-size:18px;">{{ $requestData['currency'] ?? '' }} **{{ $requestData['total_net_pay'] }}
-            </td>
+            <td style="font-size:18px;">{{ $requestData['currency'] ?? '' }} **{{ $requestData['total_net_pay'] }}</td>
         </tr>
     </table>
 
@@ -112,16 +109,13 @@
 
     <div class="shrapdana">
         <table style="padding-top:60px;margin-top: 30px;">
-
             <tr>
-
                 <td style="font-size:18px;">Memo: </td>
                 <td colspan="2" style="font-size: 22px;">FOR RECORDS PURPOSES ONLY</td>
                 <td>-----------------------------------------------------------------</td>
             </tr>
             <tr>
-                <td colspan="3" style="padding-top:30px; font-size:20px; text-align:right; font-family: cursive;">
-                    98745687T58T43098584598</td>
+                <td colspan="3" style="padding-top:30px; font-size:20px; text-align:right; font-family: cursive;">98745687T58T43098584598</td>
             </tr>
         </table>
     </div>
