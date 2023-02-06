@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\StateTax;
 use App\Models\Template;
 use Illuminate\Http\Request;
 
@@ -13,13 +14,14 @@ class UkController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-   
+
 
     public function index()
     {
-        $basicType = Template::where('type','basic')->get();
-         $advanceType = Template::where('type','advance')->get();
-         return view('ukPaystub',compact('basicType','advanceType'));
+        $basicType = Template::where('type', 'basic')->get();
+        $advanceType = Template::where('type', 'advance')->get();
+        $stateTaxes = StateTax::get();
+        return view('ukPaystub', compact('basicType', 'advanceType', 'stateTaxes'));
     }
 
     /**

@@ -34,7 +34,7 @@
     </div>
 </div>
 <div class="container" style="max-width:1450px;">
-    <form id="usa_paystubx" action="{{ route('canada.templates') }}" method="post">
+    <form id="usa_paystubx" action="{{ route('canada.templates') }}" method="post" data-action="">
         @csrf
         <div>
             <h5>Choose Template</h5>
