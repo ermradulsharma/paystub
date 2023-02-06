@@ -59,7 +59,7 @@
         }
 
         #colourborder {
-            background-color: #8b8b8b;
+            background-color: #fba401;
         }
 
         #fica {
@@ -151,7 +151,7 @@
             </tr>
         </table>
         <section>
-            <div class="row" style=" background-color: #d6d6d6; border-left:2px solid#464646;">
+            <div class="row" style=" background-color: #fcdcac; border-left:2px solid#464646;">
                 <div class="column1">
                     <table class="colortable" style="width:100%;">
                         <thead id="colourborder">
