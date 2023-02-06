@@ -39,7 +39,7 @@
         }
 
         .section_2 {
-            background: #5AA6BA;
+            background: #8a2ebd;
             color: white;
             padding: 20px 0px;
             overflow: hidden;
@@ -170,7 +170,7 @@
                     <td></td>
                 </tr>
 
-                <tfoot class="tfooter" style="background:#5AA6BA; color:white">
+                <tfoot class="tfooter" style="background:#8a2ebd; color:white">
                     <tr>
                         <th colspan="3"></th>
                         <th style="font-weight: 100;">{{ $requestData['currency'] }}
@@ -213,7 +213,7 @@
                         </tr>
                     @endforeach
                 @endif
-                <tfoot class="tfooter " style="background:#5AA6BA; color:white">
+                <tfoot class="tfooter " style="background:#8a2ebd; color:white">
                     <tr>
                         <th colspan="2">Net Pay</th>
                         <th style="font-weight: 100;">{{ $requestData['currency'] }}
