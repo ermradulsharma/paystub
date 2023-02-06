@@ -102,7 +102,7 @@
         left: 33px;
     }
     .background:before{
-        background: url('http://44.202.105.74/images/bg-lines.png') !important;
+        background: url('http://44.202.105.74/images/bg-lines1.png') !important;
         background-repeat: no-repeat;
         background-size: contain;
         width:100%;
