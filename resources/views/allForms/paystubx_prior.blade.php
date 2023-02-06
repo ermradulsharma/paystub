@@ -76,16 +76,17 @@
 
     <table style="width:100%;">
         <tr style="width:100%;">
-            <td style="padding-left:90px;padding-top:0px; font-weight:800;"> {{ $requestData['state'] }}, {{ $requestData['zip_code'] }}<td>
+            <td style="padding-left:90px; padding-top:0px; font-weight:800; font-size:25px;"> {{ $requestData['cname'] }}<td>
             <td style="font-size:14px;">No: 17658</td>
         </tr>
         <tr>
-            <td style="padding-left:90px; padding-top:0px; font-weight:800; "> {{ $requestData['address_1'] }} {{ $requestData['city'] }} <br> {{ $requestData['state'] }}, {{ $requestData['zip_code'] }}</td>
-            <td></td>
+            <td style="padding-left:90px; font-size:14px;"> {{ $requestData['address_1'] }} {{ $requestData['city'] }} <br> {{ $requestData['state'] }}, {{ $requestData['zip_code'] }}</td>
+            <td style="font-size:14px;">Date: {{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</td>
         </tr>
         <tr>
-            <td style="font-size:14px;">Date: {{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</td>
             <td></td>
+            <td style="font-size:14px;">Date: {{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</td>
+
         </tr>
         <tr>
             @php
