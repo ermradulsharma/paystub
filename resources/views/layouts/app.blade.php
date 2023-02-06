@@ -364,7 +364,7 @@
 
         function viewPDF() {
             $.ajax({
-                url: "{{ route('templates') }}",
+                url: $('#usa_paystubx').attr('action'),
                 type: 'post',
                 data: $('#usa_paystubx').serialize(),
                 success: function(response) {
@@ -384,7 +384,7 @@
         function usaStoreData() {
             type = false;
             $.ajax({
-                url: "{{ route('usaStoreData') }}",
+                url: $('#usa_paystubx').data('action'),
                 type: 'post',
                 data: $('#usa_paystubx').serialize(),
                 success: function(response) {

@@ -36,7 +36,7 @@
 </div>
 <!-- Modal End -->
 <div class="container mt-2" style="max-width:1450px;">
-    <form id="usa_paystubx" action="" method="post">
+    <form id="usa_paystubx" action="{{ route('templates') }}" method="post" data-action="{{ route('usaStoreData') }}">
         @csrf
         <div>
             <div class="row mb-3">
