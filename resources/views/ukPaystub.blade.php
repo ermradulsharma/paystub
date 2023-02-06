@@ -1,4 +1,4 @@
-`@extends('layouts.app')
+@extends('layouts.app')
 @section('content')
 <!-- Modal Start -->
 <div class="modal fade" id="openEye" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -158,26 +158,25 @@
 
                     <div class="row mb-3">
                         <div class="col-lg-2 col-md-4 mt-4">
-                            <label for="fname" class="lable">Pay Type <span style="color:red;">*</span></label>
-                            <input type="text" id="fname1" name="fname" placeholder="2-20-2023" class="w-100 p-2 text-center" style="font-size:14px;">
+                            <label for="pay_type" class="lable">Pay Type <span style="color:red;">*</span></label>
+                            <input type="text" id="pay_type" name="pay_type" placeholder="2-20-2023" class="w-100 p-2 text-center" style="font-size:14px;">
                         </div>
 
                         <div class="col-lg-2 col-md-4 mt-4">
-                            <label for="fname" class="lable text-center"> Payment method
-                                <span style="color:red;">*</span></label>
-                            <input type="text" id="fname" name="fname" placeholder="12-12-2023" class="w-100 p-2 text-center" style="font-size:14px;">
+                            <label for="pay_method" class="lable text-center"> Payment method  <span style="color:red;">*</span></label>
+                            <input type="text" id="pay_method" name="pay_method" placeholder="12-12-2023" class="w-100 p-2 text-center" style="font-size:14px;">
                         </div>
                         <div class="col-lg-2 col-md-4 mt-4">
-                            <label for="fname" class="lable">Tax Code <span style="color:red;">*</span></label>
-                            <input type="text" id="fname" name="fname" placeholder="2-20-2023" class="w-100 p-2 text-center" style="font-size:14px;">
+                            <label for="tax_code" class="lable">Tax Code <span style="color:red;">*</span></label>
+                            <input type="text" id="tax_code" name="tax_code" placeholder="2-20-2023" class="w-100 p-2 text-center" style="font-size:14px;">
                         </div>
                         <div class="col-lg-2 col-md-4 mt-4">
-                            <label for="fname" class="lable">NI Number <span style="color:red;">*</span></label>
-                            <input type="text" id="fname" name="fname" placeholder="2-20-2023" class="w-100 p-2 text-center" style="font-size:14px;">
+                            <label for="ni_number" class="lable">NI Number <span style="color:red;">*</span></label>
+                            <input type="text" id="ni_number" name="ni_number" placeholder="2-20-2023" class="w-100 p-2 text-center" style="font-size:14px;">
                         </div>
                         <div class="col-lg-2 col-md-4 mt-4">
-                            <label for="fname" class="lable">NI Table Lette <span style="color:red;">*</span></label>
-                            <input type="text" id="fname" name="fname" placeholder="2-20-2023" class="w-100 p-2 text-center" style="font-size:14px;">
+                            <label for="ni_table_letter" class="lable">NI Table Letter <span style="color:red;">*</span></label>
+                            <input type="text" id="ni_table_letter" name="ni_table_letter" placeholder="2-20-2023" class="w-100 p-2 text-center" style="font-size:14px;">
                         </div>
                         <div class="col-lg-2 col-md-4 mt-2">
                             <p class="text-center mb-0 ukpaystubtext">How do you get paid<span style="color:red;">*</span> </p>
@@ -203,14 +202,14 @@
                         </div>
                     </div>
                     <div class="row ">
-                        <div class="col-md-2 ">
-                            <input type="text" id="fname1" name="fname" placeholder="Regular" class="w-100 p-2 mt-2 " style="font-size:14px;">
+                        <div class="col-md-2 w-100">
+                            <input class="w-100 p-2 mt-2 text-center" type="text" name="earning[]" value="Regular" id="earning_0" data-id="0">
                         </div>
                         <div class="col-md-2">
-                            <input type="text" id="fname" name="fname" placeholder="25.00" class="w-100 p-2 mt-2" style="font-size:14px;">
+                            <input type="text" name="rate[]" class="w-100 p-2 mt-2 text-center calculation rate" value="" id="rate_0" data-id="0">
                         </div>
                         <div class="col-md-2 mt-">
-                            <input type="text" id="fname" name="fname" placeholder="50" class="w-100 p-2 mt-2 r" style="font-size:14px;">
+                            <input type="text" name="hours[]" class="w-100 p-2 mt-2 text-center hours calculation" value="" id="hours_0" data-id="0">
                         </div>
                     </div>
                     <div class="row mb-3">
