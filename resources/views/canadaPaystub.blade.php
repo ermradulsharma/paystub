@@ -79,9 +79,180 @@
         </div>
     </div>
 
+    <div class="container" style="max-width: 1450px;">
+            <div class="row mb-3">
+                <div class="col-md-12">
+                    <div class=" box-usa">
+                        <h5>Company Info</h5>
+                        <div class="row mb-3 ">
+                            <div class="col-md-6 mt-1">
+                                <div>
+                                    <label for="cname" class="lable">EMPLOYER (COMPANY) NAME <span class="redColor">*</span> </label>
+                                    <input type="text" id="cname" name="cname" placeholder="Your Employer & Company Name" class="w-100 p-2 text-center textInputFontSize">
+                                </div>
+                            </div>
 
+                            <!-- <div class="col-md-6 mt-1">
+                                <div>
+                                    <label for="tel" class="lable">EMPLOYER TELEPHONE NUMBER <span class="redColor">*</span> </label>
+                                    <input type="tel" id="tel" name="tel" placeholder="xxx-xxx-xxxx" class="w-100 p-2 text-center textInputFontSize" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+                                </div>
+                            </div> -->
 
+                        </div>
+                        <div id="map" hidden></div>
+                        <div class="row mb-3">
+                            <div class="col-md-12">
+                                <div>
+                                    <label for="address_1" class="lable">STREET ADDRESS 1 <span class="redColor">*</span> </label>
+                                    <input type="text" id="address_1" name="address_1" placeholder="Your Employer Address" class="w-100 p-2  textInputFontSize">
+                                </div>
 
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-12">
+                                <div>
+                                    <label for="address_2" class="lable">STREET ADDRESS 2 <span class="redColor">*</span> </label>
+                                    <input type="text" id="address_2" name="address_2" placeholder="Suite 101 or Apt 101 (optional)" class="w-100 p-2  textInputFontSize">
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-4">
+                                <div>
+                                    <label for="city" class="lable">City <span class="redColor">*</span> </label>
+                                    <input type="text" id="city" name="city" placeholder="Your Employer City" class="w-100 p-2  textInputFontSize">
+                                </div>
+
+                            </div>
+                            <div class="col-md-4">
+                                <div>
+                                    <label for="state" class="lable">Province <span class="redColor">*</span> </label>
+                                    <div class="dropdown ">
+                                        <select name="state" id="state" class="state dropdown11">
+                                            <option value=""> --- Select --- </option>
+                                            @foreach ($stateTaxes as $stateTax)
+                                            <option value="{{ $stateTax->state }}">{{ $stateTax->state }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div>
+                                    <label for="zip_code" class="lable">Postal Code <span class="redColor">*</span>
+                                    </label>
+                                    <input type="text" id="zip_code" name="zip_code" placeholder=" Zip Code" class="w-100 p-2  textInputFontSize">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" style="max-width:1450px;">
+            <h5>Employee Basic Info</h5>
+            <div class="row mb-3">
+                <div class="col-md-12">
+                    <div class=" box-usa">
+                        <div class="row mb-3">
+                            <div class="col-md-4 mt-4">
+                                <div>
+                                    <label for="emp_name" class="lable">EMPLOYEE ID <span class="redColor">*</span> </label>
+                                    <input type="text" id="emp_name" name="emp_name" placeholder="Your Full  Name" class="w-100 p-2  textInputFontSize">
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-4 mt-4">
+                                <div>
+                                    <label for="emp_id" class="lable">PAY START <span class="redColor">*</span>
+                                    </label>
+                                    <input type="text" id="emp_id" name="emp_id" placeholder="Employer ID" class="w-100 p-2 r textInputFontSize">
+                                </div>
+
+                            </div>
+                            <div class="col-md-4 mt-4">
+                                <div>
+                                    <label for="emp_ssn" class="lable">PAY DATE <span class="redColor">*</span> </label>
+                                    <input type="text" id="emp_ssn" name="emp_ssn" placeholder="1224" class="w-100 p-2  textInputFontSize">
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- <div class="row mb-3">
+                            <div class="col-md-12">
+                                <div>
+                                    <label for="emp_street_1" class="lable">STREET 1 <span class="redColor">*</span></label>
+                                    <input type="text" id="emp_street_1" name="emp_street_1" placeholder="Your Address" class="w-100 p-2  textInputFontSize">
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-12">
+                                <div>
+                                    <label for="emp_street_2" class="lable">STREET 2 <span class="redColor">*</span>
+                                    </label>
+                                    <input type="text" id="emp_street_2" name="emp_street_2" placeholder="Suite 101 or Apt 101(optional)" class="w-100 p-2  textInputFontSize">
+                                </div>
+
+                            </div>
+                        </div> -->
+
+                        <div class="row mb-3">
+                            <div class="col-md-4">
+                                <div>
+                                    <label for="emp_city" class="lable">CHECK NUMBER <span class="redColor">*</span>
+                                    </label>
+                                    <input type="text" id="emp_city" name="emp_city" placeholder="Your City" class="w-100 p-2  textInputFontSize">
+                                </div>
+
+                            </div>
+                            <div class="col-md-4">
+                            <div>
+                                    <label for="currency" class="lable" class="redColor">SELECT YOUR PREFERRED
+                                        CURRENCY <span class="redColor">*</span> </label>
+                                    <select name="currency" id="currency" class=" dropdown11">
+                                        <option value=""> --- Select currency --- </option>
+                                        <option value="$">Dollar $</option>
+                                        <option value="€">Euro €</option>
+                                        <option value="£">Pound £</option>
+                                        <option value="¥">Yen ¥</option>
+                                    </select>
+                                </div>  
+
+                            </div>
+                            <div class="col-md-4">
+                                <div>
+                                    <label for="emp_zip_code" class="lable">EMPLOYER NAME <span class="redColor">*</span>
+                                    </label>
+                                    <input type="text" id="emp_zip_code" name="emp_zip_code" placeholder=" 1234" class="w-100 p-2  textInputFontSize">
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-12">
+                                <div>
+                                    <label for="emp_street_2" class="lable">EMPLOYER ADDRESS <span class="redColor">*</span>
+                                    </label>
+                                    <input type="text" id="emp_street_2" name="emp_street_2" placeholder="Suite 101 or Apt 101(optional)" class="w-100 p-2  textInputFontSize">
+                                </div>
+
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
 
