@@ -242,7 +242,7 @@
                         </tbody>
                         <tr>
                             <td style="text-align:right; font-size:14px; border-bottom:2px solid black; border-top:2px solid black;"
-                                colspan="3"><b>Net
+                                colspan="3"><b>Gross
                                     Pay</b></td>
 
                             <td
@@ -347,7 +347,7 @@
             </section>
         </section>
         <section class="bg-img">
-            <div class="container" style=" margin-top:70px; width:95%; padding:0px 20px;">
+            <div class="container" style=" margin-top:10px; width:100%; padding:0px 20px;">
                 <div class="row" style="display: flex;justify-content: space-between;padding: 0px 14px;">
                     <div style="width: 50%;float:left;">
                         <h6 style="font-size: 17px; margin-bottom: 10px;">{{ $requestData['cname'] }}</h6>
@@ -366,7 +366,7 @@
                         </p>
                     </div>
                 </div>
-                <table style="width: 90%; margin: 50px auto 0px;">
+                <table style="width: 100%; margin: 50px auto 0px;">
                     <tr style="">
                         <td colspan="4"></td>
                         <td></td>
