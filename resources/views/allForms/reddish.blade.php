@@ -39,10 +39,11 @@
         }
 
         .section_2 {
-            background: #587193;
+            background: #bd2e40;
             color: white;
-            padding: 20px 0px;
+            padding: 15px 15px 30px;
             overflow: hidden;
+            margin-top: 10px;
         }
 
         table {
@@ -95,6 +96,7 @@
 <body>
     <section class="invoiceborder">
 
+
         <table>
             <tr>
                 <th style="padding-left: 31px;"> {{ $requestData['cname'] }}</th>
@@ -104,12 +106,9 @@
             <tr>
                 <td class="address" style="padding-left: 31px;">
                     {{ $requestData['address_1'] }} <br>
-                    {{ $requestData['city'] }} {{ $requestData['state'] }}, {{ $requestData['zip_code'] }}
-                    USA
-
+                    {{ $requestData['city'] }} {{ $requestData['state'] }}, {{ $requestData['zip_code'] }}, USA
                 </td>
                 <td style="font-weight:600; font-size:18px;" class="earning">Earning statement</td>
-
             </tr>
 
 
@@ -127,15 +126,12 @@
         <section class="section_2">
             <table>
                 <tr>
-                    <th>SSN: XXX-XX-{{ $requestData['emp_ssn'] }}</th>
-                    <th class="earning">{{ $requestData['emp_name'] }}</th>
+                    <th style="width: 40%;">SSN: XXX-XX-{{ $requestData['emp_ssn'] }}</th>
+                    <th class="earning" style="width: 60%;">{{ $requestData['emp_name'] }}</th>
                 </tr>
                 <tr>
-                    <td style=" padding: 9px;">
-                        Stub no: 1112
-                    </td>
-                    <td class="earning">
-                        Emp Id :{{ $requestData['emp_id'] }} <br>
+                    <td style=" padding: 9px;"> Stub no: 1112 </td>
+                    <td class="earning"> Emp Id :{{ $requestData['emp_id'] }} <br>
                         {{ $requestData['emp_street_1'] }},{{ $requestData['emp_street_2'] }}
                         {{ $requestData['emp_city'] }} {{ $requestData['emp_state'] }}
                         {{ $requestData['emp_zip_code'] }}
@@ -170,7 +166,7 @@
                     <td></td>
                 </tr>
 
-                <tfoot class="tfooter" style="background:#587193; color:white">
+                <tfoot class="tfooter" style="background:#bd2e40; color:white">
                     <tr>
                         <th colspan="3"></th>
                         <th style="font-weight: 100;">{{ $requestData['currency'] }}
@@ -213,7 +209,7 @@
                         </tr>
                     @endforeach
                 @endif
-                <tfoot class="tfooter " style="background:#587193; color:white">
+                <tfoot class="tfooter " style="background:#bd2e40; color:white">
                     <tr>
                         <th colspan="2">Net Pay</th>
                         <th style="font-weight: 100;">{{ $requestData['currency'] }}
