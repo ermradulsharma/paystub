@@ -382,10 +382,10 @@
 
                                 <div class="col-lg-4 mt-2 ml-2 p-0">
                                     <div class="d-flex">
-                                    <div class="col-lg-2">
+                                    <div class="col-lg-1">
                                     <img src="http://127.0.0.1:8000/images/lock.png" class="earnbtn2">
                                     </div>
-                                   <div class="col-lg-8">
+                                   <div class="col-lg-11">
                                    <input class="earnbtn text-center taxes" name="taxes[]" data-id="0"
                                         data-value="1.46" value="FICA - Medicare">
                                    </div>
