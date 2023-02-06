@@ -3,10 +3,8 @@
 
 <!-- Start #main -->
 <main id="main" class="main">
-
   <div class="pageTitle">
     <h1>Dashboard</h1>
-
   </div><!-- End Page Title -->
 
   <section class="section dashboard">

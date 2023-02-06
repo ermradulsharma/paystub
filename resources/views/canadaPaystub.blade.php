@@ -5,7 +5,7 @@
     <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="btn btn-secondary close" data-bs-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -15,7 +15,24 @@
         </div>
     </div>
 </div>
+</div>
 <!-- Modal End -->
+<!-- Modal Start -->
+<div class="modal fade" id="tempViewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn btn-secondary close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <embed src="" type="" id="tempView" allowtransparency="false" style="background-color : transparent;" frameborder="0" width="100%" height="800">
+                {{-- <iframe src="" id="tempView" allowtransparency="false" style="background-color : transparent;" frameborder="0" width="100%" height="800"></iframe> --}}
+            </div>
+        </div>
+    </div>
+</div>
 <div>
     <div class="container" style="max-width:1450px;">
         <h5>Choose Template</h5>
@@ -534,17 +551,67 @@
     </div>
 
 </div>
-
-
+@endsection
+@section('script')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" crossorigin="anonymous"></script>
+<script src="{{ asset('user') }}/js/calculations.js"></script>
 <script>
-$('.basicTem').click(function() {
-    var imageattr = $('option:selected', '.bt_id').attr('data-src');
-    $('.setImage').attr('src', imageattr);
-});
+    $(document).ready(function() {
+        $('.advanceTemplate').change(function() {
+            $('option:selected', '.basicTemplate').prop("selected", false);
+        });
+        $('.basicTemplate').change(function() {
+            $('option:selected', '.advanceTemplate').prop("selected", false);
+        });
 
-$('.advanceTem').click(function() {
-    var imageattr = $('option:selected', '.at_id').attr('data-src');
-    $('.setImage').attr('src', imageattr);
-});
+        $('#tel').keyup(function() {
+            var mobileNumber = this.value.replace(/\D/g, ''); // here you get what the end-user typed
+            mobileNumber = (mobileNumber.replace(/[^\d]/g, ''));
+            this.value = ("" + mobileNumber.substring(0, 3) + " " + mobileNumber.substring(3, 6) + " " +
+                mobileNumber.substring(6, 10));
+        });
+    });
 </script>
+<script>
+    $(document).ready(function() {
+        $('.basicTem').click(function() {
+            var imageattr = $('option:selected', '.bt_id').attr('data-src');
+            console.log('imageattr', imageattr);
+            $('.setImage').attr('src', imageattr);
+            if (imageattr != null && imageattr != undefined) {
+                $('#openEye').modal('show');
+            }
+        });
+
+        $('.advanceTem').click(function() {
+            var imageattr = $('option:selected', '.at_id').attr('data-src');
+            $('.setImage').attr('src', imageattr);
+            if (imageattr != null && imageattr != undefined) {
+                $('#openEye').modal('show');
+            }
+        });
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        $('.basicTem').click(function() {
+            var imageattr = $('option:selected', '.bt_id').attr('data-src');
+            console.log('imageattr', imageattr);
+            $('.setImage').attr('src', imageattr);
+            if (imageattr != null && imageattr != undefined) {
+                $('#openEye').modal('show');
+            }
+        });
+
+        $('.advanceTem').click(function() {
+            var imageattr = $('option:selected', '.at_id').attr('data-src');
+            $('.setImage').attr('src', imageattr);
+            if (imageattr != null && imageattr != undefined) {
+                $('#openEye').modal('show');
+            }
+        });
+    });
+</script>
+
 @endsection
