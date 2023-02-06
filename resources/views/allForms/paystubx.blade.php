@@ -105,8 +105,7 @@
         background: url('http://44.202.105.74/images/bg-lines1.png') !important;
         background-repeat: no-repeat;
         background-size: contain;
-        width:100%;
-        max-width: 700px;
+        width:300px;
         height: 400px;
         content: "";
         position: absolute;
@@ -221,17 +220,17 @@
                         @foreach ($requestData['earning'] as $key => $earn)
                             <tr>
                                 <td>{{ $earn }}</td>
-                                <td>{{ $requestData['currency'] }} {{ $requestData['rate'][$key] }}</td>
+                                <td> {{ $requestData['rate'][$key] }}</td>
                                 <td>{{ $requestData['hours'][$key] }}</td>
-                                <td>{{ $requestData['currency'] }} {{ $requestData['period'][$key] }}</td>
-                                <td>{{ $requestData['currency'] }} {{ $requestData['ytd_total'][$key] }}</td>
+                                <td> {{ $requestData['period'][$key] }}</td>
+                                <td> {{ $requestData['ytd_total'][$key] }}</td>
                             </tr>
                         @endforeach
                         </br>
                         <tr>
                             <th colspan="3" style="text-align:right; padding-right:25px;">GROSS PAY</th>
-                            <td><b>{{ $requestData['currency'] }} {{ $requestData['deduction_tax'] }}</b></td>
-                            <td><b>{{ $requestData['currency'] }} {{ $requestData['ytd_deduction_tax'] }}</b></td>
+                            <td><b> {{ $requestData['deduction_tax'] }}</b></td>
+                            <td><b> {{ $requestData['ytd_deduction_tax'] }}</b></td>
                         </tr>
 
                     </table>
@@ -261,8 +260,8 @@
                 <tr>
                     <td></td>
                     <td style="text-align: left;">{{ $taxes }}</td>
-                    <td>{{ $requestData['currency'] }} {{ $requestData['taxes_rate'][$key] }}</td>
-                    <td>{{ $requestData['currency'] }} {{ $requestData['taxes_ytd'][$key] }}</td>
+                    <td> {{ $requestData['taxes_rate'][$key] }}</td>
+                    <td> {{ $requestData['taxes_ytd'][$key] }}</td>
                 </tr>
             @endforeach
 
@@ -270,24 +269,24 @@
                 <tr>
                     <td></td>
                     <td style="text-align: left;">{{ $tax_deduction }}</td>
-                    <td>{{ $requestData['currency'] }} {{ $requestData['period_tax_deduction'][$key] }}</td>
-                    <td>{{ $requestData['currency'] }} {{ $requestData['ytd_tax_deduction'][$key] }}</td>
+                    <td> {{ $requestData['period_tax_deduction'][$key] }}</td>
+                    <td> {{ $requestData['ytd_tax_deduction'][$key] }}</td>
                 </tr>
             @endforeach
             </br></br>
             <tr>
                 <td></td>
                 <td>Total Deduction</td>
-                <td><b>{{ $requestData['currency'] }} {{ $requestData['period_gross_total'] }}</b></td>
-                <td><b>{{ $requestData['currency'] }} {{ $requestData['ytd_gross_total'] }}</b></td>
+                <td><b> {{ $requestData['period_gross_total'] }}</b></td>
+                <td><b> {{ $requestData['ytd_gross_total'] }}</b></td>
             </tr>
             </br>
             <tr>
                 <td></td>
                 <th>NET PAY</th>
-                <td><b>{{ $requestData['currency'] }}
+                <td><b>
                         {{ $requestData['total_net_pay'] }}</b></td>
-                <td><b>{{ $requestData['currency'] }}
+                <td><b>
                         {{ $requestData['total_ytd_net_pay'] }}</b></td>
             </tr>
 
@@ -309,10 +308,13 @@
                     </div>
                     <div style="width: 50%;float:right;padding-bottom: 10px;">
                         <h6 style="font-size: 17px; ">
-                            <span>{{ $requestData['advice_number'] }}</span>
+                            <p style="text-align:right;margin-right:80px;">{{ $requestData['advice_number'] }}</p>
+                            {{-- <p style="text-align:right;margin-right:60px;">
+                                {{ date('m/d/y', strtotime($requestData['pay_date'])) }}</p> --}}
                         </h6>
-                        <br>
-                        <br>
+
+                        </br>
+                        </br>
                         <P style="font-size: 10px;margin: 0;">
                             <span style="font-weight:800;">Check Nuumber:</span>
                             {{ $requestData['account_number_last_4'] }}
@@ -329,16 +331,21 @@
                     <td colspan="4"></td>
                     <td style=""></td>
                     <td style="text-align: center;"></td>
+                    <td style="text-align: center;"></td>
                     <td style="text-align: center;"> </td>
                     <td style="text-align: center;"></td>
+
                 </tr>
 
                 <tr>
                     <td colspan="4"></td>
+                    <td style="padding-left:30px;"></td>
                     <td style="padding-left:30px;">{{ $requestData['emp_name'] }}</td>
-                    <td style="text-align: left;">{{ $requestData['total_net_pay'] }}</td>
-                    <td style="text-align: left;">{{ $requestData['transit_aba_number'] }}</td>
                     <td style="text-align: left;">{{ $requestData['account_number_last_4'] }}</td>
+                    <td style="text-align: left;">{{ $requestData['transit_aba_number'] }}</td>
+                    <td style="text-align: left;">{{ $requestData['total_net_pay'] }}</td>
+
+                    </td>
                 </tr>
             </table>
         </section>
