@@ -70,9 +70,6 @@
     .shrapdana {
         max-width: 100%;
     }
-    .bg-img{
-        background-image: url('http://44.202.105.74/images/spacer.png') !important;
-    }
 
 </style>
 
@@ -120,15 +117,15 @@
                 <td style=" width:10%;font-size:14px;">Pay To The<br>
                     Order Of
                 </td>
-                    <td class="bg-img" style=" font-size:14px;text-align:left; width:70%; margin:0 auto;"><b>Ezra Pinkett</b></td>
-                    <td style="width:20%; text-align:right; margin-top:20px;font-size:12px;"><b>$
+                    <td style=" font-size:14px;text-align:left; width:100%; margin:0 auto;"><b>Ezra Pinkett</b></td>
+                    <td style="width:25%; text-align:right; margin-top:20px;font-size:12px;"><b>$
                         **7.145.63</b></td>
             </tr>
-            <tr style="width:900px; border-bottom:2px solid black;">
+            <tr style=" ">
                 <td style="width:100%; text-align:center; margin-top:50px;font-size:14px;">Seven Thousand One Hundred Forty-Five and 63/100</td>
 
             </tr>
-
+            <tr>
         </table>
     </div>
 
