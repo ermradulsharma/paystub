@@ -114,23 +114,31 @@
                 <div class=" box-usa">
 
                     <div class="row mb-3">
-                        <div class="col-md-4 mt-4">
+                        <div class="col-md-6 mt-4">
                             <label for="fname" class="lable">EMPLOYEE NAME
                                 <span style="color:red;">*</span></label><br>
                             <input type="text" id="fname" name="fname" placeholder="Your Full  Name" class="w-100 p-2 text-center" style="font-size:14px;"><br>
                         </div>
 
-                        <div class="col-md-4 mt-4">
-                            <label for="fname" class="lable">EMPLOYER ADDRESS 1
-                                <span style="color:red;">*</span></label><br>
-                            <input type="text" id="fname" name="fname" placeholder="5 Throgmorton St,London" class="w-100 p-2 text-center" style="font-size:14px;"><br>
-                        </div>
-                        <div class="col-md-4 mt-4">
+                       
+                        <div class="col-md-6 mt-4">
                             <label for="fname" class="lable">POSTCODE
                                 <span style="color:red;">*</span></label><br>
                             <input type="text" id="fname" name="fname" placeholder="1224" class="w-100 p-2 text-center" style="font-size:14px;"><br>
                         </div>
 
+                    </div>
+                    <div class="row mb-3">
+                    <div class="col-md-12 mt-4">
+                            <label for="fname" class="lable">EMPLOYER ADDRESS 1
+                                <span style="color:red;">*</span></label><br>
+                            <input type="text" id="fname" name="fname" placeholder="5 Throgmorton St,London" class="w-100 p-2 text-center" style="font-size:14px;"><br>
+                        </div>
+                        <div class="col-md-12 mt-4">
+                            <label for="fname" class="lable">STREET ADDRESS 2
+                                <span style="color:red;">*</span></label><br>
+                            <input type="text" id="fname" name="fname" placeholder="5 Throgmorton St,London" class="w-100 p-2 text-center" style="font-size:14px;"><br>
+                        </div>
                     </div>
                     <h5 class="mt-5 mb-2">EARNINGS STATEMENT</h5>
                     <div class="row mb-3">

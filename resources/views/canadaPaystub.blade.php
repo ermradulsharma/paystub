@@ -39,7 +39,8 @@
                                         @endif
                                         @endforeach
                                     </select>
-                                    <i class="fa fa-eye-slash basicTem flash-icon" data-target="#openEye" data-toggle="modal"></i>
+                                    <i class="fa fa-eye-slash basicTem flash-icon" data-target="#openEye"
+                                        data-toggle="modal"></i>
                                 </div>
                             </div>
                         </div>
@@ -63,7 +64,8 @@
                                         @endif
                                         @endforeach
                                     </select>
-                                    <i class="fa fa-eye-slash advanceTem flash-icon" data-target="#openEye" data-toggle="modal"></i>
+                                    <i class="fa fa-eye-slash advanceTem flash-icon" data-target="#openEye"
+                                        data-toggle="modal"></i>
                                 </div>
                             </div>
                             <div class=" mt-3 ">
@@ -80,113 +82,125 @@
     </div>
 
     <div class="container" style="max-width: 1450px;">
-            <div class="row mb-3">
-                <div class="col-md-12">
-                    <div class=" box-usa">
-                        <h5>Company Info</h5>
-                        <div class="row mb-3 ">
-                            <div class="col-md-6 mt-1">
-                                <div>
-                                    <label for="cname" class="lable">EMPLOYER (COMPANY) NAME <span class="redColor">*</span> </label>
-                                    <input type="text" id="cname" name="cname" placeholder="Your Employer & Company Name" class="w-100 p-2 text-center textInputFontSize">
-                                </div>
-                            </div>
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <h5>Company Info</h5>
+                <div class=" box-usa">
 
-                            <!-- <div class="col-md-6 mt-1">
+                    <div class="row mb-3 ">
+                        <div class="col-md-6 mt-1">
+                            <div>
+                                <label for="cname" class="lable">EMPLOYER (COMPANY) NAME <span class="redColor">*</span>
+                                </label>
+                                <input type="text" id="cname" name="cname" placeholder="Your Employer & Company Name"
+                                    class="w-100 p-2 text-center textInputFontSize">
+                            </div>
+                        </div>
+
+                        <!-- <div class="col-md-6 mt-1">
                                 <div>
                                     <label for="tel" class="lable">EMPLOYER TELEPHONE NUMBER <span class="redColor">*</span> </label>
                                     <input type="tel" id="tel" name="tel" placeholder="xxx-xxx-xxxx" class="w-100 p-2 text-center textInputFontSize" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                 </div>
                             </div> -->
 
+                    </div>
+                    <div id="map" hidden></div>
+                    <div class="row mb-3">
+                        <div class="col-md-12">
+                            <div>
+                                <label for="address_1" class="lable">STREET ADDRESS 1 <span class="redColor">*</span>
+                                </label>
+                                <input type="text" id="address_1" name="address_1" placeholder="Your Employer Address"
+                                    class="w-100 p-2  textInputFontSize">
+                            </div>
+
                         </div>
-                        <div id="map" hidden></div>
-                        <div class="row mb-3">
-                            <div class="col-md-12">
-                                <div>
-                                    <label for="address_1" class="lable">STREET ADDRESS 1 <span class="redColor">*</span> </label>
-                                    <input type="text" id="address_1" name="address_1" placeholder="Your Employer Address" class="w-100 p-2  textInputFontSize">
-                                </div>
+                    </div>
 
+                    <div class="row mb-3">
+                        <div class="col-md-12">
+                            <div>
+                                <label for="address_2" class="lable">STREET ADDRESS 2 <span class="redColor">*</span>
+                                </label>
+                                <input type="text" id="address_2" name="address_2"
+                                    placeholder="Suite 101 or Apt 101 (optional)" class="w-100 p-2  textInputFontSize">
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-4">
+                            <div>
+                                <label for="city" class="lable">City <span class="redColor">*</span> </label>
+                                <input type="text" id="city" name="city" placeholder="Your Employer City"
+                                    class="w-100 p-2  textInputFontSize">
+                            </div>
+
+                        </div>
+                        <div class="col-md-4">
+                            <div>
+                                <label for="state" class="lable">Province <span class="redColor">*</span> </label>
+                                <div class="dropdown ">
+                                    <select name="state" id="state" class="state dropdown11">
+                                        <option value=""> --- Select --- </option>
+                                        @foreach ($stateTaxes as $stateTax)
+                                        <option value="{{ $stateTax->state }}">{{ $stateTax->state }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
                             </div>
                         </div>
-
-                        <div class="row mb-3">
-                            <div class="col-md-12">
-                                <div>
-                                    <label for="address_2" class="lable">STREET ADDRESS 2 <span class="redColor">*</span> </label>
-                                    <input type="text" id="address_2" name="address_2" placeholder="Suite 101 or Apt 101 (optional)" class="w-100 p-2  textInputFontSize">
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <div class="col-md-4">
-                                <div>
-                                    <label for="city" class="lable">City <span class="redColor">*</span> </label>
-                                    <input type="text" id="city" name="city" placeholder="Your Employer City" class="w-100 p-2  textInputFontSize">
-                                </div>
-
-                            </div>
-                            <div class="col-md-4">
-                                <div>
-                                    <label for="state" class="lable">Province <span class="redColor">*</span> </label>
-                                    <div class="dropdown ">
-                                        <select name="state" id="state" class="state dropdown11">
-                                            <option value=""> --- Select --- </option>
-                                            @foreach ($stateTaxes as $stateTax)
-                                            <option value="{{ $stateTax->state }}">{{ $stateTax->state }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div>
-                                    <label for="zip_code" class="lable">Postal Code <span class="redColor">*</span>
-                                    </label>
-                                    <input type="text" id="zip_code" name="zip_code" placeholder=" Zip Code" class="w-100 p-2  textInputFontSize">
-                                </div>
+                        <div class="col-md-4">
+                            <div>
+                                <label for="zip_code" class="lable">Postal Code <span class="redColor">*</span>
+                                </label>
+                                <input type="text" id="zip_code" name="zip_code" placeholder=" Zip Code"
+                                    class="w-100 p-2  textInputFontSize">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="container" style="max-width:1450px;">
-            <h5>Employee Basic Info</h5>
-            <div class="row mb-3">
-                <div class="col-md-12">
-                    <div class=" box-usa">
-                        <div class="row mb-3">
-                            <div class="col-md-4 mt-4">
-                                <div>
-                                    <label for="emp_name" class="lable">EMPLOYEE ID <span class="redColor">*</span> </label>
-                                    <input type="text" id="emp_name" name="emp_name" placeholder="Your Full  Name" class="w-100 p-2  textInputFontSize">
-                                </div>
-
+    <div class="container" style="max-width:1450px;">
+        <h5>Employee Basic Info</h5>
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <div class=" box-usa">
+                    <div class="row mb-3">
+                        <div class="col-md-4 mt-4">
+                            <div>
+                                <label for="emp_name" class="lable">EMPLOYEE ID <span class="redColor">*</span> </label>
+                                <input type="text" id="emp_name" name="emp_name" placeholder="Your Full  Name"
+                                    class="w-100 p-2  textInputFontSize">
                             </div>
 
-                            <div class="col-md-4 mt-4">
-                                <div>
-                                    <label for="emp_id" class="lable">PAY START <span class="redColor">*</span>
-                                    </label>
-                                    <input type="text" id="emp_id" name="emp_id" placeholder="Employer ID" class="w-100 p-2 r textInputFontSize">
-                                </div>
-
-                            </div>
-                            <div class="col-md-4 mt-4">
-                                <div>
-                                    <label for="emp_ssn" class="lable">PAY DATE <span class="redColor">*</span> </label>
-                                    <input type="text" id="emp_ssn" name="emp_ssn" placeholder="1224" class="w-100 p-2  textInputFontSize">
-                                </div>
-
-                            </div>
                         </div>
 
-                        <!-- <div class="row mb-3">
+                        <div class="col-md-4 mt-4">
+                            <div>
+                                <label for="emp_id" class="lable">PAY START <span class="redColor">*</span>
+                                </label>
+                                <input type="text" id="emp_id" name="emp_id" placeholder="Employer ID"
+                                    class="w-100 p-2 r textInputFontSize">
+                            </div>
+
+                        </div>
+                        <div class="col-md-4 mt-4">
+                            <div>
+                                <label for="emp_ssn" class="lable">PAY DATE <span class="redColor">*</span> </label>
+                                <input type="text" id="emp_ssn" name="emp_ssn" placeholder="1224"
+                                    class="w-100 p-2  textInputFontSize">
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- <div class="row mb-3">
                             <div class="col-md-12">
                                 <div>
                                     <label for="emp_street_1" class="lable">STREET 1 <span class="redColor">*</span></label>
@@ -207,52 +221,55 @@
                             </div>
                         </div> -->
 
-                        <div class="row mb-3">
-                            <div class="col-md-4">
-                                <div>
-                                    <label for="emp_city" class="lable">CHECK NUMBER <span class="redColor">*</span>
-                                    </label>
-                                    <input type="text" id="emp_city" name="emp_city" placeholder="Your City" class="w-100 p-2  textInputFontSize">
-                                </div>
-
-                            </div>
-                            <div class="col-md-4">
+                    <div class="row mb-3">
+                        <div class="col-md-4">
                             <div>
-                                    <label for="currency" class="lable" class="redColor">SELECT YOUR PREFERRED
-                                        CURRENCY <span class="redColor">*</span> </label>
-                                    <select name="currency" id="currency" class=" dropdown11">
-                                        <option value=""> --- Select currency --- </option>
-                                        <option value="$">Dollar $</option>
-                                        <option value="€">Euro €</option>
-                                        <option value="£">Pound £</option>
-                                        <option value="¥">Yen ¥</option>
-                                    </select>
-                                </div>  
-
+                                <label for="emp_city" class="lable">CHECK NUMBER <span class="redColor">*</span>
+                                </label>
+                                <input type="text" id="emp_city" name="emp_city" placeholder="Your City"
+                                    class="w-100 p-2  textInputFontSize">
                             </div>
-                            <div class="col-md-4">
-                                <div>
-                                    <label for="emp_zip_code" class="lable">EMPLOYER NAME <span class="redColor">*</span>
-                                    </label>
-                                    <input type="text" id="emp_zip_code" name="emp_zip_code" placeholder=" 1234" class="w-100 p-2  textInputFontSize">
-                                </div>
 
-                            </div>
                         </div>
-                        <div class="row mb-3">
-                            <div class="col-md-12">
-                                <div>
-                                    <label for="emp_street_2" class="lable">EMPLOYER ADDRESS <span class="redColor">*</span>
-                                    </label>
-                                    <input type="text" id="emp_street_2" name="emp_street_2" placeholder="Suite 101 or Apt 101(optional)" class="w-100 p-2  textInputFontSize">
-                                </div>
-
+                        <div class="col-md-4">
+                            <div>
+                                <label for="currency" class="lable" class="redColor">SELECT YOUR PREFERRED
+                                    CURRENCY <span class="redColor">*</span> </label>
+                                <select name="currency" id="currency" class=" dropdown11">
+                                    <option value=""> --- Select currency --- </option>
+                                    <option value="$">Dollar $</option>
+                                    <option value="€">Euro €</option>
+                                    <option value="£">Pound £</option>
+                                    <option value="¥">Yen ¥</option>
+                                </select>
                             </div>
-                        </div> 
+
+                        </div>
+                        <div class="col-md-4">
+                            <div>
+                                <label for="emp_zip_code" class="lable">EMPLOYER NAME <span class="redColor">*</span>
+                                </label>
+                                <input type="text" id="emp_zip_code" name="emp_zip_code" placeholder=" 1234"
+                                    class="w-100 p-2  textInputFontSize">
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-12">
+                            <div>
+                                <label for="emp_street_2" class="lable">EMPLOYER ADDRESS <span class="redColor">*</span>
+                                </label>
+                                <input type="text" id="emp_street_2" name="emp_street_2"
+                                    placeholder="Suite 101 or Apt 101(optional)" class="w-100 p-2  textInputFontSize">
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
 
 
@@ -337,7 +354,7 @@
                         <div class="col-lg-6 ">
                             <div class=" m-auto d-inline-flex">
 
-                                <div class="col-lg-2 mt-2 p-0">
+                                <div class="col-lg-2 mt-2 p-0 bg-danger">
                                     <input class="earnbtn text-center " type="text" value="Regular">
                                 </div>
                                 <div class="col-lg-2 mt-2 ">
@@ -353,6 +370,10 @@
                                 </div>
 
                             </div>
+                            <div class="col-lg-6 mt-3 p-0">
+                                <button class="earnbtn1"><i class="fa fa-plus-circle pr-2" style="font-size: 24px;color: #0ec23b;padding-top: 0px;"></i>Add Earning</button>
+                            </div>
+
                         </div>
 
                         <div class="col-lg-6 p-0 ">
@@ -360,8 +381,17 @@
                             <div class="d-inline-flex m-auto ">
 
                                 <div class="col-lg-4 mt-2 ml-2 p-0">
-                                    <i class="fa fa-lock earnbtn2"></i>
-                                    <input class="earnbtn text-center " type="text" value="{{$item->title}}">
+                                    <div class="d-flex">
+                                    <div class="col-lg-2">
+                                    <img src="http://127.0.0.1:8000/images/lock.png" class="earnbtn2">
+                                    </div>
+                                   <div class="col-lg-8">
+                                   <input class="earnbtn text-center taxes" name="taxes[]" data-id="0"
+                                        data-value="1.46" value="FICA - Medicare">
+                                   </div>
+                                    </div>
+                                    
+                                   
                                 </div>
 
                                 <div class="col-lg-4 mt-2 p-0 ml-3">
@@ -376,6 +406,7 @@
 
 
                             </div>
+
                             @endforeach
                         </div>
                     </div>
@@ -384,12 +415,9 @@
 
                     <div class="row mb-3 align-item-start">
 
-                        <div class="col-lg-3 mt-1">
+                        
+                        <div class="col-lg-3"></div>
 
-                            <button class="earnbtn1"><i class="fa fa-plus-circle pr-2" style="font-size: 24px;
-                           color: #0ec23b;padding-top: 0px;"></i>Add Earning</button>
-
-                        </div>
                         <div class="col-lg-3"></div>
 
                         <div class=" col-lg-3 mt-1 ">
@@ -490,10 +518,12 @@
 
                     <div class="text-left mt-1 ">
                         <button class="previewbtn">
-                            Preview Your Paystub <i class="fa fa-eye" style="font-size: 30px; margin-left: 7px;"></i></button>
+                            Preview Your Paystub <i class="fa fa-eye"
+                                style="font-size: 30px; margin-left: 7px;"></i></button>
                     </div>
                     <div class="text-right mt-1 ">
-                        <button class="emailbtn " data-toggle="modal" data-target="#myModal"> <i class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL
+                        <button class="emailbtn " data-toggle="modal" data-target="#myModal"> <i
+                                class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL
                             PAYSTUB <i class="fa fa-download ml-4" style="font-size:24px"></i></button>
                     </div>
                 </div>
@@ -507,14 +537,14 @@
 
 
 <script>
-    $('.basicTem').click(function() {
-        var imageattr = $('option:selected', '.bt_id').attr('data-src');
-        $('.setImage').attr('src', imageattr);
-    });
+$('.basicTem').click(function() {
+    var imageattr = $('option:selected', '.bt_id').attr('data-src');
+    $('.setImage').attr('src', imageattr);
+});
 
-    $('.advanceTem').click(function() {
-        var imageattr = $('option:selected', '.at_id').attr('data-src');
-        $('.setImage').attr('src', imageattr);
-    });
+$('.advanceTem').click(function() {
+    var imageattr = $('option:selected', '.at_id').attr('data-src');
+    $('.setImage').attr('src', imageattr);
+});
 </script>
 @endsection
