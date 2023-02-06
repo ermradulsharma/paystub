@@ -76,15 +76,6 @@ class TemplateFormController extends Controller
 
 
 
-    public function BasicPaystubUsaPDF()
-    {
-        $requestData = [
-            'date' => date('m/d/Y')
-        ];
-
-        $pdf = PDF::loadView('allForms.paystubx_basic', $requestData);
-        return $pdf->download('paystubx_basic.pdf');
-    }
 
     public function AdvancePtGreenPaystubPDF()
     {
@@ -128,15 +119,7 @@ class TemplateFormController extends Controller
         return $pdf->setPaper('A4')->stream('paystubs-prior.pdf');
     }
 
-    public function AdvanceCheckUsaPDf()
-    {
-        $data = [
-            'date' => date('m/d/Y')
-        ];
-        // return view('allForms.paystubx');
-        $pdf = PDF::loadView('allForms.paystubx', $data);
-        return $pdf->setPaper('A4')->stream('paystubx.pdf');
-    }
+ 
     public function BasicPinBlueUkPDF()
     {
         $data = [
@@ -156,56 +139,7 @@ class TemplateFormController extends Controller
         return $options = PDF::getOptions();
         return PDF::loadView('allForms.htmlTemp')->stream('W2Paystubx.pdf');
     }
-    public function advanceCeruleanUsa()
-    {
-        $data = [
-            'date' => date('m/d/Y')
-        ];
-        //return view('allForms.paybill');
-        $pdf = PDF::loadView('allForms.paybill', $data);
-        return $pdf->stream('paybill.pdf');
-    }
-
-    public function advanceDistrictUsa()
-    {
-        $data = [
-            'date' => date('m/d/Y')
-        ];
-        //   return view('allForms.paystubx_district');
-        $pdf = PDF::loadView('allForms.paystubx_district', $data);
-        return $pdf->stream('W2Paystubx.pdf');
-    }
-
-
-    public function AdvanceBlueBoxUsaPDF()
-    {
-        $data = [
-            'date' => date('m/d/Y')
-        ];
-        return view('allForms.box_blue');
-        $pdf = PDF::loadView('allForms.box_blue', $data);
-        return $pdf->stream('blueboxTemp.pdf');
-    }
-
-    public function AdvanceglobleUsaPDF()
-    {
-        $data = [
-            'date' => date('m/d/Y')
-        ];
-
-        // return view('allForms.global_white');
-        $pdf = PDF::loadView('allForms.global_white', $data);
-        return $pdf->stream('GlobleTemp.pdf');
-    }
-    public function AdvanceModernUsaPDF()
-    {
-        $data = [
-            'date' => date('m/d/Y')
-        ];
-        // return view('allForms.modernusa');
-        $pdf = PDF::loadView('allForms.modernusa', $data);
-        return $pdf->stream('ModernTemp.pdf');
-    }
+    
     public function BasicPayStubBluePDF()
     {
         $data = [

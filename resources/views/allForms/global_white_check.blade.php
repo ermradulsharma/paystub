@@ -125,7 +125,8 @@
 
             <tr>
                 <td></td>
-                <td style="font-size:25px; font-weight:500;" class="table-data" rowspan="2"> {{ $requestData['cname'] }}
+                <td style="font-size:25px; font-weight:500;" class="table-data" rowspan="2">
+                    {{ $requestData['cname'] }}
                 </td>
                 <td style="font-size:25px; font-weight:500;">Earnings Statement</td>
             </tr>
@@ -314,7 +315,8 @@
                     <br>
                     <thead style="border-bottom: 2px solid #000;">
                         <th></th>
-                        <th class="td" colspan="3" style="border-bottom: 2px solid black; margin-bottom:30px;">OTHER
+                        <th class="td" colspan="3" style="border-bottom: 2px solid black; margin-bottom:30px;">
+                            OTHER
                         </th>
 
                     </thead>

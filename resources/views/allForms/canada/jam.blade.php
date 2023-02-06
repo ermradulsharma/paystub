@@ -59,7 +59,7 @@
         }
 
         #colourborder {
-            background-color: #264fab;
+            background-color: #bf587d;
         }
 
         #fica {
@@ -205,7 +205,7 @@
                     </table>
                 </div>
             </div>
-            <div class="row" style="background-color: #dce6f1; border:2px solid#464646; ">
+            <div class="row" style="background-color: #e7c6d1; border:2px solid#464646; ">
                 <div class="column1">
                     <table id="bottomtable" style="width:100%; background-color:white;">
                         <tr class="">
@@ -218,7 +218,8 @@
                             </td>
                             <td id="cols" class="head2">{{ number_format($requestData['ytd_deduction_tax'], 2) }}
                             </td>
-                            <td id="cols" class="head2">{{ number_format($requestData['total_ytd_net_pay'], 2) }}
+                            <td id="cols" class="head2">
+                                {{ number_format($requestData['total_ytd_net_pay'], 2) }}
                             </td>
                         </tr>
                     </table>

@@ -59,7 +59,7 @@
         }
 
         #colourborder {
-            background-color: #264fab;
+            background-color: #58a2bf;
         }
 
         #fica {
@@ -205,7 +205,7 @@
                     </table>
                 </div>
             </div>
-            <div class="row" style="background-color: #dce6f1; border:2px solid#464646; ">
+            <div class="row" style="background-color: #c5dee7; border:2px solid#464646; ">
                 <div class="column1">
                     <table id="bottomtable" style="width:100%; background-color:white;">
                         <tr class="">
