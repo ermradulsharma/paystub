@@ -59,7 +59,7 @@
         }
 
         #colourborder {
-            background-color: #264fab;
+            background-color: #58a2bf;
         }
 
         #fica {
@@ -126,8 +126,7 @@
                 <th class="padding" colspan="2" style="text-align: left; padding-left:20px; color:black;">
                     {{ $requestData['emp_name'] }} </th>
                 <td class="padding" colspan="6" style="text-align: center; border-right:2px solid #464646;">
-                    {{ $requestData['emp_street_1'] }},{{ $requestData['emp_street_2'] }}{{ $requestData['emp_city'] }}
-                    {{ $requestData['emp_state'] }}, {{ $requestData['emp_zip_code'] }} </td>
+                    {{ $requestData['emp_address'] }}</td>
             </thead>
             <thead id="colourborder">
                 <th class="padding" style="text-align:center;  text-align: left; padding-left:20px;" colspan="2">
@@ -142,8 +141,7 @@
                     {{ $requestData['emp_id'] }}</td>
                 <td class="padding"
                     style="border:2px solid  #464646; text-align:center; border-top:none; border-bottom:none;"
-                    colspan="3"> {{ date('m/d/Y', strtotime($requestData['pay_start'])) }} -
-                    {{ date('m/d/Y', strtotime($requestData['pay_end'])) }}</td>
+                    colspan="3"> {{ date('m/d/Y', strtotime($requestData['pay_start'])) }}</td>
                 <td class="padding"
                     style="border:2px solid  #464646; text-align:center;border-top:none; border-bottom:none;">
                     {{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</td>
@@ -153,7 +151,7 @@
             </tr>
         </table>
         <section>
-            <div class="row" style=" background-color: #dce6f1; border-left:2px solid#464646;">
+            <div class="row" style=" background-color:#c5dee7; border-left:2px solid#464646;">
                 <div class="column1">
                     <table class="colortable" style="width:100%;">
                         <thead id="colourborder">
@@ -205,7 +203,7 @@
                     </table>
                 </div>
             </div>
-            <div class="row" style="background-color: #dce6f1; border:2px solid#464646; ">
+            <div class="row" style=" border:2px solid#464646; ">
                 <div class="column1">
                     <table id="bottomtable" style="width:100%; background-color:white;">
                         <tr class="">
@@ -214,12 +212,14 @@
                             <th id="cols" class="head1">YTD NET PAY</th>
                         </tr>
                         <tr class=" ytd">
-                            <td id="cols" class="head2">{{ number_format($requestData['ytd_gross_total'], 2) }}
-                            </td>
-                            <td id="cols" class="head2">{{ number_format($requestData['ytd_deduction_tax'], 2) }}
+                            <td id="cols" class="head2">
+                                {{-- {{ number_format($requestData['ytd_gross_total'], 2) }} --}}
                             </td>
                             <td id="cols" class="head2">
-                                {{ number_format($requestData['total_ytd_net_pay'], 2) }}
+                                {{-- {{ number_format($requestData['ytd_deduction_tax'], 2) }} --}}
+                            </td>
+                            <td id="cols" class="head2">
+                                {{-- {{ number_format($requestData['total_ytd_net_pay'], 2) }} --}}
                             </td>
                         </tr>
                     </table>
@@ -233,11 +233,13 @@
                         </tr>
                         <tr class=" ytd">
                             <td id="cols" class="head2">
-                                {{ number_format($requestData['period_gross_total'], 2) }}</td>
-                            <td id="cols" class="head2">{{ number_format($requestData['deduction_tax'], 2) }}
+                                {{-- {{ number_format($requestData['period_gross_total'], 2) }} --}}
+                            </td>
+                            <td id="cols" class="head2">
+                                {{-- {{ number_format($requestData['deduction_tax'], 2) }} --}}
                             </td>
                             <td id="cols" class="head2" style="border-right: none !important;">
-                                {{ $requestData['currency'] }} {{ number_format($requestData['total_net_pay'], 2) }}
+                                {{-- {{ $requestData['currency'] }} {{ number_format($requestData['total_net_pay'], 2) }} --}}
                             </td>
                         </tr>
                     </table>
