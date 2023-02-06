@@ -75,20 +75,17 @@
 <body>
 
     <table style="width:100%;">
-        <tr style="">
-            <td style="font-size:25px; font-weight:800; padding-left:90px;">{{ $requestData['cname'] ?? '' }}</td>
-            <td style="font-size:18px;">No: {{ $requestData['emp_ssn'] ?? '' }}</td>
+        <tr style="width:100%;">
+        <td style="padding-left:90px;padding-top:0px; font-weight:800;"> {{ $requestData['state'] }}, {{ $requestData['zip_code'] }}<td>
+            <td style="font-size:14px;">No: {{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</td>
         </tr>
         <tr>
-            <td style="padding-left:90px; padding-top:0px; font-weight:800;"> {{ $requestData['address_1'] }}
-                {{ $requestData['city'] }}</td>
+            <td style="padding-left:90px; padding-top:0px; font-weight:800; "> {{ $requestData['address_1'] }} {{ $requestData['city'] }}</td>
             <td></td>
         </tr>
         <tr>
-            <td style="padding-left:90px;padding-top:0px; font-weight:800;"> {{ $requestData['state'] }},
-                {{ $requestData['zip_code'] }}
-            <td>
-            <td style="font-size:18px;">Date: {{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</td>
+            <td style="padding-left:90px;padding-top:0px; font-weight:800;"> {{ $requestData['state'] }}, {{ $requestData['zip_code'] }}<td>
+            <td style="font-size:14px;">Date: {{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</td>
         </tr>
         <tr>
             @php

@@ -207,9 +207,9 @@
 
 
 .earnbtn {
-    font-size: 16px;
+    font-size: 15px;
     width: 100%;
-    padding: 6px 22px 5px 35px;
+    padding: 6px 0px 5px 17px;
     color: #1608ea;
     border-radius: 5px;
     border: 2px solid #ff0000a3;
@@ -219,11 +219,12 @@
 }
 
 .earnbtn2 {
-    font-size: 24px;
-    margin: 7px;
+    font-size: 20px;
     position: absolute;
-    padding-left: 2px;
+    padding-left: 1px;
     color: blue;
+    top: 11px;
+    left: 11px;
 }
 
 .netpaybtn {

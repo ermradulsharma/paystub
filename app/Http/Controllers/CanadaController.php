@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Deduction;
+use App\Models\StateTax;
 use App\Models\Template;
 use Illuminate\Http\Request;
 
@@ -20,7 +21,8 @@ class CanadaController extends Controller
         $dedutions = Deduction::where('state','canada')->get();
         $basicType = Template::where('type','basic')->get();
         $advanceType = Template::where('type','advance')->get();
-        return view('canadaPaystub',compact('basicType','advanceType','dedutions'));
+        $stateTaxes = StateTax::get();
+        return view('canadaPaystub',compact('basicType','advanceType','dedutions','stateTaxes'));
     }
 
     /**
