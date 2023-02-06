@@ -19,16 +19,16 @@ class UsaController extends Controller
     public function index()
     {
         $deduction = Deduction::where('state', 'usa')->get();
-        $basicType = Template::where(['type' => 'basic', 'status' => 1])->with('images')->get();
-        $advanceType = Template::where(['type' => 'advance', 'status' => 1])->with('images')->get();
+        $basicType = Template::where(['state' => 'usa', 'type' => 'basic', 'status' => 1])->with('images')->get();
+        $advanceType = Template::where(['state' => 'usa', 'type' => 'advance', 'status' => 1])->with('images')->get();
         $stateTaxes = StateTax::get();
         return view('usa', compact('basicType', 'advanceType', 'deduction', 'stateTaxes'));
     }
 
     public function templateGloble()
     {
-        $basicType = Template::where(['type' => 'basic', 'status' => 1])->get();
-        $advanceType = Template::where(['type' => 'advance', 'status' => 1])->get();
+        $basicType = Template::where(['state' => 'usa', 'type' => 'basic', 'status' => 1])->get();
+        $advanceType = Template::where(['state' => 'usa', 'type' => 'advance', 'status' => 1])->get();
         return view('globle', compact('basicType', 'advanceType'));
     }
 

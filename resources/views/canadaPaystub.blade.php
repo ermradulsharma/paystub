@@ -56,8 +56,7 @@
                                         @endif
                                         @endforeach
                                     </select>
-                                    <i class="fa fa-eye-slash basicTem flash-icon" data-target="#openEye"
-                                        data-toggle="modal"></i>
+                                    <i class="fa fa-eye-slash basicTem flash-icon" data-target="#openEye" data-toggle="modal"></i>
                                 </div>
                             </div>
                         </div>
@@ -81,8 +80,7 @@
                                         @endif
                                         @endforeach
                                     </select>
-                                    <i class="fa fa-eye-slash advanceTem flash-icon" data-target="#openEye"
-                                        data-toggle="modal"></i>
+                                    <i class="fa fa-eye-slash advanceTem flash-icon" data-target="#openEye" data-toggle="modal"></i>
                                 </div>
                             </div>
                             <div class=" mt-3 ">
@@ -109,8 +107,7 @@
                             <div>
                                 <label for="cname" class="lable">EMPLOYER (COMPANY) NAME <span class="redColor">*</span>
                                 </label>
-                                <input type="text" id="cname" name="cname" placeholder="Your Employer & Company Name"
-                                    class="w-100 p-2 text-center textInputFontSize">
+                                <input type="text" id="cname" name="cname" placeholder="Your Employer & Company Name" class="w-100 p-2 text-center textInputFontSize">
                             </div>
                         </div>
 
@@ -128,8 +125,7 @@
                             <div>
                                 <label for="address_1" class="lable">STREET ADDRESS 1 <span class="redColor">*</span>
                                 </label>
-                                <input type="text" id="address_1" name="address_1" placeholder="Your Employer Address"
-                                    class="w-100 p-2  textInputFontSize">
+                                <input type="text" id="address_1" name="address_1" placeholder="Your Employer Address" class="w-100 p-2  textInputFontSize">
                             </div>
 
                         </div>
@@ -140,8 +136,7 @@
                             <div>
                                 <label for="address_2" class="lable">STREET ADDRESS 2 <span class="redColor">*</span>
                                 </label>
-                                <input type="text" id="address_2" name="address_2"
-                                    placeholder="Suite 101 or Apt 101 (optional)" class="w-100 p-2  textInputFontSize">
+                                <input type="text" id="address_2" name="address_2" placeholder="Suite 101 or Apt 101 (optional)" class="w-100 p-2  textInputFontSize">
                             </div>
 
                         </div>
@@ -151,8 +146,7 @@
                         <div class="col-md-4">
                             <div>
                                 <label for="city" class="lable">City <span class="redColor">*</span> </label>
-                                <input type="text" id="city" name="city" placeholder="Your Employer City"
-                                    class="w-100 p-2  textInputFontSize">
+                                <input type="text" id="city" name="city" placeholder="Your Employer City" class="w-100 p-2  textInputFontSize">
                             </div>
 
                         </div>
@@ -173,8 +167,7 @@
                             <div>
                                 <label for="zip_code" class="lable">Postal Code <span class="redColor">*</span>
                                 </label>
-                                <input type="text" id="zip_code" name="zip_code" placeholder=" Zip Code"
-                                    class="w-100 p-2  textInputFontSize">
+                                <input type="text" id="zip_code" name="zip_code" placeholder=" Zip Code" class="w-100 p-2  textInputFontSize">
                             </div>
                         </div>
                     </div>
@@ -192,61 +185,32 @@
                         <div class="col-md-4 mt-4">
                             <div>
                                 <label for="emp_name" class="lable">EMPLOYEE ID <span class="redColor">*</span> </label>
-                                <input type="text" id="emp_name" name="emp_name" placeholder="Your Full  Name"
-                                    class="w-100 p-2  textInputFontSize">
+                                <input type="text" id="emp_name" name="emp_name" placeholder="Your Full  Name" class="w-100 p-2  textInputFontSize">
                             </div>
-
                         </div>
 
                         <div class="col-md-4 mt-4">
                             <div>
                                 <label for="emp_id" class="lable">PAY START <span class="redColor">*</span>
                                 </label>
-                                <input type="text" id="emp_id" name="emp_id" placeholder="Employer ID"
-                                    class="w-100 p-2 r textInputFontSize">
+                                <input type="date" id="pay_start" name="pay_start" placeholder="12-11-2022" class="w-100 p-2 textInputFontSize pay_start datepicker" data-id="pay_start">
                             </div>
-
                         </div>
                         <div class="col-md-4 mt-4">
                             <div>
                                 <label for="emp_ssn" class="lable">PAY DATE <span class="redColor">*</span> </label>
-                                <input type="text" id="emp_ssn" name="emp_ssn" placeholder="1224"
-                                    class="w-100 p-2  textInputFontSize">
+                                <input type="date" id="pay_date" name="pay_date" placeholder="12-19-2022" class="w-100 p-2 textInputFontSize pay_date" data-id="pay_date">
                             </div>
-
                         </div>
                     </div>
-
-                    <!-- <div class="row mb-3">
-                            <div class="col-md-12">
-                                <div>
-                                    <label for="emp_street_1" class="lable">STREET 1 <span class="redColor">*</span></label>
-                                    <input type="text" id="emp_street_1" name="emp_street_1" placeholder="Your Address" class="w-100 p-2  textInputFontSize">
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <div class="col-md-12">
-                                <div>
-                                    <label for="emp_street_2" class="lable">STREET 2 <span class="redColor">*</span>
-                                    </label>
-                                    <input type="text" id="emp_street_2" name="emp_street_2" placeholder="Suite 101 or Apt 101(optional)" class="w-100 p-2  textInputFontSize">
-                                </div>
-
-                            </div>
-                        </div> -->
 
                     <div class="row mb-3">
                         <div class="col-md-4">
                             <div>
-                                <label for="emp_city" class="lable">CHECK NUMBER <span class="redColor">*</span>
+                                <label for="check_number" class="lable">CHECK NUMBER <span class="redColor">*</span>
                                 </label>
-                                <input type="text" id="emp_city" name="emp_city" placeholder="Your City"
-                                    class="w-100 p-2  textInputFontSize">
+                                <input type="text" id="check_number" name="check_number" placeholder="Check Number" class="w-100 p-2  textInputFontSize">
                             </div>
-
                         </div>
                         <div class="col-md-4">
                             <div>
@@ -260,25 +224,22 @@
                                     <option value="¥">Yen ¥</option>
                                 </select>
                             </div>
-
                         </div>
+                    </div>
+                    <div class="row mb-3">
                         <div class="col-md-4">
                             <div>
                                 <label for="emp_zip_code" class="lable">EMPLOYER NAME <span class="redColor">*</span>
                                 </label>
-                                <input type="text" id="emp_zip_code" name="emp_zip_code" placeholder=" 1234"
-                                    class="w-100 p-2  textInputFontSize">
+                                <input type="text" id="emp_zip_code" name="emp_zip_code" placeholder=" 1234" class="w-100 p-2  textInputFontSize">
                             </div>
 
                         </div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col-md-12">
+                        <div class="col-md-8">
                             <div>
                                 <label for="emp_street_2" class="lable">EMPLOYER ADDRESS <span class="redColor">*</span>
                                 </label>
-                                <input type="text" id="emp_street_2" name="emp_street_2"
-                                    placeholder="Suite 101 or Apt 101(optional)" class="w-100 p-2  textInputFontSize">
+                                <input type="text" id="emp_street_2" name="emp_street_2" placeholder="Suite 101 or Apt 101(optional)" class="w-100 p-2  textInputFontSize">
                             </div>
 
                         </div>
@@ -287,231 +248,136 @@
             </div>
         </div>
     </div>
-
-
 
     <div class="container" style="max-width: 1450px;">
         <div class="mb- d-flex " style="justify-content: space-between;">
             <h5>Earning statement</h5>
-
         </div>
         <div class="row mb-3">
             <div class="col-md-12">
                 <div class=" box-usa">
-
-                    <!-- <div class="row mb-3">
-                        <div class="col-md-3 mt-4">
-                            <label for="fname" class="lable">PAY START<spam style="color:red;">
-                                    <spam style="color:red;">*<spam></label><br>
-                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-2
-                             text-center"
-                                style="font-size:14px;"><br>
-                        </div>
-
-                        <div class="col-md-3 mt-4">
-                            <label for="fname" class="lable">PAY END <spam style="color:red;">
-                                    <spam style="color:red;">*<spam></label><br>
-                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-2
-                             text-center"
-                                style="font-size:14px;"><br>
-                        </div>
-                        <div class="col-md-3 mt-4">
-                            <label for="fname" class="lable">PAY DATE<spam style="color:red;">
-                                    <spam style="color:red;">*<spam></label><br>
-                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-2
-                             text-center"
-                                style="font-size:14px;"><br>
-                        </div>
-                        <div class="col-md-3 mt-4">
-                            <label for="fname" class="lable">HOW DO YOU GET PAID<spam style="color:red;">
-                                    <spam style="color:red;">*<spam></label><br>
-                            <input type="text" id="fname" name="fname" placeholder="" class="w-100 p-2
-                             text-center"
-                                style="font-size:14px;"><br>
-                            <div class="text-center mt-2">
-                                <button CLASS="hourbtn">HOURLY</button> <button CLASS="salrybtn">SALARY</button>
-                            </div>
-                        </div>
-
-                    </div> -->
-
                     <div class="row mb-3 pt-4">
-                        <div class="col-lg-1 col-md-6 mb-2 pr-0">
-                            <button CLASS="statementbtn">INCOME</button>
-                        </div>
-                        <div class="col-lg-1 col-md-6 mb-2 pr-0">
-
-                            <button CLASS="statementbtn">RATE</button>
-                        </div>
-                        <div class="col-lg-2 col-md-6 mb-2 pr-0">
-
-                            <button CLASS="statementbtn">HOURS</button>
-                        </div>
-                        <div class="col-lg-2 col-md-6 mb-2 pr-0">
-
-                            <button CLASS="statementbtn"> CURRENT TOTAL</button>
-                        </div>
-                        <div class="col-lg-2  col-md-6 mb-2 pr-0">
-
-                            <button CLASS="statementbtn">DEDUCTION</button>
-                        </div>
-                        <div class="col-lg-2 col-md-6 mb-2 pr-0">
-
-                            <button CLASS="statementbtn">CURRENT TOTAL</button>
-                        </div>
-                        <div class="col-lg-2 col-md-6 mb-2 pr-0">
-
-                            <button CLASS="statementbtn">YTD TOTAL</button>
-                        </div>
-                    </div>
-
-                    <div class="row mb-3 mt-2">
-
-
-                        <div class="col-lg-6 ">
-                            <div class=" m-auto d-inline-flex">
-
-                                <div class="col-lg-2 mt-2 p-0 bg-danger">
-                                    <input class="earnbtn text-center " type="text" value="Regular">
+                        <div class="col-lg-7">
+                            <div class="row">
+                                <div class="col-lg-2 pr-0">
+                                    <button type="button" CLASS="statementbtn">INCOME</button>
                                 </div>
-                                <div class="col-lg-2 mt-2 ">
-                                    <input class="earnbtn text-center " type="text" value="67.09">
+                                <div class="col-lg-2 pr-0">
+                                    <button type="button" CLASS="statementbtn">RATE</button>
                                 </div>
-
-                                <div class="col-lg-4 mt-2 pr-0">
-                                    <input class="earnbtn text-center " type="text" value="455.90">
+                                <div class="col-lg-4 pr-0">
+                                    <button type="button" CLASS="statementbtn">HOURS</button>
                                 </div>
-                                <div class="col-lg-4 mt-2 p-0">
-                                    <input class="earnbtn text-center ml-3 " type="text" value="455.90">
-
+                                <div class="col-lg-4 pr-0">
+                                    <button type="button" CLASS="statementbtn"> CURRENT TOTAL</button>
                                 </div>
-
                             </div>
-                            <div class="col-lg-6 mt-3 p-0">
-                                <button class="earnbtn1"><i class="fa fa-plus-circle pr-2" style="font-size: 24px;color: #0ec23b;padding-top: 0px;"></i>Add Earning</button>
+                            <div class="row">
+                                <div class="col-lg-2 mt-4 pr-0">
+                                    <input class="earnbtn text-center incomeKey" id="000" name="income[]" type="text" value="Regular">
+                                </div>
+                                <div class="col-lg-2 mt-4 pr-0">
+                                    <input class="earnbtn text-center rateKey" id="rate_000" name="rate[]" type="text" value="">
+                                </div>
+                                <div class="col-lg-4 mt-4 pr-0">
+                                    <input class="earnbtn text-center hoursKey" id="hours_000" name="hours[]" type="text" value="">
+                                </div>
+                                <div class="col-lg-4 mt-4 pr-0">
+                                    <input class="earnbtn text-center" readonly id="total_000" name="total[]" type="text" value="">
+                                </div>
                             </div>
-
+                            <div id="appendEarningField"></div>
+                            <div class="row">
+                                <div class="col-lg-3 mt-5">
+                                    <button type="button" class="earnbtn1 py-2 w-100 addEarningField" style="font-size: 17px;font-weight: 600;">
+                                        <i class="fa fa-plus-circle" style="font-size: 22px;color: #0ec23b;padding-top: 0px;"></i>Add Earning</button>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="col-lg-6 p-0 ">
-                            @foreach ($dedutions as $item)
-                            <div class="d-inline-flex m-auto ">
 
-                                <div class="col-lg-4 mt-2 ml-2 p-0">
+                        <div class="col-lg-5 p-0 ">
+                            <div class="row">
+                                <div class="col-lg-4 px-0">
+                                    <button type="button" CLASS="statementbtn">DEDUCTION</button>
+                                </div>
+                                <div class="col-lg-4 pr-0">
+                                    <button type="button" CLASS="statementbtn">CURRENT TOTAL</button>
+                                </div>
+                                <div class="col-lg-4 pr-0">
+                                    <button type="button" CLASS="statementbtn">YTD TOTAL</button>
+                                </div>
+                            </div>
+                            @foreach ($dedutions as $key => $item)
+                            <div class="row">
+                                <div class="col-lg-4 px-0 mt-4">
                                     <div class="d-flex">
-                                    <div class="col-lg-1">
-                                    <img src="http://127.0.0.1:8000/images/lock.png" class="earnbtn2">
+                                        <img src="http://127.0.0.1:8000/images/lock.png" class="earnbtn2">
+                                        <input class="earnbtn text-center taxes" name="taxes[]" id="0{{ $key }}" data-value="{{ $item->price }}" value="{{ $item->title }}" data-value="{{ $item->title }}">
                                     </div>
-                                   <div class="col-lg-11">
-                                   <input class="earnbtn text-center taxes" name="taxes[]" data-id="0"
-                                        data-value="1.46" value="FICA - Medicare">
-                                   </div>
-                                    </div>
-                                    
-                                   
+                                </div>
+                                <div class="col-lg-4 pr-0 mt-4">
+                                    <input class="earnbtn text-center" readonly value="" id="tax_total_0{{ $key }}">
                                 </div>
 
-                                <div class="col-lg-4 mt-2 p-0 ml-3">
-                                    <input class="earnbtn text-center " value="">
-                                    </input>
+                                <div class="col-lg-4 pr-0 mt-4">
+                                    <input class="earnbtn text-center" readonly value="" id="tax_ytd_0{{ $key }}">
                                 </div>
-
-                                <div class="col-lg-4 mt-2 p-0 ml-3">
-                                    <input class="earnbtn text-center " value="">
-                                    </input>
-                                </div>
-
-
                             </div>
-
                             @endforeach
+                            <div id="appendTaxField"></div>
+                            <div class="row">
+                                <div class=" col-lg-4 mt-5  px-0">
+                                    <button type="button" class="earnbtn addTaxField" style="font-size: 17px;font-weight: 600;"><i class="fa fa-plus-circle" style="font-size: 22px;color: #0ec23b;padding-top: 0px;"></i>Add Deductions</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
-
-
-
-                    <div class="row mb-3 align-item-start">
-
-                        
-                        <div class="col-lg-3"></div>
-
-                        <div class="col-lg-3"></div>
-
-                        <div class=" col-lg-3 mt-1 ">
-                            <button class="earnbtn1"><i class="fa fa-plus-circle pr-2" style="font-size: 24px;
-                          color: #0ec23b;
-                           padding-top: 0px;"></i>Add Deductions</button>
-                        </div>
-
-
-
-
-                    </div>
-
 
                     <div class="row mb-3 mt-5">
                         <div class="col-lg-2 col-md-6 mb-2">
-                            <button CLASS="statementbtn">YTD GROSS</button>
+                            <button type="button" CLASS="statementbtn">YTD GROSS</button>
                         </div>
                         <div class="col-lg-2 col-md-6 mb-2">
 
-                            <button CLASS="statementbtn">YTD EDUCATIONS</button>
+                            <button type="button" CLASS="statementbtn">YTD EDUCATIONS</button>
                         </div>
                         <div class="col-lg-2 col-md-6 mb-2">
 
-                            <button CLASS="statementbtn">YTD NET PAY</button>
+                            <button type="button" CLASS="statementbtn">YTD NET PAY</button>
                         </div>
                         <div class="col-lg-2 col-md-6 mb-2">
 
-                            <button CLASS="statementbtn">CURRENT TOTAL</button>
+                            <button type="button" CLASS="statementbtn">CURRENT TOTAL</button>
                         </div>
                         <div class="col-lg-2 col-md-6 mb-2">
 
-                            <button CLASS="statementbtn">DEDUCTIONS</button>
+                            <button type="button" CLASS="statementbtn">DEDUCTIONS</button>
                         </div>
                         <div class="col-lg-2 col-md-6 mb-2">
 
-                            <button CLASS="statementbtn">NET PAY</button>
+                            <button type="button" CLASS="statementbtn">NET PAY</button>
                         </div>
                     </div>
-
 
                     <div class="row mb-3">
                         <div class="col-md-2">
-
-
                             <input CLASS="earnbtn text-center" value="00.00">
-                            </input>
                         </div>
                         <div class="col-md-2">
-
-
                             <input CLASS="earnbtn text-center" value="00.00">
-                            </input>
                         </div>
                         <div class="col-md-2">
-
-
                             <input CLASS="earnbtn text-center" value="00.00">
-                            </input>
                         </div>
                         <div class="col-md-2">
-
-
                             <input CLASS="earnbtn text-center" value="00.00">
-                            </input>
                         </div>
                         <div class="col-md-2">
-
-
                             <input CLASS="earnbtn text-center" value="00.00">
-                            </input>
                         </div>
                         <div class="col-md-2">
-
-
                             <input CLASS="earnbtn text-center" value="00.00">
-                            </input>
                         </div>
 
                     </div>
@@ -521,41 +387,28 @@
         </div>
     </div>
 
-
-
-
     <div class="container" style="max-width: 1450px;">
-
         <div class="row mb-3">
             <div class="col-md-12">
-
                 <div class="mb- d-flex" style="justify-content: space-between;">
-
-
-
                     <div class="text-left mt-1 ">
-                        <button class="previewbtn">
-                            Preview Your Paystub <i class="fa fa-eye"
-                                style="font-size: 30px; margin-left: 7px;"></i></button>
+                        <button type="button" class="previewbtn">
+                            Preview Your Paystub <i class="fa fa-eye" style="font-size: 30px; margin-left: 7px;"></i></button>
                     </div>
                     <div class="text-right mt-1 ">
-                        <button class="emailbtn " data-toggle="modal" data-target="#myModal"> <i
-                                class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL
+                        <button type="button" class="emailbtn " data-toggle="modal" data-target="#myModal"> <i class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL
                             PAYSTUB <i class="fa fa-download ml-4" style="font-size:24px"></i></button>
                     </div>
                 </div>
-
             </div>
         </div>
-
     </div>
-
 </div>
 @endsection
 @section('script')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" crossorigin="anonymous"></script>
-<script src="{{ asset('user') }}/js/calculations.js"></script>
+<script src="{{ asset('user') }}/js/canada.js"></script>
 <script>
     $(document).ready(function() {
         $('.advanceTemplate').change(function() {
@@ -593,25 +446,7 @@
         });
     });
 </script>
-<script>
-    $(document).ready(function() {
-        $('.basicTem').click(function() {
-            var imageattr = $('option:selected', '.bt_id').attr('data-src');
-            console.log('imageattr', imageattr);
-            $('.setImage').attr('src', imageattr);
-            if (imageattr != null && imageattr != undefined) {
-                $('#openEye').modal('show');
-            }
-        });
 
-        $('.advanceTem').click(function() {
-            var imageattr = $('option:selected', '.at_id').attr('data-src');
-            $('.setImage').attr('src', imageattr);
-            if (imageattr != null && imageattr != undefined) {
-                $('#openEye').modal('show');
-            }
-        });
-    });
-</script>
+
 
 @endsection
