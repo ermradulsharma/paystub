@@ -2,15 +2,15 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>PayStubX | Dashboard</title>
-  <meta content="" name="description">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Paustub X | Dashboard</title>
+  <meta content="There's no need for complex and costly desktop software. Save time and money with Paystubx free online pay stub maker that creates pay stubs to include all companies, employment, income, and deduction information. No software needed for creating Global Payslip, Paystub or Payroll." name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="{{asset('Admin/assets')}}/img/favicon.png" rel="icon">
+  <link href="{{asset('Admin/assets')}}/img/payStubX.webp" rel="icon">
   <link href="{{asset('Admin/assets')}}/img/apple-touch-icon.png" rel="apple-touch-icon">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
   <!-- Google Fonts -->
