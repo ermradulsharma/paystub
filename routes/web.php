@@ -95,9 +95,9 @@ Route::get('loginWithOtp', function () {
 Route::any('sendOtp', [LoginController::class, 'sendOtp']);
 Route::post('login', [LoginController::class, 'login']);
 
-
 Route::post('templates', [TemplateFormController::class, 'templates'])->name('templates');
 Route::post('canada/templates', [TemplateFormController::class, 'canadaTemplates'])->name('canada.templates');
+Route::post('uk/templates', [TemplateFormController::class, 'unitedKingdomTemplates'])->name('uk.templates');
 
 Route::group(['middleware' => ['auth']], function () {
     Route::post('logout', [LoginController::class, 'logout'])->name('logout');
