@@ -35,34 +35,30 @@
             </div>
         </div>
     </div>
-    <div class="container" style="max-width:1450px;">
-        <form id="usa_paystubx" action="{{ route('canada.templates') }}" method="post">
-            @csrf
-            <div>
-                <h5>Choose Template</h5>
-                <div class="row mb-3">
-                    <div class="col-md-12">
-                        <div class=" box-usa">
-
-                            <div class="d-flex justify-content-between mb-3">
-                                <div class="col-md-5 col-sm-12 m-auto  text-center" style="padding: -1px 35px;">
-                                    <h6 style="" class="base">BASIC TEMPLATES</h6>
-                                    <div class="mt-4">
-                                        {{-- <i class="fa fa-angle-down down"></i> --}}
-                                        <div class="input-group mmenu mb-3">
-                                            <select class="form-control dropdown1 bt_id" style="border-right:none">
-                                                <option selected=""> --- Select Basic Templates --- </option>
-                                                @foreach ($basicType as $data)
-                                                    @if ($data->state == 'canada' && $data->type == 'basic')
-                                                        <option value="{{ $data->title }}"
-                                                            data-src="{{ $data->images->file }}">{{ $data->name }}
-                                                        </option>
-                                                    @endif
-                                                @endforeach
-                                            </select>
-                                            <i class="fa fa-eye-slash basicTem flash-icon" data-target="#openEye"
-                                                data-toggle="modal"></i>
-                                        </div>
+</div>
+<div class="container" style="max-width:1450px;">
+    <form id="usa_paystubx" action="{{ route('canada.templates') }}" method="post">
+        @csrf
+        <div>
+            <h5>Choose Template</h5>
+            <div class="row mb-3">
+                <div class="col-md-12">
+                    <div class=" box-usa">
+                        <div class="d-flex justify-content-between mb-3">
+                            <div class="col-md-5 col-sm-12 m-auto  text-center" style="padding: -1px 35px;">
+                                <h6 style="" class="base">BASIC TEMPLATES</h6>
+                                <div class="mt-4">
+                                    {{-- <i class="fa fa-angle-down down"></i> --}}
+                                    <div class="input-group mmenu mb-3">
+                                        <select name="basic_temp" class="form-control dropdown1 text-center bt_id small-font basicTemplate" style="margin-right:10px; font-size:18px;">
+                                            <option value=""> --- Select Basic Templates --- </option>
+                                            @foreach ($basicType as $data)
+                                            @if($data->state == 'canada' && $data->type == 'basic')
+                                            <option value="{{$data->title}}" data-src="{{$data->images->file}}">{{$data->name}}</option>
+                                            @endif
+                                            @endforeach
+                                        </select>
+                                        <i class="fa fa-eye-slash basicTem flash-icon" data-target="#openEye" data-toggle="modal"></i>
                                     </div>
                                 </div>
 
@@ -70,31 +66,20 @@
                                     <img src="images/hrpng.png" style="height: 200px;">
                                 </div>
 
-                                <div class="col-md-5 col-sm-12 mt-5 text-center">
-                                    <h6 style="margin-left:-23px;font-weight: 900;" class="small">ADVANCED TEMPLATES</h6>
-                                    <div class="mt-4">
-                                        {{-- <i class="fa fa-angle-down down1"></i> --}}
-                                        <div class="input-group mmenu mb-3" style="margin: auto;">
-                                            <select class="form-control dropdown1 at_id" style="border-right:none">
-                                                <option selected=""> --- Select Advance Template --- </option>
-                                                @foreach ($advanceType as $data)
-                                                    @if ($data->state == 'canada' && $data->type == 'advance')
-                                                        <option value="{{ $data->title }}"
-                                                            data-src="{{ $data->images->file }}">{{ $data->title }}
-                                                        </option>
-                                                    @endif
-                                                @endforeach
-                                            </select>
-                                            <i class="fa fa-eye-slash advanceTem flash-icon" data-target="#openEye"
-                                                data-toggle="modal"></i>
-                                        </div>
-                                    </div>
-                                    <div class=" mt-3 ">
-                                        <button class="viewbtn">
-                                            <a href="{{ url('template-view') }}">Click to see Template Landscape view.This
-                                                is not
-                                                part of design</a>
-                                        </button>
+                            <div class="col-md-5 col-sm-12 mt-5 text-center">
+                                <h6 style="margin-left:-23px;font-weight: 900;" class="small">ADVANCED TEMPLATES</h6>
+                                <div class="mt-4">
+                                    {{-- <i class="fa fa-angle-down down1"></i> --}}
+                                    <div class="input-group mmenu mb-3" style="margin: auto;">
+                                        <select name="advance_temp" class="form-control text-center dropdown1 at_id small-font advanceTemplate" style="margin-right:10px; font-size:18px;">
+                                            <option value=""> --- Select Advance Template --- </option>
+                                            @foreach ($advanceType as $data)
+                                            @if($data->state == 'canada' && $data->type == 'advance')
+                                            <option value="{{$data->title}}" data-src="{{$data->images->file}}">{{$data->name}}</option>
+                                            @endif
+                                            @endforeach
+                                        </select>
+                                        <i class="fa fa-eye-slash advanceTem flash-icon" data-target="#openEye" data-toggle="modal"></i>
                                     </div>
                                 </div>
                             </div>
@@ -185,29 +170,30 @@
                 </div>
             </div>
 
-            <div>
-                <h5>Employee Basic Info</h5>
-                <div class="row mb-3">
-                    <div class="col-md-12">
-                        <div class=" box-usa">
-                            <div class="row mb-3">
-                                <div class="col-md-4 mt-4">
-                                    <div>
-                                        <label for="emp_name" class="lable">EMPLOYEE ID <span class="redColor">*</span>
-                                        </label>
-                                        <input type="text" id="emp_name" name="emp_name"
-                                            placeholder="Your Full  Name" class="w-100 p-2  textInputFontSize">
-                                    </div>
+        <div>
+            <h5>Employee Basic Info</h5>
+            <div class="row mb-3">
+                <div class="col-md-12">
+                    <div class=" box-usa">
+                        <div class="row mb-3">
+                            <div class="col-md-4 mt-4">
+                                <div>
+                                    <label for="emp_id" class="lable">EMPLOYEE ID <span class="redColor">*</span> </label>
+                                    <input type="text" id="emp_id" name="emp_id" placeholder="Employer ID" class="w-100 p-2  textInputFontSize">
                                 </div>
 
-                                <div class="col-md-4 mt-4">
-                                    <div>
-                                        <label for="emp_id" class="lable">PAY START <span class="redColor">*</span>
-                                        </label>
-                                        <input type="text" id="emp_id" name="emp_id" placeholder="Employer ID"
-                                            class="w-100 p-2 r textInputFontSize">
-                                    </div>
+                            <div class="col-md-4 mt-4">
+                                <div>
+                                    <label for="pay_start" class="lable">PAY START <span class="redColor">*</span>
+                                    </label>
+                                    <input type="date" id="pay_start" name="pay_start" placeholder="12-11-2022" class="w-100 p-2 textInputFontSize pay_start datepicker" data-id="pay_start">
+                                </div>
 
+                            </div>
+                            <div class="col-md-4 mt-4">
+                                <div>
+                                    <label for="pay_date" class="lable">PAY DATE <span class="redColor">*</span> </label>
+                                    <input type="date" id="pay_date" name="pay_date" placeholder="12-19-2022" class="w-100 p-2 textInputFontSize pay_date" data-id="pay_date">
                                 </div>
                                 <div class="col-md-4 mt-4">
                                     <div>
@@ -220,28 +206,21 @@
                                 </div>
                             </div>
 
-                            <div class="row mb-3">
-                                <div class="col-md-4">
-                                    <div>
-                                        <label for="emp_city" class="lable">CHECK NUMBER <span class="redColor">*</span>
-                                        </label>
-                                        <input type="text" id="emp_city" name="emp_city" placeholder="Your City"
-                                            class="w-100 p-2  textInputFontSize">
-                                    </div>
+                        <div class="row mb-3">
+                            <div class="col-md-4">
+                                <div>
+                                    <label for="check_number" class="lable">CHECK NUMBER <span class="redColor">*</span>
+                                    </label>
+                                    <input type="number" id="check_number" name="check_number" placeholder="EMPLOYEE CHECK NUMBER" class="w-100 p-2  textInputFontSize">
+                                </div>
 
                                 </div>
-                                <div class="col-md-4">
-                                    <div>
-                                        <label for="currency" class="lable" class="redColor">SELECT YOUR PREFERRED
-                                            CURRENCY <span class="redColor">*</span> </label>
-                                        <select name="currency" id="currency" class=" dropdown11">
-                                            <option value=""> --- Select currency --- </option>
-                                            <option value="$">Dollar $</option>
-                                            <option value="€">Euro €</option>
-                                            <option value="£">Pound £</option>
-                                            <option value="¥">Yen ¥</option>
-                                        </select>
-                                    </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div>
+                                    <label for="emp_name" class="lable">EMPLOYER NAME <span class="redColor">*</span>
+                                    </label>
+                                    <input type="text" id="emp_name" name="emp_name" placeholder="EMPLOYER NAME" class="w-100 p-2  textInputFontSize">
                                 </div>
                                 <div class="col-md-4">
                                     <div>
@@ -254,16 +233,13 @@
 
                                 </div>
                             </div>
-                            <div class="row mb-3">
-                                <div class="col-md-12">
-                                    <div>
-                                        <label for="emp_street_2" class="lable">EMPLOYER ADDRESS <span
-                                                class="redColor">*</span>
-                                        </label>
-                                        <input type="text" id="emp_street_2" name="emp_street_2"
-                                            placeholder="Suite 101 or Apt 101(optional)"
-                                            class="w-100 p-2  textInputFontSize">
-                                    </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-12">
+                                <div>
+                                    <label for="emp_address" class="lable">EMPLOYER ADDRESS <span class="redColor">*</span>
+                                    </label>
+                                    <input type="text" id="emp_address" name="emp_address" placeholder="Suite 101 or Apt 101(optional)" class="w-100 p-2  textInputFontSize">
                                 </div>
                             </div>
                         </div>
@@ -302,27 +278,21 @@
                                 </div>
                             </div>
 
-                            <div class="row mb-3 mt-2">
-                                <div class="col-lg-6 ">
-                                    <div class=" m-auto d-inline-flex">
-                                        <div class="col-lg-2 mt-2 p-0 bg-danger">
-                                            <input class="earnbtn text-center " type="text" value="Regular">
-                                        </div>
-                                        <div class="col-lg-2 mt-2 ">
-                                            <input class="earnbtn text-center " type="text" value="67.09">
-                                        </div>
-
-                                        <div class="col-lg-4 mt-2 pr-0">
-                                            <input class="earnbtn text-center " type="text" value="455.90">
-                                        </div>
-                                        <div class="col-lg-4 mt-2 p-0">
-                                            <input class="earnbtn text-center ml-3 " type="text" value="455.90">
-                                        </div>
+                        <div class="row mb-3 mt-2">
+                            <div class="col-lg-6 ">
+                                <div class=" m-auto d-inline-flex">
+                                    <div class="col-lg-2 mt-2 p-0 bg-danger">
+                                        <input class="earnbtn text-center " type="text" name="earning[]" value="Regular" id="earning_0" data-id="0">
                                     </div>
-                                    <div class="col-lg-6 mt-3 p-0">
-                                        <button class="earnbtn1"><i class="fa fa-plus-circle pr-2"
-                                                style="font-size: 24px;color: #0ec23b;padding-top: 0px;"></i>Add
-                                            Earning</button>
+                                    <div class="col-lg-2 mt-2 ">
+                                        <input type="text" name="rate[]" class="earnbtn text-center calculation rate" value="" id="rate_0" data-id="0">
+                                    </div>
+
+                                    <div class="col-lg-4 mt-2 pr-0">
+                                        <input type="text" name="hours[]" class="earnbtn text-center hours calculation" value="" id="hours_0" data-id="0">
+                                    </div>
+                                    <div class="col-lg-4 mt-2 p-0">
+                                        <input type="text" name="total[]" class="earnbtn text-center ml-3" value="" id="total_0" data-id="0">
                                     </div>
 
                                 </div>
