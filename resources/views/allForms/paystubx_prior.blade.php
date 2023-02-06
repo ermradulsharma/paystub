@@ -76,18 +76,18 @@
 
     <table style="width:100%;">
         <tr style="width:100%;">
-            <td style="padding-left:90px; padding-top:0px; font-weight:800; font-size:25px;"> {{ $requestData['cname'] }}<td>
+            <td style="padding-left:90px; padding-top:0px; padding-bottom:0px; padding-right:0px; font-weight:800; font-size:25px;"> {{ $requestData['cname'] }}<td>
             <td style="font-size:14px;">No: 17658</td>
         </tr>
         <tr>
-            <td style="padding-left:90px; font-size:14px;"> {{ $requestData['address_1'] }} {{ $requestData['city'] }} <br> {{ $requestData['state'] }}, {{ $requestData['zip_code'] }}</td>
+            <td style="padding-left:90px; padding-top:0px; padding-bottom:0px; padding-right:0px; font-size:14px;"> {{ $requestData['address_1'] }} {{ $requestData['city'] }} <br> {{ $requestData['state'] }}, {{ $requestData['zip_code'] }}</td>
             <td style="font-size:14px;">Date: {{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</td>
         </tr>
-        <tr>
+        {{-- <tr>
             <td></td>
             <td style="font-size:14px;">Date: {{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</td>
 
-        </tr>
+        </tr> --}}
         <tr>
             @php
                 $digit = Terbilang::make((int) $requestData['total_net_pay']);
