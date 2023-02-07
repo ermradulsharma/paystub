@@ -107,9 +107,9 @@
                 <span style="margin: 0; float:right; padding-left:10px; margin-right: 11px;">Transit ABA</span>
                 <span style="margin: 0; float:right;padding-left:10px; margin-right: 11px;">Account Number</span>
                 <hr style="margin-top: 10px;">
-                <span style="margin: 0;float:right; margin-right: 23px;text-align:center; ">{{ $requestData['currency'] }}{{ number_format($requestData['total_net_pay'], 2) }}</span>
-                <span style="margin: 0;float:right; margin-right: 40px;text-align:center;">XXXXX{{ $requestData['transit_aba_number'] }}</span>
-                <span style="margin: 0;float:right; margin-right: 40px; text-align:center;">XXXXX{{ $requestData['account_number_last_4'] }}</span>
+                <span style="margin: 0;float:right; text-align:center; ">{{ $requestData['currency'] }}{{ number_format($requestData['total_net_pay'], 2) }}</span>
+                <span style="margin: 0;float:right; margin-right: 10px;text-align:center;">XXXXXX{{ $requestData['transit_aba_number'] }}</span>
+                <span style="margin: 0;float:right; margin-right: 10px;text-align:center;">XXXXXXXXXXXXXXXXX{{ $requestData['account_number_last_4'] }}</span>
             </div>
         </div>
         <div
