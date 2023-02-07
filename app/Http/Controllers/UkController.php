@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\StateTax;
 use App\Models\Template;
+use PDF;
 use Illuminate\Http\Request;
 
 class UkController extends Controller
@@ -14,7 +15,17 @@ class UkController extends Controller
      * @return \Illuminate\Http\Response
      */
 
+     public function patstubx_modern()
+     {
+         $data = [
+              'date' => date('m/d/Y')
+         ];
 
+
+          $pdf = PDF::loadView('allForms.uk.patstubx_modern', $data)->setPaper('a4', 'portrait');
+          
+          return $pdf->stream('Patstubx_Modern.pdf'); 
+     }
 
     public function index()
     {
