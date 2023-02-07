@@ -20,6 +20,18 @@
 
 }
 
+.CreatePaystub {
+    width: 312px;
+    height: 64px;
+    border-radius: 63px;
+    background-color: #FF4040;
+    font-weight: 700;
+    margin: auto;
+    font-size: xx-large;
+    font-family: 'Futura LT';
+    margin-bottom: 20px;
+}
+
 .box-h5{
     padding-left: 14px;
 }
