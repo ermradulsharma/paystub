@@ -31,5 +31,6 @@ Route::group(['namespace' => 'Api', 'middleware' => ['\App\Http\Middleware\LogAf
     Route::post('social-login', [UserController::class, 'socialLogin']);
     Route::group(['middleware' => ['auth:api']], function () {
         Route::post('save-form-data', [TemplatesController::class, 'templatesDataSave']);
+        Route::get('get-pdf-list', [TemplatesController::class, 'getPdfList']);
     });
 });
