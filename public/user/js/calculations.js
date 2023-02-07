@@ -342,6 +342,39 @@ $(document).ready(function() {
         }, 300);
     }
 
+    $('.hourbtn').click(function(){
+        $('.rate').attr('readonly', false);
+        $('.hours').attr('readonly', false);
+        $('.total').attr('readonly', true);
+    });
+
+    $('.salrybtn').click(function(){
+        $('.rate').attr('readonly', true);
+        $('.hours').attr('readonly', true);
+        $('.total').attr('readonly', false);
+        $('.rate').val('');
+        $('.hours').val('');
+    });
+
+    $('.total').keyup(function(){
+        var period_gross_total = 0;
+        var ytd_gross_total = 0;
+        $('.total').each(function() {
+            var total = this.value || 0.00;
+            var id = $(this).data('id');
+            var ytd_total = total * parseInt(days_number) || 0.00;
+            period_gross_total += total;
+            ytd_gross_total += ytd_total;
+            $('#period_'+id).val(total);
+            $('#ytd_total_'+id).val(ytd_total);
+        });
+        $("#period_gross_total").val(period_gross_total);
+        $("#ytd_gross_total").val(ytd_gross_total);
+        setTimeout(() => {
+            gross_total();
+        }, 400);
+    })
+
     $('.auto_calculate').change(function(){
         var value = $(this).val();
         if(value == "on"){
@@ -356,6 +389,8 @@ $(document).ready(function() {
     $('.manualTaxTotal').keyup(function(){
         manualTaxTotal();
     });
+
+
 
     function manualTaxTotal(){
         var period_gross_total = $("#period_gross_total").val();
