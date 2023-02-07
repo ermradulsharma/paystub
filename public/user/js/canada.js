@@ -83,7 +83,7 @@ function date_calculate(){
                 days_number = 0; 
             }
 
-            $('#days_number').val(days_number);
+            $('#days_number').val(parseInt(days_number));
         }
     } else {
         return false;
