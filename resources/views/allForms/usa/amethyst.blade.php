@@ -103,7 +103,7 @@
             height: 100%;
             content: "";
             right: 0px;
-            top: 170px;
+            top: 200px;
             left: 30px !important;
         }
 
@@ -116,7 +116,7 @@
             background-size: contain;
             background-repeat: no-repeat;
             content: "";
-            top: 80px;
+            top: 40px;
             left: 0px;
             right: 100px !important;
             position: absolute;
@@ -225,18 +225,17 @@
                         </tr>
                         @foreach ($requestData['tax_deduction'] ?? [] as $key => $tax_deduction)
                             <tr>
-                                <td></td>
-                                <td class="data">{{ $tax_deduction }}</td>
+                                <td colspan="2" class="data">{{ $tax_deduction }}</td>
                                 <td>{{ $requestData['currency'] }} {{ number_format($requestData['period_tax_deduction'][$key],2) }} </td>
                                 <td>{{ $requestData['currency'] }} {{ number_format($requestData['ytd_tax_deduction'][$key],2) }}</td>
                             </tr>
                         @endforeach
                     @endif
-                    <tfoot class="tfooter " style="background:#8a2ebd; color:white">
+                    <tfoot class="tfooter " style="background:#8a2ebd; color:white;">
                         <tr>
                             <th colspan="2">Net Pay</th>
-                            <th style="font-weight: 100;">{{ $requestData['currency'] }} {{ number_format($requestData['total_net_pay'],2) }}</th>
-                            <th style=" font-weight: 100;">{{ $requestData['currency'] }} {{ number_format($requestData['total_ytd_net_pay'],2) }}</th>
+                            <th style="position: relative; left:5px; font-weight:100px;margin-right:10px;">{{ $requestData['currency'] }} {{ number_format($requestData['total_net_pay'],2) }}</th>
+                            <th style=" padding-right:10px;font-weight:100;">{{ $requestData['currency'] }} {{ number_format($requestData['total_ytd_net_pay'],2) }}</th>
                         </tr>
                     </tfoot>
                 </table>
@@ -244,7 +243,7 @@
             </section>
 
             <section class="bg-img">
-                <div class="container" style=" margin-top:100px; width:95%; padding:0px 20px;">
+                <div class="container" style=" margin-top:60px; width:95%; padding:0px 20px;">
                     <div class="row" style="display: flex;justify-content: space-between;padding: 0px 14px;">
                         <div style="width: 50%;float:left;">
                             <h6 style="font-size: 17px; margin-bottom: 10px;">{{ $requestData['cname'] }}</h6>
@@ -257,9 +256,9 @@
                             <p> <span style="font-weight:800;"></span> {{ date('m/d/y', strtotime($requestData['pay_date'])) }} </p>
                         </div>
                     </div>
-                    <table style="width: 90%; margin: 160px auto 0px;">
+                    <table style="width: 95%; margin: 160px auto 0px;">
                         <tr style="">
-                            <td colspan="4"></td>
+
                             <td></td>
                             <td style="text-align: right;"></td>
                             <td style="text-align: right;"> </td>
@@ -267,10 +266,10 @@
                         </tr>
 
                         <tr>
-                            <td style="font-size:14px;">{{ $requestData['emp_name'] }}</td>
-                            <td style="text-align: right; font-size:13px;">XXXXX{{ $requestData['account_number_last_4'] }}</td>
-                            <td style="text-align: right;font-size:13px;">XXXXX{{ $requestData['transit_aba_number'] }}</td>
-                            <td style="text-align: right;font-size:13px;">{{ number_format($requestData['total_net_pay'],2) }}</td>
+                            <td style="font-size:14px;text-align:left;  width:55%;">{{ $requestData['emp_name'] }}</td>
+                            <td style="text-align: center; font-size:13px; width:15%;">XXXXX534</td>
+                            <td style="text-align: center;font-size:13px; width:15%;">XXXXX534</td>
+                            <td style="text-align: right;font-size:13px; width:15%;">XXXXX534</td>
                         </tr>
                     </table>
                 </div>

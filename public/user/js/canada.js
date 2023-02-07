@@ -1,24 +1,24 @@
 var i=0;
-var alltotal = 0.00;
-var alltotalYtd = 0.00;
-var allDeductiontotal = 0.00;
-var allDeductionYTDtotal = 0.00;
-var tax_total_other = 0.00;
-var tax_ytd_other = 0.00;
-var days_number = 0;
+var alltotal =  parseFloat($('#alltotal').val());
+var alltotalYtd =  parseFloat($('#alltotalYtd').val());
+var allDeductiontotal =  parseFloat($('#allDeductiontotal').val());
+var allDeductionYTDtotal =  parseFloat($('#allDeductionYTDtotal').val());
+var tax_total_other =  parseFloat($('#tax_total_other').val());
+var tax_ytd_other =  parseFloat($('#tax_ytd_other').val());
+var days_number =  parseFloat($('#days_number').val())
 
 $('.pay_start').change(function() {
     dayCalculate();
     setTimeout(() => {
         calculation();
-    }, 1000);
+    }, 500);
 });
 
 $('.pay_date').change(function() {
     date_calculate();
     setTimeout(() => {
         calculation();
-    }, 1000);
+    }, 500);
 });
 
 function dayCalculate() {
@@ -82,6 +82,8 @@ function date_calculate(){
             if(days_number < 1){
                 days_number = 0; 
             }
+
+            $('#days_number').val(days_number);
         }
     } else {
         return false;
@@ -115,7 +117,7 @@ $('.addTaxField').click(function(){
  var htmlData = `<div class="row">
  <div class="col-lg-4 px-0 mt-4">
      <div class="d-flex">
-         <img src="./images/lock.png" class="earnbtn2">
+         <img src="../images/lock.png" class="earnbtn2">
          <input class="earnbtn text-center other_taxes" name="tax_deduction[]" data-id="`+j+`">
      </div>
  </div>
@@ -133,6 +135,10 @@ $('.addTaxField').click(function(){
     $('.deduction_other, .deduction_other_ytd').keyup(function(){
         taxOtherCalculate();
     });
+});
+
+$('.deduction_other, .deduction_other_ytd').keyup(function(){
+    taxOtherCalculate();
 });
 
 $('.rateKey, .hoursKey').keyup(function(){
@@ -213,3 +219,5 @@ function setTotals(){
     $("#deductions").val(deductions.toFixed(2));
     $("#net_pay").val(netPay.toFixed(2));
 }
+
+

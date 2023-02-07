@@ -344,7 +344,7 @@
                         </p>
                     </div>
                 </div>
-                <table style="width: 100%; margin: 140px 0 0 auto; padding:0px 20px;">
+                <table style="width: 95%; margin: 140px  auto 0px; padding:0px 20px;">
                     <tr style="">
                         <td colspan="4"></td>
                         <td style="text-align: right;" colspan="6"></td>
@@ -353,16 +353,10 @@
                     </tr>
                     <td colspan="17"></td>
                     <tr>
-                        <td colspan="4"></td>
-                        <td>{{ $requestData['emp_name'] }}</td>
-                        <td style="text-align: right;"></td>
-                        <td style="text-align: right;"></td>
-                        <td style="text-align: right;">{{ $requestData['account_number_last_4'] }}</td>
-                        <td style="text-align: right;"></td>
-                        <td style="text-align: right;">{{ $requestData['transit_aba_number'] }}</td>
-                        <td style="text-align:center">
-                            {{ $requestData['currency'] }}{{ $requestData['total_net_pay'] }}</td>
-                        </td>
+                        <td style="font-size:14px;text-align:left;  width:55%;">{{ $requestData['emp_name'] }}</td>
+                        <td style="text-align: center; font-size:13px; width:15%;">XXXXX534</td>
+                        <td style="text-align: center;font-size:13px; width:15%;">XXXXX534</td>
+                        <td style="text-align: right;font-size:13px; width:15%;">XXXXX534</td>
                     </tr>
                 </table>
             </div>

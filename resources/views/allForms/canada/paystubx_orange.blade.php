@@ -91,7 +91,7 @@
         }
 
         #borderleft {
-            border-left: 2px solid black;
+            border-left: 2px solid #464646;
         }
 
         .ytd_total {
