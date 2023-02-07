@@ -10,7 +10,7 @@ class ValidationService
     public function usa($request)
     {
         $response['status'] = 200;
-        if ($request->form_type == "USA") {
+        if ($request->form_type == "usa") {
             $rules = [
                 'advance_temp' => 'required_without:basic_temp',
                 'basic_temp' => 'required_without:advance_temp',
@@ -50,7 +50,7 @@ class ValidationService
                 'hours' => 'The HOURS be empty',
                 'total' => 'The TOTAL cannot be empty',
             ];
-        } elseif ($request->form_type == "CANADA") {
+        } elseif ($request->form_type == "canada") {
             $rules = [
                 'advance_temp' => 'required_without:basic_temp',
                 'basic_temp' => 'required_without:advance_temp',
@@ -90,7 +90,7 @@ class ValidationService
                 'hours' => 'The HOURS be empty',
                 'total' => 'The TOTAL cannot be empty',
             ];
-        } elseif ($request->form_type == "UK") {
+        } elseif ($request->form_type == "uk") {
             $rules = [
                 'advance_temp' => 'required_without:basic_temp',
                 'basic_temp' => 'required_without:advance_temp',

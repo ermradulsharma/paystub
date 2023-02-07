@@ -11,14 +11,14 @@ $('.pay_start').change(function() {
     dayCalculate();
     setTimeout(() => {
         calculation();
-    }, 1000);
+    }, 500);
 });
 
 $('.pay_date').change(function() {
     date_calculate();
     setTimeout(() => {
         calculation();
-    }, 1000);
+    }, 500);
 });
 
 function dayCalculate() {
