@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\API\TemplatesController;
 use App\Http\Controllers\API\DeductionController;
+use App\Http\Controllers\LoginController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -25,6 +26,7 @@ Route::group(['namespace' => 'Api', 'middleware' => ['\App\Http\Middleware\LogAf
     Route::get('get-deduction', [DeductionController::class, 'getDeduction']);
     Route::get('get-state-taxes', [DeductionController::class, 'getStateTaxes']);
     Route::post('template-preview', [TemplatesController::class, 'templatesPreview']);
+    Route::post('send-otp', [LoginController::class, 'sendOtp']);
     Route::group(['middleware' => ['auth:api']], function () {
     });
 });
