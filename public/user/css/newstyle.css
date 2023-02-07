@@ -136,7 +136,8 @@
     font-weight: 700;
 
 }
-.form-control{
+
+.form-control {
     display: block;
     width: 100%;
     height: calc(1.5em + 0.75rem + 2px);
@@ -149,9 +150,10 @@
     background-clip: padding-box;
     border: 1px solid #ced4da;
     border-radius: 0.25rem;
-    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
-.formm:hover{
+
+.formm:hover {
     color: #495057 !important;
 }
 
@@ -184,7 +186,7 @@
 }
 
 .statementbtn {
-    font-size: 14px;
+    font-size: 13px;
     width: 100%;
     padding: 5px 10px;
     background: #074151;
@@ -288,7 +290,8 @@
     border-radius: 4px;
     box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, .6));
 }
-.previewbtn:hover{
+
+.previewbtn:hover {
     background: white;
     color: #ef2e21;
     border: 1px solid #ef2e21;
@@ -688,7 +691,7 @@ h5 {
 }
 
 .canadah1 {
-    font-size: -webkit-xxx-large;
+    font-size: -webkit-xx-large;
     font-family: 'Futura LT';
 }
 
@@ -746,6 +749,7 @@ h5 {
 .row {
     width: 100%;
     /* margin: 0 auto; */
+    margin: auto;
 }
 
 .space-between {
@@ -1045,6 +1049,10 @@ select {
     .padding {
         padding: 0px 20px !important;
     }
+
+    .imguk {
+        width: 885px;
+    }
 }
 
 
@@ -1094,6 +1102,16 @@ select {
 @media screen and (max-width: 1024px) {
     .create-container li {
         font-size: 10px;
+    }
+
+    .ukimg1 {
+        background-position-x: left;
+        left: -119px;
+    }
+
+    .mainhead {
+        padding: 0px 41px 2px 4px;
+        font-family: 'Futura LT';
     }
 
     .payimg2 {
@@ -1304,18 +1322,44 @@ select {
         font-size: 24px;
         margin-bottom: 20px;
     }
-}
 
-.create-p {
-    font-family: 'Futura LT';
-    font-size: 16px;
-    line-height: 1.8;
+    .CreatePaystub {
+        width: 312px;
+        height: 64px;
+        border-radius: 63px;
+        background-color: #FF4040;
+        font-weight: 700;
+        margin: auto;
+        font-size: xx-large;
+        font-family: 'Futura LT';
+        margin-bottom: 20px;
+    }
+
+    .imguk {
+        width: 625px;
+    }
+
+
+    .create-p {
+        font-family: 'Futura LT';
+        font-size: 16px;
+        line-height: 1.8;
+    }
 }
 
 @media screen and (max-width: 768px) {
+    .ukimg1 {
+        background-position-x: left;
+        left: 9px;
+    }
+
     .globlebtn {
         display: flex;
         justify-content: center;
+    }
+
+    .can-p {
+        font-size: 19px !important;
     }
 
     .pay-h2 {
@@ -1398,7 +1442,6 @@ select {
         /* border-radius: 6px; */
         background: #ffffff;
         margin: auto;
-        font-size: 12px !important;
         font-weight: 500;
         position: relative !important;
 
@@ -1551,6 +1594,7 @@ select {
     .canadaheading {
         text-align: center !important;
         max-width: 100%;
+        font-size: 27px;
     }
 
     .text-center2 {
@@ -1618,17 +1662,22 @@ select {
         font-size: 14px;
     }
 
-    .dropdown11 {
-        font-size: 9px;
+    .dropdown1 {
+        font-size: 9px !important;
     }
 
     .earnbtn {
         padding: 6px 13px 5px 13px;
     }
 
+    .how_p {
+        font-size: 13px !important;
+    }
 
+    .statementbtn {
+        font-size: 10px;
+    }
 }
-
 
 @media screen and (max-height: 450px) {
     .sidenav {
@@ -1662,8 +1711,9 @@ select {
     }
 
     .text-white {
-        font-size: 11px;
+        font-size: 13px;
         margin-bottom: 10px;
+        margin-top: 4px;
     }
 
     .box-border-outer {
@@ -1700,9 +1750,9 @@ select {
 
     .payimg {
         position: relative;
-        width: 85%;
+        width: 67%;
         top: 19px;
-        left: 20px;
+        left: 50px;
     }
 
     .down {
@@ -1791,7 +1841,7 @@ select {
 
     .Payslips {
         font-family: serif;
-        font-size: 14px;
+        font-size: 19px;
         line-height: 2em;
         padding: 0;
     }
@@ -1874,6 +1924,46 @@ select {
     .head-font {
         text-align: center;
     }
+
+    .can-p {
+        font-size: 17px !important;
+    }
+
+    .can-p1 {
+        font-size: 16px !important;
+    }
+
+    .ukimg1 {
+        background-position-x: left;
+        left: 20px;
+    }
+
+    .imguk {
+        width: 321px;
+    }
+    .storbtn {
+        width: 153px !important;
+        height: 53px !important;
+        margin-bottom: 0;
+    }   
+    .gen{
+        font-size: 24px !important;
+    font-family: 'Futura LT';
+    text-align: center;
+
+    }
+    .ready{
+        font-size: 24px !important;
+    }
+    .goggle{
+        justify-content: center;
+    }
+    .paytext {
+        margin-left: 30px;
+    }
+    .box-h5{
+        padding-left: 14px;
+    }
 }
 
 @media screen and (max-width: 375px) {
@@ -1897,6 +1987,14 @@ select {
         font-size: 15px;
         font-weight: bold;
         z-index: 1223;
+    }
+
+    .can-p {
+        font-size: 17px !important;
+    }
+
+    .can-p1 {
+        font-size: 16px !important;
     }
 
     .down1 {
@@ -1995,7 +2093,7 @@ select {
         display: table-cell;
         font-weight: 600;
         margin: auto;
-        font-size: 20px;
+        font-size: 19px;
         color: white;
         padding: 11px 21px;
         margin-bottom: 10px;
@@ -2044,5 +2142,37 @@ select {
 
     .textarea {
         max-width: 275px;
+    }
+
+    .ukimg1 {
+        background-position-x: left;
+        left: 20px;
+    }
+
+    .box-usa {
+        border: 3px solid #FF6161;
+        padding: 10px 0px 12px 12px;
+        background: #E8E6E6;
+        border-radius: 2px;
+       
+    }
+
+    .thousand {
+        font-size: large !important;
+        padding-left: 15px;
+    }
+    .ready{
+        font-size: 26px !important;
+    }
+    .storbtn {
+        width: 127px !important;
+        height: 44px !important;
+        margin-bottom: 0;
+    }
+    .goggle{
+        justify-content: center;
+    }
+    .paytext {
+        margin-left: 18px;
     }
 }

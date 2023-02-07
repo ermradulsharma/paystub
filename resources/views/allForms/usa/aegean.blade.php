@@ -89,6 +89,7 @@
             text-align: right;
             padding-right: 22px;
         }
+
         .bg-img2 {
             position: relative;
         }

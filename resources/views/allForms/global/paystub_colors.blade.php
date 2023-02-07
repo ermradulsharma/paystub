@@ -1,0 +1,253 @@
+@php
+    $petani = DB::table('templates')->pluck('color_code');
+@endphp
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-template-rows: 100px 100px;
+            padding-top: 30px;
+        }   
+
+        .grid-container>div {
+            text-align: center;
+            font-size: 30px;
+        }
+
+        .gridcontainer {
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-template-rows: 100px;
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .gridcontainer>div {
+            text-align: center;
+            padding: 20px 0;
+            font-size: 22px;
+        }
+
+
+        .section_2 {
+            background: #2dbdab;
+            color: white;
+            padding: 15px 15px 30px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th {
+            text-align: left;
+
+        }
+
+        .heading1 {
+            margin-top: 20px;
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+            text-align: left;
+            font-size: 18px;
+        }
+
+        .heading2 {
+            margin-top: 20px;
+            border-top: 1px solid black;
+            /* border-bottom: 1px solid black; */
+            text-align: left;
+            font-size: 18px;
+        }
+
+        .tax-align-l {
+            text-align: left;
+        }
+
+        .tax-align-c {
+            text-align: center;
+        }
+
+        .tax-align-r {
+            text-align: right;
+            padding-right: 10px;
+        }
+
+        .data:nth-child(2) {
+            background-color: #edededc4;
+        }
+
+        .tablesection {
+            padding-top: 25px;
+        }
+
+        p {
+            font-size: 16px;
+            font-family: none;
+            margin-top: -2px;
+        }
+
+        .tfooter {
+            margin-bottom: 20px;
+        }
+
+        .info {
+            margin-top: 20px;
+        }
+
+        .earning {
+            text-align: right;
+
+        }
+
+        .address {
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="invoiceborder">
+        <table>
+            <tr>
+                <th style="font-size:25px; padding:0px;"> {{ $requestData['cname'] }}</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th class="earning" style="font-size: 22px; padding:0; font-weight:600">Earnings statement</th>
+            </tr>
+            <tr>
+                <td class="address text-uppercase" style="font-size:18px; padding:0px; line-height:1.2;">
+                    {{ $requestData['address_1'] }} <br> {{ $requestData['city'] }} {{ $requestData['state'] }},
+                    {{ $requestData['zip_code'] }} <br> USA</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                    <p class="earning"> Pay Period: {{ date('M d, Y', strtotime($requestData['pay_start'])) }} to
+                        {{ date('M d, Y', strtotime($requestData['pay_end'])) }} <br> Pay Date:
+                        {{ date('M d, Y', strtotime($requestData['pay_date'])) }}</p>
+                </td>
+            </tr>
+
+        </table>
+        <section class="section_2">
+            <table>
+                <tr style=" color:white;">
+                    <th style="padding:0 !important; width:40%">SSN: XXX-XX-{{ $requestData['emp_ssn'] }}</th>
+                    <th class="earning" style="padding:0; font-weight:400; width:60%">{{ $requestData['emp_name'] }}
+                    </th>
+                </tr>
+                <tr style="color:white">
+                    <td style=" padding: 0px;"> Stub no: 1112 </td>
+                    <td class="earning" style="padding:0;">
+                        Emp Id :{{ $requestData['emp_id'] }} <br>
+                        {{ $requestData['emp_street_1'] }},{{ $requestData['emp_street_2'] }}
+                        {{ $requestData['emp_city'] }} {{ $requestData['emp_state'] }}
+                        {{ $requestData['emp_zip_code'] }}
+                    </td>
+                </tr>
+            </table>
+        </section>
+        <section class="tablesection">
+            <table>
+                <tr>
+                    <th class="heading1 tax-align-l" style="padding-left: 18px;">Earnings</th>
+                    <th class="heading1"> Rate</th>
+                    <th class="heading1">Hours</th>
+                    <th class="heading1" style="padding-left: 45px;">This Period</th>
+                    <th class="heading1 tax-align-r">YTD</th>
+                </tr>
+                @foreach ($requestData['earning'] as $key => $earn)
+                    <tr>
+                        <td class="heading2 tax-align-l" style="padding-left: 18px;">{{ $earn }}</td>
+                        <td class="heading2">{{ $requestData['currency'] }} {{ $requestData['rate'][$key] }}</td>
+                        <td class="heading2">{{ $requestData['hours'][$key] }}</td>
+                        <td class="heading2" style="padding-left: 45px;">{{ $requestData['currency'] }}
+                            {{ $requestData['period'][$key] }}</td>
+                        <td class="heading2 tax-align-r">{{ $requestData['currency'] }}
+                            {{ $requestData['ytd_total'][$key] }}</td>
+                    </tr>
+                @endforeach
+                <br>
+                <br>
+                <tfoot class="tfooter" style="background:#2dbdab;">
+                    <tr style=" color:white; height:20%;">
+                        <th colspan="3"></th>
+                        <th class="tax-align-c" style="font-weight: 100; height: 47px; padding-right: 45px;">
+                            {{ $requestData['currency'] }} {{ $requestData['period_gross_total'] }}</th>
+                        <th class="tax-align-r" style="font-weight: 100; height: 47px">{{ $requestData['currency'] }}
+                            {{ $requestData['ytd_gross_total'] }}</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+        <section class="tablesection">
+            <table class="heading">
+                <tr>
+                    <th class="heading1" style="padding-left: 18px;">Taxes / Deduction</th>
+                    <th class="heading1"> Type</th>
+                    <th class="heading1 tax-align-r">This Period</th>
+                    <th class="heading1 tax-align-r">YTD</th>
+                </tr>
+                @foreach ($requestData['taxes'] ?? [] as $key => $taxes)
+                    <tr>
+                        <td></td>
+                        <td class="data" style="line-height:1.6">{{ $taxes }}</td>
+                        <td class="tax-align-r">{{ $requestData['currency'] }} {{ $requestData['taxes_rate'][$key] }}
+                        </td>
+                        <td class="tax-align-r" style="line-height:1.6">{{ $requestData['currency'] }}
+                            {{ $requestData['taxes_ytd'][$key] }}</td>
+                    </tr>
+                @endforeach
+                @if (count($requestData['tax_deduction'] ?? []) > 0)
+                    <tr>
+                        <td></td>
+                        <td class="data" style="line-height:1.6"> <strong>Employer Taxes </strong> </td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    @foreach ($requestData['tax_deduction'] ?? [] as $key => $tax_deduction)
+                        <tr>
+                            <td></td>
+                            <td class="data" style="line-height:1.6">{{ $tax_deduction }}</td>
+                            <td class="tax-align-r">{{ $requestData['currency'] }}
+                                {{ $requestData['period_tax_deduction'][$key] }}</td>
+                            <td class="tax-align-r" style="line-height:1.6">{{ $requestData['currency'] }}
+                                {{ $requestData['ytd_tax_deduction'][$key] }}</td>
+                        </tr>
+                    @endforeach
+                @endif
+                <tfoot class="tfooter " style="background:#2dbdab; line-height:1.6;">
+                    <tr style="color:white;">
+                        <th colspan="2" style="height: 47px; padding-left: 18px;">Net Pay</th>
+                        <th class="tax-align-r" style="height: 47px; font-weight: 100;">{{ $requestData['currency'] }}
+                            {{ $requestData['total_net_pay'] }}</th>
+                        <th class="tax-align-r" style="height: 47px; font-weight: 100;">{{ $requestData['currency'] }}
+                            {{ $requestData['total_ytd_net_pay'] }}</th>
+                    </tr>
+                </tfoot>
+            </table>
+            <p style="margin-top:10px;">Your Taxes and deductions for this period are {{ $requestData['currency'] }}
+                {{ $requestData['deduction_tax'] }}.</p>
+        </section>
+
+
+    </section>
+</body>
+
+</html>

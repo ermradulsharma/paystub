@@ -22,9 +22,45 @@ class UkController extends Controller
          ];
 
 
-          $pdf = PDF::loadView('allForms.uk.patstubx_modern', $data)->setPaper('a4', 'portrait');
+          $pdf = PDF::loadView('allForms.global.patstubx_modern', $data)->setPaper('a4', 'portrait');
           
           return $pdf->stream('Patstubx_Modern.pdf'); 
+     }
+
+     public function pin_blue_uk()
+     {
+         $data = [
+              'date' => date('m/d/Y')
+         ];
+
+
+          $pdf = PDF::loadView('allForms.uk.pin_blue_uk', $data)->setPaper('a4', 'portrait');
+          
+          return $pdf->stream('pin_blue_uk.pdf'); 
+     }
+
+     public function sage_blue_uk()
+     {
+         $data = [
+              'date' => date('m/d/Y')
+         ];
+
+
+          $pdf = PDF::loadView('allForms.uk.sage_blue_uk', $data)->setPaper('a4', 'portrait');
+          
+          return $pdf->stream('sage_blue_uk.pdf'); 
+     }
+
+     public function tawny()
+     {
+         $data = [
+              'date' => date('m/d/Y')
+         ];
+
+
+          $pdf = PDF::loadView('allForms.uk.tawny', $data)->setPaper('a4', 'portrait');
+          
+          return $pdf->stream('tawny.pdf'); 
      }
 
     public function index()
