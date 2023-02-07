@@ -70,6 +70,24 @@
     .shrapdana {
         max-width: 100%;
     }
+    .border-line{
+        position: relative;
+    }
+    .border-line:before {
+        position: absolute;
+        content: "";
+        top: 175px;
+        left: 80px;
+        right: 0;
+        background-image: url("images/border-line.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        width:100%;
+        max-width: 550px;
+        height: 1px;
+        margin:0 auto;
+
+    }
 
 </style>
 
@@ -111,23 +129,25 @@
         </tr>--}}
     </table>
 
-    <div>
-        <table class="table1"style="width:100%;">
-            <tr style="width:100%;">
-                <td style=" width:10%;font-size:14px;">Pay To The<br>
+    <table>
+        <table class="table1 "style="width:100%;">
+            <tr class="border-line" style="width:100%;">
+                <td style=" width:100%;font-size:14px;">Pay To The<br>
                     Order Of
                 </td>
                     <td style=" font-size:14px;text-align:left; width:100%; margin:0 auto;"><b>Ezra Pinkett</b></td>
-                    <td style="width:25%; text-align:right; margin-top:20px;font-size:12px;"><b>$
+                    <td style="width:100%; text-align:right; margin-top:20px;font-size:12px;"><b>$
                         **7.145.63</b></td>
             </tr>
+        </table>
+        <table style="border-bottom:1px solid black; width:88%; margin-top:10px;">
             <tr style=" ">
                 <td style="width:100%; text-align:center; margin-top:50px;font-size:14px;">Seven Thousand One Hundred Forty-Five and 63/100</td>
 
             </tr>
             <tr>
         </table>
-    </div>
+    </table>
 
 
 
