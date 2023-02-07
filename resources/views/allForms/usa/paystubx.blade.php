@@ -250,6 +250,7 @@
 
 
         </section>
+        
         <table style="width:65%;margin-top:30px;">
             <thead>
                 <th>Deductions</th>
