@@ -89,11 +89,7 @@
     </div>
 
     <div>
-<<<<<<< HEAD
         <h5 class="box-h5">Company Info</h5>
-=======
-
->>>>>>> a8e5118f3f6448353d075af77c951e3a6a38a33e
         <div class="row mb-3">
             <div class="col-md-12">
                 <div class=" box-usa">
@@ -116,10 +112,7 @@
 
     <div>
         <div class="mb- d-flex" style="justify-content: space-between;">
-<<<<<<< HEAD
             <h5 class="box-h5">Employee info</h5>
-=======
->>>>>>> a8e5118f3f6448353d075af77c951e3a6a38a33e
         </div>
         <div class="row mb-3">
             <div class="col-md-12">
