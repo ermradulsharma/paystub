@@ -112,7 +112,7 @@ class TemplateFormController extends Controller
         $path = public_path() . '/uploads/mailData';
         File::isDirectory($path) or File::makeDirectory($path, 0777, true, true);
         $invoiceData['requestData'] = $requestData;
-        $pdf = PDF::loadView('allForms/' . $pageName, $invoiceData)->setPaper('a4', 'portrait');
+        $pdf = PDF::loadView('allForms/usa/' . $pageName, $invoiceData)->setPaper('a4', 'portrait');
         //    return $pdf->stream($pageName.'.pdf');
         $fileName =  date('_d_m_Y_h_i_s') . '.pdf';
         $pdf->save($path . '/' . $fileName);
@@ -437,7 +437,7 @@ class TemplateFormController extends Controller
         $path = public_path() . '/uploads/mailData';
         File::isDirectory($path) or File::makeDirectory($path, 0777, true, true);
         $invoiceData['requestData'] = $requestData;
-        $pdf = PDF::loadView('allForms/' . $pageName, $invoiceData)->setPaper('a4', 'portrait');
+        $pdf = PDF::loadView('allForms/usa/' . $pageName, $invoiceData)->setPaper('a4', 'portrait');
         $fileName =  date('_d_m_Y_h_i_s') . '.pdf';
         $pdf->save($path . '/' . $fileName);
         $invoice_id = $request->invoice_id ?? 0;
