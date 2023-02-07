@@ -194,8 +194,8 @@ globalwhitecheck usa
         </div>
 
         <h4>Memo:</h4>
-
-        {{--  <div class="row1">
+        {{-- 
+        <div class="row1">
             <div class="colum1">
                 <table>
                     <thead>

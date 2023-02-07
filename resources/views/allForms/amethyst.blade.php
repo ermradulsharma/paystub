@@ -89,6 +89,7 @@
             text-align: right;
             padding-right: 22px;
         }
+
         .bg-img2 {
             position: relative;
         }
@@ -103,7 +104,8 @@
             content: "";
             right: 0px;
             top: 170px;
-            left: 30px !important;;
+            left: 30px !important;
+            ;
         }
 
         .bg-img {
@@ -250,7 +252,8 @@
                             <tr>
                                 <td></td>
                                 <td class="data">{{ $tax_deduction }}</td>
-                                <td>{{ $requestData['currency'] }} {{ $requestData['period_tax_deduction'][$key] }}</td>
+                                <td>{{ $requestData['currency'] }} {{ $requestData['period_tax_deduction'][$key] }}
+                                </td>
                                 <td>{{ $requestData['currency'] }} {{ $requestData['ytd_tax_deduction'][$key] }}</td>
                             </tr>
                         @endforeach
@@ -265,7 +268,8 @@
                         </tr>
                     </tfoot>
                 </table>
-                <p style="margin-top:30px;">Your Taxes and deductions for this period are {{ $requestData['currency'] }}
+                <p style="margin-top:30px;">Your Taxes and deductions for this period are
+                    {{ $requestData['currency'] }}
                     {{ $requestData['deduction_tax'] }}</p>
             </section>
 
