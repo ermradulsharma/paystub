@@ -576,7 +576,7 @@
             </div>
         </div>
 
-        <div>
+        <div class="tempElemant d-none">
             <h5>Template Elements</h5>
             <div class="row mb-3">
                 <div class="col-md-12">
@@ -637,11 +637,21 @@
 <script>
     $(document).ready(function() {
         $('.advanceTemplate').change(function() {
-            var status = $('option:selected', '.bt_id').attr('data-status');
-            console.log('status', status);
+            var status = $('option:selected', '.at_id').attr('data-status');
+            if (status == 1) {
+                $(".tempElemant").removeClass("d-none");
+            }else{
+                $(".tempElemant").addClass("d-none");
+            }
             $('option:selected', '.basicTemplate').prop("selected", false);
         });
         $('.basicTemplate').change(function() {
+            var status = $('option:selected', '.bt_id').attr('data-status');
+            if (status == 1) {
+                $(".tempElemant").removeClass("d-none");
+            }else{
+                $(".tempElemant").addClass("d-none");
+            }
             $('option:selected', '.advanceTemplate').prop("selected", false);
         });
 
