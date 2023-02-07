@@ -15,9 +15,21 @@ use File;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
+use App\Models\Deduction;
+use App\Models\StateTax;
 
 class TemplateFormController extends Controller
 {
+
+    public function edit($id)
+    {
+        $invoiceData = PaySlip::where(['user_id' => Auth::user()->id, 'id' => $id])->first() ?? [];
+        $deduction = Deduction::where('state', $invoiceData->type)->orderBy('id', 'asc')->get();
+        $basicType = Template::where(['state' => $invoiceData->type, 'type' => 'basic', 'status' => 1])->with('images')->get();
+        $advanceType = Template::where(['state' => $invoiceData->type, 'type' => 'advance', 'status' => 1])->with('images')->get();
+        $stateTaxes = StateTax::get();
+        return view('lists/' . $invoiceData->type . '-edit', compact('basicType', 'advanceType', 'deduction', 'stateTaxes', 'invoiceData'));
+    }
     // ======= USA Preview Data =========
     public function templates(Request $request)
     {

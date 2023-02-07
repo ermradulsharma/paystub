@@ -39,7 +39,7 @@
                                 </a>
                             </th>
                             <th class="text-center" style="padding: 1em .5em;border:none;">
-                                <a href="{{ route('invoice-Usa-Edit', $invoice->id) }}">
+                                <a href="{{ route('invoiceEdit', $invoice->id) }}">
                                     <img src="{{asset('images/edit-icon.png')}}" alt="" width="45px">
                                 </a>
                             </th>
