@@ -20,6 +20,22 @@
 
 }
 
+.CreatePaystub {
+    width: 312px;
+    height: 64px;
+    border-radius: 63px;
+    background-color: #FF4040;
+    font-weight: 700;
+    margin: auto;
+    font-size: xx-large;
+    font-family: 'Futura LT';
+    margin-bottom: 20px;
+}
+
+.box-h5{
+    padding-left: 14px;
+}
+
 .netimg {
     width: 181px;
     height: 172px;
@@ -34,7 +50,7 @@
 
 .box-usa {
     border: 3px solid #FF6161;
-    padding: 10px 12px 12px 12px;
+    padding: 10px 0px 12px 0px;
     background: #E8E6E6;
 
     border-radius: 2px;
@@ -228,6 +244,13 @@
     top: 11px;
     left: 11px;
 }
+.earnbtn3 {
+    font-size: 20px !important;
+    height: 17px;
+    width: 17px;
+    margin-top: 7px;
+    padding-right: 1px;
+}
 
 .netpaybtn {
     font-size: 28px;
@@ -406,7 +429,7 @@ select:after {
     color: #ffffff;
     background: #12c23a;
     /* background-image: radial-gradient(white, #6bb0fd); */
-    padding: 6px 59px;
+    padding: 6px 30px;
     border: none;
     border-radius: 4px;
     box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, .6));
@@ -935,9 +958,9 @@ select {
     max-width: 176px;
 }
 
-.text-right {
+/* .text-right {
     margin-right: 30px;
-}
+} */
 
 .redcon {
     padding: 55px 115px;
@@ -1053,6 +1076,9 @@ select {
     .imguk {
         width: 885px;
     }
+    .couple {
+        max-width: 848px;
+    }
 }
 
 
@@ -1100,6 +1126,9 @@ select {
 }
 
 @media screen and (max-width: 1024px) {
+    .earnbtn {
+        font-size: 12px;
+    }
     .create-container li {
         font-size: 10px;
     }
@@ -1345,18 +1374,27 @@ select {
         font-size: 16px;
         line-height: 1.8;
     }
+    .earnbtn2 {
+        font-size: 20px;
+        position: absolute;
+        padding-left: 15px;
+        color: blue;
+        top: 5px;
+        left: 11px;
+    }
 }
 
 @media screen and (max-width: 768px) {
+    .uk-eye{
+        font-size: 22px !important;
+    }
+
     .ukimg1 {
         background-position-x: left;
         left: 9px;
     }
 
-    .globlebtn {
-        display: flex;
-        justify-content: center;
-    }
+    
 
     .can-p {
         font-size: 19px !important;
@@ -1397,7 +1435,7 @@ select {
         /* font-weight: 400; */
         margin: 0;
         /* font: var(--font_2); */
-        font-size: 7px;
+        font-size: 9px;
     }
 
     .globlebtn1 {
@@ -1409,6 +1447,8 @@ select {
 
     .text-white {
         text-align: left;
+        margin-top: 4px;
+        font-size: 17px;
     }
 
     .text-padding {
@@ -1524,7 +1564,7 @@ select {
     }
 
     .storehead {
-        padding: 0px 0px 0px 260px;
+        padding: 0px 0px 0px 12px;
     }
 
     .pay-p {
@@ -1557,8 +1597,6 @@ select {
 
     .w-100 {
         width: 100% !important;
-
-        margin: 0 auto;
         display: flex;
         justify-content: center;
     }
@@ -1675,7 +1713,8 @@ select {
     }
 
     .statementbtn {
-        font-size: 10px;
+        font-size: 8px;
+        padding:5px 2px !important;
     }
 }
 
@@ -1709,9 +1748,11 @@ select {
         top: 10px;
         left: 0px;
     }
-
+.uk-goo{
+    padding: 0 !important;
+}
     .text-white {
-        font-size: 13px;
+        font-size: 19px;
         margin-bottom: 10px;
         margin-top: 4px;
     }
@@ -1872,7 +1913,7 @@ select {
     }
 
     .storehead {
-        padding: 0px 0px 0px 30px;
+        padding: 0px 0px 0px 0px;
     }
 
     .payhead {
@@ -1964,9 +2005,36 @@ select {
     .box-h5{
         padding-left: 14px;
     }
+    .ukbtn1{
+        display: flex;
+        justify-content: center;
+        border: none;
+        box-shadow: none;
+    }
+    .createbtn2 {
+        padding: 0px 30px;
+    }
+    .add{
+        font-size: 12px !important;
+    }
+    .base {
+        font-size: 12px;
+    }
+  
+    .uk-eye{
+        font-size: 22px !important;
+    }
+
+
 }
 
+
 @media screen and (max-width: 375px) {
+    .text-white {
+        font-size: 18px;
+        margin-bottom: 10px;
+        margin-top: 4px;
+    }
     .OnPaystub {
         font-size: 13px;
         color: #0e0e0e;
@@ -1974,6 +2042,9 @@ select {
         bottom: -253px;
         left: 4px;
         font-weight: 200;
+    }
+    .add{
+        font-size: 11px !important;
     }
 
     .small-font {
@@ -2039,13 +2110,13 @@ select {
 
     .canadah4 {
         font-weight: 300;
-        font-size: 31px;
+        font-size: 17px;
         letter-spacing: 1.5px;
         padding-left: 26px;
     }
 
     .canadah2 {
-        font-size: 34px;
+        font-size: 24px;
         font-family: avenir-lt-w01_35-light1475496, sans-serif;
         padding-left: 6px;
     }
@@ -2137,7 +2208,7 @@ select {
     }
 
     .createbtn2 {
-        padding: 0px 32px;
+        padding: 0px 30px;
     }
 
     .textarea {
@@ -2146,7 +2217,7 @@ select {
 
     .ukimg1 {
         background-position-x: left;
-        left: 20px;
+        left: 2px;
     }
 
     .box-usa {
@@ -2175,4 +2246,25 @@ select {
     .paytext {
         margin-left: 18px;
     }
+    .uk-eye{
+        font-size: 22px !important;
+    }
+.payp {
+    font-size: 12px !important;
+    color: white;
+    background: #537b9d;
+    border: none;
+    padding: 6px 4px;
+    border-radius: 4px;
+    font-weight: 200;
+    font-family: 'Futura LT';
+    margin-top: 4px !important;
+}
+.earnbtn3 {
+    font-size: 20px !important;
+    height: 17px;
+    width: 17px;
+    margin-top: 14px;
+    padding-right: 1px;
+}
 }

@@ -12,7 +12,7 @@ class ValidationService
         $response['status'] = 200;
         $response['success'] = true;
 
-        if ($request->form_type == "usa") {
+        if ($request->form_type == "usa" || $request->form_type == "global") {
             $rules = [
                 'advance_temp' => 'required_without:basic_temp',
                 'basic_temp' => 'required_without:advance_temp',
@@ -108,9 +108,9 @@ class ValidationService
                 'rate' => 'required|array',
                 'hours' => 'required|array',
                 'total' => 'required|array',
-                'taxes' => 'required|array',
-                'taxes_rate' => 'required|array',
-                'taxes_ytd' => 'required|array',
+                // 'taxes' => 'required|array',
+                // 'taxes_rate' => 'required|array',
+                // 'taxes_ytd' => 'required|array',
             ];
 
             $messages = [
@@ -132,9 +132,9 @@ class ValidationService
                 'rate' => 'The RATE be empty',
                 'hours' => 'The HOURS be empty',
                 'total' => 'The TOTAL cannot be empty',
-                'taxes' => 'The Taxes cannot be empty',
-                'taxes_rate' => 'The Taxes Rate cannot be empty',
-                'taxes_ytd' => 'The Taxes YTD cannot be empty',
+                // 'taxes' => 'The Taxes cannot be empty',
+                // 'taxes_rate' => 'The Taxes Rate cannot be empty',
+                // 'taxes_ytd' => 'The Taxes YTD cannot be empty',
             ];
         } elseif ($request->form_type == "uk") {
             $rules = [

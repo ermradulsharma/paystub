@@ -50,6 +50,7 @@ Route::match(['get', 'post'], 'usa', [UsaController::class, 'index']);
 Route::get('canada-paystub', [CanadaController::class, 'index']);
 Route::get('uk-paystub', [UkController::class, 'index']);
 Route::get('globle', [UsaController::class, 'templateGloble']);
+Route::get('globle-paystub', [UsaController::class, 'globlePaystub']);
 
 
 
