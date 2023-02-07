@@ -73,22 +73,12 @@
         width: 40%;
     }
     .container {
-        background-image: url('http://44.202.105.74/images/bg-brown.jpeg') !important;
+        background-image: url('http://44.202.105.74/images/texture-brown.png') !important;
         background-size:cover;
         background-repeat:no-repeat;
         width:100%;
-        position: relative;
     }
-    .container:before {
-        content:"";
-        position: absolute;
-        top:0;
-        left: 0;
-        right: 0;
-        background-image: url('http://44.202.105.74/images/watermark.png') !important;
-        /* background-image: url('http://44.202.105.74/images/bg-blue.jpeg') !important;
-        background-image: url('http://44.202.105.74/images/bg-green.jpeg') !important; */
-    }
+
 </style>
 
 <body>
