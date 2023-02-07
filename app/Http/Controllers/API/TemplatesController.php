@@ -3,11 +3,13 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Models\PaySlip;
 use App\Models\Template;
 use PDF;
 use File;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 
 class TemplatesController extends Controller
@@ -19,7 +21,7 @@ class TemplatesController extends Controller
         $response['status'] = STATUS_BAD_REQUEST;
         $response['success'] = FALSE;
         try {
-             $dataObj = Template::getTemplate($request);
+            $dataObj = Template::getTemplate($request);
             if ($dataObj['status'] == 200) {
                 $response['basic'] = $dataObj['basic'];
                 $response['advance'] = $dataObj['advance'];
@@ -35,63 +37,14 @@ class TemplatesController extends Controller
         }
         return response()->json($response, $response['status']);
     }
+
     public function templatesPreview(Request $request)
     {
         $response = [];
         $response['message'] = "";
         $response['status'] = STATUS_BAD_REQUEST;
         $response['success'] = FALSE;
-        $requestData = $request->all();
-        $earning = [];
-        $rate = [];
-        $hours = [];
-        $total = [];
-        $period = [];
-        $ytd_total = [];
-        $taxes = [];
-        $taxes_rate = [];
-        $taxes_ytd = [];
-        $tax_deduction = [];
-        $period_tax_deduction = [];
-        $ytd_tax_deduction = [];
-
-        foreach($request->earn ?? [] as $d){
-            $earning[] = $d['earning'];
-            $rate[] = $d['rate'];
-            $hours[] = $d['hours'];
-            $total[] = $d['total'];
-            $period[] = $d['period'];
-            $ytd_total[] = $d['ytd_total'];
-        }
-        $requestData['earning'] = $earning;
-        $requestData['rate'] = $rate;
-        $requestData['hours'] = $hours;
-        $requestData['total'] = $total;
-        $requestData['period'] = $period;
-        $requestData['ytd_total'] = $ytd_total;
-
-        // ======== tax ========
-        foreach($request->tax ?? [] as $d){
-            $taxes[] = $d['taxes'];
-            $taxes_rate[] = $d['taxes_rate'];
-            $taxes_ytd[] = $d['taxes_ytd'];
-        }
-
-        $requestData['taxes'] = $taxes;
-        $requestData['taxes_rate'] = $taxes_rate;
-        $requestData['taxes_ytd'] = $taxes_ytd;
-
-        // ======== Extra tax ========
-        foreach($request->extra_tax_deduction ?? [] as $d){
-            $tax_deduction[] = $d['tax_deduction'];
-            $period_tax_deduction[] = $d['period_tax_deduction'];
-            $ytd_tax_deduction[] = $d['ytd_tax_deduction'];
-        }
-
-        $requestData['tax_deduction'] = $tax_deduction;
-        $requestData['period_tax_deduction'] = $period_tax_deduction;
-        $requestData['ytd_tax_deduction'] = $ytd_tax_deduction;
-
+        $requestData = Template::template($request);
         try {
             if ($requestData['advance_temp']) {
                 $pageName = $requestData['advance_temp'];
@@ -107,6 +60,73 @@ class TemplatesController extends Controller
             $file = public_path('/uploads/mailData/' . $fileName);
             $response['pdf'] = asset('/uploads/mailData/' . $fileName);
             $response['message'] = "Template created";
+            $response['status'] = 200;
+            $response['success'] = TRUE;
+        } catch (Exception $e) {
+            $response['message'] = $e->getMessage() . ' Line No ' . $e->getLine() . ' in File' . $e->getFile();
+            Log::error($e->getTraceAsString());
+            $response['status'] = STATUS_GENERAL_ERROR;
+        }
+        return response()->json($response, $response['status']);
+    }
+
+    public function templatesDataSave(Request $request)
+    {
+        $response = [];
+        $response['message'] = "";
+        $response['status'] = STATUS_BAD_REQUEST;
+        $response['success'] = FALSE;
+        $requestData = Template::template($request);
+        try {
+            if ($requestData['advance_temp']) {
+                $pageName = $requestData['advance_temp'];
+            } else {
+                $pageName = $requestData['basic_temp'];
+            }
+            $path = public_path() . '/uploads/mailData';
+            File::isDirectory($path) or File::makeDirectory($path, 0777, true, true);
+            $invoiceData['requestData'] = $requestData;
+            $pdf = PDF::loadView('allForms/' . $request->form_type . '/' . $pageName, $invoiceData)->setPaper('a4', 'portrait');
+            $fileName =  date('_d_m_Y_h_i_s') . '.pdf';
+            $pdf->save($path . '/' . $fileName);
+            $invoice_id = $request->invoice_id ?? 0;
+            $slip = PaySlip::where(['user_id' => Auth::user()->id, 'id' => $invoice_id])->first();
+            if (!$slip) {
+                $slip = new PaySlip;
+                $slip->user_id = Auth::user()->id;
+                $slip->reference = "PayStubx-" . rand(100000, 999999);
+            } else {
+                try {
+                    unlink(public_path('/uploads/mailData/' . basename($slip->pdf)));
+                } catch (Exception $e) {
+                }
+            }
+            $slip->data = json_encode($requestData);
+            $slip->title = $requestData['cname'];
+            $slip->pdf = $fileName;
+            $slip->type = $request->form_type;
+            if ($slip->save()) {
+                $response['message'] = "Template save successfully";
+                $response['status'] = 200;
+                $response['success'] = TRUE;
+            }
+        } catch (Exception $e) {
+            $response['message'] = $e->getMessage() . ' Line No ' . $e->getLine() . ' in File' . $e->getFile();
+            Log::error($e->getTraceAsString());
+            $response['status'] = STATUS_GENERAL_ERROR;
+        }
+        return response()->json($response, $response['status']);
+    }
+
+    public function getPdfList(Request $request)
+    {
+        $response['message'] = "";
+        $response['status'] = STATUS_BAD_REQUEST;
+        $response['success'] = FALSE;
+        try {
+            $paySlipObj = PaySlip::select('id', 'user_id', 'pdf')->where('user_id', Auth::user()->id)->get();
+            $response['data'] = $paySlipObj;
+            $response['message'] = "Payslip fetch successfully";
             $response['status'] = 200;
             $response['success'] = TRUE;
         } catch (Exception $e) {
