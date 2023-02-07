@@ -19,7 +19,7 @@
                 <div class="mt-5 pt-5 justify-content-center ">
                     <a class="btn btn-lg  mt-5 p-2 btn-danger Generate " href="{{url('usa')}}">Generate Paystub Now</a>
                 </div>
-                <div class="mt-5 d-flex pt-3">
+                <div class="mt-5 d-flex pt-3 top-gogle">
                     <a href="https://www.google.com/" target="_blank"><img class="storbtn ml-1" src="images/Google_Play_Store_badge_EN.webp"></a>
                     <a href="https://www.google.com/" target="_blank"><img class="storbtn ml-5" src="images/Download_on_the_App_Store_Badge.webp"></a>
                 </div>
@@ -47,7 +47,7 @@
 
 <div class="mt-2 createSample">
     <div class="container">
-        <div class="row">
+        <div class="row m-auto">
             <a href="{{url('/')}}"><img class="w-100" src="images/Create me.webp"></a>
         </div>
 
@@ -117,53 +117,40 @@
     <div class="container pt-5" style="max-width: 1750px;">
         <div class="">
             <div class="text-justify text-center pb-5">
-                <h2 style="font-size:30px; font-family: 'Futura LT';" class="text-white pt-5">
+                <h2 style="font-size:30px; font-family: 'Futura LT';" class="text-white pt-5 gen">
                     Generate paystubs with accurate tax
                     calculations, W-2, 1099S Etc in Seconds</h2>
                 <div class="row mt-5">
-                    <div class="col-md-4 text-center">
+                    <div class="col-md-4 mt-3 text-center">
                         <h2 class="text-white calcheading head-font">Add your Data</h2>
-                    </div>
-                    <div class="col-md-4 text-center">
-                        <h2 class="text-white calcheading head-font">Preview Data</h2>
-                    </div>
-                    <div class="col-md-4 text-center">
-                        <h2 class="text-white pay-h2 calcheading head-font">Download & Email your Paystub</h2>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-4 col-md-4">
                         <p style="font-size:17px;font-weight: 200;font-family: 'Futura LT';line-height:1.8;" class="text-white pay-p head-font">Our paystub generator
                             accurately</br>
                             calculates your Federal and State</br> taxes, including Social security </br>and Medicare
                             taxes so you don't
                         </p>
+                       
+                        <img src="images/1.webp" style=" width: 94px; height: 94px; object-fit: cover; object-position: 50% 50%;">
                     </div>
-                    <div class="col-lg-4 col-md-4">
+                
+
+                    <div class="col-md-4 mt-3 text-center">
+                        <h2 class="text-white calcheading head-font">Preview Data</h2>
                         <p style="font-size:17px;font-weight: 200;font-family: 'Futura LT'; line-height:1.8;" class="text-white pay-p head-font">Generate pay stubs with
                             accurate</br>
                             state income taxes, based on </br>state W-4, and other applicable</br> local taxes. </p>
+                            <img src="images/2.webp" style=" width: 94px; height: 94px; object-fit: cover; object-position: 50% 50%;">
                     </div>
-                    <div class="col-lg-4 col-md-4">
+                    <div class="col-md-4 mt-3 text-center">
+                        <h2 class="text-white pay-h2 calcheading head-font">Download & Email your Paystub</h2>
                         <p style="font-size:17px;font-weight: 200;font-family: 'Futura LT'; line-height:1.8;" class="text-white pay-p head-font">You will get to generate
                             unlimited</br>
                             payslip, paycheck or paystub </br>according to the plan you select.
                         </p>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-4 col-md-4" style="margin-bottom:20px;">
-                        <img src="images/1.webp" style=" width: 94px; height: 94px; object-fit: cover; object-position: 50% 50%;">
-                    </div>
-                    <div class="col-lg-4 col-md-4" style="margin-bottom:20px;">
-                        <img src="images/2.webp" style=" width: 94px; height: 94px; object-fit: cover; object-position: 50% 50%;">
-                    </div>
-                    <div class="col-lg-4 col-md-4">
                         <img src="images/3.webp" style=" width: 94px; height: 94px; object-fit: cover; object-position: 50% 50%;">
                     </div>
                 </div>
+
+         
 
             </div>
         </div>
@@ -264,7 +251,7 @@
             <div class="col-md-1"></div>
 
             <div class="col-md-6 text-left mb-5">
-                <div class="mt-5 " style="font-size: 32px; font-family: 'Futura LT'; font-weight:600;">
+                <div class="mt-5 ready" style="font-size: 32px; font-family: 'Futura LT'; font-weight:600;">
                     Ready to Explore our Online Paystub Generator?
                 </div>
                 <div>
@@ -301,8 +288,8 @@
                         It's simple, easy, and accurate.</p>
                 </div>
 
-                <div class="mt-5  d-flex pt-5">
-                    <a href="https://www.google.com/" target="_blank"><img class="storbtn ml-4" src="images/Google_Play_Store_badge_EN.webp"></a>
+                <div class="mt-5  d-flex pt-5 goggle">
+                    <a href="https://www.google.com/" target="_blank"><img class="storbtn " src="images/Google_Play_Store_badge_EN.webp"></a>
                     <a href="https://www.google.com/" target="_blank"><img class="storbtn ml-5 " src="images/Download_on_the_App_Store_Badge.webp"></a>
                 </div>
             </div>

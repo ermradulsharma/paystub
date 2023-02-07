@@ -42,7 +42,7 @@
             <div class="row mb-3">
                 <div class="col-md-12">
                     <div class=" box-usa">
-                        <h5>Company Info</h5>
+                         <h5 class="box-h5">Company Info</h5>
                         <div class="row mb-3 ">
                             <div class="col-md-6 mt-1">
                                 <div>
@@ -115,7 +115,7 @@
         </div>
 
         <div>
-            <h5>Choose Template</h5>
+             <h5 class="box-h5">Choose Template</h5>
             <div class="row mb-3">
                 <div class="col-md-12">
                     <div class=" box-usa">
@@ -166,7 +166,7 @@
         </div>
 
         <div>
-            <h5>Employee Info</h5>
+             <h5 class="box-h5">Employee Info</h5>
             <div class="row mb-3">
                 <div class="col-md-12">
                     <div class=" box-usa">
@@ -251,7 +251,7 @@
         </div>
 
         <div>
-            <h5>Employee Basic Info</h5>
+             <h5 class="box-h5">Employee Basic Info</h5>
             <div class="row mb-3">
                 <div class="col-md-12">
                     <div class=" box-usa">
@@ -377,7 +377,7 @@
 
         <div>
             <div class="mb- d-flex" style="justify-content: space-between;">
-                <h5>Earning statement</h5>
+                 <h5 class="box-h5">Earning statement</h5>
             </div>
             <div class="row mb1">
                 <div class="col-md-12">
@@ -408,7 +408,7 @@
                             </div>
 
                             <div class="col-md-3 mt-4">
-                                <p class="text-center mb-0" style="font-size:18px;">How do you get paid <span class="redColor">*</span> <span> </p>
+                                <p class="text-center how_p mb-0" style="font-size:18px;">How do you get paid <span class="redColor">*</span> <span> </p>
                                 <div class="text-center mt-2  d-flex justify-content-center">
                                     <button type="button" class="hourbtn date_select">HOURLY</button> <button type="button" class="salrybtn">SALARY</button>
                                 </div>
@@ -416,24 +416,24 @@
                         </div>
 
                         <div class="row ">
-                            <div class=" col-lg-2 col-md-2 margin-bottom ">
+                            <div class=" col-lg-2 col-md-2 margin-bottom  mb-1">
                                 <button type="button" class="statementbtn">EARNING</button>
                             </div>
-                            <div class=" col-lg-2  col-md-2 margin-bottom ">
+                            <div class=" col-lg-2  col-md-2 margin-bottom mb-1  ">
                                 <button type="button" class="statementbtn">RATE</button>
                             </div>
-                            <div class=" col-lg-2  col-md-2 margin-bottom ">
+                            <div class=" col-lg-2  col-md-2 margin-bottom mb-1  ">
                                 <button type="button" class="statementbtn">HOURS</button>
                             </div>
-                            <div class=" col-lg-2 col-md-2 margin-bottom ">
+                            <div class=" col-lg-2 col-md-2 margin-bottom mb-1  ">
                                 <button type="button" class="statementbtn">TOTAL</button>
                             </div>
-                            <div class=" col-lg-2  col-md-2 margin-bottom">
+                            <div class=" col-lg-2  col-md-2 margin-bottom mb-1 ">
                                 <button type="button" class="statementbtn">THIS PERIOD</button>
                                 <p class="p-0 m-0 text-center" style="font-family: serif;font-size: 14px;"> Total
                                     Gross </p>
                             </div>
-                            <div class=" col-lg-2  col-md-2 margin-bottom ">
+                            <div class=" col-lg-2  col-md-2 margin-bottom mb-1  ">
                                 <button type="button" class="statementbtn">YTD TOTAL</button>
                                 <p class="p-0 m-0 text-center" style="font-family: serif;font-size:14px;">YTD Total
                                     Gross</p>
@@ -577,7 +577,7 @@
         </div>
 
         <div>
-            <h5>Template Elements</h5>
+             <h5 class="box-h5">Template Elements</h5>
             <div class="row mb-3">
                 <div class="col-md-12">
                     <div class=" box-usa">

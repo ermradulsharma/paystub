@@ -7,9 +7,9 @@
             <div class="col-lg-4 m-auto text-center2">
                 <div style="" class="text-center canadaheading">Instantly Generate your Professional Canadian Pay Stubs </div>
 
-                <p style="font-weight: 400;font-size:21px;font-family: 'Futura LT';" class="mb-0">
+                <p style="font-weight: 400;font-size:21px;font-family: 'Futura LT';" class="mb-0 can-p">
                     Generate Your Canadian Pay Stub in Seconds with Paystubx. The #1 Leading in the game.</p>
-                <p class="mb-5 " style="font-size:larger;font-weight: 200;line-height: 2em;font-family: 'Futura LT';">Online secure web-based pay stub generator,</br> straightforward to use, instant pay stub delivery, and</br> free pay stub preview. Simple as ABC.</p>
+                <p class="mb-5 can-p1 " style="font-size:larger;font-weight: 200;line-height: 2em;font-family: 'Futura LT';">Online secure web-based pay stub generator,</br> straightforward to use, instant pay stub delivery, and</br> free pay stub preview. Simple as ABC.</p>
 
 
                 <div class="mt-5 justify-content-center ">
