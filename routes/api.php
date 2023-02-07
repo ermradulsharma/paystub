@@ -27,6 +27,8 @@ Route::group(['namespace' => 'Api', 'middleware' => ['\App\Http\Middleware\LogAf
     Route::get('get-state-taxes', [DeductionController::class, 'getStateTaxes']);
     Route::post('template-preview', [TemplatesController::class, 'templatesPreview']);
     Route::post('send-otp', [UserController::class, 'sendOtp']);
+    Route::post('login', [UserController::class, 'loginWithOtp']);
+    Route::post('social-login', [UserController::class, 'socialLogin']);
     Route::group(['middleware' => ['auth:api']], function () {
     });
 });
