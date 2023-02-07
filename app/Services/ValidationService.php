@@ -10,6 +10,8 @@ class ValidationService
     public function usa($request)
     {
         $response['status'] = 200;
+        $response['success'] = true;
+
         if ($request->form_type == "usa") {
             $rules = [
                 'advance_temp' => 'required_without:basic_temp',
@@ -207,6 +209,7 @@ class ValidationService
         if ($validator->fails()) {
             $response['message'] = $validator->errors()->first();
             $response['status'] = 301;
+            $response['success'] = false;
         }
         return $response;
     }

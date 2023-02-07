@@ -84,7 +84,7 @@ class TemplateFormController extends Controller
         $slip->pdf = $fileName;
         $slip->save();
         $response['message'] = "Data saved successfully successfully.";
-        return response()->json($response, 200);
+        return response()->json($response, $response['status']);
     }
 
     //======invoice list ==========
