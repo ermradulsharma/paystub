@@ -225,18 +225,17 @@
                         </tr>
                         @foreach ($requestData['tax_deduction'] ?? [] as $key => $tax_deduction)
                             <tr>
-                                <td></td>
-                                <td class="data">{{ $tax_deduction }}</td>
+                                <td colspan="2" class="data">{{ $tax_deduction }}</td>
                                 <td>{{ $requestData['currency'] }} {{ number_format($requestData['period_tax_deduction'][$key],2) }} </td>
                                 <td>{{ $requestData['currency'] }} {{ number_format($requestData['ytd_tax_deduction'][$key],2) }}</td>
                             </tr>
                         @endforeach
                     @endif
-                    <tfoot class="tfooter " style="background:#8a2ebd; color:white">
+                    <tfoot class="tfooter " style="background:#8a2ebd; color:white;">
                         <tr>
                             <th colspan="2">Net Pay</th>
-                            <th style="font-weight: 100;">{{ $requestData['currency'] }} {{ number_format($requestData['total_net_pay'],2) }}</th>
-                            <th style=" font-weight: 100;">{{ $requestData['currency'] }} {{ number_format($requestData['total_ytd_net_pay'],2) }}</th>
+                            <th style="position: relative; left:5px; font-weight:100px;margin-right:10px;">{{ $requestData['currency'] }} {{ number_format($requestData['total_net_pay'],2) }}</th>
+                            <th style=" padding-right:10px;font-weight:100;">{{ $requestData['currency'] }} {{ number_format($requestData['total_ytd_net_pay'],2) }}</th>
                         </tr>
                     </tfoot>
                 </table>

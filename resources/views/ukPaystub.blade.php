@@ -89,12 +89,13 @@
     </div>
 
     <div>
-        <h5>Company Info</h5>
+
         <div class="row mb-3">
             <div class="col-md-12">
                 <div class=" box-usa">
-                    <div class="row mb-3">
+                    <div class="row mb-3" style="align-items: end;">
                         <div class="col-md-6 mt-1">
+                            <h5>Company Info</h5>
                             <label for="cname" class="lable">EMPLOYER (COMPANY) NAME <span style="color:red;">*</span> </label>
                             <input type="text" id="cname" name="cname" placeholder="Your Employer & Company Name" class="w-100 p-2 text-center" style="font-size:14px;">
                         </div>
@@ -111,13 +112,13 @@
 
     <div>
         <div class="mb- d-flex" style="justify-content: space-between;">
-            <h5>Employee info</h5>
         </div>
         <div class="row mb-3">
             <div class="col-md-12">
                 <div class=" box-usa">
-                    <div class="row mb-3">
+                    <div class="row mb-3" style="align-item:end;">
                         <div class="col-md-6 mt-4">
+                            <h5>Employee info</h5>
                             <label for="emp_name" class="lable">EMPLOYEE NAME <span style="color:red;">*</span></label>
                             <input type="text" id="emp_name" name="emp_name" placeholder="Your Full  Name" class="w-100 p-2 text-center" style="font-size:14px;">
                         </div>

@@ -33,7 +33,6 @@ class TemplateFormController extends Controller
     // ======= USA Preview Data =========
     public function templates(Request $request)
     {
-
         $response = (new ValidationService)->usa($request);
         if ($response['status'] == 301) {
             return response()->json($response, $response['status']);
