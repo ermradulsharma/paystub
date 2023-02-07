@@ -53,6 +53,7 @@ class UserController extends Controller
         $response['success'] = FALSE;
         $response['status'] = STATUS_BAD_REQUEST;
         Log::info($request);
+        DB::beginTransaction();
         $rules = [
             'email' => 'required|email:rfc,dns',
             'code' => 'required|min:4'
@@ -84,6 +85,7 @@ class UserController extends Controller
             $response['message'] = "Login successfully";
             $response['status'] = STATUS_OK;
         }
+        DB::commit();
         return response()->json($response, 200);
     }
 
