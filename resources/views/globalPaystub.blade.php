@@ -712,12 +712,12 @@
 
 
             <div>
-                <div class="mb-4 d-flex" style="justify-content: space-between; align-items: center;">
+                <div class="mb-4 d-flex" style="justify-content: space-between; align-items: center;margin-left: 1em;">
                     <div class="text-left mt-1">
                         <button class="previewbtn text-capitalize viewTempTemplate" type="button" id="button1">Preview
                             Your Paystub <i class="fa fa-eye" style="font-size: 30px; margin-left: 7px;"></i></button>
                     </div>
-                    <div class="text-right mt-1" style="margin-right:30px;">
+                    <div class="text-right mt-1" style="margin-right:16px;">
                         <button type="button" class="emailbtn text-capitalize sendMailButton"> <i
                                 class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL PAYSTUB <i
                                 class="fa fa-download ml-4" style="font-size:24px"></i></button>
