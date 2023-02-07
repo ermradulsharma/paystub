@@ -446,9 +446,14 @@
                     </div>
                 </div>
             </div>
-        </form>
-    </div>
-    </div>
+        </div>
+
+        <!-- hidden values -->
+        <input type="hidden" name="days_number" hidden id="days_number">
+        <!-- //hidden values -->
+    </form>
+</div>
+</div>
 @endsection
 @section('script')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"

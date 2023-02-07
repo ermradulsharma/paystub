@@ -38,7 +38,7 @@
 </div>
 <!-- Modal End -->
 <div class="container mt-2" style="max-width:1450px;">
-    <form id="usa_paystubx" action="" method="post">
+    <form id="submit_form_paystubx_id" action="javascript:void()" method="get">
         @php($invoice = json_decode($invoiceData->data ?? "[]"))
         <input type="hidden" name="invoice_id" value="{{$invoiceData->id ?? 0}}">
         @csrf
