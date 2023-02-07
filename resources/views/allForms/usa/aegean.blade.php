@@ -199,8 +199,8 @@
                             <td>{{ $earn }}</td>
                             <td>{{ $requestData['currency'] }} {{ $requestData['rate'][$key] }}</td>
                             <td>{{ $requestData['hours'][$key] }}</td>
-                            <td>{{ $requestData['currency'] }} {{ $requestData['period'][$key] }}</td>
-                            <td>{{ $requestData['currency'] }} {{ $requestData['ytd_total'][$key] }}</td>
+                            <td>{{ $requestData['currency'] }} {{ number_format($requestData['period'][$key],2) }}</td>
+                            <td>{{ $requestData['currency'] }} {{ number_format($requestData['ytd_total'][$key],2) }}</td>
                         </tr>
                     @endforeach
 
@@ -216,9 +216,9 @@
                         <tr>
                             <th colspan="3"></th>
                             <th style="font-weight: 100;">{{ $requestData['currency'] }}
-                                {{ $requestData['period_gross_total'] }}</th>
+                                {{ number_format($requestData['period_gross_total'],2) }}</th>
                             <th style=" font-weight: 100;">{{ $requestData['currency'] }}
-                                {{ $requestData['ytd_gross_total'] }}</th>
+                                {{ number_format($requestData['ytd_gross_total'],2) }}</th>
                         </tr>
                     </tfoot>
                 </table>
@@ -235,8 +235,8 @@
                         <tr>
                             <td></td>
                             <td class="data">{{ $taxes }}</td>
-                            <td>{{ $requestData['currency'] }} {{ $requestData['taxes_rate'][$key] }}</td>
-                            <td>{{ $requestData['currency'] }} {{ $requestData['taxes_ytd'][$key] }}</td>
+                            <td>{{ $requestData['currency'] }} {{ number_format($requestData['taxes_rate'][$key],2) }}</td>
+                            <td>{{ $requestData['currency'] }} {{ number_format($requestData['taxes_ytd'][$key],2) }}</td>
                         </tr>
                     @endforeach
                     @if (count($requestData['tax_deduction'] ?? []) > 0)
@@ -250,8 +250,8 @@
                             <tr>
                                 <td></td>
                                 <td class="data">{{ $tax_deduction }}</td>
-                                <td>{{ $requestData['currency'] }} {{ $requestData['period_tax_deduction'][$key] }}</td>
-                                <td>{{ $requestData['currency'] }} {{ $requestData['ytd_tax_deduction'][$key] }}</td>
+                                <td>{{ $requestData['currency'] }} {{ number_format($requestData['period_tax_deduction'][$key],2) }}</td>
+                                <td>{{ $requestData['currency'] }} {{ number_format($requestData['ytd_tax_deduction'][$key],2) }}</td>
                             </tr>
                         @endforeach
                     @endif
@@ -259,14 +259,14 @@
                         <tr>
                             <th colspan="2">Net Pay</th>
                             <th style="font-weight: 100;">{{ $requestData['currency'] }}
-                                {{ $requestData['total_net_pay'] }}</th>
+                                {{ number_format($requestData['total_net_pay'],2) }}</th>
                             <th style=" font-weight: 100;">{{ $requestData['currency'] }}
-                                {{ $requestData['total_ytd_net_pay'] }}</th>
+                                {{ number_format($requestData['total_ytd_net_pay'],2) }}</th>
                         </tr>
                     </tfoot>
                 </table>
                 <p style="margin-top:30px;">Your Taxes and deductions for this period are {{ $requestData['currency'] }}
-                    {{ $requestData['deduction_tax'] }}</p>
+                    {{ number_format($requestData['deduction_tax'],2) }}</p>
             </section>
 
             <section class="bg-img">
