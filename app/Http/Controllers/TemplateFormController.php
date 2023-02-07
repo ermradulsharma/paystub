@@ -39,7 +39,7 @@ class TemplateFormController extends Controller
         $invoiceData['requestData'] = $requestData;
         $pdf = PDF::loadView('allForms/' . $request->form_type . '/' . $pageName, $invoiceData)->setPaper('a4', 'portrait');
         //    return $pdf->stream($pageName.'.pdf');
-        $fileName =  date('_d_m_Y_h_i_s') . '.pdf';
+        $fileName =  date($pageName . '_d_m_Y_h_i_s') . '.pdf';
         $pdf->save($path . '/' . $fileName);
         $response['pdf'] = asset('/uploads/mailData/' . $fileName);
         $response['message'] = "Mail send successfully.";
@@ -65,7 +65,7 @@ class TemplateFormController extends Controller
         File::isDirectory($path) or File::makeDirectory($path, 0777, true, true);
         $invoiceData['requestData'] = $requestData;
         $pdf = PDF::loadView('allForms/' . $request->form_type . '/' . $pageName, $invoiceData)->setPaper('a4', 'portrait');
-        $fileName =  date('_d_m_Y_h_i_s') . '.pdf';
+        $fileName =  date($pageName . '_d_m_Y_h_i_s') . '.pdf';
         $pdf->save($path . '/' . $fileName);
         $invoice_id = $request->invoice_id ?? 0;
         $slip = PaySlip::where(['user_id' => Auth::user()->id, 'id' => $invoice_id])->first();
