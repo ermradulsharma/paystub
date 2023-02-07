@@ -389,6 +389,10 @@
                 </div>
             </div>
         </div>
+
+        <!-- hidden values -->
+        <input type="hidden" name="days_number" hidden id="days_number">
+        <!-- //hidden values -->
     </form>
 </div>
 </div>
