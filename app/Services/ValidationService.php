@@ -12,7 +12,7 @@ class ValidationService
         $response['status'] = 200;
         $response['success'] = true;
 
-        if ($request->form_type == "usa") {
+        if ($request->form_type == "usa" || $request->form_type == "global") {
             $rules = [
                 'advance_temp' => 'required_without:basic_temp',
                 'basic_temp' => 'required_without:advance_temp',
