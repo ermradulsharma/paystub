@@ -109,8 +109,8 @@ class ValidationService
                 'hours' => 'required|array',
                 'total' => 'required|array',
                 // 'taxes' => 'required|array',
-                'taxes_rate' => 'required|array',
-                'taxes_ytd' => 'required|array',
+                // 'taxes_rate' => 'required|array',
+                // 'taxes_ytd' => 'required|array',
             ];
 
             $messages = [
@@ -133,8 +133,8 @@ class ValidationService
                 'hours' => 'The HOURS be empty',
                 'total' => 'The TOTAL cannot be empty',
                 // 'taxes' => 'The Taxes cannot be empty',
-                'taxes_rate' => 'The Taxes Rate cannot be empty',
-                'taxes_ytd' => 'The Taxes YTD cannot be empty',
+                // 'taxes_rate' => 'The Taxes Rate cannot be empty',
+                // 'taxes_ytd' => 'The Taxes YTD cannot be empty',
             ];
         } elseif ($request->form_type == "uk") {
             $rules = [
