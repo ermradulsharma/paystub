@@ -116,7 +116,7 @@
             background-size: contain;
             background-repeat: no-repeat;
             content: "";
-            top: 50px;
+            top: 40px;
             left: 0px;
             right: 100px !important;
             position: absolute;
@@ -266,7 +266,7 @@
             </section>
 
             <section class="bg-img">
-                <div class="container" style=" margin-top:70px; width:95%; padding:0px 20px;">
+                <div class="container" style=" margin-top:60px; width:95%; padding:0px 20px;">
                     <div class="row" style="display: flex;justify-content: space-between;padding: 0px 14px;">
                         <div style="width: 50%;float:left;">
                             <h6 style="font-size: 17px; margin-bottom: 10px;">{{ $requestData['cname'] }}</h6>
@@ -285,7 +285,7 @@
                             </p>
                         </div>
                     </div>
-                    <table style="width: 90%; margin: 160px auto 0px;">
+                    <table style="width: 95%; margin: 160px auto 0px;">
                         <tr style="">
                             <td colspan="4"></td>
                             <td></td>
@@ -295,11 +295,10 @@
                         </tr>
 
                         <tr>
-                            <td colspan="4"></td>
-                            <td style="font-size:14px; text-align:left;">{{ $requestData['emp_name'] }}</td>
-                            <td style="text-align: right; font-size:13px;">XX567</td>
-                            <td style="text-align: right;font-size:13px;">XXX567</td>
-                            <td style="text-align: right;font-size:13px;">12345</td>
+                            <td style="font-size:14px;text-align:left;  width:55%;">{{ $requestData['emp_name'] }}</td>
+                            <td style="text-align: center; font-size:13px; width:15%;">XXXXX534</td>
+                            <td style="text-align: center;font-size:13px; width:15%;">XXXXX534</td>
+                            <td style="text-align: right;font-size:13px; width:15%;">XXXXX534</td>
                         </tr>
                     </table>
                 </div>

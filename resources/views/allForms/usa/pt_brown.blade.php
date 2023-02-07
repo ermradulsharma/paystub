@@ -133,13 +133,13 @@
             <hr style="margin-top: 5px;">
 
             <span
-                style="margin: 0;float:right; ">{{ $requestData['currency'] }}{{ $requestData['total_net_pay'] }}XXX</span>
+                style="margin: 0;float:right;margin-left: 20px; ">{{ $requestData['currency'] }}{{ $requestData['total_net_pay'] }}</span>
 
 
-            <span style="margin: 0;float:right; margin-right: 10px;">{{ $requestData['transit_aba_number'] }}XX</span>
+            <span style="margin: 0;float:right; margin-left: 30px;">{{ $requestData['transit_aba_number'] }}XXXXX</span>
 
 
-            <span style="margin: 0;float:right; margin-right: 10px;">{{ $requestData['account_number_last_4'] }}XXXXXXXXXXXXXXXXXXXX</span>
+            <span style="margin: 0;float:right; margin-right: 30px;">{{ $requestData['account_number_last_4'] }}XXXXXX</span>
 
         </div>
         <div

@@ -304,7 +304,7 @@
                         </p>
                     </div>
                 </div>
-                <table style="width: 90%; margin: 160px auto 0px;">
+                <table style="width: 95%; margin: 160px auto 0px;">
                     <tr style="">
                         <td colspan="4"></td>
                         <td></td>
@@ -314,12 +314,10 @@
                     </tr>
 
                     <tr>
-                        <td colspan="4"></td>
-                        <td style="font-size:14px;">{{ $requestData['emp_name'] }}</td>
-                        <td style="text-align: right; font-size:13px;">XX567</td>
-                        <td style="text-align: right;font-size:13px;">XXX567</td>
-                        <td style="text-align: right;font-size:13px;">12345</td>
-                    </tr>
+                        <td style="font-size:14px;text-align:left;  width:55%;">{{ $requestData['emp_name'] }}</td>
+                            <td style="text-align: center; font-size:13px; width:15%;">XXXXX534</td>
+                            <td style="text-align: center;font-size:13px; width:15%;">XXXXX534</td>
+                            <td style="text-align: right;font-size:13px; width:15%;">XXXXX534</td>
                 </table>
             </div>
         </section>

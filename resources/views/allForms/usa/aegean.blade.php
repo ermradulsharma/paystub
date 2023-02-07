@@ -256,7 +256,7 @@
                             <p> <span style="font-weight:800;"></span> {{ date('m/d/y', strtotime($requestData['pay_date'])) }} </p>
                         </div>
                     </div>
-                    <table style="width: 100%; margin: 160px auto 0px;">
+                    <table style="width: 95%; margin: 160px auto 0px;">
                         <tr style="">
                             <td colspan="4"></td>
                             <td></td>
@@ -266,11 +266,10 @@
                         </tr>
 
                         <tr>
-                            <td colspan="4"></td>
-                            <td style="font-size:14px;">{{ $requestData['emp_name'] }}</td>
-                            <td style="text-align: right; font-size:13px;">XXXXX{{ $requestData['account_number_last_4'] }}</td>
-                            <td style="text-align: right;font-size:13px;">XXXXX{{ $requestData['transit_aba_number'] }}</td>
-                            <td style="text-align: right;font-size:13px;">{{ number_format($requestData['total_net_pay'],2) }}</td>
+                            <td style="font-size:14px;text-align:left;  width:55%;">{{ $requestData['emp_name'] }}</td>
+                            <td style="text-align: center; font-size:13px; width:15%;">XXXXX534</td>
+                            <td style="text-align: center;font-size:13px; width:15%;">XXXXX534</td>
+                            <td style="text-align: right;font-size:13px; width:15%;">XXXXX534</td>
                         </tr>
                     </table>
                 </div>
