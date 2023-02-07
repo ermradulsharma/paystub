@@ -101,7 +101,7 @@ class TemplatesController extends Controller
             $path = public_path() . '/uploads/mailData';
             File::isDirectory($path) or File::makeDirectory($path, 0777, true, true);
             $invoiceData['requestData'] = $requestData;
-            $pdf = PDF::loadView('allForms/' . $pageName, $invoiceData)->setPaper('a4');
+            $pdf = PDF::loadView('allForms/usa/' . $pageName, $invoiceData)->setPaper('a4');
             $fileName =  date('_d_m_Y_h_i_s') . '.pdf';
             $pdf->save($path . '/' . $fileName);
             $file = public_path('/uploads/mailData/' . $fileName);

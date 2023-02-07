@@ -128,7 +128,7 @@
                                             <option value=""> --- Select Basic Templates --- </option>
                                             @foreach ($basicType as $data)
                                             @if($data->state == 'usa' && $data->type == 'basic')
-                                            <option value="{{$data->title ?? ''}}" data-src="{{$data->images->file ?? ''}}"> {{$data->name}} </option>
+                                            <option value="{{$data->title ?? ''}}" data-src="{{$data->images->file ?? ''}}" data-status="{{$data->template_element}}"> {{$data->name}} </option>
                                             @endif
                                             @endforeach
                                         </select>
@@ -148,7 +148,7 @@
                                             <option value=""> --- Select Advance Template --- </option>
                                             @foreach ($advanceType as $data)
                                             @if($data->state == 'usa' && $data->type == 'advance')
-                                            <option value="{{$data->title ?? ''}}" data-src="{{$data->images->file ?? ''}}"> {{$data->name ?? ''}} </option>
+                                            <option value="{{$data->title ?? ''}}" data-src="{{$data->images->file ?? ''}}" data-status="{{$data->template_element}}"> {{$data->name ?? ''}} </option>
                                             @endif
                                             @endforeach
                                         </select>
@@ -576,7 +576,7 @@
             </div>
         </div>
 
-        <div>
+        <div class="tempElemant d-none">
             <h5>Template Elements</h5>
             <div class="row mb-3">
                 <div class="col-md-12">
@@ -637,9 +637,21 @@
 <script>
     $(document).ready(function() {
         $('.advanceTemplate').change(function() {
+            var status = $('option:selected', '.at_id').attr('data-status');
+            if (status == 1) {
+                $(".tempElemant").removeClass("d-none");
+            }else{
+                $(".tempElemant").addClass("d-none");
+            }
             $('option:selected', '.basicTemplate').prop("selected", false);
         });
         $('.basicTemplate').change(function() {
+            var status = $('option:selected', '.bt_id').attr('data-status');
+            if (status == 1) {
+                $(".tempElemant").removeClass("d-none");
+            }else{
+                $(".tempElemant").addClass("d-none");
+            }
             $('option:selected', '.advanceTemplate').prop("selected", false);
         });
 
@@ -650,6 +662,7 @@
                 mobileNumber.substring(6, 10));
         });
     });
+
 </script>
 <script>
     $(document).ready(function() {
@@ -670,6 +683,7 @@
             }
         });
     });
+
 </script>
 <script>
     $(document).ready(function() {
@@ -690,6 +704,7 @@
             }
         });
     });
+
 </script>
 
 @endsection

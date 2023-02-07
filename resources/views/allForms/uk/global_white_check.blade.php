@@ -7,51 +7,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-    body {
-        color: #000;
-        font-size: 14px;
-    }
+        body {
+            color: #000;
+            font-size: 14px;
+        }
 
-    .table {
-        margin: 0 auto;
-        width: 100%;
-    }
+        .table {
+            margin: 0 auto;
+            width: 100%;
+        }
 
-    .text {
-        margin-right: 10px;
+        .text {
+            margin-right: 10px;
 
-    }
+        }
 
-    .employee-box {
-        border: 1px solid #000;
-        background-image: linear-gradient(#fff, rgba(0, 0, 0, 0.3));
-    }
+        .employee-box {
+            border: 1px solid #000;
+            background-image: linear-gradient(#fff, rgba(0, 0, 0, 0.3));
+        }
 
-    .table-data tr {
-        text-align: center;
+        .table-data tr {
+            text-align: center;
 
-    }
+        }
 
-    .right {
-        text-align: right;
+        .right {
+            text-align: right;
 
-    }
+        }
 
-    .td {
-        text-align: left !important;
-    }
+        .td {
+            text-align: left !important;
+        }
 
-    .table-data th {
-        padding: 0px 20px 0 0;
-    }
+        .table-data th {
+            padding: 0px 20px 0 0;
+        }
 
-    .statutory {
-        text-align: left;
-    }
+        .statutory {
+            text-align: left;
+        }
 
-    .center {
-        text-align: center !important;
-    }
+        .center {
+            text-align: center !important;
+        }
     </style>
 </head>
 
@@ -197,11 +197,11 @@
     <section>
         <table style="width: 100%; margin-top: 60px;">
             <tr style="text-align:left ;">
-                <th style="text-align:left ;" >Earning</th>
+                <th style="text-align:left ;">Earning</th>
                 <th style="width: 15%;text-align:left;">Rate</th>
                 <th style="text-align:left ;">Hours</th>
                 <th style="text-align:left ;">This Period</th>
-                <th  style="text-align:left ;">Year-to-date</th>
+                <th style="text-align:left ;">Year-to-date</th>
                 <th style="border-bottom: 2px solid black;text-align:left;s">Important Note</th>
             </tr>
             <tr>
@@ -220,8 +220,8 @@
                 <td>0.00</td>
                 <td></td>
             </tr>
-           
-           
+
+
             <tr>
                 <td>Bonus</td>
                 <td>-</td>
@@ -249,21 +249,23 @@
             <tr style="font-weight: 800;">
                 <td></td>
                 <td></td>
-                <td style="border-top: 2px solid black; border-bottom:2px solid black; background-color:#98919145;" colspan="">GROSS PAY</td>
-                <td style="border-top: 2px solid black; border-bottom:2px solid black; background-color:#98919145;">400.00</td>
-                <td >5.600.00</td>
+                <td style="border-top: 2px solid black; border-bottom:2px solid black; background-color:#98919145;"
+                    colspan="">GROSS PAY</td>
+                <td style="border-top: 2px solid black; border-bottom:2px solid black; background-color:#98919145;">
+                    400.00</td>
+                <td>5.600.00</td>
             </tr>
-            
+
         </table>
     </section>
     <section style="position: relative;">
         <section>
             <table class="table-data">
                 <thead>
-                    <th  class="">Deductions</th>
-                    <th  class="statutory">statutory</th>
+                    <th class="">Deductions</th>
+                    <th class="statutory">statutory</th>
                 </thead>
-<td style="border-top:2px solid black;" colspan="17"></td>
+                <td style="border-top:2px solid black;" colspan="17"></td>
                 <tr>
                     <td></td>
                     <td class="td" colspan="2">Federal income Tax
@@ -349,16 +351,19 @@
                 </tr>
                 <tr>
                     <td></td>
-                    <td style="text-align: left; font-size:17px; border-top:2px solid black; border-bottom:2px solid black; background-color:#98919145; " colspan=""><b>Net Pay</b></td>
+                    <td style="text-align: left; font-size:17px; border-top:2px solid black; border-bottom:2px solid black; background-color:#98919145; "
+                        colspan=""><b>Net Pay</b></td>
                     <td></td>
-                    <td style="font-size:17px; border-top:2px solid black; border-bottom:2px solid black; background-color:#98919145;" ><b>251.80</b></td>
+                    <td
+                        style="font-size:17px; border-top:2px solid black; border-bottom:2px solid black; background-color:#98919145;">
+                        <b>251.80</b></td>
                     <td></td>
                     <td>5669.58</td>
                 </tr>
-         
+
             </table>
         </section>
-   
+
     </section>
     <table style="padding-top:10px; font-size:15px; font-weight:500; margin:0 auto 0 200px;">
         <tr>

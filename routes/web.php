@@ -24,6 +24,7 @@ use Symfony\Component\Routing\Router;
 
 
 
+Route::get('patstubx_modern-pdf', [UkController::class, 'patstubx_modern']);
 
 Route::get('generate-pdf', [W2FormController::class, 'generatePDF']);
 Route::get('preview-pdf', [W2FormController::class, 'previewPDF']);
