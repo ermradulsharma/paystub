@@ -117,4 +117,23 @@ class TemplatesController extends Controller
         }
         return response()->json($response, $response['status']);
     }
+
+    public function getPdfList(Request $request)
+    {
+        $response['message'] = "";
+        $response['status'] = STATUS_BAD_REQUEST;
+        $response['success'] = FALSE;
+        try {
+            $paySlipObj = PaySlip::select('id', 'user_id', 'pdf')->where('user_id', Auth::user()->id)->get();
+            $response['data'] = $paySlipObj;
+            $response['message'] = "Payslip fetch successfully";
+            $response['status'] = 200;
+            $response['success'] = TRUE;
+        } catch (Exception $e) {
+            $response['message'] = $e->getMessage() . ' Line No ' . $e->getLine() . ' in File' . $e->getFile();
+            Log::error($e->getTraceAsString());
+            $response['status'] = STATUS_GENERAL_ERROR;
+        }
+        return response()->json($response, $response['status']);
+    }
 }
