@@ -133,7 +133,7 @@
                                             @endif
                                             @endforeach
                                         </select>
-                                        <i data-src="{{$data->images->file ?? ''}}" class="fa fa-eye-slash basicTem" style="font-size: 39px;" role="button"></i>
+                                        <i data-src="{{$data->images->file ?? ''}}" class="fa fa-eye-slash basicTem uk-eye" style="font-size: 39px;" role="button"></i>
                                     </div>
                                 </div>
                             </div>
@@ -153,7 +153,7 @@
                                             @endif
                                             @endforeach
                                         </select>
-                                        <i data-src="{{$data->images->file ?? ''}}" class="fa fa-eye-slash advanceTem" role="button" style="font-size: 39px;"></i>
+                                        <i data-src="{{$data->images->file ?? ''}}" class="fa fa-eye-slash advanceTem uk-eye" role="button" style="font-size: 39px;"></i>
                                     </div>
                                 </div>
                                 <div class=" mt-3 ">
