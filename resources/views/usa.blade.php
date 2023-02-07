@@ -36,8 +36,9 @@
 </div>
 <!-- Modal End -->
 <div class="container mt-2" style="max-width:1450px;">
-    <form id="usa_paystubx" action="{{ route('templates') }}" method="post" data-action="{{ route('usaStoreData') }}">
+    <form id="submit_form_paystubx_id" action="javascript:void()" method="get">
         @csrf
+        <input type="hidden" name="form_type" value="USA" hidden>
         <div>
             <div class="row mb-3">
                 <div class="col-md-12">

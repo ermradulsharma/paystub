@@ -448,9 +448,9 @@
         function viewPDF() {
             document.getElementById("loaderDiv").style.display = "block";
             $.ajax({
-                url: $('#usa_paystubx').attr('action'),
+                url: "{{ route('templates') }}",
                 type: 'post',
-                data: $('#usa_paystubx').serialize(),
+                data: $('#submit_form_paystubx_id').serialize(),
                 success: function(response) {
                     console.log('response ', response);
                     $('#tempView').attr('src', response.pdf + '?embedded=true#toolbar=0');
@@ -471,9 +471,9 @@
 
             document.getElementById("loaderDiv").style.display = "block";
             $.ajax({
-                url: $('#usa_paystubx').data('action'),
+                url: "{{ route('usaStoreData') }}",
                 type: 'post',
-                data: $('#usa_paystubx').serialize(),
+                data: $('#submit_form_paystubx_id').serialize(),
                 success: function(response) {
                     console.log('response ', response);
                     toastr.success(response.message);
