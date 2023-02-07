@@ -33,67 +33,68 @@
         </div>
     </div>
 </div>
-<div>
-    <div class="container" style="max-width:1450px;">
+<div class="container" style="max-width: 1450px;">
+    <div>
         <h5>Choose Template</h5>
         <div class="row mb-3">
             <div class="col-md-12">
                 <div class=" box-usa">
-
                     <div class="d-flex justify-content-between mb-3">
                         <div class="col-md-5 col-sm-12 m-auto  text-center" style="padding: -1px 35px;">
                             <h6 style="" class="base">BASIC TEMPLATES</h6>
                             <div class="mt-4">
                                 {{-- <i class="fa fa-angle-down down"></i> --}}
                                 <div class="input-group mmenu mb-3">
-                                    <select class="form-control dropdown1 bt_id" style="border-right:none">
-                                        <option selected=""> --- Select Basic Templates --- </option>
+                                    <select name="basic_temp" class="form-control dropdown1 text-center bt_id small-font basicTemplate" style="margin-right:10px; font-size:18px;">
+                                        <option value=""> --- Select Basic Templates --- </option>
                                         @foreach ($basicType as $data)
                                         @if($data->state == 'canada' && $data->type == 'basic')
-                                        <option value="{{$data->title}}" data-src="{{$data->images->file}}">
-                                            {{$data->title}}
-                                        </option>
+                                        <option value="{{$data->title}}" data-src="{{$data->images->file}}">{{$data->name}}</option>
                                         @endif
                                         @endforeach
                                     </select>
                                     <i class="fa fa-eye-slash basicTem flash-icon" data-target="#openEye" data-toggle="modal"></i>
                                 </div>
                             </div>
+                        </div>
 
-                            <div class="col-md-2  text-center sh">
-                                <img src="images/hrpng.png" style="height: 200px;">
-                            </div>
+                        <div class="col-md-2  text-center sh">
+                            <img src="images/hrpng.png" style="height: 200px;">
+                        </div>
 
                         <div class="col-md-5 col-sm-12 mt-5 text-center">
                             <h6 style="margin-left:-23px;font-weight: 900;" class="small">ADVANCED TEMPLATES</h6>
                             <div class="mt-4">
                                 {{-- <i class="fa fa-angle-down down1"></i> --}}
                                 <div class="input-group mmenu mb-3" style="margin: auto;">
-                                    <select class="form-control dropdown1 at_id" style="border-right:none">
-                                        <option selected=""> --- Select Advance Template --- </option>
+                                    <select name="advance_temp" class="form-control text-center dropdown1 at_id small-font advanceTemplate" style="margin-right:10px; font-size:18px;">
+                                        <option value=""> --- Select Advance Template --- </option>
                                         @foreach ($advanceType as $data)
                                         @if($data->state == 'canada' && $data->type == 'advance')
-                                        <option value="{{$data->title}}" data-src="{{$data->images->file}}">
-                                            {{$data->title}}
-                                        </option>
+                                        <option value="{{$data->title}}" data-src="{{$data->images->file}}">{{$data->name}}</option>
                                         @endif
                                         @endforeach
                                     </select>
                                     <i class="fa fa-eye-slash advanceTem flash-icon" data-target="#openEye" data-toggle="modal"></i>
                                 </div>
                             </div>
+                            <div class=" mt-3 ">
+                                <button class="viewbtn">
+                                    <a href="{{url('template-view')}}">Click to see Template Landscape view.This is not
+                                        part of design</a>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-    <div class="container" style="max-width: 1450px;">
+    </div>
+    <div>
         <div class="row mb-3">
             <div class="col-md-12">
                 <h5>Company Info</h5>
                 <div class=" box-usa">
-
                     <div class="row mb-3 ">
                         <div class="col-md-6 mt-1">
                             <div>
@@ -102,16 +103,6 @@
                                 <input type="text" id="cname" name="cname" placeholder="Your Employer & Company Name" class="w-100 p-2 text-center textInputFontSize">
                             </div>
                         </div>
-                        <div id="map" hidden></div>
-                        <div class="row mb-3">
-                            <div class="col-md-12">
-                                <div>
-                                    <label for="address_1" class="lable">STREET ADDRESS 1 <span class="redColor">*</span>
-                                    </label>
-                                    <input type="text" id="address_1" name="address_1" placeholder="Your Employer Address" class="w-100 p-2  textInputFontSize">
-                                </div>
-                            </div> -->
-
                     </div>
                     <div id="map" hidden></div>
                     <div class="row mb-3">
@@ -122,6 +113,7 @@
                                 <input type="text" id="address_1" name="address_1" placeholder="Your Employer Address" class="w-100 p-2  textInputFontSize">
                             </div>
                         </div>
+                    </div>
 
                     <div class="row mb-3">
                         <div class="col-md-12">
@@ -131,8 +123,8 @@
                                 <input type="text" id="address_2" name="address_2" placeholder="Suite 101 or Apt 101 (optional)" class="w-100 p-2  textInputFontSize">
                             </div>
 
-                            </div>
                         </div>
+                    </div>
 
                     <div class="row mb-3">
                         <div class="col-md-4">
@@ -141,18 +133,17 @@
                                 <input type="text" id="city" name="city" placeholder="Your Employer City" class="w-100 p-2  textInputFontSize">
                             </div>
 
-                            </div>
-                            <div class="col-md-4">
-                                <div>
-                                    <label for="state" class="lable">Province <span class="redColor">*</span> </label>
-                                    <div class="dropdown ">
-                                        <select name="state" id="state" class="state dropdown11">
-                                            <option value=""> --- Select --- </option>
-                                            @foreach ($stateTaxes as $stateTax)
-                                            <option value="{{ $stateTax->state }}">{{ $stateTax->state }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div>
+                                <label for="state" class="lable">Province <span class="redColor">*</span> </label>
+                                <div class="dropdown ">
+                                    <select name="state" id="state" class="state dropdown11">
+                                        <option value=""> --- Select --- </option>
+                                        @foreach ($stateTaxes as $stateTax)
+                                        <option value="{{ $stateTax->state }}">{{ $stateTax->state }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -167,8 +158,8 @@
                 </div>
             </div>
         </div>
-
-    <div class="container" style="max-width:1450px;">
+    </div>
+    <div>
         <h5>Employee Basic Info</h5>
         <div class="row mb-3">
             <div class="col-md-12">
@@ -241,7 +232,7 @@
         </div>
     </div>
 
-    <div class="container" style="max-width: 1450px;">
+    <div>
         <div class="mb- d-flex " style="justify-content: space-between;">
             <h5>Earning statement</h5>
         </div>
@@ -377,7 +368,7 @@
         </div>
     </div>
 
-    <div class="container" style="max-width: 1450px;">
+    <div>
         <div class="row mb-3">
             <div class="col-md-12">
                 <div class="mb- d-flex" style="justify-content: space-between;">
@@ -393,6 +384,7 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 @endsection
 @section('script')
