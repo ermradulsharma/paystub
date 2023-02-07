@@ -280,7 +280,7 @@
                                 {{ $requestData['state'] }},
                                 {{ $requestData['zip_code'] }}</P>
                         </div>
-                        <div style="width: 50%;float:right;text-align:right; margin-top:4px;">
+                        <div style="width: 50%;float:right;text-align:right; margin-top:12px;">
                             <h6 style="font-size: 14px; margin-bottom: 6px;"> <span>00000422598</span>
                             </h6>
                             <p>

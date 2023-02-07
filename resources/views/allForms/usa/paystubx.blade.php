@@ -66,55 +66,47 @@
         padding: 10px;
     }
 
-    .bg-img {
-        position: relative;
-    }
-
-    .bg-img:before {
-        background: url('http://44.202.105.74/images/check.jpg') !important;
-        background-repeat: no-repeat !important;
-        background-size: contain !important;
-        height: 100%;
-        width: 700px;
-        content: "";
-        top: 170px;
-        left: 0px;
-        right: 0px;
-        position: absolute;
-        z-index: -1;
-
-    }
-
     .bg-img2 {
-        position: relative;
-    }
+            position: relative;
+        }
 
-    .bg-img2:before {
-        position: absolute;
-        background-image: url("images/side-bar.png");
-        background-repeat: no-repeat;
-        background-size: contain;
-        width: 100%;
-        height: 100%;
-        content: "";
-        right: 0;
-        top: 170px;
-        left: 38px;
-    }
-    .background:before{
-        background-image: url("images/bg-lines1.png");
-        background-repeat: no-repeat;
-        background-size: cover;
-        width:100%;
-        max-width: 625px;
-        content: "";
-        position: absolute;
-        padding:190px 0px;
-        top:-20px;
-        left: 110px;
-        right: 0;
+        .bg-img2:before {
+            position: absolute;
+            background-image: url("images/side-bar.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 100%;
+            height: 100%;
+            content: "";
+            right: 0px;
+            top: 170px;
+            left: 30px !important;;
+        }
 
-    }
+        .bg-img {
+            position: relative;
+        }
+
+        .bg-img::before {
+            background-image: url('http://44.202.105.74/images/check.jpg') !important;
+            background-size: contain;
+            background-repeat: no-repeat;
+            content: "";
+            top: 50px;
+            left: 0px;
+            right: 100px !important;
+            position: absolute;
+            z-index: -1;
+            width: 700px;
+            height: 100%;
+        }
+
+        .container {
+            position: absolute;
+            top: 0px;
+            z-index: 3;
+            height: 300px;
+        }
     .background{
         position: relative;
     }
@@ -293,62 +285,43 @@
 
         </table>
         <section class="bg-img">
-            <table class="container" style=" margin-top:215px;padding: 0 0px 0px 0px;width:100%; ">
-                <div class="row"
-                    style="display: flex; display: flex;justify-content: space-between;padding: 0px 14px;">
-                    <div style="width: 50%;float:left;padding-left:30px;">
-                        <h6 style="font-size: 17px; margin-bottom: 0;">{{ $requestData['cname'] }}</h6>
-                        <p style="font-size: 10px; margin: 0;"> {{ $requestData['emp_street_1'] }},</p>
-                        <P style="font-size: 10px; margin: 0;"> {{ $requestData['emp_street_2'] }}</P>
-                        <P style="font-size: 10px; margin: 0;"> {{ $requestData['emp_city'] }}
-                            {{ $requestData['emp_state'] }},
-                            {{ $requestData['emp_zip_code'] }}</P>
-                        <p style="font-size: 10px;">Pay To: <span style="font-weight:800;">
-                                {{ $requestData['emp_name'] }}</span>
+            <div class="container" style=" margin-top:70px; width:95%; padding:0px 20px;">
+                <div class="row" style="display: flex;justify-content: space-between;padding: 0px 14px;">
+                    <div style="width: 50%;float:left;">
+                        <h6 style="font-size: 17px; margin-bottom: 10px;">{{ $requestData['cname'] }}</h6>
+                        <p style="font-size: 13px; margin: 0;">{{ $requestData['address_1'] }}</p>
+                        <P style="font-size: 13px; margin: 0;">{{ $requestData['address_2'] }}</P>
+                        <P style="font-size: 13px; margin: 0;">{{ $requestData['city'] }}
+                            {{ $requestData['state'] }},
+                            {{ $requestData['zip_code'] }}</P>
+                    </div>
+                    <div style="width: 50%;float:right;text-align:right; top:37px; position:relative; left:130px;">
+                        <h6 style="font-size: 14px; margin-bottom: 6px;"> <span>00000422598</span>
+                        </h6>
+                        <p>
+                            <span style="font-weight:800;"></span>
+                            {{ date('m/d/y', strtotime($requestData['pay_date'])) }}
                         </p>
                     </div>
-                    <div style="width: 50%;float:right;padding-bottom: 10px;">
-                        <h6 style="font-size: 17px; ">
-                            <p style="text-align:right;margin-right:80px;">{{ $requestData['advice_number'] }}</p>
-                            {{-- <p style="text-align:right;margin-right:60px;">
-                                {{ date('m/d/y', strtotime($requestData['pay_date'])) }}</p> --}}
-                        </h6>
-
-                        </br>
-                        </br>
-                        <P style="font-size: 10px;margin: 0;">
-                            <span style="font-weight:800;">Check Nuumber:</span>
-                            {{ $requestData['account_number_last_4'] }}
-                        </P>
-                        <P style="font-size: 10px;margin: 0;">
-                            <span style="font-weight:800;">Date:</span>
-                            {{ date('m/d/y', strtotime($requestData['pay_date'])) }}
-                        </P>
-                    </div>
                 </div>
-            </table>
-            <table style="width: 100%; margin: 130px 0 0 auto;">
-                <tr style="">
-                    <td colspan="4"></td>
-                    <td style=""></td>
-                    <td style="text-align: center;"></td>
-                    <td style="text-align: center;"></td>
-                    <td style="text-align: center;"> </td>
-                    <td style="text-align: center;"></td>
+                <table style="width: 90%; margin: 160px auto 0px;">
+                    <tr style="">
+                        <td colspan="4"></td>
+                        <td></td>
+                        <td style="text-align: right;"></td>
+                        <td style="text-align: right;"> </td>
+                        <td style="text-align: right;"> </td>
+                    </tr>
 
-                </tr>
-
-                <tr>
-                    <td colspan="4"></td>
-                    <td style=""></td>
-                    <td style="padding-left:30px;">{{ $requestData['emp_name'] }}</td>
-                    <td style="text-align: left;">{{ $requestData['account_number_last_4'] }}</td>
-                    <td style="text-align: left;">{{ $requestData['transit_aba_number'] }}</td>
-                    <td style="text-align: left;">{{ $requestData['total_net_pay'] }}</td>
-
-                    </td>
-                </tr>
-            </table>
+                    <tr>
+                        <td colspan="4"></td>
+                        <td style="font-size:14px;">{{ $requestData['emp_name'] }}</td>
+                        <td style="text-align: right; font-size:13px;">XX567</td>
+                        <td style="text-align: right;font-size:13px;">XXX567</td>
+                        <td style="text-align: right;font-size:13px;">12345</td>
+                    </tr>
+                </table>
+            </div>
         </section>
     </main>
 
