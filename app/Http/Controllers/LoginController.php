@@ -100,8 +100,8 @@ class LoginController extends Controller
         $messages = [
             'email.required' => 'The email cannot be empty.',
             'email.email' => 'Please enter valid email.',
-            'code.required' => 'The Varification code cannot be empty',
-            'code.min' => 'Varification code has at least 4 digit',
+            'code.required' => 'The Verification code cannot be empty',
+            'code.min' => 'Verification code has at least 4 digit',
         ];
         $validator = Validator::make($request->all(), $rules, $messages);
         if ($validator->fails()) {

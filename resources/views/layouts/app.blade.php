@@ -88,7 +88,7 @@
     <div class="openbtn">
         <div class=" pt-4 d-flex justify-content-between">
             <a href="{{ url('/') }}"><img class="mr-3 mt-5 toggle-logo" src="{{asset('images/Paystub X.webp')}}" style="width: 222px;"></a>
-            <span style="font-size:30px;cursor:pointer;" class="" onclick="openNav()">&#9776;</span>
+            <span style="font-size:30px;cursor:pointer; padding-right:10px;" class="" onclick="openNav()">&#9776;</span>
         </div>
     </div>
 

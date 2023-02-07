@@ -23,12 +23,12 @@
     }
 
     th {
-        background-color: #43407a;
+        background-color: #793b5b;
         color: white;
     }
 
     .hadding {
-        background-color: #43407A;
+        background-color: #793b5b;
         font-size: 9px;
         padding: 4px;
     }
@@ -49,7 +49,7 @@
     }
 
     #backcolor {
-        background-color: #43407a47;
+        background-color: #793b5b47;
 
     }
 
@@ -60,49 +60,49 @@
     }
 
     .roww {
-        border: 1px solid #43407a47;
+        border: 1px solid #793b5b47;
     }
 
     .col1 {
         float: left;
         width: 60%;
     }
-
+;
     .col2 {
         float: left;
         width: 40%;
     }
+    .container {
+        background-image: url("images/texture-brown1.png");
+        background-size:cover;
+        background-repeat:no-repeat;
+        width:100%;
+        background-position: top;
+    }
+
 </style>
 
 <body>
-
-
-
-
     <div class="container"
-        style="border-right: 1px solid   #43407A; margin: auto;border-top: 1px solid   #43407A; border-left: 1px solid   #43407A; border-bottom:none;padding: 0 0px 0px 0px;">
+        style="border-right: 1px solid   #793b5b; margin: auto;border-top: 1px solid   #793b5b; border-left: 1px solid   #793b5b; border-bottom:none;padding: 0 0px 0px 0px;">
         <div class="row" style="display: flex; display: flex;justify-content: space-between;padding: 0px 14px;">
-            <div style="width: 50%;float:left;">
+            <div style="width: 60%;float:left; padding-left:40px;">
                 <h6 style="font-size: 17px; margin-bottom: 0;"> {{ $requestData['cname'] }}</h6>
-                <p style="font-size: 10px; margin: 0;"> {{ $requestData['address_1'] }}
+                <p style="font-size: 14px; margin: 0;"> {{ $requestData['address_1'] }}
                     {{ $requestData['address_2'] }}</br>{{ $requestData['city'] }}
                     {{ $requestData['state'] }},
                     {{ $requestData['zip_code'] }}</p>
 
 
-                <p style="font-size: 10px;">Pay To: <span style="font-weight:800;">
-                        {{ $requestData['emp_name'] }}</span>
-                </p>
             </div>
-            <div style="width: 50%;float:right">
+            <div style="width: 40%;float:right">
                 <h6 style="font-size: 15px; margin-bottom: 0;">Advice Number: <span>00000422598</span>
                 </h6>
                 <br>
-                <br>
-                <P style="font-size: 10px;margin: 0;">
+                <P style="font-size: 14px;margin: 0;">
                     <span style="font-weight:800;">Check Nuumber:</span> 1775
                 </P>
-                <P style="font-size: 10px;margin: 0;">
+                <P style="font-size: 14px;margin: 0;">
                     <span style="font-weight:800;">Date:</span>
                     {{ date('m/d/y', strtotime($requestData['pay_date'])) }}
                 </P>
@@ -121,7 +121,8 @@
         </div> -->
 
         <div
-            style="width: 100%; display: flex; justify-content: flex-end;justify-content: space-between;margin: 30px 0 0 auto;font-size: 15px; font-weight: 900;padding: 0 0px;">
+            style="width: 90%; margin: 30px auto 0px;font-size: 15px;padding: 0 30px;">
+           <span style="padding-bottom:20px;">Pay To:<b>Ezra Moore</b></span>
             <span style="margin: 0; float:right;">Amount</span>
 
 
@@ -129,43 +130,43 @@
 
 
             <span style="margin: 0; float:right;padding-left:10px; margin-right: 11px;">Account Number</span>
-            <hr style="margin-top: 20px;">
+            <hr style="margin-top: 5px;">
 
             <span
-                style="margin: 0;float:right; margin-right: 23px; ">{{ $requestData['currency'] }}{{ $requestData['total_net_pay'] }}</span>
+                style="margin: 0;float:right; margin-right: 23px; ">{{ $requestData['currency'] }}{{ $requestData['total_net_pay'] }}XXX</span>
 
 
-            <span style="margin: 0;float:right; margin-right: 40px;">{{ $requestData['transit_aba_number'] }}</span>
+            <span style="margin: 0;float:right; margin-right: 40px;">{{ $requestData['transit_aba_number'] }}XX</span>
 
 
-            <span style="margin: 0;float:right; margin-right: 40px;">{{ $requestData['account_number_last_4'] }}</span>
+            <span style="margin: 0;float:right; margin-right: 40px;">{{ $requestData['account_number_last_4'] }}XXXX</span>
 
         </div>
         <div
-            style="width: 50%; display: flex; justify-content: flex-end;justify-content: space-between; FONT-SIZE: 17px; margin: 0px 0 0 151px;">
-            <div style="margin-bottom: 19px;">
+            style="width: 50%;FONT-SIZE: 17px; margin: 0px 0 0 150px;">
+            <div style="padding:40px 0px 20px;">
                 <b>
-                    <p style="margin: 6px 0 0 0; font-size: 12px; font-weight:500;">{{ $requestData['emp_name'] }}</p>
+                    <p style="margin: 0px 0 0 0; font-size: 12px; font-weight:500;">{{ $requestData['emp_name'] }}</p>
                 </b>
-                <P style="margin: 6px 0 0 0; font-size:  10px;">282 65 AVE</P>
-                <p style="margin: 6px 0 0 0;font-size: 10px;">{{ $requestData['address_1'] }}
-                    </br>{{ $requestData['city'] }}
+                <P style="margin: 0px 0 0 0; font-size:  13px;">282 65 AVE</P>
+                <p style="margin: 0px 0 0 0;font-size: 13px;">{{ $requestData['address_1'] }}
+                    {{ $requestData['city'] }}
                     {{ $requestData['state'] }},
                     {{ $requestData['zip_code'] }}</p>
             </div>
         </div>
-        <div style="width: 100%;  background-color: #43407a; text-align: center; color: aliceblue; font-size: 14px;">
+        <div style="width: 100%;  background-color: #793b5b; text-align: center; color: aliceblue; font-size: 12px;">
             <p style="margin: 0;">THE FACE OF THIS DOCUMNET HAS A COLOURED BACKGROUND-NOT A WHITE BACKGROUND</p>
         </div>
     </div>
 
     <table class="top">
-        <td colspan="" style="border: 1px solid white;text-align: center; color: #43407a;">----DETATCH ALONG
+        <td colspan="" style="border: 1px solid white;text-align: center; color: #793b5b;">----DETATCH ALONG
             PERFORMATION-----------</td>
 
 
 
-        <td style="border: 1px solid white; text-align: center; color: #43407a;">----KEEP LOWER PART FOR YOUR
+        <td style="border: 1px solid white; text-align: center; color: #793b5b;">----KEEP LOWER PART FOR YOUR
             RECODE-----------</td>
 
     </table>

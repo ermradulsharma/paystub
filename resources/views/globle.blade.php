@@ -22,7 +22,7 @@
 
             <div class="col-lg-5  text-center" style="padding: 3px 23px 0px 0px;">
 
-                <div class="text-white mt-5 text-padding"
+                <div class="text-white mt-5 text-padding globe-p"
                     style="font-size: 42px;font-weight: 300;font-family: 'Outfit', sans-serif;">
                     With PaystubX you can create</br> Paystub for any country
                 </div>
@@ -97,7 +97,7 @@
                     <div style="font-size: 20px;font-weight:300;">
                         We offer a wide variety of sample paystub templates to suit</br> your needs!
                     </div>
-                    <div class="mt-5 pt-5">
+                    <div class=" pt-5">
                         <a class="btn btn-lg  mt-2 p-2 btn-danger Generate " href="{{url('usa')}}">Generate
                             Paystub
                             Now</a>
@@ -113,12 +113,12 @@
             <div class="row justify-contetn-center">
                 <div class="col-lg-10">
                     <div class="text-center">
-                        <div class="mt-5" style="font-size:30px;font-family: serif;">
+                        <div class="mt-5" style="font-size:30px;font-family: serif;padding-left: 10px;">
 
                             More Time For You. Less Time on Payroll and Taxes.
                         </div>
                     </div>
-                    <div class="px-5">
+                    <div class="">
                         <ul class="row d-flex globe-ul" style="font-size:20px;font-weight: 200; line-height:35px;">
                             <li>Employee contracts aren’t
                                 a legal requirement, but they protect your employees and your
@@ -178,7 +178,7 @@
 
 
         <div class="container text-center">
-            <div class="mt-5" style="font-size: xx-large;
+            <div class="mt-5 thousand" style="font-size: xx-large;
                  font-weight: 700;">
                 Thousands of businesses have created professional paystubs with Paystub<span
                     class="text-danger">x</span>
@@ -322,7 +322,7 @@
 </div>
 
 <div class="row saveTime">
-    <div class="col-lg-6 ">
+    <div class="col-lg-6 " style="background: #03395d;">
         <img class="w-100" src="images/globle/image3s.jpeg">
 
     </div>

@@ -87,7 +87,7 @@
             content: "";
             right: 0px;
             top: 195px;
-            left: 26px !important;
+            left: 38px !important;
             ;
         }
 
@@ -100,7 +100,7 @@
             background-size: contain;
             background-repeat: no-repeat;
             content: "";
-            top: 140px;
+            top: 60px;
             left: 0px;
             right: 100px !important;
             position: absolute;
@@ -127,13 +127,7 @@
 
                     <tr>
                         <td></td>
-                        <td class="table-data" rowspan="2">
-                            <button class="employee-box"
-                                style=" border:1px solid black; border-radius:2px; padding:5px 10px 5px 5px;background-color:#88848445"><span
-                                    class="text">EMPLOYEE ID:
-                                    {{ $requestData['emp_id'] }}</span><span>SSN: {{ $requestData['emp_ssn'] }}</span>
-                            </button>
-                        </td>
+                        <td class="table-data" rowspan="2"> <button class="employee-box" style=" border:1px solid black; border-radius:2px; padding:5px 10px 5px 5px;background-color:#88848445"><span class="text">EMPLOYEE ID: {{ $requestData['emp_id'] }}</span><span>SSN: {{ $requestData['emp_ssn'] }}</span> </button></td>
                         <td style="font-size:25px; font-weight:500;">Earnings Statement</td>
                     </tr>
                     <tr>
@@ -148,34 +142,23 @@
                     </tr>
                     <tr>
                         <td></td>
-                        <td>Marital Status: <b style="text-transform: lowercase; padding:0px;">
-                                {{ $requestData['marital_status'] }}</b>
-                        </td>
-                        <td style="font-size: 14px; text-transform: uppercase;padding:0px;">
-                            {{ $requestData['emp_name'] }}
-                        </td>
+                        <td>Marital Status: <b style="text-transform: lowercase; padding:0px;"> {{ $requestData['marital_status'] }}</b> </td>
+                        <td style="font-size: 14px; text-transform: uppercase;padding:0px;"> {{ $requestData['emp_name'] }} </td>
                     </tr>
                     <tr>
                         <td></td>
                         <td>Exemptions/Alowances:<b>{{ $requestData['exemptions'] }}</b></td>
-                        <td style="font-size: 14px;"> {{ $requestData['emp_street_1'] }} </br>
-                            {{ $requestData['emp_city'] }}
-
-                        </td>
+                        <td style="font-size: 14px;"> {{ $requestData['emp_street_1'] }} </br> {{ $requestData['emp_city'] }} </td>
                     </tr>
                     <tr>
                         <td></td>
                         <td>State:<b> {{ $requestData['emp_state'] }}</b></td>
-                        <td style="font-size: 14px;"> {{ $requestData['emp_state'] }},
-                            {{ $requestData['emp_zip_code'] }}
-                        </td>
+                        <td style="font-size: 14px;"> {{ $requestData['emp_state'] }}, {{ $requestData['emp_zip_code'] }} </td>
                     </tr>
                     <tr>
                         <td colspan="6"></td>
-
                     </tr>
                     <tr>
-
                         <td></td>
                         <td style="font-weight: bold;"> {{ $requestData['cname'] }}</td>
                         <td>PAY DATE: <b> {{ date('m/d/y', strtotime($requestData['pay_date'])) }}</b></td>
@@ -183,10 +166,7 @@
                     <tr>
                         <td></td>
                         <td><B>{{ $requestData['address_1'] }}</B></td>
-                        <td>PEPORTING PERIOD:
-
-                        </td>
-
+                        <td>PEPORTING PERIOD: </td>
                     </tr>
                     <tr>
                         <td></td>
@@ -195,7 +175,6 @@
                     </tr>
                     <tr>
                         <td colspan="7"></td>
-
                     </tr>
                     <tr>
                         <td colspan="7"></td>
@@ -203,10 +182,6 @@
                 </table>
             </div>
         </div>
-
-
-
-
         <section>
             <table class="table-data" style="">
                 <thead style="border-bottom: 2px solid black">
@@ -216,10 +191,6 @@
                     <th class="">CURRENT</th>
                     <th style="" class="">YTD</th>
                 </thead>
-
-
-
-
                 @foreach ($requestData['earning'] as $key => $earn)
                     <tr>
                         <td style="text-align: left;">{{ $earn }}</td>
@@ -354,7 +325,7 @@
             </section>
         </section>
         <section class="bg-img">
-            <div class="container" style=" margin-top:120px; width:100%;">
+            <div class="container" style=" margin-top:40px; width:100%;">
                 <div class="row" style="display: flex;justify-content: space-between;padding: 0px 14px;">
                     <div style="width: 50%;float:left;position: relative; left:20px;">
                         <h6 style="font-size: 17px; margin-bottom: 10px;">{{ $requestData['emp_name'] }}</h6>

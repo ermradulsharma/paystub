@@ -24,6 +24,15 @@ use Symfony\Component\Routing\Router;
 
 
 
+Route::get('patstubx_modern-pdf', [UkController::class, 'patstubx_modern']);
+Route::get('pin_blue_uk-pdf', [UkController::class, 'pin_blue_uk']);
+Route::get('sage_blue_uk-pdf', [UkController::class, 'sage_blue_uk']);
+
+Route::get('tawny-pdf', [UkController::class, 'tawny']);
+Route::get('taffy-pdf', [UkController::class, 'taffy']);
+Route::get('mint-pdf', [UkController::class, 'mint']);
+Route::get('aegean-pdf', [UkController::class, 'aegean']);
+Route::get('fog-pdf', [UkController::class, 'fog']);
 
 Route::get('generate-pdf', [W2FormController::class, 'generatePDF']);
 Route::get('preview-pdf', [W2FormController::class, 'previewPDF']);

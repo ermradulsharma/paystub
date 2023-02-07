@@ -39,7 +39,7 @@
         }
 
         .section_2 {
-            background: #a4ba31;
+            background: #5AA6BA;
             color: white;
             padding: 20px 0px;
             overflow: hidden;
@@ -89,8 +89,10 @@
             text-align: right;
             padding-right: 22px;
         }
+
         .bg-img2 {
             position: relative;
+            padding: 0px 0px 100px !important;
         }
 
         .bg-img2:before {
@@ -102,8 +104,9 @@
             height: 100%;
             content: "";
             right: 0px;
-            top: 170px;
-            left: 30px !important;;
+            top: 200px;
+            left: 30px !important;
+            ;
         }
 
         .bg-img {
@@ -115,7 +118,7 @@
             background-size: contain;
             background-repeat: no-repeat;
             content: "";
-            top: 50px;
+            top: 60px;
             left: 0px;
             right: 100px !important;
             position: absolute;
@@ -212,7 +215,7 @@
                         <td></td>
                     </tr>
 
-                    <tfoot class="tfooter" style="background:#a4ba31; color:white">
+                    <tfoot class="tfooter" style="background:#5AA6BA; color:white">
                         <tr>
                             <th colspan="3"></th>
                             <th style="font-weight: 100;">{{ $requestData['currency'] }}
@@ -250,12 +253,13 @@
                             <tr>
                                 <td></td>
                                 <td class="data">{{ $tax_deduction }}</td>
-                                <td>{{ $requestData['currency'] }} {{ $requestData['period_tax_deduction'][$key] }}</td>
+                                <td>{{ $requestData['currency'] }} {{ $requestData['period_tax_deduction'][$key] }}
+                                </td>
                                 <td>{{ $requestData['currency'] }} {{ $requestData['ytd_tax_deduction'][$key] }}</td>
                             </tr>
                         @endforeach
                     @endif
-                    <tfoot class="tfooter " style="background:#a4ba31; color:white">
+                    <tfoot class="tfooter " style="background:#5AA6BA; color:white">
                         <tr>
                             <th colspan="2">Net Pay</th>
                             <th style="font-weight: 100;">{{ $requestData['currency'] }}
@@ -265,11 +269,13 @@
                         </tr>
                     </tfoot>
                 </table>
-                <p style="margin-top:30px;">Your Taxes and deductions for this period are {{ $requestData['currency'] }}
+                <p style="margin-top:30px;">Your Taxes and deductions for this period are
+                    {{ $requestData['currency'] }}
                     {{ $requestData['deduction_tax'] }}</p>
             </section>
+
             <section class="bg-img">
-                <div class="container" style=" margin-top:70px; width:95%; padding:0px 20px;">
+                <div class="container" style=" margin-top:80px; width:95%; padding:0px 20px;">
                     <div class="row" style="display: flex;justify-content: space-between;padding: 0px 14px;">
                         <div style="width: 50%;float:left;">
                             <h6 style="font-size: 17px; margin-bottom: 10px;">{{ $requestData['cname'] }}</h6>
@@ -307,8 +313,6 @@
                     </table>
                 </div>
             </section>
-
-
         </section>
     </main>
 

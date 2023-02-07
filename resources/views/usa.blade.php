@@ -43,7 +43,7 @@
             <div class="row mb-3">
                 <div class="col-md-12">
                     <div class=" box-usa">
-                        <h5>Company Info</h5>
+                         <h5 class="box-h5">Company Info</h5>
                         <div class="row mb-3 ">
                             <div class="col-md-6 mt-1">
                                 <div>
@@ -116,7 +116,7 @@
         </div>
 
         <div>
-            <h5>Choose Template</h5>
+             <h5 class="box-h5">Choose Template</h5>
             <div class="row mb-3">
                 <div class="col-md-12">
                     <div class=" box-usa">
@@ -129,7 +129,7 @@
                                             <option value=""> --- Select Basic Templates --- </option>
                                             @foreach ($basicType as $data)
                                             @if($data->state == 'usa' && $data->type == 'basic')
-                                            <option value="{{$data->title ?? ''}}" data-src="{{$data->images->file ?? ''}}"> {{$data->name}} </option>
+                                            <option value="{{$data->title ?? ''}}" data-src="{{$data->images->file ?? ''}}" data-status="{{$data->template_element}}"> {{$data->name}} </option>
                                             @endif
                                             @endforeach
                                         </select>
@@ -149,7 +149,7 @@
                                             <option value=""> --- Select Advance Template --- </option>
                                             @foreach ($advanceType as $data)
                                             @if($data->state == 'usa' && $data->type == 'advance')
-                                            <option value="{{$data->title ?? ''}}" data-src="{{$data->images->file ?? ''}}"> {{$data->name ?? ''}} </option>
+                                            <option value="{{$data->title ?? ''}}" data-src="{{$data->images->file ?? ''}}" data-status="{{$data->template_element}}"> {{$data->name ?? ''}} </option>
                                             @endif
                                             @endforeach
                                         </select>
@@ -167,7 +167,7 @@
         </div>
 
         <div>
-            <h5>Employee Info</h5>
+             <h5 class="box-h5">Employee Info</h5>
             <div class="row mb-3">
                 <div class="col-md-12">
                     <div class=" box-usa">
@@ -252,7 +252,7 @@
         </div>
 
         <div>
-            <h5>Employee Basic Info</h5>
+             <h5 class="box-h5">Employee Basic Info</h5>
             <div class="row mb-3">
                 <div class="col-md-12">
                     <div class=" box-usa">
@@ -378,7 +378,7 @@
 
         <div>
             <div class="mb- d-flex" style="justify-content: space-between;">
-                <h5>Earning statement</h5>
+                 <h5 class="box-h5">Earning statement</h5>
             </div>
             <div class="row mb1">
                 <div class="col-md-12">
@@ -409,7 +409,7 @@
                             </div>
 
                             <div class="col-md-3 mt-4">
-                                <p class="text-center mb-0" style="font-size:18px;">How do you get paid <span class="redColor">*</span> <span> </p>
+                                <p class="text-center how_p mb-0" style="font-size:18px;">How do you get paid <span class="redColor">*</span> <span> </p>
                                 <div class="text-center mt-2  d-flex justify-content-center">
                                     <button type="button" class="hourbtn date_select">HOURLY</button> <button type="button" class="salrybtn">SALARY</button>
                                 </div>
@@ -417,24 +417,24 @@
                         </div>
 
                         <div class="row ">
-                            <div class=" col-lg-2 col-md-2 margin-bottom ">
+                            <div class=" col-lg-2 col-md-2 margin-bottom  mb-1">
                                 <button type="button" class="statementbtn">EARNING</button>
                             </div>
-                            <div class=" col-lg-2  col-md-2 margin-bottom ">
+                            <div class=" col-lg-2  col-md-2 margin-bottom mb-1  ">
                                 <button type="button" class="statementbtn">RATE</button>
                             </div>
-                            <div class=" col-lg-2  col-md-2 margin-bottom ">
+                            <div class=" col-lg-2  col-md-2 margin-bottom mb-1  ">
                                 <button type="button" class="statementbtn">HOURS</button>
                             </div>
-                            <div class=" col-lg-2 col-md-2 margin-bottom ">
+                            <div class=" col-lg-2 col-md-2 margin-bottom mb-1  ">
                                 <button type="button" class="statementbtn">TOTAL</button>
                             </div>
-                            <div class=" col-lg-2  col-md-2 margin-bottom">
+                            <div class=" col-lg-2  col-md-2 margin-bottom mb-1 ">
                                 <button type="button" class="statementbtn">THIS PERIOD</button>
                                 <p class="p-0 m-0 text-center" style="font-family: serif;font-size: 14px;"> Total
                                     Gross </p>
                             </div>
-                            <div class=" col-lg-2  col-md-2 margin-bottom ">
+                            <div class=" col-lg-2  col-md-2 margin-bottom mb-1  ">
                                 <button type="button" class="statementbtn">YTD TOTAL</button>
                                 <p class="p-0 m-0 text-center" style="font-family: serif;font-size:14px;">YTD Total
                                     Gross</p>
@@ -577,8 +577,8 @@
             </div>
         </div>
 
-        <div>
-            <h5>Template Elements</h5>
+        <div class="tempElemant d-none">
+            <h5 class="box-h5">Template Elements</h5>
             <div class="row mb-3">
                 <div class="col-md-12">
                     <div class=" box-usa">
@@ -638,9 +638,21 @@
 <script>
     $(document).ready(function() {
         $('.advanceTemplate').change(function() {
+            var status = $('option:selected', '.at_id').attr('data-status');
+            if (status == 1) {
+                $(".tempElemant").removeClass("d-none");
+            }else{
+                $(".tempElemant").addClass("d-none");
+            }
             $('option:selected', '.basicTemplate').prop("selected", false);
         });
         $('.basicTemplate').change(function() {
+            var status = $('option:selected', '.bt_id').attr('data-status');
+            if (status == 1) {
+                $(".tempElemant").removeClass("d-none");
+            }else{
+                $(".tempElemant").addClass("d-none");
+            }
             $('option:selected', '.advanceTemplate').prop("selected", false);
         });
 
@@ -651,6 +663,7 @@
                 mobileNumber.substring(6, 10));
         });
     });
+
 </script>
 <script>
     $(document).ready(function() {
@@ -671,6 +684,7 @@
             }
         });
     });
+
 </script>
 <script>
     $(document).ready(function() {
@@ -691,6 +705,7 @@
             }
         });
     });
+
 </script>
 
 @endsection

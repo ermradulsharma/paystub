@@ -330,14 +330,16 @@
 
 @media screen and (max-width: 1024px) {
     .imguk {
-        width: 667px;
+        width: 610px;
     }
 
     .form-main-img {
         background-position-x: left;
         left: -38px;
     }
-
+.globe-p{
+    font-size: 29px !important;
+}
     .formimg1 {
         width: 500px;
     }
@@ -433,7 +435,6 @@
     .ukh1 {
         font-size: 30px;
     }
-}
 
 
 .CreatePaystub {
@@ -453,8 +454,12 @@
 
 .tempangle {
     color: #e827a5;
-    ;
+    
     font-size: 50px;
     font-weight: 800;
 
+}
+.top-gogle{
+    justify-content: center;
+}
 }
