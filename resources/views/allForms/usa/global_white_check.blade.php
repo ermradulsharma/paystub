@@ -97,11 +97,11 @@
         }
 
         .bg-img::before {
-            background-image: url('http://44.202.105.74/images/transparent-bg1.png') !important;
+            background-image: url("images/transparent-bg2.png");
             background-size: contain;
             background-repeat: no-repeat;
             content: "";
-            top: 50px;
+            top: 40px;
             left: 0px;
             right: 100px !important;
             position: absolute;
@@ -378,9 +378,9 @@
                     <tr>
                         <td colspan="4"></td>
                         <td style="font-size:14px;">{{ $requestData['emp_name'] }}</td>
-                        <td style="text-align: right; font-size:13px;">XX567</td>
-                        <td style="text-align: right;font-size:13px;">XXX567</td>
-                        <td style="text-align: right;font-size:13px;">12345</td>
+                        <td style="text-align: center; font-size:13px;">XX567</td>
+                        <td style="text-align: center;font-size:13px;">XXX567</td>
+                        <td style="text-align: center;font-size:13px;">12345</td>
                     </tr>
                 </table>
             </div>

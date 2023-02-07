@@ -93,7 +93,6 @@
         .bg-img2 {
             position: relative;
             padding: 0px 0px 100px !important;
-            background-color: Red;
         }
 
         .bg-img2:before {
@@ -105,7 +104,7 @@
             height: 100%;
             content: "";
             right: 0px;
-            top: 170px;
+            top: 200px;
             left: 30px !important;
             ;
         }
@@ -119,7 +118,7 @@
             background-size: contain;
             background-repeat: no-repeat;
             content: "";
-            top: 130px;
+            top: 60px;
             left: 0px;
             right: 100px !important;
             position: absolute;
@@ -276,7 +275,7 @@
             </section>
 
             <section class="bg-img">
-                <div class="container" style=" margin-top:150px; width:95%; padding:0px 20px;">
+                <div class="container" style=" margin-top:80px; width:95%; padding:0px 20px;">
                     <div class="row" style="display: flex;justify-content: space-between;padding: 0px 14px;">
                         <div style="width: 50%;float:left;">
                             <h6 style="font-size: 17px; margin-bottom: 10px;">{{ $requestData['cname'] }}</h6>

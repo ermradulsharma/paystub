@@ -87,7 +87,7 @@
             content: "";
             right: 0px;
             top: 195px;
-            left: 26px !important;
+            left: 38px !important;
             ;
         }
 
@@ -100,7 +100,7 @@
             background-size: contain;
             background-repeat: no-repeat;
             content: "";
-            top: 140px;
+            top: 60px;
             left: 0px;
             right: 100px !important;
             position: absolute;
@@ -354,7 +354,7 @@
             </section>
         </section>
         <section class="bg-img">
-            <div class="container" style=" margin-top:120px; width:100%;">
+            <div class="container" style=" margin-top:40px; width:100%;">
                 <div class="row" style="display: flex;justify-content: space-between;padding: 0px 14px;">
                     <div style="width: 50%;float:left;position: relative; left:20px;">
                         <h6 style="font-size: 17px; margin-bottom: 10px;">{{ $requestData['emp_name'] }}</h6>

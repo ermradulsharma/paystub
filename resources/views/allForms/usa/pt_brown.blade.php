@@ -73,19 +73,16 @@
         width: 40%;
     }
     .container {
-        background-image: url('http://44.202.105.74/images/texture-brown.png') !important;
+        background-image: url("images/texture-brown1.png");
         background-size:cover;
         background-repeat:no-repeat;
         width:100%;
+        background-position: top;
     }
 
 </style>
 
 <body>
-
-
-
-
     <div class="container"
         style="border-right: 1px solid   #793b5b; margin: auto;border-top: 1px solid   #793b5b; border-left: 1px solid   #793b5b; border-bottom:none;padding: 0 0px 0px 0px;">
         <div class="row" style="display: flex; display: flex;justify-content: space-between;padding: 0px 14px;">
@@ -158,7 +155,7 @@
                     {{ $requestData['zip_code'] }}</p>
             </div>
         </div>
-        <div style="width: 100%;  background-color: #793b5b; text-align: center; color: aliceblue; font-size: 14px;">
+        <div style="width: 100%;  background-color: #793b5b; text-align: center; color: aliceblue; font-size: 12px;">
             <p style="margin: 0;">THE FACE OF THIS DOCUMNET HAS A COLOURED BACKGROUND-NOT A WHITE BACKGROUND</p>
         </div>
     </div>
