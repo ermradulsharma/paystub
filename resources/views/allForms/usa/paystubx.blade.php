@@ -30,12 +30,12 @@
 
     .column1 {
         float: left;
-        width: 70%;
+        width: 65%;
     }
 
     .column2 {
         float: left;
-        width: 30%;
+        width: 35%;
     }
 
     .row2::after {
@@ -77,7 +77,7 @@
         height: 100%;
         width: 700px;
         content: "";
-        top: 150px;
+        top: 170px;
         left: 0px;
         right: 0px;
         position: absolute;
@@ -98,19 +98,20 @@
         height: 100%;
         content: "";
         right: 0;
-        top: 150px;
-        left: 33px;
+        top: 170px;
+        left: 38px;
     }
     .background:before{
-        background: url('http://44.202.105.74/images/bg-lines1.png') !important;
+        background-image: url("images/bg-lines1.png");
         background-repeat: no-repeat;
-        background-size: contain;
-        width:300px;
-        height: 400px;
+        background-size: cover;
+        width:100%;
+        max-width: 625px;
         content: "";
         position: absolute;
-        top:0;
-        left: 0px;
+        padding:190px 0px;
+        top:-20px;
+        left: 110px;
         right: 0;
 
     }
@@ -213,8 +214,8 @@
                             <th>Earning</th>
                             <th style="width: 15%;">Rate</th>
                             <th>Hours</th>
-                            <th>This Period</th>
-                            <th>Year-to-date</th>
+                            <th>This<br>Period</th>
+                            <th>Year-to<br>date</th>
 
                         </tr>
                         @foreach ($requestData['earning'] as $key => $earn)
@@ -292,7 +293,7 @@
 
         </table>
         <section class="bg-img">
-            <table class="container" style=" margin-top:200px;padding: 0 0px 0px 0px;width:100%; ">
+            <table class="container" style=" margin-top:215px;padding: 0 0px 0px 0px;width:100%; ">
                 <div class="row"
                     style="display: flex; display: flex;justify-content: space-between;padding: 0px 14px;">
                     <div style="width: 50%;float:left;padding-left:30px;">
@@ -326,7 +327,7 @@
                     </div>
                 </div>
             </table>
-            <table style="width: 100%; margin: 120px 0 0 auto;">
+            <table style="width: 100%; margin: 130px 0 0 auto;">
                 <tr style="">
                     <td colspan="4"></td>
                     <td style=""></td>

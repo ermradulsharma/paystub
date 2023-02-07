@@ -71,38 +71,41 @@
     .col2 {
         float: left;
         width: 40%;
+
+    }
+    .container {
+        background-image: url("images/texture-green.png");
+        background-size:cover;
+        background-repeat:no-repeat;
+        width:100%;
     }
 </style>
 
 <body>
-
-
-
-
     <div class="container"
         style="border-right: 1px solid   #3e787a; margin: auto;border-top: 1px solid   #3e787a; border-left: 1px solid   #3e787a; border-bottom:none;padding: 0 0px 0px 0px;">
         <div class="row" style="display: flex; display: flex;justify-content: space-between;padding: 0px 14px;">
-            <div style="width: 50%;float:left;">
+            <div style="width: 60%;float:left;">
                 <h6 style="font-size: 17px; margin-bottom: 0;"> {{ $requestData['cname'] }}</h6>
-                <p style="font-size: 10px; margin: 0;"> {{ $requestData['address_1'] }}
+                <p style="font-size: 14px; margin: 0;"> {{ $requestData['address_1'] }}
                     {{ $requestData['address_2'] }}</br>{{ $requestData['city'] }}
                     {{ $requestData['state'] }},
                     {{ $requestData['zip_code'] }}</p>
 
 
-                <p style="font-size: 10px;">Pay To: <span style="font-weight:800;">
+                {{-- <p style="font-size: 10px;">Pay To: <span style="font-weight:800;">
                         {{ $requestData['emp_name'] }}</span>
-                </p>
+                </p> --}}
             </div>
-            <div style="width: 50%;float:right">
+            <div style="width: 40%;float:right">
                 <h6 style="font-size: 15px; margin-bottom: 0;">Advice Number: <span>00000422598</span>
                 </h6>
                 <br>
                 <br>
-                <P style="font-size: 10px;margin: 0;">
+                <P style="font-size: 14px;margin: 0;">
                     <span style="font-weight:800;">Check Nuumber:</span> 1775
                 </P>
-                <P style="font-size: 10px;margin: 0;">
+                <P style="font-size: 14px;margin: 0;">
                     <span style="font-weight:800;">Date:</span>
                     {{ date('m/d/y', strtotime($requestData['pay_date'])) }}
                 </P>
@@ -121,7 +124,9 @@
         </div> -->
 
         <div
-            style="width: 100%; display: flex; justify-content: flex-end;justify-content: space-between;margin: 30px 0 0 auto;font-size: 15px; font-weight: 900;padding: 0 0px;">
+            style="width: 100%; margin: 30px auto 0;font-size: 15px; font-weight: 900;padding: 0 0px 0px 0px;">
+            <div style="padding: 0px 20px;">
+                <span>Pay to:<b>Ezra Moore</b></span>
             <span style="margin: 0; float:right;">Amount</span>
 
 
@@ -129,32 +134,34 @@
 
 
             <span style="margin: 0; float:right;padding-left:10px; margin-right: 11px;">Account Number</span>
-            <hr style="margin-top: 20px;">
+            <hr style="margin-top: 10px;">
 
             <span
-                style="margin: 0;float:right; margin-right: 23px; ">{{ $requestData['currency'] }}{{ $requestData['total_net_pay'] }}</span>
+                style="margin: 0;float:right; margin-right: 23px;text-align:center; ">{{ $requestData['currency'] }}{{ $requestData['total_net_pay'] }}</span>
 
 
-            <span style="margin: 0;float:right; margin-right: 40px;">{{ $requestData['transit_aba_number'] }}</span>
+            <span style="margin: 0;float:right; margin-right: 40px;text-align:center;">{{ $requestData['transit_aba_number'] }}</span>
 
 
-            <span style="margin: 0;float:right; margin-right: 40px;">{{ $requestData['account_number_last_4'] }}</span>
+            <span style="margin: 0;float:right; margin-right: 40px; text-align:center;">{{ $requestData['account_number_last_4'] }}</span>
+            </div>
+
 
         </div>
         <div
-            style="width: 50%; display: flex; justify-content: flex-end;justify-content: space-between; FONT-SIZE: 17px; margin: 0px 0 0 151px;">
+            style="width: 50%; display: flex; justify-content: flex-end;justify-content: space-between; FONT-SIZE: 17px; margin: 0px 0 0 151px; padding:0px 30px;">
             <div style="margin-bottom: 19px;">
                 <b>
-                    <p style="margin: 6px 0 0 0; font-size: 12px; font-weight:500;">{{ $requestData['emp_name'] }}</p>
+                    <p style="margin: 0px 0 0 0; font-size: 12px; font-weight:500;">{{ $requestData['emp_name'] }}</p>
                 </b>
-                <P style="margin: 6px 0 0 0; font-size:  10px;">282 65 AVE</P>
-                <p style="margin: 6px 0 0 0;font-size: 10px;">{{ $requestData['address_1'] }}
+                <P style="margin: 0px 0 0 0; font-size:  12px;">282 65 AVE</P>
+                <p style="margin: 0px 0 0 0;font-size: 12px;">{{ $requestData['address_1'] }}
                     </br>{{ $requestData['city'] }}
                     {{ $requestData['state'] }},
                     {{ $requestData['zip_code'] }}</p>
             </div>
         </div>
-        <div style="width: 100%;  background-color: #3e787a; text-align: center; color: aliceblue; font-size: 14px;">
+        <div style="width: 100%;  background-color: #3e787a; text-align: center; color: aliceblue; font-size: 12px;">
             <p style="margin: 0;">THE FACE OF THIS DOCUMNET HAS A COLOURED BACKGROUND-NOT A WHITE BACKGROUND</p>
         </div>
     </div>

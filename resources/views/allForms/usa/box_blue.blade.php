@@ -87,7 +87,7 @@
             content: "";
             right: 0px;
             top: 195px;
-            left: 26px !important;
+            left: 38px !important;
             ;
         }
 

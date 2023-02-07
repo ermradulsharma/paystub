@@ -93,7 +93,6 @@
         .bg-img2 {
             position: relative;
             padding: 0px 0px 100px !important;
-            background-color: Red;
         }
 
         .bg-img2:before {
