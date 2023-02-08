@@ -7,7 +7,7 @@
     <style>
         #watermark {
             position: fixed;
-            bottom: 10cm;
+            bottom: 0cm;
             left: 3cm;
             width: 500px;
             height: 400px;
@@ -94,7 +94,7 @@
 
 <body>
     <div id="watermark">
-        <img src="http://44.202.105.74/user/img.png" height="100%" width="100%" />
+        <img src="http://44.202.105.74/user/water.png" height="100%" width="100%" />
     </div>
     <div class="container" style="border-right: 1px solid   #43407A; margin: auto;border-top: 1px solid   #43407A; border-left: 1px solid   #43407A; border-bottom:none;padding: 0 0px 0px 0px;">
         <div class="row" style="display: flex; display: flex;justify-content: space-between;padding: 0px 14px;">

@@ -7,7 +7,7 @@
     <style>
         #watermark {
             position: fixed;
-            bottom: 10cm;
+            bottom: 0cm;
             left: 3cm;
             width: 500px;
             height: 400px;
@@ -134,7 +134,7 @@
 
 <body>
     <div id="watermark">
-        <img src="http://44.202.105.74/user/img.png" height="100%" width="100%" />
+        <img src="http://44.202.105.74/user/water.png" height="100%" width="100%" />
     </div>
     <main class="bg-img2">
         <table class="co-table">
