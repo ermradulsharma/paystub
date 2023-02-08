@@ -496,7 +496,8 @@
                                 </div>
                                 <div class=" col-lg-2  col-md-2 margin-bottom mb-1  ">
                                     <button type="button" class="statementbtn">YTD TOTAL</button>
-                                    <p class="p-0 m-0 text-center go-ytd" style="font-family: serif;font-size:14px;">YTD Total
+                                    <p class="p-0 m-0 text-center go-ytd" style="font-family: serif;font-size:14px;">YTD
+                                        Total
                                         Gross</p>
                                 </div>
                             </div>
@@ -512,7 +513,7 @@
 
                                 <div class=" col-lg-2 col-md-2 margin-bottom ">
                                     <div>
-                                        <input type="text" name="rate[]" class="earnbtn text-center calculation rate"
+                                        <input type="number" name="rate[]" class="earnbtn text-center calculation rate"
                                             value="" id="rate_0" data-id="0">
                                     </div>
 
@@ -520,7 +521,7 @@
 
                                 <div class=" col-lg-2  col-md-2 margin-bottom ">
                                     <div>
-                                        <input type="text" name="hours[]"
+                                        <input type="number" name="hours[]"
                                             class="earnbtn text-center hours calculation" value="" id="hours_0"
                                             data-id="0">
                                     </div>
@@ -529,7 +530,7 @@
 
                                 <div class=" col-lg-2  col-md-2 margin-bottom">
                                     <div>
-                                        <input type="text" name="total[]" class="earnbtn text-center" value=""
+                                        <input type="number" name="total[]" class="earnbtn text-center" value=""
                                             id="total_0" data-id="0">
                                     </div>
 
@@ -537,7 +538,7 @@
 
                                 <div class=" col-lg-2 col-md-2 margin-bottom">
                                     <div>
-                                        <input type="text" name="period[]" class="earnbtn text-center gross_total"
+                                        <input type="number" name="period[]" class="earnbtn text-center gross_total"
                                             value="" id="period_0" data-id="0">
                                     </div>
 
@@ -545,7 +546,7 @@
 
                                 <div class=" col-lg-2 col-md-2 margin-bottom">
                                     <div>
-                                        <input type="text" name="ytd_total[]" class="earnbtn text-center ytd_total"
+                                        <input type="number" name="ytd_total[]" class="earnbtn text-center ytd_total"
                                             value="" id="ytd_total_0" data-id="0">
                                     </div>
                                 </div>
