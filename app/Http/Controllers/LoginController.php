@@ -37,13 +37,13 @@ class LoginController extends Controller
     {
         $user = Socialite::driver('google')->stateless()->user();
         //$user = Socialite::driver('google')->user();
-        $finduser = User::where('google_id', $user->id)->first();
+        $finduser = User::where('social_id', $user->id)->first();
         if ($finduser) {
             Auth::login($finduser);
         } else {
             $newUser = User::updateOrCreate(['email' => $user->email], [
                 'name' => $user->name,
-                'google_id' => $user->id,
+                'social_id' => $user->id,
                 'password' => Hash::make('123456dummy')
             ]);
             Auth::login($newUser);
