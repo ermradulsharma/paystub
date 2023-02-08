@@ -173,7 +173,7 @@
     color: #495057 !important;
 }
 
-.hourbtn {
+.hour_btn {
     padding: 8px 16px;
     border-radius: 3px;
     color: white;
@@ -185,12 +185,12 @@
     margin-right: 5px;
 }
 
-.hourbtn:hover {
+.hour_btn:hover {
     color: rgb(7, 7, 7);
     background: #eebebe;
 }
 
-.salrybtn {
+.salary_btn {
     padding: 8px 16px;
     border-radius: 3px;
     color: white;
@@ -1312,12 +1312,12 @@ select {
 
     }
 
-    .hourbtn {
+    .hour_btn {
         padding: 7px;
         font-size: 11px;
     }
 
-    .salrybtn {
+    .salary_btn {
         padding: 7px;
         font-size: 11px;
     }
@@ -1394,7 +1394,7 @@ select {
         left: 9px;
     }
 
-    
+
 
     .can-p {
         font-size: 19px !important;
@@ -1572,12 +1572,12 @@ select {
     }
 
 
-    .hourbtn {
+    .hour_btn {
         padding: 8px;
         border-radius: 3px;
     }
 
-    .salrybtn {
+    .salary_btn {
         padding: 8px;
         border-radius: 3px;
     }
@@ -1986,7 +1986,7 @@ select {
         width: 153px !important;
         height: 53px !important;
         margin-bottom: 0;
-    }   
+    }
     .gen{
         font-size: 24px !important;
     font-family: 'Futura LT';
@@ -2020,7 +2020,7 @@ select {
     .base {
         font-size: 12px;
     }
-  
+
     .uk-eye{
         font-size: 22px !important;
     }
@@ -2225,7 +2225,7 @@ select {
         padding: 10px 0px 12px 12px;
         background: #E8E6E6;
         border-radius: 2px;
-       
+
     }
 
     .thousand {
