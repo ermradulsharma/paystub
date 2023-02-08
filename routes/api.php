@@ -30,7 +30,10 @@ Route::group(['namespace' => 'Api', 'middleware' => ['\App\Http\Middleware\LogAf
     Route::post('login', [UserController::class, 'loginWithOtp']);
     Route::post('social-login', [UserController::class, 'socialLogin']);
     Route::group(['middleware' => ['auth:api']], function () {
+        Route::post('logout', [UserController::class, 'logout']);
         Route::post('save-form-data', [TemplatesController::class, 'templatesDataSave']);
         Route::get('get-pdf-list', [TemplatesController::class, 'getPdfList']);
+        Route::post('delete-template', [TemplatesController::class, 'deleteTemplate']);
+        Route::post('edit-form-data', [TemplatesController::class, 'editFormData']);
     });
 });

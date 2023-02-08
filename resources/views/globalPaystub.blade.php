@@ -470,8 +470,8 @@
                                     <p class="text-center how_p mb-0" style="font-size:18px;">How do you get paid <span
                                             class="redColor">*</span> <span> </p>
                                     <div class="text-center mt-2  d-flex justify-content-center">
-                                        <button type="button" class="hourbtn date_select">HOURLY</button> <button
-                                            type="button" class="salrybtn">SALARY</button>
+                                        <button type="button" class="hour_btn date_select">HOURLY</button> <button
+                                            type="button" class="salary_btn">SALARY</button>
                                     </div>
                                 </div>
                             </div>
