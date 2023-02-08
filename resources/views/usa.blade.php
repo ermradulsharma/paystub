@@ -81,15 +81,12 @@
                                 </div>
                             </div>
 
-                            <div class="row mb-3">
-                                <div class="col-md-12">
-                                    <div>
-                                        <label for="address_2" class="lable">STREET ADDRESS 2 <span
-                                                class="redColor">*</span> </label>
-                                        <input type="text" id="address_2" name="address_2"
-                                            placeholder="Suite 101 or Apt 101 (optional)"
-                                            class="w-100 p-2  textInputFontSize">
-                                    </div>
+                        <div class="row mb-3">
+                            <div class="col-md-12">
+                                <div>
+                                    <label for="address_2" class="lable">STREET ADDRESS 2 </label>
+                                    <input type="text" id="address_2" name="address_2" placeholder="Suite 101 or Apt 101 (optional)" class="w-100 p-2  textInputFontSize">
+                                </div>
 
                                 </div>
                             </div>
@@ -131,33 +128,25 @@
                 </div>
             </div>
 
-            <div>
-                <h5 class="box-h5">Choose Template</h5>
-                <div class="row mb-3">
-                    <div class="col-md-12">
-                        <div class=" box-usa">
-                            <div class="d-flex justify-content-between mb-3 flex">
-                                <div class="col-md-5 col-lg-6 col-sm-12 mt-5  text-center">
-                                    <h6 style="" class="base">BASIC TEMPLATES</h6>
-                                    <div class="mt-4">
-                                        <div class="input-group mmenu mb-3 text-center">
-                                            <select name="basic_temp"
-                                                class="form-control dropdown1 text-center bt_id small-font basicTemplate"
-                                                style="margin-right:10px; font-size:18px;">
-                                                <option value=""> --- Select Basic Templates --- </option>
-                                                @foreach ($basicType as $data)
-                                                    @if ($data->state == 'usa' && $data->type == 'basic')
-                                                        <option value="{{ $data->title ?? '' }}"
-                                                            data-src="{{ $data->images->file ?? '' }}"
-                                                            data-status="{{ $data->template_element }}">
-                                                            {{ $data->name }} </option>
-                                                    @endif
-                                                @endforeach
-                                            </select>
-                                            <i data-src="{{ $data->images->file ?? '' }}"
-                                                class="fa fa-eye-slash basicTem uk-eye" style="font-size: 39px;"
-                                                role="button"></i>
-                                        </div>
+        <div>
+            <h5 class="box-h5">Choose Your Template</h5>
+            <div class="row mb-3">
+                <div class="col-md-12">
+                    <div class=" box-usa">
+                        <div class="d-flex justify-content-between mb-3 flex">
+                            <div class="col-md-5 col-lg-6 col-sm-12 mt-5  text-center">
+                                <h6 style="" class="base">BASIC TEMPLATES</h6>
+                                <div class="mt-4">
+                                    <div class="input-group mmenu mb-3 text-center">
+                                        <select name="basic_temp" class="form-control dropdown1 text-center bt_id small-font basicTemplate" style="margin-right:10px; font-size:18px;">
+                                            <option value=""> --- Select Basic Templates --- </option>
+                                            @foreach ($basicType as $data)
+                                            @if($data->state == 'usa' && $data->type == 'basic')
+                                            <option value="{{$data->title ?? ''}}" data-src="{{$data->images->file ?? ''}}" data-status="{{$data->template_element}}"> {{$data->name}} </option>
+                                            @endif
+                                            @endforeach
+                                        </select>
+                                        <i data-src="{{$data->images->file ?? ''}}" class="fa fa-eye-slash basicTem uk-eye" style="font-size: 39px;" role="button"></i>
                                     </div>
                                 </div>
 
@@ -221,6 +210,10 @@
                                             class="w-100 r textInputFontSize">
                                     </div>
 
+                            <div class="col-md-4 mt-4">
+                                <div>
+                                    <label for="emp_id" class="lable">EMPLOYEE ID  </label>
+                                    <input type="text" id="emp_id" name="emp_id" placeholder="Employer ID" class="w-100 r textInputFontSize">
                                 </div>
                                 <div class="col-md-4 mt-4">
                                     <div>
@@ -230,8 +223,21 @@
                                             class="w-100  textInputFontSize">
                                     </div>
 
+                            </div>
+                            <div class="col-md-4 mt-4">
+                                <div>
+                                    <label for="emp_ssn" class="lable">EMPLOYEE SSN Last 4 <span class="redColor">*</span> </label>
+                                    <input type="text" id="emp_ssn" name="emp_ssn" placeholder="1224" class="w-100  textInputFontSize">
                                 </div>
                             </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-12">
+                                <div>
+                                    <label for="emp_street_1" class="lable">STREET ADDRESS 1 <span class="redColor">*</span></label>
+                                    <input type="text" id="emp_street_1" name="emp_street_1" placeholder="Your Address" class="w-100  textInputFontSize">
+                                </div>
 
                             <div class="row mb-3">
                                 <div class="col-md-12">
@@ -242,6 +248,12 @@
                                             placeholder="Your Address" class="w-100  textInputFontSize">
                                     </div>
 
+                        <div class="row mb-3">
+                            <div class="col-md-12">
+                                <div>
+                                    <label for="emp_street_2" class="lable">STREET ADDRESS 2
+                                    </label>
+                                    <input type="text" id="emp_street_2" name="emp_street_2" placeholder="Suite 101 or Apt 101(optional)" class="w-100  textInputFontSize">
                                 </div>
                             </div>
 
@@ -388,6 +400,14 @@
                                         </select>
                                     </div>
 
+                            <div class="col-md-3 mt-4">
+                                <div>
+                                    <label for="emp_type" class="lable">EMPLOYMENT TYPE </label>
+                                    <select name="emp_type" id="emp_type" class=" dropdown11">
+                                        <option value=""> --- Select Employment Type --- </option>
+                                        <option value="saab">Temporary</option>
+                                        <option value="opel">Permanent</option>
+                                    </select>
                                 </div>
 
                                 <div class="col-md-3 mt-4">
@@ -409,6 +429,23 @@
                                         </select>
                                     </div>
 
+                            <div class="col-md-3 mt-4">
+                                <div>
+                                    <label for="exemptions" class="lable">EXEMPTIONS 
+                                    </label>
+                                    <select name="exemptions" id="exemptions" class=" dropdown11">
+                                        <option value=""> --- Select Exemptions --- </option>
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                    </select>
                                 </div>
 
                                 <div class="col-md-3 mt-4">
@@ -424,12 +461,39 @@
                                         </select>
                                     </div>
 
+                            <div class="col-md-3 mt-4">
+                                <div>
+                                    <label for="currency" class="lable" class="redColor" style="color: red;">SELECT YOUR PREFERRED
+                                        CURRENCY  </label>
+                                    <select name="currency" id="currency" class=" dropdown11">
+                                        <option value=""> --- Select currency --- </option>
+                                        <option value="$">Dollar $</option>
+                                        <option value="€">Euro €</option>
+                                        <option value="£">Pound £</option>
+                                        <option value="¥">Yen ¥</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div>
+            <div class="mb- d-flex" style="justify-content: space-between;">
+                <h5 class="box-h5">Earning Statement</h5>
+            </div>
+            <div class="row mb1">
+                <div class="col-md-12">
+                    <div class=" box-usa">
+                        <div class="row mb-3">
+                            <div class="col-md-3 mt-4">
+                                <div>
+                                    <label for="pay_start" class="lable">PAY START<span class="redColor">*</span> </label>
+                                    <input type="date" id="pay_start" name="pay_start" placeholder="12-11-2022" class="w-100 p-2 textInputFontSize pay_start datepicker" data-id="pay_start">
+                                </div>
+                            </div>
 
             <div>
                 <div class="mb- d-flex" style="justify-content: space-between;">
@@ -543,37 +607,74 @@
 
                                 </div>
 
-                                <div class=" col-lg-2 col-md-2 margin-bottom">
-                                    <div>
-                                        <input type="number" name="ytd_total[]" class="earnbtn text-center ytd_total"
-                                            value="" id="ytd_total_0" data-id="0">
-                                    </div>
-                                </div>
+                        <div class="row mb-3">
+                            <div class=" col-lg-2  col-md-4 mt-2 margin-bottom">
+                                <button type="button" class="add_button earnbtn" type="add_earning" id="add_earning"><i class="fa fa-plus-circle pr-2" style="font-size:24px;color:green"></i>Add Earning</button>
+                            </div>
+                        </div>
 
+                        <div class="row mt-5">
+                            <div class="col-md-3">
+                                <button type="button" class="createbtn ">DEDUCTIONS</button>
+                                <p style="margin: 0;">Tap On padlocak to change text</p>
+                            </div>
+                        </div>
+
+                        @foreach ($deduction as $key => $item)
+                        <div class="row mb-3">
+                            <div class="col-md-4 col-lg-3">
+                                <img src="{{ asset('images/lock.png') }}" class="earnbtn2">
+                                <input class="earnbtn text-center taxes" name="taxes[]" data-id="{{ $key }}" data-value="{{ $item->price }}" value="{{ $item->title }}" data-value="{{ $item->title }}">
+                            </div>
+                            <div class="col-md-1 col-lg-1"></div>
+                            <div class="col-md-2 col-lg-3"></div>
+                            <div class="col-md-1 col-lg-1"></div>
+                            <div class="col-md-2 col-lg-2">
+                                <input type="text" name="taxes_rate[]" class="earnbtn text-center manualTaxTotal" id="taxes_{{ $key }}" value="" data-value="" />
                             </div>
                             <div class=" col-lg-2 col-md-2 margin-bottom">
                                 <input type="text" name="period_gross_total"
                                     class="earnbtn text-center period_gross_total" value="" id="period_gross_total"
                                     hidden>
                             </div>
-                            <div class=" col-lg-2 col-md-2 margin-bottom">
-                                <input type="text" name="ytd_gross_total" class="earnbtn text-center ytd_gross_total"
-                                    value="" id="ytd_gross_total" hidden>
+                        </div>
+                        @endforeach
+                        <div id="add_deduction" class="my-3">
+                        </div>
+                        <div class=" col-lg-2 col-md-2 margin-bottom">
+                            <input type="text" name="" class="earnbtn text-center deduction_period_tax" value="" id="deduction_period_tax" hidden>
+                            <input type="text" name="" class="earnbtn text-center deduction_period_tax_other" value="" id="deduction_period_tax_other" hidden>
+                        </div>
+                        <div class=" col-lg-2 col-md-2 margin-bottom">
+                            <input type="text" name="" class="earnbtn text-center ytd_deduction_period_tax" value="" id="ytd_deduction_period_tax" hidden>
+                            <input type="text" name="" class="earnbtn text-center ytd_deduction_period_tax_other" value="" id="ytd_deduction_period_tax_other" hidden>
+                        </div>
+                        <div class="row my-3">
+                            <div class="col-md-4 col-lg-3 mb-5">
+                                <button type="button" class="add_deduction earnbtn" type="add_deduction" id="add_deduction"><i class="fa fa-plus-circle pr-5" style="font-size:24px;color:green"></i>Add Deduction</button>
                             </div>
                             <div class="field_wrapper"> </div>
 
-                            <div class="row mb-3">
-                                <div class=" col-lg-2  col-md-4 mt-2 margin-bottom">
-                                    <button type="button" class="add_button earnbtn" type="add_earning"
-                                        id="add_earning"><i class="fa fa-plus-circle pr-2"
-                                            style="font-size:24px;color:green"></i>Add Earning</button>
-                                </div>
+                            <div class="col-md-1"></div>
+                            <div class="col-md-2 col-lg-3"></div>
+                            <div class="col-md-1"></div>
+                            <div class="col-md-3"></div>
+                            <div class="col-md-3"></div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-4 col-lg-3">
+                                <input class="earnbtn text-center" type="text" value="Taxes/Deduction Tax">
                             </div>
-
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <button type="button" class="createbtn ">DEDUCTIONS</button>
-                                </div>
+                            <div class="col-md-1"></div>
+                            <div class="col-md-2 col-lg-3"></div>
+                            <div class="col-md-1"></div>
+                            <div class="col-md-2">
+                            <p class="p-0 m-0 text-center" style="font-family: serif;">Current Gross</p>
+                                <input type="text" name="deduction_tax" class="earnbtn deduction_tax text-center" value="" />
+                            </div>
+                            <div class="col-md-2">
+                            <p class="p-0 m-0 text-center" style="font-family: serif;">YTD Gross</p>
+                                <input type="text" name="ytd_deduction_tax" class="earnbtn ytd_deduction_tax text-center" value="" />
                             </div>
 
                             @foreach ($deduction as $key => $item)

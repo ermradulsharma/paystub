@@ -3,32 +3,47 @@
 
 <head>
     <title>uk pin blue</title>
+    <style>
+        #watermark {
+            position: fixed;
+            top: 10cm;
+            bottom: 0cm;
+            left: 3cm;
+            width: 500px;
+            height: 400px;
+            z-index: -1000;
+        }
+    </style>
 </head>
 <style>
-body {
-    font-size: 13px;
-    /* border-radius: 10px 0 0 0; */
-}
+    body {
+        font-size: 13px;
+        /* border-radius: 10px 0 0 0; */
+    }
 
-table {
-    border-collapse: collapse;
-    width: 100%;
-    /* border: 1px solid #0a2e7b; */
-    /* border-radius: 10px 0 0 0; */
-}
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        /* border: 1px solid #0a2e7b; */
+        /* border-radius: 10px 0 0 0; */
+    }
 
-th {
-    background-color: #0a2e7b;
-    color: white;
-   
-}
+    th {
+        background-color: #0a2e7b;
+        color: white;
 
-td {
-    text-align: center; border-radius: 10px 0 0 0;
-}
+    }
+
+    td {
+        text-align: center;
+        border-radius: 10px 0 0 0;
+    }
 </style>
 
 <body>
+    <div id="watermark">
+        <img src="http://44.202.105.74/user/water.png" height="100%" width="100%" />
+    </div>
     <section style="border:1px solid #0a2e7b; border-radius:10px;">
         <table>
             <tr>
@@ -66,47 +81,47 @@ td {
             </tr>
 
 
-          
+
             <tr>
                 <td colspan="">Total Payment</td>
                 <td></td>
                 <td></td>
-                <td style="border-right:1px solid #0a2e7b" >56789</td>
+                <td style="border-right:1px solid #0a2e7b">56789</td>
                 <td>National Insurance</td>
                 <td>678</td>
 
             </tr>
             <tr>
                 <td colspan=""></td>
-                <td ></td>
-                <td ></td>
-                <td style="border-right:1px solid #0a2e7b"colspan="" ></td>
-                
-                <td style="font-weight: 800;" >Total Deductions</td>
+                <td></td>
+                <td></td>
+                <td style="border-right:1px solid #0a2e7b" colspan=""></td>
+
+                <td style="font-weight: 800;">Total Deductions</td>
                 <td>678</td>
 
             </tr>
             <tr>
                 <td colspan=""></td>
-                <td ></td>
-                <td ></td>
-                <td style="border-right:1px solid #0a2e7b"colspan="" ></td>
-                
-                <td style="font-weight: 800;" ></td>
+                <td></td>
+                <td></td>
+                <td style="border-right:1px solid #0a2e7b" colspan=""></td>
+
+                <td style="font-weight: 800;"></td>
                 <td></td>
 
             </tr>
             <tr>
                 <td colspan=""></td>
-                <td ></td>
-                <td ></td>
-                <td style="border-right:1px solid #0a2e7b"colspan="" ></td>
-                
-                <td style="font-weight: 800;" ></td>
+                <td></td>
+                <td></td>
+                <td style="border-right:1px solid #0a2e7b" colspan=""></td>
+
+                <td style="font-weight: 800;"></td>
                 <td></td>
 
             </tr>
-          
+
 
         </table>
         <table style="padding-top: 20px;  width:100%;border-top:1px solid #0a2e7b ; border-bottom:1px solid  #0a2e7b;">

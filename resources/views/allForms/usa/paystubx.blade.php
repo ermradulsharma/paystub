@@ -4,6 +4,17 @@
 <head>
     <title>paystubs-check</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        #watermark {
+            position: fixed;
+            top: 10cm;
+            bottom: 0cm;
+            left: 3cm;
+            width: 500px;
+            height: 400px;
+            z-index: -1000;
+        }
+    </style>
 </head>
 <style>
     th {
@@ -101,26 +112,31 @@
         top: 180px;
         left: 38px;
     }
-    .background:before{
+
+    .background:before {
         background-image: url("images/bg-lines1.png");
         background-repeat: no-repeat;
         background-size: cover;
-        width:100%;
+        width: 100%;
         max-width: 625px;
         content: "";
         position: absolute;
-        padding:190px 0px;
-        top:-20px;
+        padding: 190px 0px;
+        top: -20px;
         left: 105px;
         right: 0;
 
     }
-    .background{
+
+    .background {
         position: relative;
     }
 </style>
 
 <body>
+    <div id="watermark">
+        <img src="http://44.202.105.74/user/water.png" height="100%" width="100%" />
+    </div>
     <main class="bg-img2">
         <table class="co-table">
             <tr>
@@ -155,7 +171,8 @@
                     <tr>
                         <td>{{ $requestData['address_1'] }}</br>{{ $requestData['address_1'] }}</br>{{ $requestData['city'] }}
                             {{ $requestData['state'] }},
-                            {{ $requestData['zip_code'] }}</td>
+                            {{ $requestData['zip_code'] }}
+                        </td>
                     </tr></br></br></br>
                     <tr>
                         <td>Social Security Number:{{ $requestData['emp_ssn'] }}
@@ -199,7 +216,8 @@
                     <tr>
                         <td> {{ $requestData['emp_street_1'] }},{{ $requestData['emp_city'] }}</br>
                             {{ $requestData['emp_state'] }},
-                            {{ $requestData['emp_zip_code'] }},USA</td>
+                            {{ $requestData['emp_zip_code'] }},USA
+                        </td>
                     </tr>
                 </table>
 
@@ -219,13 +237,13 @@
 
                         </tr>
                         @foreach ($requestData['earning'] as $key => $earn)
-                            <tr>
-                                <td>{{ $earn }}</td>
-                                <td> {{ $requestData['rate'][$key] }}</td>
-                                <td>{{ $requestData['hours'][$key] }}</td>
-                                <td> {{ $requestData['period'][$key] }}</td>
-                                <td> {{ $requestData['ytd_total'][$key] }}</td>
-                            </tr>
+                        <tr>
+                            <td>{{ $earn }}</td>
+                            <td> {{ $requestData['rate'][$key] }}</td>
+                            <td>{{ $requestData['hours'][$key] }}</td>
+                            <td> {{ $requestData['period'][$key] }}</td>
+                            <td> {{ $requestData['ytd_total'][$key] }}</td>
+                        </tr>
                         @endforeach
                         </br>
                         <tr>
@@ -258,21 +276,21 @@
             </thead>
 
             @foreach ($requestData['taxes'] ?? [] as $key => $taxes)
-                <tr>
-                    <td></td>
-                    <td style="text-align: left;">{{ $taxes }}</td>
-                    <td> {{ $requestData['taxes_rate'][$key] }}</td>
-                    <td> {{ $requestData['taxes_ytd'][$key] }}</td>
-                </tr>
+            <tr>
+                <td></td>
+                <td style="text-align: left;">{{ $taxes }}</td>
+                <td> {{ $requestData['taxes_rate'][$key] }}</td>
+                <td> {{ $requestData['taxes_ytd'][$key] }}</td>
+            </tr>
             @endforeach
 
             @foreach ($requestData['tax_deduction'] ?? [] as $key => $tax_deduction)
-                <tr>
-                    <td></td>
-                    <td style="text-align: left;">{{ $tax_deduction }}</td>
-                    <td> {{ $requestData['period_tax_deduction'][$key] }}</td>
-                    <td> {{ $requestData['ytd_tax_deduction'][$key] }}</td>
-                </tr>
+            <tr>
+                <td></td>
+                <td style="text-align: left;">{{ $tax_deduction }}</td>
+                <td> {{ $requestData['period_tax_deduction'][$key] }}</td>
+                <td> {{ $requestData['ytd_tax_deduction'][$key] }}</td>
+            </tr>
             @endforeach
             </br></br>
             <tr>
@@ -294,15 +312,15 @@
         </table>
         <section class="bg-img">
             <table class="container" style=" margin-top:125px;padding: 0 0px 0px 0px;width:100%; ">
-                <div class="row"
-                    style="display: flex; display: flex;justify-content: space-between;padding: 0px 14px;">
+                <div class="row" style="display: flex; display: flex;justify-content: space-between;padding: 0px 14px;">
                     <div style="width: 50%;float:left;padding-left:30px;">
                         <h6 style="font-size: 17px; margin-bottom: 0;">{{ $requestData['cname'] }}</h6>
                         <p style="font-size: 10px; margin: 0;"> {{ $requestData['emp_street_1'] }},</p>
                         <P style="font-size: 10px; margin: 0;"> {{ $requestData['emp_street_2'] }}</P>
                         <P style="font-size: 10px; margin: 0;"> {{ $requestData['emp_city'] }}
                             {{ $requestData['emp_state'] }},
-                            {{ $requestData['emp_zip_code'] }}</P>
+                            {{ $requestData['emp_zip_code'] }}
+                        </P>
                         <p style="font-size: 10px;">Pay To: <span style="font-weight:800;">
                                 {{ $requestData['emp_name'] }}</span>
                         </p>

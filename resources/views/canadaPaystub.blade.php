@@ -35,33 +35,29 @@
             </div>
         </div>
     </div>
-    <div class="container" style="max-width: 1450px;">
-        <form id="submit_form_paystubx_id" action="javascript:void()" method="get">
-            @csrf
-            <input type="hidden" name="form_type" value="canada" hidden>
-            <div>
-                <h5 class="box-h5">Choose Template</h5>
-                <div class="row mb-3">
-                    <div class="col-md-12">
-                        <div class=" box-usa">
-                            <div class="d-flex justify-content-between mb-3">
-                                <div class="col-md-5 col-sm-12 m-auto  text-center" style="padding: -1px 35px;">
-                                    <h6 class="base">BASIC TEMPLATES</h6>
-                                    <div class="mt-4">
-                                        {{-- <i class="fa fa-angle-down down"></i> --}}
-                                        <div class="input-group mmenu mb-3">
-                                            <select name="basic_temp"
-                                                class="form-control dropdown1 text-center bt_id small-font basicTemplate"
-                                                style="margin-right:10px; font-size:18px;">
-                                                <option value=""> --- Select Basic Templates --- </option>
-                                                @foreach ($basicType as $data)
-                                                    <option value="{{ $data->title }}"
-                                                        data-src="{{ $data->images->file }}">{{ $data->name }}</option>
-                                                @endforeach
-                                            </select>
-                                            <i class="fa fa-eye-slash basicTem flash-icon" data-target="#openEye"
-                                                data-toggle="modal"></i>
-                                        </div>
+</div>
+<div class="container" style="max-width: 1450px;">
+    <form id="submit_form_paystubx_id" action="javascript:void()" method="get">
+        @csrf
+        <input type="hidden" name="form_type" value="canada" hidden>
+        <div>
+            <h5 class="box-h5">Choose Your Template</h5>
+            <div class="row mb-3">
+                <div class="col-md-12">
+                    <div class=" box-usa">
+                        <div class="d-flex justify-content-between mb-3">
+                            <div class="col-md-5 col-sm-12 m-auto  text-center" style="padding: -1px 35px;">
+                                <h6 class="base">BASIC TEMPLATES</h6>
+                                <div class="mt-4">
+                                    {{-- <i class="fa fa-angle-down down"></i> --}}
+                                    <div class="input-group mmenu mb-3">
+                                        <select name="basic_temp" class="form-control dropdown1 text-center bt_id small-font basicTemplate" style="margin-right:10px; font-size:18px;">
+                                            <option value=""> --- Select Basic Templates --- </option>
+                                            @foreach ($basicType as $data)
+                                            <option value="{{$data->title}}" data-src="{{$data->images->file}}">{{$data->name}}</option>
+                                            @endforeach
+                                        </select>
+                                        <i class="fa fa-eye-slash basicTem flash-icon" data-target="#openEye" data-toggle="modal"></i>
                                     </div>
                                 </div>
 
@@ -183,47 +179,37 @@
                     </div>
                 </div>
             </div>
-            <div>
-                <h5 class="box-h5">Employee Basic Info</h5>
-                <div class="row mb-3">
-                    <div class="col-md-12">
-                        <div class=" box-usa">
-                            <div class="row mb-3">
-                                <div class="col-md-4 mt-4">
-                                    <div>
-                                        <label for="emp_id" class="lable">EMPLOYEE ID <span class="redColor">*</span>
-                                        </label>
-                                        <input type="text" id="emp_id" name="emp_id" placeholder="Employee id"
-                                            class="w-100 p-2  textInputFontSize">
-                                    </div>
+        </div>
+        <div>
+            <h5 class="box-h5">Employee Basic Info</h5>
+            <div class="row mb-3">
+                <div class="col-md-12">
+                    <div class=" box-usa">
+                        <div class="row mb-3">
+                            <div class="col-md-4 mt-4">
+                                <div>
+                                    <label for="emp_id" class="lable">EMPLOYEE ID <span class="redColor">*</span> </label>
+                                    <input type="text" id="emp_id" name="emp_id" placeholder="Employee id" class="w-100 p-2  textInputFontSize">
                                 </div>
-                                <div class="basicpay">
-                                    <div class="col-md-2 mt-4 pr-0">
-                                        <div>
-                                            <label for="pay_start" class="lable">PAY START <span
-                                                    class="redColor">*</span></label>
-                                            <input type="date" id="pay_start" name="pay_start"
-                                                placeholder="12-11-2022"
-                                                class="w-100 p-2 textInputFontSize pay_start datepicker"
-                                                data-id="pay_start" style="border-right: none;">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-2 mt-4 pl-0">
-                                        <div>
-                                            <label for="emp_id" class="lable"> <span class="redColor">*</span></label>
-                                            <input type="date" id="pay_end" name="pay_end" placeholder=" "
-                                                class="w-100 p-2 textInputFontSize pay_end" data-id="pay_end"
-                                                style="border-left: none;" readonly>
-                                        </div>
-                                    </div>
+                            </div>
+                        <div class="basicpay" >
+                            <div class="col-md-2 mt-4 pr-0">
+                                <div>
+                                    <label for="pay_start" class="lable">PAY START </label>
+                                    <input type="date" id="pay_start" name="pay_start" placeholder="12-11-2022" class="w-100 p-2 textInputFontSize pay_start datepicker" data-id="pay_start" style="border-right: none;">
                                 </div>
-                                <div class="col-md-4 mt-4">
-                                    <div>
-                                        <label for="pay_date" class="lable">PAY DATE <span
-                                                class="redColor">*</span></label>
-                                        <input type="date" id="pay_date" name="pay_date" placeholder="12-19-2022"
-                                            class="w-100 p-2 textInputFontSize pay_date" data-id="pay_date">
-                                    </div>
+                            </div>
+                            <div class="col-md-2 mt-4 pl-0">
+                                <div>
+                                    <label for="emp_id" class="lable"> </label>
+                                    <input type="date" id="pay_end" name="pay_end" placeholder=" " class="w-100 p-2 textInputFontSize pay_end" data-id="pay_end" style="border-left: none;" readonly>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="col-md-4 mt-4">
+                                <div>
+                                    <label for="pay_date" class="lable">PAY DATE </label>
+                                    <input type="date" id="pay_date" name="pay_date" placeholder="12-19-2022" class="w-100 p-2 textInputFontSize pay_date" data-id="pay_date">
                                 </div>
                             </div>
 
@@ -251,16 +237,21 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row mb-3">
-                                <div class="col-md-4">
-                                    <div>
-                                        <label for="emp_name" class="lable">EMPLOYER NAME <span
-                                                class="redColor">*</span>
-                                        </label>
-                                        <input type="text" id="emp_name" name="emp_name" placeholder="Employee name"
-                                            class="w-100 p-2  textInputFontSize">
-                                    </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-4">
+                                <div>
+                                    <label for="emp_name" class="lable">EMPLOYEE NAME <span class="redColor">*</span>
+                                    </label>
+                                    <input type="text" id="emp_name" name="emp_name" placeholder="Employee name" class="w-100 p-2  textInputFontSize">
+                                </div>
 
+                            </div>
+                            <div class="col-md-8">
+                                <div>
+                                    <label for="emp_address" class="lable">EMPLOYEE ADDRESS <span class="redColor">*</span>
+                                    </label>
+                                    <input type="text" id="emp_address" name="emp_address" placeholder="Suite 101 or Apt 101(optional)" class="w-100 p-2  textInputFontSize">
                                 </div>
                                 <div class="col-md-8">
                                     <div>
@@ -279,28 +270,38 @@
                 </div>
             </div>
 
-            <div>
-                <div class="mb- d-flex " style="justify-content: space-between;">
-                    <h5 class="box-h5">Earning statement</h5>
-                </div>
-                <div class="row mb-3">
-                    <div class="col-md-12">
-                        <div class=" box-usa">
-                            <div class="row mb-3 pt-4">
-                                <div class="col-lg-7">
-                                    <div class="row">
-                                        <div class="col-lg-2 col-md-2 pr-0">
-                                            <button type="button" CLASS="statementbtn">INCOME</button>
-                                        </div>
-                                        <div class="col-lg-2  col-md-2 pr-0">
-                                            <button type="button" CLASS="statementbtn">RATE</button>
-                                        </div>
-                                        <div class="col-lg-4 col-md-4 pr-0">
-                                            <button type="button" CLASS="statementbtn">HOURS</button>
-                                        </div>
-                                        <div class="col-lg-4 col-md-4 pr-0">
-                                            <button type="button" CLASS="statementbtn"> CURRENT TOTAL</button>
-                                        </div>
+        <div>
+            <div class="mb- d-flex " style="justify-content: space-between;">
+                <h5 class="box-h5">Earning Statement</h5>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-12">
+                    <div class=" box-usa">
+                        <div class="row mb-3 pt-4">
+                            <div class="col-lg-7">
+                                <div class="row">
+                                    <div class="col-lg-2 col-md-2 pr-0">
+                                        <button type="button" CLASS="statementbtn">INCOME</button>
+                                    </div>
+                                    <div class="col-lg-2  col-md-2 pr-0">
+                                        <button type="button" CLASS="statementbtn">RATE</button>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 pr-0">
+                                        <button type="button" CLASS="statementbtn">HOURS</button>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 pr-0">
+                                        <button type="button" CLASS="statementbtn"> CURRENT TOTAL</button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-2  col-md-2 mt-4 pr-0">
+                                        <input class="earnbtn text-center incomeKey" data-id="000" name="earning[]" type="text" value="Regular">
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 mt-4 pr-0">
+                                        <input class="earnbtn text-center rateKey" id="rate_000" name="rate[]" type="text" value="">
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 mt-4 pr-0">
+                                        <input class="earnbtn text-center hoursKey" id="hours_000" name="hours[]" type="text" value="">
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-2  col-md-2 mt-4 pr-0">

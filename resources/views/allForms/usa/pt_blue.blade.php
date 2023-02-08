@@ -3,6 +3,17 @@
 
 <head>
     <title>pt_green Document</title>
+    <style>
+        #watermark {
+            position: fixed;
+            top: 10cm;
+            bottom: 0cm;
+            left: 3cm;
+            width: 500px;
+            height: 400px;
+            z-index: -1000;
+        }
+    </style>
 </head>
 <style>
     table {
@@ -78,6 +89,7 @@
         background-size: cover;
         background-repeat: no-repeat;
         width: 100%;
+        background-position: top;
     }
 </style>
 

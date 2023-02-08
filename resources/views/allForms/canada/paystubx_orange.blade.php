@@ -104,9 +104,23 @@
             float: left;
         }
     </style>
+    <style>
+        #watermark {
+            position: fixed;
+            top: 10cm;
+            bottom: 0cm;
+            left: 3cm;
+            width: 500px;
+            height: 400px;
+            z-index: -1000;
+        }
+    </style>
 </head>
 
 <body>
+    <div id="watermark">
+        <img src="http://44.202.105.74/user/water.png" height="100%" width="100%" />
+    </div>
     <div style="max-width: 100%; margin: auto; padding: 10px 10px; bordar-top:2px solid red">
         <table style="width:100%; border-left:2px solid#464646; border-right:2px solid#464646;">
             <thead style="border:none !important;color:white; background-color:darkgrey; ">

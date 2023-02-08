@@ -72,6 +72,10 @@ $(document).ready(function () {
                 arr_pushed(id);
             }, 300);
         });
+
+        $('.total').keyup(function(){
+            total();
+        });
         return false;
     });
 
@@ -401,12 +405,13 @@ $(document).ready(function () {
                 if (time_period == "bi-monthly") {
                     days_number = days / 61;
                 }
-                for (let i = 0; i < finalArray.length; i++) {
-                    var hours = $("#hours_" + i).val();
-                    if (hours != "") {
-                        calculation(i);
+                    for (let i = 0; i < finalArray.length; i++) {
+                        var hours = $('#hours_'+i).val();
+                        if (hours != '') {
+                            calculation(i);
+                        }
                     }
-                }
+                    total();
             }
         } else {
             return false;
@@ -437,15 +442,15 @@ $(document).ready(function () {
         $(".total").attr("readonly", true);
     });
 
-    $(".salary_btn").click(function () {
-        $(".rate").attr("readonly", true);
-        $(".rate").attr("hidden", true);
-        $(".hours").attr("readonly", true);
-        $(".hours").attr("hidden", true);
-        $(".hourly").attr("readonly", true);
-        $(".total").attr("readonly", false);
-        $(".time_period").val("monthly");
-        $(".auto_calculate").val("on");
+    $('.salary_btn').click(function(){
+        $('.rate').attr('readonly', true);
+        $('#rate_0').attr('hidden', true);
+        $('.hours').attr('readonly', true);
+        $('#hours_0').attr('hidden', true);
+        $('.hourly').attr('readonly', true);
+        $('.total').attr('readonly', false);
+        $('.time_period').val('monthly');
+        $('.auto_calculate').val('on');
         var date = new Date();
         var day = date.getDate();
         var month = date.getMonth() + 1;
@@ -464,7 +469,11 @@ $(document).ready(function () {
         $(".hours").val("");
     });
 
-    $(".total").keyup(function () {
+    $('.total').keyup(function(){
+        total();
+    })
+
+    function total(){
         var period_gross_total = 0;
         var ytd_gross_total = 0;
         $(".total").each(function () {
@@ -473,15 +482,15 @@ $(document).ready(function () {
             var ytd_total = total * parseInt(days_number) || 0.0;
             period_gross_total += total;
             ytd_gross_total += ytd_total;
-            $("#period_" + id).val(total);
-            $("#ytd_total_" + id).val(ytd_total);
+            $('#period_'+id).val(parseFloat(total).toFixed(2));
+            $('#ytd_total_'+id).val(parseFloat(ytd_total).toFixed(2));
         });
-        $("#period_gross_total").val(period_gross_total);
-        $("#ytd_gross_total").val(ytd_gross_total);
+        $("#period_gross_total").val(parseFloat(period_gross_total).toFixed(2));
+        $("#ytd_gross_total").val(parseFloat(ytd_gross_total).toFixed(2));
         setTimeout(() => {
             gross_total();
         }, 400);
-    });
+    }
 
     $(".auto_calculate").change(function () {
         var value = $(this).val();

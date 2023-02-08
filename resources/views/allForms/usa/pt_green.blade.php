@@ -3,6 +3,17 @@
 
 <head>
     <title>pt_green Document</title>
+    <style>
+        #watermark {
+            position: fixed;
+            top: 10cm;
+            bottom: 0cm;
+            left: 3cm;
+            width: 500px;
+            height: 400px;
+            z-index: -1000;
+        }
+    </style>
 </head>
 <style>
     table {
@@ -82,8 +93,10 @@
 </style>
 
 <body>
-    <div class="container"
-        style="border-right: 1px solid   #3e787a; margin: auto;border-top: 1px solid   #3e787a; border-left: 1px solid   #3e787a; border-bottom:none;padding: 0 0px 0px 0px;">
+    <div id="watermark">
+        <img src="http://44.202.105.74/user/water.png" height="100%" width="100%" />
+    </div>
+    <div class="container" style="border-right: 1px solid   #3e787a; margin: auto;border-top: 1px solid   #3e787a; border-left: 1px solid   #3e787a; border-bottom:none;padding: 0 0px 0px 0px;">
         <div class="row" style="display: flex; display: flex;justify-content: space-between;padding: 0px 14px;">
             <div style="width: 60%;float:left;">
                 <h6 style="font-size: 17px; margin-bottom: 0;"> {{ $requestData['cname'] }}</h6>
@@ -123,8 +136,7 @@
                     style="margin: 0;float:right; margin-right: 30px;">{{ $requestData['account_number_last_4'] }}XXXXXX</span>
             </div>
         </div>
-        <div
-            style="width: 50%; display: flex; justify-content: flex-end;justify-content: space-between; FONT-SIZE: 17px; margin: 0px 0 0 151px; padding:0px 30px;">
+        <div style="width: 50%; display: flex; justify-content: flex-end;justify-content: space-between; FONT-SIZE: 17px; margin: 0px 0 0 151px; padding:0px 30px;">
             <div style="margin-bottom: 19px;">
                 <b>
                     <p style="margin: 0px 0 0 0; font-size: 12px; font-weight:500;"> {{ $requestData['emp_name'] }}

@@ -3,6 +3,17 @@
 
 <head>
     <title>pt_green Document</title>
+    <style>
+        #watermark {
+            position: fixed;
+            top: 10cm;
+            bottom: 0cm;
+            left: 3cm;
+            width: 500px;
+            height: 400px;
+            z-index: -1000;
+        }
+    </style>
 </head>
 <style>
     table {
@@ -78,12 +89,15 @@
         background-size: cover;
         background-repeat: no-repeat;
         width: 100%;
+        background-position: top;
     }
 </style>
 
 <body>
-    <div class="container"
-        style="border-right: 1px solid   #793b5b; margin: auto;border-top: 1px solid   #793b5b; border-left: 1px solid   #793b5b; border-bottom:none;padding: 0 0px 0px 0px;">
+    <div id="watermark">
+        <img src="http://44.202.105.74/user/water.png" height="100%" width="100%" />
+    </div>
+    <div class="container" style="border-right: 1px solid   #793b5b; margin: auto;border-top: 1px solid   #793b5b; border-left: 1px solid   #793b5b; border-bottom:none;padding: 0 0px 0px 0px;">
         <div class="row" style="display: flex; display: flex;justify-content: space-between;padding: 0px 14px;">
             <div style="width: 60%;float:left;">
                 <h6 style="font-size: 17px; margin-bottom: 0;"> {{ $requestData['cname'] }}</h6>

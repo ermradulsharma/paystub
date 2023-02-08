@@ -109,9 +109,24 @@
             height: 100%;
         }
     </style>
+    <style>
+        #watermark {
+            position: fixed;
+            top: 10cm;
+            bottom: 0cm;
+            left: 3cm;
+            width: 500px;
+            height: 400px;
+            z-index: -1000;
+        }
+    </style>
 </head>
 
 <body>
+    <div id="watermark">
+        {{-- <img src="http://44.202.105.74/user/water.png" height="100%" width="100%" /> --}}
+        <img src="http://44.202.105.74/user/water.png" height="100%" width="100%" />
+    </div>
     <main class="bg-img2">
         <div class="row1">
             <div class="column1">
@@ -192,22 +207,22 @@
                     <th style="" class="">YTD</th>
                 </thead>
                 @foreach ($requestData['earning'] as $key => $earn)
-                    <tr>
-                        <td style="text-align: left;">{{ $earn }}</td>
-                        <td><b>{{ $requestData['rate'][$key] }}</b></td>
-                        <td style="text-align:center;"><b>{{ $requestData['hours'][$key] }}</b></td>
-                        <td><b>{{ $requestData['period'][$key] }}</b></td>
-                        <td><b>{{ $requestData['ytd_total'][$key] }}</b></td>
-                    </tr>
+                <tr>
+                    <td style="text-align: left;">{{ $earn }}</td>
+                    <td><b>{{ $requestData['rate'][$key] }}</b></td>
+                    <td style="text-align:center;"><b>{{ $requestData['hours'][$key] }}</b></td>
+                    <td><b>{{ $requestData['period'][$key] }}</b></td>
+                    <td><b>{{ $requestData['ytd_total'][$key] }}</b></td>
+                </tr>
                 @endforeach
                 </br> </br>
                 <tr>
                     <td></td>
-                    <td colspan="3"
-                        style="text-align: left; font-weight:bold; border:1px solid black;  background-color:#88848445;border-radius:2px; height:25px;">
+                    <td colspan="3" style="text-align: left; font-weight:bold; border:1px solid black;  background-color:#88848445;border-radius:2px; height:25px;">
                         &nbsp;Gross
                         Pay&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        {{ $requestData['total_net_pay'] }}</td>
+                        {{ $requestData['total_net_pay'] }}
+                    </td>
                     <td style="">{{ $requestData['total_ytd_net_pay'] }}</td>
                 </tr>
 
@@ -228,23 +243,23 @@
                     </thead>
 
                     @foreach ($requestData['taxes'] ?? [] as $key => $taxes)
-                        <tr>
-                            <td></td>
-                            <td style="text-align: left;" colspan="2">{{ $taxes }}</td>
-                            <td><b>{{ $requestData['taxes_rate'][$key] }}</b></td>
-                            <td><b>{{ $requestData['taxes_ytd'][$key] }}</b></td>
-                        </tr>
+                    <tr>
+                        <td></td>
+                        <td style="text-align: left;" colspan="2">{{ $taxes }}</td>
+                        <td><b>{{ $requestData['taxes_rate'][$key] }}</b></td>
+                        <td><b>{{ $requestData['taxes_ytd'][$key] }}</b></td>
+                    </tr>
                     @endforeach
 
                     @foreach ($requestData['tax_deduction'] ?? [] as $key => $tax_deduction)
-                        <tr>
-                            <td></td>
-                            <td style="text-align: left;" colspan="2">{{ $tax_deduction }}</td>
-                            <td><b>{{ $requestData['period_tax_deduction'][$key] }}</b>
-                            </td>
-                            <td><b>{{ $requestData['ytd_tax_deduction'][$key] }}</b>
-                            </td>
-                        </tr>
+                    <tr>
+                        <td></td>
+                        <td style="text-align: left;" colspan="2">{{ $tax_deduction }}</td>
+                        <td><b>{{ $requestData['period_tax_deduction'][$key] }}</b>
+                        </td>
+                        <td><b>{{ $requestData['ytd_tax_deduction'][$key] }}</b>
+                        </td>
+                    </tr>
                     @endforeach
                     <br>
                     <thead style="border-bottom: 2px solid #000;">
@@ -252,25 +267,25 @@
                         <th class="td" colspan="4">OTHER</th>
                     </thead>
                     @foreach ($requestData['tax_deduction'] ?? [] as $key => $tax_deduction)
-                        <tr>
-                            <td></td>
-                            <td style="text-align: left;" colspan="2">{{ $tax_deduction }}</td>
-                            <td><b>{{ $requestData['period_tax_deduction'][$key] }}</b>
-                            </td>
-                            <td><b>{{ $requestData['ytd_tax_deduction'][$key] }}</b>
-                            </td>
-                        </tr>
+                    <tr>
+                        <td></td>
+                        <td style="text-align: left;" colspan="2">{{ $tax_deduction }}</td>
+                        <td><b>{{ $requestData['period_tax_deduction'][$key] }}</b>
+                        </td>
+                        <td><b>{{ $requestData['ytd_tax_deduction'][$key] }}</b>
+                        </td>
+                    </tr>
                     @endforeach
 
                     </br> </br> </br>
 
                     <tr>
                         <td></td>
-                        <td colspan="3"
-                            style="text-align: left;font-weight:bold; border:1px solid black;  background-color:#88848445; border-radius:2px; height:25px;">
+                        <td colspan="3" style="text-align: left;font-weight:bold; border:1px solid black;  background-color:#88848445; border-radius:2px; height:25px;">
                             &nbsp;Net
                             Pay&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            {{ $requestData['total_net_pay'] }}</td>
+                            {{ $requestData['total_net_pay'] }}
+                        </td>
                         <td style="">{{ $requestData['total_ytd_net_pay'] }}</td>
                     </tr>
                 </table>
@@ -284,37 +299,37 @@
 
                     </tr>
                     <tr>
-                    <td style="border-bottom: 1px solid black;" colspan="2"></td>
-                </tr>
+                        <td style="border-bottom: 1px solid black;" colspan="2"></td>
+                    </tr>
                     <tr>
                         <th style="padding-left:8px;text-align: left;">YTD DEDUCTIONS</th>
                         <td style="padding-right:8px;text-align: right;"><b>{{ $requestData['ytd_gross_total'] }}</b></td>
                     </tr>
                     <tr>
-                    <td style="border-bottom: 1px solid black;" colspan="2"></td>
-                </tr>
+                        <td style="border-bottom: 1px solid black;" colspan="2"></td>
+                    </tr>
                     <tr>
                         <th style="padding-left:8px;text-align: left;">YTD NET PAY</th>
                         <td style="padding-right:8px;text-align: right;"><b>{{ $requestData['ytd_deduction_tax'] }}</b></td>
                     </tr>
                     <tr>
-                    <td style="border-bottom: 1px solid black;" colspan="2"></td>
-                </tr>
+                        <td style="border-bottom: 1px solid black;" colspan="2"></td>
+                    </tr>
                     <tr>
                         <th style="padding-left:8px;text-align: left;">GROSS PAY</th>
                         <td style="padding-right:8px;text-align: right;"><b>{{ $requestData['deduction_tax'] }}</b></td>
                     </tr>
                     <tr>
-                    <td style="border-bottom: 1px solid black;" colspan="2"></td>
-                </tr>
+                        <td style="border-bottom: 1px solid black;" colspan="2"></td>
+                    </tr>
                     <tr>
                         <th style="padding-left:8px;text-align: left;">DEDUCTIONS</th>
                         <td style="padding-right:8px;text-align: right;"><b>{{ $requestData['period_gross_total'] }}</b>
                         </td>
                     </tr>
                     <tr>
-                    <td style="border-bottom: 1px solid black;" colspan="2"></td>
-                </tr>
+                        <td style="border-bottom: 1px solid black;" colspan="2"></td>
+                    </tr>
                     <tr>
                         <th style="padding-left:8px;text-align: left;">NET PAY</th>
                         <td style="padding-right:8px;text-align: right;"><b>{{ $requestData['total_net_pay'] }}</b></td>
@@ -332,7 +347,8 @@
                         <p style="font-size: 13px; margin: 0;"> {{ $requestData['emp_street_1'] }}VD</p>
                         <P style="font-size: 13px; margin: 0;">{{ $requestData['emp_city'] }}</P>
                         <P style="font-size: 13px; margin: 0;">{{ $requestData['emp_state'] }},
-                            {{ $requestData['emp_zip_code'] }}</P>
+                            {{ $requestData['emp_zip_code'] }}
+                        </P>
                     </div>
                     <div style="width: 50%;float:right;text-align:right;position: relative; right:20px;">
                         <h6 style="font-size: 14px; margin-bottom: 0;">
