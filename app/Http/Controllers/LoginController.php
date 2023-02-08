@@ -25,7 +25,7 @@ class LoginController extends Controller
 
     public function loginWithGoogle()
     {
-        return Socialite::driver('google')->redirect();
+        return Socialite::driver('google')->stateless()->redirect();
     }
 
     /**
@@ -35,8 +35,8 @@ class LoginController extends Controller
      */
     public function callbackFromGoogle()
     {
-
-        $user = Socialite::driver('google')->user();
+        $user = Socialite::driver('google')->stateless()->user();
+        //$user = Socialite::driver('google')->user();
         $finduser = User::where('google_id', $user->id)->first();
         if ($finduser) {
             Auth::login($finduser);
