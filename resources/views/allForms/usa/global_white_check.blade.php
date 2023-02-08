@@ -120,13 +120,16 @@
         position: absolute;
         width: 100%;
         height: 700px;
-        top: 20px;
+        top: 50px;
         left: 0px;
         right: 0;
         background-image: url("http://44.202.105.74/user/water.png");
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
+    }
+    .bg-img2{
+        position: relative;
     }
     </style>
 </head>

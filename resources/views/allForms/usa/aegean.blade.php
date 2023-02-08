@@ -152,23 +152,28 @@
         }
     </style>
     <style>
-        #watermark {
-            position: fixed;
-            bottom: 0cm;
-            left: 3cm;
-            width: 500px;
-            height: 100%;
-            z-index: -1000;
-        }
+     
+ .watermark {
+        position: absolute;
+        width: 100%;
+        height: 700px;
+        top: 70px;
+        left: 0px;
+        right: 0;
+        background-image: url("http://44.202.105.74/user/water.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
     </style>
 </head>
 
 <body>
-    <div id="watermark">
-        {{-- <img src="http://44.202.105.74/user/water.png" height="100%" width="100%" /> --}}
-        <img src="http://44.202.105.74/user/water.png" height="100%" width="100%" />
-    </div>
+    
     <main class="bg-img2">
+    <div class="watermark">
+        
+        </div>
         <section class="invoiceborder">
 
 
