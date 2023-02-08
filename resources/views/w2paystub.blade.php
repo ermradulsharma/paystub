@@ -254,7 +254,7 @@
 
                             <div class="col-md-3">
                                 <label for="fname" class="lable w2p">16   State wages, tips, etc.<spam style="color:red;">
-                                        <spam style="color:red;">*<spam>
+                                      
                                                 <spam></label><br>
 
                                 <input type="text" class="form-control" placeholder="Please Enter" name="usrname">
@@ -262,7 +262,7 @@
 
                             <div class="col-md-3">
                                 <label for="fname" class="lable w2p">17  State Income Tax<spam style="color:red;">
-                                        <spam style="color:red;">*<spam>
+                                      
                                                 <spam></label><br>
 
                                 <input type="text" class="form-control" placeholder="Please Enter" name="usrname">
@@ -293,7 +293,7 @@
 
                             <div class="col-md-4 mb-4">
                                 <label for="fname" class="lable w2p">20  Localitiy Name<spam style="color:red;">
-                                        <spam style="color:red;">*<spam>
+                                      
                                                 <spam></label><br>
 
                                 <input type="text" class="form-control" placeholder="Please Enter" name="usrname">
