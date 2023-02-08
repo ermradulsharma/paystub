@@ -342,18 +342,30 @@ $(document).ready(function() {
         }, 300);
     }
 
-    $('.hourbtn').click(function(){
+    $('.hour_btn').click(function(){
         $('.rate').attr('readonly', false);
         $('.hours').attr('readonly', false);
         $('.total').attr('readonly', true);
     });
 
-    $('.salrybtn').click(function(){
+    $('.salary_btn').click(function(){
         $('.rate').attr('readonly', true);
+        $('.rate').attr('hidden', true);
         $('.hours').attr('readonly', true);
+        $('.hours').attr('hidden', true);
         $('.total').attr('readonly', false);
+        $('.time_period').val('monthly');
+        var date = new Date();
+        var day = date.getDate();
+        var month = date.getMonth() + 1;
+        var year = date.getFullYear();
+        var date_1 = year + '-' + (('' + month).length < 2 ? '0' : '') + month + '-' + (('' + day).length < 2 ? '0' : '') + day;
+        $('.pay_start').val(date_1);
+        dayCalculate();
         $('.rate').val('');
         $('.hours').val('');
+
+
     });
 
     $('.total').keyup(function(){
