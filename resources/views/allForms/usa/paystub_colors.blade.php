@@ -130,6 +130,7 @@ $petani = DB::table('templates')->pluck('color_code');
     <style>
         #watermark {
             position: fixed;
+            top: 10cm;
             bottom: 0cm;
             left: 3cm;
             width: 500px;
