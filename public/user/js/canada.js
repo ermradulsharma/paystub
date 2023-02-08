@@ -1,24 +1,24 @@
-var i = 0;
-var alltotal = parseFloat($("#alltotal").val());
-var alltotalYtd = parseFloat($("#alltotalYtd").val());
-var allDeductiontotal = parseFloat($("#allDeductiontotal").val());
-var allDeductionYTDtotal = parseFloat($("#allDeductionYTDtotal").val());
-var tax_total_other = parseFloat($("#tax_total_other").val());
-var tax_ytd_other = parseFloat($("#tax_ytd_other").val());
-var days_number = parseFloat($("#days_number").val());
+var i=0;
+var alltotal =  parseFloat($('#alltotal').val() || 0.00);
+var alltotalYtd =  parseFloat($('#alltotalYtd').val() || 0.00);
+var allDeductiontotal =  parseFloat($('#allDeductiontotal').val() || 0.00);
+var allDeductionYTDtotal =  parseFloat($('#allDeductionYTDtotal').val() || 0.00);
+var tax_total_other =  parseFloat($('#tax_total_other').val() || 0.00);
+var tax_ytd_other =  parseFloat($('#tax_ytd_other').val() || 0.00);
+var days_number =  parseFloat($('#days_number').val() || 0.00)
 
-$(".pay_start").change(function () {
+$('.pay_start').change(function() {
     dayCalculate();
     setTimeout(() => {
         calculation();
-    }, 500);
+    }, 100);
 });
 
 $(".pay_date").change(function () {
     date_calculate();
     setTimeout(() => {
         calculation();
-    }, 500);
+    }, 100);
 });
 
 function dayCalculate() {
@@ -37,7 +37,9 @@ function dayCalculate() {
         day;
     if (tax_rate == null) {
         $("span").removeClass("d-none");
-        $(".tax_rate").focus();
+        $('.tax_rate').focus();
+    }else{
+        $("span").addClass("d-none");
     }
 
     var dt1 = new Date(pay_start);
@@ -50,7 +52,7 @@ function dayCalculate() {
             date_calculate();
             $(".pay_end").attr("readonly", true);
         }
-    }, 400);
+    }, 100);
 }
 
 function date_calculate() {
@@ -196,20 +198,20 @@ $(".rateKey, .hoursKey").keyup(function () {
     calculation();
 });
 
-function calculation() {
-    var timeout = 200;
+function calculation(){
+    var timeout = 0;
     var earningTotal = 0;
     var earningYtdTotal = 0;
-    $(".incomeKey").each(function () {
-        var id = $(this).data("id");
-        var rate = parseFloat($("#rate_" + id).val());
-        var hours = parseFloat($("#hours_" + id).val());
-        var total = (rate * hours) | 0.0;
-        var ytd = total * parseInt(days_number) || 0.0;
-        $("#total_" + id).val(parseFloat(total).toFixed(2));
-        earningTotal += total;
-        earningYtdTotal += ytd;
-        timeout += 200;
+    $('.incomeKey').each( function() {
+        var id = $(this).data('id');
+        var rate = parseFloat($('#rate_'+id).val());
+        var hours = parseFloat($('#hours_'+id).val());
+        var total = rate*hours | 0.00;
+        var ytd = total * parseInt(days_number) || 0.00;
+        $('#total_'+id).val(parseFloat(total).toFixed(2));
+        earningTotal+=total;
+        earningYtdTotal+=ytd;
+        timeout +=100;
     });
     alltotal = earningTotal;
     alltotalYtd = earningYtdTotal;
@@ -221,23 +223,26 @@ function calculation() {
 function taxCalculate() {
     var taxTotal = 0;
     var taxYTDTotal = 0;
-    $(".taxes").each(function () {
-        var total = 0;
-        var ytd_total = 0;
-        var id = $(this).data("id");
-        var rate = parseFloat($(this).data("value"));
-        total = (alltotal * rate) / 100;
-        ytd_total = total * parseInt(days_number) || 0.0;
-        taxTotal += total;
-        taxYTDTotal += ytd_total;
-        $("#tax_total_" + id).val(parseFloat(total).toFixed(2));
-        $("#tax_ytd_" + id).val(ytd_total);
+    var timeout = 0;
+    $('.taxes').each( function() {
+            var total = 0;
+            var ytd_total = 0;
+            var id = $(this).data('id');
+            var rate = parseFloat($(this).data('value'));
+            total = (alltotal*rate)/100;
+            ytd_total = total * parseInt(days_number) || 0.00;
+            taxTotal +=total;
+            taxYTDTotal +=ytd_total;
+            $('#tax_total_'+id).val(parseFloat(total).toFixed(2));
+            $('#tax_ytd_'+id).val(parseFloat(ytd_total).toFixed(2));
+            timeout +=50;
     });
     setTimeout(() => {
         allDeductiontotal = taxTotal;
         allDeductionYTDtotal = taxYTDTotal;
         setTotals();
-    }, 600);
+    }, timeout);
+
 }
 
 function taxOtherCalculate() {
@@ -254,20 +259,18 @@ function taxOtherCalculate() {
         tax_total_other = tax_total;
         tax_ytd_other = tax_ytd;
         setTotals();
-    }, 600);
+    }, 200);
 }
 
-function setTotals() {
-    var deductions =
-        parseFloat(allDeductiontotal) + parseFloat(tax_total_other);
-    var ytd_deducations =
-        parseFloat(allDeductionYTDtotal) + parseFloat(tax_ytd_other);
-    var netPay = parseFloat(alltotal) - parseFloat(deductions);
-    var YtdnetPay = parseFloat(alltotalYtd) - parseFloat(ytd_deducations);
-    $("#ytd_gross").val(alltotalYtd.toFixed(2) | 0.0);
-    $("#ytd_deducations").val(ytd_deducations.toFixed(2) | 0.0);
-    $("#ytd_net_pay").val(YtdnetPay.toFixed(2) | 0.0);
-    $("#current_total").val(alltotal.toFixed(2) | 0.0);
-    $("#deductions").val(deductions.toFixed(2) | 0.0);
-    $("#net_pay").val(netPay.toFixed(2) | 0.0);
+function setTotals(){
+    var deductions = parseFloat(allDeductiontotal)+parseFloat(tax_total_other);
+    var ytd_deducations = parseFloat(allDeductionYTDtotal)+parseFloat(tax_ytd_other);
+    var netPay = parseFloat(alltotal)-parseFloat(deductions);
+    var YtdnetPay = parseFloat(alltotalYtd)-parseFloat(ytd_deducations);
+    $("#ytd_gross").val(parseFloat(alltotalYtd || 0.00).toFixed(2));
+    $("#ytd_deducations").val(parseFloat(ytd_deducations || 0.00).toFixed(2));
+    $("#ytd_net_pay").val(parseFloat(YtdnetPay || 0.00).toFixed(2));
+    $("#current_total").val(parseFloat(alltotal || 0.00).toFixed(2));
+    $("#deductions").val(parseFloat(deductions || 0.00).toFixed(2));
+    $("#net_pay").val(parseFloat(netPay || 0.00).toFixed(2));
 }
