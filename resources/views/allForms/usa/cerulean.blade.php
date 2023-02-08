@@ -354,11 +354,9 @@
                         <tr>
                             <td style="font-size:14px;text-align:left;  width:55%;">{{ $requestData['emp_name'] }}</td>
                             <td style="text-align: center; font-size:13px; width:15%;">
-                                {{ $requestData['account_number_last_4'] }}
-                            </td>
+                                XXXXX{{ $requestData['account_number_last_4'] }}</td>
                             <td style="text-align: center;font-size:13px; width:15%;">
-                                {{ $requestData['transit_aba_number'] }}
-                            </td>
+                                XXXXX{{ $requestData['transit_aba_number'] }}</td>
                             <td style="text-align: right;font-size:13px; width:15%;">
                                 {{ number_format($requestData['total_net_pay']) }}
                             </td>
