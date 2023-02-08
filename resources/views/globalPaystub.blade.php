@@ -634,10 +634,12 @@
                                 <div class="col-md-2 col-lg-3"></div>
                                 <div class="col-md-1"></div>
                                 <div class="col-md-2">
+                                <p class="p-0 m-0 text-center" style="font-family: serif;">Current Gross</p>
                                     <input type="text" name="deduction_tax" class="earnbtn deduction_tax text-center"
                                         value="" />
                                 </div>
                                 <div class="col-md-2">
+                                <p class="p-0 m-0 text-center" style="font-family: serif;">YTD Gross</p>
                                     <input type="text" name="ytd_deduction_tax"
                                         class="earnbtn ytd_deduction_tax text-center" value="" />
                                 </div>

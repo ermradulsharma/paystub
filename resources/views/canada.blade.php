@@ -48,8 +48,8 @@
                         style="font-family: helvetica-w01-bold,helvetica-w02-bold,helvetica-lt-w10-bold,sans-serif;font-weight: 600;">
                         READY TO GET STARTED?</h1>
                     <p style=" font-size: 22px; font-weight: 200;line-height: 30px; font-family: 'Futura LT';">Very easy
-                        platform to generate </br> your Canadian Paystub, and </br> Payslip in
-                        Get your</br> data ready, customize your</br> paystub, generate, download,</br> email,
+                        platform to generate </br> your Canadian Paystub, and </br> Payslip in seconds.
+                        Get your</br> data ready, customize your</br> paystub, generate, download,</br> email, or
                         print it.
                     </p>
                 </div>
