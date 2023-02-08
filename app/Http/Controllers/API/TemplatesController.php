@@ -146,10 +146,36 @@ class TemplatesController extends Controller
             $requestData = $request->all();
             foreach ($requestData['id'] as $id) {
                 $paySlipObj = PaySlip::where(['user_id' => Auth::user()->id, 'id' => $id])->exists();
-                if($paySlipObj){
+                if ($paySlipObj) {
                     PaySlip::where(['user_id' => Auth::user()->id, 'id' => $id])->forceDelete();
                 }
             }
+            $response['message'] = "Payslip deleted successfully";
+            $response['status'] = 200;
+            $response['success'] = TRUE;
+        } catch (Exception $e) {
+            $response['message'] = $e->getMessage() . ' Line No ' . $e->getLine() . ' in File' . $e->getFile();
+            Log::error($e->getTraceAsString());
+            $response['status'] = STATUS_GENERAL_ERROR;
+        }
+        return response()->json($response, $response['status']);
+    }
+
+    public function editFormData(Request $request)
+    {
+        $response['message'] = "";
+        $response['status'] = STATUS_BAD_REQUEST;
+        $response['success'] = FALSE;
+        try {
+            $requestData = $request->all();
+            $paySlipObj = PaySlip::where(['user_id' => Auth::user()->id, 'id' => $requestData['id']])->exists();
+            if ($paySlipObj) {
+                $paySlipObj =  PaySlip::where(['user_id' => Auth::user()->id, 'id' => $requestData['id']])->first();
+            }
+            json_decode($paySlipObj->data);
+            $paySlipObj->slipData = Template::editFormData(json_decode($paySlipObj->data));
+            unset($paySlipObj->data);
+            $response['data'] = $paySlipObj;
             $response['message'] = "Payslip deleted successfully";
             $response['status'] = 200;
             $response['success'] = TRUE;

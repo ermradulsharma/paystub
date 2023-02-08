@@ -58,7 +58,7 @@
 
             <li class="nav-item  ml-3 ">
                 @guest
-                <a class="btn btn-lg py-2 w-100 mt-5 btn-danger login registerBtn" href="javascript:void(0);">Login</a>
+                <a class="btn btn-lg py-2 w-100 mt-5 btn-danger login registerBtn" href="javascript:void(0);">LOGIN</a>
                 <div class="d-none logoutDiv">
                     <a class="btn btn-lg py-2 w-100 mt-5 btn-danger " style="width: 120px !important;padding: 6px 0 !important;" href="javascript:void(0);" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i class="fa fa-sign-out"></i> Log out</a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -213,16 +213,16 @@
                 <div class="col-lg-3 text-center m-auto">
                     <div class="container justify-content-center text-left">
                         <div class="flex-row">
-                            <div style="padding:12px; border:1px solid #fff; border-radius:5px;max-width:220px; text-align:center; margin-bottom:15px;">
+                            <div style="padding:12px; border:1px solid #fff; border-radius:5px;max-width:220px; text-align:center; margin-bottom:15px;" class="foot">
                                 <a class="w-100 footbtn font" href="{{ url('terms') }}">Terms & Conditions</a>
                             </div>
-                            <div class="mt-3 " style="padding:12px; border:1px solid #fff; border-radius:5px;max-width:220px; text-align:center; margin-bottom:15px;">
+                            <div class="mt-3 foot " style="padding:12px; border:1px solid #fff; border-radius:5px;max-width:220px; text-align:center; margin-bottom:15px;">
                                 <a class="w-100 footbtn font" href="{{ url('privacy') }}">Privacy Policy</a>
                             </div>
-                            <div class="mt-3 " style="padding:12px; border:1px solid #fff; border-radius:5px;max-width:220px; text-align:center; margin-bottom:15px;">
+                            <div class="mt-3 foot " style="padding:12px; border:1px solid #fff; border-radius:5px;max-width:220px; text-align:center; margin-bottom:15px;" >
                                 <a class="w-100 footbtn font" href="{{ url('refund') }}">Refund Policy</a>
                             </div>
-                            <div class="mt-3 " style="padding:12px; border:1px solid #fff; border-radius:5px;max-width:220px; text-align:center;">
+                            <div class="mt-3 foot" style="padding:12px; border:1px solid #fff; border-radius:5px;max-width:220px; text-align:center;">
                                 <a class="w-100 footbtn font" href="{{ url('contact') }}">Contact Us</a>
                             </div>
                         </div>

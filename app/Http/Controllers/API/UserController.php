@@ -144,4 +144,28 @@ class UserController extends Controller
         }
         return response()->json($response, 200);
     }
+    public function logout(Request $request)
+    {
+        $response = [];
+        $response['success'] = FALSE;
+
+        try {
+            $userObj = User::find(Auth::user()->id);
+            $userObj->device_token = "";
+            $userObj->device_type = "";
+            if ($userObj->save()) {
+                $user = Auth::user()->token();
+                $user->revoke();
+
+                $response['message'] = 'User Logout Successfully';
+                $response['success'] = TRUE;
+                $response['status'] = STATUS_OK;
+            }
+        } catch (\Exception $e) {
+            $response['message'] = $e->getMessage() . ' Line No ' . $e->getLine() . ' in File' . $e->getFile();
+            Log::error($e->getTraceAsString());
+            $response['status'] = STATUS_GENERAL_ERROR;
+        }
+        return response()->json($response, $response['status']);
+    }
 }

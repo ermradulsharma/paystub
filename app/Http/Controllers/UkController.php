@@ -15,17 +15,7 @@ class UkController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-     public function patstubx_modern()
-     {
-         $data = [
-              'date' => date('m/d/Y')
-         ];
-
-
-          $pdf = PDF::loadView('allForms.global.patstubx_modern', $data)->setPaper('a4', 'portrait');
-          
-          return $pdf->stream('Patstubx_Modern.pdf'); 
-     }
+    
 
      public function pin_blue_uk()
      {
