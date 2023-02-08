@@ -38,7 +38,7 @@
     <form id="submit_form_paystubx_id" action="javascript:void()" method="get">
         @csrf
         <input type="hidden" name="invoice_id" value="{{$invoiceData->id ?? 0}}" hidden>
-        <input type="hidden" name="form_type" value="canada" hidden>
+        <input type="hidden" name="form_type" value="{{$invoice->form_type ?? 'usa'}}" hidden>
         <div>
             <h5>Choose Template</h5>
             <div class="row mb-3">
@@ -413,13 +413,13 @@
         </div>
 
         <!-- hidden values -->
-        <input type="hidden" name="alltotal" hidden id="alltotal" value="{{$invoice->period_gross_total ?? 0}}">
-        <input type="hidden" name="alltotalYtd" hidden id="alltotalYtd" value="{{$invoice->ytd_gross_total ?? 0}}">
-        <input type="hidden" name="allDeductiontotal" hidden id="allDeductiontotal" value="{{$invoice->deduction_tax ?? 0}}">
-        <input type="hidden" name="allDeductionYTDtotal" hidden id="allDeductionYTDtotal" value="{{$invoice->ytd_deduction_tax ?? 0}}">
-        <input type="hidden" name="tax_total_other" hidden id="tax_total_other" value="{{$invoice->tax_total_other ?? 0}}">
-        <input type="hidden" name="tax_ytd_other" hidden id="tax_ytd_other" value="{{$invoice->tax_ytd_other ?? 0}}">
-        <input type="hidden" name="days_number" hidden id="days_number" value="{{$invoice->days_number ?? 0}}">
+        <input type="hidden" name="alltotal" hidden id="alltotal" value="{{$invoice->period_gross_total ?? 0}}" hidden>
+        <input type="hidden" name="alltotalYtd" hidden id="alltotalYtd" value="{{$invoice->ytd_gross_total ?? 0}}" hidden>
+        <input type="hidden" name="allDeductiontotal" hidden id="allDeductiontotal" value="{{$invoice->deduction_tax ?? 0}}" hidden>
+        <input type="hidden" name="allDeductionYTDtotal" hidden id="allDeductionYTDtotal" value="{{$invoice->ytd_deduction_tax ?? 0}}" hidden>
+        <input type="hidden" name="tax_total_other" hidden id="tax_total_other" value="{{$invoice->tax_total_other ?? 0}}" hidden>
+        <input type="hidden" name="tax_ytd_other" hidden id="tax_ytd_other" value="{{$invoice->tax_ytd_other ?? 0}}" hidden>
+        <input type="hidden" name="days_number" hidden id="days_number" value="{{$invoice->days_number ?? 0}}" hidden>
         <!-- //hidden values -->
     </form>
 </div>

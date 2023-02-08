@@ -43,7 +43,7 @@
             <div class="row mb-3">
                 <div class="col-md-12">
                     <div class=" box-usa">
-                         <h5 class="box-h5">Company Info</h5>
+                        <h5 class="box-h5">Company Info</h5>
                         <div class="row mb-3 ">
                             <div class="col-md-6 mt-1">
                                 <div>
@@ -116,7 +116,7 @@
         </div>
 
         <div>
-             <h5 class="box-h5">Choose Template</h5>
+            <h5 class="box-h5">Choose Template</h5>
             <div class="row mb-3">
                 <div class="col-md-12">
                     <div class=" box-usa">
@@ -133,7 +133,7 @@
                                             @endif
                                             @endforeach
                                         </select>
-                                        <i data-src="{{$data->images->file ?? ''}}" class="fa fa-eye-slash basicTem" style="font-size: 39px;" role="button"></i>
+                                        <i data-src="{{$data->images->file ?? ''}}" class="fa fa-eye-slash basicTem uk-eye" style="font-size: 39px;" role="button"></i>
                                     </div>
                                 </div>
                             </div>
@@ -153,7 +153,7 @@
                                             @endif
                                             @endforeach
                                         </select>
-                                        <i data-src="{{$data->images->file ?? ''}}" class="fa fa-eye-slash advanceTem" role="button" style="font-size: 39px;"></i>
+                                        <i data-src="{{$data->images->file ?? ''}}" class="fa fa-eye-slash advanceTem uk-eye" role="button" style="font-size: 39px;"></i>
                                     </div>
                                 </div>
                                 <div class=" mt-3 ">
@@ -167,7 +167,7 @@
         </div>
 
         <div>
-             <h5 class="box-h5">Employee Info</h5>
+            <h5 class="box-h5">Employee Info</h5>
             <div class="row mb-3">
                 <div class="col-md-12">
                     <div class=" box-usa">
@@ -252,7 +252,7 @@
         </div>
 
         <div>
-             <h5 class="box-h5">Employee Basic Info</h5>
+            <h5 class="box-h5">Employee Basic Info</h5>
             <div class="row mb-3">
                 <div class="col-md-12">
                     <div class=" box-usa">
@@ -378,7 +378,7 @@
 
         <div>
             <div class="mb- d-flex" style="justify-content: space-between;">
-                 <h5 class="box-h5">Earning statement</h5>
+                <h5 class="box-h5">Earning statement</h5>
             </div>
             <div class="row mb1">
                 <div class="col-md-12">
@@ -411,7 +411,8 @@
                             <div class="col-md-3 mt-4">
                                 <p class="text-center how_p mb-0" style="font-size:18px;">How do you get paid <span class="redColor">*</span> <span> </p>
                                 <div class="text-center mt-2  d-flex justify-content-center">
-                                    <button type="button" class="hourbtn date_select">HOURLY</button> <button type="button" class="salrybtn">SALARY</button>
+                                    <button type="button" class="hourbtn date_select">HOURLY</button>
+                                    <button type="button" class="salrybtn">SALARY</button>
                                 </div>
                             </div>
                         </div>
@@ -465,7 +466,7 @@
 
                             <div class=" col-lg-2  col-md-2 margin-bottom">
                                 <div>
-                                    <input type="text" name="total[]" class="earnbtn text-center" value="" id="total_0" data-id="0">
+                                    <input type="text" name="total[]" class="earnbtn text-center total" value="" id="total_0" data-id="0" readonly="true">
                                 </div>
 
                             </div>
@@ -617,12 +618,11 @@
 
 
         <div>
-            <div class="mb-4 d-flex" style="justify-content: space-between; align-items: center;">
+            <div class="mb-4 d-flex" style="justify-content: space-between; align-items: center;margin-left: 1em;">
                 <div class="text-left mt-1">
-                    <button class="previewbtn text-capitalize viewTempTemplate" type="button" id="button1">Preview
-                        Your Paystub <i class="fa fa-eye" style="font-size: 30px; margin-left: 7px;"></i></button>
+                    <button class="previewbtn text-capitalize viewTempTemplate" type="button" id="button1">Preview Your Paystub <i class="fa fa-eye" style="font-size: 30px; margin-left: 7px;"></i></button>
                 </div>
-                <div class="text-right mt-1" style="margin-right:30px;">
+                <div class="text-right mt-1" style="margin-right:16px;">
                     <button type="button" class="emailbtn text-capitalize sendMailButton"> <i class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL PAYSTUB <i class="fa fa-download ml-4" style="font-size:24px"></i></button>
                 </div>
             </div>
@@ -641,7 +641,7 @@
             var status = $('option:selected', '.at_id').attr('data-status');
             if (status == 1) {
                 $(".tempElemant").removeClass("d-none");
-            }else{
+            } else {
                 $(".tempElemant").addClass("d-none");
             }
             $('option:selected', '.basicTemplate').prop("selected", false);
@@ -650,7 +650,7 @@
             var status = $('option:selected', '.bt_id').attr('data-status');
             if (status == 1) {
                 $(".tempElemant").removeClass("d-none");
-            }else{
+            } else {
                 $(".tempElemant").addClass("d-none");
             }
             $('option:selected', '.advanceTemplate').prop("selected", false);
@@ -663,7 +663,6 @@
                 mobileNumber.substring(6, 10));
         });
     });
-
 </script>
 <script>
     $(document).ready(function() {
@@ -684,7 +683,6 @@
             }
         });
     });
-
 </script>
 <script>
     $(document).ready(function() {
@@ -705,7 +703,6 @@
             }
         });
     });
-
 </script>
 
 @endsection

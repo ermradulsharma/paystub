@@ -37,7 +37,7 @@
 <div class="container" style="max-width:1450px;">
     <form id="usa_paystubx" action="{{ route('uk.templates') }}" method="post" data-action="{{ route('usaStoreData') }}">
     <div >
-        <h5>Choose Template</h5>
+        <h5 class="box-h5">Choose Template</h5>
         <div class="row mb-3">
             <div class="col-md-12">
                 <div class=" box-usa">
@@ -54,7 +54,7 @@
                                         @endif
                                         @endforeach
                                     </select>
-                                    <i data-src="{{$data->images->file ?? ''}}" class="fa fa-eye-slash basicTem" style="font-size: 39px;" role="button"></i>
+                                    <i data-src="{{$data->images->file ?? ''}}" class="fa fa-eye-slash basicTem uk-eye" style="font-size: 39px;" role="button"></i>
                                 </div>
                             </div>
                         </div>
@@ -64,7 +64,7 @@
                         </div>
 
                         <div class="col-md-5 col-sm-12 mt-5 text-center">
-                            <h6 style="margin-left:-23px;font-weight: 900;">ADVANCED TEMPLATES</h6>
+                            <h6 style="margin-left:-23px;font-weight: 900;" class="add">ADVANCED TEMPLATES</h6>
                             <div class="mt-4">
                                 <div class="input-group mmenu mb-3" style="margin: auto;">
                                     <select name="advance_temp" class="form-control text-center dropdown1 at_id small-font advanceTemplate" style="margin-right:10px; font-size:18px;">
@@ -75,7 +75,7 @@
                                         @endif
                                         @endforeach
                                     </select>
-                                    <i data-src="{{$data->images->file ?? ''}}" class="fa fa-eye-slash advanceTem" role="button" style="font-size: 39px;"></i>
+                                    <i data-src="{{$data->images->file ?? ''}}" class="fa fa-eye-slash advanceTem uk-eye" role="button" style="font-size: 39px;" class=""></i>
                                 </div>
                             </div>
                             <div class=" mt-3 ">
@@ -89,7 +89,7 @@
     </div>
 
     <div>
-
+        <h5 class="box-h5">Company Info</h5>
         <div class="row mb-3">
             <div class="col-md-12">
                 <div class=" box-usa">
@@ -112,6 +112,7 @@
 
     <div>
         <div class="mb- d-flex" style="justify-content: space-between;">
+            <h5 class="box-h5">Employee info</h5>
         </div>
         <div class="row mb-3">
             <div class="col-md-12">
@@ -217,9 +218,18 @@
                                 <input type="text" name="hours[]" class="w-100 p-2 mt-2 text-center hours calculation" value="" id="hours_0" data-id="0">
                             </div>
                         </div>
-                        <div class="row mb-3">
-                            <div class="col-lg-2 col-md-4 mt-2 mb-5">
-                                <button class="earnbtn"><i class="fa fa-plus-circle pr-2" style="font-size:24px;color:green"></i>Add Earning</button>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <h5 class="box-h5">Deductions</h5>
+                            <div class="row mb-3 ">
+                                <div class="col-md-6">
+                                    <i class="fa fa-lock earnbtn2"></i>
+                                    <input class="earnbtn text-center" type="text" value="FICA Medicare">
+                                </div>
+                                <div class="col-md-4 ">
+                                    <input class="earnbtn text-center" value="556.80"></input>
+                                </div>
                             </div>
                         </div>
                         <div class="row">
@@ -258,7 +268,7 @@
                     </div>
 
                         <div class="col-lg-6">
-                            <h5>TOTAL YEAR TO DATE</h5>
+                            <h5 class="box-h5">TOTAL YEAR TO DATE</h5>
                             <div class="row mb-3 ">
                                 <div class="col-md-6">
                                     <i class="fa fa-lock earnbtn2"></i>

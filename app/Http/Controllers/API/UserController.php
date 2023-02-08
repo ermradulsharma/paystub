@@ -7,6 +7,7 @@ use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
 
@@ -53,6 +54,7 @@ class UserController extends Controller
         $response['success'] = FALSE;
         $response['status'] = STATUS_BAD_REQUEST;
         Log::info($request);
+        DB::beginTransaction();
         $rules = [
             'email' => 'required|email:rfc,dns',
             'code' => 'required|min:4'
@@ -84,6 +86,7 @@ class UserController extends Controller
             $response['message'] = "Login successfully";
             $response['status'] = STATUS_OK;
         }
+        DB::commit();
         return response()->json($response, 200);
     }
 

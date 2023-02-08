@@ -70,7 +70,7 @@ function date_calculate(){
     var pay_date_1 = year + '-' + (('' + month).length < 2 ? '0' : '') + month + '-' + (('' + date).length < 2 ? '0' : '') + date;
     if(pay_date_1 != 'NaN-NaN-NaN'){
         if (pay_date_1 <= pay_end_1) {
-            
+
         } else {
             var dt3 = new Date(pay_start_1);
             var dt2 = new Date(pay_end_1);
@@ -80,10 +80,10 @@ function date_calculate(){
             var days = (mBetween / (1000 * 3600 * 24));
             days_number = days / 7;
             if(days_number < 1){
-                days_number = 0; 
+                days_number = 0;
             }
 
-            $('#days_number').val(days_number);
+            $('#days_number').val(parseInt(days_number));
         }
     } else {
         return false;
@@ -158,7 +158,7 @@ function calculation(){
         $('#total_'+id).val(parseFloat(total).toFixed(2));
         earningTotal+=total;
         earningYtdTotal+=ytd;
-        timeout +=200; 
+        timeout +=200;
     });
     alltotal = earningTotal;
     alltotalYtd = earningYtdTotal;
@@ -187,7 +187,7 @@ function taxCalculate(){
         allDeductionYTDtotal = taxYTDTotal;
         setTotals();
     }, 600);
-    
+
 }
 
 function taxOtherCalculate(){
@@ -212,12 +212,12 @@ function setTotals(){
     var ytd_deducations = parseFloat(allDeductionYTDtotal)+parseFloat(tax_ytd_other);
     var netPay = parseFloat(alltotal)-parseFloat(deductions);
     var YtdnetPay = parseFloat(alltotalYtd)-parseFloat(ytd_deducations);
-    $("#ytd_gross").val(alltotalYtd.toFixed(2));
-    $("#ytd_deducations").val(ytd_deducations.toFixed(2));
-    $("#ytd_net_pay").val(YtdnetPay.toFixed(2));
-    $("#current_total").val(alltotal.toFixed(2));
-    $("#deductions").val(deductions.toFixed(2));
-    $("#net_pay").val(netPay.toFixed(2));
+    $("#ytd_gross").val(alltotalYtd.toFixed(2)|0.00);
+    $("#ytd_deducations").val(ytd_deducations.toFixed(2)|0.00);
+    $("#ytd_net_pay").val(YtdnetPay.toFixed(2)|0.00);
+    $("#current_total").val(alltotal.toFixed(2)|0.00);
+    $("#deductions").val(deductions.toFixed(2)|0.00);
+    $("#net_pay").val(netPay.toFixed(2)|0.00);
 }
 
 

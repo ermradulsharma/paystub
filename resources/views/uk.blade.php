@@ -31,7 +31,7 @@
                         <a class="Generate btn-lg btn" href="{{url('uk-paystub') }}">Generate Paystub
                             Now</a>
                     </div>
-                    <div class="mt-5 pt-3 d-flex" style="padding: 25px 49px;">
+                    <div class="mt-5 pt-3 d-flex uk-goo" style="padding: 25px 49px; ">
                         <a href="https://www.google.com/" target="_blank"><img class="storbtn "
                                 src="images/Google_Play_Store_badge_EN.webp"></a>
                         <a href="https://www.google.com/" target="_blank"><img class="storbtn ml-3"
@@ -280,7 +280,7 @@
                 for
                 checking if you’ve been taxed correctly.</p>
 
-            <div class="my-4 mb-5">
+            <div class="my-4 mb-5 ukbtn1">
                 <a class="Generate btn-lg btn" href="{{url('uk-paystub') }}">Generate Paystub
                     Now</a>
             </div>
