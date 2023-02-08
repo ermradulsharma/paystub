@@ -91,6 +91,7 @@ class TemplateFormController extends Controller
             }
         }
         $slip->data = json_encode($requestData);
+        $slip->type = $requestData['form_type'];
         $slip->title = $requestData['cname'];
         $slip->pdf = $fileName;
         $slip->save();
