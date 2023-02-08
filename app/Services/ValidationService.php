@@ -93,14 +93,14 @@ class ValidationService
                 'taxes_ytd' => 'Taxes YTD cannot be empty',
                 'total_net_pay' => 'TOTAL NET PAY cannot be empty',
                 'total_ytd_net_pay' => 'TOTAL YTD NET PAY cannot be empty',
-                'co_number'  => 'CO number cannot be empty',
-                'file_number'  => 'FILE number cannot be empty',
-                'clock_vchr_number'  => 'CLOCK VCHR number cannot be empty',
-                'advice_number'  => 'ADVICE number cannot be empty',
-                'account_number_last_4.required'  => 'ACCOUNT LAST 4 number cannot be empty',
-                'transit_aba_number'  => 'TRANSIT ABA number cannot be empty',
-                'account_number_last_4.min' => 'You have to fill  min 4 digit numbers',
-                'account_number_last_4.max' => 'You can not fill  more than  4 digit numbers',
+                // 'co_number'  => 'CO number cannot be empty',
+                // 'file_number'  => 'FILE number cannot be empty',
+                // 'clock_vchr_number'  => 'CLOCK VCHR number cannot be empty',
+                // 'advice_number'  => 'ADVICE number cannot be empty',
+                // 'account_number_last_4.required'  => 'ACCOUNT LAST 4 number cannot be empty',
+                // 'transit_aba_number'  => 'TRANSIT ABA number cannot be empty',
+                // 'account_number_last_4.min' => 'You have to fill  min 4 digit numbers',
+                // 'account_number_last_4.max' => 'You can not fill  more than  4 digit numbers',
             ];
         } elseif ($request->form_type == "canada") {
             $rules = [
