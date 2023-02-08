@@ -49,12 +49,12 @@ class ValidationService
                 'taxes_ytd' => 'required|array',
                 'total_net_pay' => 'required',
                 'total_ytd_net_pay' => 'required',
-                'co_number' => 'required',
-                'file_number' => 'required',
-                'clock_vchr_number' => 'required',
-                'advice_number' => 'required',
-                'account_number_last_4' => 'required|min:4|max:4',
-                'transit_aba_number' => 'required',
+                // 'co_number' => 'required',
+                // 'file_number' => 'required',
+                // 'clock_vchr_number' => 'required',
+                // 'advice_number' => 'required',
+                // 'account_number_last_4' => 'required|min:4|max:4',
+                // 'transit_aba_number' => 'required',
             ];
 
             $messages = [
