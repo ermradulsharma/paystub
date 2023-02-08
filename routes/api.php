@@ -32,5 +32,6 @@ Route::group(['namespace' => 'Api', 'middleware' => ['\App\Http\Middleware\LogAf
     Route::group(['middleware' => ['auth:api']], function () {
         Route::post('save-form-data', [TemplatesController::class, 'templatesDataSave']);
         Route::get('get-pdf-list', [TemplatesController::class, 'getPdfList']);
+        Route::post('delete-template', [TemplatesController::class, 'deleteTemplate']);
     });
 });
