@@ -151,7 +151,7 @@
             </tr>
         </table>
         <section>
-            <div class="row" style=" background-color: #d6d6d6; border-left:2px solid#464646;">
+            <div class="row" style=" background-color: #c6cce7; border-left:2px solid#464646;border-right:2px solid#464646;">
                 <div class="column1">
                     <table class="colortable" style="width:100%;">
                         <thead id="colourborder">
@@ -162,11 +162,11 @@
                         </thead>
                         <tbody>
                             @foreach ($requestData['earning'] as $key => $earn)
-                                <tr>
+                                <tr style="border-right:2px solid#464646;">
                                     <td id="fica" style="padding:left 20px;"> {{ $earn }}</td>
                                     <td> {{ number_format($requestData['rate'][$key], 2) }}</td>
-                                    <td>{{ $requestData['hours'][$key] }}.00</td>
-                                    <td style="text-align: right; padding-right:4px;">{{ $requestData['currency'] }}
+                                    <td style="text-align: center;">{{ $requestData['hours'][$key] }}.00</td>
+                                    <td style="text-align: center;">{{ $requestData['currency'] }}
                                         {{ number_format($requestData['total'][$key], 2) }}</td>
                                 </tr>
                             @endforeach
@@ -174,13 +174,13 @@
                     </table>
                 </div>
                 <div class="column2">
-                    <table class="colortable" style="width:100%; border-right:2px solid#464646;">
+                    <table class="colortable" style="width:100%;">
                         <thead id="colourborder">
                             <th class="padding" style="text-align: center; ">DEDUCTION</th>
                             <th class="padding" style="">CURRENT TOTAL</th>
                             <th class="padding" style="">YEAR TO DATE</th>
                         </thead>
-                        <tbody id="borderleft">
+                        <tbody id="">
                             @foreach ($requestData['taxes'] ?? [] as $key => $taxes)
                                 <tr>
                                     <td id="fica" style="">{{ $taxes }}</td>
