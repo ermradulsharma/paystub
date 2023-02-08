@@ -84,8 +84,7 @@
                             <div class="row mb-3">
                                 <div class="col-md-12">
                                     <div>
-                                        <label for="address_2" class="lable">STREET ADDRESS 2 <span
-                                                class="redColor">*</span> </label>
+                                        <label for="address_2" class="lable">STREET ADDRESS 2  </label>
                                         <input type="text" id="address_2" name="address_2"
                                             placeholder="Suite 101 or Apt 101 (optional)"
                                             class="w-100 p-2  textInputFontSize">
@@ -132,7 +131,7 @@
             </div>
 
             <div>
-                <h5 class="box-h5">Choose Template</h5>
+                <h5 class="box-h5">Choose Your Template</h5>
                 <div class="row mb-3">
                     <div class="col-md-12">
                         <div class=" box-usa">
@@ -210,7 +209,7 @@
 
                                 <div class="col-md-4 mt-4">
                                     <div>
-                                        <label for="emp_id" class="lable">EMPLOYEE ID <span class="redColor">*</span>
+                                        <label for="emp_id" class="lable">EMPLOYEE ID 
                                         </label>
                                         <input type="text" id="emp_id" name="emp_id" placeholder="Employer ID"
                                             class="w-100 p-2 r textInputFontSize">
@@ -219,8 +218,7 @@
                                 </div>
                                 <div class="col-md-4 mt-4">
                                     <div>
-                                        <label for="emp_ssn" class="lable">EMPLOYEE SSN last4 <span
-                                                class="redColor">*</span> </label>
+                                        <label for="emp_ssn" class="lable">EMPLOYEE SSN Last 4  </label>
                                         <input type="text" id="emp_ssn" name="emp_ssn" placeholder="1224"
                                             class="w-100 p-2  textInputFontSize">
                                     </div>
@@ -243,7 +241,7 @@
                             <div class="row mb-3">
                                 <div class="col-md-12">
                                     <div>
-                                        <label for="emp_street_2" class="lable">STREET 2 <span class="redColor">*</span>
+                                        <label for="emp_street_2" class="lable">STREET 2 
                                         </label>
                                         <input type="text" id="emp_street_2" name="emp_street_2"
                                             placeholder="Suite 101 or Apt 101(optional)"
@@ -365,8 +363,9 @@
                             <div class="row mb-3">
                                 <div class="col-md-3 mt-4">
                                     <div>
-                                        <label for="hourly" class="lable">HOURLY <span class="redColor">*</span>
-                                        </label>
+                                        <label for="hourly" class="lable">PAYMENT TYPE
+                                        <span
+                                                class="redColor">*</span></label>
                                         <input type="text" step="0.5" id="hourly" name="hourly"
                                             placeholder="Hourly" class="w-100 p-2  textInputFontSize hourly"
                                             value="">
@@ -376,8 +375,7 @@
 
                                 <div class="col-md-3 mt-4">
                                     <div>
-                                        <label for="emp_type" class="lable">EMPLOYMENT TYPE <span
-                                                class="redColor">*</span> </label>
+                                        <label for="emp_type" class="lable">EMPLOYMENT TYPE 
                                         <select name="emp_type" id="emp_type" class=" dropdown11">
                                             <option value=""> --- Select Employment Type --- </option>
                                             <option value="saab">Temporary</option>
@@ -389,8 +387,7 @@
 
                                 <div class="col-md-3 mt-4">
                                     <div>
-                                        <label for="exemptions" class="lable">EXEMPTIONS <span class="redColor">*</span>
-                                        </label>
+                                        <label for="exemptions" class="lable">EXEMPTIONS 
                                         <select name="exemptions" id="exemptions" class=" dropdown11">
                                             <option value=""> --- Select Exemptions --- </option>
                                             <option value="0">0</option>
@@ -410,8 +407,8 @@
 
                                 <div class="col-md-3 mt-4">
                                     <div>
-                                        <label for="currency" class="lable" class="redColor">SELECT YOUR PREFERRED
-                                            CURRENCY <span class="redColor">*</span> </label>
+                                        <label for="currency" class="lable" class="redColor" style="color: red;">SELECT YOUR PREFERRED
+                                            CURRENCY  </label>
                                         <select name="currency" id="currency" class=" dropdown11">
                                             <option value=""> --- Select currency --- </option>
                                             <option value="$">Dollar $</option>
@@ -466,14 +463,14 @@
 
                                 </div>
 
-                                <div class="col-md-3 mt-4">
+                                <!-- <div class="col-md-3 mt-4">
                                     <p class="text-center how_p mb-0" style="font-size:18px;">How do you get paid <span
                                             class="redColor">*</span> <span> </p>
                                     <div class="text-center mt-2  d-flex justify-content-center">
                                         <button type="button" class="hour_btn date_select">HOURLY</button> <button
                                             type="button" class="salary_btn">SALARY</button>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
 
                             <div class="row ">
@@ -570,11 +567,12 @@
                                 </div>
                             </div>
 
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <button type="button" class="createbtn ">DEDUCTIONS</button>
-                                </div>
+                            <div class="row mt-5">
+                            <div class="col-md-3">
+                                <button type="button" class="createbtn ">DEDUCTIONS</button>
+                                <p style="margin: 0;">Tap On padlocak to change text</p>
                             </div>
+                        </div>
 
                             @foreach ($deduction as $key => $item)
                                 <div class="row mb-3 mt-4">
@@ -628,7 +626,7 @@
                                 <div class="col-md-3"></div>
                                 <div class="col-md-3"></div>
                             </div>
-                            <div class="row mb-3">
+                            <div class="row mb-3 mt-4">
                                 <div class="col-md-4 col-lg-3">
                                     <input class="earnbtn text-center" type="text" value="Taxes/Deduction Tax">
                                 </div>

@@ -4,7 +4,7 @@
 
         <div class="container" style="max-width: 1580px;">
             <div class="row" style="margin:0 auto;">
-                <div class="col-lg-4 m-auto text-center2">
+                <div class="col-lg-4  text-center2">
                     <div style="" class="text-center canadaheading">Instantly Generate your Professional Canadian Pay
                         Stubs </div>
 
@@ -43,7 +43,7 @@
     <div class="pt-5" style="background-color: #E9E6E6;">
         <div class="container" style="max-width: 1580px;">
             <div class="row" style="margin:0 auto;">
-                <div class="col-md-6 col-sm-6 m-auto justifuy-content-center">
+                <div class="col-md-6 col-sm-6 justifuy-content-center">
                     <h1 class="display-4"
                         style="font-family: helvetica-w01-bold,helvetica-w02-bold,helvetica-lt-w10-bold,sans-serif;font-weight: 600;">
                         READY TO GET STARTED?</h1>

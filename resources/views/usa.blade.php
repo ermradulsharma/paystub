@@ -74,7 +74,7 @@
                         <div class="row mb-3">
                             <div class="col-md-12">
                                 <div>
-                                    <label for="address_2" class="lable">STREET ADDRESS 2 <span class="redColor">*</span> </label>
+                                    <label for="address_2" class="lable">STREET ADDRESS 2 </label>
                                     <input type="text" id="address_2" name="address_2" placeholder="Suite 101 or Apt 101 (optional)" class="w-100 p-2  textInputFontSize">
                                 </div>
 
@@ -116,7 +116,7 @@
         </div>
 
         <div>
-            <h5 class="box-h5">Choose Template</h5>
+            <h5 class="box-h5">Choose Your Template</h5>
             <div class="row mb-3">
                 <div class="col-md-12">
                     <div class=" box-usa">
@@ -182,14 +182,14 @@
 
                             <div class="col-md-4 mt-4">
                                 <div>
-                                    <label for="emp_id" class="lable">EMPLOYEE ID <span class="redColor">*</span> </label>
+                                    <label for="emp_id" class="lable">EMPLOYEE ID  </label>
                                     <input type="text" id="emp_id" name="emp_id" placeholder="Employer ID" class="w-100 r textInputFontSize">
                                 </div>
 
                             </div>
                             <div class="col-md-4 mt-4">
                                 <div>
-                                    <label for="emp_ssn" class="lable">EMPLOYEE SSN last4 <span class="redColor">*</span> </label>
+                                    <label for="emp_ssn" class="lable">EMPLOYEE SSN Last 4 <span class="redColor">*</span> </label>
                                     <input type="text" id="emp_ssn" name="emp_ssn" placeholder="1224" class="w-100  textInputFontSize">
                                 </div>
 
@@ -209,7 +209,7 @@
                         <div class="row mb-3">
                             <div class="col-md-12">
                                 <div>
-                                    <label for="emp_street_2" class="lable">STREET 2 <span class="redColor">*</span>
+                                    <label for="emp_street_2" class="lable">STREET 2 
                                     </label>
                                     <input type="text" id="emp_street_2" name="emp_street_2" placeholder="Suite 101 or Apt 101(optional)" class="w-100  textInputFontSize">
                                 </div>
@@ -325,7 +325,7 @@
 
                             <div class="col-md-3 mt-4">
                                 <div>
-                                    <label for="emp_type" class="lable">EMPLOYMENT TYPE <span class="redColor">*</span> </label>
+                                    <label for="emp_type" class="lable">EMPLOYMENT TYPE </label>
                                     <select name="emp_type" id="emp_type" class=" dropdown11">
                                         <option value=""> --- Select Employment Type --- </option>
                                         <option value="saab">Temporary</option>
@@ -337,7 +337,7 @@
 
                             <div class="col-md-3 mt-4">
                                 <div>
-                                    <label for="exemptions" class="lable">EXEMPTIONS <span class="redColor">*</span>
+                                    <label for="exemptions" class="lable">EXEMPTIONS 
                                     </label>
                                     <select name="exemptions" id="exemptions" class=" dropdown11">
                                         <option value=""> --- Select Exemptions --- </option>
@@ -358,8 +358,8 @@
 
                             <div class="col-md-3 mt-4">
                                 <div>
-                                    <label for="currency" class="lable" class="redColor">SELECT YOUR PREFERRED
-                                        CURRENCY <span class="redColor">*</span> </label>
+                                    <label for="currency" class="lable" class="redColor" style="color: red;">SELECT YOUR PREFERRED
+                                        CURRENCY  </label>
                                     <select name="currency" id="currency" class=" dropdown11">
                                         <option value=""> --- Select currency --- </option>
                                         <option value="$">Dollar $</option>
@@ -378,7 +378,7 @@
 
         <div>
             <div class="mb- d-flex" style="justify-content: space-between;">
-                <h5 class="box-h5">Earning statement</h5>
+                <h5 class="box-h5">Earning Statement</h5>
             </div>
             <div class="row mb1">
                 <div class="col-md-12">
@@ -495,14 +495,15 @@
                             </div>
                         </div>
 
-                        <div class="row">
+                        <div class="row mt-5">
                             <div class="col-md-3">
                                 <button type="button" class="createbtn ">DEDUCTIONS</button>
+                                <p style="margin: 0;">Tap On padlocak to change text</p>
                             </div>
                         </div>
 
                         @foreach ($deduction as $key => $item)
-                        <div class="row mb-3 mt-4">
+                        <div class="row mb-3">
                             <div class="col-md-4 col-lg-3">
                                 <img src="{{ asset('images/lock.png') }}" class="earnbtn2">
                                 <input class="earnbtn text-center taxes" name="taxes[]" data-id="{{ $key }}" data-value="{{ $item->price }}" value="{{ $item->title }}" data-value="{{ $item->title }}">
@@ -529,7 +530,7 @@
                             <input type="text" name="" class="earnbtn text-center ytd_deduction_period_tax_other" value="" id="ytd_deduction_period_tax_other" hidden>
                         </div>
                         <div class="row my-3">
-                            <div class="col-md-4 col-lg-3">
+                            <div class="col-md-4 col-lg-3 mb-5">
                                 <button type="button" class="add_deduction earnbtn" type="add_deduction" id="add_deduction"><i class="fa fa-plus-circle pr-5" style="font-size:24px;color:green"></i>Add Deduction</button>
                             </div>
 

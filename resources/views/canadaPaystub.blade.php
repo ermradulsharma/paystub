@@ -38,7 +38,7 @@
         @csrf
         <input type="hidden" name="form_type" value="canada" hidden>
         <div>
-            <h5 class="box-h5">Choose Template</h5>
+            <h5 class="box-h5">Choose Your Template</h5>
             <div class="row mb-3">
                 <div class="col-md-12">
                     <div class=" box-usa">
@@ -177,20 +177,20 @@
                         <div class="basicpay" >
                             <div class="col-md-2 mt-4 pr-0">
                                 <div>
-                                    <label for="pay_start" class="lable">PAY START <span class="redColor">*</span></label>
+                                    <label for="pay_start" class="lable">PAY START </label>
                                     <input type="date" id="pay_start" name="pay_start" placeholder="12-11-2022" class="w-100 p-2 textInputFontSize pay_start datepicker" data-id="pay_start" style="border-right: none;">
                                 </div>
                             </div>
                             <div class="col-md-2 mt-4 pl-0">
                                 <div>
-                                    <label for="emp_id" class="lable"> <span class="redColor">*</span></label>
+                                    <label for="emp_id" class="lable"> </label>
                                     <input type="date" id="pay_end" name="pay_end" placeholder=" " class="w-100 p-2 textInputFontSize pay_end" data-id="pay_end" style="border-left: none;" readonly>
                                 </div>
                             </div>
                             </div>
                             <div class="col-md-4 mt-4">
                                 <div>
-                                    <label for="pay_date" class="lable">PAY DATE <span class="redColor">*</span></label>
+                                    <label for="pay_date" class="lable">PAY DATE </label>
                                     <input type="date" id="pay_date" name="pay_date" placeholder="12-19-2022" class="w-100 p-2 textInputFontSize pay_date" data-id="pay_date">
                                 </div>
                             </div>

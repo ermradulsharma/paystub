@@ -702,6 +702,10 @@ h5 {
     margin-top: -47px;
 
 }
+.box-usa2{
+    border: 4px solid black;
+    padding: 2px;
+}
 
 .canadah4 {
     font-weight: 300;
@@ -719,6 +723,7 @@ h5 {
 .canadah1 {
     font-size: -webkit-xx-large;
     font-family: 'Futura LT';
+    font-size: 52px;
 }
 
 .canadap {
@@ -733,6 +738,7 @@ h5 {
     display: flex;
     max-width: 312px;
     font-family: 'Futura LT';
+    margin-top: 21px;
 }
 
 .paddingleft {
