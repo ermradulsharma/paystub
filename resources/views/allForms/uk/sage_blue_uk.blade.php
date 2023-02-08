@@ -3,89 +3,102 @@
 
 <head>
     <title>uk pin blue</title>
+    <style>
+        #watermark {
+            position: fixed;
+            bottom: 10cm;
+            left: 3cm;
+            width: 500px;
+            height: 400px;
+            z-index: -1000;
+        }
+    </style>
 </head>
 <style>
-body {
-    color: black;
-}
+    body {
+        color: black;
+    }
 
-td {
-    font-size: 15px;
-}
+    td {
+        font-size: 15px;
+    }
 
-th {
-    font-size: 14px;
-}
+    th {
+        font-size: 14px;
+    }
 
-.center {
-    text-align: center;
-}
+    .center {
+        text-align: center;
+    }
 
-table.std {
-    margin-top: 0.2cm;
-    border: 0.03cm solid #4a50b2;
-    border-spacing: 0;
-    border-radius: 15px 15px 15px 15px;
-    font-size: 10pt;
-   
-}
+    table.std {
+        margin-top: 0.2cm;
+        border: 0.03cm solid #4a50b2;
+        border-spacing: 0;
+        border-radius: 15px 15px 15px 15px;
+        font-size: 10pt;
 
-table.std thead {
-    text-align: left;
-    background-color: #4a50b2;
-    height: 25px;
-    color: white;
-}
+    }
 
-table.std thead tr th:first-child {
+    table.std thead {
+        text-align: left;
+        background-color: #4a50b2;
+        height: 25px;
+        color: white;
+    }
 
-    border-radius: 15px 15px 0px 0px;
-}
+    table.std thead tr th:first-child {
 
-table.ltd {
-    margin-top: 0.2cm;
-    border: 0.03cm solid #4a50b2;
-    border-spacing: 0;
-    border-radius: 15px 15px 15px 15px;
-    font-size: 10pt;
-    height:;
-}
+        border-radius: 15px 15px 0px 0px;
+    }
 
-table.ltd thead {
-    text-align: left;
-    background-color: #4a50b2;
-    height: ;
-    color: white;
-}
+    table.ltd {
+        margin-top: 0.2cm;
+        border: 0.03cm solid #4a50b2;
+        border-spacing: 0;
+        border-radius: 15px 15px 15px 15px;
+        font-size: 10pt;
+        height: ;
+    }
 
-table.ltd thead tr th:first-child {
+    table.ltd thead {
+        text-align: left;
+        background-color: #4a50b2;
+        height: ;
+        color: white;
+    }
 
-    border-radius: 15px 0px 0px 0px;
-}
+    table.ltd thead tr th:first-child {
 
-table.ltd thead tr th:last-child {
+        border-radius: 15px 0px 0px 0px;
+    }
 
-    border-radius: 0px 15px 0px 0px;
-}
+    table.ltd thead tr th:last-child {
 
-table.ltd thead tr th {
-    text-align: center;
-    padding: 0px 10px;
-}
+        border-radius: 0px 15px 0px 0px;
+    }
 
-table.ltd tr td {
-    text-align: center;
-}
+    table.ltd thead tr th {
+        text-align: center;
+        padding: 0px 10px;
+    }
+
+    table.ltd tr td {
+        text-align: center;
+    }
 </style>
 
 <body>
+    <div id="watermark">
+        <img src="http://44.202.105.74/user/img.png" height="100%" width="100%" />
+    </div>
 
     <section>
         <table style="width:100%; height:px;" class="ltd">
             <thead>
                 <tr>
                     <th style="border-right:1px solid blue;">Employee No</th>
-                    <th style="border-right:1px solid blue;" >Employee Name
+                    <th style="border-right:1px solid blue;">Employee Name
                     </th>
                     <th style="border-right:1px solid blue;">Process
                         Date
@@ -183,11 +196,11 @@ table.ltd tr td {
                 </tr>
                 <tr>
                     <td colspan="5"></td>
-                    
+
                 </tr>
                 <tr>
                     <td colspan="5"></td>
-                    
+
                 </tr>
                 <tr>
                     <td colspan="4">Healthcare</td>
@@ -200,14 +213,14 @@ table.ltd tr td {
                     <td colspan="4">Student Loan</td>
                     <td>456</td>
                 </tr>
-             
+
                 <tr>
                     <td colspan="5"></td>
-                    
+
                 </tr>
                 <tr>
                     <td colspan="5"></td>
-                    
+
                 </tr>
                 <tr>
                     <td colspan="4">EE Pension</td>
@@ -334,8 +347,7 @@ table.ltd tr td {
             </tr>
         </table>
 
-        <table
-            style="width:29.5%; float:right; border:1px solid #4a50b2; border-radius:10px; margin-top:-52px; padding:13px 10px 13px 10px; background-color:#e7e8f7;">
+        <table style="width:29.5%; float:right; border:1px solid #4a50b2; border-radius:10px; margin-top:-52px; padding:13px 10px 13px 10px; background-color:#e7e8f7;">
             <tr>
                 <td style="color:#4a50b2; font-size:16px; font-weight:600;">Net Pay</td>
                 <td>2380.34</td>

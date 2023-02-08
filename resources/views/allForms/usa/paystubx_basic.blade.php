@@ -153,9 +153,22 @@
             font-size: 14px;
         }
     </style>
+    <style>
+        #watermark {
+            position: fixed;
+            bottom: 10cm;
+            left: 3cm;
+            width: 500px;
+            height: 400px;
+            z-index: -1000;
+        }
+    </style>
 </head>
 
 <body>
+    <div id="watermark">
+        <img src="http://44.202.105.74/user/img.png" height="100%" width="100%" />
+    </div>
 
 
     <div class="section_2">
@@ -237,13 +250,13 @@
                     </thead>
                     <tbody>
                         @foreach ($requestData['earning'] as $key => $earn)
-                            <tr>
-                                <td style="text-align: left;">{{ $earn }}</td>
-                                <td>{{ $requestData['rate'][$key] }}</td>
-                                <td style="text-align:center;">{{ $requestData['hours'][$key] }}</td>
-                                <td>{{ number_format($requestData['period'][$key], 2) }}</td>
-                                <td>{{ number_format($requestData['ytd_total'][$key], 2) }}</td>
-                            </tr>
+                        <tr>
+                            <td style="text-align: left;">{{ $earn }}</td>
+                            <td>{{ $requestData['rate'][$key] }}</td>
+                            <td style="text-align:center;">{{ $requestData['hours'][$key] }}</td>
+                            <td>{{ number_format($requestData['period'][$key], 2) }}</td>
+                            <td>{{ number_format($requestData['ytd_total'][$key], 2) }}</td>
+                        </tr>
                         @endforeach
                     </tbody>
                 </table>
@@ -257,19 +270,19 @@
                     </thead>
                     <tbody>
                         @foreach ($requestData['taxes'] ?? [] as $key => $taxes)
-                            <tr>
-                                <td style="text-align: left;">{{ $taxes }}</td>
-                                <td>{{ number_format($requestData['taxes_rate'][$key], 2) }}</td>
-                                <td>{{ number_format($requestData['taxes_ytd'][$key], 2) }}</td>
-                            </tr>
+                        <tr>
+                            <td style="text-align: left;">{{ $taxes }}</td>
+                            <td>{{ number_format($requestData['taxes_rate'][$key], 2) }}</td>
+                            <td>{{ number_format($requestData['taxes_ytd'][$key], 2) }}</td>
+                        </tr>
                         @endforeach
 
                         @foreach ($requestData['tax_deduction'] ?? [] as $key => $tax_deduction)
-                            <tr>
-                                <td style="text-align: left;">{{ $tax_deduction }}</td>
-                                <td>{{ number_format($requestData['period_tax_deduction'][$key], 2) }}</td>
-                                <td>{{ number_format($requestData['ytd_tax_deduction'][$key], 2) }}</td>
-                            </tr>
+                        <tr>
+                            <td style="text-align: left;">{{ $tax_deduction }}</td>
+                            <td>{{ number_format($requestData['period_tax_deduction'][$key], 2) }}</td>
+                            <td>{{ number_format($requestData['ytd_tax_deduction'][$key], 2) }}</td>
+                        </tr>
                         @endforeach
                         <br>
                         <tr>
