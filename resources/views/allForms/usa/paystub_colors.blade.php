@@ -63,8 +63,8 @@
             text-align: left;
             font-size: 18px;
             color: #5b615d;
-            padding-top: 10px;
-            padding-bottom: 10px;
+            padding-top: 8px;
+            padding-bottom: 8px;
         }
 
 
