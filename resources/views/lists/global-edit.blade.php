@@ -132,9 +132,7 @@
                                         <select name="basic_temp" value="{{$invoice->basic_temp ?? ''}}" class="form-control dropdown1 text-center bt_id small-font basicTemplate" style="margin-right:10px; font-size:18px;">
                                             <option value=""> --- Select Basic Templates --- </option>
                                             @foreach ($basicType as $basic_temp)
-                                            @if($basic_temp->state == 'usa' && $basic_temp->type == 'basic')
                                             <option value="{{$basic_temp->title ?? ''}}" {{$invoice->basic_temp == $basic_temp->title ? 'selected' : ''}} data-src="{{$basic_temp->images->file ?? ''}}"> {{$basic_temp->name}} </option>
-                                            @endif
                                             @endforeach
                                         </select>
                                         <i class="fa fa-eye-slash basicTem" style="font-size: 39px;" role="button"></i>
@@ -152,9 +150,7 @@
                                         <select name="advance_temp" class="form-control text-center dropdown1 at_id small-font advanceTemplate" style="margin-right:10px; font-size:18px;">
                                             <option value=""> --- Select Advance Template --- </option>
                                             @foreach ($advanceType as $advance_temp)
-                                            @if($advance_temp->state == 'usa' && $advance_temp->type == 'advance')
                                             <option value="{{$advance_temp->title ?? ''}}" {{$invoice->advance_temp == $advance_temp->title ? 'selected' : ''}} data-src="{{$advance_temp->images->file ?? ''}}"> {{$advance_temp->name ?? ''}} </option>
-                                            @endif
                                             @endforeach
                                         </select>
                                         <i class="fa fa-eye-slash advanceTem" role="button" style="font-size: 39px;"></i>

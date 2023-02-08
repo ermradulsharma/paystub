@@ -67,10 +67,8 @@ $(document).ready(function () {
 
         $(".calculation").keyup(function () {
             var id = $(this).data("id");
-            setTimeout(function () {
                 calculation(id);
                 arr_pushed(id);
-            }, 300);
         });
 
         $('.total').keyup(function(){
@@ -424,6 +422,7 @@ $(document).ready(function () {
         var hours = parseFloat($("#hours_" + ids).val()).toFixed(2);
         var total = rate * hours || 0.0;
         var ytd_total = total * parseInt(days_number) || 0.0;
+        console.log(rate);
         setTimeout(function () {
             $("#total_" + ids).val(parseFloat(total).toFixed(2));
             $("#period_" + ids).val(parseFloat(total).toFixed(2));

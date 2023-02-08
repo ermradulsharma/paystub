@@ -18,7 +18,7 @@ class UsaController extends Controller
      */
     public function index()
     {
-        $deduction = Deduction::where('state', 'usa')->get();
+        $deduction = Deduction::where('state', 'usa')->orderBy('id', 'asc')->get();
         $basicType = Template::where(['state' => 'usa', 'type' => 'basic', 'status' => 1])->with('images')->get();
         $advanceType = Template::where(['state' => 'usa', 'type' => 'advance', 'status' => 1])->with('images')->get();
         $stateTaxes = StateTax::get();
@@ -34,7 +34,7 @@ class UsaController extends Controller
 
     public function globlePaystub()
     {
-        $deduction = Deduction::where('state', 'global')->get();
+        $deduction = Deduction::where('state', 'global')->orderBy('id', 'asc')->get();
         $basicType = Template::where(['state' => 'global', 'type' => 'basic', 'status' => 1])->with('images')->get();
         $advanceType = Template::where(['state' => 'global', 'type' => 'advance', 'status' => 1])->with('images')->get();
         $stateTaxes = StateTax::get();
