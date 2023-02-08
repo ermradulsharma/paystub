@@ -124,7 +124,7 @@ class TemplatesController extends Controller
         $response['status'] = STATUS_BAD_REQUEST;
         $response['success'] = FALSE;
         try {
-            $paySlipObj = PaySlip::select('id', 'reference', 'user_id', 'pdf', 'created_at')->where('user_id', Auth::user()->id)->get();
+            $paySlipObj = PaySlip::select('id', 'reference', 'user_id', 'pdf', 'created_at', 'data')->where('user_id', Auth::user()->id)->get();
             $response['data'] = $paySlipObj;
             $response['message'] = "Payslip fetch successfully";
             $response['status'] = 200;
@@ -144,12 +144,12 @@ class TemplatesController extends Controller
         $response['success'] = FALSE;
         try {
             $requestData = $request->all();
-            foreach ($requestData['id'] as $id) {
-                $paySlipObj = PaySlip::where(['user_id' => Auth::user()->id, 'id' => $id])->exists();
-                if ($paySlipObj) {
-                    PaySlip::where(['user_id' => Auth::user()->id, 'id' => $id])->forceDelete();
-                }
+
+            $paySlipObj = PaySlip::where(['user_id' => Auth::user()->id, 'id' => $requestData['id']])->exists();
+            if ($paySlipObj) {
+                PaySlip::where(['user_id' => Auth::user()->id, 'id' => $requestData['id']])->forceDelete();
             }
+
             $response['message'] = "Payslip deleted successfully";
             $response['status'] = 200;
             $response['success'] = TRUE;
@@ -172,7 +172,7 @@ class TemplatesController extends Controller
             if ($paySlipObj) {
                 $paySlipObj =  PaySlip::where(['user_id' => Auth::user()->id, 'id' => $requestData['id']])->first();
             }
-            json_decode($paySlipObj->data);
+            json_decode($paySlipObj->data , true);
             $paySlipObj->slipData = Template::editFormData(json_decode($paySlipObj->data));
             unset($paySlipObj->data);
             $response['data'] = $paySlipObj;

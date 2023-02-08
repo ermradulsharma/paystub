@@ -107,7 +107,8 @@
     <style>
         #watermark {
             position: fixed;
-            bottom: 10cm;
+            top: 10cm;
+            bottom: 0cm;
             left: 3cm;
             width: 500px;
             height: 400px;
@@ -118,7 +119,7 @@
 
 <body>
     <div id="watermark">
-        <img src="http://44.202.105.74/user/img.png" height="100%" width="100%" />
+        <img src="http://44.202.105.74/user/water.png" height="100%" width="100%" />
     </div>
     <div style="max-width: 100%; margin: auto; padding: 10px 10px; bordar-top:2px solid red">
         <table style="width:100%; border-left:2px solid#464646; border-right:2px solid#464646;">

@@ -199,7 +199,7 @@
                         <div class="row mb-3">
                             <div class="col-md-12">
                                 <div>
-                                    <label for="emp_street_1" class="lable">STREET 1 <span class="redColor">*</span></label>
+                                    <label for="emp_street_1" class="lable">STREET ADDRESS 1 <span class="redColor">*</span></label>
                                     <input type="text" id="emp_street_1" name="emp_street_1" placeholder="Your Address" class="w-100  textInputFontSize">
                                 </div>
 
@@ -209,7 +209,7 @@
                         <div class="row mb-3">
                             <div class="col-md-12">
                                 <div>
-                                    <label for="emp_street_2" class="lable">STREET 2 
+                                    <label for="emp_street_2" class="lable">STREET ADDRESS 2
                                     </label>
                                     <input type="text" id="emp_street_2" name="emp_street_2" placeholder="Suite 101 or Apt 101(optional)" class="w-100  textInputFontSize">
                                 </div>
@@ -548,9 +548,11 @@
                             <div class="col-md-2 col-lg-3"></div>
                             <div class="col-md-1"></div>
                             <div class="col-md-2">
+                            <p class="p-0 m-0 text-center" style="font-family: serif;">Current Gross</p>
                                 <input type="text" name="deduction_tax" class="earnbtn deduction_tax text-center" value="" />
                             </div>
                             <div class="col-md-2">
+                            <p class="p-0 m-0 text-center" style="font-family: serif;">YTD Gross</p>
                                 <input type="text" name="ytd_deduction_tax" class="earnbtn ytd_deduction_tax text-center" value="" />
                             </div>
                         </div>

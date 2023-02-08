@@ -73,7 +73,7 @@
             <ul style="font-size: 20px;line-height:1.5em;font-family: 'Futura LT';" class="mt-4">
                 <li class="mt-2 proof">Help employees qualify for loans, housing & more ✅</li>
                 <li class="mt-2 proof">Comply with state and local employment laws ✅</li>
-                <li class="mt-2 proof">RequestBe transparent with compensation ✅</li>
+                <li class="mt-2 proof">Be transparent with compensation ✅</li>
                 <li class="mt-2 proof">Trust auto-calculation for every pay stub, for every state ✅</li>
                 <li class="mt-2 proof">Manage all payroll documents in one place ✅</li>
             </ul>
@@ -106,8 +106,7 @@
                     On Paystub X Join thousands of satisfied independent </br> contractors and small business owners and
                     get the
                     </br> highest quality pay stubs, W2s and 1099s — right to </br> your inbox! We make it easy.
-                    Guaranteed.
-                    .</p>
+                    Guaranteed.</p>
             </div>
         </div>
 
@@ -263,12 +262,11 @@
 
 
                         <li class="mt-2" style="font-weight: 200; font-size: 20px; line-height:1.5em; font-family: 'Futura LT';">1099-NEC,
-                            1099-MISC - Efile with IRS, Distribute
-                            Contractor✅</li>
+                            1099-MISC - Efile with IRS, Distribute to
+                            Contractors ✅</li>
 
 
-                        <li class="mt-2" style="font-weight: 200; font-size: 20px; line-height:1.5em; font-family: 'Futura LT';">Request a small
-                            business loan ✅</li>
+                        <li class="mt-2" style="font-weight: 200; font-size: 20px; line-height:1.5em; font-family: 'Futura LT';">Efile Form 940 - FUTA filing with IRS. ✅</li>
                     </ul>
                 </div>
                 <div class="mt-5 pt-3  ">
