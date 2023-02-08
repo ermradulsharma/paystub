@@ -116,7 +116,7 @@
         <div class="row mb-3">
             <div class="col-md-12">
                 <div class=" box-usa">
-                    <div class="row mb-3" style="align-item:end;">
+                    <div class="row mb-3" style="align-items:end;">
                         <div class="col-md-6 mt-4">
                             <h5>Employee info</h5>
                             <label for="emp_name" class="lable">EMPLOYEE NAME <span style="color:red;">*</span></label>
@@ -139,116 +139,123 @@
                             <input type="text" id="emp_street_2" name="emp_street_2" placeholder="5 Throgmorton St,London" class="w-100 p-2 text-center" style="font-size:14px;">
                         </div>
                     </div>
-                    <h5 class="mt-5 mb-2">EARNINGS STATEMENT</h5>
-                    <div class="row mb-3">
-                        <div class="col-md-4 ">
-                            <label for="pay_start" class="lable">PAY START <span style="color:red;">*</span></label>
-                            <input type="date" id="pay_start" name="pay_start" placeholder="2-20-2023" class="w-100 p-2 text-center" style="font-size:14px;">
-                        </div>
-
-                        <div class="col-md-4 ">
-                            <label for="pay_date" class="lable text-center"> PAY DATE <span style="color:red;">*</span></label>
-                            <input type="date" id="pay_date" name="pay_date" placeholder="12-12-2023" class="w-100 p-2 text-center" style="font-size:14px;">
-                        </div>
-                        <div class="col-md-4 ">
-                            <label for="pay_end" class="lable">PAY END <span style="color:red;">*</span></label>
-                            <input type="date" id="pay_end" name="pay_end" placeholder="2-20-2023" class="w-100 p-2 text-center" style="font-size:14px;">
-                        </div>
-                    </div>
-
-
-                    <div class="row mb-3">
-                        <div class="col-lg-2 col-md-4 mt-4">
-                            <label for="pay_type" class="lable">Pay Type <span style="color:red;">*</span></label>
-                            <input type="text" id="pay_type" name="pay_type" placeholder="2-20-2023" class="w-100 p-2 text-center" style="font-size:14px;">
-                        </div>
-
-                        <div class="col-lg-2 col-md-4 mt-4">
-                            <label for="pay_method" class="lable text-center"> Payment method  <span style="color:red;">*</span></label>
-                            <input type="text" id="pay_method" name="pay_method" placeholder="12-12-2023" class="w-100 p-2 text-center" style="font-size:14px;">
-                        </div>
-                        <div class="col-lg-2 col-md-4 mt-4">
-                            <label for="tax_code" class="lable">Tax Code <span style="color:red;">*</span></label>
-                            <input type="text" id="tax_code" name="tax_code" placeholder="2-20-2023" class="w-100 p-2 text-center" style="font-size:14px;">
-                        </div>
-                        <div class="col-lg-2 col-md-4 mt-4">
-                            <label for="ni_number" class="lable">NI Number <span style="color:red;">*</span></label>
-                            <input type="text" id="ni_number" name="ni_number" placeholder="2-20-2023" class="w-100 p-2 text-center" style="font-size:14px;">
-                        </div>
-                        <div class="col-lg-2 col-md-4 mt-4">
-                            <label for="ni_table_letter" class="lable">NI Table Letter <span style="color:red;">*</span></label>
-                            <input type="text" id="ni_table_letter" name="ni_table_letter" placeholder="2-20-2023" class="w-100 p-2 text-center" style="font-size:14px;">
-                        </div>
-                        <div class="col-lg-2 col-md-4 mt-2">
-                            <p class="text-center mb-0 ukpaystubtext">How do you get paid<span style="color:red;">*</span> </p>
-                            <div class="text-center mt-2  d-flex justifycenter ">
-                                <button class="hourbtn mr-2">HOURLY</button>
-                                <button class="salrybtn">SALARY</button>
-                            </div>
-                        </div>
-                    </div>
-                    <h5 class="mt-5">PAYMENTS</h5>
-                    <div class="row ">
-                    </div>
-
-                    <div class="row ">
-                        <div class="col-md-2 ">
-                            <button class="statementbtn">EARNING</button>
-                        </div>
-                        <div class="col-md-2 ">
-                            <button class="statementbtn">RATE</button>
-                        </div>
-                        <div class="col-md-2 ">
-                            <button class="statementbtn">HOURS</button>
-                        </div>
-                    </div>
-                    <div class="row ">
-                        <div class="col-md-2 w-100">
-                            <input class="w-100 p-2 mt-2 text-center" type="text" name="earning[]" value="Regular" id="earning_0" data-id="0">
-                        </div>
-                        <div class="col-md-2">
-                            <input type="text" name="rate[]" class="w-100 p-2 mt-2 text-center calculation rate" value="" id="rate_0" data-id="0">
-                        </div>
-                        <div class="col-md-2 mt-">
-                            <input type="text" name="hours[]" class="w-100 p-2 mt-2 text-center hours calculation" value="" id="hours_0" data-id="0">
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col-lg-2 col-md-4 mt-2 mb-5">
-                            <button class="earnbtn"><i class="fa fa-plus-circle pr-2" style="font-size:24px;color:green"></i>Add Earning</button>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <h5>Deductions</h5>
-                            <div class="row mb-3 ">
-                                <div class="col-md-6">
-                                    <i class="fa fa-lock earnbtn2"></i>
-                                    <input class="earnbtn text-center" type="text" value="FICA Medicare">
-                                </div>
-                                <div class="col-md-4 ">
-                                    <input class="earnbtn text-center" value="556.80"></input>
-                                </div>
-                            </div>
+                    <div class="flex-row">
+                        <div>
+                            <h5 class="mt-5 mb-2">EARNINGS STATEMENT</h5>
                             <div class="row mb-3">
-                                <div class="col-md-6">
-                                    <i class="fa fa-lock earnbtn2"></i>
-                                    <input class="earnbtn text-center" type="text" value="National Insurence">
+                                <div class="col-md-4 ">
+                                    <label for="pay_start" class="lable">PAY START <span style="color:red;">*</span></label>
+                                    <input type="date" id="pay_start" name="pay_start" placeholder="2-20-2023" class="w-100 p-2 text-center" style="font-size:14px;">
                                 </div>
 
                                 <div class="col-md-4 ">
-                                    <input class="earnbtn text-center" value="556.80"></input>
+                                    <label for="pay_date" class="lable text-center"> PAY DATE <span style="color:red;">*</span></label>
+                                    <input type="date" id="pay_date" name="pay_date" placeholder="12-12-2023" class="w-100 p-2 text-center" style="font-size:14px;">
+                                </div>
+                                <div class="col-md-4 ">
+                                    <label for="pay_end" class="lable">PAY END <span style="color:red;">*</span></label>
+                                    <input type="date" id="pay_end" name="pay_end" placeholder="2-20-2023" class="w-100 p-2 text-center" style="font-size:14px;">
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <button class="createbtn2 "> Total Deductions</button>
+
+
+                            <div class="row mb-3">
+                                <div class="col-lg-2 col-md-4 mt-4">
+                                    <label for="pay_type" class="lable">Pay Type <span style="color:red;">*</span></label>
+                                    <input type="text" id="pay_type" name="pay_type" placeholder="2-20-2023" class="w-100 p-2 text-center" style="font-size:14px;">
                                 </div>
-                                <div class="col-md-4">
-                                    <input class="earnbtn text-center" value=" 7,247.29">
+
+                                <div class="col-lg-2 col-md-4 mt-4">
+                                    <label for="pay_method" class="lable text-center"> Payment method  <span style="color:red;">*</span></label>
+                                    <input type="text" id="pay_method" name="pay_method" placeholder="12-12-2023" class="w-100 p-2 text-center" style="font-size:14px;">
+                                </div>
+                                <div class="col-lg-2 col-md-4 mt-4">
+                                    <label for="tax_code" class="lable">Tax Code <span style="color:red;">*</span></label>
+                                    <input type="text" id="tax_code" name="tax_code" placeholder="2-20-2023" class="w-100 p-2 text-center" style="font-size:14px;">
+                                </div>
+                                <div class="col-lg-2 col-md-4 mt-4">
+                                    <label for="ni_number" class="lable">NI Number <span style="color:red;">*</span></label>
+                                    <input type="text" id="ni_number" name="ni_number" placeholder="2-20-2023" class="w-100 p-2 text-center" style="font-size:14px;">
+                                </div>
+                                <div class="col-lg-2 col-md-4 mt-4">
+                                    <label for="ni_table_letter" class="lable">NI Table Letter <span style="color:red;">*</span></label>
+                                    <input type="text" id="ni_table_letter" name="ni_table_letter" placeholder="2-20-2023" class="w-100 p-2 text-center" style="font-size:14px;">
+                                </div>
+                                <div class="col-lg-2 col-md-4 mt-2">
+                                    <p class="text-center mb-0 ukpaystubtext">How do you get paid<span style="color:red;">*</span> </p>
+                                    <div class="text-center mt-2  d-flex justifycenter ">
+                                        <button class="hourbtn mr-2">HOURLY</button>
+                                        <button class="salrybtn">SALARY</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                       <div>
+                        <h5 class="mt-5">PAYMENTS</h5>
+                        <div class="row ">
+                        </div>
+
+                        <div class="row ">
+                            <div class="col-md-2 ">
+                                <button class="statementbtn">EARNING</button>
+                            </div>
+                            <div class="col-md-2 ">
+                                <button class="statementbtn">RATE</button>
+                            </div>
+                            <div class="col-md-2 ">
+                                <button class="statementbtn">HOURS</button>
+                            </div>
+                        </div>
+                        <div class="row ">
+                            <div class="col-md-2 w-100">
+                                <input class="w-100 p-2 mt-2 text-center" type="text" name="earning[]" value="Regular" id="earning_0" data-id="0">
+                            </div>
+                            <div class="col-md-2">
+                                <input type="text" name="rate[]" class="w-100 p-2 mt-2 text-center calculation rate" value="" id="rate_0" data-id="0">
+                            </div>
+                            <div class="col-md-2 mt-">
+                                <input type="text" name="hours[]" class="w-100 p-2 mt-2 text-center hours calculation" value="" id="hours_0" data-id="0">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-lg-2 col-md-4 mt-2 mb-5">
+                                <button class="earnbtn"><i class="fa fa-plus-circle pr-2" style="font-size:24px;color:green"></i>Add Earning</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <h5>Deductions</h5>
+                                <div class="row mb-3 ">
+                                    <div class="col-md-6">
+                                        <i class="fa fa-lock earnbtn2"></i>
+                                        <input class="earnbtn text-center" type="text" value="FICA Medicare">
+                                    </div>
+                                    <div class="col-md-4 ">
+                                        <input class="earnbtn text-center" value="556.80"></input>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <i class="fa fa-lock earnbtn2"></i>
+                                        <input class="earnbtn text-center" type="text" value="National Insurence">
+                                    </div>
+
+                                    <div class="col-md-4 ">
+                                        <input class="earnbtn text-center" value="556.80"></input>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <button class="createbtn2 "> Total Deductions</button>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input class="earnbtn text-center" value=" 7,247.29">
+                                    </div>
+                                </div>
+                            </div>
+
+                       </div>
+                    </div>
 
                         <div class="col-lg-6">
                             <h5>TOTAL YEAR TO DATE</h5>
