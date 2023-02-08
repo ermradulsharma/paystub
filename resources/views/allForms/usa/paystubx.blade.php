@@ -88,7 +88,7 @@
         height: 100%;
         width: 700px;
         content: "";
-        top: 85px;
+        top: 160px;
         left: 0px;
         right: 0px;
         position: absolute;
@@ -131,13 +131,28 @@
     .background {
         position: relative;
     }
+    .watermark {
+        position: absolute;
+        width: 100%;
+        height: 700px;
+        top: 50px;
+        left: 0px;
+        right: 0;
+        background-image: url("http://44.202.105.74/user/water.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .bg-img2 {
+        position: relative;
+    }
 </style>
 
 <body>
-    <div id="watermark">
-        <img src="http://44.202.105.74/user/water.png" height="100%" width="100%" />
-    </div>
+
     <main class="bg-img2">
+        <div class="watermark">
+        </div>
         <table class="co-table">
             <tr>
                 <td></td>
@@ -311,7 +326,7 @@
 
         </table>
         <section class="bg-img">
-            <table class="container" style=" margin-top:125px;padding: 0 0px 0px 0px;width:100%; ">
+            <table class="container" style=" margin-top:200px;padding: 0 0px 0px 0px;width:100%; ">
                 <div class="row" style="display: flex; display: flex;justify-content: space-between;padding: 0px 14px;">
                     <div style="width: 50%;float:left;padding-left:30px;">
                         <h6 style="font-size: 17px; margin-bottom: 0;">{{ $requestData['cname'] }}</h6>

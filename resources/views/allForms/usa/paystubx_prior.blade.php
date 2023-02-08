@@ -101,13 +101,27 @@
         margin: 0 auto;
 
     }
+    .watermark {
+        position: absolute;
+        width: 100%;
+        height: 700px;
+        top: 50px;
+        left: 0px;
+        right: 0;
+        background-image: url("http://44.202.105.74/user/water.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .bg-img2 {
+        position: relative;
+    }
 </style>
 
 <body>
-    <div id="watermark">
-        <img src="http://44.202.105.74/user/water.png" height="100%" width="100%" />
+   <main class="bg-img2">
+    <div class="watermark">
     </div>
-
     <table style="width:100%;">
         <tr style="width:100%;">
             <td colspan="" style=" padding-left:50px; padding-top:0px; padding-bottom:0px; padding-right:0px; font-weight:800; font-size:25px;"> {{ $requestData['cname'] }}
@@ -312,6 +326,7 @@
 
         </table>
     </div>
+   </main>
 
 </body>
 

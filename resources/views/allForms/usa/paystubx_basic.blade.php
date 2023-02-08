@@ -152,26 +152,31 @@
         th {
             font-size: 14px;
         }
-    </style>
-    <style>
-        #watermark {
-            position: fixed;
-            top: 10cm;
-            bottom: 0cm;
-            left: 3cm;
-            width: 500px;
-            height: 400px;
-            z-index: -1000;
+        .bg-img2{
+            position: relative;
         }
+        .watermark {
+        position: absolute;
+        width: 100%;
+        height: 700px;
+        top: 50px;
+        left: 0px;
+        right: 0;
+        background-image: url("http://44.202.105.74/user/water.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .bg-img2 {
+        position: relative;
+    }
     </style>
+
 </head>
 
 <body>
-    <div id="watermark">
-        <img src="http://44.202.105.74/user/water.png" height="100%" width="100%" />
-    </div>
-
-
+<main class="bg-img2">
+    <div class="watermark"></div>
     <div class="section_2">
         <table style="width: 100%;">
             <thead style="background-color: #a9a9a9;">
@@ -323,6 +328,8 @@
             </div>
         </div>
     </section>
+</main>
+
 </body>
 
 </html>
