@@ -389,7 +389,6 @@
                                     <label for="pay_start" class="lable">PAY START<span class="redColor">*</span> </label>
                                     <input type="date" id="pay_start" name="pay_start" placeholder="12-11-2022" class="w-100 p-2 textInputFontSize pay_start datepicker" data-id="pay_start">
                                 </div>
-
                             </div>
 
                             <div class="col-md-3 mt-4">
@@ -397,7 +396,6 @@
                                     <label for="pay_end" class="lable">PAY END <span class="redColor">*</span> </label>
                                     <input type="date" id="pay_end" name="pay_end" placeholder="12-17-2022" class="w-100 p-2 textInputFontSize pay_end" data-id="pay_end">
                                 </div>
-
                             </div>
 
                             <div class="col-md-3 mt-4">
@@ -447,7 +445,6 @@
                                 <div>
                                     <input class="earnbtn text-center" type="text" name="earning[]" value="Regular" id="earning_0" data-id="0">
                                 </div>
-
                             </div>
 
                             <div class=" col-lg-2 col-md-2 margin-bottom ">
@@ -461,7 +458,6 @@
                                 <div>
                                     <input type="text" name="hours[]" class="earnbtn text-center hours calculation" value="" id="hours_0" data-id="0">
                                 </div>
-
                             </div>
 
                             <div class=" col-lg-2  col-md-2 margin-bottom">
@@ -663,6 +659,7 @@
                 mobileNumber.substring(6, 10));
         });
     });
+
 </script>
 <script>
     $(document).ready(function() {
@@ -683,6 +680,7 @@
             }
         });
     });
+
 </script>
 <script>
     $(document).ready(function() {
@@ -703,6 +701,7 @@
             }
         });
     });
+
 </script>
 
 @endsection
