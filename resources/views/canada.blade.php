@@ -29,7 +29,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-8" style="background-position-x:right;left:12px;">
+                <div class="col-lg-8" style="background-position-x:right;left:12px; margin:auto;">
                     <img src="images/computer.webp" class="w-100">
                 </div>
             </div>

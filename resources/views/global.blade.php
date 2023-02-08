@@ -208,7 +208,7 @@
                                             </option>
                                         @endforeach
                                     </select>
-                                    <i class="fa fa-eye-slash basicTem" data-target="#openEye" data-toggle="modal"
+                                    <i class="fa fa-eye-slash basicTem uk-eye" data-target="#openEye" data-toggle="modal"
                                         style="font-size: 39px; position:relative;left:10px;"></i>
 
 
@@ -240,7 +240,7 @@
                                             </option>
                                         @endforeach
                                     </select>
-                                    <i class="fa fa-eye-slash advanceTem" data-target="#openEye" data-toggle="modal"
+                                    <i class="fa fa-eye-slash advanceTem uk-eye" data-target="#openEye" data-toggle="modal"
                                         style="font-size: 39px; position:relative;left:10px;"></i>
 
 

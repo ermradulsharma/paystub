@@ -470,8 +470,8 @@
                                     <p class="text-center how_p mb-0" style="font-size:18px;">How do you get paid <span
                                             class="redColor">*</span> <span> </p>
                                     <div class="text-center mt-2  d-flex justify-content-center">
-                                        <button type="button" class="hourbtn date_select">HOURLY</button> <button
-                                            type="button" class="salrybtn">SALARY</button>
+                                        <button type="button" class="hour_btn date_select">HOURLY</button> <button
+                                            type="button" class="salary_btn">SALARY</button>
                                     </div>
                                 </div>
                             </div>
@@ -496,7 +496,7 @@
                                 </div>
                                 <div class=" col-lg-2  col-md-2 margin-bottom mb-1  ">
                                     <button type="button" class="statementbtn">YTD TOTAL</button>
-                                    <p class="p-0 m-0 text-center" style="font-family: serif;font-size:14px;">YTD Total
+                                    <p class="p-0 m-0 text-center go-ytd" style="font-family: serif;font-size:14px;">YTD Total
                                         Gross</p>
                                 </div>
                             </div>

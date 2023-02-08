@@ -185,8 +185,8 @@
                                 <div class="col-lg-2 col-md-4 mt-2">
                                     <p class="text-center mb-0 ukpaystubtext">How do you get paid<span style="color:red;">*</span> </p>
                                     <div class="text-center mt-2  d-flex justifycenter ">
-                                        <button class="hourbtn mr-2">HOURLY</button>
-                                        <button class="salrybtn">SALARY</button>
+                                        <button class="hour_btn mr-2">HOURLY</button>
+                                        <button class="salary_btn">SALARY</button>
                                     </div>
                                 </div>
                             </div>

@@ -174,7 +174,7 @@
                                     <input type="text" id="emp_id" name="emp_id" placeholder="Employee id" class="w-100 p-2  textInputFontSize">
                                 </div>
                             </div>
-
+                        <div class="basicpay" >
                             <div class="col-md-2 mt-4 pr-0">
                                 <div>
                                     <label for="pay_start" class="lable">PAY START <span class="redColor">*</span></label>
@@ -186,6 +186,7 @@
                                     <label for="emp_id" class="lable"> <span class="redColor">*</span></label>
                                     <input type="date" id="pay_end" name="pay_end" placeholder=" " class="w-100 p-2 textInputFontSize pay_end" data-id="pay_end" style="border-left: none;" readonly>
                                 </div>
+                            </div>
                             </div>
                             <div class="col-md-4 mt-4">
                                 <div>
@@ -289,7 +290,7 @@
 
                             <div class="col-lg-5 ">
                                 <div class="row">
-                                    <div class="col-lg-4 col-md-4  px-0">
+                                <div class="col-lg-4 col-md-4 pr-0">
                                         <button type="button" CLASS="statementbtn">DEDUCTION</button>
                                     </div>
                                     <div class="col-lg-4 col-md-4 pr-0">

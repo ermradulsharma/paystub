@@ -229,7 +229,7 @@
                     </tr>
                     @foreach ($requestData['earning'] as $key => $earn)
                         <tr>
-                            <td>REGULAR
+                            <td style="text-align:left;">Regular
                                 {{ $earn }}
                             </td>
                             <td>{{ $requestData['rate'][$key] }}

@@ -94,7 +94,7 @@
                     place!
                 </p>
 
-                <div class="mt-3">
+                <div class="mt-3 gennn">
                     <a class="btn btn-lg  mt-2 p-2 btn-danger Generate " href="{{url('usa')}}">Generate Paystub Now</a>
                 </div>
             </div>
@@ -113,8 +113,8 @@
 
     </div>
 </div>
-<div class="calculations mt-4">
-    <div class="container pt-5" style="max-width: 1750px;">
+<div class="calculations ">
+    <div class="container " style="max-width: 1750px;">
         <div class="">
             <div class="text-justify text-center pb-5">
                 <h2 style="font-size:30px; font-family: 'Futura LT';" class="text-white pt-5 gen">
@@ -122,7 +122,7 @@
                     calculations, W-2, 1099S Etc in Seconds</h2>
                 <div class="row mt-5">
                     <div class="col-md-4 mt-3 text-center">
-                        <h2 class="text-white calcheading head-font">Add your Data</h2>
+                        <h2 class="text-white calcheading head-font" style="color: #fafabd !important;">Add your Data</h2>
                         <p style="font-size:17px;font-weight: 200;font-family: 'Futura LT';line-height:1.8;" class="text-white pay-p head-font">Our paystub generator
                             accurately</br>
                             calculates your Federal and State</br> taxes, including Social security </br>and Medicare
@@ -134,7 +134,7 @@
                 
 
                     <div class="col-md-4 mt-3 text-center">
-                        <h2 class="text-white calcheading head-font">Preview Data</h2>
+                        <h2 class="text-white calcheading head-font" style="color: #fafabd !important;">Preview Data</h2>
                         <p style="font-size:17px;font-weight: 200;font-family: 'Futura LT'; line-height:1.8;" class="text-white pay-p head-font">Generate pay stubs with
                             accurate</br>
                             state income taxes, based on </br>state W-4, and other applicable</br> local taxes. </p>
@@ -161,7 +161,7 @@
 <div>
     <div class="container text-justify text-center pb-5">
         <h1 style="font-size:30px;font-family: font-family: 'Futura'; font-weight:600;" class="pt-5">Why do Small
-            Businesses Love Paystub<span class="text-danger">X</span>?</h1>
+            Businesses Love Paystub<span class="text-danger">X?</span></h1>
     </div>
 
 
@@ -303,7 +303,7 @@
 <div>
     <div class="container mb-5">
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-12 mt-4 " style="">
                 <a href="{{url('/')}}"><img class="w-100" src="images/2022-12-16_220238.webp"></a>
             </div>
         </div>

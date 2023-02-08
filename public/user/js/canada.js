@@ -117,7 +117,7 @@ $('.addTaxField').click(function(){
  var htmlData = `<div class="row">
  <div class="col-lg-4 px-0 mt-4">
      <div class="d-flex">
-         <img src="../images/lock.png" class="earnbtn2">
+         <img src="../images/lock.png" class="earnbtn3">
          <input class="earnbtn text-center other_taxes" name="tax_deduction[]" data-id="`+j+`">
      </div>
  </div>
