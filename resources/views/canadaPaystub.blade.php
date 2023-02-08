@@ -221,7 +221,7 @@
                         <div class="row mb-3">
                             <div class="col-md-4">
                                 <div>
-                                    <label for="emp_name" class="lable">EMPLOYER NAME <span class="redColor">*</span>
+                                    <label for="emp_name" class="lable">EMPLOYEE NAME <span class="redColor">*</span>
                                     </label>
                                     <input type="text" id="emp_name" name="emp_name" placeholder="Employee name" class="w-100 p-2  textInputFontSize">
                                 </div>
@@ -229,7 +229,7 @@
                             </div>
                             <div class="col-md-8">
                                 <div>
-                                    <label for="emp_address" class="lable">EMPLOYER ADDRESS <span class="redColor">*</span>
+                                    <label for="emp_address" class="lable">EMPLOYEE ADDRESS <span class="redColor">*</span>
                                     </label>
                                     <input type="text" id="emp_address" name="emp_address" placeholder="Suite 101 or Apt 101(optional)" class="w-100 p-2  textInputFontSize">
                                 </div>
@@ -243,7 +243,7 @@
 
         <div>
             <div class="mb- d-flex " style="justify-content: space-between;">
-                <h5 class="box-h5">Earning statement</h5>
+                <h5 class="box-h5">Earning Statement</h5>
             </div>
             <div class="row mb-3">
                 <div class="col-md-12">
