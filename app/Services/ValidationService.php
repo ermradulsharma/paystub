@@ -49,12 +49,6 @@ class ValidationService
                 'taxes_ytd' => 'required|array',
                 'total_net_pay' => 'required',
                 'total_ytd_net_pay' => 'required',
-                'co_number' => 'required',
-                'file_number' => 'required',
-                'clock_vchr_number' => 'required',
-                'advice_number' => 'required|min:4',
-                'account_number_last_4' => 'required|min:4|max:4',
-                'transit_aba_number' => 'required',
             ];
 
             $messages = [
@@ -93,12 +87,6 @@ class ValidationService
                 'taxes_ytd' => 'The Taxes YTD cannot be empty',
                 'total_net_pay' => 'The TOTAL NET PAY cannot be empty',
                 'total_ytd_net_pay' => 'The TOTAL YTD NET PAY cannot be empty',
-                'co_number'  => 'The co_number cannot be empty',
-                'file_number'  => 'The file_number cannot be empty',
-                'clock_vchr_number'  => 'The clock_vchr_number cannot be empty',
-                'advice_number'  => 'The advice_number cannot be empty',
-                'account_number_last_4'  => 'The account_number_last_4 cannot be empty',
-                'transit_aba_number'  => 'The transit_aba_number cannot be empty',
             ];
         } elseif ($request->form_type == "canada") {
             $rules = [
