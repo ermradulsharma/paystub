@@ -118,24 +118,29 @@
         }
     </style>
     <style>
-        #watermark {
-            position: fixed;
-            top: 10cm;
-            bottom: 0cm;
-            left: 3cm;
-            width: 500px;
-            height: 400px;
-            z-index: -1000;
-        }
+      .watermark {
+        position: absolute;
+        width: 100%;
+        height: 700px;
+        top: 100px;
+        left: 0px;
+        right: 0;
+        background-image: url("http://44.202.105.74/user/water.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .gg{
+        position: relative;
+    }
     </style>
 </head>
 
 <body>
-    <div id="watermark">
-        {{-- <img src="http://44.202.105.74/user/water.png" height="100%" width="100%" /> --}}
-        <img src="http://44.202.105.74/user/water.png" height="100%" width="100%" />
+   
+    <main class="gg">
+    <div class="watermark">
     </div>
-    <main class="">
         <table class="table" style="width: 100%;">
 
             <tr>

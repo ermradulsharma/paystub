@@ -43,7 +43,7 @@
                 <h5 class="box-h5">Choose Template</h5>
                 <div class="row mb-3">
                     <div class="col-md-12">
-                        <div class=" box-usa">
+                        <div class=" box-usa py-5">
                             <div class="d-flex justify-content-between mb-3">
                                 <div class="col-md-5 col-sm-12 m-auto  text-center" style="padding: -1px 35px;">
                                     <h6 class="base">BASIC TEMPLATES</h6>
@@ -65,14 +65,14 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-2  text-center sh">
+                                {{-- <!-- <div class="col-md-2  text-center sh">
                                     <img src="images/hrpng.png" style="height: 200px;">
                                 </div>
 
                                 <div class="col-md-5 col-sm-12 mt-5 text-center">
                                     <h6 style="margin-left:-23px;font-weight: 900;" class="small">ADVANCED TEMPLATES</h6>
                                     <div class="mt-4">
-                                        {{-- <i class="fa fa-angle-down down1"></i> --}}
+                                         <i class="fa fa-angle-down down1"></i> 
                                         <div class="input-group mmenu mb-3" style="margin: auto;">
                                             <select name="advance_temp"
                                                 class="form-control text-center dropdown1 at_id small-font advanceTemplate"
@@ -94,7 +94,7 @@
                                                 part of design</a>
                                         </button>
                                     </div>
-                                </div>
+                                </div> --> --}}
                             </div>
                         </div>
                     </div>
