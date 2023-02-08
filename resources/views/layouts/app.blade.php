@@ -50,7 +50,7 @@
                 <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('uk') ? 'active' : '' }}" href="{{ url('uk') }}">UK</a>
             </li>
             <li class="nav-item ml-3">
-                <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('globle') ? 'active' : '' }}" href="{{ url('globle') }}">GLOBEL</a>
+                <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('globle') ? 'active' : '' }}" href="{{ url('globle') }}">GLOBAL</a>
             </li>
             <li class="nav-item ml-3">
                 <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('form') ? 'active' : '' }}" href="{{ url('form') }}" style="width: 143px !important;">W-2 FORM</a>

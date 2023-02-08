@@ -102,9 +102,23 @@ globalwhitecheck usa
             margin-left: 54%;
         }
     </style>
+    <style>
+        #watermark {
+            position: fixed;
+            top: 10cm;
+            bottom: 0cm;
+            left: 3cm;
+            width: 500px;
+            height: 400px;
+            z-index: -1000;
+        }
+    </style>
 </head>
 
 <body>
+    <div id="watermark">
+        <img src="http://44.202.105.74/user/water.png" height="100%" width="100%" />
+    </div>
     <main>
 
         <div>
@@ -159,7 +173,8 @@ globalwhitecheck usa
                         <td>Period Beginning:</td>
                         <td style="text-align:left;">
 
-                            {{ date('m/d/y', strtotime($requestData['pay_start'])) }}</td>
+                            {{ date('m/d/y', strtotime($requestData['pay_start'])) }}
+                        </td>
                         <td></td>
                     </tr>
                     <tr>
@@ -187,7 +202,7 @@ globalwhitecheck usa
         <div class="div1">
             <table>
                 <tr>
-                    <td colspna="2"style="text-align: left;">BENEFITS</td>
+                    <td colspna="2" style="text-align: left;">BENEFITS</td>
                     <td>Accurued</td>
                     <td>Used</td>
                     <td>Available</td>
@@ -228,7 +243,8 @@ globalwhitecheck usa
                         <td>{{ $requestData['hours'][$key] }}</td>
                         <td>{{ $requestData['rate'][$key] }}</td>
                         <td>
-                            {{ number_format($requestData['total'][$key], 2) }}</td>
+                            {{ number_format($requestData['total'][$key], 2) }}
+                        </td>
                         <td></td>
                     </tr>
                     @endforeach
@@ -239,18 +255,18 @@ globalwhitecheck usa
             <div class="colum2">
                 <table>
                     <thead style="border-bottom: 2px solid black;>
-                        <td colspan="2">
+                        <td colspan=" 2">
                         <b>DEDUCTIONS</b></td>
                         <td><b>Current</b></td>
                         <td><b>YTD</b></td>
                     </thead>
 
                     @foreach ($requestData['taxes'] ?? [] as $key => $taxes)
-                        <tr>
-                            <td colspan="2" style="text-align: left;">{{ $taxes }}</td>
-                            <td>{{ number_format($requestData['taxes_rate'][$key], 2) }}</td>
-                            <td>{{ number_format($requestData['taxes_ytd'][$key], 2) }}</td>
-                        </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: left;">{{ $taxes }}</td>
+                        <td>{{ number_format($requestData['taxes_rate'][$key], 2) }}</td>
+                        <td>{{ number_format($requestData['taxes_ytd'][$key], 2) }}</td>
+                    </tr>
                     @endforeach
 
 
@@ -271,12 +287,12 @@ globalwhitecheck usa
                         <td><b>YTD</b></td>
                     </thead>
                     @foreach ($requestData['tax_deduction'] ?? [] as $key => $tax_deduction)
-                        <tr>
-                            <td style="text-align:
+                    <tr>
+                        <td style="text-align:
                         left;">{{ $tax_deduction }}</td>
-                            <td>{{ number_format($requestData['period_tax_deduction'][$key], 2) }}</td>
-                            <td>{{ number_format($requestData['ytd_tax_deduction'][$key], 2) }}</td>
-                        </tr>
+                        <td>{{ number_format($requestData['period_tax_deduction'][$key], 2) }}</td>
+                        <td>{{ number_format($requestData['ytd_tax_deduction'][$key], 2) }}</td>
+                    </tr>
                     @endforeach
                 </table>
 
@@ -317,7 +333,8 @@ globalwhitecheck usa
                     <th style="text-align:left;">Net Pay
                     </th>
                     <th style="text-align: left;">
-                        {{ $requestData['currency'] }}{{ number_format($requestData['total_net_pay'], 2) }}</th>
+                        {{ $requestData['currency'] }}{{ number_format($requestData['total_net_pay'], 2) }}
+                    </th>
                 </tr>
             </table>
         </div>
