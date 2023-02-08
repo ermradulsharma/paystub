@@ -496,7 +496,7 @@
                                 </div>
                                 <div class=" col-lg-2  col-md-2 margin-bottom mb-1  ">
                                     <button type="button" class="statementbtn">YTD TOTAL</button>
-                                    <p class="p-0 m-0 text-center" style="font-family: serif;font-size:14px;">YTD Total
+                                    <p class="p-0 m-0 text-center go-ytd" style="font-family: serif;font-size:14px;">YTD Total
                                         Gross</p>
                                 </div>
                             </div>

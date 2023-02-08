@@ -70,6 +70,7 @@
     font-weight: 400;
     margin: 0;
     font: var(--font_2);
+    font-weight: 600;
 }
 
 #fname {
@@ -522,7 +523,9 @@ input:hover {
     margin: auto;
 
 }
-
+.basicpay{
+    display: contents;
+}
 .google-icon-wrapper {
     position: absolute;
     margin-top: 1px;
@@ -805,6 +808,7 @@ select {
     border-radius: 4px;
     font-weight: 200;
     font-family: 'Futura LT';
+    margin-top: 17px;
 }
 
 .payp:hover {
@@ -904,7 +908,7 @@ select {
 }
 
 .box {
-    padding: 65px 30px;
+    padding: 15px 30px;
     border: 9px solid #b3dade;
     height: 100%;
 }
@@ -976,9 +980,33 @@ select {
 .head-font {
     font-size: 30px;
     font-family: 'Futura LT';
+    margin-bottom: 30px;
 }
 
-
+/* chnges after testing by interen */
+ul.nav.nav-justified.navbar {
+    margin-bottom: 35px;
+}
+.gennn{
+    margin-bottom: 30px;
+}
+.foot:hover {
+    padding:12px; 
+    border:1px solid #fff; 
+    border-radius:5px;
+    max-width:220px; 
+    text-align:center; 
+    margin-bottom:15px;
+    text-decoration: none !important;
+    background-color: white;
+    transition: all 0.5s ease-in-out;
+    
+}
+.foot:hover a{
+    color: black;
+    text-decoration: none;
+}
+/* chnges after testing by interen */
 
 
 
@@ -1126,8 +1154,24 @@ select {
 }
 
 @media screen and (max-width: 1024px) {
+    .statementbtn {
+        font-size: 10px;
+    }
+    .lable {
+        font-size: 10px;
+    }
+    .w-100 {
+        width: 100%!important;
+        padding: 6px;
+    }
+    .ukpaystubtext {
+        font-size: 13px;
+    }
     .earnbtn {
-        font-size: 12px;
+        font-size: 12px !important;
+    }
+    .earnbtn1 {
+        font-size: 10px !important;
     }
     .create-container li {
         font-size: 10px;
@@ -1385,6 +1429,28 @@ select {
 }
 
 @media screen and (max-width: 768px) {
+    .payp {
+       font-size: 9px !important;
+    }
+    .gennn {
+        margin-bottom: unset;
+    }
+    .go-ytd{
+        font-size: 12px !important;
+    }
+    .usap{
+        font-size: 12px !important;
+    }
+    .dropdown11 {
+        width: 100%;
+        padding: 5px;
+        border: 1px solid #00000080;
+        /* border-radius: 6px; */
+        background: #ffffff;
+        margin: auto;
+        font-size: 12px;
+    }
+    
     .uk-eye{
         font-size: 22px !important;
     }
@@ -1599,6 +1665,7 @@ select {
         width: 100% !important;
         display: flex;
         justify-content: center;
+        padding: 3px;
     }
 
     .formp1 {
@@ -1741,6 +1808,14 @@ select {
 }
 
 @media screen and (max-width: 425px) {
+    .basicpay {
+        display: flex;
+        width: 100%;
+    }
+    .thousand {
+        font-size: large !important;
+        padding-left: 15px;
+    }
     .globleImg {
         max-width: 300px;
         height: 300px;
@@ -2030,6 +2105,20 @@ select {
 
 
 @media screen and (max-width: 375px) {
+    .small {
+        font-size: 12px !important      ;
+    }
+    .earnbtn1 {
+        font-size: 16px !important;
+    }
+    .small {
+        font-size: 11px;
+    }
+    .basic1 {
+        margin-left: -23px;
+        font-weight: 900;
+        font-size: 13px;
+    }
     .text-white {
         font-size: 18px;
         margin-bottom: 10px;

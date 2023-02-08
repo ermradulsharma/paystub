@@ -85,7 +85,7 @@
                             <div class="col-md-4">
                                 <div>
                                     <label for="city" class="lable">City <span class="redColor">*</span> </label>
-                                    <input type="text" id="city" name="city" placeholder="Your Employer City" class="w-100 p-2  textInputFontSize">
+                                    <input type="text" id="city" name="city" placeholder="Your Employer City" class="w-100   textInputFontSize">
                                 </div>
 
                             </div>
@@ -106,7 +106,7 @@
                                 <div>
                                     <label for="zip_code" class="lable">Zip Code <span class="redColor">*</span>
                                     </label>
-                                    <input type="text" id="zip_code" name="zip_code" placeholder=" Zip Code" class="w-100 p-2  textInputFontSize">
+                                    <input type="text" id="zip_code" name="zip_code" placeholder=" Zip Code" class="w-100   textInputFontSize">
                                 </div>
                             </div>
                         </div>
@@ -175,7 +175,7 @@
                             <div class="col-md-4 mt-4">
                                 <div>
                                     <label for="emp_name" class="lable">EMPLOYEE NAME <span class="redColor">*</span> </label>
-                                    <input type="text" id="emp_name" name="emp_name" placeholder="Your Full  Name" class="w-100 p-2  textInputFontSize">
+                                    <input type="text" id="emp_name" name="emp_name" placeholder="Your Full  Name" class="w-100  textInputFontSize">
                                 </div>
 
                             </div>
@@ -183,14 +183,14 @@
                             <div class="col-md-4 mt-4">
                                 <div>
                                     <label for="emp_id" class="lable">EMPLOYEE ID <span class="redColor">*</span> </label>
-                                    <input type="text" id="emp_id" name="emp_id" placeholder="Employer ID" class="w-100 p-2 r textInputFontSize">
+                                    <input type="text" id="emp_id" name="emp_id" placeholder="Employer ID" class="w-100 r textInputFontSize">
                                 </div>
 
                             </div>
                             <div class="col-md-4 mt-4">
                                 <div>
                                     <label for="emp_ssn" class="lable">EMPLOYEE SSN last4 <span class="redColor">*</span> </label>
-                                    <input type="text" id="emp_ssn" name="emp_ssn" placeholder="1224" class="w-100 p-2  textInputFontSize">
+                                    <input type="text" id="emp_ssn" name="emp_ssn" placeholder="1224" class="w-100  textInputFontSize">
                                 </div>
 
                             </div>
@@ -200,7 +200,7 @@
                             <div class="col-md-12">
                                 <div>
                                     <label for="emp_street_1" class="lable">STREET 1 <span class="redColor">*</span></label>
-                                    <input type="text" id="emp_street_1" name="emp_street_1" placeholder="Your Address" class="w-100 p-2  textInputFontSize">
+                                    <input type="text" id="emp_street_1" name="emp_street_1" placeholder="Your Address" class="w-100  textInputFontSize">
                                 </div>
 
                             </div>
@@ -211,7 +211,7 @@
                                 <div>
                                     <label for="emp_street_2" class="lable">STREET 2 <span class="redColor">*</span>
                                     </label>
-                                    <input type="text" id="emp_street_2" name="emp_street_2" placeholder="Suite 101 or Apt 101(optional)" class="w-100 p-2  textInputFontSize">
+                                    <input type="text" id="emp_street_2" name="emp_street_2" placeholder="Suite 101 or Apt 101(optional)" class="w-100  textInputFontSize">
                                 </div>
 
                             </div>
@@ -221,7 +221,7 @@
                             <div class="col-md-4">
                                 <div>
                                     <label for="emp_city" class="lable">City <span class="redColor">*</span> </label>
-                                    <input type="text" id="emp_city" name="emp_city" placeholder="Your City" class="w-100 p-2  textInputFontSize">
+                                    <input type="text" id="emp_city" name="emp_city" placeholder="Your City" class="w-100   textInputFontSize">
                                 </div>
 
                             </div>
@@ -241,7 +241,7 @@
                             <div class="col-md-4">
                                 <div>
                                     <label for="emp_zip_code" class="lable">Zip Code <span class="redColor">*</span></label>
-                                    <input type="text" id="emp_zip_code" name="emp_zip_code" placeholder=" 1234" class="w-100 p-2  textInputFontSize">
+                                    <input type="text" id="emp_zip_code" name="emp_zip_code" placeholder=" 1234" class="w-100  textInputFontSize">
                                 </div>
 
                             </div>
@@ -318,7 +318,7 @@
                                 <div>
                                     <label for="hourly" class="lable">HOURLY <span class="redColor">*</span>
                                     </label>
-                                    <input type="text" step="0.5" id="hourly" name="hourly" placeholder="Hourly" class="w-100 p-2  textInputFontSize hourly" value="">
+                                    <input type="text" step="0.5" id="hourly" name="hourly" placeholder="Hourly" class="w-100   textInputFontSize hourly" value="">
                                 </div>
 
                             </div>
@@ -437,7 +437,7 @@
                             </div>
                             <div class=" col-lg-2  col-md-2 margin-bottom mb-1  ">
                                 <button type="button" class="statementbtn">YTD TOTAL</button>
-                                <p class="p-0 m-0 text-center" style="font-family: serif;font-size:14px;">YTD Total
+                                <p class="p-0 m-0 text-center usap" style="font-family: serif;font-size:14px;">YTD Total
                                     Gross</p>
                             </div>
                         </div>
