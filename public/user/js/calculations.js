@@ -343,6 +343,10 @@ $(document).ready(function() {
     }
 
     $('.hour_btn').click(function(){
+        $('.rate').attr('hidden', false);
+        $('.hours').attr('hidden', false);
+        $('.hourly').attr('readonly', false);
+        $('.time_period').val('monthly');
         $('.rate').attr('readonly', false);
         $('.hours').attr('readonly', false);
         $('.total').attr('readonly', true);
@@ -353,8 +357,10 @@ $(document).ready(function() {
         $('.rate').attr('hidden', true);
         $('.hours').attr('readonly', true);
         $('.hours').attr('hidden', true);
+        $('.hourly').attr('readonly', true);
         $('.total').attr('readonly', false);
         $('.time_period').val('monthly');
+        $('.auto_calculate').val('on');
         var date = new Date();
         var day = date.getDate();
         var month = date.getMonth() + 1;
