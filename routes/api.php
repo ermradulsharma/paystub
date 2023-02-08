@@ -33,5 +33,6 @@ Route::group(['namespace' => 'Api', 'middleware' => ['\App\Http\Middleware\LogAf
         Route::post('save-form-data', [TemplatesController::class, 'templatesDataSave']);
         Route::get('get-pdf-list', [TemplatesController::class, 'getPdfList']);
         Route::post('delete-template', [TemplatesController::class, 'deleteTemplate']);
+        Route::post('edit-form-data', [TemplatesController::class, 'editFormData']);
     });
 });
