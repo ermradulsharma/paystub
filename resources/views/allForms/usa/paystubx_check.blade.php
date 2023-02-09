@@ -76,7 +76,7 @@
             height: 100%;
             width: 700px;
             content: "";
-            top: 160px;
+            top: 120px;
             left: 0px;
             right: 0px;
             position: absolute;
@@ -97,7 +97,7 @@
             height: 100%;
             content: "";
             right: 0;
-            top: 180px;
+            top: 200px;
             left: 38px;
         }
 
@@ -106,12 +106,12 @@
             background-repeat: no-repeat;
             background-size: cover;
             width: 100%;
-            max-width: 625px;
+            max-width: 700px;
             content: "";
             position: absolute;
-            padding: 190px 0px;
+            padding: 140px 0px;
             top: -20px;
-            left: 105px;
+            left: 100px;
             right: 0;
 
         }
@@ -119,6 +119,7 @@
         .background {
             position: relative;
         }
+
         .watermark {
             position: absolute;
             width: 100%;
@@ -131,16 +132,19 @@
             background-repeat: no-repeat;
             background-position: center;
         }
+
         .bg-img2 {
             position: relative;
         }
+
     </style>
 </head>
+
 <body>
 
     <main class="bg-img2">
         @guest
-        <div class="watermark"></div>
+            <div class="watermark"></div>
         @endguest
         <table class="co-table">
             <tr>
@@ -233,27 +237,29 @@
                 <div class="column1">
                     <table style="width: 100%;">
                         <tr>
-                            <th>Earning</th>
-                            <th style="width: 15%;">Rate</th>
-                            <th>Hours</th>
-                            <th>This<br>Period</th>
-                            <th>Year-to<br>date</th>
+                            <th style="width:20%;" >Earning</th>
+                            <th style="width:20%;text-align:left; padding-left:15px;">Rate</th>
+                            <th style=" width:20%;text-align:right;">Hours</th>
+                            <th style=" width:17%;text-align:right;">This Period</th>
+                            <th style="width:23%; text-align:center;">Year-to-date</th>
 
                         </tr>
                         @foreach ($requestData['earning'] as $key => $earn)
-                        <tr>
-                            <td>{{ $earn }}</td>
-                            <td> {{ number_format($requestData['rate'][$key],2) }}</td>
-                            <td>{{ number_format($requestData['hours'][$key],2) }}</td>
-                            <td> {{ number_format($requestData['period'][$key],2) }}</td>
-                            <td> {{ number_format($requestData['ytd_total'][$key],2) }}</td>
-                        </tr>
+                            <tr>
+                                <td style="width:20%;">{{ $earn }}</td>
+                                <td style=" width:20%; text-align:left; padding-left:15px;"> {{ number_format($requestData['rate'][$key], 2) }}</td>
+                                <td style=" width:20%;text-align:right;">{{ number_format($requestData['hours'][$key], 2) }}</td>
+                                <td style="text-align: right; width:17%;"> {{ number_format($requestData['period'][$key], 2) }}</td>
+                                <td style=" width:23%; text-align:right; padding-right:15px;"> {{ number_format($requestData['ytd_total'][$key], 2) }}</td>
+                            </tr>
                         @endforeach
                         </br>
                         <tr>
-                            <th colspan="3" style="text-align:right; padding-right:25px;">GROSS PAY</th>
-                            <td><b> {{ number_format($requestData['deduction_tax'],2) }}</b></td>
-                            <td><b> {{ number_format($requestData['ytd_deduction_tax'],2) }}</b></td>
+                            <th style=" width:20%;"></th>
+                            <th style=" width:20%;"></th>
+                            <th style="width:20%;text-align:right;">GROSS PAY</th>
+                            <th style="width:17%; text-align:right;"><b> {{ number_format($requestData['deduction_tax'], 2) }}</b></th>
+                            <th style=" width:23%; text-align:right; padding-right:15px;"><b> {{ number_format($requestData['ytd_deduction_tax'], 2) }}</b></th>
                         </tr>
 
                     </table>
@@ -271,52 +277,66 @@
                 </div>
             </div>
 
+            <div class="row1 background" style="margin-top: 60px;">
+                <div class="column1">
+                    <table style="width:100%; ">
+                        <thead>
+                            <th style="width:20%;">Deductions</th>
+                            <th style="width:20%; text-align:left; padding-left:15px;" colspan="">Statuory</th>
+                            <th style="width:20%;"></th>
+                            <th style="width:20%;"></th>
+                            <th style="width:20%;"></th>
 
+                        </thead>
+
+                        @foreach ($requestData['taxes'] ?? [] as $key => $taxes)
+                            <tr>
+                                <td style="width:20%;"></td>
+                                <td style="width:25%; text-align:left; padding-left:15px;" colspan="" >{{ $taxes }}</td>
+                                <td style="width:20%;"></td>
+                                <td style="width:15%;text-align:right;"> {{ number_format($requestData['taxes_rate'][$key], 2) }}</td>
+                                <td style="text-align:right; padding-right:15px;width:20%; "> {{ number_format($requestData['taxes_ytd'][$key], 2) }}</td>
+
+                            </tr>
+                        @endforeach
+
+                        @foreach ($requestData['tax_deduction'] ?? [] as $key => $tax_deduction)
+                            <tr>
+                                <td style="width:20%;"></td>
+                                <td style="width:20%;text-align:left; padding-left:15px;" colspan="">{{ $tax_deduction }}</td>
+                                <td style="width:20%;"></td>
+                                <td style="text-align:right;width:20%; "> {{ number_format($requestData['period_tax_deduction'][$key], 2) }}</td>
+                                <td style="text-align:right; padding-right:15px;width:20%; "> {{ number_format($requestData['ytd_tax_deduction'][$key], 2) }}</td>
+                            </tr>
+                        @endforeach
+                        </br></br>
+                        <tr>
+                            <td style="width:20%;"></td>
+                            <td style="width:20%; text-align:center;" colspan="">Total Deduction</td>
+                            <td style="width:20%;"></td>
+                            <td style="text-align:right;width:20%; "><b> {{ number_format($requestData['period_gross_total'], 2) }}</b></td>
+                            <td style="text-align:right; padding-right:15px;width:20%; "><b> {{ number_format($requestData['ytd_gross_total'], 2) }}</b></td>
+                        </tr>
+                        </br>
+                        <tr>
+                            <td style="width:20%;"></td>
+                            <th style="width:20%; text-align:left; padding-left:15px;" colspan="">NET PAY</th>
+                            <th style="width:20%;"></th>
+                            <td style="text-align:right;width:20%; "><b>
+                                    {{ number_format($requestData['total_net_pay'], 2) }}</b></td>
+                            <td style="text-align:right; padding-right:15px;width:20%; "><b>
+                                    {{ number_format($requestData['total_ytd_net_pay'], 2) }}</b></td>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
         </section>
-        <table style="width:65%;margin-top:30px;">
-            <thead>
-                <th>Deductions</th>
-                <th colspan="3">Statuory</th>
-            </thead>
 
-            @foreach ($requestData['taxes'] ?? [] as $key => $taxes)
-            <tr>
-                <td></td>
-                <td style="text-align: left;">{{ $taxes }}</td>
-                <td> {{ number_format($requestData['taxes_rate'][$key],2) }}</td>
-                <td> {{ number_format($requestData['taxes_ytd'][$key],2) }}</td>
-            </tr>
-            @endforeach
-
-            @foreach ($requestData['tax_deduction'] ?? [] as $key => $tax_deduction)
-            <tr>
-                <td></td>
-                <td style="text-align: left;">{{ $tax_deduction }}</td>
-                <td> {{ number_format($requestData['period_tax_deduction'][$key],2) }}</td>
-                <td> {{ number_format($requestData['ytd_tax_deduction'][$key],2) }}</td>
-            </tr>
-            @endforeach
-            </br></br>
-            <tr>
-                <td></td>
-                <td>Total Deduction</td>
-                <td><b> {{ number_format($requestData['period_gross_total'],2) }}</b></td>
-                <td><b> {{ number_format($requestData['ytd_gross_total'],2) }}</b></td>
-            </tr>
-            </br>
-            <tr>
-                <td></td>
-                <th>NET PAY</th>
-                <td><b>
-                        {{ number_format($requestData['total_net_pay'],2) }}</b></td>
-                <td><b>
-                        {{ number_format($requestData['total_ytd_net_pay'],2) }}</b></td>
-            </tr>
-
-        </table>
         <section class="bg-img">
-            <table class="container" style=" margin-top:200px;padding: 0 0px 0px 0px;width:100%; ">
-                <div class="row" style="display: flex; display: flex;justify-content: space-between;padding: 0px 14px;">
+            <table class="container" style=" margin-top:60px;padding: 0 0px 0px 0px;width:100%; position: absolute; top:100px; ">
+                <div class="row"
+                    style="display: flex; display: flex;justify-content: space-between;padding: 0px 14px;">
                     <div style="width: 50%;float:left;padding-left:30px;">
                         <h6 style="font-size: 17px; margin-bottom: 0;">{{ $requestData['cname'] }}</h6>
                         <p style="font-size: 10px; margin: 0;"> {{ $requestData['emp_street_1'] }},</p>
@@ -349,7 +369,7 @@
                     </div>
                 </div>
             </table>
-            <table style="width: 90%; margin: 130px auto 0;">
+            <table style="width: 90%; margin: 0px auto 0; position: absolute; top:300px;">
                 <tr style="">
 
                     <td style=""></td>
@@ -362,9 +382,13 @@
 
                 <tr>
                     <td style="font-size:14px;text-align:left;  width:55%;">{{ $requestData['emp_name'] }}</td>
-                    <td style="text-align: center; font-size:13px; width:15%;">XXXXX{{ $requestData['account_number_last_4'] }}</td>
-                    <td style="text-align: center;font-size:13px; width:15%;">XXXXX{{ $requestData['transit_aba_number'] }}</td>
-                    <td style="text-align: right;font-size:13px; width:15%;">{{ $requestData['currency'] }} {{ number_format($requestData['total_net_pay'],2) }} </td></td>
+                    <td style="text-align: center; font-size:13px; width:15%;">
+                        XXXXX{{ $requestData['account_number_last_4'] }}</td>
+                    <td style="text-align: center;font-size:13px; width:15%;">
+                        XXXXX{{ $requestData['transit_aba_number'] }}</td>
+                    <td style="text-align: right;font-size:13px; width:15%;">{{ $requestData['currency'] }}
+                        {{ number_format($requestData['total_net_pay'], 2) }} </td>
+                    </td>
                 </tr>
             </table>
         </section>
