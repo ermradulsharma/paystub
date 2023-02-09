@@ -106,7 +106,7 @@
 
 .paystub {
     background-color: #252e58;
-    background-image: linear-gradient(96deg, #252e58e8 5%, #6361d3 46%, #2a5960 100%);
+    background-image: linear-gradient(96deg, #252e58e8 5%, #6361d3 46%, #07a96cd9 100%);
     width: 100%;
 }
 
@@ -126,6 +126,8 @@
     letter-spacing: 1px;
     font-weight: 200;
     font-family: 'Futura LT';
+    margin-bottom: 80px;
+
 
 }
 .Generate {
@@ -188,7 +190,7 @@
 
 .createSample {
     background-color: #6d8507;
-    background-image: linear-gradient(135deg, #6d8507 0%, #eeefd5 50%, #c1bef6 100%);
+    background-image: linear-gradient(135deg, #6d8507 0%, #eeab49 50%, #c1bef6 100%);
 }
 
 .WithPaystubX {
@@ -460,7 +462,5 @@
     font-weight: 800;
 
 }
-.top-gogle{
-    justify-content: center;
-}
+
 }
