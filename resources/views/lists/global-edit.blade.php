@@ -430,7 +430,7 @@
                                 <button type="button" class="statementbtn">EARNING</button>
                                 @foreach($invoice->earning ?? [] as $key => $earning)
                                 <div class="margin-bottom mb-3">
-                                    <input class="earnbtn {{$key==0 ? 'mt-4' : ''}} text-center" type="text" name="earning[]" value="{{$earning ?? null}}" id="earning_{{$key}}" data-id="{{$key}}">
+                                    <input class="earnbtn {{$key==0 ? 'mt-4' : ''}} text-center" type="text" name="earning[]" value="{{$earning ?? null}}" id="earning_00{{$key}}" data-id="00{{$key}}">
                                 </div>
                                 @endforeach
                                 <div id="addEarning"></div>
@@ -439,7 +439,7 @@
                                 <button type="button" class="statementbtn">RATE</button>
                                 @foreach($invoice->rate ?? [] as $key => $rate)
                                 <div class="margin-bottom mb-3">
-                                    <input type="text" name="rate[]" class="earnbtn {{$key==0 ? 'mt-4 removeData' : ''}} text-center calculation rate" value="{{$rate ?? null}}" id="rate_{{$key}}" data-id="{{$key}}">
+                                    <input type="text" name="rate[]" class="earnbtn {{$key==0 ? 'mt-4 removeData' : ''}} text-center calculation rate" value="{{$rate ?? null}}" id="rate_00{{$key}}" data-id="00{{$key}}">
                                 </div>
                                 @endforeach
                                 <div id="addRate"></div>
@@ -448,7 +448,7 @@
                                 <button type="button" class="statementbtn">HOURS</button>
                                 @foreach($invoice->hours ?? [] as $key => $hours)
                                 <div class="margin-bottom mb-3">
-                                    <input type="text" name="hours[]" class="earnbtn {{$key==0 ? 'mt-4 removeData' : ''}} text-center hours calculation" value="{{$hours ?? null}}" id="hours_{{$key}}" data-id="{{$key}}">
+                                    <input type="text" name="hours[]" class="earnbtn {{$key==0 ? 'mt-4 removeData' : ''}} text-center hours calculation" value="{{$hours ?? null}}" id="hours_00{{$key}}" data-id="00{{$key}}">
                                 </div>
                                 @endforeach
                                 <div id="addHours"></div>
@@ -457,7 +457,7 @@
                                 <button type="button" class="statementbtn">TOTAL</button>
                                 @foreach($invoice->total ?? [] as $key => $total)
                                 <div class="margin-bottom mb-3">
-                                    <input type="text" name="total[]" class="earnbtn {{$key==0 ? 'mt-4' : ''}} text-center total" value="{{$total ?? null}}" id="total_{{$key}}" data-id="{{$key}}" readonly="true">
+                                    <input type="text" name="total[]" class="earnbtn {{$key==0 ? 'mt-4' : ''}} text-center total" value="{{$total ?? null}}" id="total_00{{$key}}" data-id="00{{$key}}" readonly="true">
                                 </div>
                                 @endforeach
                                 <div id="addTotal"></div>
@@ -469,7 +469,7 @@
                                 </div>
                                 @foreach($invoice->period ?? [] as $key => $period)
                                 <div class="margin-bottom mb-3" style="padding-top: {{$key==0 ? '2px' : ''}}">
-                                    <input type="text" name="period[]" class="earnbtn  text-center gross_total" value="{{$period ?? null}}" id="period_{{$key}}" data-id="{{$key}}">
+                                    <input type="text" name="period[]" class="earnbtn  text-center gross_total" value="{{$period ?? null}}" id="period_00{{$key}}" data-id="00{{$key}}">
                                 </div>
                                 @endforeach
                                 <div id="addGrossTotal"></div>
@@ -495,7 +495,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <div class=" col-lg-2  col-md-4 mt-2 margin-bottom">
+                            <div class="col-xl-2 col-lg-3 col-md-4 mt-2 margin-bottom">
                                 <button type="button" class="add_button earnbtn" type="add_earning" id="add_earning" style="font-size: 18px !important;"><i class="fa fa-plus-circle pr-2" style="font-size:24px;color:green"></i>Add Earning</button>
                             </div>
                         </div>
@@ -637,7 +637,7 @@
                     </div>
                 </div>
             </div>
-
+            <input type="hidden" name="days_number" id="days_number" value="{{$invoice->days_number ?? 0}}" hidden>
 
             <div class="row mt-3">
                 <div class="col-12 text-center px-0">
