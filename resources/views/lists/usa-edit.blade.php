@@ -45,9 +45,9 @@
         @csrf
         <div>
             <div class="row mb-3">
-                <div class="col-md-12">
-                    <div class=" box-usa">
-                        <h5>Company Info</h5>
+                <div class="col-md-12 px-0">
+                    <div class="box-usa">
+                        <h5 class="px-3">Company Info</h5>
                         <div class="row mb-3 ">
                             <div class="col-md-6 mt-1">
                                 <div>
@@ -122,7 +122,7 @@
         <div>
             <h5>Choose Template</h5>
             <div class="row mb-3">
-                <div class="col-md-12">
+                <div class="col-md-12 px-0">
                     <div class=" box-usa">
                         <div class="d-flex justify-content-between mb-3 flex">
                             <div class="col-md-5 col-lg-6 col-sm-12 mt-5  text-center">
@@ -172,7 +172,7 @@
         <div>
             <h5>Employee Info</h5>
             <div class="row mb-3">
-                <div class="col-md-12">
+                <div class="col-md-12 px-0">
                     <div class=" box-usa">
                         <div class="row mb-3">
                             <div class="col-md-4 mt-4">
@@ -263,7 +263,7 @@
         <div>
             <h5>Employee Basic Info</h5>
             <div class="row mb-3">
-                <div class="col-md-12">
+                <div class="col-md-12 px-0">
                     <div class=" box-usa">
                         <div class="row mb-3">
                             <div class="col-md-3 mt-4">
@@ -390,7 +390,7 @@
                 <h5>Earning statement</h5>
             </div>
             <div class="row mb1">
-                <div class="col-md-12">
+                <div class="col-md-12 px-0">
                     <div class=" box-usa">
                         <div class="row mb-3">
                             <div class="col-md-3 mt-4">
@@ -428,83 +428,75 @@
                             </div>
                         </div>
 
+                        <!-- =============================== -->
                         <div class="row ">
-                            <div class=" col-lg-2 col-md-2 margin-bottom ">
+                            <div class=" col-lg-2 col-md-2 margin-bottom  mt-2">
                                 <button type="button" class="statementbtn">EARNING</button>
+                                @foreach($invoice->earning ?? [] as $key => $earning)
+                                <div class="margin-bottom">
+                                    <input class="earnbtn {{$key==0 ? 'mt-4' : ''}} mb-3 text-center" type="text" name="earning[]" value="{{$earning ?? null}}" id="earning_00{{$key}}" data-id="00{{$key}}">
+                                </div>
+                                @endforeach
+                                <div id="addEarning"></div>
                             </div>
-                            <div class=" col-lg-2  col-md-2 margin-bottom ">
+                            <div class="col-lg-2  col-md-2 margin-bottom mt-2  ">
                                 <button type="button" class="statementbtn">RATE</button>
+                                @foreach($invoice->rate ?? [] as $key => $rate)
+                                <div class="margin-bottom">
+                                    <input type="text" name="rate[]" class="earnbtn {{$key==0 ? 'mt-4' : ''}} mb-3 text-center calculation rate" value="{{$rate ?? null}}" id="rate_00{{$key}}" data-id="00{{$key}}">
+                                </div>
+                                @endforeach
+                                <div id="addRate"></div>
                             </div>
-                            <div class=" col-lg-2  col-md-2 margin-bottom ">
+                            <div class=" col-lg-2  col-md-2 margin-bottom mt-2  ">
                                 <button type="button" class="statementbtn">HOURS</button>
+                                @foreach($invoice->hours ?? [] as $key => $hours)
+                                <div class="margin-bottom">
+                                    <input type="text" name="hours[]" class="earnbtn {{$key==0 ? 'mt-4' : ''}} mb-3 text-center hours calculation" value="{{$hours ?? null}}" id="hours_00{{$key}}" data-id="00{{$key}}">
+                                </div>
+                                @endforeach
+                                <div id="addHours"></div>
                             </div>
-                            <div class=" col-lg-2 col-md-2 margin-bottom ">
+                            <div class=" col-lg-2 col-md-2 margin-bottom mt-2  ">
                                 <button type="button" class="statementbtn">TOTAL</button>
+                                @foreach($invoice->total ?? [] as $key => $total)
+                                <div class="margin-bottom">
+                                    <input type="text" name="total[]" class="earnbtn {{$key==0 ? 'mt-4' : ''}} mb-3 text-center total" value="{{$total ?? null}}" id="total_00{{$key}}" data-id="00{{$key}}" readonly="true">
+                                </div>
+                                @endforeach
+                                <div id="addTotal"></div>
                             </div>
-                            <div class=" col-lg-2  col-md-2 margin-bottom">
-                                <button type="button" class="statementbtn">THIS PERIOD</button>
-                                <p class="p-0 m-0 text-center" style="font-family: serif;font-size: 14px;"> Total
-                                    Gross </p>
+                            <div class=" col-lg-2  col-md-2 margin-bottom mt-2">
+                                <div class="margin-bottom">
+                                    <button type="button" class="statementbtn">THIS PERIOD</button>
+                                    <p class="p-0 m-0 text-center" style="font-family: serif;font-size: 14px;"> Total Gross </p>
+                                </div>
+                                @foreach($invoice->period ?? [] as $key => $period)
+                                <div class="margin-bottom" style="padding-top: {{$key==0 ? '2px' : ''}}">
+                                    <input type="text" name="period[]" class="earnbtn {{$key==0 ? 'mb-3' : ''}}  text-center gross_total" value="{{$period ?? null}}" id="period_00{{$key}}" data-id="00{{$key}}">
+                                </div>
+                                @endforeach
+                                <div id="addGrossTotal"></div>
                             </div>
-                            <div class=" col-lg-2  col-md-2 margin-bottom ">
-                                <button type="button" class="statementbtn">YTD TOTAL</button>
-                                <p class="p-0 m-0 text-center" style="font-family: serif;font-size:14px;">YTD Total
-                                    Gross</p>
+                            <div class=" col-lg-2  col-md-2 margin-bottom mt-2  ">
+                                <div class="margin-bottom">
+                                    <button type="button" class="statementbtn">YTD TOTAL</button>
+                                    <p class="p-0 m-0 text-center usap" style="font-family: serif;font-size:14px;">YTD Total Gross</p>
+                                </div>
+                                @foreach($invoice->ytd_total ?? [] as $key => $ytd_total)
+                                <div class="margin-bottom" style="padding-top: {{$key==0 ? '2px' : ''}}">
+                                    <input type="text" name="ytd_total[]" class="earnbtn {{$key==0 ? 'mb-3' : ''}}  text-center ytd_total" value="{{$ytd_total ?? null}}" id="ytd_total_00{{$key}}" data-id="00{{$key}}">
+                                </div>
+                                @endforeach
+                                <div id="addYtdTotal"></div>
                             </div>
                         </div>
+                        <!-- //============================= -->
 
-                        @foreach($invoice->earning ?? [] as $key => $earning)
-                        <div class="row mb-3 mt-">
-                            <div class=" col-lg-2 col-md-2 margin-bottom">
-                                <div>
-                                    <input class="earnbtn text-center" type="text" name="earning[]" value="{{$earning ?? null}}" id="earning_00{{$key}}" data-id="00{{$key}}">
-                                </div>
-
-                            </div>
-
-                            <div class=" col-lg-2 col-md-2 margin-bottom ">
-                                <div>
-                                    <input type="text" name="rate[]" value="{{ $invoice->rate[$key] ?? null }}" class="earnbtn text-center calculation rate" id="rate_00{{$key}}" data-id="00{{$key}}">
-                                </div>
-
-                            </div>
-
-                            <div class=" col-lg-2  col-md-2 margin-bottom ">
-                                <div>
-                                    <input type="text" name="hours[]" value="{{ $invoice->hours[$key] ?? null }}" class="earnbtn text-center hours calculation" id="hours_00{{$key}}" data-id="00{{$key}}">
-                                </div>
-
-                            </div>
-
-                            <div class=" col-lg-2  col-md-2 margin-bottom">
-                                <div>
-                                    <input type="text" name="total[]" value="{{ $invoice->total[$key] ?? null }}" class="earnbtn text-center" id="total_00{{$key}}" data-id="00{{$key}}">
-                                </div>
-
-                            </div>
-
-                            <div class=" col-lg-2 col-md-2 margin-bottom">
-                                <div>
-                                    <input type="text" name="period[]" value="{{ $invoice->period[$key] ?? null }}" class="earnbtn text-center gross_total" id="period_00{{$key}}" data-id="00{{$key}}">
-                                </div>
-
-                            </div>
-
-                            <div class=" col-lg-2 col-md-2 margin-bottom">
-                                <div>
-                                    <input type="text" name="ytd_total[]" value="{{ $invoice->ytd_total[$key] ?? null }}" class="earnbtn text-center ytd_total" id="ytd_total_00{{$key}}" data-id="00{{$key}}">
-                                </div>
-                            </div>
-                        </div>
-                        @endforeach
-
-                        <div class=" col-lg-2 col-md-2 margin-bottom">
+                        <div class="d-none">
                             <input type="text" name="period_gross_total" value="{{$invoice->period_gross_total ?? ''}}" class="earnbtn text-center period_gross_total" value="" id="period_gross_total" hidden>
-                        </div>
-                        <div class=" col-lg-2 col-md-2 margin-bottom">
                             <input type="text" name="ytd_gross_total" value="{{$invoice->ytd_gross_total ?? ''}}" class="earnbtn text-center ytd_gross_total" value="" id="ytd_gross_total" hidden>
                         </div>
-                        <div class="field_wrapper"> </div>
 
                         <div class="row mb-3">
                             <div class=" col-lg-2  col-md-4 mt-2 margin-bottom">
@@ -537,7 +529,7 @@
                             </div>
                         </div>
                         @endforeach
-                        <div id="add_deduction" class="my-3">
+                        <div class="my-3">
                             @foreach ($invoice->tax_deduction ?? [] as $key => $tax_deduction)
                             @php(@$deduction_period_tax_other += $invoice->period_tax_deduction[$key] ?? 0)
                             @php(@$ytd_deduction_period_tax_other += $invoice->ytd_tax_deduction[$key] ?? 0)
@@ -550,112 +542,115 @@
                                 <div class="col-md-2"><input type="text" name="ytd_tax_deduction[]" value="{{$invoice->ytd_tax_deduction[$key] ?? 0}}" class="earnbtn text-center ytd_tax tax add_ytd_deduction" id="taxes_ytd_00{{$key+1}}" data-id="00{{$key+1}}"></div>
                             </div>
                             @endforeach
-                        </div>
-                        <div class=" col-lg-2 col-md-2 margin-bottom">
-                            <input type="text" name="" class="earnbtn text-center deduction_period_tax" value="{{$deduction_period_tax ?? 0}}" id="deduction_period_tax" hidden>
-                            <input type="text" name="" class="earnbtn text-center deduction_period_tax_other" value="{{$deduction_period_tax_other ?? 0}}" id="deduction_period_tax_other" hidden>
-                        </div>
-                        <div class=" col-lg-2 col-md-2 margin-bottom">
-                            <input type="text" name="" class="earnbtn text-center ytd_deduction_period_tax" value="{{$ytd_deduction_period_tax ?? 0}}" id="ytd_deduction_period_tax" hidden>
-                            <input type="text" name="" class="earnbtn text-center ytd_deduction_period_tax_other" value="{{$ytd_deduction_period_tax_other ?? 0}}" id="ytd_deduction_period_tax_other" hidden>
-                        </div>
-                        <div class="row my-3">
-                            <div class="col-md-4 col-lg-3">
-                                <button type="button" class="add_deduction earnbtn" type="add_deduction" id="add_deduction"><i class="fa fa-plus-circle pr-5" style="font-size:24px;color:green"></i>Add Deduction</button>
+                            <div id="add_deduction">
                             </div>
+                            <div class="d-none">
+                                <input type="text" name="" class="earnbtn text-center deduction_period_tax" value="{{$deduction_period_tax ?? 0}}" id="deduction_period_tax" hidden>
+                                <input type="text" name="" class="earnbtn text-center deduction_period_tax_other" value="{{$deduction_period_tax_other ?? 0}}" id="deduction_period_tax_other" hidden>
+                                <input type="text" name="" class="earnbtn text-center ytd_deduction_period_tax" value="{{$ytd_deduction_period_tax ?? 0}}" id="ytd_deduction_period_tax" hidden>
+                                <input type="text" name="" class="earnbtn text-center ytd_deduction_period_tax_other" value="{{$ytd_deduction_period_tax_other ?? 0}}" id="ytd_deduction_period_tax_other" hidden>
+                            </div>
+                            <div class="row my-3">
+                                <div class="col-md-4 col-lg-3">
+                                    <button type="button" class="add_deduction earnbtn" type="add_deduction"><i class="fa fa-plus-circle pr-5" style="font-size:24px;color:green"></i>Add Deduction</button>
+                                </div>
 
-                            <div class="col-md-1"></div>
-                            <div class="col-md-2 col-lg-3"></div>
-                            <div class="col-md-1"></div>
-                            <div class="col-md-3"></div>
-                            <div class="col-md-3"></div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-md-4 col-lg-3">
-                                <input class="earnbtn text-center" type="text" value="Taxes/Deduction Tax">
+                                <div class="col-md-1"></div>
+                                <div class="col-md-2 col-lg-3"></div>
+                                <div class="col-md-1"></div>
+                                <div class="col-md-3"></div>
+                                <div class="col-md-3"></div>
                             </div>
-                            <div class="col-md-1"></div>
-                            <div class="col-md-2 col-lg-3"></div>
-                            <div class="col-md-1"></div>
-                            <div class="col-md-2">
-                                <input type="text" name="deduction_tax" value="{{$invoice->deduction_tax ?? ''}}" class="earnbtn deduction_tax text-center" value="" />
+                            <div class="row mb-3">
+                                <div class="col-md-4 col-lg-3">
+                                    <p class="p-0 m-0 text-center" style="font-family: serif;">&nbsp;</p>
+                                    <input class="earnbtn text-center" type="button" value="Taxes/Deduction Tax">
+                                </div>
+                                <div class="col-md-1"></div>
+                                <div class="col-md-2 col-lg-3"></div>
+                                <div class="col-md-1"></div>
+                                <div class="col-md-2">
+                                    <p class="p-0 m-0 text-center" style="font-family: serif;">Current Gross</p>
+                                    <input type="text" name="deduction_tax" value="{{$invoice->deduction_tax ?? ''}}" class="earnbtn deduction_tax text-center" value="" />
+                                </div>
+                                <div class="col-md-2">
+                                    <p class="p-0 m-0 text-center" style="font-family: serif;">YTD Gross</p>
+                                    <input type="text" name="ytd_deduction_tax" value="{{$invoice->ytd_deduction_tax ?? ''}}" class="earnbtn ytd_deduction_tax text-center" value="" />
+                                </div>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" name="ytd_deduction_tax" value="{{$invoice->ytd_deduction_tax ?? ''}}" class="earnbtn ytd_deduction_tax text-center" value="" />
-                            </div>
-                        </div>
-                        <div class="row mb-3 mt-5">
-                            <div class="col-md-4 col-lg-3">
-                                <button type="button" class="netpaybtn net_pay">Net Pay</button>
-                            </div>
-                            <div class="col-md-1"></div>
-                            <div class="col-md-2 col-lg-3"></div>
-                            <div class="col-md-1"></div>
-                            <div class="col-md-2">
-                                <p class="p-0 m-0 text-center" style="font-family: serif;">Net Pay</p>
-                                <input name="total_net_pay" value="{{$invoice->total_net_pay ?? ''}}" class="earnbtn text-center total_net_pay" value="">
-                            </div>
-                            <div class="col-md-2">
-                                <p class="p-0 m-0 text-center" style="font-family: serif;">YTD Net pay</p>
-                                <input name="total_ytd_net_pay" value="{{$invoice->total_ytd_net_pay ?? ''}}" class="earnbtn text-center total_ytd_net_pay" value="">
+                            <div class="row mb-3 mt-5">
+                                <div class="col-md-4 col-lg-3">
+                                    <p class="p-0 m-0 text-center" style="font-family: serif;">&nbsp;</p>
+                                    <button type="button" class="netpaybtn net_pay">Net Pay</button>
+                                </div>
+                                <div class="col-md-1"></div>
+                                <div class="col-md-2 col-lg-3"></div>
+                                <div class="col-md-1"></div>
+                                <div class="col-md-2">
+                                    <p class="p-0 m-0 text-center" style="font-family: serif;">Net Pay</p>
+                                    <input name="total_net_pay" value="{{$invoice->total_net_pay ?? ''}}" class="earnbtn text-center total_net_pay" value="">
+                                </div>
+                                <div class="col-md-2">
+                                    <p class="p-0 m-0 text-center" style="font-family: serif;">YTD Net pay</p>
+                                    <input name="total_ytd_net_pay" value="{{$invoice->total_ytd_net_pay ?? ''}}" class="earnbtn text-center total_ytd_net_pay" value="">
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div>
-            <h5>Template Elements</h5>
-            <div class="row mb-3">
-                <div class="col-md-12">
-                    <div class=" box-usa">
-                        <div class="row mb-3">
-                            <div class="col-lg-2 col-md-4 col-sm-6">
-                                <p class="p-0 m-0 " style="font-family: serif;">CO<span class="redColor">*</span></p>
-                                <input class="earnbtn text-center " value="{{$invoice->co_number ?? ''}}" name="co_number"></input>
-                            </div>
-                            <div class="col-lg-2 col-md-4 col-sm-6">
-                                <p class="p-0 m-0 text-center" style="font-family: serif;">FILE.<span class="redColor">*</span></p>
-                                <input class="earnbtn text-center " value="{{$invoice->file_number ?? ''}}" name="file_number"></input>
-                            </div>
-                            <div class="col-lg-2 col-md-4 col-sm-6">
-                                <p class="p-0 m-0 " style="font-family: serif;">CLOCK VCHR.<span class="redColor">*</span>
-                                </p>
-                                <input class="earnbtn text-center " value="{{$invoice->clock_vchr_number ?? ''}}" name="clock_vchr_number"></input>
-                            </div>
-                            <div class="col-lg-2 col-md-4 col-sm-6">
-                                <p class="p-0 m-0 " style="font-family: serif;">Advice Number:<span class="redColor">*</span></p>
-                                <input class="earnbtn text-center " value="{{$invoice->advice_number ?? ''}}" name="advice_number"></input>
-                            </div>
-                            <div class="col-lg-2 col-md-4 col-sm-6">
-                                <p class="p-0 m-0 " style="font-family: serif;">Account Number LAST<span class="redColor">*</span></p>
-                                <input class="earnbtn text-center " value="{{$invoice->account_number_last_4 ?? ''}}" name="account_number_last_4"></input>
-                            </div>
-                            <div class="col-lg-2 col-md-4 col-sm-6">
-                                <p class="p-0 m-0 " style="font-family: serif;">Transit ABA<span class="redColor">*</span>
-                                </p>
-                                <input class="earnbtn text-center " value="{{$invoice->transit_aba_number ?? ''}}" name="transit_aba_number"></input>
+            <div class="tempElemant d-none">
+                <h5>Template Elements</h5>
+                <div class="row mb-3">
+                    <div class="col-md-12 px-0">
+                        <div class=" box-usa">
+                            <div class="row mb-3">
+                                <div class="col-lg-2 col-md-4 col-sm-6">
+                                    <p class="p-0 m-0 " style="font-family: serif;">CO<span class="redColor">*</span></p>
+                                    <input class="earnbtn text-center " value="{{$invoice->co_number ?? ''}}" name="co_number"></input>
+                                </div>
+                                <div class="col-lg-2 col-md-4 col-sm-6">
+                                    <p class="p-0 m-0 text-center" style="font-family: serif;">FILE.<span class="redColor">*</span></p>
+                                    <input class="earnbtn text-center " value="{{$invoice->file_number ?? ''}}" name="file_number"></input>
+                                </div>
+                                <div class="col-lg-2 col-md-4 col-sm-6">
+                                    <p class="p-0 m-0 " style="font-family: serif;">CLOCK VCHR.<span class="redColor">*</span>
+                                    </p>
+                                    <input class="earnbtn text-center " value="{{$invoice->clock_vchr_number ?? ''}}" name="clock_vchr_number"></input>
+                                </div>
+                                <div class="col-lg-2 col-md-4 col-sm-6">
+                                    <p class="p-0 m-0 " style="font-family: serif;">Advice Number:<span class="redColor">*</span></p>
+                                    <input class="earnbtn text-center " value="{{$invoice->advice_number ?? ''}}" name="advice_number"></input>
+                                </div>
+                                <div class="col-lg-2 col-md-4 col-sm-6">
+                                    <p class="p-0 m-0 " style="font-family: serif;">Account Number LAST<span class="redColor">*</span></p>
+                                    <input class="earnbtn text-center " value="{{$invoice->account_number_last_4 ?? ''}}" name="account_number_last_4"></input>
+                                </div>
+                                <div class="col-lg-2 col-md-4 col-sm-6">
+                                    <p class="p-0 m-0 " style="font-family: serif;">Transit ABA<span class="redColor">*</span>
+                                    </p>
+                                    <input class="earnbtn text-center " value="{{$invoice->transit_aba_number ?? ''}}" name="transit_aba_number"></input>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
 
-        <div>
-            <div class="mb-4 d-flex" style="justify-content: space-between; align-items: center;">
-                <div class="text-left mt-1">
-                    <button class="previewbtn text-capitalize viewTempTemplate" type="button" id="button1">Preview
-                        Your Paystub <i class="fa fa-eye" style="font-size: 30px; margin-left: 7px;"></i></button>
-                </div>
-                <div class="text-right mt-1" style="margin-right:30px;">
-                    <button type="button" class="emailbtn text-capitalize registerBtn {{ Auth::user() ? 'd-none' : 'd-block' }}"> <i class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL PAYSTUB <i class="fa fa-download ml-4" style="font-size:24px"></i></button>
-                    <button type="button" class="emailbtn text-capitalize sendMailButton {{ Auth::user() ? 'd-block' : 'd-none' }}"> <i class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL PAYSTUB <i class="fa fa-download ml-4" style="font-size:24px"></i></button>
+            <div>
+                <div class="mb-4 d-flex" style="justify-content: space-between; align-items: center;">
+                    <div class="text-left mt-1">
+                        <button class="previewbtn text-capitalize viewTempTemplate" type="button" id="button1">Preview
+                            Your Paystub <i class="fa fa-eye" style="font-size: 30px; margin-left: 7px;"></i></button>
+                    </div>
+                    <div class="text-right mt-1" style="margin-right:30px;">
+                        <button type="button" class="emailbtn text-capitalize registerBtn {{ Auth::user() ? 'd-none' : 'd-block' }}"> <i class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL PAYSTUB <i class="fa fa-download ml-4" style="font-size:24px"></i></button>
+                        <button type="button" class="emailbtn text-capitalize sendMailButton {{ Auth::user() ? 'd-block' : 'd-none' }}"> <i class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL PAYSTUB <i class="fa fa-download ml-4" style="font-size:24px"></i></button>
+                    </div>
                 </div>
             </div>
-        </div>
 
     </form>
 </div>

@@ -6,62 +6,40 @@ var arr = [];
 $(document).ready(function () {
     var maxField = 12;
     var addButton = $("#add_earning");
-    var wrapper_1 = $(".field_wrapper");
     var addDeduction = $(".add_deduction");
-    var wrapper_2 = $("#add_deduction");
+    var wrapper_2 = $('#add_deduction');
     var net_pay = $(".net_pay");
     var x = 1;
     var i = 1;
 
     $(addButton).click(function () {
-        var fieldHTML =
-            '<div class="row mb-3">' +
-            '<div class="col-md-2 ">' +
-            '<input  id="earning_' +
-            i +
-            '" data-id="' +
-            i +
-            '" name="earning[]" class="earnbtn text-center" value="">' +
-            "</div>" +
-            '<div class="col-md-2 ">' +
-            '<input type="number" id="rate_' +
-            i +
-            '" data-id="' +
-            i +
-            '" name="rate[]" class="earnbtn calculation text-center rate" value="">' +
-            "</div>" +
-            '<div class="col-md-2 ">' +
-            '<input type="number" id="hours_' +
-            i +
-            '" data-id="' +
-            i +
-            '" name="hours[]" class="earnbtn calculation text-center hours" value="">' +
-            "</div>" +
-            '<div class="col-md-2">' +
-            '<input type="number" id="total_' +
-            i +
-            '" data-id="' +
-            i +
-            '" name="total[]" class="earnbtn text-center" value="">' +
-            "</div>" +
-            '<div class="col-md-2">' +
-            '<input type="number" id="period_' +
-            i +
-            '" data-id="' +
-            i +
-            '" name="period[]" class="earnbtn gross_total text-center" value="">' +
-            "</div>" +
-            '<div class="col-md-2 ">' +
-            '<input type="number" id="ytd_total_' +
-            i +
-            '" data-id="' +
-            i +
-            '" name="ytd_total[]" class="earnbtn ytd_total text-center" value="">' +
-            "</div>" +
-            "</div>";
+        var addEarning =`<div class="margin-bottom">
+                            <input class="earnbtn mb-3 text-center" type="text" name="earning[]" value="" id="earning_`+i+`" data-id="`+i+`">
+                        </div>`;
+        var addRate =`<div class="margin-bottom">
+                        <input type="text" name="rate[]" class="earnbtn mb-3 text-center calculation rate" value="" id="rate_`+i+`" data-id="`+i+`">
+                    </div>`;
+        var addHours =`<div class="margin-bottom">
+                        <input type="text" name="hours[]" class="earnbtn mb-3 text-center hours calculation" value="" id="hours_`+i+`" data-id="`+i+`">
+                    </div>`;
+        var addTotal = `<div class="margin-bottom">
+                        <input type="text" name="total[]" class="earnbtn mb-3 text-center total" value="" id="total_`+i+`" data-id="`+i+`" readonly="true">
+                    </div>`;
+var addGrossTotal = `<div class="margin-bottom"">
+                        <input type="text" name="period[]" class="earnbtn mb-3 text-center gross_total" value="" id="period_`+i+`" data-id="`+i+`">
+                    </div>`;
+    var addYtdTotal =`<div class="margin-bottom" style="padding-top: 2px;">
+                        <input type="text" name="ytd_total[]" class="earnbtn mb-3 text-center ytd_total" value="" id="ytd_total_`+i+`" data-id="`+i+`">
+                    </div>`;
         if (x < maxField) {
             x++;
-            $(wrapper_1).append(fieldHTML);
+            $("#addEarning").append(addEarning);
+            $("#addRate").append(addRate);
+            $("#addHours").append(addHours);
+            $("#addTotal").append(addTotal);
+            $("#addGrossTotal").append(addGrossTotal);
+            $("#addYtdTotal").append(addYtdTotal);
+            $("#add_deduction").append(add_deduction);
         }
         i++;
 
@@ -92,14 +70,14 @@ $(document).ready(function () {
             '<div class="col-md-3"> </div>' +
             '<div class="col-md-1"> </div>' +
             '<div class="col-md-2">' +
-            '<input type="number" name="period_tax_deduction[]" class="earnbtn text-center tax_deduction tax" id="taxes_0' +
+            '<input type="text" name="period_tax_deduction[]" class="earnbtn text-center tax_deduction tax" id="taxes_0' +
             i +
             '" value="" data-id="' +
             i +
             '"/>' +
             "</div>" +
             '<div class="col-md-2">' +
-            '<input type="number" name="ytd_tax_deduction[]" class="earnbtn text-center ytd_tax tax add_ytd_deduction" id="taxes_ytd_0' +
+            '<input type="text" name="ytd_tax_deduction[]" class="earnbtn text-center ytd_tax tax add_ytd_deduction" id="taxes_ytd_0' +
             i +
             '" value="" data-id="' +
             i +
