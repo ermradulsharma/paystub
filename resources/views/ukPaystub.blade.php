@@ -97,7 +97,7 @@
                     <div class=" box-usa">
                         <div class="row mb-3" style="align-items: end;">
                             <div class="col-md-6 mt-1">
-                                <h5>Company Info</h5>
+                               
                                 <label for="cname" class="lable">EMPLOYER (COMPANY) NAME <span style="color:red;">*</span> </label>
                                 <input type="text" id="cname" name="cname" placeholder="Your Employer & Company Name" class="w-100 p-2 text-center" style="font-size:14px;">
                             </div>
@@ -121,7 +121,7 @@
                     <div class=" box-usa">
                         <div class="row mb-3" style="align-items:end;">
                             <div class="col-md-6 mt-4">
-                                <h5>Employee info</h5>
+                            
                                 <label for="emp_name" class="lable">EMPLOYEE NAME <span style="color:red;">*</span></label>
                                 <input type="text" id="emp_name" name="emp_name" placeholder="Your Full  Name" class="w-100 p-2 text-center" style="font-size:14px;">
                             </div>
@@ -134,7 +134,7 @@
                         </div>
                         <div class="row mb-3">
                             <div class="col-md-12 mt-4">
-                                <label for="emp_street_1" class="lable">EMPLOYER ADDRESS 1 <span style="color:red;">*</span></label>
+                                <label for="emp_street_1" class="lable">EMPLOYEE ADDRESS 1 <span style="color:red;">*</span></label>
                                 <input type="text" id="emp_street_1" name="emp_street_1" placeholder="5 Throgmorton St,London" class="w-100 p-2 text-center" style="font-size:14px;">
                             </div>
                             <div class="col-md-12 mt-4">
@@ -152,11 +152,11 @@
                                     </div>
 
                                     <div class="col-md-4 ">
-                                        <label for="pay_date" class="lable text-center"> PAY DATE <span style="color:red;">*</span></label>
+                                        <label for="pay_date" class="lable text-center"> PAY END <span style="color:red;">*</span></label>
                                         <input type="date" id="pay_date" name="pay_date" placeholder="12-12-2023" class="w-100 p-2 text-center" style="font-size:14px;">
                                     </div>
                                     <div class="col-md-4 ">
-                                        <label for="pay_end" class="lable">PAY END <span style="color:red;">*</span></label>
+                                        <label for="pay_end" class="lable">PAY DATE <span style="color:red;">*</span></label>
                                         <input type="date" id="pay_end" name="pay_end" placeholder="2-20-2023" class="w-100 p-2 text-center" style="font-size:14px;">
                                     </div>
                                 </div>
