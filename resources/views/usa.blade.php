@@ -35,7 +35,7 @@
     </div>
 </div>
 <!-- Modal End -->
-<div class="container mt-2" style="max-width:1450px;">
+<div class="container mt-2 px-0" style="max-width:1450px;">
     <form id="submit_form_paystubx_id" action="javascript:void()" method="get">
         @csrf
         <input type="hidden" name="form_type" value="usa" hidden>
@@ -121,7 +121,7 @@
             <div class="row mb-3">
                 <div class="col-md-12">
                     <div class=" box-usa">
-                        <div class="d-flex justify-content-between mb-3 flex">
+                        <div class="d-flex justify-content-between mb-3 flex w-100">
                             <div class="col-md-5 col-lg-6 col-sm-12 mt-5  text-center">
                                 <h6 style="" class="base">BASIC TEMPLATES</h6>
                                 <div class="mt-4">
@@ -129,11 +129,9 @@
                                         <select name="basic_temp" class="form-control dropdown1 text-center bt_id small-font basicTemplate" style="margin-right:10px; font-size:18px;">
                                             <option value=""> --- Select Basic Templates --- </option>
                                             @foreach ($basicType as $data)
-                                            @if ($data->state == 'usa' && $data->type == 'basic')
                                             <option value="{{ $data->title ?? '' }}" data-src="{{ $data->images->file ?? '' }}" data-status="{{ $data->template_element }}">
                                                 {{ $data->name }}
                                             </option>
-                                            @endif
                                             @endforeach
                                         </select>
                                         <i data-src="{{ $data->images->file ?? '' }}" class="fa fa-eye-slash basicTem uk-eye" style="font-size: 39px;" role="button"></i>
@@ -151,11 +149,9 @@
                                         <select name="advance_temp" class="form-control text-center dropdown1 at_id small-font advanceTemplate" style="margin-right:10px; font-size:18px;">
                                             <option value=""> --- Select Advance Template --- </option>
                                             @foreach ($advanceType as $data)
-                                            @if ($data->state == 'usa' && $data->type == 'advance')
                                             <option value="{{ $data->title ?? '' }}" data-src="{{ $data->images->file ?? '' }}" data-status="{{ $data->template_element }}">
                                                 {{ $data->name ?? '' }}
                                             </option>
-                                            @endif
                                             @endforeach
                                         </select>
                                         <i data-src="{{ $data->images->file ?? '' }}" class="fa fa-eye-slash advanceTem uk-eye" role="button" style="font-size: 39px;"></i>
@@ -488,35 +484,35 @@
 
                         <div class="row mb-3">
                             <div class=" col-lg-2  col-md-4 mt-2 margin-bottom">
-                                <button type="button" class="add_button earnbtn" id="add_earning"><i class="fa fa-plus-circle pr-2" style="font-size:24px;color:green"></i>Add Earning</button>
+                                <button type="button" class="add_button earnbtn" id="add_earning" style="font-size: 18px !important;"><i class="fa fa-plus-circle pr-2" style="font-size:24px;color:green"></i>Add Earning</button>
                             </div>
                         </div>
 
                         <div class="row mt-5">
-                            <div class="col-md-3">
-                                <button type="button" class="createbtn ">DEDUCTIONS</button>
+                            <div class="col-md-4 col-lg-3">
+                                <button type="button" class="createbtn w-100 py-0">DEDUCTIONS</button>
                                 <p style="margin: 0;">Tap On padlocak to change text</p>
                             </div>
                         </div>
 
                         @foreach ($deduction as $key => $item)
-                        <div class="row mb-3">
-                            <div class="col-md-4 col-lg-3">
+                        <div class="row">
+                            <div class="col-md-4 col-lg-3 mb-3">
                                 <img src="{{ asset('images/lock.png') }}" class="earnbtn2">
                                 <input class="earnbtn text-center taxes" name="taxes[]" data-id="{{ $key }}" data-value="{{ $item->price }}" value="{{ $item->title }}" data-value="{{ $item->title }}">
                             </div>
                             <div class="col-md-1 col-lg-1"></div>
                             <div class="col-md-2 col-lg-3"></div>
                             <div class="col-md-1 col-lg-1"></div>
-                            <div class="col-md-2 col-lg-2">
+                            <div class="col-md-2 col-lg-2 mb-3">
                                 <input type="text" name="taxes_rate[]" class="earnbtn text-center manualTaxTotal" id="taxes_{{ $key }}" value="" data-value="" />
                             </div>
-                            <div class="col-md-2 col-lg-2">
+                            <div class="col-md-2 col-lg-2 mb-3">
                                 <input type="text" name="taxes_ytd[]" class="earnbtn text-center manualTaxTotal" id="taxes_ytd_{{ $key }}" value="" data-value="" />
                             </div>
                         </div>
                         @endforeach
-                        <div id="add_deduction" class="my-3"></div>
+                        <div id="add_deduction" class="mb-3"></div>
                         <div class=" col-lg-2 col-md-2 margin-bottom">
                             <input type="text" name="" class="earnbtn text-center deduction_period_tax" value="" id="deduction_period_tax" hidden>
                             <input type="text" name="" class="earnbtn text-center deduction_period_tax_other" value="" id="deduction_period_tax_other" hidden>
@@ -526,40 +522,40 @@
                             <input type="text" name="" class="earnbtn text-center ytd_deduction_period_tax_other" value="" id="ytd_deduction_period_tax_other" hidden>
                         </div>
                         <div class="row my-3">
-                            <div class="col-md-4 col-lg-3 mb-5">
-                                <button type="button" class="add_deduction earnbtn"><i class="fa fa-plus-circle pr-5" style="font-size:24px;color:green"></i>Add Deduction</button>
+                            <div class="col-md-4 col-lg-3">
+                                <button type="button" class="add_deduction earnbtn" style="font-size: 18px !important;"><i class="fa fa-plus-circle pr-lg-5 pr-2" style="font-size:24px;color:green"></i>Add Deduction</button>
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <div class="col-md-4 col-lg-3">
-                                <p class="p-0 m-0 text-center" style="font-family: serif;">&nbsp;</p>
-                                <input class="earnbtn text-center" type="button" value="Taxes/Deduction Tax">
+                            <div class="col-md-4 col-lg-3 mb-2">
+                                <p class="p-0 m-0 text-center d-none d-lg-block" style="font-family: serif;">&nbsp;</p>
+                                <input class="earnbtn text-center mb-2" type="button" value="Taxes/Deduction Tax">
                             </div>
                             <div class="col-md-1"></div>
                             <div class="col-md-2 col-lg-3"></div>
                             <div class="col-md-1"></div>
-                            <div class="col-md-2">
+                            <div class="col-md-2 mb-2">
                                 <p class="p-0 m-0 text-center" style="font-family: serif;">Current Gross</p>
                                 <input type="text" name="deduction_tax" class="earnbtn deduction_tax text-center" value="" />
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-md-2 mb-2">
                                 <p class="p-0 m-0 text-center" style="font-family: serif;">YTD Gross</p>
                                 <input type="text" name="ytd_deduction_tax" class="earnbtn ytd_deduction_tax text-center" value="" />
                             </div>
                         </div>
                         <div class="row mb-3 mt-5">
-                            <div class="col-md-4 col-lg-3">
+                            <div class="col-md-4 col-lg-3 mb-2">
                                 <p class="p-0 m-0 text-center" style="font-family: serif;">&nbsp;</p>
                                 <button type="button" class="netpaybtn net_pay">Net Pay</button>
                             </div>
                             <div class="col-md-1"></div>
                             <div class="col-md-2 col-lg-3"></div>
                             <div class="col-md-1"></div>
-                            <div class="col-md-2">
+                            <div class="col-md-2 mb-2">
                                 <p class="p-0 m-0 text-center" style="font-family: serif;">Net Pay</p>
                                 <input name="total_net_pay" class="earnbtn text-center total_net_pay" value="">
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-md-2 mb-2">
                                 <p class="p-0 m-0 text-center" style="font-family: serif;">YTD Net pay</p>
                                 <input name="total_ytd_net_pay" class="earnbtn text-center total_ytd_net_pay" value="">
                             </div>
@@ -575,28 +571,28 @@
                 <div class="col-md-12">
                     <div class=" box-usa">
                         <div class="row mb-3">
-                            <div class="col-lg-2 col-md-4 col-sm-6">
+                            <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
                                 <p class="p-0 m-0 " style="font-family: serif;">CO<span class="redColor">*</span></p>
                                 <input name="co_number" class="earnbtn text-center " value=""></input>
                             </div>
-                            <div class="col-lg-2 col-md-4 col-sm-6">
-                                <p class="p-0 m-0 text-center" style="font-family: serif;">FILE.<span class="redColor">*</span></p>
+                            <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
+                                <p class="p-0 m-0" style="font-family: serif;">FILE.<span class="redColor">*</span></p>
                                 <input name="file_number" class="earnbtn text-center " value=""></input>
                             </div>
-                            <div class="col-lg-2 col-md-4 col-sm-6">
+                            <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
                                 <p class="p-0 m-0 " style="font-family: serif;">CLOCK VCHR.<span class="redColor">*</span>
                                 </p>
                                 <input name="clock_vchr_number" class="earnbtn text-center " value=""></input>
                             </div>
-                            <div class="col-lg-2 col-md-4 col-sm-6">
+                            <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
                                 <p class="p-0 m-0 " style="font-family: serif;">Advice Number:<span class="redColor">*</span></p>
                                 <input name="advice_number" class="earnbtn text-center " value=""></input>
                             </div>
-                            <div class="col-lg-2 col-md-4 col-sm-6">
+                            <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
                                 <p class="p-0 m-0 " style="font-family: serif;">Account Number LAST<span class="redColor">*</span></p>
                                 <input name="account_number_last_4" class="earnbtn text-center " value=""></input>
                             </div>
-                            <div class="col-lg-2 col-md-4 col-sm-6">
+                            <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
                                 <p class="p-0 m-0 " style="font-family: serif;">Transit ABA<span class="redColor">*</span>
                                 </p>
                                 <input name="transit_aba_number" class="earnbtn text-center " value=""></input>
@@ -608,14 +604,11 @@
         </div>
 
 
-        <div class="mt-2">
-            <div class="mb-4 d-flex" style="justify-content: space-between; align-items: center;margin-left: 1em;">
-                <div class="text-left mt-1">
-                    <button class="previewbtn text-capitalize viewTempTemplate" type="button" id="button1">Preview
-                        Your Paystub <i class="fa fa-eye" style="font-size: 30px; margin-left: 7px;"></i></button>
-                </div>
-                <div class="text-right mt-1" style="margin-right:16px;">
-                    <button type="button" class="emailbtn text-capitalize sendMailButton"> <i class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL PAYSTUB <i class="fa fa-download ml-4" style="font-size:24px"></i></button>
+        <div class="row mt-3">
+            <div class="col-12 text-center">
+                <div class="d-flex flex-wrap justify-content-between">
+                    <button class="previewbtn text-capitalize viewTempTemplate mb-3 w-sm-100" type="button" id="button1">Preview Your Paystub <i class="fa fa-eye" style="font-size: 30px; margin-left: 7px;"></i></button>
+                    <button type="button" class="emailbtn text-capitalize sendMailButton mb-3 w-sm-100"> <i class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL PAYSTUB <i class="fa fa-download ml-4" style="font-size:24px"></i></button>
                 </div>
             </div>
         </div>
