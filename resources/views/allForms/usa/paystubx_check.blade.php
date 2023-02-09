@@ -5,154 +5,143 @@
     <title>paystubs-check</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        #watermark {
-            position: fixed;
-            top: 10cm;
-            bottom: 0cm;
-            left: 3cm;
-            width: 500px;
-            height: 400px;
-            z-index: -1000;
+        th {
+            text-align: left;
+        }
+
+        table {
+            font-size: 13px;
+        }
+
+        .two-col {
+            -webkit-column-count: 2;
+            /* Chrome, Safari, Opera */
+            -moz-column-count: 2;
+            /* Firefox */
+            column-count: 2;
+        }
+
+        .row1::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .column1 {
+            float: left;
+            width: 65%;
+        }
+
+        .column2 {
+            float: left;
+            width: 35%;
+        }
+
+        .row2::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .col0 {
+            float: left;
+            width: 27%;
+            margin-right: 10px;
+        }
+
+        .col1 {
+            float: left;
+            width: 38%;
+            margin-right: 10px;
+        }
+
+        .col2 {
+            float: left;
+            width: 35%;
+            margin-left: 10px;
+        }
+
+        .co-table {
+            padding: 10px;
+        }
+
+        .bg-img {
+            position: relative;
+        }
+
+        .bg-img:before {
+            background: url('http://44.202.105.74/images/check.jpg') !important;
+            background-repeat: no-repeat !important;
+            background-size: contain !important;
+            height: 100%;
+            width: 700px;
+            content: "";
+            top: 160px;
+            left: 0px;
+            right: 0px;
+            position: absolute;
+            z-index: -1;
+
+        }
+
+        .bg-img2 {
+            position: relative;
+        }
+
+        .bg-img2:before {
+            position: absolute;
+            background-image: url("images/side-bar.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 100%;
+            height: 100%;
+            content: "";
+            right: 0;
+            top: 180px;
+            left: 38px;
+        }
+
+        .background:before {
+            background-image: url("images/bg-lines1.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+            max-width: 625px;
+            content: "";
+            position: absolute;
+            padding: 190px 0px;
+            top: -20px;
+            left: 105px;
+            right: 0;
+
+        }
+
+        .background {
+            position: relative;
+        }
+        .watermark {
+            position: absolute;
+            width: 100%;
+            height: 700px;
+            top: 50px;
+            left: 0px;
+            right: 0;
+            background-image: url("http://44.202.105.74/user/water.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .bg-img2 {
+            position: relative;
         }
     </style>
 </head>
-<style>
-    th {
-        text-align: left;
-    }
-
-    table {
-        font-size: 13px;
-    }
-
-    .two-col {
-        -webkit-column-count: 2;
-        /* Chrome, Safari, Opera */
-        -moz-column-count: 2;
-        /* Firefox */
-        column-count: 2;
-    }
-
-    .row1::after {
-        content: "";
-        clear: both;
-        display: table;
-    }
-
-    .column1 {
-        float: left;
-        width: 65%;
-    }
-
-    .column2 {
-        float: left;
-        width: 35%;
-    }
-
-    .row2::after {
-        content: "";
-        clear: both;
-        display: table;
-    }
-
-    .col0 {
-        float: left;
-        width: 27%;
-        margin-right: 10px;
-    }
-
-    .col1 {
-        float: left;
-        width: 38%;
-        margin-right: 10px;
-    }
-
-    .col2 {
-        float: left;
-        width: 35%;
-        margin-left: 10px;
-    }
-
-    .co-table {
-        padding: 10px;
-    }
-
-    .bg-img {
-        position: relative;
-    }
-
-    .bg-img:before {
-        background: url('http://44.202.105.74/images/check.jpg') !important;
-        background-repeat: no-repeat !important;
-        background-size: contain !important;
-        height: 100%;
-        width: 700px;
-        content: "";
-        top: 160px;
-        left: 0px;
-        right: 0px;
-        position: absolute;
-        z-index: -1;
-
-    }
-
-    .bg-img2 {
-        position: relative;
-    }
-
-    .bg-img2:before {
-        position: absolute;
-        background-image: url("images/side-bar.png");
-        background-repeat: no-repeat;
-        background-size: contain;
-        width: 100%;
-        height: 100%;
-        content: "";
-        right: 0;
-        top: 180px;
-        left: 38px;
-    }
-
-    .background:before {
-        background-image: url("images/bg-lines1.png");
-        background-repeat: no-repeat;
-        background-size: cover;
-        width: 100%;
-        max-width: 625px;
-        content: "";
-        position: absolute;
-        padding: 190px 0px;
-        top: -20px;
-        left: 105px;
-        right: 0;
-
-    }
-
-    .background {
-        position: relative;
-    }
-    .watermark {
-        position: absolute;
-        width: 100%;
-        height: 700px;
-        top: 50px;
-        left: 0px;
-        right: 0;
-        background-image: url("http://44.202.105.74/user/water.png");
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-    .bg-img2 {
-        position: relative;
-    }
-</style>
-
 <body>
 
     <main class="bg-img2">
-        <div class="watermark">
-        </div>
+        @guest
+        <div class="watermark"></div>
+        @endguest
         <table class="co-table">
             <tr>
                 <td></td>
@@ -254,17 +243,17 @@
                         @foreach ($requestData['earning'] as $key => $earn)
                         <tr>
                             <td>{{ $earn }}</td>
-                            <td> {{ $requestData['rate'][$key] }}</td>
-                            <td>{{ $requestData['hours'][$key] }}</td>
-                            <td> {{ $requestData['period'][$key] }}</td>
-                            <td> {{ $requestData['ytd_total'][$key] }}</td>
+                            <td> {{ number_format($requestData['rate'][$key],2) }}</td>
+                            <td>{{ number_format($requestData['hours'][$key],2) }}</td>
+                            <td> {{ number_format($requestData['period'][$key],2) }}</td>
+                            <td> {{ number_format($requestData['ytd_total'][$key],2) }}</td>
                         </tr>
                         @endforeach
                         </br>
                         <tr>
                             <th colspan="3" style="text-align:right; padding-right:25px;">GROSS PAY</th>
-                            <td><b> {{ $requestData['deduction_tax'] }}</b></td>
-                            <td><b> {{ $requestData['ytd_deduction_tax'] }}</b></td>
+                            <td><b> {{ number_format($requestData['deduction_tax'],2) }}</b></td>
+                            <td><b> {{ number_format($requestData['ytd_deduction_tax'],2) }}</b></td>
                         </tr>
 
                     </table>
@@ -294,8 +283,8 @@
             <tr>
                 <td></td>
                 <td style="text-align: left;">{{ $taxes }}</td>
-                <td> {{ $requestData['taxes_rate'][$key] }}</td>
-                <td> {{ $requestData['taxes_ytd'][$key] }}</td>
+                <td> {{ number_format($requestData['taxes_rate'][$key],2) }}</td>
+                <td> {{ number_format($requestData['taxes_ytd'][$key],2) }}</td>
             </tr>
             @endforeach
 
@@ -303,25 +292,25 @@
             <tr>
                 <td></td>
                 <td style="text-align: left;">{{ $tax_deduction }}</td>
-                <td> {{ $requestData['period_tax_deduction'][$key] }}</td>
-                <td> {{ $requestData['ytd_tax_deduction'][$key] }}</td>
+                <td> {{ number_format($requestData['period_tax_deduction'][$key],2) }}</td>
+                <td> {{ number_format($requestData['ytd_tax_deduction'][$key],2) }}</td>
             </tr>
             @endforeach
             </br></br>
             <tr>
                 <td></td>
                 <td>Total Deduction</td>
-                <td><b> {{ $requestData['period_gross_total'] }}</b></td>
-                <td><b> {{ $requestData['ytd_gross_total'] }}</b></td>
+                <td><b> {{ number_format($requestData['period_gross_total'],2) }}</b></td>
+                <td><b> {{ number_format($requestData['ytd_gross_total'],2) }}</b></td>
             </tr>
             </br>
             <tr>
                 <td></td>
                 <th>NET PAY</th>
                 <td><b>
-                        {{ $requestData['total_net_pay'] }}</b></td>
+                        {{ number_format($requestData['total_net_pay'],2) }}</b></td>
                 <td><b>
-                        {{ $requestData['total_ytd_net_pay'] }}</b></td>
+                        {{ number_format($requestData['total_ytd_net_pay'],2) }}</b></td>
             </tr>
 
         </table>
@@ -349,10 +338,10 @@
 
                         </br>
                         </br>
-                        <P style="font-size: 10px;margin: 0;">
+                        {{-- <P style="font-size: 10px;margin: 0;">
                             <span style="font-weight:800;">Check Nuumber:</span>
                             {{ $requestData['account_number_last_4'] }}
-                        </P>
+                        </P> --}}
                         <P style="font-size: 10px;margin: 0;">
                             <span style="font-weight:800;">Date:</span>
                             {{ date('m/d/y', strtotime($requestData['pay_date'])) }}
@@ -373,19 +362,13 @@
 
                 <tr>
                     <td style="font-size:14px;text-align:left;  width:55%;">{{ $requestData['emp_name'] }}</td>
-                    <td style="text-align: center; font-size:13px; width:15%;">XXXXX534</td>
-                    <td style="text-align: center;font-size:13px; width:15%;">XXXXX534</td>
-                    <td style="text-align: right;font-size:13px; width:15%;">XXXXX534</td>
-
-                    </td>
+                    <td style="text-align: center; font-size:13px; width:15%;">XXXXX{{ $requestData['account_number_last_4'] }}</td>
+                    <td style="text-align: center;font-size:13px; width:15%;">XXXXX{{ $requestData['transit_aba_number'] }}</td>
+                    <td style="text-align: right;font-size:13px; width:15%;">{{ $requestData['currency'] }} {{ number_format($requestData['total_net_pay'],2) }} </td></td>
                 </tr>
             </table>
         </section>
     </main>
-
-
-
-
 </body>
 
 </html>

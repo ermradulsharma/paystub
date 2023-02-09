@@ -166,23 +166,24 @@
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
-    }
-    .bg-img2 {
-        position: relative;
-    }
+        }
+        .bg-img2 {
+            position: relative;
+        }
     </style>
 
 </head>
 
 <body>
 <main class="bg-img2">
+    @guest
     <div class="watermark"></div>
+    @endguest
     <div class="section_2">
         <table style="width: 100%;">
             <thead style="background-color: #a9a9a9;">
                 <th style="text-align:left;font-size:16px;">#767767</th>
-                <th style="text-align:right; padding-right:20px; font-size:larger;text-transform: uppercase; "> Earning
-                    Statement </th>
+                <th style="text-align:right; padding-right:20px; font-size:larger; text-transform: uppercase; font-weight:900"> Earning Statement </th>
             </thead>
         </table>
     </div>
@@ -195,13 +196,10 @@
                         <td style="font-size: 14px;"><b>{{ $requestData['cname'] }}</b></td>
                     </tr>
                     <tr>
-                        <td>{{ $requestData['address_1'] }},</br>{{ $requestData['city'] }} {{ $requestData['state'] }},
-                            {{ $requestData['zip_code'] }}, USA
-                        </td>
+                        <td>{{ $requestData['address_1'] }},</br>{{ $requestData['city'] }} {{ $requestData['state'] }}, {{ $requestData['zip_code'] }}, USA </td>
                     </tr>
                     <tr>
-                        <td style="margin-top: 10px;"><span style="font-weight: 500;">Marital Status:
-                            </span>{{ $requestData['marital_status'] }} </td>
+                        <td style="margin-top: 10px;"><span style="font-weight: 500;">Marital Status: </span>{{ $requestData['marital_status'] }} </td>
                     </tr>
                     <tr>
                         <td> <span style="font-weight: 500;">Exemptions: </span> {{ $requestData['exemptions'] }}</td>
@@ -212,29 +210,21 @@
             <div class="col2">
                 <table>
                     <tr>
-                        <td> <span style="font-weight: 500;">Pay Period:</span> <span>
-                                {{ date('m/d/Y', strtotime($requestData['pay_start'])) }} -
-                                {{ date('m/d/Y', strtotime($requestData['pay_end'])) }}</td></span>
-                        </td>
+                        <td> <span style="font-weight: 500;">Pay Period:</span> <span> {{ date('m/d/Y', strtotime($requestData['pay_start'])) }} - {{ date('m/d/Y', strtotime($requestData['pay_end'])) }}</span></td>
                     </tr>
 
                     <tr>
-                        <td> <span style="font-weight: 500;">Pay Date:</span><span>
-                                {{ date('m/d/Y', strtotime($requestData['pay_date'])) }} </span></td>
+                        <td> <span style="font-weight: 500;">Pay Date:</span><span> {{ date('m/d/Y', strtotime($requestData['pay_date'])) }} </span></td>
                     </tr>
                     <tr>
-                        <td><span style="font-weight: 500;">Employee #: </span> <span>
-                                {{ $requestData['emp_id'] }}</span></td>
+                        <td><span style="font-weight: 500;">Employee #: </span> <span> {{ $requestData['emp_id'] }}</span></td>
                     </tr>
                     <tr>
-                        <td> {{ $requestData['emp_street_1'] }}, </br> {{ $requestData['emp_city'] }}
-                            {{ $requestData['emp_state'] }},{{ $requestData['emp_zip_code'] }}, USA
-                        </td>
+                        <td> {{ $requestData['emp_street_1'] }}, </br> {{ $requestData['emp_city'] }} {{ $requestData['emp_state'] }},{{ $requestData['emp_zip_code'] }}, USA </td>
                     </tr>
 
                     <tr>
-                        <td><span style="font-weight: 500;">Social Security#:</span> <span>
-                                ***-**-{{ $requestData['emp_ssn'] }}</span></td>
+                        <td><span style="font-weight: 500;">Social Security#:</span> <span> ***-**-{{ $requestData['emp_ssn'] }}</span></td>
                     </tr>
                 </table>
             </div>
@@ -331,5 +321,4 @@
 </main>
 
 </body>
-
 </html>

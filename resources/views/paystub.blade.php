@@ -8,8 +8,8 @@
     <div class="container-XL" style="">
 
         <div class="row pb-5">
-            <div class="col-lg-2 mt-5 pt-5"></div>
-            <div class="col-lg-4 col-md-6 banner-left-content payhead">
+
+            <div class="col-lg-6 col-md-4 banner-left-content payhead col-set">
                 <h1 class="instant display-5 pt-5">
                     Instant Online <br>Professional PayStub <br>Generator
                 </h1>
@@ -19,16 +19,17 @@
                 <div class="mt-5 pt-5 justify-content-center ">
                     <a class="btn btn-lg  mt-5 p-2 btn-danger Generate " href="{{url('usa')}}">Generate Paystub Now</a>
                 </div>
-                <div class="mt-5 d-flex pt-3 top-gogle">
-                    <a href="https://www.google.com/" target="_blank"><img class="storbtn ml-1" src="images/Google_Play_Store_badge_EN.webp"></a>
-                    <a href="https://www.google.com/" target="_blank"><img class="storbtn ml-5" src="images/Download_on_the_App_Store_Badge.webp"></a>
+                <div class="mt-5 d-flex pt-5 top-gogle">
+                    <a href="https://www.google.com/" target="_blank"><img class="storbtn ml-1"
+                            src="images/Google_Play_Store_badge_EN.webp"></a>
+                    <a href="https://www.google.com/" target="_blank"><img class="storbtn ml-5"
+                            src="images/Download_on_the_App_Store_Badge.webp"></a>
                 </div>
             </div>
             <!-- <div class="col-lg-1"></div> -->
-            <div class="col-lg-5 col-md-6" style="display: flex;
-                justify-content: right;">
+            <div class="col-lg-6 col-md-6 col-set1">
                 <div class="mt-5">
-                    <a href="{{url('/')}}"><img class="w-100 pr-4" src="images/paystub_image.webp"></a>
+                    <a href="{{url('/')}}"><img class="w-100 " src="images/paystub_image.webp"></a>
                 </div>
             </div>
 
@@ -46,9 +47,18 @@
 </div>
 
 <div class="mt-2 createSample">
-    <div class="container">
+    <div class="container see-img">
         <div class="row m-auto">
-            <a href="{{url('/')}}"><img class="w-100" src="images/Create me.webp"></a>
+            <div>
+                <button class="see-sample">SEE SAMPLE</button>
+            </div>
+            <div>
+                <button class="see-sample1">SEE SAMPLE</button>
+            </div>
+            <div>
+                <button class="see-sample2">SEE SAMPLE</button>
+            </div>
+            <a href="{{url('/')}}"><img class="w-100 " src="images/Create me.webp"></a>
         </div>
 
     </div>
@@ -80,7 +90,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-5">
+        <div class="col-lg-4">
             <img src="images/previewed.png" class="payimg">
             <div class="paytext">
                 <p style="" class="smallfont1">TAX FILING HAS NEVER BEEN
@@ -99,9 +109,9 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-7">
+        <div class="col-lg-8">
             <img class="payimg2" src="images/paystubx_images.png" class="">
-            <div>
+            <div class="payyy">
                 <p class="img2-p">
                     On Paystub X Join thousands of satisfied independent </br> contractors and small business owners and
                     get the
@@ -121,35 +131,42 @@
                     calculations, W-2, 1099S Etc in Seconds</h2>
                 <div class="row mt-5">
                     <div class="col-md-4 mt-3 text-center">
-                        <h2 class="text-white calcheading head-font" style="color: #fafabd !important;">Add your Data</h2>
-                        <p style="font-size:17px;font-weight: 200;font-family: 'Futura LT';line-height:1.8;" class="text-white pay-p head-font">Our paystub generator
+                        <h2 class="text-white calcheading head-font" style="color: #fafabd !important;">Add your Data
+                        </h2>
+                        <p style="font-size:17px;font-weight: 200;font-family: 'Futura LT';line-height:1.8;"
+                            class="text-white pay-p head-font">Our paystub generator
                             accurately</br>
                             calculates your Federal and State</br> taxes, including Social security </br>and Medicare
                             taxes so you don't
                         </p>
-                       
-                        <img src="images/1.webp" style=" width: 94px; height: 94px; object-fit: cover; object-position: 50% 50%;">
+
+                        <img src="images/1.webp"
+                            style=" width: 94px; height: 94px; object-fit: cover; object-position: 50% 50%;">
                     </div>
-                
+
 
                     <div class="col-md-4 mt-3 text-center">
-                        <h2 class="text-white calcheading head-font" style="color: #fafabd !important;">Preview Data</h2>
-                        <p style="font-size:17px;font-weight: 200;font-family: 'Futura LT'; line-height:1.8;" class="text-white pay-p head-font">Generate pay stubs with
+                        <h2 class="text-white calcheading head-font" style="color: #fafabd !important;">Preview Data
+                        </h2>
+                        <p style="font-size:17px;font-weight: 200;font-family: 'Futura LT'; line-height:1.8;"
+                            class="text-white pay-p head-font">Generate pay stubs with
                             accurate</br>
                             state income taxes, based on </br>state W-4, and other applicable</br> local taxes. </p>
-                            <img src="images/2.webp" style=" width: 94px; height: 94px; object-fit: cover; object-position: 50% 50%;">
+                        <img src="images/2.webp"
+                            style=" width: 94px; height: 94px; object-fit: cover; object-position: 50% 50%;">
                     </div>
                     <div class="col-md-4 mt-3 text-center">
                         <h2 class="text-white pay-h2 calcheading head-font">Download & Email your Paystub</h2>
-                        <p style="font-size:17px;font-weight: 200;font-family: 'Futura LT'; line-height:1.8;" class="text-white pay-p head-font">You will get to generate
+                        <p style="font-size:17px;font-weight: 200;font-family: 'Futura LT'; line-height:1.8;"
+                            class="text-white pay-p head-font">You will get to generate
                             unlimited</br>
                             payslip, paycheck or paystub </br>according to the plan you select.
                         </p>
-                        <img src="images/3.webp" style=" width: 94px; height: 94px; object-fit: cover; object-position: 50% 50%;">
+                        <img src="images/3.webp" class="num" style=" width: 94px; height: 94px; object-fit: cover; object-position: 50% 50%;">
                     </div>
                 </div>
 
-         
+
 
             </div>
         </div>
@@ -175,7 +192,8 @@
                     </div>
                     <div class="box-icon"> <img src="images/salary.webp" class="salary"></div>
                     <div class="bottom-content">
-                        <p>Keeping payroll records is a complex task. Once you set everything up, we take care of it for you. Our reliable online service removes the human error of payroll record keeping.</p>
+                        <p>Keeping payroll records is a complex task. Once you set everything up, we take care of it for
+                            you. Our reliable online service removes the human error of payroll record keeping.</p>
                     </div>
                 </div>
 
@@ -187,7 +205,9 @@
                     </div>
                     <div class="box-icon"> <img src="images/NYCFreeTaxPrep-Documents-W2.webp" class="salary"></div>
                     <div class="bottom-content">
-                        <p>A W-2 tax form shows important information about the income you've earned from your employer, amount of taxes withheld from your paycheck, benefits provided and other information for the year. You use this form to file your federal and state taxes.</p>
+                        <p>A W-2 tax form shows important information about the income you've earned from your employer,
+                            amount of taxes withheld from your paycheck, benefits provided and other information for the
+                            year. You use this form to file your federal and state taxes.</p>
                     </div>
                 </div>
 
@@ -199,7 +219,8 @@
                     </div>
                     <div class="box-icon"><img src="images/2573180.webp" class="salary mb-3"></div>
                     <div class="bottom-content">
-                        <p>Form 1099-MISC reports payments other than nonemployee compensation made by a trade or business to others.</p>
+                        <p>Form 1099-MISC reports payments other than nonemployee compensation made by a trade or
+                            business to others.</p>
                     </div>
                 </div>
 
@@ -218,7 +239,10 @@
 
             <div class="col-md-4 text-center">
                 <div class="justify-content-center">
-                    <iframe class="mr-2 youtubeimg w-100" src="https://www.youtube.com/embed/TrnLCFsN5i8" title="Plane Overhead" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe class="mr-2 youtubeimg w-100" src="https://www.youtube.com/embed/TrnLCFsN5i8"
+                        title="Plane Overhead" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
                     <button class="text-white payp">Generate Paystubs with Accurate Tax Calculations</button>
                 </div>
 
@@ -226,7 +250,10 @@
 
             <div class="col-md-4 text-center ">
                 <div class="justify-content-center">
-                    <iframe class="mr-2 youtubeimg  w-100" style=" " src="https://www.youtube.com/embed/TrnLCFsN5i8" title="Plane Overhead" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe class="mr-2 youtubeimg  w-100" style=" " src="https://www.youtube.com/embed/TrnLCFsN5i8"
+                        title="Plane Overhead" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
                     <button class="text-white payp">How to Create PayStubs for Independent Contractors</button>
                 </div>
 
@@ -234,7 +261,10 @@
 
             <div class="col-md-4 text-center">
                 <div class="justify-content-center">
-                    <iframe class="mr-2 youtubeimg  w-100" style=" " src="https://www.youtube.com/embed/TrnLCFsN5i8" title="Plane Overhead" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe class="mr-2 youtubeimg  w-100" style=" " src="https://www.youtube.com/embed/TrnLCFsN5i8"
+                        title="Plane Overhead" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
                     <button class="text-white payp">Select your Preferred Template</button>
                 </div>
 
@@ -257,16 +287,22 @@
                     <ul>
 
 
-                        <li class="mt-2" style="font-weight: 200; font-size: 20px; line-height:1.5em; font-family: 'Futura LT';"> W-2 - Efile with
+                        <li class="mt-2"
+                            style="font-weight: 200; font-size: 20px; line-height:1.5em; font-family: 'Futura LT';"> W-2
+                            - Efile with
                             SSA, Distribute to Employees. ✅</li>
 
 
-                        <li class="mt-2" style="font-weight: 200; font-size: 20px; line-height:1.5em; font-family: 'Futura LT';">1099-NEC,
+                        <li class="mt-2"
+                            style="font-weight: 200; font-size: 20px; line-height:1.5em; font-family: 'Futura LT';">
+                            1099-NEC,
                             1099-MISC - Efile with IRS, Distribute to
                             Contractors ✅</li>
 
 
-                        <li class="mt-2" style="font-weight: 200; font-size: 20px; line-height:1.5em; font-family: 'Futura LT';">Efile Form 940 - FUTA filing with IRS. ✅</li>
+                        <li class="mt-2"
+                            style="font-weight: 200; font-size: 20px; line-height:1.5em; font-family: 'Futura LT';">
+                            Efile Form 940 - FUTA filing with IRS. ✅</li>
                     </ul>
                 </div>
                 <div class="mt-5 pt-3  ">
@@ -279,7 +315,8 @@
                     <b style="font-size: 24px; font-weight: 600; font-family: 'Futura LT';">
                         Generate Paystubs Using our<span class="text-danger"> Android or iOS
                             App</span></b>
-                    <p style="font-size: 20px;line-height: 35px;font-family: 'Futura LT';" class="mt-1 ">Generate paystubs
+                    <p style="font-size: 20px;line-height: 35px;font-family: 'Futura LT';" class="mt-1 ">Generate
+                        paystubs
                         instantly by using our
                         paystub
                         generator app.</br>
@@ -287,8 +324,10 @@
                 </div>
 
                 <div class="mt-5  d-flex pt-5 goggle">
-                    <a href="https://www.google.com/" target="_blank"><img class="storbtn " src="images/Google_Play_Store_badge_EN.webp"></a>
-                    <a href="https://www.google.com/" target="_blank"><img class="storbtn ml-5 " src="images/Download_on_the_App_Store_Badge.webp"></a>
+                    <a href="https://www.google.com/" target="_blank"><img class="storbtn "
+                            src="images/Google_Play_Store_badge_EN.webp"></a>
+                    <a href="https://www.google.com/" target="_blank"><img class="storbtn ml-5 "
+                            src="images/Download_on_the_App_Store_Badge.webp"></a>
                 </div>
             </div>
 
@@ -311,13 +350,13 @@
 
 
 <script>
-    function openNav() {
-        document.getElementById("mySidenav").style.width = "250px";
-    }
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
 
-    function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
-    }
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
 </script>
 
 @endsection
