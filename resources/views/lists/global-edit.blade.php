@@ -495,7 +495,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <div class=" col-lg-2  col-md-4 mt-2 margin-bottom">
+                            <div class="col-xl-2 col-lg-3 col-md-4 mt-2 margin-bottom">
                                 <button type="button" class="add_button earnbtn" type="add_earning" id="add_earning" style="font-size: 18px !important;"><i class="fa fa-plus-circle pr-2" style="font-size:24px;color:green"></i>Add Earning</button>
                             </div>
                         </div>
