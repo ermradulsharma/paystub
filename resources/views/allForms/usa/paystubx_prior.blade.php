@@ -126,10 +126,11 @@
     <main class="bg-img2">
         @php $userObj = Auth::user() ?? [];
         $expiryDate = Auth::user()->expiryDate ?? null;
-        @endphp
+
         @if(!$userObj || $expiryDate == null)
         <div class="watermark"></div>
         @endif
+        @endphp
         <table style="width:100%;">
             <tr style="width:100%;">
                 <td colspan="" style=" padding-left:50px; padding-top:0px; padding-bottom:0px; padding-right:0px; font-weight:800; font-size:25px;"> {{ $requestData['cname'] }}</td>
