@@ -16,7 +16,7 @@
     }
 
     th {
-        background-color: #050618;
+        background-color:#aeaee4;
         color: white;
 
     }
@@ -50,31 +50,31 @@
 
     <section style="border:1px solid #0a2e7b; border-radius:10px;">
         <table style="">
-            <tr>
-                <th style="border-right:1px solid #0a2e7b; border-radius:10px 0px 0px 0px;">Empolyee No.</th>
-                <th style="border-right:1px solid #0a2e7b">Empolyee </th>
-                <th style="border-right:1px solid #0a2e7b;">Date</th>
-                <th style="border-right:1px solid #0a2e7b;border-radius:0px 10px 0px 0px;">National Insurance No.</th>
+            <tr style="">
+                <th style="border-right:1px solid #0a2e7b; border-radius:10px 0px 0px 0px;color: #302aa5;text-transform:uppercase;font-size:10px;">Empolyee No.</th>
+                <th style="border-right:1px solid #0a2e7b;color: #302aa5;text-transform:uppercase;font-size:10px;">Empolyee Name </th>
+                <th style="border-right:1px solid #0a2e7b;color: #302aa5;text-transform:uppercase;font-size:10px;">Process Date</th>
+                <th style="border-right:1px solid #0a2e7b;border-radius:0px 10px 0px 0px;color: #302aa5;text-transform:uppercase;font-size:10px;">National Insurance No.</th>
             </tr>
-            <tr style="background-color:#b8baca;">
+            <tr style="">
                 <td style="border-right:1px solid #0a2e7b;border-radius:0;">007</td>
                 <td style="border-right:1px solid #0a2e7b;border-radius:0px 0px 0px0px;">Mark Jack Dannel</td>
                 <td style="border-right:1px solid #0a2e7b;border-radius:0;">31-May-2016</td>
                 <td style="border-right:1px solid #0a2e7b;border-radius:0;">PX 56 56 56 C</td>
             </tr>
         </table>
-        <table style=" border-bottom:none;margin-bottom:0; background-color:#c8c9d091;">
+        <table style=" border-bottom:none;margin-bottom:0; ">
             <tr>
-                <th>Payment</th>
-                <th>Units</th>
-                <th>Rate</th>
-                <th style="border-right:1px solid #0a2e7b">Amount</th>
-                <th>Deductions</th>
-                <th>Amount</th>
+                <th style="color: #302aa5;text-transform:uppercase;font-size:10px;">Payment</th>
+                <th style="color: #302aa5;text-transform:uppercase;font-size:10px;">Units</th>
+                <th style="color: #302aa5;text-transform:uppercase;font-size:10px;">Rate</th>
+                <th style="border-right:1px solid #0a2e7b;color: #302aa5;text-transform:uppercase;font-size:10px;">Amount</th>
+                <th style="color: #302aa5;text-transform:uppercase;font-size:10px;">Deductions</th>
+                <th style="color: #302aa5;text-transform:uppercase;font-size:10px;">Amount</th>
 
             </tr>
             <tr>
-                <td>Basic Pay</td>
+                <td><b>Basic Pay</b></td>
                 <td></td>
                 <td></td>
                 <td style="border-right:1px solid #0a2e7b">56789</td>
@@ -84,7 +84,7 @@
 
             </tr>
             <tr>
-                <td colspan=""><b>Total Payment</b></td>
+                <td colspan=""><b>Total Payments</b></td>
                 <td></td>
                 <td></td>
                 <td style="border-right:1px solid #0a2e7b">56789</td>
@@ -93,7 +93,7 @@
 
             </tr>
             <tr>
-                <td>Basic Pay</td>
+                <td><b>Basic Pay</b></td>
                 <td></td>
                 <td></td>
                 <td style="border-right:1px solid #0a2e7b">56789</td>
@@ -103,7 +103,7 @@
 
             </tr>
             <tr>
-                <td colspan=""><b>Total Payment</b></td>
+                <td colspan=""><b>Total Payments</b></td>
                 <td></td>
                 <td></td>
                 <td style="border-right:1px solid #0a2e7b">56789</td>
@@ -112,7 +112,7 @@
 
             </tr>
             <tr>
-                <td>Basic Pay</td>
+                <td><b>Basic Pay</b></td>
                 <td></td>
                 <td></td>
                 <td style="border-right:1px solid #0a2e7b">56789</td>
@@ -122,7 +122,7 @@
 
             </tr>
             <tr>
-                <td colspan=""><b>Total Payment</b></td>
+                <td colspan=""><b>Total Payments</b></td>
                 <td></td>
                 <td></td>
                 <td style="border-right:1px solid #0a2e7b">56789</td>
@@ -219,7 +219,7 @@
                 <td style="text-align: left;width:80px;">Dept:Default</td>
                 <td style="text-align: left;width:130px;">Tax Period:May-2016</td>
                 <td style="text-align: left;width:130px;">Payment Method:BACS</td>
-                <td><button style="text-align:right;border: 1px solid #0a2e7b; border-radius:5px; padding:10px 20px 10px 10px; width:130px; position: relative; "><span style="background-color:#050618; font-size:13px; font-weight:800;
+                <td><button style="text-align:right;border: 1px solid #0a2e7b; background-color:white; border-radius:5px; padding:10px 20px 10px 10px; width:130px; position: relative; "><span style="background-color:#302aa5; font-size:13px; font-weight:800;
                     padding:9.5px 6px; border-radius:5px 0px 0px 5px; position: absolute; top:0px; left:0; color:white;">Net Pay:</span>
                         3456</button></td>
             </tr>
