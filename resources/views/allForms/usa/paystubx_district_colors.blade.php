@@ -228,8 +228,9 @@
 
 <body>
     <main class="bg-img2">
-        @php($userObj = Auth::user() ?? [])
-        @php($expiryDate = Auth::user()->expiryDate ?? null)
+        @php$userObj = Auth::user() ?? [];
+        $expiryDate = Auth::user()->expiryDate ?? null;
+        @endphp
         @if(!$userObj || $expiryDate == null)
         <div class="watermark"></div>
         @endif
