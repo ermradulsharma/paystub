@@ -3,17 +3,6 @@
 
 <head>
     <title>uk pin blue</title>
-    <style>
-        #watermark {
-            position: fixed;
-            top: 10cm;
-            bottom: 0cm;
-            left: 3cm;
-            width: 500px;
-            height: 400px;
-            z-index: -1000;
-        }
-    </style>
 </head>
 <style>
     body {
@@ -24,12 +13,10 @@
     table {
         border-collapse: collapse;
         width: 100%;
-        /* border: 1px solid #0a2e7b; */
-        /* border-radius: 10px 0 0 0; */
     }
 
     th {
-        background-color: #0a2e7b;
+        background-color: #050618;
         color: white;
 
     }
@@ -38,28 +25,45 @@
         text-align: center;
         border-radius: 10px 0 0 0;
     }
+    .watermark {
+            position: absolute;
+            width: 100%;
+            height: 700px;
+            top: 0px;
+            left: 0px;
+            right: 0;
+            background-image: url("http://44.202.105.74/user/water.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .bg-img2 {
+            position: relative;
+        }
 </style>
 
 <body>
-    <div id="watermark">
-        <img src="http://44.202.105.74/user/water.png" height="100%" width="100%" />
+   <main class="bg-img2">
+    <div class="watermark">
     </div>
+
     <section style="border:1px solid #0a2e7b; border-radius:10px;">
-        <table>
+        <table style="">
             <tr>
-                <th style="border-right:1px solid #0a2e7b; ">Empolyee No.</th>
+                <th style="border-right:1px solid #0a2e7b; border-radius:10px 0px 0px 0px;">Empolyee No.</th>
                 <th style="border-right:1px solid #0a2e7b">Empolyee </th>
-                <th style="border-right:1px solid #0a2e7b">Date</th>
-                <th style="border-right:1px solid #0a2e7b">National Insurance No.</th>
+                <th style="border-right:1px solid #0a2e7b;">Date</th>
+                <th style="border-right:1px solid #0a2e7b;border-radius:0px 10px 0px 0px;">National Insurance No.</th>
             </tr>
-            <tr>
-                <td style="border-right:1px solid #0a2e7b">007</td>
-                <td style="border-right:1px solid #0a2e7b">Mark Jack Dannel</td>
-                <td style="border-right:1px solid #0a2e7b">31-May-2016</td>
-                <td style="border-right:1px solid #0a2e7b">PX 56 56 56 C</td>
+            <tr style="background-color:#b8baca;">
+                <td style="border-right:1px solid #0a2e7b;border-radius:0;">007</td>
+                <td style="border-right:1px solid #0a2e7b;border-radius:0px 0px 0px0px;">Mark Jack Dannel</td>
+                <td style="border-right:1px solid #0a2e7b;border-radius:0;">31-May-2016</td>
+                <td style="border-right:1px solid #0a2e7b;border-radius:0;">PX 56 56 56 C</td>
             </tr>
         </table>
-        <table style=" border-bottom:none;margin-bottom:0; padding-bottom:0;">
+        <table style=" border-bottom:none;margin-bottom:0; background-color:#c8c9d091;">
             <tr>
                 <th>Payment</th>
                 <th>Units</th>
@@ -79,11 +83,46 @@
                 <td>678</td>
 
             </tr>
-
-
-
             <tr>
-                <td colspan="">Total Payment</td>
+                <td colspan=""><b>Total Payment</b></td>
+                <td></td>
+                <td></td>
+                <td style="border-right:1px solid #0a2e7b">56789</td>
+                <td>National Insurance</td>
+                <td>678</td>
+
+            </tr>
+            <tr>
+                <td>Basic Pay</td>
+                <td></td>
+                <td></td>
+                <td style="border-right:1px solid #0a2e7b">56789</td>
+                <td>Income Tax</td>
+
+                <td>678</td>
+
+            </tr>
+            <tr>
+                <td colspan=""><b>Total Payment</b></td>
+                <td></td>
+                <td></td>
+                <td style="border-right:1px solid #0a2e7b">56789</td>
+                <td>National Insurance</td>
+                <td>678</td>
+
+            </tr>
+            <tr>
+                <td>Basic Pay</td>
+                <td></td>
+                <td></td>
+                <td style="border-right:1px solid #0a2e7b">56789</td>
+                <td>Income Tax</td>
+
+                <td>678</td>
+
+            </tr>
+            <tr>
+                <td colspan=""><b>Total Payment</b></td>
                 <td></td>
                 <td></td>
                 <td style="border-right:1px solid #0a2e7b">56789</td>
@@ -124,9 +163,9 @@
 
 
         </table>
-        <table style="padding-top: 20px;  width:100%;border-top:1px solid #0a2e7b ; border-bottom:1px solid  #0a2e7b;">
-            <tr>
-                <td style="border-right:1px solid #0a2e7b; font-weight:500; text-align:left; padding-left:20px;">Mr Jack
+        <table style="padding-top: 0px;  width:100%;border-top:1px solid #0a2e7b ; border-bottom:1px solid  #0a2e7b;">
+            <tr style="">
+                <td style="border-right:1px solid #0a2e7b; font-weight:500; text-align:left; padding-left:20px; border-radius:0;">Mr Jack Danial
                 </td>
                 <th colspan="2" style="border-right:1px solid #0a2e7b">Total This Period</th>
                 <th colspan="2" style="border-right:1px solid #0a2e7b">Total Year to Date</th>
@@ -167,29 +206,28 @@
                 <td>6,000.00</td>
             </tr>
         </table>
-        <table style=" ">
+        <table style="padding-left:10px;">
             <tr style="">
-                <td style="font-weight: 800; font-size:20px;" colspan="">Paysliponline</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                </td>
-            </tr>
-            <tr>
-                <td>Tax code:0000</td>
-                <td>NI table: A</td>
-                <td>Dept:Default</td>
-                <td>Tax Period:May-2016</td>
-                <td>Payment Method:BACS</td>
-                <td><button style="border: 3px solid #0a2e7b; border-radius:5px; padding:8px 20px 8px 10px;">Net Pay:
-                        3456</button></td>
+                <td style="font-weight: 800; font-size:20px; text-align:left;" colspan="">Paysliponline</td>
 
+            </tr>
+        </table>
+        <table style="padding-left:10px;">
+            <tr style=" width:100%; font-size:12px;">
+                <td style="text-align: left;width:90px;">Tax code:0000</td>
+                <td style="text-align: left;width:80px; ">NI table: A</td>
+                <td style="text-align: left;width:80px;">Dept:Default</td>
+                <td style="text-align: left;width:130px;">Tax Period:May-2016</td>
+                <td style="text-align: left;width:130px;">Payment Method:BACS</td>
+                <td><button style="text-align:right;border: 1px solid #0a2e7b; border-radius:5px; padding:10px 20px 10px 10px; width:130px; position: relative; "><span style="background-color:#050618; font-size:13px; font-weight:800;
+                    padding:9.5px 6px; border-radius:5px 0px 0px 5px; position: absolute; top:0px; left:0; color:white;">Net Pay:</span>
+                        3456</button></td>
             </tr>
         </table>
 
 
     </section>
+   </main>
 </body>
 
 </html>
