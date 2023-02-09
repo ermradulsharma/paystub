@@ -32,7 +32,7 @@
             top: 0px;
             left: 0px;
             right: 0;
-            background-image: url("http://44.202.105.74/user/water.png");
+            background-image: url("http://44.202.105.74/user/watermark.png");
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
