@@ -57,8 +57,8 @@ var addGrossTotal = `<div class="margin-bottom"">
 
     $(addDeduction).click(function () {
         var fieldHTML =
-            '<div class="row mb-3">' +
-            '<div class="col-md-3">' +
+            '<div class="row">' +
+            '<div class="col-md-4 col-lg-3 mb-3">' +
             '<img src="http://44.202.105.74/images/lock.png" class="earnbtn2">' +
             '<input name="tax_deduction[]" class="earnbtn text-center tax_deduction_0 tax_deduction_' +
             i +
@@ -66,17 +66,17 @@ var addGrossTotal = `<div class="margin-bottom"">
             i +
             '" type="text" value="">' +
             "</div>" +
-            '<div class="col-md-1"> </div>' +
-            '<div class="col-md-3"> </div>' +
-            '<div class="col-md-1"> </div>' +
-            '<div class="col-md-2">' +
+            '<div class="col-md-1 col-lg-1"> </div>' +
+            '<div class="col-md-2 col-lg-3"> </div>' +
+            '<div class="col-md-1 col-lg-1"> </div>' +
+            '<div class="col-md-2 col-lg-2 mb-3">' +
             '<input type="text" name="period_tax_deduction[]" class="earnbtn text-center tax_deduction tax" id="taxes_0' +
             i +
             '" value="" data-id="' +
             i +
             '"/>' +
             "</div>" +
-            '<div class="col-md-2">' +
+            '<div class="col-md-2 col-lg-2 mb-3">' +
             '<input type="text" name="ytd_tax_deduction[]" class="earnbtn text-center ytd_tax tax add_ytd_deduction" id="taxes_ytd_0' +
             i +
             '" value="" data-id="' +

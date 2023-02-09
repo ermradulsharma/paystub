@@ -18,7 +18,8 @@
     box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, .6));
 
 }
-.see-sample{
+
+.see-sample {
     padding: 4px 10px;
     font-size: 17px;
     border: 2px solid red;
@@ -32,14 +33,16 @@
     z-index: 14;
     top: 212px;
     left: 173px;
-    
+
 }
-.see-sample:hover{
+
+.see-sample:hover {
     background-image: linear-gradient(360deg, #631b01, #efb9a7);
     color: white !important;
     border: 2px solid black !important;
 }
-.see-sample1{
+
+.see-sample1 {
     padding: 4px 10px;
     font-size: 17px;
     border: 2px solid red;
@@ -54,12 +57,14 @@
     top: 184px;
     left: 508px
 }
-.see-sample1:hover{
+
+.see-sample1:hover {
     background-image: linear-gradient(360deg, #631b01, #efb9a7);
     color: white !important;
     border: 2px solid black !important;
 }
-.see-sample2{
+
+.see-sample2 {
     padding: 4px 10px;
     font-size: 17px;
     border: 2px solid red;
@@ -73,22 +78,26 @@
     z-index: 14;
     top: 217px;
     /* left: 160px; */
-    right: 187px;    
+    right: 187px;
 }
-.see-sample2:hover{
+
+.see-sample2:hover {
     background-image: linear-gradient(360deg, #631b01, #efb9a7);
     color: white !important;
     border: 2px solid black !important;
 }
-.see-img{
+
+.see-img {
     position: relative;
-  
+
 }
-.col-set{
+
+.col-set {
     max-width: 559px;
     margin: 0 0 0 auto;
 }
-.col-set1{
+
+.col-set1 {
     display: flex;
     margin: 0 161px 0 0;
 }
@@ -218,7 +227,8 @@
 .viewbtn {
     font-size: 14px;
     color: #010101;
-    background: yellow padding: 5px 20px;
+    background: yellow;
+    padding: 5px 20px;
     border: none;
     border-radius: 4px;
     font-weight: 700;
@@ -366,7 +376,7 @@
     font-size: 23px;
     color: #ffffff;
     background: #ef2e21;
-    padding: 6px 35px;
+    padding: 0px 35px;
     border: none;
     border-radius: 4px;
     box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, .6));
@@ -736,10 +746,12 @@ h5 {
     margin-left: -60px;
     margin-top: -156px;
 }
-.payyy{
+
+.payyy {
     justify-content: center;
-    display:flex;
+    display: flex;
 }
+
 .img2-p {
     font-size: 20px;
     font-family: 'Futura LT';
@@ -962,9 +974,11 @@ select {
     flex-wrap: wrap;
     width: 100%;
 }
-.num{
+
+.num {
     margin-top: 33px;
 }
+
 .box-border-outer {
     width: calc(33.33% - 14px);
     margin-right: 20px;
@@ -1223,27 +1237,33 @@ ul.nav.nav-justified.navbar {
     .num {
         margin-top: 0px;
     }
-    .see-sample2{
+
+    .see-sample2 {
         top: 182px;
-    right: 157px;
+        right: 157px;
     }
-    .see-sample1{
+
+    .see-sample1 {
         top: 156px;
-    left: 415px;
+        left: 415px;
     }
-    .see-sample{
+
+    .see-sample {
         top: 179px;
-    left: 141px;
+        left: 141px;
     }
+
     .col-set {
         max-width: 410px;
         margin: 0 0 0 auto;
     }
+
     .col-set1 {
         display: flex;
         margin: 0 auto 0 66px;
         max-width: 556px;
     }
+
     .statementbtn {
         font-size: 10px;
     }
@@ -1364,7 +1384,7 @@ ul.nav.nav-justified.navbar {
 
     .box-usa {
         border: 3px solid #FF6161;
-        padding: 10px 0px 12px 12px;
+        padding: 10px 0px 12px 0px;
         background: #E8E6E6;
         border-radius: 2px;
     }
@@ -1527,32 +1547,38 @@ ul.nav.nav-justified.navbar {
         top: 133px;
         right: 116px;
         padding: 4px 8px;
-    font-size: 11px;
+        font-size: 11px;
     }
+
     .see-sample1 {
         top: 114px;
         left: 312px;
         padding: 4px 9px;
-    font-size: 11px;
+        font-size: 11px;
     }
+
     .see-sample {
         top: 131px;
         left: 108px;
         padding: 4px 8px;
-    font-size: 11px;
+        font-size: 11px;
     }
-    .QUICK {        
+
+    .QUICK {
         margin-bottom: unset;
     }
+
     .col-set1 {
         display: flex;
         margin: 0 auto 0 66px;
         max-width: 580px;
     }
+
     .col-set {
         max-width: 594px;
         margin: auto;
     }
+
     .payp {
         font-size: 9px !important;
     }
@@ -1661,7 +1687,7 @@ ul.nav.nav-justified.navbar {
 
     .box-usa {
         border: 3px solid #FF6161;
-        padding: 10px 0px 12px 12px;
+        padding: 10px 0px 12px 0px;
         background: #E8E6E6;
         border-radius: 2px;
     }
@@ -1909,6 +1935,10 @@ ul.nav.nav-justified.navbar {
 }
 
 @media screen and (max-height: 450px) {
+    .w-sm-100 {
+        width: 100%;
+    }
+
     .sidenav {
         padding-top: 15px;
     }
@@ -1931,6 +1961,10 @@ ul.nav.nav-justified.navbar {
 }
 
 @media screen and (max-width: 425px) {
+    .w-sm-100 {
+        width: 100%;
+    }
+
     .see-sample2 {
         top: 78px;
         right: 76px;
@@ -1939,6 +1973,7 @@ ul.nav.nav-justified.navbar {
         border: 1px solid red;
         border-radius: 2px;
     }
+
     .see-sample1 {
         top: 66px;
         left: 190px;
@@ -1947,6 +1982,7 @@ ul.nav.nav-justified.navbar {
         border: 1px solid red;
         border-radius: 2px;
     }
+
     .see-sample {
         top: 75px;
         left: 73px;
@@ -1955,6 +1991,7 @@ ul.nav.nav-justified.navbar {
         border: 1px solid red;
         border-radius: 2px;
     }
+
     .basicpay {
         display: flex;
         width: 100%;
@@ -2050,17 +2087,16 @@ ul.nav.nav-justified.navbar {
     }
 
     .previewbtn {
-        font-size: 13px;
+        font-size: 23px;
         color: #ffffff;
         background: #ef2e21;
-        padding: 2px 3px;
+        padding: 2px 10px;
         border: none;
         border-radius: 4px;
         box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, .6));
     }
 
     .emailbtn {
-        font-size: 10px;
         color: #ffffff;
         background: #12c23a;
         padding: 4px 5px;
@@ -2181,7 +2217,7 @@ ul.nav.nav-justified.navbar {
     }
 
     .earnbtn {
-        margin-bottom: 10px;
+        /* margin-bottom: 10px; */
 
     }
 
@@ -2263,6 +2299,10 @@ ul.nav.nav-justified.navbar {
 
 
 @media screen and (max-width: 375px) {
+    .w-sm-100 {
+        width: 100%;
+    }
+
     .see-sample2 {
         top: 70px;
         right: 70px;
@@ -2271,6 +2311,7 @@ ul.nav.nav-justified.navbar {
         border: 1px solid red;
         border-radius: 2px;
     }
+
     .see-sample1 {
         top: 59px;
         left: 169px;
@@ -2279,6 +2320,7 @@ ul.nav.nav-justified.navbar {
         border: 1px solid red;
         border-radius: 2px;
     }
+
     .see-sample {
         top: 67px;
         left: 68px;
@@ -2287,6 +2329,7 @@ ul.nav.nav-justified.navbar {
         border: 1px solid red;
         border-radius: 2px;
     }
+
     .small {
         font-size: 12px !important;
     }
@@ -2374,14 +2417,12 @@ ul.nav.nav-justified.navbar {
     }
 
     .emailbtn {
-        font-size: 10px;
         color: #ffffff;
         background: #12c23a;
-        padding: 2px 0px;
+        padding: 2px 10px;
         border: none;
         border-radius: 4px;
         box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, .6));
-        margin-left: 6px;
     }
 
     .canadah4 {
@@ -2414,7 +2455,7 @@ ul.nav.nav-justified.navbar {
 
     .earnbtn {
         /* margin-top: 1px; */
-        margin-bottom: 10px;
+        /* margin-bottom: 10px; */
 
     }
 
@@ -2495,7 +2536,7 @@ ul.nav.nav-justified.navbar {
 
     .box-usa {
         border: 3px solid #FF6161;
-        padding: 10px 0px 12px 12px;
+        padding: 10px 0px 12px 0px;
         background: #E8E6E6;
         border-radius: 2px;
 
