@@ -76,7 +76,7 @@
             height: 100%;
             width: 700px;
             content: "";
-            top: 160px;
+            top: 120px;
             left: 0px;
             right: 0px;
             position: absolute;
@@ -97,7 +97,7 @@
             height: 100%;
             content: "";
             right: 0;
-            top: 180px;
+            top: 200px;
             left: 38px;
         }
 
@@ -109,7 +109,7 @@
             max-width: 700px;
             content: "";
             position: absolute;
-            padding: 150px 0px;
+            padding: 140px 0px;
             top: -20px;
             left: 100px;
             right: 0;
@@ -136,6 +136,7 @@
         .bg-img2 {
             position: relative;
         }
+
     </style>
 </head>
 
@@ -333,7 +334,7 @@
         </section>
 
         <section class="bg-img">
-            <table class="container" style=" margin-top:200px;padding: 0 0px 0px 0px;width:100%; ">
+            <table class="container" style=" margin-top:60px;padding: 0 0px 0px 0px;width:100%; position: absolute; top:100px; ">
                 <div class="row"
                     style="display: flex; display: flex;justify-content: space-between;padding: 0px 14px;">
                     <div style="width: 50%;float:left;padding-left:30px;">
@@ -368,7 +369,7 @@
                     </div>
                 </div>
             </table>
-            <table style="width: 90%; margin: 130px auto 0;">
+            <table style="width: 90%; margin: 0px auto 0; position: absolute; top:300px;">
                 <tr style="">
 
                     <td style=""></td>
