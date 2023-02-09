@@ -59,11 +59,11 @@
                             </div>
                         </div>
 
-                        {{-- <!-- <div class="col-md-2  text-center sh">
+                        <div class="col-md-2  text-center sh" hidden>
                             <img src="images/hrpng.png" style="height: 200px;">
                         </div>
 
-                        <div class="col-md-5 col-sm-12 mt-5 text-center">
+                        <div class="col-md-5 col-sm-12 mt-5 text-center" hidden>
                             <h6 style="margin-left:-23px;font-weight: 900;" class="add">ADVANCED TEMPLATES</h6>
                             <div class="mt-4">
                                 <div class="input-group mmenu mb-3" style="margin: auto;">
@@ -81,7 +81,7 @@
                             <div class=" mt-3 ">
                                 <button class="viewbtn"> <a href="{{url('template-view')}}">Click to see Template Landscape view.This is not part of design</a></button>
                             </div>
-                        </div> --> --}}
+                        </div>
                     </div>
                 </div>
             </div>
