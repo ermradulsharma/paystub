@@ -418,6 +418,7 @@ var addGrossTotal = `<div class="margin-bottom"">
         $(".rate").attr("readonly", false);
         $(".hours").attr("readonly", false);
         $(".total").attr("readonly", true);
+        $(".removeData").parent().removeClass("margintop-5");
     });
 
     // let css_property =
@@ -451,6 +452,7 @@ var addGrossTotal = `<div class="margin-bottom"">
         dayCalculate();
         $(".rate").val("");
         $(".hours").val("");
+        $(".removeData").parent().addClass("margintop-5");
     });
 
     $('.total').keyup(function(){

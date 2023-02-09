@@ -434,14 +434,14 @@
                             <div class="col-lg-2  col-md-2 margin-bottom mt-2  ">
                                 <button type="button" class="statementbtn">RATE</button>
                                 <div class="margin-bottom">
-                                    <input type="text" name="rate[]" class="earnbtn mt-4 mb-3 text-center calculation rate" value="" id="rate_0" data-id="0">
+                                    <input type="text" name="rate[]" class="earnbtn removeData mt-4 mb-3 text-center calculation rate" value="" id="rate_0" data-id="0">
                                 </div>
                                 <div id="addRate"></div>
                             </div>
                             <div class=" col-lg-2  col-md-2 margin-bottom mt-2  ">
                                 <button type="button" class="statementbtn">HOURS</button>
                                 <div class="margin-bottom">
-                                    <input type="text" name="hours[]" class="earnbtn mt-4 mb-3 text-center hours calculation" value="" id="hours_0" data-id="0">
+                                    <input type="text" name="hours[]" class="earnbtn removeData mt-4 mb-3 text-center hours calculation" value="" id="hours_0" data-id="0">
                                 </div>
                                 <div id="addHours"></div>
                             </div>
