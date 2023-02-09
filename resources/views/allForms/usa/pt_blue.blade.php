@@ -254,8 +254,8 @@
             <div></div>
             <div class="row roww">
                 <div class="col1">
-                    <table style="width: 100%;">
-                        <thead id="backcolor">
+                    <table style="width: 100%;border-right: 1px solid #afaec5;">
+                        <thead style="border-top:0;" id="backcolor">
                             <td style="font-size:9px; border-right:1px solid  #afaec5;">WAGES</td>
                             <td style="border-right:1px solid  #afaec5;">RATE</td>
                             <td style="font-size:9px;">HOURS</td>
@@ -289,7 +289,7 @@
                 </div>
                 <div class="col2">
                     <table style="width: 100%;">
-                        <thead id="backcolor">
+                        <thead style="border-top:none;" id="backcolor">
                             <td style="font-size:9px;">DEDUCTIONS & TAXES</td>
                             <td style="font-size:9px;">AMOUNT<br>THIS CHECK</td>
                             <td style="border-right: none !important;   border-collapse: collapse;font-size:9px;">AMOUNT
@@ -297,7 +297,7 @@
                             </td>
                         </thead>
 
-                        <tbody style="border-left: 2px solid #afaec5; ">
+                        <tbody style=" ">
                             @foreach ($requestData['taxes'] ?? [] as $key => $taxes)
                                 <tr style="border:none;">
                                     <td>{{ $taxes }}</td>
