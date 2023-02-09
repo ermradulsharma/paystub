@@ -514,8 +514,8 @@
                         @endforeach
                         <div id="add_deduction" class="mb-3"></div>
                         <div class=" col-lg-2 col-md-2 margin-bottom">
-                            <input type="text" name="" class="earnbtn text-center deduction_period_tax" value="" id="deduction_period_tax" hidden>
-                            <input type="text" name="" class="earnbtn text-center deduction_period_tax_other" value="" id="deduction_period_tax_other" hidden>
+                            <input type="text" name="deduction_period_tax" class="earnbtn text-center deduction_period_tax" value="" id="deduction_period_tax" hidden>
+                            <input type="text" name="deduction_period_tax_other" class="earnbtn text-center deduction_period_tax_other" value="" id="deduction_period_tax_other" hidden>
                         </div>
                         <div class=" col-lg-2 col-md-2 margin-bottom">
                             <input type="text" name="" class="earnbtn text-center ytd_deduction_period_tax" value="" id="ytd_deduction_period_tax" hidden>
