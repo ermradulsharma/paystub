@@ -1,5 +1,5 @@
-var days_number = 0;
-var deduction_tax = 0;
+var days_number = $('#days_number').val() || 0;
+var deduction_tax = $(".deduction_tax").val() || 0;
 var myNewArray = [];
 var finalArray = [];
 var arr = [];
@@ -381,6 +381,8 @@ var addGrossTotal = `<div class="margin-bottom"">
                 if (time_period == "bi-monthly") {
                     days_number = days / 61;
                 }
+
+                $('#days_number').val(parseInt(days_number));
                     for (let i = 0; i < finalArray.length; i++) {
                         var hours = $('#hours_'+i).val();
                         if (hours != '') {
@@ -429,9 +431,7 @@ var addGrossTotal = `<div class="margin-bottom"">
         $('.salary_btn').css({"background-image":"linear-gradient(45deg, #f8760ce3, #e78989)"});
         $('.hour_btn').css({"background-image":"linear-gradient(45deg, #f70303, #f84d45)"});
         $('.rate').attr('readonly', true);
-        $('#rate_0').attr('hidden', true);
         $('.hours').attr('readonly', true);
-        $('#hours_0').attr('hidden', true);
         $('.hourly').attr('readonly', true);
         $('.total').attr('readonly', false);
         $('.time_period').val('monthly');
@@ -452,6 +452,7 @@ var addGrossTotal = `<div class="margin-bottom"">
         dayCalculate();
         $(".rate").val("");
         $(".hours").val("");
+        $(".removeData").attr("hidden", true);
         $(".removeData").parent().addClass("margintop-5");
     });
 

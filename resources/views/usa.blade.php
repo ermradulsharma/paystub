@@ -603,7 +603,7 @@
             </div>
         </div>
 
-
+        <input type="hidden" name="days_number" id="days_number" value="0" hidden>
         <div class="row mt-3">
             <div class="col-12 text-center">
                 <div class="d-flex flex-wrap justify-content-between">
