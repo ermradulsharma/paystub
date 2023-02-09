@@ -710,9 +710,11 @@ h5 {
     margin: 0;
     color: red;
     font-weight: 700;
-    font-size: 13px;
+    font-size: 17px;
 }
-
+.form-row{
+    border: 1px solid red;
+}
 .box-p {
     font-size: 17px;
     margin-top: 23px;
@@ -1091,6 +1093,39 @@ ul.nav.nav-justified.navbar {
     color: black;
     text-decoration: none;
 }
+/* chnges after testing by interen end*/
+
+/* w2 form design start */
+
+.form-p{
+    font-size: 12px;
+    font-weight: 500;
+    color: red;
+    padding: 0;
+    margin: 0;
+}
+.form-input{
+    border: 1px solid #00000096;
+    padding: 5px 46px;
+    text-align: center;
+    background: #8080801f;
+}
+.form-input2{
+    border: 1px solid #00000096;
+    text-align: right;
+    background: #8080801f;
+    width: 100%;
+}
+.form-input3{
+    border: 1px solid #00000096;
+    text-align: left;
+    background: #8080801f;
+    width: 100%;
+}
+
+
+/* w2 form design end*/
+
 
 
 .margintop-5 {
