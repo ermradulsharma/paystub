@@ -128,30 +128,14 @@ function date_calculate() {
 }
 
 $(".addEarningField").click(function () {
-    var htmlData =
-        `<div class="row">
-                    <div class="col-lg-2 mt-4 pr-0">
-                        <input class="earnbtn text-center incomeKey" data-id="` +
-        i +
-        `" name="earning[]" type="text">
-                    </div>
-                    <div class="col-lg-2 mt-4 pr-0">
-                        <input class="earnbtn text-center rateKey" id="rate_` +
-        i +
-        `" name="rate[]" type="number">
-                    </div>
-                    <div class="col-lg-4 mt-4 pr-0">
-                        <input class="earnbtn text-center hoursKey" id="hours_` +
-        i +
-        `" name="hours[]" type="number">
-                    </div>
-                    <div class="col-lg-4 mt-4 pr-0">
-                        <input class="earnbtn text-center" type="number" id="total_` +
-        i +
-        `" name="total[]">
-                    </div>
-                </div>`;
-    $("#appendEarningField").append(htmlData);
+    var earning = `<input class="earnbtn mt-3 text-center incomeKey" data-id="000`+i+`" name="earning[]" type="text" value="">`;
+    var rate = `<input class="earnbtn mt-3 text-center rateKey" type="number" id="rate_000`+i+`" name="rate[]" type="text" value="">`;
+    var hours = `<input class="earnbtn mt-3 text-center hoursKey" type="number" id="hours_000`+i+`" name="hours[]" type="text" value="">`;
+    var total = `<input class="earnbtn mt-3 text-center" readonly id="total_000`+i+`" name="total[]" type="text" value=""></input>`;
+    $('.addincomeKey:last').append(earning);
+    $('.addrateKey:last').append(rate);
+    $('.addhoursKey:last').append(hours);
+    $('.addcurrentTotal:last').append(total);
     i++;
     $(".rateKey, .hoursKey").keyup(function () {
         calculation();
@@ -160,29 +144,16 @@ $(".addEarningField").click(function () {
 
 var j = 0;
 $(".addTaxField").click(function () {
-    var htmlData =
-        `<div class="row">
- <div class="col-lg-4 px-0 mt-4">
-     <div class="d-flex">
-         <img src="../images/lock.png" class="earnbtn3">
-         <input class="earnbtn text-center other_taxes" name="tax_deduction[]" data-id="` +
-        j +
-        `">
-     </div>
- </div>
- <div class="col-lg-4 pr-0 mt-4">
-     <input class="earnbtn text-center deduction_other" type="number" name="period_tax_deduction[]" id="tax_` +
-        j +
-        `">
- </div>
-
- <div class="col-lg-4 pr-0 mt-4">
-     <input class="earnbtn text-center deduction_other_ytd" type="number" name="ytd_tax_deduction[]" id="ytd_` +
-        j +
-        `">
- </div>
-</div>`;
-    $("#appendTaxField").append(htmlData);
+    var addtaxes = `<div class="d-flex mt-3">
+                        <img src="../images/lock.png" class="earnbtn3">
+                        <input class="earnbtn text-center other_taxes" name="tax_deduction[]" data-id="` + j +`">
+                    </div>`;
+    var addtaxes_rate = `<input class="earnbtn text-center deduction_other mt-3" type="number" name="period_tax_deduction[]" id="tax_` +j +`">`;
+    var addtaxes_ytd = `<input class="earnbtn text-center deduction_other_ytd mt-3" type="number" name="ytd_tax_deduction[]" id="ytd_` +j +`">`;
+    $(".addtaxes:last").append(addtaxes);
+    $(".addtaxes_rate:last").append(addtaxes_rate);
+    $(".addtaxes_ytd:last").append(addtaxes_ytd);
+    
     j++;
 
     $(".deduction_other, .deduction_other_ytd").keyup(function () {
