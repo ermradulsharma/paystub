@@ -228,13 +228,14 @@
 
 <body>
     <main class="bg-img2">
-        @php$userObj = Auth::user() ?? [];
-        $expiryDate = Auth::user()->expiryDate ?? null;
-
-        @if(!$userObj || $expiryDate == null)
+        @guest
+        <div class="watermark"></div>
+        @endguest
+        @auth
+        @if(Auth::user()->expiryDate == '')
         <div class="watermark"></div>
         @endif
-        @endphp
+        @endauth
         <section class="invoiceborder">
             <table>
                 <tr>

@@ -124,13 +124,14 @@
 
 <body>
     <main class="bg-img2">
-        @php $userObj = Auth::user() ?? [];
-        $expiryDate = Auth::user()->expiryDate ?? null;
-
-        @if(!$userObj || $expiryDate == null)
+        @guest
+        <div class="watermark"></div>
+        @endguest
+        @auth
+        @if(Auth::user()->expiryDate == '')
         <div class="watermark"></div>
         @endif
-        @endphp
+        @endauth
         <table style="width:100%;">
             <tr style="width:100%;">
                 <td colspan="" style=" padding-left:50px; padding-top:0px; padding-bottom:0px; padding-right:0px; font-weight:800; font-size:25px;"> {{ $requestData['cname'] }}</td>
@@ -166,7 +167,7 @@
             </table>
             <table style="border-bottom:1px solid black; width:88%; margin-top:10px;">
                 <tr style=" ">
-                    <td style="width:100%; text-align:center; margin-top:50px;font-size:14px;">{{ $word ?? 0 }} and {{ (int) $decimal }}/100</td>
+                    <td style="width:100%; text-align:center; margin-top:50px;font-size:14px;">{{ $word }} and {{ (int) $decimal }}/100</td>
 
                 </tr>
             </table>
