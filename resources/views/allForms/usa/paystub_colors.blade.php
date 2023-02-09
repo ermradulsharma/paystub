@@ -148,9 +148,11 @@ $petani = DB::table('templates')->pluck('color_code');
 
 <body>
     <main class="bg-img2">
-        @guest
+        @php($userObj = Auth::user() ?? [])
+        @php($expiryDate = Auth::user()->expiryDate ?? null)
+        @if(!$userObj || $expiryDate == null)
         <div class="watermark"></div>
-        @endguest
+        @endif
 
         <section class="invoiceborder">
             <table>
