@@ -432,16 +432,23 @@ $(document).ready(function () {
     }
 
     $(".hour_btn").click(function () {
+        $('.hour_btn').css({"background-image":"linear-gradient(45deg, #f8760ce3, #e78989)"});
+        $('.salary_btn').css({"background-image":"linear-gradient(45deg, #f70303, #f84d45)"});
         $(".rate").attr("hidden", false);
         $(".hours").attr("hidden", false);
         $(".hourly").attr("readonly", false);
-        $(".time_period").val("monthly");
         $(".rate").attr("readonly", false);
         $(".hours").attr("readonly", false);
         $(".total").attr("readonly", true);
     });
 
+    // let css_property =
+    //     {
+    //         "background-image": "linear-gradient(45deg, #f8760ce3, #e78989)"
+    //     }
     $('.salary_btn').click(function(){
+        $('.salary_btn').css({"background-image":"linear-gradient(45deg, #f8760ce3, #e78989)"});
+        $('.hour_btn').css({"background-image":"linear-gradient(45deg, #f70303, #f84d45)"});
         $('.rate').attr('readonly', true);
         $('#rate_0').attr('hidden', true);
         $('.hours').attr('readonly', true);
