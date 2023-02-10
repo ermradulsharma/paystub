@@ -15,7 +15,6 @@
         </div>
     </div>
 </div>
-</div>
 <!-- Modal End -->
 <!-- Modal Start -->
 <div class="modal fade" id="tempViewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -62,7 +61,6 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="text-center sh">
                                 <img src="{{asset('user/line.png')}}" style="height: 200px;">
                             </div>
@@ -94,7 +92,7 @@
                 <div class="col-md-12">
                     <h5 class="box-h5">Company Info</h5>
                     <div class=" box-usa">
-                        <div class="row mb-3 ">
+                        <div class="row mb-3 mt-3">
                             <div class="col-md-6 mt-1">
                                 <div>
                                     <label for="cname" class="lable">EMPLOYER (COMPANY) NAME <span class="redColor">*</span>
@@ -103,7 +101,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="map" hidden></div>
                         <div class="row mb-3">
                             <div class="col-md-6">
                                 <div>
@@ -379,13 +376,7 @@
         <input type="hidden" name="tax_total_other" hidden id="tax_total_other" value="{{$invoice->tax_total_other ?? 0}}" hidden>
         <input type="hidden" name="tax_ytd_other" hidden id="tax_ytd_other" value="{{$invoice->tax_ytd_other ?? 0}}" hidden>
         <input type="hidden" name="days_number" hidden id="days_number" value="{{$invoice->days_number ?? 0}}" hidden>
-</div>
-
-<!-- hidden values -->
-<input type="hidden" name="days_number" hidden id="days_number">
-<!-- //hidden values -->
-</form>
-</div>
+    </form>
 </div>
 @endsection
 @section('script')

@@ -15,7 +15,6 @@
         </div>
     </div>
 </div>
-</div>
 <!-- Modal End -->
 <!-- Modal Start -->
 <div class="modal fade" id="tempViewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -90,8 +89,8 @@
             <div class="row mb-3">
                 <div class="col-md-12">
                     <h5 class="box-h5">Company Info</h5>
-                    <div class=" box-usa">
-                        <div class="row mb-3 ">
+                    <div class="box-usa">
+                        <div class="row mb-3 mt-3">
                             <div class="col-md-6 mt-1">
                                 <div>
                                     <label for="cname" class="lable">EMPLOYER (COMPANY) NAME <span class="redColor">*</span>
@@ -348,13 +347,10 @@
                 </div>
             </div>
         </div>
-</div>
-
-<!-- hidden values -->
-<input type="hidden" name="days_number" hidden id="days_number">
-<!-- //hidden values -->
-</form>
-</div>
+        <!-- hidden values -->
+        <input type="hidden" name="days_number" hidden id="days_number">
+        <!-- //hidden values -->
+    </form>
 </div>
 @endsection
 @section('script')
