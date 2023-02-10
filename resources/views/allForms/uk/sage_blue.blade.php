@@ -76,23 +76,25 @@
     table.ltd tr td {
         text-align: center;
     }
-    .watermark {
-            position: absolute;
-            width: 100%;
-            height: 700px;
-            top: 50px;
-            left: 0px;
-            right: 0;
-            background-image: url("http://44.202.105.74/user/water.png");
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-        }
 
-        .bg-img2 {
-            position: relative;
-        }
+    .watermark {
+        position: absolute;
+        width: 100%;
+        height: 700px;
+        top: 50px;
+        left: 0px;
+        right: 0;
+        background-image: url("http://44.202.105.74/user/water.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .bg-img2 {
+        position: relative;
+    }
 </style>
+
 <body>
     <main class="bg-img2">
         <div class="watermark">
@@ -242,7 +244,8 @@
 
         <section style="margin-top:210px; padding-bottom:0.5px; ">
 
-            <table style="width:40%; float:left; border:1px solid #4a50b2; border-radius:10px; height: 195px; margin-top:10px; padding-left:10px;">
+            <table
+                style="width:40%; float:left; border:1px solid #4a50b2; border-radius:10px; height: 195px; margin-top:10px; padding-left:10px;">
                 <tr>
                     <td>Sally James</td>
                 </tr>
@@ -352,7 +355,8 @@
                 </tr>
             </table>
 
-            <table style="width:29.5%; float:right; border:1px solid #4a50b2; border-radius:10px; margin-top:-52px; padding:13px 10px 13px 10px; background-color:#f4f4fc;">
+            <table
+                style="width:29.5%; float:right; border:1px solid #4a50b2; border-radius:10px; margin-top:-52px; padding:13px 10px 13px 10px; background-color:#f4f4fc;">
                 <tr>
                     <td style="color:#4a50b2; font-size:16px; font-weight:600;">Net Pay</td>
                     <td>2380.34</td>
@@ -362,4 +366,5 @@
     </main>
 
 </body>
+
 </html>
