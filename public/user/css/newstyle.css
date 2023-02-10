@@ -2092,6 +2092,9 @@ ul.nav.nav-justified.navbar {
 }
 
 @media screen and (max-width: 425px) {
+    .oo{
+        display: flex;
+    }
     .payst{
         border:unset;
         display: unset;
@@ -2703,7 +2706,7 @@ ul.nav.nav-justified.navbar {
     }
 
     .storbtn {
-        width: 127px !important;
+        width: 155px !important;
         height: 44px !important;
         margin-bottom: 0;
     }
@@ -2741,6 +2744,9 @@ ul.nav.nav-justified.navbar {
     }
     .ukpay-inner{
         padding: 10px;
+    }
+    .oo{
+        display: flex;
     }
 }
 
