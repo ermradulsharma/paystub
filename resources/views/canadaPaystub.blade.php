@@ -38,51 +38,47 @@
         @csrf
         <input type="hidden" name="form_type" value="canada" hidden>
         <div>
-            <h5 class="box-h5">Choose Template</h5>
+            <h5 class="box-h5">Choose Your Template</h5>
             <div class="row mb-3">
                 <div class="col-md-12">
-                    <div class=" box-usa py-5">
-                        <div class="d-flex justify-content-between mb-3">
-                            <div class="col-md-5 col-sm-12 m-auto  text-center" style="padding: -1px 35px;">
+                    <div class="box-usa">
+                        <div class="d-flex justify-content-between flex w-100 ">
+                            <div class="col-md-5 col-lg-6 col-sm-12 pt-3 mt-lg-5 my-auto text-center">
                                 <h6 class="base">BASIC TEMPLATES</h6>
-                                <div class="mt-4">
-                                    {{-- <i class="fa fa-angle-down down"></i> --}}
-                                    <div class="input-group mmenu mb-3">
-                                        <select name="basic_temp" class="form-control dropdown1 text-center bt_id small-font basicTemplate" style="margin-right:10px; font-size:18px;">
+                                <div class="mt-3">
+                                    <div class="input-group mmenu mb-3 text-center">
+                                        <select name="basic_temp" class="form-control dropdown1 text-center basicTemplate" style="margin-right:10px;">
                                             <option value=""> --- Select Basic Templates --- </option>
                                             @foreach ($basicType as $data)
-                                            <option value="{{ $data->title }}" data-src="{{ $data->images->file }}">{{ $data->name }}</option>
+                                            <option value="{{ $data->title ?? '' }}" data-src="{{ $data->images->file ?? '' }}" data-status="{{ $data->template_element }}">
+                                                {{ $data->name }}
+                                            </option>
                                             @endforeach
                                         </select>
-                                        <i class="fa fa-eye-slash basicTem flash-icon" data-target="#openEye" data-toggle="modal"></i>
+                                        <i data-src="{{ $data->images->file ?? '' }}" class="fa fa-eye-slash basicTem uk-eye" role="button"></i>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="col-md-2  text-center sh" hidden>
-                                <img src="images/hrpng.png" style="height: 200px;">
+                            <div class="text-center sh">
+                                <img src="{{asset('user/line.png')}}" style="height: 200px;">
                             </div>
-
-                            <div class="col-md-5 col-sm-12 mt-5 text-center" hidden>
-                                <h6 style="margin-left:-23px;font-weight: 900;" class="small">ADVANCED TEMPLATES</h6>
-                                <div class="mt-4">
-                                    <i class="fa fa-angle-down down1"></i>
-                                    <div class="input-group mmenu mb-3" style="margin: auto;">
-                                        <select name="advance_temp" class="form-control text-center dropdown1 at_id small-font advanceTemplate" style="margin-right:10px; font-size:18px;">
-                                            <option value=""> --- Select Advance Template --- </option>
-                                            @foreach ($advanceType as $data)
-                                            <option value="{{ $data->title }}" data-src="{{ $data->images->file }}">{{ $data->name }}</option>
-                                            @endforeach
-                                        </select>
-                                        <i class="fa fa-eye-slash advanceTem flash-icon" data-target="#openEye" data-toggle="modal"></i>
+                            <div class="col-md-5 col-lg-6 col-sm-12 pt-3 mt-lg-5  my-auto text-center">
+                                <div class="pr-lg-3">
+                                    <h6 class="base">ADVANCED TEMPLATES</h6>
+                                    <div class="mt-3">
+                                        <div class="input-group mmenu mb-3">
+                                            <select name="advance_temp" class="form-control text-center dropdown1 advanceTemplate" style="margin-right:10px;">
+                                                <option value=""> --- Select Advance Template --- </option>
+                                                @foreach ($advanceType as $data)
+                                                <option value="{{ $data->title ?? '' }}" data-src="{{ $data->images->file ?? '' }}" data-status="{{ $data->template_element }}">
+                                                    {{ $data->name ?? '' }}
+                                                </option>
+                                                @endforeach
+                                            </select>
+                                            <i data-src="{{ $data->images->file ?? '' }}" class="fa fa-eye-slash advanceTem uk-eye" role="button"></i>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class=" mt-3 ">
-                                    <button class="viewbtn">
-                                        <a href="{{ url('template-view') }}">Click to see Template Landscape view.This
-                                            is not
-                                            part of design</a>
-                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -106,7 +102,7 @@
                         </div>
                         <div id="map" hidden></div>
                         <div class="row mb-3">
-                            <div class="col-md-12">
+                            <div class="col-md-6">
                                 <div>
                                     <label for="address_1" class="lable">STREET ADDRESS 1 <span class="redColor">*</span>
                                     </label>
@@ -116,7 +112,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <div class="col-md-12">
+                            <div class="col-md-6">
                                 <div>
                                     <label for="address_2" class="lable">STREET ADDRESS 2 <span class="redColor">*</span>
                                     </label>
@@ -127,7 +123,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <div>
                                     <label for="city" class="lable">City <span class="redColor">*</span>
                                     </label>
@@ -135,7 +131,7 @@
                                 </div>
 
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <div>
                                     <label for="state" class="lable">Province <span class="redColor">*</span>
                                     </label>
@@ -150,7 +146,7 @@
                                     <span class="d-none text-center error redColor">Please Select State</span>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <div>
                                     <label for="zip_code" class="lable">Postal Code <span class="redColor">*</span>
                                     </label>
@@ -167,7 +163,7 @@
             <div class="row mb-3">
                 <div class="col-md-12">
                     <div class=" box-usa">
-                        <div class="row mb-3">
+                        <div class="row">
                             <div class="col-md-4 mt-4">
                                 <div>
                                     <label for="emp_id" class="lable">EMPLOYEE ID <span class="redColor">*</span>
@@ -175,17 +171,19 @@
                                     <input type="text" id="emp_id" name="emp_id" placeholder="Employee id" class="w-100 p-2  textInputFontSize">
                                 </div>
                             </div>
-                            <div class="basicpay">
-                                <div class="col-md-2 mt-4 pr-0">
-                                    <div>
-                                        <label for="pay_start" class="lable">PAY START <span class="redColor">*</span></label>
-                                        <input type="date" id="pay_start" name="pay_start" placeholder="12-11-2022" class="w-100 p-2 textInputFontSize pay_start datepicker" data-id="pay_start" style="border-right: none;">
+                            <div class="col-md-4 mt-4">
+                                <div class="row">
+                                    <div class="col-6 px-0">
+                                        <div>
+                                            <label for="pay_start" class="lable">PAY START <span class="redColor">*</span></label>
+                                            <input type="date" id="pay_start" name="pay_start" placeholder="12-11-2022" class="w-100 py-2 textInputFontSize pay_start datepicker" data-id="pay_start" style="border: 1px solid #878080;border-right: none;">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-2 mt-4 pl-0">
-                                    <div>
-                                        <label for="emp_id" class="lable"> <span class="redColor">*</span></label>
-                                        <input type="date" id="pay_end" name="pay_end" placeholder=" " class="w-100 p-2 textInputFontSize pay_end" data-id="pay_end" style="border-left: none;" readonly>
+                                    <div class="col-6 px-0">
+                                        <div>
+                                            <label for="emp_id" class="lable"> <span class="redColor"></span></label>
+                                            <input type="date" id="pay_end" name="pay_end" placeholder=" " class="w-100 py-2 textInputFontSize pay_end" data-id="pay_end" style="border: 1px solid #878080;border-left: none;" readonly>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -197,18 +195,17 @@
                             </div>
                         </div>
 
-                        <div class="row mb-3">
-                            <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-md-4 mt-4">
                                 <div>
                                     <label for="check_number" class="lable">CHECK NUMBER <span class="redColor">*</span>
                                     </label>
                                     <input type="text" id="check_number" name="check_number" placeholder="Check Number" class="w-100 p-2  textInputFontSize">
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-2 mt-4">
                                 <div>
-                                    <label for="currency" class="lable" class="redColor">SELECT YOUR PREFERRED
-                                        CURRENCY <span class="redColor">*</span> </label>
+                                    <label for="currency" class="lable" class="redColor">CURRENCY <span class="redColor">*</span> </label>
                                     <select name="currency" id="currency" class=" dropdown11">
                                         <option value=""> --- Select currency --- </option>
                                         <option value="$">Dollar $</option>
@@ -219,8 +216,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row mb-3">
-                            <div class="col-md-4">
+                        <div class="row mb-4">
+                            <div class="col-md-4 mt-4">
                                 <div>
                                     <label for="emp_name" class="lable">EMPLOYER NAME <span class="redColor">*</span>
                                     </label>
@@ -228,13 +225,12 @@
                                 </div>
 
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-md-4 mt-4">
                                 <div>
                                     <label for="emp_address" class="lable">EMPLOYER ADDRESS <span class="redColor">*</span>
                                     </label>
                                     <input type="text" id="emp_address" name="emp_address" placeholder="Suite 101 or Apt 101(optional)" class="w-100 p-2  textInputFontSize">
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -243,36 +239,36 @@
         </div>
 
         <div>
-            <div class="mb- d-flex " style="justify-content: space-between;">
+            <div class="d-flex " style="justify-content: space-between;">
                 <h5 class="box-h5">Earning statement</h5>
             </div>
             <div class="row mb-3">
                 <div class="col-md-12">
                     <div class=" box-usa">
-                        <div class="row mb-3 pt-4">
-                            <div class="col-lg-7 pr-0">
+                        <div class="row mb-3 pt-4 justify-content-center">
+                            <div class="col-lg-7 pr-lg-0 px-0 mb-3">
                                 <div class="row">
-                                    <div class="col-lg-2 col-md-2 pr-0 addincomeKey">
+                                    <div class="col-lg-3 col-md-3 mb-3 pr-lg-0 addincomeKey">
                                         <button type="button" CLASS="statementbtn">INCOME</button>
                                         <input class="earnbtn mt-3 text-center incomeKey" data-id="000" name="earning[]" type="text" value="Regular">
                                     </div>
-                                    <div class="col-lg-2  col-md-2 pr-0 addrateKey">
+                                    <div class="col-lg-3 col-md-3 mb-3 pr-lg-0 addrateKey">
                                         <button type="button" CLASS="statementbtn">RATE</button>
                                         <input class="earnbtn mt-3 text-center rateKey" type="number" id="rate_000" name="rate[]" type="text" value="">
                                     </div>
-                                    <div class="col-lg-4 col-md-4 pr-0 addhoursKey">
+                                    <div class="col-lg-3 col-md-3 mb-3 pr-lg-0 addhoursKey">
                                         <button type="button" CLASS="statementbtn">HOURS</button>
                                         <input class="earnbtn mt-3 text-center hoursKey" type="number" id="hours_000" name="hours[]" type="text" value="">
                                     </div>
-                                    <div class="col-lg-4 col-md-4 pr-0 addcurrentTotal">
+                                    <div class="col-lg-3 col-md-3 mb-3 pr-lg-0 addcurrentTotal">
                                         <button type="button" CLASS="statementbtn"> CURRENT TOTAL</button>
                                         <input class="earnbtn mt-3 text-center currentTotal" readonly id="total_000" name="total[]" type="text" value="">
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-lg-3 col-md-3 mt-5">
-                                        <button type="button" class="earnbtn1 py-2 w-100 addEarningField" style="font-size: 17px;font-weight: 600;">
-                                            <i class="fa fa-plus-circle" style="font-size: 22px;color: #0ec23b;padding-top: 0px;"></i>Add
+                                <div class="row my-2">
+                                    <div class="col-lg-12">
+                                        <button type="button" class="btnCommon addEarningField">
+                                            <i class="fa fa-plus-circle pr-2" style="font-size: 22px;color: #0ec23b;padding-top: 0px;"></i>Add
                                             Earning</button>
                                     </div>
                                 </div>
@@ -281,81 +277,62 @@
 
                             <div class="col-lg-5 pl-0">
                                 <div class="row">
-                                    <div class="col-lg-4 col-md-4 pr-0 addtaxes">
+                                    <div class="col-lg-4 mb-4 col-md-4 pr-0 addtaxes">
                                         <button type="button" CLASS="statementbtn">DEDUCTION</button>
-                                        @foreach ($dedutions as $key => $item)
+                                        @foreach ($deduction as $key => $item)
                                         <div class="d-flex mt-3">
                                             <img src="{{ asset('images/lock.png') }}" class="earnbtn3">
-                                            <input class="earnbtn text-center taxes" name="taxes[]" data-id="00{{ $key }}" data-value="{{ $item->price }}" value="{{ $item->title }}" data-value="{{ $item->title }}">
+                                            <input class="earnbtn text-center taxes" name="taxes[]" data-id="00{{ $key }}" data-value="{{ $item->price }}" value="{{ $item->title }}">
                                         </div>
                                         @endforeach
                                     </div>
-                                    <div class="col-lg-4 col-md-4 pr-0 addtaxes_rate">
+                                    <div class="col-lg-4 mb-4 col-md-4 pr-0 addtaxes_rate">
                                         <button type="button" CLASS="statementbtn">CURRENT TOTAL</button>
-                                        @foreach ($dedutions as $key => $item)
+                                        @foreach ($deduction as $key => $item)
                                         <input class="earnbtn text-center mt-3" readonly name="taxes_rate[]" id="tax_total_00{{ $key }}">
                                         @endforeach
                                     </div>
-                                    <div class="col-lg-4 col-md-4 pr-0 addtaxes_ytd">
+                                    <div class="col-lg-4 mb-4 col-md-4 pr-0 addtaxes_ytd">
                                         <button type="button" CLASS="statementbtn">YTD TOTAL</button>
-                                        @foreach ($dedutions as $key => $item)
+                                        @foreach ($deduction as $key => $item)
                                         <input class="earnbtn text-center mt-3" readonly name="taxes_ytd[]" id="tax_ytd_00{{ $key }}">
                                         @endforeach
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class=" col-lg-4 col-md-4 mt-5  px-0">
-                                        <button type="button" class="earnbtn addTaxField" style="font-size: 17px;font-weight: 600;"><i class="fa fa-plus-circle" style="font-size: 22px;color: #0ec23b;padding-top: 0px;"></i>Add
+                                <div class="row my-2">
+                                    <div class="col-lg-12">
+                                        <button type="button" class="btnCommon addTaxField">
+                                            <i class="fa fa-plus-circle pr-2" style="font-size: 22px;color: #0ec23b;padding-top: 0px;"></i>Add
                                             Deductions</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="row mb-3 mt-5">
-                            <div class="col-lg-2 col-md-2 mb-2">
+                        <div class="row mb-3 mt-4 mt-lg-5">
+                            <div class="col-lg-2 col-md-2 pr-md-0 mb-2">
                                 <button type="button" CLASS="statementbtn">YTD GROSS</button>
+                                <input CLASS="earnbtn text-center mt-3" id="ytd_gross" name="ytd_gross_total">
                             </div>
-                            <div class="col-lg-2 col-md-2 mb-2">
-
+                            <div class="col-lg-2 col-md-2 pr-md-0 mb-2">
                                 <button type="button" CLASS="statementbtn">YTD DEDUCATIONS</button>
+                                <input CLASS="earnbtn text-center mt-3" id="ytd_deducations" name="ytd_deduction_tax">
                             </div>
-                            <div class="col-lg-2 col-md-2 mb-2">
-
+                            <div class="col-lg-2 col-md-2 pr-md-0 mb-2">
                                 <button type="button" CLASS="statementbtn">YTD NET PAY</button>
+                                <input CLASS="earnbtn text-center mt-3" id="ytd_net_pay" name="total_ytd_net_pay">
                             </div>
-                            <div class="col-lg-2 col-md-2 mb-2">
-
+                            <div class="col-lg-2 col-md-2 pr-md-0 mb-2">
                                 <button type="button" CLASS="statementbtn">CURRENT TOTAL</button>
+                                <input CLASS="earnbtn text-center mt-3" id="current_total" name="period_gross_total">
                             </div>
-                            <div class="col-lg-2 col-md-2 mb-2">
-
+                            <div class="col-lg-2 col-md-2 pr-md-0 mb-2">
                                 <button type="button" CLASS="statementbtn">DEDUCTIONS</button>
+                                <input CLASS="earnbtn text-center mt-3" id="deductions" name="deduction_tax">
                             </div>
                             <div class="col-lg-2 col-md-2 mb-2">
-
                                 <button type="button" CLASS="statementbtn">NET PAY</button>
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <div class="col-md-2">
-                                <input CLASS="earnbtn text-center" id="ytd_gross" name="ytd_gross_total">
-                            </div>
-                            <div class="col-md-2">
-                                <input CLASS="earnbtn text-center" id="ytd_deducations" name="ytd_deduction_tax">
-                            </div>
-                            <div class="col-md-2">
-                                <input CLASS="earnbtn text-center" id="ytd_net_pay" name="total_ytd_net_pay">
-                            </div>
-                            <div class="col-md-2">
-                                <input CLASS="earnbtn text-center" id="current_total" name="period_gross_total">
-                            </div>
-                            <div class="col-md-2">
-                                <input CLASS="earnbtn text-center" id="deductions" name="deduction_tax">
-                            </div>
-                            <div class="col-md-2">
-                                <input CLASS="earnbtn text-center" id="net_pay" name="total_net_pay">
+                                <input CLASS="earnbtn text-center mt-3" id="net_pay" name="total_net_pay">
                             </div>
                         </div>
                     </div>
@@ -363,19 +340,11 @@
             </div>
         </div>
 
-        <div>
-            <div class="row mb-3">
-                <div class="col-md-12">
-                    <div class="mb- d-flex" style="justify-content: space-between;">
-                        <div class="text-left mt-1 ">
-                            <button type="button" class="previewbtn viewTempTemplate">
-                                Preview Your Paystub <i class="fa fa-eye" style="font-size: 30px; margin-left: 7px;"></i></button>
-                        </div>
-                        <div class="text-right mt-1 ">
-                            <button type="button" class="emailbtn sendMailButton" data-toggle="modal" data-target="#myModal"> <i class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL
-                                PAYSTUB <i class="fa fa-download ml-4" style="font-size:24px"></i></button>
-                        </div>
-                    </div>
+        <div class="row mt-3">
+            <div class="col-12 text-center">
+                <div class="d-flex flex-wrap justify-content-between">
+                    <button class="previewbtn text-capitalize viewTempTemplate mb-3 w-sm-100" type="button" id="button1">Preview Your Paystub <i class="fa fa-eye" style="font-size: 30px; margin-left: 7px;"></i></button>
+                    <button type="button" class="emailbtn text-capitalize sendMailButton mb-3 w-sm-100"> <i class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL PAYSTUB <i class="fa fa-download ml-4" style="font-size:24px"></i></button>
                 </div>
             </div>
         </div>
