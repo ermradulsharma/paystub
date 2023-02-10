@@ -147,7 +147,7 @@
         <div class="watermark"></div>
         @endguest
         @auth
-        @if(Auth::user()->expiryDate == '')
+        @if(Auth::user()->expiryDate == '' || !isset($requestData['watermark']))
         <div class="watermark"></div>
         @endif
         @endauth

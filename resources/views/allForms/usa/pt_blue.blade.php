@@ -106,9 +106,9 @@
             <div class="watermark"></div>
         @endguest
         @auth
-            @if (Auth::user()->expiryDate == '')
-                <div class="watermark"></div>
-            @endif
+        @if(Auth::user()->expiryDate == '' || !isset($requestData['watermark']))
+        <div class="watermark"></div>
+        @endif
         @endauth
         <div class="container"
             style="border-right: 1px solid   #43407a; margin: auto;border-top: 1px solid   #43407a; border-left: 1px solid   #43407a; border-bottom:none;padding: 0 0px 0px 0px;">

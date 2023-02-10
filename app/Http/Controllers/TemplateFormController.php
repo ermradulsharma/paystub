@@ -66,11 +66,8 @@ class TemplateFormController extends Controller
         }
 
         $requestData = $request->all();
-        if ($requestData['advance_temp']) {
-            $pageName = $requestData['advance_temp'];
-        } else {
-            $pageName = $requestData['basic_temp'];
-        }
+        $pageName = $requestData['advance_temp'] ?? $requestData['basic_temp'];
+
 
         $path = public_path() . '/uploads/mailData';
         File::isDirectory($path) or File::makeDirectory($path, 0777, true, true);
@@ -133,14 +130,24 @@ class TemplateFormController extends Controller
             $invoice = $invoice->where('id', $id);
         }
         $invoice = $invoice->orderBy('id', 'desc')->first();
+        $requestData = json_decode($invoice->data);
+        $requestData = collect($requestData);
+        $requestData['watermark'] = 'no';
+        $pageName = $requestData['advance_temp'] ?? $requestData['basic_temp'];
+
+        $path = public_path('/uploads/mailData');
+        File::isDirectory($path) or File::makeDirectory($path, 0777, true, true);
+        $invoiceData['requestData'] = $requestData;
+        $pdf = PDF::loadView('allForms/' . $requestData['form_type'] . '/' . $pageName, $invoiceData)->setPaper('a4', 'portrait');
+        $fileName =  date('_d_m_Y_h_i_s') . '.pdf';
+        $pdf->save($path . '/' . $fileName);
         if ($invoice) {
             $mailData = [
                 'email' => Auth::user()->email,
                 'title' => 'Please find attachment file'
             ];
             $moreData = [];
-
-            $file = public_path('/uploads/mailData/' . basename($invoice->pdf));
+            $file = public_path('/uploads/mailData/' . basename($fileName));
             try {
                 Mail::send('mail.invoice_mail', $moreData, function ($message) use ($mailData, $file) {
                     $message->to($mailData['email']);

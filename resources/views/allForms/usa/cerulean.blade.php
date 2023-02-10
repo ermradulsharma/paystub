@@ -179,9 +179,9 @@
             <div class="watermark"></div>
         @endguest
         @auth
-            @if (Auth::user()->expiryDate == '')
-                <div class="watermark"></div>
-            @endif
+        @if(Auth::user()->expiryDate == '' || !isset($requestData['watermark']))
+        <div class="watermark"></div>
+        @endif
         @endauth
         <section class="invoiceborder">
             <table>

@@ -132,29 +132,37 @@
         .table1 td {
             font-size: 10px;
         }
+
         .watermark {
-        position: absolute;
-        width: 100%;
-        height: 700px;
-        top: 50px;
-        left: 0px;
-        right: 0;
-        background-image: url("http://44.202.105.74/user/water.png");
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
+            position: absolute;
+            width: 100%;
+            height: 700px;
+            top: 50px;
+            left: 0px;
+            right: 0;
+            background-image: url("http://44.202.105.74/user/water.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
         }
-        .bg-img2{
+
+        .bg-img2 {
             position: relative;
         }
+
     </style>
 </head>
 
 <body>
     <main class="bg-img2">
-        <div class="watermark">
-        </div>
-
+        @guest
+        <div class="watermark"></div>
+        @endguest
+        @auth
+        @if(Auth::user()->expiryDate == '' || !isset($requestData['watermark']))
+        <div class="watermark"></div>
+        @endif
+        @endauth
         <table class="table1">
             <tr>
 
@@ -236,8 +244,8 @@
                         $totalRate = 0; @endphp
                         @foreach ($requestData['earning'] as $key => $earn)
                         @php
-                            $totalHours =$requestData['hours'][0];
-                            $totalRate =$requestData['rate'][0];
+                        $totalHours =$requestData['hours'][0];
+                        $totalRate =$requestData['rate'][0];
                         @endphp
                         <tr>
                             <td style="text-align:left;">Regular {{ $earn }} </td>
@@ -266,7 +274,7 @@
                             <td>EFFECTIVE THIS PAY PERIOD - REGULAR</td>
                         </tr>
                         <tr>
-                            <td>CURRENT PAY RATE IS:  {{ $requestData['currency'] }} {{ number_format($totalRate/$totalHours,2) }} PER HOUR</td>
+                            <td>CURRENT PAY RATE IS: {{ $requestData['currency'] }} {{ number_format($totalRate/$totalHours,2) }} PER HOUR</td>
                         </tr>
                         <tr>
                             <td>Company Telephone Number:{{ $requestData['tel'] }} </td>
