@@ -540,9 +540,10 @@ input:hover {
 
 .earnbtn:hover {
     color: white;
-    background-image: linear-gradient(45deg, #a70404d6, #cd7570);
-    border: 2px solid #0b0a0a;
+    background-image: linear-gradient(360deg, #a70404d6, #ebc6c3);
+    border: 2px solid #0b0a0a !important;
     border-radius: 4px;
+    transition: all 05s ease-in-out;
 }
 
 .fa-lock:hover {
@@ -1122,14 +1123,52 @@ ul.nav.nav-justified.navbar {
     background: #8080801f;
     width: 100%;
 }
-
-
 /* w2 form design end*/
 
-
+/* uk design again start */
+.payst{
+    border: 1px solid red;
+    display: flex;
+}
+/* uk design again end */
 
 .margintop-5 {
     margin-top: 5em;
+}
+.input-uk{
+    font-size: 14px;
+    border: 2px solid #ff5722;;
+    border-radius: 5px;
+    box-shadow: 0px 3px 7px 1px #0000004f;
+    width: 100%;
+    padding: 8px 9px;
+    background: rgba(255, 255, 255, 0);
+    text-align: center;
+  font-weight: 600;
+  color: blue;
+}
+.ukpay-inner{
+    padding: 10px;
+}
+.ukpay-inner1{
+    padding: 0px 0px 24px 0;
+    display: contents;
+}
+.uk-lable{
+    font-size: 19px;
+    font-weight: 300;
+}
+.pay-outer:hover {
+    background: #f8eae0;
+}
+.input-uk:hover{
+    color: white;
+    background-image: linear-gradient(360deg, #a70404d6, #ebc6c3);
+    border: 2px solid #000000 !important;
+    border-radius: 5px;
+    box-shadow: 0px 3px 7px 1px #0000004f;
+    width: 100%;
+    padding: 8px 9px;
 }
 
 /* chnges after testing by interen */
@@ -1274,6 +1313,9 @@ ul.nav.nav-justified.navbar {
 }
 
 @media screen and (max-width: 1024px) {
+    .ukpay-inner {
+        padding:unset;
+    }
     .num {
         margin-top: 0px;
     }
@@ -1972,6 +2014,12 @@ ul.nav.nav-justified.navbar {
         font-size: 8px;
         padding: 8px 2px !important;
     }
+    .uk-lable{
+        font-size: 18px;
+    }
+    .ukpay-inner {
+        padding: unset;
+    }
 }
 
 @media screen and (max-height: 450px) {
@@ -1991,7 +2039,7 @@ ul.nav.nav-justified.navbar {
         font-size: 18px;
     }
 
-
+  
 }
 
 @media screen and (max-height: 450px) {
@@ -2005,6 +2053,14 @@ ul.nav.nav-justified.navbar {
 }
 
 @media screen and (max-width: 425px) {
+    .payst{
+        border:unset;
+        display: unset;
+       
+    }
+    .pay-outer{
+        padding: 0;
+    }
     .margintop-5 {
         margin-top: 0em;
     }
@@ -2341,12 +2397,19 @@ ul.nav.nav-justified.navbar {
     .uk-eye {
         font-size: 22px !important;
     }
-
-
+    .uk-lable{
+        font-size: 18px;
+    }
+    .ukpay-inner{
+        padding: 10px;
+    }
 }
 
 
 @media screen and (max-width: 375px) {
+    .uk-lable{
+        font-size: 18px;
+    }
     .w-sm-100 {
         width: 100%;
     }
@@ -2635,5 +2698,8 @@ ul.nav.nav-justified.navbar {
         width: 17px;
         margin-top: 14px;
         padding-right: 1px;
+    }
+    .ukpay-inner{
+        padding: 10px;
     }
 }
