@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Mail\VerifyEmail;
+use App\Mail\VerifyEmailSend;
 use Illuminate\Http\Request;
 use Laravel\Socialite\Facades\Socialite;
 use Exception;
@@ -147,7 +147,7 @@ class LoginController extends Controller
             $mailData['otp'] = $code;
             $mailData['type'] = 'E-mail Verification';
             $mailData['subject'] = 'Verify E-mail';
-            Mail::to($user->email)->send(new VerifyEmail($mailData));
+            Mail::to($user->email)->send(new VerifyEmailSend($mailData));
         }
         /* $moreData = [
             "otp" => $code
