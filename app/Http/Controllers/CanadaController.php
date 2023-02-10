@@ -15,16 +15,6 @@ class CanadaController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-
-    public function index()
-    {
-        $dedutions = Deduction::where('state', 'canada')->orderBy('id', 'asc')->get();
-        $basicType = Template::where(['state' => 'canada', 'type' => 'basic', 'status' => 1])->get();
-        $advanceType = Template::where(['state' => 'canada', 'type' => 'advance', 'status' => 1])->get();
-        $stateTaxes = StateTax::get();
-        return view('canadaPaystub', compact('basicType', 'advanceType', 'dedutions', 'stateTaxes'));
-    }
-
     /**
      * Show the form for creating a new resource.
      *

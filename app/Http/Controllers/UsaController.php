@@ -16,30 +16,7 @@ class UsaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        $deduction = Deduction::where('state', 'usa')->orderBy('id', 'asc')->get();
-        $basicType = Template::where(['state' => 'usa', 'type' => 'basic', 'status' => 1])->with('images')->get();
-        $advanceType = Template::where(['state' => 'usa', 'type' => 'advance', 'status' => 1])->with('images')->get();
-        $stateTaxes = StateTax::get();
-        return view('usa', compact('basicType', 'advanceType', 'deduction', 'stateTaxes'));
-    }
-
-    public function templateGloble()
-    {
-        $basicType = Template::where(['state' => 'global', 'type' => 'basic', 'status' => 1])->get();
-        $advanceType = Template::where(['state' => 'global', 'type' => 'advance', 'status' => 1])->get();
-        return view('global', compact('basicType', 'advanceType'));
-    }
-
-    public function globlePaystub()
-    {
-        $deduction = Deduction::where('state', 'global')->orderBy('id', 'asc')->get();
-        $basicType = Template::where(['state' => 'global', 'type' => 'basic', 'status' => 1])->with('images')->get();
-        $advanceType = Template::where(['state' => 'global', 'type' => 'advance', 'status' => 1])->with('images')->get();
-        $stateTaxes = StateTax::get();
-        return view('globalPaystub', compact('basicType', 'advanceType', 'deduction', 'stateTaxes'));
-    }
+    
 
     public function prizing(Request $request)
     {

@@ -283,7 +283,7 @@
                                 <div class="row">
                                     <div class="col-lg-4 col-md-4 pr-0 addtaxes">
                                         <button type="button" CLASS="statementbtn">DEDUCTION</button>
-                                        @foreach ($dedutions as $key => $item)
+                                        @foreach ($deduction as $key => $item)
                                         <div class="d-flex mt-3">
                                             <img src="{{ asset('images/lock.png') }}" class="earnbtn3">
                                             <input class="earnbtn text-center taxes" name="taxes[]" data-id="00{{ $key }}" data-value="{{ $item->price }}" value="{{ $item->title }}" data-value="{{ $item->title }}">
@@ -292,13 +292,13 @@
                                     </div>
                                     <div class="col-lg-4 col-md-4 pr-0 addtaxes_rate">
                                         <button type="button" CLASS="statementbtn">CURRENT TOTAL</button>
-                                        @foreach ($dedutions as $key => $item)
+                                        @foreach ($deduction as $key => $item)
                                         <input class="earnbtn text-center mt-3" readonly name="taxes_rate[]" id="tax_total_00{{ $key }}">
                                         @endforeach
                                     </div>
                                     <div class="col-lg-4 col-md-4 pr-0 addtaxes_ytd">
                                         <button type="button" CLASS="statementbtn">YTD TOTAL</button>
-                                        @foreach ($dedutions as $key => $item)
+                                        @foreach ($deduction as $key => $item)
                                         <input class="earnbtn text-center mt-3" readonly name="taxes_ytd[]" id="tax_ytd_00{{ $key }}">
                                         @endforeach
                                     </div>

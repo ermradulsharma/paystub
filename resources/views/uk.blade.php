@@ -4,8 +4,6 @@
 
 
 <div title="Uk-header" style="background: #ff6261; " class="mt-2">
-
-
     <div class="container-fluid">
         <div class="container" style="max-width: 1613px">
             <div class="row">
@@ -28,28 +26,20 @@
                     </div>
 
                     <div class="mt-5 pt-3 pl-5" style="">
-                        <a class="Generate btn-lg btn" href="{{url('uk-paystub') }}">Generate Paystub
-                            Now</a>
+                        <a class="Generate btn-lg btn" href="{{route('uk.payStub') }}">Generate Paystub Now</a>
                     </div>
                     <div class="mt-5 pt-3 d-flex uk-goo" style="padding: 25px 49px; ">
-                        <a href="https://www.google.com/" target="_blank"><img class="storbtn "
-                                src="images/Google_Play_Store_badge_EN.webp"></a>
-                        <a href="https://www.google.com/" target="_blank"><img class="storbtn ml-3"
-                                src="images/Download_on_the_App_Store_Badge.webp"></a>
+                        <a href="https://www.google.com/" target="_blank"><img class="storbtn" src="images/Google_Play_Store_badge_EN.webp"></a>
+                        <a href="https://www.google.com/" target="_blank"><img class="storbtn ml-3" src="images/Download_on_the_App_Store_Badge.webp"></a>
                     </div>
-
-
-
                 </div>
 
                 <div class="col-lg-6 col-md-6 ukimg1">
                     <div class="">
                         <img class=" my-2 pt-1 imguk" src="images/uk/payslip_uk.png ">
                     </div>
-
                 </div>
             </div>
-
         </div>
     </div>
 </div>
@@ -152,7 +142,7 @@
         <div class=" text-justify text-center text-white">
             <h1 style="font-family: 'Futura LT';">Generate 100% Legal UK Payslips</h1>
             <div class="my-3 d-flex">
-                <a class="Generate btn-lg btn" href="{{url('uk-paystub') }}">Generate Paystub
+                <a class="Generate btn-lg btn" href="{{route('uk.payStub') }}">Generate Paystub
                     Now</a>
 
 
@@ -164,7 +154,7 @@
 </div>
 
 <div class="container-xxl" style="background: #f7f9ff;" >
-   <img class="w-100 " src="images/uk/paystubx_uk_picture.png">   
+   <img class="w-100 " src="images/uk/paystubx_uk_picture.png">
 </div>
 
 <div class="container" style="max-width:1613px;">
@@ -281,7 +271,7 @@
                 checking if you’ve been taxed correctly.</p>
 
             <div class="my-4 mb-5 ukbtn1">
-                <a class="Generate btn-lg btn" href="{{url('uk-paystub') }}">Generate Paystub
+                <a class="Generate btn-lg btn" href="{{route('uk.payStub') }}">Generate Paystub
                     Now</a>
             </div>
         </div>
