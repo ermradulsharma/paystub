@@ -18,8 +18,9 @@ defined('DEVELOPER_FIRST_NAME') or define("DEVELOPER_FIRST_NAME", 'Developer');
 defined('DEVELOPER_LAST_NAME') or define("DEVELOPER_LAST_NAME", 'Account');
 
 // ======================================== App Details ========================================================
-defined('APP_NAME') or define("APP_NAME", 'Social App');
-defined('APP_URL') or define("APP_URL", 'http://www.socialapp.com');
+defined('APP_NAME') or define("APP_NAME", 'Paystub X');
+defined('APP_URL') or define("APP_URL", 'http://www.paystubx.com');
+defined('MAIL_FROM_EMAIL') or define("MAIL_FROM_EMAIL", 'developerspbs@gmail.com');
 
 define('IMAGE_UPLOAD_PATH', 'public/');
 define('STORAGE_UPLOAD_PATH', storage_path('public/'));
