@@ -33,7 +33,7 @@
     <div class="container" style="max-width:1500px">
         <ul class="nav nav-justified navbar" style="max-width: 1445px;">
             <li class="nav-item">
-                <a href="{{ route('paystub') }}"><img class="mr-3 mt-5" src="{{asset('images/Paystub X.webp')}}" style="width: 222px;"></a>
+                <a href="{{ route('welcome') }}"><img class="mr-3 mt-5" src="{{asset('images/Paystub X.webp')}}" style="width: 222px;"></a>
             </li>
             <li class="nav-item ml-3 ">
                 <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('usa*') ? 'active' : '' }} " href="{{ route('usa.payStub') }}">USA</a>
@@ -74,11 +74,11 @@
     <div id="mySidenav" class="sidenav">
         <a href="{{ url('/') }}"><img class="mr-3 mt-5 toggle-logo" src="{{asset('images/Paystub X.webp')}}" style="width: 222px;"></a>
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('usa') ? 'active' : '' }} " href="{{ url('usa') }}">USA</a>
-        <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('canada') ? 'active' : '' }}" href="{{ url('canada') }}">CANADA</a>
-        <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('uk') ? 'active' : '' }}" href="{{ url('uk') }}">UK</a>
-        <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('globle') ? 'active' : '' }}" href="{{ url('globle') }}">GLOBEL</a>
-        <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('form') ? 'active' : '' }}" href="{{ url('form') }}">W-2 FORM</a>
+        <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('usa*') ? 'active' : '' }} " href="{{ route('usa.payStub') }}">USA</a>
+        <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('canada*') ? 'active' : '' }}" href="{{ route('canada') }}">CANADA</a>
+        <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('uk*') ? 'active' : '' }}" href="{{ route('uk') }}">UK</a>
+        <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('globle*') ? 'active' : '' }}" href="{{ route('global') }}">GLOBEL</a>
+        <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('w2form*') ? 'active' : '' }}" href="{{ route('w2form') }}">W-2 FORM</a>
     </div>
     <div class="openbtn">
         <div class=" pt-4 d-flex justify-content-between">

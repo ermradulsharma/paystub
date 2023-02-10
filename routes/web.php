@@ -22,7 +22,7 @@ use Symfony\Component\Routing\Router;
 */
 Route::get('/', function () {
     return view('welcome');
-})->name('paystub');
+})->name('welcome');
 Route::match(['get', 'post'], 'usa/paystub', [PayStubController::class, 'usaPayStub'])->name('usa.payStub');
 
 Route::match(['get', 'post'], 'global', [PayStubController::class, 'templateGlobal'])->name('global');
