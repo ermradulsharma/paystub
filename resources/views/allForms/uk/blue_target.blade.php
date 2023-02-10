@@ -208,10 +208,10 @@
             </tr>
         </table> --}}
         <table style="border-bottom:1px solid #0a2e7b ;">
-            <thead style="border:1px solid #0a2e7b ; border-left:none; border-right:none;">
+            <thead style="border:1px solid #0a2e7b ; border-left:none; border-right:none; border-bottom:none;">
                 <th style="background-color: white !important; border-bottom:none !important;"></th>
-                <th style="color: #0a2e7b; font-size:10px;">THIS PERIOD</th>
-                <th style="color: #0a2e7b; font-size:10px;">YEAR TO DATE</th>
+                <th style="color: #0a2e7b; font-size:10px;border-top:1px solid #0a2e7b ;border-left:1px solid #0a2e7b;">THIS PERIOD</th>
+                <th style="color: #0a2e7b; font-size:10px;border-top:1px solid #0a2e7b; border-left:1px solid #0a2e7b; ">YEAR TO DATE</th>
             </thead>
             <tr>
                 <td>
