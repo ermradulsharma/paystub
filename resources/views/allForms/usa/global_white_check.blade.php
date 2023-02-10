@@ -196,7 +196,7 @@
             <tr>
                 <td></td>
                 <td>Exemptions/Alowances:{{ $requestData['exemptions'] }}</td>
-                <td><b> {{ $requestData['emp_street_1'] }}</br> {{ $requestData['emp_street_2'] }}</b> </td>
+                <td><b> {{ $requestData['emp_street_1'] }} <br> {{ $requestData['emp_street_2'] }}</b> </td>
             </tr>
             <tr>
                 <td></td>
