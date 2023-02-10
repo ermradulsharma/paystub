@@ -11,6 +11,7 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 
@@ -139,7 +140,17 @@ class LoginController extends Controller
             $user = new User;
             $user->email = $request->email;
         }
-
+        $moreData = [
+            "otp" => $code
+        ];
+        $mailData = [
+            "email" => $request->email,
+            "title" => "Verification code"
+        ];
+        Mail::send('mail.verify', $moreData, function ($message) use ($mailData) {
+            $message->to($mailData['email']);
+            $message->subject($mailData['title']);
+        });
         $user->code = $code;
         $user->save();
         $response['message'] = "Verification code sent successfully";
