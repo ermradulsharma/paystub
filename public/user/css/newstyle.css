@@ -495,7 +495,7 @@ select:after {
     font-size: 21px;
     color: #ffffff;
     background: #12c23a;
-    padding: 6px 30px;
+    padding: 3px 80px;
     border: none;
     border-radius: 4px;
     box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, .6));
@@ -1126,6 +1126,334 @@ ul.nav.nav-justified.navbar {
 
 
 /* w2 form design end*/
+/* w2 form new design start*/
+.w2-form {
+    padding: 50px 0px 100px;
+    background-color: rgba(255, 97, 97, 1);
+}
+.w2form-outer {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 50px;
+    background: white;
+}
+.wrapper {
+    max-width: 1450px;
+    margin: 0 auto;
+    border: 2px solid red;
+}
+.w2form-row {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    border: 2px solid red;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+
+}
+.checkbox {
+    width: 20px;
+    height: 20px;
+    border: 2px solid red;
+}
+.w2-checkbox-outer p {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding-right: 10px;
+}
+.w2-checkbox-outer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    max-width: 150px;
+    padding-top: 15px;
+}
+.w2form-no h5 {
+    font-weight: 800;
+    font-size: 25px;
+    padding-top:15px;
+
+}
+.w2form-no {
+    width: 100%;
+    text-align: center;
+    max-width: 150px;
+    border-right: 2px solid red;
+}
+input{
+    display: inline-block;
+}
+.input-box {
+    width: 100%;
+    max-width: 325px;
+    border: 5px solid red;
+    padding: 5px 10px;
+    margin-right: 20px;
+}
+.input-box p {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 0;
+    text-align: center;
+}
+.input{
+    max-width: 350px;
+    width: 100%;
+}
+.color-red {
+    color: red;
+    padding: 0;
+}
+.font-weight-800{
+    font-weight: 800;
+}
+.w2-lefttext {
+    width: 100%;
+    padding-top:10px;
+    max-width: 200px;
+}
+.input-box input {
+    text-align: center;
+    background-color: rgba(128, 128, 128,0.1);
+    border: none;
+    border: 1px solid black;
+    padding: 0px 30px;
+    margin:0 auto;
+    display: flex;
+}
+.w2form-box-outer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.w2form-left-box {
+    width: 55%;
+    border-right: 2px solid red;
+}
+
+.border-none {
+    border: none;
+
+}
+.textarea-w2 textarea{
+    width: 100%;
+    max-width: 680px;
+    margin-bottom:14px;
+
+}
+.border-none input {
+    margin: 0;
+}
+.border-none p {
+   text-align: left;
+}
+.textarea-outer{
+    border-bottom: 2px solid red;
+    border-top:2px solid red;
+    padding-left: 10px;
+}
+.border-none textarea {
+    background-color: rgba(128, 128, 128,0.1);
+}
+.inputbox-outer {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    border-top: 2px solid red;
+    border-bottom: 2px dashed red;
+}
+.width {
+    width: calc(47% - 20px) !important;
+    margin-right: 20px !important;
+    border-right: 2px solid red;
+}
+.text {
+    width: 8%;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: right;
+}
+.bottom-textarea {
+    margin-top:10px;
+    margin-left: 10px;
+}
+.bottom-textarea textarea {
+    max-width: 700px;
+    width: 100%;
+}
+.w2form-right-box {
+    width:45%;
+}
+.input-box2-outer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-bottom: 2px solid red;
+
+}
+.inputbox2 {
+    width: calc(50% - 10px);
+    margin-right: 20px;
+    position: relative;
+    padding: 0px 10px;
+}
+.inputbox2:nth-child(2) {
+    margin-right: 0;
+}
+.inputbox2 input {
+    text-align: right;
+    background-color: rgba(128, 128, 128,0.1);
+    margin-bottom:6px;
+    border: 1px solid black;
+
+}
+.inputbox2:before {
+    position: absolute;
+    top: 0;
+    right: -22px;
+    width: 2px;
+    height: 100%;
+    background: red;
+    content: "";
+}
+.inputbox2:nth-child(2):before {
+    content: none;
+}
+.pie-box {
+    max-width: 30px;
+    width: 100%;
+}
+input.input-pie-box {
+    width: calc(85% - 25px);
+    margin-left: 20px;
+}
+.checkbox-sqaure input {
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+
+}
+.checkbox-sqaure input:hover{
+    box-shadow: none;
+}
+.checkbox-sqaure{
+    padding: 0px;
+    margin: 0px;
+}
+.checkbox-sqaure-outer {
+    display: flex;
+}
+.display{
+    display: flex;
+    flex-wrap: wrap;
+}
+.justifycenter{
+    justify-content: center;
+}
+.checkbox-inner  {
+    width: 30%;
+}
+.input:hover{
+    border: 1px solid #244b1f !important;
+    background: #244b1f;
+    color: white !important;
+    box-shadow: none;
+}
+.input {
+    transition: all 0.5s ease-in-out;
+}
+.bottom-textarea1{
+    max-width: 400px;
+    width: 100%;
+}
+.bottom-box-outer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    border-top: 2px solid red;
+    border-bottom: 2px dashed red;
+
+}
+.select-box {
+    max-width: 80px;
+    text-align: left;
+    padding-left: 10px;
+    width: 100%;
+}
+
+.bottom-box-inner1 {
+    width: 7%;
+    border-right: 2px solid red;
+    padding-left: 5px;
+    padding-right: 15px;
+    padding-bottom: 5px;
+}
+.bottom-box-inner2{
+    width:18%;
+    border-right: 2px solid red;
+    padding-left: 15px;
+    padding-right:15px;
+    padding-bottom: 5px;
+}
+
+.bottom-box-inner3{
+    width:15% ;
+    border-right: 2px solid red;
+    padding-left: 15px;
+    padding-right:15px;
+    padding-bottom: 5px;
+}
+
+.bottom-box-inner4{
+    width:15% ;
+    border-right: 2px solid red;
+    padding-left: 15px;
+    padding-right:15px;
+    padding-bottom: 5px;
+}
+
+.bottom-box-inner5{
+    width:15% ;
+    border-right: 2px solid red;
+    padding-left: 15px;
+    padding-right:15px;
+    padding-bottom: 5px;
+}
+
+.bottom-box-inner6{
+    width:16% ;
+    border-right: 2px solid red;
+    padding-left: 15px;
+    padding-right:15px;
+    padding-bottom: 5px;
+}
+
+.bottom-box-inner7{
+    width:13% ;
+    padding-left: 10px;
+    padding-bottom: 5px;
+
+
+}
+.top-contentw2 {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+.top-contentw2 h2{
+   color: white;
+   font-size: 50px;
+}
+.top-contentw2 p{
+    color: white;
+    font-size: 30px;
+
+
+
+
+/* w2 form new design end*/
 
 
 
@@ -1590,7 +1918,23 @@ ul.nav.nav-justified.navbar {
         padding: 4px 8px;
         font-size: 11px;
     }
-
+    .w2form-no{
+        max-width: 100px;
+    }
+    .w2-checkbox-outer {
+        max-width: 100px;
+    }
+    .w2form-left-box {
+        width: 100%;
+        border-right: 0;
+    }
+    .w2form-right-box {
+        width: 100%;
+        border-top: 2px solid red;
+    }
+    .inputbox2:before{
+        right:-15px;
+    }
     .see-sample1 {
         top: 114px;
         left: 312px;
@@ -2013,7 +2357,71 @@ ul.nav.nav-justified.navbar {
     .w-sm-100 {
         width: 100%;
     }
-
+    .textarea-w2 textarea{
+        max-width: 400px;
+    }
+    .bottom-textarea textarea{
+        max-width: 400px;
+    }
+    .bottom-box-inner1{
+        width:100%;
+        border-right:none;
+        padding-left: 15px;
+    }
+    .bottom-box-inner2{
+        width:100%;
+        border-right:none;
+    }
+    .bottom-box-inner3{
+        width:100%;
+        border-right:none;
+    }
+    .bottom-box-inner4{
+        width:100%;
+        border-right:none;
+    }
+    .bottom-box-inner5{
+        width:100%;
+        border-right:none;
+    }
+    .bottom-box-inner6{
+        width:100%;
+        border-right:none;
+    }
+    .bottom-box-inner7{
+        width:100%;
+        border-right:none;
+        padding-left: 15px;
+    }
+    .inputbox2 {
+        width: 100%;
+        margin-right: 0;
+    }
+    .inputbox2:before {
+        content: none;
+    }
+    .input-box{
+        max-width: 100%;
+        margin-right: 0;
+    }
+    .w2-lefttext{
+        padding-left: 10px;
+    }
+    .input-box input{
+        margin:0;
+    }
+    .width{
+        width: 100% !important;
+        margin-right: 0;
+        border-right: none;
+    }
+    .text{
+        padding-left: 10px;
+    }
+    .checkbox-inner {
+        /* width: 100%;
+        margin-bottom: 6px; */
+    }
     .see-sample2 {
         top: 78px;
         right: 76px;
@@ -2351,6 +2759,12 @@ ul.nav.nav-justified.navbar {
     .w-sm-100 {
         width: 100%;
     }
+    .bottom-textarea textarea{
+        max-width: 350px;
+    }
+    .textarea-w2 textarea {
+        max-width: 350px;
+    }
 
     .see-sample2 {
         top: 70px;
@@ -2636,5 +3050,13 @@ ul.nav.nav-justified.navbar {
         width: 17px;
         margin-top: 14px;
         padding-right: 1px;
+    }
+}
+@media screen and (max-width: 320px) {
+    .textarea-w2 textarea {
+        max-width: 295px;
+    }
+    .textarea-w2 textarea {
+        max-width: 295px;
     }
 }
