@@ -13,7 +13,7 @@
             </div>
 
             <div style="text-align: -webkit-right;" class="mb-4">
-                <a class="btn btn-lg  mt-5 p-2 btn-danger Generate " href="{{url('usa')}}">Select W-2 Year</a>
+                <a class="btn btn-lg  mt-5 p-2 btn-danger Generate " href="{{route('paystub')}}">Select W-2 Year</a>
             </div>
 
             <div class="container bg-light  redcon" style="max-width:1450px;">

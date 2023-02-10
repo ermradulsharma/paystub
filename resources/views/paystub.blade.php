@@ -20,10 +20,8 @@
                     <a class="btn btn-lg  mt-5 p-2 btn-danger Generate " href="{{url('usa')}}">Generate Paystub Now</a>
                 </div>
                 <div class="mt-5 d-flex pt-5 top-gogle">
-                    <a href="https://www.google.com/" target="_blank"><img class="storbtn ml-1"
-                            src="images/Google_Play_Store_badge_EN.webp"></a>
-                    <a href="https://www.google.com/" target="_blank"><img class="storbtn ml-5"
-                            src="images/Download_on_the_App_Store_Badge.webp"></a>
+                    <a href="https://www.google.com/" target="_blank"><img class="storbtn ml-1" src="images/Google_Play_Store_badge_EN.webp"></a>
+                    <a href="https://www.google.com/" target="_blank"><img class="storbtn ml-5" src="images/Download_on_the_App_Store_Badge.webp"></a>
                 </div>
             </div>
             <!-- <div class="col-lg-1"></div> -->
@@ -133,32 +131,27 @@
                     <div class="col-md-4 mt-3 text-center">
                         <h2 class="text-white calcheading head-font" style="color: #fafabd !important;">Add your Data
                         </h2>
-                        <p style="font-size:17px;font-weight: 200;font-family: 'Futura LT';line-height:1.8;"
-                            class="text-white pay-p head-font">Our paystub generator
+                        <p style="font-size:17px;font-weight: 200;font-family: 'Futura LT';line-height:1.8;" class="text-white pay-p head-font">Our paystub generator
                             accurately</br>
                             calculates your Federal and State</br> taxes, including Social security </br>and Medicare
                             taxes so you don't
                         </p>
 
-                        <img src="images/1.webp"
-                            style=" width: 94px; height: 94px; object-fit: cover; object-position: 50% 50%;">
+                        <img src="images/1.webp" style=" width: 94px; height: 94px; object-fit: cover; object-position: 50% 50%;">
                     </div>
 
 
                     <div class="col-md-4 mt-3 text-center">
                         <h2 class="text-white calcheading head-font" style="color: #fafabd !important;">Preview Data
                         </h2>
-                        <p style="font-size:17px;font-weight: 200;font-family: 'Futura LT'; line-height:1.8;"
-                            class="text-white pay-p head-font">Generate pay stubs with
+                        <p style="font-size:17px;font-weight: 200;font-family: 'Futura LT'; line-height:1.8;" class="text-white pay-p head-font">Generate pay stubs with
                             accurate</br>
                             state income taxes, based on </br>state W-4, and other applicable</br> local taxes. </p>
-                        <img src="images/2.webp"
-                            style=" width: 94px; height: 94px; object-fit: cover; object-position: 50% 50%;">
+                        <img src="images/2.webp" style=" width: 94px; height: 94px; object-fit: cover; object-position: 50% 50%;">
                     </div>
                     <div class="col-md-4 mt-3 text-center">
                         <h2 class="text-white pay-h2 calcheading head-font">Download & Email your Paystub</h2>
-                        <p style="font-size:17px;font-weight: 200;font-family: 'Futura LT'; line-height:1.8;"
-                            class="text-white pay-p head-font">You will get to generate
+                        <p style="font-size:17px;font-weight: 200;font-family: 'Futura LT'; line-height:1.8;" class="text-white pay-p head-font">You will get to generate
                             unlimited</br>
                             payslip, paycheck or paystub </br>according to the plan you select.
                         </p>
@@ -239,10 +232,7 @@
 
             <div class="col-md-4 text-center">
                 <div class="justify-content-center">
-                    <iframe class="mr-2 youtubeimg w-100" src="https://www.youtube.com/embed/TrnLCFsN5i8"
-                        title="Plane Overhead" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen></iframe>
+                    <iframe class="mr-2 youtubeimg w-100" src="https://www.youtube.com/embed/TrnLCFsN5i8" title="Plane Overhead" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     <button class="text-white payp">Generate Paystubs with Accurate Tax Calculations</button>
                 </div>
 
@@ -250,10 +240,7 @@
 
             <div class="col-md-4 text-center ">
                 <div class="justify-content-center">
-                    <iframe class="mr-2 youtubeimg  w-100" style=" " src="https://www.youtube.com/embed/TrnLCFsN5i8"
-                        title="Plane Overhead" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen></iframe>
+                    <iframe class="mr-2 youtubeimg  w-100" style=" " src="https://www.youtube.com/embed/TrnLCFsN5i8" title="Plane Overhead" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     <button class="text-white payp">How to Create PayStubs for Independent Contractors</button>
                 </div>
 
@@ -261,10 +248,7 @@
 
             <div class="col-md-4 text-center">
                 <div class="justify-content-center">
-                    <iframe class="mr-2 youtubeimg  w-100" style=" " src="https://www.youtube.com/embed/TrnLCFsN5i8"
-                        title="Plane Overhead" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen></iframe>
+                    <iframe class="mr-2 youtubeimg  w-100" style=" " src="https://www.youtube.com/embed/TrnLCFsN5i8" title="Plane Overhead" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     <button class="text-white payp">Select your Preferred Template</button>
                 </div>
 
@@ -287,21 +271,18 @@
                     <ul>
 
 
-                        <li class="mt-2"
-                            style="font-weight: 200; font-size: 20px; line-height:1.5em; font-family: 'Futura LT';"> W-2
+                        <li class="mt-2" style="font-weight: 200; font-size: 20px; line-height:1.5em; font-family: 'Futura LT';"> W-2
                             - Efile with
                             SSA, Distribute to Employees. ✅</li>
 
 
-                        <li class="mt-2"
-                            style="font-weight: 200; font-size: 20px; line-height:1.5em; font-family: 'Futura LT';">
+                        <li class="mt-2" style="font-weight: 200; font-size: 20px; line-height:1.5em; font-family: 'Futura LT';">
                             1099-NEC,
                             1099-MISC - Efile with IRS, Distribute to
                             Contractors ✅</li>
 
 
-                        <li class="mt-2"
-                            style="font-weight: 200; font-size: 20px; line-height:1.5em; font-family: 'Futura LT';">
+                        <li class="mt-2" style="font-weight: 200; font-size: 20px; line-height:1.5em; font-family: 'Futura LT';">
                             Efile Form 940 - FUTA filing with IRS. ✅</li>
                     </ul>
                 </div>
@@ -324,10 +305,8 @@
                 </div>
 
                 <div class="mt-5  d-flex pt-5 goggle">
-                    <a href="https://www.google.com/" target="_blank"><img class="storbtn "
-                            src="images/Google_Play_Store_badge_EN.webp"></a>
-                    <a href="https://www.google.com/" target="_blank"><img class="storbtn ml-5 "
-                            src="images/Download_on_the_App_Store_Badge.webp"></a>
+                    <a href="https://www.google.com/" target="_blank"><img class="storbtn " src="images/Google_Play_Store_badge_EN.webp"></a>
+                    <a href="https://www.google.com/" target="_blank"><img class="storbtn ml-5 " src="images/Download_on_the_App_Store_Badge.webp"></a>
                 </div>
             </div>
 
@@ -350,13 +329,14 @@
 
 
 <script>
-function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-}
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+    }
 
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-}
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+
 </script>
 
 @endsection

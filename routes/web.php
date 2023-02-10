@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CanadaController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PayStubController;
 use App\Http\Controllers\TemplateFormController;
 use App\Http\Controllers\UkController;
 use App\Http\Controllers\UsaController;
@@ -19,32 +20,41 @@ use Symfony\Component\Routing\Router;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', function () {
+    return view('welcome');
+})->name('paystub');
+Route::match(['get', 'post'], 'usa/paystub', [PayStubController::class, 'usaPayStub'])->name('usa.payStub');
 
+Route::match(['get', 'post'], 'global', [PayStubController::class, 'templateGlobal'])->name('global');
+Route::match(['get', 'post'], 'global/paystub', [PayStubController::class, 'globlePaystub'])->name('global.payStub');
+
+Route::get('uk', function () {
+    return view('uk');
+})->name('uk');
+Route::match(['get', 'post'], 'uk/paystub', [PayStubController::class, 'ukPayStub'])->name('uk.payStub');
+
+Route::get('canada', function () {
+    return view('canada');
+})->name('canada');
+Route::match(['get', 'post'], 'canada/paystub', [PayStubController::class, 'canadaPayStub'])->name('canada.payStub');
+
+Route::get('w2form', function () {
+    return view('forms');
+})->name('w2form');
+
+Route::get('w2form/paystub', function () {
+    return view('w2paystub');
+})->name('w2form.paystub');
 
 Route::get('generate-pdf', [W2FormController::class, 'generatePDF']);
 Route::get('preview-pdf', [W2FormController::class, 'previewPDF']);
 
 
 
-Route::match(['get', 'post'], 'usa', [UsaController::class, 'index']);
-Route::get('canada-paystub', [CanadaController::class, 'index']);
-Route::get('uk-paystub', [UkController::class, 'index']);
-Route::get('globle', [UsaController::class, 'templateGloble']);
-Route::get('globle-paystub', [UsaController::class, 'globlePaystub']);
 
 
 
 
-Route::get('canada', function () {
-    return view('canada');
-});
-Route::get('uk', function () {
-    return view('uk');
-});
-
-Route::get('form', function () {
-    return view('forms');
-});
 Route::get('terms', function () {
     return view('terms');
 });
@@ -56,9 +66,6 @@ Route::get('refund', function () {
     return view('refund');
 });
 
-Route::get('w2paystub', function () {
-    return view('w2paystub');
-});
 Route::get('contact', function () {
     return view('contact');
 });
@@ -68,13 +75,8 @@ Route::get('template-view', function () {
 Route::get('userDashboard', function () {
     return view('user-dashboard');
 });
-/* Route::get('prizing', function () {
-    return view('prizing');
-}); */
 
-Route::get('/', function () {
-    return view('paystub');
-})->name('welcome');
+
 
 Route::get('auth/Login', [LoginController::class, 'loginWithGoogle'])->name('login.google');
 Route::match(['get', 'post'], 'google/callback', [LoginController::class, 'callbackFromGoogle'])->name('google.callback');
