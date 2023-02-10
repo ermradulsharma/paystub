@@ -707,6 +707,7 @@ h5 {
 .rec-box-border {
     padding: 1px 20px;
     border: 2px solid red;
+    border-bottom: none;
 }
 
 /* w2paystub */
