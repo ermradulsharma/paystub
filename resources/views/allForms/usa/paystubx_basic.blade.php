@@ -176,11 +176,14 @@
 
 <body>
 <main class="bg-img2">
-    @php($userObj = Auth::user() ?? [])
-        @php($expiryDate = Auth::user()->expiryDate ?? null)
-        @if(!$userObj || $expiryDate == null)
-        <div class="watermark"></div>
-        @endif
+    @guest
+    <div class="watermark"></div>
+    @endguest
+    @auth
+    @if(Auth::user()->expiryDate == '')
+    <div class="watermark"></div>
+    @endif
+    @endauth
     <div class="section_2">
         <table style="width: 100%;">
             <thead style="background-color: #a9a9a9;">

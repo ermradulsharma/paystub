@@ -37,7 +37,7 @@
                     </div>
 
                     <div class="mt-5 pt-3 pl-4 globlebtn">
-                        <a class="btn btn-lg  mt-2 p-2 btn-danger Generate " href="{{ url('globle-paystub') }}">Generate
+                        <a class="btn btn-lg  mt-2 p-2 btn-danger Generate " href="{{ route('global.payStub') }}">Generate
                             Paystub
                             Now</a>
                     </div>
@@ -98,7 +98,7 @@
                             We offer a wide variety of sample paystub templates to suit</br> your needs!
                         </div>
                         <div class=" pt-5">
-                            <a class="btn btn-lg  mt-2 p-2 btn-danger Generate " href="{{ url('globle-paystub') }}">Generate
+                            <a class="btn btn-lg  mt-2 p-2 btn-danger Generate " href="{{ route('global.payStub') }}">Generate
                                 Paystub
                                 Now</a>
                         </div>
@@ -182,7 +182,7 @@
                  font-weight: 700;">
                    <h2 >Thousands of businesses have created professional paystubs with Paystub<span
                         class="text-danger">x</span><br>
-                    Select the template that best suits your needs.</h2> 
+                    Select the template that best suits your needs.</h2>
 
                 </div>
 
@@ -203,7 +203,7 @@
                                 <div class="input-group mmenu mb-3" style="margin: auto;">
                                     <select class="form-control dropdown1 bt_id" style="border-right:none">
                                         <option selected=""> --- Select Basic Templates --- </option>
-                                        @foreach ($basicType as $data)
+                                        @foreach ($basicType ?? [] as $data)
                                             <option value="{{ $data->title }}" data-src="{{ $data->images->file }}">
                                                 {{ $data->title }}
                                             </option>
@@ -235,7 +235,7 @@
                                 <div class="input-group mmenu mb-3" style="margin: auto;">
                                     <select class="form-control dropdown1 at_id" style="border-right:none">
                                         <option selected=""> --- Select Advance Template --- </option>
-                                        @foreach ($advanceType as $data)
+                                        @foreach ($advanceType ?? [] as $data)
                                             <option value="{{ $data->title }}" data-src="{{ $data->images->file }}">
                                                 {{ $data->title }}
                                             </option>
@@ -315,7 +315,7 @@
             <div class="col-lg-5">
                 <img src="images/globle/yoga.gif" class="w-100">
                 <div class="mt-2 d-flex ">
-                    <a class="btn btn-lg  mt-2 mb-4 p-2 btn-danger Generate " href="{{ url('globle-paystub') }}">Generate
+                    <a class="btn btn-lg  mt-2 mb-4 p-2 btn-danger Generate " href="{{ route('global.payStub') }}">Generate
                         Paystub
                         Now</a>
                 </div>
@@ -335,35 +335,25 @@
                 <b>
                     Save Time</b>
             </h4>
-            <p style="font-size:18px; line-height:2em;">Automate payroll and concentrate on growing your
-                business.</p>
+            <p style="font-size:18px; line-height:2em;">Automate payroll and concentrate on growing your business.</p>
             <h4 style="font-family:'sans-serif">
-                <b>
-                    Save Money</b>
+                <b> Save Money</b>
             </h4>
-            <p style="font-size:18px; line-height:2em;">Manage payroll yourself and save while doing it.
-                See Payroll Pricing </p>
+            <p style="font-size:18px; line-height:2em;">Manage payroll yourself and save while doing it. See Payroll Pricing </p>
             <h4 style="font-family:'sans-serif">
-                <b>
-                    Happy Employees</b>
+                <b> Happy Employees</b>
             </h4>
-            <p style="font-size:18px; line-height:2em;">Pay employees accurately and on time to increase their
-                productivity.</p>
+            <p style="font-size:18px; line-height:2em;">Pay employees accurately and on time to increase their productivity.</p>
             <h4 style="font-family:'sans-serif">
-                <b>
-                    100% Accuracy</b>
+                <b> 100% Accuracy</b>
             </h4>
-            <p style="font-size:18px; line-height:2em;">Deliver error-free paychecks, W-2s, and payroll
-                reports.</p>
+            <p style="font-size:18px; line-height:2em;">Deliver error-free paychecks, W-2s, and payroll reports.</p>
             <h4 style="font-family:'sans-serif">
-                <b>
-                    Simplified Compliance</b>
+                <b> Simplified Compliance</b>
             </h4>
-            <p style="font-size:18px; line-height:2em;">Stay in compliance with IRS laws and reporting
-                requirements.</p>
+            <p style="font-size:18px; line-height:2em;">Stay in compliance with IRS laws and reporting requirements.</p>
             <h4 style="font-family:'sans-serif">
-                <b>
-                    Streamline Payroll</b>
+                <b> Streamline Payroll</b>
             </h4>
             <p style="font-size:18px; line-height:1em;">Improve the efficiency of your company and employees.
             </p>
@@ -377,8 +367,7 @@
             <div class=" text-justify text-center text-white">
                 <h1>Generate 100% Legal UK Payslips</h1>
                 <div class="my-3 d-flex">
-                    <a class="btn btn-lg  btn-danger Generate " href="{{ url('globle-paystub') }}">Generate Paystub
-                        Now</a>
+                    <a class="btn btn-lg  btn-danger Generate " href="{{ route('global.payStub') }}">Generate Paystub Now</a>
                 </div>
                 <h2>Simple as ABC</h2>
             </div>

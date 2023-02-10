@@ -18,19 +18,19 @@
 
                     <div class="mt-5 justify-content-center ">
                         <a style="font-family: 'Futura LT';"class="btn btn-lg  mt-2 p-2 btn-danger CreatePaystub "
-                            href="{{ url('canada-paystub') }}">Create Paystub</a>
+                            href="{{ route('canada.payStub') }}">Create Paystub</a>
                     </div>
 
                     <div class="mt-5 pt-2 justify-content-center">
                         <a href="https://www.google.com/" target="_blank"><img class="storbtn "
-                                src="images/Google_Play_Store_badge_EN.webp"></a>
+                                src="{{ asset('images/Google_Play_Store_badge_EN.webp') }}"></a>
                         <a href="https://www.google.com/" target="_blank"><img class="storbtn ml-5"
-                                src="images/Download_on_the_App_Store_Badge.webp"></a>
+                                src="{{ asset('images/Download_on_the_App_Store_Badge.webp') }}"></a>
                     </div>
                 </div>
 
                 <div class="col-lg-8" style="background-position-x:right;left:12px; margin:auto;">
-                    <img src="images/computer.webp" class="w-100">
+                    <img src="{{ asset('images/computer.webp') }}" class="w-100">
                 </div>
             </div>
         </div>
@@ -58,7 +58,7 @@
                     <h2 class="mb-5" style="font-weight:600;">Who can use Paystub<span class="text-danger">x</span>?</h2>
                     <div class="row">
                         <div class="col-md-6" style="border-right:1px solid black;">
-                            <img src="images/employericon.webp" class="emp-img">
+                            <img src="{{ asset('images/employericon.webp') }}" class="emp-img">
                             <div class="employee-font">Employers</div>
                             <p style="font-size:15px;font-family: 'Futura lt';" class="mt-3">Paystubx is a great tool for
                                 employers who</br> manage payroll on
@@ -68,7 +68,7 @@
                             </p>
                         </div>
                         <div class="col-md-6">
-                            <img src="images/sole-propritors.webp" class="emp-img">
+                            <img src="{{ asset('images/sole-propritors') }}.webp" class="emp-img">
                             <div class="employee-font">Sole Proprietors</div>
                             <p style="font-size:15px;font-family: 'Futura lt';" class="mt-3">Sole proprietors or
                                 self-employed individuals<br> can act as their
@@ -98,14 +98,14 @@
                         </ul>
                         <div class=" justify-content-center ">
                             <a style=""class="btn btn-lg  mt-5 p-2 btn-danger CreatePaystub "
-                                href="{{ url('canada-paystub') }}">Create Paystub</a>
+                                href="{{ route('canada.payStub') }}">Create Paystub</a>
                         </div>
 
                     </div>
                     <div class="col-lg-6 m-auto justify-content-center"
                         style="background-position-x: left;
                        left: -146px;top: -138px;">
-                        <img src="images/couple.png" class="couple">
+                        <img src="{{ asset('images/couple.png') }}" class="couple">
                     </div>
                 </div>
             </div>
@@ -116,12 +116,12 @@
 
     <div class="container-fluid" style="background-image: linear-gradient(45deg, #fdf5f4, #f2fbf7);">
         <div class="col-md-12 candada">
-            <img src="images/hh.png" class="w-100">
+            <img src="{{ asset('images/hh.png') }}" class="w-100">
         </div>
 
     </div>
     <div class="container-fluid pb-5 d-flex " style="background-image: linear-gradient(45deg, #fdf5f4, #f2fbf7);">
-        <a class="btn btn-lg  mt-5 p-2 btn-danger Generate " href="{{ url('canada-paystub') }}">Generate Paystub Now</a>
+        <a class="btn btn-lg  mt-5 p-2 btn-danger Generate " href="{{ route('canada.payStub') }}">Generate Paystub Now</a>
     </div>
 
 
@@ -135,9 +135,9 @@
 
                 <div class="my-5">
                     <a href="https://www.google.com/" target="_blank"><img class="storbtn "
-                            src="images/Google_Play_Store_badge_EN.webp"></a>
+                            src="{{ asset('images/Google_Play_Store_badge_EN.webp') }}"></a>
                     <a href="https://www.google.com/" target="_blank"><img class="storbtn ml-5"
-                            src="images/Download_on_the_App_Store_Badge.webp"></a>
+                            src="{{ asset('images/Download_on_the_App_Store_Badge.webp') }}"></a>
                 </div>
 
             </div>

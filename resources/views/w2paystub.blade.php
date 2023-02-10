@@ -13,7 +13,7 @@
             </div>
 
             <div style="text-align: -webkit-right;" class="mb-4">
-                <a class="btn btn-lg  mt-5 p-2 btn-danger Generate " href="{{url('usa')}}">Select W-2 Year</a>
+                <a class="btn btn-lg  mt-5 p-2 btn-danger Generate " href="{{route('welcome')}}">Select W-2 Year</a>
             </div>
 
             <div class="container bg-light  redcon" style="max-width:1450px;">
@@ -26,13 +26,13 @@
                                     <h5>22222</h5>
                                 </div>
                             </div>
-                            <div class="col-md-2" style="border-right:2px solid red;">
+                            <div class="col-md-2" style="">
                                 <label for="vehicle1" class="w2p box-p"> VOID</label>
                                 <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" class="tickbox">
                             </div>
                             <div class="col-md-4 pt-2" style="border-right: 5px solid red; border-left: 3px solid red;">
                                 <p class="w2p">a Employee's social security number</p>
-                                <input type="text" id="fname" name="fname" placeholder="enter text"
+                                <input class="form-input" type="text" id="fname" name="fname" placeholder="Please Enter"
                                     class="w-100 p-2 mb-3"><br>
                             </div>
                             <div class="col-md-4 pt-3">
@@ -43,7 +43,7 @@
                     </div>
                 </div>
 
-                <div class="container" style="max-width:1450px; padding:0; border: 2px solid red;">
+                <div class="container" style="max-width:1450px; padding:0; border: 1px solid red;">
                     <div class="row form-row">
                         <div class="col-lg-6" style="border-right: 1px solid red;">
                             <p class="form-p"><span><b>b</b></span> Employer Identifcation number (EIN)</p>
@@ -241,7 +241,7 @@
                         </div>
                     </div>
                     <div class="row" style=" border-bottom:2px dashed red; margin-bottom:6px;">
-                       
+
                         <div class="col-lg-2" style="border-right: 2px solid red; padding-bottom: 8px;padding-top: 4px;" >
                         <p class="form-p"><span><b>11</b></span> Employer state ID number</p>
                                     <input type="text" id="" name="fname" class="form-input2"
