@@ -258,17 +258,17 @@
                         <tbody>
                             @foreach ($requestData['earning'] as $key => $earn)
                                 <tr style="border: none;">
-                                    <td>{{ $earn }}</td>
-                                    <td>{{ $requestData['currency'] }}{{ number_format($requestData['rate'][$key], 2) }} </td>
-                                    <td>{{ number_format($requestData['hours'][$key],2) }}</td>
-                                    <td>{{ $requestData['currency'] }} {{ number_format($requestData['period'][$key], 2) }}</td>
-                                    <td>{{ $requestData['currency'] }} {{ number_format($requestData['ytd_total'][$key], 2) }}</td>
+                                    <td style="border:none;">{{ $earn }}</td>
+                                    <td style="border:none;">{{ $requestData['currency'] }}{{ number_format($requestData['rate'][$key], 2) }} </td>
+                                    <td style="border:none;">{{ number_format($requestData['hours'][$key],2) }}</td>
+                                    <td style="border:none;">{{ $requestData['currency'] }} {{ number_format($requestData['period'][$key], 2) }}</td>
+                                    <td style="border:none;">{{ $requestData['currency'] }} {{ number_format($requestData['ytd_total'][$key], 2) }}</td>
                                 </tr>
                             @endforeach
                             <tr style="border: none;">
                                 <td colspan="3" style="text-align:left;">Total Wages</td>
-                                <td>{{ $requestData['currency'] }}{{ number_format($requestData['period_gross_total'], 2) }}</td>
-                                <td>{{ $requestData['currency'] }}{{ number_format($requestData['ytd_gross_total'], 2) }}</td>
+                                <td style="border:none;">{{ $requestData['currency'] }}{{ number_format($requestData['period_gross_total'], 2) }}</td>
+                                <td style="border:none;">{{ $requestData['currency'] }}{{ number_format($requestData['ytd_gross_total'], 2) }}</td>
                             </tr>
                         </tbody>
 
@@ -286,7 +286,7 @@
                         <tbody style=" ">
                             @foreach ($requestData['taxes'] ?? [] as $key => $taxes)
                                 <tr style="border:none;">
-                                    <td>{{ $taxes }}</td>
+                                    <td >{{ $taxes }}</td>
                                     <td>{{ $requestData['currency'] }} {{ number_format($requestData['taxes_rate'][$key], 2) }}</td>
                                     <td>{{ $requestData['currency'] }} {{ number_format($requestData['taxes_ytd'][$key], 2) }}</td>
                                 </tr>
