@@ -24,7 +24,7 @@
                     <div class="mt-5 pt-2 justify-content-center">
                         <a href="https://www.google.com/" target="_blank"><img class="storbtn "
                                 src="{{ asset('images/Google_Play_Store_badge_EN.webp') }}"></a>
-                        <a href="https://www.google.com/" target="_blank"><img class="storbtn ml-5"
+                        <a href="https://www.google.com/" target="_blank"><img class="storbtn ml-2"
                                 src="{{ asset('images/Download_on_the_App_Store_Badge.webp') }}"></a>
                     </div>
                 </div>
@@ -96,7 +96,7 @@
                             <li>Year to Date (YTD) Calculations</li>
                             <li>Withholding calculations </li>
                         </ul>
-                        <div class=" justify-content-center ">
+                        <div class=" justify-content-center oo ">
                             <a style=""class="btn btn-lg  mt-5 p-2 btn-danger CreatePaystub "
                                 href="{{ route('canada.payStub') }}">Create Paystub</a>
                         </div>

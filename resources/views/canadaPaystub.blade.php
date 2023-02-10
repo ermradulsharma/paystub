@@ -59,10 +59,10 @@
                                 </div>
                             </div>
 
-                            <!-- <div class="text-center sh">
+                            <div class="text-center sh" hidden>
                                 <img src="{{asset('user/line.png')}}" style="height: 200px;">
                             </div>
-                            <div class="col-md-5 col-lg-6 col-sm-12 pt-3 mt-lg-5  my-auto text-center">
+                            <div class="col-md-5 col-lg-6 col-sm-12 pt-3 mt-lg-5  my-auto text-center" hidden>
                                 <div class="pr-lg-3">
                                     <h6 class="base">ADVANCED TEMPLATES</h6>
                                     <div class="mt-3">
@@ -79,7 +79,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div> -->
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -1143,6 +1143,36 @@ ul.nav.nav-justified.navbar {
 }
 /* uk design again end */
 
+/* template-view */
+.view-temp{
+  color: #0e866c;
+ font-size:24px;;
+}
+.view-temp2{
+    color: #ffffff;
+    background:#e827a5;
+        font-size:22px;
+}
+.prebtn{
+    color: #0e866c;
+    background: #ffffff;
+    font-size: 15px;
+    border: #0e866c 2px solid;
+}
+/* template-view end */
+
+
+
+
+
+
+
+
+
+
+
+
+
 .margintop-5 {
     margin-top: 5em;
 }
@@ -1625,6 +1655,15 @@ ul.nav.nav-justified.navbar {
 }
 
 @media screen and (max-width: 768px) {
+    .view-temp2 {
+        color: #ffffff;
+        background: #e827a5;
+        font-size: 17px;
+    }
+    .view-temp {
+        color: #0e866c;
+        font-size: 22px;
+    }
     .see-sample2 {
         top: 133px;
         right: 116px;
@@ -2053,6 +2092,9 @@ ul.nav.nav-justified.navbar {
 }
 
 @media screen and (max-width: 425px) {
+    .oo{
+        display: flex;
+    }
     .payst{
         border:unset;
         display: unset;
@@ -2664,7 +2706,7 @@ ul.nav.nav-justified.navbar {
     }
 
     .storbtn {
-        width: 127px !important;
+        width: 155px !important;
         height: 44px !important;
         margin-bottom: 0;
     }
@@ -2702,6 +2744,9 @@ ul.nav.nav-justified.navbar {
     }
     .ukpay-inner{
         padding: 10px;
+    }
+    .oo{
+        display: flex;
     }
 }
 

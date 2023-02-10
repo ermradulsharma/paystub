@@ -294,7 +294,7 @@
                 </div>
                 <div class="col2">
                     <table style="width: 100%;">
-                        <thead style="border-top:none; border-left:none;color:#793b5b  ;" id="backcolor">
+                        <thead style="border-top:none;color:#793b5b  ;" id="backcolor">
                             <td style="font-size:9px; border-right:1px solid  #793b5b  ;">DEDUCTIONS & TAXES</td>
                             <td style="font-size:9px; border-right:1px solid  #793b5b  ;  ">AMOUNT<br>THIS CHECK</td>
                             <td style="border-right: none !important;   border-collapse: collapse;font-size:9px;">
