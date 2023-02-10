@@ -41,8 +41,8 @@
             <div class="row mb-3">
                 <div class="col-md-12">
                     <div class="box-usa">
-                        <div class="d-flex justify-content-between flex w-100 ">
-                            <div class="col-md-5 col-lg-6 col-sm-12 pt-3 mt-lg-5 my-auto text-center">
+                        <div class="d-flex justify-content-center flex w-100 ">
+                            <div class="col-md-5 col-lg-6 col-sm-12 my-lg-5 my-auto text-center">
                                 <h6 class="base">BASIC TEMPLATES</h6>
                                 <div class="mt-3">
                                     <div class="input-group mmenu mb-3 text-center">
@@ -59,7 +59,7 @@
                                 </div>
                             </div>
 
-                            <div class="text-center sh">
+                            <!-- <div class="text-center sh">
                                 <img src="{{asset('user/line.png')}}" style="height: 200px;">
                             </div>
                             <div class="col-md-5 col-lg-6 col-sm-12 pt-3 mt-lg-5  my-auto text-center">
@@ -79,7 +79,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
