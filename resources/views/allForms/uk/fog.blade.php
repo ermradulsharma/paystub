@@ -39,8 +39,14 @@
 
 <body>
     <main class="bg-img2">
-        <div class="watermark">
-        </div>
+        @guest
+        <div class="watermark"></div>
+        @endguest
+        @auth
+        @if(Auth::user()->expiryDate == '' || !isset($requestData['watermark']))
+        <div class="watermark"></div>
+        @endif
+        @endauth
 
         <section style="width: 100%; background-color: #efefef; padding-top:30px;padding-bottom:60px;">
             <section style="width: 100%; margin-top:20px;">

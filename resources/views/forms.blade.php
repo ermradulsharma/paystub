@@ -31,7 +31,7 @@
                 </div>
 
                 <div class="mt-2 text-left d-flex">
-                    <a class="btn btn-lg   btn-danger Generate1 " href="{{url('w2paystub')}}">Create W-2
+                    <a class="btn btn-lg   btn-danger Generate1 " href="{{route('w2form.paystub')}}">Create W-2
                         Form</a>
                 </div>
 
@@ -73,7 +73,7 @@
                         in less than 2 minutes.
                     </p>
                     <div class=" mt-5 justify-content-center d-flex">
-                        <a class="btn btn-lg  btn-danger Generate " href="{{url('w2paystub')}}">Create W-2
+                        <a class="btn btn-lg  btn-danger Generate " href="{{route('w2form.paystub')}}">Create W-2
                             Form</a>
                     </div>
 
@@ -156,7 +156,7 @@
                         employee/employer information:
                     </p>
                     <ul class="justify-content-center" style="font-size:20px; font-weight: 200;color:black;">
-                        <li class="mt-1" >Box A – Be
+                        <li class="mt-1">Box A – Be
                             careful to ensure your employee’s social security number is<br> entered correctly her</li>
                         <li class="mt-1">Box B – Enter
                             your EIN number</li>
@@ -167,7 +167,7 @@
                         <li class="mt-1">Box E & F –
                             Enter your employee’s name and address</li>
                         <div class="my-3">
-                            <a class="btn btn-lg  btn-danger Generate " href="{{url('w2paystub')}}">Create W-2
+                            <a class="btn btn-lg  btn-danger Generate " href="{{route('w2form.paystub')}}">Create W-2
                                 Form</a>
                         </div>
                     </ul>
@@ -189,11 +189,11 @@
         <div class="col-2"></div>
         <div class="col-10">
             <div class="">
-                <div class=" text-left"style="font-size:20px;colour:black; font-weight:200;">
+                <div class=" text-left" style="font-size:20px;colour:black; font-weight:200;">
                     Once complete, enter the following in the numbered boxes:
                 </div>
                 <ol style="font-size:20px;color:black; font-weight: 200;">
-                    <li class="mt-2" >Gross wages, tips, and
+                    <li class="mt-2">Gross wages, tips, and
                         any other compensation.</li>
                     <li class="mt-2">Total amount of federal
                         income tax withheld from employee wages for the year.</li>
@@ -222,7 +222,7 @@
                     <li class="mt-2">For restaurants and
                         bars, enter any allocated tips that the employee received during the year. Note that there are
                         several special rules for <span class="text-danger">restaurant payroll for tipped wages</span>
-                    .</li>
+                        .</li>
 
                     <li class="mt-2">Box 9 is left blank. It
                         was previously used for businesses that were participating in the W-2 Verification Code pilot
@@ -230,7 +230,7 @@
 
                     <li class="mt-2">Report any dependent
                         care assistance that was deducted from employee wages, as well as any employer contributions
-                    .</li>
+                        .</li>
 
                     <li class="mt-2">Enter any distributions
                         from nonqualified deferred compensation plans.</li>
@@ -250,9 +250,9 @@
         <div class="container" style="max-width: 1452px;">
             <div class="row">
                 <div class="col-md-8 my-3 p-0">
-                 <img class="formimg2 w-100" src="images/w2form/5f7a31_76101bf5bf7c4aa3906e133b06665388_mv2.webp">
+                    <img class="formimg2 w-100" src="images/w2form/5f7a31_76101bf5bf7c4aa3906e133b06665388_mv2.webp">
                 </div>
-                <div class="col-md-3 mt-3 p-0" >
+                <div class="col-md-3 mt-3 p-0">
                     <ol style="font-size:18px; font-weight: 200;" class="pl-4">
                         <li>Box 12 is where a variety of tax-deferred compensation, benefits, and non-monetary compensation are recorded.</li>
                     </ol>
@@ -298,7 +298,7 @@
             <h1>Generate 100% Legal UK Payslips</h1>
             <div class="my-3" style="display: flex;
                                    justify-content: center;">
-                <a class="btn btn-lg  btn-danger Generate " href="{{url('w2paystub')}}">Create W-2
+                <a class="btn btn-lg  btn-danger Generate " href="{{route('w2form.paystub')}}">Create W-2
                     Form</a>
             </div>
             <h2>Simple as ABC</h2>

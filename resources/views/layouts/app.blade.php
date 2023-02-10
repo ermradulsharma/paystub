@@ -2,15 +2,13 @@
 <html lang="en">
 
 <head>
-    <!-- Basic -->
-    <title>PAYSTUB</title>
+    <title> PAYSTUB X </title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS  -->
+
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -18,13 +16,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;800&family=Public+Sans:wght@300&display=swap">
 
-
     <!-- Responsive CSS Style -->
     <link rel="stylesheet" type="text/css" href="{{ asset('user') }}/css/style.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('user') }}/css/newstyle.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('user') }}/css/user-dashboard.css">
-
-    {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> --}}
     <style>
         select,
         select option {
@@ -38,22 +33,22 @@
     <div class="container" style="max-width:1500px">
         <ul class="nav nav-justified navbar" style="max-width: 1445px;">
             <li class="nav-item">
-                <a href="{{ url('/') }}"><img class="mr-3 mt-5" src="{{asset('images/Paystub X.webp')}}" style="width: 222px;"></a>
+                <a href="{{ route('welcome') }}"><img class="mr-3 mt-5" src="{{asset('images/Paystub X.webp')}}" style="width: 222px;"></a>
             </li>
             <li class="nav-item ml-3 ">
-                <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('usa') ? 'active' : '' }} " href="{{ url('usa') }}">USA</a>
+                <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('usa*') ? 'active' : '' }} " href="{{ route('usa.payStub') }}">USA</a>
             </li>
             <li class="nav-item ml-3">
-                <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('canada') ? 'active' : '' }}" href="{{ url('canada') }}">CANADA</a>
+                <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('canada*') ? 'active' : '' }}" href="{{ route('canada') }}">CANADA</a>
             </li>
             <li class="nav-item ml-3">
-                <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('uk') ? 'active' : '' }}" href="{{ url('uk') }}">UK</a>
+                <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('uk*') ? 'active' : '' }}" href="{{ route('uk') }}">UK</a>
             </li>
             <li class="nav-item ml-3">
-                <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('globle') ? 'active' : '' }}" href="{{ url('globle') }}">GLOBAL</a>
+                <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('global*') ? 'active' : '' }}" href="{{ route('global') }}">GLOBAL</a>
             </li>
             <li class="nav-item ml-3">
-                <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('form') ? 'active' : '' }}" href="{{ url('form') }}" style="width: 143px !important;">W-2 FORM</a>
+                <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('w2form*') ? 'active' : '' }}" href="{{ route('w2form') }}" style="width: 143px !important;">W-2 FORM</a>
             </li>
 
             <li class="nav-item  ml-3 ">
@@ -79,11 +74,11 @@
     <div id="mySidenav" class="sidenav">
         <a href="{{ url('/') }}"><img class="mr-3 mt-5 toggle-logo" src="{{asset('images/Paystub X.webp')}}" style="width: 222px;"></a>
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('usa') ? 'active' : '' }} " href="{{ url('usa') }}">USA</a>
-        <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('canada') ? 'active' : '' }}" href="{{ url('canada') }}">CANADA</a>
-        <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('uk') ? 'active' : '' }}" href="{{ url('uk') }}">UK</a>
-        <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('globle') ? 'active' : '' }}" href="{{ url('globle') }}">GLOBEL</a>
-        <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('form') ? 'active' : '' }}" href="{{ url('form') }}">W-2 FORM</a>
+        <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('usa*') ? 'active' : '' }} " href="{{ route('usa.payStub') }}">USA</a>
+        <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('canada*') ? 'active' : '' }}" href="{{ route('canada') }}">CANADA</a>
+        <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('uk*') ? 'active' : '' }}" href="{{ route('uk') }}">UK</a>
+        <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('globle*') ? 'active' : '' }}" href="{{ route('global') }}">GLOBEL</a>
+        <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('w2form*') ? 'active' : '' }}" href="{{ route('w2form') }}">W-2 FORM</a>
     </div>
     <div class="openbtn">
         <div class=" pt-4 d-flex justify-content-between">
@@ -219,7 +214,7 @@
                             <div class="mt-3 foot " style="padding:12px; border:1px solid #fff; border-radius:5px;max-width:220px; text-align:center; margin-bottom:15px;">
                                 <a class="w-100 footbtn font" href="{{ url('privacy') }}">Privacy Policy</a>
                             </div>
-                            <div class="mt-3 foot " style="padding:12px; border:1px solid #fff; border-radius:5px;max-width:220px; text-align:center; margin-bottom:15px;" >
+                            <div class="mt-3 foot " style="padding:12px; border:1px solid #fff; border-radius:5px;max-width:220px; text-align:center; margin-bottom:15px;">
                                 <a class="w-100 footbtn font" href="{{ url('refund') }}">Refund Policy</a>
                             </div>
                             <div class="mt-3 foot" style="padding:12px; border:1px solid #fff; border-radius:5px;max-width:220px; text-align:center;">
@@ -252,6 +247,7 @@
         </div>
     </div>
     <!-- End Footer Section -->
+
     <!-- End Footer Section -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"></script>
@@ -259,6 +255,7 @@
     <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     @yield('script')
+
     <style>
         /* Center the loader */
         #loader {
@@ -338,10 +335,13 @@
             background: #00000054;
             z-index: 999;
         }
+
     </style>
+
     <div id="loaderDiv" style="display: none;">
         <div id="loader"></div>
     </div>
+
     <script>
         $('.registerBtn').click(function() {
             $('#loginModal').modal('show');
@@ -351,10 +351,10 @@
         });
         $('#sendOTPForm').on('submit', function() {
             $.ajax({
-                url: "{{ url('sendOtp') }}",
-                type: "POST",
-                data: $('#sendOTPForm').serialize(),
-                success: function(response) {
+                url: "{{ url('sendOtp') }}"
+                , type: "POST"
+                , data: $('#sendOTPForm').serialize()
+                , success: function(response) {
                     console.log('response ', response);
                     $("#loginModal").modal("hide");
 
@@ -366,8 +366,8 @@
                         $('#hidden_email').val(response.email);
                         toastr.success(response.message);
                     }
-                },
-                error: function(err) {
+                }
+                , error: function(err) {
                     error = err.responseJSON;
                     console.log('err ', error);
                     toastr.error(error.message);
@@ -375,15 +375,16 @@
             });
             return false;
         });
+
     </script>
 
     <script>
         $('#loginOtp').on('submit', function() {
             $.ajax({
-                url: $(this).attr('action'),
-                type: "POST",
-                data: $(this).serialize(),
-                success: function(response) {
+                url: $(this).attr('action')
+                , type: "POST"
+                , data: $(this).serialize()
+                , success: function(response) {
                     console.log('response ', response);
                     $("#otpModal").modal("hide");
                     toastr.success(response.message);
@@ -395,8 +396,8 @@
                     if (response.user_type == 'Admin') {
                         window.location.href = "{{route('admin.dashboard')}}";
                     }
-                },
-                error: function(err) {
+                }
+                , error: function(err) {
                     error = err.responseJSON;
                     console.log('err ', error);
                     toastr.error(error.message);
@@ -417,8 +418,7 @@
                     setTimeout(() => {
                         window.location.href = "{{route('admin.dashboard')}}";
                     }, 300);
-                },
-                error: function(err) {
+                }, error: function(err) {
                     error = err.responseJSON;
                     console.log('err ', error);
                     toastr.error(error.message);
@@ -426,7 +426,9 @@
             });
             return false;
         });
+
     </script>
+
     <script>
         function openNav() {
             document.getElementById("mySidenav").style.width = "250px";
@@ -435,7 +437,9 @@
         function closeNav() {
             document.getElementById("mySidenav").style.width = "0";
         }
+
     </script>
+
     <script>
         $('.viewTempTemplate').click(function() {
             viewPDF();
@@ -454,11 +458,9 @@
                 success: function(response) {
                     console.log('response ', response);
                     $('#tempView').attr('src', response.pdf + '?embedded=true#toolbar=0');
-                    // $('#tempView').html(response.data);
                     $('#tempViewModal').modal('show');
                     document.getElementById("loaderDiv").style.display = "none";
-                },
-                error: function(err) {
+                }, error: function(err) {
                     error = err.responseJSON;
                     toastr.error(error.message);
                     document.getElementById("loaderDiv").style.display = "none";
@@ -494,7 +496,9 @@
                 }
             });
         }
+
     </script>
+
     @if ($errors->first())
     <script>
         toastr.error('{{ $errors->first() }}');
@@ -505,6 +509,7 @@
     <script>
         toastr.success("{{ Session::get('message') }}");
     </script>
+
     @endif
     @if (Session::has('error'))
     <script>

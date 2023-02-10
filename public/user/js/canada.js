@@ -176,9 +176,10 @@ function calculation(){
     $('.incomeKey').each( function() {
         var id = $(this).data('id');
         var rate = parseFloat($('#rate_'+id).val());
+        console.log(rate);
         var hours = parseFloat($('#hours_'+id).val());
-        var total = rate*hours | 0.00;
-        var ytd = total * parseInt(days_number) || 0.00;
+        var total = rate*hours || 0.00;
+        var ytd = total * parseInt(days_number);
         $('#total_'+id).val(parseFloat(total).toFixed(2));
         earningTotal+=total;
         earningYtdTotal+=ytd;

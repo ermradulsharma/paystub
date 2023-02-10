@@ -132,7 +132,7 @@
 
 .box-usa {
     border: 3px solid #FF6161;
-    padding: 10px 0px 12px 0px;
+
     background: #E8E6E6;
 
     border-radius: 2px;
@@ -167,6 +167,10 @@
 .mmenu {
     width: 67%;
     margin: auto;
+}
+
+.uk-eye {
+    font-size: 50px;
 }
 
 .ukbtn {
@@ -216,7 +220,7 @@
 
 .dropdown11 {
     width: 100%;
-    padding: 5px;
+    padding: 6px;
     border: 1px solid #00000080;
     /* border-radius: 6px; */
     background: #ffffff;
@@ -238,10 +242,10 @@
 .form-control {
     display: block;
     width: 100%;
-    height: calc(1.5em + 0.75rem + 2px);
+    height: calc(1.6em + 1rem + 2px);
     padding: 0.375rem 0.75rem;
-    font-size: 1rem;
-    font-weight: 400;
+    font-size: 1.5rem;
+    font-weight: 900;
     line-height: 1.5;
     color: #495057 !important;
     background-color: #fff;
@@ -540,9 +544,10 @@ input:hover {
 
 .earnbtn:hover {
     color: white;
-    background-image: linear-gradient(45deg, #a70404d6, #cd7570);
-    border: 2px solid #0b0a0a;
+    background-image: linear-gradient(360deg, #a70404d6, #ebc6c3);
+    border: 2px solid #0b0a0a !important;
     border-radius: 4px;
+    transition: all 05s ease-in-out;
 }
 
 .fa-lock:hover {
@@ -713,9 +718,11 @@ h5 {
     font-weight: 700;
     font-size: 17px;
 }
-.form-row{
+
+.form-row {
     border: 1px solid red;
 }
+
 .box-p {
     font-size: 17px;
     margin-top: 23px;
@@ -1094,371 +1101,115 @@ ul.nav.nav-justified.navbar {
     color: black;
     text-decoration: none;
 }
+
 /* chnges after testing by interen end*/
 
 /* w2 form design start */
 
-.form-p{
+.form-p {
     font-size: 12px;
     font-weight: 500;
     color: red;
     padding: 0;
     margin: 0;
 }
-.form-input{
+
+.form-input {
     border: 1px solid #00000096;
     padding: 5px 46px;
     text-align: center;
     background: #8080801f;
 }
-.form-input2{
+
+.form-input2 {
     border: 1px solid #00000096;
     text-align: right;
     background: #8080801f;
     width: 100%;
 }
-.form-input3{
+
+.form-input3 {
     border: 1px solid #00000096;
     text-align: left;
     background: #8080801f;
     width: 100%;
 }
-
-
 /* w2 form design end*/
-/* w2 form new design start*/
-.w2-form {
-    padding: 50px 0px 100px;
-    background-color: rgba(255, 97, 97, 1);
-}
-.w2form-outer {
-    max-width: 1600px;
-    margin: 0 auto;
-    padding: 50px;
-    background: white;
-}
-.wrapper {
-    max-width: 1450px;
-    margin: 0 auto;
-    border: 2px solid red;
-}
-.w2form-row {
-    display: flex;
-    width: 100%;
-    flex-wrap: wrap;
-    border: 2px solid red;
-    border-left: none;
-    border-right: none;
-    border-top: none;
 
-}
-.checkbox {
-    width: 20px;
-    height: 20px;
-    border: 2px solid red;
-}
-.w2-checkbox-outer p {
-    font-size: 14px;
-    text-transform: uppercase;
-    font-weight: 600;
-    padding-right: 10px;
-}
-.w2-checkbox-outer {
+/* uk design again start */
+.payst{
+    border: 1px solid red;
     display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    justify-content: center;
-    max-width: 150px;
-    padding-top: 15px;
 }
-.w2form-no h5 {
-    font-weight: 800;
-    font-size: 25px;
-    padding-top:15px;
+/* uk design again end */
 
+/* template-view */
+.view-temp{
+  color: #0e866c;
+ font-size:24px;;
 }
-.w2form-no {
-    width: 100%;
-    text-align: center;
-    max-width: 150px;
-    border-right: 2px solid red;
+.view-temp2{
+    color: #ffffff;
+    background:#e827a5;
+        font-size:22px;
 }
-input{
-    display: inline-block;
-}
-.input-box {
-    width: 100%;
-    max-width: 325px;
-    border: 5px solid red;
-    padding: 5px 10px;
-    margin-right: 20px;
-}
-.input-box p {
+.prebtn{
+    color: #0e866c;
+    background: #ffffff;
     font-size: 15px;
-    font-weight: 600;
-    margin-bottom: 0;
-    text-align: center;
+    border: #0e866c 2px solid;
 }
-.input{
-    max-width: 350px;
-    width: 100%;
-}
-.color-red {
-    color: red;
-    padding: 0;
-}
-.font-weight-800{
-    font-weight: 800;
-}
-.w2-lefttext {
-    width: 100%;
-    padding-top:10px;
-    max-width: 200px;
-}
-.input-box input {
-    text-align: center;
-    background-color: rgba(128, 128, 128,0.1);
-    border: none;
-    border: 1px solid black;
-    padding: 0px 30px;
-    margin:0 auto;
-    display: flex;
-}
-.w2form-box-outer {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-}
-.w2form-left-box {
-    width: 55%;
-    border-right: 2px solid red;
-}
-
-.border-none {
-    border: none;
-
-}
-.textarea-w2 textarea{
-    width: 100%;
-    max-width: 680px;
-    margin-bottom:14px;
-
-}
-.border-none input {
-    margin: 0;
-}
-.border-none p {
-   text-align: left;
-}
-.textarea-outer{
-    border-bottom: 2px solid red;
-    border-top:2px solid red;
-    padding-left: 10px;
-}
-.border-none textarea {
-    background-color: rgba(128, 128, 128,0.1);
-}
-.inputbox-outer {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    border-top: 2px solid red;
-    border-bottom: 2px dashed red;
-}
-.width {
-    width: calc(47% - 20px) !important;
-    margin-right: 20px !important;
-    border-right: 2px solid red;
-}
-.text {
-    width: 8%;
-    font-size: 15px;
-    font-weight: 600;
-    text-align: right;
-}
-.bottom-textarea {
-    margin-top:10px;
-    margin-left: 10px;
-}
-.bottom-textarea textarea {
-    max-width: 700px;
-    width: 100%;
-}
-.w2form-right-box {
-    width:45%;
-}
-.input-box2-outer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    border-bottom: 2px solid red;
-
-}
-.inputbox2 {
-    width: calc(50% - 10px);
-    margin-right: 20px;
-    position: relative;
-    padding: 0px 10px;
-}
-.inputbox2:nth-child(2) {
-    margin-right: 0;
-}
-.inputbox2 input {
-    text-align: right;
-    background-color: rgba(128, 128, 128,0.1);
-    margin-bottom:6px;
-    border: 1px solid black;
-
-}
-.inputbox2:before {
-    position: absolute;
-    top: 0;
-    right: -22px;
-    width: 2px;
-    height: 100%;
-    background: red;
-    content: "";
-}
-.inputbox2:nth-child(2):before {
-    content: none;
-}
-.pie-box {
-    max-width: 30px;
-    width: 100%;
-}
-input.input-pie-box {
-    width: calc(85% - 25px);
-    margin-left: 20px;
-}
-.checkbox-sqaure input {
-    width: 20px;
-    height: 20px;
-    border: 1px solid black;
-
-}
-.checkbox-sqaure input:hover{
-    box-shadow: none;
-}
-.checkbox-sqaure{
-    padding: 0px;
-    margin: 0px;
-}
-.checkbox-sqaure-outer {
-    display: flex;
-}
-.display{
-    display: flex;
-    flex-wrap: wrap;
-}
-.justifycenter{
-    justify-content: center;
-}
-.checkbox-inner  {
-    width: 30%;
-}
-.input:hover{
-    border: 1px solid #244b1f !important;
-    background: #244b1f;
-    color: white !important;
-    box-shadow: none;
-}
-.input {
-    transition: all 0.5s ease-in-out;
-}
-.bottom-textarea1{
-    max-width: 400px;
-    width: 100%;
-}
-.bottom-box-outer {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    border-top: 2px solid red;
-    border-bottom: 2px dashed red;
-
-}
-.select-box {
-    max-width: 80px;
-    text-align: left;
-    padding-left: 10px;
-    width: 100%;
-}
-
-.bottom-box-inner1 {
-    width: 7%;
-    border-right: 2px solid red;
-    padding-left: 5px;
-    padding-right: 15px;
-    padding-bottom: 5px;
-}
-.bottom-box-inner2{
-    width:18%;
-    border-right: 2px solid red;
-    padding-left: 15px;
-    padding-right:15px;
-    padding-bottom: 5px;
-}
-
-.bottom-box-inner3{
-    width:15% ;
-    border-right: 2px solid red;
-    padding-left: 15px;
-    padding-right:15px;
-    padding-bottom: 5px;
-}
-
-.bottom-box-inner4{
-    width:15% ;
-    border-right: 2px solid red;
-    padding-left: 15px;
-    padding-right:15px;
-    padding-bottom: 5px;
-}
-
-.bottom-box-inner5{
-    width:15% ;
-    border-right: 2px solid red;
-    padding-left: 15px;
-    padding-right:15px;
-    padding-bottom: 5px;
-}
-
-.bottom-box-inner6{
-    width:16% ;
-    border-right: 2px solid red;
-    padding-left: 15px;
-    padding-right:15px;
-    padding-bottom: 5px;
-}
-
-.bottom-box-inner7{
-    width:13% ;
-    padding-left: 10px;
-    padding-bottom: 5px;
-
-
-}
-.top-contentw2 {
-    max-width: 1600px;
-    margin: 0 auto;
-}
-.top-contentw2 h2{
-   color: white;
-   font-size: 50px;
-}
-.top-contentw2 p{
-    color: white;
-    font-size: 30px;
+/* template-view end */
 
 
 
 
-/* w2 form new design end*/
+
+
+
+
+
+
 
 
 
 .margintop-5 {
     margin-top: 5em;
+}
+.input-uk{
+    font-size: 14px;
+    border: 2px solid #ff5722;;
+    border-radius: 5px;
+    box-shadow: 0px 3px 7px 1px #0000004f;
+    width: 100%;
+    padding: 8px 9px;
+    background: rgba(255, 255, 255, 0);
+    text-align: center;
+  font-weight: 600;
+  color: blue;
+}
+.ukpay-inner{
+    padding: 10px;
+}
+.ukpay-inner1{
+    padding: 0px 0px 24px 0;
+    display: contents;
+}
+.uk-lable{
+    font-size: 19px;
+    font-weight: 300;
+}
+.pay-outer:hover {
+    background: #f8eae0;
+}
+.input-uk:hover{
+    color: white;
+    background-image: linear-gradient(360deg, #a70404d6, #ebc6c3);
+    border: 2px solid #000000 !important;
+    border-radius: 5px;
+    box-shadow: 0px 3px 7px 1px #0000004f;
+    width: 100%;
+    padding: 8px 9px;
 }
 
 /* chnges after testing by interen */
@@ -1603,6 +1354,9 @@ input.input-pie-box {
 }
 
 @media screen and (max-width: 1024px) {
+    .ukpay-inner {
+        padding:unset;
+    }
     .num {
         margin-top: 0px;
     }
@@ -1655,7 +1409,7 @@ input.input-pie-box {
     }
 
     .earnbtn1 {
-        font-size: 10px !important;
+        /* font-size: 10px !important; */
     }
 
     .create-container li {
@@ -1753,7 +1507,7 @@ input.input-pie-box {
 
     .box-usa {
         border: 3px solid #FF6161;
-        padding: 10px 0px 12px 0px;
+        /* padding: 10px 0px 12px 0px; */
         background: #E8E6E6;
         border-radius: 2px;
     }
@@ -1764,19 +1518,8 @@ input.input-pie-box {
         border: 1px solid #00000080;
         background: #ffffff;
         margin: auto;
-        font-size: 23px;
-        font-weight: 500;
-        position: relative !important;
-    }
-
-    .dropdown1 {
-        width: 82% !important;
-        padding: 4px;
-        border: 1px solid #00000080;
-        background: #ffffff;
-        margin: auto;
-        font-size: 16px;
-        font-weight: 500;
+        font-size: 22px;
+        font-weight: 600;
         position: relative !important;
     }
 
@@ -1912,6 +1655,15 @@ input.input-pie-box {
 }
 
 @media screen and (max-width: 768px) {
+    .view-temp2 {
+        color: #ffffff;
+        background: #e827a5;
+        font-size: 17px;
+    }
+    .view-temp {
+        color: #0e866c;
+        font-size: 22px;
+    }
     .see-sample2 {
         top: 133px;
         right: 116px;
@@ -1982,7 +1734,7 @@ input.input-pie-box {
 
     .dropdown11 {
         width: 100%;
-        padding: 5px;
+        padding: 10px;
         border: 1px solid #00000080;
         background: #ffffff;
         margin: auto;
@@ -1990,7 +1742,7 @@ input.input-pie-box {
     }
 
     .uk-eye {
-        font-size: 22px !important;
+        font-size: 38px;
     }
 
     .ukimg1 {
@@ -2072,7 +1824,7 @@ input.input-pie-box {
 
     .box-usa {
         border: 3px solid #FF6161;
-        padding: 10px 0px 12px 0px;
+        /* padding: 10px 0px 12px 0px; */
         background: #E8E6E6;
         border-radius: 2px;
     }
@@ -2083,7 +1835,7 @@ input.input-pie-box {
         border: 1px solid #00000080;
         background: #ffffff;
         margin: auto;
-        font-weight: 500;
+        font-weight: 900;
         position: relative !important;
 
     }
@@ -2302,7 +2054,7 @@ input.input-pie-box {
     }
 
     .dropdown1 {
-        font-size: 9px !important;
+        font-size: 15px !important;
     }
 
     .earnbtn {
@@ -2315,7 +2067,13 @@ input.input-pie-box {
 
     .statementbtn {
         font-size: 8px;
-        padding: 8px 2px !important;
+        padding: 10px 2px;
+    }
+    .uk-lable{
+        font-size: 18px;
+    }
+    .ukpay-inner {
+        padding: unset;
     }
 }
 
@@ -2350,6 +2108,17 @@ input.input-pie-box {
 }
 
 @media screen and (max-width: 425px) {
+    .oo{
+        display: flex;
+    }
+    .payst{
+        border:unset;
+        display: unset;
+
+    }
+    .pay-outer{
+        padding: 0;
+    }
     .margintop-5 {
         margin-top: 0em;
     }
@@ -2506,7 +2275,7 @@ input.input-pie-box {
     }
 
     .dropdown1 {
-        font-size: 9px;
+        font-size: 11px !important;
     }
 
     .payimg {
@@ -2544,10 +2313,10 @@ input.input-pie-box {
     }
 
     .previewbtn {
-        font-size: 23px;
+        font-size: 21px;
         color: #ffffff;
         background: #ef2e21;
-        padding: 2px 10px;
+        padding: 2px 2px;
         border: none;
         border-radius: 4px;
         box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, .6));
@@ -2556,10 +2325,11 @@ input.input-pie-box {
     .emailbtn {
         color: #ffffff;
         background: #12c23a;
-        padding: 4px 5px;
+        padding: 6px 1px;
         border: none;
         border-radius: 4px;
         box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, .6));
+        font-size: 18px;
     }
 
     .OnPaystub {
@@ -2748,14 +2518,21 @@ input.input-pie-box {
     }
 
     .uk-eye {
-        font-size: 22px !important;
+        font-size: 36px;
     }
-
-
+    .uk-lable{
+        font-size: 18px;
+    }
+    .ukpay-inner{
+        padding: 10px;
+    }
 }
 
 
 @media screen and (max-width: 375px) {
+    .uk-lable{
+        font-size: 18px;
+    }
     .w-sm-100 {
         width: 100%;
     }
@@ -2867,7 +2644,7 @@ input.input-pie-box {
     .statementbtn {
         font-size: 14px;
         width: 100%;
-        padding: 8px 10px;
+        padding: 5px 10px;
         background: #074151;
         color: white;
         border: none;
@@ -2882,7 +2659,7 @@ input.input-pie-box {
     .emailbtn {
         color: #ffffff;
         background: #12c23a;
-        padding: 2px 10px;
+        padding: 6px 10px;
         border: none;
         border-radius: 4px;
         box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, .6));
@@ -2999,7 +2776,7 @@ input.input-pie-box {
 
     .box-usa {
         border: 3px solid #FF6161;
-        padding: 10px 0px 12px 0px;
+        /* padding: 10px 0px 12px 0px; */
         background: #E8E6E6;
         border-radius: 2px;
 
@@ -3015,7 +2792,7 @@ input.input-pie-box {
     }
 
     .storbtn {
-        width: 127px !important;
+        width: 155px !important;
         height: 44px !important;
         margin-bottom: 0;
     }
@@ -3029,7 +2806,7 @@ input.input-pie-box {
     }
 
     .uk-eye {
-        font-size: 22px !important;
+        font-size: 34px;
     }
 
     .payp {
@@ -3051,6 +2828,28 @@ input.input-pie-box {
         margin-top: 14px;
         padding-right: 1px;
     }
+    .ukpay-inner{
+        padding: 10px;
+    }
+    .oo{
+        display: flex;
+    }
+}
+
+
+.btnCommon {
+    padding: 3px 15px;
+    font-size: 18px;
+    align-items: center;
+    box-sizing: border-box;
+    justify-content: var(--label-align);
+    width: -moz-max-content;
+    width: max-content;
+    background: #e9e6e6;
+    color: #141212;
+    border-radius: 4px;
+    border: 2px solid #ff6261;
+    font-weight: 600;
 }
 @media screen and (max-width: 320px) {
     .textarea-w2 textarea {

@@ -140,7 +140,7 @@
                             </div>
 
                             <div class="text-center sh">
-                                <img src="images/hrpng.png" style="height: 200px;">
+                                <img src="{{ asset('images/hrpng.png') }}" style="height: 200px;">
                             </div>
                             <div class="col-md-5 col-lg-6 col-sm-12 mt-5 text-center">
                                 <h6 style="margin-left:-23px;font-weight: 900;">ADVANCED TEMPLATES</h6>

@@ -10,24 +10,25 @@
                 </div>
         </div>
 
-        <div class="w2form-outer">
-            <div class="wrapper">
-                <div class="w2form-row">
-                    <div class="w2form-no">
-                        <h5>22222</h5>
-                    </div>
-                    <div class="w2-checkbox-outer">
-                        <p class="color-red">Void</p>
-                        <div class="checkbox"></div>
-                    </div>
-                    <div class="input-box">
-                        <p class="color-red">a Employee's social security number</p>
-                        <input class="input" type="text" placeholder="Please Enter">
-                    </div>
-                    <div class="w2-lefttext">
-                        <p class="w2p">For offical use only <i class="fa fa-play" aria-hidden="true"></i></p>
-                        <p class="w2p">OMB No. 1545-0008</p>
-                    </div>
+<div>
+    <div class="container-fluid p-4 mt-2" style="background-color: #fb5e5efa; ">
+
+        <div class="container" style="max-width:1450px;">
+            <div class="text-left ">
+                <h1 style="color:white;">Form W-2</h1>
+                <p style="color:white; font-size:30px;">Start entering the Form W-2 information and e-file the return.
+                    It’s super simple. Fill, Submit &
+                    Download.</p>
+            </div>
+
+            <div style="text-align: -webkit-right;" class="mb-4">
+                <a class="btn btn-lg  mt-5 p-2 btn-danger Generate " href="{{route('welcome')}}">Select W-2 Year</a>
+            </div>
+
+            <div class="container bg-light  redcon" style="max-width:1450px;">
+                <div clas="recipt-box">
+                    <div class="rec-box-border">
+                        <div class="row">
 
                 </div>
                 <div class="w2form-box-outer">
