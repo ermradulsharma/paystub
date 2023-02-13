@@ -305,27 +305,13 @@ var addGrossTotal = `<div class="margin-bottom"">
         var date = pay_start.getDate();
         var month = pay_start.getMonth() + 1;
         var year = pay_start.getFullYear();
-        var pay_start_1 =
-            year +
-            "-" +
-            (("" + month).length < 2 ? "0" : "") +
-            month +
-            "-" +
-            (("" + date).length < 2 ? "0" : "") +
-            date;
+        var pay_start_1 = year + "-" + (("" + month).length < 2 ? "0" : "") + month + "-" + (("" + date).length < 2 ? "0" : "") + date;
 
         var pay_end = new Date($(".pay_end").val());
         var date = pay_end.getDate();
         var month = pay_end.getMonth() + 1;
         var year = pay_end.getFullYear();
-        var pay_end_1 =
-            year +
-            "-" +
-            (("" + month).length < 2 ? "0" : "") +
-            month +
-            "-" +
-            (("" + date).length < 2 ? "0" : "") +
-            date;
+        var pay_end_1 = year + "-" + (("" + month).length < 2 ? "0" : "") + month + "-" + (("" + date).length < 2 ? "0" : "") + date;
 
         var pay_date = new Date($(".pay_date").val());
         var weekday = [
@@ -343,14 +329,7 @@ var addGrossTotal = `<div class="margin-bottom"">
         var date = pay_date.getDate();
         var month = pay_date.getMonth() + 1;
         var year = pay_date.getFullYear();
-        var pay_date_1 =
-            year +
-            "-" +
-            (("" + month).length < 2 ? "0" : "") +
-            month +
-            "-" +
-            (("" + date).length < 2 ? "0" : "") +
-            date;
+        var pay_date_1 = year + "-" + (("" + month).length < 2 ? "0" : "") + month + "-" + (("" + date).length < 2 ? "0" : "") + date;
         if (pay_date_1 != "NaN-NaN-NaN") {
             if (pay_date_1 <= pay_end_1) {
                 setTimeout(function () {
@@ -440,14 +419,7 @@ var addGrossTotal = `<div class="margin-bottom"">
         var day = date.getDate();
         var month = date.getMonth() + 1;
         var year = date.getFullYear();
-        var date_1 =
-            year +
-            "-" +
-            (("" + month).length < 2 ? "0" : "") +
-            month +
-            "-" +
-            (("" + day).length < 2 ? "0" : "") +
-            day;
+        var date_1 = year + "-" + (("" + month).length < 2 ? "0" : "") + month + "-" + (("" + day).length < 2 ? "0" : "") + day;
         $(".pay_start").val(date_1);
         dayCalculate();
         $(".rate").val("");
@@ -497,12 +469,8 @@ var addGrossTotal = `<div class="margin-bottom"">
     function manualTaxTotal() {
         var period_gross_total = $("#period_gross_total").val();
         var ytd_gross_total = $("#ytd_gross_total").val();
-        var deduction_period_tax_other = parseFloat(
-            $("#deduction_period_tax_other").val() || 0.0
-        );
-        var ytd_deduction_period_tax_other = parseFloat(
-            $("#ytd_deduction_period_tax_other").val() || 0.0
-        );
+        var deduction_period_tax_other = parseFloat($("#deduction_period_tax_other").val() || 0.0);
+        var ytd_deduction_period_tax_other = parseFloat($("#ytd_deduction_period_tax_other").val() || 0.0);
         period_deduction_tax = 0;
         period_ytd_deduction_tax = 0;
         var time = 0;
@@ -521,23 +489,10 @@ var addGrossTotal = `<div class="margin-bottom"">
                 time += 100;
             });
             setTimeout(function () {
-                $(".deduction_tax").val(
-                    parseFloat(
-                        period_deduction_tax + deduction_period_tax_other
-                    ).toFixed(2)
-                );
-                $(".ytd_deduction_tax").val(
-                    parseFloat(
-                        period_ytd_deduction_tax +
-                            ytd_deduction_period_tax_other
-                    ).toFixed(2)
-                );
-                $(".deduction_period_tax").val(
-                    parseFloat(period_deduction_tax).toFixed(2)
-                );
-                $(".ytd_deduction_period_tax").val(
-                    parseFloat(period_ytd_deduction_tax).toFixed(2)
-                );
+                $(".deduction_tax").val(parseFloat(period_deduction_tax + deduction_period_tax_other).toFixed(2));
+                $(".ytd_deduction_tax").val(parseFloat(period_ytd_deduction_tax + ytd_deduction_period_tax_other).toFixed(2));
+                $(".deduction_period_tax").val(parseFloat(period_deduction_tax).toFixed(2));
+                $(".ytd_deduction_period_tax").val(parseFloat(period_ytd_deduction_tax).toFixed(2));
             }, 200);
             setTimeout(() => {
                 netPay();
@@ -568,12 +523,8 @@ var addGrossTotal = `<div class="margin-bottom"">
     function default_tax() {
         var period_gross_total = $("#period_gross_total").val();
         var ytd_gross_total = $("#ytd_gross_total").val();
-        var deduction_period_tax_other = parseFloat(
-            $("#deduction_period_tax_other").val() || 0.0
-        );
-        var ytd_deduction_period_tax_other = parseFloat(
-            $("#ytd_deduction_period_tax_other").val() || 0.0
-        );
+        var deduction_period_tax_other = parseFloat($("#deduction_period_tax_other").val() || 0.0);
+        var ytd_deduction_period_tax_other = parseFloat($("#ytd_deduction_period_tax_other").val() || 0.0);
         var tax_state = $("option:selected", ".tax_rate").attr("data-tax");
         period_deduction_tax = 0;
         period_ytd_deduction_tax = 0;
@@ -593,40 +544,19 @@ var addGrossTotal = `<div class="margin-bottom"">
                     }
                     taxes_values = taxes_values;
                 }
-                period_tax_price =
-                    parseFloat(period_gross_total).toFixed(2) *
-                    (taxes_values / 100);
-                period_ytd_tax_price =
-                    parseFloat(ytd_gross_total).toFixed(2) *
-                    (taxes_values / 100);
+                period_tax_price = parseFloat(period_gross_total).toFixed(2) * (taxes_values / 100);
+                period_ytd_tax_price = parseFloat(ytd_gross_total).toFixed(2) * (taxes_values / 100);
 
-                $("#taxes_" + taxes_ids).val(
-                    parseFloat(period_tax_price).toFixed(2)
-                );
-                $("#taxes_ytd_" + taxes_ids).val(
-                    parseFloat(period_ytd_tax_price).toFixed(2)
-                );
+                $("#taxes_" + taxes_ids).val(parseFloat(period_tax_price).toFixed(2));
+                $("#taxes_ytd_" + taxes_ids).val(parseFloat(period_ytd_tax_price).toFixed(2));
 
                 period_deduction_tax += period_tax_price;
                 period_ytd_deduction_tax += period_ytd_tax_price;
                 setTimeout(function () {
-                    $(".deduction_tax").val(
-                        parseFloat(
-                            period_deduction_tax + deduction_period_tax_other
-                        ).toFixed(2)
-                    );
-                    $(".ytd_deduction_tax").val(
-                        parseFloat(
-                            period_ytd_deduction_tax +
-                                ytd_deduction_period_tax_other
-                        ).toFixed(2)
-                    );
-                    $(".deduction_period_tax").val(
-                        parseFloat(period_deduction_tax).toFixed(2)
-                    );
-                    $(".ytd_deduction_period_tax").val(
-                        parseFloat(period_ytd_deduction_tax).toFixed(2)
-                    );
+                    $(".deduction_tax").val( parseFloat( period_deduction_tax + deduction_period_tax_other ).toFixed(2));
+                    $(".ytd_deduction_tax").val(parseFloat(period_ytd_deduction_tax + ytd_deduction_period_tax_other).toFixed(2));
+                    $(".deduction_period_tax").val(parseFloat(period_deduction_tax).toFixed(2));
+                    $(".ytd_deduction_period_tax").val(parseFloat(period_ytd_deduction_tax).toFixed(2));
                 }, 200);
                 time += 200;
             });
@@ -641,10 +571,8 @@ var addGrossTotal = `<div class="margin-bottom"">
         var ytd_gross_total = $("#ytd_gross_total").val() || 0.0;
         var deduction_tax = $(".deduction_tax").val() || 0.0;
         var ytd_deduction_tax = $(".ytd_deduction_tax").val() || 0.0;
-        var total_net_pay =
-            parseFloat(period_gross_total) - parseFloat(deduction_tax) || 0.0;
-        var total_ytd_net_pay =
-            parseFloat(ytd_gross_total) - parseFloat(ytd_deduction_tax) || 0.0;
+        var total_net_pay = parseFloat(period_gross_total) - parseFloat(deduction_tax) || 0.0;
+        var total_ytd_net_pay = parseFloat(ytd_gross_total) - parseFloat(ytd_deduction_tax) || 0.0;
         setTimeout(function () {
             $(".total_net_pay").val(parseFloat(total_net_pay).toFixed(2));
             $(".total_ytd_net_pay").val(
