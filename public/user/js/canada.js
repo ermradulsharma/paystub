@@ -36,10 +36,11 @@ function dayCalculate() {
         (("" + day).length < 2 ? "0" : "") +
         day;
     if (tax_rate == null) {
-        $("span").removeClass("d-none");
+        $(".error").addClass("d-none");
+
         $('.tax_rate').focus();
     }else{
-        $("span").addClass("d-none");
+        $('.error').removeClass("d-none");
     }
 
     var dt1 = new Date(pay_start);
@@ -153,7 +154,7 @@ $(".addTaxField").click(function () {
     $(".addtaxes:last").append(addtaxes);
     $(".addtaxes_rate:last").append(addtaxes_rate);
     $(".addtaxes_ytd:last").append(addtaxes_ytd);
-    
+
     j++;
 
     $(".deduction_other, .deduction_other_ytd").keyup(function () {
