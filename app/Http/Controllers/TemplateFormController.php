@@ -125,51 +125,50 @@ class TemplateFormController extends Controller
     }
     public function invoiceMail($id = null)
     {
-        if($id == ''){
-            $response['success'] = FALSE;
-            $response['status'] = STATUS_BAD_REQUEST;
-            $response['message'] = "Please Fill Paystub Pay slip";
-            if($response['status'] == 400){
-                return back()->with($response);;
-            }
-            return response()->json($response, 200);
-        }
-        $invoice = PaySlip::where(['user_id' => Auth::user()->id]);
-        if ($id != null) {
-            $invoice = $invoice->where('id', $id);
-        }
-        $invoice = $invoice->orderBy('id', 'desc')->first();
-        $requestData = json_decode($invoice->data);
-        $requestData = collect($requestData);
-        $requestData['watermark'] = 'no';
-        $pageName = $requestData['advance_temp'] ?? $requestData['basic_temp'];
 
-        $path = public_path('/uploads/mailData');
-        File::isDirectory($path) or File::makeDirectory($path, 0777, true, true);
-        $invoiceData['requestData'] = $requestData;
-        $pdf = PDF::loadView('allForms/' . $requestData['form_type'] . '/' . $pageName, $invoiceData)->setPaper('a4', 'portrait');
-        $fileName =  date('_d_m_Y_h_i_s') . '.pdf';
-        $pdf->save($path . '/' . $fileName);
-        if ($invoice) {
-            $mailData = [
-                'email' => Auth::user()->email,
-                'title' => 'Please find attachment file'
-            ];
-            $moreData = [];
-            $file = public_path('/uploads/mailData/' . basename($fileName));
-            try {
-                Mail::send('mail.invoice_mail', $moreData, function ($message) use ($mailData, $file) {
-                    $message->to($mailData['email']);
-                    $message->subject($mailData['title']);
-                    $message->attach($file);
-                });
-            } catch (\Exception $e) {
-                $response['message'] = $e->getMessage() . ' Line No ' . $e->getLine() . ' in File' . $e->getFile();
+        $paySlipObj = PaySlip::where(['user_id' => Auth::user()->id])->exists();
+        if($paySlipObj){
+            $invoice = PaySlip::where(['user_id' => Auth::user()->id]);
+            if ($id != null) {
+                $invoice = $invoice->where('id', $id);
             }
+            $invoice = $invoice->orderBy('id', 'desc')->first();
+            $requestData = json_decode($invoice->data);
+            $requestData = collect($requestData);
+            $requestData['watermark'] = 'no';
+            $pageName = $requestData['advance_temp'] ?? $requestData['basic_temp'];
+
+            $path = public_path('/uploads/mailData');
+            File::isDirectory($path) or File::makeDirectory($path, 0777, true, true);
+            $invoiceData['requestData'] = $requestData;
+            $pdf = PDF::loadView('allForms/' . $requestData['form_type'] . '/' . $pageName, $invoiceData)->setPaper('a4', 'portrait');
+            $fileName =  date('_d_m_Y_h_i_s') . '.pdf';
+            $pdf->save($path . '/' . $fileName);
+            if ($invoice) {
+                $mailData = [
+                    'email' => Auth::user()->email,
+                    'title' => 'Please find attachment file'
+                ];
+                $moreData = [];
+                $file = public_path('/uploads/mailData/' . basename($fileName));
+                try {
+                    Mail::send('mail.invoice_mail', $moreData, function ($message) use ($mailData, $file) {
+                        $message->to($mailData['email']);
+                        $message->subject($mailData['title']);
+                        $message->attach($file);
+                    });
+                } catch (\Exception $e) {
+                    $response['message'] = $e->getMessage() . ' Line No ' . $e->getLine() . ' in File' . $e->getFile();
+                }
+            }
+            if ($id != null) {
+                return redirect(route('invoiceList'))->with('message', 'Mail has been sent successfully.');
+            }
+            return back()->with('message', 'Mail has been sent successfully.');
+        }else{
+            $response['message'] = "Please choose Paystub pay slip";
+            return back()->with($response, 200);
         }
-        if ($id != null) {
-            return redirect(route('invoiceList'))->with('message', 'Mail has been sent successfully.');
-        }
-        return back()->with('message', 'Mail has been sent successfully.');
+
     }
 }
