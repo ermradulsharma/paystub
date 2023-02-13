@@ -81,7 +81,7 @@
         <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('w2form*') ? 'active' : '' }}" href="{{ route('w2form') }}">W-2 FORM</a>
     </div>
     <div class="openbtn">
-        <div class=" pt-4 d-flex justify-content-between">
+        <div class=" pt-4 d-flex justify-content-between" style="display:flex !important">
             <a href="{{ url('/') }}"><img class="mr-3 mt-5 toggle-logo" src="{{asset('images/Paystub X.webp')}}" style="width: 222px;"></a>
             <span style="font-size:30px;cursor:pointer; padding-right:10px;" class="" onclick="openNav()">&#9776;</span>
         </div>
@@ -224,7 +224,7 @@
 
                     </div>
                 </div>
-                <div class="col-lg-5 text-center" style="margin-top:15px;">
+                <div class="col-lg-5 col-sm-12 text-center" style="margin-top:15px;">
                     <div class="container  justify-content-center">
                         <div class="container">
                             <a href="https://www.google.com/" target="_blank"><i class="fa fa-facebook   fbicon " aria-hidden="true"></i></a>

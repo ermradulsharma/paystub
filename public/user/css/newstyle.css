@@ -1135,27 +1135,33 @@ ul.nav.nav-justified.navbar {
     background: #8080801f;
     width: 100%;
 }
+
 .checkbox {
     width: 40px;
     height: 40px;
     border-radius: 2px;
     border: 1px solid black;
 }
+
 .mobile {
     display: none !important;
 }
+
 .desktop {
     display: block !important;
 }
+
 .color-red {
     color: red;
     font-weight: 600;
     font-size: 12px;
 }
+
 .w2-form-number p {
     font-size: 20px;
     font-weight: 800;
 }
+
 .checkbox-outer p {
     font-size: 16px;
     text-transform: uppercase;
@@ -1163,6 +1169,7 @@ ul.nav.nav-justified.navbar {
     color: red;
     padding-right: 30px !important;
 }
+
 .checkbox-outer {
     max-width: 200px;
     width: 100%;
@@ -1171,6 +1178,7 @@ ul.nav.nav-justified.navbar {
     align-items: center;
     justify-content: center;
 }
+
 .left-text {
     max-width: 275px;
     width: 100%;
@@ -1180,6 +1188,7 @@ ul.nav.nav-justified.navbar {
     flex-direction: column;
     justify-content: center;
 }
+
 .input-feild-outer {
     max-width: 335px;
     width: 100%;
@@ -1187,6 +1196,7 @@ ul.nav.nav-justified.navbar {
     border: 5px solid red;
     text-align: center;
 }
+
 .input-feild-outer input {
     max-width: 270px;
     width: 100%;
@@ -1195,6 +1205,7 @@ ul.nav.nav-justified.navbar {
     border: 1px solid #00000096;
     padding: 5px;
 }
+
 .w2-form-number {
     max-width: 200px;
     width: 100%;
@@ -1204,12 +1215,14 @@ ul.nav.nav-justified.navbar {
     flex-direction: column;
     justify-content: center;
 }
+
 .input-box input {
     max-width: 250px;
     width: 100%;
     border: 1px solid #00000096;
     background-color: #8080801f;
 }
+
 textarea#w3review {
     max-width: 580px;
     width: 100%;
@@ -1217,10 +1230,12 @@ textarea#w3review {
     margin-left: 10px;
     margin-right: 10px;
 }
+
 .w2form-left-box {
     width: 52%;
     position: relative;
 }
+
 .w2form-left-box:before {
     position: absolute;
     top: 0;
@@ -1230,9 +1245,11 @@ textarea#w3review {
     height: 100%;
     background-color: red;
 }
+
 .w2form-right-box {
     width: 48%;
 }
+
 .w2form-box-outer {
     width: 100%;
     display: flex;
@@ -1240,9 +1257,11 @@ textarea#w3review {
     justify-content: space-between;
     border-bottom: 2px solid red;
 }
+
 .bottom-box-outer.a {
     display: none;
 }
+
 .inputbox2 input {
     width: 100%;
     max-width: 250px;
@@ -1251,11 +1270,13 @@ textarea#w3review {
     text-align: right;
     margin-bottom: 5px;
 }
+
 .inputbox2 {
     width: 50%;
-    padding:0px 15px;
+    padding: 0px 15px;
     position: relative;
 }
+
 .inputbox2:before {
     content: "";
     position: absolute;
@@ -1265,12 +1286,15 @@ textarea#w3review {
     height: 100%;
     background-color: red;
 }
-.inputbox2:nth-child(2n):before{
+
+.inputbox2:nth-child(2n):before {
     content: none;
 }
+
 .bottom-textarea1 {
     margin-left: 0 !important;
 }
+
 .input-box2-outer {
     display: flex;
     flex-wrap: wrap;
@@ -1278,20 +1302,24 @@ textarea#w3review {
     border-bottom: 2px solid red;
     justify-content: center;
 }
+
 input.pie-box.input {
     max-width: 30px;
     width: 100%;
 }
+
 input.input-pie-box.input {
     max-width: 195px;
     width: 100%;
     margin-left: 12px;
 }
+
 .pie-box-outer {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
 }
+
 .inputbox-outer {
     display: flex;
     flex-wrap: wrap;
@@ -1301,46 +1329,56 @@ input.input-pie-box.input {
     border-bottom: 2px dashed red;
     margin-bottom: 10px;
 }
+
 .input-box input {
     max-width: 250px !important;
     width: 100%;
     background-color: #8080801f;
 }
+
 .checkbox-inner {
     width: 33.33%;
     display: flex;
     flex-direction: column-reverse;
 }
+
 .checkbox-inner p {
     text-align: center;
     padding-bottom: 3px !important;
 }
+
 .display {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
 }
+
 .checkbox-inner p {
     width: calc(100% - 20px);
 }
+
 p.checkbox-sqaure input {
     max-width: 20px;
     width: 100%;
 }
+
 p.checkbox-sqaure {
     max-width: 20px;
 }
+
 .border-none {
     border-bottom: 2px solid red;
     padding-bottom: 5px;
     padding-left: 10px;
 }
+
 .textarea-w2.textarea-outer {
     border-bottom: 2px solid red;
     padding-top: 1.5px;
 
 
 }
+
 .bottom-box-outer.for-mobile {
     visibility: visible;
 }
@@ -1351,6 +1389,7 @@ p.checkbox-sqaure {
     width: 100%;
     margin-right: 20px;
 }
+
 .bottom-box-inner1 {
     max-width: 160px;
     width: 100%;
@@ -1358,12 +1397,15 @@ p.checkbox-sqaure {
     border-right: 2px solid red;
     padding-bottom: 10px;
 }
-.bottom-box-inner1 input{
+
+.bottom-box-inner1 input {
     width: 100%;
 }
-.bottom-box-inner1:last-child{
+
+.bottom-box-inner1:last-child {
     border-right: 0;
 }
+
 .bottom-outer:last-child {
     border-bottom: none;
 }
@@ -1375,34 +1417,42 @@ p.checkbox-sqaure {
     border-right: 2px solid red;
     padding-bottom: 10px;
 }
+
 .bottom-box-inner:nth-child(2) {
     max-width: 200px;
 }
+
 .bottom-box-outer:last-child {
     width: calc(45% - 25px);
     margin-right: 20px;
 }
+
 .bottom-box-outer {
     width: calc(55% - 15px);
     margin-right: 20px;
     display: flex;
 }
+
 .bottom-box-outer:last-child {
     width: calc(45% - 25px);
     margin-right: 20px;
 }
-.bottom-box-inner input{
+
+.bottom-box-inner input {
     width: 100%;
 }
+
 .bottom-outer {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
     border-bottom: 2px dashed red;
 }
+
 .for-desktop {
-   display: none;
+    display: none;
 }
+
 .for-desktop1 {
     visibility: visible;
 }
@@ -1411,6 +1461,7 @@ select#cars {
     max-width: 70px;
     width: 100%;
 }
+
 .text {
     max-width: 60px;
     width: 100%;
@@ -1421,28 +1472,33 @@ select#cars {
 /* w2 form design end*/
 
 /* uk design again start */
-.payst{
+.payst {
     border: 1px solid red;
     display: flex;
 }
+
 /* uk design again end */
 
 /* template-view */
-.view-temp{
-  color: #0e866c;
- font-size:24px;;
+.view-temp {
+    color: #0e866c;
+    font-size: 24px;
+    ;
 }
-.view-temp2{
+
+.view-temp2 {
     color: #ffffff;
-    background:#e827a5;
-        font-size:22px;
+    background: #e827a5;
+    font-size: 22px;
 }
-.prebtn{
+
+.prebtn {
     color: #0e866c;
     background: #ffffff;
     font-size: 15px;
     border: #0e866c 2px solid;
 }
+
 /* template-view end */
 
 
@@ -1452,33 +1508,40 @@ select#cars {
 .margintop-5 {
     margin-top: 5em;
 }
-.input-uk{
+
+.input-uk {
     font-size: 14px;
-    border: 2px solid #ff5722;;
+    border: 2px solid #ff5722;
+    ;
     border-radius: 5px;
     box-shadow: 0px 3px 7px 1px #0000004f;
     width: 100%;
     padding: 8px 9px;
     background: rgba(255, 255, 255, 0);
     text-align: center;
-  font-weight: 600;
-  color: blue;
+    font-weight: 600;
+    color: blue;
 }
-.ukpay-inner{
+
+.ukpay-inner {
     padding: 10px;
 }
-.ukpay-inner1{
+
+.ukpay-inner1 {
     padding: 0px 0px 24px 0;
     display: contents;
 }
-.uk-lable{
+
+.uk-lable {
     font-size: 19px;
     font-weight: 300;
 }
+
 .pay-outer:hover {
     background: #f8eae0;
 }
-.input-uk:hover{
+
+.input-uk:hover {
     color: white;
     background-image: linear-gradient(360deg, #a70404d6, #ebc6c3);
     border: 2px solid #000000 !important;
@@ -1583,9 +1646,10 @@ select#cars {
     .couple {
         max-width: 848px;
     }
-     .abc{
+
+    .abc {
         display: none;
-     }
+    }
 }
 
 
@@ -1639,95 +1703,122 @@ select#cars {
         flex-direction: inherit;
         align-items: flex-start;
     }
+
     .checkbox-inner p {
         text-align: left;
     }
+
     .checkbox-sqaure p {
         margin-left: 10px;
     }
+
     .display {
         display: inline-block;
 
     }
+
     .checkbox-sqaure {
         width: 20px !important;
     }
+
     .ukpay-inner {
 
 
-        padding:unset;
+        padding: unset;
     }
+
     .redcon {
         padding: 30px;
     }
+
     .w2-form-number {
         max-width: 100px;
     }
+
     .bottom-box-outer.a {
-        display:flex;
+        display: flex;
     }
+
     .bottom-box-outer.b {
         display: none;
     }
-    .checkbox-outer{
+
+    .checkbox-outer {
         max-width: 135px;
     }
+
     .input-feild-outer {
         max-width: 315px;
     }
-    .left-text{
+
+    .left-text {
         max-width: 175px;
     }
+
     textarea#w3review {
-        max-width:450px;
+        max-width: 450px;
     }
+
     input.pie-box.input {
         max-width: 23px;
         height: 27px;
         width: 100%;
         font-size: 10px;
     }
+
     input.input-pie-box.input {
         max-width: 145px;
 
     }
+
     .bottom-box-outer {
-        flex-wrap:wrap;
+        flex-wrap: wrap;
         width: 100%;
         border-bottom: 2px solid red;
         margin-right: 0;
     }
-    .bottom-box-inner:last-child{
+
+    .bottom-box-inner:last-child {
         border-right: none;
     }
-    .bottom-box-outer:last-child{
+
+    .bottom-box-outer:last-child {
         width: 100%;
         border-bottom: none;
     }
-    .bottom-box-inner{
+
+    .bottom-box-inner {
         max-width: 175px;
     }
+
     .bottom-box-inner1 {
         max-width: 175px;
     }
+
     .mobile {
         display: block !important;
     }
+
     .desktop {
         display: none;
     }
+
     .bottom-box-outer.for-mobile {
         visibility: hidden;
     }
+
     .bottom-box-outer.for-mobile .bottom-box-inner {
-        padding:0 !important;
+        padding: 0 !important;
     }
+
     .for-desktop {
         display: block;
-     }
-     .for-desktop1 {
-         visibility: visible;
-     }
+    }
+
+    .for-desktop1 {
+        visibility: visible;
+    }
+
     .num {
         margin-top: 0px;
     }
@@ -2031,48 +2122,61 @@ select#cars {
         background: #e827a5;
         font-size: 17px;
     }
+
     .view-temp {
         color: #0e866c;
         font-size: 22px;
     }
+
     .see-sample2 {
         top: 133px;
         right: 116px;
         padding: 4px 8px;
         font-size: 11px;
     }
-    .w2form-no{
+
+    .w2form-no {
         max-width: 100px;
     }
+
     .w2-checkbox-outer {
         max-width: 100px;
     }
+
     .w2form-left-box {
         width: 100%;
         border-right: 0;
     }
+
     .w2form-right-box {
         width: 100%;
         border-top: 2px solid red;
     }
-    .inputbox2:before{
-        right:0;
+
+    .inputbox2:before {
+        right: 0;
     }
-    input.input-pie-box.input{
+
+    input.input-pie-box.input {
         max-width: 84%;
     }
+
     textarea#w3review {
         max-width: 600px;
     }
+
     .inputbox2 {
         padding: 0px 15px 0px;
     }
+
     .inputbox2 input {
         max-width: 100%;
     }
+
     .bottom-box-inner {
         max-width: 165px;
     }
+
     .bottom-box-inner1 {
         max-width: 165px;
     }
@@ -2460,19 +2564,24 @@ select#cars {
         font-size: 8px;
         padding: 10px 2px;
     }
-    .uk-lable{
+
+    .uk-lable {
         font-size: 18px;
     }
+
     .ukpay-inner {
         padding: unset;
     }
+
     .checkbox-outer {
         max-width: 105px;
     }
-    .checkbox-outer p{
+
+    .checkbox-outer p {
         padding-right: 18px !important;
     }
-    .checkbox{
+
+    .checkbox {
         width: 25px;
         height: 25px;
     }
@@ -2509,17 +2618,23 @@ select#cars {
 }
 
 @media screen and (max-width: 425px) {
-    .oo{
+    .storehead a img{
+        margin-left: 0px !important;
+    }
+    .oo {
         display: flex;
     }
-    .payst{
-        border:unset;
+
+    .payst {
+        border: unset;
         display: unset;
 
     }
-    .pay-outer{
+
+    .pay-outer {
         padding: 0;
     }
+
     .margintop-5 {
         margin-top: 0em;
     }
@@ -2527,102 +2642,130 @@ select#cars {
     .w-sm-100 {
         width: 100%;
     }
-    .textarea-w2 textarea{
+
+    .textarea-w2 textarea {
         max-width: 400px;
     }
+
     .text-left p {
         font-size: 15px !important;
     }
+
     p.w2p span {
         font-size: 30px !important;
     }
+
     p.w2p span {
         font-size: 18px !important;
     }
+
     h3.w2p {
         font-size: 19px !important;
     }
+
     .d-flex {
-        display: inline-block !important;
+        /* display: inline-block !important; */
         justify-content: center;
         width: 100%;
     }
-    .bottom-textarea textarea{
+
+    .bottom-textarea textarea {
         max-width: 400px;
     }
+
     .checkbox-outer {
         padding: 13px 0px;
     }
+
     .left-text {
         max-width: 100%;
         flex-direction: row;
         justify-content: space-evenly;
     }
+
     .input-box input {
         max-width: 98% !important;
     }
+
     .input-box.width {
         max-width: 98%;
         margin-right: 0px;
 
     }
+
     .text {
         text-align: left;
         padding-bottom: 35px;
     }
+
     .input-feild-outer {
         max-width: 360px;
         margin: 0 auto;
     }
+
     .bottom-box-inner {
         max-width: 100%;
         border-right: none;
     }
+
     .bottom-box-inner1 {
         max-width: 100%;
         border-right: none;
     }
+
     .bottom-box-outer:last-child {
         margin-right: 0;
     }
+
     .bottom-box-inner:nth-child(2) {
         max-width: 100%;
     }
+
     textarea#w3review {
         max-width: 340px;
     }
+
     .input-box input {
         max-width: 100%;
     }
+
     .inputbox2 {
         width: 100%;
         margin-right: 0;
     }
+
     .inputbox2:before {
         content: none;
     }
-    .input-box{
+
+    .input-box {
         max-width: 100%;
         margin-right: 0;
     }
-    .w2-lefttext{
+
+    .w2-lefttext {
         padding-left: 10px;
     }
-    .input-box input{
-        margin:0;
+
+    .input-box input {
+        margin: 0;
     }
-    .width{
+
+    .width {
         width: 100% !important;
         margin-right: 0;
         border-right: none;
     }
-    .text{
+
+    .text {
         padding-left: 10px;
     }
+
     .checkbox-inner {
         /* width: 100%;
         margin-bottom: 6px; */
     }
+
     .see-sample2 {
         top: 78px;
         right: 76px;
@@ -2952,44 +3095,55 @@ select#cars {
     .uk-eye {
         font-size: 36px;
     }
-    .uk-lable{
+
+    .uk-lable {
         font-size: 18px;
     }
-    .ukpay-inner{
+
+    .ukpay-inner {
         padding: 10px;
     }
 }
 
 
 @media screen and (max-width: 375px) {
-    .uk-lable{
+    .uk-lable {
         font-size: 18px;
     }
+
     .w-sm-100 {
         width: 100%;
     }
+
     .input-feild-outer {
         max-width: 310px;
     }
+
     .input-box input {
         max-width: 96% !important;
     }
+
     p.w2p span {
         font-size: 12px !important;
     }
+
     p.w2p {
         font-size: 12px !important;
     }
+
     h3.w2p {
         font-size: 12px !important;
         padding-bottom: 10px;
     }
+
     textarea#w3review {
         max-width: 305px;
     }
-    .bottom-textarea textarea{
+
+    .bottom-textarea textarea {
         max-width: 350px;
     }
+
     .textarea-w2 textarea {
         max-width: 350px;
     }
@@ -3279,10 +3433,12 @@ select#cars {
         margin-top: 14px;
         padding-right: 1px;
     }
-    .ukpay-inner{
+
+    .ukpay-inner {
         padding: 10px;
     }
-    .oo{
+
+    .oo {
         display: flex;
     }
 }
@@ -3302,36 +3458,64 @@ select#cars {
     border: 2px solid #ff6261;
     font-weight: 600;
 }
+
 @media screen and (max-width: 320px) {
     .textarea-w2 textarea {
         max-width: 295px;
     }
+
     .textarea-w2 textarea {
         max-width: 295px;
     }
+
     .text-left h1 {
         font-size: 30px;
         font-weight: 500;
     }
+
     .text-left p {
         font-size: 12px !important;
     }
+
     p.color-red {
         font-size: 12px !important;
     }
+
     .input-feild-outer {
         max-width: 255px;
     }
+
     .input-feild-outer input {
         max-width: 230px;
     }
+
     textarea#w3review {
         max-width: 250px;
     }
+
     input.input-pie-box.input {
         max-width: 80%;
     }
-.padding {
-    padding: 0px!important;
-}
+
+    .padding {
+        padding: 0px !important;
+    }
+    .fbicon {
+        border: 2px solid white;
+        border-radius: 60%;
+        padding: 11px;
+        font-size: 15px;
+        width: 50px;
+        color: white;
+        width: 38px;
+    }
+    .socialicon {
+        border: 2px solid white;
+        border-radius: 60%;
+        padding: 11px;
+        font-size: 15px;
+        width: 50px;
+        color: white;
+        width: 38px;
+    }
 }
