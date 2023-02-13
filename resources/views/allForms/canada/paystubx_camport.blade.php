@@ -1,5 +1,3 @@
-globalwhitecheck usa
-
 <!DOCTYPE html>
 <html lang="en">
 

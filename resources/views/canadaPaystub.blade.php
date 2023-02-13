@@ -46,7 +46,7 @@
                                 <h6 class="base">BASIC TEMPLATES</h6>
                                 <div class="mt-3">
                                     <div class="input-group mmenu mb-3 text-center">
-                                        <select name="basic_temp" class="form-control dropdown1 text-center basicTemplate" style="margin-right:10px;">
+                                        <select name="basic_temp" class="form-control dropdown1 bt_id text-center basicTemplate" style="margin-right:10px;">
                                             <option value=""> --- Select Basic Templates --- </option>
                                             @foreach ($basicType as $data)
                                             <option value="{{ $data->title ?? '' }}" data-src="{{ $data->images->file ?? '' }}" data-status="{{ $data->template_element }}">
@@ -67,7 +67,7 @@
                                     <h6 class="base">ADVANCED TEMPLATES</h6>
                                     <div class="mt-3">
                                         <div class="input-group mmenu mb-3">
-                                            <select name="advance_temp" class="form-control text-center dropdown1 advanceTemplate" style="margin-right:10px;">
+                                            <select name="advance_temp" class="form-control text-center at_id dropdown1 advanceTemplate" style="margin-right:10px;">
                                                 <option value=""> --- Select Advance Template --- </option>
                                                 @foreach ($advanceType as $data)
                                                 <option value="{{ $data->title ?? '' }}" data-src="{{ $data->images->file ?? '' }}" data-status="{{ $data->template_element }}">

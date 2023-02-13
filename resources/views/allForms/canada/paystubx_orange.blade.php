@@ -132,7 +132,7 @@
             <tr style="color:white; background-color:darkgrey; ">
                 <td style="font-size: 16px;padding-left: 24px;padding-bottom: 12px; " colspan="2">
                     {{ $requestData['address_1'] }},{{ $requestData['address_2'] }}</br>{{ $requestData['city'] }}
-                    {{ $requestData['state'] }}, {{ $requestData['zip_code'] }}, USA
+                    {{ $requestData['state'] }}, {{ $requestData['zip_code'] }}, CA
                 </td>
             </tr>
         </table>
