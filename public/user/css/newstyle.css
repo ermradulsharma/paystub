@@ -1331,59 +1331,78 @@ p.checkbox-sqaure {
     flex-wrap: wrap;
     width: 100%;
     border-bottom: 2px dashed red;
+    justify-content: space-around;
 }
 .bottom-box-inner1 {
-    max-width: 95px;
-    width: 100%;
+    width:7%;
+    border-right: 2px solid red;
+    padding-right: 10px;
 }
 .bottom-box-inner1 input {
     width: 100%;
+    max-width: 180px;
 }
 .bottom-box-inner2 {
-    max-width: 200px;
-    width: 100%;
+    width: 18%;
     margin-right: 10px;
+    border-right: 2px solid red;
+    padding-right: 10px;
+
 }
 .bottom-box-inner2 input {
     width: 100%;
+    max-width: 180px;
 }
 .bottom-box-inner3 {
-    max-width: 180px;
-    width: 100%;
+    width: 16%;
     margin-right: 10px;
+    border-right: 2px solid red;
+
 }
 .bottom-box-inner3 input {
     width: 100%;
+    max-width: 180px;
 }
 .bottom-box-inner4 {
-    max-width: 175px;
-    width: 100%;
+    width: 16%;
     margin-right: 10px;
+    border-right: 2px solid red;
+
 }
 .bottom-box-inner4 input {
     width: 100%;
+    max-width: 180px;
 }
 .bottom-box-inner5 {
-    max-width: 180px;
-    width: 100%;
+    width: 13%;
     margin-right: 10px;
+    border-right: 2px solid red;
+
 }
 .bottom-box-inner5 input {
     width: 100%;
+    max-width: 180px;
 }
 .bottom-box-inner6 {
-    max-width: 150px;
-    width: 100%;
+    width: 13%;
     margin-right: 10px;
+    border-right: 2px solid red;
+
 }
+
 .bottom-box-inner6 input {
     width: 100%;
+    max-width: 180px;
 }
 .bottom-box-inner7 {
-    max-width: 150px;
-    width: 100%;
+    width: 12%;
 }
 .bottom-box-inner7  input {
+    width: 100%;
+    max-width: 180px;
+}
+select#cars {
+    max-width: 70px;
     width: 100%;
 }
 
