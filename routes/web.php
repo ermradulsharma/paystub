@@ -46,8 +46,8 @@ Route::get('w2form/paystub', function () {
     return view('w2paystub');
 })->name('w2form.paystub');
 
-Route::get('generate-pdf', [W2FormController::class, 'generatePDF']);
-Route::get('preview-pdf', [W2FormController::class, 'previewPDF']);
+Route::get('w2form/generate-pdf', [W2FormController::class, 'generatePDF']);
+Route::get('w2form/preview-pdf', [W2FormController::class, 'previewPDF']);
 
 Route::get('terms', function () {
     return view('terms');
