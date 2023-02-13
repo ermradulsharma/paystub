@@ -50,7 +50,8 @@
                                     <input class="input" type="text" placeholder="Please Enter">
                                 </div>
                                 <div style="" class=" textarea-w2 textarea-outer">
-                                    <p style="margin:0; padding:0px;" class="color-red"><b>c</b> Employer Identifcation
+                                    <p style="margin:0; padding:0px;margin-left:10px !important;" class="color-red"><b>c</b>
+                                        Employer Identifcation
                                         number (EIN)</p>
                                     <textarea class="w2-textarea" style="padding-left:10px;" id="w3review" name="w3review" rows="5" cols="80"
                                         placeholder="Please Enter"></textarea>
@@ -62,16 +63,18 @@
                                 </div>
                                 <div class="inputbox-outer">
                                     <div class="input-box  width">
-                                        <p style="margin:0; padding:0px;" class="color-red"><b>e</b> Employee's First Name
-                                            and Initial</p>
+                                        <p style="margin:0; padding:0px; margin-left:10px !important;" class="color-red">
+                                            <b>e</b> Employee's First Name
+                                            and Initial
+                                        </p>
                                         <input class="input"
-                                            style="text-align: left;margin:0px; padding-left:10px !important;"
+                                            style="text-align: left;margin:0px; padding-left:10px !important;margin-left:10px !important;"
                                             type="text" placeholder="Please Enter">
                                     </div>
-                                    <div style="margin-right:0px !important;" class="input-box  width ">
+                                    <div style="margin-left:10px !important;margin-right:0px !important;" class="input-box  width ">
                                         <p style="margin:0; padding:0px;" class="color-red"> Last Name</p>
                                         <input class="input"
-                                            style="text-align: left;margin:0px; padding-left:10px !important;"
+                                            style="text-align: left;margin:0px;  padding-left:10px !important;"
                                             type="text" placeholder="Please Enter">
                                     </div>
                                     <div class="text">
@@ -81,8 +84,10 @@
                                 <div class="bottom-textarea">
                                     <textarea class="w2-textarea" style="padding-left:10px;" id="w3review" name="w3review" rows="6" cols="83"
                                         placeholder="Please Enter"></textarea>
-                                    <p style="font-weight: 600; margin:0" class="color-red"><b>f</b> Employee's address and
-                                        zip code</p>
+                                    <p style="margin-left:10px !important;font-weight: 600; margin:0" class="color-red">
+                                        <b>f</b> Employee's address and
+                                        zip code
+                                    </p>
                                 </div>
 
 
@@ -186,33 +191,38 @@
                                 <div class="input-box2-outer">
                                     <div class="inputbox2
                             ">
-                                        <div style="width:10% !important;" class="checkbox-inner">
-                                            <p style="padding:0; margin:0px;line-height:1.2;" class="color-red">
+                                        <div style="width:100% !important;" class="checkbox-inner">
+                                            <p style="padding:0; margin:0px;line-height:1.2; text-align:left !important;" class="color-red">
                                                 <b>13</b>
                                             </p>
                                         </div>
                                         <div class="display">
 
                                             <div class="checkbox-inner">
-                                                <p class="checkbox-sqaure"><input type="checkbox" id="vehicle1"
-                                                        name="vehicle1" value="Bike"></p>
+                                                <input class="checkbox-sqaure" type="checkbox" id="vehicle1"
+                                                name="vehicle1" value="Bike">
                                                 <p style="padding:0; margin:0px; font-size:12px;line-height:1.2;"
                                                     class="color-red"><b style="font-size: 10px;">Statury employee</b></p>
 
-                                            </div>
-                                            <div class="checkbox-inner">
-                                                <p class="checkbox-sqaure"><input type="checkbox" id="vehicle1"
-                                                        name="vehicle1" value="Bike"></p>
-                                                <p style="padding:0; margin:0px;font-size:12px;line-height:1.2;"
-                                                    class="color-red"><b style="font-size: 10px;">Retirement plan</b></p>
+
 
                                             </div>
                                             <div class="checkbox-inner">
-                                                <p class="checkbox-sqaure"><input type="checkbox" id="vehicle1"
-                                                        name="vehicle1" value="Bike"></p>
-                                                <p style="padding:0; margin:0px;font-size:12px;line-height:1.2;"
-                                                    class="color-red"><b style="font-size: 10px;">This party sick pay</b>
-                                                </p>
+                                                <input class="checkbox-sqaure" type="checkbox" id="vehicle1"
+                                                name="vehicle1" value="Bike">
+                                                <p style="padding:0; margin:0px; font-size:12px;line-height:1.2;"
+                                                    class="color-red"><b style="font-size: 10px;">Retirement  plan</b></p>
+
+
+
+                                            </div>
+                                            <div class="checkbox-inner">
+                                                <input class="checkbox-sqaure" type="checkbox" id="vehicle1"
+                                                name="vehicle1" value="Bike">
+                                                <p style="padding:0; margin:0px; font-size:12px;line-height:1.2;"
+                                                    class="color-red"><b style="font-size: 10px;">Third party sick pay</b></p>
+
+
 
                                             </div>
                                         </div>
@@ -268,73 +278,143 @@
 
                             </div>
                         </div>
-                        <div class="bottom-box-outer">
-                            <div class=" bottom-box-inner1">
-                                <p style="padding:0; margin:0px;" class="color-red"><b>15 </b>State
-                                </p>
 
-                                <select class="select-box" name="cars" id="cars">
-                                    <option value="volvo">Alaska</option>
-                                    <option value="saab">Ahemdabad</option>
-                                    <option value="opel">Alaska</option>
-                                    <option value="audi">Gujrat</option>
-                                </select>
+                        <div class="bottom-outer">
+                            <div class="bottom-box-outer">
+                                <div class=" bottom-box-inner">
+                                    <p style="padding:0; margin:0px;" class="color-red"><b>15 </b>State
+                                    </p>
+
+                                    {{-- <select class="select-box" name="cars" id="cars">
+                                        <option value="volvo">Alaska</option>
+                                        <option value="saab">Ahemdabad</option>
+                                        <option value="opel">Alaska</option>
+                                        <option value="audi">Gujrat</option>
+                                    </select> --}}
+                                    <input style="border:1px solid black; text-align:center;" class="input"
+                                        type="text" placeholder="Please Enter">
+
+
+                                </div>
+                                <div class=" bottom-box-inner">
+                                    <p style="padding:0; margin:0px;" class="color-red"><b></b>Employess's state id number
+                                    </p>
+                                    <input style="border:1px solid black; text-align:center;" class="input"
+                                        type="text" placeholder="Please Enter">
+
+                                </div>
+                                <div class=" bottom-box-inner">
+                                    <p style="padding:0; margin:0px;" class="color-red"><b>16 </b> State Wages,
+                                    </p>
+                                    <input style="border:1px solid black;" class="input" type="text"
+                                        placeholder="Please Enter">
+
+                                </div>
+                                <div class=" bottom-box-inner">
+                                    <p style="padding:0; margin:0px;" class="color-red"><b>17 </b>State income tax
+                                    </p>
+                                    <input style="border:1px solid black;" class="input" type="text"
+                                        placeholder="Please Enter">
+
+                                </div>
+                            </div>
+                            <div class="bottom-box-outer a ">
+                                <div style="padding:25px 0px" class=" bottom-box-inner">
+
+
+
+                                </div>
+                                <div class=" bottom-box-inner">
+
+
+                                </div>
+                                <div class=" bottom-box-inner">
+
+
+                                </div>
+                                <div class=" bottom-box-inner">
+
+
+                                </div>
+                            </div>
+
+                            <div class="bottom-box-outer">
+                                <div class=" bottom-box-inner1">
+                                    <p style="padding:0; margin:0px;" class="color-red"><b>18 </b> Local Wages, Tips</p>
+                                    <input style="border:1px solid black;" class="input" type="text"
+                                        placeholder="Please Enter">
+
+                                </div>
+                                <div class=" bottom-box-inner1">
+                                    <p style="padding:0; margin:0px;" class="color-red"><b>19 </b> Local Income Tax
+                                    </p>
+                                    <input style="border:1px solid black;" class="input" type="text"
+                                        placeholder="Please Enter">
+
+                                </div>
+                                <div class=" bottom-box-inner1">
+                                    <p style="padding:0; margin:0px;" class="color-red"><b>20 </b> Locality Name
+                                    </p>
+                                    <input style="border:1px solid black;" class="input" type="text"
+                                        placeholder="Please Enter">
+
+                                </div>
+
 
 
                             </div>
-                            <div class=" bottom-box-inner2">
-                                <p style="padding:0; margin:0px;" class="color-red"><b></b>Employess's state id number
-                                </p>
-                                <input style="border:1px solid black; text-align:center;" class="input" type="text"
-                                    placeholder="Please Enter">
-
-                            </div>
-                            <div class=" bottom-box-inner3">
-                                <p style="padding:0; margin:0px;" class="color-red"><b>16 </b> State Wages, Tips etc;
-                                </p>
-                                <input style="border:1px solid black;" class="input" type="text"
-                                    placeholder="Please Enter">
-
-                            </div>
-                            <div class=" bottom-box-inner4">
-                                <p style="padding:0; margin:0px;" class="color-red"><b>17 </b>State income tax
-                                </p>
-                                <input style="border:1px solid black;" class="input" type="text"
-                                    placeholder="Please Enter">
-
-                            </div>
-                            <div class=" bottom-box-inner5">
-                                <p style="padding:0; margin:0px;" class="color-red"><b>18 </b> Local Wages, Tips etc</p>
-                                <input style="border:1px solid black;" class="input" type="text"
-                                    placeholder="Please Enter">
-
-                            </div>
-                            <div class=" bottom-box-inner6">
-                                <p style="padding:0; margin:0px;" class="color-red"><b>19 </b> Local Income Tax
-                                </p>
-                                <input style="border:1px solid black;" class="input" type="text"
-                                    placeholder="Please Enter">
-
-                            </div>
-                            <div class=" bottom-box-inner7">
-                                <p style="padding:0; margin:0px;" class="color-red"><b>20 </b> Locality Name
-                                </p>
-                                <input style="border:1px solid black;" class="input" type="text"
-                                    placeholder="Please Enter">
-
-                            </div>
-
-
                         </div>
+
+                        <div class="bottom-outer">
+                            <div class="bottom-box-outer b">
+                                <div style="padding:25px 0px" class=" bottom-box-inner">
+
+
+
+                                </div>
+                                <div class=" bottom-box-inner">
+
+
+                                </div>
+                                <div class=" bottom-box-inner">
+
+
+                                </div>
+                                <div class=" bottom-box-inner">
+
+
+                                </div>
+                            </div>
+                            <div class="bottom-box-outer">
+
+                                <div style="padding: 25px 0px" class=" bottom-box-inner1">
+
+
+                                </div>
+                                <div class=" bottom-box-inner1">
+
+
+                                </div>
+                                <div class=" bottom-box-inner1">
+
+
+                                </div>
+
+
+
+                            </div>
+                        </div>
+
+
                     </div>
 
 
 
                     <div class="container" style="max-width: 1452px;">
                         <div class="row">
-                            <div class="col-md-6">
-                                <p class="w2p">Form<span style="font-size: 47px;">W-2</span>
-                                    <span style="font-size: 26px;">Wage and Tax Statement</span>
+                            <div class=" col-md-6 padding">
+                                <p class="w2p"> Form <span style="font-size: 47px;">W-2</span>
+                                    <span style="font-size: 26px;"> Wage and Tax Statement</span>
                                 </p>
                                 <p class="w2p">
                                     <span style="font-size: 18px; font-weight: 900;">Copy A-For Social Security
@@ -350,7 +430,7 @@
                                 <p style="text-align: center;font-size: 54px; font-weight: 800;font-family: emoji;">2022
                                 </p>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-4 padding">
                                 <p class="w2p" style="font-weight: 400; font-size: 16px;">Department of treasury -
                                     Internal
                                     revenue service</p>
