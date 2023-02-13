@@ -104,8 +104,8 @@ class ValidationService
             ];
         } elseif ($request->form_type == "canada") {
             $rules = [
-                'advance_temp' => 'required_without:basic_temp',
-                'basic_temp' => 'required_without:advance_temp',
+                // 'advance_temp' => 'required_without:basic_temp',
+                'basic_temp' => 'required',
                 'cname' => 'required',
                 'address_1' => 'required',
                 'city' => 'required',
@@ -128,8 +128,8 @@ class ValidationService
             ];
 
             $messages = [
-                'advance_temp.required_without' => 'Please select either advance template or basic template.',
-                'basic_temp.required_without' => 'Please select either advance template or basic template.',
+                // 'advance_temp.required_without' => 'Please select either advance template or basic template.',
+                'basic_temp' => 'Please select template.',
                 'cname' => 'Name cannot be empty',
                 'address_1' => 'STREET ADDRESS 1 cannot be empty',
                 'city' => 'City cannot be empty',
@@ -152,8 +152,8 @@ class ValidationService
             ];
         } elseif ($request->form_type == "uk") {
             $rules = [
-                'advance_temp' => 'required_without:basic_temp',
-                'basic_temp' => 'required_without:advance_temp',
+                // 'advance_temp' => 'required_without:basic_temp',
+                'basic_temp' => 'required',
                 'cname' => 'required',
                 'company_address' => 'required',
                 // 'city' => 'required',
@@ -173,8 +173,8 @@ class ValidationService
             ];
 
             $messages = [
-                'advance_temp.required_without' => 'Please select either advance template or basic template.',
-                'basic_temp.required_without' => 'Please select either advance template or basic template.',
+                // 'advance_temp.required_without' => 'Please select either advance template or basic template.',
+                'basic_temp' => 'Please select template.',
                 'cname' => 'Name cannot be empty',
                 'company_address' => 'STREET ADDRESS 1 cannot be empty',
                 // 'city' => 'City cannot be empty',
