@@ -125,6 +125,15 @@ class TemplateFormController extends Controller
     }
     public function invoiceMail($id = null)
     {
+        if($id == ''){
+            $response['success'] = FALSE;
+            $response['status'] = STATUS_BAD_REQUEST;
+            $response['message'] = "Please Fill Paystub Pay slip";
+            if($response['status'] == 400){
+                return back()->with($response);;
+            }
+            return response()->json($response, 200);
+        }
         $invoice = PaySlip::where(['user_id' => Auth::user()->id]);
         if ($id != null) {
             $invoice = $invoice->where('id', $id);
