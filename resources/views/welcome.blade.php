@@ -60,7 +60,7 @@
         <div class="col-lg-5">
             <h1 class="WithPaystubX mt-3"> With Paystub<span class="text-danger">X</span></h1>
             <h3 class="Show"> Show proof of income. </h3>
-            <ul style="font-size: 20px;line-height:1.5em;font-family: 'Futura LT';" class="mt-4">
+            <ul style="font-size: 20px;line-height:1.5em;font-family: 'Futura LT';" class="mt-4 list-outer">
                 <li class=" mt-2 proof"> Rent an apartment ✅</li>
                 <li class=" mt-2 proof"> Qualify for a mortgage ✅</li>
                 <li class=" mt-2 proof">Request a small business loan ✅</li>
@@ -71,7 +71,7 @@
         </div>
         <div class="col-lg-5">
             <h3 class="Createpay"> Create pay stubs for your employees. </h3>
-            <ul style="font-size: 20px;line-height:1.5em;font-family: 'Futura LT';" class="mt-4">
+            <ul style="font-size: 20px;line-height:1.5em;font-family: 'Futura LT';" class="mt-4 list-outer">
                 <li class="mt-2 proof">Help employees qualify for loans, housing & more ✅</li>
                 <li class="mt-2 proof">Comply with state and local employment laws ✅</li>
                 <li class="mt-2 proof">Be transparent with compensation ✅</li>
@@ -122,7 +122,7 @@
                     calculations, W-2, 1099S Etc in Seconds</h2>
                 <div class="row mt-5">
                     <div class="col-md-4 mt-3 text-center">
-                        <h2 class="text-white calcheading head-font" style="color: #fafabd !important;">Add your Data
+                        <h2 class="text-white calcheading head-font" style="">Add your Data
                         </h2>
                         <p style="font-size:17px;font-weight: 200;font-family: 'Futura LT';line-height:1.8;" class="text-white pay-p head-font">Our paystub generator
                             accurately</br>
@@ -130,17 +130,17 @@
                             taxes so you don't
                         </p>
 
-                        <img src="images/1.webp" style=" width: 94px; height: 94px; object-fit: cover; object-position: 50% 50%;">
+                        <img class="image-no" src="images/1.webp" style=" width: 94px; height: 94px; object-fit: cover; object-position: 50% 50%;">
                     </div>
 
 
                     <div class="col-md-4 mt-3 text-center">
-                        <h2 class="text-white calcheading head-font" style="color: #fafabd !important;">Preview Data
+                        <h2 class="text-white calcheading head-font" style="">Preview Data
                         </h2>
                         <p style="font-size:17px;font-weight: 200;font-family: 'Futura LT'; line-height:1.8;" class="text-white pay-p head-font">Generate pay stubs with
                             accurate</br>
                             state income taxes, based on </br>state W-4, and other applicable</br> local taxes. </p>
-                        <img src="images/2.webp" style=" width: 94px; height: 94px; object-fit: cover; object-position: 50% 50%;">
+                        <img class="image-no" src="images/2.webp" style=" width: 94px; height: 94px; object-fit: cover; object-position: 50% 50%;">
                     </div>
                     <div class="col-md-4 mt-3 text-center">
                         <h2 class="text-white pay-h2 calcheading head-font">Download & Email your Paystub</h2>
@@ -148,7 +148,7 @@
                             unlimited</br>
                             payslip, paycheck or paystub </br>according to the plan you select.
                         </p>
-                        <img src="images/3.webp" class="num" style=" width: 94px; height: 94px; object-fit: cover; object-position: 50% 50%;">
+                        <img src="images/3.webp" class="image-no" style=" width: 94px; height: 94px; object-fit: cover; object-position: 50% 50%;">
                     </div>
                 </div>
 
@@ -261,7 +261,7 @@
                     Ready to Explore our Online Paystub Generator?
                 </div>
                 <div>
-                    <ul>
+                    <ul class="list-outer">
 
 
                         <li class="mt-2" style="font-weight: 200; font-size: 20px; line-height:1.5em; font-family: 'Futura LT';"> W-2

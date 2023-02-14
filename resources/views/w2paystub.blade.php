@@ -391,14 +391,16 @@
 
                 </div>
             </div>
-            <div class="row mt-3">
-                <div class="col-12 text-center">
+            <div class="container" style="max-width:1450px; padding:0;">
+            <div style="" class="row mt-3">
+                <div style="margin: 0; padding:0;" class="col-12 text-center">
                     <div class="d-flex flex-wrap justify-content-between">
                         <a class="previewbtn text-capitalize viewTempTemplate mb-3 w-sm-100" type="button" id="button1"  href="{{ 'preview-pdf' }}" target="_blank">Preview Below Check <i class="fa fa-eye" style="font-size: 30px; margin-left: 7px;"></i></a>
                         <a type="button" class="emailbtn text-capitalize sendMailButton mb-3 w-sm-100" target="_blank" href="{{ 'generate-pdf' }}"> Download <i class="fa fa-download ml-4" style="font-size:24px"></i></a>
                     </div>
                 </div>
             </div>
+        </div>
             {{-- <div class="d-flex" style="justify-content: space-between; max-width:1450px; margin:0 auto;">
                 <div class="text-left mt-4 ">
                     <a class="previewbtn btn btn-block" style="text-decoration:none;" href="{{ 'preview-pdf' }}" target="_blank">Preview Below Check <i class="fa fa-eye" style="font-size: 30px; margin-left: 7px;"></i> </a>
@@ -412,4 +414,5 @@
 
 
     </section>
+
 @endsection
