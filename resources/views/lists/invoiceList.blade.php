@@ -31,7 +31,7 @@
                             <th class="text-center" style="padding: 1.5em .5em;border:none;">{{$invoice->title}}</th>
                             <th class="text-center" style="padding: 1.5em .5em;border:none;">{{$invoice->reference}}</th>
                             <th class="text-center" style="padding: .9em .5em;border:none;">
-                                <a class="btn btn-outline-dark py-2 downloiadBtn" href="{{$invoice->pdf}}" download>Dounload &nbsp;<i class="fa fa-arrow-circle-down 2x" aria-hidden="true"></i></a>
+                                <a class="btn btn-outline-dark py-2 downloiadBtn" href="{{$invoice->pdf}}" download>Download &nbsp;<i class="fa fa-arrow-circle-down 2x" aria-hidden="true"></i></a>
                             </th>
                             <th class="text-center" style="padding: 1em .5em;border:none;">
                                 <a href="{{ route('invoiceMailId', $invoice->id) }}">

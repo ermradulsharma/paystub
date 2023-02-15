@@ -1,3 +1,11 @@
+/*
+*:not(input.field) {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+} */
 .createbtn {
     padding: 1px 40px;
     border-radius: 5px;
@@ -7,6 +15,7 @@
     font-size: 24px;
     box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, .6));
 }
+
 
 .createbtn2 {
     padding: 0px 58px;
@@ -255,9 +264,9 @@
     transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
-.formm:hover {
+/* .formm:hover {
     color: #495057 !important;
-}
+} */
 
 .hour_btn {
     padding: 8px 16px;
@@ -313,8 +322,8 @@
     position: absolute;
     padding-left: 15px;
     color: blue;
-    top: 11px;
-    left: 11px;
+    top: 19px;
+    left: 2px;
 }
 
 .earnbtn3 {
@@ -499,7 +508,7 @@ select:after {
     font-size: 21px;
     color: #ffffff;
     background: #12c23a;
-    padding: 6px 30px;
+    padding: 3px 80px;
     border: none;
     border-radius: 4px;
     box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, .6));
@@ -520,10 +529,10 @@ select:after {
 }
 
 input:hover {
-    box-shadow: 5px 5px 1px 3px #0000002b;
+    /* box-shadow: 5px 5px 1px 3px #0000002b; */
 
     border: 1px solid #244b1f !important;
-    background: #244b1f;
+    background: #244b1f !important;
     color: white !important;
 
 }
@@ -706,9 +715,10 @@ h5 {
 }
 
 .rec-box-border {
-    padding: 1px 20px;
+    /* padding: 1px 20px; */
     border: 2px solid red;
-    border-bottom: none;
+
+
 }
 
 /* w2paystub */
@@ -1137,6 +1147,349 @@ ul.nav.nav-justified.navbar {
 
 /* w2 form design end*/
 
+.checkbox {
+    width: 40px;
+    height: 40px;
+    border-radius: 2px;
+    border: 1px solid black;
+}
+
+.mobile {
+    display: none !important;
+}
+
+.desktop {
+    display: block !important;
+}
+
+.color-red {
+    color: red;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.w2-form-number p {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.checkbox-outer p {
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: red;
+    padding-right: 30px !important;
+}
+
+.checkbox-outer {
+    max-width: 200px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.left-text {
+    max-width: 275px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.bottom-box-inner:first-child {
+    max-width: 140px;
+}
+
+.input-feild-outer {
+    max-width: 335px;
+    width: 100%;
+    margin-left: 20px;
+    border: 5px solid red;
+    text-align: center;
+}
+
+.input-feild-outer input {
+    max-width: 270px;
+    width: 100%;
+    margin-bottom: 5px;
+    background-color: #8080801f;
+    border: 1px solid #00000096;
+    padding: 5px;
+}
+
+.w2-form-number {
+    max-width: 200px;
+    width: 100%;
+    border-right: 2px solid red;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.input-box input {
+    max-width: 250px;
+    width: 100%;
+    border: 1px solid #00000096;
+    background-color: #8080801f;
+}
+
+textarea#w3review {
+    max-width: 580px;
+    width: 100%;
+    margin-bottom: 9.5px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.w2form-left-box {
+    width: 52%;
+    position: relative;
+}
+
+.w2form-left-box:before {
+    position: absolute;
+    top: 0;
+    content: "";
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background-color: red;
+}
+
+.w2form-right-box {
+    width: 48%;
+}
+
+.w2form-box-outer {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-bottom: 2px solid red;
+}
+
+.bottom-box-outer.a {
+    display: none;
+}
+
+.inputbox2 input {
+    width: 100%;
+    max-width: 250px;
+    border: 1px solid #00000096;
+    background-color: #8080801f;
+    text-align: right;
+    margin-bottom: 5px;
+}
+
+.inputbox2 {
+    width: 50%;
+    padding: 0px 15px;
+    position: relative;
+}
+
+.inputbox2:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -5px;
+    width: 2px;
+    height: 100%;
+    background-color: red;
+}
+
+.inputbox2:nth-child(2n):before {
+    content: none;
+}
+
+.bottom-textarea1 {
+    margin-left: 0 !important;
+}
+
+.input-box2-outer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    border-bottom: 2px solid red;
+    justify-content: center;
+}
+
+input.pie-box.input {
+    max-width: 30px;
+    width: 100%;
+}
+
+input.input-pie-box.input {
+    max-width: 195px;
+    width: 100%;
+    margin-left: 12px;
+}
+
+.pie-box-outer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.inputbox-outer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    width: 100%;
+    padding-bottom: 6px;
+    border-bottom: 2px dashed red;
+    margin-bottom: 10px;
+}
+
+.input-box input {
+    max-width: 250px !important;
+    width: 100%;
+    background-color: #8080801f;
+}
+
+.checkbox-inner {
+    width: 33.33%;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.checkbox-inner p {
+    text-align: center;
+    padding-bottom: 3px !important;
+}
+
+.display {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.checkbox-inner p {
+    width: calc(100% - 20px);
+}
+
+p.checkbox-sqaure input {
+    max-width: 20px;
+    width: 100%;
+}
+
+p.checkbox-sqaure {
+    max-width: 20px;
+}
+
+.border-none {
+    border-bottom: 2px solid red;
+    padding-bottom: 5px;
+    padding-left: 10px;
+}
+
+.textarea-w2.textarea-outer {
+    border-bottom: 2px solid red;
+    padding-top: 1.5px;
+
+
+}
+
+.bottom-box-outer.for-mobile {
+    visibility: visible;
+}
+
+
+.input-box.width {
+    max-width: 260px;
+    width: 100%;
+    margin-right: 20px;
+}
+
+.bottom-box-inner1 {
+    max-width: 175px;
+    width: 100%;
+    padding: 0px 10px;
+    border-right: 2px solid red;
+    padding-bottom: 10px;
+}
+
+.bottom-box-inner1 input {
+    width: 100%;
+}
+
+.bottom-box-inner1:last-child {
+    border-right: 0;
+}
+
+.bottom-outer:last-child {
+    border-bottom: none;
+}
+
+.bottom-box-inner {
+    max-width: 170px;
+    width: 100%;
+    padding: 0px 10px;
+    border-right: 2px solid red;
+    padding-bottom: 10px;
+}
+
+.bottom-box-inner:nth-child(2) {
+    max-width: 200px;
+}
+
+.bottom-box-outer:last-child {
+    width:44%;
+}
+
+.bottom-box-outer {
+    width: 56%;
+    display: flex;
+}
+
+
+
+.bottom-box-inner input {
+    width: 100%;
+}
+
+.bottom-outer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    border-bottom: 2px dashed red;
+}
+
+.for-desktop {
+    display: none;
+}
+
+.for-desktop1 {
+    visibility: visible;
+}
+
+select#cars {
+    max-width: 130px;
+    width: 100%;
+}
+
+.text {
+    max-width: 60px;
+    width: 100%;
+    text-align: r;
+    text-align: right;
+}
+
+/* w2 form design end*/
+/* bottom gradiant section style start*/
+.bottom-graadiant-section {
+    background: linear-gradient(to right, rgb(108,129,70) 0%,rgb(190,205,129) 33%,rgb(206,199,212) 63%,rgb(246,174,120) 99%);
+    padding: 30px 0px;
+}
+.content p {
+    line-height: 1.3;
+    font-size: 20px;
+}
+/* bottom gradiant section style end*/
 /* uk design again start */
 .payst {
     border: 1px solid red;
@@ -1144,6 +1497,35 @@ ul.nav.nav-justified.navbar {
 }
 
 /* uk design again end */
+
+/* template-view */
+.view-temp {
+    color: #0e866c;
+    font-size: 24px;
+    ;
+}
+
+.view-temp2 {
+    color: #ffffff;
+    background: #e827a5;
+    font-size: 22px;
+}
+
+.prebtn {
+    color: #0e866c;
+    background: #ffffff;
+    font-size: 15px;
+    border: #0e866c 2px solid;
+}
+
+.list-outer {
+    padding: 0px 20px;
+    display: block;
+}
+
+/* template-view end */
+
+/* uk paystub start*/
 
 .margintop-5 {
     margin-top: 5em;
@@ -1163,6 +1545,10 @@ ul.nav.nav-justified.navbar {
     color: blue;
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> db6b3b7b9fe60397f122f325c3de5ad860dc422f
 .ukpay-inner {
     padding: 10px;
 }
@@ -1286,6 +1672,10 @@ ul.nav.nav-justified.navbar {
     .couple {
         max-width: 848px;
     }
+
+    .abc {
+        display: none;
+    }
 }
 
 
@@ -1333,8 +1723,121 @@ ul.nav.nav-justified.navbar {
 }
 
 @media screen and (max-width: 1024px) {
-    .ukpay-inner {
-        padding: 0 8px;
+    .checkbox-inner {
+        width: 100%;
+        display: flex;
+        flex-direction: inherit;
+        align-items: flex-start;
+    }
+
+    .checkbox-inner p {
+        text-align: left;
+    }
+
+    .checkbox-sqaure p {
+        margin-left: 10px;
+    }
+
+    .display {
+        display: inline-block;
+
+    }
+
+    .checkbox-sqaure {
+        width: 20px !important;
+    }
+
+
+    .redcon {
+        padding: 30px;
+    }
+
+    .w2-form-number {
+        max-width: 100px;
+    }
+
+    .bottom-box-outer.a {
+        display: flex;
+    }
+
+    .bottom-box-outer.b {
+        display: none;
+    }
+
+    .checkbox-outer {
+        max-width: 135px;
+    }
+
+    .input-feild-outer {
+        max-width: 315px;
+    }
+
+    .left-text {
+        max-width: 175px;
+    }
+
+    textarea#w3review {
+        max-width: 450px;
+    }
+
+    input.pie-box.input {
+        max-width: 23px;
+        height: 27px;
+        width: 100%;
+        font-size: 10px;
+    }
+
+    input.input-pie-box.input {
+        max-width: 145px;
+
+    }
+
+    .bottom-box-outer {
+        flex-wrap: wrap;
+        width: 100%;
+        border-bottom: 2px solid red;
+        margin-right: 0;
+    }
+
+    .bottom-box-inner:last-child {
+        border-right: none;
+    }
+
+    .bottom-box-outer:last-child {
+        width: 100%;
+        border-bottom: none;
+    }
+
+    .bottom-box-inner {
+        max-width: 175px;
+    }
+
+    .bottom-box-inner1 {
+        max-width: 175px;
+    }
+
+    .mobile {
+        display: block !important;
+    }
+
+    .desktop {
+        display: none;
+    }
+
+    .bottom-box-outer.for-mobile {
+        visibility: hidden;
+    }
+
+    .bottom-box-outer.for-mobile .bottom-box-inner {
+        padding: 0 !important;
+    }
+
+    .for-desktop {
+        display: block;
+    }
+
+    .for-desktop1 {
+        visibility: visible;
     }
 
     .num {
@@ -1423,16 +1926,28 @@ ul.nav.nav-justified.navbar {
     }
 
     .smallfont1 {
-        font-size: 17px;
+        font-size: 13px;
         margin-top: 25px;
     }
 
     .smallfont2 {
-        font-size: 24px;
+        font-size: 18px;
     }
 
     .smallfont3 {
-        font-size: 24px;
+        font-size: 18px;
+    }
+
+    .mt-5.ready {
+        font-size: 25px !important;
+    }
+
+    li.mt-2 {
+        font-size: 17px !important;
+    }
+
+    .Generate {
+        font-size: 18px !important;
     }
 
     .youtubeimg {
@@ -1576,20 +2091,22 @@ ul.nav.nav-justified.navbar {
     }
 
     .WithPaystubX {
-        font-size: 30px;
+        font-size: 25px;
     }
 
     .Show {
-        font-size: 30px;
+        font-size: 25px;
+    }
+
+    .Createpay {
+        font-size: 25px;
     }
 
     .font {
         font-size: 18px;
     }
 
-    .text-white {
-        font-size: 17px;
-    }
+
 
     .footimg {
         max-width: 200px;
@@ -1624,23 +2141,85 @@ ul.nav.nav-justified.navbar {
         line-height: 1.8;
     }
 
-    .earnbtn2 {
-        font-size: 20px;
-        position: absolute;
-        padding-left: 15px;
-        color: blue;
-        top: 5px;
-        left: 11px;
-    }
+
 }
 
 @media screen and (max-width: 768px) {
+    .view-temp2 {
+        color: #ffffff;
+        background: #e827a5;
+        font-size: 17px;
+    }
+
+    .view-temp {
+        color: #0e866c;
+        font-size: 22px;
+    }
+
     .see-sample2 {
         top: 133px;
         right: 116px;
         padding: 4px 8px;
         font-size: 11px;
     }
+
+    .w2form-no {
+        max-width: 100px;
+    }
+
+    .w2-checkbox-outer {
+        max-width: 100px;
+    }
+
+    .w2form-left-box {
+        width: 100%;
+        border-right: 0;
+    }
+
+    .w2form-right-box {
+        width: 100%;
+        border-top: 2px solid red;
+    }
+
+    input.input-uk.text-center.taxes {
+        width: 95%;
+    }
+    button.netpaybtn.net_pay {
+        width: 95%;
+    }
+    input.input-uk.text-center.taxePays {
+        width: 95%;
+    }
+
+
+    .inputbox2:before {
+        right: 0;
+    }
+
+    input.input-pie-box.input {
+        max-width: 84%;
+    }
+
+    textarea#w3review {
+        max-width: 600px;
+    }
+
+    .inputbox2 {
+        padding: 0px 15px 0px;
+    }
+
+    .inputbox2 input {
+        max-width: 100%;
+    }
+
+    .bottom-box-inner {
+        max-width: 165px;
+    }
+
+    .bottom-box-inner1 {
+        max-width: 165px;
+    }
+
 
     .see-sample1 {
         top: 114px;
@@ -1755,7 +2334,7 @@ ul.nav.nav-justified.navbar {
     }
 
     .text-white {
-        text-align: left;
+        text-align: center;
         margin-top: 4px;
         font-size: 17px;
     }
@@ -2029,8 +2608,24 @@ ul.nav.nav-justified.navbar {
         font-size: 18px;
     }
 
-    .ukpay-inner {
-        padding: 0 10px;
+    .emailbtn{
+        padding: 3px 25px;
+    }
+    .previewbtn {
+        padding: 0px 23px;
+    }
+
+    .checkbox-outer {
+        max-width: 105px;
+    }
+
+    .checkbox-outer p {
+        padding-right: 18px !important;
+    }
+
+    .checkbox {
+        width: 25px;
+        height: 25px;
     }
 }
 
@@ -2065,10 +2660,35 @@ ul.nav.nav-justified.navbar {
 }
 
 @media screen and (max-width: 425px) {
+    .storehead a img {
+        margin-left: 0px !important;
+    }
+
+    .oo {
+        display: flex;
+    }
+
     .payst {
         border: unset;
         display: unset;
 
+    }
+
+    .col-set1 {
+        margin: 30px auto 0px;
+    }
+
+    .mt-5.pt-5.justify-content-center {
+        margin: 0 !important;
+    }
+
+    p.QUICK {
+        font-size: 15px;
+        padding-top: 20px;
+    }
+
+    .mt-5.d-flex.pt-5.top-gogle {
+        margin: 0 !important;
     }
 
     .pay-outer {
@@ -2081,6 +2701,142 @@ ul.nav.nav-justified.navbar {
 
     .w-sm-100 {
         width: 100%;
+    }
+
+    h1.pt-5 {
+        font-size: 23px !important;
+    }
+
+    .textarea-w2 textarea {
+        max-width: 400px;
+    }
+
+    .text-left p {
+        font-size: 15px !important;
+    }
+
+    .col-md-4.mt-3.text-center h2 {
+        font-size: 20px !important;
+    }
+
+    img.image-no {
+        width: 60px !important;
+        height: 60px !important;
+    }
+
+    p.w2p span {
+        font-size: 30px !important;
+    }
+
+    p.w2p span {
+        font-size: 18px !important;
+    }
+
+    h3.w2p {
+        font-size: 19px !important;
+    }
+
+    .d-flex {
+        /* display: inline-block !important; */
+        justify-content: center;
+        width: 100%;
+    }
+
+    .bottom-textarea textarea {
+        max-width: 400px;
+    }
+
+    .checkbox-outer {
+        padding: 13px 0px;
+    }
+
+    .left-text {
+        max-width: 100%;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .input-box input {
+        max-width: 98% !important;
+    }
+
+    .input-box.width {
+        max-width: 98%;
+        margin-right: 0px;
+
+    }
+
+    .text {
+        text-align: left;
+        padding-bottom: 35px;
+    }
+
+    .input-feild-outer {
+        max-width: 360px;
+        margin: 0 auto;
+    }
+
+    .bottom-box-inner {
+        max-width: 100%;
+        border-right: none;
+    }
+
+    .bottom-box-inner1 {
+        max-width: 100%;
+        border-right: none;
+    }
+
+    .bottom-box-outer:last-child {
+        margin-right: 0;
+    }
+
+    .bottom-box-inner:nth-child(2) {
+        max-width: 100%;
+    }
+
+    textarea#w3review {
+        max-width: 340px;
+    }
+
+    .input-box input {
+        max-width: 100%;
+    }
+
+    .inputbox2 {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .inputbox2:before {
+        content: none;
+    }
+
+    .input-box {
+        max-width: 100%;
+        margin-right: 0;
+    }
+
+    .w2-lefttext {
+        padding-left: 10px;
+    }
+
+    .input-box input {
+        margin: 0;
+    }
+
+    .width {
+        width: 100% !important;
+        margin-right: 0;
+        border-right: none;
+    }
+
+    .text {
+        padding-left: 10px;
+    }
+
+    .checkbox-inner {
+        /* width: 100%;
+        margin-bottom: 6px; */
     }
 
     .see-sample2 {
@@ -2432,6 +3188,63 @@ ul.nav.nav-justified.navbar {
         width: 100%;
     }
 
+    .input-feild-outer {
+        max-width: 310px;
+    }
+
+    .input-box input {
+        max-width: 96% !important;
+    }
+
+    .gen {
+        font-size: 18px !important;
+    }
+
+    h1.pt-5 {
+        font-size: 20px !important;
+    }
+
+    .box-content h6 {
+        font-size: 20px;
+    }
+
+    .bottom-content p {
+        font-size: 15px;
+    }
+
+    h2.text-center.text-light.pb-3 {
+        font-size: 20px;
+    }
+
+    p.w2p span {
+        font-size: 12px !important;
+    }
+
+    p.QUICK {
+        font-size: 13px;
+    }
+
+    p.w2p {
+        font-size: 12px !important;
+    }
+
+    h3.w2p {
+        font-size: 12px !important;
+        padding-bottom: 10px;
+    }
+
+    textarea#w3review {
+        max-width: 305px;
+    }
+
+    .bottom-textarea textarea {
+        max-width: 350px;
+    }
+
+    .textarea-w2 textarea {
+        max-width: 350px;
+    }
+
     .see-sample2 {
         top: 70px;
         right: 70px;
@@ -2681,9 +3494,47 @@ ul.nav.nav-justified.navbar {
     }
 
     .storbtn {
-        width: 127px !important;
+        width: 120px !important;
         height: 44px !important;
         margin-bottom: 0;
+    }
+
+    .col-md-6.text-left.mb-5 {
+        padding: 0;
+    }
+
+    .mt-5 {
+        margin-top: 0 !important;
+    }
+
+    li.mt-2 {
+        font-size: 15px !important;
+    }
+
+    .WithPaystubX {
+        font-size: 20px !important;
+    }
+
+    .Createpay {
+        font-size: 20px !important;
+    }
+
+    .Show {
+        font-size: 20px !important;
+    }
+
+    .mt-5.ready {
+        font-size: 20px !important;
+        padding-top: 20px;
+    }
+
+    .mt-5 b {
+        font-size: 20px !important;
+    }
+
+    .text-left p {
+        font-size: 16px !important;
+        line-height: 1.4 !important;
     }
 
     .goggle {
@@ -2721,6 +3572,10 @@ ul.nav.nav-justified.navbar {
     .ukpay-inner {
         padding: 10px;
     }
+
+    .oo {
+        display: flex;
+    }
 }
 
 
@@ -2737,4 +3592,65 @@ ul.nav.nav-justified.navbar {
     border-radius: 4px;
     border: 2px solid #ff6261;
     font-weight: 600;
+}
+
+@media screen and (max-width: 320px) {
+    .textarea-w2 textarea {
+        max-width: 295px;
+    }
+
+    .textarea-w2 textarea {
+        max-width: 295px;
+    }
+
+    .text-left h1 {
+        font-size: 30px;
+        font-weight: 500;
+    }
+
+
+
+    p.color-red {
+        font-size: 12px !important;
+    }
+
+    .input-feild-outer {
+        max-width: 255px;
+    }
+
+    .input-feild-outer input {
+        max-width: 230px;
+    }
+
+    textarea#w3review {
+        max-width: 250px;
+    }
+
+    input.input-pie-box.input {
+        max-width: 80%;
+    }
+
+    .padding {
+        padding: 0px !important;
+    }
+
+    .fbicon {
+        border: 2px solid white;
+        border-radius: 60%;
+        padding: 11px;
+        font-size: 15px;
+        width: 50px;
+        color: white;
+        width: 38px;
+    }
+
+    .socialicon {
+        border: 2px solid white;
+        border-radius: 60%;
+        padding: 11px;
+        font-size: 15px;
+        width: 50px;
+        color: white;
+        width: 38px;
+    }
 }

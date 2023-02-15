@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\VerifyEmailSend;
 use Illuminate\Http\Request;
 use Laravel\Socialite\Facades\Socialite;
 use Exception;
 use App\Models\User;
-use App\Models\verifiedEmail;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 
@@ -37,9 +38,9 @@ class LoginController extends Controller
     {
         $user = Socialite::driver('google')->stateless()->user();
         //$user = Socialite::driver('google')->user();
-        $finduser = User::where('social_id', $user->id)->first();
-        if ($finduser) {
-            Auth::login($finduser);
+        $findUser = User::where('social_id', $user->id)->first();
+        if ($findUser) {
+            Auth::login($findUser);
         } else {
             $newUser = User::updateOrCreate(['email' => $user->email], [
                 'name' => $user->name,
@@ -140,6 +141,25 @@ class LoginController extends Controller
             $user->email = $request->email;
         }
 
+        if ($user->email != "") {
+            $mailData = [];
+            $mailData['name'] = $request->email;
+            $mailData['otp'] = $code;
+            $mailData['type'] = 'E-mail Verification';
+            $mailData['subject'] = 'Verify E-mail';
+            Mail::to($user->email)->send(new VerifyEmailSend($mailData));
+        }
+        /* $moreData = [
+            "otp" => $code
+        ];
+        $mailData = [
+            "email" => $request->email,
+            "title" => "Verification code"
+        ];
+        Mail::send('mail.verify', $moreData, function ($message) use ($mailData) {
+            $message->to($mailData['email']);
+            $message->subject($mailData['title']);
+        }); */
         $user->code = $code;
         $user->save();
         $response['message'] = "Verification code sent successfully";

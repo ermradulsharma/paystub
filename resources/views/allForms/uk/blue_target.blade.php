@@ -28,23 +28,21 @@
     }
 
     .watermark {
-        position: absolute;
-        width: 100%;
-        height: 700px;
-        top: 0px;
-        left: 0px;
-        right: 0;
-        background-image: url("http://44.202.105.74/user/water.png");
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-    }
+            position: absolute;
+            width: 100%;
+            height: 700px;
+            top: 50px;
+            left: 0px;
+            right: 0;
+            background-image: url("http://44.202.105.74/user/water.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
 
-    .bg-img2 {
-        position: relative;
-        background-color: #aeaee4;
-        padding: 50px 30px;
-    }
+        .bg-img2 {
+            position: relative;
+        }
 
     .bold {
         font-weight: bold;
@@ -74,8 +72,14 @@
 
 <body>
     <main class="bg-img2">
-        <div class="watermark">
-        </div>
+        @guest
+        <div class="watermark"></div>
+        @endguest
+        @auth
+        @if(Auth::user()->expiryDate == '' || !isset($requestData['watermark']))
+        <div class="watermark"></div>
+        @endif
+        @endauth
 
         <section style="border:1px solid #0a2e7b; border-radius:10px; background-color:white;">
             <table style="">
