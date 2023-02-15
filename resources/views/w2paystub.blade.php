@@ -1,5 +1,22 @@
 @extends('layouts.app')
 @section('content')
+<!-- Modal Start -->
+<div class="modal fade" id="tempViewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn btn-secondary close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <embed src="" type="" id="tempView" allowtransparency="false" style="background-color : transparent;" frameborder="0" width="100%" height="800">
+                {{-- <iframe src="" id="tempView" allowtransparency="false" style="background-color : transparent;" frameborder="0" width="100%" height="800"></iframe> --}}
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal End -->
 <section class="w2-form">
     <div></div>
     <div class="container-fluid p-4 mt-2" style="background-color: #fb5e5efa; ">
@@ -17,7 +34,6 @@
             @csrf
             <input type="hidden" name="form_type" value="w2form" hidden>
             <div class="container bg-light  redcon" style="max-width:1450px;">
-
                 <div clas="recipt-box">
                     <div class="rec-box-border">
                         <div style="border-bottom:2px solid red;" class="row">
