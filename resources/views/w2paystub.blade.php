@@ -161,7 +161,7 @@
                                         for box 12</p>
                                     <div class="pie-box-outer">
                                         <span><img style="width:9px;" src="{{ asset('images/code.png') }}"></span>
-                                        <input name="pie_1" class="pie-box input" type="text" placeholder="PIE" pattern="[A-Za-z]{3}">
+                                        <input name="pie_1" class="pie-box input" type="text" placeholder="PIE" maxlength="3">
                                         <input name="instructions_box_1" class="input-pie-box input" type="number" placeholder="Please Enter">
                                     </div>
 
@@ -194,7 +194,7 @@
                                     <p style="padding:0; margin:0px;" class="color-red"><b>12b </b> </p>
                                     <div class="pie-box-outer">
                                         <span><img style="width:9px;" src="{{ asset('images/code.png') }}"></span>
-                                        <input name="pie_2" class="pie-box input" type="text" placeholder="PIE" pattern="[A-Za-z]{3}">
+                                        <input name="pie_2" class="pie-box input" type="text" placeholder="PIE" maxlength="3">
                                         <input name="instructions_box_2" class="input-pie-box input" type="number" placeholder="Please Enter">
                                     </div>
 
@@ -211,7 +211,7 @@
                                         <p style="padding:0; margin:0px;" class="color-red"><b>12c </b> </p>
                                         <div class="pie-box-outer">
                                             <span><img style="width:9px;" src="{{ asset('images/code.png') }}"></span>
-                                            <input name="pie_3" class="pie-box input" type="text" placeholder="PIE" pattern="[A-Za-z]{3}">
+                                            <input name="pie_3" class="pie-box input" type="text" placeholder="PIE" maxlength="3">
                                             <input name="instructions_box_3" class="input-pie-box input" type="number" placeholder="Please Enter">
                                         </div>
 
@@ -220,7 +220,7 @@
                                         <p style="padding:0; margin:0px;" class="color-red"><b>12d </b></p>
                                         <div class="pie-box-outer">
                                             <span><img style="width:9px;" src="{{ asset('images/code.png') }}"></span>
-                                            <input name="pie_4" class="pie-box input" type="text" placeholder="PIE" pattern="[A-Za-z]{3}">
+                                            <input name="pie_4" class="pie-box input" type="text" placeholder="PIE" maxlength="3">
                                             <input name="instructions_box_4" class="input-pie-box input" type="number" placeholder="Please Enter">
                                         </div>
                                     </div>
