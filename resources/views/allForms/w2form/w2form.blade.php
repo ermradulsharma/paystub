@@ -61,7 +61,7 @@
     }
 
     .table-outer {
-        height: 485px;
+        height: 495px;
         border-bottom: 2px solid red;
         width: 100%;
 
@@ -245,11 +245,13 @@
                             </div>
 
                         </td>
-                        <td style="margin:0; padding:0;position: relative;">
+                        <td style=" background-color:red;margin:0; padding:0;position: relative;">
                             <p style=""><b>12b </b></p>
-                            <span style="position:absolute; top:40px; z-index:2;"><img style="width:6px !important;" src="images/code.png"></span>
-                            <div style=" margin-left:20px;"><span style="font-size: 16px; color:black;">{{ $requestData['pie_2'] }}</span>&nbsp;
-                                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 16px; color:black;" class="bottom-number">{{ number_format($requestData['instructions_box_2'],2) }}</span>
+
+                            <div style=" margin-left:30px; ">
+                                <p><img style="width:6px !important; float:left; position: relative; left:-20px;" src="images/code.png"></p>
+                                <p style="background-color:red;padding-right:15px !important;border-right:2px solid red;float:left;font-size: 16px; color:black; ">{{ $requestData['pie_2'] }}</p>
+                                <p style="float:right;font-size: 16px; color:black; width:70%;" class="bottom-number">{{ number_format($requestData['instructions_box_2'],2) }}</p>
                             </div>
 
                         </td>
