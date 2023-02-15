@@ -180,7 +180,7 @@
                                     </div>
                                     <div class="col-6 px-0">
                                         <div>
-                                            <label for="emp_id" class="lable"> <span class="redColor"></span></label>
+                                            <label for="pay_end" class="lable"> <span class="redColor"></span></label>
                                             <input type="date" id="pay_end" name="pay_end" placeholder=" " class="w-100 py-2 textInputFontSize pay_end" data-id="pay_end" style="border: 1px solid #878080;border-left: none;" readonly>
                                         </div>
                                     </div>
@@ -248,19 +248,19 @@
                             <div class="col-lg-7 pr-lg-0 px-0 mb-3">
                                 <div class="row">
                                     <div class="col-lg-3 col-md-3 mb-3 pr-lg-0 addincomeKey">
-                                        <button type="button" CLASS="statementbtn">INCOME</button>
+                                        <button type="button" class="statementbtn">INCOME</button>
                                         <input class="earnbtn mt-3 text-center incomeKey" data-id="000" name="earning[]" type="text" value="Regular">
                                     </div>
                                     <div class="col-lg-3 col-md-3 mb-3 pr-lg-0 addrateKey">
-                                        <button type="button" CLASS="statementbtn">RATE</button>
+                                        <button type="button" class="statementbtn">RATE</button>
                                         <input class="earnbtn mt-3 text-center rateKey" type="number" id="rate_000" name="rate[]" type="text" value="">
                                     </div>
                                     <div class="col-lg-3 col-md-3 mb-3 pr-lg-0 addhoursKey">
-                                        <button type="button" CLASS="statementbtn">HOURS</button>
+                                        <button type="button" class="statementbtn">HOURS</button>
                                         <input class="earnbtn mt-3 text-center hoursKey" type="number" id="hours_000" name="hours[]" type="text" value="">
                                     </div>
                                     <div class="col-lg-3 col-md-3 mb-3 pr-lg-0 addcurrentTotal">
-                                        <button type="button" CLASS="statementbtn"> CURRENT TOTAL</button>
+                                        <button type="button" class="statementbtn"> CURRENT TOTAL</button>
                                         <input class="earnbtn mt-3 text-center currentTotal" readonly id="total_000" name="total[]" type="text" value="">
                                     </div>
                                 </div>
@@ -277,7 +277,7 @@
                             <div class="col-lg-5 pl-0">
                                 <div class="row">
                                     <div class="col-lg-4 mb-4 col-md-4 pr-0 addtaxes">
-                                        <button type="button" CLASS="statementbtn">DEDUCTION</button>
+                                        <button type="button" class="statementbtn">DEDUCTION</button>
                                         @foreach ($deduction as $key => $item)
                                         <div class="d-flex mt-3">
                                             <img src="{{ asset('images/lock.png') }}" class="earnbtn3">
@@ -286,13 +286,13 @@
                                         @endforeach
                                     </div>
                                     <div class="col-lg-4 mb-4 col-md-4 pr-0 addtaxes_rate">
-                                        <button type="button" CLASS="statementbtn">CURRENT TOTAL</button>
+                                        <button type="button" class="statementbtn">CURRENT TOTAL</button>
                                         @foreach ($deduction as $key => $item)
                                         <input class="earnbtn text-center mt-3" readonly name="taxes_rate[]" id="tax_total_00{{ $key }}">
                                         @endforeach
                                     </div>
                                     <div class="col-lg-4 mb-4 col-md-4 pr-0 addtaxes_ytd">
-                                        <button type="button" CLASS="statementbtn">YTD TOTAL</button>
+                                        <button type="button" class="statementbtn">YTD TOTAL</button>
                                         @foreach ($deduction as $key => $item)
                                         <input class="earnbtn text-center mt-3" readonly name="taxes_ytd[]" id="tax_ytd_00{{ $key }}">
                                         @endforeach
@@ -310,28 +310,28 @@
 
                         <div class="row mb-3 mt-4 mt-lg-5">
                             <div class="col-lg-2 col-md-2 pr-md-0 mb-2">
-                                <button type="button" CLASS="statementbtn">YTD GROSS</button>
-                                <input CLASS="earnbtn text-center mt-3" id="ytd_gross" name="ytd_gross_total">
+                                <button type="button" class="statementbtn">YTD GROSS</button>
+                                <input class="earnbtn text-center mt-3" id="ytd_gross" name="ytd_gross_total">
                             </div>
                             <div class="col-lg-2 col-md-2 pr-md-0 mb-2">
-                                <button type="button" CLASS="statementbtn">YTD DEDUCATIONS</button>
-                                <input CLASS="earnbtn text-center mt-3" id="ytd_deducations" name="ytd_deduction_tax">
+                                <button type="button" class="statementbtn">YTD DEDUCATIONS</button>
+                                <input class="earnbtn text-center mt-3" id="ytd_deducations" name="ytd_deduction_tax">
                             </div>
                             <div class="col-lg-2 col-md-2 pr-md-0 mb-2">
-                                <button type="button" CLASS="statementbtn">YTD NET PAY</button>
-                                <input CLASS="earnbtn text-center mt-3" id="ytd_net_pay" name="total_ytd_net_pay">
+                                <button type="button" class="statementbtn">YTD NET PAY</button>
+                                <input class="earnbtn text-center mt-3" id="ytd_net_pay" name="total_ytd_net_pay">
                             </div>
                             <div class="col-lg-2 col-md-2 pr-md-0 mb-2">
-                                <button type="button" CLASS="statementbtn">CURRENT TOTAL</button>
-                                <input CLASS="earnbtn text-center mt-3" id="current_total" name="period_gross_total">
+                                <button type="button" class="statementbtn">CURRENT TOTAL</button>
+                                <input class="earnbtn text-center mt-3" id="current_total" name="period_gross_total">
                             </div>
                             <div class="col-lg-2 col-md-2 pr-md-0 mb-2">
-                                <button type="button" CLASS="statementbtn">DEDUCTIONS</button>
-                                <input CLASS="earnbtn text-center mt-3" id="deductions" name="deduction_tax">
+                                <button type="button" class="statementbtn">DEDUCTIONS</button>
+                                <input class="earnbtn text-center mt-3" id="deductions" name="deduction_tax">
                             </div>
                             <div class="col-lg-2 col-md-2 mb-2">
-                                <button type="button" CLASS="statementbtn">NET PAY</button>
-                                <input CLASS="earnbtn text-center mt-3" id="net_pay" name="total_net_pay">
+                                <button type="button" class="statementbtn">NET PAY</button>
+                                <input class="earnbtn text-center mt-3" id="net_pay" name="total_net_pay">
                             </div>
                         </div>
                     </div>

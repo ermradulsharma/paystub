@@ -1145,6 +1145,8 @@ ul.nav.nav-justified.navbar {
     width: 100%;
 }
 
+/* w2 form design end*/
+
 .checkbox {
     width: 40px;
     height: 40px;
@@ -1542,7 +1544,6 @@ select#cars {
     font-weight: 600;
     color: blue;
 }
-
 
 .ukpay-inner {
     padding: 10px;
