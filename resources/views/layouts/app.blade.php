@@ -7,7 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS  -->
-
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans" />
@@ -25,6 +24,7 @@
         select option {
             text-transform: capitalize
         }
+
     </style>
     @yield('style')
 </head>
@@ -32,25 +32,12 @@
 <body>
     <div class="container" style="max-width:1500px">
         <ul class="nav nav-justified navbar" style="max-width: 1445px;">
-            <li class="nav-item">
-                <a href="{{ route('welcome') }}"><img class="mr-3 mt-5" src="{{asset('images/Paystub X.webp')}}" style="width: 222px;"></a>
-            </li>
-            <li class="nav-item ml-3 ">
-                <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('usa*') ? 'active' : '' }} " href="{{ route('usa.payStub') }}">USA</a>
-            </li>
-            <li class="nav-item ml-3">
-                <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('canada*') ? 'active' : '' }}" href="{{ route('canada') }}">CANADA</a>
-            </li>
-            <li class="nav-item ml-3">
-                <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('uk*') ? 'active' : '' }}" href="{{ route('uk') }}">UK</a>
-            </li>
-            <li class="nav-item ml-3">
-                <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('global*') ? 'active' : '' }}" href="{{ route('global') }}">GLOBAL</a>
-            </li>
-            <li class="nav-item ml-3">
-                <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('w2form*') ? 'active' : '' }}" href="{{ route('w2form') }}" style="width: 143px !important;">W-2 FORM</a>
-            </li>
-
+            <li class="nav-item"> <a href="{{ route('welcome') }}"><img class="mr-3 mt-5" src="{{asset('images/Paystub X.webp')}}" style="width: 222px;"></a> </li>
+            <li class="nav-item ml-3 "> <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('usa*') ? 'active' : '' }} " href="{{ route('usa.payStub') }}">USA</a> </li>
+            <li class="nav-item ml-3"> <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('canada*') ? 'active' : '' }}" href="{{ route('canada') }}">CANADA</a> </li>
+            <li class="nav-item ml-3"> <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('uk*') ? 'active' : '' }}" href="{{ route('uk') }}">UK</a> </li>
+            <li class="nav-item ml-3"> <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('global*') ? 'active' : '' }}" href="{{ route('global') }}">GLOBAL</a> </li>
+            <li class="nav-item ml-3"> <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('w2form*') ? 'active' : '' }}" href="{{ route('w2form') }}" style="width: 143px !important;">W-2 FORM</a> </li>
             <li class="nav-item  ml-3 ">
                 @guest
                 <a class="btn btn-lg py-2 w-100 mt-5 btn-danger login registerBtn" href="javascript:void(0);">LOGIN</a>
@@ -67,7 +54,6 @@
                 </form>
                 @endguest
             </li>
-
         </ul>
     </div>
 
@@ -242,7 +228,6 @@
                         <a href="{{ url('/') }}"><img class="footimg" src="{{asset('images/satisfaction.webp')}}"></a>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
@@ -408,17 +393,18 @@
 
         $('#adminLogin').on('submit', function() {
             $.ajax({
-                url: $(this).attr('action'),
-                type: "POST",
-                data: $(this).serialize(),
-                success: function(response) {
+                url: $(this).attr('action')
+                , type: "POST"
+                , data: $(this).serialize()
+                , success: function(response) {
                     console.log('response ', response);
                     $("#loginPasswordModal").modal("hide");
                     toastr.success(response.message);
                     setTimeout(() => {
                         window.location.href = "{{route('admin.dashboard')}}";
                     }, 300);
-                }, error: function(err) {
+                }
+                , error: function(err) {
                     error = err.responseJSON;
                     console.log('err ', error);
                     toastr.error(error.message);
@@ -460,7 +446,8 @@
                     $('#tempView').attr('src', response.pdf + '?embedded=true#toolbar=0');
                     $('#tempViewModal').modal('show');
                     document.getElementById("loaderDiv").style.display = "none";
-                }, error: function(err) {
+                },
+                error: function(err) {
                     error = err.responseJSON;
                     toastr.error(error.message);
                     document.getElementById("loaderDiv").style.display = "none";
@@ -502,18 +489,21 @@
     @if ($errors->first())
     <script>
         toastr.error('{{ $errors->first() }}');
+
     </script>
     @endif
 
     @if (Session::has('message'))
     <script>
         toastr.success("{{ Session::get('message') }}");
+
     </script>
 
     @endif
     @if (Session::has('error'))
     <script>
         toastr.error("{{ Session::get('error') }}");
+
     </script>
     @endif
 </body>
