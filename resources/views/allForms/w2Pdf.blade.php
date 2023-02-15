@@ -14,7 +14,7 @@
     }
 
     td {
-        font-size: 10px;
+        font-size: 12px;
         color: red;
     }
 
@@ -61,12 +61,19 @@
     }
 
     .table-outer {
-        height: 478px;
+        height: 430px;
         border-bottom: 2px solid red;
         width: 100%;
 
     }
 
+    .bottom-number {
+        font-size: 16px;
+        color: black;
+        font-weight: 700;
+        padding-bottom: 10px !important;
+
+    }
 </style>
 
 <body>
@@ -92,12 +99,10 @@
                             type="text">
                     </td>
                     <td class="" style="border: 3px solid red;  width:37%;padding-left:17px;">
-                        <p style="font-size:15px;text-align:center;" class="w2p">a Employee's social security number
+                        <p style="font-size:15px;text-align:center;" class="w2p"><b>a</b> Employee's social security
+                            number
                         </p>
-                        <input
-                            style="height: 20px; color:grey; display:flex; justify-content:center; max-width:170px; margin:0 auto;"
-                            type="text" id="fname" name="fname" placeholder="enter text"
-                            class="w-100 p-2 mb-3">
+                        <p class="bottom-number">123-45-6789</p>
 
                     </td>
                     <td class="" style="width:25%; padding-left:20px; font-size:15px;">
@@ -109,54 +114,52 @@
             <section class="table-outer">
                 <table class="left-table" style="">
                     <tr style=" width:100%;">
-                        <td class="width-small"><b>b</b> Employer Identification Number (EIN)</td>
+                        <td colspan="3" class="width-small"><b>b</b> Employer Identification Number (EIN)</td>
 
                     </tr>
-                    <thead style="border-bottom:2px solid red; width:100%;">
-                        <input style="height: 20px; color:grey; width:100%;" type="text" id="fname" name="fname"
-                            placeholder="enter text" class="w-100 p-2 mb-3">
-                    </thead>
+                    <tr style="border-bottom:2px solid red; width:100%;">
+                        <td style="border-bottom:2px solid red;" colspan="3">
+                            <p class="bottom-number">123-45-6789</p>
+
+                    </tr>
                     <tr>
                         <td><b>c</b> Employer's Name, Address, Zipcode</td>
                     </tr>
-                    <thead style="border-bottom:2px solid red; width:100%; ">
-                        <td style="">
-                            <textarea style="height:150px !important;" name="company_address" class="w2-textarea" style="padding-left:10px;" id="w3review" name="w3review"
-                                rows="5" cols="80" placeholder="Please Enter"></textarea>
+                    <tr>
+                        <td style="border-bottom: 2px solid red" colspan="3">
+                            <p style="" class="bottom-number">Readdle<br>795 folsom street<br>San
+                                francsico,CA-94107</p>
                         </td>
-                    </thead>
+                    </tr>
                     <thead style=" width:100%">
                         <td><b>d</b> Control Number</td>
 
                     </thead>
                     <thead style="border-bottom:2px solid red; width:100%;">
-                        <input style="height: 20px; color:grey;" type="text" id="fname" name="fname"
-                            placeholder="enter text" class="w-100 p-2 mb-3">
+                        <p class="bottom-number">R3D1</p>
                     </thead>
                     <thead style="width:100%;  border-top:2px solid red;">
-                        <td style="width:40%;">
+                        <td style="width:40%; border-right:2px solid red">
                             <p><b>e </b>Employee's First Name Initial</p>
-                            <input style="height: 20px; color:grey; width:140px; " type="text" id="fname" name="fname"
-                                placeholder="enter text" class="w-100 p-2 mb-3">
+                            <p class="bottom-number">Nitika V</p>
                         </td>
-                        <td style="width:40%;">
+                        <td style="width:40%;border-right:2px solid red">
                             <p>Last Name</p>
-                            <input style="height: 20px; color:grey; width:140px; " type="text" id="fname" name="fname"
-                                placeholder="enter text" class="w-100 p-2 mb-3">
+                            <p class="bottom-number">Balyik</p>
                         </td>
                         <td style="width:20%;">
                             <p>Suff.</p>
-                            <input style="border:none;height: 20px;width:20px; " type="text" id="fname" name="fname"
-                                placeholder="enter text" class="w-100 p-2 mb-3">
+                            <input style="border:none;height: 20px;width:20px; " type="text" id="fname"
+                                name="fname" placeholder="enter text" class="w-100 ">
                         </td>
 
 
 
                     </thead>
                     <tr>
-                        <td style="">
-                            <textarea class="textarea" name="company_address" class="w2-textarea" style="padding-left:10px;" id="w3review"
-                                name="w3review" rows="5" cols="80" placeholder="Please Enter"></textarea>
+                        <td style="border-top:2px dashed red;" colspan="3">
+                            <p style="padding-top:15px !important;" class="bottom-number">1233,Example Street<br>Sample
+                                city-12345</p>
                         </td>
                     </tr>
                     <tr>
@@ -167,191 +170,167 @@
                     <thead style="border-bottom:2px solid red;">
                         <td style="border-right:2px solid red;">
                             <p><b>1</b>Wages, Tips, Other compensation </p>
-                            <input style="height: 20px; color:grey;" type="text" id="fname" name="fname"
-                                placeholder="enter text" class="w-100 p-2 mb-3">
+                            <p class="bottom-number">50,000.00</p>
                         </td>
                         <td>
                             <p><b>2 </b>Fedral Income Tax Field</p>
-                            <input style="height: 20px; color:grey;" type="text" id="fname" name="fname"
-                                placeholder="enter text" class="w-100 p-2 mb-3">
+                            <<p class="bottom-number">50,000.00</p>
                         </td>
                     </thead>
                     <thead style="border-bottom:2px solid red;">
                         <td style="border-right:2px solid red;">
                             <p><b>3</b>Social Security Wages </p>
-                            <input style="height: 20px; color:grey;" type="text" id="fname" name="fname"
-                                placeholder="enter text" class="w-100 p-2 mb-3">
+                            <p class="bottom-number">50,000.00</p>
                         </td>
                         <td>
                             <p><b>4 </b> Social Security tax withheld</p>
-                            <input style="height: 20px; color:grey;" type="text" id="fname" name="fname"
-                                placeholder="enter text" class="w-100 p-2 mb-3">
+                            <p class="bottom-number">50,000.00</p>
                         </td>
                     </thead>
                     <thead style="border-bottom:2px solid red;">
                         <td style="border-right:2px solid red;">
                             <p><b>5</b> Medicare Wages &amp; tips </p>
-                            <input style="height: 20px; color:grey;" type="text" id="fname" name="fname"
-                                placeholder="enter text" class="w-100 p-2 mb-3">
+                            <p class="bottom-number">50,000.00</p>
                         </td>
                         <td>
                             <p><b>6 </b>Medicare tax withheld</p>
-                            <input style="height: 20px; color:grey;" type="text" id="fname" name="fname"
-                                placeholder="enter text" class="w-100 p-2 mb-3">
+                            <p class="bottom-number">50,000.00</p>
                         </td>
                     </thead>
                     <thead style="border-bottom:2px solid red;">
                         <td style="border-right:2px solid red;">
                             <p><b>7</b> Social Security tips </p>
-                            <input style="height: 20px; color:grey;" type="text" id="fname" name="fname"
-                                placeholder="enter text" class="w-100 p-2 mb-3">
+                            <p class="bottom-number"></p>
                         </td>
                         <td>
                             <p><b>8 </b> Allocated tips</p>
-                            <input style="height: 20px; color:grey;" type="text" id="fname" name="fname"
-                                placeholder="enter text" class="w-100 p-2 mb-3">
+                            <p class="bottom-number"></p>
                         </td>
                     </thead>
                     <thead style="border-bottom:2px solid red; ">
-                        <td
-                            style="border-right:2px solid red;background-color:pink;padding:10px 0px; position:relative;">
-                            <p style="position: absolute; top:10px;left:0px;"><b
-                                    style="background-color:white; padding:10px;">9</b></p>
-
+                        <td style="border-right:2px solid red;">
+                            <p style=""><b>9 </b> Verification code</p>
+                            <p class="bottom-number"></p>
                         </td>
                         <td>
                             <p><b>10 </b> Dependent care benefits</p>
-                            <input style="height: 20px; color:grey;" type="text" id="fname" name="fname"
-                                placeholder="enter text" class="w-100 p-2 mb-3">
+                            <p class="bottom-number"></p>
                         </td>
                     </thead>
                     <thead style="border-bottom:2px solid red;">
                         <td style="border-right:2px solid red;">
                             <p><b>11</b> Nonqualified plans</p>
-                            <input style="height: 20px; color:grey;" type="text" id="fname" name="fname"
-                                placeholder="enter text" class="w-100 p-2 mb-3">
+                            <p class="bottom-number"></p>
                         </td>
                         <td style="position: relative;">
                             <p><b>12a </b>See Instructions box 12</p>
-                            <span style="position:absolute; top:15px; z-index:2;"><img style="width:7px !important;"
+                            <span style="position:absolute; top:15px; z-index:2;"><img style="width:5px !important;"
                                     src="images/code.png"></span>
-                            <div style=" margin-left:20px;"><span
-                                    style="background-color: #8080801f; color:black; font-size:12px; border:1px solid #8080801f; padding:4.5px; position: absolute; top:15.5px; left:13px; z-index:2;">PIE</span><input
-                                    style="" style=" position:relative; left:-9px;height: 20px; color:grey;"
-                                    type="text" id="fname" name="fname" placeholder="enter text"
-                                    class="">
+                            <div style=" margin-left:20px;"><span style="font-size: 16px; color:black;">D</span>&nbsp;
+                                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 16px; color:black;"
+                                    class="bottom-number">1234.00</span>
                             </div>
 
                         </td>
                     </thead>
                     <thead style="border-bottom:2px solid red;">
-                        <td style="border-right:2px solid red; padding-bottom:25px;">
+                        <td style="border-right:2px solid red; ">
                             <p><b>13</b></p>
-                            <div style="float:left;">
-                                <p>statury employee</p><input class="checkbox-sqaure" type="checkbox" id="vehicle1"
-                                    name="statury_emp" value="Bike">
+                            <div style="">
+                                <input class="checkbox-sqaure" type="checkbox" id="vehicle1" name="statury_emp"
+                                    value="Bike">
+                                <p style="float: left; position:relative; left:20px; top:2px;">statury employee</p>
                             </div>
-                            <div style="float: right;">
-                                <p>Retirement plan</p><input class="checkbox-sqaure" type="checkbox" id="vehicle1"
-                                    name="statury_emp" value="Bike">
+                            <div style="">
+
+                                <input class="checkbox-sqaure" type="checkbox" id="vehicle1" name="statury_emp"
+                                    value="Bike">
+                                <p style="float: left;position:relative; left:20px; top:2px;">Retirement plan</p>
                             </div>
-                            <div style=" padding-bottom:10px;position: relative; top:30px;">
-                                <p>Third party sick pay</p><input class="checkbox-sqaure" type="checkbox"
-                                    id="vehicle1" name="statury_emp" value="Bike">
+                            <div style="  ">
+
+                                <input style="" class="checkbox-sqaure" type="checkbox" id="vehicle1"
+                                    name="statury_emp" value="Bike">
+                                <p style="float: left;position:relative; left:20px; top:2px;">Third party sick pay</p>
                             </div>
 
                         </td>
                         <td style="margin:0; padding:0;position: relative;">
                             <p style=""><b>12b </b></p>
-                            <span style="position:absolute; top:35px; z-index:2;"><img style="width:7px !important;"
+                            <span style="position:absolute; top:40px; z-index:2;"><img style="width:6px !important;"
                                     src="images/code.png"></span>
-                            <div style=" margin-left:20px;"><span
-                                    style="background-color: #8080801f; color:black; font-size:12px; border:1px solid #8080801f; padding:4.5px; position: absolute; top:15.5px; left:13px; z-index:2;">PIE</span><input
-                                    style="" style=" position:relative; left:-9px;height: 20px; color:grey;"
-                                    type="text" id="fname" name="fname" placeholder="enter text"
-                                    class="">
+                            <div style=" margin-left:20px;"><span style="font-size: 16px; color:black;">C</span>&nbsp;
+                                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 16px; color:black;"
+                                    class="bottom-number">1234.00</span>
                             </div>
 
                         </td>
                     </thead>
-                    <thead style="">
+                    <tr style="">
                         <td style="border-right:2px solid red;">
                             <p><b>14 </b>Other</p>
-                            {{-- <textarea name="company_address" class="w2-textarea" style="padding-left:10px;" id="w3review" name="w3review"
-                                rows="5" cols="80" placeholder="Please Enter"></textarea> --}}
-                            <div style="height: 95px;border:1px solid grey"></div>
+                            <textarea style="height: 15%;" name="text" id="" cols="30" rows="10"></textarea>
 
                         </td>
                         <td style="margin:0; padding:0;position: relative;">
                             <p style=""><b>12c </b></p>
-                            <span style="position:absolute; top:20px; z-index:2;"><img style="width:7px !important;"
+                            <span style="position:absolute; top:15px; z-index:2;"><img style="width:5px !important;"
                                     src="images/code.png"></span>
-                            <div style=" margin-left:20px;"><span
-                                    style="background-color: #8080801f; color:black; font-size:12px; border:1px solid #8080801f; padding:4.5px; position: absolute; top:15.5px; left:13px; z-index:2;">PIE</span><input
-                                    style="" style=" position:relative; left:-9px;height: 20px; color:grey;"
-                                    type="text" id="fname" name="fname" placeholder="enter text"
-                                    class="">
+                            <div style="padding-bottom:10px; margin-left:20px;"><span
+                                    style="font-size: 16px; color:black;"></span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                &nbsp;<span style="font-size: 16px; color:black;" class="bottom-number"></span>
                             </div>
                             <div style="position: relative; border-top:2px solid red; border-bottom:2px solid red;">
                                 <p style=""><b>12d</b></p>
                                 <span style="position:absolute; top:15px; z-index:2;"><img
-                                        style="width:7px !important;" src="images/code.png"></span>
-                                <div style=" margin-left:20px;"><span
-                                        style="background-color: #8080801f; color:black; font-size:12px; border:1px solid #8080801f; padding:4.5px; position: absolute; top:15.5px; left:13px; z-index:2;">PIE</span><input
-                                        style="" style=" position:relative; left:-9px;height: 20px; color:grey;"
-                                        type="text" id="fname" name="fname" placeholder="enter text"
-                                        class="">
+                                        style="width:5px !important;" src="images/code.png"></span>
+                                <div style="padding-bottom:10px; margin-left:20px;"><span
+                                        style="font-size: 16px; color:black;"></span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                    &nbsp;<span style="font-size: 16px; color:black;" class="bottom-number"></span>
                                 </div>
                             </div>
                             <div style="background-color:pink; padding:15px;">
 
                             </div>
                         </td>
-                    </thead>
+                    </tr>
                 </table>
             </section>
             <table style="border-bottom:2px dashed red;">
                 <tr>
-                    <td style="border-right:2px solid red; ">
+                    <td style="border-right:2px solid red; width:62px; ">
                         <p><b>15 </b> State</p>
-                        <input style="height: 20px; color:grey; width:30px;" type="text" id="fname"
-                            name="fname" placeholder="enter text" class="w-100 p-2 mb-3">
+                        <p style="font-size: 13px;" class="bottom-number">OH</p>
                     </td>
-                    <td style="border-right:2px solid red; ">
+                    <td style="border-right:2px solid red; width:137px; ">
                         <p>Employee's state id number</p>
-                        <input style="height: 20px; color:grey; width:140px;" type="text" id="fname"
-                            name="fname" placeholder="enter text" class="w-100 p-2 mb-3">
+                        <p style="font-size: 13px;" class="bottom-number">123-45-6789</p>
                     </td>
-                    <td style="border-right:2px solid red; ">
+                    <td style="border-right:2px solid red; width:98px; ">
                         <p><b>16 </b>State,wages tips</p>
-                        <input style="height: 20px; color:grey; width:100px;" type="text" id="fname"
-                            name="fname" placeholder="enter text" class="w-100 p-2 mb-3">
+                        <p style="font-size: 13px;" class="bottom-number">50,000.00</p>
                     </td>
-                    <td style="border-right:2px solid red; ">
+                    <td style="border-right:2px solid red; width:80px; ">
                         <p><b>17 </b>State income tax</p>
-                        <input style="height: 20px; color:grey;width:80px;" type="text" id="fname"
-                            name="fname" placeholder="enter text" class="w-100 p-2 mb-3">
+                        <p style="font-size: 13px;" class="bottom-number">50,000.00</p>
                     </td>
-                    <td style="border-right:2px solid red;width:14%;">
+                    <td style="border-right:2px solid red;width:80px;">
                         <p><b>18 </b>Local, wages, tips</p>
-                        <input style="height: 20px; color:grey;width:80px;" type="text" id="fname"
-                            name="fname" placeholder="enter text" class="w-100 p-2 mb-3">
+                        <p style="font-size: 13px;" class="bottom-number">50,000.00</p>
                     </td>
-                    <td style="border-right:2px solid red;">
+                    <td style="border-right:2px solid red; width:80px;">
                         <p><b>19 </b>Local income tax</p>
-                        <input style="height: 20px; color:grey;width:80px;" type="text" id="fname"
-                            name="fname" placeholder="enter text" class="w-100 p-2 mb-3">
+                        <p style="font-size: 13px;" class="bottom-number">50,000.00</p>
                     </td>
-                    <td style="">
+                    <td style=" width:82px;">
                         <p><b>20 </b>Locality Name</p>
-                        <input style="height: 20px; color:grey;width:80px;" type="text" id="fname"
-                            name="fname" placeholder="enter text" class="w-100 p-2 mb-3">
+                        <p style="font-size: 13px;" class="bottom-number">CLEVELAND</p>
                     </td>
                 </tr>
             </table>
             <table style="">
                 <tr>
-                    <td style="border-right:2px solid red; padding:20px 0px; width:38px;">
+                    <td style="border-right:2px solid red; padding:20px 0px; width:62px;">
 
                     </td>
                     <td style="border-right:2px solid red; width:137px; ">

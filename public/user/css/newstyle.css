@@ -1197,6 +1197,9 @@ ul.nav.nav-justified.navbar {
     flex-direction: column;
     justify-content: center;
 }
+.bottom-box-inner:first-child {
+    max-width: 100px;
+}
 
 .input-feild-outer {
     max-width: 335px;
@@ -2651,6 +2654,19 @@ select#cars {
         border: unset;
         display: unset;
 
+    }
+    .col-set1 {
+        margin: 30px auto 0px;
+    }
+    .mt-5.pt-5.justify-content-center {
+        margin: 0 !important;
+    }
+    p.QUICK {
+        font-size: 15px;
+        padding-top: 20px;
+    }
+    .mt-5.d-flex.pt-5.top-gogle{
+        margin: 0 !important;
     }
 
     .pay-outer {
