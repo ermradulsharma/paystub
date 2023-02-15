@@ -347,11 +347,8 @@
     <div style="max-width: 1500px;" class="container">
         <div class="row">
             <div class="content">
-                <p>
-                    Department of the Treasury—Internal Revenue Service
-                </p>
-                <p> For Privacy Act and Paperwork Reduction
-                </p>
+                <p> Department of the Treasury—Internal Revenue Service </p>
+                <p> For Privacy Act and Paperwork Reduction </p>
                 <p> Act Notice, see the separate instructions.</p>
             </div>
         </div>
