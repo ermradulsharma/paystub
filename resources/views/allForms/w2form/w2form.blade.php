@@ -248,20 +248,17 @@
                         <td style="border-right:2px solid red; ">
                             <p><b>13</b></p>
                             <div style="">
-                                <input class="checkbox-sqaure" type="checkbox" id="vehicle1" name="statury_emp"
-                                    value="Bike">
+                                <input class="checkbox-sqaure" type="checkbox" id="vehicle1" @if($requestData['statutory_emp']==true) checked @else unchecked @endif">
                                 <p style="float: left; position:relative; left:20px; top:2px;">statury employee</p>
                             </div>
                             <div style="">
 
-                                <input class="checkbox-sqaure" type="checkbox" id="vehicle1" name="statury_emp"
-                                    value="Bike">
+                                <input class="checkbox-sqaure" type="checkbox" id="vehicle1" @if($requestData['retirement_plan']==true) checked @else unchecked @endif">
                                 <p style="float: left;position:relative; left:20px; top:2px;">Retirement plan</p>
                             </div>
                             <div style="  ">
 
-                                <input style="" class="checkbox-sqaure" type="checkbox" id="vehicle1"
-                                    name="statury_emp" value="Bike">
+                                <input style="" class="checkbox-sqaure" type="checkbox" id="vehicle1" @if($requestData['third_party_sick']==true) checked @else unchecked @endif">
                                 <p style="float: left;position:relative; left:20px; top:2px;">Third party sick pay</p>
                             </div>
 

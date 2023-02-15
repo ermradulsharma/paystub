@@ -175,16 +175,16 @@
                                     </div>
                                     <div class="display">
                                         <div class="checkbox-inner">
-                                            <input class="checkbox-sqaure" type="checkbox" id="vehicle1" name="statutory_emp" value="Bike">
+                                            <input class="checkbox-sqaure statutory_emp" type="checkbox" id="vehicle1" name="statutory_emp" value="false">
                                             <p style="padding:0; margin:0px; font-size:12px;line-height:1.2;" class="color-red"><b style="font-size: 10px;">Statutory employee</b>
                                             </p>
                                         </div>
                                         <div class="checkbox-inner">
-                                            <input class="checkbox-sqaure" type="checkbox" id="vehicle1" name="retirement_plan" value="Bike">
+                                            <input class="checkbox-sqaure retirement_plan" type="checkbox" id="vehicle1" name="retirement_plan" value="false">
                                             <p style="padding:0; margin:0px; font-size:12px;line-height:1.2;" class="color-red"><b style="font-size: 10px;">Retirement plan</b></p>
                                         </div>
                                         <div class="checkbox-inner">
-                                            <input class="checkbox-sqaure" type="checkbox" id="vehicle1" name="third_party_sick" value="Bike">
+                                            <input class="checkbox-sqaure third_party_sick" type="checkbox" id="vehicle1" name="third_party_sick" value="false">
                                             <p style="padding:0; margin:0px; font-size:12px;line-height:1.2;" class="color-red"><b style="font-size: 10px;">Third party sick pay</b>
                                             </p>
                                         </div>
@@ -354,4 +354,13 @@
         </div>
     </div>
 </section>
+@endsection
+@section('checked')
+<script>
+    $('.statutory_emp').click(function() {
+        var statutory_emp = $(this).val();
+        console.log('statutory_emp',statutory_emp);
+    });
+
+</script>
 @endsection
