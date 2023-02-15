@@ -20,6 +20,7 @@ use Symfony\Component\Routing\Router;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
@@ -41,10 +42,7 @@ Route::match(['get', 'post'], 'canada/paystub', [PayStubController::class, 'cana
 Route::get('w2form', function () {
     return view('forms');
 })->name('w2form');
-
-Route::get('w2form/paystub', function () {
-    return view('w2paystub');
-})->name('w2form.paystub');
+Route::match(['get', 'post'], 'w2form/paystub', [PayStubController::class, 'w2formPayStub'])->name('w2form.paystub');
 
 Route::get('w2form/generate-pdf', [W2FormController::class, 'generatePDF']);
 Route::get('w2form/preview-pdf', [W2FormController::class, 'previewPDF']);

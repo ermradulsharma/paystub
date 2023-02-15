@@ -53,6 +53,12 @@ class PayStubController extends Controller
         return view('globalPaystub', compact('basicType', 'advanceType', 'deduction', 'stateTaxes'));
     }
 
+    public function w2formPayStub()
+    {
+        $stateTaxes = StateTax::get();
+        return view('w2paystub', compact('stateTaxes'));
+    }
+
     public function prizing(Request $request)
     {
         return view('lists.prizing');
