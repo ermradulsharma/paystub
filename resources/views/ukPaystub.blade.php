@@ -165,7 +165,7 @@
                         </div>
                         <div style="padding:0 !important;" class="row p-3">
                             <div class="col-lg-5" style="color: black; text-transform:uppercase;font-size:30px; font-weight:600;">
-                                <p>Earning Statement</p>
+                                <p class="top-heading">Earning Statement</p>
                                 <div style="border:3px solid #ff5722;" class=" pay-outer mb-3">
                                     <div class="ukpay-inner ">
                                         <div class="row">
@@ -221,9 +221,8 @@
                                 </div>
                             </div>
 
-
                             <div class="col-lg-7" style="color: black; text-transform:uppercase;font-size:30px; font-weight:600;">
-                                <p>Payments</p>
+                                <p class="top-heading">Payments</p>
                                 <div style="border:3px solid #ff5722;padding-bottom:62px;" class=" pay-outer">
                                     <div class="ukpay-inner ">
                                         <div class="row ">
@@ -357,7 +356,7 @@
                                 </div>
                             </div>
                             <div class="col-lg-7" style="color: black; text-transform:uppercase;font-size:30px; font-weight:600;">
-                                <p>Additional Information Here (Note)</p>
+                                <p class="top-heading">Additional Information Here (Note)</p>
                                 <div style="border:3px solid #ff5722;" class=" pay-outer mb-3">
                                     <div class="ukpay-inner ">
                                         <div class="row">
