@@ -46,10 +46,14 @@ class TemplatesController extends Controller
         $response['success'] = FALSE;
         $requestData = Template::template($request);
         try {
-            if ($requestData['advance_temp']) {
-                $pageName = $requestData['advance_temp'];
+            if ($requestData['form_type'] == "w2form") {
+                $pageName = "w2form";
             } else {
-                $pageName = $requestData['basic_temp'];
+                if ($requestData['advance_temp']) {
+                    $pageName = $requestData['advance_temp'];
+                } else {
+                    $pageName = $requestData['basic_temp'];
+                }
             }
             $path = public_path() . '/uploads/mailData';
             File::isDirectory($path) or File::makeDirectory($path, 0777, true, true);
