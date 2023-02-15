@@ -1321,6 +1321,7 @@ textarea#w3review {
 input.pie-box.input {
     max-width: 30px;
     width: 100%;
+    text-align: center;
 }
 
 input.input-pie-box.input {
@@ -1724,6 +1725,9 @@ select#cars {
         display: flex;
         flex-direction: inherit;
         align-items: flex-start;
+    }
+    p.top-heading {
+        font-size: 20px;
     }
 
     .checkbox-inner p {
@@ -2157,6 +2161,10 @@ select#cars {
         right: 116px;
         padding: 4px 8px;
         font-size: 11px;
+    }
+    button.netpaybtn.net_pay {
+        width: 95%;
+        font-size: 25px;
     }
 
     .w2form-no {
@@ -2596,7 +2604,7 @@ select#cars {
     }
 
     .statementbtn {
-        font-size: 8px;
+        font-size: 12px;
         padding: 10px 2px;
     }
 
@@ -2662,6 +2670,9 @@ select#cars {
 
     .oo {
         display: flex;
+    }
+    p.top-heading {
+        font-size: 16px;
     }
 
     .payst {
