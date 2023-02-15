@@ -277,7 +277,7 @@
                                         <div class="ukpay-inner ">
                                             <div class="row">
                                                 <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
-                                                    <img src="http://127.0.0.1:8000/images/lock.png" style="" class="earnbtn2">
+                                                    <img src="{{ asset('images/lock.png') }}" style="" class="earnbtn2">
                                                     <input class="input-uk text-center taxes" name="taxes[]" data-id="" data-value="" value="Income Tax">
                                                 </div>
 
@@ -285,7 +285,7 @@
                                                     <input type="text" name="taxes_rate[]" class="input-uk text-center manualTaxTotal" id="taxes_" value="" data-value="">
                                                 </div>
                                                 <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
-                                                    <img src="http://127.0.0.1:8000/images/lock.png" style="" class="earnbtn2">
+                                                    <img src="{{ asset('images/lock.png') }}" style="" class="earnbtn2">
                                                     <input class="input-uk  text-center taxes" name="taxes[]" data-id="" data-value="" value="National Insurance">
                                                 </div>
 
@@ -312,7 +312,7 @@
                                     <div class="ukpay-inner ">
                                         <div class="row">
                                             <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
-                                                <img src="http://127.0.0.1:8000/images/lock.png" class="earnbtn2">
+                                                <img src="{{ asset('images/lock.png') }}" class="earnbtn2">
                                                 <input class="input-uk text-center taxePays" name="taxes[]" data-id="" data-value="" value="Taxable Gross Pay ">
                                             </div>
 
@@ -320,7 +320,7 @@
                                                 <input type="text" name="taxes_rate[]" class="input-uk text-center manualTaxTotal" id="taxes_" value="" data-value="">
                                             </div>
                                             <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
-                                                <img src="http://127.0.0.1:8000/images/lock.png" class="earnbtn2">
+                                                <img src="{{ asset('images/lock.png') }}" class="earnbtn2">
                                                 <input class="input-uk  text-center taxes" name="taxes[]" data-id="" data-value="" value="Income Tax">
                                             </div>
 
@@ -328,7 +328,7 @@
                                                 <input type="text" name="taxes_rate[]" class="input-uk  text-center manualTaxTotal" id="taxes_" value="" data-value="">
                                             </div>
                                             <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
-                                                <img src="http://127.0.0.1:8000/images/lock.png" class="earnbtn2">
+                                                <img src="{{ asset('images/lock.png') }}" class="earnbtn2">
                                                 <input class="input-uk  text-center taxes" name="taxes[]" data-id="" data-value="" value="Employee NIC">
                                             </div>
 
@@ -336,7 +336,7 @@
                                                 <input type="text" name="taxes_rate[]" class="input-uk  text-center manualTaxTotal" id="taxes_" value="" data-value="">
                                             </div>
                                             <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
-                                                <img src="http://127.0.0.1:8000/images/lock.png" class="earnbtn2">
+                                                <img src="{{ asset('images/lock.png') }}" class="earnbtn2">
                                                 <input class="input-uk  text-center taxes" name="taxes[]" data-id="" data-value="" value="Employee NIC">
                                             </div>
 
