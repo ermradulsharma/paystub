@@ -61,7 +61,7 @@
     }
 
     .table-outer {
-        height: 430px;
+        height: 485px;
         border-bottom: 2px solid red;
         width: 100%;
 
@@ -97,7 +97,7 @@
             </div>
             <table style="border-bottom:3px solid red;">
                 <tr>
-                    <td style="width: 15%;border-right:1px solid red; padding-left:20px; font-weight:bold; font-size:15px; color:black;"> 22222 </td>
+                    <td style="width: 15%;border-right:1px solid red; padding-left:20px; font-weight:bold; font-size:15px; color:black; "> 22222 </td>
 
                     <td class="" style=" width:23%; text-align:center;">
                         <label style="padding-right:20px; position:relative; bottom:10px; font-size:15px;" for="vehicle1" class="w2p box-p"> VOID</label>
@@ -195,31 +195,31 @@
                     <thead style="border-bottom:2px solid red;">
                         <td style="border-right:2px solid red;">
                             <p><b>7</b> Social Security tips </p>
-                            <p class="bottom-number">{{ $requestData['ss_tips'] }}</p>
+                            <p class="bottom-number">{{ number_format($requestData['ss_tips'],2) }}</p>
                         </td>
                         <td>
                             <p><b>8 </b> Allocated tips</p>
-                            <p class="bottom-number">{{ $requestData['allocated_tips'] }}</p>
+                            <p class="bottom-number">{{ number_format($requestData['allocated_tips'],2) }}</p>
                         </td>
                     </thead>
                     <thead style="border-bottom:2px solid red; ">
                         <td style="border-right:2px solid red;">
                             <p style=""><b>9 </b> Verification code</p>
-                            <p class="bottom-number">{{ $requestData['medicare_tax'] }}</p>
+                            <p class="bottom-number">{{ number_format($requestData['medicare_tax'],2) }}</p>
                         </td>
                         <td>
                             <p><b>10 </b> Dependent care benefits</p>
-                            <p class="bottom-number">{{ $requestData['dependent_care'] }}</p>
+                            <p class="bottom-number">{{ number_format($requestData['dependent_care'],2) }}</p>
                         </td>
                     </thead>
                     <thead style="border-bottom:2px solid red;">
                         <td style="border-right:2px solid red;">
                             <p><b>11</b> Nonqualified plans</p>
-                            <p class="bottom-number">{{ $requestData['nonqualified'] }}</p>
+                            <p class="bottom-number">{{ number_format($requestData['nonqualified'],2) }}</p>
                         </td>
                         <td style="position: relative;">
                             <p><b>12a </b>See Instructions box 12</p>
-                            <span style="position:absolute; top:15px; z-index:2;"><img style="width:5px !important;" src="images/code.png"></span>
+                            <span style="position:absolute; top:20px; z-index:2;"><img style="width:5px !important;" src="images/code.png"></span>
                             <div style=" margin-left:20px;"><span style="font-size: 16px; color:black;">{{ $requestData['pie_1'] }}</span>&nbsp;
                                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 16px; color:black;" class="bottom-number">{{ number_format($requestData['instructions_box_1'],2) }}</span>
                             </div>
@@ -269,7 +269,7 @@
                             <div style="position: relative; border-top:2px solid red; border-bottom:2px solid red;">
                                 <p style=""><b>12d</b></p>
                                 <span style="position:absolute; top:15px; z-index:2;"><img style="width:5px !important;" src="images/code.png"></span>
-                                <div style="padding-bottom:10px; margin-left:20px;"><span style="font-size: 16px; color:black;">{{ $requestData['pie_4'] }}</span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                <div style="padding-bottom:10px; margin-left:20px; "><span style="font-size: 16px; color:black;">{{ $requestData['pie_4'] }}</span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                                     &nbsp;<span style="font-size: 16px; color:black;" class="bottom-number">{{ number_format($requestData['instructions_box_4'],2) }}</span>
                                 </div>
                             </div>
@@ -282,56 +282,56 @@
             </section>
             <table style="border-bottom:2px dashed red;">
                 <tr>
-                    <td style="border-right:2px solid red; width:62px; ">
-                        <p><b>15 </b> State</p>
+                    <td style="border-right:2px solid red; width:70px; ">
+                        <p style="font-size: 9px !important; font-weight:bold !important;"><b>15 </b> State</p>
                         <p style="font-size: 13px;" class="bottom-number">{{ $requestData['state'] }}</p>
                     </td>
-                    <td style="border-right:2px solid red; width:137px; ">
-                        <p>Employee's state id number</p>
+                    <td style="border-right:2px solid red; width:120px; ">
+                        <p style="font-size: 9px !important; font-weight:bold !important;">Employee's state id number</p>
                         <p style="font-size: 13px;" class="bottom-number">{{ $requestData['employee_state_id'] }}</p>
                     </td>
-                    <td style="border-right:2px solid red; width:98px; ">
-                        <p><b>16 </b>State,wages tips</p>
+                    <td style="border-right:2px solid red; width:85px; ">
+                        <p style="font-size: 9px !important; font-weight:bold !important;"><b>16 </b>State,wages tips</p>
                         <p style="font-size: 13px;" class="bottom-number">{{ number_format($requestData['state_wages'],2) }}</p>
                     </td>
-                    <td style="border-right:2px solid red; width:80px; ">
-                        <p><b>17 </b>State income tax</p>
+                    <td style="border-right:2px solid red; width:95px; ">
+                        <p style="font-size: 9px !important; font-weight:bold !important;" ><b>17 </b>State income tax</p>
                         <p style="font-size: 13px;" class="bottom-number">{{ number_format($requestData['state_income_tax'],2) }}</p>
                     </td>
-                    <td style="border-right:2px solid red;width:80px;">
-                        <p><b>18 </b>Local, wages, tips</p>
+                    <td style="border-right:2px solid red;width:100px;">
+                        <p style="font-size: 9px !important; font-weight:bold !important;" ><b>18 </b>Local, wages, tips</p>
                         <p style="font-size: 13px;" class="bottom-number">{{ number_format($requestData['local_wages'],2) }}</p>
                     </td>
-                    <td style="border-right:2px solid red; width:80px;">
-                        <p><b>19 </b>Local income tax</p>
+                    <td style="border-right:2px solid red; width:100px;">
+                        <p style="font-size: 9px !important; font-weight:bold !important;"><b>19 </b>Local income tax</p>
                         <p style="font-size: 13px;" class="bottom-number">{{ number_format($requestData['local_income_tax'],2) }}</p>
                     </td>
-                    <td style=" width:82px;">
-                        <p><b>20 </b>Locality Name</p>
-                        <p style="font-size: 13px;" class="bottom-number">CLEVELAND</p>
+                    <td style=" width:85px;">
+                        <p style="font-size: 9px !important; font-weight:bold !important;"><b>20 </b>Locality Name</p>
+                        <p style="font-size: 11px;" class="bottom-number">CLEVELAND</p>
                     </td>
                 </tr>
             </table>
             <table style="">
                 <tr>
-                    <td style="border-right:2px solid red; padding:20px 0px; width:62px;">
+                    <td style="border-right:2px solid red; padding:20px 0px; width:70px;">
 
                     </td>
-                    <td style="border-right:2px solid red; width:137px; ">
+                    <td style="border-right:2px solid red; width:120px; ">
 
                     </td>
-                    <td style="border-right:2px solid red; width:98px; ">
+                    <td style="border-right:2px solid red; width:85px; ">
 
                     </td>
-                    <td style="border-right:2px solid red; width:80px ">
+                    <td style="border-right:2px solid red; width:95px ">
                     </td>
-                    <td style="border-right:2px solid red;width:80px;">
+                    <td style="border-right:2px solid red;width:100px;">
 
                     </td>
-                    <td style="border-right:2px solid red; width:82px">
+                    <td style="border-right:2px solid red; width:100px">
 
                     </td>
-                    <td style="width:80px;">
+                    <td style="width:85px;">
 
                     </td>
                 </tr>
@@ -356,7 +356,7 @@
                 </td>
 
                 <td style="width:20%;">
-                    <p style="text-align: center;font-size: 30px; font-weight: 800;font-family: emoji;">2022</p>
+                    <p style="text-align: center;font-size: 30px; font-weight: 800;font-family: emoji; color:black;">2022</p>
                 </td>
                 <td style="width:40%">
                     <p class="w2p" style="font-weight: 400; font-size: 15px;">Department of treasury - Internal

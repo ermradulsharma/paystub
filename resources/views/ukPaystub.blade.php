@@ -308,7 +308,7 @@
                         </div>
                         <div class="row">
                             <div class="col-lg-5" style="color: black; text-transform:uppercase;font-size:30px; font-weight:600;">
-                                <p>Total Year To Date</p>
+                                <p class="top-heading">Total Year To Date</p>
                                 <div style="border:3px solid #ff5722;" class=" pay-outer mb-3">
                                     <div class="ukpay-inner ">
                                         <div class="row">

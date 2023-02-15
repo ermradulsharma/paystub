@@ -1199,7 +1199,7 @@ ul.nav.nav-justified.navbar {
 }
 
 .bottom-box-inner:first-child {
-    max-width: 100px;
+    max-width: 140px;
 }
 
 .input-feild-outer {
@@ -1404,7 +1404,7 @@ p.checkbox-sqaure {
 }
 
 .bottom-box-inner1 {
-    max-width: 160px;
+    max-width: 175px;
     width: 100%;
     padding: 0px 10px;
     border-right: 2px solid red;
@@ -1424,7 +1424,7 @@ p.checkbox-sqaure {
 }
 
 .bottom-box-inner {
-    max-width: 151px;
+    max-width: 170px;
     width: 100%;
     padding: 0px 10px;
     border-right: 2px solid red;
@@ -1436,20 +1436,15 @@ p.checkbox-sqaure {
 }
 
 .bottom-box-outer:last-child {
-    width: calc(45% - 25px);
-    margin-right: 20px;
+    width:44%;
 }
 
 .bottom-box-outer {
-    width: calc(55% - 15px);
-    margin-right: 20px;
+    width: 56%;
     display: flex;
 }
 
-.bottom-box-outer:last-child {
-    width: calc(45% - 25px);
-    margin-right: 20px;
-}
+
 
 .bottom-box-inner input {
     width: 100%;
@@ -1471,7 +1466,7 @@ p.checkbox-sqaure {
 }
 
 select#cars {
-    max-width: 70px;
+    max-width: 130px;
     width: 100%;
 }
 

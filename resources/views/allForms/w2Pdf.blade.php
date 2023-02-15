@@ -74,6 +74,9 @@
         padding-bottom: 10px !important;
 
     }
+    .bg-img2 {
+        position: relative;
+    }
 
 </style>
 
@@ -190,23 +193,23 @@
                         </td>
                         <td>
                             <p><b>8 </b> Allocated tips</p>
-                            <p class="bottom-number"></p>
+                            <p class="bottom-number">50,000.00</p>
                         </td>
                     </thead>
                     <thead style="border-bottom:2px solid red; ">
                         <td style="border-right:2px solid red;">
                             <p style=""><b>9 </b> Verification code</p>
-                            <p class="bottom-number"></p>
+                            <p class="bottom-number">23454</p>
                         </td>
                         <td>
                             <p><b>10 </b> Dependent care benefits</p>
-                            <p class="bottom-number"></p>
+                            <p class="bottom-number">50,000.00</p>
                         </td>
                     </thead>
                     <thead style="border-bottom:2px solid red;">
                         <td style="border-right:2px solid red;">
                             <p><b>11</b> Nonqualified plans</p>
-                            <p class="bottom-number"></p>
+                            <p class="bottom-number">50,000.00</p>
                         </td>
                         <td style="position: relative;">
                             <p><b>12a </b>See Instructions box 12</p>
