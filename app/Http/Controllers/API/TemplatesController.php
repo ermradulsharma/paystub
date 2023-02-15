@@ -106,7 +106,7 @@ class TemplatesController extends Controller
                 }
             }
             $slip->data = json_encode($requestData);
-            $slip->title = $requestData['cname'];
+            $slip->title = $requestData['cname'] ?? "";
             $slip->pdf = $fileName;
             $slip->type = $request->form_type;
             if ($slip->save()) {
@@ -176,7 +176,7 @@ class TemplatesController extends Controller
             if ($paySlipObj) {
                 $paySlipObj =  PaySlip::where(['user_id' => Auth::user()->id, 'id' => $requestData['id']])->first();
             }
-            json_decode($paySlipObj->data , true);
+            json_decode($paySlipObj->data, true);
             $paySlipObj->slipData = Template::editFormData(json_decode($paySlipObj->data));
             unset($paySlipObj->data);
             $response['data'] = $paySlipObj;
