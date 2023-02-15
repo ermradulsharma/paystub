@@ -99,7 +99,7 @@
                                                 Landscape view.This is not part of design</a></button>
                                     </div>
                                 </div>
-                            </div> -->
+                            </div> 
                         </div>
                     </div>
                 </div>

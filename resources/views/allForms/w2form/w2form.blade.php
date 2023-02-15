@@ -375,7 +375,7 @@
                     </td>
                     <td style=" width:85px;">
                         <p style="font-size: 9px !important; font-weight:bold !important;"><b>20 </b>Locality Name</p>
-                        <p style="font-size: 11px;" class="bottom-number">CLEVELAND</p>
+                        <p style="font-size: 11px;" class="bottom-number">{{ $requestData['locality_name'] }}</p>
                     </td>
                 </tr>
             </table>
