@@ -46,15 +46,19 @@ class TemplatesController extends Controller
         $response['success'] = FALSE;
         $requestData = Template::template($request);
         try {
-            if ($requestData['advance_temp']) {
-                $pageName = $requestData['advance_temp'];
+            if ($requestData['form_type'] == "w2form") {
+                $pageName = "w2form";
             } else {
-                $pageName = $requestData['basic_temp'];
+                if ($requestData['advance_temp']) {
+                    $pageName = $requestData['advance_temp'];
+                } else {
+                    $pageName = $requestData['basic_temp'];
+                }
             }
             $path = public_path() . '/uploads/mailData';
             File::isDirectory($path) or File::makeDirectory($path, 0777, true, true);
             $invoiceData['requestData'] = $requestData;
-            $pdf = PDF::loadView('allForms/usa/' . $pageName, $invoiceData)->setPaper('a4');
+            $pdf = PDF::loadView('allForms/' . $request->form_type . '/' . $pageName, $invoiceData)->setPaper('a4');
             $fileName =  date('_d_m_Y_h_i_s') . '.pdf';
             $pdf->save($path . '/' . $fileName);
             $file = public_path('/uploads/mailData/' . $fileName);
@@ -78,10 +82,14 @@ class TemplatesController extends Controller
         $response['success'] = FALSE;
         $requestData = Template::template($request);
         try {
-            if ($requestData['advance_temp']) {
-                $pageName = $requestData['advance_temp'];
+            if ($requestData['form_type'] == "w2form") {
+                $pageName = "w2form";
             } else {
-                $pageName = $requestData['basic_temp'];
+                if ($requestData['advance_temp']) {
+                    $pageName = $requestData['advance_temp'];
+                } else {
+                    $pageName = $requestData['basic_temp'];
+                }
             }
             $path = public_path() . '/uploads/mailData';
             File::isDirectory($path) or File::makeDirectory($path, 0777, true, true);
@@ -102,7 +110,7 @@ class TemplatesController extends Controller
                 }
             }
             $slip->data = json_encode($requestData);
-            $slip->title = $requestData['cname'];
+            $slip->title = $requestData['cname'] ?? "";
             $slip->pdf = $fileName;
             $slip->type = $request->form_type;
             if ($slip->save()) {
@@ -172,7 +180,7 @@ class TemplatesController extends Controller
             if ($paySlipObj) {
                 $paySlipObj =  PaySlip::where(['user_id' => Auth::user()->id, 'id' => $requestData['id']])->first();
             }
-            json_decode($paySlipObj->data , true);
+            json_decode($paySlipObj->data, true);
             $paySlipObj->slipData = Template::editFormData(json_decode($paySlipObj->data));
             unset($paySlipObj->data);
             $response['data'] = $paySlipObj;
