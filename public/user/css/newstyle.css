@@ -264,9 +264,9 @@
     transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
-.formm:hover {
+/* .formm:hover {
     color: #495057 !important;
-}
+} */
 
 .hour_btn {
     padding: 8px 16px;
@@ -1197,6 +1197,7 @@ ul.nav.nav-justified.navbar {
     flex-direction: column;
     justify-content: center;
 }
+
 .bottom-box-inner:first-child {
     max-width: 100px;
 }
@@ -1510,10 +1511,12 @@ select#cars {
     font-size: 15px;
     border: #0e866c 2px solid;
 }
+
 .list-outer {
     padding: 0px 20px;
     display: block;
 }
+
 /* template-view end */
 
 
@@ -1931,12 +1934,15 @@ select#cars {
     .smallfont3 {
         font-size: 18px;
     }
+
     .mt-5.ready {
         font-size: 25px !important;
     }
+
     li.mt-2 {
         font-size: 17px !important;
     }
+
     .Generate {
         font-size: 18px !important;
     }
@@ -2088,6 +2094,7 @@ select#cars {
     .Show {
         font-size: 25px;
     }
+
     .Createpay {
         font-size: 25px;
     }
@@ -2643,9 +2650,10 @@ select#cars {
 }
 
 @media screen and (max-width: 425px) {
-    .storehead a img{
+    .storehead a img {
         margin-left: 0px !important;
     }
+
     .oo {
         display: flex;
     }
@@ -2655,17 +2663,21 @@ select#cars {
         display: unset;
 
     }
+
     .col-set1 {
         margin: 30px auto 0px;
     }
+
     .mt-5.pt-5.justify-content-center {
         margin: 0 !important;
     }
+
     p.QUICK {
         font-size: 15px;
         padding-top: 20px;
     }
-    .mt-5.d-flex.pt-5.top-gogle{
+
+    .mt-5.d-flex.pt-5.top-gogle {
         margin: 0 !important;
     }
 
@@ -2680,8 +2692,9 @@ select#cars {
     .w-sm-100 {
         width: 100%;
     }
+
     h1.pt-5 {
-        font-size:23px !important;
+        font-size: 23px !important;
     }
 
     .textarea-w2 textarea {
@@ -2691,9 +2704,11 @@ select#cars {
     .text-left p {
         font-size: 15px !important;
     }
+
     .col-md-4.mt-3.text-center h2 {
         font-size: 20px !important;
     }
+
     img.image-no {
         width: 60px !important;
         height: 60px !important;
@@ -3170,28 +3185,35 @@ select#cars {
     .input-box input {
         max-width: 96% !important;
     }
+
     .gen {
-        font-size: 18px!important;
+        font-size: 18px !important;
     }
 
     h1.pt-5 {
         font-size: 20px !important;
     }
+
     .box-content h6 {
         font-size: 20px;
     }
+
     .bottom-content p {
         font-size: 15px;
     }
+
     h2.text-center.text-light.pb-3 {
         font-size: 20px;
     }
+
     p.w2p span {
         font-size: 12px !important;
     }
+
     p.QUICK {
         font-size: 13px;
     }
+
     p.w2p {
         font-size: 12px !important;
     }
@@ -3466,18 +3488,23 @@ select#cars {
         height: 44px !important;
         margin-bottom: 0;
     }
+
     .col-md-6.text-left.mb-5 {
         padding: 0;
     }
+
     .mt-5 {
         margin-top: 0 !important;
     }
+
     li.mt-2 {
         font-size: 15px !important;
     }
+
     .WithPaystubX {
         font-size: 20px !important;
     }
+
     .Createpay {
         font-size: 20px !important;
     }
@@ -3485,13 +3512,16 @@ select#cars {
     .Show {
         font-size: 20px !important;
     }
+
     .mt-5.ready {
         font-size: 20px !important;
-        padding-top:20px;
+        padding-top: 20px;
     }
+
     .mt-5 b {
         font-size: 20px !important;
     }
+
     .text-left p {
         font-size: 16px !important;
         line-height: 1.4 !important;
@@ -3593,6 +3623,7 @@ select#cars {
     .padding {
         padding: 0px !important;
     }
+
     .fbicon {
         border: 2px solid white;
         border-radius: 60%;
@@ -3602,6 +3633,7 @@ select#cars {
         color: white;
         width: 38px;
     }
+
     .socialicon {
         border: 2px solid white;
         border-radius: 60%;
