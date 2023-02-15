@@ -192,6 +192,14 @@ class ValidationService
                 'hours' => 'HOURS be empty',
                 // 'total' => 'TOTAL cannot be empty',
             ];
+        } elseif ($request->form_type == "w2form") {
+            $rules = [
+                'form_type' => 'required',
+            ];
+
+            $messages = [
+                'form_type' => 'Form type is required',
+            ];
         }
         $validator = Validator::make($request->all(), $rules, $messages);
         if ($validator->fails()) {

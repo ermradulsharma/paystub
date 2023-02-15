@@ -49,9 +49,8 @@
                                 <div class="checkbox"> </div>
                             </div>
                             <div class="input-feild-outer">
-                                <p style="font-size: 16px; font-weight:800;padding: 0; margin:0;" class="color-red">a
-                                    Employee's Social Security number</p>
-                                <input name="emp_ssn" style="text-align: center" type="text" placeholder="Please Enter">
+                                <p style="font-size: 16px; font-weight:800;padding: 0; margin:0;" class="color-red">a Employee's Social Security number</p>
+                                <input name="company_ssn" style="text-align: center" type="number" placeholder="Please Enter">
                             </div>
                             <div class="left-text">
                                 <p style="padding: 0; margin:0;" class="w2p">For offical use only <i class="fa fa-play"
@@ -62,9 +61,8 @@
                         <div class="w2form-box-outer">
                             <div class="w2form-left-box">
                                 <div class="input-box border-none">
-                                    <p style="padding: 0; margin:0;" class="color-red"><b>b</b> Employer Identifcation
-                                        number (EIN)</p>
-                                    <input name="company_in" class="input" type="text" placeholder="Please Enter">
+                                    <p style="padding: 0; margin:0;" class="color-red"><b>b</b> Employer Identifcation number (EIN)</p>
+                                    <input name="company_in" class="input" type="number" placeholder="Please Enter">
                                 </div>
                                 <div style="" class=" textarea-w2 textarea-outer">
                                     <p style="margin:0; padding:0px;margin-left:10px !important;" class="color-red"><b>c</b>
@@ -109,59 +107,48 @@
                             <div class="w2form-right-box">
                                 <div class="input-box2-outer">
                                     <div class="inputbox2">
-                                        <p style="padding:0; margin:0px;" class="color-red"><b>1</b> Wages, Tips, other
-                                            compensation</p>
-                                        <input name="wages" class="input" type="text" placeholder="Please Enter">
+                                        <p style="padding:0; margin:0px;" class="color-red"><b>1</b> Wages, Tips, other compensation</p>
+                                        <input name="wages" class="input" type="number" placeholder="Please Enter">
 
                                     </div>
                                     <div class="inputbox2">
-                                        <p style="padding:0; margin:0px;" class="color-red"><b>2</b> Federal income tax
-                                            withheld</p>
-                                        <input name="federal_tax" class="input" type="text"
-                                            placeholder="Please Enter">
+                                        <p style="padding:0; margin:0px;" class="color-red"><b>2</b> Federal income tax withheld</p>
+                                        <input name="federal_tax" class="input" type="number" placeholder="Please Enter">
                                     </div>
                                 </div>
                                 <div class="input-box2-outer">
                                     <div class="inputbox2">
-                                        <p style="padding:0; margin:0px;" class="color-red"><b>3</b> Social security wages
-                                        </p>
-                                        <input name="ss_wages" class="input" type="text" placeholder="Please Enter">
+                                        <p style="padding:0; margin:0px;" class="color-red"><b>3</b> Social security wages</p>
+                                        <input name="ss_wages" class="input" type="number" placeholder="Please Enter">
 
                                     </div>
                                     <div class="inputbox2">
-                                        <p style="padding:0; margin:0px;" class="color-red"><b>4 </b> Social security tax
-                                            withheld</p>
-                                        <input name="ss_tax" class="input" type="text" placeholder="Please Enter">
+                                        <p style="padding:0; margin:0px;" class="color-red"><b>4 </b> Social security tax withheld</p>
+                                        <input name="ss_tax" class="input" type="number" placeholder="Please Enter">
                                     </div>
                                 </div>
 
                                 <div class="input-box2-outer">
                                     <div class="inputbox2">
-                                        <p style="padding:0; margin:0px;" class="color-red"><b>5</b> Medicare wages and
-                                            tips</p>
-                                        <input name="medicare_wages" class="input" type="text"
-                                            placeholder="Please Enter">
+                                        <p style="padding:0; margin:0px;" class="color-red"><b>5</b> Medicare wages and tips</p>
+                                        <input name="medicare_wages" class="input" type="number" placeholder="Please Enter">
 
                                     </div>
                                     <div class="inputbox2">
-                                        <p style="padding:0; margin:0px;" class="color-red"><b>6 </b> Medicare tax
-                                            withheld</p>
-                                        <input name="medicare_tax" class="input" type="text"
-                                            placeholder="Please Enter">
+                                        <p style="padding:0; margin:0px;" class="color-red"><b>6 </b> Medicare tax withheld</p>
+                                        <input name="medicare_tax" class="input" type="number" placeholder="Please Enter">
 
                                     </div>
                                 </div>
                                 <div class="input-box2-outer">
                                     <div class="inputbox2">
-                                        <p style="padding:0; margin:0px;" class="color-red"><b>7</b> Social security tips
-                                        </p>
-                                        <input name="ss_tips" class="input" type="text" placeholder="Please Enter">
+                                        <p style="padding:0; margin:0px;" class="color-red"><b>7</b> Social security tips</p>
+                                        <input name="ss_tips" class="input" type="number" placeholder="Please Enter">
 
                                     </div>
                                     <div class="inputbox2">
                                         <p style="padding:0; margin:0px;" class="color-red"><b>8 </b> Allocted tips</p>
-                                        <input name="allocated_tips" class="input" type="text"
-                                            placeholder="Please Enter">
+                                        <input name="allocated_tips" class="input" type="number" placeholder="Please Enter">
 
                                     </div>
                                 </div>
@@ -170,19 +157,15 @@
                                         <p style="padding:0; margin:0px;" class="color-red"><b>9</b></p>
                                     </div>
                                     <div class="inputbox2">
-                                        <p style="padding:0; margin:0px;" class="color-red"><b>10 </b> Dependent care
-                                            benefits</p>
-                                        <input name="dependent_care" class="input" type="text"
-                                            placeholder="Please Enter">
+                                        <p style="padding:0; margin:0px;" class="color-red"><b>10 </b> Dependent care benefits</p>
+                                        <input name="dependent_care" class="input" type="number" placeholder="Please Enter">
 
                                     </div>
                                 </div>
                                 <div class="input-box2-outer">
                                     <div class="inputbox2">
-                                        <p style="padding:0; margin:0px;" class="color-red"><b>11</b> Nonqualified plans
-                                        </p>
-                                        <input name="nonqualified" class="input" type="text"
-                                            placeholder="Please Enter">
+                                        <p style="padding:0; margin:0px;" class="color-red"><b>11</b> Nonqualified plans</p>
+                                        <input name="nonqualified" class="input" type="number" placeholder="Please Enter">
 
                                     </div>
                                     <div class="inputbox2">
@@ -190,10 +173,8 @@
                                             for box 12</p>
                                         <div class="pie-box-outer">
                                             <span><img style="width:9px;" src="{{ asset('images/code.png') }}"></span>
-                                            <input name="pie_1" class="pie-box input" type="text"
-                                                placeholder="PIE">
-                                            <input name="instructions_box_1" class="input-pie-box input" type="text"
-                                                placeholder="Please Enter">
+                                            <input name="pie_1" class="pie-box input" type="text" placeholder="PIE" pattern="[A-Za-z]{3}">
+                                            <input name="instructions_box_1" class="input-pie-box input" type="number" placeholder="Please Enter">
                                         </div>
 
 
@@ -232,10 +213,8 @@
                                         <p style="padding:0; margin:0px;" class="color-red"><b>12b </b> </p>
                                         <div class="pie-box-outer">
                                             <span><img style="width:9px;" src="{{ asset('images/code.png') }}"></span>
-                                            <input name="pie_2" class="pie-box input" type="text"
-                                                placeholder="PIE">
-                                            <input name="instructions_box_2" class="input-pie-box input" type="text"
-                                                placeholder="Please Enter">
+                                            <input name="pie_2" class="pie-box input" type="text" placeholder="PIE" pattern="[A-Za-z]{3}">
+                                            <input name="instructions_box_2" class="input-pie-box input" type="number" placeholder="Please Enter">
                                         </div>
 
 
@@ -252,10 +231,8 @@
                                             <p style="padding:0; margin:0px;" class="color-red"><b>12c </b> </p>
                                             <div class="pie-box-outer">
                                                 <span><img style="width:9px;" src="{{ asset('images/code.png') }}"></span>
-                                                <input name="pie_3" class="pie-box input" type="text"
-                                                    placeholder="PIE">
-                                                <input name="instructions_box_3" class="input-pie-box input"
-                                                    type="text" placeholder="Please Enter">
+                                                <input name="pie_3" class="pie-box input" type="text" placeholder="PIE" pattern="[A-Za-z]{3}">
+                                                <input name="instructions_box_3" class="input-pie-box input" type="number" placeholder="Please Enter">
                                             </div>
 
                                         </div>
@@ -263,10 +240,8 @@
                                             <p style="padding:0; margin:0px;" class="color-red"><b>12d </b></p>
                                             <div class="pie-box-outer">
                                                 <span><img style="width:9px;" src="{{ asset('images/code.png') }}"></span>
-                                                <input name="pie_4" class="pie-box input" type="text"
-                                                    placeholder="PIE">
-                                                <input name="instructions_box_4" class="input-pie-box input"
-                                                    type="text" placeholder="Please Enter">
+                                                <input name="pie_4" class="pie-box input" type="text" placeholder="PIE" pattern="[A-Za-z]{3}">
+                                                <input name="instructions_box_4" class="input-pie-box input" type="number" placeholder="Please Enter">
                                             </div>
                                         </div>
                                     </div>
@@ -280,7 +255,7 @@
                                     <p style="padding:0; margin:0px;" class="color-red"><b>15 </b>State
                                     </p>
 
-                                    <select class="select-box" name="cars" id="cars">
+                                    <select class="select-box" name="state" id="cars">
                                         <option value="volvo">Alaska</option>
                                         <option value="saab">Ahemdabad</option>
                                         <option value="opel">Alaska</option>
@@ -292,18 +267,18 @@
                                     <p style="padding:0; margin:0px;" class="color-red"><b></b>Employess's state id number
                                     </p>
                                     <input name="employee_state_id" style="border:1px solid black; text-align:center;"
-                                        class="input" type="text" placeholder="Please Enter">
+                                        class="input" type="number" placeholder="Please Enter">
                                 </div>
                                 <div class=" bottom-box-inner">
                                     <p style="padding:0; margin:0px;" class="color-red"><b>16 </b> State Wages, tips etc.
                                     </p>
                                     <input name="state_wages" style="border:1px solid black;" class="input"
-                                        type="text" placeholder="Please Enter">
+                                        type="number" placeholder="Please Enter">
                                 </div>
                                 <div class=" bottom-box-inner">
                                     <p style="padding:0; margin:0px;" class="color-red"><b>17 </b>State income tax </p>
                                     <input name="state_income_tax" style="border:1px solid black;" class="input"
-                                        type="text" placeholder="Please Enter">
+                                        type="number" placeholder="Please Enter">
                                 </div>
                             </div>
                             <div class="bottom-box-outer a ">
@@ -315,16 +290,13 @@
 
                             <div class="bottom-box-outer">
                                 <div class=" bottom-box-inner1">
-                                    <p style="padding:0; margin:0px;" class="color-red"><b>18 </b> Local Wages, tips, etc.
-                                    </p>
-                                    <input name="local_wages" style="border:1px solid black;" class="input"
-                                        type="text" placeholder="Please Enter">
+                                    <p style="padding:0; margin:0px;" class="color-red"><b>18 </b> Local Wages, tips, etc.</p>
+                                    <input name="local_wages" style="border:1px solid black;" class="input" type="number" placeholder="Please Enter">
 
                                 </div>
                                 <div class=" bottom-box-inner1">
                                     <p style="padding:0; margin:0px;" class="color-red"><b>19 </b> Local Income Tax </p>
-                                    <input name="local_income_tax" style="border:1px solid black;" class="input"
-                                        type="text" placeholder="Please Enter">
+                                    <input name="local_income_tax" style="border:1px solid black;" class="input" type="number" placeholder="Please Enter">
                                 </div>
                                 <div class=" bottom-box-inner1">
                                     <p style="padding:0; margin:0px;" class="color-red"><b>20 </b> Locality Name </p>
@@ -387,12 +359,8 @@
                 <div style="" class="row mt-3">
                     <div style="margin: 0; padding:0;" class="col-12 text-center">
                         <div class="d-flex flex-wrap justify-content-between">
-                            <a class="previewbtn text-capitalize viewTempTemplate mb-3 w-sm-100" type="button"
-                                id="button1" href="{{ 'preview-pdf' }}" target="_blank">Preview Below Check <i
-                                    class="fa fa-eye" style="font-size: 30px; margin-left: 7px;"></i></a>
-                            <a type="button" class="emailbtn text-capitalize sendMailButton mb-3 w-sm-100"
-                                target="_blank" href="{{ 'generate-pdf' }}"> Download <i class="fa fa-download ml-4"
-                                    style="font-size:24px"></i></a>
+                            <a class="previewbtn text-capitalize viewTempTemplate mb-3 w-sm-100" type="button" id="button1">Preview Below Check <i class="fa fa-eye" style="font-size: 30px; margin-left: 7px;"></i></a>
+                            <a type="button" class="emailbtn text-capitalize sendMailButton mb-3 w-sm-100" target="_blank" href="{{ 'generate-pdf' }}"> Download <i class="fa fa-download ml-4" style="font-size:24px"></i></a>
                         </div>
                     </div>
                 </div>

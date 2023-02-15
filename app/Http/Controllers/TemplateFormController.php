@@ -37,13 +37,17 @@ class TemplateFormController extends Controller
         if ($response['status'] == 301) {
             return response()->json($response, $response['status']);
         }
-
         $requestData = $request->all();
-        if ($requestData['advance_temp']) {
-            $pageName = $requestData['advance_temp'];
+        if ($requestData['form_type'] == "w2form") {
+            $pageName = "w2form";
         } else {
-            $pageName = $requestData['basic_temp'];
+            if ($requestData['advance_temp']) {
+                $pageName = $requestData['advance_temp'];
+            } else {
+                $pageName = $requestData['basic_temp'];
+            }
         }
+
 
         $path = public_path() . '/uploads/mailData';
         File::isDirectory($path) or File::makeDirectory($path, 0777, true, true);
@@ -66,7 +70,7 @@ class TemplateFormController extends Controller
         }
 
         $requestData = $request->all();
-        $pageName = $requestData['advance_temp'] ?? $requestData['basic_temp'];
+        $pageName = $requestData['advance_temp'] ?? $requestData['basic_temp'] ?? '';
 
 
         $path = public_path() . '/uploads/mailData';
@@ -127,7 +131,7 @@ class TemplateFormController extends Controller
     {
 
         $paySlipObj = PaySlip::where(['user_id' => Auth::user()->id])->exists();
-        if($paySlipObj){
+        if ($paySlipObj) {
             $invoice = PaySlip::where(['user_id' => Auth::user()->id]);
             if ($id != null) {
                 $invoice = $invoice->where('id', $id);
@@ -165,10 +169,9 @@ class TemplateFormController extends Controller
                 return redirect(route('invoiceList'))->with('message', 'Mail has been sent successfully.');
             }
             return back()->with('message', 'Mail has been sent successfully.');
-        }else{
+        } else {
             $response['message'] = "Please choose Paystub pay slip";
             return back()->with($response, 200);
         }
-
     }
 }
