@@ -24,24 +24,25 @@
 
                     <div class="text-white text-padding globe-p"
                         style="font-size: 42px;font-weight: 300;font-family: 'Outfit', sans-serif;">
-                        With PaystubX you can create</br> Paystub for any country
+                        With PaystubX you can create<br> Paystub for any country
                     </div>
 
                     <div class="mt-4 text-left">
-                        <div class="text-white PayslipsGlo ml-4">
-                            There’s no need for complex and costly desktop software. Save</br> time and money with
-                            Paystubx free online pay stub maker that </br>creates pay stubs to include all companies,
-                            employment, income,</br> and deduction information. No software needed for creating</br>
+                        <div class="text-white PayslipsGlo ml-4 text-white2">
+                            There’s no need for complex and costly desktop software. Save<br> time and money with
+                            Paystubx free online pay stub maker that <br>creates pay stubs to include all companies,
+                            employment, income,<br> and deduction information. No software needed for creating<br>
                             Global Payslip, Paystub or Payroll.
                         </div>
                     </div>
 
                     <div class="mt-5 pt-3 pl-4 globlebtn">
-                        <a class="btn btn-lg  mt-2 p-2 btn-danger Generate " href="{{ route('global.payStub') }}">Generate
+                        <a class="btn btn-lg  p-2 btn-danger Generate global-btn "
+                            href="{{ route('global.payStub') }}">Generate
                             Paystub
                             Now</a>
                     </div>
-                    <div class="mt-5 pt-4    pr-3 mr-5 ml-3 d-flex storehead">
+                    <div class="mt-5 pt-4    pr-3 mr-5 ml-3 d-flex storehead global">
                         <a href="https://www.google.com/" target="_blank"><img class="storbtn mt-5"
                                 src="images/Google_Play_Store_badge_EN.webp"></a>
                         <a href="https://www.google.com/" target="_blank"><img class="storbtn mt-5 ml-5"
@@ -61,16 +62,16 @@
             <div class="col-lg-6">
                 <div class="row">
                     <div class="col-lg-3 col-md-1"></div>
-                    <div class="col-lg-9 col-md-12 pl-5">
-                        <div class="mt-5">
+                    <div class="col-lg-9 col-md-12 pl-5 global-padding">
+                        <div class="mt-5 global-heading">
 
-                            <h2> Use Paystubx for end-to-end Global Payroll</br> Process Management</h2>
+                            <h2> Use Paystubx for end-to-end Global Payroll Process Management</h2>
                         </div>
-                        <div style="font-size: 21px;font-weight: 200;">
-                            With Paystubx you can customize your own Global Paystub</br> or payroll:
+                        <div class="global-p" style="font-size: 21px;font-weight: 200;">
+                            With Paystubx you can customize your own Global Paystub or payroll:
                         </div>
                         <div class="mt-2">
-                            <ul style="    font-size: 19px;font-weight: 300;">
+                            <ul class="global-list" style="    font-size: 19px;font-weight: 300;">
 
                                 <li class="mt-3">Consolidated Reporting</li>
                                 <li class="mt-3">Calendar & Alerts</li>
@@ -80,12 +81,12 @@
                                 <li class="mt-3">Payslip Team's Support</li>
                             </ul>
                         </div>
-                        <div class="mt-2" style=" font-size:25px;">
+                        <div class="mt-2 global-heading" style=" font-size:25px;">
 
                             Want to generate professional paystubs?
                         </div>
-                        <div style="font-size: 20px;font-weight:300;">
-                            We offer a wide variety of sample paystub templates to suit</br> your needs!
+                        <div class="global-p" style="font-size: 20px;font-weight:300;">
+                            We offer a wide variety of sample paystub templates to suit<br> your needs!
                         </div>
                         <div class=" pt-5">
                             <a class="btn btn-lg  mt-2 p-2 btn-danger Generate "
@@ -98,9 +99,9 @@
             </div>
             <div class="col-lg-6">
                 <div class="row justify-contetn-center">
-                    <div class="col-lg-10">
+                    <div class=" global-padding">
                         <div class="text-center">
-                            <div class="mt-5" style="font-size:30px;font-family: serif;padding-left: 10px;">
+                            <div class="mt-5 global-heading" style="font-size:30px;font-family: serif;padding-left: 10px;">
                                 More Time For You. Less Time on Payroll and Taxes.
                             </div>
                         </div>
@@ -134,7 +135,7 @@
                                     other free
                                     payroll tools that can help you manage your business</li>
 
-                                <p class="mt-4" style="font-weight: 300; font-size:19px;">Simply
+                                <p class="mt-4 bottom-p" style="font-weight: 300; font-size:19px;">Simply
                                     enter the
                                     information about your company, employee,
                                     income,
@@ -168,7 +169,7 @@
                 <div class="box-usa2">
                     <div class=" box-usa">
                         <div class="d-flex justify-content-between mb-3">
-                            <div class="col-md-5 mt-5 text-center">
+                            <div class="col-md-5 mt-5 text-center template-text">
                                 <h6 class="basic1">BASIC TEMPLATES</h6>
                                 <div class="mt-4">
                                     {{-- <i class="fa fa-angle-down down1"></i> --}}
@@ -189,10 +190,10 @@
                             <div class="col-md-2  text-center sh">
                                 <!-- <div style="height:240px;-webkit-box-shadow: 9px 0 4px -4px #999, 0px 0 4px -4px #999;">
 
-                                            </div> -->
+                                                </div> -->
                                 <img src="images/hrpng.png" style="height: 200px;">
                             </div>
-                            <div class="col-md-5 mt-5 text-center">
+                            <div class="col-md-5 mt-5 text-center template-text">
                                 <h6 class="basic1">ADVANCED TEMPLATES</h6>
                                 <div class="mt-4">
                                     {{-- <i class="fa fa-angle-down down1"></i> --}}
@@ -219,16 +220,17 @@
     </div>
     <div class="container" style="max-width:1500px;">
         <div class="row">
-            <div class="col-lg-7 justify-content-center">
+            <div class="col-lg-7 justify-content-center global-padding">
                 <div class="mt-2  mb-4 stubheading">
-                    How to use the Pay</br> Stub Generator
+                    How to use the Pay<br> Stub Generator
                 </div>
 
-                <div style="font-size: 20px;font-weight:300;">To create a pay stub with our free pay stub generator, follow
+                <div class="global-p" style="font-size: 20px;font-weight:300;">To create a pay stub with our free pay stub
+                    generator, follow
                     these instructions and you'll quickly have a professional pay stub to provide to your employee.
                 </div>
                 <div class="mt-2">
-                    <ol style=" font-size: 18px;font-weight:300;">
+                    <ol class="global-list-outer" style=" font-size: 18px;font-weight:300;">
                         <li class=" mt-3">Upload
                             your company logo (optional)</li>
 
@@ -265,7 +267,7 @@
             <div class="col-lg-5">
                 <img src="images/globle/yoga.gif" class="w-100">
                 <div class="mt-2 d-flex ">
-                    <a class="btn btn-lg  mt-2 mb-4 p-2 btn-danger Generate "
+                    <a class="btn btn-lg  mt-2 mb-4 p-2 btn-danger Generate  global-btn"
                         href="{{ route('global.payStub') }}">Generate
                         Paystub
                         Now</a>
@@ -275,9 +277,9 @@
     </div>
     <div class="row saveTime">
         <div class="col-lg-6 " style="background: #03395d;">
-            <img class="w-100" src="images/globle/image3s.jpeg">
+            <img class="w-100 global-mobile-img" src="images/globle/image3s.jpeg">
         </div>
-        <div class="col-lg-6 pt-2 container justify-content-center pl-5">
+        <div class="col-lg-6 pt-2 container justify-content-center pl-5 global-content">
             <h4 style="font-family:'sans-serif">
                 <b>
                     Save Time</b>
@@ -311,12 +313,12 @@
     <div class="row" style="background:#2c2b69;">
         <div class="col-12 container my-5 text-justify text-center text-white">
             <div class=" text-justify text-center text-white">
-                <h1>Generate 100% Legal UK Payslips</h1>
+                <h1 class="global-heading">Generate 100% Legal UK Payslips</h1>
                 <div class="my-3 d-flex">
                     <a class="btn btn-lg  btn-danger Generate " href="{{ route('global.payStub') }}">Generate Paystub
                         Now</a>
                 </div>
-                <h2>Simple as ABC</h2>
+                <h2 class="global-heading">Simple as ABC</h2>
             </div>
 
         </div>

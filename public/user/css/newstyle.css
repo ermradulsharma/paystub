@@ -1539,6 +1539,15 @@ ul.mt-4 {
 .computer-img {
     max-width: 800px;
 }
+.mt-5.global-heading h2 {
+    max-width: 500px;
+}
+.global-p {
+    max-width: 500px;
+}
+.global-list {
+    padding: 0px 16px !important;
+}
 
 /* template-view end */
 
@@ -1762,7 +1771,9 @@ ul.mt-4 {
     .checkbox-sqaure {
         width: 20px !important;
     }
-
+    img.w-100.global-mobile-img {
+        margin-top: 45px;
+    }
 
     .redcon {
         padding: 30px;
@@ -2007,6 +2018,15 @@ ul.mt-4 {
         width: 125px;
         height: 44px;
     }
+    .global-content p{
+        font-size: 14px !important;
+
+    }
+    .global-content h4{
+        font-size: 16px !important;
+
+    }
+
 
     .create-p {
         font-size: 8px;
@@ -2181,7 +2201,19 @@ ul.mt-4 {
         background: #e827a5;
         font-size: 17px;
     }
+    .mt-5.pt-4.pr-3.mr-5.ml-3.d-flex.storehead.global {
+        display: flex;
+        justify-content: center;
+        padding: 0 !important;
+        margin: 0px !important;
+    }
+    .globleImg {
 
+        margin: 0 auto !important;
+        display: flex;
+        justify-content: center;
+        margin-top: 20px !important;
+    }
     .view-temp {
         color: #0e866c;
         font-size: 22px;
@@ -2429,7 +2461,11 @@ ul.mt-4 {
         background: #E8E6E6;
         border-radius: 2px;
     }
-
+a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px !important;
+}
     .dropdown1 {
         width: 73% !important;
         padding: -11px;
@@ -2544,9 +2580,6 @@ ul.mt-4 {
 
     }
 
-    /* .banner-left-content {
-        padding: 0px 50px;
-    } */
 
     .w-100 {
         width: 100% !important;
@@ -2743,6 +2776,11 @@ ul.mt-4 {
 
 
     }
+    .basic1 {
+        margin-left: 0px;
+        font-weight: 900;
+        font-size: 8px;
+    }
     .ukp {
         font-size: 22px;
     }
@@ -2795,8 +2833,12 @@ ul.mt-4 {
         margin-top: 0em;
     }
 
+
     .w-sm-100 {
         width: 100%;
+    }
+    .text-white.PayslipsGlo.ml-4.text-white2 {
+        font-size: 15px !important;
     }
 
     h1.pt-5 {
@@ -2893,7 +2935,10 @@ ul.mt-4 {
     h2.mb-5 {
         font-size: 25px;
     }
-
+    .box-usa2 {
+        max-width: 300px !important;
+        margin: 0 auto;
+    }
 
     .d-flex {
 
@@ -2992,9 +3037,17 @@ ul.mt-4 {
     .text {
         padding-left: 10px;
     }
-
-
-
+    .mt-5.global-heading h2 {
+        font-size: 20px;
+    }
+    .global-p {
+        font-size: 16px !important;
+    }
+    .mt-5.global-heading {
+        font-size: 22px !important;
+        text-align: left;
+        padding-top: 20px;
+    }
     .see-sample2 {
         top: 78px;
         right: 76px;
@@ -3003,6 +3056,48 @@ ul.mt-4 {
         border: 1px solid red;
         border-radius: 2px;
     }
+    .mt-5.global-heading {
+        font-size: 22px !important;
+        text-align: left;
+    }
+    p.mt-4.bottom-p {
+        font-size: 15px !important;
+    }
+    .mt-5.thousand h2 {
+        font-size: 18px !important;
+    }
+    .mt-2.mb-4.stubheading {
+        font-size: 20px;
+    }
+    a.btn.btn-lg.mt-2.mb-4.p-2.btn-danger.Generate.global-btn {
+        margin-bottom: 20px !important;
+    }
+    ol.global-list-outer {
+        padding: 0px 16px;
+        font-size: 13px !important;
+    }
+    img.w-100.global-mobile-img {
+        margin-top: 0;
+    }
+    .col-lg-6.pt-2.container.justify-content-center.pl-5.global-content {
+        padding: 10px !important;
+    }
+    h1.global-heading {
+        font-size: 25px;
+    }
+    h2.global-heading {
+        font-size: 25px;
+    }
+    .mt-2.global-heading {
+        font-size: 20px !important;
+    }
+    .col-lg-9.col-md-12.pl-5.global-padding {
+        padding: 0px !important;
+    }
+    ul.global-list li {
+        font-size: 14px;
+    }
+
 
     .see-sample1 {
         top: 66px;
@@ -3415,6 +3510,9 @@ ul.mt-4 {
         border: 1px solid red;
         border-radius: 2px;
     }
+    .col-md-5.mt-5.text-center.template-text {
+        margin-top: 10px !important;
+    }
 
     .see-sample {
         top: 67px;
@@ -3437,11 +3535,7 @@ ul.mt-4 {
         font-size: 11px;
     }
 
-    .basic1 {
-        margin-left: -23px;
-        font-weight: 900;
-        font-size: 13px;
-    }
+
 
     .text-white {
 
