@@ -254,6 +254,11 @@
                                                 @endforeach
                                             </div>
 
+                                            {{-- <div class="col-md-5 col-lg-5 mb-3  px-lg-2 px-0">
+                                                @foreach ($deduction as $key => $item)
+                                                <input class="earnbtn mt-3 text-center currentTotal" readonly id="total_000" name="total[]" type="text" value="">
+                                                @endforeach
+                                            </div> --}}
                                             <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
                                                 <button style="background-color: #85b7bc; font-weight:300" type="button" class="netpaybtn net_pay">Total Deduction</button>
                                             </div>

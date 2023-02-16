@@ -89,11 +89,11 @@
                         </tr>
                         <tr>
                             <td>Basic Pay</td>
-                            <td><b>4567</b></td>
+                            <td><b>{{ number_format($requestData['taxable_gross_pay'],2) }}</b></td>
                         </tr>
                         <tr>
                             <td><b>Total Payment</b></td>
-                            <td><b>4567</b></td>
+                            <td><b>{{ number_format($requestData['taxable_gross_pay'],2) }}</b></td>
                         </tr>
                         <tr>
                             <th style="font-size: 15px; text-align:center;"><b>Deductions</b></th>
@@ -101,17 +101,9 @@
                         @foreach ($requestData['taxes'] ?? [] as $key => $taxes)
                         <tr>
                             <td>{{ $taxes }}</td>
-                            <td><b>{{$requestData['taxes_rate'][$key] }}</b></td>
+                            <td><b>{{ number_format($requestData['taxes_rate'][$key],2) }}</b></td>
                         </tr>
                         @endforeach
-                        {{-- <tr>
-                            <td>Income tax</td>
-                            <td><b>5678</b></td>
-                        </tr>
-                        <tr>
-                            <td>National Insurance</td>
-                            <td><b>5678</b></td>
-                        </tr> --}}
                         <tr>
                             <td><b>Total Deductions</b></td>
                             <td><b>{{ $requestData['deduction_tax'] }}</b></td>
