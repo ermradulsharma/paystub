@@ -265,9 +265,7 @@
                                 </div>
                                 <div class="row my-2">
                                     <div class="col-lg-12">
-                                        <button type="button" class="btnCommon addEarningField">
-                                            <i class="fa fa-plus-circle pr-2" style="font-size: 22px;color: #0ec23b;padding-top: 0px;"></i>Add
-                                            Earning</button>
+                                        <button type="button" class="btnCommon addEarningField"> <i class="fa fa-plus-circle pr-2" style="font-size: 22px;color: #0ec23b;padding-top: 0px;"></i>Add Earning</button>
                                     </div>
                                 </div>
                             </div>
