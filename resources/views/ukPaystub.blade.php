@@ -121,12 +121,12 @@
                         </div>
 
                         <div class="col-md-6 mt-1">
-                            <label for="emp_address_1" class="lable text-center">EMPLOYEE ADDRESS 1 <span style="color:red;">*</span></label>
-                            <input type="text" id="emp_address_1" name="emp_address_1" placeholder="5 Throgmorton St, London EC2N 2AD, United Kingdom" class="w-100 p-2 text-center" style="font-size:14px;">
+                            <label for="emp_street_1" class="lable text-center">EMPLOYEE ADDRESS 1 <span style="color:red;">*</span></label>
+                            <input type="text" id="emp_street_1" name="emp_street_1" placeholder="5 Throgmorton St, London EC2N 2AD, United Kingdom" class="w-100 p-2 text-center" style="font-size:14px;">
                         </div>
                         <div class="col-md-6 mt-1">
-                            <label for="emp_address_2" class="lable">STREET ADDRESS 2</label>
-                            <input type="text" id="emp_address_2" name="emp_address_2" placeholder="Your Employer &amp; Company Name" class="w-100 p-2 text-center" style="font-size:14px;">
+                            <label for="emp_street_2" class="lable">STREET ADDRESS 2</label>
+                            <input type="text" id="emp_street_2" name="emp_street_2" placeholder="Your Employer &amp; Company Name" class="w-100 p-2 text-center" style="font-size:14px;">
                         </div>
 
                         <div class="col-md-6 mt-1">
@@ -275,7 +275,7 @@
                                     <div class="row">
                                         <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
                                             <img src="{{ asset('images/lock.png') }}" class="earnbtn2">
-                                            <input class="input-uk text-center taxePays" name="taxes[]" data-id="" data-value="" value="Taxable Gross Pay ">
+                                            <input class="input-uk text-center" value="Taxable Gross Pay ">
                                         </div>
 
                                         <div class="col-md-5 col-lg-5 mb-3  px-lg-2 px-0">
@@ -283,7 +283,7 @@
                                         </div>
                                         <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
                                             <img src="{{ asset('images/lock.png') }}" class="earnbtn2">
-                                            <input class="input-uk  text-center taxes" name="taxes[]" data-id="" data-value="" value="Income Tax">
+                                            <input class="input-uk text-center" value="Income Tax">
                                         </div>
 
                                         <div class="col-md-5 col-lg-5 mb-3  px-lg-2 px-0">
@@ -291,7 +291,7 @@
                                         </div>
                                         <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
                                             <img src="{{ asset('images/lock.png') }}" class="earnbtn2">
-                                            <input class="input-uk  text-center taxes" name="taxes[]" data-id="" data-value="" value="Employee NIC">
+                                            <input class="input-uk  text-center" value="Employee NIC">
                                         </div>
 
                                         <div class="col-md-5 col-lg-5 mb-3  px-lg-2 px-0">
@@ -299,7 +299,7 @@
                                         </div>
                                         <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
                                             <img src="{{ asset('images/lock.png') }}" class="earnbtn2">
-                                            <input class="input-uk  text-center taxes" name="taxes[]" data-id="" data-value="" value="Employee NIC">
+                                            <input class="input-uk  text-center" value="Employee NIC">
                                         </div>
 
                                         <div class="col-md-5 col-lg-5 mb-3  px-lg-2 px-0">
@@ -322,8 +322,7 @@
                                 <div class="ukpay-inner ">
                                     <div class="row">
                                         <div style="padding-bottom:255px;" class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
-
-                                            <input style="color: #7c7370; border-color: #7c7370;" class="input-uk text-center note taxePays" name="taxes[]" data-id="" data-value="" value="Note here (optional) ">
+                                            <input style="color: #7c7370; border-color: #7c7370;" class="input-uk text-center note" value="Note here (optional) ">
                                         </div>
                                     </div>
                                 </div>
