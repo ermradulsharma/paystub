@@ -236,7 +236,6 @@
                 </div>
             </div>
         </div>
-
         <div>
             <div class="d-flex " style="justify-content: space-between;">
                 <h5 class="box-h5">Earning statement</h5>
@@ -272,8 +271,6 @@
                                     </div>
                                 </div>
                             </div>
-
-
                             <div class="col-lg-5 pl-0">
                                 <div class="row">
                                     <div class="col-lg-4 mb-4 col-md-4 pr-0 addtaxes">
@@ -307,7 +304,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="row mb-3 mt-4 mt-lg-5">
                             <div class="col-lg-2 col-md-2 pr-md-0 mb-2">
                                 <button type="button" class="statementbtn">YTD GROSS</button>
@@ -338,7 +334,6 @@
                 </div>
             </div>
         </div>
-
         <div class="row mt-3">
             <div class="col-12 text-center">
                 <div class="d-flex flex-wrap justify-content-between">

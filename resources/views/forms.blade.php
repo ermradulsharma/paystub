@@ -24,7 +24,6 @@
         </div>
     </div>
 </div>
-
 <div style="background: #e9e6e6;">
     <div class="container" style="max-width: 1452px;">
         <div class="row">
@@ -58,8 +57,6 @@
         </div>
     </div>
 </div>
-
-
 <div class="container-fluid" style="background: #e9e6e6;">
     <div class="container py-5" style="max-width: 1452px;">
         <div class=" text-center my-5" style="font-size: 32px; font-weight: bold;">Instructions for filling out Form <span class="text-danger">W-2</span> </div>
@@ -88,7 +85,6 @@
         </div>
     </div>
 </div>
-
 <div class="" style="background: #e9e6e6;">
     <div class="container" style="max-width: 1452px;">
         <div class="col-2"></div>
@@ -111,7 +107,6 @@
             </div>
         </div>
     </div>
-
     <div class="container-fluid" style="background: #e9e6e6;">
         <div class="container" style="max-width: 1452px;">
             <div class="row">
@@ -127,7 +122,6 @@
         </div>
     </div>
 </div>
-
 <div class="row" style="background: #e9e6e6;">
     <div class="col-md-7 mt-5 py-5 pl-5 container">
         <h1 class="" style="font-family:'serif;">Common mistakes to avoid while filling out Form W-2 </h1>
@@ -138,7 +132,6 @@
         </div>
     </div>
 </div>
-
 <div class="container-fluid p-3" style="background:#2c2b69;">
     <div class="col-lg-12 my-5 justify-content-center  text-white">
         <div class=" text-justify text-center text-white">
@@ -150,5 +143,4 @@
         </div>
     </div>
 </div>
-
 @endsection

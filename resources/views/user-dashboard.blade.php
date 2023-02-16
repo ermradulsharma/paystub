@@ -84,10 +84,6 @@
 
                             </div>
                         </div>
-
-
-
-
                         <div class="row mt-3">
                             <div class="col-md-3">
                                 <p class="w2p">1 Wages, Tips, Other compensation </p>
@@ -107,9 +103,7 @@
                                 <p class="w2p">4 Social Security tax withheld</p>
                                 <input type="text" id="fname" name="fname" placeholder="enter text" class="w-100 p-2"><br>
                             </div>
-
                         </div>
-
                         <div class="row mt-3">
                             <div class="col-md-3">
                                 <p class="w2p">5 Medicare Wages & tips</p>
@@ -129,7 +123,6 @@
                                 <p class="w2p">8 Allocated tips</p>
                                 <input type="text" id="fname" name="fname" placeholder="enter text" class="w-100 p-2"><br>
                             </div>
-
                         </div>
                         <div class="row mt-3">
                             <div class="col-md-4">
@@ -146,7 +139,6 @@
                                 <input type="text" id="fname" name="fname" placeholder="enter text" class="w-100 p-2"><br>
                             </div>
                         </div>
-
                         <div class="row mt-3">
                             <div class="col-md-3">
                                 <p class="w2p">12a See Instructions box 12</p>
@@ -181,7 +173,6 @@
 
                         </div>
                         <div class="row">
-
                             <div class="col-md-6 mt-3">
                                 <div class="row">
                                     <div class="col-md-4">
@@ -203,13 +194,10 @@
                                 <textarea id="w3review" name="w3review" rows="4" cols="30" placeholder="Please Enter" style="width:100%;"></textarea>
                             </div>
                         </div>
-
-
-
                         <div class="row mt-3">
                             <div class="col-md-3">
-                                <label for="fname" class="lable w2p">15 State <spam style="color:red;">
-                                        <spam style="color:red;">
+                                <label for="fname" class="lable w2p">15 State <span style="color:red;">
+                                        <span style="color:red;">
                                             <spam>
                                                 <spam></label><br>
                                 <div class="dropdown ">

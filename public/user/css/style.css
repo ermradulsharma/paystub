@@ -4,14 +4,14 @@
 
 
 .redColor {
-    
+
     color: red;
 }
 
 .textInputFontSize {
     font-size: 14px;
-    padding: 6px; 
- 
+    padding: 6px;
+
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;800&family=Public+Sans:wght@300&display=swap');
@@ -142,7 +142,7 @@
     font-family: 'Futura LT';
 }
 
-.Generate1 {    
+.Generate1 {
     border-radius: 63px;
     background-color: #ff0000;
     display: table-cell;
@@ -353,6 +353,10 @@
 
     .instant {
         font-size: 30px;
+        margin-bottom:30px;
+    }
+    .list-outer {
+        padding: 0px 16px;
     }
 }
 
@@ -377,19 +381,7 @@
         height: 43px;
     }
 
-    .Generate {
-        font-family: serif;
-        /* width: 399px; */
-        /* height: 24px; */
-        border-radius: 63px;
-        background-color: #ff0000;
-        display: table-cell;
-        font-weight: 600;
-        margin: auto;
-        font-size: 20px;
-        color: white;
-        padding: 3px 21px;
-    }
+
 
     .Payslips {
         font-size: 20px;
@@ -457,7 +449,7 @@
 
 .tempangle {
     color: #e827a5;
-    
+
     font-size: 50px;
     font-weight: 800;
 

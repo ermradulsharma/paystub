@@ -34,12 +34,7 @@
                 </div>
             </div>
         </div>
-
-
-
-
     </div>
-
     <div class="pt-5" style="background-color: #E9E6E6;">
         <div class="container" style="max-width: 1580px;">
             <div class="row" style="margin:0 auto;">
@@ -111,9 +106,6 @@
             </div>
         </div>
     </div>
-
-
-
     <div class="container-fluid" style="background-image: linear-gradient(45deg, #fdf5f4, #f2fbf7);">
         <div class="col-md-12 candada">
             <img src="{{ asset('images/hh.png') }}" class="w-100">
@@ -123,8 +115,6 @@
     <div class="container-fluid pb-5 d-flex " style="background-image: linear-gradient(45deg, #fdf5f4, #f2fbf7);">
         <a class="btn btn-lg  mt-5 p-2 btn-danger Generate " href="{{ route('canada.payStub') }}">Generate Paystub Now</a>
     </div>
-
-
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-lg-12 text-center mt-3">

@@ -1480,6 +1480,7 @@ select#cars {
     text-align: right;
 }
 
+
 /* w2 form design end*/
 /* bottom gradiant section style start*/
 .bottom-graadiant-section {
@@ -1522,6 +1523,9 @@ select#cars {
 .list-outer {
     padding: 0px 20px;
     display: block;
+}
+ul.mt-4 {
+    padding: 0px 16px;
 }
 
 /* template-view end */
@@ -1786,6 +1790,14 @@ select#cars {
         width: 100%;
         font-size: 10px;
     }
+    .QUICK {
+        font-size: 16px;
+        margin-bottom: 40px;
+    }
+    .mt-5.pt-5.justify-content-center {
+        margin: 0px !important;
+        padding: 0px !important;
+    }
 
     input.input-pie-box.input {
         max-width: 145px;
@@ -2002,7 +2014,6 @@ select#cars {
 
     .box-usa {
         border: 3px solid #FF6161;
-        /* padding: 10px 0px 12px 0px; */
         background: #E8E6E6;
         border-radius: 2px;
     }
@@ -2239,9 +2250,7 @@ select#cars {
         font-size: 11px;
     }
 
-    .QUICK {
-        margin-bottom: unset;
-    }
+
 
     .col-set1 {
         display: flex;
@@ -2278,7 +2287,10 @@ select#cars {
         margin: auto;
         font-size: 12px;
     }
-
+    .list-img{
+        width: 60px !important;
+        height: 60px !important;
+    }
     .uk-eye {
         font-size: 38px;
     }
@@ -2691,11 +2703,14 @@ select#cars {
 
     p.QUICK {
         font-size: 15px;
-        padding-top: 20px;
+        text-align: center;
     }
 
     .mt-5.d-flex.pt-5.top-gogle {
         margin: 0 !important;
+    }
+    li.mt-2 {
+        font-size: 13px !important;
     }
 
     .pay-outer {
@@ -2711,7 +2726,9 @@ select#cars {
     }
 
     h1.pt-5 {
-        font-size: 23px !important;
+
+        text-align: center;
+        font-size: 20px !important;
     }
 
     .textarea-w2 textarea {
@@ -2742,9 +2759,22 @@ select#cars {
     h3.w2p {
         font-size: 19px !important;
     }
+    .fbicon{
+        width: 42px;
+        font-size: 17px;
+        padding: 10px;
+    }
+    .socialicon{
+        width: 42px;
+        font-size: 17px;
+        padding: 10px;
+
+    }
+    li.mt-2
+
 
     .d-flex {
-        /* display: inline-block !important; */
+
         justify-content: center;
         width: 100%;
     }
@@ -2841,10 +2871,7 @@ select#cars {
         padding-left: 10px;
     }
 
-    .checkbox-inner {
-        /* width: 100%;
-        margin-bottom: 6px; */
-    }
+
 
     .see-sample2 {
         top: 78px;
@@ -2997,28 +3024,18 @@ select#cars {
     }
 
     .paytext {
-        /* position: absolute; */
-        /* bottom: -136px; */
         left: 161px;
         font-size: 15px;
         top: -17px;
     }
 
-    /* .payimg2 {
-        position: relative;
-        top: 50px;
-        width: 100%;
-        object-fit: contain;
-        object-position: 50% 50%;
-        left: 0;
-        height: 300px;
 
-    } */
     .img2-p {
         font-size: 17px;
         font-weight: 200;
         margin-top: 0px;
         margin-left: 0;
+        padding-bottom: 40px;
     }
 
     .Payslips {
@@ -3060,7 +3077,6 @@ select#cars {
     .payhead {
         margin-top: -52px;
 
-
     }
 
     .formimg1 {
@@ -3068,8 +3084,16 @@ select#cars {
     }
 
     .Generate {
-        padding: 11px 21px;
+        padding: 11px 20px !important;
         margin-bottom: 10px;
+        display: flex !important;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        margin: 0px !important;
+        max-width: 300px;
+        margin: 0 auto !important;
+        font-size: 16px !important;
     }
 
     .paytext {
@@ -3207,9 +3231,7 @@ select#cars {
         font-size: 18px !important;
     }
 
-    h1.pt-5 {
-        font-size: 20px !important;
-    }
+
 
     .box-content h6 {
         font-size: 20px;
@@ -3311,6 +3333,16 @@ select#cars {
         left: 4px;
         font-weight: 200;
     }
+    .fbicon{
+        width: 35px;
+        font-size: 14px;
+        padding: 8px;
+    }
+    .socialicon{
+        width: 35px;
+        font-size: 14px;
+        padding: 8px;
+    }
 
     .add {
         font-size: 11px !important;
@@ -3402,11 +3434,6 @@ select#cars {
         margin-top: 7px;
     }
 
-    .earnbtn {
-        /* margin-top: 1px; */
-        /* margin-bottom: 10px; */
-
-    }
 
     .earnbtn2 {
         font-size: 24px;
@@ -3420,21 +3447,6 @@ select#cars {
     .formimg1 {
         width: 362px;
         margin-left: 16px;
-    }
-
-    .Generate {
-        font-family: serif;
-        width: none;
-
-        border-radius: 63px;
-        background-color: #ff0000;
-        display: table-cell;
-        font-weight: 600;
-        margin: auto;
-        font-size: 19px;
-        color: white;
-        padding: 11px 21px;
-        margin-bottom: 10px;
     }
 
     .payimg2 {
@@ -3516,19 +3528,22 @@ select#cars {
     }
 
     li.mt-2 {
-        font-size: 15px !important;
+        font-size: 12px !important;
     }
 
     .WithPaystubX {
-        font-size: 20px !important;
+        font-size: 17px !important;
     }
 
     .Createpay {
-        font-size: 20px !important;
+        font-size: 17px !important;
     }
 
     .Show {
-        font-size: 20px !important;
+        font-size: 17px !important;
+    }
+    .smallfont{
+        font-size: 17px !important;
     }
 
     .mt-5.ready {
@@ -3661,4 +3676,18 @@ select#cars {
         color: white;
         width: 38px;
     }
+    .fbicon{
+        width: 33px;
+        font-size: 13px;
+        padding: 8px;
+    }
+    .socialicon{
+        width: 33px;
+        font-size: 13px;
+        padding: 8px;
+    }
+    .container.footer-icons {
+        padding: 0;
+    }
+
 }

@@ -56,14 +56,7 @@
             </div>
         </div>
     </div>
-
-
-
-
-
-
     <div style="background-color: #e9e6e6;">
-
         <div class="row">
             <div class="col-lg-6">
                 <div class="row">
@@ -71,13 +64,11 @@
                     <div class="col-lg-9 col-md-12 pl-5">
                         <div class="mt-5">
 
-                           <h2> Use Paystubx for end-to-end Global Payroll</br> Process Management</h2>
+                            <h2> Use Paystubx for end-to-end Global Payroll</br> Process Management</h2>
                         </div>
                         <div style="font-size: 21px;font-weight: 200;">
                             With Paystubx you can customize your own Global Paystub</br> or payroll:
                         </div>
-
-
                         <div class="mt-2">
                             <ul style="    font-size: 19px;font-weight: 300;">
 
@@ -89,7 +80,6 @@
                                 <li class="mt-3">Payslip Team's Support</li>
                             </ul>
                         </div>
-
                         <div class="mt-2" style=" font-size:25px;">
 
                             Want to generate professional paystubs?
@@ -98,23 +88,19 @@
                             We offer a wide variety of sample paystub templates to suit</br> your needs!
                         </div>
                         <div class=" pt-5">
-                            <a class="btn btn-lg  mt-2 p-2 btn-danger Generate " href="{{ route('global.payStub') }}">Generate
+                            <a class="btn btn-lg  mt-2 p-2 btn-danger Generate "
+                                href="{{ route('global.payStub') }}">Generate
                                 Paystub
                                 Now</a>
                         </div>
-
-
                     </div>
                 </div>
             </div>
-
             <div class="col-lg-6">
-
                 <div class="row justify-contetn-center">
                     <div class="col-lg-10">
                         <div class="text-center">
                             <div class="mt-5" style="font-size:30px;font-family: serif;padding-left: 10px;">
-
                                 More Time For You. Less Time on Payroll and Taxes.
                             </div>
                         </div>
@@ -163,109 +149,74 @@
                                 </p>
 
                             </ul>
-
-
-
                         </div>
-
-
-
                     </div>
-
                 </div>
-
             </div>
-
-
             <div class="container text-center">
                 <div class="mt-5 thousand" style="font-size: xx-large;
                  font-weight: 700;">
-                   <h2 >Thousands of businesses have created professional paystubs with Paystub<span
-                        class="text-danger">x</span><br>
-                    Select the template that best suits your needs.</h2>
-
+                    <h2>Thousands of businesses have created professional paystubs with Paystub<span
+                            class="text-danger">x</span><br>
+                        Select the template that best suits your needs.</h2>
                 </div>
-
             </div>
         </div>
-
         <div class="row mb-3 justify-content-center">
             <div class="col-lg-2"></div>
             <div class="col-md-8 my-5">
                 <div class="box-usa2">
-                <div class=" box-usa">
-
-                    <div class="d-flex justify-content-between mb-3">
-                        <div class="col-md-5 mt-5 text-center">
-                            <h6 class="basic1">BASIC TEMPLATES</h6>
-                            <div class="mt-4">
-                                {{-- <i class="fa fa-angle-down down1"></i> --}}
-                                <div class="input-group mmenu mb-3" style="margin: auto;">
-                                    <select class="form-control dropdown1 bt_id" style="border-right:none">
-                                        <option selected=""> --- Select Basic Templates --- </option>
-                                        @foreach ($basicType ?? [] as $data)
-                                            <option value="{{ $data->title }}" data-src="{{ $data->images->file }}">
-                                                {{ $data->title }}
-                                            </option>
-                                        @endforeach
-                                    </select>
-                                    <i class="fa fa-eye-slash basicTem uk-eye" data-target="#openEye" data-toggle="modal"
-                                        style="font-size: 39px; position:relative;left:10px;"></i>
-
-
-
+                    <div class=" box-usa">
+                        <div class="d-flex justify-content-between mb-3">
+                            <div class="col-md-5 mt-5 text-center">
+                                <h6 class="basic1">BASIC TEMPLATES</h6>
+                                <div class="mt-4">
+                                    {{-- <i class="fa fa-angle-down down1"></i> --}}
+                                    <div class="input-group mmenu mb-3" style="margin: auto;">
+                                        <select class="form-control dropdown1 bt_id" style="border-right:none">
+                                            <option selected=""> --- Select Basic Templates --- </option>
+                                            @foreach ($basicType ?? [] as $data)
+                                                <option value="{{ $data->title }}" data-src="{{ $data->images->file }}">
+                                                    {{ $data->title }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                        <i class="fa fa-eye-slash basicTem uk-eye" data-target="#openEye"
+                                            data-toggle="modal" style="font-size: 39px; position:relative;left:10px;"></i>
+                                    </div>
                                 </div>
-
-
                             </div>
+                            <div class="col-md-2  text-center sh">
+                                <!-- <div style="height:240px;-webkit-box-shadow: 9px 0 4px -4px #999, 0px 0 4px -4px #999;">
 
-
-                        </div>
-                        <div class="col-md-2  text-center sh">
-                            <!-- <div style="height:240px;-webkit-box-shadow: 9px 0 4px -4px #999, 0px 0 4px -4px #999;">
-
-                                    </div> -->
-                            <img src="images/hrpng.png" style="height: 200px;">
-                        </div>
-
-                        <div class="col-md-5 mt-5 text-center">
-                            <h6 class="basic1">ADVANCED TEMPLATES</h6>
-                            <div class="mt-4">
-                                {{-- <i class="fa fa-angle-down down1"></i> --}}
-                                <div class="input-group mmenu mb-3" style="margin: auto;">
-                                    <select class="form-control dropdown1 at_id" style="border-right:none">
-                                        <option selected=""> --- Select Advance Template --- </option>
-                                        @foreach ($advanceType ?? [] as $data)
-                                            <option value="{{ $data->title }}" data-src="{{ $data->images->file }}">
-                                                {{ $data->title }}
-                                            </option>
-                                        @endforeach
-                                    </select>
-                                    <i class="fa fa-eye-slash advanceTem uk-eye" data-target="#openEye" data-toggle="modal"
-                                        style="font-size: 39px; position:relative;left:10px;"></i>
-
-
-
+                                            </div> -->
+                                <img src="images/hrpng.png" style="height: 200px;">
+                            </div>
+                            <div class="col-md-5 mt-5 text-center">
+                                <h6 class="basic1">ADVANCED TEMPLATES</h6>
+                                <div class="mt-4">
+                                    {{-- <i class="fa fa-angle-down down1"></i> --}}
+                                    <div class="input-group mmenu mb-3" style="margin: auto;">
+                                        <select class="form-control dropdown1 at_id" style="border-right:none">
+                                            <option selected=""> --- Select Advance Template --- </option>
+                                            @foreach ($advanceType ?? [] as $data)
+                                                <option value="{{ $data->title }}" data-src="{{ $data->images->file }}">
+                                                    {{ $data->title }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                        <i class="fa fa-eye-slash advanceTem uk-eye" data-target="#openEye"
+                                            data-toggle="modal" style="font-size: 39px; position:relative;left:10px;"></i>
+                                    </div>
                                 </div>
-
-
                             </div>
-
-
                         </div>
                     </div>
-
                 </div>
-                </div>
-
-
             </div>
             <div class="col-lg-2"></div>
-
         </div>
-
     </div>
-
     <div class="container" style="max-width:1500px;">
         <div class="row">
             <div class="col-lg-7 justify-content-center">
@@ -309,27 +260,23 @@
                             click "Generate pay stub" to receive your free
                             pay stub</li>
                     </ol>
-
                 </div>
             </div>
             <div class="col-lg-5">
                 <img src="images/globle/yoga.gif" class="w-100">
                 <div class="mt-2 d-flex ">
-                    <a class="btn btn-lg  mt-2 mb-4 p-2 btn-danger Generate " href="{{ route('global.payStub') }}">Generate
+                    <a class="btn btn-lg  mt-2 mb-4 p-2 btn-danger Generate "
+                        href="{{ route('global.payStub') }}">Generate
                         Paystub
                         Now</a>
                 </div>
             </div>
-
         </div>
     </div>
-
     <div class="row saveTime">
         <div class="col-lg-6 " style="background: #03395d;">
             <img class="w-100" src="images/globle/image3s.jpeg">
-
         </div>
-
         <div class="col-lg-6 pt-2 container justify-content-center pl-5">
             <h4 style="font-family:'sans-serif">
                 <b>
@@ -339,11 +286,13 @@
             <h4 style="font-family:'sans-serif">
                 <b> Save Money</b>
             </h4>
-            <p style="font-size:18px; line-height:2em;">Manage payroll yourself and save while doing it. See Payroll Pricing </p>
+            <p style="font-size:18px; line-height:2em;">Manage payroll yourself and save while doing it. See Payroll
+                Pricing </p>
             <h4 style="font-family:'sans-serif">
                 <b> Happy Employees</b>
             </h4>
-            <p style="font-size:18px; line-height:2em;">Pay employees accurately and on time to increase their productivity.</p>
+            <p style="font-size:18px; line-height:2em;">Pay employees accurately and on time to increase their
+                productivity.</p>
             <h4 style="font-family:'sans-serif">
                 <b> 100% Accuracy</b>
             </h4>
@@ -358,24 +307,20 @@
             <p style="font-size:18px; line-height:1em;">Improve the efficiency of your company and employees.
             </p>
         </div>
-
     </div>
-
-
     <div class="row" style="background:#2c2b69;">
         <div class="col-12 container my-5 text-justify text-center text-white">
             <div class=" text-justify text-center text-white">
                 <h1>Generate 100% Legal UK Payslips</h1>
                 <div class="my-3 d-flex">
-                    <a class="btn btn-lg  btn-danger Generate " href="{{ route('global.payStub') }}">Generate Paystub Now</a>
+                    <a class="btn btn-lg  btn-danger Generate " href="{{ route('global.payStub') }}">Generate Paystub
+                        Now</a>
                 </div>
                 <h2>Simple as ABC</h2>
             </div>
 
         </div>
     </div>
-
-
     <script>
         $('.basicTem').click(function() {
             var imageattr = $('option:selected', '.bt_id').attr('data-src');
