@@ -89,11 +89,11 @@
                         </tr>
                         <tr>
                             <td>Basic Pay</td>
-                            <td><b>4567</b></td>
+                            <td><b>{{ number_format($requestData['taxable_gross_pay'],2) }}</b></td>
                         </tr>
                         <tr>
                             <td><b>Total Payment</b></td>
-                            <td><b>4567</b></td>
+                            <td><b>{{ number_format($requestData['taxable_gross_pay'],2) }}</b></td>
                         </tr>
                         <tr>
                             <th style="font-size: 15px; text-align:center;"><b>Deductions</b></th>

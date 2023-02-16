@@ -28,6 +28,7 @@ class Template extends Model
             $earning = [];
             $rate = [];
             $hours = [];
+            $total = [];
             $taxes = [];
             $taxes_rate = [];
             $requestData = $request->all();
@@ -35,10 +36,12 @@ class Template extends Model
                 $earning[] = $d['earning'];
                 $rate[] = $d['rate'];
                 $hours[] = $d['hours'];
+                $total[] = $d['total'];
             }
             $requestData['earning'] = $earning;
             $requestData['rate'] = $rate;
             $requestData['hours'] = $hours;
+            $requestData['total'] = $total;
 
             // ======== tax ========
             foreach ($request->tax ?? [] as $d) {
