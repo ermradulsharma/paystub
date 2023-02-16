@@ -50,7 +50,7 @@
                 <div>
                     <button class="see-sample2">SEE SAMPLE</button>
                 </div>
-                <a href="{{ url('/') }}"><img class="w-100 " src="images/Create me.webp"></a>
+                <a class="" href="{{ url('/') }}"><img class="w-100 " src="images/Create me.webp"></a>
             </div>
 
         </div>
@@ -68,6 +68,27 @@
                     <li class=" mt-2 proof"> Apply for health insurance ✅</li>
                 </ul>
                 <p style="" class="mt-3 smallfont">Generate 100% Legal Pay Stubs in seconds.</p>
+                <img src="images/previewed.png" class="payimg mobile-img">
+                <div class="col-lg-4 mobile-img">
+                    <img src="images/previewed.png" class="payimg mobile-img-desktop">
+                    <div class="paytext">
+                        <p style="" class="smallfont1">TAX FILING HAS NEVER BEEN
+                            EASY
+                        </p>
+                        <p class="text-black text-capitalize smallfont2" style="">Handling
+                            Payroll
+                            Yourself?
+                        </p>
+                        <p class="text-danger smallfont3" style="">You are at the right
+                            place!
+                        </p>
+
+                        <div class="mt-3 gennn">
+                            <a class="btn btn-lg  mt-2 p-2 btn-danger Generate " href="{{ route('usa.payStub') }}">Generate
+                                Paystub Now</a>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="col-lg-5">
                 <h3 class="Createpay"> Create pay stubs for your employees. </h3>
@@ -81,8 +102,8 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-4">
-                <img src="images/previewed.png" class="payimg">
+            <div class="col-lg-4 mobile-img-desktop">
+                <img src="images/previewed.png" class="payimg mobile-img-desktop">
                 <div class="paytext">
                     <p style="" class="smallfont1">TAX FILING HAS NEVER BEEN
                         EASY

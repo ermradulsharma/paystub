@@ -325,6 +325,10 @@
     top: 19px;
     left: 2px;
 }
+img.earnbtn2.lock {
+    top: 10px;
+    left: 12px;
+}
 
 .earnbtn3 {
     font-size: 20px !important;
@@ -974,9 +978,8 @@ select {
 
 }
 
-.text-white {
-    font-family: 'Futura LT';
-    font-size: 17px;
+p.text-white.footer-text {
+    font-size: 17px !important;
 }
 
 .three-box-section {
@@ -1479,6 +1482,12 @@ select#cars {
     text-align: r;
     text-align: right;
 }
+.mobile-img-desktop {
+    display: block;
+}
+.mobile-img {
+    display:none;
+}
 
 
 /* w2 form design end*/
@@ -1526,6 +1535,9 @@ select#cars {
 }
 ul.mt-4 {
     padding: 0px 16px;
+}
+.computer-img {
+    max-width: 800px;
 }
 
 /* template-view end */
@@ -1903,8 +1915,17 @@ ul.mt-4 {
         font-size: 12px !important;
     }
 
-    .earnbtn1 {
-        /* font-size: 10px !important; */
+    h1.display-4 {
+        font-size: 30px;
+    }
+    .mb-4.canadah4 {
+        font-size: 25px;
+    }
+    h2.ml-3.canadah2 {
+        font-size: 30px;
+    }
+    h1.canadah1 {
+        font-size: 35px;
     }
 
     .create-container li {
@@ -1912,8 +1933,7 @@ ul.mt-4 {
     }
 
     .ukimg1 {
-        background-position-x: left;
-        left: -119px;
+        padding: 0px !important;
     }
 
     .mainhead {
@@ -2177,6 +2197,12 @@ ul.mt-4 {
         width: 95%;
         font-size: 25px;
     }
+    .mobile-img-desktop {
+        display: none;
+    }
+    .mobile-img {
+        display: block;
+    }
 
     .w2form-no {
         max-width: 100px;
@@ -2205,7 +2231,12 @@ ul.mt-4 {
     input.input-uk.text-center.taxePays {
         width: 95%;
     }
-
+    img.payimg.mobile-img {
+        width: 70%;
+    }
+    .payimg2 {
+        width: 70% !important;
+    }
 
     .inputbox2:before {
         right: 0;
@@ -2213,6 +2244,9 @@ ul.mt-4 {
 
     input.input-pie-box.input {
         max-width: 84%;
+    }
+    .computer-img {
+       margin-top: 30px;
     }
 
     textarea#w3review {
@@ -2249,7 +2283,22 @@ ul.mt-4 {
         padding: 4px 8px;
         font-size: 11px;
     }
-
+    .mainhead {
+        text-align: center !important;
+        padding: 0;
+    }
+    .mt-5.pt-3.pl-5.uk-btn {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px !important;
+        padding: 0 !important;
+        margin-bottom: 20px;
+    }
+    .mt-5.pt-3.d-flex.uk-goo {
+        display: flex;
+        justify-content: center;
+        padding: 0 !important;
+    }
 
 
     .col-set1 {
@@ -2300,7 +2349,9 @@ ul.mt-4 {
         left: 9px;
     }
 
-
+    .Createpay {
+        padding-top:20px;
+    }
 
     .can-p {
         font-size: 19px !important;
@@ -2319,10 +2370,7 @@ ul.mt-4 {
         height: 134px;
     }
 
-    .mainhead {
-        padding: 0px 0px 0px 0px;
-        text-align: left !important;
-    }
+
 
     .tickbox {
         width: 20px;
@@ -2352,7 +2400,7 @@ ul.mt-4 {
     .text-white {
         text-align: center;
         margin-top: 4px;
-        font-size: 17px;
+
     }
 
     .text-padding {
@@ -2370,6 +2418,9 @@ ul.mt-4 {
     .flex-row {
         max-width: 210px;
         margin: 0 auto;
+    }
+    img.my-2.pt-1.imguk {
+        width: 700px ;
     }
 
     .box-usa {
@@ -2448,7 +2499,7 @@ ul.mt-4 {
     }
 
     .paytext {
-        margin-left: 85px;
+        margin-left: 0px !important;
     }
 
     .payimg {
@@ -2536,6 +2587,7 @@ ul.mt-4 {
         text-align: center !important;
         max-width: 100%;
         font-size: 27px;
+        margin-top:0px;
     }
 
     .text-center2 {
@@ -2571,9 +2623,7 @@ ul.mt-4 {
         font-size: 30px;
     }
 
-    .mainhead {
-        text-align: left !important;
-    }
+
 
     .createbtn2 {
         padding: 0px 62px;
@@ -2691,6 +2741,16 @@ ul.mt-4 {
         border: unset;
         display: unset;
 
+
+    }
+    .ukp {
+        font-size: 22px;
+    }
+    .uktext {
+        font-size: 22px !important;
+    }
+    li.mt-1.ukli {
+        font-size: 16px;
     }
 
     .col-set1 {
@@ -2712,7 +2772,21 @@ ul.mt-4 {
     li.mt-2 {
         font-size: 13px !important;
     }
-
+    .mt-5.pt-3 {
+        margin-top: 0 !important;
+    }
+    .mt-5 {
+        margin-top: 15px !important;
+    }
+    .col-md-6.text-left.mb-5 {
+        margin-bottom: 10px !important;
+    }
+    .mt-5.d-flex.pt-5.goggle {
+        padding: 0 !important;
+    }
+    .row.py-5.justify-content-center {
+        padding-bottom: 10px !important;
+    }
     .pay-outer {
         padding: 0;
     }
@@ -2742,6 +2816,12 @@ ul.mt-4 {
     .col-md-4.mt-3.text-center h2 {
         font-size: 20px !important;
     }
+    img.storbtn.ml-5 {
+        margin-left: 20px !important;
+    }
+    .mt-5.d-flex.pt-5.top-gogle {
+        justify-content: center;
+    }
 
     img.image-no {
         width: 60px !important;
@@ -2770,7 +2850,49 @@ ul.mt-4 {
         padding: 10px;
 
     }
-    li.mt-2
+    h1.display-4 {
+        font-size: 23px !important;
+        text-align: center;
+    }
+    p.paragraph {
+        font-size: 16px !important;
+        text-align: center;
+        line-height: 1.3;
+    }
+    .mb-4.canadah4 {
+        font-size: 20px;
+        line-height: 1.4;
+        text-align: center;
+    }
+    h2.ml-3.canadah2 {
+        font-size: 23px;
+        text-align: center;
+    }
+    h2.ml-3.canadah2 {
+        font-size: 15px !important;
+    }
+    .code {
+        padding: 0px;
+    }
+    .canada-btn {
+       position: relative;
+       top:20px;
+        padding: 10px 20px !important;
+        max-width: 210px !important;
+    }
+    ul.mt-2 {
+        font-size: 16px !important;
+        line-height: 1.8 !important;
+    }
+    h1.canadah1 {
+        font-size: 23px;
+    }
+    p.canadap {
+        font-size: 16px;
+    }
+    h2.mb-5 {
+        font-size: 25px;
+    }
 
 
     .d-flex {
@@ -2923,9 +3045,10 @@ ul.mt-4 {
     }
 
     .text-white {
-        font-size: 19px;
+        font-size: 25px !important;
         margin-bottom: 10px;
         margin-top: 4px;
+        line-height: 1.5 !important;
     }
 
     .box-border-outer {
@@ -3035,14 +3158,14 @@ ul.mt-4 {
         font-weight: 200;
         margin-top: 0px;
         margin-left: 0;
-        padding-bottom: 40px;
+        padding-bottom: 100px;
     }
 
     .Payslips {
         font-family: serif;
-        font-size: 19px;
-        line-height: 2em;
+        font-size: 15px !important;
         padding: 0;
+        line-height: 1.6 !important;
     }
 
     .CreatePaystub {
@@ -3109,7 +3232,7 @@ ul.mt-4 {
     }
 
     .payimg2 {
-        width: 100%;
+        width: 100% !important;
         margin: 10px auto 0px 0px;
         height: 60%;
     }
@@ -3137,6 +3260,7 @@ ul.mt-4 {
 
     .can-p1 {
         font-size: 16px !important;
+        margin-bottom: 10px !important;
     }
 
     .ukimg1 {
@@ -3145,12 +3269,12 @@ ul.mt-4 {
     }
 
     .imguk {
-        width: 321px;
+        width: 305px !important;
     }
 
     .storbtn {
-        width: 153px !important;
-        height: 53px !important;
+        width: 120px !important;
+        height: 40px !important;
         margin-bottom: 0;
     }
 
@@ -3197,7 +3321,7 @@ ul.mt-4 {
     }
 
     .uk-eye {
-        font-size: 36px;
+        font-size: 25px !important;
     }
 
     .uk-lable {
@@ -3320,7 +3444,7 @@ ul.mt-4 {
     }
 
     .text-white {
-        font-size: 18px;
+
         margin-bottom: 10px;
         margin-top: 4px;
     }
@@ -3426,14 +3550,31 @@ ul.mt-4 {
     }
 
     .canadap {
-        font-size: 18px;
+        font-size: 15px;
         font-weight: none;
     }
 
     .statementbtn {
         margin-top: 7px;
     }
-
+    h1.display-4 {
+        font-size: 16px !important;
+    }
+    h2.mb-5 {
+        font-size: 15px;
+    }
+    .mb-4.canadah4 {
+        font-size: 17px;
+    }
+    .mb-4.canadah4 {
+        font-size: 17px;
+    }
+    .mb-4.canadah4 {
+        font-size: 17px;
+    }
+    h1.canadah1 {
+        font-size: 15px;
+    }
 
     .earnbtn2 {
         font-size: 24px;
@@ -3451,7 +3592,7 @@ ul.mt-4 {
 
     .payimg2 {
         position: relative;
-        width: 100%;
+        width: 100% !important;
         left: 0px;
         height: 50%;
     }
@@ -3492,8 +3633,9 @@ ul.mt-4 {
     }
 
     .ukimg1 {
-        background-position-x: left;
-        left: 2px;
+
+        left: 0;
+
     }
 
     .box-usa {
@@ -3688,6 +3830,9 @@ ul.mt-4 {
     }
     .container.footer-icons {
         padding: 0;
+    }
+    .ukimg1 {
+       left:-25px;
     }
 
 }

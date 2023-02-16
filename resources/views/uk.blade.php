@@ -20,7 +20,7 @@
                                 stubs online. Generate, print and use. It’s that<br> simple!
                             </div>
                         </div>
-                        <div class="mt-5 pt-3 pl-5" style="">
+                        <div class="mt-5 pt-3 pl-5 uk-btn" style="">
                             <a class="Generate btn-lg btn" href="{{ route('uk.payStub') }}">Generate Paystub Now</a>
                         </div>
                         <div class="mt-5 pt-3 d-flex uk-goo" style="padding: 25px 49px; ">
@@ -30,7 +30,7 @@
                                     src="images/Download_on_the_App_Store_Badge.webp"></a>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-6 ukimg1">
+                    <div class="col-lg-6 col-md-12 col-sm-12 ukimg1">
                         <div class="">
                             <img class=" my-2 pt-1 imguk" src="images/uk/payslip_uk.png ">
                         </div>
@@ -107,12 +107,12 @@
     <div class="row" style="background:#2c2b69;">
         <div class="col-12 my-5 text-justify text-center text-white">
             <div class=" text-justify text-center text-white">
-                <h1 style="font-family: 'Futura LT';">Generate 100% Legal UK Payslips</h1>
+                <h1 class="uk-big-heading" style="font-family: 'Futura LT';">Generate 100% Legal UK Payslips</h1>
                 <div class="my-3 d-flex">
                     <a class="Generate btn-lg btn" href="{{ route('uk.payStub') }}">Generate Paystub
                         Now</a>
                 </div>
-                <h2 style="font-family: 'Futura LT';">Simple as ABC</h2>
+                <h2 class="uk-big-heading" style="font-family: 'Futura LT';">Simple as ABC</h2>
             </div>
         </div>
     </div>

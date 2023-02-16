@@ -361,9 +361,7 @@
 }
 
 @media screen and (max-width: 768px) {
-    .imguk {
-        width: 500px;
-    }
+
 
     .ukimg1 {
         background-position-x: left;
@@ -381,7 +379,16 @@
         height: 43px;
     }
 
-
+    h1.uk-big-heading {
+        font-size: 20px;
+    }
+    h2.uk-big-heading {
+        font-size: 20px;
+    }
+    .ukh1 {
+        font-size: 20px !important;
+        font-weight: 800;
+    }
 
     .Payslips {
         font-size: 20px;
