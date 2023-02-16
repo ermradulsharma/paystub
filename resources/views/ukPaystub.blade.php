@@ -68,11 +68,9 @@
                                         </div>
                                     </div>
                                 </div>
-
                                 <div class="col-md-2  text-center sh" hidden>
                                     <img src="images/hrpng.png" style="height: 200px;">
                                 </div>
-
                                 <div class="col-md-5 col-sm-12 mt-5 text-center" hidden>
                                     <h6 style="margin-left:-23px;font-weight: 900;" class="add">ADVANCED TEMPLATES</h6>
                                     <div class="mt-4">
@@ -104,7 +102,6 @@
                     </div>
                 </div>
             </div>
-
             <div>
                 <h5 class="box-h5">Company Info</h5>
                 <div class="row mb-3">
@@ -129,7 +126,6 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -142,86 +138,107 @@
 
                                 <label for="cname" class="lable">EMPLOYEE NAME <span style="color:red;">*</span>
                                 </label>
-                                <input type="text" id="cname" name="cname" placeholder="Your Employer &amp; Company Name" class="w-100 p-2 text-center" style="font-size:14px;">
+                                <input type="text" id="cname" name="cname"
+                                    placeholder="Your Employer &amp; Company Name" class="w-100 p-2 text-center"
+                                    style="font-size:14px;">
                             </div>
 
                             <div class="col-md-6 mt-1">
-                                <label for="company_address" class="lable text-center">EMPLOYEE ADDRESS 1 <span style="color:red;">*</span></label>
-                                <input type="text" id="company_address" name="company_address" placeholder="5 Throgmorton St, London EC2N 2AD, United Kingdom" class="w-100 p-2 text-center" style="font-size:14px;">
+                                <label for="company_address" class="lable text-center">EMPLOYEE ADDRESS 1 <span
+                                        style="color:red;">*</span></label>
+                                <input type="text" id="company_address" name="company_address"
+                                    placeholder="5 Throgmorton St, London EC2N 2AD, United Kingdom"
+                                    class="w-100 p-2 text-center" style="font-size:14px;">
                             </div>
 
                             <div class="col-md-6 mt-1">
 
                                 <label for="cname" class="lable">STREET ADDRESS 2</label>
-                                <input type="text" id="cname" name="cname" placeholder="Your Employer &amp; Company Name" class="w-100 p-2 text-center" style="font-size:14px;">
+                                <input type="text" id="cname" name="cname"
+                                    placeholder="Your Employer &amp; Company Name" class="w-100 p-2 text-center"
+                                    style="font-size:14px;">
                             </div>
 
                             <div class="col-md-6 mt-1">
-                                <label for="company_address" class="lable text-center">POSTCODE<span style="color:red;">*</span></label>
-                                <input type="text" id="company_address" name="company_address" placeholder="5 Throgmorton St, London EC2N 2AD, United Kingdom" class="w-100 p-2 text-center" style="font-size:14px;">
+                                <label for="company_address" class="lable text-center">POSTCODE<span
+                                        style="color:red;">*</span></label>
+                                <input type="text" id="company_address" name="company_address"
+                                    placeholder="5 Throgmorton St, London EC2N 2AD, United Kingdom"
+                                    class="w-100 p-2 text-center" style="font-size:14px;">
                             </div>
-
-
                         </div>
                         <div style="padding:0 !important;" class="row p-3">
-                            <div class="col-lg-5" style="color: black; text-transform:uppercase;font-size:30px; font-weight:600;">
+                            <div class="col-lg-5"
+                                style="color: black; text-transform:uppercase;font-size:30px; font-weight:600;">
                                 <p class="top-heading">Earning Statement</p>
                                 <div style="border:3px solid #ff5722;" class=" pay-outer mb-3">
                                     <div class="ukpay-inner ">
                                         <div class="row">
                                             <div style="margin:0 !important;" class="col-md-4 mt-3 pl-0">
-                                                <label for="cname" class="lable uk-lable ">Pay Start <span style="color:red;">*</span>
+                                                <label for="cname" class="lable uk-lable ">Pay Start <span
+                                                        style="color:red;">*</span>
                                                 </label>
-                                                <input type="text" id="cname" name="cname" class="input-uk" value="12-11-2022" style="font-size:14px;">
+                                                <input type="text" id="cname" name="cname" class="input-uk"
+                                                    value="12-11-2022" style="font-size:14px;">
                                             </div>
                                             <div style="margin:0 !important;" class="col-md-4 mt-3 pl-0">
-                                                <label for="cname" class="lable uk-lable">Pay End <span style="color:red;">*</span>
+                                                <label for="cname" class="lable uk-lable">Pay End <span
+                                                        style="color:red;">*</span>
                                                 </label>
-                                                <input type="text" id="cname" name="cname" class="input-uk" value="09-12-2022" style="font-size:14px;">
+                                                <input type="text" id="cname" name="cname" class="input-uk"
+                                                    value="09-12-2022" style="font-size:14px;">
                                             </div>
                                             <div style="margin:0 !important;" class="col-md-4 mt-3 pl-0">
-                                                <label for="cname" class="lable uk-lable">Pay Date <span style="color:red;">*</span>
+                                                <label for="cname" class="lable uk-lable">Pay Date <span
+                                                        style="color:red;">*</span>
                                                 </label>
-                                                <input type="text" id="cname" name="cname" class="input-uk" value="10-12-2022" style="font-size:14px;">
+                                                <input type="text" id="cname" name="cname" class="input-uk"
+                                                    value="10-12-2022" style="font-size:14px;">
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="ukpay-inner1">
                                                 <div class="col-lg-8 mt-3 p-0">
-                                                    <label for="cname" class="lable uk-lable">Pay Type<span style="color:red;">*</span>
+                                                    <label for="cname" class="lable uk-lable">Pay Type<span
+                                                            style="color:red;">*</span>
                                                     </label>
-                                                    <input type="text" id="cname" name="cname" class="input-uk" value="2 Weekly" style="font-size:14px;">
+                                                    <input type="text" id="cname" name="cname" class="input-uk"
+                                                        value="2 Weekly" style="font-size:14px;">
                                                 </div>
                                                 <div class="col-lg-8 mt-3 p-0">
-                                                    <label for="cname" class="lable uk-lable">Payment Mehtod<span style="color:red;">*</span>
+                                                    <label for="cname" class="lable uk-lable">Payment Mehtod<span
+                                                            style="color:red;">*</span>
                                                     </label>
-                                                    <input type="text" id="cname" name="cname" class="input-uk" value="BACS" style="font-size:14px;">
+                                                    <input type="text" id="cname" name="cname" class="input-uk"
+                                                        value="BACS" style="font-size:14px;">
                                                 </div>
                                                 <div class="col-lg-8 mt-3 p-0">
-                                                    <label for="cname" class="lable uk-lable">Tax Code<span style="color:red;">*</span>
+                                                    <label for="cname" class="lable uk-lable">Tax Code<span
+                                                            style="color:red;">*</span>
                                                     </label>
-                                                    <input type="text" id="cname" name="cname" class="input-uk" value="1257L" style="font-size:14px;">
+                                                    <input type="text" id="cname" name="cname" class="input-uk"
+                                                        value="1257L" style="font-size:14px;">
                                                 </div>
                                                 <div class="col-lg-8 mt-3 p-0">
-                                                    <label for="cname" class="lable uk-lable">NI Number<span style="color:red;">*</span>
+                                                    <label for="cname" class="lable uk-lable">NI Number<span
+                                                            style="color:red;">*</span>
                                                     </label>
-                                                    <input type="text" id="cname" name="cname" class="input-uk" value="SC 56 52 10 C" style="font-size:14px;">
+                                                    <input type="text" id="cname" name="cname" class="input-uk"
+                                                        value="SC 56 52 10 C" style="font-size:14px;">
                                                 </div>
                                                 <div class="col-lg-8 mt-3 p-0 mb-3">
-                                                    <label for="cname" class="lable uk-lable">NI Table Letter<span style="color:red;">*</span> </label>
-                                                    <input type="text" id="cname" name="cname" class="input-uk" value="A" style="font-size:14px;">
+                                                    <label for="cname" class="lable uk-lable">NI Table Letter<span
+                                                            style="color:red;">*</span> </label>
+                                                    <input type="text" id="cname" name="cname" class="input-uk"
+                                                        value="A" style="font-size:14px;">
                                                 </div>
                                             </div>
-
                                         </div>
-
-
-
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="col-lg-7" style="color: black; text-transform:uppercase;font-size:30px; font-weight:600;">
+                            <div class="col-lg-7"
+                                style="color: black; text-transform:uppercase;font-size:30px; font-weight:600;">
                                 <p class="top-heading">Payments</p>
                                 <div style="border:3px solid #ff5722;padding-bottom:62px;" class=" pay-outer">
                                     <div class="ukpay-inner ">
@@ -236,34 +253,40 @@
                                             </div>
                                             <div class="col-lg-4"></div>
                                             <div class="col-lg-4"></div>
-
                                         </div>
                                         <div class="row">
                                             <div class=" col-lg-4 col-md-12 margin-bottom  mt-2  px-lg-2 px-0 ">
                                                 <button type="button" class="statementbtn">EARNING</button>
                                                 <div class="margin-bottom">
-                                                    <input class="input-uk mt-4 mb-3 text-center" type="text" name="earning[]" value="Regular" id="earning_0" data-id="0">
+                                                    <input class="input-uk mt-4 mb-3 text-center" type="text"
+                                                        name="earning[]" value="Regular" id="earning_0" data-id="0">
                                                 </div>
                                                 <div id="addEarning"></div>
                                             </div>
                                             <div class=" col-lg-4 col-md-12 margin-bottom  mt-2  px-lg-2 px-0">
                                                 <button type="button" class="statementbtn">RATE</button>
                                                 <div class="margin-bottom">
-                                                    <input type="text" name="rate[]" class="input-uk removeData mt-4 mb-3 text-center calculation rate" value="" id="rate_0" data-id="0">
+                                                    <input type="text" name="rate[]"
+                                                        class="input-uk removeData mt-4 mb-3 text-center calculation rate"
+                                                        value="" id="rate_0" data-id="0">
                                                 </div>
                                                 <div id="addEarning"></div>
                                             </div>
                                             <div class=" col-lg-4 col-md-12 margin-bottom  mt-2  px-lg-2 px-0">
                                                 <button type="button" class="statementbtn">HOUR</button>
                                                 <div class="margin-bottom">
-                                                    <input type="text" name="hours[]" class="input-uk removeData mt-4 mb-3 text-center hours calculation" value="" id="hours_0" data-id="0">
+                                                    <input type="text" name="hours[]"
+                                                        class="input-uk removeData mt-4 mb-3 text-center hours calculation"
+                                                        value="" id="hours_0" data-id="0">
                                                 </div>
                                                 <div id="addEarning"></div>
                                             </div>
                                         </div>
                                         <div class="row mb-3">
                                             <div class="col-xl-4 col-lg-7 col-md-4 mt-2 margin-bottom  px-lg-2 px-0">
-                                                <button type="button" class="add_button input-uk" id="add_earning" style="font-size: 18px !important;"><i class="fa fa-plus-circle pr-2" style="font-size:24px;color:green"></i>Add Earnings</button>
+                                                <button type="button" class="add_button input-uk" id="add_earning"
+                                                    style="font-size: 18px !important;"><i class="fa fa-plus-circle pr-2"
+                                                        style="font-size:24px;color:green"></i>Add Earnings</button>
                                             </div>
                                         </div>
                                     </div>
@@ -277,27 +300,38 @@
                                         <div class="ukpay-inner ">
                                             <div class="row">
                                                 <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
-                                                    <img src="{{ asset('images/lock.png') }}" style="" class="earnbtn2">
-                                                    <input class="input-uk text-center taxes" name="taxes[]" data-id="" data-value="" value="Income Tax">
+                                                    <img src="{{ asset('images/lock.png') }}" style=""
+                                                        class="earnbtn2">
+                                                    <input class="input-uk text-center taxes" name="taxes[]"
+                                                        data-id="" data-value="" value="Income Tax">
                                                 </div>
 
                                                 <div class="col-md-5 col-lg-5 mb-3  px-lg-2 px-0">
-                                                    <input type="text" name="taxes_rate[]" class="input-uk text-center manualTaxTotal" id="taxes_" value="" data-value="">
+                                                    <input type="text" name="taxes_rate[]"
+                                                        class="input-uk text-center manualTaxTotal" id="taxes_"
+                                                        value="" data-value="">
                                                 </div>
                                                 <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
-                                                    <img src="{{ asset('images/lock.png') }}" style="" class="earnbtn2">
-                                                    <input class="input-uk  text-center taxes" name="taxes[]" data-id="" data-value="" value="National Insurance">
+                                                    <img src="{{ asset('images/lock.png') }}" style=""
+                                                        class="earnbtn2">
+                                                    <input class="input-uk  text-center taxes" name="taxes[]"
+                                                        data-id="" data-value="" value="National Insurance">
                                                 </div>
 
                                                 <div class="col-md-5 col-lg-5 mb-3  px-lg-2 px-0">
-                                                    <input type="text" name="taxes_rate[]" class="input-uk  text-center manualTaxTotal" id="taxes_" value="" data-value="">
+                                                    <input type="text" name="taxes_rate[]"
+                                                        class="input-uk  text-center manualTaxTotal" id="taxes_"
+                                                        value="" data-value="">
                                                 </div>
                                                 <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
-                                                    <button style="background-color: #85b7bc; font-weight:300" type="button" class="netpaybtn net_pay">Total Deduction</button>
+                                                    <button style="background-color: #85b7bc; font-weight:300"
+                                                        type="button" class="netpaybtn net_pay">Total Deduction</button>
                                                 </div>
 
                                                 <div class="col-md-5 col-lg-5 mb-0 pb-0   px-lg-2 px-0">
-                                                    <input type="text" name="taxes_rate[]" class="input-uk   text-center manualTaxTotal" id="taxes_" value="" data-value="">
+                                                    <input type="text" name="taxes_rate[]"
+                                                        class="input-uk   text-center manualTaxTotal" id="taxes_"
+                                                        value="" data-value="">
                                                 </div>
                                             </div>
                                         </div>
@@ -306,83 +340,105 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-5" style="color: black; text-transform:uppercase;font-size:30px; font-weight:600;">
+                            <div class="col-lg-5"
+                                style="color: black; text-transform:uppercase;font-size:30px; font-weight:600;">
                                 <p class="top-heading">Total Year To Date</p>
                                 <div style="border:3px solid #ff5722;" class=" pay-outer mb-3">
                                     <div class="ukpay-inner ">
                                         <div class="row">
                                             <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
                                                 <img src="{{ asset('images/lock.png') }}" class="earnbtn2">
-                                                <input class="input-uk text-center taxePays" name="taxes[]" data-id="" data-value="" value="Taxable Gross Pay ">
+                                                <input class="input-uk text-center taxePays" name="taxes[]"
+                                                    data-id="" data-value="" value="Taxable Gross Pay ">
                                             </div>
 
                                             <div class="col-md-5 col-lg-5 mb-3  px-lg-2 px-0">
-                                                <input type="text" name="taxes_rate[]" class="input-uk text-center manualTaxTotal" id="taxes_" value="" data-value="">
+                                                <input type="text" name="taxes_rate[]"
+                                                    class="input-uk text-center manualTaxTotal" id="taxes_"
+                                                    value="" data-value="">
                                             </div>
                                             <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
                                                 <img src="{{ asset('images/lock.png') }}" class="earnbtn2">
-                                                <input class="input-uk  text-center taxes" name="taxes[]" data-id="" data-value="" value="Income Tax">
+                                                <input class="input-uk  text-center taxes" name="taxes[]" data-id=""
+                                                    data-value="" value="Income Tax">
                                             </div>
 
                                             <div class="col-md-5 col-lg-5 mb-3  px-lg-2 px-0">
-                                                <input type="text" name="taxes_rate[]" class="input-uk  text-center manualTaxTotal" id="taxes_" value="" data-value="">
+                                                <input type="text" name="taxes_rate[]"
+                                                    class="input-uk  text-center manualTaxTotal" id="taxes_"
+                                                    value="" data-value="">
                                             </div>
                                             <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
                                                 <img src="{{ asset('images/lock.png') }}" class="earnbtn2">
-                                                <input class="input-uk  text-center taxes" name="taxes[]" data-id="" data-value="" value="Employee NIC">
+                                                <input class="input-uk  text-center taxes" name="taxes[]" data-id=""
+                                                    data-value="" value="Employee NIC">
                                             </div>
 
                                             <div class="col-md-5 col-lg-5 mb-3  px-lg-2 px-0">
-                                                <input type="text" name="taxes_rate[]" class="input-uk  text-center manualTaxTotal" id="taxes_" value="" data-value="">
+                                                <input type="text" name="taxes_rate[]"
+                                                    class="input-uk  text-center manualTaxTotal" id="taxes_"
+                                                    value="" data-value="">
                                             </div>
                                             <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
                                                 <img src="{{ asset('images/lock.png') }}" class="earnbtn2">
-                                                <input class="input-uk  text-center taxes" name="taxes[]" data-id="" data-value="" value="Employee NIC">
+                                                <input class="input-uk  text-center taxes" name="taxes[]" data-id=""
+                                                    data-value="" value="Employee NIC">
                                             </div>
 
                                             <div class="col-md-5 col-lg-5 mb-3  px-lg-2 px-0">
-                                                <input type="text" name="taxes_rate[]" class="input-uk  text-center manualTaxTotal" id="taxes_" value="" data-value="">
+                                                <input type="text" name="taxes_rate[]"
+                                                    class="input-uk  text-center manualTaxTotal" id="taxes_"
+                                                    value="" data-value="">
                                             </div>
                                             <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
-                                                <button style="background-color:#0ec23b; font-weight:300" type="button" class="netpaybtn net_pay">Net Pay</button>
+                                                <button style="background-color:#0ec23b; font-weight:300" type="button"
+                                                    class="netpaybtn net_pay">Net Pay</button>
                                             </div>
 
                                             <div class="col-md-5 col-lg-5 mb-3  px-lg-2 px-0">
-                                                <input type="text" name="taxes_rate[]" class="input-uk  text-center manualTaxTotal" id="taxes_" value="" data-value="">
+                                                <input type="text" name="taxes_rate[]"
+                                                    class="input-uk  text-center manualTaxTotal" id="taxes_"
+                                                    value="" data-value="">
                                             </div>
 
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-7" style="color: black; text-transform:uppercase;font-size:30px; font-weight:600;">
+                            <div class="col-lg-7"
+                                style="color: black; text-transform:uppercase;font-size:30px; font-weight:600;">
                                 <p class="top-heading">Additional Information Here (Note)</p>
                                 <div style="border:3px solid #ff5722;" class=" pay-outer mb-3">
                                     <div class="ukpay-inner ">
                                         <div class="row">
-                                            <div style="padding-bottom:255px;" class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
+                                            <div style="padding-bottom:255px;"
+                                                class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
 
-                                                <input style="color: #7c7370; border-color: #7c7370;" class="input-uk text-center note taxePays" name="taxes[]" data-id="" data-value="" value="Note here (optional) ">
+                                                <input style="color: #7c7370; border-color: #7c7370;"
+                                                    class="input-uk text-center note taxePays" name="taxes[]"
+                                                    data-id="" data-value="" value="Note here (optional) ">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-
                     </div>
                     <div class="row mt-3">
-            <div style="padding:0;" class="col-12 text-center">
-                <div class="d-flex flex-wrap justify-content-between">
-                    <button class="previewbtn text-capitalize viewTempTemplate mb-3 w-sm-100" type="button" id="button1">Preview Your Paystub <i class="fa fa-eye" style="font-size: 30px; margin-left: 7px;"></i></button>
-                    <button type="button" class="emailbtn text-capitalize sendMailButton mb-3 w-sm-100"> <i class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL PAYSTUB <i class="fa fa-download ml-4" style="font-size:24px"></i></button>
+                        <div style="padding:0;" class="col-12 text-center">
+                            <div class="d-flex flex-wrap justify-content-between">
+                                <button class="previewbtn text-capitalize viewTempTemplate mb-3 w-sm-100" type="button"
+                                    id="button1">Preview Your Paystub <i class="fa fa-eye"
+                                        style="font-size: 30px; margin-left: 7px;"></i></button>
+                                <button type="button" class="emailbtn text-capitalize sendMailButton mb-3 w-sm-100"> <i
+                                        class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL PAYSTUB <i
+                                        class="fa fa-download ml-4" style="font-size:24px"></i></button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-                </div>
-            </div>
-        </div>
+    </div>
     </div>
     </form>
     </div>
