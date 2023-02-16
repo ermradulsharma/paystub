@@ -28,7 +28,6 @@
             </div>
             <div class="modal-body">
                 <embed src="" type="" id="tempView" allowtransparency="false" style="background-color : transparent;" frameborder="0" width="100%" height="800">
-                {{-- <iframe src="" id="tempView" allowtransparency="false" style="background-color : transparent;" frameborder="0" width="100%" height="800"></iframe> --}}
             </div>
         </div>
     </div>
@@ -219,6 +218,13 @@
                                             </div>
                                             <div id="addEarning"></div>
                                         </div>
+                                        <div class=" col-lg-4 col-md-12 margin-bottom  mt-2  px-lg-2 px-0 addcurrentTotal" hidden>
+                                            <button type="button" class="statementbtn">Current Total</button>
+                                            <div class="margin-bottom">
+                                                <input class="earnbtn mt-3 text-center currentTotal" type="number" id="total_000" name="total[]" type="text" value="">
+                                            </div>
+                                            <div id="addEarning"></div>
+                                        </div>
                                     </div>
                                     <div class="row mb-3">
                                         <div class="col-xl-4 col-lg-7 col-md-4 mt-2 margin-bottom  px-lg-2 px-0">
@@ -235,29 +241,25 @@
                                     </div>
                                     <div class="ukpay-inner ">
                                         <div class="row">
-                                            @foreach ($deduction as $key => $item)
+
                                             <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
+                                                @foreach ($deduction as $key => $item)
                                                 <img src="{{ asset('images/lock.png') }}" style="" class="earnbtn2">
                                                 <input class="input-uk text-center taxes" name="taxes[]" data-id="00{{ $key }}" data-value="{{ $item->price }}" value="{{ $item->title }}">
+                                                @endforeach
                                             </div>
                                             <div class="col-md-5 col-lg-5 mb-3  px-lg-2 px-0">
+                                                @foreach ($deduction as $key => $item)
                                                 <input class="input-uk text-center" readonly name="taxes_rate[]" id="tax_total_00{{ $key }}">
-                                            </div>
-                                            @endforeach
-                                            {{-- <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
-                                                <img src="{{ asset('images/lock.png') }}" style="" class="earnbtn2">
-                                                <input class="input-uk  text-center taxes" name="taxes[]" data-id="" data-value="" value="National Insurance">
+                                                @endforeach
                                             </div>
 
-                                            <div class="col-md-5 col-lg-5 mb-3  px-lg-2 px-0">
-                                                <input type="text" name="taxes_rate[]" class="input-uk  text-center manualTaxTotal" id="taxes_" value="" data-value="">
-                                            </div> --}}
                                             <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
                                                 <button style="background-color: #85b7bc; font-weight:300" type="button" class="netpaybtn net_pay">Total Deduction</button>
                                             </div>
 
                                             <div class="col-md-5 col-lg-5 mb-0 pb-0   px-lg-2 px-0">
-                                                <input type="text" name="taxes_rate[]" class="input-uk   text-center manualTaxTotal" id="taxes_" value="" data-value="">
+                                                <input type="text" name="deduction_tax" class="input-uk text-center" id="deductions">
                                             </div>
                                         </div>
                                     </div>
@@ -277,7 +279,7 @@
                                         </div>
 
                                         <div class="col-md-5 col-lg-5 mb-3  px-lg-2 px-0">
-                                            <input type="text" name="taxes_rate[]" class="input-uk text-center manualTaxTotal" id="taxes_" value="" data-value="">
+                                            <input type="text" name="current_total" class="input-uk text-center" id="current_total" readonly>
                                         </div>
                                         <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
                                             <img src="{{ asset('images/lock.png') }}" class="earnbtn2">
@@ -308,7 +310,7 @@
                                         </div>
 
                                         <div class="col-md-5 col-lg-5 mb-3  px-lg-2 px-0">
-                                            <input type="text" name="taxes_rate[]" class="input-uk  text-center manualTaxTotal" id="taxes_" value="" data-value="">
+                                            <input type="text" name="net_pay" class="input-uk  text-center" id="net_pay" readonly>
                                         </div>
 
                                     </div>
