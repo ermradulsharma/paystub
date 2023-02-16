@@ -22,10 +22,11 @@ class PayStubController extends Controller
 
     public function ukPayStub()
     {
+        $deduction = Deduction::where('state', 'uk')->orderBy('id', 'asc')->get();
         $basicType = Template::where('type', 'basic')->get();
         $advanceType = Template::where('type', 'advance')->get();
         $stateTaxes = StateTax::get();
-        return view('ukPaystub', compact('basicType', 'advanceType', 'stateTaxes'));
+        return view('ukPaystub', compact('basicType', 'advanceType', 'stateTaxes','deduction'));
     }
 
     public function canadaPayStub()

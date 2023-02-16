@@ -27,14 +27,7 @@ function dayCalculate() {
     var day = pay_start.getDate();
     var month = pay_start.getMonth() + 1;
     var year = pay_start.getFullYear();
-    var pay_start_1 =
-        year +
-        "-" +
-        (("" + month).length < 2 ? "0" : "") +
-        month +
-        "-" +
-        (("" + day).length < 2 ? "0" : "") +
-        day;
+    var pay_start_1 = year + "-" + (("" + month).length < 2 ? "0" : "") + month +  "-" + (("" + day).length < 2 ? "0" : "") + day;
     if (tax_rate == null) {
         $("span").removeClass("d-none");
         $('.tax_rate').focus();
@@ -60,14 +53,7 @@ function date_calculate() {
     var date = pay_start.getDate();
     var month = pay_start.getMonth() + 1;
     var year = pay_start.getFullYear();
-    var pay_start_1 =
-        year +
-        "-" +
-        (("" + month).length < 2 ? "0" : "") +
-        month +
-        "-" +
-        (("" + date).length < 2 ? "0" : "") +
-        date;
+    var pay_start_1 = year + "-" + (("" + month).length < 2 ? "0" : "") + month + "-" + (("" + date).length < 2 ? "0" : "") + date;
 
     var pay_end = new Date($(".pay_end").val());
     var date = pay_end.getDate();
@@ -151,7 +137,7 @@ $(".addTaxField").click(function () {
     $(".addtaxes:last").append(addtaxes);
     $(".addtaxes_rate:last").append(addtaxes_rate);
     $(".addtaxes_ytd:last").append(addtaxes_ytd);
-    
+
     j++;
 
     $(".deduction_other, .deduction_other_ytd").keyup(function () {
