@@ -28,7 +28,6 @@
             </div>
             <div class="modal-body">
                 <embed src="" type="" id="tempView" allowtransparency="false" style="background-color : transparent;" frameborder="0" width="100%" height="800">
-                {{-- <iframe src="" id="tempView" allowtransparency="false" style="background-color : transparent;" frameborder="0" width="100%" height="800"></iframe> --}}
             </div>
         </div>
     </div>
@@ -122,12 +121,12 @@
                         </div>
 
                         <div class="col-md-6 mt-1">
-                            <label for="emp_address_1" class="lable text-center">EMPLOYEE ADDRESS 1 <span style="color:red;">*</span></label>
-                            <input type="text" id="emp_address_1" name="emp_address_1" placeholder="5 Throgmorton St, London EC2N 2AD, United Kingdom" class="w-100 p-2 text-center" style="font-size:14px;">
+                            <label for="emp_street_1" class="lable text-center">EMPLOYEE ADDRESS 1 <span style="color:red;">*</span></label>
+                            <input type="text" id="emp_street_1" name="emp_street_1" placeholder="5 Throgmorton St, London EC2N 2AD, United Kingdom" class="w-100 p-2 text-center" style="font-size:14px;">
                         </div>
                         <div class="col-md-6 mt-1">
-                            <label for="emp_address_2" class="lable">STREET ADDRESS 2</label>
-                            <input type="text" id="emp_address_2" name="emp_address_2" placeholder="Your Employer &amp; Company Name" class="w-100 p-2 text-center" style="font-size:14px;">
+                            <label for="emp_street_2" class="lable">STREET ADDRESS 2</label>
+                            <input type="text" id="emp_street_2" name="emp_street_2" placeholder="Your Employer &amp; Company Name" class="w-100 p-2 text-center" style="font-size:14px;">
                         </div>
 
                         <div class="col-md-6 mt-1">
@@ -219,6 +218,13 @@
                                             </div>
                                             <div id="addEarning"></div>
                                         </div>
+                                        <div class=" col-lg-4 col-md-12 margin-bottom  mt-2  px-lg-2 px-0 addcurrentTotal" hidden>
+                                            <button type="button" class="statementbtn">Current Total</button>
+                                            <div class="margin-bottom">
+                                                <input class="earnbtn mt-3 text-center currentTotal" type="number" id="total_000" name="total[]" type="text" value="">
+                                            </div>
+                                            <div id="addEarning"></div>
+                                        </div>
                                     </div>
                                     <div class="row mb-3">
                                         <div class="col-xl-4 col-lg-7 col-md-4 mt-2 margin-bottom  px-lg-2 px-0">
@@ -235,29 +241,25 @@
                                     </div>
                                     <div class="ukpay-inner ">
                                         <div class="row">
-                                            @foreach ($deduction as $key => $item)
+
                                             <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
+                                                @foreach ($deduction as $key => $item)
                                                 <img src="{{ asset('images/lock.png') }}" style="" class="earnbtn2">
                                                 <input class="input-uk text-center taxes" name="taxes[]" data-id="00{{ $key }}" data-value="{{ $item->price }}" value="{{ $item->title }}">
+                                                @endforeach
                                             </div>
                                             <div class="col-md-5 col-lg-5 mb-3  px-lg-2 px-0">
+                                                @foreach ($deduction as $key => $item)
                                                 <input class="input-uk text-center" readonly name="taxes_rate[]" id="tax_total_00{{ $key }}">
-                                            </div>
-                                            @endforeach
-                                            {{-- <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
-                                                <img src="{{ asset('images/lock.png') }}" style="" class="earnbtn2">
-                                                <input class="input-uk  text-center taxes" name="taxes[]" data-id="" data-value="" value="National Insurance">
+                                                @endforeach
                                             </div>
 
-                                            <div class="col-md-5 col-lg-5 mb-3  px-lg-2 px-0">
-                                                <input type="text" name="taxes_rate[]" class="input-uk  text-center manualTaxTotal" id="taxes_" value="" data-value="">
-                                            </div> --}}
                                             <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
                                                 <button style="background-color: #85b7bc; font-weight:300" type="button" class="netpaybtn net_pay">Total Deduction</button>
                                             </div>
 
                                             <div class="col-md-5 col-lg-5 mb-0 pb-0   px-lg-2 px-0">
-                                                <input type="text" name="taxes_rate[]" class="input-uk   text-center manualTaxTotal" id="taxes_" value="" data-value="">
+                                                <input type="text" name="deduction_tax" class="input-uk text-center" id="deductions">
                                             </div>
                                         </div>
                                     </div>
@@ -273,44 +275,43 @@
                                     <div class="row">
                                         <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
                                             <img src="{{ asset('images/lock.png') }}" class="earnbtn2">
-                                            <input class="input-uk text-center taxePays" name="taxes[]" data-id="" data-value="" value="Taxable Gross Pay ">
+                                            <input class="input-uk text-center" value="Taxable Gross Pay ">
                                         </div>
 
                                         <div class="col-md-5 col-lg-5 mb-3  px-lg-2 px-0">
-                                            <input type="text" name="taxes_rate[]" class="input-uk text-center manualTaxTotal" id="taxes_" value="" data-value="">
+                                            <input type="text" name="taxable_gross_pay" class="input-uk text-center" id="current_total" readonly>
                                         </div>
                                         <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
                                             <img src="{{ asset('images/lock.png') }}" class="earnbtn2">
-                                            <input class="input-uk  text-center taxes" name="taxes[]" data-id="" data-value="" value="Income Tax">
+                                            <input class="input-uk text-center" value="Income Tax">
                                         </div>
 
                                         <div class="col-md-5 col-lg-5 mb-3  px-lg-2 px-0">
-                                            <input type="text" name="taxes_rate[]" class="input-uk  text-center manualTaxTotal" id="taxes_" value="" data-value="">
+                                            <input type="text" name="income_tax" class="input-uk  text-center" id="income_tax" value="" data-value="">
                                         </div>
                                         <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
                                             <img src="{{ asset('images/lock.png') }}" class="earnbtn2">
-                                            <input class="input-uk  text-center taxes" name="taxes[]" data-id="" data-value="" value="Employee NIC">
+                                            <input class="input-uk  text-center" value="Employee NIC">
                                         </div>
 
                                         <div class="col-md-5 col-lg-5 mb-3  px-lg-2 px-0">
-                                            <input type="text" name="taxes_rate[]" class="input-uk  text-center manualTaxTotal" id="taxes_" value="" data-value="">
+                                            <input type="text" name="employee_nic" class="input-uk  text-center" id="employee_nic" value="" data-value="">
                                         </div>
                                         <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
                                             <img src="{{ asset('images/lock.png') }}" class="earnbtn2">
-                                            <input class="input-uk  text-center taxes" name="taxes[]" data-id="" data-value="" value="Employee NIC">
+                                            <input class="input-uk  text-center" value="Employee NIC">
                                         </div>
 
                                         <div class="col-md-5 col-lg-5 mb-3  px-lg-2 px-0">
-                                            <input type="text" name="taxes_rate[]" class="input-uk  text-center manualTaxTotal" id="taxes_" value="" data-value="">
+                                            <input type="text" name="employer_nic" class="input-uk  text-center" id="employee_nic" value="" data-value="">
                                         </div>
                                         <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
                                             <button style="background-color:#0ec23b; font-weight:300" type="button" class="netpaybtn net_pay">Net Pay</button>
                                         </div>
 
                                         <div class="col-md-5 col-lg-5 mb-3  px-lg-2 px-0">
-                                            <input type="text" name="taxes_rate[]" class="input-uk  text-center manualTaxTotal" id="taxes_" value="" data-value="">
+                                            <input type="text" name="net_pay" class="input-uk text-center" id="net_pay" readonly>
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
@@ -321,8 +322,7 @@
                                 <div class="ukpay-inner ">
                                     <div class="row">
                                         <div style="padding-bottom:255px;" class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
-
-                                            <input style="color: #7c7370; border-color: #7c7370;" class="input-uk text-center note taxePays" name="taxes[]" data-id="" data-value="" value="Note here (optional) ">
+                                            <input style="color: #7c7370; border-color: #7c7370;" class="input-uk text-center note" value="Note here (optional) ">
                                         </div>
                                     </div>
                                 </div>

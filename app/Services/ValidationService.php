@@ -152,24 +152,18 @@ class ValidationService
             ];
         } elseif ($request->form_type == "uk") {
             $rules = [
-                // 'advance_temp' => 'required_without:basic_temp',
                 'basic_temp' => 'required',
                 'cname' => 'required',
                 'company_address' => 'required',
-                // 'city' => 'required',
-                // 'state' => 'required',
                 'emp_zip_code' => 'required',
                 'emp_name' => 'required',
-                // 'emp_id' => 'required',
                 'emp_street_1' => 'required',
                 'emp_street_2' => 'required',
-                // 'currency' => 'required',
                 'pay_start' => 'required',
                 'pay_date' => 'required',
                 'earning' => 'required|array',
                 'rate' => 'required|array',
                 'hours' => 'required|array',
-                // 'total' => 'required|array',
             ];
 
             $messages = [

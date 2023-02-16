@@ -22,68 +22,99 @@ class Template extends Model
         return $response;
     }
 
-    static function template($request){
-        $earning = [];
-        $rate = [];
-        $hours = [];
-        $total = [];
-        $period = [];
-        $ytd_total = [];
-        $taxes = [];
-        $taxes_rate = [];
-        $taxes_ytd = [];
-        $tax_deduction = [];
-        $period_tax_deduction = [];
-        $ytd_tax_deduction = [];
-        $requestData = $request->all();
-        foreach($request->earn ?? [] as $d){
-            $earning[] = $d['earning'];
-            $rate[] = $d['rate'];
-            $hours[] = $d['hours'];
-            $total[] = $d['total'];
-            $period[] = $d['period'];
-            $ytd_total[] = $d['ytd_total'];
+    static function template($request)
+    {
+        if ($request->form_type == 'uk') {
+            $earning = [];
+            $rate = [];
+            $hours = [];
+            $taxes = [];
+            $taxes_rate = [];
+            $requestData = $request->all();
+            foreach ($request->earn ?? [] as $d) {
+                $earning[] = $d['earning'];
+                $rate[] = $d['rate'];
+                $hours[] = $d['hours'];
+            }
+            $requestData['earning'] = $earning;
+            $requestData['rate'] = $rate;
+            $requestData['hours'] = $hours;
+
+            // ======== tax ========
+            foreach ($request->tax ?? [] as $d) {
+                $taxes[] = $d['taxes'];
+                $taxes_rate[] = $d['taxes_rate'];
+            }
+
+            $requestData['taxes'] = $taxes;
+            $requestData['taxes_rate'] = $taxes_rate;
+            unset($requestData['earn']);
+            unset($requestData['tax']);
+        } else {
+            $earning = [];
+            $rate = [];
+            $hours = [];
+            $total = [];
+            $period = [];
+            $ytd_total = [];
+            $taxes = [];
+            $taxes_rate = [];
+            $taxes_ytd = [];
+            $tax_deduction = [];
+            $period_tax_deduction = [];
+            $ytd_tax_deduction = [];
+            $requestData = $request->all();
+            foreach ($request->earn ?? [] as $d) {
+                $earning[] = $d['earning'];
+                $rate[] = $d['rate'];
+                $hours[] = $d['hours'];
+                $total[] = $d['total'];
+                $period[] = $d['period'];
+                $ytd_total[] = $d['ytd_total'];
+            }
+            $requestData['earning'] = $earning;
+            $requestData['rate'] = $rate;
+            $requestData['hours'] = $hours;
+            $requestData['total'] = $total;
+            $requestData['period'] = $period;
+            $requestData['ytd_total'] = $ytd_total;
+
+            // ======== tax ========
+            foreach ($request->tax ?? [] as $d) {
+                $taxes[] = $d['taxes'];
+                $taxes_rate[] = $d['taxes_rate'];
+                $taxes_ytd[] = $d['taxes_ytd'];
+            }
+
+            $requestData['taxes'] = $taxes;
+            $requestData['taxes_rate'] = $taxes_rate;
+            $requestData['taxes_ytd'] = $taxes_ytd;
+
+            // ======== Extra tax ========
+            foreach ($request->extra_tax_deduction ?? [] as $d) {
+                $tax_deduction[] = $d['tax_deduction'];
+                $period_tax_deduction[] = $d['period_tax_deduction'];
+                $ytd_tax_deduction[] = $d['ytd_tax_deduction'];
+            }
+
+            $requestData['tax_deduction'] = $tax_deduction;
+            $requestData['period_tax_deduction'] = $period_tax_deduction;
+            $requestData['ytd_tax_deduction'] = $ytd_tax_deduction;
+            unset($requestData['earn']);
+            unset($requestData['tax']);
+            unset($requestData['extra_tax_deduction']);
         }
-        $requestData['earning'] = $earning;
-        $requestData['rate'] = $rate;
-        $requestData['hours'] = $hours;
-        $requestData['total'] = $total;
-        $requestData['period'] = $period;
-        $requestData['ytd_total'] = $ytd_total;
 
-        // ======== tax ========
-        foreach($request->tax ?? [] as $d){
-            $taxes[] = $d['taxes'];
-            $taxes_rate[] = $d['taxes_rate'];
-            $taxes_ytd[] = $d['taxes_ytd'];
-        }
-
-        $requestData['taxes'] = $taxes;
-        $requestData['taxes_rate'] = $taxes_rate;
-        $requestData['taxes_ytd'] = $taxes_ytd;
-
-        // ======== Extra tax ========
-        foreach($request->extra_tax_deduction ?? [] as $d){
-            $tax_deduction[] = $d['tax_deduction'];
-            $period_tax_deduction[] = $d['period_tax_deduction'];
-            $ytd_tax_deduction[] = $d['ytd_tax_deduction'];
-        }
-
-        $requestData['tax_deduction'] = $tax_deduction;
-        $requestData['period_tax_deduction'] = $period_tax_deduction;
-        $requestData['ytd_tax_deduction'] = $ytd_tax_deduction;
-        unset($requestData['earn']);
-        unset($requestData['tax']);
-        unset($requestData['extra_tax_deduction']);
         return $requestData;
     }
 
-    static function editFormData($data){
+    static function editFormData($data)
+    {
         $earn = [];
         $tax = [];
-        $extra_tax_deduction =[];
+        $extra_tax_deduction = [];
 
-        foreach($data->earning ?? [] as $key => $earning){
+        foreach ($data->earning ?? [] as $key => $earning) {
             $arr = [];
             $arr['earning'] = $earning;
             $arr['rate'] = $data->rate[$key];
@@ -94,7 +125,7 @@ class Template extends Model
             $data->earn[] = $arr;
         }
 
-        foreach($data->taxes ?? [] as $key => $taxes){
+        foreach ($data->taxes ?? [] as $key => $taxes) {
             $arr = [];
             $arr['taxes'] = $taxes;
             $arr['taxes_rate'] = $data->taxes_rate[$key];
@@ -103,7 +134,7 @@ class Template extends Model
         }
 
 
-        foreach($data->tax_deduction ?? [] as $key => $tax_deduction){
+        foreach ($data->tax_deduction ?? [] as $key => $tax_deduction) {
             $arr = [];
             $arr['tax_deduction'] = $tax_deduction;
             $arr['period_tax_deduction'] = $data->period_tax_deduction[$key];
@@ -126,5 +157,4 @@ class Template extends Model
 
         return $data;
     }
-
 }
