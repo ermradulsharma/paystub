@@ -162,7 +162,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><b>f</b> Employee's Address, Zipcode</td>
+                        <td style="position: relative; "><div style=" position: absolute;top:30%;"><b>f</b> Employee's Address, Zipcode</div><</td>
                     </tr>
                 </table>
                 <table class="right-table">
@@ -274,7 +274,8 @@
                     <tr style="">
                         <td style="border-right:2px solid red;">
                             <p><b>14 </b>Other</p>
-                            <textarea style="height: 21.5%;" name="text" id="" cols="30" rows="10"></textarea>
+                            <p style=" height:21%;" class="bottom-number">
+                                {{ $requestData['company_in'] }}<br>{{ $requestData['company_address'] }}</p>
 
                         </td>
                         <td style="margin:0; padding:0;position: relative;">
@@ -284,7 +285,7 @@
                                     <p><img style="width:6px !important; float:left; position: relative; left:12px;" src="images/code.png"></p>
                                     <p style="float:left;font-size: 16px; color:black; padding-left:30px !important; ">
                                         {{ $requestData['pie_2'] }}</p>
-                                    <p style="float:left;width:2px; height:30px;background-color:red; position: relative; left:65px; top:20px;">
+                                    <p style="float:left;width:2px; height:30px;background-color:red; position: relative; left:65px; top:18px;">
                                     </p>
                                     <p style="float:right;font-size: 16px; color:black; width:40%; " class="bottom-number">
                                         {{ number_format($requestData['instructions_box_2'], 2) }}
