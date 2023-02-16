@@ -111,20 +111,15 @@
                 <thead>
                     <tr>
                         <th style="border-right:1px solid blue;">Employee No</th>
-                        <th style="border-right:1px solid blue;">Employee Name
-                        </th>
-                        <th style="border-right:1px solid blue;">Process
-                            Date
-                        </th>
-                        <th>
-                            National Insurance Number</th>
+                        <th style="border-right:1px solid blue;">Employee Name </th>
+                        <th style="border-right:1px solid blue;">Process Date </th>
+                        <th> National Insurance Number</th>
                     </tr>
 
                 </thead>
                 <tr>
 
                     <td class="center" style="border-right:1px solid blue;">12345</td>
-
                     <td class="center" style="border-right:1px solid blue;">Saily James</td>
                     <td class="center" style="border-right:1px solid blue;">31/01/22</td>
                     <td class="center">NHOOFFFF1</td>
