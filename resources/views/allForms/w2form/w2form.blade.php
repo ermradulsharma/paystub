@@ -79,33 +79,30 @@
     .bg-img2 {
         position: relative;
     }
+
 </style>
 
 <body>
     <main class="bg-img2">
         @guest
-            <div class="watermark"></div>
+        <div class="watermark"></div>
         @endguest
         @auth
-            @if (Auth::user()->expiryDate == '' || !isset($requestData['watermark']))
-                <div class="watermark"></div>
-            @endif
+        @if (Auth::user()->expiryDate == '' || !isset($requestData['watermark']))
+        <div class="watermark"></div>
+        @endif
         @endauth
         <section style=" border:2px solid red;">
             <div class="watermark">
             </div>
             <table style="border-bottom:3px solid red;">
                 <tr>
-                    <td
-                        style="width: 15%;border-right:1px solid red; padding-left:20px; font-weight:bold; font-size:15px; color:black; ">
+                    <td style="width: 15%;border-right:1px solid red; padding-left:20px; font-weight:bold; font-size:15px; color:black; ">
                         22222 </td>
 
                     <td class="" style=" width:23%; text-align:center;">
-                        <label style="padding-right:20px; position:relative; bottom:10px; font-size:15px;" for="vehicle1"
-                            class="w2p box-p"> VOID</label>
-                        <input
-                            style="width: 25px; height:25px; border:1px solid grey; border-radius:2px;position:relative; top:6px;"
-                            type="text">
+                        <label style="padding-right:20px; position:relative; bottom:10px; font-size:15px;" for="vehicle1" class="w2p box-p"> VOID</label>
+                        <input style="width: 25px; height:25px; border:1px solid grey; border-radius:2px;position:relative; top:6px;" type="text">
                     </td>
                     <td class="" style="border: 3px solid red;  width:37%;padding-left:17px;">
                         <p style="font-size:15px;text-align:center;" class="w2p"><b>a</b> Employee's social security
@@ -155,8 +152,7 @@
                         </td>
                         <td style="width:20%;">
                             <p>Suff.</p>
-                            <input style="border:none;height: 20px;width:20px; " type="text" id="fname"
-                                name="fname" placeholder="enter text" class="w-100 ">
+                            <input style="border:none;height: 20px;width:20px; " type="text" id="fname" name="fname" placeholder="enter text" class="w-100 ">
                         </td>
                     </thead>
                     <tr>
@@ -230,15 +226,12 @@
                             <p style="position: absolute; top:0;"><b>12a </b>See Instructions box 12</p>
 
                             <div style="position: absolute; top:15px; margin-left:30px; ">
-                                <p><img style="width:6px !important; float:left; position: relative; left:-20px;"
-                                        src="images/code.png"></p>
+                                <p><img style="width:6px !important; float:left; position: relative; left:-20px;" src="images/code.png"></p>
                                 <p style="padding-right:15px !important;float:left;font-size: 16px; color:black; ">
                                     {{ $requestData['pie_2'] }}</p>
-                                <p
-                                    style="float:left;background-color: red; width:2px; height:30px; position: relative; left:35px; top:0px;">
+                                <p style="float:left;background-color: red; width:2px; height:30px; position: relative; left:35px; top:0px;">
                                 </p>
-                                <p style="float:right;font-size: 16px; color:black; position: relative; left:60px;"
-                                    class="bottom-number">{{ number_format($requestData['instructions_box_1'], 2) }}
+                                <p style="float:right;font-size: 16px; color:black; position: relative; left:60px;" class="bottom-number">{{ number_format($requestData['instructions_box_1'], 2) }}
                                 </p>
                             </div>
 
@@ -248,17 +241,17 @@
                         <td style="border-right:2px solid red; ">
                             <p><b>13</b></p>
                             <div style="">
-                                <input class="checkbox-sqaure" type="checkbox" id="vehicle1" @if($requestData['statutory_emp']==true) checked @else unchecked @endif">
+                                <input class="checkbox-sqaure" type="checkbox" id="vehicle1" @if(isset($requestData['statutory_emp']))@if($requestData['statutory_emp']==true) checked @else unchecked @endif @else value="false" @endif>
                                 <p style="float: left; position:relative; left:20px; top:2px;">statury employee</p>
                             </div>
                             <div style="">
 
-                                <input class="checkbox-sqaure" type="checkbox" id="vehicle1" @if($requestData['retirement_plan']==true) checked @else unchecked @endif">
+                                <input class="checkbox-sqaure" type="checkbox" id="vehicle1" @if(isset($requestData['retirement_plan']))@if($requestData['retirement_plan']==true) checked @else unchecked @endif @else value="false" @endif>
                                 <p style="float: left;position:relative; left:20px; top:2px;">Retirement plan</p>
                             </div>
                             <div style="  ">
 
-                                <input style="" class="checkbox-sqaure" type="checkbox" id="vehicle1" @if($requestData['third_party_sick']==true) checked @else unchecked @endif">
+                                <input style="" class="checkbox-sqaure" type="checkbox" id="vehicle1" @if(isset($requestData['third_party_sick']))@if($requestData['third_party_sick']==true) checked @else unchecked @endif @else value="false" @endif>
                                 <p style="float: left;position:relative; left:20px; top:2px;">Third party sick pay</p>
                             </div>
 
@@ -267,12 +260,10 @@
                             <p style=""><b>12b </b></p>
 
                             <div style=" margin-left:30px; ">
-                                <p><img style="width:6px !important; float:left; position: relative; left:-20px;"
-                                        src="images/code.png"></p>
+                                <p><img style="width:6px !important; float:left; position: relative; left:-20px;" src="images/code.png"></p>
                                 <p style="padding-right:15px !important;float:left;font-size: 16px; color:black; ">
                                     {{ $requestData['pie_2'] }}</p>
-                                <p
-                                    style="float:left;background-color: red; width:2px; height:30px; position: relative; left:35px; top:2px;">
+                                <p style="float:left;background-color: red; width:2px; height:30px; position: relative; left:35px; top:2px;">
                                 </p>
                                 <p style="float:right;font-size: 16px; color:black; width:50%;" class="bottom-number">
                                     {{ number_format($requestData['instructions_box_2'], 2) }}</p>
@@ -290,15 +281,12 @@
                             <div style="position: absolute; top:0; width:100%;">
                                 <p style=""><b>12c </b></p>
                                 <div style=" width:100%; ">
-                                    <p><img style="width:6px !important; float:left; position: relative; left:12px;"
-                                            src="images/code.png"></p>
+                                    <p><img style="width:6px !important; float:left; position: relative; left:12px;" src="images/code.png"></p>
                                     <p style="float:left;font-size: 16px; color:black; padding-left:30px !important; ">
                                         {{ $requestData['pie_2'] }}</p>
-                                    <p
-                                        style="float:left;width:2px; height:30px;background-color:red; position: relative; left:65px; top:20px;">
+                                    <p style="float:left;width:2px; height:30px;background-color:red; position: relative; left:65px; top:20px;">
                                     </p>
-                                    <p style="float:right;font-size: 16px; color:black; width:40%; "
-                                        class="bottom-number">
+                                    <p style="float:right;font-size: 16px; color:black; width:40%; " class="bottom-number">
                                         {{ number_format($requestData['instructions_box_2'], 2) }}
                                     </p>
 
@@ -310,16 +298,12 @@
                                 <p style="position: relative; top:20px;"><b>12d </b></p>
 
                                 <div style=" width:100%; ">
-                                    <p><img style="width:6px !important; float:left;position: relative; top:20px;left:12px;"
-                                            src="images/code.png"></p>
-                                    <p
-                                        style="float:left;font-size: 16px; color:black; padding-left:30px !important;position: relative; top:20px; ">
+                                    <p><img style="width:6px !important; float:left;position: relative; top:20px;left:12px;" src="images/code.png"></p>
+                                    <p style="float:left;font-size: 16px; color:black; padding-left:30px !important;position: relative; top:20px; ">
                                         {{ $requestData['pie_2'] }}</p>
-                                    <p
-                                        style="float:left;width:2px; height:30px;background-color:red; position: relative; left:65px; top:22px;">
+                                    <p style="float:left;width:2px; height:30px;background-color:red; position: relative; left:65px; top:22px;">
                                     </p>
-                                    <p style="float:right;font-size: 16px; color:black; width:40%;position: relative; top:20px; "
-                                        class="bottom-number">
+                                    <p style="float:right;font-size: 16px; color:black; width:40%;position: relative; top:20px; " class="bottom-number">
                                         {{ number_format($requestData['instructions_box_2'], 2) }}
                                     </p>
 
@@ -328,8 +312,7 @@
 
 
                             </div>
-                            <div
-                                style="position:relative; top:45px; background-color:pink; padding:10px 0px;  border-top:2px solid red;">
+                            <div style="position:relative; top:45px; background-color:pink; padding:10px 0px;  border-top:2px solid red;">
                             </div>
                         </td>
                     </tr>
