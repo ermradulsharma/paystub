@@ -304,14 +304,9 @@
     background: linear-gradient(to bottom right, #3022AD, #D5469E);
 }
 
-.ukimg1 {
-    background-position-x: left;
-    left: -166px;
-}
 
-.imguk {
-    width: 995px;
-}
+
+
 
 .fromimg {
     width: 115px;
@@ -332,9 +327,7 @@
 
 
 @media screen and (max-width: 1024px) {
-    .imguk {
-        width: 610px;
-    }
+
 
     .form-main-img {
         background-position-x: left;
@@ -363,10 +356,7 @@
 @media screen and (max-width: 768px) {
 
 
-    .ukimg1 {
-        background-position-x: left;
-        left: 0px;
-    }
+
 
     .PayslipsGlo {
         text-align: center;
@@ -404,16 +394,11 @@
         width: 353px;
     }
 
-    .imguk {
-        width: 355px;
-    }
+
 }
 
 @media screen and (max-width: 375px) {
-    .imguk {
-        width: 260px;
-    }
-}
+
 
 .couple {
     max-width: 1086px;

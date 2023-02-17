@@ -31,8 +31,8 @@
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-12 col-sm-12 ukimg1">
-                        <div class="">
-                            <img class=" my-2 pt-1 imguk" src="images/uk/payslip_uk.png ">
+                        <div class="img-uk-outer">
+                            <img class=" my-2 pt-1 imguk" src="images/uk/payslip-uk-2.png ">
                         </div>
                     </div>
                 </div>

@@ -169,7 +169,7 @@
                 <div class="box-usa2">
                     <div class=" box-usa">
                         <div class="d-flex justify-content-between mb-3">
-                            <div class="col-md-5 mt-5 text-center template-text">
+                            <div class="col-md-5 col-sm-12 mt-5 text-center template-text">
                                 <h6 class="basic1">BASIC TEMPLATES</h6>
                                 <div class="mt-4">
                                     {{-- <i class="fa fa-angle-down down1"></i> --}}
@@ -193,7 +193,7 @@
                                                 </div> -->
                                 <img src="images/hrpng.png" style="height: 200px;">
                             </div>
-                            <div class="col-md-5 mt-5 text-center template-text">
+                            <div class="col-md-5 col-sm-12 mt-5 text-center template-text">
                                 <h6 class="basic1">ADVANCED TEMPLATES</h6>
                                 <div class="mt-4">
                                     {{-- <i class="fa fa-angle-down down1"></i> --}}

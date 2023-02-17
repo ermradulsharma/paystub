@@ -1548,7 +1548,15 @@ ul.mt-4 {
 .global-list {
     padding: 0px 16px !important;
 }
-
+.img-uk-outer img {
+    width: 100%;
+}
+.img-uk-outer {
+    max-width: 900px;
+}
+.mt-5.pt-3.d-flex.uk-goo {
+    padding-left: 48px !important;
+}
 /* template-view end */
 
 /* uk paystub start*/
@@ -1687,9 +1695,6 @@ ul.mt-4 {
         padding: 0px 20px !important;
     }
 
-    .imguk {
-        width: 885px;
-    }
 
     .couple {
         max-width: 848px;
@@ -1943,9 +1948,7 @@ ul.mt-4 {
         font-size: 10px;
     }
 
-    .ukimg1 {
-        padding: 0px !important;
-    }
+
 
     .mainhead {
         padding: 0px 41px 2px 4px;
@@ -2181,9 +2184,6 @@ ul.mt-4 {
         margin-bottom: 20px;
     }
 
-    .imguk {
-        width: 625px;
-    }
 
 
     .create-p {
@@ -2217,6 +2217,11 @@ ul.mt-4 {
     .view-temp {
         color: #0e866c;
         font-size: 22px;
+    }
+    .storbtn {
+        width: 120px !important;
+        height: 40px !important;
+        margin-bottom: 0;
     }
 
     .see-sample2 {
@@ -2318,6 +2323,7 @@ ul.mt-4 {
     .mainhead {
         text-align: center !important;
         padding: 0;
+        font-size: 30px;
     }
     .mt-5.pt-3.pl-5.uk-btn {
         display: flex;
@@ -2376,10 +2382,7 @@ ul.mt-4 {
         font-size: 38px;
     }
 
-    .ukimg1 {
-        background-position-x: left;
-        left: 9px;
-    }
+
 
     .Createpay {
         padding-top:20px;
@@ -2451,9 +2454,7 @@ ul.mt-4 {
         max-width: 210px;
         margin: 0 auto;
     }
-    img.my-2.pt-1.imguk {
-        width: 700px ;
-    }
+
 
     .box-usa {
         border: 3px solid #FF6161;
@@ -2463,8 +2464,18 @@ ul.mt-4 {
     }
 a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
     display: flex;
+    justify-content: center !important;
+    font-size: 16px !important;
+    margin: 0 auto 20px !important;
+    padding:11px 20px !important;
+}
+.Generate {
+    padding: 11px 20px !important;
+    max-width: 300px !important;
+
+}
+.my-3.d-flex {
     justify-content: center;
-    margin-bottom: 20px !important;
 }
     .dropdown1 {
         width: 73% !important;
@@ -2770,6 +2781,7 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
         font-size: 16px;
     }
 
+
     .payst {
         border: unset;
         display: unset;
@@ -2779,7 +2791,7 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
     .basic1 {
         margin-left: 0px;
         font-weight: 900;
-        font-size: 8px;
+
     }
     .ukp {
         font-size: 22px;
@@ -2853,6 +2865,12 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
 
     .text-left p {
         font-size: 15px !important;
+    }
+    h1.global-heading {
+        font-size: 20px !important;
+    }
+    h2.global-heading {
+        font-size: 20px !important;
     }
 
     .col-md-4.mt-3.text-center h2 {
@@ -2945,7 +2963,9 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
         justify-content: center;
         width: 100%;
     }
-
+    .d-flex.justify-content-between.mb-3{
+        display: inline-block !important;
+    }
     .bottom-textarea textarea {
         max-width: 400px;
     }
@@ -3128,8 +3148,6 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
     }
 
     .globleImg {
-        max-width: 300px;
-        height: 300px;
         position: relative;
         top: 10px;
         left: 0px;
@@ -3140,7 +3158,6 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
     }
 
     .text-white {
-        font-size: 25px !important;
         margin-bottom: 10px;
         margin-top: 4px;
         line-height: 1.5 !important;
@@ -3256,12 +3273,7 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
         padding-bottom: 100px;
     }
 
-    .Payslips {
-        font-family: serif;
-        font-size: 15px !important;
-        padding: 0;
-        line-height: 1.6 !important;
-    }
+
 
     .CreatePaystub {
         font-family: serif;
@@ -3302,16 +3314,11 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
     }
 
     .Generate {
-        padding: 11px 20px !important;
+        padding: 11px 60px ;
         margin-bottom: 10px;
-        display: flex !important;
-        flex-wrap: wrap;
-        justify-content: center;
         width: 100%;
         margin: 0px !important;
-        max-width: 300px;
-        margin: 0 auto !important;
-        font-size: 16px !important;
+        max-width: 400px;
     }
 
     .paytext {
@@ -3358,20 +3365,6 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
         margin-bottom: 10px !important;
     }
 
-    .ukimg1 {
-        background-position-x: left;
-        left: 20px;
-    }
-
-    .imguk {
-        width: 305px !important;
-    }
-
-    .storbtn {
-        width: 120px !important;
-        height: 40px !important;
-        margin-bottom: 0;
-    }
 
     .gen {
         font-size: 24px !important;
@@ -3426,12 +3419,22 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
     .ukpay-inner {
         padding: 10px;
     }
+    .img-uk-outer {
+        max-width: 325px;
+    }
+
+
 }
+
+
 
 
 @media screen and (max-width: 375px) {
     .uk-lable {
         font-size: 18px;
+    }
+    p.mainhead {
+        font-size: 20px;
     }
 
     .w-sm-100 {
@@ -3726,11 +3729,7 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
         max-width: 275px;
     }
 
-    .ukimg1 {
 
-        left: 0;
-
-    }
 
     .box-usa {
         border: 3px solid #FF6161;
@@ -3838,6 +3837,7 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
 }
 
 
+
 .btnCommon {
     padding: 3px 15px;
     font-size: 18px;
@@ -3857,6 +3857,7 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
     .textarea-w2 textarea {
         max-width: 295px;
     }
+
 
     .textarea-w2 textarea {
         max-width: 295px;
@@ -3925,8 +3926,6 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
     .container.footer-icons {
         padding: 0;
     }
-    .ukimg1 {
-       left:-25px;
-    }
+
 
 }
