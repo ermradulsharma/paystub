@@ -381,7 +381,7 @@
                             <a class="previewbtn text-capitalize viewTempTemplate mb-3 w-sm-100" type="button"
                                 id="button1">Preview Below Check <i class="fa fa-eye"
                                     style="font-size: 30px; margin-left: 7px;"></i></a>
-                            <a type="button" class="emailbtn text-capitalize downloadPdf mb-3 w-sm-100" > Download <i class="fa fa-download ml-4" style="font-size:24px"></i></a>
+                            <a type="button" class="emailbtn text-capitalize mb-3 w-sm-100" href="{{ route('generate') }}" download> Download <i class="fa fa-download ml-4" style="font-size:24px"></i></a>
                         </div>
                     </div>
                 </div>

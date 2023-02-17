@@ -27,45 +27,13 @@ class W2FormController extends Controller
         $requestData = $request->all();
         if ($requestData['form_type'] == "w2form") {
             $pageName = "w2form";
-        } else {
-            if ($requestData['advance_temp']) {
-                $pageName = $requestData['advance_temp'];
-            } else {
-                $pageName = $requestData['basic_temp'];
-            }
         }
-
-
-        // $pageName = $requestData['advance_temp'] ?? $requestData['basic_temp'] ?? '';
-
-
         $path = public_path() . '/uploads/mailData';
         File::isDirectory($path) or File::makeDirectory($path, 0777, true, true);
         $invoiceData['requestData'] = $requestData;
         $pdf = PDF::loadView('allForms/' . $request->form_type . '/' . $pageName, $invoiceData)->setPaper('a4', 'portrait');
-        $fileName =  date('_d_m_Y_h_i_s') . '.pdf';
-        $pdf->download($path . '/' . $fileName);
-        // return back();
-        $invoice_id = $request->invoice_id ?? 0;
-        $slip = PaySlip::where(['user_id' => Auth::user()->id, 'id' => $invoice_id])->first();
-        if (!$slip) {
-            $slip = new PaySlip;
-            $slip->user_id = Auth::user()->id;
-            $slip->reference = "PayStubx-" . rand(100000, 999999);
-        } else {
-            try {
-                unlink(public_path('/uploads/mailData/' . basename($slip->pdf)));
-            } catch (Exception $e) {
-            }
-        }
-        $slip->data = json_encode($requestData);
-        $slip->type = $requestData['form_type'];
-        $slip->title = $requestData['cname'] ?? "";
-        $slip->pdf = $fileName;
-        $slip->save();
-        $response['data'] = $slip;
-        $response['message'] = "Data saved successfully successfully.";
-        return response()->json($response, $response['status']);
+        // $fileName =  date('_d_m_Y_h_i_s') . '.pdf';
+        return  $pdf->download('w2form.pdf');
     }
 
     public function previewPDF()
