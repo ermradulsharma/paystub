@@ -535,9 +535,7 @@
                 type: 'post',
                 data: $('#submit_form_paystubx_id').serialize(),
                 success: function(response) {
-                    // console.log('response ', response);
-                    // console.log('pdf ', response.pdf);
-                    // toastr.success(response.message);
+                    
                     setTimeout(function() {
                         var a = document.createElement('a');
                         a.href = response.pdf;

@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Deduction;
 use App\Models\StateTax;
+use App\Models\w2formPdf;
 
 class TemplateFormController extends Controller
 {
@@ -178,7 +179,6 @@ class TemplateFormController extends Controller
 
     public function generatePDF(Request $request)
     {
-
         $response = (new ValidationService)->usa($request);
         if ($response['status'] == 301) {
             return response()->json($response, $response['status']);
@@ -193,21 +193,10 @@ class TemplateFormController extends Controller
         $pdf = PDF::loadView('allForms/' . $request->form_type . '/' . $pageName, $invoiceData)->setPaper('a4', 'portrait');
         $fileName =  date('_d_m_Y_h_i_s') . '.pdf';
         $pdf->save($path . '/' . $fileName);
-        // return back();
-        $invoice_id = $request->invoice_id ?? 0;
-        $slip = PaySlip::where(['user_id' => Auth::user()->id, 'id' => $invoice_id])->first();
-        if (!$slip) {
-            $slip = new PaySlip;
-            $slip->user_id = Auth::user()->id;
-            $slip->reference = "PayStubx-" . rand(100000, 999999);
-        } else {
-            try {
-                unlink(public_path('/uploads/mailData/' . basename($slip->pdf)));
-            } catch (Exception $e) {
-            }
-        }
+
+        $slip = new w2formPdf;
+        $slip->reference = "PayStubx-" . rand(100000, 999999);
         $slip->data = json_encode($requestData);
-        $slip->type = $requestData['form_type'];
         $slip->title = $requestData['cname'] ?? "";
         $slip->pdf = $fileName;
         $slip->save();
