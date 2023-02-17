@@ -20,7 +20,6 @@
     </div>
     <!-- Modal End -->
     <section style="background-color: #fb5e5efa;" class="w2-form">
-        <div></div>
         <div class="container-fluid p-4 mt-2" style=" ">
             <div class="container" style="max-width:1450px;">
                 <div class="text-left ">
@@ -28,7 +27,6 @@
                     <p style="color:white; font-size:30px;">Start entering the Form W-2 information and e-file the return.
                         It’s super simple. Fill, Submit & Download.</p>
                 </div>
-
                 <div style="text-align: -webkit-right;" class="mb-4">
                     <a class="btn btn-lg  mt-5 p-2 btn-danger Generate " href="{{ route('welcome') }}">Select W-2 Year</a>
                 </div>
@@ -381,13 +379,13 @@
                             <a class="previewbtn text-capitalize viewTempTemplate mb-3 w-sm-100" type="button"
                                 id="button1">Preview Below Check <i class="fa fa-eye"
                                     style="font-size: 30px; margin-left: 7px;"></i></a>
-                            <a type="button" class="emailbtn text-capitalize mb-3 w-sm-100 downloadPdf"> Download <i class="fa fa-download ml-4" style="font-size:24px"></i></a>
+                            <a type="button" class="emailbtn text-capitalize mb-3 w-sm-100 downloadPdf"> Download <i
+                                    class="fa fa-download ml-4" style="font-size:24px"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
         </form>
-        </div>
     </section>
     <section class="bottom-graadiant-section">
         <div style="max-width: 1500px;" class="container">
@@ -402,21 +400,21 @@
     </section>
 @endsection
 @section('checked')
-<script>
-    $('.statutory_emp').click(function() {
-       var statutory_emp = $('.statutory_emp').is(':checked');
-       console.log('statutory_emp',statutory_emp);
-       $('.statutory_emp').val(statutory_emp);
-    });
-    $('.retirement_plan').click(function() {
-       var checked_2 = $('.retirement_plan').is(':checked');
-       console.log('checked_2',checked_2);
-       $('.retirement_plan').val(checked_2);
-    });
-    $('.third_party_sick').click(function() {
-       var checked_3 = $('.third_party_sick').is(':checked');
-       console.log('checked_3',checked_3);
-       $('.third_party_sick').val(checked_3);
-    });
-</script>
+    <script>
+        $('.statutory_emp').click(function() {
+            var statutory_emp = $('.statutory_emp').is(':checked');
+            console.log('statutory_emp', statutory_emp);
+            $('.statutory_emp').val(statutory_emp);
+        });
+        $('.retirement_plan').click(function() {
+            var checked_2 = $('.retirement_plan').is(':checked');
+            console.log('checked_2', checked_2);
+            $('.retirement_plan').val(checked_2);
+        });
+        $('.third_party_sick').click(function() {
+            var checked_3 = $('.third_party_sick').is(':checked');
+            console.log('checked_3', checked_3);
+            $('.third_party_sick').val(checked_3);
+        });
+    </script>
 @endsection
