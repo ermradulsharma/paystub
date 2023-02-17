@@ -499,7 +499,12 @@ select:after {
 }
 
 .sidenav a:hover {
-    color: #f1f1f1;
+    color: #0b2f5b !important;
+    background: #fff;
+}
+.sidebar .active a{
+    color: #0b2f5b !important;
+    background: #fff;
 }
 
 .sidenav .closebtn {
