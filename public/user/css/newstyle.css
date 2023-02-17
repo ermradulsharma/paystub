@@ -6,6 +6,26 @@
     -ms-user-select: none;
     user-select: none;
 } */
+@media only screen and  (min-width:1444px) and (max-width:2560px) {
+
+}
+@media only screen and (min-width:1023px) and (max-width:1440px) {
+
+}
+@media only screen and (min-width:767px) and (max-width:1024px) {
+
+}
+@media only screen and (min-width:424px) and (max-width:768px) {
+
+}
+@media only screen and (min-width:374px) and (max-width:425px) {
+    .input-box-font{
+        font-size:14px !important;
+    }
+}
+@media only screen and (min-width:320px) and (max-width:375px) {
+
+}
 .createbtn {
     padding: 1px 40px;
     border-radius: 5px;
@@ -2384,7 +2404,6 @@ img.earnbtn2.global-earnbtn {
 
     .dropdown11 {
         width: 100%;
-        padding: 10px;
         border: 1px solid #00000080;
         background: #ffffff;
         margin: auto;
@@ -2601,7 +2620,7 @@ img.earnbtn2.global-earnbtn {
         width: 100% !important;
         display: flex;
         justify-content: center;
-        padding: 3px;
+        padding: 3px !important;
     }
 
     .formp1 {
@@ -2865,9 +2884,7 @@ img.earnbtn2.global-earnbtn {
     .text-white.Payslips {
         font-size: 14px !important;
     }
-    .text-center {
-        font-size: 20px !important;
-    }
+
     .oo {
         display: flex;
     }

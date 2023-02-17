@@ -2,10 +2,7 @@
     color: red;
 }
 
-.textInputFontSize {
-    font-size: 14px;
-    padding: 6px;
-}
+
 
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;800&family=Public+Sans:wght@300&display=swap");
 
@@ -76,7 +73,7 @@
 
 .navbtn:hover {
     color: #0b2f5b;
-    background: white;
+
 }
 
 .active {

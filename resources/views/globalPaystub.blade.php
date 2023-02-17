@@ -53,7 +53,7 @@
                                                 class="redColor">*</span> </label>
                                         <input type="text" id="cname" name="cname"
                                             placeholder="Your Employer & Company Name"
-                                            class="w-100 p-2 text-center textInputFontSize">
+                                            class="w-100 p-2 text-centerinput-box-font">
                                     </div>
                                 </div>
 
@@ -62,7 +62,7 @@
                                         <label for="tel" class="lable">EMPLOYER TELEPHONE NUMBER <span
                                                 class="redColor">*</span> </label>
                                         <input type="tel" id="tel" name="tel" placeholder="xxx-xxx-xxxx"
-                                            class="w-100 p-2 text-center textInputFontSize"
+                                            class="w-100 p-2 text-centerinput-box-font"
                                             onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                     </div>
                                 </div>
@@ -75,7 +75,7 @@
                                         <label for="address_1" class="lable">STREET ADDRESS 1 <span
                                                 class="redColor">*</span> </label>
                                         <input type="text" id="address_1" name="address_1"
-                                            placeholder="Your Employer Address" class="w-100 p-2  textInputFontSize">
+                                            placeholder="Your Employer Address" class="w-100 p-2 input-box-font">
                                     </div>
 
                                 </div>
@@ -87,7 +87,7 @@
                                         <label for="address_2" class="lable">STREET ADDRESS 2 </label>
                                         <input type="text" id="address_2" name="address_2"
                                             placeholder="Suite 101 or Apt 101 (optional)"
-                                            class="w-100 p-2  textInputFontSize">
+                                            class="w-100 p-2 input-box-font">
                                     </div>
 
                                 </div>
@@ -98,7 +98,7 @@
                                     <div>
                                         <label for="city" class="lable">City <span class="redColor">*</span> </label>
                                         <input type="text" id="city" name="city"
-                                            placeholder="Your Employer City" class="w-100   textInputFontSize">
+                                            placeholder="Your Employer City" class="w-100  input-box-font">
                                     </div>
 
                                 </div>
@@ -121,7 +121,7 @@
                                         <label for="zip_code" class="lable">Zip Code <span class="redColor">*</span>
                                         </label>
                                         <input type="text" id="zip_code" name="zip_code" placeholder=" Zip Code"
-                                            class="w-100   textInputFontSize">
+                                            class="w-100  input-box-font">
                                     </div>
                                 </div>
                             </div>
@@ -202,14 +202,14 @@
                                         <label for="emp_name" class="lable">EMPLOYEE NAME <span
                                                 class="redColor">*</span> </label>
                                         <input type="text" id="emp_name" name="emp_name"
-                                            placeholder="Your Full  Name" class="w-100  textInputFontSize">
+                                            placeholder="Your Full  Name" class="w-100 input-box-font">
                                     </div>
                                 </div>
                                 <div class="col-md-4 mt-4">
                                     <div>
                                         <label for="emp_id" class="lable">EMPLOYEE ID </label>
                                         <input type="text" id="emp_id" name="emp_id" placeholder="Employer ID"
-                                            class="w-100 r textInputFontSize">
+                                            class="w-100 rinput-box-font">
                                     </div>
                                 </div>
                                 <div class="col-md-4 mt-4">
@@ -217,7 +217,7 @@
                                         <label for="emp_ssn" class="lable">EMPLOYEE SSN Last 4 <span
                                                 class="redColor">*</span> </label>
                                         <input type="text" id="emp_ssn" name="emp_ssn" placeholder="1224"
-                                            class="w-100  textInputFontSize">
+                                            class="w-100 input-box-font">
                                     </div>
                                 </div>
                             </div>
@@ -227,7 +227,7 @@
                                         <label for="emp_street_1" class="lable">STREET ADDRESS 1 <span
                                                 class="redColor">*</span></label>
                                         <input type="text" id="emp_street_1" name="emp_street_1"
-                                            placeholder="Your Address" class="w-100  textInputFontSize">
+                                            placeholder="Your Address" class="w-100 input-box-font">
                                     </div>
                                 </div>
                             </div>
@@ -237,7 +237,7 @@
                                         <label for="emp_street_2" class="lable">STREET ADDRESS 2
                                         </label>
                                         <input type="text" id="emp_street_2" name="emp_street_2"
-                                            placeholder="Suite 101 or Apt 101(optional)" class="w-100  textInputFontSize">
+                                            placeholder="Suite 101 or Apt 101(optional)" class="w-100 input-box-font">
                                     </div>
                                 </div>
                             </div>
@@ -247,7 +247,7 @@
                                         <label for="emp_city" class="lable">City <span class="redColor">*</span>
                                         </label>
                                         <input type="text" id="emp_city" name="emp_city" placeholder="Your City"
-                                            class="w-100   textInputFontSize">
+                                            class="w-100  input-box-font">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -270,7 +270,7 @@
                                         <label for="emp_zip_code" class="lable">Zip Code <span
                                                 class="redColor">*</span></label>
                                         <input type="text" id="emp_zip_code" name="emp_zip_code" placeholder=" 1234"
-                                            class="w-100  textInputFontSize">
+                                            class="w-100 input-box-font">
                                     </div>
                                 </div>
                             </div>
@@ -345,7 +345,7 @@
                                         <label for="hourly" class="lable">HOURLY <span class="redColor">*</span>
                                         </label>
                                         <input type="text" step="0.5" id="hourly" name="hourly"
-                                            placeholder="Hourly" class="w-100   textInputFontSize hourly" value="">
+                                            placeholder="Hourly" class="w-100  input-box-font hourly" value="">
                                     </div>
                                 </div>
                                 <div class="col-md-3 mt-4">
@@ -409,7 +409,7 @@
                                         <label for="pay_start" class="lable">PAY START<span class="redColor">*</span>
                                         </label>
                                         <input type="date" id="pay_start" name="pay_start" placeholder="12-11-2022"
-                                            class="w-100 p-2 textInputFontSize pay_start datepicker" data-id="pay_start">
+                                            class="w-100 p-2input-box-font pay_start datepicker" data-id="pay_start">
                                     </div>
                                 </div>
 
@@ -418,7 +418,7 @@
                                         <label for="pay_end" class="lable">PAY END <span class="redColor">*</span>
                                         </label>
                                         <input type="date" id="pay_end" name="pay_end" placeholder="12-17-2022"
-                                            class="w-100 p-2 textInputFontSize pay_end" data-id="pay_end">
+                                            class="w-100 p-2input-box-font pay_end" data-id="pay_end">
                                     </div>
                                 </div>
 
@@ -427,7 +427,7 @@
                                         <label for="pay_date" class="lable">PAY DATE <span class="redColor">*</span>
                                         </label>
                                         <input type="date" id="pay_date" name="pay_date" placeholder="12-19-2022"
-                                            class="w-100 p-2 textInputFontSize pay_date" data-id="pay_date">
+                                            class="w-100 p-2input-box-font pay_date" data-id="pay_date">
                                     </div>
 
                                 </div>
@@ -623,35 +623,35 @@
                             <div class="row mb-3">
                                 <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
                                     <p class="p-0 m-0 " style="font-family: serif;">CO<span class="redColor">*</span></p>
-                                    <input name="co_number" class="earnbtn text-center " value=""></input>
+                                    <input name="co_number" class="earnbtn text-center " value="">
                                 </div>
                                 <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
                                     <p class="p-0 m-0" style="font-family: serif;">FILE.<span class="redColor">*</span>
                                     </p>
-                                    <input name="file_number" class="earnbtn text-center " value=""></input>
+                                    <input name="file_number" class="earnbtn text-center " value="">
                                 </div>
                                 <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
                                     <p class="p-0 m-0 " style="font-family: serif;">CLOCK VCHR.<span
                                             class="redColor">*</span>
                                     </p>
-                                    <input name="clock_vchr_number" class="earnbtn text-center " value=""></input>
+                                    <input name="clock_vchr_number" class="earnbtn text-center " value="">
                                 </div>
                                 <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
                                     <p class="p-0 m-0 " style="font-family: serif;">Advice Number:<span
                                             class="redColor">*</span></p>
-                                    <input name="advice_number" class="earnbtn text-center " value=""></input>
+                                    <input name="advice_number" class="earnbtn text-center " value="">
                                 </div>
                                 <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
                                     <p class="p-0 m-0 " style="font-family: serif;">Account Number LAST<span
                                             class="redColor">*</span></p>
                                     <input name="account_number_last_4" class="earnbtn text-center "
-                                        value=""></input>
+                                        value="">
                                 </div>
                                 <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
                                     <p class="p-0 m-0 " style="font-family: serif;">Transit ABA<span
                                             class="redColor">*</span>
                                     </p>
-                                    <input name="transit_aba_number" class="earnbtn text-center " value=""></input>
+                                    <input name="transit_aba_number" class="earnbtn text-center " value="">
                                 </div>
                             </div>
                         </div>
@@ -661,7 +661,7 @@
             <input type="hidden" name="days_number" id="days_number" value="0" hidden>
             <div class="row mt-3">
                 <div class="col-12 text-center">
-                    <div class="d-flex flex-wrap justify-content-between">
+                    <div class="d-flex flex-wrap justify-content-between canada-btn-inner">
                         <button class="previewbtn text-capitalize viewTempTemplate mb-3 w-sm-100" type="button"
                             id="button1">Preview Your Paystub <i class="fa fa-eye"
                                 style="font-size: 30px; margin-left: 7px;"></i></button>
