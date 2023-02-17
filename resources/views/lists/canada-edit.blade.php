@@ -61,7 +61,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- <div class="text-center sh">
+                            {{-- <!-- <div class="text-center sh">
                                 <img src="{{asset('user/line.png')}}" style="height: 200px;">
                             </div>
                             <div class="col-md-5 col-lg-6 col-sm-12 pt-3 mt-lg-5  my-auto text-center">
@@ -81,7 +81,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div> -->
+                            </div> --> --}}
                         </div>
                     </div>
                 </div>

@@ -168,10 +168,10 @@ class TemplateFormController extends Controller
             if ($id != null) {
                 return redirect(route('invoiceList'))->with('message', 'Mail has been sent successfully.');
             }
-            return back()->with('message', 'Mail has been sent successfully.');
         } else {
             $response['message'] = "Please choose Paystub pay slip";
             return back()->with($response, 200);
         }
+        return back()->with('message', 'Mail has been sent successfully.');
     }
 }
