@@ -78,21 +78,22 @@
     }
 
     .watermark {
-            position: absolute;
-            width: 100%;
-            height: 700px;
-            top: 50px;
-            left: 0px;
-            right: 0;
-            background-image: url("http://44.202.105.74/user/water.png");
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-        }
+        position: absolute;
+        width: 100%;
+        height: 700px;
+        top: 50px;
+        left: 0px;
+        right: 0;
+        background-image: url("http://44.202.105.74/user/water.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
 
-        .bg-img2 {
-            position: relative;
-        }
+    .bg-img2 {
+        position: relative;
+    }
+
 </style>
 
 <body>
@@ -115,23 +116,18 @@
                         <th style="border-right:1px solid blue;">Process Date </th>
                         <th> National Insurance Number</th>
                     </tr>
-
                 </thead>
                 <tr>
-
                     <td class="center" style="border-right:1px solid blue;">12345</td>
-                    <td class="center" style="border-right:1px solid blue;">Saily James</td>
-                    <td class="center" style="border-right:1px solid blue;">31/01/22</td>
-                    <td class="center">NHOOFFFF1</td>
+                    <td class="center" style="border-right:1px solid blue;">{{ $requestData['emp_name']}}</td>
+                    <td class="center" style="border-right:1px solid blue;">{{ date('d/m/Y', strtotime($requestData['pay_date'])) }}</td>
+                    <td class="center">{{ $requestData['ni_number']}}</td>
                 </tr>
             </table>
-
         </section>
 
         <section style="margin-top:1px;">
-
             <table style="width:59.8%; float:left; height:200px; background-color:#f4f4fc;" class="ltd">
-
                 <thead>
                     <tr>
                         <th>Payments</th>
@@ -139,42 +135,15 @@
                         <th>Rate</th>
                         <th>Amount</th>
                     </tr>
-
-
-
                 </thead>
+                @foreach ($requestData['earning'] as $key => $earn)
                 <tr>
-                    <td>Salary</td>
-                    <td></td>
-                    <td>3000</td>
-                    <td>3000</td>
-
+                    <td class="l-align">{{ $earn }}</td>
+                    <td class="bold">{{ $requestData['hours'][$key] }}</td>
+                    <td class="bold">{{ number_format($requestData['rate'][$key], 2) }}</td>
+                    <td style="border-right:1px solid #0a2e7b" class="bold">{{ number_format($requestData['total'][$key], 2) }}</td>
                 </tr>
-                <tr>
-                    <td>Bonus</td>
-                    <td></td>
-
-                    <td>100</td>
-                    <td>100</td>
-
-                </tr>
-                <tr>
-                    <td>Commission</td>
-                    <td></td>
-
-                    <td>250</td>
-                    <td>250</td>
-
-                </tr>
-                <tr>
-                    <td>Expenses</td>
-                    <td></td>
-
-                    <td>10.50</td>
-                    <td>10.50</td>
-
-                </tr>
-
+                @endforeach
             </table>
 
             <table style="width:39.8%; float:right; height:200px;background-color:#f4f4fc;" class="ltd">
@@ -187,86 +156,29 @@
                 </thead>
 
                 <tbody>
+                    @foreach ($requestData['taxes'] ?? [] as $key => $taxes)
                     <tr>
-                        <td colspan="4">Period Pay</td>
-                        <td>3350</td>
+                        <td colspan="4">{{ $taxes }}</td>
+                        <td>{{ number_format($requestData['taxes_rate'][$key],2) }}</td>
                     </tr>
-                    <tr>
-                        <td colspan="4">PAYE Tax</td>
-                        <td>500</td>
-                    </tr>
+                    @endforeach
                 </tbody>
-
-                <tbody>
-                    <tr>
-                        <td colspan="4">Nat Insurance</td>
-                        <td>1390</td>
-                    </tr>
-                    <tr>
-                        <td colspan="5"></td>
-
-                    </tr>
-                    <tr>
-                        <td colspan="5"></td>
-
-                    </tr>
-                    <tr>
-                        <td colspan="4">Healthcare</td>
-                        <td>2345</td>
-                    </tr>
-                </tbody>
-
-                <tbody>
-                    <tr>
-                        <td colspan="4">Student Loan</td>
-                        <td>456</td>
-                    </tr>
-
-                    <tr>
-                        <td colspan="5"></td>
-
-                    </tr>
-                    <tr>
-                        <td colspan="5"></td>
-
-                    </tr>
-                    <tr>
-                        <td colspan="4">EE Pension</td>
-                        <td>800</td>
-                    </tr>
-                    <tr>
-                        <td colspan="4">EE Pension</td>
-                        <td>1350</td>
-                    </tr>
-
-
             </table>
         </section>
 
         <section style="margin-top:210px; padding-bottom:0.5px; ">
-
-            <table
-                style="width:40%; float:left; border:1px solid #4a50b2; border-radius:10px; height: 195px; margin-top:10px; padding-left:10px;">
+            <table style="width:40%; float:left; border:1px solid #4a50b2; border-radius:10px; height: 195px; margin-top:10px; padding-left:10px;">
                 <tr>
-                    <td>Sally James</td>
+                    <td>{{ $requestData['emp_name']}}</td>
                 </tr>
                 <tr>
-                    <td>Flat 5, The Big House</td>
-                </tr>
-
-                <tr>
-                    <td>Long Street</td>
+                    <td>{{ $requestData['emp_street_1']}}</td>
                 </tr>
                 <tr>
-                    <td>Nice Town</td>
+                    <td>{{ $requestData['emp_street_2'] ?? ""}}</td>
                 </tr>
                 <tr>
-                    <td>Gorgeous Countrye</td>
-                </tr>
-                <tr>
-                    <td>PE77 1PO</td>
-                </tr>
-
+                    <td>{{ $requestData['emp_zip_code']}}</td>
                 </tr>
             </table>
 
@@ -279,12 +191,12 @@
                 <tbody>
                     <tr>
                         <td class="center">Pay</td>
-                        <td>23140</td>
+                        <td>{{ number_format($requestData['taxable_gross_pay'],2) }}</td>
                     </tr>
                     <tr>
 
                         <td class="center">Pay Tax</td>
-                        <td>23140</td>
+                        <td>{{ number_format($requestData['deduction_tax'],2) }}</td>
                     </tr>
                 </tbody>
 
@@ -317,12 +229,12 @@
                 <tbody>
                     <tr>
                         <td class="center">Pay</td>
-                        <td>23140</td>
+                        <td>{{ number_format($requestData['taxable_gross_pay'],2) }}</td>
                     </tr>
                     <tr>
 
                         <td class="center">Pay Tax</td>
-                        <td>23140</td>
+                        <td>{{ number_format($requestData['deduction_tax'],2) }}</td>
                     </tr>
                 </tbody>
 
@@ -356,8 +268,7 @@
                 </tr>
             </table>
 
-            <table
-                style="width:29.5%; float:right; border:1px solid #4a50b2; border-radius:10px; margin-top:-52px; padding:13px 10px 13px 10px; background-color:#f4f4fc;">
+            <table style="width:29.5%; float:right; border:1px solid #4a50b2; border-radius:10px; margin-top:-52px; padding:13px 10px 13px 10px; background-color:#f4f4fc;">
                 <tr>
                     <td style="color:#4a50b2; font-size:16px; font-weight:600;">Net Pay</td>
                     <td>2380.34</td>
