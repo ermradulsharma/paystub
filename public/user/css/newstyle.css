@@ -6,6 +6,10 @@
     -ms-user-select: none;
     user-select: none;
 } */
+.input-box-font {
+    padding: 6px !important;
+    text-align: left !important;
+}
 @media only screen and  (min-width:1444px) and (max-width:2560px) {
 
 }
@@ -22,6 +26,7 @@
     .input-box-font{
         font-size:14px !important;
     }
+
 }
 @media only screen and (min-width:320px) and (max-width:375px) {
 
@@ -2408,6 +2413,7 @@ img.earnbtn2.global-earnbtn {
         background: #ffffff;
         margin: auto;
         font-size: 12px;
+        padding: 10px !important;
     }
     .list-img {
         width: 60px !important;
@@ -2620,7 +2626,7 @@ img.earnbtn2.global-earnbtn {
         width: 100% !important;
         display: flex;
         justify-content: center;
-        padding: 3px !important;
+
     }
 
     .formp1 {
@@ -2720,7 +2726,7 @@ img.earnbtn2.global-earnbtn {
     }
 
     .dropdown1 {
-        font-size: 15px !important;
+        font-size: 12px !important;
     }
 
     .earnbtn {
@@ -2801,6 +2807,9 @@ img.earnbtn2.global-earnbtn {
     }
     input#cname {
         text-align: left !important;
+    }
+    .dropdown11 {
+        padding: 9px !important;
     }
     .col-12.text-center.canada-btn-outer {
         padding: 0px 20px !important;
@@ -3327,7 +3336,7 @@ img.earnbtn2.global-earnbtn {
     }
 
     .dropdown1 {
-        font-size: 11px !important;
+        font-size: 9px !important;
     }
 
     .payimg {
@@ -3701,9 +3710,7 @@ img.earnbtn2.global-earnbtn {
         font-size: 11px !important;
     }
 
-    .small-font {
-        font-size: 14px !important;
-    }
+
 
     .down {
         position: absolute;

@@ -95,7 +95,7 @@
                                 <div class="">
                                     <label class="" for="cname" class="lable">EMPLOYER (COMPANY) NAME <span class="redColor">*</span>
                                     </label>
-                                    <input type="text" id="cname" name="cname" placeholder="Your Employer & Company Name" class="input-c w-100 p-2 text-cente input-box-font">
+                                    <input type="text" id="cname" name="cname" placeholder="Your Employer & Company Name" class="input-c w-100  text-center input-box-font">
                                 </div>
                             </div>
                         </div>
@@ -105,7 +105,7 @@
                                 <div>
                                     <label for="address_1" class="lable">STREET ADDRESS 1 <span class="redColor">*</span>
                                     </label>
-                                    <input type="text" id="address_1" name="address_1" placeholder="Your Employer Address" class="w-100 p-2 input-box-font">
+                                    <input type="text" id="address_1" name="address_1" placeholder="Your Employer Address" class="w-100  input-box-font">
                                 </div>
                             </div>
                         </div>
@@ -115,7 +115,7 @@
                                 <div>
                                     <label for="address_2" class="lable">STREET ADDRESS 2 <span class="redColor">*</span>
                                     </label>
-                                    <input type="text" id="address_2" name="address_2" placeholder="Suite 101 or Apt 101 (optional)" class="w-100 p-2 input-box-font">
+                                    <input type="text" id="address_2" name="address_2" placeholder="Suite 101 or Apt 101 (optional)" class="w-100  input-box-font">
                                 </div>
 
                             </div>
@@ -126,7 +126,7 @@
                                 <div>
                                     <label for="city" class="lable">City <span class="redColor">*</span>
                                     </label>
-                                    <input type="text" id="city" name="city" placeholder="Your Employer City" class="w-100 p-2 input-box-font">
+                                    <input type="text" id="city" name="city" placeholder="Your Employer City" class="w-100  input-box-font">
                                 </div>
 
                             </div>
@@ -149,7 +149,7 @@
                                 <div>
                                     <label for="zip_code" class="lable">Postal Code <span class="redColor">*</span>
                                     </label>
-                                    <input type="text" id="zip_code" name="zip_code" placeholder=" Zip Code" class="w-100 p-2 input-box-font">
+                                    <input type="text" id="zip_code" name="zip_code" placeholder=" Zip Code" class="w-100  input-box-font">
                                 </div>
                             </div>
                         </div>
@@ -167,7 +167,7 @@
                                 <div>
                                     <label for="emp_id" class="lable">EMPLOYEE ID <span class="redColor">*</span>
                                     </label>
-                                    <input type="text" id="emp_id" name="emp_id" placeholder="Employee id" class="w-100 p-2 input-box-font">
+                                    <input type="text" id="emp_id" name="emp_id" placeholder="Employee id" class="w-100  input-box-font">
                                 </div>
                             </div>
                             <div class="col-md-4 mt-4">
@@ -199,7 +199,7 @@
                                 <div>
                                     <label for="check_number" class="lable">CHECK NUMBER <span class="redColor">*</span>
                                     </label>
-                                    <input type="text" id="check_number" name="check_number" placeholder="Check Number" class="w-100 p-2 input-box-font">
+                                    <input type="text" id="check_number" name="check_number" placeholder="Check Number" class="w-100  input-box-font">
                                 </div>
                             </div>
                             <div class="col-md-2 mt-4">
@@ -220,7 +220,7 @@
                                 <div>
                                     <label for="emp_name" class="lable">EMPLOYER NAME <span class="redColor">*</span>
                                     </label>
-                                    <input type="text" id="emp_name" name="emp_name" placeholder="Employee name" class="w-100 p-2 input-box-font">
+                                    <input type="text" id="emp_name" name="emp_name" placeholder="Employee name" class="w-100  input-box-font">
                                 </div>
 
                             </div>
@@ -228,7 +228,7 @@
                                 <div>
                                     <label for="emp_address" class="lable">EMPLOYER ADDRESS <span class="redColor">*</span>
                                     </label>
-                                    <input type="text" id="emp_address" name="emp_address" placeholder="Suite 101 or Apt 101(optional)" class="w-100 p-2 input-box-font">
+                                    <input type="text" id="emp_address" name="emp_address" placeholder="Suite 101 or Apt 101(optional)" class="w-100  input-box-font">
                                 </div>
                             </div>
                         </div>

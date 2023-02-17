@@ -209,7 +209,7 @@
                                     <div>
                                         <label for="emp_id" class="lable">EMPLOYEE ID </label>
                                         <input type="text" id="emp_id" name="emp_id" placeholder="Employer ID"
-                                            class="w-100 rinput-box-font">
+                                            class="w-100 input-box-font">
                                     </div>
                                 </div>
                                 <div class="col-md-4 mt-4">
