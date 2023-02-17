@@ -177,29 +177,18 @@ class TemplateFormController extends Controller
 
     public function generatePDF(Request $request)
     {
+
         $response = (new ValidationService)->usa($request);
         if ($response['status'] == 301) {
             return response()->json($response, $response['status']);
         }
-        $requestData = $request->all();
-        if ($requestData['form_type'] == "w2form") {
-            $pageName = "w2form";
+        $requestData = PaySlip::generatePDF($request);
+        if ($requestData['status'] == 200) {
+            $response['pdf'] = $requestData['pdf'];
+            $response['success'] = true;
+            $response['message'] = "Data saved successfully";
+            $response['status'] = STATUS_OK;
         }
-        $path = public_path() . '/uploads/mailData';
-        File::isDirectory($path) or File::makeDirectory($path, 0777, true, true);
-        $invoiceData['requestData'] = $requestData;
-        $pdf = PDF::loadView('allForms/' . $request->form_type . '/' . $pageName, $invoiceData)->setPaper('a4', 'portrait');
-        $fileName =  date('_d_m_Y_h_i_s') . '.pdf';
-        $pdf->save($path . '/' . $fileName);
-
-        $slip = new w2formPdf;
-        $slip->reference = "PayStubx-" . rand(100000, 999999);
-        $slip->data = json_encode($requestData);
-        $slip->title = $requestData['cname'] ?? "";
-        $slip->pdf = $fileName;
-        $slip->save();
-        $response['pdf'] = asset('/uploads/mailData/' . $fileName);
-        $response['message'] = "Data saved successfully successfully.";
         return response()->json($response, $response['status']);
     }
 }
