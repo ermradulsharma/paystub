@@ -37,5 +37,6 @@ Route::group(['namespace' => 'Api', 'middleware' => ['\App\Http\Middleware\LogAf
         Route::post('delete-template', [TemplatesController::class, 'deleteTemplate']);
         Route::post('edit-form-data', [TemplatesController::class, 'editFormData']);
         Route::post('download-pdf', [TemplatesController::class, 'generatePdf']);
+        Route::post('subscription', [TemplatesController::class, 'subscription']);
     });
 });

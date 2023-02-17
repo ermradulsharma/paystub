@@ -5,6 +5,8 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\Models\PaySlip;
 use App\Models\Template;
+use App\Models\User;
+use Carbon\Carbon;
 use PDF;
 use File;
 use Exception;
@@ -213,6 +215,21 @@ class TemplatesController extends Controller
             Log::error($e->getTraceAsString());
             $response['status'] = STATUS_GENERAL_ERROR;
         }
+        return response()->json($response, $response['status']);
+    }
+    public function subscription(Request $request)
+    {
+        $requestData = $request->all();
+        $userObj = User::find(Auth::user()->id);
+        if ($requestData['type'] == 1) {
+            $userObj->expiryDate = Carbon::now();
+        } else {
+            $userObj->expiryDate = "";
+        }
+        $userObj->save();
+        $response['success'] = true;
+        $response['message'] = "Data saved successfully";
+        $response['status'] = STATUS_OK;
         return response()->json($response, $response['status']);
     }
 }
