@@ -177,6 +177,7 @@ class TemplateFormController extends Controller
 
     public function generatePDF(Request $request)
     {
+        
         $response = (new ValidationService)->usa($request);
         if ($response['status'] == 301) {
             return response()->json($response, $response['status']);

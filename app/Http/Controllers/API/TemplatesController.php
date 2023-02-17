@@ -5,7 +5,6 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\Models\PaySlip;
 use App\Models\Template;
-use App\Models\w2formPdf;
 use PDF;
 use File;
 use Exception;
@@ -85,58 +84,39 @@ class TemplatesController extends Controller
         try {
             if ($requestData['form_type'] == "w2form") {
                 $pageName = "w2form";
-
-                $path = public_path() . '/uploads/mailData';
-                File::isDirectory($path) or File::makeDirectory($path, 0777, true, true);
-                $invoiceData['requestData'] = $requestData;
-                $pdf = PDF::loadView('allForms/' . $request->form_type . '/' . $pageName, $invoiceData)->setPaper('a4', 'portrait');
-                $fileName =  date('_d_m_Y_h_i_s') . '.pdf';
-                $pdf->save($path . '/' . $fileName);
-
-                $slip = new w2formPdf;
-                $slip->reference = "PayStubx-" . rand(100000, 999999);
-                $slip->data = json_encode($requestData);
-                $slip->title = $requestData['cname'] ?? "";
-                $slip->pdf = $fileName;
-                $slip->save();
-                $response['pdf'] = asset('/uploads/mailData/' . $fileName);
-                $response['message'] = "Data saved successfully.";
-                $response['status'] = 200;
-                $response['success'] = TRUE;
             } else {
                 if ($requestData['advance_temp']) {
                     $pageName = $requestData['advance_temp'];
                 } else {
                     $pageName = $requestData['basic_temp'];
                 }
-
-                $path = public_path() . '/uploads/mailData';
-                File::isDirectory($path) or File::makeDirectory($path, 0777, true, true);
-                $invoiceData['requestData'] = $requestData;
-                $pdf = PDF::loadView('allForms/' . $request->form_type . '/' . $pageName, $invoiceData)->setPaper('a4', 'portrait');
-                $fileName =  date('_d_m_Y_h_i_s') . '.pdf';
-                $pdf->save($path . '/' . $fileName);
-                $invoice_id = $request->invoice_id ?? 0;
-                $slip = PaySlip::where(['user_id' => Auth::user()->id, 'id' => $invoice_id])->first();
-                if (!$slip) {
-                    $slip = new PaySlip;
-                    $slip->user_id = Auth::user()->id;
-                    $slip->reference = "PayStubx-" . rand(100000, 999999);
-                } else {
-                    try {
-                        unlink(public_path('/uploads/mailData/' . basename($slip->pdf)));
-                    } catch (Exception $e) {
-                    }
+            }
+            $path = public_path() . '/uploads/mailData';
+            File::isDirectory($path) or File::makeDirectory($path, 0777, true, true);
+            $invoiceData['requestData'] = $requestData;
+            $pdf = PDF::loadView('allForms/' . $request->form_type . '/' . $pageName, $invoiceData)->setPaper('a4', 'portrait');
+            $fileName =  date('_d_m_Y_h_i_s') . '.pdf';
+            $pdf->save($path . '/' . $fileName);
+            $invoice_id = $request->invoice_id ?? 0;
+            $slip = PaySlip::where(['user_id' => Auth::user()->id, 'id' => $invoice_id])->first();
+            if (!$slip) {
+                $slip = new PaySlip;
+                $slip->user_id = Auth::user()->id;
+                $slip->reference = "PayStubx-" . rand(100000, 999999);
+            } else {
+                try {
+                    unlink(public_path('/uploads/mailData/' . basename($slip->pdf)));
+                } catch (Exception $e) {
                 }
-                $slip->data = json_encode($requestData);
-                $slip->title = $requestData['cname'] ?? "";
-                $slip->pdf = $fileName;
-                $slip->type = $request->form_type;
-                if ($slip->save()) {
-                    $response['message'] = "Template save successfully";
-                    $response['status'] = 200;
-                    $response['success'] = TRUE;
-                }
+            }
+            $slip->data = json_encode($requestData);
+            $slip->title = $requestData['cname'] ?? "";
+            $slip->pdf = $fileName;
+            $slip->type = $request->form_type;
+            if ($slip->save()) {
+                $response['message'] = "Template save successfully";
+                $response['status'] = 200;
+                $response['success'] = TRUE;
             }
         } catch (Exception $e) {
             $response['message'] = $e->getMessage() . ' Line No ' . $e->getLine() . ' in File' . $e->getFile();
@@ -207,6 +187,27 @@ class TemplatesController extends Controller
             $response['message'] = "Payslip deleted successfully";
             $response['status'] = 200;
             $response['success'] = TRUE;
+        } catch (Exception $e) {
+            $response['message'] = $e->getMessage() . ' Line No ' . $e->getLine() . ' in File' . $e->getFile();
+            Log::error($e->getTraceAsString());
+            $response['status'] = STATUS_GENERAL_ERROR;
+        }
+        return response()->json($response, $response['status']);
+    }
+
+    public function generatePdf(Request $request)
+    {
+        $response['message'] = "";
+        $response['status'] = STATUS_BAD_REQUEST;
+        $response['success'] = FALSE;
+        try {
+            $requestData = PaySlip::generatePDF($request);
+            if ($requestData['status'] == 200) {
+                $response['pdf'] = $requestData['pdf'];
+                $response['success'] = true;
+                $response['message'] = "Data saved successfully";
+                $response['status'] = STATUS_OK;
+            }
         } catch (Exception $e) {
             $response['message'] = $e->getMessage() . ' Line No ' . $e->getLine() . ' in File' . $e->getFile();
             Log::error($e->getTraceAsString());
