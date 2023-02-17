@@ -535,11 +535,18 @@
                 type: 'post',
                 data: $('#submit_form_paystubx_id').serialize(),
                 success: function(response) {
-                    console.log('response ', response);
+                    // console.log('response ', response);
+                    // console.log('pdf ', response.pdf);
                     // toastr.success(response.message);
-                    // setTimeout(function() {
-                    //     window.location.href = "{{ route('invoiceList') }}";
-                    // }, 1000);
+                    setTimeout(function() {
+                        var a = document.createElement('a');
+                        a.href = response.pdf;
+                        a.download = 'w2form.pdf';
+                        document.body.append(a);
+                        a.click();
+                        a.remove();
+                        // window.link.download = response.pdf;
+                    }, 1000);
                     document.getElementById("loaderDiv").style.display = "none";
                 },
                 error: function(err) {

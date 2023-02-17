@@ -43,9 +43,7 @@ Route::get('w2form', function () {
     return view('forms');
 })->name('w2form');
 Route::match(['get', 'post'], 'w2form/paystub', [PayStubController::class, 'w2formPayStub'])->name('w2form.paystub');
-// Route::post('templates', [TemplateFormController::class, 'templates'])->name('templates');
-Route::post('generate-pdf', [W2FormController::class, 'generatePDF'])->name('generate');
-Route::get('w2form/preview-pdf', [W2FormController::class, 'previewPDF']);
+Route::post('generate-pdf', [TemplateFormController::class, 'generatePDF'])->name('generate');
 
 Route::get('terms', function () {
     return view('terms');
