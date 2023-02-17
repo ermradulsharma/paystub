@@ -26,6 +26,7 @@
                     </thead>
                     <tbody>
                         @foreach($invoiceList as $invoice)
+                        @if($invoice->type != 'w2form')
                         <tr>
                             <th class="text-center" style="padding: 1.5em .5em;border:none;">{{date('m-d-Y', strtotime($invoice->created_at))}}</th>
                             <th class="text-center" style="padding: 1.5em .5em;border:none;">{{$invoice->title}}</th>
@@ -54,6 +55,7 @@
                                     Preview Your Paystub &nbsp;<i class="fa fa-eye"></i></a>
                             </th>
                         </tr>
+                        @endif
                         @endforeach
                     </tbody>
                 </table>
@@ -91,5 +93,6 @@
         // $('#tempView').html(response.data);
         $('#tempViewModal').modal('show');
     })
+
 </script>
 @endsection

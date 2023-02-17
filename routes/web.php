@@ -1,12 +1,8 @@
 <?php
 
-use App\Http\Controllers\CanadaController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PayStubController;
 use App\Http\Controllers\TemplateFormController;
-use App\Http\Controllers\UkController;
-use App\Http\Controllers\UsaController;
-use App\Http\Controllers\W2FormController;
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\Routing\Router;
 
@@ -43,9 +39,7 @@ Route::get('w2form', function () {
     return view('forms');
 })->name('w2form');
 Route::match(['get', 'post'], 'w2form/paystub', [PayStubController::class, 'w2formPayStub'])->name('w2form.paystub');
-
-Route::get('w2form/generate-pdf', [W2FormController::class, 'generatePDF']);
-Route::get('w2form/preview-pdf', [W2FormController::class, 'previewPDF']);
+Route::post('generate-pdf', [TemplateFormController::class, 'generatePDF'])->name('generate');
 
 Route::get('terms', function () {
     return view('terms');
@@ -109,6 +103,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('invoiceMail/{id}', [TemplateFormController::class, 'invoiceMail'])->name('invoiceMailId');
     Route::get('invoiceMail', [TemplateFormController::class, 'invoiceMail'])->name('invoiceMail');
     Route::get('invoiceEdit/{id}', [TemplateFormController::class, 'edit'])->name('invoiceEdit');
-    Route::get('prizing', [UsaController::class, 'prizing'])->name('prizing');
+    Route::get('prizing', [TemplateFormController::class, 'prizing'])->name('prizing');
     Route::get('subscription', [TemplateFormController::class, 'subscription'])->name('subscription');
 });
