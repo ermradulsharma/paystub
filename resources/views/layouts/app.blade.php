@@ -476,6 +476,10 @@
             usaStoreData();
         });
 
+        $('.downloadPdf').click(function() {
+            generatePDF();
+        });
+
         function viewPDF() {
             document.getElementById("loaderDiv").style.display = "block";
             $.ajax({
@@ -498,7 +502,6 @@
         }
 
         function usaStoreData() {
-
             document.getElementById("loaderDiv").style.display = "block";
             $.ajax({
                 url: "{{ route('usaStoreData') }}",
@@ -510,6 +513,33 @@
                     setTimeout(function() {
                         window.location.href = "{{ route('invoiceList') }}";
                     }, 1000);
+                    document.getElementById("loaderDiv").style.display = "none";
+                },
+                error: function(err) {
+                    error = err.responseJSON;
+                    if (error.message == "Unauthenticated.") {
+                        toastr.warning("PLease login first, Then you create invoice.");
+                        $('#loginModal').modal('show');
+                    } else {
+                        toastr.error(error.message);
+                    }
+                    document.getElementById("loaderDiv").style.display = "none";
+                }
+            });
+        }
+
+        function generatePDF() {
+            document.getElementById("loaderDiv").style.display = "block";
+            $.ajax({
+                url: "{{ route('generate') }}",
+                type: 'post',
+                data: $('#submit_form_paystubx_id').serialize(),
+                success: function(response) {
+                    console.log('response ', response);
+                    // toastr.success(response.message);
+                    // setTimeout(function() {
+                    //     window.location.href = "{{ route('invoiceList') }}";
+                    // }, 1000);
                     document.getElementById("loaderDiv").style.display = "none";
                 },
                 error: function(err) {
