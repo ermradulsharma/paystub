@@ -73,10 +73,12 @@
 
 .navbtn:hover {
     color: #0b2f5b;
+    background: white;
 
 }
 
 .active {
+
     color: #0b2f5b;
     background: white;
 }

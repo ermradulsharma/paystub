@@ -125,7 +125,7 @@
                     </div>
 
                     <div class="text-center mt-4 mb-4">
-                        <img src="{{ asset('images/Group 3.png') }}" style="width:130px;">
+                        <img src="{{ asset('images/login-img.png') }}" style="width:130px;">
                     </div>
                     <h6 class="text-center" style="color: #457bbe;">Sign Up Using Email</h6>
                     <p class="text-center"></p>
@@ -535,7 +535,7 @@
                 type: 'post',
                 data: $('#submit_form_paystubx_id').serialize(),
                 success: function(response) {
-                    
+
                     setTimeout(function() {
                         var a = document.createElement('a');
                         a.href = response.pdf;

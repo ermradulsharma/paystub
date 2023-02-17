@@ -20,12 +20,27 @@
 
 }
 @media only screen and (min-width:424px) and (max-width:768px) {
+    .margin-left{
+
+        margin: 0px 30px 0px auto;
+    }
+    .margin-right{
+        margin: 0px auto 0px 30px;
+    }
 
 }
 @media only screen and (min-width:374px) and (max-width:425px) {
     .input-box-font{
         font-size:14px !important;
     }
+    .margin-left{
+
+        margin: 0 auto !important
+    }
+    .margin-right{
+        margin: 0 auto !important
+    }
+
 
 }
 @media only screen and (min-width:320px) and (max-width:375px) {
@@ -418,10 +433,11 @@ img.earnbtn2.lock {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+    transition: all 0.5s ease-in-out;
 }
 
 .previewbtn:hover {
-    background: white;
+    background: white !important;
     color: #ef2e21;
     border: 1px solid #ef2e21;
     box-shadow: 6px 5px 4px 0px #00000066;
@@ -535,6 +551,7 @@ select:after {
     border: none;
     border-radius: 4px;
     box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, 0.6));
+    transition: all 0.5s ease-in-out;
 }
 
 .emailbtn2 {
@@ -600,7 +617,7 @@ input:hover {
 }
 
 .emailbtn:hover {
-    background: white;
+    background: white !important;
     color: #40924a;
     border: 1px solid green;
     box-shadow: 6px 5px 4px 0px #00000066;
@@ -608,7 +625,8 @@ input:hover {
 
 .mainhead {
     padding: 0px 225px 2px 4px;
-    font-family: "Futura LT";
+    font-family: 'Outfit', sans-serif;
+    font-weight: 500;
 }
 
 .google-btn {
@@ -841,7 +859,7 @@ h5 {
     letter-spacing: 1.5px;
     display: flex;
     max-width: 312px;
-    font-family: "Futura LT";
+    font-family: 'Outfit', sans-serif;
     margin-top: 21px;
 }
 
@@ -1975,8 +1993,9 @@ img.earnbtn2.global-earnbtn {
     }
 
     .mainhead {
-        padding: 0px 41px 2px 4px;
-        font-family: "Futura LT";
+        padding: 0px 225px 2px 4px;
+        font-family: 'Outfit', sans-serif;
+        font-weight: 500;
     }
 
     .payimg2 {
@@ -2811,9 +2830,7 @@ img.earnbtn2.global-earnbtn {
     .dropdown11 {
         padding: 9px !important;
     }
-    .col-12.text-center.canada-btn-outer {
-        padding: 0px 20px !important;
-    }
+
     .d-flex.flex-wrap.justify-content-between.usa-btn-inner {
         justify-content: center !important;
     }
@@ -4001,6 +4018,9 @@ img.earnbtn2.global-earnbtn {
     }
     p.mt-1.b-p {
         font-size: 13px !important;
+    }
+    button.netpaybtn.net_pay {
+        font-size: 21px;
     }
 
     .text-left h1 {
