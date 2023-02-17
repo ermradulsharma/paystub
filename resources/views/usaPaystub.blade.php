@@ -53,7 +53,7 @@
                                                 class="redColor">*</span> </label>
                                         <input type="text" id="cname" name="cname"
                                             placeholder="Your Employer & Company Name"
-                                            class="w-100 p-2 text-center textInputFontSize">
+                                            class="w-100 p-2 text-center text Input FontSize">
                                     </div>
                                 </div>
 
@@ -660,8 +660,8 @@
             </div>
             <input type="hidden" name="days_number" id="days_number" value="0" hidden>
             <div class="row mt-3">
-                <div class="col-12 text-center">
-                    <div class="d-flex flex-wrap justify-content-between">
+                <div class="col-12 text-center usa-btn">
+                    <div class="d-flex flex-wrap justify-content-between usa-btn-inner">
                         <button class="previewbtn text-capitalize viewTempTemplate mb-3 w-sm-100" type="button"
                             id="button1">Preview Your Paystub <i class="fa fa-eye"
                                 style="font-size: 30px; margin-left: 7px;"></i></button>

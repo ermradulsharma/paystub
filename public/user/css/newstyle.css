@@ -2184,11 +2184,20 @@ img.earnbtn2.global-earnbtn {
         background: #e827a5;
         font-size: 17px;
     }
+    .col-12.text-center.canada-btn-outer {
+        padding: 0;
+    }
+    .d-flex.flex-wrap.justify-content-between.canada-btn-inner {
+        justify-content: center !important;
+    }
     .mt-5.pt-4.pr-3.mr-5.ml-3.d-flex.storehead.global {
         display: flex;
         justify-content: center;
         padding: 0 !important;
         margin: 0px !important;
+    }
+    .col-12.text-center.usa-btn {
+        padding: 0;
     }
     .w2form-left-box:before {
         content: none;
@@ -2770,6 +2779,18 @@ img.earnbtn2.global-earnbtn {
 @media screen and (max-width: 425px) {
     .storehead a img {
         margin-left: 0px !important;
+    }
+    input#cname {
+        text-align: left !important;
+    }
+    .col-12.text-center.canada-btn-outer {
+        padding: 0px 20px !important;
+    }
+    .d-flex.flex-wrap.justify-content-between.usa-btn-inner {
+        justify-content: center !important;
+    }
+    .col-12.text-center.usa-btn {
+        padding: 0px 20px;
     }
     .col-lg-9.col-md-12.mt-5.py-5.pl-5.container.w2-form-container {
         padding: 0px 20px !important;

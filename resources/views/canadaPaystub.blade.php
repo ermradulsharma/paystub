@@ -92,10 +92,10 @@
                     <div class="box-usa">
                         <div class="row mb-3 mt-3">
                             <div class="col-md-6 mt-1">
-                                <div>
+                                <div class="">
                                     <label for="cname" class="lable">EMPLOYER (COMPANY) NAME <span class="redColor">*</span>
                                     </label>
-                                    <input type="text" id="cname" name="cname" placeholder="Your Employer & Company Name" class="w-100 p-2 text-center textInputFontSize">
+                                    <input type="text" id="cname" name="cname" placeholder="Your Employer & Company Name" class="input-c w-100 p-2 text-center textInputFontSize">
                                 </div>
                             </div>
                         </div>
@@ -333,8 +333,8 @@
             </div>
         </div>
         <div class="row mt-3">
-            <div class="col-12 text-center">
-                <div class="d-flex flex-wrap justify-content-between">
+            <div class="col-12 text-center canada-btn-outer">
+                <div class="d-flex flex-wrap justify-content-between canada-btn-inner">
                     <button class="previewbtn text-capitalize viewTempTemplate mb-3 w-sm-100" type="button" id="button1">Preview Your Paystub <i class="fa fa-eye" style="font-size: 30px; margin-left: 7px;"></i></button>
                     <button type="button" class="emailbtn text-capitalize sendMailButton mb-3 w-sm-100"> <i class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL PAYSTUB <i class="fa fa-download ml-4" style="font-size:24px"></i></button>
                 </div>
