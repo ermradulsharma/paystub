@@ -161,7 +161,7 @@
                                     <img src="{{ asset('images/hrpng.png') }}" style="height: 200px;">
                                 </div>
                                 <div class="col-md-5 col-lg-6 col-sm-12 mt-5 text-center">
-                                    <h6 style="margin-left:-23px;font-weight: 900;">ADVANCED TEMPLATES</h6>
+                                    <h6 class="base" style="margin-left:-23px;font-weight: 900;">ADVANCED TEMPLATES</h6>
                                     <div class="mt-4">
                                         <div class="input-group mmenu mb-3">
                                             <select name="advance_temp"
@@ -531,7 +531,7 @@
                             @foreach ($deduction as $key => $item)
                                 <div class="row">
                                     <div class="col-md-4 col-lg-3 mb-3">
-                                        <img src="{{ asset('images/lock.png') }}" class="earnbtn2">
+                                        <img src="{{ asset('images/lock.png') }}" class="earnbtn2 global-earnbtn">
                                         <input class="earnbtn text-center taxes" name="taxes[]"
                                             data-id="{{ $key }}" data-value="{{ $item->price }}"
                                             value="{{ $item->title }}" data-value="{{ $item->title }}">

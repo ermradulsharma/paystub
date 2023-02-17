@@ -1,39 +1,33 @@
-
-
-
-
-
 .redColor {
-
     color: red;
 }
 
 .textInputFontSize {
     font-size: 14px;
     padding: 6px;
-
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;800&family=Public+Sans:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;800&family=Public+Sans:wght@300&display=swap");
 
 .footerSection {
     background-color: #252e58;
-    background-image: linear-gradient(92deg, #252e58 7%, #625b9e 38%, #252e58 69%, #766fe5 98%);
-
-
+    background-image: linear-gradient(
+        92deg,
+        #252e58 7%,
+        #625b9e 38%,
+        #252e58 69%,
+        #766fe5 98%
+    );
 }
 
 .footbtn {
     font-size: 18px;
     font-family: emoji;
     color: white;
-
 }
 
 .footbtn:hover {
-
     color: black;
-
 }
 
 .socialicon {
@@ -43,7 +37,6 @@
     font-size: 24px;
     color: white;
     width: 50px;
-
 }
 
 .socialicon:hover {
@@ -59,7 +52,6 @@
     width: 50px;
     color: white;
     width: 50px;
-
 }
 
 .fbicon:hover {
@@ -75,23 +67,21 @@
 
 .navbtn {
     color: white;
-    background: #0B2F5B;
+    background: #0b2f5b;
     font-size: 16px;
     font-family: emoji;
     border: 4px double;
     max-width: 150px;
-
 }
 
 .navbtn:hover {
-    color: #0B2F5B;
+    color: #0b2f5b;
     background: white;
 }
 
 .active {
-    color: #0B2F5B;
+    color: #0b2f5b;
     background: white;
-
 }
 
 .login {
@@ -106,29 +96,30 @@
 
 .paystub {
     background-color: #252e58;
-    background-image: linear-gradient(96deg, #252e58e8 5%, #6361d3 46%, #07a96cd9 100%);
+    background-image: linear-gradient(
+        96deg,
+        #252e58e8 5%,
+        #6361d3 46%,
+        #07a96cd9 100%
+    );
     width: 100%;
 }
 
 .instant {
-
     color: white;
-    font-family: 'Futura LT';
+    font-family: "Futura LT";
     font-size: 58px;
 }
 
 .QUICK {
-
     color: white;
     line-height: 0.5em;
     font-size: 22px;
     word-spacing: 1px;
     letter-spacing: 1px;
     font-weight: 200;
-    font-family: 'Futura LT';
+    font-family: "Futura LT";
     margin-bottom: 80px;
-
-
 }
 .Generate {
     width: 312px;
@@ -139,7 +130,7 @@
     margin: auto;
     font-size: x-large;
     color: white;
-    font-family: 'Futura LT';
+    font-family: "Futura LT";
 }
 
 .Generate1 {
@@ -150,37 +141,36 @@
     font-size: x-large;
     color: white;
     padding: 10px 54px;
-    font-family: 'Futura LT';
+    font-family: "Futura LT";
 }
 
 .storbtn {
     width: 165px;
     height: 50px;
-
 }
 
 .ukp {
     font-size: 42px;
     font-weight: 400;
     margin: 0;
-    font-family: 'Futura LT';
+    font-family: "Futura LT";
 }
 .ukh1 {
     font-size: 46px;
-    font-family: 'Futura LT';
+    font-family: "Futura LT";
 }
 
 .ukp1 {
     font-weight: 200;
     font-size: 16px;
     color: black;
-    font-family: 'Futura LT';
+    font-family: "Futura LT";
 }
 
 .ukli {
     font-size: 20px;
     font-weight: 200;
-    font-family: 'Futura LT';
+    font-family: "Futura LT";
 }
 
 .img2 {
@@ -190,26 +180,29 @@
 
 .createSample {
     background-color: #6d8507;
-    background-image: linear-gradient(135deg, #6d8507 0%, #eeab49 50%, #c1bef6 100%);
+    background-image: linear-gradient(
+        135deg,
+        #6d8507 0%,
+        #eeab49 50%,
+        #c1bef6 100%
+    );
 }
 
 .WithPaystubX {
     font-size: 52px;
     font-weight: 600;
-    font-family: 'Futura LT';
+    font-family: "Futura LT";
 }
 
 .Show {
-
     font-size: 50px;
     font-weight: 500;
-    font-family: 'Futura LT';
-
+    font-family: "Futura LT";
 }
 
 .Createpay {
     font-size: 33px;
-    font-family: 'Futura LT';
+    font-family: "Futura LT";
     font-weight: 600;
 }
 
@@ -240,7 +233,6 @@
 
 .calculations {
     background: #42419e;
-
 }
 
 .salary {
@@ -250,7 +242,6 @@
 
 .Accurate {
     background-color: #b3dade;
-
 }
 
 .boxAccurate {
@@ -259,12 +250,9 @@
 
 .vedios {
     background: #ff6261;
-
 }
 
-
 .Payslips {
-
     font-size: 24px;
     line-height: 2.5rem;
     text-align: left;
@@ -274,7 +262,6 @@
 }
 
 .PayslipsGlo {
-
     font-size: 18px;
     line-height: 2rem;
     text-align: left;
@@ -285,28 +272,29 @@
 
 .ukimg {
     /* Created with https://www.css-gradient.com */
-    background: #773E85;
-    background: -webkit-linear-gradient(bottom, #773E85, #E84265);
-    background: -moz-linear-gradient(bottom, #773E85, #E84265);
-    background: linear-gradient(to top, #773E85, #E84265);
+    background: #773e85;
+    background: -webkit-linear-gradient(bottom, #773e85, #e84265);
+    background: -moz-linear-gradient(bottom, #773e85, #e84265);
+    background: linear-gradient(to top, #773e85, #e84265);
 }
 
 .saveTime {
     background-color: #6d8507;
-    background-image: linear-gradient(135deg, #6d8507 0%, #faaa63 50%, #c9c6ff 100%);
+    background-image: linear-gradient(
+        135deg,
+        #6d8507 0%,
+        #faaa63 50%,
+        #c9c6ff 100%
+    );
 }
 
 .needw2 {
     /* Created with https://www.css-gradient.com */
-    background: #3022AD;
-    background: -webkit-linear-gradient(top left, #3022AD, #D5469E);
-    background: -moz-linear-gradient(top left, #3022AD, #D5469E);
-    background: linear-gradient(to bottom right, #3022AD, #D5469E);
+    background: #3022ad;
+    background: -webkit-linear-gradient(top left, #3022ad, #d5469e);
+    background: -moz-linear-gradient(top left, #3022ad, #d5469e);
+    background: linear-gradient(to bottom right, #3022ad, #d5469e);
 }
-
-
-
-
 
 .fromimg {
     width: 115px;
@@ -319,23 +307,10 @@
     font-weight: 200;
 }
 
-.form-main-img {
-    background-position-x: left;
-    left: -155px;
-}
-
-
-
 @media screen and (max-width: 1024px) {
-
-
-    .form-main-img {
-        background-position-x: left;
-        left: -38px;
+    .globe-p {
+        font-size: 29px !important;
     }
-.globe-p{
-    font-size: 29px !important;
-}
     .formimg1 {
         width: 500px;
     }
@@ -346,7 +321,7 @@
 
     .instant {
         font-size: 30px;
-        margin-bottom:30px;
+        margin-bottom: 30px;
     }
     .list-outer {
         padding: 0px 16px;
@@ -354,10 +329,6 @@
 }
 
 @media screen and (max-width: 768px) {
-
-
-
-
     .PayslipsGlo {
         text-align: center;
     }
@@ -393,18 +364,14 @@
     .formimg2 {
         width: 353px;
     }
-
-
 }
 
 @media screen and (max-width: 375px) {
-
-
-.couple {
-    max-width: 1086px;
+    .couple {
+        max-width: 1086px;
+    }
 }
-
-@media screen and (max-width:1440px) {
+@media screen and (max-width: 1440px) {
     .couple {
         max-width: 904px;
     }
@@ -416,35 +383,31 @@
 
     .ukp {
         font-size: 30px;
-
     }
 
     .ukh1 {
         font-size: 30px;
     }
 
+    .CreatePaystub {
+        width: 312px;
+        height: 64px;
+        border-radius: 63px;
+        background-color: #ff4040;
+        font-weight: 700;
+        margin: auto;
+        font-size: xx-large;
+        font-family: "Futura LT";
+    }
 
-.CreatePaystub {
-    width: 312px;
-    height: 64px;
-    border-radius: 63px;
-    background-color: #FF4040;
-    font-weight: 700;
-    margin: auto;
-    font-size: xx-large;
-    font-family: 'Futura LT';
-}
+    .template-box {
+        border: 2px #a0a0a0 solid;
+    }
 
-.template-box {
-    border: 2px #a0a0a0 solid;
-}
+    .tempangle {
+        color: #e827a5;
 
-.tempangle {
-    color: #e827a5;
-
-    font-size: 50px;
-    font-weight: 800;
-
-}
-
+        font-size: 50px;
+        font-weight: 800;
+    }
 }

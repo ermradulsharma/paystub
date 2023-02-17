@@ -1537,7 +1537,8 @@ ul.mt-4 {
     padding: 0px 16px;
 }
 .computer-img {
-    max-width: 800px;
+    max-width: 900px;
+    margin-left: auto;
 }
 .mt-5.global-heading h2 {
     max-width: 500px;
@@ -1556,6 +1557,25 @@ ul.mt-4 {
 }
 .mt-5.pt-3.d-flex.uk-goo {
     padding-left: 48px !important;
+}
+.global-padding {
+    max-width: 800px;
+}
+.text-white.ml-2.w2-form-heading {
+    max-width: 310px;
+}
+.w2-form-pcimg img {
+    width: 100%;
+}
+.w2-form-pcimg {
+   max-width: 900px;
+}
+.w2-form-container {
+    max-width: 1100px;
+}
+img.earnbtn2.global-earnbtn {
+    left: 15px;
+    top: 10px;
 }
 /* template-view end */
 
@@ -1617,7 +1637,12 @@ ul.mt-4 {
     .mmenu {
         width: 100%;
     }
-
+    .col-lg-3.display-none {
+        display: none;
+    }
+    .container.bg-light.redcon {
+        max-width: 1385px !important;
+    }
     .down {
         position: absolute;
         right: 91px;
@@ -1762,6 +1787,9 @@ ul.mt-4 {
 
     .checkbox-inner p {
         text-align: left;
+    }
+    .container.bg-light.redcon {
+        max-width: 978px !important;
     }
 
     .checkbox-sqaure p {
@@ -2012,11 +2040,6 @@ ul.mt-4 {
         top: 310px !important;
     }
 
-    .globleImg {
-        max-width: 470px;
-        height: auto;
-    }
-
     .storbtn {
         width: 125px;
         height: 44px;
@@ -2214,6 +2237,31 @@ ul.mt-4 {
         justify-content: center;
         margin-top: 20px !important;
     }
+    .col-lg-9.col-md-12.mt-5.py-5.pl-5.container.w2-form-container {
+        margin: 0 !important;
+    }
+    .text-center.my-5.w2-form-text {
+        margin-top: 0 !important;
+    }
+    .text-white.ml-2.w2-form-heading {
+        font-size: 25px !important;
+        text-align: left;
+    }
+    .text-left.pt-5.w2-form-content {
+        padding: 0px !important;
+    }
+    a.btn.btn-lg.btn-danger.Generate1.w2-form-btn {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+    .formimg1 {
+
+        margin: 0 auto !important;
+        display: flex;
+        justify-content: center;
+    }
     .view-temp {
         color: #0e866c;
         font-size: 22px;
@@ -2341,7 +2389,7 @@ ul.mt-4 {
 
     .col-set1 {
         display: flex;
-        margin: 0 auto 0 66px;
+        margin: 0 auto;
         max-width: 580px;
     }
 
@@ -2773,25 +2821,121 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
     .storehead a img {
         margin-left: 0px !important;
     }
-
+    .col-lg-9.col-md-12.mt-5.py-5.pl-5.container.w2-form-container {
+        padding: 0px 20px !important;
+    }
+    .container.py-5.w2-form-containerpadding {
+        padding: 0 !important;
+    }
+    .container.m-auto.justify-content-center.w2-form-containerpadding {
+        padding: 0;
+    }
+    .container.m-auto.justify-content-center.w2-form-containerpadding p {
+        text-align: center;
+        padding: 0 !important;
+        font-size: 15px !important;
+        margin-top: 0;
+    }
+    .text-center.my-5.w2-form-text {
+        margin-bottom: 15px !important;
+    }
+    a.btn.btn-lg.btn-danger.Generate.w2-form-btn {
+        font-size: 16px !important;
+        max-width: 215px !important;
+    }
+    .col-lg-6.col-sm-12.col-md-12.pr-2.w2-form-img {
+        padding: 0px !important;
+    }
+    ul.w2-form-list li {
+        font-size: 15px;
+    }
+    p.text-left {
+        font-size: 15px !important;
+    }
+    p.para-w2 {
+        font-size: 15px !important;
+    }
+    ul.justify-content-center.w2-form-list2 {
+        padding: 0px 15px;
+    }
+    ul.justify-content-center.w2-form-list2 li {
+        font-size: 15px;
+    }
+    .text-left {
+        font-size: 15px !important;
+    }
+    .col-lg-9.col-md-12.mt-5.py-5.pl-5.container.w2-form-container h1 {
+        font-size: 20px;
+    }
+    .text-justify.text-center.text-white.w2-form-bottom h1 {
+        font-size: 18px;
+    }
+    .text-justify.text-center.text-white.w2-form-bottom h2 {
+        font-size: 18px;
+    }
+    a.btn.btn-lg.btn-danger.Generate1.w2-form-btn {
+        font-size: 17px;
+    }
+    .col-lg-5.col-sm-12.text-center.p-4.m-auto {
+        padding: 15px 0px !important;
+    }
+    .text-white.PayslipsGlo.ml-4.text-white2 {
+        font-size: 14px !important;
+    }
+    .text-white.Payslips {
+        font-size: 14px !important;
+    }
+    .text-center {
+        font-size: 20px !important;
+    }
     .oo {
         display: flex;
+    }
+    label.lable.text-center.uk-paystub-text {
+        font-size: 9px !important;
     }
     p.top-heading {
         font-size: 16px;
     }
-
+    .mt-5.justify-content-center.d-flex.w2-form-btn {
+        margin-bottom: 20px;
+    }
+    a.btn.btn-lg.mt-5.p-2.btn-danger.Generate.canada-btn {
+        max-width: 250px !important;
+    }
+    .three-box-section {
+        padding-bottom: 0px;
+    }
 
     .payst {
         border: unset;
         display: unset;
-
-
+    }
+    .fromimg {
+        width: 80px;
+    }
+    .text-white.ml-2.w2-form-heading{
+        font-size: 21px !important;
     }
     .basic1 {
         margin-left: 0px;
         font-weight: 900;
 
+    }
+    p.text-white.pay-p.head-font.home-p {
+        font-size: 15px !important;
+    }
+    .box {
+        padding: 10px !important;
+    }
+    .box-icon{
+        padding-bottom: 10px !important;
+    }
+    .box-content h6 {
+        padding-bottom: 10px !important;
+    }
+    .bottom-content p {
+        font-size: 15px;
     }
     .ukp {
         font-size: 22px;
@@ -3151,6 +3295,7 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
         position: relative;
         top: 10px;
         left: 0px;
+        height: auto;
     }
 
     .uk-goo {
@@ -3161,6 +3306,7 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
         margin-bottom: 10px;
         margin-top: 4px;
         line-height: 1.5 !important;
+        font-size: 20px !important;
     }
 
     .box-border-outer {
@@ -3319,6 +3465,9 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
         width: 100%;
         margin: 0px !important;
         max-width: 400px;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto  !important;
     }
 
     .paytext {
@@ -3336,7 +3485,7 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
     .payimg2 {
         width: 100% !important;
         margin: 10px auto 0px 0px;
-        height: 60%;
+        height: auto;
     }
 
     .tickbox {
@@ -3357,20 +3506,26 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
     }
 
     .can-p {
-        font-size: 17px !important;
+        font-size: 14px !important;
+        padding-top: 20px;
     }
 
     .can-p1 {
-        font-size: 16px !important;
+        font-size: 14px !important;
         margin-bottom: 10px !important;
     }
-
+    .text-white.text-padding.globe-p {
+        font-size: 25px !important;
+    }
 
     .gen {
         font-size: 24px !important;
         font-family: 'Futura LT';
         text-align: center;
 
+    }
+    ol.w2-form-list {
+        padding: 0px 16px;
     }
 
     .ready {
@@ -3453,12 +3608,15 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
         font-size: 18px !important;
     }
 
-
-
-    .box-content h6 {
-        font-size: 20px;
+    .text-white.ml-2.w2-form-heading {
+        font-size: 17px !important;
     }
-
+    .box-content h6 {
+        font-size: 17px;
+    }
+    b.bottom-c {
+        font-size: 17px !important;
+    }
     .bottom-content p {
         font-size: 15px;
     }
@@ -3691,13 +3849,26 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
         position: relative;
         width: 100% !important;
         left: 0px;
-        height: 50%;
+        height: auto;
     }
-
     .img2-p {
-        font-size: 17px;
+        font-size: 14px;
         font-weight: 200;
         margin-top: 20px;
+        line-height: 1.6;
+        padding-bottom: 35px;
+    }
+    a.btn.btn-lg.mt-2.p-2.btn-danger.Generate {
+        max-width: 230px !important;
+        font-size: 15px !important;
+    }
+    a.btn.btn-lg.mt-5.p-2.btn-danger.Generate {
+        max-width: 230px !important;
+        font-size: 15px !important;
+    }
+    a.btn.btn-lg.btn-danger.Generate {
+        max-width: 230px !important;
+        font-size: 15px !important;
     }
 
     .paytext {
@@ -3733,7 +3904,6 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
 
     .box-usa {
         border: 3px solid #FF6161;
-        /* padding: 10px 0px 12px 0px; */
         background: #E8E6E6;
         border-radius: 2px;
 
@@ -3782,13 +3952,12 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
     }
 
     .mt-5.ready {
-        font-size: 20px !important;
+        font-size: 16px !important;
         padding-top: 20px;
     }
 
-    .mt-5 b {
-        font-size: 20px !important;
-    }
+
+
 
     .text-left p {
         font-size: 16px !important;
@@ -3862,13 +4031,18 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
     .textarea-w2 textarea {
         max-width: 295px;
     }
+    p.mt-1.b-p {
+        font-size: 13px !important;
+    }
 
     .text-left h1 {
         font-size: 30px;
         font-weight: 500;
     }
 
-
+    .text-white.ml-2.w2-form-heading {
+        font-size: 15px !important;
+    }
 
     p.color-red {
         font-size: 12px !important;
@@ -3876,6 +4050,9 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
 
     .input-feild-outer {
         max-width: 255px;
+    }
+    input.input-uk.text-center {
+        font-size: 13px !important;
     }
 
     .input-feild-outer input {
@@ -3903,6 +4080,9 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
         color: white;
         width: 38px;
     }
+    b.bottom-c {
+        font-size: 15px !important;
+    }
 
     .socialicon {
         border: 2px solid white;
@@ -3925,6 +4105,9 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
     }
     .container.footer-icons {
         padding: 0;
+    }
+    .text-left.mt-4 p {
+        font-size: 13px !important;
     }
 
 

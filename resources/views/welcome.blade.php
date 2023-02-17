@@ -148,7 +148,7 @@
                             <h2 class="text-white calcheading head-font" style="color: #fafabd !important;">Add your Data
                             </h2>
                             <p style="font-size:17px;font-weight: 200;font-family: 'Futura LT';line-height:1.8;"
-                                class="text-white pay-p head-font">Our paystub generator
+                                class="text-white pay-p head-font home-p">Our paystub generator
                                 accurately<br>
                                 calculates your Federal and State<br> taxes, including Social security <br>and Medicare
                                 taxes so you don't
@@ -161,7 +161,7 @@
                             <h2 class="text-white calcheading head-font" style="color: #fafabd !important;">Preview Data
                             </h2>
                             <p style="font-size:17px;font-weight: 200;font-family: 'Futura LT'; line-height:1.8;"
-                                class="text-white pay-p head-font">Generate pay stubs with
+                                class="text-white pay-p head-font home-p">Generate pay stubs with
                                 accurate<br>
                                 state income taxes, based on <br>state W-4, and other applicable<br> local taxes. </p>
                             <img class="list-img" src="images/2.webp"
@@ -170,7 +170,7 @@
                         <div class="col-md-4 mt-3 text-center">
                             <h2 class="text-white pay-h2 calcheading head-font">Download & Email your Paystub</h2>
                             <p style="font-size:17px;font-weight: 200;font-family: 'Futura LT'; line-height:1.8;"
-                                class="text-white pay-p head-font">You will get to generate
+                                class="text-white pay-p head-font home-p">You will get to generate
                                 unlimited<br>
                                 payslip, paycheck or paystub <br>according to the plan you select.
                             </p>
@@ -308,14 +308,14 @@
                 </div>
                 <div class="col-md-5 text-left mb-5 ">
                     <div class="mt-5">
-                        <b style="font-size: 24px; font-weight: 600; font-family: 'Futura LT';">
+                        <b class="bottom-c" style="font-size: 24px; font-weight: 600; font-family: 'Futura LT';">
                             Generate Paystubs Using our<span class="text-danger"> Android or iOS
                                 App</span></b>
-                        <p style="font-size: 20px;line-height: 35px;font-family: 'Futura LT';" class="mt-1 ">Generate
+                        <p style="font-size: 20px;line-height: 35px;font-family: 'Futura LT';" class="mt-1 b-p ">Generate
                             paystubs
                             instantly by using our
                             paystub
-                            generator app.</br>
+                            generator app.<br>
                             It's simple, easy, and accurate.</p>
                     </div>
                     <div class="mt-5  d-flex pt-5 goggle">

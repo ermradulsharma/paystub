@@ -102,7 +102,7 @@
                             </div>
 
                             <div class="col-md-6 mt-1">
-                                <label for="company_address" class="lable text-center">EMPLOYER (COMAPNY) ADDRESS <span style="color:red;">*</span></label>
+                                <label for="company_address" class="lable text-center uk-paystub-text">EMPLOYER (COMAPNY) ADDRESS <span style="color:red;">*</span></label>
                                 <input type="text" id="company_address" name="company_address" placeholder="5 Throgmorton St, London EC2N 2AD, United Kingdom" class="w-100 p-2 text-center" style="font-size:14px;">
                             </div>
                         </div>
@@ -121,7 +121,7 @@
                         </div>
 
                         <div class="col-md-6 mt-1">
-                            <label for="emp_street_1" class="lable text-center">EMPLOYEE ADDRESS 1 <span style="color:red;">*</span></label>
+                            <label for="emp_street_1" class="lable text-center uk-paystub-text">EMPLOYEE ADDRESS 1 <span style="color:red;">*</span></label>
                             <input type="text" id="emp_street_1" name="emp_street_1" placeholder="5 Throgmorton St, London EC2N 2AD, United Kingdom" class="w-100 p-2 text-center" style="font-size:14px;">
                         </div>
                         <div class="col-md-6 mt-1">
@@ -130,7 +130,7 @@
                         </div>
 
                         <div class="col-md-6 mt-1">
-                            <label for="emp_zip_code" class="lable text-center">POSTCODE<span style="color:red;">*</span></label>
+                            <label for="emp_zip_code" class="lable text-center uk-paystub-text">POSTCODE<span style="color:red;">*</span></label>
                             <input type="text" id="emp_zip_code" name="emp_zip_code" placeholder="5 Throgmorton St, London EC2N 2AD, United Kingdom" class="w-100 p-2 text-center" style="font-size:14px;">
                         </div>
                     </div>

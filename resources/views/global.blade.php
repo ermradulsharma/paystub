@@ -50,7 +50,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-6 col-md-12   " style="background-position-x:left;">
+                <div class="col-lg-7 col-md-12   " style="background-position-x:left;">
                     <img class=" globleImg" src="images/globle/qewqq22.png">
                 </div>
 
@@ -61,8 +61,8 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="row">
-                    <div class="col-lg-3 col-md-1"></div>
-                    <div class="col-lg-9 col-md-12 pl-5 global-padding">
+                    <div class="col-lg-3 display-none"></div>
+                    <div class="col-lg-9 col-md-12 col-sm-12 pl-5 global-padding">
                         <div class="mt-5 global-heading">
 
                             <h2> Use Paystubx for end-to-end Global Payroll Process Management</h2>
@@ -97,6 +97,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-lg-6">
                 <div class="row justify-contetn-center">
                     <div class=" global-padding">
