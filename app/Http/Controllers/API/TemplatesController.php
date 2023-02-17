@@ -101,7 +101,8 @@ class TemplatesController extends Controller
                 $slip->save();
                 $response['pdf'] = asset('/uploads/mailData/' . $fileName);
                 $response['message'] = "Data saved successfully.";
-                return response()->json($response, $response['status']);
+                $response['status'] = 200;
+                $response['success'] = TRUE;
             } else {
                 if ($requestData['advance_temp']) {
                     $pageName = $requestData['advance_temp'];
