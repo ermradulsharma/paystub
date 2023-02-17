@@ -91,8 +91,7 @@
                     <td style="padding-top:10px; padding-bottom:10px; border-right:1px solid #0a2e7b;border-radius:0;" class="bold">007</td>
                     <td style="padding-top:10px; padding-bottom:10px; border-right:1px solid #0a2e7b;border-radius:0px 0px 0px0px;" class="bold">{{ $requestData['emp_name']}}</td>
                     <td style="padding-top:10px; padding-bottom:10px; border-right:1px solid #0a2e7b;border-radius:0;" class="bold">{{ date('d-F-Y', strtotime($requestData['pay_date'])) }}</td>
-                    <td style="padding-top:10px; padding-bottom:10px; border-radius:0;" class="bold">PX 56 56 56 C
-                    </td>
+                    <td style="padding-top:10px; padding-bottom:10px; border-radius:0;" class="bold">{{ $requestData['ni_number']}}</td>
                 </tr>
             </table>
             <div class="row">

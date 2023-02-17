@@ -87,10 +87,12 @@
                         <tr>
                             <th style="font-size: 15px; text-align:center;"><b>Payments</b></th>
                         </tr>
+                        @foreach ($requestData['earning'] as $key => $earn)
                         <tr>
-                            <td>Basic Pay</td>
-                            <td><b>{{ number_format($requestData['taxable_gross_pay'],2) }}</b></td>
+                            <td>{{ $earn }}</td>
+                            <td>{{ number_format($requestData['total'][$key], 2) }}</td>
                         </tr>
+                        @endforeach
                         <tr>
                             <td><b>Total Payment</b></td>
                             <td><b>{{ number_format($requestData['taxable_gross_pay'],2) }}</b></td>
@@ -167,19 +169,19 @@
                         </tr>
                         <tr>
                             <td>Taxable Gross Pay</td>
-                            <td><b>{{ number_format($requestData['taxable_gross_pay'],2) }}</b></td>
+                            <td style="text-align: right;"><b>{{ number_format($requestData['taxable_gross_pay'],2) }}</b></td>
                         </tr>
                         <tr>
                             <td>Income Tax</td>
-                            <td><b>{{ number_format($requestData['income_tax'],2) }}</b></td>
+                            <td style="text-align: right;"><b>{{ number_format($requestData['income_tax'],2) }}</b></td>
                         </tr>
                         <tr>
                             <td>Employee NIC</td>
-                            <td><b>{{ number_format($requestData['employee_nic'],2) }}</b></td>
+                            <td style="text-align: right;"><b>{{ number_format($requestData['employee_nic'],2) }}</b></td>
                         </tr>
                         <tr>
                             <td>Employee NIC</td>
-                            <td><b>{{ number_format($requestData['employer_nic'],2) }}</b></td>
+                            <td style="text-align: right;"><b>{{ number_format($requestData['employer_nic'],2) }}</b></td>
                         </tr>
                     </thead>
                 </table>

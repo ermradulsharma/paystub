@@ -113,50 +113,78 @@ class Template extends Model
 
     static function editFormData($data)
     {
-        $earn = [];
-        $tax = [];
-        $extra_tax_deduction = [];
+        if ($data->form_type != 'uk') {
+            $earn = [];
+            $tax = [];
+            $extra_tax_deduction = [];
 
-        foreach ($data->earning ?? [] as $key => $earning) {
-            $arr = [];
-            $arr['earning'] = $earning;
-            $arr['rate'] = $data->rate[$key];
-            $arr['hours'] = $data->hours[$key];
-            $arr['total'] = $data->total[$key];
-            $arr['period'] = $data->period[$key];
-            $arr['ytd_total'] = $data->ytd_total[$key];
-            $data->earn[] = $arr;
+            foreach ($data->earning ?? [] as $key => $earning) {
+                $arr = [];
+                $arr['earning'] = $earning;
+                $arr['rate'] = $data->rate[$key];
+                $arr['hours'] = $data->hours[$key];
+                $arr['total'] = $data->total[$key];
+                $arr['period'] = $data->period[$key];
+                $arr['ytd_total'] = $data->ytd_total[$key];
+                $data->earn[] = $arr;
+            }
+
+            foreach ($data->taxes ?? [] as $key => $taxes) {
+                $arr = [];
+                $arr['taxes'] = $taxes;
+                $arr['taxes_rate'] = $data->taxes_rate[$key];
+                $arr['taxes_ytd'] = $data->taxes_ytd[$key];
+                $data->tax[$key] = $arr;
+            }
+
+
+            foreach ($data->tax_deduction ?? [] as $key => $tax_deduction) {
+                $arr = [];
+                $arr['tax_deduction'] = $tax_deduction;
+                $arr['period_tax_deduction'] = $data->period_tax_deduction[$key];
+                $arr['ytd_tax_deduction'] = $data->ytd_tax_deduction[$key];
+                $data->extra_tax_deduction[$key] = $arr;
+            }
+
+            unset($data->earning);
+            unset($data->rate);
+            unset($data->hours);
+            unset($data->total);
+            unset($data->period);
+            unset($data->ytd_total);
+            unset($data->taxes);
+            unset($data->taxes_rate);
+            unset($data->taxes_ytd);
+            unset($data->tax_deduction);
+            unset($data->period_tax_deduction);
+            unset($data->ytd_tax_deduction);
+        } else {
+            $earn = [];
+            $tax = [];
+
+            foreach ($data->earning ?? [] as $key => $earning) {
+                $arr = [];
+                $arr['earning'] = $earning;
+                $arr['rate'] = $data->rate[$key];
+                $arr['hours'] = $data->hours[$key];
+                $arr['total'] = $data->total[$key];
+                $data->earn[] = $arr;
+            }
+
+            foreach ($data->taxes ?? [] as $key => $taxes) {
+                $arr = [];
+                $arr['taxes'] = $taxes;
+                $arr['taxes_rate'] = $data->taxes_rate[$key];
+                $data->tax[$key] = $arr;
+            }
+            unset($data->earning);
+            unset($data->rate);
+            unset($data->hours);
+            unset($data->total);
+            unset($data->taxes);
+            unset($data->taxes_rate);
         }
 
-        foreach ($data->taxes ?? [] as $key => $taxes) {
-            $arr = [];
-            $arr['taxes'] = $taxes;
-            $arr['taxes_rate'] = $data->taxes_rate[$key];
-            $arr['taxes_ytd'] = $data->taxes_ytd[$key];
-            $data->tax[$key] = $arr;
-        }
-
-
-        foreach ($data->tax_deduction ?? [] as $key => $tax_deduction) {
-            $arr = [];
-            $arr['tax_deduction'] = $tax_deduction;
-            $arr['period_tax_deduction'] = $data->period_tax_deduction[$key];
-            $arr['ytd_tax_deduction'] = $data->ytd_tax_deduction[$key];
-            $data->extra_tax_deduction[$key] = $arr;
-        }
-
-        unset($data->earning);
-        unset($data->rate);
-        unset($data->hours);
-        unset($data->total);
-        unset($data->period);
-        unset($data->ytd_total);
-        unset($data->taxes);
-        unset($data->taxes_rate);
-        unset($data->taxes_ytd);
-        unset($data->tax_deduction);
-        unset($data->period_tax_deduction);
-        unset($data->ytd_tax_deduction);
 
         return $data;
     }
