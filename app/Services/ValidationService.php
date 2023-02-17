@@ -108,7 +108,6 @@ class ValidationService
                 'zip_code' => 'required',
                 'emp_name' => 'required',
                 'emp_id' => 'required',
-                'emp_address' => 'required',
                 'currency' => 'required',
                 'pay_start' => 'required',
                 'pay_end' => 'required',
@@ -117,9 +116,7 @@ class ValidationService
                 'rate' => 'required|array',
                 'hours' => 'required|array',
                 'total' => 'required|array',
-                // 'taxes' => 'required|array',
-                // 'taxes_rate' => 'required|array',
-                // 'taxes_ytd' => 'required|array',
+                'check_number' => 'required',
             ];
 
             $messages = [
@@ -131,7 +128,6 @@ class ValidationService
                 'zip_code' => 'Zip Code cannot be empty',
                 'emp_name' => 'Employee name cannot be empty',
                 'emp_id' => 'Employee id cannot be empty',
-                'emp_address' => 'Employee STREET 1 cannot be empty',
                 'currency' => 'Please SELECT YOUR PREFERRED CURRENCY cannot be empty',
                 'pay_start' => 'PAY START cannot be empty',
                 'pay_end' => 'PAY END cannot be empty',
@@ -140,9 +136,7 @@ class ValidationService
                 'rate' => 'RATE be empty',
                 'hours' => 'HOURS be empty',
                 'total' => 'TOTAL cannot be empty',
-                // 'taxes' => 'Taxes cannot be empty',
-                // 'taxes_rate' => 'Taxes Rate cannot be empty',
-                // 'taxes_ytd' => 'Taxes YTD cannot be empty',
+                'check_number' => 'Check number cannot be empty',
             ];
         } elseif ($request->form_type == "uk") {
             $rules = [
@@ -156,6 +150,10 @@ class ValidationService
                 'pay_end' => 'required',
                 'pay_date' => 'required',
                 'pay_type' => 'required',
+                'payment_method' => 'required',
+                'tax_code' => 'required',
+                'ni_number' => 'required',
+                'ni_table_letter' => 'required',
                 'earning' => 'required|array',
                 'rate' => 'required|array',
                 'hours' => 'required|array',
@@ -172,6 +170,10 @@ class ValidationService
                 'pay_end' => 'PAY END cannot be empty',
                 'pay_type' => 'PAY TYPE cannot be empty',
                 'pay_date' => 'PAY DATE cannot be empty',
+                'payment_method' => 'PAYMENT METHOD cannot be empty',
+                'tax_code' => 'TAX CODE cannot be empty',
+                'ni_number' => 'NI NUMBER cannot be empty',
+                'ni_table_letter' => 'NI TABLE LETTER cannot be empty',
                 'earning' => 'EARNING cannot be empty',
                 'rate' => 'RATE be empty',
                 'hours' => 'HOURS be empty',
