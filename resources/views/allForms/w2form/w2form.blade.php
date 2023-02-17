@@ -131,8 +131,7 @@
                     </tr>
                     <tr>
                         <td style="border-bottom: 2px solid red" colspan="3">
-                            <p style="" class="bottom-number">
-                                {{ $requestData['company_in'] }}<br>{{ $requestData['company_address'] }}</p>
+                            <p style="" class="bottom-number">{{ $requestData['company_address'] }}</p>
                         </td>
                     </tr>
                     <thead style=" width:100%">
@@ -228,7 +227,7 @@
                             <div style="position: absolute; top:15px; margin-left:30px; ">
                                 <p><img style="width:6px !important; float:left; position: relative; left:-20px;" src="images/code.png"></p>
                                 <p style="padding-right:15px !important;float:left;font-size: 16px; color:black; ">
-                                    {{ $requestData['pie_2'] }}</p>
+                                    {{ $requestData['pie_1'] }}</p>
                                 <p style="float:left;background-color: red; width:2px; height:30px; position: relative; left:35px; top:0px;">
                                 </p>
                                 <p style="float:right;font-size: 16px; color:black; position: relative; left:60px;" class="bottom-number">{{ number_format($requestData['instructions_box_1'], 2) }}
@@ -275,7 +274,7 @@
                         <td style="border-right:2px solid red;">
                             <p><b>14 </b>Other</p>
                             <p style=" height:21%;" class="bottom-number">
-                                {{ $requestData['company_in'] }}<br>{{ $requestData['company_address'] }}</p>
+                              {{ $requestData['other'] }}</p>
 
                         </td>
                         <td style="margin:0; padding:0;position: relative;">
@@ -284,11 +283,11 @@
                                 <div style=" width:100%; ">
                                     <p><img style="width:6px !important; float:left; position: relative; left:12px;" src="images/code.png"></p>
                                     <p style="float:left;font-size: 16px; color:black; padding-left:30px !important; ">
-                                        {{ $requestData['pie_2'] }}</p>
+                                        {{ $requestData['pie_3'] }}</p>
                                     <p style="float:left;width:2px; height:30px;background-color:red; position: relative; left:65px; top:18px;">
                                     </p>
                                     <p style="float:right;font-size: 16px; color:black; width:40%; " class="bottom-number">
-                                        {{ number_format($requestData['instructions_box_2'], 2) }}
+                                        {{ number_format($requestData['instructions_box_3'], 2) }}
                                     </p>
 
 
@@ -301,11 +300,11 @@
                                 <div style=" width:100%; ">
                                     <p><img style="width:6px !important; float:left;position: relative; top:20px;left:12px;" src="images/code.png"></p>
                                     <p style="float:left;font-size: 16px; color:black; padding-left:30px !important;position: relative; top:20px; ">
-                                        {{ $requestData['pie_2'] }}</p>
+                                        {{ $requestData['pie_4'] }}</p>
                                     <p style="float:left;width:2px; height:30px;background-color:red; position: relative; left:65px; top:22px;">
                                     </p>
                                     <p style="float:right;font-size: 16px; color:black; width:40%;position: relative; top:20px; " class="bottom-number">
-                                        {{ number_format($requestData['instructions_box_2'], 2) }}
+                                        {{ number_format($requestData['instructions_box_4'], 2) }}
                                     </p>
 
 
