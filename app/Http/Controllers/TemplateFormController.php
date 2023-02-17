@@ -49,8 +49,6 @@ class TemplateFormController extends Controller
                 $pageName = $requestData['basic_temp'];
             }
         }
-
-
         $path = public_path() . '/uploads/mailData';
         File::isDirectory($path) or File::makeDirectory($path, 0777, true, true);
         $invoiceData['requestData'] = $requestData;
