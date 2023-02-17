@@ -1,12 +1,8 @@
 <?php
 
-use App\Http\Controllers\CanadaController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PayStubController;
 use App\Http\Controllers\TemplateFormController;
-use App\Http\Controllers\UkController;
-use App\Http\Controllers\UsaController;
-use App\Http\Controllers\W2FormController;
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\Routing\Router;
 
@@ -107,6 +103,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('invoiceMail/{id}', [TemplateFormController::class, 'invoiceMail'])->name('invoiceMailId');
     Route::get('invoiceMail', [TemplateFormController::class, 'invoiceMail'])->name('invoiceMail');
     Route::get('invoiceEdit/{id}', [TemplateFormController::class, 'edit'])->name('invoiceEdit');
-    Route::get('prizing', [UsaController::class, 'prizing'])->name('prizing');
+    Route::get('prizing', [TemplateFormController::class, 'prizing'])->name('prizing');
     Route::get('subscription', [TemplateFormController::class, 'subscription'])->name('subscription');
 });
