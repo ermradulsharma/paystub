@@ -40,10 +40,34 @@
     .margin-right{
         margin: 0 auto !important
     }
+    .col-md-4.mt-3.pl-0.padding-0 {
+        padding: 0 !important;
+    }
+    .col-lg-12.center-btn {
+        display: flex;
+        justify-content: center;
+        padding: 0 !important;
+    }
+    .col-xl-4.col-lg-7.col-md-4.mt-2.margin-bottom.px-lg-2.px-0.center-btn {
+        display: flex;
+        justify-content: center;
+    }
 
 
 }
 @media only screen and (min-width:320px) and (max-width:375px) {
+    .col-md-4.mt-3.pl-0.padding-0 {
+        padding: 0 !important;
+    }
+    .col-lg-12.center-btn {
+        display: flex;
+        justify-content: center;
+        padding: 0 !important;
+    }
+    .col-xl-4.col-lg-7.col-md-4.mt-2.margin-bottom.px-lg-2.px-0.center-btn {
+        display: flex;
+        justify-content: center;
+    }
 
 }
 .createbtn {

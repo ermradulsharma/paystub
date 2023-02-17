@@ -140,15 +140,15 @@
                             <div style="border:3px solid #ff5722;" class=" pay-outer mb-3">
                                 <div class="ukpay-inner ">
                                     <div class="row">
-                                        <div style="margin:0 !important;" class="col-md-4 mt-3 pl-0">
+                                        <div style="margin:0 !important;" class="col-md-4 mt-3 pl-0 padding-0">
                                             <label for="pay_start" class="lable uk-lable ">Pay Start <span style="color:red;">*</span> </label>
                                             <input type="date" id="pay_start" name="pay_start" class="input-uk" value="12-11-2022" style="font-size:14px;">
                                         </div>
-                                        <div style="margin:0 !important;" class="col-md-4 mt-3 pl-0">
+                                        <div style="margin:0 !important;" class="col-md-4 mt-3 pl-0 padding-0">
                                             <label for="pay_end" class="lable uk-lable">Pay End <span style="color:red;">*</span> </label>
                                             <input type="date" id="pay_end" name="pay_end" class="input-uk" value="09-12-2022" style="font-size:14px;">
                                         </div>
-                                        <div style="margin:0 !important;" class="col-md-4 mt-3 pl-0">
+                                        <div style="margin:0 !important;" class="col-md-4 mt-3 pl-0 padding-0">
                                             <label for="pay_date" class="lable uk-lable">Pay Date <span style="color:red;">*</span> </label>
                                             <input type="date" id="pay_date" name="pay_date" class="input-uk" value="10-12-2022" style="font-size:14px;">
                                         </div>
@@ -227,7 +227,7 @@
                                         </div>
                                     </div>
                                     <div class="row mb-3">
-                                        <div class="col-xl-4 col-lg-7 col-md-4 mt-2 margin-bottom  px-lg-2 px-0">
+                                        <div class="col-xl-4 col-lg-7 col-md-4 mt-2 margin-bottom  px-lg-2 px-0 center-btn">
                                             <button type="button" class="btnCommon addEarningField"> <i class="fa fa-plus-circle pr-2" style="font-size: 22px;color: #0ec23b;padding-top: 0px;"></i>Add Earning</button>
                                         </div>
                                     </div>
@@ -236,7 +236,7 @@
                                     <div class="row mt-5">
                                         <div class="col-md-4 col-lg-7  px-lg-2 px-0">
                                             <!-- <button type="button" class="createbtn w-100 py-0">DEDUCTIONS</button> -->
-                                            <h3 style="font-weight: 300 !important;">DEDUCTION</h3>
+                                            <h3 class="uk-text" style="font-weight: 300 !important;">DEDUCTION</h3>
                                         </div>
                                     </div>
                                     <div class="ukpay-inner ">
@@ -248,7 +248,7 @@
                                                 <input class="input-uk text-center taxes" name="taxes[]" data-id="00{{ $key }}" data-value="{{ $item->price }}" value="{{ $item->title }}">
                                                 @endforeach
                                             </div>
-                                            <div class="col-md-5 col-lg-5 mb-3  px-lg-2 px-0">
+                                            <div class="col-md-5 col-lg-5 mb-3  px-lg-2 px-0 ">
                                                 @foreach ($deduction as $key => $item)
                                                 <input class="input-uk text-center" readonly name="taxes_rate[]" id="tax_total_00{{ $key }}">
                                                 @endforeach
