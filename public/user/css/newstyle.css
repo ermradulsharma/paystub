@@ -11,11 +11,10 @@
     border-radius: 5px;
     background-color: #ef2d22;
     color: white;
-    border: 1px solid rgb(232, 102, 102)'';
+    border: 1px solid rgb(232, 102, 102) "";
     font-size: 24px;
-    box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, .6));
+    box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, 0.6));
 }
-
 
 .createbtn2 {
     padding: 0px 58px;
@@ -24,8 +23,7 @@
     color: white;
     border: 1px black;
     font-size: 24px;
-    box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, .6));
-
+    box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, 0.6));
 }
 
 .see-sample {
@@ -42,7 +40,6 @@
     z-index: 14;
     top: 212px;
     left: 173px;
-
 }
 
 .see-sample:hover {
@@ -64,7 +61,7 @@
     position: absolute;
     z-index: 14;
     top: 184px;
-    left: 508px
+    left: 508px;
 }
 
 .see-sample1:hover {
@@ -98,7 +95,6 @@
 
 .see-img {
     position: relative;
-
 }
 
 .col-set {
@@ -115,11 +111,11 @@
     width: 312px;
     height: 64px;
     border-radius: 63px;
-    background-color: #FF4040;
+    background-color: #ff4040;
     font-weight: 700;
     margin: auto;
     font-size: xx-large;
-    font-family: 'Futura LT';
+    font-family: "Futura LT";
     margin-bottom: 20px;
 }
 
@@ -140,9 +136,9 @@
 }
 
 .box-usa {
-    border: 3px solid #FF6161;
+    border: 3px solid #ff6161;
 
-    background: #E8E6E6;
+    background: #e8e6e6;
 
     border-radius: 2px;
 }
@@ -153,7 +149,7 @@
     background: #ffffff;
     padding: 32px 19px;
     border-radius: 10px;
-    margin-left: 30px
+    margin-left: 30px;
 }
 
 .lable {
@@ -192,7 +188,7 @@
     border-radius: 5px;
     border: 2px solid #ff0000a3;
     text-align: left;
-    box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, .6));
+    box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, 0.6));
     /* color: var(--corvid-color,rgb(var(--txt,var(--color_15)))); */
     font-weight: 700;
 }
@@ -245,7 +241,6 @@
     border: none;
     border-radius: 4px;
     font-weight: 700;
-
 }
 
 .form-control {
@@ -261,7 +256,7 @@
     background-clip: padding-box;
     border: 1px solid #ced4da;
     border-radius: 0.25rem;
-    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 /* .formm:hover {
@@ -304,7 +299,6 @@
     border-radius: 2px;
 }
 
-
 .earnbtn {
     font-size: 15px;
     width: 100%;
@@ -312,7 +306,7 @@
     color: #1608ea;
     border-radius: 5px;
     border: 2px solid #ff0000a3;
-    box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, .6));
+    box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, 0.6));
     font-weight: 700;
     background: #e9e6e6;
 }
@@ -346,7 +340,7 @@ img.earnbtn2.lock {
     color: white;
     border: none;
     border-radius: 5px;
-    box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, .6));
+    box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, 0.6));
 }
 
 #name {
@@ -354,7 +348,6 @@ img.earnbtn2.lock {
     border: navajowhite;
     padding: 11px;
     box-shadow: 6px 6px 1px 3px #e4bfae;
-
 }
 
 .finame {
@@ -386,17 +379,20 @@ img.earnbtn2.lock {
 
 #name:hover {
     border: 1px solid black;
-
 }
 
 .previewbtn {
     font-size: 23px;
     color: #ffffff;
-    background: #ef2e21;
+    background: #ef2e21 !important;
     padding: 0px 35px;
     border: none;
     border-radius: 4px;
-    box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, .6));
+    box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, 0.6));
+    background-color: #8ebc42;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 .previewbtn:hover {
@@ -405,8 +401,6 @@ img.earnbtn2.lock {
     border: 1px solid #ef2e21;
     box-shadow: 6px 5px 4px 0px #00000066;
 }
-
-
 
 .pay-box {
     border: 1px solid #0000008c;
@@ -473,14 +467,14 @@ select:after {
     right: 25px;
     font-size: 36px;
     margin-left: 50px;
-    color: #0C2F62;
+    color: #0c2f62;
 }
 
 .nav-btn {
     box-shadow: 4px 4px 2px 1px #e9d1d3;
     width: 55%;
     color: white !important;
-    background: #0B2F5B;
+    background: #0b2f5b;
     font-size: 16px;
     font-family: emoji;
     padding: 3px;
@@ -495,9 +489,6 @@ select:after {
     margin: 0 0 0 10px !important;
 }
 
-
-
-
 .earnbtn1 {
     font-size: 18px;
     width: 60%;
@@ -511,11 +502,14 @@ select:after {
 .emailbtn {
     font-size: 21px;
     color: #ffffff;
-    background: #12c23a;
+    background: #12c23a !important;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     padding: 3px 80px;
     border: none;
     border-radius: 4px;
-    box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, .6));
+    box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, 0.6));
 }
 
 .emailbtn2 {
@@ -525,7 +519,7 @@ select:after {
     padding: 3px 53px;
     border: none;
     border-radius: 4px;
-    box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, .6));
+    box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, 0.6));
 }
 
 .sidebtn:hover {
@@ -538,7 +532,6 @@ input:hover {
     border: 1px solid #244b1f !important;
     background: #244b1f !important;
     color: white !important;
-
 }
 
 .dropdown1:hover {
@@ -572,7 +565,6 @@ input:hover {
     background-image: linear-gradient(45deg, #a70404d6, #cd7570);
     border: 2px solid #0b0a0a;
     border-radius: 4px;
-
 }
 
 .statementbtn:hover {
@@ -580,7 +572,6 @@ input:hover {
     color: #ffffff;
     /* border: 2px solid #2c5781; */
     font-weight: 400;
-
 }
 
 .emailbtn:hover {
@@ -588,12 +579,11 @@ input:hover {
     color: #40924a;
     border: 1px solid green;
     box-shadow: 6px 5px 4px 0px #00000066;
-
 }
 
 .mainhead {
     padding: 0px 225px 2px 4px;
-    font-family: 'Futura LT';
+    font-family: "Futura LT";
 }
 
 .google-btn {
@@ -603,7 +593,6 @@ input:hover {
     border-radius: 6px;
     box-shadow: 0 3px 4px 0 rgb(0 0 0 / 25%);
     margin: auto;
-
 }
 
 .basicpay {
@@ -689,7 +678,6 @@ input:hover {
     border-radius: 9px;
     width: 64%;
     font-size: 13px;
-
 }
 
 table {
@@ -721,8 +709,6 @@ h5 {
 .rec-box-border {
     /* padding: 1px 20px; */
     border: 2px solid red;
-
-
 }
 
 /* w2paystub */
@@ -741,7 +727,6 @@ h5 {
     font-size: 17px;
     margin-top: 23px;
     position: relative;
-
 }
 
 .tickbox {
@@ -761,7 +746,6 @@ h5 {
 .payimg {
     width: 315px;
     padding-bottom: 65px;
-
 }
 
 .payimg2 {
@@ -778,7 +762,7 @@ h5 {
 
 .img2-p {
     font-size: 20px;
-    font-family: 'Futura LT';
+    font-family: "Futura LT";
     color: rgba(0, 0, 0, 0.7);
     line-height: 1.8;
 }
@@ -795,7 +779,6 @@ h5 {
     font-size: 7px;
     top: 475px !important;
     margin-top: -47px;
-
 }
 
 .box-usa2 {
@@ -807,18 +790,18 @@ h5 {
     font-weight: 300;
     font-size: 42px;
     letter-spacing: 1.5px;
-    font-family: 'Futura LT';
+    font-family: "Futura LT";
 }
 
 .canadah2 {
     font-size: 40px;
-    font-family: 'Futura LT';
+    font-family: "Futura LT";
     font-weight: 600;
 }
 
 .canadah1 {
     font-size: -webkit-xx-large;
-    font-family: 'Futura LT';
+    font-family: "Futura LT";
     font-size: 52px;
 }
 
@@ -833,20 +816,19 @@ h5 {
     letter-spacing: 1.5px;
     display: flex;
     max-width: 312px;
-    font-family: 'Futura LT';
+    font-family: "Futura LT";
     margin-top: 21px;
 }
 
 .paddingleft {
     display: inline-table;
     padding: 0px 0px 0px 240px;
-
 }
 
 .uktext {
     font-size: 42px;
     font-weight: 300;
-    font-family: 'Futura LT';
+    font-family: "Futura LT";
 }
 
 .create-p {
@@ -865,7 +847,6 @@ h5 {
 
 .stubheading {
     font-size: 48px;
-
 }
 
 .formp1 {
@@ -909,7 +890,7 @@ select {
     padding: 6px 4px;
     border-radius: 4px;
     font-weight: 200;
-    font-family: 'Futura LT';
+    font-family: "Futura LT";
     margin-top: 17px;
 }
 
@@ -941,31 +922,30 @@ select {
 .youtubeimg {
     width: 418px;
     height: 234px;
-
 }
 
 .smallfont {
     font-size: 25px;
-    font-family: 'Futura LT';
+    font-family: "Futura LT";
 }
 
 .smallfont1 {
     font-size: 22px;
     color: #363636;
     line-height: 1em;
-    font-family: 'Futura LT';
+    font-family: "Futura LT";
 }
 
 .smallfont2 {
     font-size: 30px;
     line-height: 1em;
-    font-family: 'Futura LT';
+    font-family: "Futura LT";
 }
 
 .smallfont3 {
     font-size: 30px;
     line-height: 1.5em;
-    font-family: 'Futura LT';
+    font-family: "Futura LT";
 }
 
 .wrapper {
@@ -973,9 +953,8 @@ select {
 }
 
 .font {
-    font-family: 'Futura LT';
+    font-family: "Futura LT";
     font-size: 20px;
-
 }
 
 p.text-white.footer-text {
@@ -1079,12 +1058,11 @@ p.text-white.footer-text {
     font-size: 39px;
     position: relative;
     left: 10px;
-    ;
 }
 
 .head-font {
     font-size: 30px;
-    font-family: 'Futura LT';
+    font-family: "Futura LT";
     margin-bottom: 30px;
 }
 
@@ -1107,7 +1085,6 @@ ul.nav.nav-justified.navbar {
     text-decoration: none !important;
     background-color: white;
     transition: all 0.5s ease-in-out;
-
 }
 
 .foot:hover a {
@@ -1394,14 +1371,11 @@ p.checkbox-sqaure {
 .textarea-w2.textarea-outer {
     border-bottom: 2px solid red;
     padding-top: 1.5px;
-
-
 }
 
 .bottom-box-outer.for-mobile {
     visibility: visible;
 }
-
 
 .input-box.width {
     max-width: 260px;
@@ -1442,15 +1416,13 @@ p.checkbox-sqaure {
 }
 
 .bottom-box-outer:last-child {
-    width:44%;
+    width: 44%;
 }
 
 .bottom-box-outer {
     width: 56%;
     display: flex;
 }
-
-
 
 .bottom-box-inner input {
     width: 100%;
@@ -1486,14 +1458,19 @@ select#cars {
     display: block;
 }
 .mobile-img {
-    display:none;
+    display: none;
 }
-
 
 /* w2 form design end*/
 /* bottom gradiant section style start*/
 .bottom-graadiant-section {
-    background: linear-gradient(to right, rgb(108,129,70) 0%,rgb(190,205,129) 33%,rgb(206,199,212) 63%,rgb(246,174,120) 99%);
+    background: linear-gradient(
+        to right,
+        rgb(108, 129, 70) 0%,
+        rgb(190, 205, 129) 33%,
+        rgb(206, 199, 212) 63%,
+        rgb(246, 174, 120) 99%
+    );
     padding: 30px 0px;
 }
 .content p {
@@ -1513,7 +1490,6 @@ select#cars {
 .view-temp {
     color: #0e866c;
     font-size: 24px;
-    ;
 }
 
 .view-temp2 {
@@ -1568,7 +1544,7 @@ ul.mt-4 {
     width: 100%;
 }
 .w2-form-pcimg {
-   max-width: 900px;
+    max-width: 900px;
 }
 .w2-form-container {
     max-width: 1100px;
@@ -1577,6 +1553,7 @@ img.earnbtn2.global-earnbtn {
     left: 15px;
     top: 10px;
 }
+
 /* template-view end */
 
 /* uk paystub start*/
@@ -1588,7 +1565,6 @@ img.earnbtn2.global-earnbtn {
 .input-uk {
     font-size: 14px;
     border: 2px solid #ff5722;
-    ;
     border-radius: 5px;
     box-shadow: 0px 3px 7px 1px #0000004f;
     width: 100%;
@@ -1643,6 +1619,9 @@ img.earnbtn2.global-earnbtn {
     .container.bg-light.redcon {
         max-width: 1385px !important;
     }
+    .container.btn-container {
+        max-width: 1385px !important;
+    }
     .down {
         position: absolute;
         right: 91px;
@@ -1671,7 +1650,6 @@ img.earnbtn2.global-earnbtn {
 
     .paddingleft {
         padding: 0px 0px 0px 80px;
-
     }
 
     .uktext {
@@ -1720,7 +1698,6 @@ img.earnbtn2.global-earnbtn {
         padding: 0px 20px !important;
     }
 
-
     .couple {
         max-width: 848px;
     }
@@ -1729,9 +1706,6 @@ img.earnbtn2.global-earnbtn {
         display: none;
     }
 }
-
-
-
 
 @media screen and (min-width: 1155px) {
     .opennav {
@@ -1745,11 +1719,9 @@ img.earnbtn2.global-earnbtn {
         font-size: 14px;
         line-height: 2em;
     }
-
 }
 
 @media screen and (max-width: 1129px) {
-
     /* .navbar {
         display: none;
 
@@ -1791,6 +1763,9 @@ img.earnbtn2.global-earnbtn {
     .container.bg-light.redcon {
         max-width: 978px !important;
     }
+    .container.btn-container {
+        max-width: 978px !important;
+    }
 
     .checkbox-sqaure p {
         margin-left: 10px;
@@ -1798,7 +1773,6 @@ img.earnbtn2.global-earnbtn {
 
     .display {
         display: inline-block;
-
     }
 
     .checkbox-sqaure {
@@ -1857,7 +1831,6 @@ img.earnbtn2.global-earnbtn {
 
     input.input-pie-box.input {
         max-width: 145px;
-
     }
 
     .bottom-box-outer {
@@ -1976,11 +1949,9 @@ img.earnbtn2.global-earnbtn {
         font-size: 10px;
     }
 
-
-
     .mainhead {
         padding: 0px 41px 2px 4px;
-        font-family: 'Futura LT';
+        font-family: "Futura LT";
     }
 
     .payimg2 {
@@ -2044,19 +2015,15 @@ img.earnbtn2.global-earnbtn {
         width: 125px;
         height: 44px;
     }
-    .global-content p{
+    .global-content p {
         font-size: 14px !important;
-
     }
-    .global-content h4{
+    .global-content h4 {
         font-size: 16px !important;
-
     }
-
 
     .create-p {
         font-size: 8px;
-
     }
 
     .tickbox {
@@ -2079,8 +2046,8 @@ img.earnbtn2.global-earnbtn {
     }
 
     .box-usa {
-        border: 3px solid #FF6161;
-        background: #E8E6E6;
+        border: 3px solid #ff6161;
+        background: #e8e6e6;
         border-radius: 2px;
     }
 
@@ -2150,7 +2117,6 @@ img.earnbtn2.global-earnbtn {
 
     .paddingleft {
         padding: 0px 0px 0px 35px;
-
     }
 
     .hour_btn {
@@ -2183,8 +2149,6 @@ img.earnbtn2.global-earnbtn {
         font-size: 18px;
     }
 
-
-
     .footimg {
         max-width: 200px;
     }
@@ -2199,23 +2163,19 @@ img.earnbtn2.global-earnbtn {
         width: 312px;
         height: 64px;
         border-radius: 63px;
-        background-color: #FF4040;
+        background-color: #ff4040;
         font-weight: 700;
         margin: auto;
         font-size: xx-large;
-        font-family: 'Futura LT';
+        font-family: "Futura LT";
         margin-bottom: 20px;
     }
 
-
-
     .create-p {
-        font-family: 'Futura LT';
+        font-family: "Futura LT";
         font-size: 16px;
         line-height: 1.8;
     }
-
-
 }
 
 @media screen and (max-width: 768px) {
@@ -2230,8 +2190,10 @@ img.earnbtn2.global-earnbtn {
         padding: 0 !important;
         margin: 0px !important;
     }
+    .w2form-left-box:before {
+        content: none;
+    }
     .globleImg {
-
         margin: 0 auto !important;
         display: flex;
         justify-content: center;
@@ -2257,7 +2219,6 @@ img.earnbtn2.global-earnbtn {
     }
 
     .formimg1 {
-
         margin: 0 auto !important;
         display: flex;
         justify-content: center;
@@ -2328,10 +2289,10 @@ img.earnbtn2.global-earnbtn {
     }
 
     input.input-pie-box.input {
-        max-width: 84%;
+        max-width: 87%;
     }
     .computer-img {
-       margin-top: 30px;
+        margin-top: 30px;
     }
 
     textarea#w3review {
@@ -2353,7 +2314,6 @@ img.earnbtn2.global-earnbtn {
     .bottom-box-inner1 {
         max-width: 165px;
     }
-
 
     .see-sample1 {
         top: 114px;
@@ -2385,7 +2345,6 @@ img.earnbtn2.global-earnbtn {
         justify-content: center;
         padding: 0 !important;
     }
-
 
     .col-set1 {
         display: flex;
@@ -2422,7 +2381,7 @@ img.earnbtn2.global-earnbtn {
         margin: auto;
         font-size: 12px;
     }
-    .list-img{
+    .list-img {
         width: 60px !important;
         height: 60px !important;
     }
@@ -2430,10 +2389,8 @@ img.earnbtn2.global-earnbtn {
         font-size: 38px;
     }
 
-
-
     .Createpay {
-        padding-top:20px;
+        padding-top: 20px;
     }
 
     .can-p {
@@ -2452,8 +2409,6 @@ img.earnbtn2.global-earnbtn {
         width: 238px;
         height: 134px;
     }
-
-
 
     .tickbox {
         width: 20px;
@@ -2483,11 +2438,10 @@ img.earnbtn2.global-earnbtn {
     .text-white {
         text-align: center;
         margin-top: 4px;
-
     }
 
     .text-padding {
-        padding: 0px 0px 0px 30px
+        padding: 0px 0px 0px 30px;
     }
 
     .formimg1 {
@@ -2503,28 +2457,26 @@ img.earnbtn2.global-earnbtn {
         margin: 0 auto;
     }
 
-
     .box-usa {
-        border: 3px solid #FF6161;
+        border: 3px solid #ff6161;
         /* padding: 10px 0px 12px 0px; */
-        background: #E8E6E6;
+        background: #e8e6e6;
         border-radius: 2px;
     }
-a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
-    display: flex;
-    justify-content: center !important;
-    font-size: 16px !important;
-    margin: 0 auto 20px !important;
-    padding:11px 20px !important;
-}
-.Generate {
-    padding: 11px 20px !important;
-    max-width: 300px !important;
-
-}
-.my-3.d-flex {
-    justify-content: center;
-}
+    a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
+        display: flex;
+        justify-content: center !important;
+        font-size: 16px !important;
+        margin: 0 auto 20px !important;
+        padding: 11px 20px !important;
+    }
+    .Generate {
+        padding: 11px 20px !important;
+        max-width: 300px !important;
+    }
+    .my-3.d-flex {
+        justify-content: center;
+    }
     .dropdown1 {
         width: 73% !important;
         padding: -11px;
@@ -2533,7 +2485,6 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
         margin: auto;
         font-weight: 900;
         position: relative !important;
-
     }
 
     .down {
@@ -2619,7 +2570,6 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
         font-size: 13px !important;
     }
 
-
     .hour_btn {
         padding: 8px;
         border-radius: 3px;
@@ -2636,9 +2586,7 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
 
     .stubheading {
         font-size: 35px;
-
     }
-
 
     .w-100 {
         width: 100% !important;
@@ -2679,7 +2627,7 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
         text-align: center !important;
         max-width: 100%;
         font-size: 27px;
-        margin-top:0px;
+        margin-top: 0px;
     }
 
     .text-center2 {
@@ -2714,8 +2662,6 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
     .canadah1 {
         font-size: 30px;
     }
-
-
 
     .createbtn2 {
         padding: 0px 62px;
@@ -2766,11 +2712,17 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
         font-size: 18px;
     }
 
-    .emailbtn{
-        padding: 3px 25px;
+    .emailbtn {
+        padding: 3px 23px;
+        max-width: 305px;
+        width: 100%;
+        margin: 0px 20px 0 0;
     }
     .previewbtn {
         padding: 0px 23px;
+        max-width: 305px;
+        width: 100%;
+        margin: 0px 0px 0 20px;
     }
 
     .checkbox-outer {
@@ -2803,8 +2755,6 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
     .sidenav a {
         font-size: 18px;
     }
-
-
 }
 
 @media screen and (max-height: 450px) {
@@ -2851,6 +2801,15 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
     }
     p.text-left {
         font-size: 15px !important;
+    }
+    .d-flex.flex-wrap.justify-content-between.w2-form-row {
+        justify-content: center !important;
+    }
+    .previewbtn {
+        margin-left: 0;
+    }
+    .emailbtn {
+        margin-right: 0;
     }
     p.para-w2 {
         font-size: 15px !important;
@@ -2914,13 +2873,12 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
     .fromimg {
         width: 80px;
     }
-    .text-white.ml-2.w2-form-heading{
+    .text-white.ml-2.w2-form-heading {
         font-size: 21px !important;
     }
     .basic1 {
         margin-left: 0px;
         font-weight: 900;
-
     }
     p.text-white.pay-p.head-font.home-p {
         font-size: 15px !important;
@@ -2928,7 +2886,7 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
     .box {
         padding: 10px !important;
     }
-    .box-icon{
+    .box-icon {
         padding-bottom: 10px !important;
     }
     .box-content h6 {
@@ -2989,7 +2947,6 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
         margin-top: 0em;
     }
 
-
     .w-sm-100 {
         width: 100%;
     }
@@ -2998,7 +2955,6 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
     }
 
     h1.pt-5 {
-
         text-align: center;
         font-size: 20px !important;
     }
@@ -3043,16 +2999,15 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
     h3.w2p {
         font-size: 19px !important;
     }
-    .fbicon{
+    .fbicon {
         width: 42px;
         font-size: 17px;
         padding: 10px;
     }
-    .socialicon{
+    .socialicon {
         width: 42px;
         font-size: 17px;
         padding: 10px;
-
     }
     h1.display-4 {
         font-size: 23px !important;
@@ -3079,8 +3034,8 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
         padding: 0px;
     }
     .canada-btn {
-       position: relative;
-       top:20px;
+        position: relative;
+        top: 20px;
         padding: 10px 20px !important;
         max-width: 210px !important;
     }
@@ -3103,11 +3058,10 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
     }
 
     .d-flex {
-
         justify-content: center;
         width: 100%;
     }
-    .d-flex.justify-content-between.mb-3{
+    .d-flex.justify-content-between.mb-3 {
         display: inline-block !important;
     }
     .bottom-textarea textarea {
@@ -3131,7 +3085,6 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
     .input-box.width {
         max-width: 98%;
         margin-right: 0px;
-
     }
 
     .text {
@@ -3163,7 +3116,7 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
     }
 
     textarea#w3review {
-        max-width: 340px;
+        max-width: 390px;
     }
 
     .input-box input {
@@ -3262,7 +3215,6 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
         font-size: 14px;
     }
 
-
     .see-sample1 {
         top: 66px;
         left: 190px;
@@ -3316,7 +3268,6 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
     .createbtn2 {
         padding: 0px 57px;
     }
-
 
     .globe-ul {
         font-size: 16px !important;
@@ -3378,11 +3329,10 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
     .previewbtn {
         font-size: 21px;
         color: #ffffff;
-        background: #ef2e21;
         padding: 2px 2px;
         border: none;
         border-radius: 4px;
-        box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, .6));
+        box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, 0.6));
     }
 
     .emailbtn {
@@ -3391,7 +3341,7 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
         padding: 6px 1px;
         border: none;
         border-radius: 4px;
-        box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, .6));
+        box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, 0.6));
         font-size: 18px;
     }
 
@@ -3410,7 +3360,6 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
         top: -17px;
     }
 
-
     .img2-p {
         font-size: 17px;
         font-weight: 200;
@@ -3419,14 +3368,12 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
         padding-bottom: 100px;
     }
 
-
-
     .CreatePaystub {
         font-family: serif;
         width: 210px;
         height: 47px;
         border-radius: 63px;
-        background-color: #FF4040;
+        background-color: #ff4040;
         font-weight: 700;
         margin: auto;
         font-size: 20px;
@@ -3452,7 +3399,6 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
 
     .payhead {
         margin-top: -52px;
-
     }
 
     .formimg1 {
@@ -3460,14 +3406,14 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
     }
 
     .Generate {
-        padding: 11px 60px ;
+        padding: 11px 60px;
         margin-bottom: 10px;
         width: 100%;
         margin: 0px !important;
         max-width: 400px;
         display: flex;
         justify-content: center;
-        margin: 0 auto  !important;
+        margin: 0 auto !important;
     }
 
     .paytext {
@@ -3498,7 +3444,6 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
 
     .earnbtn {
         /* margin-bottom: 10px; */
-
     }
 
     .head-font {
@@ -3520,9 +3465,8 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
 
     .gen {
         font-size: 24px !important;
-        font-family: 'Futura LT';
+        font-family: "Futura LT";
         text-align: center;
-
     }
     ol.w2-form-list {
         padding: 0px 16px;
@@ -3577,12 +3521,7 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
     .img-uk-outer {
         max-width: 325px;
     }
-
-
 }
-
-
-
 
 @media screen and (max-width: 375px) {
     .uk-lable {
@@ -3643,7 +3582,7 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
     }
 
     textarea#w3review {
-        max-width: 305px;
+        max-width: 350px;
     }
 
     .bottom-textarea textarea {
@@ -3696,10 +3635,7 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
         font-size: 11px;
     }
 
-
-
     .text-white {
-
         margin-bottom: 10px;
         margin-top: 4px;
     }
@@ -3712,12 +3648,12 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
         left: 4px;
         font-weight: 200;
     }
-    .fbicon{
+    .fbicon {
         width: 35px;
         font-size: 14px;
         padding: 8px;
     }
-    .socialicon{
+    .socialicon {
         width: 35px;
         font-size: 14px;
         padding: 8px;
@@ -3782,7 +3718,7 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
         padding: 6px 10px;
         border: none;
         border-radius: 4px;
-        box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, .6));
+        box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, 0.6));
     }
 
     .canadah4 {
@@ -3801,7 +3737,6 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
     .canadah1 {
         font-size: 26px;
         font-weight: 600;
-
     }
 
     .canadap {
@@ -3837,7 +3772,7 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
         position: absolute;
         padding-left: 2px;
         color: blue;
-        top:7px !important;
+        top: 7px !important;
     }
 
     .formimg1 {
@@ -3879,17 +3814,14 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
     .youtubeimg {
         width: 361px;
         height: 204px;
-
     }
 
     .earnbtn1 {
         width: 100%;
-
     }
 
     .earnbtn {
         padding: 6px 22px 5px 27px;
-
     }
 
     .createbtn2 {
@@ -3900,13 +3832,10 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
         max-width: 275px;
     }
 
-
-
     .box-usa {
-        border: 3px solid #FF6161;
-        background: #E8E6E6;
+        border: 3px solid #ff6161;
+        background: #e8e6e6;
         border-radius: 2px;
-
     }
 
     .thousand {
@@ -3947,7 +3876,7 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
     .Show {
         font-size: 17px !important;
     }
-    .smallfont{
+    .smallfont {
         font-size: 17px !important;
     }
 
@@ -3955,9 +3884,6 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
         font-size: 16px !important;
         padding-top: 20px;
     }
-
-
-
 
     .text-left p {
         font-size: 16px !important;
@@ -3984,7 +3910,7 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
         padding: 6px 4px;
         border-radius: 4px;
         font-weight: 200;
-        font-family: 'Futura LT';
+        font-family: "Futura LT";
         margin-top: 4px !important;
     }
 
@@ -4005,8 +3931,6 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
     }
 }
 
-
-
 .btnCommon {
     padding: 3px 15px;
     font-size: 18px;
@@ -4026,7 +3950,6 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
     .textarea-w2 textarea {
         max-width: 295px;
     }
-
 
     .textarea-w2 textarea {
         max-width: 295px;
@@ -4060,7 +3983,7 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
     }
 
     textarea#w3review {
-        max-width: 250px;
+        max-width: 290px;
     }
 
     input.input-pie-box.input {
@@ -4093,12 +4016,12 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
         color: white;
         width: 38px;
     }
-    .fbicon{
+    .fbicon {
         width: 33px;
         font-size: 13px;
         padding: 8px;
     }
-    .socialicon{
+    .socialicon {
         width: 33px;
         font-size: 13px;
         padding: 8px;
@@ -4109,6 +4032,4 @@ a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
     .text-left.mt-4 p {
         font-size: 13px !important;
     }
-
-
 }

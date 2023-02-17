@@ -374,7 +374,7 @@
                     </div>
                 </div>
             </div>
-            <div class="container" style="max-width:1450px; padding:0;">
+            <div class="container btn-container" style="max-width:1450px; padding:0;">
                 <div style="" class="row mt-3">
                     <div style="margin: 0; padding:0;" class="col-12 text-center">
                         <div class="d-flex flex-wrap justify-content-between w2-form-row">
