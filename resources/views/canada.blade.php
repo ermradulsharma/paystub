@@ -53,7 +53,7 @@
                 <div class="col-md-6 col-sm-6 justifuy-content-center text-center">
                     <h2 class="mb-5" style="font-weight:600;">Who can use Paystub<span class="text-danger">x</span>?</h2>
                     <div class="row">
-                        <div class="col-md-6" style="border-right:1px solid black;">
+                        <div class="col-md-6 border-right-line" style="border-right:1px solid black;">
                             <img src="{{ asset('images/employericon.webp') }}" class="emp-img">
                             <div class="employee-font">Employers</div>
                             <p style="font-size:15px;font-family: 'Futura lt';" class="mt-3">Paystubx is a great tool for
