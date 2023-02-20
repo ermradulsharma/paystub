@@ -284,7 +284,7 @@
                                 <div class=" bottom-box-inner">
                                     <p style="padding:0; margin:0px;" class="color-red"><b></b>Employess's state id number
                                     </p>
-                                    <input name="employee_state_id" style="border:1px solid black; text-align:center;"
+                                    <input name="employee_state_id" style="border:1px solid black;"
                                         class="input" type="number" placeholder="Please Enter">
                                 </div>
                                 <div class=" bottom-box-inner">
@@ -307,7 +307,7 @@
                             </div>
                             <div class="bottom-box-outer">
                                 <div class=" bottom-box-inner1">
-                                    <p style="padding:0; margin:0px;" class="color-red"><b>18 </b> Local Wages, tips, etc.
+                                    <p style="padding:0; margin:0px; text-align:left;" class="color-red"><b>18 </b> Local Wages, tips, etc.
                                     </p>
                                     <input name="local_wages" style="border:1px solid black;" class="input"
                                         type="number" placeholder="Please Enter">

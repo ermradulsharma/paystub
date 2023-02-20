@@ -295,6 +295,7 @@
     background: #ffffff;
     margin: auto;
     font-size: 17px;
+    border-radius: 2px;
 }
 
 .viewbtn {
@@ -1518,6 +1519,9 @@ p.checkbox-sqaure {
 select#cars {
     max-width: 130px;
     width: 100%;
+    border: 1px solid black;
+    background-color:white;
+    border-radius: 2px;
 }
 
 .text {
@@ -1624,6 +1628,9 @@ ul.mt-4 {
 img.earnbtn2.global-earnbtn {
     left: 15px;
     top: 10px;
+}
+label.lable.em-name {
+    font-weight: 700;
 }
 
 /* template-view end */
@@ -2859,6 +2866,10 @@ img.earnbtn2.global-earnbtn {
     .dropdown11 {
         padding: 9px !important;
     }
+    input.pie-box.input{
+        max-width: 25px;
+        height: 28px;
+    }
 
     .d-flex.flex-wrap.justify-content-between.usa-btn-inner {
         justify-content: center !important;
@@ -2938,6 +2949,15 @@ img.earnbtn2.global-earnbtn {
     }
     .text-white.Payslips {
         font-size: 14px !important;
+    }
+    .bottom-box-inner:first-child{
+        max-width: 100%;
+    }
+    select#cars {
+        max-width: 100%;
+        height: 26.5px;
+        padding: 1px 2px;
+
     }
 
     .oo {
@@ -3863,7 +3883,8 @@ img.earnbtn2.global-earnbtn {
         position: absolute;
         padding-left: 2px;
         color: blue;
-        top: 7px !important;
+        top: 3px !important;
+        left:12px;
     }
 
     .formimg1 {
@@ -4041,7 +4062,9 @@ img.earnbtn2.global-earnbtn {
     .textarea-w2 textarea {
         max-width: 295px;
     }
-
+    label.lable.em-name {
+        font-weight: 500;
+    }
     .textarea-w2 textarea {
         max-width: 295px;
     }
@@ -4081,7 +4104,7 @@ img.earnbtn2.global-earnbtn {
     }
 
     input.input-pie-box.input {
-        max-width: 80%;
+        max-width: 83%;
     }
 
     .padding {

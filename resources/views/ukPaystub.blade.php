@@ -142,15 +142,15 @@
                                     <div class="row">
                                         <div style="margin:0 !important;" class="col-md-4 mt-3 pl-0 padding-0">
                                             <label for="pay_start" class="lable uk-lable ">Pay Start <span style="color:red;">*</span> </label>
-                                            <input type="date" id="pay_start" name="pay_start" class="input-uk" value="12-11-2022" style="font-size:14px;">
+                                            <input style="color:#00000080;border:1px solid #00000080;padding:0px 6px !important; height:40px; appearance: none;" type="date" id="pay_start" name="pay_start" class="input-uk" value="12-11-2022" style="font-size:14px;">
                                         </div>
                                         <div style="margin:0 !important;" class="col-md-4 mt-3 pl-0 padding-0">
                                             <label for="pay_end" class="lable uk-lable">Pay End <span style="color:red;">*</span> </label>
-                                            <input type="date" id="pay_end" name="pay_end" class="input-uk" value="09-12-2022" style="font-size:14px;">
+                                            <input style="color:#00000080;border:1px solid #00000080;padding:0px 6px !important; height:40px; appearance: none;" type="date" id="pay_end" name="pay_end" class="input-uk" value="09-12-2022" style="font-size:14px;">
                                         </div>
                                         <div style="margin:0 !important;" class="col-md-4 mt-3 pl-0 padding-0">
                                             <label for="pay_date" class="lable uk-lable">Pay Date <span style="color:red;">*</span> </label>
-                                            <input type="date" id="pay_date" name="pay_date" class="input-uk" value="10-12-2022" style="font-size:14px;">
+                                            <input style="color:#00000080;border:1px solid #00000080;padding:0px 6px !important; height:40px; appearance: none;" type="date" id="pay_date" name="pay_date" class="input-uk" value="10-12-2022" style="font-size:14px;">
                                         </div>
                                     </div>
                                     <div class="row">

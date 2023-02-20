@@ -409,7 +409,7 @@
                                     <div>
                                         <label for="pay_start" class="lable">PAY START<span class="redColor">*</span>
                                         </label>
-                                        <input type="date" id="pay_start" name="pay_start" placeholder="12-11-2022"
+                                        <input style="color:#00000080;border:1px solid #00000080;padding:0px 6px !important; height:40px; appearance: none;" type="date" id="pay_start" name="pay_start" placeholder="12-11-2022"
                                             class="w-100 p-2 input-box-font pay_start datepicker" data-id="pay_start">
                                     </div>
                                 </div>
@@ -418,7 +418,7 @@
                                     <div>
                                         <label for="pay_end" class="lable">PAY END <span class="redColor">*</span>
                                         </label>
-                                        <input type="date" id="pay_end" name="pay_end" placeholder="12-17-2022"
+                                        <input style="color:#00000080;;border:1px solid #00000080; padding:0px 6px !important; height:40px; appearance: none;" type="date" id="pay_end" name="pay_end" placeholder="12-17-2022"
                                             class="w-100 p-2 input-box-font pay_end" data-id="pay_end">
                                     </div>
                                 </div>
@@ -427,7 +427,7 @@
                                     <div>
                                         <label for="pay_date" class="lable">PAY DATE <span class="redColor">*</span>
                                         </label>
-                                        <input type="date" id="pay_date" name="pay_date" placeholder="12-19-2022"
+                                        <input style="color:#00000080;;padding:0px 6px !important; height:40px; appearance: none; border:1px solid #00000080;" type="date" id="pay_date" name="pay_date" placeholder="12-19-2022"
                                             class="w-100 p-2 input-box-font pay_date" data-id="pay_date">
                                     </div>
                                 </div>
