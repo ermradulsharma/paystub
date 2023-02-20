@@ -54,10 +54,10 @@
                 <table style="width: 99%; border:1px solid #0054ff; padding:5px; margin-left:5px; margin-right:5px; border-radius:7px;background: white;">
                     <thead>
                         <tr>
-                            <th style="font-size:16px"><b>{{ $requestData['cname'] }}</b> </th>
+                            <th style="font-size:16px"><b>{{ $requestData['cname'] ?? '' }}</b> </th>
                         </tr>
                         <tr>
-                            <th> {{ $requestData['company_address'] }}, United Kingdom </th>
+                            <th> {{ $requestData['company_address'] ?? '' }}, United Kingdom </th>
                         </tr>
                     </thead>
                 </table>
@@ -73,7 +73,7 @@
                             <td>{{ $requestData['emp_street_1'] }}</td>
                         </tr>
                         <tr>
-                            <td>{{ $requestData['emp_street_2'] }}</td>
+                            <td>{{ $requestData['emp_street_2'] ?? '' }}</td>
                         </tr>
                         <tr>
                             <td>{{ $requestData['emp_zip_code'] }}</td>

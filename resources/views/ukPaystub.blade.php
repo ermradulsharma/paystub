@@ -203,31 +203,32 @@
                                                     <label for="pay_type" class="lable uk-lable">Pay Type<span
                                                             style="color:red;">*</span> </label>
                                                     <input type="text" id="pay_type" name="pay_type"
-                                                        class="input-uk" value="2 Weekly" style="font-size:14px;">
+                                                        class="input-uk" placeholder="2 Weekly" style="font-size:14px;">
                                                 </div>
                                                 <div class="col-lg-8 mt-3 p-0">
                                                     <label for="payment_method" class="lable uk-lable">Payment Mehtod<span
                                                             style="color:red;">*</span> </label>
                                                     <input type="text" id="payment_method" name="payment_method"
-                                                        class="input-uk" value="BACS" style="font-size:14px;">
+                                                        class="input-uk" placeholder="BACS" style="font-size:14px;">
                                                 </div>
                                                 <div class="col-lg-8 mt-3 p-0">
                                                     <label for="tax_code" class="lable uk-lable">Tax Code<span
                                                             style="color:red;">*</span> </label>
                                                     <input type="text" id="tax_code" name="tax_code"
-                                                        class="input-uk" value="1257L" style="font-size:14px;">
+                                                        class="input-uk" placeholder="1257L" style="font-size:14px;">
                                                 </div>
                                                 <div class="col-lg-8 mt-3 p-0">
                                                     <label for="ni_number" class="lable uk-lable">NI Number<span
                                                             style="color:red;">*</span> </label>
                                                     <input type="text" id="ni_number" name="ni_number"
-                                                        class="input-uk" value="SC 56 52 10 C" style="font-size:14px;">
+                                                        class="input-uk" placeholder="SC 56 52 10 C"
+                                                        style="font-size:14px;">
                                                 </div>
                                                 <div class="col-lg-8 mt-3 p-0 mb-3">
                                                     <label for="ni_table_letter" class="lable uk-lable">NI Table
                                                         Letter<span style="color:red;">*</span> </label>
                                                     <input type="text" id="ni_table_letter" name="ni_table_letter"
-                                                        class="input-uk" value="A" style="font-size:14px;">
+                                                        class="input-uk" placeholder="A" style="font-size:14px;">
                                                 </div>
                                             </div>
                                         </div>
@@ -301,31 +302,8 @@
                                     <div class="ukpay-inner ">
                                         <div class="row mt-5">
                                             <div class="col-md-4 col-lg-7  px-lg-2 px-0">
-                                                <!-- <button type="button" class="createbtn w-100 py-0">DEDUCTIONS</button> -->
                                                 <h3 class="uk-text" style="font-weight: 300 !important;">DEDUCTION</h3>
 
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
-                                                    <img src="http://192.168.1.9:8000/images/lock.png"
-                                                        class="earnbtn2 lockuk ">
-                                                    <input class="input-uk text-center" value="Income Tax ">
-                                                </div>
-                                                <div class="col-md-5 col-lg-5 mb-3  px-lg-2 px-0">
-                                                    <input type="text" name="taxable_gross_pay"
-                                                        class="input-uk text-center" id="current_total" readonly="">
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
-                                                    <img src="http://192.168.1.9:8000/images/lock.png"
-                                                        class="earnbtn2 lockuk ">
-                                                    <input class="input-uk text-center" value="National Innsurance ">
-                                                </div>
-                                                <div class="col-md-5 col-lg-5 mb-3  px-lg-2 px-0">
-                                                    <input type="text" name="taxable_gross_pay"
-                                                        class="input-uk text-center" id="current_total" readonly="">
-                                                </div>
                                             </div>
                                         </div>
                                         <div class="ukpay-inner ">
@@ -334,7 +312,7 @@
                                                 <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
                                                     @foreach ($deduction as $key => $item)
                                                         <img src="{{ asset('images/lock.png') }}" style=""
-                                                            class="earnbtn2 lockuk lock-uk">
+                                                            class="earnbtn2 lockuk lock-uk {{ $key }}">
                                                         <input class="input-uk text-center taxes" name="taxes[]"
                                                             data-id="00{{ $key }}"
                                                             data-value="{{ $item->price }}"
@@ -347,12 +325,6 @@
                                                             id="tax_total_00{{ $key }}">
                                                     @endforeach
                                                 </div>
-
-                                                {{-- <div class="col-md-5 col-lg-5 mb-3  px-lg-2 px-0">
-                                                @foreach ($deduction as $key => $item)
-                                                <input class="earnbtn mt-3 text-center currentTotal" readonly id="total_000" name="total[]" type="text" value="">
-                                                @endforeach
-                                            </div> --}}
                                                 <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
                                                     <button style="background-color: #85b7bc; font-weight:300"
                                                         type="button" class="netpaybtn net_pay">Total Deduction</button>
@@ -433,7 +405,8 @@
                                             <div style="padding-bottom:255px;"
                                                 class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
                                                 <input style="color: #7c7370; border-color: #7c7370;"
-                                                    class="input-uk text-center note" value="Note here (optional) ">
+                                                    class="input-uk text-center note" name="note"
+                                                    placeholder="Note here (optional) ">
                                             </div>
                                         </div>
                                     </div>
