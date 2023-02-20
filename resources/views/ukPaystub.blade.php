@@ -308,23 +308,24 @@
                                         </div>
                                         <div class="ukpay-inner ">
                                             <div class="row">
-
+                                                @foreach ($deduction as $key => $item)
                                                 <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
-                                                    @foreach ($deduction as $key => $item)
+
                                                         <img src="{{ asset('images/lock.png') }}" style=""
                                                             class="earnbtn2 lockuk lock-uk {{ $key }}">
                                                         <input class="input-uk text-center uk-texs taxes" name="taxes[]"
                                                             data-id="00{{ $key }}"
                                                             data-value="{{ $item->price }}"
                                                             value="{{ $item->title }}">
-                                                    @endforeach
+                                                    {{-- @endforeach --}}
                                                 </div>
                                                 <div class="col-md-5 col-lg-5 mb-3  px-lg-2 px-0 ">
-                                                    @foreach ($deduction as $key => $item)
-                                                        <input class="input-uk text-center uk-texs" readonly name="taxes_rate[]"
-                                                            id="tax_total_00{{ $key }}">
-                                                    @endforeach
+                                                   {{--  @foreach ($deduction as $key => $item) --}}
+                                                        <input class="input-uk text-center uk-texs" readonly
+                                                            name="taxes_rate[]" id="tax_total_00{{ $key }}">
+
                                                 </div>
+                                                @endforeach
                                                 <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
                                                     <button style="background-color: #85b7bc; font-weight:300"
                                                         type="button" class="netpaybtn net_pay">Total Deduction</button>
@@ -362,8 +363,9 @@
                                             </div>
 
                                             <div class="col-md-5 col-lg-5 mb-3  px-lg-2 px-0">
-                                                <input type="text" name="income_tax" class="input-uk  text-center uk-texs"
-                                                    id="income_tax" value="" data-value="">
+                                                <input type="text" name="income_tax"
+                                                    class="input-uk  text-center uk-texs" id="income_tax" value=""
+                                                    data-value="">
                                             </div>
                                             <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
                                                 <img src="{{ asset('images/lock.png') }}" class="earnbtn2 lockuk">
@@ -371,8 +373,9 @@
                                             </div>
 
                                             <div class="col-md-5 col-lg-5 mb-3  px-lg-2 px-0">
-                                                <input type="text" name="employee_nic" class="input-uk  text-center uk-texs"
-                                                    id="employee_nic" value="" data-value="">
+                                                <input type="text" name="employee_nic"
+                                                    class="input-uk  text-center uk-texs" id="employee_nic"
+                                                    value="" data-value="">
                                             </div>
                                             <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
                                                 <img src="{{ asset('images/lock.png') }}" class="earnbtn2 lockuk">
@@ -380,8 +383,9 @@
                                             </div>
 
                                             <div class="col-md-5 col-lg-5 mb-3  px-lg-2 px-0">
-                                                <input type="text" name="employer_nic" class="input-uk  text-center uk-texs"
-                                                    id="employee_nic" value="" data-value="">
+                                                <input type="text" name="employer_nic"
+                                                    class="input-uk  text-center uk-texs" id="employee_nic"
+                                                    value="" data-value="">
                                             </div>
                                             <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
                                                 <button style="background-color:#0ec23b; font-weight:300" type="button"
