@@ -262,16 +262,14 @@
         <section style="width: 100%; margin-top:220px;">
             <table style="width:69.7%; border:1px solid #4a50b2; border-radius:10px;">
                 <tr>
-                    <td style="font-size:13px; padding:5px 10px;line-height:1.5;">Jolly Little Co Limited, Unit 12, The
-                        Industrial Estate, Nice Town, PE77 9 HU<br>
-                        Pay Method - Bank Tax Code - 1185L Pay Period - Month P - 10</td>
+                    <td style="font-size:13px; padding:5px 10px;line-height:1.5;">{{ $requestData['cname']}}, {{ $requestData['company_address' ?? '']}}, UK<br> Pay Method - Bank Tax Code - 1185L Pay Period - Month P - 10</td>
                 </tr>
             </table>
 
             <table style="width:29.5%; float:right; border:1px solid #4a50b2; border-radius:10px; margin-top:-52px; padding:13px 10px 13px 10px; background-color:#f4f4fc;">
                 <tr>
                     <td style="color:#4a50b2; font-size:16px; font-weight:600;">Net Pay</td>
-                    <td>2380.34</td>
+                    <td>{{ number_format($requestData['net_pay'],2)}}</td>
                 </tr>
             </table>
         </section>
