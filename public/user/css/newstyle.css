@@ -2288,6 +2288,9 @@ img.earnbtn2.lockuk {
         left:12px !important;
 
     }
+    img.earnbtn2.lockuk {
+        top: 18px !important;
+    }
     .input-uk{
         width: 100%;
     }
