@@ -2885,6 +2885,21 @@ img.earnbtn2.lockuk {
         font-size: 18px;
     }
 }
+@media screen and (max-width: 720px) {
+    .text-center.sh {
+        display: none;
+    }
+    .d-flex.justify-content-between.mb-3.flex.w-100 {
+        display: inline-block !important;
+    }
+    .margin-left {
+        margin: 0 auto;
+    }
+    .margin-right {
+        margin: 0 auto;
+    }
+
+}
 
 @media screen and (max-width: 425px) {
     .storehead a img {
