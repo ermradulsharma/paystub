@@ -86,8 +86,7 @@
                                     <div>
                                         <label for="address_2" class="lable">STREET ADDRESS 2 </label>
                                         <input type="text" id="address_2" name="address_2"
-                                            placeholder="Suite 101 or Apt 101 (optional)"
-                                            class="w-100 p-2  input-box-font">
+                                            placeholder="Suite 101 or Apt 101 (optional)" class="w-100 p-2  input-box-font">
                                     </div>
 
                                 </div>
@@ -409,7 +408,9 @@
                                     <div>
                                         <label for="pay_start" class="lable">PAY START<span class="redColor">*</span>
                                         </label>
-                                        <input style="color:#00000080;border:1px solid #00000080;padding:0px 6px !important; height:40px; appearance: none;" type="date" id="pay_start" name="pay_start" placeholder="12-11-2022"
+                                        <input
+                                            style="color:#00000080;border:1px solid #00000080;padding:0px 6px !important; height:40px; appearance: none;"
+                                            type="date" id="pay_start" name="pay_start" placeholder="12-11-2022"
                                             class="w-100 p-2 input-box-font pay_start datepicker" data-id="pay_start">
                                     </div>
                                 </div>
@@ -418,7 +419,9 @@
                                     <div>
                                         <label for="pay_end" class="lable">PAY END <span class="redColor">*</span>
                                         </label>
-                                        <input style="color:#00000080;;border:1px solid #00000080; padding:0px 6px !important; height:40px; appearance: none;" type="date" id="pay_end" name="pay_end" placeholder="12-17-2022"
+                                        <input
+                                            style="color:#212529;border:1px solid #00000080; padding:0px 6px !important; height:40px; appearance: none;"
+                                            type="date" id="pay_end" name="pay_end" placeholder="12-17-2022"
                                             class="w-100 p-2 input-box-font pay_end" data-id="pay_end">
                                     </div>
                                 </div>
@@ -427,7 +430,9 @@
                                     <div>
                                         <label for="pay_date" class="lable">PAY DATE <span class="redColor">*</span>
                                         </label>
-                                        <input style="color:#00000080;;padding:0px 6px !important; height:40px; appearance: none; border:1px solid #00000080;" type="date" id="pay_date" name="pay_date" placeholder="12-19-2022"
+                                        <input
+                                            style="color:#212529;padding:0px 6px !important; height:40px; appearance: none; border:1px solid #00000080;"
+                                            type="date" id="pay_date" name="pay_date" placeholder="12-19-2022"
                                             class="w-100 p-2 input-box-font pay_date" data-id="pay_date">
                                     </div>
                                 </div>
@@ -644,8 +649,7 @@
                                 <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
                                     <p class="p-0 m-0 " style="font-family: serif;">Account Number LAST<span
                                             class="redColor">*</span></p>
-                                    <input name="account_number_last_4" class="earnbtn text-center "
-                                        value="">
+                                    <input name="account_number_last_4" class="earnbtn text-center " value="">
                                 </div>
                                 <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
                                     <p class="p-0 m-0 " style="font-family: serif;">Transit ABA<span

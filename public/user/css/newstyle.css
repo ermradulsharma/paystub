@@ -381,8 +381,9 @@
     position: absolute;
     padding-left: 15px;
     color: blue;
-    top: 19px;
-    left: 2px;
+    top: 12px;
+    left: 12px;
+    appearance: none;
 }
 img.earnbtn2.lock {
     top: 10px;
@@ -1632,6 +1633,10 @@ img.earnbtn2.global-earnbtn {
 label.lable.em-name {
     font-weight: 700;
 }
+img.earnbtn2.lockuk {
+    top: 18px;
+    left: 5px;
+}
 
 /* template-view end */
 
@@ -2267,6 +2272,9 @@ label.lable.em-name {
     .col-12.text-center.canada-btn-outer {
         padding: 0;
     }
+    .input-uk{
+        width: 95%;
+    }
     .d-flex.flex-wrap.justify-content-between.canada-btn-inner {
         justify-content: center !important;
     }
@@ -2865,6 +2873,12 @@ label.lable.em-name {
     }
     .dropdown11 {
         padding: 9px !important;
+    }
+    .input-uk{
+        width: 100%;
+    }
+    button.netpaybtn.net_pay{
+        width: 100%;
     }
     input.pie-box.input{
         max-width: 25px;
@@ -3663,6 +3677,10 @@ label.lable.em-name {
 
     .input-box input {
         max-width: 96% !important;
+    }
+    img.earnbtn2.lockuk {
+        top:9px !important;
+        left:0px !important;
     }
 
     .gen {
