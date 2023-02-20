@@ -366,15 +366,7 @@
     }
 }
 
-@media screen and (max-width: 375px) {
-    .couple {
-        max-width: 1086px;
-    }
-}
 @media screen and (max-width: 1440px) {
-    .couple {
-        max-width: 904px;
-    }
 
     .globleImg {
         max-width: 1500px;

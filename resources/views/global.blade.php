@@ -20,7 +20,7 @@
         <div class="container" style="max-width:1500px">
             <div class="row">
 
-                <div class="col-lg-5  text-center" style="padding: 3px 23px 0px 0px;">
+                <div class="col-lg-5  text-center" style="">
 
                     <div class="text-white text-padding globe-p"
                         style="font-size: 42px;font-weight: 300;font-family: 'Outfit', sans-serif;">

@@ -29,7 +29,7 @@
     <div class="container" style="max-width: 1452px;">
         <div class="row">
             <div class="col-md-12 mt-4 mb-4">
-                <div class=" text-center" style="font-size: 32px; font-weight: 700;"> What do you need to fill out a <span class="text-danger">W-2</span>? </div>
+                <div class=" text-center w2-para" style="font-size: 32px; font-weight: 700;"> What do you need to fill out a <span class="text-danger">W-2</span>? </div>
             </div>
 
             <div class="col-md-5 m-auto">
@@ -45,13 +45,13 @@
 
                 <div class="mt-3">
                     <ul class="w2-form-list" style="font-size: 20px; color: white; font-weight: 200; line-height: 1.7em;">
-                        <li class="">Personal information for each employee, including name, address, and</br> Social Security number</li>
+                        <li class="">Personal information for each employee, including name, address, and<br> Social Security number</li>
                         <li class="">Your employer EIN number </li>
                         <li class="">Total amount of wages and/or tips paid for each employe </li>
                         <li class="">Total federal, state, and local taxes withheld for each employe </li>
                         <li class="">Total Social Security and Medicare taxes withheld for each employe</li>
                         <li class="">Deductions for dependent care assistance programs for each employe</li>
-                        <li class="">Other compensation and benefits including elective deferrals for</br> retirement plans and the cost of employer-sponsored health coverage for</br> each employe</li>
+                        <li class="">Other compensation and benefits including elective deferrals for<br> retirement plans and the cost of employer-sponsored health coverage for<br> each employe</li>
                     </ul>
                 </div>
             </div>
@@ -60,7 +60,7 @@
 </div>
 <div class="container-fluid" style="background: #e9e6e6;">
     <div class="container py-5 w2-form-containerpadding" style="max-width: 1452px;">
-        <div class=" text-center my-5 w2-form-text" style="font-size: 32px; font-weight: bold;">Instructions for filling out Form <span class="text-danger">W-2</span> </div>
+        <div class=" text-center my-5 w2-form-text w2-para" style="font-size: 32px; font-weight: bold;">Instructions for filling out Form <span class="text-danger">W-2</span> </div>
         <div class="row">
             <div class="col-lg-6 col-sm-12 col-md-12 pr-2 w2-form-img">
                 <div class=" pb-3">

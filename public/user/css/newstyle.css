@@ -1637,6 +1637,13 @@ img.earnbtn2.lockuk {
     top: 18px;
     left: 5px;
 }
+.couple-img img {
+    width: 100%;
+}
+.couple-img {
+    max-width: 700px;
+    margin-left: auto;
+}
 
 /* template-view end */
 
@@ -1782,9 +1789,7 @@ img.earnbtn2.lockuk {
         padding: 0px 20px !important;
     }
 
-    .couple {
-        max-width: 848px;
-    }
+
 
     .abc {
         display: none;
@@ -1836,6 +1841,9 @@ img.earnbtn2.lockuk {
         display: flex;
         flex-direction: inherit;
         align-items: flex-start;
+    }
+    .formp {
+        font-size: 15px;
     }
     p.top-heading {
         font-size: 20px;
@@ -2134,6 +2142,7 @@ img.earnbtn2.lockuk {
         border: 3px solid #ff6161;
         background: #e8e6e6;
         border-radius: 2px;
+        padding: 15px 0px !important;
     }
 
     .dropdown1 {
@@ -2175,9 +2184,7 @@ img.earnbtn2.lockuk {
         font-weight: 200;
     }
 
-    .couple {
-        max-width: 646px;
-    }
+
 
     .basic {
         margin-left: 25px;
@@ -2269,10 +2276,25 @@ img.earnbtn2.lockuk {
         background: #e827a5;
         font-size: 17px;
     }
+    .text-center.w2-para {
+        font-size: 25px !important;
+    }
     .col-12.text-center.canada-btn-outer {
         padding: 0;
     }
+    .earnbtn2{
+        top:7px !important;
+        appearance: none;
+        left:12px !important;
+
+    }
     .input-uk{
+        width: 100%;
+    }
+    .previewbtn {
+        margin-right: 40px !important;
+    }
+    .uk-texs {
         width: 95%;
     }
     .d-flex.flex-wrap.justify-content-between.canada-btn-inner {
@@ -2386,7 +2408,7 @@ img.earnbtn2.lockuk {
     }
 
     input.input-pie-box.input {
-        max-width: 87%;
+        max-width: 86%;
     }
     .computer-img {
         margin-top: 30px;
@@ -2743,9 +2765,6 @@ img.earnbtn2.lockuk {
         max-width: 150px;
     }
 
-    .couple {
-        margin-top: 100px;
-    }
 
     .canadah4 {
         font-size: 25px;
@@ -2880,16 +2899,14 @@ img.earnbtn2.lockuk {
     button.netpaybtn.net_pay{
         width: 100%;
     }
+    .previewbtn {
+        margin-right: 0px !important;
+    }
     input.pie-box.input{
         max-width: 25px;
         height: 28px;
     }
-    .earnbtn2{
-        top:7px !important;
-        appearance: none;
-        left:12px !important;
 
-    }
     img.earnbtn2.lockuk {
         top: 18px !important;
     }
@@ -3062,6 +3079,7 @@ img.earnbtn2.lockuk {
     }
     .mt-5.pt-3 {
         margin-top: 0 !important;
+        padding-left: 0 !important;
     }
     .mt-5 {
         margin-top: 15px !important;
@@ -3088,6 +3106,7 @@ img.earnbtn2.lockuk {
     }
     .text-white.PayslipsGlo.ml-4.text-white2 {
         font-size: 15px !important;
+        margin-left: 0 !important;
     }
 
     h1.pt-5 {
@@ -3515,15 +3534,6 @@ img.earnbtn2.lockuk {
         font-size: 20px;
     }
 
-    .couple {
-        max-width: 372px;
-        background-position-x: 0;
-        left: 0;
-        top: 0;
-        margin-top: -7px;
-        margin-top: 104px;
-        margin-left: 61px;
-    }
 
     .textarea {
         max-width: 300px;
@@ -3597,6 +3607,7 @@ img.earnbtn2.lockuk {
     }
     .text-white.text-padding.globe-p {
         font-size: 25px !important;
+        padding-left: 0;
     }
 
     .gen {
@@ -4097,6 +4108,9 @@ img.earnbtn2.lockuk {
     }
     p.mt-1.b-p {
         font-size: 13px !important;
+    }
+    .text-center.w2-para {
+        font-size: 20px !important;
     }
     button.netpaybtn.net_pay {
         font-size: 21px;

@@ -99,9 +99,9 @@
 
                     </div>
                     <div class="col-lg-6 m-auto justify-content-center"
-                        style="background-position-x: left;
-                       left: -146px;top: -138px;">
-                        <img src="{{ asset('images/couple.png') }}" class="couple">
+                        style="">
+                       <div class="couple-img"> <img src="{{ asset('images/couple-1.png') }}" class="couple"></div>
+
                     </div>
                 </div>
             </div>

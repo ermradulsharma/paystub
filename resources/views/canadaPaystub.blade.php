@@ -243,7 +243,7 @@
                                             placeholder="Check Number" class="w-100  input-box-font">
                                     </div>
                                 </div>
-                                <div class="col-md-2 mt-4">
+                                <div class="col-lg-3 col-md-3 mt-4">
                                     <div>
                                         <label for="currency" class="lable" class="redColor">CURRENCY <span
                                                 class="redColor">*</span> </label>

@@ -313,7 +313,7 @@
                                                     @foreach ($deduction as $key => $item)
                                                         <img src="{{ asset('images/lock.png') }}" style=""
                                                             class="earnbtn2 lockuk lock-uk {{ $key }}">
-                                                        <input class="input-uk text-center taxes" name="taxes[]"
+                                                        <input class="input-uk text-center uk-texs taxes" name="taxes[]"
                                                             data-id="00{{ $key }}"
                                                             data-value="{{ $item->price }}"
                                                             value="{{ $item->title }}">
@@ -321,7 +321,7 @@
                                                 </div>
                                                 <div class="col-md-5 col-lg-5 mb-3  px-lg-2 px-0 ">
                                                     @foreach ($deduction as $key => $item)
-                                                        <input class="input-uk text-center" readonly name="taxes_rate[]"
+                                                        <input class="input-uk text-center uk-texs" readonly name="taxes_rate[]"
                                                             id="tax_total_00{{ $key }}">
                                                     @endforeach
                                                 </div>
@@ -332,7 +332,7 @@
 
                                                 <div class="col-md-5 col-lg-5 mb-0 pb-0   px-lg-2 px-0">
                                                     <input type="text" name="deduction_tax"
-                                                        class="input-uk text-center" id="deductions">
+                                                        class="input-uk text-center uk-texs" id="deductions">
                                                 </div>
                                             </div>
                                         </div>
@@ -349,38 +349,38 @@
                                         <div class="row">
                                             <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
                                                 <img src="{{ asset('images/lock.png') }}" class="earnbtn2 lockuk ">
-                                                <input class="input-uk text-center" value="Taxable Gross Pay ">
+                                                <input class="input-uk text-center uk-texs" value="Taxable Gross Pay ">
                                             </div>
 
                                             <div class="col-md-5 col-lg-5 mb-3  px-lg-2 px-0">
                                                 <input type="text" name="taxable_gross_pay"
-                                                    class="input-uk text-center" id="current_total" readonly>
+                                                    class="input-uk text-center uk-texs" id="current_total" readonly>
                                             </div>
                                             <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
                                                 <img src="{{ asset('images/lock.png') }}" class="earnbtn2 lockuk ">
-                                                <input class="input-uk text-center" value="Income Tax">
+                                                <input class="input-uk text-center uk-texs" value="Income Tax">
                                             </div>
 
                                             <div class="col-md-5 col-lg-5 mb-3  px-lg-2 px-0">
-                                                <input type="text" name="income_tax" class="input-uk  text-center"
+                                                <input type="text" name="income_tax" class="input-uk  text-center uk-texs"
                                                     id="income_tax" value="" data-value="">
                                             </div>
                                             <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
                                                 <img src="{{ asset('images/lock.png') }}" class="earnbtn2 lockuk">
-                                                <input class="input-uk  text-center" value="Employee NIC">
+                                                <input class="input-uk  text-center uk-texs" value="Employee NIC">
                                             </div>
 
                                             <div class="col-md-5 col-lg-5 mb-3  px-lg-2 px-0">
-                                                <input type="text" name="employee_nic" class="input-uk  text-center"
+                                                <input type="text" name="employee_nic" class="input-uk  text-center uk-texs"
                                                     id="employee_nic" value="" data-value="">
                                             </div>
                                             <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
                                                 <img src="{{ asset('images/lock.png') }}" class="earnbtn2 lockuk">
-                                                <input class="input-uk  text-center" value="Employee NIC">
+                                                <input class="input-uk  text-center uk-texs" value="Employee NIC">
                                             </div>
 
                                             <div class="col-md-5 col-lg-5 mb-3  px-lg-2 px-0">
-                                                <input type="text" name="employer_nic" class="input-uk  text-center"
+                                                <input type="text" name="employer_nic" class="input-uk  text-center uk-texs"
                                                     id="employee_nic" value="" data-value="">
                                             </div>
                                             <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
@@ -389,7 +389,7 @@
                                             </div>
 
                                             <div class="col-md-5 col-lg-5 mb-3  px-lg-2 px-0">
-                                                <input type="text" name="net_pay" class="input-uk text-center"
+                                                <input type="text" name="net_pay" class="input-uk text-center uk-texs"
                                                     id="net_pay" readonly>
                                             </div>
                                         </div>
@@ -405,7 +405,7 @@
                                             <div style="padding-bottom:255px;"
                                                 class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
                                                 <input style="color: #7c7370; border-color: #7c7370;"
-                                                    class="input-uk text-center note" name="note"
+                                                    class="input-uk text-center uk-texs note" name="note"
                                                     placeholder="Note here (optional) ">
                                             </div>
                                         </div>
