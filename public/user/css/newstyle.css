@@ -289,7 +289,7 @@
     width: 50% !important;
     padding: 6px;
     border: 1px solid #00000080;
-    /* border-radius: 6px; */
+    border-radius: 6px !important;
     background: #ffffff;
     margin: auto;
     font-size: 20px;
