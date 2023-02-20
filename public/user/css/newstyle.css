@@ -33,6 +33,21 @@
         .col-md-4.text-center.vedio-box {
             max-width: 33.33%;
         }
+        .d-flex.flex-wrap.justify-content-between.usa-btn-inner {
+            display: inline-block !important;
+        }
+        .d-flex.flex-wrap.justify-content-between.canada-btn-inner {
+            display: inline-block !important;
+        }
+        input.input-uk.text-center.taxes {
+            width: 100% !important;
+        }
+        .uk-texs{
+            width:100% !important;
+        }
+        button.netpaybtn.net_pay {
+            width: 100% !important;
+        }
 
 }
 @media only screen and (min-width:374px) and (max-width:425px) {

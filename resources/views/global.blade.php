@@ -191,7 +191,7 @@
                             <div class="col-md-2  text-center sh">
                                 <!-- <div style="height:240px;-webkit-box-shadow: 9px 0 4px -4px #999, 0px 0 4px -4px #999;">
 
-                                                </div> -->
+                                                    </div> -->
                                 <img src="images/hrpng.png" style="height: 200px;">
                             </div>
                             <div class="col-md-5 col-sm-12 mt-5 text-center template-text">
