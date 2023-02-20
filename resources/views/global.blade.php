@@ -175,7 +175,7 @@
                                 <div class="mt-4">
                                     {{-- <i class="fa fa-angle-down down1"></i> --}}
                                     <div class="input-group mmenu mb-3" style="margin: auto;">
-                                        <select class="form-control dropdown1 bt_id" style="">
+                                        <select class="form-control dropdown1 dropdown12 bt_id" style="">
                                             <option selected=""> --- Select Basic Templates --- </option>
                                             @foreach ($basicType ?? [] as $data)
                                                 <option value="{{ $data->title }}" data-src="{{ $data->images->file }}">
@@ -199,7 +199,7 @@
                                 <div class="mt-4">
                                     {{-- <i class="fa fa-angle-down down1"></i> --}}
                                     <div class="input-group mmenu mb-3" style="margin: auto;">
-                                        <select class="form-control dropdown1 at_id" style="">
+                                        <select class="form-control dropdown1  dropdown12 at_id" style="">
                                             <option selected=""> --- Select Advance Template --- </option>
                                             @foreach ($advanceType ?? [] as $data)
                                                 <option value="{{ $data->title }}" data-src="{{ $data->images->file }}">

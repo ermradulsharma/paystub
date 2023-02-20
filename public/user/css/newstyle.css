@@ -10,72 +10,86 @@
     padding: 6px !important;
     text-align: left !important;
 }
-@media only screen and  (min-width:1444px) and (max-width:2560px) {
 
+.dropdown12{
+    border-radius: 6px !important;
 }
-@media only screen and (min-width:1023px) and (max-width:1440px) {
 
-}
-@media only screen and (min-width:767px) and (max-width:1024px) {
+@media only screen and (min-width:1444px) and (max-width:2560px) {}
 
-}
+@media only screen and (min-width:1023px) and (max-width:1440px) {}
+
+@media only screen and (min-width:767px) and (max-width:1024px) {}
+
 @media only screen and (min-width:424px) and (max-width:768px) {
-    .margin-left{
+    .margin-left {
 
         margin: 0px 30px 0px auto;
     }
-    .margin-right{
+
+    .margin-right {
         margin: 0px auto 0px 30px;
     }
 
 }
-    @media only screen and (min-width:620px) and (max-width:720px){
-        .col-md-4.text-center.vedio-box {
-            max-width: 33.33%;
-        }
-        .d-flex.flex-wrap.justify-content-between.usa-btn-inner {
-            display: inline-block !important;
-        }
-        .d-flex.flex-wrap.justify-content-between.canada-btn-inner {
-            display: inline-block !important;
-        }
-        input.input-uk.text-center.taxes {
-            width: 100% !important;
-        }
-        .uk-texs{
-            width:100% !important;
-        }
-        button.netpaybtn.net_pay {
-            width: 100% !important;
-        }
+
+@media only screen and (min-width:620px) and (max-width:720px) {
+    .col-md-4.text-center.vedio-box {
+        max-width: 33.33%;
     }
-        @media only screen and (max-width:720px){
-            .border-right-line {
-                border-right: none !important;
-            }
 
-        }
+    .d-flex.flex-wrap.justify-content-between.usa-btn-inner {
+        display: inline-block !important;
+    }
 
+    .d-flex.flex-wrap.justify-content-between.canada-btn-inner {
+        display: inline-block !important;
+    }
+
+    input.input-uk.text-center.taxes {
+        width: 100% !important;
+    }
+
+    .uk-texs {
+        width: 100% !important;
+    }
+
+    button.netpaybtn.net_pay {
+        width: 100% !important;
+    }
+}
+
+@media only screen and (max-width:720px) {
+    .border-right-line {
+        border-right: none !important;
+    }
+
+}
 
 @media only screen and (min-width:374px) and (max-width:425px) {
-    .input-box-font{
-        font-size:14px !important;
+    .input-box-font {
+        font-size: 14px !important;
     }
-    .margin-left{
+
+    .margin-left {
 
         margin: 0 auto !important
     }
-    .margin-right{
+
+    .margin-right {
         margin: 0 auto !important
     }
+
     .col-md-4.mt-3.pl-0.padding-0 {
         padding: 0 !important;
     }
+
     .col-lg-12.center-btn {
         display: flex;
         justify-content: center;
         padding: 0 !important;
     }
+
     .col-xl-4.col-lg-7.col-md-4.mt-2.margin-bottom.px-lg-2.px-0.center-btn {
         display: flex;
         justify-content: center;
@@ -83,21 +97,25 @@
 
 
 }
+
 @media only screen and (min-width:320px) and (max-width:375px) {
     .col-md-4.mt-3.pl-0.padding-0 {
         padding: 0 !important;
     }
+
     .col-lg-12.center-btn {
         display: flex;
         justify-content: center;
         padding: 0 !important;
     }
+
     .col-xl-4.col-lg-7.col-md-4.mt-2.margin-bottom.px-lg-2.px-0.center-btn {
         display: flex;
         justify-content: center;
     }
 
 }
+
 .createbtn {
     padding: 1px 40px;
     border-radius: 5px;
@@ -289,7 +307,7 @@
     width: 50% !important;
     padding: 6px;
     border: 1px solid #00000080;
-    border-radius: 6px !important;
+    /* border-radius: 6px !important; */
     background: #ffffff;
     margin: auto;
     font-size: 20px;
@@ -413,6 +431,7 @@
     left: 12px;
     appearance: none;
 }
+
 img.earnbtn2.lock {
     top: 10px;
     left: 12px;
@@ -556,7 +575,8 @@ select:after {
     color: #0b2f5b !important;
     background: #fff;
 }
-.sidebar .active a{
+
+.sidebar .active a {
     color: #0b2f5b !important;
     background: #fff;
 }
@@ -1549,7 +1569,7 @@ select#cars {
     max-width: 130px;
     width: 100%;
     border: 1px solid black;
-    background-color:white;
+    background-color: white;
     border-radius: 2px;
 }
 
@@ -1559,9 +1579,11 @@ select#cars {
     text-align: r;
     text-align: right;
 }
+
 .mobile-img-desktop {
     display: block;
 }
+
 .mobile-img {
     display: none;
 }
@@ -1569,19 +1591,19 @@ select#cars {
 /* w2 form design end*/
 /* bottom gradiant section style start*/
 .bottom-graadiant-section {
-    background: linear-gradient(
-        to right,
-        rgb(108, 129, 70) 0%,
-        rgb(190, 205, 129) 33%,
-        rgb(206, 199, 212) 63%,
-        rgb(246, 174, 120) 99%
-    );
+    background: linear-gradient(to right,
+            rgb(108, 129, 70) 0%,
+            rgb(190, 205, 129) 33%,
+            rgb(206, 199, 212) 63%,
+            rgb(246, 174, 120) 99%);
     padding: 30px 0px;
 }
+
 .content p {
     line-height: 1.3;
     font-size: 20px;
 }
+
 /* bottom gradiant section style end*/
 /* uk design again start */
 .payst {
@@ -1614,60 +1636,78 @@ select#cars {
     padding: 0px 20px;
     display: block;
 }
+
 ul.mt-4 {
     padding: 0px 16px;
 }
+
 .computer-img {
     max-width: 900px;
     margin-left: auto;
 }
+
 .mt-5.global-heading h2 {
     max-width: 500px;
 }
+
 .global-p {
     max-width: 500px;
 }
+
 .global-list {
     padding: 0px 16px !important;
 }
+
 .img-uk-outer img {
     width: 100%;
 }
+
 .img-uk-outer {
     max-width: 900px;
 }
+
 .mt-5.pt-3.d-flex.uk-goo {
     padding-left: 48px !important;
 }
+
 .global-padding {
     max-width: 800px;
 }
+
 .text-white.ml-2.w2-form-heading {
     max-width: 310px;
 }
+
 .w2-form-pcimg img {
     width: 100%;
 }
+
 .w2-form-pcimg {
     max-width: 900px;
 }
+
 .w2-form-container {
     max-width: 1100px;
 }
+
 img.earnbtn2.global-earnbtn {
     left: 15px;
     top: 10px;
 }
+
 label.lable.em-name {
     font-weight: 700;
 }
+
 img.earnbtn2.lockuk {
     top: 18px;
     left: 5px;
 }
+
 .couple-img img {
     width: 100%;
 }
+
 .couple-img {
     max-width: 700px;
     margin-left: auto;
@@ -1732,15 +1772,19 @@ img.earnbtn2.lockuk {
     .mmenu {
         width: 100%;
     }
+
     .col-lg-3.display-none {
         display: none;
     }
+
     .container.bg-light.redcon {
         max-width: 1385px !important;
     }
+
     .container.btn-container {
         max-width: 1385px !important;
     }
+
     .down {
         position: absolute;
         right: 91px;
@@ -1839,6 +1883,7 @@ img.earnbtn2.lockuk {
 }
 
 @media screen and (max-width: 1129px) {
+
     /* .navbar {
         display: none;
 
@@ -1870,9 +1915,11 @@ img.earnbtn2.lockuk {
         flex-direction: inherit;
         align-items: flex-start;
     }
+
     .formp {
         font-size: 15px;
     }
+
     p.top-heading {
         font-size: 20px;
     }
@@ -1880,9 +1927,11 @@ img.earnbtn2.lockuk {
     .checkbox-inner p {
         text-align: left;
     }
+
     .container.bg-light.redcon {
         max-width: 978px !important;
     }
+
     .container.btn-container {
         max-width: 978px !important;
     }
@@ -1898,6 +1947,7 @@ img.earnbtn2.lockuk {
     .checkbox-sqaure {
         width: 20px !important;
     }
+
     img.w-100.global-mobile-img {
         margin-top: 45px;
     }
@@ -1940,10 +1990,12 @@ img.earnbtn2.lockuk {
         width: 100%;
         font-size: 10px;
     }
+
     .QUICK {
         font-size: 16px;
         margin-bottom: 40px;
     }
+
     .mt-5.pt-5.justify-content-center {
         margin: 0px !important;
         padding: 0px !important;
@@ -2055,12 +2107,15 @@ img.earnbtn2.lockuk {
     h1.display-4 {
         font-size: 30px;
     }
+
     .mb-4.canadah4 {
         font-size: 25px;
     }
+
     h2.ml-3.canadah2 {
         font-size: 30px;
     }
+
     h1.canadah1 {
         font-size: 35px;
     }
@@ -2136,9 +2191,11 @@ img.earnbtn2.lockuk {
         width: 125px;
         height: 44px;
     }
+
     .global-content p {
         font-size: 14px !important;
     }
+
     .global-content h4 {
         font-size: 16px !important;
     }
@@ -2304,64 +2361,81 @@ img.earnbtn2.lockuk {
         background: #e827a5;
         font-size: 17px;
     }
+
     .text-center.w2-para {
         font-size: 25px !important;
     }
+
     .col-12.text-center.canada-btn-outer {
         padding: 0;
     }
-    .earnbtn2{
-        top:7px !important;
+
+    .earnbtn2 {
+        top: 7px !important;
         appearance: none;
-        left:12px !important;
+        left: 12px !important;
 
     }
+
     img.earnbtn2.lockuk {
         top: 18px !important;
     }
-    .input-uk{
+
+    .input-uk {
         width: 100%;
     }
+
     .previewbtn {
         margin-right: 40px !important;
     }
+
     .uk-texs {
         width: 95%;
     }
+
     .d-flex.flex-wrap.justify-content-between.canada-btn-inner {
         justify-content: center !important;
     }
+
     .mt-5.pt-4.pr-3.mr-5.ml-3.d-flex.storehead.global {
         display: flex;
         justify-content: center;
         padding: 0 !important;
         margin: 0px !important;
     }
+
     .col-12.text-center.usa-btn {
         padding: 0;
     }
+
     .w2form-left-box:before {
         content: none;
     }
+
     .globleImg {
         margin: 0 auto !important;
         display: flex;
         justify-content: center;
         margin-top: 20px !important;
     }
+
     .col-lg-9.col-md-12.mt-5.py-5.pl-5.container.w2-form-container {
         margin: 0 !important;
     }
+
     .text-center.my-5.w2-form-text {
         margin-top: 0 !important;
     }
+
     .text-white.ml-2.w2-form-heading {
         font-size: 25px !important;
         text-align: left;
     }
+
     .text-left.pt-5.w2-form-content {
         padding: 0px !important;
     }
+
     a.btn.btn-lg.btn-danger.Generate1.w2-form-btn {
         display: flex;
         justify-content: center;
@@ -2373,10 +2447,12 @@ img.earnbtn2.lockuk {
         display: flex;
         justify-content: center;
     }
+
     .view-temp {
         color: #0e866c;
         font-size: 22px;
     }
+
     .storbtn {
         width: 120px !important;
         height: 40px !important;
@@ -2389,13 +2465,16 @@ img.earnbtn2.lockuk {
         padding: 4px 8px;
         font-size: 11px;
     }
+
     button.netpaybtn.net_pay {
         width: 95%;
         font-size: 25px;
     }
+
     .mobile-img-desktop {
         display: none;
     }
+
     .mobile-img {
         display: block;
     }
@@ -2421,15 +2500,19 @@ img.earnbtn2.lockuk {
     input.input-uk.text-center.taxes {
         width: 95%;
     }
+
     button.netpaybtn.net_pay {
         width: 95%;
     }
+
     input.input-uk.text-center.taxePays {
         width: 95%;
     }
+
     img.payimg.mobile-img {
         width: 70%;
     }
+
     .payimg2 {
         width: 70% !important;
     }
@@ -2441,6 +2524,7 @@ img.earnbtn2.lockuk {
     input.input-pie-box.input {
         max-width: 86%;
     }
+
     .computer-img {
         margin-top: 30px;
     }
@@ -2478,11 +2562,13 @@ img.earnbtn2.lockuk {
         padding: 4px 8px;
         font-size: 11px;
     }
+
     .mainhead {
         text-align: center !important;
         padding: 0;
         font-size: 30px;
     }
+
     .mt-5.pt-3.pl-5.uk-btn {
         display: flex;
         justify-content: center;
@@ -2490,6 +2576,7 @@ img.earnbtn2.lockuk {
         padding: 0 !important;
         margin-bottom: 20px;
     }
+
     .mt-5.pt-3.d-flex.uk-goo {
         display: flex;
         justify-content: center;
@@ -2531,10 +2618,12 @@ img.earnbtn2.lockuk {
         font-size: 12px;
         padding: 10px !important;
     }
+
     .list-img {
         width: 60px !important;
         height: 60px !important;
     }
+
     .uk-eye {
         font-size: 38px;
     }
@@ -2613,6 +2702,7 @@ img.earnbtn2.lockuk {
         background: #e8e6e6;
         border-radius: 2px;
     }
+
     a.btn.btn-lg.p-2.btn-danger.Generate.global-btn {
         display: flex;
         justify-content: center !important;
@@ -2620,13 +2710,16 @@ img.earnbtn2.lockuk {
         margin: 0 auto 20px !important;
         padding: 11px 20px !important;
     }
+
     .Generate {
         padding: 11px 20px !important;
         max-width: 300px !important;
     }
+
     .my-3.d-flex {
         justify-content: center;
     }
+
     .dropdown1 {
         width: 73% !important;
         padding: -11px;
@@ -2865,6 +2958,7 @@ img.earnbtn2.lockuk {
         width: 100%;
         margin: 0px 20px 0 0;
     }
+
     .previewbtn {
         padding: 0px 23px;
         max-width: 305px;
@@ -2913,16 +3007,20 @@ img.earnbtn2.lockuk {
         font-size: 18px;
     }
 }
+
 @media screen and (max-width: 720px) {
     .text-center.sh {
         display: none;
     }
+
     .d-flex.justify-content-between.mb-3.flex.w-100 {
         display: inline-block !important;
     }
+
     .margin-left {
         margin: 0 auto;
     }
+
     .margin-right {
         margin: 0 auto;
     }
@@ -2934,23 +3032,29 @@ img.earnbtn2.lockuk {
     .storehead a img {
         margin-left: 0px !important;
     }
+
     input#cname {
         text-align: left !important;
     }
+
     .dropdown11 {
         padding: 9px !important;
         color: #00000080 !important;
     }
-    .input-uk{
+
+    .input-uk {
         width: 100%;
     }
-    button.netpaybtn.net_pay{
+
+    button.netpaybtn.net_pay {
         width: 100%;
     }
+
     .previewbtn {
         margin-right: 0px !important;
     }
-    input.pie-box.input{
+
+    input.pie-box.input {
         max-width: 25px;
         height: 28px;
     }
@@ -2962,85 +3066,111 @@ img.earnbtn2.lockuk {
     .d-flex.flex-wrap.justify-content-between.usa-btn-inner {
         justify-content: center !important;
     }
+
     .col-12.text-center.usa-btn {
         padding: 0px 20px;
     }
+
     .col-lg-9.col-md-12.mt-5.py-5.pl-5.container.w2-form-container {
         padding: 0px 20px !important;
     }
+
     .container.py-5.w2-form-containerpadding {
         padding: 0 !important;
     }
+
     .container.m-auto.justify-content-center.w2-form-containerpadding {
         padding: 0;
     }
+
     .container.m-auto.justify-content-center.w2-form-containerpadding p {
         text-align: center;
         padding: 0 !important;
         font-size: 15px !important;
         margin-top: 0;
     }
+
     .text-center.my-5.w2-form-text {
         margin-bottom: 15px !important;
     }
+
     a.btn.btn-lg.btn-danger.Generate.w2-form-btn {
         font-size: 16px !important;
         max-width: 215px !important;
     }
+
     .col-lg-6.col-sm-12.col-md-12.pr-2.w2-form-img {
         padding: 0px !important;
     }
+
     ul.w2-form-list li {
         font-size: 15px;
     }
+
     p.text-left {
         font-size: 15px !important;
     }
+
     .d-flex.flex-wrap.justify-content-between.w2-form-row {
         justify-content: center !important;
     }
+
     .previewbtn {
         margin-left: 0;
     }
+
     .emailbtn {
         margin-right: 0;
     }
+
     p.para-w2 {
         font-size: 15px !important;
     }
+
     ul.justify-content-center.w2-form-list2 {
         padding: 0px 15px;
     }
+
     ul.justify-content-center.w2-form-list2 li {
         font-size: 15px;
     }
+
     .text-left {
         font-size: 15px !important;
     }
+
     .col-lg-9.col-md-12.mt-5.py-5.pl-5.container.w2-form-container h1 {
         font-size: 20px;
     }
+
     .text-justify.text-center.text-white.w2-form-bottom h1 {
         font-size: 18px;
     }
+
     .text-justify.text-center.text-white.w2-form-bottom h2 {
         font-size: 18px;
     }
+
     a.btn.btn-lg.btn-danger.Generate1.w2-form-btn {
         font-size: 17px;
     }
+
     .col-lg-5.col-sm-12.text-center.p-4.m-auto {
         padding: 15px 0px !important;
     }
+
     .text-white.PayslipsGlo.ml-4.text-white2 {
         font-size: 14px !important;
     }
+
     .text-white.Payslips {
         font-size: 14px !important;
     }
-    .bottom-box-inner:first-child{
+
+    .bottom-box-inner:first-child {
         max-width: 100%;
     }
+
     select#cars {
         max-width: 100%;
         height: 26.5px;
@@ -3051,18 +3181,23 @@ img.earnbtn2.lockuk {
     .oo {
         display: flex;
     }
+
     label.lable.text-center.uk-paystub-text {
         font-size: 9px !important;
     }
+
     p.top-heading {
         font-size: 16px;
     }
+
     .mt-5.justify-content-center.d-flex.w2-form-btn {
         margin-bottom: 20px;
     }
+
     a.btn.btn-lg.mt-5.p-2.btn-danger.Generate.canada-btn {
         max-width: 250px !important;
     }
+
     .three-box-section {
         padding-bottom: 0px;
     }
@@ -3071,37 +3206,48 @@ img.earnbtn2.lockuk {
         border: unset;
         display: unset;
     }
+
     .fromimg {
         width: 80px;
     }
+
     .text-white.ml-2.w2-form-heading {
         font-size: 21px !important;
     }
+
     .basic1 {
         margin-left: 0px;
         font-weight: 900;
     }
+
     p.text-white.pay-p.head-font.home-p {
         font-size: 15px !important;
     }
+
     .box {
         padding: 10px !important;
     }
+
     .box-icon {
         padding-bottom: 10px !important;
     }
+
     .box-content h6 {
         padding-bottom: 10px !important;
     }
+
     .bottom-content p {
         font-size: 15px;
     }
+
     .ukp {
         font-size: 22px;
     }
+
     .uktext {
         font-size: 22px !important;
     }
+
     li.mt-1.ukli {
         font-size: 16px;
     }
@@ -3122,25 +3268,32 @@ img.earnbtn2.lockuk {
     .mt-5.d-flex.pt-5.top-gogle {
         margin: 0 !important;
     }
+
     li.mt-2 {
         font-size: 13px !important;
     }
+
     .mt-5.pt-3 {
         margin-top: 0 !important;
         padding-left: 0 !important;
     }
+
     .mt-5 {
         margin-top: 15px !important;
     }
+
     .col-md-6.text-left.mb-5 {
         margin-bottom: 10px !important;
     }
+
     .mt-5.d-flex.pt-5.goggle {
         padding: 0 !important;
     }
+
     .row.py-5.justify-content-center {
         padding-bottom: 10px !important;
     }
+
     .pay-outer {
         padding: 0;
     }
@@ -3152,6 +3305,7 @@ img.earnbtn2.lockuk {
     .w-sm-100 {
         width: 100%;
     }
+
     .text-white.PayslipsGlo.ml-4.text-white2 {
         font-size: 15px !important;
         margin-left: 0 !important;
@@ -3169,9 +3323,11 @@ img.earnbtn2.lockuk {
     .text-left p {
         font-size: 15px !important;
     }
+
     h1.global-heading {
         font-size: 20px !important;
     }
+
     h2.global-heading {
         font-size: 20px !important;
     }
@@ -3179,9 +3335,11 @@ img.earnbtn2.lockuk {
     .col-md-4.mt-3.text-center h2 {
         font-size: 20px !important;
     }
+
     img.storbtn.ml-5 {
         margin-left: 20px !important;
     }
+
     .mt-5.d-flex.pt-5.top-gogle {
         justify-content: center;
     }
@@ -3202,59 +3360,73 @@ img.earnbtn2.lockuk {
     h3.w2p {
         font-size: 19px !important;
     }
+
     .fbicon {
         width: 42px;
         font-size: 17px;
         padding: 10px;
     }
+
     .socialicon {
         width: 42px;
         font-size: 17px;
         padding: 10px;
     }
+
     h1.display-4 {
         font-size: 23px !important;
         text-align: center;
     }
+
     p.paragraph {
         font-size: 16px !important;
         text-align: center;
         line-height: 1.3;
     }
+
     .mb-4.canadah4 {
         font-size: 20px;
         line-height: 1.4;
         text-align: center;
     }
+
     h2.ml-3.canadah2 {
         font-size: 23px;
         text-align: center;
     }
+
     h2.ml-3.canadah2 {
         font-size: 15px !important;
     }
+
     .code {
         padding: 0px;
     }
+
     .canada-btn {
         position: relative;
         top: 20px;
         padding: 10px 20px !important;
         max-width: 210px !important;
     }
+
     ul.mt-2 {
         font-size: 16px !important;
         line-height: 1.8 !important;
     }
+
     h1.canadah1 {
         font-size: 23px;
     }
+
     p.canadap {
         font-size: 16px;
     }
+
     h2.mb-5 {
         font-size: 25px;
     }
+
     .box-usa2 {
         max-width: 300px !important;
         margin: 0 auto;
@@ -3264,9 +3436,11 @@ img.earnbtn2.lockuk {
         justify-content: center;
         width: 100%;
     }
+
     .d-flex.justify-content-between.mb-3 {
         display: inline-block !important;
     }
+
     .bottom-textarea textarea {
         max-width: 400px;
     }
@@ -3357,17 +3531,21 @@ img.earnbtn2.lockuk {
     .text {
         padding-left: 10px;
     }
+
     .mt-5.global-heading h2 {
         font-size: 20px;
     }
+
     .global-p {
         font-size: 16px !important;
     }
+
     .mt-5.global-heading {
         font-size: 22px !important;
         text-align: left;
         padding-top: 20px;
     }
+
     .see-sample2 {
         top: 78px;
         right: 76px;
@@ -3376,44 +3554,57 @@ img.earnbtn2.lockuk {
         border: 1px solid red;
         border-radius: 2px;
     }
+
     .mt-5.global-heading {
         font-size: 22px !important;
         text-align: left;
     }
+
     p.mt-4.bottom-p {
         font-size: 15px !important;
     }
+
     .mt-5.thousand h2 {
         font-size: 18px !important;
     }
+
     .mt-2.mb-4.stubheading {
         font-size: 20px;
     }
+
     a.btn.btn-lg.mt-2.mb-4.p-2.btn-danger.Generate.global-btn {
         margin-bottom: 20px !important;
     }
+
     ol.global-list-outer {
         padding: 0px 16px;
         font-size: 13px !important;
     }
+
     img.w-100.global-mobile-img {
         margin-top: 0;
     }
+
     .col-lg-6.pt-2.container.justify-content-center.pl-5.global-content {
         padding: 10px !important;
     }
+
     h1.global-heading {
         font-size: 25px;
     }
+
     h2.global-heading {
         font-size: 25px;
     }
+
     .mt-2.global-heading {
         font-size: 20px !important;
     }
+
     .col-lg-9.col-md-12.pl-5.global-padding {
         padding: 0px !important;
     }
+
     ul.global-list li {
         font-size: 14px;
     }
@@ -3653,6 +3844,7 @@ img.earnbtn2.lockuk {
         font-size: 14px !important;
         margin-bottom: 10px !important;
     }
+
     .text-white.text-padding.globe-p {
         font-size: 25px !important;
         padding-left: 0;
@@ -3663,6 +3855,7 @@ img.earnbtn2.lockuk {
         font-family: "Futura LT";
         text-align: center;
     }
+
     ol.w2-form-list {
         padding: 0px 16px;
     }
@@ -3713,6 +3906,7 @@ img.earnbtn2.lockuk {
     .ukpay-inner {
         padding: 10px;
     }
+
     .img-uk-outer {
         max-width: 325px;
     }
@@ -3722,6 +3916,7 @@ img.earnbtn2.lockuk {
     .uk-lable {
         font-size: 18px;
     }
+
     p.mainhead {
         font-size: 20px;
     }
@@ -3737,9 +3932,10 @@ img.earnbtn2.lockuk {
     .input-box input {
         max-width: 96% !important;
     }
+
     img.earnbtn2.lockuk {
-        top:9px !important;
-        left:0px !important;
+        top: 9px !important;
+        left: 0px !important;
     }
 
     .gen {
@@ -3749,12 +3945,15 @@ img.earnbtn2.lockuk {
     .text-white.ml-2.w2-form-heading {
         font-size: 17px !important;
     }
+
     .box-content h6 {
         font-size: 17px;
     }
+
     b.bottom-c {
         font-size: 17px !important;
     }
+
     .bottom-content p {
         font-size: 15px;
     }
@@ -3809,6 +4008,7 @@ img.earnbtn2.lockuk {
         border: 1px solid red;
         border-radius: 2px;
     }
+
     .col-md-5.mt-5.text-center.template-text {
         margin-top: 10px !important;
     }
@@ -3847,11 +4047,13 @@ img.earnbtn2.lockuk {
         left: 4px;
         font-weight: 200;
     }
+
     .fbicon {
         width: 35px;
         font-size: 14px;
         padding: 8px;
     }
+
     .socialicon {
         width: 35px;
         font-size: 14px;
@@ -3944,21 +4146,27 @@ img.earnbtn2.lockuk {
     .statementbtn {
         margin-top: 7px;
     }
+
     h1.display-4 {
         font-size: 16px !important;
     }
+
     h2.mb-5 {
         font-size: 15px;
     }
+
     .mb-4.canadah4 {
         font-size: 17px;
     }
+
     .mb-4.canadah4 {
         font-size: 17px;
     }
+
     .mb-4.canadah4 {
         font-size: 17px;
     }
+
     h1.canadah1 {
         font-size: 15px;
     }
@@ -3970,7 +4178,7 @@ img.earnbtn2.lockuk {
         padding-left: 2px;
         color: blue;
         top: 3px !important;
-        left:12px;
+        left: 12px;
     }
 
     .formimg1 {
@@ -3984,6 +4192,7 @@ img.earnbtn2.lockuk {
         left: 0px;
         height: auto;
     }
+
     .img2-p {
         font-size: 14px;
         font-weight: 200;
@@ -3991,14 +4200,17 @@ img.earnbtn2.lockuk {
         line-height: 1.6;
         padding-bottom: 35px;
     }
+
     a.btn.btn-lg.mt-2.p-2.btn-danger.Generate {
         max-width: 230px !important;
         font-size: 15px !important;
     }
+
     a.btn.btn-lg.mt-5.p-2.btn-danger.Generate {
         max-width: 230px !important;
         font-size: 15px !important;
     }
+
     a.btn.btn-lg.btn-danger.Generate {
         max-width: 230px !important;
         font-size: 15px !important;
@@ -4074,6 +4286,7 @@ img.earnbtn2.lockuk {
     .Show {
         font-size: 17px !important;
     }
+
     .smallfont {
         font-size: 17px !important;
     }
@@ -4148,18 +4361,23 @@ img.earnbtn2.lockuk {
     .textarea-w2 textarea {
         max-width: 295px;
     }
+
     label.lable.em-name {
         font-weight: 500;
     }
+
     .textarea-w2 textarea {
         max-width: 295px;
     }
+
     p.mt-1.b-p {
         font-size: 13px !important;
     }
+
     .text-center.w2-para {
         font-size: 20px !important;
     }
+
     button.netpaybtn.net_pay {
         font-size: 21px;
     }
@@ -4180,6 +4398,7 @@ img.earnbtn2.lockuk {
     .input-feild-outer {
         max-width: 255px;
     }
+
     input.input-uk.text-center {
         font-size: 13px !important;
     }
@@ -4209,6 +4428,7 @@ img.earnbtn2.lockuk {
         color: white;
         width: 38px;
     }
+
     b.bottom-c {
         font-size: 15px !important;
     }
@@ -4222,19 +4442,23 @@ img.earnbtn2.lockuk {
         color: white;
         width: 38px;
     }
+
     .fbicon {
         width: 33px;
         font-size: 13px;
         padding: 8px;
     }
+
     .socialicon {
         width: 33px;
         font-size: 13px;
         padding: 8px;
     }
+
     .container.footer-icons {
         padding: 0;
     }
+
     .text-left.mt-4 p {
         font-size: 13px !important;
     }
