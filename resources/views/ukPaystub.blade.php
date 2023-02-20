@@ -244,7 +244,7 @@
 
                                             <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
                                                 @foreach ($deduction as $key => $item)
-                                                <img src="{{ asset('images/lock.png') }}" style="" class="earnbtn2">
+                                                <img src="{{ asset('images/lock.png') }}" style="" class="earnbtn2 lockuk lock-uk">
                                                 <input class="input-uk text-center taxes" name="taxes[]" data-id="00{{ $key }}" data-value="{{ $item->price }}" value="{{ $item->title }}">
                                                 @endforeach
                                             </div>
@@ -279,7 +279,7 @@
                                 <div class="ukpay-inner ">
                                     <div class="row">
                                         <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
-                                            <img src="{{ asset('images/lock.png') }}" class="earnbtn2">
+                                            <img src="{{ asset('images/lock.png') }}" class="earnbtn2 lockuk ">
                                             <input class="input-uk text-center" value="Taxable Gross Pay ">
                                         </div>
 
@@ -287,7 +287,7 @@
                                             <input type="text" name="taxable_gross_pay" class="input-uk text-center" id="current_total" readonly>
                                         </div>
                                         <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
-                                            <img src="{{ asset('images/lock.png') }}" class="earnbtn2">
+                                            <img src="{{ asset('images/lock.png') }}" class="earnbtn2 lockuk ">
                                             <input class="input-uk text-center" value="Income Tax">
                                         </div>
 
@@ -295,7 +295,7 @@
                                             <input type="text" name="income_tax" class="input-uk  text-center" id="income_tax" value="" data-value="">
                                         </div>
                                         <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
-                                            <img src="{{ asset('images/lock.png') }}" class="earnbtn2">
+                                            <img src="{{ asset('images/lock.png') }}" class="earnbtn2 lockuk">
                                             <input class="input-uk  text-center" value="Employee NIC">
                                         </div>
 
@@ -303,7 +303,7 @@
                                             <input type="text" name="employee_nic" class="input-uk  text-center" id="employee_nic" value="" data-value="">
                                         </div>
                                         <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
-                                            <img src="{{ asset('images/lock.png') }}" class="earnbtn2">
+                                            <img src="{{ asset('images/lock.png') }}" class="earnbtn2 lockuk">
                                             <input class="input-uk  text-center" value="Employee NIC">
                                         </div>
 

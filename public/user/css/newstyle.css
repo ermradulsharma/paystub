@@ -2870,6 +2870,15 @@ label.lable.em-name {
         max-width: 25px;
         height: 28px;
     }
+    .earnbtn2{
+        top:7px !important;
+        appearance: none;
+        left:12px !important;
+
+    }
+    img.earnbtn2.lockuk {
+        top: 18px !important;
+    }
 
     .d-flex.flex-wrap.justify-content-between.usa-btn-inner {
         justify-content: center !important;
