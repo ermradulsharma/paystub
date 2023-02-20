@@ -135,7 +135,7 @@
                     <div class="col-md-12">
                         <div class=" box-usa">
                             <div class="d-flex justify-content-between mb-3 flex w-100">
-                                <div class="col-md-5 col-lg-6 col-sm-12 mt-5  text-center margin-left">
+                                <div class="col-md-5 col-lg-6 col-sm-10 mt-5  text-center margin-left">
                                     <h6 style="" class="base">BASIC TEMPLATES</h6>
                                     <div class="mt-4">
                                         <div class="input-group mmenu mb-3 text-center">
@@ -160,7 +160,7 @@
                                 <div class="text-center sh">
                                     <img src="{{ asset('images/hrpng.png') }}" style="height: 200px;">
                                 </div>
-                                <div class="col-md-5 col-lg-6 col-sm-12 mt-5 text-center margin-right">
+                                <div class="col-md-5 col-lg-6 col-sm-10 mt-5 text-center margin-right">
                                     <h6 class="base" style="margin-left:-23px;font-weight: 900;">ADVANCED TEMPLATES</h6>
                                     <div class="mt-4">
                                         <div class="input-group mmenu mb-3">

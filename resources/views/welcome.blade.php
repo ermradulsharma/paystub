@@ -238,8 +238,8 @@
          </h2>
       </div>
       <div class="row">
-         <div class="col-md-4 text-center">
-            <div class="justify-content-center">
+         <div class="col-md-4 text-center vedio-box">
+            <div style="" class="justify-content-center">
                <iframe class="mr-2 youtubeimg w-100" src="https://www.youtube.com/embed/TrnLCFsN5i8"
                   title="Plane Overhead" frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -247,7 +247,7 @@
                <button class="text-white payp">Generate Paystubs with Accurate Tax Calculations</button>
             </div>
          </div>
-         <div class="col-md-4 text-center ">
+         <div class="col-md-4 text-center vedio-box ">
             <div class="justify-content-center">
                <iframe class="mr-2 youtubeimg  w-100" style=" "
                   src="https://www.youtube.com/embed/TrnLCFsN5i8" title="Plane Overhead" frameborder="0"
@@ -256,7 +256,7 @@
                <button class="text-white payp">How to Create PayStubs for Independent Contractors</button>
             </div>
          </div>
-         <div class="col-md-4 text-center">
+         <div class="col-md-4 text-center vedio-box">
             <div class="justify-content-center">
                <iframe class="mr-2 youtubeimg  w-100" style=" "
                   src="https://www.youtube.com/embed/TrnLCFsN5i8" title="Plane Overhead" frameborder="0"
