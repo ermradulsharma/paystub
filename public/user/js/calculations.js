@@ -3,6 +3,7 @@ var deduction_tax = $(".deduction_tax").val() || 0;
 var myNewArray = [];
 var finalArray = [];
 var arr = [];
+var period;
 $(document).ready(function () {
     var maxField = 12;
     var addButton = $("#add_earning");
@@ -92,15 +93,15 @@ var addGrossTotal = `<div class="margin-bottom"">
 
         $(".tax_deduction").keyup(function () {
             var deduction_period_tax = $("#deduction_period_tax").val() || 0.0;
-            console.log("deduction_period_tax", deduction_period_tax);
+            // console.log("deduction_period_tax", deduction_period_tax);
             var tax_deduction = 0.0;
             $(".tax_deduction").each(function () {
                 tax_deduction += parseFloat(this.value || 0.0);
             });
-            console.log("tax_deduction", tax_deduction);
+            // console.log("tax_deduction", tax_deduction);
             setTimeout(function () {
                 tax_deduction = tax_deduction;
-                console.log("tax_deduction", tax_deduction);
+                // console.log("tax_deduction", tax_deduction);
                 var total =
                     parseFloat(deduction_period_tax) +
                     parseFloat(tax_deduction);
@@ -141,15 +142,15 @@ var addGrossTotal = `<div class="margin-bottom"">
 
     $(".tax_deduction").keyup(function () {
         var deduction_period_tax = $("#deduction_period_tax").val() || 0.0;
-        console.log("deduction_period_tax", deduction_period_tax);
+        // console.log("deduction_period_tax", deduction_period_tax);
         var tax_deduction = 0.0;
         $(".tax_deduction").each(function () {
             tax_deduction += parseFloat(this.value || 0.0);
         });
-        console.log("tax_deduction", tax_deduction);
+        // console.log("tax_deduction", tax_deduction);
         setTimeout(function () {
             tax_deduction = tax_deduction;
-            console.log("tax_deduction", tax_deduction);
+            // console.log("tax_deduction", tax_deduction);
             var total =
                 parseFloat(deduction_period_tax) + parseFloat(tax_deduction);
             if (isNaN(total)) {
@@ -200,7 +201,7 @@ var addGrossTotal = `<div class="margin-bottom"">
 
     $(".hourly").keyup(function () {
         var id = $(this).val();
-        console.log("id", id);
+        // console.log("id", id);
         if (id != "NaN") {
             $("#rate_0").val(parseFloat(id).toFixed(2));
             $("#total_" + i).val("");
@@ -250,15 +251,7 @@ var addGrossTotal = `<div class="margin-bottom"">
         var day = pay_start.getDate();
         var month = pay_start.getMonth() + 1;
         var year = pay_start.getFullYear();
-        var pay_start_1 =
-            year +
-            "-" +
-            (("" + month).length < 2 ? "0" : "") +
-            month +
-            "-" +
-            (("" + day).length < 2 ? "0" : "") +
-            day;
-
+        var pay_start_1 = year + "-" + (("" + month).length < 2 ? "0" : "") + month + "-" + (("" + day).length < 2 ? "0" : "") + day;
         var time_period = $(".time_period").val();
         if (tax_rate == null) {
             $("span").removeClass("d-none");
@@ -281,9 +274,7 @@ var addGrossTotal = `<div class="margin-bottom"">
             var dt1 = new Date(pay_start);
             var newDate = moment(dt1).add(2, "months").format("YYYY-MM-DD");
         }
-        var newDate_1 = moment(newDate)
-            .subtract(1, "days")
-            .format("YYYY-MM-DD");
+        var newDate_1 = moment(newDate).subtract(1, "days").format("YYYY-MM-DD");
         setTimeout(() => {
             if (pay_start != "") {
                 $(".pay_end").val(newDate_1);
@@ -314,15 +305,7 @@ var addGrossTotal = `<div class="margin-bottom"">
         var pay_end_1 = year + "-" + (("" + month).length < 2 ? "0" : "") + month + "-" + (("" + date).length < 2 ? "0" : "") + date;
 
         var pay_date = new Date($(".pay_date").val());
-        var weekday = [
-            "Sunday",
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday",
-        ];
+        var weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
         var day = pay_date.getDay();
         var day_name = weekday[pay_date.getDay()];
 
@@ -342,14 +325,27 @@ var addGrossTotal = `<div class="margin-bottom"">
                 }, 300);
             } else {
                 var time_period = $(".time_period").val();
+                d = new Date(
+                    Date.UTC(
+                      pay_start.getFullYear(),
+                      pay_start.getMonth(),
+                      pay_start.getDate()
+                    )
+                  );
+                var yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
+
+                // console.log('yearStart', yearStart);
+
+                var dt4 = new Date(yearStart);
                 var dt3 = new Date(pay_start_1);
                 var dt2 = new Date(pay_end_1);
                 var dt1 = new Date(pay_date_1);
-
-                var mBetween = dt1.getTime() - dt3.getTime();
+                var mBetween = dt3.getTime() - dt4.getTime();
+                // var mBetween = dt1.getTime() - dt3.getTime();
                 var days = mBetween / (1000 * 3600 * 24);
                 if (time_period == "weekly") {
                     days_number = days / 7;
+                    // console.log('days_number', days_number);
                 }
                 if (time_period == "bi-weekly") {
                     days_number = days / 14;
@@ -381,7 +377,7 @@ var addGrossTotal = `<div class="margin-bottom"">
         var hours = parseFloat($("#hours_" + ids).val()).toFixed(2);
         var total = rate * hours || 0.0;
         var ytd_total = total * parseInt(days_number) || 0.0;
-        console.log(rate);
+        // console.log(rate);
         setTimeout(function () {
             $("#total_" + ids).val(parseFloat(total).toFixed(2));
             $("#period_" + ids).val(parseFloat(total).toFixed(2));
@@ -544,8 +540,31 @@ var addGrossTotal = `<div class="margin-bottom"">
                     }
                     taxes_values = taxes_values;
                 }
-                period_tax_price = parseFloat(period_gross_total).toFixed(2) * (taxes_values / 100);
-                period_ytd_tax_price = parseFloat(ytd_gross_total).toFixed(2) * (taxes_values / 100);
+                if( tax_name == "Federal Income Tax"){
+                    var time_period = $(".time_period").val();
+                    if(time_period == 'weekly'){
+                        period = 52;
+                    } else if(time_period == 'bi-weekly'){
+                        period = 26;
+                    } else if(time_period == 'monthly'){
+                        period = 12;
+                    } else if(time_period == 'bi-monthly'){
+                        period = 6;
+                    }
+
+                    fTaxArr = getNewFederalTaxRate(period, $(".marital_status").val(), $(".exemptions").val(), period_gross_total);
+                    fedaRalTax = (parseFloat(parseFloat(period_gross_total.toString())).toFixed(2) - fTaxArr.subtract) * fTaxArr.rate ;
+
+                    var tax_rate = $(".tax_rate").find(":selected").data("tax");
+                    if (tax_rate != null) {
+                        taxes_values_1 = parseFloat(fedaRalTax).toFixed(2);
+                    } else {
+                        taxes_values = 0.0;
+                    }
+                    taxes_values = taxes_values_1;
+                }
+                period_tax_price = parseFloat(taxes_values).toFixed(2) * (taxes_values / 100);
+                period_ytd_tax_price = parseFloat(taxes_values).toFixed(2) * (taxes_values / 100);
 
                 $("#taxes_" + taxes_ids).val(parseFloat(period_tax_price).toFixed(2));
                 $("#taxes_ytd_" + taxes_ids).val(parseFloat(period_ytd_tax_price).toFixed(2));

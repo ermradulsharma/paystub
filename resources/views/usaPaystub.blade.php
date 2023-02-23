@@ -361,7 +361,7 @@
                                     <div>
                                         <label for="exemptions" class="lable">EXEMPTIONS
                                         </label>
-                                        <select name="exemptions" id="exemptions" class=" dropdown11">
+                                        <select name="exemptions" id="exemptions" class=" dropdown11 exemptions" >
                                             <option value=""> --- Select Exemptions --- </option>
                                             <option value="0">0</option>
                                             <option value="1">1</option>
@@ -684,6 +684,8 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" crossorigin="anonymous"></script>
     <script src="{{ asset('user') }}/js/calculations.js"></script>
+    <script src="{{ asset('user') }}/js/javaformula.js"></script>
+    <script src="{{ asset('user') }}/js/federal.js"></script>
     <script>
         $(document).ready(function() {
             $('.advanceTemplate').change(function() {
