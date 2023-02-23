@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<link rel="stylesheet" href="{{ asset('user') }}/css/bootstrap-datepicker.min.css">
     <!-- Modal Start -->
     <div class="modal fade" id="openEye" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
@@ -409,7 +410,7 @@
                                         <label for="pay_start" class="lable">PAY START<span class="redColor">*</span>
                                         </label>
                                         <input
-                                            style="color:#00000080;border:1px solid #00000080;padding:0px 6px !important; height:40px; appearance: none;"
+                                            style="color:#140303f5;border:1px solid #110303fe;padding:0px 6px !important; height:40px; appearance: none;"
                                             type="date" id="pay_start" name="pay_start" placeholder="12-11-2022"
                                             class="w-100 p-2 input-box-font pay_start datepicker" data-id="pay_start">
                                     </div>
@@ -420,9 +421,9 @@
                                         <label for="pay_end" class="lable">PAY END <span class="redColor">*</span>
                                         </label>
                                         <input
-                                            style="color:#212529;border:1px solid #00000080; padding:0px 6px !important; height:40px; appearance: none;"
+                                            style="color:#140303f5;border:1px solid #110303fe; padding:0px 6px !important; height:40px; appearance: none;"
                                             type="date" id="pay_end" name="pay_end" placeholder="12-17-2022"
-                                            class="w-100 p-2 input-box-font pay_end" data-id="pay_end">
+                                            class="w-100 p-2 input-box-font pay_end  datepicker" data-id="pay_end">
                                     </div>
                                 </div>
 
@@ -431,9 +432,9 @@
                                         <label for="pay_date" class="lable">PAY DATE <span class="redColor">*</span>
                                         </label>
                                         <input
-                                            style="color:#212529;padding:0px 6px !important; height:40px; appearance: none; border:1px solid #00000080;"
+                                            style="color:#140303f5;padding:0px 6px !important; height:40px; appearance: none; border:1px solid #110303fe;"
                                             type="date" id="pay_date" name="pay_date" placeholder="12-19-2022"
-                                            class="w-100 p-2 input-box-font pay_date" data-id="pay_date">
+                                            class="w-100 p-2 input-box-font pay_date  datepicker" data-id="pay_date">
                                     </div>
                                 </div>
                                 <div class="col-md-3 mt-4">
@@ -679,6 +680,13 @@
     </div>
 @endsection
 @section('script')
+<script src="{{ asset('user') }}/js/bootstrap-datepicker.min.js"></script>
+<script>
+    $('.inputdatepicker').datepicker({
+        autoclose: true,
+        todayHighlight: true,
+    }).datepicker('setDate', 'today');
+</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
         integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>

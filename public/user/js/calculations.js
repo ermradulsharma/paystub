@@ -340,9 +340,12 @@ var addGrossTotal = `<div class="margin-bottom"">
                 var dt3 = new Date(pay_start_1);
                 var dt2 = new Date(pay_end_1);
                 var dt1 = new Date(pay_date_1);
+
                 var mBetween = dt3.getTime() - dt4.getTime();
+                console.log('mBetween', mBetween);
                 // var mBetween = dt1.getTime() - dt3.getTime();
                 var days = mBetween / (1000 * 3600 * 24);
+                console.log('days', days);
                 if (time_period == "weekly") {
                     days_number = days / 7;
                     // console.log('days_number', days_number);
@@ -552,8 +555,8 @@ var addGrossTotal = `<div class="margin-bottom"">
                         period = 6;
                     }
 
-                    fTaxArr = getNewFederalTaxRate(period, $(".marital_status").val(), $(".exemptions").val(), period_gross_total);
-                    fedaRalTax = (parseFloat(parseFloat(period_gross_total.toString())).toFixed(2) - fTaxArr.subtract) * fTaxArr.rate ;
+                    var fTaxArr = getNewFederalTaxRate(period, $(".marital_status").val(), $(".exemptions").val(), period_gross_total);
+                    var fedaRalTax = (parseFloat(parseFloat(period_gross_total.toString())).toFixed(2) - fTaxArr.subtract) * fTaxArr.rate ;
 
                     var tax_rate = $(".tax_rate").find(":selected").data("tax");
                     if (tax_rate != null) {
@@ -561,10 +564,15 @@ var addGrossTotal = `<div class="margin-bottom"">
                     } else {
                         taxes_values = 0.0;
                     }
+                    console.log(taxes_values_1);
                     taxes_values = taxes_values_1;
+                    period_tax_price = taxes_values_1;
+                    period_ytd_tax_price = taxes_values_1 * days_number;
+                }else{
+                    period_tax_price = parseFloat(period_gross_total).toFixed(2) * (taxes_values / 100);
+                    period_ytd_tax_price = parseFloat(ytd_gross_total).toFixed(2) * (taxes_values / 100);
                 }
-                period_tax_price = parseFloat(taxes_values).toFixed(2) * (taxes_values / 100);
-                period_ytd_tax_price = parseFloat(taxes_values).toFixed(2) * (taxes_values / 100);
+
 
                 $("#taxes_" + taxes_ids).val(parseFloat(period_tax_price).toFixed(2));
                 $("#taxes_ytd_" + taxes_ids).val(parseFloat(period_ytd_tax_price).toFixed(2));
