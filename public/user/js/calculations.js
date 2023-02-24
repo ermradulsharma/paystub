@@ -551,8 +551,14 @@ $(document).ready(function () {
                         taxes_values_1 = 0.0;
                     }
                     taxes_values = taxes_values_1;
-                    period_tax_price = taxes_values;
-                    period_ytd_tax_price = parseFloat(taxes_values).toFixed(2) * parseFloat(days_number).toFixed(2);
+                    if(period_gross_total == 0){
+                        period_tax_price = 0.00;
+                        period_ytd_tax_price = 0.00;
+                    }else{
+                        period_tax_price = taxes_values;
+                        period_ytd_tax_price = parseFloat(taxes_values).toFixed(2) * parseFloat(days_number).toFixed(2);
+                    }
+
                 }else{
                     period_tax_price = parseFloat(period_gross_total).toFixed(2) * (taxes_values / 100);
                     period_ytd_tax_price = parseFloat(ytd_gross_total).toFixed(2) * (taxes_values / 100);
