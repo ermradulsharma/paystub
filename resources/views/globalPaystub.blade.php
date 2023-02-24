@@ -86,8 +86,7 @@
                                     <div>
                                         <label for="address_2" class="lable">STREET ADDRESS 2 </label>
                                         <input type="text" id="address_2" name="address_2"
-                                            placeholder="Suite 101 or Apt 101 (optional)"
-                                            class="w-100 p-2 input-box-font">
+                                            placeholder="Suite 101 or Apt 101 (optional)" class="w-100 p-2 input-box-font">
                                     </div>
 
                                 </div>
@@ -291,7 +290,7 @@
                                         <div class="dropdown ">
                                             <select name="emp_your_state" id="emp_your_state"
                                                 class=" dropdown11 tax_rate">
-                                                <option value="">Choose your State</option>
+                                                {{-- <option value="">Choose your State</option> --}}
                                                 @foreach ($stateTaxes as $stateTax)
                                                     <option value="{{ $stateTax->state }}"
                                                         data-tax="{{ $stateTax->rate }}">{{ $stateTax->state }}</option>
@@ -306,7 +305,7 @@
                                         <label for="auto_cal" class="lable">AUTO CALCULATOR <span
                                                 class="redColor">*</span> </label>
                                         <select name="auto_cal" id="auto_cal" class="dropdown11 auto_calculate">
-                                            <option value=""> --- Select Calculator --- </option>
+                                            {{-- <option value=""> --- Select Calculator --- </option> --}}
                                             <option value="on">ON</option>
                                             <option value="off">OFF</option>
                                         </select>
@@ -318,7 +317,7 @@
                                                 class="redColor">*</span> </label>
                                         <select name="marital_status" id="marital_status"
                                             class="dropdown11 marital_status">
-                                            <option value=""> --- Select Marital Status--- </option>
+                                            {{-- <option value=""> --- Select Marital Status--- </option> --}}
                                             <option value="single">Single</option>
                                             <option value="married">Married</option>
                                             <option value="other">Prefered top not say</option>
@@ -330,7 +329,7 @@
                                         <label for="time_period" class="lable">HOW DO YOU GET PAID <span
                                                 class="redColor">*</span> </label>
                                         <select name="time_period" id="time_period" class="dropdown11 time_period">
-                                            <option value=""> --- Select --- </option>
+                                            {{-- <option value=""> --- Select --- </option> --}}
                                             <option value="weekly">Weekly</option>
                                             <option value="bi-weekly">Bi-Weekly</option>
                                             <option value="monthly">Monthly</option>
@@ -352,7 +351,7 @@
                                     <div>
                                         <label for="emp_type" class="lable">EMPLOYMENT TYPE </label>
                                         <select name="emp_type" id="emp_type" class=" dropdown11">
-                                            <option value=""> --- Select Employment Type --- </option>
+                                            {{-- <option value=""> --- Select Employment Type --- </option> --}}
                                             <option value="Temporary">Temporary</option>
                                             <option value="Permanent">Permanent</option>
                                         </select>
@@ -363,7 +362,7 @@
                                         <label for="exemptions" class="lable">EXEMPTIONS
                                         </label>
                                         <select name="exemptions" id="exemptions" class=" dropdown11">
-                                            <option value=""> --- Select Exemptions --- </option>
+                                            {{-- <option value=""> --- Select Exemptions --- </option> --}}
                                             <option value="0">0</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
@@ -383,7 +382,7 @@
                                             YOUR PREFERRED
                                             CURRENCY </label>
                                         <select name="currency" id="currency" class=" dropdown11">
-                                            <option value=""> --- Select currency --- </option>
+                                            {{-- <option value=""> --- Select currency --- </option> --}}
                                             <option value="$">Dollar $</option>
                                             <option value="€">Euro €</option>
                                             <option value="£">Pound £</option>
@@ -408,7 +407,9 @@
                                     <div>
                                         <label for="pay_start" class="lable">PAY START<span class="redColor">*</span>
                                         </label>
-                                        <input style="color:#00000080;;border:1px solid #00000080; padding:0px 6px !important; height:40px; appearance: none;" type="date" id="pay_start" name="pay_start" placeholder="12-11-2022"
+                                        <input
+                                            style="color:#00000080;;border:1px solid #00000080; padding:0px 6px !important; height:40px; appearance: none;"
+                                            type="date" id="pay_start" name="pay_start" placeholder="12-11-2022"
                                             class="w-100 p-2input-box-font pay_start datepicker" data-id="pay_start">
                                     </div>
                                 </div>
@@ -417,7 +418,9 @@
                                     <div>
                                         <label for="pay_end" class="lable">PAY END <span class="redColor">*</span>
                                         </label>
-                                        <input style="color:#00000080;;border:1px solid #00000080; padding:0px 6px !important; height:40px; appearance: none;" type="date" id="pay_end" name="pay_end" placeholder="12-17-2022"
+                                        <input
+                                            style="color:#00000080;;border:1px solid #00000080; padding:0px 6px !important; height:40px; appearance: none;"
+                                            type="date" id="pay_end" name="pay_end" placeholder="12-17-2022"
                                             class="w-100 p-2input-box-font pay_end" data-id="pay_end">
                                     </div>
                                 </div>
@@ -426,7 +429,9 @@
                                     <div>
                                         <label for="pay_date" class="lable">PAY DATE <span class="redColor">*</span>
                                         </label>
-                                        <input style="color:#00000080;;border:1px solid #00000080; padding:0px 6px !important; height:40px; appearance: none;" type="date" id="pay_date" name="pay_date" placeholder="12-19-2022"
+                                        <input
+                                            style="color:#00000080;;border:1px solid #00000080; padding:0px 6px !important; height:40px; appearance: none;"
+                                            type="date" id="pay_date" name="pay_date" placeholder="12-19-2022"
                                             class="w-100 p-2input-box-font pay_date" data-id="pay_date">
                                     </div>
 
@@ -644,8 +649,7 @@
                                 <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
                                     <p class="p-0 m-0 " style="font-family: serif;">Account Number LAST<span
                                             class="redColor">*</span></p>
-                                    <input name="account_number_last_4" class="earnbtn text-center "
-                                        value="">
+                                    <input name="account_number_last_4" class="earnbtn text-center " value="">
                                 </div>
                                 <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
                                     <p class="p-0 m-0 " style="font-family: serif;">Transit ABA<span
@@ -675,11 +679,18 @@
     </div>
 @endsection
 @section('script')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
-        integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="{{ asset('user') }}/js/bootstrap-datepicker.min.js"></script>
+    <script>
+        $('.inputdatepicker').datepicker({
+            autoclose: true,
+            todayHighlight: true,
+        }).datepicker('setDate', 'today');
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" crossorigin="anonymous"></script>
     <script src="{{ asset('user') }}/js/calculations.js"></script>
+    <script src="{{ asset('user') }}/js/javaformula.js"></script>
+    <script src="{{ asset('user') }}/js/federal.js"></script>
     <script>
         $(document).ready(function() {
             $('.advanceTemplate').change(function() {
