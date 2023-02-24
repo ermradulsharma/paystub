@@ -240,8 +240,10 @@
                             <td><b>Year-to-date</b></td>
 
                         </tr>
-                        @php $totalHours = 0;
-                        $totalRate = 0; @endphp
+                        @php
+                        $totalHours = 0;
+                        $totalRate = 0;
+                        @endphp
                         @foreach ($requestData['earning'] as $key => $earn)
                         @php
                         $totalHours =$requestData['hours'][0];
@@ -274,7 +276,7 @@
                             <td>EFFECTIVE THIS PAY PERIOD - REGULAR</td>
                         </tr>
                         <tr>
-                            <td>CURRENT PAY RATE IS: {{ $requestData['currency'] }} {{ number_format($totalRate/$totalHours,2) }} PER HOUR</td>
+                            <td>CURRENT PAY RATE IS: {{ $requestData['currency'] }} @if($totalRate != 0 && $totalHours != 0){{ number_format($totalRate / $totalHours, 2)}} @else {{ 0}} @endif PER HOUR</td>
                         </tr>
                         <tr>
                             <td>Company Telephone Number:{{ $requestData['tel'] }} </td>
