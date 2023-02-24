@@ -344,7 +344,7 @@
                                         <label for="hourly" class="lable">HOURLY <span class="redColor">*</span>
                                         </label>
                                         <input type="text" step="0.5" id="hourly" name="hourly"
-                                            placeholder="Hourly" class="w-100  input-box-font hourly" value="">
+                                            placeholder="Hourly" class="w-100 input-box-font hourly" value="">
                                     </div>
                                 </div>
                                 <div class="col-md-3 mt-4">
@@ -361,7 +361,7 @@
                                     <div>
                                         <label for="exemptions" class="lable">EXEMPTIONS
                                         </label>
-                                        <select name="exemptions" id="exemptions" class=" dropdown11">
+                                        <select name="exemptions" id="exemptions" class="dropdown11 exemptions">
                                             {{-- <option value=""> --- Select Exemptions --- </option> --}}
                                             <option value="0">0</option>
                                             <option value="1">1</option>
@@ -408,9 +408,9 @@
                                         <label for="pay_start" class="lable">PAY START<span class="redColor">*</span>
                                         </label>
                                         <input
-                                            style="color:#00000080;;border:1px solid #00000080; padding:0px 6px !important; height:40px; appearance: none;"
+                                            style="color:#140303f5;border:1px solid #110303fe;padding:0px 6px !important; height:40px; appearance: none;"
                                             type="date" id="pay_start" name="pay_start" placeholder="12-11-2022"
-                                            class="w-100 p-2input-box-font pay_start datepicker" data-id="pay_start">
+                                            class="w-100 p-2 input-box-font pay_start datepicker" data-id="pay_start">
                                     </div>
                                 </div>
 
@@ -419,9 +419,9 @@
                                         <label for="pay_end" class="lable">PAY END <span class="redColor">*</span>
                                         </label>
                                         <input
-                                            style="color:#00000080;;border:1px solid #00000080; padding:0px 6px !important; height:40px; appearance: none;"
+                                            style="color:#140303f5;border:1px solid #110303fe; padding:0px 6px !important; height:40px; appearance: none;"
                                             type="date" id="pay_end" name="pay_end" placeholder="12-17-2022"
-                                            class="w-100 p-2input-box-font pay_end" data-id="pay_end">
+                                            class="w-100 p-2 input-box-font pay_end  datepicker" data-id="pay_end">
                                     </div>
                                 </div>
 
@@ -430,9 +430,9 @@
                                         <label for="pay_date" class="lable">PAY DATE <span class="redColor">*</span>
                                         </label>
                                         <input
-                                            style="color:#00000080;;border:1px solid #00000080; padding:0px 6px !important; height:40px; appearance: none;"
+                                            style="color:#140303f5;padding:0px 6px !important; height:40px; appearance: none; border:1px solid #110303fe;"
                                             type="date" id="pay_date" name="pay_date" placeholder="12-19-2022"
-                                            class="w-100 p-2input-box-font pay_date" data-id="pay_date">
+                                            class="w-100 p-2 input-box-font pay_date  datepicker" data-id="pay_date">
                                     </div>
 
                                 </div>
@@ -539,7 +539,8 @@
                                         <img src="{{ asset('images/lock.png') }}" class="earnbtn2 global-earnbtn">
                                         <input class="earnbtn text-center taxes" name="taxes[]"
                                             data-id="{{ $key }}" data-value="{{ $item->price }}"
-                                            value="{{ $item->title }}" data-value="{{ $item->title }}">
+                                            value="{{ $item->title }}" data-value="{{ $item->title }}"
+                                            data-text="{{ $item->type }}">
                                     </div>
                                     <div class="col-md-1 col-lg-1"></div>
                                     <div class="col-md-2 col-lg-3"></div>

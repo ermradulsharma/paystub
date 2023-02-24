@@ -13,6 +13,12 @@ $(document).ready(function () {
     var x = 1;
     var i = 1;
 
+    function addCommas(num){
+        obj2 = new Intl.NumberFormat('en-US');
+		output2 = obj2.format(num);
+        return output2
+    }
+
     $(addButton).click(function () {
         var addEarning =`<div class="margin-bottom">
                             <input class="earnbtn mb-3 text-center" type="text" name="earning[]" value="" id="earning_`+i+`" data-id="`+i+`">
@@ -302,7 +308,7 @@ $(document).ready(function () {
             days_number = parseFloat(days).toFixed(2)/56;
             console.log('days_number',days_number);
         } */
-
+        console.log('days_number',days_number);
         $('#days_number').val(parseInt(days_number));
         for (let i = 0; i < finalArray.length; i++) {
             var hours = $('#hours_'+i).val();
@@ -427,6 +433,7 @@ $(document).ready(function () {
         var month = date.getMonth() + 1;
         var year = date.getFullYear();
         var date_1 = year + "-" + (("" + month).length < 2 ? "0" : "") + month + "-" + (("" + day).length < 2 ? "0" : "") + day;
+        console.log('date_1', date_1);
         $(".pay_start").val(date_1);
         dayCalculate();
         $(".rate").val("");
@@ -469,6 +476,7 @@ $(document).ready(function () {
             $(".manualTaxTotal").attr("readonly", false);
         }
     });
+
     $(".manualTaxTotal").keyup(function () {
         manualTaxTotal();
     });
@@ -540,10 +548,12 @@ $(document).ready(function () {
             $(".taxes").each(function () {
                 var taxes_ids = $(this).data("id");
                 var taxes_values = $(this).data("value");
+                var taxes_text = $(this).data("text");
                 var tax_name = $(this).val();
 
                 if (tax_name == "State Tax") {
                     var tax_rate = $(".tax_rate").find(":selected").data("tax");
+                    console.log('tax_rate', tax_rate);
                     if (tax_rate != null) {
                         taxes_values = parseFloat(tax_state).toFixed(2);
                     } else {
@@ -551,7 +561,7 @@ $(document).ready(function () {
                     }
                     taxes_values = taxes_values;
                 }
-                if( tax_name == "Federal Income Tax"){
+                if(taxes_text == 'deduction_8' || taxes_text == 'deduction_18'){
                     var time_period = $(".time_period").val();
                     if(time_period == 'weekly'){
                         period = 52;
@@ -562,11 +572,15 @@ $(document).ready(function () {
                     } else if(time_period == 'bi-monthly'){
                         period = 6;
                     }
-
+                    console.log('status', $(".marital_status").val());
+                    console.log('exemptions', $(".exemptions").val());
                     var fTaxArr = getNewFederalTaxRate(period, $(".marital_status").val(), $(".exemptions").val(), period_gross_total);
-                    var fedaRalTax = (parseFloat(parseFloat(period_gross_total.toString())).toFixed(2) - fTaxArr.subtract) * fTaxArr.rate ;
 
+                    var fedaRalTax = (parseFloat(period_gross_total - fTaxArr.subtract)).toFixed(2) * fTaxArr.rate ;
+                    console.log('fedaRalTax',fedaRalTax);
+                    // var fedaRalTax = (parseFloat(parseFloat(period_gross_total.toString())).toFixed(2) - fTaxArr.subtract) * fTaxArr.rate ;
                     var tax_rate = $(".tax_rate").find(":selected").data("tax");
+
                     if (tax_rate != null) {
                         taxes_values_1 = parseFloat(fedaRalTax).toFixed(2) || 0.00;
                     } else {
@@ -591,7 +605,7 @@ $(document).ready(function () {
                 period_deduction_tax += parseFloat(period_tax_price);
                 period_ytd_deduction_tax += parseFloat(period_ytd_tax_price);
                 setTimeout(function () {
-                    $(".deduction_tax").val( parseFloat( period_deduction_tax + deduction_period_tax_other ).toFixed(2));
+                    $(".deduction_tax").val(parseFloat( period_deduction_tax + deduction_period_tax_other ).toFixed(2));
                     $(".ytd_deduction_tax").val(parseFloat(period_ytd_deduction_tax + ytd_deduction_period_tax_other).toFixed(2));
                     $(".deduction_period_tax").val(parseFloat(period_deduction_tax).toFixed(2));
                     $(".ytd_deduction_period_tax").val(parseFloat(period_ytd_deduction_tax).toFixed(2));
