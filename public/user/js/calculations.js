@@ -557,13 +557,11 @@ $(document).ready(function () {
                     period_tax_price = parseFloat(period_gross_total).toFixed(2) * (taxes_values / 100);
                     period_ytd_tax_price = parseFloat(ytd_gross_total).toFixed(2) * (taxes_values / 100);
                 }
-
-
                 $("#taxes_" + taxes_ids).val(parseFloat(period_tax_price).toFixed(2));
                 $("#taxes_ytd_" + taxes_ids).val(parseFloat(period_ytd_tax_price).toFixed(2));
 
-                period_deduction_tax += period_tax_price;
-                period_ytd_deduction_tax += period_ytd_tax_price;
+                period_deduction_tax += parseFloat(period_tax_price);
+                period_ytd_deduction_tax += parseFloat(period_ytd_tax_price);
                 setTimeout(function () {
                     $(".deduction_tax").val( parseFloat( period_deduction_tax + deduction_period_tax_other ).toFixed(2));
                     $(".ytd_deduction_tax").val(parseFloat(period_ytd_deduction_tax + ytd_deduction_period_tax_other).toFixed(2));
