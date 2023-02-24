@@ -281,6 +281,28 @@ $(document).ready(function () {
             days_number = (pay_start.getMonth() + 1) / 2;
         }
 
+
+        /* var diff = new Date(pay_start - yearStart);
+        // get days
+        var days = diff/1000/60/60/24 + 1;
+        console.log('days',days);
+        var weekNo = Math.ceil(((d - yearStart) / 86400000 + 1));
+        var currentWeek = parseFloat(weekNo).toFixed(2);
+
+        if (time_period == "weekly") {
+            days_number = parseFloat(days).toFixed(2)/7;
+        }
+        if (time_period == "bi-weekly") {
+            days_number = parseFloat(days).toFixed(2)/14;
+        }
+        if (time_period == "monthly") {
+            days_number = parseFloat(days).toFixed(2)/28;
+        }
+        if (time_period == "bi-monthly") {
+            days_number = parseFloat(days).toFixed(2)/56;
+            console.log('days_number',days_number);
+        } */
+
         $('#days_number').val(parseInt(days_number));
         for (let i = 0; i < finalArray.length; i++) {
             var hours = $('#hours_'+i).val();
