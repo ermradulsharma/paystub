@@ -546,13 +546,13 @@ $(document).ready(function () {
 
                     var tax_rate = $(".tax_rate").find(":selected").data("tax");
                     if (tax_rate != null) {
-                        taxes_values_1 = parseFloat(fedaRalTax).toFixed(2);
+                        taxes_values_1 = parseFloat(fedaRalTax).toFixed(2) || 0.00;
                     } else {
-                        taxes_values = 0.0;
+                        taxes_values_1 = 0.0;
                     }
                     taxes_values = taxes_values_1;
-                    period_tax_price = taxes_values_1;
-                    period_ytd_tax_price = parseFloat(taxes_values_1).toFixed(2) * parseFloat(days_number).toFixed(2);
+                    period_tax_price = taxes_values;
+                    period_ytd_tax_price = parseFloat(taxes_values).toFixed(2) * parseFloat(days_number).toFixed(2);
                 }else{
                     period_tax_price = parseFloat(period_gross_total).toFixed(2) * (taxes_values / 100);
                     period_ytd_tax_price = parseFloat(ytd_gross_total).toFixed(2) * (taxes_values / 100);

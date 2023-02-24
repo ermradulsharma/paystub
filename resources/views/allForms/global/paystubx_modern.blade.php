@@ -249,8 +249,8 @@
                         @endphp
                         <tr>
                             <td style="text-align:left;">Regular {{ $earn }} </td>
-                            <td>{{ number_format($requestData['rate'][$key],2) }} </td>
-                            <td>{{ number_format($requestData['hours'][$key],2) }} </td>
+                            <td>{{ number_format($requestData['rate'][$key],2) ?? ''}} </td>
+                            <td>{{ number_format($requestData['hours'][$key],2) ?? '' }} </td>
                             <td>{{ number_format($requestData['period'][$key],2) }} </td>
                             <td>{{ number_format($requestData['ytd_total'][$key],2) }} </td>
                         </tr>
