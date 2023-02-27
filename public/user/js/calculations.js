@@ -221,13 +221,8 @@ $(document).ready(function () {
     }
 
     function dayCalculate() {
-        var currentDate = new Date();
-        var month = currentDate.getMonth()+1;
-        var day = currentDate.getDate();
-        var output = currentDate.getFullYear() + '-' + (month<10 ? '0' : '') + month + '-' + (day<10 ? '0' : '') + day;
-
         var tax_rate = $(".tax_rate").find(":selected").data("tax");
-        var pay_start = new Date($(".pay_start").val()) | output;
+        var pay_start = new Date($(".pay_start").val());
         var day = pay_start.getDate();
         var month = pay_start.getMonth() + 1;
         var year = pay_start.getFullYear();
@@ -291,30 +286,7 @@ $(document).ready(function () {
         if (time_period == "bi-monthly") {
             days_number = (pay_start.getMonth() + 1) / 2;
         }
-
-
-        /* var diff = new Date(pay_start - yearStart);
-        // get days
-        var days = diff/1000/60/60/24 + 1;
-        console.log('days',days);
-        var weekNo = Math.ceil(((d - yearStart) / 86400000 + 1));
-        var currentWeek = parseFloat(weekNo).toFixed(2);
-
-        if (time_period == "weekly") {
-            days_number = parseFloat(days).toFixed(2)/7;
-        }
-        if (time_period == "bi-weekly") {
-            days_number = parseFloat(days).toFixed(2)/14;
-        }
-        if (time_period == "monthly") {
-            days_number = parseFloat(days).toFixed(2)/28;
-        }
-        if (time_period == "bi-monthly") {
-            days_number = parseFloat(days).toFixed(2)/56;
-            console.log('days_number',days_number);
-        } */
-        // console.log('days_number',days_number);
-        $('#days_number').val(parseInt(days_number).toFixed(2));
+        $('#days_number').val(days_number);
         for (let i = 0; i < finalArray.length; i++) {
             var hours = $('#hours_'+i).val();
             if (hours != '') {
@@ -322,96 +294,20 @@ $(document).ready(function () {
             }
         }
         total();
-
-        /* var date = pay_start.getDate();
-        var month = pay_start.getMonth() + 1;
-        var year = pay_start.getFullYear();
-        var pay_start_1 = year + "-" + (("" + month).length < 2 ? "0" : "") + month + "-" + (("" + date).length < 2 ? "0" : "") + date;
-
-        var pay_end = new Date($(".pay_end").val());
-        var date = pay_end.getDate();
-        var month = pay_end.getMonth() + 1;
-        var year = pay_end.getFullYear();
-        var pay_end_1 = year + "-" + (("" + month).length < 2 ? "0" : "") + month + "-" + (("" + date).length < 2 ? "0" : "") + date;
-
-        var pay_date = new Date($(".pay_date").val());
-        var weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-        var day = pay_date.getDay();
-        var day_name = weekday[pay_date.getDay()];
-
-        var date = pay_date.getDate();
-        var month = pay_date.getMonth() + 1;
-        var year = pay_date.getFullYear();
-        var pay_date_1 = year + "-" + (("" + month).length < 2 ? "0" : "") + month + "-" + (("" + date).length < 2 ? "0" : "") + date;
-        if (pay_date_1 != "NaN-NaN-NaN") {
-            if (pay_date_1 <= pay_end_1) {
-                setTimeout(function () {
-                    if (pay_date_1 != "NaN-NaN-NaN") {
-                        for (let i = 0; i < finalArray.length; i++) {
-                            $("#ytd_total_" + i).val(parseFloat(0).toFixed(2));
-                            gross_total();
-                        }
-                    }
-                }, 300);
-            } else {
-                var time_period = $(".time_period").val();
-                d = new Date( Date.UTC(pay_start.getFullYear(), pay_start.getMonth(), pay_start.getDate()));
-                d.setUTCDate(d.getUTCDate() + 4 - (d.getUTCDay() || 7));
-                var yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
-                var weekNo = Math.ceil(((d - yearStart) / 86400000 + 1) / 7);
-                var currentWeek = weekNo;
-
-                console.log('currentWeek',currentWeek);
-                var dt4 = new Date(yearStart);
-                var dt3 = new Date(pay_start_1);
-                var dt2 = new Date(pay_end_1);
-                var dt1 = new Date(pay_date_1);
-
-                var mBetween = dt3.getTime() - dt4.getTime();
-                var days = mBetween / (1000 * 3600 * 24);
-                console.log('days', days);
-                if (time_period == "weekly") {
-                    days_number = currentWeek;
-                    // console.log('days_number', days_number);
-                }
-                if (time_period == "bi-weekly") {
-                    days_number = currentWeek / 2;
-                }
-                if (time_period == "monthly") {
-                    days_number = pay_start.getMonth() + 1;
-                }
-                if (time_period == "bi-monthly") {
-                    days_number = (pay_start.getMonth() + 1) / 2;
-                }
-
-                $('#days_number').val(parseInt(days_number));
-                for (let i = 0; i < finalArray.length; i++) {
-                    var hours = $('#hours_'+i).val();
-                    if (hours != '') {
-                        calculation(i);
-                    }
-                }
-                total();
-            }
-        } else {
-            return false;
-        } */
     }
 
     function calculation(ids) {
-        var pay_start = new Date($(".pay_start").val());
-        var auto_calculate = $(".auto_calculate").find(":selected").val();
-        var rate = parseFloat($("#rate_" + ids).val()).toFixed(2);
-        var hours = parseFloat($("#hours_" + ids).val()).toFixed(2);
+        var rate = $("#rate_" + ids).val();
+        var hours = $("#hours_" + ids).val();
         var total = rate * hours || 0.0;
-        var ytd_total = total * parseFloat(days_number).toFixed(2) || 0.0;
+        var ytd_total = total * days_number || 0.0;
         setTimeout(function () {
             $("#total_" + ids).val(parseFloat(total).toFixed(2));
             $("#period_" + ids).val(parseFloat(total).toFixed(2));
             $("#ytd_total_" + ids).val(parseFloat(ytd_total).toFixed(2));
             date_calculate();
             gross_total();
-        }, 300);
+        }, 400);
     }
 
     $(".hour_btn").click(function () {
@@ -459,7 +355,7 @@ $(document).ready(function () {
         $(".total").each(function () {
             var total = this.value || 0.0;
             var id = $(this).data("id");
-            var ytd_total = total * parseInt(days_number) || 0.0;
+            var ytd_total = total * days_number || 0.0;
             period_gross_total += total;
             ytd_gross_total += ytd_total;
             $('#period_'+id).val(parseFloat(total).toFixed(2));
@@ -568,8 +464,8 @@ $(document).ready(function () {
                     }
                     taxes_values = taxes_values;
                 }
-                // if(taxes_text == 'deduction_8' || taxes_text == 'deduction_18'){
-                if(taxes_text == 'deduction_3' || taxes_text == 'deduction_5'){
+                if(taxes_text == 'deduction_8' || taxes_text == 'deduction_18'){
+                // if(taxes_text == 'deduction_3' || taxes_text == 'deduction_5'){
                     var time_period = $(".time_period").val();
                     if(time_period == 'weekly'){
                         period = 52;
