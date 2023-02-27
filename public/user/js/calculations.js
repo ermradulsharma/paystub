@@ -185,9 +185,9 @@ $(document).ready(function () {
         }
     });
 
-    $(".pay_date").change(function () {
+    /* $(".pay_date").change(function () {
         date_calculate();
-    });
+    }); */
 
     $(".calculation").keyup(function () {
         var id = $(this).data("id");
@@ -213,7 +213,7 @@ $(document).ready(function () {
         } else {
             $(".error").addClass("d-none");
         }
-        is_empty();
+        // is_empty();
     }
 
     function time_period() {
@@ -221,8 +221,13 @@ $(document).ready(function () {
     }
 
     function dayCalculate() {
+        var currentDate = new Date();
+        var month = currentDate.getMonth()+1;
+        var day = currentDate.getDate();
+        var output = currentDate.getFullYear() + '-' + (month<10 ? '0' : '') + month + '-' + (day<10 ? '0' : '') + day;
+
         var tax_rate = $(".tax_rate").find(":selected").data("tax");
-        var pay_start = new Date($(".pay_start").val());
+        var pay_start = new Date($(".pay_start").val()) | output;
         var day = pay_start.getDate();
         var month = pay_start.getMonth() + 1;
         var year = pay_start.getFullYear();
@@ -308,8 +313,8 @@ $(document).ready(function () {
             days_number = parseFloat(days).toFixed(2)/56;
             console.log('days_number',days_number);
         } */
-        console.log('days_number',days_number);
-        $('#days_number').val(parseInt(days_number));
+        // console.log('days_number',days_number);
+        $('#days_number').val(parseInt(days_number).toFixed(2));
         for (let i = 0; i < finalArray.length; i++) {
             var hours = $('#hours_'+i).val();
             if (hours != '') {
@@ -394,6 +399,7 @@ $(document).ready(function () {
     }
 
     function calculation(ids) {
+        var pay_start = new Date($(".pay_start").val());
         var auto_calculate = $(".auto_calculate").find(":selected").val();
         var rate = parseFloat($("#rate_" + ids).val()).toFixed(2);
         var hours = parseFloat($("#hours_" + ids).val()).toFixed(2);
@@ -403,6 +409,7 @@ $(document).ready(function () {
             $("#total_" + ids).val(parseFloat(total).toFixed(2));
             $("#period_" + ids).val(parseFloat(total).toFixed(2));
             $("#ytd_total_" + ids).val(parseFloat(ytd_total).toFixed(2));
+            date_calculate();
             gross_total();
         }, 300);
     }
@@ -561,6 +568,7 @@ $(document).ready(function () {
                     }
                     taxes_values = taxes_values;
                 }
+                // if(taxes_text == 'deduction_8' || taxes_text == 'deduction_18'){
                 if(taxes_text == 'deduction_3' || taxes_text == 'deduction_5'){
                     var time_period = $(".time_period").val();
                     if(time_period == 'weekly'){
@@ -572,12 +580,9 @@ $(document).ready(function () {
                     } else if(time_period == 'bi-monthly'){
                         period = 6;
                     }
-                    console.log('status', $(".marital_status").val());
-                    console.log('exemptions', $(".exemptions").val());
                     var fTaxArr = getNewFederalTaxRate(period, $(".marital_status").val(), $(".exemptions").val(), period_gross_total);
 
                     var fedaRalTax = (parseFloat(period_gross_total - fTaxArr.subtract)).toFixed(2) * fTaxArr.rate ;
-                    console.log('fedaRalTax',fedaRalTax);
                     // var fedaRalTax = (parseFloat(parseFloat(period_gross_total.toString())).toFixed(2) - fTaxArr.subtract) * fTaxArr.rate ;
                     var tax_rate = $(".tax_rate").find(":selected").data("tax");
 
@@ -627,9 +632,7 @@ $(document).ready(function () {
         var total_ytd_net_pay = parseFloat(ytd_gross_total) - parseFloat(ytd_deduction_tax) || 0.0;
         setTimeout(function () {
             $(".total_net_pay").val(parseFloat(total_net_pay).toFixed(2));
-            $(".total_ytd_net_pay").val(
-                parseFloat(total_ytd_net_pay).toFixed(2)
-            );
+            $(".total_ytd_net_pay").val(parseFloat(total_ytd_net_pay).toFixed(2));
         }, 300);
     }
 

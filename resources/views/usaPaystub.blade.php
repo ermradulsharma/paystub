@@ -412,7 +412,7 @@
                                         <input
                                             style="color:#140303f5;border:1px solid #110303fe;padding:0px 6px !important; height:40px; appearance: none;"
                                             type="date" id="pay_start" name="pay_start" placeholder="12-11-2022"
-                                            class="w-100 p-2 input-box-font pay_start datepicker" data-id="pay_start">
+                                            class="w-100 p-2 input-box-font pay_start datepicker" data-id="pay_start" value="<?php echo date('Y-m-d'); ?>">
                                     </div>
                                 </div>
 
@@ -423,7 +423,7 @@
                                         <input
                                             style="color:#140303f5;border:1px solid #110303fe; padding:0px 6px !important; height:40px; appearance: none;"
                                             type="date" id="pay_end" name="pay_end" placeholder="12-17-2022"
-                                            class="w-100 p-2 input-box-font pay_end  datepicker" data-id="pay_end">
+                                            class="w-100 p-2 input-box-font pay_end  datepicker" data-id="pay_end" value="<?php echo date('Y-m-d'); ?>">
                                     </div>
                                 </div>
 
@@ -434,7 +434,7 @@
                                         <input
                                             style="color:#140303f5;padding:0px 6px !important; height:40px; appearance: none; border:1px solid #110303fe;"
                                             type="date" id="pay_date" name="pay_date" placeholder="12-19-2022"
-                                            class="w-100 p-2 input-box-font pay_date  datepicker" data-id="pay_date">
+                                            class="w-100 p-2 input-box-font pay_date  datepicker" data-id="pay_date" value="<?php echo date('Y-m-d'); ?>">
                                     </div>
                                 </div>
                                 <div class="col-md-3 mt-4">
