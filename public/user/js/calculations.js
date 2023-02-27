@@ -455,17 +455,20 @@ $(document).ready(function () {
                 var tax_name = $(this).val();
 
                 if (tax_name == "State Tax") {
-                    var tax_rate = $(".tax_rate").find(":selected").data("tax");
+                    taxes_values = parseFloat(tax_state).toFixed(2);
                     console.log('tax_rate', tax_rate);
-                    if (tax_rate != null) {
-                        taxes_values = parseFloat(tax_state).toFixed(2);
-                    } else {
+
+                   /*  var tax_rate = $(".tax_rate").find("option:selected").data("tax");
+                    console.log('tax_rate', tax_rate);
+                    if (tax_rate != null) { */
+
+                    /* } else {
                         taxes_values = 0.0;
-                    }
-                    taxes_values = taxes_values;
+                    } */
+                    // taxes_values = taxes_values;
                 }
-                if(taxes_text == 'deduction_8' || taxes_text == 'deduction_18'){
-                // if(taxes_text == 'deduction_3' || taxes_text == 'deduction_5'){
+                // if(taxes_text == 'deduction_8' || taxes_text == 'deduction_18'){
+                if(taxes_text == 'deduction_3' || taxes_text == 'deduction_5'){
                     var time_period = $(".time_period").val();
                     if(time_period == 'weekly'){
                         period = 52;
@@ -477,17 +480,16 @@ $(document).ready(function () {
                         period = 6;
                     }
                     var fTaxArr = getNewFederalTaxRate(period, $(".marital_status").val(), $(".exemptions").val(), period_gross_total);
-
                     var fedaRalTax = (parseFloat(period_gross_total - fTaxArr.subtract)).toFixed(2) * fTaxArr.rate ;
                     // var fedaRalTax = (parseFloat(parseFloat(period_gross_total.toString())).toFixed(2) - fTaxArr.subtract) * fTaxArr.rate ;
-                    var tax_rate = $(".tax_rate").find(":selected").data("tax");
+                    // var tax_rate = $(".tax_rate").find("option:selected").data("tax");
 
-                    if (tax_rate != null) {
-                        taxes_values_1 = parseFloat(fedaRalTax).toFixed(2) || 0.00;
-                    } else {
-                        taxes_values_1 = 0.0;
-                    }
-                    taxes_values = taxes_values_1;
+                    // if (tax_rate != null) {
+                        taxes_values = parseFloat(fedaRalTax).toFixed(2) || 0.00;
+                    // } else {
+                    //     taxes_values_1 = 0.0;
+                    // }
+                    // taxes_values = taxes_values_1;
                     if(period_gross_total == 0){
                         period_tax_price = 0.00;
                         period_ytd_tax_price = 0.00;
@@ -529,7 +531,7 @@ $(document).ready(function () {
         setTimeout(function () {
             $(".total_net_pay").val(parseFloat(total_net_pay).toFixed(2));
             $(".total_ytd_net_pay").val(parseFloat(total_ytd_net_pay).toFixed(2));
-        }, 300);
+        }, 20);
     }
 
     function toFixValue() {
