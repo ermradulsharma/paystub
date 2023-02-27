@@ -591,8 +591,8 @@ $(document).ready(function () {
                         period_tax_price = 0.00;
                         period_ytd_tax_price = 0.00;
                     }else{
-                        period_tax_price = taxes_values;
-                        period_ytd_tax_price = parseFloat(taxes_values).toFixed(2) * parseFloat(days_number).toFixed(2);
+                        period_tax_price = taxes_values || 0.00;
+                        period_ytd_tax_price = parseFloat(taxes_values).toFixed(2) * parseFloat(days_number).toFixed(2) || 0.00;
                     }
 
                 }else{
