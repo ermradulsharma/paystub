@@ -65,7 +65,7 @@ $(document).ready(function () {
     $(addDeduction).click(function () {
         var fieldHTML = '<div class="row">' +
                             '<div class="col-md-4 col-lg-3 mb-3">' +
-                                '<img src="http://44.202.105.74/images/lock.png" class="earnbtn2">' +
+                                '<img src="http://paystubx.com/images/lock.png" class="earnbtn2">' +
                                 '<input name="tax_deduction[]" class="earnbtn text-center tax_deduction_0 tax_deduction_' + i + ' " data-id="' + i + '" type="text" value="">' +
                             "</div>" +
                             '<div class="col-md-1 col-lg-1"> </div>' +
