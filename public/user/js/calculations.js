@@ -456,7 +456,7 @@ $(document).ready(function () {
 
                 if (tax_name == "State Tax") {
                     taxes_values = parseFloat(tax_state).toFixed(2);
-                    console.log('tax_rate', tax_rate);
+                    // console.log('tax_rate', tax_rate);
 
                    /*  var tax_rate = $(".tax_rate").find("option:selected").data("tax");
                     console.log('tax_rate', tax_rate);
@@ -467,8 +467,8 @@ $(document).ready(function () {
                     } */
                     // taxes_values = taxes_values;
                 }
-                // if(taxes_text == 'deduction_8' || taxes_text == 'deduction_18'){
-                if(taxes_text == 'deduction_3' || taxes_text == 'deduction_5'){
+                // if(taxes_text == 'deduction_8' || taxes_text == 'deduction_18'){   // Local
+                if(taxes_text == 'deduction_3' || taxes_text == 'deduction_5'){   // live condition
                     var time_period = $(".time_period").val();
                     if(time_period == 'weekly'){
                         period = 52;
@@ -480,12 +480,17 @@ $(document).ready(function () {
                         period = 6;
                     }
                     var fTaxArr = getNewFederalTaxRate(period, $(".marital_status").val(), $(".exemptions").val(), period_gross_total);
-                    var fedaRalTax = (parseFloat(period_gross_total - fTaxArr.subtract)).toFixed(2) * fTaxArr.rate ;
+                    // console.log('fTaxArr', fTaxArr);
+                    var fedaRalTax = (period_gross_total - fTaxArr.subtract) * fTaxArr.rate ;
                     // var fedaRalTax = (parseFloat(parseFloat(period_gross_total.toString())).toFixed(2) - fTaxArr.subtract) * fTaxArr.rate ;
                     // var tax_rate = $(".tax_rate").find("option:selected").data("tax");
 
                     // if (tax_rate != null) {
-                        taxes_values = parseFloat(fedaRalTax).toFixed(2) || 0.00;
+                        if(fedaRalTax > 0){
+                            taxes_values = fedaRalTax || 0.00;
+                        }else{
+                            taxes_values = 0.00;
+                        }
                     // } else {
                     //     taxes_values_1 = 0.0;
                     // }
@@ -495,7 +500,7 @@ $(document).ready(function () {
                         period_ytd_tax_price = 0.00;
                     }else{
                         period_tax_price = taxes_values || 0.00;
-                        period_ytd_tax_price = parseFloat(taxes_values).toFixed(2) * parseFloat(days_number).toFixed(2) || 0.00;
+                        period_ytd_tax_price = taxes_values * days_number || 0.00;
                     }
 
                 }else{
@@ -505,8 +510,8 @@ $(document).ready(function () {
                 $("#taxes_" + taxes_ids).val(parseFloat(period_tax_price).toFixed(2));
                 $("#taxes_ytd_" + taxes_ids).val(parseFloat(period_ytd_tax_price).toFixed(2));
 
-                period_deduction_tax += parseFloat(period_tax_price);
-                period_ytd_deduction_tax += parseFloat(period_ytd_tax_price);
+                period_deduction_tax += period_tax_price;
+                period_ytd_deduction_tax += period_ytd_tax_price;
                 setTimeout(function () {
                     $(".deduction_tax").val(parseFloat( period_deduction_tax + deduction_period_tax_other ).toFixed(2));
                     $(".ytd_deduction_tax").val(parseFloat(period_ytd_deduction_tax + ytd_deduction_period_tax_other).toFixed(2));

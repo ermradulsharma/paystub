@@ -62,8 +62,7 @@
                                         <label for="tel" class="lable">EMPLOYER TELEPHONE NUMBER <span
                                                 class="redColor">*</span> </label>
                                         <input type="tel" id="tel" name="tel" placeholder="xxx-xxx-xxxx"
-                                            class="w-100 p-2 text-centerinput-box-font"
-                                            onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+                                            class="w-100 p-2 text-centerinput-box-font">
                                     </div>
                                 </div>
 
@@ -692,6 +691,14 @@
     <script src="{{ asset('user') }}/js/calculations.js"></script>
     <script src="{{ asset('user') }}/js/javaformula.js"></script>
     <script src="{{ asset('user') }}/js/federal.js"></script>
+    <script src="{{ asset('user') }}/js/dist/jquery-input-mask-phone-number.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#tel').usPhoneFormat({
+                format: 'xxx-xxx-xxxx',
+            });
+        });
+    </script>
     <script>
         $(document).ready(function() {
             $('.advanceTemplate').change(function() {
@@ -713,12 +720,12 @@
                 $('option:selected', '.advanceTemplate').prop("selected", false);
             });
 
-            $('#tel').keyup(function() {
+            /* $('#tel').keyup(function() {
                 var mobileNumber = this.value.replace(/\D/g, ''); // here you get what the end-user typed
                 mobileNumber = (mobileNumber.replace(/[^\d]/g, ''));
                 this.value = ("" + mobileNumber.substring(0, 3) + " " + mobileNumber.substring(3, 6) + " " +
                     mobileNumber.substring(6, 10));
-            });
+            }); */
         });
     </script>
     <script>

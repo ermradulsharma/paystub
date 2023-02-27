@@ -62,9 +62,8 @@
                                     <div>
                                         <label for="tel" class="lable">EMPLOYER TELEPHONE NUMBER <span
                                                 class="redColor">*</span> </label>
-                                        <input type="tel" id="tel" name="tel" placeholder="xxx-xxx-xxxx"
-                                            class="w-100 p-2 text-center input-box-font "
-                                            onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+                                        <input type="text" id="tel" name="tel" placeholder="xxx-xxx-xxxx"
+                                            class="w-100 p-2 text-center input-box-font third-phone">
                                     </div>
                                 </div>
 
@@ -692,10 +691,23 @@
         }).datepicker('setDate', 'today');
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" crossorigin="anonymous"></script>
     <script src="{{ asset('user') }}/js/calculations.js"></script>
     <script src="{{ asset('user') }}/js/javaformula.js"></script>
     <script src="{{ asset('user') }}/js/federal.js"></script>
+    {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> --}}
+    <script src="{{ asset('user') }}/js/dist/jquery-input-mask-phone-number.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#tel').usPhoneFormat({
+                format: 'xxx-xxx-xxxx',
+            });
+        });
+        // $(document).ready(function() {
+        //     $(".third-phone").mask("(999)-999-9999");
+        // });
+    </script>
     <script>
         $(document).ready(function() {
             $('.advanceTemplate').change(function() {
@@ -717,12 +729,12 @@
                 $('option:selected', '.advanceTemplate').prop("selected", false);
             });
 
-            $('#tel').keyup(function() {
+            /* $('#tel').keyup(function() {
                 var mobileNumber = this.value.replace(/\D/g, ''); // here you get what the end-user typed
                 mobileNumber = (mobileNumber.replace(/[^\d]/g, ''));
-                this.value = ("" + mobileNumber.substring(0, 3) + " " + mobileNumber.substring(3, 6) + " " +
+                this.value = ("" + mobileNumber.substring(0, 3) + "-" + mobileNumber.substring(3, 6) + "-" +
                     mobileNumber.substring(6, 10));
-            });
+            }); */
         });
     </script>
     <script>
