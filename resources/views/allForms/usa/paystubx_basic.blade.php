@@ -238,7 +238,7 @@
             </div>
         </div>
 
-        <section class="infomation">
+        {{-- <section class="infomation">
             <div class="row">
                 <div class="col1">
                     <table>
@@ -288,7 +288,7 @@
                     </table>
                 </div>
             </div>
-        </section>
+        </section> --}}
 
 
         <section class="infomation">

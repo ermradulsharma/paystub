@@ -287,14 +287,14 @@ $(document).ready(function () {
             days_number = (pay_start.getMonth() + 1) / 2;
         }
         $('#days_number').val(days_number);
-       /*  for (let i = 0; i < finalArray.length; i++) {
+        /*  for (let i = 0; i < finalArray.length; i++) {
 
-            var hours = $('#hours_' + i).val();
-            if (hours != '') {
-                calculation(i);
-            }
+             var hours = $('#hours_' + i).val();
+             if (hours != '') {
+                 calculation(i);
+             }
 
-        } */
+         } */
         total();
     }
 
@@ -322,6 +322,7 @@ $(document).ready(function () {
         $(".hours").attr("readonly", false);
         $(".total").attr("readonly", true);
         $(".removeData").parent().removeClass("margintop-5");
+        is_empty();
     });
 
     $('.salary_btn').click(function () {
@@ -345,6 +346,7 @@ $(document).ready(function () {
         $(".hours").val("");
         $(".removeData").attr("hidden", true);
         $(".removeData").parent().addClass("margintop-5");
+        is_empty();
     });
 
     $('.total').keyup(function () {
@@ -574,21 +576,21 @@ $(document).ready(function () {
             $("#ytd_total_" + i).val("");
             $("#taxes_0" + i).val("");
             $("#taxes_ytd_0" + i).val("");
-            $(".deduction_tax").val("");
-            $(".ytd_deduction_tax").val("");
-            $(".total_net_pay").val("");
-            $(".total_ytd_net_pay").val("");
-            $(".taxes").each(function () {
-                var taxes_ids = $(this).data("id");
-                $("#taxes_" + taxes_ids).val("");
-                $("#taxes_ytd_" + taxes_ids).val("");
-            });
-            $(".tax_deduction_0").each(function () {
-                var taxes_id = $(this).data("id");
-                $("#taxes_0" + taxes_id).val("");
-                $("#taxes_ytd_0" + taxes_id).val("");
-            });
         }
+        $(".deduction_tax").val("");
+        $(".ytd_deduction_tax").val("");
+        $(".total_net_pay").val("");
+        $(".total_ytd_net_pay").val("");
+        $(".taxes").each(function () {
+            var taxes_ids = $(this).data("id");
+            $("#taxes_" + taxes_ids).val("");
+            $("#taxes_ytd_" + taxes_ids).val("");
+        });
+        $(".tax_deduction_0").each(function () {
+            var taxes_id = $(this).data("id");
+            $("#taxes_0" + taxes_id).val("");
+            $("#taxes_ytd_0" + taxes_id).val("");
+        });
     }
 
     function arr_pushed(id) {
