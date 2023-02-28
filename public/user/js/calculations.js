@@ -52,16 +52,12 @@ $(document).ready(function () {
 
         $(".calculation").keyup(function () {
             var id = $(this).data("id");
-            setTimeout(function () {
-                calculation(id);
-                arr_pushed(id);
-            }, 200);
+            calculation(id);
+            arr_pushed(id);
         });
 
         $('.total').keyup(function () {
-            setTimeout(function () {
-                total();
-            }, 200);
+            total();
         });
         return false;
     });
@@ -291,12 +287,14 @@ $(document).ready(function () {
             days_number = (pay_start.getMonth() + 1) / 2;
         }
         $('#days_number').val(days_number);
-        for (let i = 0; i < finalArray.length; i++) {
+       /*  for (let i = 0; i < finalArray.length; i++) {
+
             var hours = $('#hours_' + i).val();
             if (hours != '') {
                 calculation(i);
             }
-        }
+
+        } */
         total();
     }
 
@@ -471,7 +469,7 @@ $(document).ready(function () {
                     } */
                     // taxes_values = taxes_values;
                 }
-                // if (taxes_text == 'deduction_8' || taxes_text == 'deduction_18') {   // Local
+                // if(taxes_text == 'deduction_8' || taxes_text == 'deduction_18'){   // Local
                 if (taxes_text == 'deduction_3' || taxes_text == 'deduction_5') {   // live condition
                     var time_period = $(".time_period").val();
                     if (time_period == 'weekly') {
