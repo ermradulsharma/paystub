@@ -704,9 +704,6 @@
                 format: 'xxx-xxx-xxxx',
             });
         });
-        // $(document).ready(function() {
-        //     $(".third-phone").mask("(999)-999-9999");
-        // });
     </script>
     <script>
         $(document).ready(function() {

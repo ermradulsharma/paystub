@@ -13,30 +13,30 @@ $(document).ready(function () {
     var x = 1;
     var i = 1;
 
-    function addCommas(num){
+    function addCommas(num) {
         obj2 = new Intl.NumberFormat('en-US');
-		output2 = obj2.format(num);
+        output2 = obj2.format(num);
         return output2
     }
 
     $(addButton).click(function () {
-        var addEarning =`<div class="margin-bottom">
-                            <input class="earnbtn mb-3 text-center" type="text" name="earning[]" value="" id="earning_`+i+`" data-id="`+i+`">
+        var addEarning = `<div class="margin-bottom">
+                            <input class="earnbtn mb-3 text-center" type="text" name="earning[]" value="" id="earning_`+ i + `" data-id="` + i + `">
                         </div>`;
-        var addRate =`<div class="margin-bottom">
-                        <input type="text" name="rate[]" class="earnbtn mb-3 text-center calculation rate" value="" id="rate_`+i+`" data-id="`+i+`">
+        var addRate = `<div class="margin-bottom">
+                        <input type="text" name="rate[]" class="earnbtn mb-3 text-center calculation rate" value="" id="rate_`+ i + `" data-id="` + i + `">
                     </div>`;
-        var addHours =`<div class="margin-bottom">
-                        <input type="text" name="hours[]" class="earnbtn mb-3 text-center hours calculation" value="" id="hours_`+i+`" data-id="`+i+`">
+        var addHours = `<div class="margin-bottom">
+                        <input type="text" name="hours[]" class="earnbtn mb-3 text-center hours calculation" value="" id="hours_`+ i + `" data-id="` + i + `">
                     </div>`;
         var addTotal = `<div class="margin-bottom">
-                        <input type="text" name="total[]" class="earnbtn mb-3 text-center total" value="" id="total_`+i+`" data-id="`+i+`" readonly="true">
+                        <input type="text" name="total[]" class="earnbtn mb-3 text-center total" value="" id="total_`+ i + `" data-id="` + i + `" readonly="true">
                     </div>`;
         var addGrossTotal = `<div class="margin-bottom"">
-                        <input type="text" name="period[]" class="earnbtn mb-3 text-center gross_total" value="" id="period_`+i+`" data-id="`+i+`">
+                        <input type="text" name="period[]" class="earnbtn mb-3 text-center gross_total" value="" id="period_`+ i + `" data-id="` + i + `">
                     </div>`;
-        var addYtdTotal =`<div class="margin-bottom" style="padding-top: 2px;">
-                        <input type="text" name="ytd_total[]" class="earnbtn mb-3 text-center ytd_total" value="" id="ytd_total_`+i+`" data-id="`+i+`">
+        var addYtdTotal = `<div class="margin-bottom" style="padding-top: 2px;">
+                        <input type="text" name="ytd_total[]" class="earnbtn mb-3 text-center ytd_total" value="" id="ytd_total_`+ i + `" data-id="` + i + `">
                     </div>`;
         if (x < maxField) {
             x++;
@@ -52,32 +52,36 @@ $(document).ready(function () {
 
         $(".calculation").keyup(function () {
             var id = $(this).data("id");
+            setTimeout(function () {
                 calculation(id);
                 arr_pushed(id);
+            }, 200);
         });
 
-        $('.total').keyup(function(){
-            total();
+        $('.total').keyup(function () {
+            setTimeout(function () {
+                total();
+            }, 200);
         });
         return false;
     });
 
     $(addDeduction).click(function () {
         var fieldHTML = '<div class="row">' +
-                            '<div class="col-md-4 col-lg-3 mb-3">' +
-                                '<img src="http://paystubx.com/images/lock.png" class="earnbtn2">' +
-                                '<input name="tax_deduction[]" class="earnbtn text-center tax_deduction_0 tax_deduction_' + i + ' " data-id="' + i + '" type="text" value="">' +
-                            "</div>" +
-                            '<div class="col-md-1 col-lg-1"> </div>' +
-                            '<div class="col-md-2 col-lg-3"> </div>' +
-                            '<div class="col-md-1 col-lg-1"> </div>' +
-                            '<div class="col-md-2 col-lg-2 mb-3">' +
-                            '<input type="text" name="period_tax_deduction[]" class="earnbtn text-center tax_deduction tax" id="taxes_0' + i + '" value="" data-id="' + i + '"/>' +
-                        "</div>" +
-                        '<div class="col-md-2 col-lg-2 mb-3">' +
-                            '<input type="text" name="ytd_tax_deduction[]" class="earnbtn text-center ytd_tax tax add_ytd_deduction" id="taxes_ytd_0' + i + '" value="" data-id="' + i + '"/>' +
-                        "</div>" +
-                        "</div>";
+            '<div class="col-md-4 col-lg-3 mb-3">' +
+            '<img src="http://paystubx.com/images/lock.png" class="earnbtn2">' +
+            '<input name="tax_deduction[]" class="earnbtn text-center tax_deduction_0 tax_deduction_' + i + ' " data-id="' + i + '" type="text" value="">' +
+            "</div>" +
+            '<div class="col-md-1 col-lg-1"> </div>' +
+            '<div class="col-md-2 col-lg-3"> </div>' +
+            '<div class="col-md-1 col-lg-1"> </div>' +
+            '<div class="col-md-2 col-lg-2 mb-3">' +
+            '<input type="text" name="period_tax_deduction[]" class="earnbtn text-center tax_deduction tax" id="taxes_0' + i + '" value="" data-id="' + i + '"/>' +
+            "</div>" +
+            '<div class="col-md-2 col-lg-2 mb-3">' +
+            '<input type="text" name="ytd_tax_deduction[]" class="earnbtn text-center ytd_tax tax add_ytd_deduction" id="taxes_ytd_0' + i + '" value="" data-id="' + i + '"/>' +
+            "</div>" +
+            "</div>";
         if (x < maxField) {
             x++;
             $(wrapper_2).append(fieldHTML);
@@ -269,7 +273,7 @@ $(document).ready(function () {
     function date_calculate() {
         var pay_start = new Date($(".pay_start").val());
         var time_period = $(".time_period").val();
-        d = new Date( Date.UTC(pay_start.getFullYear(), pay_start.getMonth(), pay_start.getDate()));
+        d = new Date(Date.UTC(pay_start.getFullYear(), pay_start.getMonth(), pay_start.getDate()));
         d.setUTCDate(d.getUTCDate() + 4 - (d.getUTCDay() || 7));
         var yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
         var weekNo = Math.ceil(((d - yearStart) / 86400000 + 1) / 7);
@@ -288,7 +292,7 @@ $(document).ready(function () {
         }
         $('#days_number').val(days_number);
         for (let i = 0; i < finalArray.length; i++) {
-            var hours = $('#hours_'+i).val();
+            var hours = $('#hours_' + i).val();
             if (hours != '') {
                 calculation(i);
             }
@@ -311,8 +315,8 @@ $(document).ready(function () {
     }
 
     $(".hour_btn").click(function () {
-        $('.hour_btn').css({"background-image":"linear-gradient(45deg, #f8760ce3, #e78989)"});
-        $('.salary_btn').css({"background-image":"linear-gradient(45deg, #f70303, #f84d45)"});
+        $('.hour_btn').css({ "background-image": "linear-gradient(45deg, #f8760ce3, #e78989)" });
+        $('.salary_btn').css({ "background-image": "linear-gradient(45deg, #f70303, #f84d45)" });
         $(".rate").attr("hidden", false);
         $(".hours").attr("hidden", false);
         $(".hourly").attr("readonly", false);
@@ -322,9 +326,9 @@ $(document).ready(function () {
         $(".removeData").parent().removeClass("margintop-5");
     });
 
-    $('.salary_btn').click(function(){
-        $('.salary_btn').css({"background-image":"linear-gradient(45deg, #f8760ce3, #e78989)"});
-        $('.hour_btn').css({"background-image":"linear-gradient(45deg, #f70303, #f84d45)"});
+    $('.salary_btn').click(function () {
+        $('.salary_btn').css({ "background-image": "linear-gradient(45deg, #f8760ce3, #e78989)" });
+        $('.hour_btn').css({ "background-image": "linear-gradient(45deg, #f70303, #f84d45)" });
         $('.rate').attr('readonly', true);
         $('.hours').attr('readonly', true);
         $('.hourly').attr('readonly', true);
@@ -345,11 +349,11 @@ $(document).ready(function () {
         $(".removeData").parent().addClass("margintop-5");
     });
 
-    $('.total').keyup(function(){
+    $('.total').keyup(function () {
         total();
     })
 
-    function total(){
+    function total() {
         var period_gross_total = 0;
         var ytd_gross_total = 0;
         $(".total").each(function () {
@@ -358,8 +362,8 @@ $(document).ready(function () {
             var ytd_total = total * days_number || 0.0;
             period_gross_total += total;
             ytd_gross_total += ytd_total;
-            $('#period_'+id).val(parseFloat(total).toFixed(2));
-            $('#ytd_total_'+id).val(parseFloat(ytd_total).toFixed(2));
+            $('#period_' + id).val(parseFloat(total).toFixed(2));
+            $('#ytd_total_' + id).val(parseFloat(ytd_total).toFixed(2));
         });
         $("#period_gross_total").val(parseFloat(period_gross_total).toFixed(2));
         $("#ytd_gross_total").val(parseFloat(ytd_gross_total).toFixed(2));
@@ -458,52 +462,52 @@ $(document).ready(function () {
                     taxes_values = parseFloat(tax_state).toFixed(2);
                     // console.log('tax_rate', tax_rate);
 
-                   /*  var tax_rate = $(".tax_rate").find("option:selected").data("tax");
-                    console.log('tax_rate', tax_rate);
-                    if (tax_rate != null) { */
+                    /*  var tax_rate = $(".tax_rate").find("option:selected").data("tax");
+                     console.log('tax_rate', tax_rate);
+                     if (tax_rate != null) { */
 
                     /* } else {
                         taxes_values = 0.0;
                     } */
                     // taxes_values = taxes_values;
                 }
-                // if(taxes_text == 'deduction_8' || taxes_text == 'deduction_18'){   // Local
-                if(taxes_text == 'deduction_3' || taxes_text == 'deduction_5'){   // live condition
+                // if (taxes_text == 'deduction_8' || taxes_text == 'deduction_18') {   // Local
+                if (taxes_text == 'deduction_3' || taxes_text == 'deduction_5') {   // live condition
                     var time_period = $(".time_period").val();
-                    if(time_period == 'weekly'){
+                    if (time_period == 'weekly') {
                         period = 52;
-                    } else if(time_period == 'bi-weekly'){
+                    } else if (time_period == 'bi-weekly') {
                         period = 26;
-                    } else if(time_period == 'monthly'){
+                    } else if (time_period == 'monthly') {
                         period = 12;
-                    } else if(time_period == 'bi-monthly'){
+                    } else if (time_period == 'bi-monthly') {
                         period = 6;
                     }
                     var fTaxArr = getNewFederalTaxRate(period, $(".marital_status").val(), $(".exemptions").val(), period_gross_total);
                     // console.log('fTaxArr', fTaxArr);
-                    var fedaRalTax = (period_gross_total - fTaxArr.subtract) * fTaxArr.rate ;
+                    var fedaRalTax = (period_gross_total - fTaxArr.subtract) * fTaxArr.rate;
                     // var fedaRalTax = (parseFloat(parseFloat(period_gross_total.toString())).toFixed(2) - fTaxArr.subtract) * fTaxArr.rate ;
                     // var tax_rate = $(".tax_rate").find("option:selected").data("tax");
 
                     // if (tax_rate != null) {
-                        if(fedaRalTax > 0){
-                            taxes_values = fedaRalTax || 0.00;
-                        }else{
-                            taxes_values = 0.00;
-                        }
+                    if (fedaRalTax > 0) {
+                        taxes_values = fedaRalTax || 0.00;
+                    } else {
+                        taxes_values = 0.00;
+                    }
                     // } else {
                     //     taxes_values_1 = 0.0;
                     // }
                     // taxes_values = taxes_values_1;
-                    if(period_gross_total == 0){
+                    if (period_gross_total == 0) {
                         period_tax_price = 0.00;
                         period_ytd_tax_price = 0.00;
-                    }else{
+                    } else {
                         period_tax_price = taxes_values || 0.00;
                         period_ytd_tax_price = taxes_values * days_number || 0.00;
                     }
 
-                }else{
+                } else {
                     period_tax_price = parseFloat(period_gross_total).toFixed(2) * (taxes_values / 100);
                     period_ytd_tax_price = parseFloat(ytd_gross_total).toFixed(2) * (taxes_values / 100);
                 }
@@ -513,7 +517,7 @@ $(document).ready(function () {
                 period_deduction_tax += period_tax_price;
                 period_ytd_deduction_tax += period_ytd_tax_price;
                 setTimeout(function () {
-                    $(".deduction_tax").val(parseFloat( period_deduction_tax + deduction_period_tax_other ).toFixed(2));
+                    $(".deduction_tax").val(parseFloat(period_deduction_tax + deduction_period_tax_other).toFixed(2));
                     $(".ytd_deduction_tax").val(parseFloat(period_ytd_deduction_tax + ytd_deduction_period_tax_other).toFixed(2));
                     $(".deduction_period_tax").val(parseFloat(period_deduction_tax).toFixed(2));
                     $(".ytd_deduction_period_tax").val(parseFloat(period_ytd_deduction_tax).toFixed(2));
