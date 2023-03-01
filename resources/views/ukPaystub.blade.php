@@ -114,7 +114,7 @@
                                     <label for="cname" class="lable">EMPLOYER (COMPANY) NAME <span
                                             style="color:red;">*</span> </label>
                                     <input type="text" id="cname" name="cname"
-                                        placeholder="Company Name"
+                                        placeholder="Employer (Company) Name"
                                         class="w-100 input-box-font text-center" style="font-size:14px;">
                                 </div>
 
@@ -122,7 +122,7 @@
                                     <label for="company_address" class="lable text-center uk-paystub-text">EMPLOYER
                                         (COMAPNY) ADDRESS <span style="color:red;">*</span></label>
                                     <input type="text" id="company_address" name="company_address"
-                                        placeholder="Company Address"
+                                        placeholder="Employer (Company) Address"
                                         class="w-100 input-box-font text-center" style="font-size:14px;">
                                 </div>
                             </div>
@@ -158,10 +158,10 @@
                             </div>
 
                             <div class="col-md-6 mt-1">
-                                <label for="emp_zip_code" class="lable text-center uk-paystub-text">POSTCODE<span
+                                <label for="emp_zip_code" class="lable text-center uk-paystub-text">Postal Code<span
                                         style="color:red;">*</span></label>
-                                <input type="number" id="emp_zip_code" name="emp_zip_code"
-                                    placeholder="12345-678-96"
+                                <input type="text" id="emp_zip_code" name="emp_zip_code"
+                                    placeholder="123456"
                                     class="w-100 input-box-font text-center" style="font-size:14px;">
                             </div>
                         </div>

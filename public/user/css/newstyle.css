@@ -337,11 +337,11 @@
     width: 100%;
     padding: 6px;
     border: 1px solid #00000080;
-    /* border-radius: 6px; */
     background: #ffffff;
     margin: auto;
     font-size: 17px;
     border-radius: 2px;
+    color: #757575;
 }
 
 .viewbtn {

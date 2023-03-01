@@ -52,7 +52,7 @@
                                         <label for="cname" class="lable">EMPLOYER (COMPANY) NAME <span
                                                 class="redColor">*</span> </label>
                                         <input type="text" id="cname" name="cname"
-                                            placeholder="Company Name"
+                                            placeholder="Employer (Company) Name"
                                             class="w-100 p-2 text-centerinput-box-font">
                                     </div>
                                 </div>
@@ -106,7 +106,7 @@
                                         </label>
                                         <div class="dropdown ">
                                             <select name="state" id="state" class="state dropdown11">
-                                                <option value=""> --- Select --- </option>
+                                                <option value=""> --- Select State --- </option>
                                                 @foreach ($stateTaxes as $stateTax)
                                                     <option value="{{ $stateTax->state }}">{{ $stateTax->state }}</option>
                                                 @endforeach
@@ -214,7 +214,7 @@
                                     <div>
                                         <label for="emp_ssn" class="lable">EMPLOYEE SSN Last 4 <span
                                                 class="redColor">*</span> </label>
-                                        <input type="text" id="emp_ssn" name="emp_ssn" placeholder="1224 (Last 4 digits)"
+                                        <input type="text" id="emp_ssn" name="emp_ssn" placeholder="SSN (Last 4 digits)"
                                             class="w-100 input-box-font">
                                     </div>
                                 </div>
@@ -254,7 +254,7 @@
                                         </label>
                                         <div class="dropdown ">
                                             <select name="emp_state" id="emp_state" class=" dropdown11 ">
-                                                <option value="" data-tax="null"> --- Select --- </option>
+                                                <option value="" data-tax="null"> --- Select State --- </option>
                                                 @foreach ($stateTaxes as $stateTax)
                                                     <option value="{{ $stateTax->state }}"
                                                         data-tax="{{ $stateTax->rate }}">{{ $stateTax->state }}</option>
@@ -267,7 +267,7 @@
                                     <div>
                                         <label for="emp_zip_code" class="lable">Zip Code <span
                                                 class="redColor">*</span></label>
-                                        <input type="text" id="emp_zip_code" name="emp_zip_code" placeholder=" 1234"
+                                        <input type="text" id="emp_zip_code" name="emp_zip_code" placeholder="Zip Code"
                                             class="w-100 input-box-font">
                                     </div>
                                 </div>
