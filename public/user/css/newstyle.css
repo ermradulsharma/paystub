@@ -15,11 +15,15 @@
     border-radius: 6px !important;
 }
 
-@media only screen and (min-width:1444px) and (max-width:2560px) {}
 
-@media only screen and (min-width:1023px) and (max-width:1440px) {}
 
-@media only screen and (min-width:767px) and (max-width:1024px) {}
+@media only screen and (min-width:1025px) and (max-width:1439px) {
+    .col-set1{
+        margin: 0 !important;
+    }
+}
+
+
 
 @media only screen and (min-width:424px) and (max-width:768px) {
     .margin-left {
