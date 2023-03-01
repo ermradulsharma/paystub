@@ -114,7 +114,7 @@
                                     <label for="cname" class="lable">EMPLOYER (COMPANY) NAME <span
                                             style="color:red;">*</span> </label>
                                     <input type="text" id="cname" name="cname"
-                                        placeholder="Your Employer & Company Name"
+                                        placeholder="Company Name"
                                         class="w-100 input-box-font text-center" style="font-size:14px;">
                                 </div>
 
@@ -122,7 +122,7 @@
                                     <label for="company_address" class="lable text-center uk-paystub-text">EMPLOYER
                                         (COMAPNY) ADDRESS <span style="color:red;">*</span></label>
                                     <input type="text" id="company_address" name="company_address"
-                                        placeholder="5 Throgmorton St, London EC2N 2AD, United Kingdom"
+                                        placeholder="Company Address"
                                         class="w-100 input-box-font text-center" style="font-size:14px;">
                                 </div>
                             </div>
@@ -139,7 +139,7 @@
                                 <label for="emp_name" class="lable">EMPLOYEE NAME <span style="color:red;">*</span>
                                 </label>
                                 <input type="text" id="emp_name" name="emp_name"
-                                    placeholder="Your Employer &amp; Company Name"
+                                    placeholder="Employee Name"
                                     class="w-100 input-box-font text-center" style="font-size:14px;">
                             </div>
 
@@ -147,21 +147,21 @@
                                 <label for="emp_street_1" class="lable text-center uk-paystub-text">EMPLOYEE ADDRESS 1
                                     <span style="color:red;">*</span></label>
                                 <input type="text" id="emp_street_1" name="emp_street_1"
-                                    placeholder="5 Throgmorton St, London EC2N 2AD, United Kingdom"
+                                    placeholder="Employee Street Address 1"
                                     class="w-100 input-box-font text-center" style="font-size:14px;">
                             </div>
                             <div class="col-md-6 mt-1">
                                 <label for="emp_street_2" class="lable">STREET ADDRESS 2</label>
                                 <input type="text" id="emp_street_2" name="emp_street_2"
-                                    placeholder="Your Employer &amp; Company Name"
+                                    placeholder="Employee Street Address 2"
                                     class="w-100 input-box-font text-center" style="font-size:14px;">
                             </div>
 
                             <div class="col-md-6 mt-1">
                                 <label for="emp_zip_code" class="lable text-center uk-paystub-text">POSTCODE<span
                                         style="color:red;">*</span></label>
-                                <input type="text" id="emp_zip_code" name="emp_zip_code"
-                                    placeholder="5 Throgmorton St, London EC2N 2AD, United Kingdom"
+                                <input type="number" id="emp_zip_code" name="emp_zip_code"
+                                    placeholder="12345-678-96"
                                     class="w-100 input-box-font text-center" style="font-size:14px;">
                             </div>
                         </div>

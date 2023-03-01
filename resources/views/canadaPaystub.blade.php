@@ -109,7 +109,7 @@
                                                 class="redColor">*</span>
                                         </label>
                                         <input type="text" id="cname" name="cname"
-                                            placeholder="Your Employer & Company Name"
+                                            placeholder="Company Name"
                                             class="input-c w-100  text-center input-box-font">
                                     </div>
                                 </div>
@@ -122,7 +122,7 @@
                                                 class="redColor">*</span>
                                         </label>
                                         <input type="text" id="address_1" name="address_1"
-                                            placeholder="Your Employer Address" class="w-100  input-box-font">
+                                            placeholder="Company Street Address 1" class="w-100  input-box-font">
                                     </div>
                                 </div>
                             </div>
@@ -134,7 +134,7 @@
                                                 class="redColor">*</span>
                                         </label>
                                         <input type="text" id="address_2" name="address_2"
-                                            placeholder="Suite 101 or Apt 101 (optional)" class="w-100  input-box-font">
+                                            placeholder="Company Street Address 2 (optional)" class="w-100  input-box-font">
                                     </div>
 
                                 </div>
@@ -146,7 +146,7 @@
                                         <label for="city" class="lable">City <span class="redColor">*</span>
                                         </label>
                                         <input type="text" id="city" name="city"
-                                            placeholder="Your Employer City" class="w-100  input-box-font">
+                                            placeholder="City" class="w-100  input-box-font">
                                     </div>
 
                                 </div>
@@ -274,7 +274,7 @@
                                                 class="redColor">*</span>
                                         </label>
                                         <input type="text" id="emp_address" name="emp_address"
-                                            placeholder="Suite 101 or Apt 101(optional)" class="w-100  input-box-font">
+                                            placeholder="Employee Address" class="w-100  input-box-font">
                                     </div>
                                 </div>
                             </div>
