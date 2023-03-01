@@ -690,40 +690,29 @@
     </div>
 @endsection
 @section('script')
-    <script src="{{ asset('user') }}/js/bootstrap-datepicker.min.js"></script>
-    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/additional-methods.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script>
     <script>
         $('.inputdatepicker').datepicker({
             autoclose: true,
             todayHighlight: true,
+            format: "mm-dd-yyyy",
         }).datepicker('setDate', 'today');
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" crossorigin="anonymous"></script>
     <script src="{{ asset('user') }}/js/calculations.js"></script>
     <script src="{{ asset('user') }}/js/javaformula.js"></script>
     <script src="{{ asset('user') }}/js/federal.js"></script>
-    {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> --}}
 
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
-    <script src="{{ asset('user') }}/js/dist/jquery-input-mask-phone-number.min.js"></script>
-    <script type="text/javascript">
+    <script>
         $(document).ready(function() {
             $('#tel').usPhoneFormat({
                 format: 'xxx-xxx-xxxx',
             });
-        });
-    </script>
-    <script>
-        $('#zip_code').mask('00000-9999');
-        $('#emp_zip_code').mask('00000-9999');
-    </script>
-    <script>
-        $(document).ready(function() {
             $('.advanceTemplate').change(function() {
                 var status = $('option:selected', '.at_id').attr('data-status');
                 if (status == 1) {
@@ -743,16 +732,22 @@
                 $('option:selected', '.advanceTemplate').prop("selected", false);
             });
 
-            /* $('#tel').keyup(function() {
-                var mobileNumber = this.value.replace(/\D/g, ''); // here you get what the end-user typed
-                mobileNumber = (mobileNumber.replace(/[^\d]/g, ''));
-                this.value = ("" + mobileNumber.substring(0, 3) + "-" + mobileNumber.substring(3, 6) + "-" +
-                    mobileNumber.substring(6, 10));
-            }); */
-        });
-    </script>
-    <script>
-        $(document).ready(function() {
+            $('.basicTem').click(function() {
+                var imageattr = $('option:selected', '.bt_id').attr('data-src');
+                console.log('imageattr', imageattr);
+                $('.setImage').attr('src', imageattr);
+                if (imageattr != null && imageattr != undefined) {
+                    $('#openEye').modal('show');
+                }
+            });
+
+            $('.advanceTem').click(function() {
+                var imageattr = $('option:selected', '.at_id').attr('data-src');
+                $('.setImage').attr('src', imageattr);
+                if (imageattr != null && imageattr != undefined) {
+                    $('#openEye').modal('show');
+                }
+            });
             $('.basicTem').click(function() {
                 var imageattr = $('option:selected', '.bt_id').attr('data-src');
                 console.log('imageattr', imageattr);
@@ -771,24 +766,23 @@
             });
         });
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    {{-- <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/additional-methods.js"></script> --}}
+    <script>
+        $('#zip_code').mask('00000-9999');
+        $('#emp_zip_code').mask('00000-9999');
+    </script>
+
+
+    <script src="{{ asset('user') }}/js/dist/jquery-input-mask-phone-number.min.js"></script>
     <script>
         $(document).ready(function() {
-            $('.basicTem').click(function() {
-                var imageattr = $('option:selected', '.bt_id').attr('data-src');
-                console.log('imageattr', imageattr);
-                $('.setImage').attr('src', imageattr);
-                if (imageattr != null && imageattr != undefined) {
-                    $('#openEye').modal('show');
-                }
-            });
-
-            $('.advanceTem').click(function() {
-                var imageattr = $('option:selected', '.at_id').attr('data-src');
-                $('.setImage').attr('src', imageattr);
-                if (imageattr != null && imageattr != undefined) {
-                    $('#openEye').modal('show');
-                }
+            $('#tel').usPhoneFormat({
+                format: 'xxx-xxx-xxxx',
             });
         });
     </script>
+    {{-- <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpavHXELJMJvIHifFPN6tBBiFSXKGpy2g&callback=initMap&libraries=places">
+    </script> --}}
 @endsection

@@ -226,7 +226,7 @@ $(document).ready(function () {
         var day = pay_start.getDate();
         var month = pay_start.getMonth() + 1;
         var year = pay_start.getFullYear();
-        var pay_start_1 = year + "-" + (("" + month).length < 2 ? "0" : "") + month + "-" + (("" + day).length < 2 ? "0" : "") + day;
+        var pay_start_1 = (("" + month).length < 2 ? "0" : "") + month + "-" + (("" + day).length < 2 ? "0" : "") + day + "-" + year;
         var time_period = $(".time_period").val();
         if (tax_rate == null) {
             $("span").removeClass("d-none");
@@ -235,21 +235,21 @@ $(document).ready(function () {
 
         if (time_period == "weekly") {
             var dt1 = new Date(pay_start);
-            var newDate = moment(dt1).add(1, "weeks").format("YYYY-MM-DD");
+            var newDate = moment(dt1).add(1, "weeks").format("MM-DD-YYYY");
         }
         if (time_period == "bi-weekly") {
             var dt1 = new Date(pay_start);
-            var newDate = moment(dt1).add(2, "weeks").format("YYYY-MM-DD");
+            var newDate = moment(dt1).add(2, "weeks").format("MM-DD-YYYY");
         }
         if (time_period == "monthly") {
             var dt1 = new Date(pay_start);
-            var newDate = moment(dt1).add(1, "months").format("YYYY-MM-DD");
+            var newDate = moment(dt1).add(1, "months").format("MM-DD-YYYY");
         }
         if (time_period == "bi-monthly") {
             var dt1 = new Date(pay_start);
-            var newDate = moment(dt1).add(2, "months").format("YYYY-MM-DD");
+            var newDate = moment(dt1).add(2, "months").format("MM-DD-YYYY");
         }
-        var newDate_1 = moment(newDate).subtract(1, "days").format("YYYY-MM-DD");
+        var newDate_1 = moment(newDate).subtract(1, "days").format("MM-DD-YYYY");
         setTimeout(() => {
             if (pay_start != "") {
                 $(".pay_end").val(newDate_1);
@@ -338,8 +338,7 @@ $(document).ready(function () {
         var day = date.getDate();
         var month = date.getMonth() + 1;
         var year = date.getFullYear();
-        var date_1 = year + "-" + (("" + month).length < 2 ? "0" : "") + month + "-" + (("" + day).length < 2 ? "0" : "") + day;
-        console.log('date_1', date_1);
+        var date_1 = (("" + month).length < 2 ? "0" : "") + month + "-" + (("" + day).length < 2 ? "0" : "") + day + "-" + year;
         $(".pay_start").val(date_1);
         dayCalculate();
         $(".rate").val("");
@@ -471,7 +470,7 @@ $(document).ready(function () {
                     } */
                     // taxes_values = taxes_values;
                 }
-                // if(taxes_text == 'deduction_8' || taxes_text == 'deduction_18'){   // Local
+                // if (taxes_text == 'deduction_8' || taxes_text == 'deduction_18') {   // Local
                 if (taxes_text == 'deduction_3' || taxes_text == 'deduction_5') {   // live condition
                     var time_period = $(".time_period").val();
                     if (time_period == 'weekly') {
