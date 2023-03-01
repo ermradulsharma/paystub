@@ -87,7 +87,7 @@
                                         <label for="address_2" class="lable">STREET ADDRESS 2 </label>
                                         <input type="text" id="address_2" name="address_2"
                                             placeholder="Company Street Address 2 (optional)"
-                                            class="w-100 p-2  input-box-font">
+                                            class="w-100 p-2  input-box-font" value="">
                                     </div>
 
                                 </div>
@@ -781,25 +781,36 @@
 
             google.maps.event.addListener(autocomplete, 'place_changed', function() {
                 var near_place = autocomplete.getPlace();
-                console.log(near_place.address_components[0].types);
-                console.log(near_place.address_components[0].long_name);
-                document.getElementById('loc_lat').value = near_place.geometry.location.lat();
-                document.getElementById('loc_long').value = near_place.geometry.location.lng();
+                console.log(near_place.address_components);
+                console.log('qwertyuiokjhgfdfgh',near_place);
+                if (near_place && near_place.address_components.length > 0) {
+                    //console.log(pos);
+                    var obj = [];
 
-                document.getElementById('latitude_view').innerHTML = near_place.geometry.location.lat();
-                document.getElementById('longitude_view').innerHTML = near_place.geometry.location.lng();
+                    for (var i = 0; i < near_place.address_components.length; i++) {
+                        for (var j = 0; j < near_place.address_components[i].types.length; j++) {
+                            obj[near_place.address_components[i].types[j]] = near_place.address_components[
+                                i].long_name;
+                        }
+                    }
+                    console.log(near_place);
+                    console.log('wertyuiop', obj);
+                    setLocation(obj);
+                }
+                console.log(near_place.address_components[0].long_name);
             });
         });
-        $(document).on('change', '#' + searchInput, function() {
-            document.getElementById('latitude_input').value = '';
-            document.getElementById('longitude_input').value = '';
 
-            document.getElementById('latitude_view').innerHTML = '';
-            document.getElementById('longitude_view').innerHTML = '';
-        });
+        function setLocation(obj) {
+            console.log('wertyuiop', obj);
+            $("#address_1").val(obj.sublocality);
+            $("#address_2").val(obj.sublocality);
+            $("#city").val(obj.administrative_area_level_3);
+            $("#state").val(obj.administrative_area_level_1);
+            $("#zip_code").val(obj.postal_code);
+        }
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
-    {{-- <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/additional-methods.js"></script> --}}
     <script>
         $('#zip_code').mask('00000-9999');
         $('#emp_zip_code').mask('00000-9999');
@@ -814,7 +825,4 @@
             });
         });
     </script>
-    {{-- <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpavHXELJMJvIHifFPN6tBBiFSXKGpy2g&callback=initMap&libraries=places">
-    </script> --}}
 @endsection
