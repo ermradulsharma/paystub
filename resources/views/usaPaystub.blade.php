@@ -687,6 +687,7 @@
                 </div>
             </div>
         </form>
+
     </div>
 @endsection
 @section('script')
@@ -764,6 +765,37 @@
                     $('#openEye').modal('show');
                 }
             });
+        });
+    </script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyDpavHXELJMJvIHifFPN6tBBiFSXKGpy2g">
+    </script>
+    <script>
+        var searchInput = 'address_1';
+
+        $(document).ready(function() {
+            var autocomplete;
+            autocomplete = new google.maps.places.Autocomplete((document.getElementById(searchInput)), {
+                types: ['geocode'],
+            });
+
+            google.maps.event.addListener(autocomplete, 'place_changed', function() {
+                var near_place = autocomplete.getPlace();
+                console.log(near_place.address_components[0].types);
+                console.log(near_place.address_components[0].long_name);
+                document.getElementById('loc_lat').value = near_place.geometry.location.lat();
+                document.getElementById('loc_long').value = near_place.geometry.location.lng();
+
+                document.getElementById('latitude_view').innerHTML = near_place.geometry.location.lat();
+                document.getElementById('longitude_view').innerHTML = near_place.geometry.location.lng();
+            });
+        });
+        $(document).on('change', '#' + searchInput, function() {
+            document.getElementById('latitude_input').value = '';
+            document.getElementById('longitude_input').value = '';
+
+            document.getElementById('latitude_view').innerHTML = '';
+            document.getElementById('longitude_view').innerHTML = '';
         });
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
