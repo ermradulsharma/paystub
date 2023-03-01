@@ -86,7 +86,8 @@
                                     <div>
                                         <label for="address_2" class="lable">STREET ADDRESS 2 </label>
                                         <input type="text" id="address_2" name="address_2"
-                                            placeholder="Company Street Address 2 (optional)" class="w-100 p-2  input-box-font">
+                                            placeholder="Company Street Address 2 (optional)"
+                                            class="w-100 p-2  input-box-font">
                                     </div>
 
                                 </div>
@@ -96,8 +97,8 @@
                                 <div class="col-md-4">
                                     <div>
                                         <label for="city" class="lable">City <span class="redColor">*</span> </label>
-                                        <input type="text" id="city" name="city"
-                                            placeholder="City" class="w-100   input-box-font">
+                                        <input type="text" id="city" name="city" placeholder="City"
+                                            class="w-100   input-box-font">
                                     </div>
 
                                 </div>
@@ -120,7 +121,7 @@
                                         <label for="zip_code" class="lable">Zip Code <span class="redColor">*</span>
                                         </label>
                                         <input type="text" id="zip_code" name="zip_code" placeholder=" Zip Code"
-                                            class="w-100   input-box-font">
+                                            class="w-100 input-box-font zip_code">
                                     </div>
                                 </div>
                             </div>
@@ -200,8 +201,8 @@
                                     <div>
                                         <label for="emp_name" class="lable">EMPLOYEE NAME <span
                                                 class="redColor">*</span> </label>
-                                        <input type="text" id="emp_name" name="emp_name"
-                                            placeholder="Employee Name" class="w-100  input-box-font">
+                                        <input type="text" id="emp_name" name="emp_name" placeholder="Employee Name"
+                                            class="w-100  input-box-font">
                                     </div>
                                 </div>
                                 <div class="col-md-4 mt-4">
@@ -215,8 +216,10 @@
                                     <div>
                                         <label for="emp_ssn" class="lable">EMPLOYEE SSN Last 4 <span
                                                 class="redColor">*</span> </label>
-                                        <input type="text" id="emp_ssn" name="emp_ssn" placeholder="SSN (Last 4 digits)"
-                                            class="w-100  input-box-font">
+                                        <input type="text" id="emp_ssn" name="emp_ssn"
+                                            placeholder="SSN (Last 4 digits)" class="w-100 input-box-font" maxlength="4"
+                                            minlength="4"
+                                            onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                     </div>
                                 </div>
                             </div>
@@ -236,7 +239,8 @@
                                         <label for="emp_street_2" class="lable">STREET ADDRESS 2
                                         </label>
                                         <input type="text" id="emp_street_2" name="emp_street_2"
-                                            placeholder="Employee Street Address 2(optional)" class="w-100  input-box-font">
+                                            placeholder="Employee Street Address 2 (optional)"
+                                            class="w-100  input-box-font">
                                     </div>
                                 </div>
                             </div>
@@ -255,7 +259,10 @@
                                         </label>
                                         <div class="dropdown ">
                                             <select name="emp_state" id="emp_state" class=" dropdown11 ">
-                                                <div><option class="ff" style="color: #757575;" value="" data-tax="null"> --- Select State dd--- </option></div>
+                                                <div>
+                                                    <option class="ff" style="color: #757575;" value=""
+                                                        data-tax="null"> --- Select State --- </option>
+                                                </div>
                                                 @foreach ($stateTaxes as $stateTax)
                                                     <option value="{{ $stateTax->state }}"
                                                         data-tax="{{ $stateTax->rate }}">{{ $stateTax->state }}</option>
@@ -268,8 +275,8 @@
                                     <div>
                                         <label for="emp_zip_code" class="lable">Zip Code <span
                                                 class="redColor">*</span></label>
-                                        <input type="text" id="emp_zip_code" name="emp_zip_code" placeholder="Zip Code"
-                                            class="w-100  input-box-font">
+                                        <input type="text" id="emp_zip_code" name="emp_zip_code"
+                                            placeholder="Zip Code" class="w-100  input-box-font">
                                     </div>
                                 </div>
                             </div>
@@ -684,6 +691,7 @@
 @endsection
 @section('script')
     <script src="{{ asset('user') }}/js/bootstrap-datepicker.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/additional-methods.js"></script>
     <script>
         $('.inputdatepicker').datepicker({
             autoclose: true,
@@ -698,12 +706,20 @@
     <script src="{{ asset('user') }}/js/federal.js"></script>
     {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> --}}
     <script src="{{ asset('user') }}/js/dist/jquery-input-mask-phone-number.min.js"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
             $('#tel').usPhoneFormat({
                 format: 'xxx-xxx-xxxx',
             });
         });
+    </script>
+    <script>
+        $('#zip_code').mask('00000-9999');
+        $('#emp_zip_code').mask('00000-9999');
     </script>
     <script>
         $(document).ready(function() {
