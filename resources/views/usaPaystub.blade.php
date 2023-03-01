@@ -255,7 +255,7 @@
                                         </label>
                                         <div class="dropdown ">
                                             <select name="emp_state" id="emp_state" class=" dropdown11 ">
-                                                <option value="" data-tax="null"> --- Select State--- </option>
+                                                <div><option class="ff" style="color: #757575;" value="" data-tax="null"> --- Select State dd--- </option></div>
                                                 @foreach ($stateTaxes as $stateTax)
                                                     <option value="{{ $stateTax->state }}"
                                                         data-tax="{{ $stateTax->rate }}">{{ $stateTax->state }}</option>
