@@ -181,7 +181,7 @@
                                         </div>
                                     </div>
                                     <div class=" mt-3 ">
-                                        <button class="viewbtn"> <a href="{{ url('template-view') }}">Click to see
+                                        <button class="viewbtn"> <a style="color: #010101;" href="{{ url('template-view') }}">Click to see
                                                 Template Landscape view.This is not part of design</a></button>
                                     </div>
                                 </div>
