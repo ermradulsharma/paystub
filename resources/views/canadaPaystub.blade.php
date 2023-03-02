@@ -134,7 +134,8 @@
                                                 class="redColor">*</span>
                                         </label>
                                         <input type="text" id="address_2" name="address_2"
-                                            placeholder="Company Street Address 2 (optional)" class="w-100  input-box-font">
+                                            placeholder="Company Street Address 2 (optional)"
+                                            class="w-100  input-box-font">
                                     </div>
 
                                 </div>
@@ -145,8 +146,8 @@
                                     <div>
                                         <label for="city" class="lable">City <span class="redColor">*</span>
                                         </label>
-                                        <input type="text" id="city" name="city"
-                                            placeholder="City" class="w-100  input-box-font">
+                                        <input type="text" id="city" name="city" placeholder="City"
+                                            class="w-100  input-box-font">
                                     </div>
 
                                 </div>
@@ -248,11 +249,10 @@
                                         <label for="currency" class="lable" class="redColor">CURRENCY <span
                                                 class="redColor">*</span> </label>
                                         <select name="currency" id="currency" class=" dropdown11">
-                                            <option value=""> --- Select currency --- </option>
-                                            <option value="$">Dollar $</option>
-                                            <option value="€">Euro €</option>
-                                            <option value="£">Pound £</option>
-                                            <option value="¥">Yen ¥</option>
+                                            @foreach ($currencies as $currency)
+                                                <option value="{{ $currency->symbol }}">{{ $currency->symbol }}
+                                                    ({{ $currency->name }})</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
