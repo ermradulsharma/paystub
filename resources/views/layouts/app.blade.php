@@ -496,6 +496,11 @@
                 error: function(err) {
                     console.log('err', err);
                     error = err.responseJSON;
+                    if(error.error.key != 'undefined')
+                    {
+                        $('#'+error.error.key).focus();
+                        $('#'+error.error.key).css('border-color', 'red');
+                    }
                     toastr.error(error.message);
                     document.getElementById("loaderDiv").style.display = "none";
                 }

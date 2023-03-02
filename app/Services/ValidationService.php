@@ -189,6 +189,13 @@ class ValidationService
         }
         $validator = Validator::make($request->all(), $rules, $messages);
         if ($validator->fails()) {
+            $erro = [];
+            foreach($validator->errors()->toArray() ?? [] as $key => $error){
+                $msg = [];
+                $msg['key'] = $key;
+                $erro[] = $msg;
+            }
+            $response['error'] = $erro[0];
             $response['message'] = $validator->errors()->first();
             $response['status'] = 301;
             $response['success'] = false;
