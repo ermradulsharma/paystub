@@ -777,37 +777,68 @@
             var autocomplete;
             autocomplete = new google.maps.places.Autocomplete((document.getElementById(searchInput)), {
                 types: ['geocode'],
+                componentRestrictions: {
+                    country: "USA"
+                }
             });
+
 
             google.maps.event.addListener(autocomplete, 'place_changed', function() {
                 var near_place = autocomplete.getPlace();
-                console.log(near_place.address_components);
-                console.log('qwertyuiokjhgfdfgh',near_place);
                 if (near_place && near_place.address_components.length > 0) {
-                    //console.log(pos);
                     var obj = [];
-
                     for (var i = 0; i < near_place.address_components.length; i++) {
                         for (var j = 0; j < near_place.address_components[i].types.length; j++) {
                             obj[near_place.address_components[i].types[j]] = near_place.address_components[
                                 i].long_name;
                         }
                     }
-                    console.log(near_place);
-                    console.log('wertyuiop', obj);
                     setLocation(obj);
                 }
-                console.log(near_place.address_components[0].long_name);
             });
         });
 
         function setLocation(obj) {
-            console.log('wertyuiop', obj);
-            $("#address_1").val(obj.sublocality);
-            $("#address_2").val(obj.sublocality);
-            $("#city").val(obj.administrative_area_level_3);
+            $("#address_1").val(obj.street_number, obj.route );
+            $("#address_2").val(obj.neighborhood);
+            $("#city").val(obj.locality);
             $("#state").val(obj.administrative_area_level_1);
             $("#zip_code").val(obj.postal_code);
+        }
+    </script>
+    <script>
+         var searchInput_1 = 'emp_street_1';
+        $(document).ready(function() {
+            var autocomplete;
+            autocomplete = new google.maps.places.Autocomplete((document.getElementById(searchInput_1)), {
+                types: ['geocode'],
+                componentRestrictions: {
+                    country: "USA"
+                }
+            });
+
+
+            google.maps.event.addListener(autocomplete, 'place_changed', function() {
+                var near_place = autocomplete.getPlace();
+                if (near_place && near_place.address_components.length > 0) {
+                    var obj = [];
+                    for (var i = 0; i < near_place.address_components.length; i++) {
+                        for (var j = 0; j < near_place.address_components[i].types.length; j++) {
+                            obj[near_place.address_components[i].types[j]] = near_place.address_components[
+                                i].long_name;
+                        }
+                    }
+                    setEmpLocation(obj);
+                }
+            });
+        });
+
+        function setEmpLocation(obj) {
+            $("#emp_street_1").val(obj.street_number, obj.route );
+            $("#emp_street_2").val(obj.neighborhood);
+            $("#emp_city").val(obj.locality);
+            $("#emp_state").val(obj.administrative_area_level_1);
+            $("#emp_zip_code").val(obj.postal_code);
         }
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
