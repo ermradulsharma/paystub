@@ -54,7 +54,7 @@
                                                 class="redColor">*</span> </label>
                                         <input type="text" id="cname" name="cname"
                                             placeholder="Employer(Company) Name"
-                                            class="w-100 p-2 text-center input-box-font">
+                                            class="w-100 p-2 text-center input-box-font @error('cname') is-invalid @enderror" required>
                                     </div>
                                 </div>
 
@@ -134,7 +134,7 @@
                 <div class="row mb-3">
                     <div class="col-md-12">
                         <div class=" box-usa">
-                            <div class="d-flex justify-content-between mb-3 flex w-100">
+                            <div class="d-flex justify-content-between flex w-100">
                                 <div class="col-md-5 col-lg-6 col-sm-10 mt-5  text-center margin-left">
                                     <h6 style="" class="base">BASIC TEMPLATES</h6>
                                     <div class="mt-4">
