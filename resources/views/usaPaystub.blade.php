@@ -54,7 +54,8 @@
                                                 class="redColor">*</span> </label>
                                         <input type="text" id="cname" name="cname"
                                             placeholder="Employer(Company) Name"
-                                            class="w-100 p-2 text-center input-box-font @error('cname') is-invalid @enderror" required>
+                                            class="w-100 p-2 text-center input-box-font @error('cname') is-invalid @enderror"
+                                            required>
                                     </div>
                                 </div>
 
@@ -706,9 +707,6 @@
     <script src="{{ asset('user') }}/js/calculations.js"></script>
     <script src="{{ asset('user') }}/js/javaformula.js"></script>
     <script src="{{ asset('user') }}/js/federal.js"></script>
-
-
-
     <script>
         $(document).ready(function() {
             $('#tel').usPhoneFormat({
@@ -799,7 +797,7 @@
         });
 
         function setLocation(obj) {
-            $("#address_1").val(obj.street_number, obj.route );
+            $("#address_1").val(obj.street_number, obj.route);
             $("#address_2").val(obj.neighborhood);
             $("#city").val(obj.locality);
             $("#state").val(obj.administrative_area_level_1);
@@ -807,7 +805,7 @@
         }
     </script>
     <script>
-         var searchInput_1 = 'emp_street_1';
+        var searchInput_1 = 'emp_street_1';
         $(document).ready(function() {
             var autocomplete;
             autocomplete = new google.maps.places.Autocomplete((document.getElementById(searchInput_1)), {
@@ -834,7 +832,7 @@
         });
 
         function setEmpLocation(obj) {
-            $("#emp_street_1").val(obj.street_number, obj.route );
+            $("#emp_street_1").val(obj.street_number, obj.route);
             $("#emp_street_2").val(obj.neighborhood);
             $("#emp_city").val(obj.locality);
             $("#emp_state").val(obj.administrative_area_level_1);

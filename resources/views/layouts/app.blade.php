@@ -29,7 +29,7 @@
         }
     </style>
     @yield('style')
-   
+
 </head>
 
 <body>
@@ -494,6 +494,7 @@
                     document.getElementById("loaderDiv").style.display = "none";
                 },
                 error: function(err) {
+                    console.log('err', err);
                     error = err.responseJSON;
                     toastr.error(error.message);
                     document.getElementById("loaderDiv").style.display = "none";
