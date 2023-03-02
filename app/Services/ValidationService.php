@@ -193,9 +193,10 @@ class ValidationService
             foreach($validator->errors()->toArray() ?? [] as $key => $error){
                 $msg = [];
                 $msg['key'] = $key;
+                $msg['message'] = $error;
                 $erro[] = $msg;
             }
-            $response['error'] = $erro[0];
+            $response['errors'] = $erro;
             $response['message'] = $validator->errors()->first();
             $response['status'] = 301;
             $response['success'] = false;

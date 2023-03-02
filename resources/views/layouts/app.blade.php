@@ -496,11 +496,14 @@
                 error: function(err) {
                     console.log('err', err);
                     error = err.responseJSON;
-                    if(error.error.key != 'undefined')
-                    {
-                        $('#'+error.error.key).focus();
-                        $('#'+error.error.key).css('border-color', 'red');
-                    }
+                    error.errors.forEach((element, i)=> {
+                        if(i == 0){
+                            $('#'+element.key).focus();
+                        }
+                        $('#'+element.key).css('border-color', 'red');
+                        $('#'+element.key).parent().parent().children("div").append('<div class="text-danger">'+element.message+'</div>');
+                    });
+
                     toastr.error(error.message);
                     document.getElementById("loaderDiv").style.display = "none";
                 }
