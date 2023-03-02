@@ -29,7 +29,7 @@ class CurrencySeeder extends Seeder
                 ['name' => 'INR', 'unicode' => '&#8360;', "symbol" => '₨'],
                 ['name' => 'IRR', 'unicode' => '&#65020;', "symbol" => '﷼'],
                 ['name' => 'HKD', 'unicode' => '&#36;', "symbol" => 'HK$'],
-                ['name' => 'ALL', 'unicode' => '&#76;&#101;&#10', 'Lek'],
+                ['name' => 'ALL', 'unicode' => '&#76;&#101;&#10', "symbol" => 'Lek'],
                 ['name' => 'GGP', 'unicode' => '&#163;', "symbol" => '£'],
                 ['name' => 'AWG', 'unicode' => '&#402;', "symbol" => 'ƒ'],
                 ['name' => 'BOB', 'unicode' => '&#36;&#98;', "symbol" => '$b'],
