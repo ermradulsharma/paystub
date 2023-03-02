@@ -183,7 +183,8 @@
                                         </div>
                                     </div>
                                     <div class=" mt-3 ">
-                                        <button class="viewbtn"> <a style="color: black;" href="{{ url('template-view') }}">Click to see
+                                        <button class="viewbtn"> <a style="color: black;"
+                                                href="{{ url('template-view') }}">Click to see
                                                 Template Landscape view.This is not part of design</a></button>
                                     </div>
                                 </div>
@@ -387,14 +388,15 @@
                                 <div class="col-md-3 mt-4">
                                     <div>
                                         <label for="currency" class="lable" class="redColor" style="color: red;">SELECT
-                                            YOUR PREFERRED
-                                            CURRENCY </label>
+                                            YOUR PREFERRED CURRENCY </label>
                                         <select name="currency" id="currency" class=" dropdown11">
-                                            {{-- <option value=""> --- Select currency --- </option> --}}
-                                            <option value="$">Dollar $</option>
+                                            @foreach ($currencies as $currency)
+                                                <option value="{{ $currency->symbol }}">{{ $currency->symbol }} ({{$currency->name}})</option>
+                                            @endforeach
+                                           {{--  <option value="$">Dollar $</option>
                                             <option value="€">Euro €</option>
                                             <option value="£">Pound £</option>
-                                            <option value="¥">Yen ¥</option>
+                                            <option value="¥">Yen ¥</option> --}}
                                         </select>
                                     </div>
 

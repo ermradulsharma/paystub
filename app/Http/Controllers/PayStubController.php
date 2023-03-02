@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Currency;
 use App\Models\Deduction;
 use App\Models\PaySlip;
 use App\Models\StateTax;
@@ -17,7 +18,8 @@ class PayStubController extends Controller
         $basicType = Template::where(['state' => 'usa', 'type' => 'basic', 'status' => 1])->with('images')->get();
         $advanceType = Template::where(['state' => 'usa', 'type' => 'advance', 'status' => 1])->with('images')->get();
         $stateTaxes = StateTax::get();
-        return view('usaPaystub', compact('basicType', 'advanceType', 'deduction', 'stateTaxes'));
+        $currencies = Currency::get();
+        return view('usaPaystub', compact('basicType', 'advanceType', 'deduction', 'stateTaxes', 'currencies'));
     }
 
     public function ukPayStub()
@@ -26,7 +28,8 @@ class PayStubController extends Controller
         $basicType = Template::where('type', 'basic')->get();
         $advanceType = Template::where('type', 'advance')->get();
         $stateTaxes = StateTax::get();
-        return view('ukPaystub', compact('basicType', 'advanceType', 'stateTaxes','deduction'));
+        $currencies = Currency::get();
+        return view('ukPaystub', compact('basicType', 'advanceType', 'stateTaxes','deduction', 'currencies'));
     }
 
     public function canadaPayStub()
@@ -35,7 +38,8 @@ class PayStubController extends Controller
         $basicType = Template::where(['state' => 'canada', 'type' => 'basic', 'status' => 1])->get();
         $advanceType = Template::where(['state' => 'canada', 'type' => 'advance', 'status' => 1])->get();
         $stateTaxes = StateTax::get();
-        return view('canadaPaystub', compact('basicType', 'advanceType', 'deduction', 'stateTaxes'));
+        $currencies = Currency::get();
+        return view('canadaPaystub', compact('basicType', 'advanceType', 'deduction', 'stateTaxes', 'currencies'));
     }
 
     public function templateGlobal()
@@ -51,7 +55,8 @@ class PayStubController extends Controller
         $basicType = Template::where(['state' => 'global', 'type' => 'basic', 'status' => 1])->with('images')->get();
         $advanceType = Template::where(['state' => 'global', 'type' => 'advance', 'status' => 1])->with('images')->get();
         $stateTaxes = StateTax::get();
-        return view('globalPaystub', compact('basicType', 'advanceType', 'deduction', 'stateTaxes'));
+        $currencies = Currency::get();
+        return view('globalPaystub', compact('basicType', 'advanceType', 'deduction', 'stateTaxes', 'currencies'));
     }
 
     public function w2formPayStub()
