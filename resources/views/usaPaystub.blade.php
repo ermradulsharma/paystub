@@ -55,8 +55,7 @@
                                                 class="redColor">*</span> </label>
                                         <input type="text" id="cname" name="cname"
                                             placeholder="Employer(Company) Name"
-                                            class="w-100 p-2 text-center input-box-font @error('cname') is-invalid @enderror"
-                                            required>
+                                            class="w-100 p-2 text-center input-box-font">
                                     </div>
                                 </div>
 
