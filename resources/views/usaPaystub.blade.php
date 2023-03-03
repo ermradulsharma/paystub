@@ -55,7 +55,7 @@
                                                 class="redColor">*</span> </label>
                                         <input type="text" id="cname" name="cname"
                                             placeholder="Employer(Company) Name"
-                                            class="w-100 p-2 text-center input-box-font">
+                                            class="w-100 p-2 text-center input-box-font removeDiv">
                                     </div>
                                 </div>
 
@@ -64,7 +64,7 @@
                                         <label for="tel" class="lable">EMPLOYER TELEPHONE NUMBER <span
                                                 class="redColor">*</span> </label>
                                         <input type="text" id="tel" name="tel" placeholder="xxx-xxx-xxxx"
-                                            class="w-100 p-2 text-center input-box-font third-phone">
+                                            class="w-100 p-2 text-center input-box-font removeDiv third-phone">
                                     </div>
                                 </div>
 
@@ -76,7 +76,7 @@
                                         <label for="address_1" class="lable">STREET ADDRESS 1 <span
                                                 class="redColor">*</span> </label>
                                         <input type="text" id="address_1" name="address_1"
-                                            placeholder="Company Street Address 1" class="w-100 p-2  input-box-font">
+                                            placeholder="Company Street Address 1" class="w-100 p-2  input-box-font removeDiv">
                                     </div>
 
                                 </div>
@@ -88,7 +88,7 @@
                                         <label for="address_2" class="lable">STREET ADDRESS 2 </label>
                                         <input type="text" id="address_2" name="address_2"
                                             placeholder="Company Street Address 2 (optional)"
-                                            class="w-100 p-2  input-box-font" value="">
+                                            class="w-100 p-2  input-box-font removeDiv" value="">
                                     </div>
 
                                 </div>
@@ -99,7 +99,7 @@
                                     <div>
                                         <label for="city" class="lable">City <span class="redColor">*</span> </label>
                                         <input type="text" id="city" name="city" placeholder="City"
-                                            class="w-100   input-box-font">
+                                            class="w-100   input-box-font removeDiv">
                                     </div>
 
                                 </div>
@@ -108,7 +108,7 @@
                                         <label for="state" class="lable">State <span class="redColor">*</span>
                                         </label>
                                         <div class="dropdown ">
-                                            <select name="state" id="state" class="state dropdown11">
+                                            <select name="state" id="state" class="state dropdown11 removeDiv">
                                                 <option value=""> --- Select State --- </option>
                                                 @foreach ($stateTaxes as $stateTax)
                                                     <option value="{{ $stateTax->state }}">{{ $stateTax->state }}</option>
@@ -122,7 +122,7 @@
                                         <label for="zip_code" class="lable">Zip Code <span class="redColor">*</span>
                                         </label>
                                         <input type="text" id="zip_code" name="zip_code" placeholder=" Zip Code"
-                                            class="w-100 input-box-font zip_code">
+                                            class="w-100 input-box-font removeDiv zip_code">
                                     </div>
                                 </div>
                             </div>
@@ -141,7 +141,7 @@
                                     <div class="mt-4">
                                         <div class="input-group mmenu mb-3 text-center">
                                             <select name="basic_temp"
-                                                class="form-control dropdown1 text-center bt_id small-font basicTemplate"
+                                                class="form-control dropdown1 text-center bt_id small-font basicTemplate removeDiv"
                                                 style="margin-right:10px; font-size:18px;">
                                                 <option value=""> --- Select Basic Templates --- </option>
                                                 @foreach ($basicType as $data)
@@ -166,7 +166,7 @@
                                     <div class="mt-4">
                                         <div class="input-group mmenu mb-3">
                                             <select name="advance_temp"
-                                                class="form-control text-center dropdown1 at_id small-font advanceTemplate"
+                                                class="form-control text-center dropdown1 at_id small-font advanceTemplate removeDiv"
                                                 style="margin-right:10px; font-size:18px;">
                                                 <option value=""> --- Select Advance Template --- </option>
                                                 @foreach ($advanceType as $data)
@@ -205,14 +205,14 @@
                                                 class="redColor">*</span>
                                         </label>
                                         <input type="text" id="emp_name" name="emp_name" placeholder="Employee Name"
-                                            class="w-100  input-box-font">
+                                            class="w-100  input-box-font removeDiv">
                                     </div>
                                 </div>
                                 <div class="col-md-4 mt-4">
                                     <div>
                                         <label for="emp_id" class="lable">EMPLOYEE ID </label>
                                         <input type="text" id="emp_id" name="emp_id" placeholder="Employer ID"
-                                            class="w-100 r input-box-font">
+                                            class="w-100 r input-box-font removeDiv">
                                     </div>
                                 </div>
                                 <div class="col-md-4 mt-4">
@@ -220,7 +220,7 @@
                                         <label for="emp_ssn" class="lable">EMPLOYEE SSN Last 4 <span
                                                 class="redColor">*</span> </label>
                                         <input type="text" id="emp_ssn" name="emp_ssn"
-                                            placeholder="SSN (Last 4 digits)" class="w-100 input-box-font" maxlength="4"
+                                            placeholder="SSN (Last 4 digits)" class="w-100 input-box-font removeDiv" maxlength="4"
                                             minlength="4"
                                             onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                     </div>
@@ -232,7 +232,7 @@
                                         <label for="emp_street_1" class="lable">STREET ADDRESS 1 <span
                                                 class="redColor">*</span></label>
                                         <input type="text" id="emp_street_1" name="emp_street_1"
-                                            placeholder="Employee Street Address 1" class="w-100  input-box-font">
+                                            placeholder="Employee Street Address 1" class="w-100  input-box-font removeDiv">
                                     </div>
                                 </div>
                             </div>
@@ -243,7 +243,7 @@
                                         </label>
                                         <input type="text" id="emp_street_2" name="emp_street_2"
                                             placeholder="Employee Street Address 2 (optional)"
-                                            class="w-100  input-box-font">
+                                            class="w-100  input-box-font removeDiv">
                                     </div>
                                 </div>
                             </div>
@@ -253,7 +253,7 @@
                                         <label for="emp_city" class="lable">City <span class="redColor">*</span>
                                         </label>
                                         <input type="text" id="emp_city" name="emp_city" placeholder="City"
-                                            class="w-100   input-box-font">
+                                            class="w-100   input-box-font removeDiv">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -261,7 +261,7 @@
                                         <label for="emp_state" class="lable">State <span class="redColor">*</span>
                                         </label>
                                         <div class="dropdown ">
-                                            <select name="emp_state" id="emp_state" class=" dropdown11 ">
+                                            <select name="emp_state" id="emp_state" class=" dropdown11 removeDiv">
                                                 <div>
                                                     <option class="ff" style="color: #757575;" value=""
                                                         data-tax="null"> ---
@@ -280,7 +280,7 @@
                                         <label for="emp_zip_code" class="lable">Zip Code <span
                                                 class="redColor">*</span></label>
                                         <input type="text" id="emp_zip_code" name="emp_zip_code"
-                                            placeholder="Zip Code" class="w-100  input-box-font">
+                                            placeholder="Zip Code" class="w-100  input-box-font removeDiv">
                                     </div>
                                 </div>
                             </div>
@@ -300,7 +300,7 @@
                                                 class="redColor">*</span> </label>
                                         <div class="dropdown ">
                                             <select name="emp_your_state" id="emp_your_state"
-                                                class=" dropdown11 tax_rate">
+                                                class=" dropdown11 tax_rate removeDiv">
                                                 {{-- <option value="">Choose your State</option> --}}
                                                 @foreach ($stateTaxes as $stateTax)
                                                     <option value="{{ $stateTax->state }}"
@@ -316,7 +316,7 @@
                                         <label for="auto_cal" class="lable">AUTO CALCULATOR <span
                                                 class="redColor">*</span>
                                         </label>
-                                        <select name="auto_cal" id="auto_cal" class="dropdown11 auto_calculate">
+                                        <select name="auto_cal" id="auto_cal" class="dropdown11 auto_calculate removeDiv">
                                             {{-- <option value=""> --- Select Calculator --- </option> --}}
                                             <option value="on">ON</option>
                                             <option value="off">OFF</option>
@@ -328,7 +328,7 @@
                                         <label for="marital_status" class="lable">MARITAL STATUS <span
                                                 class="redColor">*</span> </label>
                                         <select name="marital_status" id="marital_status"
-                                            class="dropdown11 marital_status">
+                                            class="dropdown11 marital_status removeDiv">
                                             {{-- <option value=""> --- Select Marital Status--- </option> --}}
                                             <option value="single">Single</option>
                                             <option value="married">Married</option>
@@ -340,7 +340,7 @@
                                     <div>
                                         <label for="time_period" class="lable">HOW DO YOU GET PAID <span
                                                 class="redColor">*</span> </label>
-                                        <select name="time_period" id="time_period" class="dropdown11 time_period">
+                                        <select name="time_period" id="time_period" class="dropdown11 time_period removeDiv">
                                             {{-- <option value=""> --- Select --- </option> --}}
                                             <option value="weekly">Weekly</option>
                                             <option value="bi-weekly">Bi-Weekly</option>
@@ -356,13 +356,13 @@
                                         <label for="hourly" class="lable">HOURLY <span class="redColor">*</span>
                                         </label>
                                         <input type="text" step="0.5" id="hourly" name="hourly"
-                                            placeholder="Hourly" class="w-100   input-box-font hourly" value="">
+                                            placeholder="Hourly" class="w-100   input-box-font removeDiv hourly" value="">
                                     </div>
                                 </div>
                                 <div class="col-md-3 mt-4">
                                     <div>
                                         <label for="emp_type" class="lable">EMPLOYMENT TYPE </label>
-                                        <select name="emp_type" id="emp_type" class=" dropdown11">
+                                        <select name="emp_type" id="emp_type" class=" dropdown11 removeDiv">
                                             {{-- <option value=""> --- Select Employment Type --- </option> --}}
                                             <option value="Temporary">Temporary</option>
                                             <option value="Permanent">Permanent</option>
@@ -373,7 +373,7 @@
                                     <div>
                                         <label for="exemptions" class="lable">EXEMPTIONS
                                         </label>
-                                        <select name="exemptions" id="exemptions" class=" dropdown11 exemptions">
+                                        <select name="exemptions" id="exemptions" class=" dropdown11 exemptions removeDiv">
                                             {{-- <option value=""> --- Select Exemptions --- </option> --}}
                                             <option value="0">0</option>
                                             <option value="1">1</option>
@@ -392,7 +392,7 @@
                                     <div>
                                         <label for="currency" class="lable" class="redColor" style="color: red;">SELECT
                                             YOUR PREFERRED CURRENCY </label>
-                                        <select name="currency" id="currency" class=" dropdown11">
+                                        <select name="currency" id="currency" class=" dropdown11 removeDiv">
                                             @foreach ($currencies as $currency)
                                                 <option value="{{ $currency->symbol }}">{{ $currency->symbol }}
                                                     ({{ $currency->name }})
@@ -426,7 +426,7 @@
                                         <input
                                             style="color:#140303f5;border:1px solid #110303fe;padding:0px 6px !important; height:40px; appearance: none;"
                                             type="text" id="pay_start" name="pay_start" placeholder="12-11-2022"
-                                            class="w-100 p-2 input-box-font pay_start datepicker inputdatepicker"
+                                            class="w-100 p-2 input-box-font removeDiv pay_start datepicker inputdatepicker"
                                             data-id="pay_start" value="<?php echo date('m-d-Y'); ?>">
                                     </div>
                                 </div>
@@ -438,7 +438,7 @@
                                         <input
                                             style="color:#140303f5;border:1px solid #110303fe; padding:0px 6px !important; height:40px; appearance: none;"
                                             type="text" id="pay_end" name="pay_end" placeholder="12-17-2022"
-                                            class="w-100 p-2 input-box-font pay_end datepicker inputdatepicker"
+                                            class="w-100 p-2 input-box-font removeDiv pay_end datepicker inputdatepicker"
                                             data-id="pay_end" value="<?php echo date('m-d-Y'); ?>">
                                     </div>
                                 </div>
@@ -450,7 +450,7 @@
                                         <input
                                             style="color:#140303f5;padding:0px 6px !important; height:40px; appearance: none; border:1px solid #110303fe;"
                                             type="text" id="pay_date" name="pay_date" placeholder="12-19-2022"
-                                            class="w-100 p-2 input-box-font pay_date datepicker inputdatepicker"
+                                            class="w-100 p-2 input-box-font removeDiv pay_date datepicker inputdatepicker"
                                             data-id="pay_date" value="<?php echo date('m-d-Y'); ?>">
                                     </div>
                                 </div>

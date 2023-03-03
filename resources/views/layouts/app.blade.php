@@ -496,19 +496,25 @@
                 error: function(err) {
                     console.log('err', err);
                     error = err.responseJSON;
-                    /* error.errors.forEach((element, i)=> {
+                    $('.error_div').remove();
+                    error.errors.forEach((element, i)=> {
                         if(i == 0){
                             $('#'+element.key).focus();
                         }
                         $('#'+element.key).css('border-color', 'red');
-                        $('#'+element.key).parent().parent().children("div").append('<div class="text-danger">'+element.message+'</div>');
-                    }); */
+                        $('#'+element.key).parent().parent().children("div").append('<div class="text-danger error_div 0_'+element.key+'">'+element.message+'</div>');
+                    });
 
                     toastr.error(error.message);
                     document.getElementById("loaderDiv").style.display = "none";
                 }
             });
+            $('.removeDiv').keyup(function(){
+                var id =$(this).attr('id');
+                $('.0_'+id).remove();
+            });
             return false;
+
         }
 
         function usaStoreData() {
