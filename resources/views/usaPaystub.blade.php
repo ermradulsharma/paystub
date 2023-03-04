@@ -76,7 +76,8 @@
                                         <label for="address_1" class="lable">STREET ADDRESS 1 <span
                                                 class="redColor">*</span> </label>
                                         <input type="text" id="address_1" name="address_1"
-                                            placeholder="Company Street Address 1" class="w-100 p-2  input-box-font removeDiv">
+                                            placeholder="Company Street Address 1"
+                                            class="w-100 p-2  input-box-font removeDiv">
                                     </div>
 
                                 </div>
@@ -220,8 +221,8 @@
                                         <label for="emp_ssn" class="lable">EMPLOYEE SSN Last 4 <span
                                                 class="redColor">*</span> </label>
                                         <input type="text" id="emp_ssn" name="emp_ssn"
-                                            placeholder="SSN (Last 4 digits)" class="w-100 input-box-font removeDiv" maxlength="4"
-                                            minlength="4"
+                                            placeholder="SSN (Last 4 digits)" class="w-100 input-box-font removeDiv"
+                                            maxlength="4" minlength="4"
                                             onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                     </div>
                                 </div>
@@ -232,7 +233,8 @@
                                         <label for="emp_street_1" class="lable">STREET ADDRESS 1 <span
                                                 class="redColor">*</span></label>
                                         <input type="text" id="emp_street_1" name="emp_street_1"
-                                            placeholder="Employee Street Address 1" class="w-100  input-box-font removeDiv">
+                                            placeholder="Employee Street Address 1"
+                                            class="w-100  input-box-font removeDiv">
                                     </div>
                                 </div>
                             </div>
@@ -316,7 +318,8 @@
                                         <label for="auto_cal" class="lable">AUTO CALCULATOR <span
                                                 class="redColor">*</span>
                                         </label>
-                                        <select name="auto_cal" id="auto_cal" class="dropdown11 auto_calculate removeDiv">
+                                        <select name="auto_cal" id="auto_cal"
+                                            class="dropdown11 auto_calculate removeDiv">
                                             {{-- <option value=""> --- Select Calculator --- </option> --}}
                                             <option value="on">ON</option>
                                             <option value="off">OFF</option>
@@ -340,7 +343,8 @@
                                     <div>
                                         <label for="time_period" class="lable">HOW DO YOU GET PAID <span
                                                 class="redColor">*</span> </label>
-                                        <select name="time_period" id="time_period" class="dropdown11 time_period removeDiv">
+                                        <select name="time_period" id="time_period"
+                                            class="dropdown11 time_period removeDiv">
                                             {{-- <option value=""> --- Select --- </option> --}}
                                             <option value="weekly">Weekly</option>
                                             <option value="bi-weekly">Bi-Weekly</option>
@@ -356,7 +360,8 @@
                                         <label for="hourly" class="lable">HOURLY <span class="redColor">*</span>
                                         </label>
                                         <input type="text" step="0.5" id="hourly" name="hourly"
-                                            placeholder="Hourly" class="w-100   input-box-font removeDiv hourly" value="">
+                                            placeholder="Hourly" class="w-100   input-box-font removeDiv hourly"
+                                            value="">
                                     </div>
                                 </div>
                                 <div class="col-md-3 mt-4">
@@ -373,7 +378,8 @@
                                     <div>
                                         <label for="exemptions" class="lable">EXEMPTIONS
                                         </label>
-                                        <select name="exemptions" id="exemptions" class=" dropdown11 exemptions removeDiv">
+                                        <select name="exemptions" id="exemptions"
+                                            class=" dropdown11 exemptions removeDiv">
                                             {{-- <option value=""> --- Select Exemptions --- </option> --}}
                                             <option value="0">0</option>
                                             <option value="1">1</option>
@@ -808,31 +814,42 @@
                 $("#address_1").val('');
             } else if (obj.street_number == undefined) {
                 $("#address_1").val(obj.route);
+                $('#address_1').css('border-color', 'gray');
+                $('.0_address_1').remove();
             } else if (obj.route == undefined) {
                 $("#address_1").val(obj.street_number);
+                $('#emp_street_1').css('border-color', 'gray');
+                $('.0_address_1').remove();
             } else {
                 $("#address_1").val(obj.street_number + ', ' + obj.route);
+                $('#emp_street_1').css('border-color', 'gray');
+                $('.0_address_1').remove();
             }
-
-
-
             if (obj.neighborhood != undefined) {
                 $("#address_2").val(obj.neighborhood);
+                $('#address_2').css('border-color', 'gray');
+                $('.0_address_2').remove();
             } else {
                 $("#address_2").val('');
             }
             if (obj.locality != undefined) {
                 $("#city").val(obj.locality);
+                $('#city').css('border-color', 'gray');
+                $('.0_city').remove();
             } else {
                 $("#city").val('');
             }
             if (obj.administrative_area_level_1 != undefined) {
                 $("#state").val(obj.administrative_area_level_1);
+                $('#state').css('border-color', 'gray');
+                $('.0_state').remove();
             } else {
                 $("#state").val('');
             }
             if (obj.postal_code != undefined) {
                 $("#zip_code").val(obj.postal_code);
+                $('#zip_code').css('border-color', 'gray');
+                $('.0_zip_code').remove();
             } else {
                 $("#zip_code").val('');
             }
@@ -870,29 +887,43 @@
                 $("#emp_street_1").val('');
             } else if (obj.street_number == undefined) {
                 $("#emp_street_1").val(obj.route);
+                $('#emp_street_1').css('border-color', 'gray');
+                $('.0_emp_street_1').remove();
             } else if (obj.route == undefined) {
                 $("#emp_street_1").val(obj.route);
+                $('#emp_street_1').css('border-color', 'gray');
+                $('.0_emp_street_1').remove();
             } else {
                 $("#emp_street_1").val(obj.street_number + ', ' + obj.route);
+                $('#emp_street_1').css('border-color', 'gray');
+                $('.0_emp_street_1').remove();
             }
 
             if (obj.neighborhood != undefined) {
                 $("#emp_street_2").val(obj.neighborhood);
+                $('#emp_street_2').css('border-color', 'gray');
+                $(".0_emp_street_2").remove();
             } else {
                 $("#emp_street_2").val('');
             }
             if (obj.locality != undefined) {
                 $("#emp_city").val(obj.locality);
+                $('#emp_city').css('border-color', 'gray');
+                $(".0_emp_city").remove();
             } else {
                 $("#emp_city").val('');
             }
             if (obj.administrative_area_level_1 != undefined) {
                 $("#emp_state").val(obj.administrative_area_level_1);
+                $('#emp_state').css('border-color', 'gray');
+                $(".0_emp_state").remove();
             } else {
                 $("#emp_state").val('');
             }
             if (obj.postal_code != undefined) {
                 $("#emp_zip_code").val(obj.postal_code);
+                $('#emp_zip_code').css('border-color', 'gray');
+                $(".0_emp_zip_code").remove();
             } else {
                 $("#emp_zip_code").val('');
             }
