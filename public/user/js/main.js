@@ -22,7 +22,6 @@ $('#sendOTPForm').on('submit', function () {
             if (response.type == 1) {
                 $('#login_email').val(response.email);
                 $("#loginPasswordModal").modal("show");
-                userAuth = 1;
             } else {
                 $("#otpModal").modal("show");
                 $('#hidden_email').val(response.email);
@@ -39,7 +38,6 @@ $('#sendOTPForm').on('submit', function () {
 });
 
 $('#loginOtp').on('submit', function () {
-    userAuth = 0;
     $.ajax({
         url: $(this).attr('action'),
         type: "POST",
@@ -56,6 +54,8 @@ $('#loginOtp').on('submit', function () {
             if (response.user_type == 'Admin') {
                 window.location.href = baseUrl + 'admin/dashboard';
             }
+            console.log("userAuth ======= ",userAuth);
+            console.log("okk ============ ",okk);
             if(userAuth==1){
                 if (okk == 1) {
                     usaStoreData();
@@ -174,13 +174,6 @@ $('.sendMailButton').click(async function () {
     }
 });
 
-$('.previewbtn').click(async function () {
-    okk = await checkValidationForm();
-    if (okk == 1) {
-        usaStoreData();
-    }
-});
-
 
 $('.downloadPdf').click(function () {
     generatePDF();
@@ -234,6 +227,7 @@ function usaStoreData() {
         error: function (err) {
             error = err.responseJSON;
             if (error.message == "Unauthenticated.") {
+                userAuth = 1;
                 $('#loginModal').modal('show');
             } else {
                 //

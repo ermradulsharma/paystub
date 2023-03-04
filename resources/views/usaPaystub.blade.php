@@ -89,7 +89,7 @@
                                         <label for="address_2" class="lable">STREET ADDRESS 2 </label>
                                         <input type="text" id="address_2" name="address_2"
                                             placeholder="Company Street Address 2 (optional)"
-                                            class="w-100 p-2  input-box-font removeDiv" value="">
+                                            class="w-100 p-2  input-box-font" value="">
                                     </div>
 
                                 </div>
@@ -245,7 +245,7 @@
                                         </label>
                                         <input type="text" id="emp_street_2" name="emp_street_2"
                                             placeholder="Employee Street Address 2 (optional)"
-                                            class="w-100  input-box-font removeDiv">
+                                            class="w-100  input-box-font">
                                     </div>
                                 </div>
                             </div>
@@ -357,10 +357,10 @@
                             <div class="row mb-3">
                                 <div class="col-md-3 mt-4">
                                     <div>
-                                        <label for="hourly" class="lable">HOURLY <span class="redColor">*</span>
+                                        <label for="hourly" class="lable">HOURLY
                                         </label>
                                         <input type="text" step="0.5" id="hourly" name="hourly"
-                                            placeholder="Hourly" class="w-100   input-box-font removeDiv hourly"
+                                            placeholder="Hourly" class="w-100   input-box-font hourly"
                                             value="">
                                     </div>
                                 </div>
@@ -701,7 +701,6 @@
                 </div>
             </div>
         </form>
-
     </div>
 @endsection
 @section('script')
@@ -714,8 +713,6 @@
             format: "mm-dd-yyyy",
         }).datepicker('setDate', 'today');
     </script>
-
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" crossorigin="anonymous"></script>
     <script src="{{ asset('user') }}/js/calculations.js"></script>
     <script src="{{ asset('user') }}/js/javaformula.js"></script>
@@ -934,8 +931,6 @@
         $('#zip_code').mask('00000-9999');
         $('#emp_zip_code').mask('00000-9999');
     </script>
-
-
     <script src="{{ asset('user') }}/js/dist/jquery-input-mask-phone-number.min.js"></script>
     <script>
         $(document).ready(function() {
