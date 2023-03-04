@@ -154,7 +154,7 @@ function removeErrorMsg(id, value) {
     $('.0_' + id).remove();
     $('#' + id).css('border-color', 'gray');
     if (value.length == 0) {
-        $('#' + id).css('border-color', 'gray');
+        $('#' + id).css('border-color', 'red');
         $('#' + id).parent().parent().children("div").append("<div class='text-danger error_div 0_" + id +
             "'>This field can't be empty.</div>");
     }
