@@ -150,6 +150,12 @@ $('.removeDiv').focusout(function () {
     removeErrorMsg(id, value);
 });
 
+$('.removeDiv').keyup(function () {
+    var id = $(this).attr('id');
+    var value = $(this).val();
+    removeErrorMsg(id, value);
+});
+
 function removeErrorMsg(id, value) {
     $('.0_' + id).remove();
     $('#' + id).css('border-color', 'gray');
