@@ -153,8 +153,7 @@
                                                     </option>
                                                 @endforeach
                                             </select>
-                                            <i data-src="{{ $data->images->file ?? '' }}"
-                                                class="fa fa-eye-slash basicTem uk-eye" style="font-size: 39px;"
+                                            <i class="fa fa-eye-slash basicTem uk-eye" style="font-size: 39px;"
                                                 role="button"></i>
                                         </div>
                                     </div>
@@ -178,8 +177,7 @@
                                                     </option>
                                                 @endforeach
                                             </select>
-                                            <i data-src="{{ $data->images->file ?? '' }}"
-                                                class="fa fa-eye-slash advanceTem uk-eye" role="button"
+                                            <i class="fa fa-eye-slash advanceTem uk-eye" role="button"
                                                 style="font-size: 39px;"></i>
                                         </div>
                                     </div>
