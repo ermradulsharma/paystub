@@ -87,15 +87,13 @@ $(document).ready(function () {
         $(".tax_deduction").keyup(function () {
             var id = $(this).val();
             var deduction_period_tax = $("#deduction_period_tax").val() || 0.0;
-            console.log('deduction_period_tax', deduction_period_tax);
             var tax_deduction = 0;
             $(".tax_deduction").each(function () {
                 tax_deduction += parseFloat(this.value).toFixed(2);
             });
             setTimeout(function () {
                 tax_deduction = tax_deduction;
-                console.log('tax_deduction', tax_deduction);
-                var total = deduction_period_tax + tax_deduction;
+                var total = parseFloat(deduction_period_tax) + parseFloat(tax_deduction);
                 console.log('total', total);
                 if (isNaN(total)) {
                     total = parseFloat(deduction_period_tax).toFixed(2);
@@ -110,7 +108,7 @@ $(document).ready(function () {
             var ytd_deduction_period_tax = $("#ytd_deduction_period_tax").val() || 0.0;
             var ytd_tax = 0.0;
             $(".ytd_tax").each(function () {
-                ytd_tax += parseFloat(this.value || 0.0);
+                ytd_tax += parseFloat(this.value || 0.0).toFixed(2);
             });
             setTimeout(function () {
                 ytd_tax = ytd_tax;
@@ -118,9 +116,7 @@ $(document).ready(function () {
                 if (isNaN(sum)) {
                     sum = parseFloat(ytd_deduction_period_tax).toFixed(2);
                 }
-                $(".ytd_deduction_period_tax_other").val(
-                    parseFloat(ytd_tax).toFixed(2)
-                );
+                $(".ytd_deduction_period_tax_other").val(parseFloat(ytd_tax).toFixed(2));
                 $(".ytd_deduction_tax").val(parseFloat(sum).toFixed(2));
                 netPay();
             }, 300);
@@ -136,7 +132,7 @@ $(document).ready(function () {
         });
         setTimeout(function () {
             tax_deduction = tax_deduction;
-            var total = parseFloat(deduction_period_tax).toFixed(2) + parseFloat(tax_deduction).toFixed(2);
+            var total = parseFloat(deduction_period_tax) + parseFloat(tax_deduction);
             if (isNaN(total)) {
                 total = parseFloat(deduction_period_tax).toFixed(2);
             }
