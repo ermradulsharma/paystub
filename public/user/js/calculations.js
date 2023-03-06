@@ -89,12 +89,11 @@ $(document).ready(function () {
             var deduction_period_tax = $("#deduction_period_tax").val() || 0.0;
             var tax_deduction = 0;
             $(".tax_deduction").each(function () {
-                tax_deduction += parseFloat(this.value).toFixed(2);
+                tax_deduction += parseFloat(this.value || 0.0).toFixed(2);
             });
             setTimeout(function () {
                 tax_deduction = tax_deduction;
                 var total = parseFloat(deduction_period_tax) + parseFloat(tax_deduction);
-                console.log('total', total);
                 if (isNaN(total)) {
                     total = parseFloat(deduction_period_tax).toFixed(2);
                 }
