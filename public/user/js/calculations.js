@@ -609,11 +609,12 @@ $(document).ready(function () {
         return arr.filter((item, index) => arr.indexOf(item) === index);
     }
 
-    $('.lock').click(function(){
- var id = $
+    $('.lock').click(function () {
+        var id = $(this).data('id');
+        unlockPadLock(id)
     });
 
-    function unlockPadLock(){
-
+    function unlockPadLock(id) {
+        $("#taxe_" + id).attr("readonly", false);
     }
 });

@@ -553,7 +553,7 @@
                                     <div class="col-md-4 col-lg-3 mb-3">
                                         <img src="{{ asset('images/lock.png') }}" class="earnbtn2 lock"
                                             data-id="{{ $key }}">
-                                        <input class="earnbtn text-center taxes" name="taxes[]"
+                                        <input class="earnbtn text-center taxes" name="taxes[]" id="taxe_{{ $key }}"
                                             data-id="{{ $key }}" data-value="{{ $item->price }}"
                                             value="{{ $item->title }}" data-value="{{ $item->title }}"
                                             data-text="{{ $item->type }}" readonly>
