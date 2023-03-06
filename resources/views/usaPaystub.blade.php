@@ -5,7 +5,7 @@
     <!-- Modal Start -->
     <div class="modal fade" id="openEye" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
-            <div class="modal-content">
+            <div class="modal-content" style="position:relative;">
                 <div class="modal-header">
                     <button type="button" class="btn btn-secondary close" data-bs-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>

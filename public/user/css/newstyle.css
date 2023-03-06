@@ -14,7 +14,19 @@
 .dropdown12{
     border-radius: 6px !important;
 }
-
+.modal-body:before {
+    position: absolute;
+    content: "";
+    height: 700px;
+    top: -30px;
+    left: 0px;
+    right: 0;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin: 0 auto;
+    background-image: url("http://paystubx.com/user/water.png");
+}
 
 
 @media only screen and (min-width:1025px) and (max-width:1439px) {
@@ -648,10 +660,12 @@ select:after {
 .sidebtn:hover {
     border: 1px solid black;
 }
+input{
+    transition: all 0.3s ease-in-out;
+    border: 1px solid #444 !important;
+}
 
 input:hover {
-    /* box-shadow: 5px 5px 1px 3px #0000002b; */
-
     border: 1px solid #244b1f !important;
     background: #244b1f !important;
     color: white !important;
