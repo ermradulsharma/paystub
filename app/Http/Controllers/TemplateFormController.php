@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Currency;
 use App\Models\PaySlip;
 use App\Models\Template;
 use App\Models\User;
@@ -29,7 +30,8 @@ class TemplateFormController extends Controller
         $basicType = Template::where(['state' => $invoiceData->type, 'type' => 'basic', 'status' => 1])->with('images')->get();
         $advanceType = Template::where(['state' => $invoiceData->type, 'type' => 'advance', 'status' => 1])->with('images')->get();
         $stateTaxes = StateTax::get();
-        return view('lists/' . $invoiceData->type . '-edit', compact('basicType', 'advanceType', 'deduction', 'stateTaxes', 'invoiceData'));
+        $currencies = Currency::get();
+        return view('lists/' . $invoiceData->type . '-edit', compact('basicType', 'advanceType', 'deduction', 'stateTaxes', 'currencies', 'invoiceData'));
     }
 
     // ======= USA Preview Data =========

@@ -177,12 +177,17 @@ $(document).ready(function () {
 
     $(".hourly").keyup(function () {
         var id = $(this).val();
+        console.log('1234567', id);
         if (id != "NaN") {
             $("#rate_0").val(parseFloat(id).toFixed(2));
             $("#total_" + i).val("");
             $("#period_" + i).val("");
             $("#ytd_total_" + i).val("");
         }
+        if (id == "") {
+            $("#rate_0").val("");
+        }
+
     });
 
     /* $(".pay_date").change(function () {
@@ -223,10 +228,6 @@ $(document).ready(function () {
     function dayCalculate() {
         var tax_rate = $(".tax_rate").find(":selected").data("tax");
         var pay_start = new Date($(".pay_start").val());
-        var day = pay_start.getDate();
-        var month = pay_start.getMonth() + 1;
-        var year = pay_start.getFullYear();
-        var pay_start_1 = (("" + month).length < 2 ? "0" : "") + month + "-" + (("" + day).length < 2 ? "0" : "") + day + "-" + year;
         var time_period = $(".time_period").val();
         if (tax_rate == null) {
             $("span").removeClass("d-none");
@@ -235,21 +236,28 @@ $(document).ready(function () {
 
         if (time_period == "weekly") {
             var dt1 = new Date(pay_start);
-            var newDate = moment(dt1).add(1, "weeks").format("MM-DD-YYYY");
+            var dt2 = dt1.getDate() + 6;
+            var newDate = moment(dt1).add(1, "weeks").format("MM/DD/YYYY");
+            console.log('weekly', newDate);
         }
         if (time_period == "bi-weekly") {
             var dt1 = new Date(pay_start);
-            var newDate = moment(dt1).add(2, "weeks").format("MM-DD-YYYY");
+            var newDate = moment(dt1).add(2, "weeks").format("MM/DD/YYYY");
+            console.log();
+            console.log('bi-weekly', newDate);
         }
         if (time_period == "monthly") {
             var dt1 = new Date(pay_start);
-            var newDate = moment(dt1).add(1, "months").format("MM-DD-YYYY");
+            var newDate = moment(dt1).add(1, "months").format("MM/DD/YYYY");
+            console.log('monthly', newDate);
         }
         if (time_period == "bi-monthly") {
             var dt1 = new Date(pay_start);
-            var newDate = moment(dt1).add(2, "months").format("MM-DD-YYYY");
+            var newDate = moment(dt1).add(2, "months").format("MM/DD/YYYY");
+            console.log('bi-monthly', newDate);
         }
-        var newDate_1 = moment(newDate).subtract(1, "days").format("MM-DD-YYYY");
+        var newDate_1 = moment(newDate).format("MM/DD/YYYY");
+        console.log('newDate_1',newDate_1);
         setTimeout(() => {
             if (pay_start != "") {
                 $(".pay_end").val(newDate_1);
