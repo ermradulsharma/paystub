@@ -127,7 +127,7 @@ function checkValidationForm() {
             'hours', 'total', 'period', 'ytd_total', 'period_gross_total', 'ytd_gross_total',
             'deduction_period_tax', 'deduction_period_tax_other', 'advance_temp', 'co_number',
             'file_number', 'clock_vchr_number', 'advice_number', 'account_number_last_4',
-            'transit_aba_number');
+            'transit_aba_number', 'basic_temp');
         $('.0_' + name).remove();
         $('#' + name).css('border-color', 'gray');
         if (blockedTile.indexOf(name) == -1 && element.value.length == 0) {

@@ -64,6 +64,7 @@
                                         <label for="tel" class="lable">EMPLOYER TELEPHONE NUMBER <span
                                                 class="redColor">*</span> </label>
                                         <input type="text" id="tel" name="tel" placeholder="xxx-xxx-xxxx"
+                                            maxlength="10" minlength="10"
                                             class="w-100 p-2 text-center input-box-font removeDiv third-phone">
                                     </div>
                                 </div>
@@ -140,7 +141,7 @@
                                     <h6 style="" class="base">BASIC TEMPLATES</h6>
                                     <div class="mt-4">
                                         <div class="input-group mmenu mb-3 text-center">
-                                            <select name="basic_temp"
+                                            <select name="basic_temp" id="basic_temp"
                                                 class="form-control dropdown1 text-center bt_id small-font basicTemplate removeDiv"
                                                 style="margin-right:10px; font-size:18px;">
                                                 <option value=""> --- Select Basic Templates --- </option>
@@ -164,7 +165,7 @@
                                     <h6 style="margin-left:-23px;font-weight: 900;">ADVANCED TEMPLATES</h6>
                                     <div class="mt-4">
                                         <div class="input-group mmenu mb-3">
-                                            <select name="advance_temp"
+                                            <select name="advance_temp" id="advance_temp"
                                                 class="form-control text-center dropdown1 at_id small-font advanceTemplate removeDiv"
                                                 style="margin-right:10px; font-size:18px;">
                                                 <option value=""> --- Select Advance Template --- </option>
@@ -262,7 +263,8 @@
                                         <div class="dropdown ">
                                             <select name="emp_state" id="emp_state" class=" dropdown11 removeDiv">
                                                 <div>
-                                                    <option class="ff" style="color: #757575;" value="" data-tax="null"> --- Select State --- </option>
+                                                    <option class="ff" style="color: #757575;" value=""
+                                                        data-tax="null"> --- Select State --- </option>
                                                 </div>
                                                 @foreach ($stateTaxes as $stateTax)
                                                     <option value="{{ $stateTax->state }}"
@@ -476,7 +478,8 @@
                                     <button type="button" class="statementbtn">RATE</button>
                                     <div class="margin-bottom">
                                         <input type="text" name="rate[]"
-                                            class="earnbtn removeData mt-4 mb-3 text-center calculation rate" id="rate_0" data-id="0">
+                                            class="earnbtn removeData mt-4 mb-3 text-center calculation rate"
+                                            id="rate_0" data-id="0">
                                     </div>
                                     <div id="addRate"></div>
                                 </div>
@@ -484,7 +487,8 @@
                                     <button type="button" class="statementbtn">HOURS</button>
                                     <div class="margin-bottom">
                                         <input type="text" name="hours[]"
-                                            class="earnbtn removeData mt-4 mb-3 text-center hours calculation" id="hours_0" data-id="0">
+                                            class="earnbtn removeData mt-4 mb-3 text-center hours calculation"
+                                            id="hours_0" data-id="0">
                                     </div>
                                     <div id="addHours"></div>
                                 </div>
@@ -492,7 +496,7 @@
                                     <button type="button" class="statementbtn">TOTAL</button>
                                     <div class="margin-bottom">
                                         <input type="text" name="total[]" class="earnbtn mt-4 mb-3 text-center total"
-                                             id="total_0" data-id="0" readonly="true">
+                                            id="total_0" data-id="0" readonly="true">
                                     </div>
                                     <div id="addTotal"></div>
                                 </div>
@@ -504,8 +508,7 @@
                                     </div>
                                     <div class="margin-bottom" style="padding-top: 2px;">
                                         <input type="text" name="period[]"
-                                            class="earnbtn  mb-3 text-center gross_total" id="period_0"
-                                            data-id="0">
+                                            class="earnbtn  mb-3 text-center gross_total" id="period_0" data-id="0">
                                     </div>
                                     <div id="addGrossTotal"></div>
                                 </div>
@@ -517,19 +520,18 @@
                                     </div>
                                     <div class="margin-bottom" style="padding-top: 2px;">
                                         <input type="text" name="ytd_total[]"
-                                            class="earnbtn  mb-3 text-center ytd_total" id="ytd_total_0"
-                                            data-id="0">
+                                            class="earnbtn  mb-3 text-center ytd_total" id="ytd_total_0" data-id="0">
                                     </div>
                                     <div id="addYtdTotal"></div>
                                 </div>
                             </div>
                             <div class=" col-lg-2 col-md-2 margin-bottom">
                                 <input type="text" name="period_gross_total"
-                                    class="earnbtn text-center period_gross_total" id="period_gross_total"
-                                    hidden>
+                                    class="earnbtn text-center period_gross_total" id="period_gross_total" hidden>
                             </div>
                             <div class=" col-lg-2 col-md-2 margin-bottom">
-                                <input type="text" name="ytd_gross_total" class="earnbtn text-center ytd_gross_total" id="ytd_gross_total" hidden>
+                                <input type="text" name="ytd_gross_total" class="earnbtn text-center ytd_gross_total"
+                                    id="ytd_gross_total" hidden>
                             </div>
 
                             <div class="row mb-3">
@@ -550,37 +552,38 @@
                             @foreach ($deduction as $key => $item)
                                 <div class="row">
                                     <div class="col-md-4 col-lg-3 mb-3">
-                                        <img src="{{ asset('images/lock.png') }}" class="earnbtn2 lock">
+                                        <img src="{{ asset('images/lock.png') }}" class="earnbtn2 lock"
+                                            data-id="{{ $key }}">
                                         <input class="earnbtn text-center taxes" name="taxes[]"
                                             data-id="{{ $key }}" data-value="{{ $item->price }}"
                                             value="{{ $item->title }}" data-value="{{ $item->title }}"
-                                            data-text="{{ $item->type }}">
+                                            data-text="{{ $item->type }}" readonly>
                                     </div>
                                     <div class="col-md-1 col-lg-1"></div>
                                     <div class="col-md-2 col-lg-3"></div>
                                     <div class="col-md-1 col-lg-1"></div>
                                     <div class="col-md-2 col-lg-2 mb-3">
                                         <input type="text" name="taxes_rate[]"
-                                            class="earnbtn text-center manualTaxTotal" id="taxes_{{ $key }}"/>
+                                            class="earnbtn text-center manualTaxTotal" id="taxes_{{ $key }}" />
                                     </div>
                                     <div class="col-md-2 col-lg-2 mb-3">
                                         <input type="text" name="taxes_ytd[]"
-                                            class="earnbtn text-center manualTaxTotal" id="taxes_ytd_{{ $key }}"/>
+                                            class="earnbtn text-center manualTaxTotal"
+                                            id="taxes_ytd_{{ $key }}" />
                                     </div>
                                 </div>
                             @endforeach
                             <div id="add_deduction" class="mb-3"></div>
                             <div class=" col-lg-2 col-md-2 margin-bottom">
                                 <input type="text" name="deduction_period_tax"
-                                    class="earnbtn text-center deduction_period_tax"
-                                    id="deduction_period_tax" hidden>
+                                    class="earnbtn text-center deduction_period_tax" id="deduction_period_tax" hidden>
                                 <input type="text" name="deduction_period_tax_other"
-                                    class="earnbtn text-center deduction_period_tax_other"
-                                    id="deduction_period_tax_other" hidden>
+                                    class="earnbtn text-center deduction_period_tax_other" id="deduction_period_tax_other"
+                                    hidden>
                             </div>
                             <div class=" col-lg-2 col-md-2 margin-bottom">
                                 <input type="text" name="" class="earnbtn text-center ytd_deduction_period_tax"
-                                 id="ytd_deduction_period_tax" hidden>
+                                    id="ytd_deduction_period_tax" hidden>
                                 <input type="text" name=""
                                     class="earnbtn text-center ytd_deduction_period_tax_other"
                                     id="ytd_deduction_period_tax_other" hidden>
@@ -603,11 +606,13 @@
                                 <div class="col-md-1"></div>
                                 <div class="col-md-2 mb-2">
                                     <p class="p-0 m-0 text-center" style="font-family: serif;">Current Gross</p>
-                                    <input type="text" name="deduction_tax" class="earnbtn deduction_tax text-center"/>
+                                    <input type="text" name="deduction_tax"
+                                        class="earnbtn deduction_tax text-center" />
                                 </div>
                                 <div class="col-md-2 mb-2">
                                     <p class="p-0 m-0 text-center" style="font-family: serif;">YTD Gross</p>
-                                    <input type="text" name="ytd_deduction_tax" class="earnbtn ytd_deduction_tax text-center"/>
+                                    <input type="text" name="ytd_deduction_tax"
+                                        class="earnbtn ytd_deduction_tax text-center" />
                                 </div>
                             </div>
                             <div class="row mb-3 mt-5">
