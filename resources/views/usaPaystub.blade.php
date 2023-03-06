@@ -7,15 +7,15 @@
         <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
             <div class="modal-content" style="position:relative;">
                 <div class="modal-header">
-                    <button type="button" class="btn btn-secondary close" data-bs-dismiss="modal" aria-label="Close">
+                    <button type="button" class="btn btn-secondary close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
                     <img src="" class="setImage w-100">
+                </div>
             </div>
         </div>
-    </div>
     </div>
     <!-- Modal End -->
     <!-- Modal Start -->
@@ -97,7 +97,8 @@
                             <div class="row mb-3">
                                 <div class="col-md-4">
                                     <div>
-                                        <label for="city" class="lable">City <span class="redColor">*</span> </label>
+                                        <label for="city" class="lable">City <span class="redColor">*</span>
+                                        </label>
                                         <input type="text" id="city" name="city" placeholder="City"
                                             class="w-100   input-box-font removeDiv">
                                     </div>
@@ -456,11 +457,12 @@
                                     </div>
                                 </div>
                                 <div class="col-md-3 mt-4">
-                                    <p class="text-center how_p mb-0" style="font-size:18px;">How do you get paid <span
-                                            class="redColor">*</span> <span> </p>
-                                    <div class="text-center mt-2  d-flex justify-content-center">
-                                        <button type="button" class="hour_btn date_select">HOURLY</button>
-                                        <button type="button" class="salary_btn">SALARY</button>
+                                    <div>
+                                        <label for="how_to_paid" class="lable" style="text-align: center !important; display: block;">How do you get paid<span class="redColor">*</span></label>
+                                        <div class="text-center mt-2  d-flex justify-content-center">
+                                            <button type="button" class="hour_btn date_select">HOURLY</button>
+                                            <button type="button" class="salary_btn">SALARY</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -552,11 +554,14 @@
                                 <div class="row">
                                     <div class="col-md-4 col-lg-3 mb-3">
                                         <img src="{{ asset('images/lock.png') }}" class="earnbtn2 lock"
-                                            data-id="{{ $key }}">
-                                        <input class="earnbtn text-center taxes" name="taxes[]" id="taxe_{{ $key }}"
-                                            data-id="{{ $key }}" data-value="{{ $item->price }}"
-                                            value="{{ $item->title }}" data-value="{{ $item->title }}"
-                                            data-text="{{ $item->type }}" readonly>
+                                            data-id="{{ $key }}"
+                                            data-src="{{ asset('images/openPadlock.png') }}">
+                                        <img class="earnbtn2 lock" data-id="{{ $key }}"
+                                            src="{{ asset('images/openPadlock.png') }}" style="display:none">
+                                        <input class="earnbtn text-center taxes" name="taxes[]"
+                                            id="taxe_{{ $key }}" data-id="{{ $key }}"
+                                            data-value="{{ $item->price }}" value="{{ $item->title }}"
+                                            data-value="{{ $item->title }}" data-text="{{ $item->type }}" readonly>
                                     </div>
                                     <div class="col-md-1 col-lg-1"></div>
                                     <div class="col-md-2 col-lg-3"></div>

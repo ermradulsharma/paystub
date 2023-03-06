@@ -393,15 +393,16 @@
     color: white;
     border: none;
     font-size: 15px;
-    background-image: linear-gradient(45deg, #f8760ce3, #e78989);
-    box-shadow: 0 1px 4px rgb(0 0 0 / 60%);
+    background-color: #f70303;
+
+    /* box-shadow: 0 1px 4px rgb(0 0 0 / 60%); */
     margin-right: 5px;
 }
 
-.hour_btn:hover {
+/* .hour_btn:hover {
     color: rgb(7, 7, 7);
     background: #eebebe;
-}
+} */
 
 .salary_btn {
     padding: 8px 16px;
@@ -409,7 +410,7 @@
     color: white;
     border: none;
     font-size: 15px;
-    background-image: linear-gradient(45deg, #f70303, #f84d45);
+    background-color: #827f7f;
     box-shadow: 0 1px 4px rgb(0 0 0 / 60%);
 }
 

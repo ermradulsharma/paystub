@@ -317,8 +317,8 @@ $(document).ready(function () {
     }
 
     $(".hour_btn").click(function () {
-        $('.hour_btn').css({ "background-image": "linear-gradient(45deg, #f8760ce3, #e78989)" });
-        $('.salary_btn').css({ "background-image": "linear-gradient(45deg, #f70303, #f84d45)" });
+        $('.hour_btn').css({ "background-color": "#f70303" });
+        $('.salary_btn').css({ "background-color": "#827f7f" });
         $(".rate").attr("hidden", false);
         $(".hours").attr("hidden", false);
         $(".hourly").attr("readonly", false);
@@ -330,8 +330,8 @@ $(document).ready(function () {
     });
 
     $('.salary_btn').click(function () {
-        $('.salary_btn').css({ "background-image": "linear-gradient(45deg, #f8760ce3, #e78989)" });
-        $('.hour_btn').css({ "background-image": "linear-gradient(45deg, #f70303, #f84d45)" });
+        $('.salary_btn').css({ "background-color": "#f70303" });
+        $('.hour_btn').css({ "background-color": "#827f7f" });
         $('.rate').attr('readonly', true);
         $('.hours').attr('readonly', true);
         $('.hourly').attr('readonly', true);
@@ -610,7 +610,7 @@ $(document).ready(function () {
 
     $('.lock').click(function () {
         var id = $(this).data('id');
-        console.log('id', id);
+        $(this).find('img').toggle();
         unlockPadLock(id);
     });
 
