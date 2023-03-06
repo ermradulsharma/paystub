@@ -12,8 +12,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <img src=" " class="setImage w-100">
-                </div>
+                    <img src="" class="setImage w-100">
             </div>
         </div>
     </div>

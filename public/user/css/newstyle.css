@@ -18,16 +18,15 @@
     position: absolute;
     content: "";
     height: 700px;
-    top: -30px;
+    top: 50px;
     left: 0px;
     right: 0;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
     margin: 0 auto;
-    background-image: url("http://paystubx.com/user/water.png");
+    background-image: url("images/water.png");
 }
-
 
 @media only screen and (min-width:1025px) and (max-width:1439px) {
     .col-set1{
