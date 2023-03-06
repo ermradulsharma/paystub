@@ -88,8 +88,7 @@
                                     <div>
                                         <label for="address_2" class="lable">STREET ADDRESS 2 </label>
                                         <input type="text" id="address_2" name="address_2"
-                                            placeholder="Company Street Address 2 (optional)"
-                                            class="w-100 p-2  input-box-font" value="">
+                                            placeholder="Company Street Address 2 (optional)" class="w-100  input-box-font">
                                     </div>
 
                                 </div>
@@ -263,9 +262,7 @@
                                         <div class="dropdown ">
                                             <select name="emp_state" id="emp_state" class=" dropdown11 removeDiv">
                                                 <div>
-                                                    <option class="ff" style="color: #757575;" value=""
-                                                        data-tax="null"> ---
-                                                        Select State --- </option>
+                                                    <option class="ff" style="color: #757575;" value="" data-tax="null"> --- Select State --- </option>
                                                 </div>
                                                 @foreach ($stateTaxes as $stateTax)
                                                     <option value="{{ $stateTax->state }}"
@@ -358,8 +355,7 @@
                                         <label for="hourly" class="lable">HOURLY
                                         </label>
                                         <input type="text" step="0.5" id="hourly" name="hourly"
-                                            placeholder="Hourly" class="w-100   input-box-font hourly"
-                                            value="">
+                                            placeholder="Hourly" class="w-100   input-box-font hourly">
                                     </div>
                                 </div>
                                 <div class="col-md-3 mt-4">
@@ -480,8 +476,7 @@
                                     <button type="button" class="statementbtn">RATE</button>
                                     <div class="margin-bottom">
                                         <input type="text" name="rate[]"
-                                            class="earnbtn removeData mt-4 mb-3 text-center calculation rate"
-                                            value="" id="rate_0" data-id="0">
+                                            class="earnbtn removeData mt-4 mb-3 text-center calculation rate" id="rate_0" data-id="0">
                                     </div>
                                     <div id="addRate"></div>
                                 </div>
@@ -489,8 +484,7 @@
                                     <button type="button" class="statementbtn">HOURS</button>
                                     <div class="margin-bottom">
                                         <input type="text" name="hours[]"
-                                            class="earnbtn removeData mt-4 mb-3 text-center hours calculation"
-                                            value="" id="hours_0" data-id="0">
+                                            class="earnbtn removeData mt-4 mb-3 text-center hours calculation" id="hours_0" data-id="0">
                                     </div>
                                     <div id="addHours"></div>
                                 </div>
@@ -498,7 +492,7 @@
                                     <button type="button" class="statementbtn">TOTAL</button>
                                     <div class="margin-bottom">
                                         <input type="text" name="total[]" class="earnbtn mt-4 mb-3 text-center total"
-                                            value="" id="total_0" data-id="0" readonly="true">
+                                             id="total_0" data-id="0" readonly="true">
                                     </div>
                                     <div id="addTotal"></div>
                                 </div>
@@ -510,7 +504,7 @@
                                     </div>
                                     <div class="margin-bottom" style="padding-top: 2px;">
                                         <input type="text" name="period[]"
-                                            class="earnbtn  mb-3 text-center gross_total" value="" id="period_0"
+                                            class="earnbtn  mb-3 text-center gross_total" id="period_0"
                                             data-id="0">
                                     </div>
                                     <div id="addGrossTotal"></div>
@@ -523,7 +517,7 @@
                                     </div>
                                     <div class="margin-bottom" style="padding-top: 2px;">
                                         <input type="text" name="ytd_total[]"
-                                            class="earnbtn  mb-3 text-center ytd_total" value="" id="ytd_total_0"
+                                            class="earnbtn  mb-3 text-center ytd_total" id="ytd_total_0"
                                             data-id="0">
                                     </div>
                                     <div id="addYtdTotal"></div>
@@ -531,12 +525,11 @@
                             </div>
                             <div class=" col-lg-2 col-md-2 margin-bottom">
                                 <input type="text" name="period_gross_total"
-                                    class="earnbtn text-center period_gross_total" value="" id="period_gross_total"
+                                    class="earnbtn text-center period_gross_total" id="period_gross_total"
                                     hidden>
                             </div>
                             <div class=" col-lg-2 col-md-2 margin-bottom">
-                                <input type="text" name="ytd_gross_total" class="earnbtn text-center ytd_gross_total"
-                                    value="" id="ytd_gross_total" hidden>
+                                <input type="text" name="ytd_gross_total" class="earnbtn text-center ytd_gross_total" id="ytd_gross_total" hidden>
                             </div>
 
                             <div class="row mb-3">
@@ -568,30 +561,28 @@
                                     <div class="col-md-1 col-lg-1"></div>
                                     <div class="col-md-2 col-lg-2 mb-3">
                                         <input type="text" name="taxes_rate[]"
-                                            class="earnbtn text-center manualTaxTotal" id="taxes_{{ $key }}"
-                                            value="" data-value="" />
+                                            class="earnbtn text-center manualTaxTotal" id="taxes_{{ $key }}"/>
                                     </div>
                                     <div class="col-md-2 col-lg-2 mb-3">
                                         <input type="text" name="taxes_ytd[]"
-                                            class="earnbtn text-center manualTaxTotal" id="taxes_ytd_{{ $key }}"
-                                            value="" data-value="" />
+                                            class="earnbtn text-center manualTaxTotal" id="taxes_ytd_{{ $key }}"/>
                                     </div>
                                 </div>
                             @endforeach
                             <div id="add_deduction" class="mb-3"></div>
                             <div class=" col-lg-2 col-md-2 margin-bottom">
                                 <input type="text" name="deduction_period_tax"
-                                    class="earnbtn text-center deduction_period_tax" value=""
+                                    class="earnbtn text-center deduction_period_tax"
                                     id="deduction_period_tax" hidden>
                                 <input type="text" name="deduction_period_tax_other"
-                                    class="earnbtn text-center deduction_period_tax_other" value=""
+                                    class="earnbtn text-center deduction_period_tax_other"
                                     id="deduction_period_tax_other" hidden>
                             </div>
                             <div class=" col-lg-2 col-md-2 margin-bottom">
                                 <input type="text" name="" class="earnbtn text-center ytd_deduction_period_tax"
-                                    value="" id="ytd_deduction_period_tax" hidden>
+                                 id="ytd_deduction_period_tax" hidden>
                                 <input type="text" name=""
-                                    class="earnbtn text-center ytd_deduction_period_tax_other" value=""
+                                    class="earnbtn text-center ytd_deduction_period_tax_other"
                                     id="ytd_deduction_period_tax_other" hidden>
                             </div>
                             <div class="row my-3">
@@ -612,13 +603,11 @@
                                 <div class="col-md-1"></div>
                                 <div class="col-md-2 mb-2">
                                     <p class="p-0 m-0 text-center" style="font-family: serif;">Current Gross</p>
-                                    <input type="text" name="deduction_tax" class="earnbtn deduction_tax text-center"
-                                        value="" />
+                                    <input type="text" name="deduction_tax" class="earnbtn deduction_tax text-center"/>
                                 </div>
                                 <div class="col-md-2 mb-2">
                                     <p class="p-0 m-0 text-center" style="font-family: serif;">YTD Gross</p>
-                                    <input type="text" name="ytd_deduction_tax"
-                                        class="earnbtn ytd_deduction_tax text-center" value="" />
+                                    <input type="text" name="ytd_deduction_tax" class="earnbtn ytd_deduction_tax text-center"/>
                                 </div>
                             </div>
                             <div class="row mb-3 mt-5">
@@ -631,12 +620,11 @@
                                 <div class="col-md-1"></div>
                                 <div class="col-md-2 mb-2">
                                     <p class="p-0 m-0 text-center" style="font-family: serif;">Net Pay</p>
-                                    <input name="total_net_pay" class="earnbtn text-center total_net_pay" value="">
+                                    <input name="total_net_pay" class="earnbtn text-center total_net_pay">
                                 </div>
                                 <div class="col-md-2 mb-2">
                                     <p class="p-0 m-0 text-center" style="font-family: serif;">YTD Net pay</p>
-                                    <input name="total_ytd_net_pay" class="earnbtn text-center total_ytd_net_pay"
-                                        value="">
+                                    <input name="total_ytd_net_pay" class="earnbtn text-center total_ytd_net_pay">
                                 </div>
                             </div>
                         </div>
@@ -651,34 +639,34 @@
                             <div class="row mb-3">
                                 <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
                                     <p class="p-0 m-0 " style="font-family: serif;">CO<span class="redColor">*</span></p>
-                                    <input name="co_number" class="earnbtn text-center " value="">
+                                    <input name="co_number" class="earnbtn text-center">
                                 </div>
                                 <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
                                     <p class="p-0 m-0" style="font-family: serif;">FILE.<span class="redColor">*</span>
                                     </p>
-                                    <input name="file_number" class="earnbtn text-center " value="">
+                                    <input name="file_number" class="earnbtn text-center">
                                 </div>
                                 <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
                                     <p class="p-0 m-0 " style="font-family: serif;">CLOCK VCHR.<span
                                             class="redColor">*</span>
                                     </p>
-                                    <input name="clock_vchr_number" class="earnbtn text-center " value="">
+                                    <input name="clock_vchr_number" class="earnbtn text-center">
                                 </div>
                                 <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
                                     <p class="p-0 m-0 " style="font-family: serif;">Advice Number:<span
                                             class="redColor">*</span></p>
-                                    <input name="advice_number" class="earnbtn text-center " value="">
+                                    <input name="advice_number" class="earnbtn text-center">
                                 </div>
                                 <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
                                     <p class="p-0 m-0 " style="font-family: serif;">Account Number LAST<span
                                             class="redColor">*</span></p>
-                                    <input name="account_number_last_4" class="earnbtn text-center " value="">
+                                    <input name="account_number_last_4" class="earnbtn text-center">
                                 </div>
                                 <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
                                     <p class="p-0 m-0 " style="font-family: serif;">Transit ABA<span
                                             class="redColor">*</span>
                                     </p>
-                                    <input name="transit_aba_number" class="earnbtn text-center " value="">
+                                    <input name="transit_aba_number" class="earnbtn text-center">
                                 </div>
                             </div>
                         </div>
@@ -702,7 +690,7 @@
     </div>
 @endsection
 @section('script')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script> --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script>
     <script>
         $('.inputdatepicker').datepicker({
@@ -712,9 +700,7 @@
         }).datepicker('setDate', 'today');
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" crossorigin="anonymous"></script>
-    <script src="{{ asset('user') }}/js/calculations.js"></script>
-    <script src="{{ asset('user') }}/js/javaformula.js"></script>
-    <script src="{{ asset('user') }}/js/federal.js"></script>
+
     <script>
         $(document).ready(function() {
             $('#tel').usPhoneFormat({
@@ -937,4 +923,7 @@
             });
         });
     </script>
+    <script src="{{ asset('user') }}/js/calculations.js"></script>
+    <script src="{{ asset('user') }}/js/javaformula.js"></script>
+    <script src="{{ asset('user') }}/js/federal.js"></script>
 @endsection

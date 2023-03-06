@@ -21,22 +21,22 @@ $(document).ready(function () {
 
     $(addButton).click(function () {
         var addEarning = `<div class="margin-bottom">
-                            <input class="earnbtn mb-3 text-center" type="text" name="earning[]" value="" id="earning_`+ i + `" data-id="` + i + `">
+                            <input class="earnbtn mb-3 text-center" type="text" name="earning[]"  id="earning_`+ i + `" data-id="` + i + `">
                         </div>`;
         var addRate = `<div class="margin-bottom">
-                        <input type="text" name="rate[]" class="earnbtn mb-3 text-center calculation rate" value="" id="rate_`+ i + `" data-id="` + i + `">
+                        <input type="text" name="rate[]" class="earnbtn mb-3 text-center calculation rate"  id="rate_`+ i + `" data-id="` + i + `">
                     </div>`;
         var addHours = `<div class="margin-bottom">
-                        <input type="text" name="hours[]" class="earnbtn mb-3 text-center hours calculation" value="" id="hours_`+ i + `" data-id="` + i + `">
+                        <input type="text" name="hours[]" class="earnbtn mb-3 text-center hours calculation"  id="hours_`+ i + `" data-id="` + i + `">
                     </div>`;
         var addTotal = `<div class="margin-bottom">
-                        <input type="text" name="total[]" class="earnbtn mb-3 text-center total" value="" id="total_`+ i + `" data-id="` + i + `" readonly="true">
+                        <input type="text" name="total[]" class="earnbtn mb-3 text-center total"  id="total_`+ i + `" data-id="` + i + `" readonly="true">
                     </div>`;
         var addGrossTotal = `<div class="margin-bottom"">
-                        <input type="text" name="period[]" class="earnbtn mb-3 text-center gross_total" value="" id="period_`+ i + `" data-id="` + i + `">
+                        <input type="text" name="period[]" class="earnbtn mb-3 text-center gross_total"  id="period_`+ i + `" data-id="` + i + `">
                     </div>`;
         var addYtdTotal = `<div class="margin-bottom" style="padding-top: 2px;">
-                        <input type="text" name="ytd_total[]" class="earnbtn mb-3 text-center ytd_total" value="" id="ytd_total_`+ i + `" data-id="` + i + `">
+                        <input type="text" name="ytd_total[]" class="earnbtn mb-3 text-center ytd_total"  id="ytd_total_`+ i + `" data-id="` + i + `">
                     </div>`;
         if (x < maxField) {
             x++;
@@ -66,16 +66,16 @@ $(document).ready(function () {
         var fieldHTML = '<div class="row">' +
             '<div class="col-md-4 col-lg-3 mb-3">' +
             '<img src="http://paystubx.com/images/lock.png" class="earnbtn2">' +
-            '<input name="tax_deduction[]" class="earnbtn text-center tax_deduction_0 tax_deduction_' + i + ' " data-id="' + i + '" type="text" value="">' +
+            '<input name="tax_deduction[]" class="earnbtn text-center tax_deduction_0 tax_deduction_' + i + ' " data-id="' + i + '" type="text">' +
             "</div>" +
             '<div class="col-md-1 col-lg-1"> </div>' +
             '<div class="col-md-2 col-lg-3"> </div>' +
             '<div class="col-md-1 col-lg-1"> </div>' +
             '<div class="col-md-2 col-lg-2 mb-3">' +
-            '<input type="text" name="period_tax_deduction[]" class="earnbtn text-center tax_deduction tax" id="taxes_0' + i + '" value="" data-id="' + i + '"/>' +
+            '<input type="text" name="period_tax_deduction[]" class="earnbtn text-center tax_deduction tax" id="taxes_0' + i + '"  data-id="' + i + '"/>' +
             "</div>" +
             '<div class="col-md-2 col-lg-2 mb-3">' +
-            '<input type="text" name="ytd_tax_deduction[]" class="earnbtn text-center ytd_tax tax add_ytd_deduction" id="taxes_ytd_0' + i + '" value="" data-id="' + i + '"/>' +
+            '<input type="text" name="ytd_tax_deduction[]" class="earnbtn text-center ytd_tax tax add_ytd_deduction" id="taxes_ytd_0' + i + '"  data-id="' + i + '"/>' +
             "</div>" +
             "</div>";
         if (x < maxField) {
@@ -85,20 +85,22 @@ $(document).ready(function () {
         i++;
 
         $(".tax_deduction").keyup(function () {
+            var id = $(this).val();
             var deduction_period_tax = $("#deduction_period_tax").val() || 0.0;
-            var tax_deduction = 0.0;
+            console.log('deduction_period_tax', deduction_period_tax);
+            var tax_deduction = 0;
             $(".tax_deduction").each(function () {
-                tax_deduction += parseFloat(this.value || 0.0);
+                tax_deduction += parseFloat(this.value).toFixed(2);
             });
             setTimeout(function () {
                 tax_deduction = tax_deduction;
-                var total = parseFloat(deduction_period_tax).toFixed(2) + parseFloat(tax_deduction).toFixed(2);
+                console.log('tax_deduction', tax_deduction);
+                var total = deduction_period_tax + tax_deduction;
+                console.log('total', total);
                 if (isNaN(total)) {
                     total = parseFloat(deduction_period_tax).toFixed(2);
                 }
-                $(".deduction_period_tax_other").val(
-                    parseFloat(tax_deduction).toFixed(2)
-                );
+                $(".deduction_period_tax_other").val(parseFloat(tax_deduction).toFixed(2));
                 $(".deduction_tax").val(parseFloat(total).toFixed(2));
                 netPay();
             }, 300);
@@ -130,11 +132,11 @@ $(document).ready(function () {
         var deduction_period_tax = $("#deduction_period_tax").val() || 0.0;
         var tax_deduction = 0.0;
         $(".tax_deduction").each(function () {
-            tax_deduction += parseFloat(this.value || 0.0);
+            tax_deduction += parseFloat(this.value || 0.0).toFixed(2);
         });
         setTimeout(function () {
             tax_deduction = tax_deduction;
-            var total = parseFloat(deduction_period_tax) + parseFloat(tax_deduction);
+            var total = parseFloat(deduction_period_tax).toFixed(2) + parseFloat(tax_deduction).toFixed(2);
             if (isNaN(total)) {
                 total = parseFloat(deduction_period_tax).toFixed(2);
             }
@@ -257,7 +259,7 @@ $(document).ready(function () {
             console.log('bi-monthly', newDate);
         }
         var newDate_1 = moment(newDate).format("MM/DD/YYYY");
-        console.log('newDate_1',newDate_1);
+        console.log('newDate_1', newDate_1);
         setTimeout(() => {
             if (pay_start != "") {
                 $(".pay_end").val(newDate_1);
