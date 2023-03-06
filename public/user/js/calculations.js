@@ -342,7 +342,7 @@ $(document).ready(function () {
         var day = date.getDate();
         var month = date.getMonth() + 1;
         var year = date.getFullYear();
-        var date_1 = (("" + month).length < 2 ? "0" : "") + month + "-" + (("" + day).length < 2 ? "0" : "") + day + "-" + year;
+        var date_1 = (("" + month).length < 2 ? "0" : "") + month + "/" + (("" + day).length < 2 ? "0" : "") + day + "/" + year;
         $(".pay_start").val(date_1);
         dayCalculate();
         $(".rate").val("");
