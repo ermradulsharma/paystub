@@ -307,14 +307,11 @@
     font-size: 16px;
     width: 100%;
     padding: 4px 10px;
-    /* background: #ffffff; */
     color: #1608ea;
-    /* border: none; */
     border-radius: 5px;
     border: 2px solid #ff0000a3;
     text-align: left;
     box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, 0.6));
-    /* color: var(--corvid-color,rgb(var(--txt,var(--color_15)))); */
     font-weight: 700;
 }
 
@@ -322,7 +319,6 @@
     width: 50% !important;
     padding: 6px;
     border: 1px solid #00000080;
-    /* border-radius: 6px !important; */
     background: #ffffff;
     margin: auto;
     font-size: 20px;
@@ -394,15 +390,8 @@
     border: none;
     font-size: 15px;
     background-color: #f70303;
-
-    /* box-shadow: 0 1px 4px rgb(0 0 0 / 60%); */
     margin-right: 5px;
 }
-
-/* .hour_btn:hover {
-    color: rgb(7, 7, 7);
-    background: #eebebe;
-} */
 
 .salary_btn {
     padding: 8px 16px;
@@ -411,7 +400,6 @@
     border: none;
     font-size: 15px;
     background-color: #827f7f;
-    box-shadow: 0 1px 4px rgb(0 0 0 / 60%);
 }
 
 .statementbtn {
@@ -903,13 +891,10 @@ h5 {
 }
 
 .base {
-    /* margin-left: 70px; */
     font-weight: 900;
 }
 
 .paytext {
-    /* position: absolute; */
-    /* bottom: -136px; */
     left: 54px !important;
     font-size: 7px;
     top: 475px !important;
@@ -992,7 +977,6 @@ h5 {
 
 .row {
     width: 100%;
-    /* margin: 0 auto; */
     margin: auto;
 }
 

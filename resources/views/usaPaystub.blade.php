@@ -459,7 +459,7 @@
                                 <div class="col-md-3 mt-4">
                                     <div>
                                         <label for="how_to_paid" class="lable" style="text-align: center !important; display: block;">How do you get paid<span class="redColor">*</span></label>
-                                        <div class="text-center mt-2  d-flex justify-content-center">
+                                        <div class="text-center d-flex justify-content-center">
                                             <button type="button" class="hour_btn date_select">HOURLY</button>
                                             <button type="button" class="salary_btn">SALARY</button>
                                         </div>
