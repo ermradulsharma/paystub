@@ -458,7 +458,9 @@
                                 </div>
                                 <div class="col-md-3 mt-4">
                                     <div>
-                                        <label for="how_to_paid" class="lable" style="text-align: center !important; display: block;">How do you get paid<span class="redColor">*</span></label>
+                                        <label for="how_to_paid" class="lable"
+                                            style="text-align: center !important; display: block;">How do you get paid<span
+                                                class="redColor">*</span></label>
                                         <div class="text-center d-flex justify-content-center">
                                             <button type="button" class="hour_btn date_select">HOURLY</button>
                                             <button type="button" class="salary_btn">SALARY</button>
@@ -554,7 +556,7 @@
                                 <div class="row">
                                     <div class="col-md-4 col-lg-3 mb-3">
                                         <img src="{{ asset('images/lock.png') }}" class="earnbtn2 lock"
-                                            data-id="{{ $key }}"
+                                            data-id="{{ $key }}" id="{{ $key }}"
                                             data-src="{{ asset('images/openPadlock.png') }}">
                                         <img class="earnbtn2 lock" data-id="{{ $key }}"
                                             src="{{ asset('images/openPadlock.png') }}" style="display:none">
