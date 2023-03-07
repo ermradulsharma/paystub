@@ -586,7 +586,7 @@ $(document).ready(function () {
             $("#taxe_" + id).attr("readonly", false);
         } else {
             $("#" + id).attr('src', 'http://127.0.0.1:8000/images/lock.png');
-            $("#taxe_" + id).attr("readonly", false);
+            $("#taxe_" + id).attr("readonly", true);
         } */
 
         // for live
@@ -595,7 +595,7 @@ $(document).ready(function () {
             $("#taxe_" + id).attr("readonly", false);
         } else {
             $("#" + id).attr('src', 'https://paystubx.com/images/lock.png');
-            $("#taxe_" + id).attr("readonly", false);
+            $("#taxe_" + id).attr("readonly", true);
         }
     });
 
