@@ -1,21 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
+    <link rel="stylesheet" href="{{ asset('user') }}/css/bootstrap-datepicker.min.css">
     <!-- Modal Start -->
     <div class="modal fade" id="openEye" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
-            <div class="modal-content">
+            <div class="modal-content" style="position:relative;">
                 <div class="modal-header">
-                    <button type="button" class="btn btn-secondary close" data-bs-dismiss="modal" aria-label="Close">
+                    <button type="button" class="btn btn-secondary close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <img src=" " class="setImage w-100">
+                    <img src="" class="setImage w-100">
                 </div>
             </div>
         </div>
-    </div>
     </div>
     <!-- Modal End -->
     <!-- Modal Start -->
@@ -29,10 +29,10 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <object data="your_url_to_pdf" type="application/pdf">
-                        <iframe src="" id="tempView" width="100%" height="800px" frameborder="0"></iframe>
-                    </object>
-                    {{-- <iframe  height="800px" frameborder="0" controls="false"></iframe> --}}
+                    <embed src="" type="" id="tempView" allowtransparency="false"
+                        style="background-color : transparent;" frameborder="0" width="100%" height="800">
+                    {{-- <iframe src="" id="tempView" allowtransparency="false" style="background-color : transparent;"
+                frameborder="0" width="100%" height="800"></iframe> --}}
                 </div>
             </div>
         </div>
@@ -56,7 +56,7 @@
                                                 class="redColor">*</span> </label>
                                         <input type="text" id="cname" name="cname"
                                             value="{{ $invoice->cname ?? '' }}" placeholder="Your Employer & Company Name"
-                                            class="w-100 p-2 text-center textInputFontSize">
+                                            class="w-100 p-2 text-center textInputFontSize removeDiv">
                                     </div>
                                 </div>
 
@@ -64,10 +64,9 @@
                                     <div>
                                         <label for="tel" class="lable">EMPLOYER TELEPHONE NUMBER <span
                                                 class="redColor">*</span> </label>
-                                        <input type="tel" id="tel" name="tel"
-                                            value="{{ $invoice->tel ?? '' }}" placeholder="xxx-xxx-xxxx"
-                                            class="w-100 p-2 text-center textInputFontSize"
-                                            onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+                                        <input type="text" id="tel" name="tel" placeholder="xxx-xxx-xxxx"
+                                            maxlength="10" minlength="10" value="{{ $invoice->tel ?? '' }}"
+                                            class="w-100 p-2 text-center input-box-font removeDiv third-phone">
                                     </div>
                                 </div>
 
@@ -80,7 +79,7 @@
                                                 class="redColor">*</span> </label>
                                         <input type="text" id="address_1" name="address_1"
                                             value="{{ $invoice->address_1 ?? '' }}" placeholder="Your Employer Address"
-                                            class="w-100 p-2  textInputFontSize">
+                                            class="w-100 p-2  textInputFontSize removeDiv">
                                     </div>
 
                                 </div>
@@ -107,7 +106,7 @@
                                         </label>
                                         <input type="text" id="city" name="city"
                                             value="{{ $invoice->city ?? '' }}" placeholder="Your Employer City"
-                                            class="w-100 p-2  textInputFontSize">
+                                            class="w-100 p-2  textInputFontSize removeDiv">
                                     </div>
 
                                 </div>
@@ -117,7 +116,7 @@
                                         </label>
                                         <div class="dropdown ">
                                             <select name="state" value="{{ $invoice->state ?? '' }}" id="state"
-                                                class="state dropdown11">
+                                                class="state dropdown11 removeDiv">
                                                 <option value=""> --- Select --- </option>
                                                 @foreach ($stateTaxes as $stateTax)
                                                     <option value="{{ $stateTax->state }}"
@@ -132,9 +131,9 @@
                                     <div>
                                         <label for="zip_code" class="lable">Zip Code <span class="redColor">*</span>
                                         </label>
-                                        <input type="text" id="zip_code" name="zip_code"
-                                            value="{{ $invoice->zip_code ?? '' }}" placeholder=" Zip Code"
-                                            class="w-100 p-2  textInputFontSize">
+                                        <input type="text" id="zip_code" name="zip_code" placeholder=" Zip Code"
+                                            class="w-100 input-box-font removeDiv zip_code"
+                                            value="{{ $invoice->zip_code ?? '' }}">
                                     </div>
                                 </div>
                             </div>
@@ -153,8 +152,9 @@
                                     <h6 style="" class="base">BASIC TEMPLATES</h6>
                                     <div class="mt-4">
                                         <div class="input-group mmenu mb-3 text-center">
-                                            <select name="basic_temp" value="{{ $invoice->basic_temp ?? '' }}"
-                                                class="form-control text-center bt_id small-font basicTemplate"
+                                            <select name="basic_temp" id="basic_temp"
+                                                value="{{ $invoice->basic_temp ?? '' }}"
+                                                class="form-control text-center bt_id small-font basicTemplate removeDiv"
                                                 style="margin-right:10px; font-size:18px;">
                                                 <option value=""> --- Select Basic Templates --- </option>
                                                 @foreach ($basicType as $basic_temp)
@@ -177,8 +177,8 @@
                                     <h6 style="margin-left:-23px;font-weight: 900;">ADVANCED TEMPLATES</h6>
                                     <div class="mt-4">
                                         <div class="input-group mmenu mb-3">
-                                            <select name="advance_temp"
-                                                class="form-control text-center at_id small-font advanceTemplate"
+                                            <select name="advance_temp" id="advance_temp"
+                                                class="form-control text-center at_id small-font advanceTemplate removeDiv"
                                                 style="margin-right:10px; font-size:18px;">
                                                 <option value=""> --- Select Advance Template --- </option>
                                                 @foreach ($advanceType as $advance_temp)
@@ -211,101 +211,93 @@
                                 <div class="col-md-4 mt-4">
                                     <div>
                                         <label for="emp_name" class="lable">EMPLOYEE NAME <span
-                                                class="redColor">*</span> </label>
-                                        <input type="text" id="emp_name" name="emp_name"
-                                            value="{{ $invoice->emp_name ?? '' }}" placeholder="Your Full  Name"
-                                            class="w-100 p-2  textInputFontSize">
-                                    </div>
-
-                                </div>
-
-                                <div class="col-md-4 mt-4">
-                                    <div>
-                                        <label for="emp_id" class="lable">EMPLOYEE ID <span class="redColor">*</span>
+                                                class="redColor">*</span>
                                         </label>
-                                        <input type="text" id="emp_id" name="emp_id"
-                                            value="{{ $invoice->emp_id ?? '' }}" placeholder="Employer ID"
-                                            class="w-100 p-2 r textInputFontSize">
+                                        <input type="text" id="emp_name" name="emp_name" placeholder="Employee Name"
+                                            class="w-100  input-box-font removeDiv"
+                                            value="{{ $invoice->emp_name ?? '' }}">
                                     </div>
-
                                 </div>
                                 <div class="col-md-4 mt-4">
                                     <div>
-                                        <label for="emp_ssn" class="lable">EMPLOYEE SSN last4 <span
+                                        <label for="emp_id" class="lable">EMPLOYEE ID </label>
+                                        <input type="text" id="emp_id" name="emp_id" placeholder="Employer ID"
+                                            class="w-100 r input-box-font removeDiv"
+                                            value="{{ $invoice->emp_id ?? '' }}">
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mt-4">
+                                    <div>
+                                        <label for="emp_ssn" class="lable">EMPLOYEE SSN Last 4 <span
                                                 class="redColor">*</span> </label>
                                         <input type="text" id="emp_ssn" name="emp_ssn"
-                                            value="{{ $invoice->emp_ssn ?? '' }}" placeholder="1224"
-                                            class="w-100 p-2  textInputFontSize">
+                                            placeholder="SSN (Last 4 digits)" class="w-100 input-box-font removeDiv"
+                                            value="{{ $invoice->emp_ssn ?? '' }}" maxlength="4" minlength="4"
+                                            onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                     </div>
-
                                 </div>
                             </div>
 
                             <div class="row mb-3">
                                 <div class="col-md-12">
                                     <div>
-                                        <label for="emp_street_1" class="lable">STREET 1 <span
+                                        <label for="emp_street_1" class="lable">STREET ADDRESS 1 <span
                                                 class="redColor">*</span></label>
                                         <input type="text" id="emp_street_1" name="emp_street_1"
-                                            value="{{ $invoice->emp_street_1 ?? '' }}" placeholder="Your Address"
-                                            class="w-100 p-2  textInputFontSize">
+                                            placeholder="Employee Street Address 1"
+                                            class="w-100  input-box-font removeDiv"
+                                            value="{{ $invoice->emp_street_1 ?? '' }}">
                                     </div>
-
                                 </div>
                             </div>
-
                             <div class="row mb-3">
                                 <div class="col-md-12">
                                     <div>
-                                        <label for="emp_street_2" class="lable">STREET 2 <span class="redColor">*</span>
+                                        <label for="emp_street_2" class="lable">STREET ADDRESS 2
                                         </label>
                                         <input type="text" id="emp_street_2" name="emp_street_2"
-                                            value="{{ $invoice->emp_street_2 ?? '' }}"
-                                            placeholder="Suite 101 or Apt 101(optional)"
-                                            class="w-100 p-2  textInputFontSize">
+                                            placeholder="Employee Street Address 2 (optional)"
+                                            class="w-100  input-box-font" value="{{ $invoice->emp_street_2 ?? '' }}">
                                     </div>
-
                                 </div>
                             </div>
-
                             <div class="row mb-3">
                                 <div class="col-md-4">
                                     <div>
                                         <label for="emp_city" class="lable">City <span class="redColor">*</span>
                                         </label>
-                                        <input type="text" id="emp_city" name="emp_city"
-                                            value="{{ $invoice->emp_city ?? '' }}" placeholder="Your City"
-                                            class="w-100 p-2  textInputFontSize">
+                                        <input type="text" id="emp_city" name="emp_city" placeholder="City"
+                                            class="w-100   input-box-font removeDiv"
+                                            value="{{ $invoice->emp_city ?? '' }}">
                                     </div>
-
                                 </div>
                                 <div class="col-md-4">
                                     <div>
                                         <label for="emp_state" class="lable">State <span class="redColor">*</span>
                                         </label>
                                         <div class="dropdown ">
-                                            <select name="emp_state" id="emp_state" class=" dropdown11 ">
-                                                <option value="" data-tax="null"> --- Select --- </option>
+                                            <select name="emp_state" id="emp_state" class=" dropdown11 removeDiv">
+                                                <div>
+                                                    <option class="ff" style="color: #757575;" value=""
+                                                        data-tax="null"> --- Select State --- </option>
+                                                </div>
                                                 @foreach ($stateTaxes as $stateTax)
                                                     <option value="{{ $stateTax->state }}"
                                                         {{ $invoice->emp_state == $stateTax->state ? 'selected' : '' }}
                                                         data-tax="{{ $stateTax->rate }}">{{ $stateTax->state }}</option>
                                                 @endforeach
                                             </select>
-
                                         </div>
                                     </div>
-
                                 </div>
                                 <div class="col-md-4">
                                     <div>
-                                        <label for="emp_zip_code" class="lable">Zip Code <span class="redColor">*</span>
-                                        </label>
+                                        <label for="emp_zip_code" class="lable">Zip Code <span
+                                                class="redColor">*</span></label>
                                         <input type="text" id="emp_zip_code" name="emp_zip_code"
-                                            value="{{ $invoice->emp_zip_code ?? '' }}" placeholder=" 1234"
-                                            class="w-100 p-2  textInputFontSize">
+                                            placeholder="Zip Code" class="w-100  input-box-font removeDiv"
+                                            value="{{ $invoice->emp_zip_code ?? '' }}">
                                     </div>
-
                                 </div>
                             </div>
                         </div>
@@ -788,42 +780,40 @@
                                         <p class="p-0 m-0 " style="font-family: serif;">CO<span class="redColor">*</span>
                                         </p>
                                         <input class="earnbtn text-center " value="{{ $invoice->co_number ?? '' }}"
-                                            name="co_number"></input>
+                                            name="co_number">
                                     </div>
                                     <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
                                         <p class="p-0 m-0" style="font-family: serif;">FILE.<span
                                                 class="redColor">*</span></p>
                                         <input class="earnbtn text-center " value="{{ $invoice->file_number ?? '' }}"
-                                            name="file_number"></input>
+                                            name="file_number">
                                     </div>
                                     <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
                                         <p class="p-0 m-0 " style="font-family: serif;">CLOCK VCHR.<span
                                                 class="redColor">*</span>
                                         </p>
                                         <input class="earnbtn text-center "
-                                            value="{{ $invoice->clock_vchr_number ?? '' }}"
-                                            name="clock_vchr_number"></input>
+                                            value="{{ $invoice->clock_vchr_number ?? '' }}" name="clock_vchr_number">
                                     </div>
                                     <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
                                         <p class="p-0 m-0 " style="font-family: serif;">Advice Number:<span
                                                 class="redColor">*</span></p>
                                         <input class="earnbtn text-center " value="{{ $invoice->advice_number ?? '' }}"
-                                            name="advice_number"></input>
+                                            name="advice_number">
                                     </div>
                                     <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
                                         <p class="p-0 m-0 " style="font-family: serif;">Account Number LAST<span
                                                 class="redColor">*</span></p>
                                         <input class="earnbtn text-center "
                                             value="{{ $invoice->account_number_last_4 ?? '' }}"
-                                            name="account_number_last_4"></input>
+                                            name="account_number_last_4">
                                     </div>
                                     <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
                                         <p class="p-0 m-0 " style="font-family: serif;">Transit ABA<span
                                                 class="redColor">*</span>
                                         </p>
                                         <input class="earnbtn text-center "
-                                            value="{{ $invoice->transit_aba_number ?? '' }}"
-                                            name="transit_aba_number"></input>
+                                            value="{{ $invoice->transit_aba_number ?? '' }}" name="transit_aba_number">
                                     </div>
                                 </div>
                             </div>
@@ -850,19 +840,17 @@
     </div>
 @endsection
 @section('script')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script> --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script>
     <script>
         $('.inputdatepicker').datepicker({
             autoclose: true,
             todayHighlight: true,
-            format: "mm-dd-yyyy",
+            format: "mm/dd/yyyy",
         }).datepicker('setDate', 'today');
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" crossorigin="anonymous"></script>
-    <script src="{{ asset('user') }}/js/calculations.js"></script>
-    <script src="{{ asset('user') }}/js/javaformula.js"></script>
-    <script src="{{ asset('user') }}/js/federal.js"></script>
+
     <script>
         $(document).ready(function() {
             $('#tel').usPhoneFormat({
@@ -1085,4 +1073,7 @@
             });
         });
     </script>
-@endsection 
+    <script src="{{ asset('user') }}/js/calculations.js"></script>
+    <script src="{{ asset('user') }}/js/javaformula.js"></script>
+    <script src="{{ asset('user') }}/js/federal.js"></script>
+@endsection
