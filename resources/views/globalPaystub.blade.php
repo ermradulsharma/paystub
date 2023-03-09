@@ -6,12 +6,12 @@
     <div class="modal fade" id="openEye" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
             <div class="modal-content" style="position:relative;">
-                <div class="modal-header">
+                <div class="modal-header" style="position: relative; z-index:3;">
                     <button type="button" class="btn btn-secondary close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body watermark-bg">
                     <img src="" class="setImage w-100">
                 </div>
             </div>
@@ -41,7 +41,7 @@
     <div class="container mt-2 px-0" style="max-width:1450px;">
         <form id="submit_form_paystubx_id" action="javascript:void()" method="get">
             @csrf
-            <input type="hidden" name="form_type" value="global" hidden>
+            <input type="hidden" name="form_type" value="usa" hidden>
             <div>
                 <div class="row mb-3">
                     <div class="col-md-12">
@@ -363,7 +363,7 @@
                                 <div class="col-md-3 mt-4">
                                     <div>
                                         <label for="emp_type" class="lable">EMPLOYMENT TYPE </label>
-                                        <select name="emp_type" id="emp_type" class=" dropdown11 removeDiv">
+                                        <select name="emp_type" id="emp_type" class="dropdown11 removeDiv">
                                             {{-- <option value=""> --- Select Employment Type --- </option> --}}
                                             <option value="Temporary">Temporary</option>
                                             <option value="Permanent">Permanent</option>
@@ -375,7 +375,7 @@
                                         <label for="exemptions" class="lable">EXEMPTIONS
                                         </label>
                                         <select name="exemptions" id="exemptions"
-                                            class=" dropdown11 exemptions removeDiv">
+                                            class="dropdown11 exemptions removeDiv">
                                             {{-- <option value=""> --- Select Exemptions --- </option> --}}
                                             <option value="0">0</option>
                                             <option value="1">1</option>

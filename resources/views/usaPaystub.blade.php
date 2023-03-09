@@ -363,7 +363,7 @@
                                 <div class="col-md-3 mt-4">
                                     <div>
                                         <label for="emp_type" class="lable">EMPLOYMENT TYPE </label>
-                                        <select name="emp_type" id="emp_type" class=" dropdown11 removeDiv">
+                                        <select name="emp_type" id="emp_type" class="dropdown11 removeDiv">
                                             {{-- <option value=""> --- Select Employment Type --- </option> --}}
                                             <option value="Temporary">Temporary</option>
                                             <option value="Permanent">Permanent</option>
@@ -375,7 +375,7 @@
                                         <label for="exemptions" class="lable">EXEMPTIONS
                                         </label>
                                         <select name="exemptions" id="exemptions"
-                                            class=" dropdown11 exemptions removeDiv">
+                                            class="dropdown11 exemptions removeDiv">
                                             {{-- <option value=""> --- Select Exemptions --- </option> --}}
                                             <option value="0">0</option>
                                             <option value="1">1</option>

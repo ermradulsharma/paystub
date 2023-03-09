@@ -6,12 +6,12 @@
     <div class="modal fade" id="openEye" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
             <div class="modal-content" style="position:relative;">
-                <div class="modal-header">
+                <div class="modal-header" style="position: relative; z-index:3;">
                     <button type="button" class="btn btn-secondary close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body watermark-bg">
                     <img src="" class="setImage w-100">
                 </div>
             </div>
@@ -317,7 +317,7 @@
                                                 class="redColor">*</span> </label>
                                         <div class="dropdown ">
                                             <select name="emp_your_state" id="emp_your_state"
-                                                class=" dropdown11 tax_rate">
+                                                class=" dropdown11 tax_rate removeDiv">
                                                 <option value="">Choose your State</option>
                                                 @foreach ($stateTaxes as $stateTax)
                                                     <option value="{{ $stateTax->state }}"
@@ -335,7 +335,8 @@
                                     <div>
                                         <label for="auto_cal" class="lable">AUTO CALCULATOR <span
                                                 class="redColor">*</span> </label>
-                                        <select name="auto_cal" id="auto_cal" class="dropdown11 auto_calculate">
+                                        <select name="auto_cal" id="auto_cal"
+                                            class="dropdown11 auto_calculate removeDiv">
                                             <option value=""> --- Select Calculator --- </option>
                                             <option value="on" {{ $invoice->auto_cal == 'on' ? 'selected' : '' }}>ON
                                             </option>
@@ -351,7 +352,7 @@
                                         <label for="marital_status" class="lable">MARITAL STATUS <span
                                                 class="redColor">*</span> </label>
                                         <select name="marital_status" id="marital_status"
-                                            class="dropdown11 marital_status">
+                                            class="dropdown11 marital_status removeDiv">
                                             <option value=""> --- Select Marital Status--- </option>
                                             <option value="single"
                                                 {{ $invoice->marital_status == 'single' ? 'selected' : '' }}>Single
@@ -371,7 +372,8 @@
                                     <div>
                                         <label for="time_period" class="lable">HOW DO YOU GET PAID <span
                                                 class="redColor">*</span> </label>
-                                        <select name="time_period" id="time_period" class="dropdown11 time_period">
+                                        <select name="time_period" id="time_period"
+                                            class="dropdown11 time_period removeDiv">
                                             <option value=""> --- Select --- </option>
                                             <option value="weekly"
                                                 {{ $invoice->time_period == 'weekly' ? 'selected' : '' }}>Weekly</option>
@@ -396,7 +398,7 @@
                                         </label>
                                         <input type="text" step="0.5" id="hourly" name="hourly"
                                             value="{{ $invoice->hourly ?? '' }}" placeholder="Hourly"
-                                            class="w-100 p-2  textInputFontSize hourly" value="">
+                                            class="w-100 p-2  textInputFontSize hourly">
                                     </div>
 
                                 </div>
@@ -405,7 +407,7 @@
                                     <div>
                                         <label for="emp_type" class="lable">EMPLOYMENT TYPE<span
                                                 class="redColor">*</span> </label>
-                                        <select name="emp_type" id="emp_type" class=" dropdown11">
+                                        <select name="emp_type" id="emp_type" class=" dropdown11 removeDiv">
                                             <option value=""> --- Select Employment Type --- </option>
                                             <option value="Temporary"
                                                 {{ $invoice->emp_type == 'Temporary' ? 'selected' : '' }}>Temporary
@@ -422,7 +424,8 @@
                                     <div>
                                         <label for="exemptions" class="lable">EXEMPTIONS <span class="redColor">*</span>
                                         </label>
-                                        <select name="exemptions" id="exemptions" class=" dropdown11">
+                                        <select name="exemptions" id="exemptions"
+                                            class=" dropdown11 exemptions removeDiv">
                                             <option value=""> --- Select Exemptions --- </option>
                                             <option value="0" {{ $invoice->exemptions == '0' ? 'selected' : '' }}>0
                                             </option>
@@ -455,17 +458,15 @@
                                             CURRENCY <span class="redColor">*</span> </label>
                                         <select name="currency" id="currency" class=" dropdown11">
                                             <option value=""> --- Select currency --- </option>
-                                            <option value="$" {{ $invoice->currency == '$' ? 'selected' : '' }}>
-                                                Dollar $</option>
-                                            <option value="€" {{ $invoice->currency == '€' ? 'selected' : '' }}>Euro
-                                                €</option>
-                                            <option value="£" {{ $invoice->currency == '£' ? 'selected' : '' }}>Pound
-                                                £</option>
-                                            <option value="¥" {{ $invoice->currency == '¥' ? 'selected' : '' }}>Yen ¥
-                                            </option>
+                                            @foreach ($currencies as $currency)
+                                                <option value="{{ $currency->symbol }}"
+                                                    {{ $invoice->currency == $currency->symbol ? 'selected' : '' }}>
+                                                    {{ $currency->symbol }}
+                                                    ({{ $currency->name }})
+                                                </option>
+                                            @endforeach
                                         </select>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
@@ -485,9 +486,12 @@
                                     <div>
                                         <label for="pay_start" class="lable">PAY START<span class="redColor">*</span>
                                         </label>
-                                        <input type="date" id="pay_start" name="pay_start"
-                                            value="{{ $invoice->pay_start ?? '' }}" placeholder="12-11-2022"
-                                            class="w-100 p-2 textInputFontSize pay_start datepicker" data-id="pay_start">
+                                        <input
+                                            style="color:#140303f5;border:1px solid #110303fe;padding:0px 6px !important; height:40px; appearance: none;"
+                                            type="text" id="pay_start" name="pay_start" placeholder="12-11-2022"
+                                            class="w-100 p-2 input-box-font removeDiv pay_start datepicker inputdatepicker"
+                                            data-id="pay_start"
+                                            @if ($invoice->pay_start != '') value="{{ $invoice->pay_start }}" @else value="<?php echo date('m/d/Y'); ?>" @endif>
                                     </div>
 
                                 </div>
@@ -496,9 +500,12 @@
                                     <div>
                                         <label for="pay_end" class="lable">PAY END <span class="redColor">*</span>
                                         </label>
-                                        <input type="date" id="pay_end" name="pay_end"
-                                            value="{{ $invoice->pay_end ?? '' }}" placeholder="12-17-2022"
-                                            class="w-100 p-2 textInputFontSize pay_end" data-id="pay_end">
+                                        <input
+                                            style="color:#140303f5;border:1px solid #110303fe; padding:0px 6px !important; height:40px; appearance: none;"
+                                            type="text" id="pay_end" name="pay_end" placeholder="12-17-2022"
+                                            class="w-100 p-2 input-box-font removeDiv pay_end datepicker inputdatepicker"
+                                            data-id="pay_end"
+                                            @if ($invoice->pay_end != '') value="{{ $invoice->pay_end }}" @else value="<?php echo date('m/d/Y'); ?>" @endif>
                                     </div>
 
                                 </div>
@@ -507,19 +514,25 @@
                                     <div>
                                         <label for="pay_date" class="lable">PAY DATE <span class="redColor">*</span>
                                         </label>
-                                        <input type="date" id="pay_date" name="pay_date"
-                                            value="{{ $invoice->pay_date ?? '' }}" placeholder="12-19-2022"
-                                            class="w-100 p-2 textInputFontSize pay_date" data-id="pay_date">
+                                        <input
+                                            style="color:#140303f5;padding:0px 6px !important; height:40px; appearance: none; border:1px solid #110303fe;"
+                                            type="text" id="pay_date" name="pay_date" placeholder="12-19-2022"
+                                            class="w-100 p-2 input-box-font removeDiv pay_date datepicker inputdatepicker"
+                                            data-id="pay_date"
+                                            @if ($invoice->pay_date != '') value="{{ $invoice->pay_date }}" @else value="<?php echo date('m/d/Y'); ?>" @endif>
                                     </div>
 
                                 </div>
 
                                 <div class="col-md-3 mt-4">
-                                    <p class="text-center mb-0" style="font-size:18px;">How do you get paid <span
-                                            class="redColor">*</span> <span> </p>
-                                    <div class="text-center mt-2  d-flex justify-content-center">
-                                        <button type="button" class="hour_btn date_select">HOURLY</button> <button
-                                            type="button" class="salary_btn">SALARY</button>
+                                    <div>
+                                        <label for="how_to_paid" class="lable"
+                                            style="text-align: center !important; display: block;">How do you get paid<span
+                                                class="redColor">*</span></label>
+                                        <div class="text-center d-flex justify-content-center">
+                                            <button type="button" class="hour_btn date_select">HOURLY</button>
+                                            <button type="button" class="salary_btn">SALARY</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -847,7 +860,7 @@
             autoclose: true,
             todayHighlight: true,
             format: "mm/dd/yyyy",
-        }).datepicker('setDate', 'today');
+        });
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" crossorigin="anonymous"></script>
 
