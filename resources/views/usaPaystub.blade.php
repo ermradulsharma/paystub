@@ -719,6 +719,7 @@
             });
             $('.advanceTemplate').change(function() {
                 var status = $('option:selected', '.at_id').attr('data-status');
+                console.log('status', status);
                 if (status == 1) {
                     $(".tempElemant").removeClass("d-none");
                 } else {

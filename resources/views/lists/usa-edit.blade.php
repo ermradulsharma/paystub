@@ -154,13 +154,14 @@
                                         <div class="input-group mmenu mb-3 text-center">
                                             <select name="basic_temp" id="basic_temp"
                                                 value="{{ $invoice->basic_temp ?? '' }}"
-                                                class="form-control text-center bt_id small-font basicTemplate removeDiv"
+                                                class="form-control dropdown1 text-center bt_id small-font basicTemplate removeDiv"
                                                 style="margin-right:10px; font-size:18px;">
                                                 <option value=""> --- Select Basic Templates --- </option>
                                                 @foreach ($basicType as $basic_temp)
                                                     <option value="{{ $basic_temp->title ?? '' }}"
                                                         {{ $invoice->basic_temp == $basic_temp->title ? 'selected' : '' }}
-                                                        data-src="{{ $basic_temp->images->file ?? '' }}">
+                                                        data-src="{{ $basic_temp->images->file ?? '' }}"
+                                                        data-status="{{ $basic_temp->template_element }}">
                                                         {{ $basic_temp->name }} </option>
                                                 @endforeach
                                             </select>
@@ -178,13 +179,14 @@
                                     <div class="mt-4">
                                         <div class="input-group mmenu mb-3">
                                             <select name="advance_temp" id="advance_temp"
-                                                class="form-control text-center at_id small-font advanceTemplate removeDiv"
+                                                class="form-control text-center dropdown1 at_id small-font advanceTemplate removeDiv"
                                                 style="margin-right:10px; font-size:18px;">
                                                 <option value=""> --- Select Advance Template --- </option>
                                                 @foreach ($advanceType as $advance_temp)
                                                     <option value="{{ $advance_temp->title ?? '' }}"
                                                         {{ $invoice->advance_temp == $advance_temp->title ? 'selected' : '' }}
-                                                        data-src="{{ $advance_temp->images->file ?? '' }}">
+                                                        data-src="{{ $advance_temp->images->file ?? '' }}"
+                                                        data-status="{{ $basic_temp->template_element ? true : false }}">
                                                         {{ $advance_temp->name ?? '' }} </option>
                                                 @endforeach
                                             </select>
@@ -871,6 +873,7 @@
             });
             $('.advanceTemplate').change(function() {
                 var status = $('option:selected', '.at_id').attr('data-status');
+                console.log('status', status);
                 if (status == 1) {
                     $(".tempElemant").removeClass("d-none");
                 } else {
