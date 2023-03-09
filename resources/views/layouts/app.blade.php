@@ -285,6 +285,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
     <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script>
+    <script>
+        $('.inputdatepicker').datepicker({
+            autoclose: true,
+            todayHighlight: true,
+            format: "mm/dd/yyyy",
+        }).datepicker('setDate', 'today');
+    </script>
     <script src="{{ asset('user') }}/js/main.js"></script>
     @yield('script')
     @yield('checked')

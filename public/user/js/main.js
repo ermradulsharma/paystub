@@ -180,7 +180,6 @@ $('.sendMailButton').click(async function () {
     }
 });
 
-
 $('.downloadPdf').click(function () {
     generatePDF();
 });

@@ -48,20 +48,19 @@
                                     <h6 class="base">BASIC TEMPLATES</h6>
                                     <div class="mt-3">
                                         <div class="input-group mmenu mb-3 text-center">
-                                            <select name="basic_temp"
-                                                class="form-control dropdown1 bt_id text-center basicTemplate"
-                                                style="margin-right:10px;">
+                                            <select name="basic_temp" id="basic_temp"
+                                                class="form-control dropdown1 text-center bt_id small-font basicTemplate removeDiv"
+                                                style="margin-right:10px; font-size:18px;">
                                                 <option value=""> --- Select Basic Templates --- </option>
                                                 @foreach ($basicType as $data)
                                                     <option value="{{ $data->title ?? '' }}"
                                                         data-src="{{ $data->images->file ?? '' }}"
-                                                        data-status="{{ $data->template_element }}">
-                                                        {{ $data->name }}
+                                                        data-status="{{ $data->template_element }}"> {{ $data->name }}
                                                     </option>
                                                 @endforeach
                                             </select>
-                                            <i data-src="{{ $data->images->file ?? '' }}"
-                                                class="fa fa-eye-slash basicTem uk-eye" role="button"></i>
+                                            <i class="fa fa-eye-slash basicTem uk-eye" style="font-size: 39px;"
+                                                role="button"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -82,12 +81,10 @@
                                                         <option value="{{ $data->title ?? '' }}"
                                                             data-src="{{ $data->images->file ?? '' }}"
                                                             data-status="{{ $data->template_element }}">
-                                                            {{ $data->name ?? '' }}
-                                                        </option>
+                                                            {{ $data->name ?? '' }} </option>
                                                     @endforeach
                                                 </select>
-                                                <i data-src="{{ $data->images->file ?? '' }}"
-                                                    class="fa fa-eye-slash advanceTem uk-eye" role="button"></i>
+                                                <i class="fa fa-eye-slash advanceTem uk-eye" role="button"></i>
                                             </div>
                                         </div>
                                     </div>
@@ -106,8 +103,7 @@
                                 <div class="col-md-6 mt-1">
                                     <div class="">
                                         <label for="cname" class="lable em-name">EMPLOYER (COMPANY) NAME <span
-                                                class="redColor">*</span>
-                                        </label>
+                                                class="redColor">*</span> </label>
                                         <input type="text" id="cname" name="cname"
                                             placeholder="Employer (Company) Name"
                                             class="input-c w-100  text-center input-box-font">
@@ -119,10 +115,9 @@
                                 <div class="col-md-6">
                                     <div>
                                         <label for="address_1" class="lable">STREET ADDRESS 1 <span
-                                                class="redColor">*</span>
-                                        </label>
+                                                class="redColor">*</span> </label>
                                         <input type="text" id="address_1" name="address_1"
-                                            placeholder="Company Street Address 1" class="w-100  input-box-font">
+                                            placeholder="Street Address 1" class="w-100  input-box-font">
                                     </div>
                                 </div>
                             </div>
@@ -130,22 +125,17 @@
                             <div class="row mb-3">
                                 <div class="col-md-6">
                                     <div>
-                                        <label for="address_2" class="lable">STREET ADDRESS 2 <span
-                                                class="redColor">*</span>
-                                        </label>
+                                        <label for="address_2" class="lable">STREET ADDRESS 2</label>
                                         <input type="text" id="address_2" name="address_2"
-                                            placeholder="Company Street Address 2 (optional)"
-                                            class="w-100  input-box-font">
+                                            placeholder="Street Address 2 (optional)" class="w-100  input-box-font">
                                     </div>
-
                                 </div>
                             </div>
 
                             <div class="row mb-3">
                                 <div class="col-md-6">
                                     <div>
-                                        <label for="city" class="lable">City <span class="redColor">*</span>
-                                        </label>
+                                        <label for="city" class="lable">City <span class="redColor">*</span></label>
                                         <input type="text" id="city" name="city" placeholder="City"
                                             class="w-100  input-box-font">
                                     </div>
@@ -156,7 +146,7 @@
                                         <label for="state" class="lable">Province <span class="redColor">*</span>
                                         </label>
                                         <div class="dropdown ">
-                                            <select name="state" id="emp_state" class="state dropdown11 tax_rate">
+                                            <select name="state" id="state" class="state dropdown11 tax_rate">
                                                 <option value=""> --- Select State --- </option>
                                                 @foreach ($stateTaxes as $stateTax)
                                                     <option value="{{ $stateTax->state }}"
@@ -169,9 +159,9 @@
                                 </div>
                                 <div class="col-md-3">
                                     <div>
-                                        <label for="zip_code" class="lable">Postal Code <span class="redColor">*</span>
-                                        </label>
-                                        <input type="text" id="zip_code" name="zip_code" placeholder=" 123456"
+                                        <label for="zip_code" class="lable">Postal Code <span
+                                                class="redColor">*</span></label>
+                                        <input type="text" id="zip_code" name="zip_code" placeholder="Zip Code"
                                             class="w-100  input-box-font">
                                     </div>
                                 </div>
@@ -188,9 +178,9 @@
                             <div class="row">
                                 <div class="col-md-4 mt-4">
                                     <div>
-                                        <label for="emp_id" class="lable">EMPLOYEE ID <span class="redColor">*</span>
-                                        </label>
-                                        <input type="text" id="emp_id" name="emp_id" placeholder="Employee id"
+                                        <label for="emp_id" class="lable">EMPLOYEE ID <span
+                                                class="redColor">*</span></label>
+                                        <input type="text" id="emp_id" name="emp_id" placeholder="Employee Id"
                                             class="w-100  input-box-font">
                                     </div>
                                 </div>
@@ -201,12 +191,11 @@
                                                 <label for="pay_start" class="lable">PAY START <span
                                                         class="redColor">*</span></label>
                                                 <input
-                                                    style="color:#00000080; border-radius:2px 0px 0px 2px;border:1px solid #00000080; border-right:none;padding:0px 6px !important; height:40px; appearance: none;"
-                                                    type="date" id="pay_start" name="pay_start"
-                                                    placeholder="12-11-2022"
-                                                    class="w-100 py- input-box-font pay_start datepicker"
-                                                    data-id="pay_start"
-                                                    style="border: 1px solid #878080;border-right: none;">
+                                                    style="color:#140303f5;border:1px solid #110303fe;padding:0px 6px !important; height:40px; appearance: none;"
+                                                    type="text" id="pay_start" name="pay_start"
+                                                    placeholder="MM/DD/YYYY"
+                                                    class="w-100 p-2 input-box-font removeDiv pay_start datepicker inputdatepicker"
+                                                    data-id="pay_start" value="<?php echo date('m/d/Y'); ?>">
                                             </div>
                                         </div>
                                         <div class="col-6 px-0">
@@ -214,10 +203,11 @@
                                                 <label for="pay_end" class="lable"> <span
                                                         class="redColor"></span></label>
                                                 <input
-                                                    style="color:#00000080; border-radius:0 2px 2px 0;border:1px solid #00000080;padding:0px 6px !important; height:40px; appearance: none; border-left:none;"
-                                                    type="date" id="pay_end" name="pay_end" placeholder=" "
-                                                    class="w-100 py- input-box-font pay_end" data-id="pay_end"
-                                                    style="border: 1px solid #878080;border-left: none;" readonly>
+                                                    style="color:#140303f5;border:1px solid #110303fe; padding:0px 6px !important; height:40px; appearance: none;"
+                                                    type="text" id="pay_end" name="pay_end"
+                                                    placeholder="MM/DD/YYYY"
+                                                    class="w-100 p-2 input-box-font removeDiv pay_end datepicker inputdatepicker"
+                                                    data-id="pay_end" value="<?php echo date('m/d/Y'); ?>">
                                             </div>
                                         </div>
                                     </div>
@@ -227,9 +217,10 @@
                                         <label for="pay_date" class="lable">PAY DATE <span
                                                 class="redColor">*</span></label>
                                         <input
-                                            style="color:#00000080;border:1px solid #00000080; padding:0px 6px !important; height:40px; appearance: none;"
-                                            type="date" id="pay_date" name="pay_date" placeholder="12-19-2022"
-                                            class="w-100 p- input-box-font pay_date" data-id="pay_date">
+                                            style="color:#140303f5;padding:0px 6px !important; height:40px; appearance: none; border:1px solid #110303fe;"
+                                            type="text" id="pay_date" name="pay_date" placeholder="MM/DD/YYYY"
+                                            class="w-100 p-2 input-box-font removeDiv pay_date datepicker inputdatepicker"
+                                            data-id="pay_date" value="<?php echo date('m/d/Y'); ?>">
                                     </div>
                                 </div>
                             </div>
@@ -238,20 +229,20 @@
                                 <div class="col-md-4 mt-4">
                                     <div>
                                         <label for="check_number" class="lable">CHECK NUMBER <span
-                                                class="redColor">*</span>
-                                        </label>
+                                                class="redColor">*</span> </label>
                                         <input type="text" id="check_number" name="check_number"
-                                            placeholder="Check Number" class="w-100  input-box-font">
+                                            placeholder="Check Number" class="w-100  removeDiv input-box-font">
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-3 mt-4">
                                     <div>
                                         <label for="currency" class="lable" class="redColor">CURRENCY <span
                                                 class="redColor">*</span> </label>
-                                        <select name="currency" id="currency" class=" dropdown11">
+                                        <select name="currency" id="currency" class="dropdown11 removeDiv">
                                             @foreach ($currencies as $currency)
                                                 <option value="{{ $currency->symbol }}">{{ $currency->symbol }}
-                                                    ({{ $currency->name }})</option>
+                                                    ({{ $currency->name }})
+                                                </option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -260,21 +251,19 @@
                             <div class="row mb-4">
                                 <div class="col-md-4 mt-4">
                                     <div>
-                                        <label for="emp_name" class="lable">EMPLOYER NAME <span
-                                                class="redColor">*</span>
-                                        </label>
+                                        <label for="emp_name" class="lable">EMPLOYEE NAME <span
+                                                class="redColor">*</span> </label>
                                         <input type="text" id="emp_name" name="emp_name" placeholder="Employee name"
-                                            class="w-100  input-box-font">
+                                            class="w-100  input-box-font removeDiv">
                                     </div>
 
                                 </div>
                                 <div class="col-md-4 mt-4">
                                     <div>
-                                        <label for="emp_address" class="lable">EMPLOYER ADDRESS <span
-                                                class="redColor">*</span>
-                                        </label>
+                                        <label for="emp_address" class="lable">EMPLOYEE ADDRESS <span
+                                                class="redColor">*</span> </label>
                                         <input type="text" id="emp_address" name="emp_address"
-                                            placeholder="Employee Address" class="w-100  input-box-font">
+                                            placeholder="Employee Address" class="w-100 removeDiv input-box-font">
                                     </div>
                                 </div>
                             </div>
@@ -410,11 +399,8 @@
     </div>
 @endsection
 @section('script')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
-        integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" crossorigin="anonymous"></script>
-    <script src="{{ asset('user') }}/js/canada.js"></script>
+
     <script>
         $(document).ready(function() {
             $('.advanceTemplate').change(function() {
@@ -452,4 +438,172 @@
             });
         });
     </script>
+
+    <script
+        src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyDpavHXELJMJvIHifFPN6tBBiFSXKGpy2g">
+    </script>
+    <script>
+        var searchInput = 'address_1';
+
+        $(document).ready(function() {
+            var autocomplete;
+            autocomplete = new google.maps.places.Autocomplete((document.getElementById(searchInput)), {
+                types: ['geocode'],
+                componentRestrictions: {
+                    country: "CA"
+                }
+            });
+
+
+            google.maps.event.addListener(autocomplete, 'place_changed', function() {
+                var near_place = autocomplete.getPlace();
+                if (near_place && near_place.address_components.length > 0) {
+                    var obj = [];
+                    for (var i = 0; i < near_place.address_components.length; i++) {
+                        for (var j = 0; j < near_place.address_components[i].types.length; j++) {
+                            obj[near_place.address_components[i].types[j]] = near_place.address_components[
+                                i].long_name;
+                        }
+                    }
+                    setLocation(obj);
+                }
+            });
+        });
+
+        function setLocation(obj) {
+            if (obj.street_number == undefined && obj.route == undefined) {
+                $("#address_1").val('');
+            } else if (obj.street_number == undefined) {
+                $("#address_1").val(obj.route);
+                $('#address_1').css('border-color', 'gray');
+                $('.0_address_1').remove();
+            } else if (obj.route == undefined) {
+                $("#address_1").val(obj.street_number);
+                $('#emp_street_1').css('border-color', 'gray');
+                $('.0_address_1').remove();
+            } else {
+                $("#address_1").val(obj.street_number + ', ' + obj.route);
+                $('#emp_street_1').css('border-color', 'gray');
+                $('.0_address_1').remove();
+            }
+            if (obj.neighborhood != undefined) {
+                $("#address_2").val(obj.neighborhood);
+                $('#address_2').css('border-color', 'gray');
+                $('.0_address_2').remove();
+            } else {
+                $("#address_2").val('');
+            }
+            if (obj.locality != undefined) {
+                $("#city").val(obj.locality);
+                $('#city').css('border-color', 'gray');
+                $('.0_city').remove();
+            } else {
+                $("#city").val('');
+            }
+            if (obj.administrative_area_level_1 != undefined) {
+                $("#state").val(obj.administrative_area_level_1);
+                $('#state').css('border-color', 'gray');
+                $('.0_state').remove();
+            } else {
+                $("#state").val('');
+            }
+            if (obj.postal_code != undefined) {
+                $("#zip_code").val(obj.postal_code);
+                $('#zip_code').css('border-color', 'gray');
+                $('.0_zip_code').remove();
+            } else {
+                $("#zip_code").val('');
+            }
+        }
+    </script>
+    <script>
+        var searchInput_1 = 'emp_address';
+        $(document).ready(function() {
+            var autocomplete;
+            autocomplete = new google.maps.places.Autocomplete((document.getElementById(searchInput_1)), {
+                types: ['geocode'],
+                componentRestrictions: {
+                    country: "CA"
+                }
+            });
+
+            google.maps.event.addListener(autocomplete, 'place_changed', function() {
+                var near_place = autocomplete.getPlace();
+                if (near_place && near_place.address_components.length > 0) {
+                    var obj = [];
+                    for (var i = 0; i < near_place.address_components.length; i++) {
+                        for (var j = 0; j < near_place.address_components[i].types.length; j++) {
+                            obj[near_place.address_components[i].types[j]] = near_place.address_components[
+                                i].long_name;
+                        }
+                    }
+                    setEmpLocation(obj);
+                }
+            });
+        });
+
+        function setEmpLocation(obj) {
+            /* console.log('obj', obj);
+            $("#emp_address").val(obj);
+            if (obj.street_number == undefined && obj.route == undefined) {
+                $("#emp_street_1").val('');
+            } else if (obj.street_number == undefined) {
+                $("#emp_street_1").val(obj.route);
+                $('#emp_street_1').css('border-color', 'gray');
+                $('.0_emp_street_1').remove();
+            } else if (obj.route == undefined) {
+                $("#emp_street_1").val(obj.route);
+                $('#emp_street_1').css('border-color', 'gray');
+                $('.0_emp_street_1').remove();
+            } else {
+                $("#emp_street_1").val(obj.street_number + ', ' + obj.route);
+                $('#emp_street_1').css('border-color', 'gray');
+                $('.0_emp_street_1').remove();
+            }
+
+            if (obj.neighborhood != undefined) {
+                $("#emp_street_2").val(obj.neighborhood);
+                $('#emp_street_2').css('border-color', 'gray');
+                $(".0_emp_street_2").remove();
+            } else {
+                $("#emp_street_2").val('');
+            }
+            if (obj.locality != undefined) {
+                $("#emp_city").val(obj.locality);
+                $('#emp_city').css('border-color', 'gray');
+                $(".0_emp_city").remove();
+            } else {
+                $("#emp_city").val('');
+            }
+            if (obj.administrative_area_level_1 != undefined) {
+                $("#emp_state").val(obj.administrative_area_level_1);
+                $('#emp_state').css('border-color', 'gray');
+                $(".0_emp_state").remove();
+            } else {
+                $("#emp_state").val('');
+            }
+            if (obj.postal_code != undefined) {
+                $("#emp_zip_code").val(obj.postal_code);
+                $('#emp_zip_code').css('border-color', 'gray');
+                $(".0_emp_zip_code").remove();
+            } else {
+                $("#emp_zip_code").val('');
+            } */
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script>
+        $('#zip_code').mask('00000-9999');
+        $('#emp_zip_code').mask('00000-9999');
+    </script>
+    <script src="{{ asset('user') }}/js/dist/jquery-input-mask-phone-number.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#tel').usPhoneFormat({
+                format: 'xxx-xxx-xxxx',
+            });
+        });
+    </script>
+
+    <script src="{{ asset('user') }}/js/canada.js"></script>
 @endsection

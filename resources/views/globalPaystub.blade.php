@@ -702,14 +702,14 @@
 @endsection
 @section('script')
     {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script> --}}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script>
+    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script>
     <script>
         $('.inputdatepicker').datepicker({
             autoclose: true,
             todayHighlight: true,
             format: "mm/dd/yyyy",
         }).datepicker('setDate', 'today');
-    </script>
+    </script> --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" crossorigin="anonymous"></script>
 
     <script>

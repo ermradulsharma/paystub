@@ -120,10 +120,8 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div>
-                                        <label for="zip_code" class="lable">Zip Code <span class="redColor">*</span>
-                                        </label>
-                                        <input type="text" id="zip_code" name="zip_code" placeholder=" Zip Code"
-                                            class="w-100 input-box-font removeDiv zip_code">
+                                        <label for="zip_code" class="lable">Zip Code <span class="redColor">*</span> </label>
+                                        <input type="text" id="zip_code" name="zip_code" placeholder=" Zip Code" class="w-100 input-box-font removeDiv zip_code">
                                     </div>
                                 </div>
                             </div>
@@ -702,21 +700,18 @@
 @endsection
 @section('script')
     {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script> --}}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script>
+    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script>
     <script>
         $('.inputdatepicker').datepicker({
             autoclose: true,
             todayHighlight: true,
             format: "mm/dd/yyyy",
         }).datepicker('setDate', 'today');
-    </script>
+    </script> --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" crossorigin="anonymous"></script>
 
     <script>
         $(document).ready(function() {
-            $('#tel').usPhoneFormat({
-                format: 'xxx-xxx-xxxx',
-            });
             $('.advanceTemplate').change(function() {
                 var status = $('option:selected', '.at_id').attr('data-status');
                 console.log('status', status);
@@ -727,6 +722,7 @@
                 }
                 $('option:selected', '.basicTemplate').prop("selected", false);
             });
+
             $('.basicTemplate').change(function() {
                 var status = $('option:selected', '.bt_id').attr('data-status');
                 if (status == 1) {
@@ -753,6 +749,7 @@
                     $('#openEye').modal('show');
                 }
             });
+
             $('.basicTem').click(function() {
                 var imageattr = $('option:selected', '.bt_id').attr('data-src');
                 console.log('imageattr', imageattr);
