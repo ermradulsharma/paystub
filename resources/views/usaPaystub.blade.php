@@ -6,12 +6,12 @@
     <div class="modal fade" id="openEye" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
             <div class="modal-content" style="position:relative;">
-                <div class="modal-header">
+                <div class="modal-header" style="position: relative; z-index:3;">
                     <button type="button" class="btn btn-secondary close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body watermark-bg">
                     <img src="" class="setImage w-100">
                 </div>
             </div>

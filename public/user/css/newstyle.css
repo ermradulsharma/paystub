@@ -14,7 +14,7 @@
 .dropdown12{
     border-radius: 6px !important;
 }
-.modal-body:before {
+.watermark-bg:before {
     position: absolute;
     content: "";
     height: 100%;
@@ -26,6 +26,9 @@
     background-position: center;
     margin: 0 auto;
     background-image: url("http://paystubx.com/user/watermark-bg2.png");
+}
+.watermark-bg{
+    position: relative;
 }
 
 @media only screen and (min-width:1025px) and (max-width:1439px) {
