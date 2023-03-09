@@ -512,6 +512,7 @@ img.earnbtn2.lock {
     -moz-appearance: none;
     appearance: none;
     transition: all 0.5s ease-in-out;
+    border: 1px solid transparent;
 }
 
 .previewbtn:hover {
@@ -519,6 +520,7 @@ img.earnbtn2.lock {
     color: #ef2e21;
     border: 1px solid #ef2e21;
     box-shadow: 6px 5px 4px 0px #00000066;
+    text-decoration: none;
 }
 
 .pay-box {
@@ -636,6 +638,7 @@ select:after {
     border-radius: 4px;
     box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, 0.6));
     transition: all 0.5s ease-in-out;
+    border: 1px solid transparent;
 }
 
 .emailbtn2 {
@@ -704,6 +707,7 @@ color: #027bff !important;
     color: #40924a;
     border: 1px solid green;
     box-shadow: 6px 5px 4px 0px #00000066;
+    text-decoration: none;
 }
 
 .mainhead {
@@ -3670,7 +3674,9 @@ img.earnbtn2.lockuk {
         padding: 23px;
         margin: 0;
     }
-
+    input.input-uk.text-center.taxes{
+        width: 100%;
+    }
     .mmenu {
         width: 100%;
     }
