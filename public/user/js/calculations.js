@@ -38,8 +38,8 @@ $(document).ready(function () {
         var addYtdTotal = `<div class="margin-bottom" style="padding-top: 2px;">
                         <input type="text" name="ytd_total[]" class="earnbtn mb-3 text-center ytd_total"  id="ytd_total_`+ i + `" data-id="` + i + `">
                     </div>`;
-        if (x < maxField) {
-            x++;
+        if (i < maxField) {
+            i++;
             $("#addEarning").append(addEarning);
             $("#addRate").append(addRate);
             $("#addHours").append(addHours);
@@ -65,23 +65,23 @@ $(document).ready(function () {
     $(addDeduction).click(function () {
         var fieldHTML = '<div class="row">' +
             '<div class="col-md-4 col-lg-3 mb-3">' +
-            '<input name="tax_deduction[]" class="earnbtn text-center tax_deduction_0 tax_deduction_' + i + ' " data-id="' + i + '" type="text">' +
+            '<input name="tax_deduction[]" class="earnbtn text-center tax_deduction_0 tax_deduction_' + x + ' " data-id="' + x + '" type="text">' +
             "</div>" +
             '<div class="col-md-1 col-lg-1"> </div>' +
             '<div class="col-md-2 col-lg-3"> </div>' +
             '<div class="col-md-1 col-lg-1"> </div>' +
             '<div class="col-md-2 col-lg-2 mb-3">' +
-            '<input type="text" name="period_tax_deduction[]" class="earnbtn text-center tax_deduction tax" id="taxes_0' + i + '"  data-id="' + i + '"/>' +
+            '<input type="text" name="period_tax_deduction[]" class="earnbtn text-center tax_deduction tax" id="taxes_0' + x + '"  data-id="' + x + '"/>' +
             "</div>" +
             '<div class="col-md-2 col-lg-2 mb-3">' +
-            '<input type="text" name="ytd_tax_deduction[]" class="earnbtn text-center ytd_tax tax add_ytd_deduction" id="taxes_ytd_0' + i + '"  data-id="' + i + '"/>' +
+            '<input type="text" name="ytd_tax_deduction[]" class="earnbtn text-center ytd_tax tax add_ytd_deduction" id="taxes_ytd_0' + x + '"  data-id="' + x + '"/>' +
             "</div>" +
             "</div>";
         if (x < maxField) {
             x++;
             $(wrapper_2).append(fieldHTML);
         }
-        i++;
+        x++;
 
         $(".tax_deduction").keyup(function () {
             var id = $(this).val();
@@ -539,7 +539,8 @@ $(document).ready(function () {
     }
 
     function is_empty() {
-        for (let i = 0; i < finalArray.length; i++) {
+        $(".earning").each(function () {
+            var i = $(this).data("id");
             $("#rate_" + i).val("");
             $("#hours_" + i).val("");
             $("#total_" + i).val("");
@@ -547,7 +548,7 @@ $(document).ready(function () {
             $("#ytd_total_" + i).val("");
             $("#taxes_0" + i).val("");
             $("#taxes_ytd_0" + i).val("");
-        }
+        });
         $(".deduction_tax").val("");
         $(".ytd_deduction_tax").val("");
         $(".total_net_pay").val("");
@@ -581,13 +582,13 @@ $(document).ready(function () {
         var img = $(this).attr('src');
 
         // For local
-       /*  if (img == 'http://127.0.0.1:8000/images/lock.png') {
-            $("#" + id).attr('src', 'http://127.0.0.1:8000/images/unlock.png');
-            $("#taxe_" + id).attr("readonly", false);
-        } else {
-            $("#" + id).attr('src', 'http://127.0.0.1:8000/images/lock.png');
-            $("#taxe_" + id).attr("readonly", true);
-        } */
+        /*  if (img == 'http://127.0.0.1:8000/images/lock.png') {
+             $("#" + id).attr('src', 'http://127.0.0.1:8000/images/unlock.png');
+             $("#taxe_" + id).attr("readonly", false);
+         } else {
+             $("#" + id).attr('src', 'http://127.0.0.1:8000/images/lock.png');
+             $("#taxe_" + id).attr("readonly", true);
+         } */
 
         // for live
         if (img == 'https://paystubx.com/images/lock.png') {
