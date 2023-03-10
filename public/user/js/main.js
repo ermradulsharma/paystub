@@ -110,7 +110,7 @@ function checkValidationForm() {
 
     $.each(formData, function (i, element) {
         var name = element.name.replace("[]", "");
-        var blockedTile = new Array("address_2", "emp_street_2", "hourly", "earning", "rate", "hours", "total", "period", "ytd_total", "period_gross_total", "ytd_gross_total", "deduction_period_tax", "deduction_period_tax_other", "advance_temp", "co_number", "file_number", "clock_vchr_number", "advice_number", "account_number_last_4", "transit_aba_number", "basic_temp", "taxes", "taxes_rate", "taxes_ytd");
+        var blockedTile = new Array("address_2", "emp_street_2", "hourly", "earning", "rate", "hours", "total", "period", "ytd_total", "period_gross_total", "ytd_gross_total", "deduction_period_tax", "deduction_period_tax_other", "advance_temp", "co_number", "file_number", "clock_vchr_number", "advice_number", "account_number_last_4", "transit_aba_number", "basic_temp", "taxes", "taxes_rate", "taxes_ytd", 'net_pay');
         $(".0_" + name).remove();
         $("#" + name).css("border-color", "gray");
         if (blockedTile.indexOf(name) == -1 && element.value.length == 0) {
@@ -118,7 +118,7 @@ function checkValidationForm() {
                 $("#" + name).focus();
             }
             $("#" + name).css("border-color", "red");
-            $("#" + name).parent().parent().children("div").append("<div class='text-danger error_div 0_" + name + "'>This field can't be empty.</div>");
+            $("#" + name).parent().parent().children("div").append("<div class='text-danger error_div 0_" + name + "' style='font-size:14px;'>This field can't be empty.</div>");
             ok = 0;
         }
     });
@@ -142,7 +142,7 @@ function removeErrorMsg(id, value) {
     $("#" + id).css("border-color", "gray");
     if (value.length == 0) {
         $("#" + id).css("border-color", "red");
-        $("#" + id).parent().parent().children("div").append("<div class='text-danger error_div 0_" + id + "'>This field can't be empty.</div>");
+        $("#" + id).parent().parent().children("div").append("<div class='text-danger error_div 0_" + id + "' style='font-size:14px;'>This field can't be empty.</div>");
     }
 }
 
