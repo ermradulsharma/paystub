@@ -332,32 +332,32 @@
                                     <div class="ukpay-inner ">
                                         <div class="row">
                                             <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
-                                                <img src="{{ asset('images/lock.png') }}" class="earnbtn2 lockuk lock" data-id="0">
-                                                <input class="input-uk text-center uk-texs" value="Taxable Gross Pay" id="taxe_0" readonly>
+                                                <img src="{{ asset('images/lock.png') }}" class="earnbtn2 lockuk lock" data-id="00">
+                                                <input class="input-uk text-center uk-texs" value="Taxable Gross Pay" id="taxe_00" readonly>
                                             </div>
 
                                             <div class="col-md-5 col-lg-5 mb-3  px-lg-2 px-0">
                                                 <input type="text" name="taxable_gross_pay" class="input-uk text-center uk-texs" id="current_total" readonly>
                                             </div>
                                             <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
-                                                <img src="{{ asset('images/lock.png') }}" class="earnbtn2 lockuk lock" id="1">
-                                                <input class="input-uk text-center uk-texs" value="Income Tax" id="taxe_1" readonly>
+                                                <img src="{{ asset('images/lock.png') }}" class="earnbtn2 lockuk lock" id="11">
+                                                <input class="input-uk text-center uk-texs" value="Income Tax" id="taxe_11" readonly>
                                             </div>
 
                                             <div class="col-md-5 col-lg-5 mb-3  px-lg-2 px-0">
                                                 <input type="text" name="income_tax" class="input-uk  text-center uk-texs" id="income_tax" value="">
                                             </div>
                                             <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
-                                                <img src="{{ asset('images/lock.png') }}" class="earnbtn2 lockuk lock" id="2">
-                                                <input class="input-uk  text-center uk-texs" value="Employee NIC" id="taxe_2" readonly>
+                                                <img src="{{ asset('images/lock.png') }}" class="earnbtn2 lockuk lock" id="22">
+                                                <input class="input-uk  text-center uk-texs" value="Employee NIC" id="taxe_22" readonly>
                                             </div>
 
                                             <div class="col-md-5 col-lg-5 mb-3  px-lg-2 px-0">
                                                 <input type="text" name="employee_nic" class="input-uk  text-center uk-texs" id="employee_nic" value="">
                                             </div>
                                             <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
-                                                <img src="{{ asset('images/lock.png') }}" class="earnbtn2 lockuk lock" id="3">
-                                                <input class="input-uk  text-center uk-texs" value="Employee NIC" id="taxe_3" readonly>
+                                                <img src="{{ asset('images/lock.png') }}" class="earnbtn2 lockuk lock" id="33">
+                                                <input class="input-uk  text-center uk-texs" value="Employee NIC" id="taxe_33" readonly>
                                             </div>
 
                                             <div class="col-md-5 col-lg-5 mb-3  px-lg-2 px-0">
