@@ -184,7 +184,7 @@ $petani = DB::table('templates')->pluck('color_code');
                         <th class="earning" style="padding:0; font-weight:400; width:60%">{{ $requestData['emp_name'] }} </th>
                     </tr>
                     <tr style="color:white">
-                        <td style=" padding: 0px;"> Stub no: 1112 </td>
+                        <td style=" padding: 0px;"> Stub No: {{ $requestData['clock_vchr_number'] }} </td>
                         <td class="earning" style="padding:0;"> Emp Id :{{ $requestData['emp_id'] }} <br> {{ $requestData['emp_street_1'] }},{{ $requestData['emp_street_2'] }} {{ $requestData['emp_city'] }} {{ $requestData['emp_state'] }} {{ $requestData['emp_zip_code'] }} </td>
                     </tr>
                 </table>

@@ -263,7 +263,7 @@
                     </tr>
                     <tr>
                         <td style=" padding: 9px;">
-                            <!-- Stub no: 1112 -->
+                            <!-- Stub No: {{ $requestData['clock_vchr_number'] }} -->
                         </td>
                         <td class="earning">
                             This is not a check
