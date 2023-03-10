@@ -62,7 +62,7 @@
                                     <div>
                                         <label for="tel" class="lable">EMPLOYER TELEPHONE NUMBER <span
                                                 class="redColor">*</span> </label>
-                                        <input type="text" id="tel" name="tel" placeholder="xxx-xxx-xxxx"
+                                        <input type="text" id="tel" name="tel" placeholder="123-456-7890"
                                             maxlength="10" minlength="10"
                                             class="w-100 p-2 text-center input-box-font removeDiv third-phone">
                                     </div>
@@ -179,11 +179,11 @@
                                                 style="font-size: 39px;"></i>
                                         </div>
                                     </div>
-                                    <div class=" mt-3 ">
+                                    {{-- <div class=" mt-3 ">
                                         <button class="viewbtn"> <a style="color: black;"
                                                 href="{{ url('template-view') }}">Click to see
                                                 Template Landscape view.This is not part of design</a></button>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>
@@ -352,10 +352,9 @@
                             <div class="row mb-3">
                                 <div class="col-md-3 mt-4">
                                     <div>
-                                        <label for="hourly" class="lable">HOURLY
+                                        <label for="hourly" class="lable">Rate / Unit
                                         </label>
-                                        <input type="text" step="0.5" id="hourly" name="hourly"
-                                            placeholder="Hourly" class="w-100   input-box-font hourly">
+                                        <input type="text" step="0.5" id="hourly" name="hourly" placeholder="Wage" class="w-100   input-box-font hourly">
                                     </div>
                                 </div>
                                 <div class="col-md-3 mt-4">
@@ -651,31 +650,24 @@
                                     <input name="co_number" class="earnbtn text-center">
                                 </div>
                                 <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
-                                    <p class="p-0 m-0" style="font-family: serif;">FILE.<span class="redColor">*</span>
-                                    </p>
+                                    <p class="p-0 m-0" style="font-family: serif;">FILE.<span class="redColor">*</span> </p>
                                     <input name="file_number" class="earnbtn text-center">
                                 </div>
                                 <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
-                                    <p class="p-0 m-0 " style="font-family: serif;">CLOCK VCHR.<span
-                                            class="redColor">*</span>
-                                    </p>
+                                    <p class="p-0 m-0 " style="font-family: serif;">CLOCK VCHR.<span class="redColor">*</span> </p>
                                     <input name="clock_vchr_number" class="earnbtn text-center">
                                 </div>
                                 <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
-                                    <p class="p-0 m-0 " style="font-family: serif;">Advice Number:<span
-                                            class="redColor">*</span></p>
-                                    <input name="advice_number" class="earnbtn text-center">
+                                    <p class="p-0 m-0 " style="font-family: serif;">Advice Number:<span class="redColor">*</span></p>
+                                    <input name="advice_number" class="earnbtn text-center" placeholder="123456">
                                 </div>
                                 <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
-                                    <p class="p-0 m-0 " style="font-family: serif;">Account Number LAST<span
-                                            class="redColor">*</span></p>
-                                    <input name="account_number_last_4" class="earnbtn text-center">
+                                    <p class="p-0 m-0 " style="font-family: serif;">Account Number LAST<span class="redColor">*</span></p>
+                                    <input name="account_number_last_4" class="earnbtn text-center" placeholder="1234">
                                 </div>
                                 <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
-                                    <p class="p-0 m-0 " style="font-family: serif;">Transit ABA<span
-                                            class="redColor">*</span>
-                                    </p>
-                                    <input name="transit_aba_number" class="earnbtn text-center">
+                                    <p class="p-0 m-0 " style="font-family: serif;">Transit ABA<span  class="redColor">*</span> </p>
+                                    <input name="transit_aba_number" class="earnbtn text-center" placeholder="1234">
                                 </div>
                             </div>
                         </div>
@@ -686,12 +678,8 @@
             <div class="row mt-3">
                 <div class="col-12 text-center usa-btn">
                     <div class="d-flex flex-wrap justify-content-between usa-btn-inner">
-                        <button class="previewbtn text-capitalize viewTempTemplate mb-3 w-sm-100" type="button"
-                            id="button1">Preview Your Paystub <i class="fa fa-eye"
-                                style="font-size: 30px; margin-left: 7px;"></i></button>
-                        <button type="button" class="emailbtn text-capitalize sendMailButton mb-3 w-sm-100"> <i
-                                class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL PAYSTUB <i
-                                class="fa fa-download ml-4" style="font-size:24px"></i></button>
+                        <button class="previewbtn text-capitalize viewTempTemplate mb-3 w-sm-100" type="button" id="button1">Preview Your Paystub <i class="fa fa-eye" style="font-size: 30px; margin-left: 7px;"></i></button>
+                        <button type="button" class="emailbtn text-capitalize sendMailButton mb-3 w-sm-100"> <i class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL PAYSTUB <i class="fa fa-download ml-4" style="font-size:24px"></i></button>
                     </div>
                 </div>
             </div>
