@@ -649,9 +649,10 @@
                                     <input name="file_number" class="earnbtn text-center">
                                 </div>
                                 <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
-                                    <p class="p-0 m-0 " style="font-family: serif;">CLOCK VCHR.<span
+                                    <p class="p-0 m-0 " style="font-family: serif;">Stub No.<span
                                             class="redColor">*</span> </p>
-                                    <input name="clock_vchr_number" class="earnbtn text-center">
+                                    <input name="clock_vchr_number" class="earnbtn text-center" maxlength="6" minlength="4" placeholder="1234"
+                                    onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                 </div>
                                 <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
                                     <p class="p-0 m-0 " style="font-family: serif;">Advice Number:<span
