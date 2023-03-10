@@ -530,53 +530,6 @@
 
         function setEmpLocation(obj) {
             console.log('obj', obj);
-            /* console.log('obj', obj);
-            $("#emp_address").val(obj);
-            if (obj.street_number == undefined && obj.route == undefined) {
-                $("#emp_street_1").val('');
-            } else if (obj.street_number == undefined) {
-                $("#emp_street_1").val(obj.route);
-                $('#emp_street_1').css('border-color', 'gray');
-                $('.0_emp_street_1').remove();
-            } else if (obj.route == undefined) {
-                $("#emp_street_1").val(obj.route);
-                $('#emp_street_1').css('border-color', 'gray');
-                $('.0_emp_street_1').remove();
-            } else {
-                $("#emp_street_1").val(obj.street_number + ', ' + obj.route);
-                $('#emp_street_1').css('border-color', 'gray');
-                $('.0_emp_street_1').remove();
-            }
-
-            if (obj.neighborhood != undefined) {
-                $("#emp_street_2").val(obj.neighborhood);
-                $('#emp_street_2').css('border-color', 'gray');
-                $(".0_emp_street_2").remove();
-            } else {
-                $("#emp_street_2").val('');
-            }
-            if (obj.locality != undefined) {
-                $("#emp_city").val(obj.locality);
-                $('#emp_city').css('border-color', 'gray');
-                $(".0_emp_city").remove();
-            } else {
-                $("#emp_city").val('');
-            }
-            if (obj.administrative_area_level_1 != undefined) {
-                $("#emp_state").val(obj.administrative_area_level_1);
-                $('#emp_state').css('border-color', 'gray');
-                $(".0_emp_state").remove();
-            } else {
-                $("#emp_state").val('');
-            }
-            if (obj.postal_code != undefined) {
-                $("#emp_zip_code").val(obj.postal_code);
-                $('#emp_zip_code').css('border-color', 'gray');
-                $(".0_emp_zip_code").remove();
-            } else {
-                $("#emp_zip_code").val('');
-            } */
-        }
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
     <script>

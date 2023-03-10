@@ -41,7 +41,7 @@
     <div class="container mt-2 px-0" style="max-width:1450px;">
         <form id="submit_form_paystubx_id" action="javascript:void()" method="get">
             @csrf
-            <input type="hidden" name="form_type" value="usa" hidden>
+            <input type="hidden" name="form_type" value="global" hidden>
             <div>
                 <div class="row mb-3">
                     <div class="col-md-12">
@@ -50,11 +50,8 @@
                             <div class="row mb-3 ">
                                 <div class="col-md-6 mt-1">
                                     <div>
-                                        <label for="cname" class="lable">EMPLOYER (COMPANY) NAME <span
-                                                class="redColor">*</span> </label>
-                                        <input type="text" id="cname" name="cname"
-                                            placeholder="Employer(Company) Name"
-                                            class="w-100 p-2 text-center input-box-font removeDiv">
+                                        <label for="cname" class="lable">EMPLOYER (COMPANY) NAME <span class="redColor">*</span> </label>
+                                        <input type="text" id="cname" name="cname" placeholder="Employer(Company) Name" class="w-100 p-2 text-center input-box-font removeDiv">
                                     </div>
                                 </div>
 
@@ -62,7 +59,7 @@
                                     <div>
                                         <label for="tel" class="lable">EMPLOYER TELEPHONE NUMBER <span
                                                 class="redColor">*</span> </label>
-                                        <input type="text" id="tel" name="tel" placeholder="xxx-xxx-xxxx"
+                                        <input type="text" id="tel" name="tel" placeholder="123-456-7890"
                                             maxlength="10" minlength="10"
                                             class="w-100 p-2 text-center input-box-font removeDiv third-phone">
                                     </div>
@@ -181,11 +178,11 @@
                                                 style="font-size: 39px;"></i>
                                         </div>
                                     </div>
-                                    <div class=" mt-3 ">
+                                    {{-- <div class=" mt-3 ">
                                         <button class="viewbtn"> <a style="color: black;"
                                                 href="{{ url('template-view') }}">Click to see
                                                 Template Landscape view.This is not part of design</a></button>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>
@@ -354,10 +351,10 @@
                             <div class="row mb-3">
                                 <div class="col-md-3 mt-4">
                                     <div>
-                                        <label for="hourly" class="lable">HOURLY
+                                        <label for="hourly" class="lable">Rate / Unit
                                         </label>
                                         <input type="text" step="0.5" id="hourly" name="hourly"
-                                            placeholder="Hourly" class="w-100   input-box-font hourly">
+                                            placeholder="Wage" class="w-100   input-box-font hourly">
                                     </div>
                                 </div>
                                 <div class="col-md-3 mt-4">
@@ -472,8 +469,8 @@
                                 <div class=" col-lg-2 col-md-2 margin-bottom  mt-2">
                                     <button type="button" class="statementbtn">EARNING</button>
                                     <div class="margin-bottom">
-                                        <input class="earnbtn mt-4 mb-3 text-center" type="text" name="earning[]"
-                                            value="Regular" id="earning_0" data-id="0">
+                                        <input class="earnbtn mt-4 mb-3 text-center earning" type="text"
+                                            name="earning[]" value="Regular" id="earning_0" data-id="0">
                                     </div>
                                     <div id="addEarning"></div>
                                 </div>
@@ -555,15 +552,9 @@
                             @foreach ($deduction as $key => $item)
                                 <div class="row">
                                     <div class="col-md-4 col-lg-3 mb-3">
-                                        <img src="{{ asset('images/lock.png') }}" class="earnbtn2 lock"
-                                            data-id="{{ $key }}" id="{{ $key }}"
-                                            data-src="{{ asset('images/openPadlock.png') }}">
-                                        <img class="earnbtn2 lock" data-id="{{ $key }}"
-                                            src="{{ asset('images/openPadlock.png') }}" style="display:none">
-                                        <input class="earnbtn text-center taxes" name="taxes[]"
-                                            id="taxe_{{ $key }}" data-id="{{ $key }}"
-                                            data-value="{{ $item->price }}" value="{{ $item->title }}"
-                                            data-value="{{ $item->title }}" data-text="{{ $item->type }}" readonly>
+                                        <img src="{{ asset('images/lock.png') }}" class="earnbtn2 lock" data-id="{{ $key }}" id="{{ $key }}"  data-src="{{ asset('images/openPadlock.png') }}">
+                                        <img class="earnbtn2 lock" data-id="{{ $key }}" src="{{ asset('images/openPadlock.png') }}" style="display:none">
+                                        <input class="earnbtn text-center taxes" name="taxes[]" id="taxe_{{ $key }}" data-id="{{ $key }}" data-value="{{ $item->price }}" value="{{ $item->title }}"  data-value="{{ $item->title }}" data-text="{{ $item->type }}" readonly>
                                     </div>
                                     <div class="col-md-1 col-lg-1"></div>
                                     <div class="col-md-2 col-lg-3"></div>
@@ -658,26 +649,31 @@
                                     <input name="file_number" class="earnbtn text-center">
                                 </div>
                                 <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
-                                    <p class="p-0 m-0 " style="font-family: serif;">CLOCK VCHR.<span
-                                            class="redColor">*</span>
-                                    </p>
-                                    <input name="clock_vchr_number" class="earnbtn text-center">
+                                    <p class="p-0 m-0 " style="font-family: serif;">Stub No.<span
+                                            class="redColor">*</span> </p>
+                                    <input name="clock_vchr_number" class="earnbtn text-center" maxlength="6" minlength="4" placeholder="1234"
+                                    onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                 </div>
                                 <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
                                     <p class="p-0 m-0 " style="font-family: serif;">Advice Number:<span
                                             class="redColor">*</span></p>
-                                    <input name="advice_number" class="earnbtn text-center">
+                                    <input name="advice_number" class="earnbtn text-center" placeholder="123456"
+                                        maxlength="6" minlength="4"
+                                        onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                 </div>
                                 <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
                                     <p class="p-0 m-0 " style="font-family: serif;">Account Number LAST<span
                                             class="redColor">*</span></p>
-                                    <input name="account_number_last_4" class="earnbtn text-center">
+                                    <input name="account_number_last_4" class="earnbtn text-center" placeholder="1234"
+                                        maxlength="4" minlength="4"
+                                        onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                 </div>
                                 <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
                                     <p class="p-0 m-0 " style="font-family: serif;">Transit ABA<span
-                                            class="redColor">*</span>
-                                    </p>
-                                    <input name="transit_aba_number" class="earnbtn text-center">
+                                            class="redColor">*</span> </p>
+                                    <input name="transit_aba_number" class="earnbtn text-center" placeholder="1234"
+                                        maxlength="4" minlength="4"
+                                        onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                 </div>
                             </div>
                         </div>
@@ -701,22 +697,10 @@
     </div>
 @endsection
 @section('script')
-    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script> --}}
-    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script>
-    <script>
-        $('.inputdatepicker').datepicker({
-            autoclose: true,
-            todayHighlight: true,
-            format: "mm/dd/yyyy",
-        }).datepicker('setDate', 'today');
-    </script> --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" crossorigin="anonymous"></script>
 
     <script>
         $(document).ready(function() {
-            $('#tel').usPhoneFormat({
-                format: 'xxx-xxx-xxxx',
-            });
             $('.advanceTemplate').change(function() {
                 var status = $('option:selected', '.at_id').attr('data-status');
                 if (status == 1) {
