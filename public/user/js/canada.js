@@ -32,6 +32,7 @@ function dayCalculate() {
     }
     var dt1 = new Date(pay_start);
     var newDate = moment(dt1).add(1, "weeks").subtract(1, "days").format("MM/DD/YYYY");
+    console.log('newDate', newDate);
     setTimeout(() => {
         if (pay_start != "") {
             $(".pay_end").val(newDate);
