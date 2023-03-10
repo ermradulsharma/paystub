@@ -332,7 +332,7 @@
                                     <div class="ukpay-inner ">
                                         <div class="row">
                                             <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
-                                                <img src="{{ asset('images/lock.png') }}" class="earnbtn2 lockuk lock" data-id="00">
+                                                <img src="{{ asset('images/lock.png') }}" class="earnbtn2 lockuk lock" data-id="00" id="00">
                                                 <input class="input-uk text-center uk-texs" value="Taxable Gross Pay" id="taxe_00" readonly>
                                             </div>
 
@@ -340,7 +340,7 @@
                                                 <input type="text" name="taxable_gross_pay" class="input-uk text-center uk-texs" id="current_total" readonly>
                                             </div>
                                             <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
-                                                <img src="{{ asset('images/lock.png') }}" class="earnbtn2 lockuk lock" id="11">
+                                                <img src="{{ asset('images/lock.png') }}" class="earnbtn2 lockuk lock" data-id="11" id="11">
                                                 <input class="input-uk text-center uk-texs" value="Income Tax" id="taxe_11" readonly>
                                             </div>
 
@@ -348,7 +348,7 @@
                                                 <input type="text" name="income_tax" class="input-uk  text-center uk-texs" id="income_tax" value="">
                                             </div>
                                             <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
-                                                <img src="{{ asset('images/lock.png') }}" class="earnbtn2 lockuk lock" id="22">
+                                                <img src="{{ asset('images/lock.png') }}" class="earnbtn2 lockuk lock" data-id="22" id="22">
                                                 <input class="input-uk  text-center uk-texs" value="Employee NIC" id="taxe_22" readonly>
                                             </div>
 
@@ -356,7 +356,7 @@
                                                 <input type="text" name="employee_nic" class="input-uk  text-center uk-texs" id="employee_nic" value="">
                                             </div>
                                             <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
-                                                <img src="{{ asset('images/lock.png') }}" class="earnbtn2 lockuk lock" id="33">
+                                                <img src="{{ asset('images/lock.png') }}" class="earnbtn2 lockuk lock" data-id="33" id="33">
                                                 <input class="input-uk  text-center uk-texs" value="Employee NIC" id="taxe_33" readonly>
                                             </div>
 

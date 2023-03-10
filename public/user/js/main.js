@@ -249,10 +249,6 @@ function generatePDF() {
 $('.lock').click(function () {
     var id = $(this).data('id');
     var img = $(this).attr('src');
-    // for live
-    console.log('id', id);
-    console.log('img', img);
-
     if (img == 'https://paystubx.com/images/lock.png') {
         $("#" + id).attr('src', 'https://paystubx.com/images/unlock.png');
         $("#taxe_" + id).attr("readonly", false);
