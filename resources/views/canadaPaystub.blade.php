@@ -151,7 +151,7 @@
                                                 @endforeach
                                             </select>
                                         </div>
-                                        <span class="d-none text-center error redColor">Please Select State</span>
+                                        {{-- <span class="d-none text-center error redColor">Please Select State</span> --}}
                                     </div>
                                 </div>
                                 <div class="col-md-3">
@@ -456,6 +456,7 @@
         });
 
         function setLocation(obj) {
+            console.log('obj', obj);
             if (obj.street_number == undefined && obj.route == undefined) {
                 $("#address_1").val('');
             } else if (obj.street_number == undefined) {
@@ -528,6 +529,7 @@
         });
 
         function setEmpLocation(obj) {
+            console.log('obj', obj);
             /* console.log('obj', obj);
             $("#emp_address").val(obj);
             if (obj.street_number == undefined && obj.route == undefined) {

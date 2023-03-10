@@ -118,7 +118,7 @@ function checkValidationForm() {
                 $("#" + name).focus();
             }
             $("#" + name).css("border-color", "red");
-            $("#" + name).parent().parent().children("div").append("<div class='text-danger error_div 0_" + name + "' style='font-size:14px;'>This field can't be empty.</div>");
+            $("#" + name).parent().parent('div').append("<span class='text-danger error_div 0_" + name + "' style='font-size:14px;'>This field can't be empty.</span>");
             ok = 0;
         }
     });
@@ -142,7 +142,7 @@ function removeErrorMsg(id, value) {
     $("#" + id).css("border-color", "gray");
     if (value.length == 0) {
         $("#" + id).css("border-color", "red");
-        $("#" + id).parent().parent().children("div").append("<div class='text-danger error_div 0_" + id + "' style='font-size:14px;'>This field can't be empty.</div>");
+        $("#" + id).parent().parent('div').append("<span class='text-danger error_div 0_" + id + "' style='font-size:14px;'>This field can't be empty.</span>");
     }
 }
 
