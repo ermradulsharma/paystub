@@ -49,7 +49,7 @@
                                     <div class="mt-3">
                                         <div class="input-group mmenu mb-3 text-center">
                                             <select name="basic_temp" id="basic_temp"
-                                                class="form-control dropdown1 text-center bt_id small-font basicTemplate removeDiv"
+                                                class="form-control dropdown1 text-center bt_id small-font basicTemplate"
                                                 style="margin-right:10px; font-size:18px;">
                                                 <option value=""> --- Select Basic Templates --- </option>
                                                 @foreach ($basicType as $data)
@@ -73,7 +73,7 @@
                                         <h6 class="base">ADVANCED TEMPLATES</h6>
                                         <div class="mt-3">
                                             <div class="input-group mmenu mb-3">
-                                                <select name="advance_temp"
+                                                <select name="advance_temp" id="advance_temp"
                                                     class="form-control text-center at_id dropdown1 advanceTemplate"
                                                     style="margin-right:10px;">
                                                     <option value=""> --- Select Advance Template --- </option>
@@ -106,7 +106,7 @@
                                                 class="redColor">*</span> </label>
                                         <input type="text" id="cname" name="cname"
                                             placeholder="Employer (Company) Name"
-                                            class="input-c w-100  text-center input-box-font">
+                                            class="input-c w-100  text-center input-box-font removeDiv">
                                     </div>
                                 </div>
                             </div>
@@ -117,7 +117,7 @@
                                         <label for="address_1" class="lable">STREET ADDRESS 1 <span
                                                 class="redColor">*</span> </label>
                                         <input type="text" id="address_1" name="address_1"
-                                            placeholder="Street Address 1" class="w-100  input-box-font">
+                                            placeholder="Street Address 1" class="w-100  input-box-font removeDiv">
                                     </div>
                                 </div>
                             </div>
@@ -137,7 +137,7 @@
                                     <div>
                                         <label for="city" class="lable">City <span class="redColor">*</span></label>
                                         <input type="text" id="city" name="city" placeholder="City"
-                                            class="w-100  input-box-font">
+                                            class="w-100  input-box-font removeDiv">
                                     </div>
 
                                 </div>
@@ -146,7 +146,8 @@
                                         <label for="state" class="lable">Province <span class="redColor">*</span>
                                         </label>
                                         <div class="dropdown ">
-                                            <select name="state" id="state" class="state dropdown11 tax_rate">
+                                            <select name="state" id="state"
+                                                class="state dropdown11 tax_rate removeDiv">
                                                 <option value=""> --- Select State --- </option>
                                                 @foreach ($stateTaxes as $stateTax)
                                                     <option value="{{ $stateTax->state }}"
@@ -162,7 +163,7 @@
                                         <label for="zip_code" class="lable">Postal Code <span
                                                 class="redColor">*</span></label>
                                         <input type="text" id="zip_code" name="zip_code" placeholder="Zip Code"
-                                            class="w-100  input-box-font">
+                                            class="w-100  input-box-font removeDiv">
                                     </div>
                                 </div>
                             </div>
@@ -181,7 +182,7 @@
                                         <label for="emp_id" class="lable">EMPLOYEE ID <span
                                                 class="redColor">*</span></label>
                                         <input type="text" id="emp_id" name="emp_id" placeholder="Employee Id"
-                                            class="w-100  input-box-font">
+                                            class="w-100  input-box-font removeDiv">
                                     </div>
                                 </div>
                                 <div class="col-md-4 mt-4">
@@ -231,7 +232,7 @@
                                         <label for="check_number" class="lable">CHECK NUMBER <span
                                                 class="redColor">*</span> </label>
                                         <input type="text" id="check_number" name="check_number"
-                                            placeholder="Check Number" class="w-100  removeDiv input-box-font">
+                                            placeholder="Check Number" class="w-100 removeDiv input-box-font">
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-3 mt-4">
@@ -317,10 +318,8 @@
                                             <button type="button" class="statementbtn">DEDUCTION</button>
                                             @foreach ($deduction as $key => $item)
                                                 <div class="d-flex mt-3">
-                                                    <img src="{{ asset('images/lock.png') }}" class="earnbtn3">
-                                                    <input class="earnbtn text-center taxes" name="taxes[]"
-                                                        data-id="00{{ $key }}" data-value="{{ $item->price }}"
-                                                        value="{{ $item->title }}">
+                                                    <img src="{{ asset('images/lock.png') }}" class="earnbtn3 lock" data-id="{{ $key }}" id="{{ $key }}">
+                                                    <input class="earnbtn text-center taxes" id="taxe_{{ $key }}" name="taxes[]" data-id="00{{ $key }}" data-value="{{ $item->price }}" value="{{ $item->title }}" readonly>
                                                 </div>
                                             @endforeach
                                         </div>
@@ -341,8 +340,8 @@
                                     </div>
                                     <div class="row my-2">
                                         <div class="col-lg-12 center-btn">
-                                            <button type="button" class="btnCommon addTaxField">
-                                                <i class="fa fa-plus-circle pr-2"
+                                            <button type="button" class="btnCommon addTaxField"> <i
+                                                    class="fa fa-plus-circle pr-2"
                                                     style="font-size: 22px;color: #0ec23b;padding-top: 0px;"></i>Add
                                                 Deductions</button>
                                         </div>
@@ -410,16 +409,6 @@
                 $('option:selected', '.advanceTemplate').prop("selected", false);
             });
 
-            $('#tel').keyup(function() {
-                var mobileNumber = this.value.replace(/\D/g, ''); // here you get what the end-user typed
-                mobileNumber = (mobileNumber.replace(/[^\d]/g, ''));
-                this.value = ("" + mobileNumber.substring(0, 3) + " " + mobileNumber.substring(3, 6) + " " +
-                    mobileNumber.substring(6, 10));
-            });
-        });
-    </script>
-    <script>
-        $(document).ready(function() {
             $('.basicTem').click(function() {
                 var imageattr = $('option:selected', '.bt_id').attr('data-src');
                 console.log('imageattr', imageattr);
@@ -600,7 +589,7 @@
     <script>
         $(document).ready(function() {
             $('#tel').usPhoneFormat({
-                format: 'xxx-xxx-xxxx',
+                format: '123-456-7890',
             });
         });
     </script>

@@ -577,27 +577,6 @@ $(document).ready(function () {
         return arr.filter((item, index) => arr.indexOf(item) === index);
     }
 
-    $('.lock').click(function () {
-        var id = $(this).data('id');
-        var img = $(this).attr('src');
-
-        // For local
-        /*  if (img == 'http://127.0.0.1:8000/images/lock.png') {
-             $("#" + id).attr('src', 'http://127.0.0.1:8000/images/unlock.png');
-             $("#taxe_" + id).attr("readonly", false);
-         } else {
-             $("#" + id).attr('src', 'http://127.0.0.1:8000/images/lock.png');
-             $("#taxe_" + id).attr("readonly", true);
-         } */
-
-        // for live
-        if (img == 'https://paystubx.com/images/lock.png') {
-            $("#" + id).attr('src', 'https://paystubx.com/images/unlock.png');
-            $("#taxe_" + id).attr("readonly", false);
-        } else {
-            $("#" + id).attr('src', 'https://paystubx.com/images/lock.png');
-            $("#taxe_" + id).attr("readonly", true);
-        }
-    });
+    
 
 });

@@ -50,11 +50,8 @@
                             <div class="row mb-3 ">
                                 <div class="col-md-6 mt-1">
                                     <div>
-                                        <label for="cname" class="lable">EMPLOYER (COMPANY) NAME <span
-                                                class="redColor">*</span> </label>
-                                        <input type="text" id="cname" name="cname"
-                                            placeholder="Employer(Company) Name"
-                                            class="w-100 p-2 text-center input-box-font removeDiv">
+                                        <label for="cname" class="lable">EMPLOYER (COMPANY) NAME <span class="redColor">*</span> </label>
+                                        <input type="text" id="cname" name="cname" placeholder="Employer(Company) Name" class="w-100 p-2 text-center input-box-font removeDiv">
                                     </div>
                                 </div>
 
@@ -120,8 +117,10 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div>
-                                        <label for="zip_code" class="lable">Zip Code <span class="redColor">*</span> </label>
-                                        <input type="text" id="zip_code" name="zip_code" placeholder=" Zip Code" class="w-100 input-box-font removeDiv zip_code">
+                                        <label for="zip_code" class="lable">Zip Code <span class="redColor">*</span>
+                                        </label>
+                                        <input type="text" id="zip_code" name="zip_code" placeholder=" Zip Code"
+                                            class="w-100 input-box-font removeDiv zip_code">
                                     </div>
                                 </div>
                             </div>
@@ -354,7 +353,8 @@
                                     <div>
                                         <label for="hourly" class="lable">Rate / Unit
                                         </label>
-                                        <input type="text" step="0.5" id="hourly" name="hourly" placeholder="Wage" class="w-100   input-box-font hourly">
+                                        <input type="text" step="0.5" id="hourly" name="hourly"
+                                            placeholder="Wage" class="w-100   input-box-font hourly">
                                     </div>
                                 </div>
                                 <div class="col-md-3 mt-4">
@@ -469,8 +469,8 @@
                                 <div class=" col-lg-2 col-md-2 margin-bottom  mt-2">
                                     <button type="button" class="statementbtn">EARNING</button>
                                     <div class="margin-bottom">
-                                        <input class="earnbtn mt-4 mb-3 text-center earning" type="text" name="earning[]"
-                                            value="Regular" id="earning_0" data-id="0">
+                                        <input class="earnbtn mt-4 mb-3 text-center earning" type="text"
+                                            name="earning[]" value="Regular" id="earning_0" data-id="0">
                                     </div>
                                     <div id="addEarning"></div>
                                 </div>
@@ -552,15 +552,9 @@
                             @foreach ($deduction as $key => $item)
                                 <div class="row">
                                     <div class="col-md-4 col-lg-3 mb-3">
-                                        <img src="{{ asset('images/lock.png') }}" class="earnbtn2 lock"
-                                            data-id="{{ $key }}" id="{{ $key }}"
-                                            data-src="{{ asset('images/openPadlock.png') }}">
-                                        <img class="earnbtn2 lock" data-id="{{ $key }}"
-                                            src="{{ asset('images/openPadlock.png') }}" style="display:none">
-                                        <input class="earnbtn text-center taxes" name="taxes[]"
-                                            id="taxe_{{ $key }}" data-id="{{ $key }}"
-                                            data-value="{{ $item->price }}" value="{{ $item->title }}"
-                                            data-value="{{ $item->title }}" data-text="{{ $item->type }}" readonly>
+                                        <img src="{{ asset('images/lock.png') }}" class="earnbtn2 lock" data-id="{{ $key }}" id="{{ $key }}"  data-src="{{ asset('images/openPadlock.png') }}">
+                                        <img class="earnbtn2 lock" data-id="{{ $key }}" src="{{ asset('images/openPadlock.png') }}" style="display:none">
+                                        <input class="earnbtn text-center taxes" name="taxes[]" id="taxe_{{ $key }}" data-id="{{ $key }}" data-value="{{ $item->price }}" value="{{ $item->title }}"  data-value="{{ $item->title }}" data-text="{{ $item->type }}" readonly>
                                     </div>
                                     <div class="col-md-1 col-lg-1"></div>
                                     <div class="col-md-2 col-lg-3"></div>
@@ -650,24 +644,35 @@
                                     <input name="co_number" class="earnbtn text-center">
                                 </div>
                                 <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
-                                    <p class="p-0 m-0" style="font-family: serif;">FILE.<span class="redColor">*</span> </p>
+                                    <p class="p-0 m-0" style="font-family: serif;">FILE.<span class="redColor">*</span>
+                                    </p>
                                     <input name="file_number" class="earnbtn text-center">
                                 </div>
                                 <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
-                                    <p class="p-0 m-0 " style="font-family: serif;">CLOCK VCHR.<span class="redColor">*</span> </p>
+                                    <p class="p-0 m-0 " style="font-family: serif;">CLOCK VCHR.<span
+                                            class="redColor">*</span> </p>
                                     <input name="clock_vchr_number" class="earnbtn text-center">
                                 </div>
                                 <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
-                                    <p class="p-0 m-0 " style="font-family: serif;">Advice Number:<span class="redColor">*</span></p>
-                                    <input name="advice_number" class="earnbtn text-center" placeholder="123456">
+                                    <p class="p-0 m-0 " style="font-family: serif;">Advice Number:<span
+                                            class="redColor">*</span></p>
+                                    <input name="advice_number" class="earnbtn text-center" placeholder="123456"
+                                        maxlength="6" minlength="4"
+                                        onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                 </div>
                                 <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
-                                    <p class="p-0 m-0 " style="font-family: serif;">Account Number LAST<span class="redColor">*</span></p>
-                                    <input name="account_number_last_4" class="earnbtn text-center" placeholder="1234">
+                                    <p class="p-0 m-0 " style="font-family: serif;">Account Number LAST<span
+                                            class="redColor">*</span></p>
+                                    <input name="account_number_last_4" class="earnbtn text-center" placeholder="1234"
+                                        maxlength="4" minlength="4"
+                                        onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                 </div>
                                 <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
-                                    <p class="p-0 m-0 " style="font-family: serif;">Transit ABA<span  class="redColor">*</span> </p>
-                                    <input name="transit_aba_number" class="earnbtn text-center" placeholder="1234">
+                                    <p class="p-0 m-0 " style="font-family: serif;">Transit ABA<span
+                                            class="redColor">*</span> </p>
+                                    <input name="transit_aba_number" class="earnbtn text-center" placeholder="1234"
+                                        maxlength="4" minlength="4"
+                                        onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                 </div>
                             </div>
                         </div>
@@ -678,8 +683,12 @@
             <div class="row mt-3">
                 <div class="col-12 text-center usa-btn">
                     <div class="d-flex flex-wrap justify-content-between usa-btn-inner">
-                        <button class="previewbtn text-capitalize viewTempTemplate mb-3 w-sm-100" type="button" id="button1">Preview Your Paystub <i class="fa fa-eye" style="font-size: 30px; margin-left: 7px;"></i></button>
-                        <button type="button" class="emailbtn text-capitalize sendMailButton mb-3 w-sm-100"> <i class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL PAYSTUB <i class="fa fa-download ml-4" style="font-size:24px"></i></button>
+                        <button class="previewbtn text-capitalize viewTempTemplate mb-3 w-sm-100" type="button"
+                            id="button1">Preview Your Paystub <i class="fa fa-eye"
+                                style="font-size: 30px; margin-left: 7px;"></i></button>
+                        <button type="button" class="emailbtn text-capitalize sendMailButton mb-3 w-sm-100"> <i
+                                class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL PAYSTUB <i
+                                class="fa fa-download ml-4" style="font-size:24px"></i></button>
                     </div>
                 </div>
             </div>
