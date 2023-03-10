@@ -25,8 +25,8 @@ class PayStubController extends Controller
     public function ukPayStub()
     {
         $deduction = Deduction::where('state', 'uk')->orderBy('id', 'asc')->get();
-        $basicType = Template::where('type', 'basic')->get();
-        $advanceType = Template::where('type', 'advance')->get();
+        $basicType = Template::where(['state' => 'uk', 'type' => 'basic', 'status' => 1])->get();
+        $advanceType = Template::where(['state' => 'uk', 'type' => 'advance', 'status' => 1])->get();
         $stateTaxes = StateTax::get();
         $currencies = Currency::get();
         return view('ukPaystub', compact('basicType', 'advanceType', 'stateTaxes','deduction', 'currencies'));

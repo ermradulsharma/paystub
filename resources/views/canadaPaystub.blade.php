@@ -48,9 +48,7 @@
                                     <h6 class="base">BASIC TEMPLATES</h6>
                                     <div class="mt-3">
                                         <div class="input-group mmenu mb-3 text-center">
-                                            <select name="basic_temp" id="basic_temp"
-                                                class="form-control dropdown1 text-center bt_id small-font basicTemplate"
-                                                style="margin-right:10px; font-size:18px;">
+                                            <select name="basic_temp" id="basic_temp" class="form-control dropdown1 text-center bt_id small-font basicTemplate" style="margin-right:10px; font-size:18px;">
                                                 <option value=""> --- Select Basic Templates --- </option>
                                                 @foreach ($basicType as $data)
                                                     <option value="{{ $data->title ?? '' }}"
@@ -73,9 +71,7 @@
                                         <h6 class="base">ADVANCED TEMPLATES</h6>
                                         <div class="mt-3">
                                             <div class="input-group mmenu mb-3">
-                                                <select name="advance_temp" id="advance_temp"
-                                                    class="form-control text-center at_id dropdown1 advanceTemplate"
-                                                    style="margin-right:10px;">
+                                                <select name="advance_temp" id="advance_temp" class="form-control text-center at_id dropdown1 advanceTemplate" style="margin-right:10px;">
                                                     <option value=""> --- Select Advance Template --- </option>
                                                     @foreach ($advanceType as $data)
                                                         <option value="{{ $data->title ?? '' }}"
@@ -398,7 +394,7 @@
     </div>
 @endsection
 @section('script')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 
     <script>
         $(document).ready(function() {
