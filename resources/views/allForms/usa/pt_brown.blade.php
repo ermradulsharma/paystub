@@ -117,7 +117,7 @@
                 <div style="width: 60%;float:left;">
                     <h6 style="font-size: 17px; margin-bottom: 0;"> {{ $requestData['cname'] }}</h6>
                     <p style="font-size: 14px; margin: 0;"> {{ $requestData['address_1'] }}
-                        {{ $requestData['address_2'] }}</br>{{ $requestData['city'] }} {{ $requestData['state'] }},
+                        {{ $requestData['address_2'] }}<br>{{ $requestData['city'] }} {{ $requestData['state'] }},
                         {{ $requestData['zip_code'] }}</p>
                 </div>
                 <div style="width:40%;float:right;">
@@ -155,7 +155,7 @@
                 </div>
             </div>
             <div
-                style="width: 50%; display: flex; justify-content: flex-end;justify-content: space-between; FONT-SIZE: 17px; margin: 0px 0 0 151px; padding:0px 30px;">
+                style="width: 50%; display: flex; justify-content: flex-end;justify-content: start; font-size: 17px; margin: 0px 0 0 151px; padding:0px 30px;">
                 <div style="margin-bottom: 19px;">
                     <b>
                         <p style="margin: 0px 0 0 0; font-size: 12px; font-weight:500;"> {{ $requestData['emp_name'] }}
@@ -163,7 +163,7 @@
                     </b>
                     <P style="margin: 0px 0 0 0; font-size:  12px;"> {{ $requestData['address_1'] }} </P>
                     <p style="margin: 0px 0 0 0;font-size: 12px;">{{ $requestData['address_2'] }}
-                        </br>{{ $requestData['city'] }} {{ $requestData['state'] }}, {{ $requestData['zip_code'] }}
+                        <br>{{ $requestData['city'] }} {{ $requestData['state'] }}, {{ $requestData['zip_code'] }}
                     </p>
                 </div>
             </div>

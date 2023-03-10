@@ -41,13 +41,8 @@
         }
 
         .invoiceborder {
-            /* border: 1px solid black; */
-            /* padding-left: 20px; */
             padding-top: 20px;
             padding-bottom: 20px;
-            /* padding-right: 20px; */
-            /* border-width:20px */
-            /* margin: 200px 200px 200px 200px; */
         }
 
         .section_2 {
@@ -58,19 +53,6 @@
             overflow: hidden;
             padding-top: 15px;
         }
-
-        /* .text1 {
-            margin-right: 69%;
-
-            font-size: 20px;
-        }
-
-        .text2 {
-            margin-left: 69%;
-            font-size: 20px;
-
-
-        } */
 
         table {
 
@@ -93,7 +75,6 @@
             color: white;
             text-align: left;
             font-size: 12px;
-            /* padding: 8px; */
         }
 
         .data:nth-child(6) {
@@ -102,10 +83,7 @@
         }
 
         .tablesection {
-            /* padding: 26px; */
             padding-top: 25px;
-            /* height: 90px; */
-            /* overflow: hidden; */
         }
 
         p {

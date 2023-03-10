@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'Futura';
-    src: url('FONT/Futura-Bold.woff2') format('woff2'),
-        url('FONT/Futura-Bold.woff') format('woff');
+    src: url('font/Futura-Bold.woff2') format('woff2'),
+        url('font/Futura-Bold.woff') format('woff');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -9,16 +9,16 @@
 
 @font-face {
     font-family: 'Futura Bk BT';
-    src: url('FONT/FuturaBT-Book.woff2') format('woff2'),
-        url('FONT/FuturaBT-Book.woff') format('woff');
+    src: url('font/FuturaBT-Book.woff2') format('woff2'),
+        url('font/FuturaBT-Book.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
     font-family: 'Futura LT';
-    src: url('FONT/FuturaLT-Book.woff2') format('woff2'),
-        url('FONT/FuturaLT-Book.woff') format('woff');
+    src: url('font/FuturaLT-Book.woff2') format('woff2'),
+        url('font/FuturaLT-Book.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -28,8 +28,8 @@
 
 @font-face {
     font-family: 'Futura Md BT';
-    src: url('FONT/FuturaBT-Medium.woff2') format('woff2'),
-        url('FONT/FuturaBT-Medium.woff') format('woff');
+    src: url('font/FuturaBT-Medium.woff2') format('woff2'),
+        url('font/FuturaBT-Medium.woff') format('woff');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -38,8 +38,8 @@
 
 @font-face {
     font-family: 'Futura';
-    src: url('FONT/Futura-Black-Bold.woff2') format('woff2'),
-        url('FONT/Futura-Black-Bold.woff') format('woff');
+    src: url('font/Futura-Black-Bold.woff2') format('woff2'),
+        url('font/Futura-Black-Bold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -47,17 +47,197 @@
 
 @font-face {
     font-family: 'Futura XBlkCnIt BT';
-    src: url('FONT/FuturaBT-ExtraBlackCondItalic.woff2') format('woff2'),
-        url('FONT/FuturaBT-ExtraBlackCondItalic.woff') format('woff');
+    src: url('font/FuturaBT-ExtraBlackCondItalic.woff2') format('woff2'),
+        url('font/FuturaBT-ExtraBlackCondItalic.woff') format('woff');
     font-weight: 900;
     font-style: italic;
     font-display: swap;
 }
 @font-face {
     font-family: 'MICR';
-    src: url('FONT/MICR-Plain.woff2') format('woff2'),
-        url('FONT/MICR-Plain.woff') format('woff');
+    src: url('font/MICR-Plain.woff2') format('woff2'),
+        url('font/MICR-Plain.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
+@font-face {
+    font-family: 'Crossten';
+    src: url('font/Crossten-BlackItalic.woff2') format('woff2'),
+        url('font/Crossten-BlackItalic.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Crossten';
+    src: url('font/Crossten-BoldItalic.woff2') format('woff2'),
+        url('font/Crossten-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Crossten';
+    src: url('font/Crossten-Bold.woff2') format('woff2'),
+        url('font/Crossten-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Crossten';
+    src: url('font/Crossten-Black.woff2') format('woff2'),
+        url('font/Crossten-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Crossten';
+    src: url('font/Crossten-ExtraLightItalic.woff2') format('woff2'),
+        url('font/Crossten-ExtraLightItalic.woff') format('woff');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Crossten';
+    src: url('font/Crossten-ExtraBoldItalic.woff2') format('woff2'),
+        url('font/Crossten-ExtraBoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Crossten';
+    src: url('font/Crossten-Book.woff2') format('woff2'),
+        url('font/Crossten-Book.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Crossten';
+    src: url('font/Crossten-ExtraLight.woff2') format('woff2'),
+        url('font/Crossten-ExtraLight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Crossten';
+    src: url('font/Crossten-ExtraBold.woff2') format('woff2'),
+        url('font/Crossten-ExtraBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Crossten';
+    src: url('font/Crossten-BookItalic.woff2') format('woff2'),
+        url('font/Crossten-BookItalic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Crossten';
+    src: url('font/Crossten-Medium.woff2') format('woff2'),
+        url('font/Crossten-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Crossten';
+    src: url('font/Crossten-MediumItalic.woff2') format('woff2'),
+        url('font/Crossten-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Crossten';
+    src: url('font/Crossten-SemiBold.woff2') format('woff2'),
+        url('font/Crossten-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Crossten';
+    src: url('font/Crossten-LightItalic.woff2') format('woff2'),
+        url('font/Crossten-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Crossten';
+    src: url('font/Crossten-Thin.woff2') format('woff2'),
+        url('font/Crossten-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Crossten';
+    src: url('font/Crossten-ThinItalic.woff2') format('woff2'),
+        url('font/Crossten-ThinItalic.woff') format('woff');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Crossten';
+    src: url('font/Crossten-SemiBoldItalic.woff2') format('woff2'),
+        url('font/Crossten-SemiBoldItalic.woff') format('woff');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Crossten';
+    src: url('font/Crossten-Light.woff2') format('woff2'),
+        url('font/Crossten-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Crossten Ultra';
+    src: url('font/Crossten-UltraItalic.woff2') format('woff2'),
+        url('font/Crossten-UltraItalic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Crossten Ultra';
+    src: url('font/Crossten-Ultra.woff2') format('woff2'),
+        url('font/Crossten-Ultra.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

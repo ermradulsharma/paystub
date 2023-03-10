@@ -7,6 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        body{
+            font-family: 'Crossten';
+
+        }
         .grid-container {
             display: grid;
             grid-template-columns: 50% 50%;
@@ -97,7 +101,6 @@
 
         .earning {
             text-align: right;
-            padding-right: 22px;
         }
 
         .bg-img2 {
@@ -113,7 +116,7 @@
             height: 100%;
             content: "";
             right: 0px;
-            top: 200px;
+            top: 190px;
             left: 30px !important;
 
         }
@@ -123,8 +126,8 @@
         }
 
         .bg-img::before {
-            background-image: url('http://44.202.105.74/images/check.jpg') !important;
-            background-size: contain;
+            background-image: url('images/check2.png') !important;
+            background-size: 100%;
             background-repeat: no-repeat;
             content: "";
             top: 40px;
@@ -132,7 +135,7 @@
             right: 100px !important;
             position: absolute;
             z-index: -1;
-            width: 700px;
+            width: 100%;
             height: 100%;
         }
 
@@ -184,21 +187,21 @@
         <section class="invoiceborder">
             <table>
                 <tr>
-                    <th style="padding-left: 31px;"> {{ $requestData['cname'] }}</th>
+                    <th style="padding-left: 31px;padding-top:0; padding-bottom:0;"> {{ $requestData['cname'] }}</th>
                     <th></th>
                 </tr>
                 <tr>
-                    <td class="address" style="padding-left: 31px;"> {{ $requestData['address_1'] }} <br>
-                        {{ $requestData['city'] }} {{ $requestData['state'] }}, {{ $requestData['zip_code'] }}, USA
+                    <td class="address" style="padding-left: 31px; font-size:12px;"> {{ $requestData['address_1'] }} <br>
+                        {{ $requestData['city'] }}{{ $requestData['state'] }}, {{ $requestData['zip_code'] }},<br> USA
                     </td>
-                    <td style="font-weight:600; font-size:18px;" class="earning">Earnings Statement</td>
+                    <td style="font-weight:600; font-size:18px;padding-top:0;padding-bottom:0; margin-bottom:0px; margin-top:0px;" class="earning"><span>Earnings Statement</span></td>
                 </tr>
 
 
                 <tr>
                     <td></td>
                     <td>
-                        <p class="earning"> Pay Period: {{ date('M d, Y', strtotime($requestData['pay_start'])) }} to
+                        <p class="earning" style="font-size: 12px;padding:top:0;"> Pay Period: {{ date('M d, Y', strtotime($requestData['pay_start'])) }} to
                             {{ date('M d, Y', strtotime($requestData['pay_end'])) }} <br> Pay Date:
                             {{ date('M d, Y', strtotime($requestData['pay_date'])) }} </p>
                     </td>
@@ -207,12 +210,12 @@
             <section class="section_2">
                 <table>
                     <tr>
-                        <th style="width: 40%;">SSN: XXX-XX-{{ $requestData['emp_ssn'] }}</th>
+                        <th style="width: 40%; font-size:13px;padding-bottom:20px;">SSN: XXX-XX-{{ $requestData['emp_ssn'] }}</th>
                         <th class="earning" style="width: 60%;">{{ $requestData['emp_name'] }}</th>
                     </tr>
                     <tr>
                         <td style=" padding: 9px;"> Stub No: 1112 </td>
-                        <td class="earning"> Emp.ID.{{ $requestData['emp_id'] }} <br>
+                        <td class="earning" style="font-size:13px;"> Emp.ID.{{ $requestData['emp_id'] }} <br>
                             {{ $requestData['emp_street_1'] }},{{ $requestData['emp_street_2'] }}
                             {{ $requestData['emp_city'] }} {{ $requestData['emp_state'] }}
                             {{ $requestData['emp_zip_code'] }} </td>
