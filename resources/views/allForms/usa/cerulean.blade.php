@@ -123,7 +123,7 @@
         }
 
         .bg-img::before {
-            background-image: url('http://44.202.105.74/images/check.jpg') !important;
+            background-image: url('images/check2.png') !important;
             background-size: contain;
             background-repeat: no-repeat;
             content: "";
@@ -186,11 +186,11 @@
         <section class="invoiceborder">
             <table>
                 <tr>
-                    <th style="padding-left: 31px;"> {{ $requestData['cname'] }}</th>
+                    <th style="padding-left: 31px;padding-top:0; padding-bottom:0;"> {{ $requestData['cname'] }}</th>
                     <th></th>
                 </tr>
                 <tr>
-                    <td class="address" style="padding-left: 31px;"> {{ $requestData['address_1'] }} <br>
+                    <td class="address" style="padding-left: 31px;font-size:12px;"> {{ $requestData['address_1'] }} <br>
                         {{ $requestData['city'] }} {{ $requestData['state'] }}, {{ $requestData['zip_code'] }}, USA
                     </td>
                     <td style="font-weight:600; font-size:18px;" class="earning">Earnings Statement</td>
@@ -198,7 +198,7 @@
                 <tr>
                     <td></td>
                     <td>
-                        <p class="earning"> Pay Period: {{ date('M d, Y', strtotime($requestData['pay_start'])) }} to
+                        <p class="earning"style="font-size:12px;"> Pay Period: {{ date('M d, Y', strtotime($requestData['pay_start'])) }} to
                             {{ date('M d, Y', strtotime($requestData['pay_end'])) }} <br> pay date:
                             {{ date('M d, Y', strtotime($requestData['pay_date'])) }} </p>
                     </td>
@@ -207,12 +207,12 @@
             <section class="section_2">
                 <table>
                     <tr>
-                        <th style="width: 40%;">SSN: XXX-XX-{{ $requestData['emp_ssn'] }}</th>
+                        <th style="width: 40%;font-size:13px;">SSN: XXX-XX-{{ $requestData['emp_ssn'] }}</th>
                         <th class="earning" style="width: 60%;">{{ $requestData['emp_name'] }}</th>
                     </tr>
                     <tr>
                         <td style=" padding: 9px;"> Stub No: 1112 </td>
-                        <td class="earning"> Emp.ID.{{ $requestData['emp_id'] }} <br>
+                        <td class="earning"style="font-size:13px"> Emp.ID.{{ $requestData['emp_id'] }} <br>
                             {{ $requestData['emp_street_1'] }}, {{ $requestData['emp_street_2'] }}
                             {{ $requestData['emp_city'] }} {{ $requestData['emp_state'] }}
                             {{ $requestData['emp_zip_code'] }} </td>
@@ -324,7 +324,7 @@
                             <h6 style="font-size: 14px; margin-bottom: 6px;">
                                 <span>{{ $requestData['advice_number'] }}</span>
                             </h6>
-                            <p> <span style="font-weight:800;"></span>
+                            <p style="font-size:13px"> <span style="font-weight:800;"></span>
                                 {{ date('m/d/y', strtotime($requestData['pay_date'])) }} </p>
                         </div>
                     </div>

@@ -96,7 +96,7 @@
         }
 
         .bg-img::before {
-            background-image: url('http://44.202.105.74/images/check.jpg') !important;
+            background-image: url('images/check2.png') !important;
             background-size: contain;
             background-repeat: no-repeat;
             content: "";
@@ -299,7 +299,7 @@
                         </tr>
                     @endforeach
 
-                    </br> </br> </br>
+                    <br> <br> <br>
 
                     <tr>
                         <td></td>
@@ -385,10 +385,10 @@
                         </P>
                     </div>
                     <div style="width: 50%;float:right;text-align:right;position: relative; right:20px;">
-                        <h6 style="font-size: 14px; margin-bottom: 0;">
+                        <h6 style="font-size: 14px; margin-bottom: 0; position: relative; top:-8px;">
                             <span style="">{{ $requestData['advice_number'] }}</span>
                         </h6>
-                        <p>
+                        <p style=" position: relative; top:-18px; font-size:13px;">
                             <span style="font-weight:800;"></span>
                             {{ date('m/d/y', strtotime($requestData['pay_date'])) }}
                         </p>
