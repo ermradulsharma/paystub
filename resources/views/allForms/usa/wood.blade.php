@@ -213,7 +213,7 @@
                         <th class="earning" style="width: 60%;">{{ $requestData['emp_name'] }}</th>
                     </tr>
                     <tr>
-                        <td style=" padding: 9px;"> Stub No: {{ $requestData['clock_vchr_number'] }} </td>
+                        <td style=" padding: 9px;"> Stub No: {{ $requestData['stub_no'] }} </td>
                         <td class="earning"style="font-size:13px;"> Emp.ID.{{ $requestData['emp_id'] }} <br>
                             {{ $requestData['emp_street_1'] }},{{ $requestData['emp_street_2'] }}
                             {{ $requestData['emp_city'] }} {{ $requestData['emp_state'] }}

@@ -288,8 +288,10 @@
                                     <div>
                                         <label for="stub_no" class="lable">Stub No <span
                                                 class="redColor">*</span></label>
-                                        <input type="text" id="stub_no" name="stub_no" placeholder="Stub No"
-                                            class="w-100  input-box-font removeDiv">
+                                        <input type="text" id="stub_no" name="stub_no"
+                                            class="w-100  input-box-font removeDiv" placeholder="1234" maxlength="6"
+                                            minlength="4"
+                                            onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                     </div>
                                 </div>
                             </div>

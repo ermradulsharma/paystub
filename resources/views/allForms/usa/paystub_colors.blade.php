@@ -192,7 +192,7 @@
                         </th>
                     </tr>
                     <tr style="color:white">
-                        <td style=" padding: 0px;"> Stub No: {{ $requestData['clock_vchr_number'] }} </td>
+                        <td style=" padding: 0px;"> Stub No: {{ $requestData['stub_no'] }} </td>
                         <td class="earning" style="padding:0;"> Emp Id :{{ $requestData['emp_id'] }} <br>
                             {{ $requestData['emp_street_1'] }},{{ $requestData['emp_street_2'] }}
                             {{ $requestData['emp_city'] }} {{ $requestData['emp_state'] }}
