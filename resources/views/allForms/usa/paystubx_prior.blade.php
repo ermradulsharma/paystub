@@ -136,7 +136,7 @@
                     style=" padding-left:50px; padding-top:0px; padding-bottom:0px; padding-right:0px; font-weight:800; font-size:25px;">
                     {{ $requestData['cname'] }}</td>
                 <td></td>
-                <td style="font-size:14px;text-align:right;">No: 17658</td>
+                <td style="font-size:14px;text-align:right;"><b>No: 17658</b></td>
             </tr>
             <tr>
                 <td style="padding-left:50px; padding-top:0px; padding-bottom:30px; padding-right:0px; font-size:14px;">
@@ -165,18 +165,18 @@
                     <td style=" width:100%;font-size:14px;">Pay To The<br>
                         Order Of
                     </td>
-                    <td style=" font-size:14px;text-align:left; width:100%; margin:0 auto;">
+                    <td style=" font-size:15px;text-align:left; width:100%; margin:0 auto;">
                         <b>{{ $requestData['emp_name'] ?? '' }}</b>
                     </td>
-                    <td style="width:100%; text-align:right; margin-top:20px;font-size:12px;">
+                    <td style="width:100%; text-align:right; margin-top:20px;font-size:14px;">
                         <b>{{ $requestData['currency'] ?? '' }}
                             **{{ number_format($requestData['total_net_pay'], 2) }}</b>
                     </td>
                 </tr>
             </table>
-            <table style="border-bottom:1px solid black; width:88%; margin-top:10px;">
+            <table style="border-bottom:1.5px solid black; width:88%; margin-top:0px;">
                 <tr style=" ">
-                    <td style="width:100%; text-align:center; margin-top:50px;font-size:14px;">{{ $word }} and
+                    <td style="width:100%; text-align:center; margin-top:0px;font-size:16px;">{{ $word }} and
                         {{ (int) $decimal }}/100</td>
 
                 </tr>
@@ -185,9 +185,9 @@
         <div class="shrapdana">
             <table style="padding-top:60px;margin-top: 30px;">
                 <tr>
-                    <td style="font-size:18px;">Memo: </td>
-                    <td colspan="2" style="font-size: 22px;">FOR RECORDS PURPOSES ONLY</td>
-                    <td>-----------------------------------------------------------------</td>
+                    <td style="font-size:14px; padding-right:30px;">Memo: </td>
+                    <td colspan="2" style="font-size: 23px; letter-spacing: -1.5px; padding-right:50px;">FOR RECORDS PURPOSES ONLY</td>
+                    <td>----------------------------------------------------------------</td>
                 </tr>
                 <tr>
                     <td colspan="3"
@@ -196,9 +196,9 @@
                 </tr>
             </table>
         </div>
-        </br>
-        </br>
-        </br>
+        <br>
+        <br>
+        <br>
 
         <div class="row2">
             <div class="col1">
@@ -210,11 +210,11 @@
                     </tr>
                     <tr>
 
-                        <td>{{ $requestData['address_1'] }}</br>{{ $requestData['city'] }}
+                        <td>{{ $requestData['address_1'] }}<br>{{ $requestData['city'] }}
                             {{ $requestData['state'] }},
                             {{ $requestData['zip_code'] }}
                         </td>
-                        <td>{{ $requestData['emp_street_1'] }}</br>{{ $requestData['emp_city'] }}
+                        <td>{{ $requestData['emp_street_1'] }}<br>{{ $requestData['emp_city'] }}
                             {{ $requestData['emp_state'] }},
                             {{ $requestData['emp_zip_code'] }}
                         </td>
@@ -257,7 +257,7 @@
                 </table>
             </div>
         </div>
-        </br>
+        <br>
         <div class="row1">
             <div class="column1">
                 <table style="width:100%;">

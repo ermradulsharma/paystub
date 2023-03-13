@@ -31,10 +31,11 @@
         }
 
         .section_2 {
-            padding-top: 5px;
             background: #a9a9a9;
             color: white;
-            height: 35px;
+            height: 25px !important;
+            padding:0px !important;
+            margin: 0px !important;
         }
 
         .earning {
@@ -91,13 +92,6 @@
         .main {
             display: inline-flexbox;
 
-        }
-
-        .section_2 {
-            padding-top: 5px;
-            background: #a9a9a9;
-            color: white;
-            height: 35px;
         }
 
         .earning {
@@ -161,7 +155,7 @@
             position: absolute;
             width: 100%;
             height: 700px;
-            top: 50px;
+            top: -130px;
             left: 0px;
             right: 0;
             background-image: url("http://44.202.105.74/user/water.png");
@@ -189,9 +183,9 @@
         @endauth
     <div class="section_2">
         <table style="width: 100%;">
-            <thead style="background-color: #a9a9a9;">
-                <th style="text-align:left;font-size:16px;">#767767</th>
-                <th style="text-align:right; padding-right:20px; font-size:larger; text-transform: uppercase; font-weight:900"> Earning Statement </th>
+            <thead style="background-color: #a9a9a9;  ">
+                <th style="text-align:left;font-size:16px;"><span style="padding-right:8px;">#</span>767767</th>
+                <th style="text-align:right; padding-right:20px; font-size:16px; text-transform: uppercase; font-weight:900"> Earning Statement </th>
             </thead>
         </table>
     </div>
@@ -201,16 +195,16 @@
             <div class="col1">
                 <table>
                     <tr>
-                        <td style="font-size: 14px;"><b>{{ $requestData['cname'] }}</b></td>
+                        <td style="font-size: 15px;"><b>{{ $requestData['cname'] }}</b></td>
                     </tr>
                     <tr>
-                        <td>{{ $requestData['address_1'] }},</br>{{ $requestData['city'] }} {{ $requestData['state'] }}, {{ $requestData['zip_code'] }}, USA </td>
+                        <td style="font-size: 15px; padding-bottom:20px;">{{ $requestData['address_1'] }},<br>{{ $requestData['city'] }} {{ $requestData['state'] }}, {{ $requestData['zip_code'] }}, USA </td>
                     </tr>
                     <tr>
                         <td style="margin-top: 10px;"><span style="font-weight: 500;">Marital Status: </span>{{ $requestData['marital_status'] }} </td>
                     </tr>
                     <tr>
-                        <td> <span style="font-weight: 500;">Exemptions: </span> {{ $requestData['exemptions'] }}</td>
+                        <td style="padding-bottom:15px;"> <span style="font-weight: 500; ">Exemptions: </span> {{ $requestData['exemptions'] }}</td>
                     </tr>
                 </table>
             </div>
@@ -225,10 +219,10 @@
                         <td> <span style="font-weight: 500;">Pay Date:</span><span> {{ date('m/d/Y', strtotime($requestData['pay_date'])) }} </span></td>
                     </tr>
                     <tr>
-                        <td><span style="font-weight: 500;">Employee #: </span> <span> {{ $requestData['emp_id'] }}</span></td>
+                        <td><span style="font-weight: 500; ">Employee #: </span> <span> {{ $requestData['emp_id'] }}</span></td>
                     </tr>
                     <tr>
-                        <td> {{ $requestData['emp_street_1'] }}, </br> {{ $requestData['emp_city'] }} {{ $requestData['emp_state'] }},{{ $requestData['emp_zip_code'] }}, USA </td>
+                        <td style="padding-top:8px;"> {{ $requestData['emp_street_1'] }}, <br> {{ $requestData['emp_city'] }} {{ $requestData['emp_state'] }},{{ $requestData['emp_zip_code'] }}, USA </td>
                     </tr>
 
                     <tr>
@@ -237,61 +231,7 @@
                 </table>
             </div>
         </div>
-
-        {{-- <section class="infomation">
-            <div class="row">
-                <div class="col1">
-                    <table>
-                        <tr>
-                            <td style="font-size: 14px;"><b>{{ $requestData['cname'] }}</b></td>
-                        </tr>
-                        <tr>
-                            <td>{{ $requestData['address_1'] }},</br>{{ $requestData['city'] }}
-                                {{ $requestData['state'] }}, {{ $requestData['zip_code'] }}, USA </td>
-                        </tr>
-                        <tr>
-                            <td style="margin-top: 10px;"><span style="font-weight: 500;">Marital Status:
-                                </span>{{ $requestData['marital_status'] }} </td>
-                        </tr>
-                        <tr>
-                            <td> <span style="font-weight: 500;">Exemptions: </span> {{ $requestData['exemptions'] }}
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-
-                <div class="col2">
-                    <table>
-                        <tr>
-                            <td> <span style="font-weight: 500;">Pay Period:</span> <span>
-                                    {{ date('m/d/Y', strtotime($requestData['pay_start'])) }} -
-                                    {{ date('m/d/Y', strtotime($requestData['pay_end'])) }}</span></td>
-                        </tr>
-
-                        <tr>
-                            <td> <span style="font-weight: 500;">Pay Date:</span><span>
-                                    {{ date('m/d/Y', strtotime($requestData['pay_date'])) }} </span></td>
-                        </tr>
-                        <tr>
-                            <td><span style="font-weight: 500;">Employee #: </span> <span>
-                                    {{ $requestData['emp_id'] }}</span></td>
-                        </tr>
-                        <tr>
-                            <td> {{ $requestData['emp_street_1'] }}, </br> {{ $requestData['emp_city'] }}
-                                {{ $requestData['emp_state'] }},{{ $requestData['emp_zip_code'] }}, USA </td>
-                        </tr>
-
-                        <tr>
-                            <td><span style="font-weight: 500;">Social Security#:</span> <span>
-                                    ***-**-{{ $requestData['emp_ssn'] }}</span></td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </section> --}}
-
-
-        <section class="infomation">
+        <section class="infomation" style="border: none; border-top:1px solid darkgrey;">
             <div class="row1">
                 <div class="column1">
                     <table class="tablewidth">
@@ -320,7 +260,7 @@
                     <table class="tablewidth">
                         <thead>
                             <th class="hadding" style="text-align: left;">DEDUCTIONS</th>
-                            <th class="hadding" style="text-align: center;"">TOTAL</th>
+                            <th class="hadding" style="text-align: center;">TOTAL</th>
                             <th class=" hadding">YTD TOTAL</th>
                         </thead>
                         <tbody>
