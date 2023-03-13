@@ -40,7 +40,7 @@
     <div class="container" style="max-width:1450px;">
         <form id="submit_form_paystubx_id" action="javascript:void()" method="get">
             @csrf
-            <input type="hidden" name="form_type" value="uk" hidden>
+            <input type="hidden" name="form_type" value="uk">
             <div>
                 <h5 class="box-h5">Choose Template</h5>
                 <div class="row mb-3">
