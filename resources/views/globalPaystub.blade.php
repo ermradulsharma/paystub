@@ -250,7 +250,7 @@
                                 </div>
                             </div>
                             <div class="row mb-3 stubx">
-                                <div class="col-md-4">
+                                <div class="col-md-4 stubxc">
                                     <div>
                                         <label for="emp_city" class="lable">City <span class="redColor">*</span>
                                         </label>
@@ -258,7 +258,7 @@
                                             class="w-100   input-box-font removeDiv">
                                     </div>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-4 stubxc">
                                     <div>
                                         <label for="emp_state" class="lable">State <span class="redColor">*</span>
                                         </label>
@@ -276,7 +276,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-4 stubxc">
                                     <div>
                                         <label for="emp_zip_code" class="lable">Zip Code <span
                                                 class="redColor">*</span></label>
@@ -284,43 +284,7 @@
                                             placeholder="Zip Code" class="w-100  input-box-font removeDiv">
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row mb-3 stub d-none">
-                                <div class="col-md-3">
-                                    <div>
-                                        <label for="emp_city" class="lable">City <span class="redColor">*</span>
-                                        </label>
-                                        <input type="text" id="emp_city" name="emp_city" placeholder="City"
-                                            class="w-100   input-box-font removeDiv">
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div>
-                                        <label for="emp_state" class="lable">State <span class="redColor">*</span>
-                                        </label>
-                                        <div class="dropdown ">
-                                            <select name="emp_state" id="emp_state" class=" dropdown11 removeDiv">
-                                                <div>
-                                                    <option class="ff" style="color: #757575;" value=""
-                                                        data-tax="null"> --- Select State --- </option>
-                                                </div>
-                                                @foreach ($stateTaxes as $stateTax)
-                                                    <option value="{{ $stateTax->state }}"
-                                                        data-tax="{{ $stateTax->rate }}">{{ $stateTax->state }}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div>
-                                        <label for="emp_zip_code" class="lable">Zip Code <span
-                                                class="redColor">*</span></label>
-                                        <input type="text" id="emp_zip_code" name="emp_zip_code"
-                                            placeholder="Zip Code" class="w-100  input-box-font removeDiv">
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
+                                <div class="col-md-4 stubxc stubxcv d-none">
                                     <div>
                                         <label for="stub_no" class="lable">Stub No <span
                                                 class="redColor">*</span></label>
@@ -694,76 +658,37 @@
                     <div class="col-md-12">
                         <div class=" box-usa">
                             <div class="row mb-3 advice">
-                                {{-- <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
+                                <div class="col-lg-4 col-md-4 col-sm-6 mb-2 advicex advicexv d-none">
                                     <p class="p-0 m-0 " style="font-family: serif;">CO<span class="redColor">*</span></p>
                                     <input type="text" name="co_number" class="earnbtn text-center">
                                 </div>
-                                <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
-                                    <p class="p-0 m-0" style="font-family: serif;">FILE.<span class="redColor">*</span>
-                                    </p>
-                                    <input type="text" name="file_number" class="earnbtn text-center">
-                                </div> --}}
-                                {{-- <div class="col-lg-3 col-md-4 col-sm-6 mb-2">
-                                    <p class="p-0 m-0 " style="font-family: serif;">Stub No.<span
-                                            class="redColor">*</span> </p>
-                                    <input type="text" name="stub_no" class="earnbtn text-center" maxlength="6"
-                                        minlength="4" placeholder="1234"
-                                        onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
-                                </div> --}}
-                                <div class="col-lg-4 col-md-4 col-sm-6 mb-2">
-                                    <p class="p-0 m-0 " style="font-family: serif;">Advice Number:<span
-                                            class="redColor">*</span></p>
-                                    <input type="text" name="advice_number" class="earnbtn text-center"
-                                        placeholder="123456" maxlength="6" minlength="4"
-                                        onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
-                                </div>
-                                <div class="col-lg-4 col-md-4 col-sm-6 mb-2">
-                                    <p class="p-0 m-0 " style="font-family: serif;">Account Number LAST<span
-                                            class="redColor">*</span></p>
-                                    <input type="text" name="account_number_last_4" class="earnbtn text-center"
-                                        placeholder="1234" maxlength="4" minlength="4"
-                                        onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
-                                </div>
-                                <div class="col-lg-4 col-md-4 col-sm-6 mb-2">
-                                    <p class="p-0 m-0 " style="font-family: serif;">Transit ABA<span
-                                            class="redColor">*</span> </p>
-                                    <input type="text" name="transit_aba_number" class="earnbtn text-center"
-                                        placeholder="1234" maxlength="4" minlength="4"
-                                        onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
-                                </div>
-                            </div>
-                            <div class="row mb-3 clock_vchr d-none">
-                                <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
-                                    <p class="p-0 m-0 " style="font-family: serif;">CO<span class="redColor">*</span></p>
-                                    <input type="text" name="co_number" class="earnbtn text-center">
-                                </div>
-                                <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
+                                <div class="col-lg-4 col-md-4 col-sm-6 mb-2 advicex advicexv d-none">
                                     <p class="p-0 m-0" style="font-family: serif;">FILE.<span class="redColor">*</span>
                                     </p>
                                     <input type="text" name="file_number" class="earnbtn text-center">
                                 </div>
-                                <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
+                                <div class="col-lg-2 col-md-4 col-sm-6 mb-2 advicex advicexv d-none">
                                     <p class="p-0 m-0 " style="font-family: serif;">Clock Vchr Number<span
                                             class="redColor">*</span> </p>
                                     <input type="text" name="clock_vchr_number" class="earnbtn text-center"
                                         maxlength="6" minlength="4" placeholder="1234"
                                         onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                 </div>
-                                <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
+                                <div class="col-lg-4 col-md-4 col-sm-6 mb-2 advicex">
                                     <p class="p-0 m-0 " style="font-family: serif;">Advice Number:<span
                                             class="redColor">*</span></p>
                                     <input type="text" name="advice_number" class="earnbtn text-center"
                                         placeholder="123456" maxlength="6" minlength="4"
                                         onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                 </div>
-                                <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
+                                <div class="col-lg-4 col-md-4 col-sm-6 mb-2 advicex">
                                     <p class="p-0 m-0 " style="font-family: serif;">Account Number LAST<span
                                             class="redColor">*</span></p>
                                     <input type="text" name="account_number_last_4" class="earnbtn text-center"
                                         placeholder="1234" maxlength="4" minlength="4"
                                         onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                 </div>
-                                <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
+                                <div class="col-lg-4 col-md-4 col-sm-6 mb-2 advicex">
                                     <p class="p-0 m-0 " style="font-family: serif;">Transit ABA<span
                                             class="redColor">*</span> </p>
                                     <input type="text" name="transit_aba_number" class="earnbtn text-center"
@@ -800,25 +725,35 @@
                 var status = $('option:selected', '.at_id').attr('data-status');
                 var stub = $('option:selected', '.at_id').data('stub');
                 if (stub == 1) {
-                    console.log('stub', stub);
-                    $(".stubx").addClass("d-none");
-                    $(".stub").removeClass("d-none");
+                    $('.stubxc').each(function() {
+                        $(".stubxc").removeClass("col-md-4");
+                        $(".stubxcv").removeClass("d-none");
+                        $(".stubxc").addClass("col-md-3");
+                    });
                 }
                 if (stub == 0) {
-                    console.log('stub', stub);
-                    $(".stubx").removeClass("d-none");
-                    $(".stub").addClass("d-none");
+                    $('.stubxc').each(function() {
+                        $(".stubxc").addClass("col-md-4");
+                        $(".stubxcv").addClass("d-none");
+                        $(".stubxc").removeClass("col-md-3");
+                    });
                 }
                 if (status == 1) {
                     $(".tempElemant").removeClass("d-none");
                     var clock = $('option:selected', '.at_id').data('clock');
                     if (clock == 1) {
-                        $(".advice").addClass("d-none");
-                        $(".clock_vchr").removeClass("d-none");
+                        $('.advicex').each(function() {
+                            $(".advicex").removeClass("col-lg-4 col-md-4 col-sm-6");
+                            $(".advicexv").removeClass("d-none");
+                            $(".advicex").addClass("col-lg-2 col-md-4 col-sm-6");
+                        });
                     }
                     if (clock == 0) {
-                        $(".clock_vchr").addClass("d-none");
-                        $(".advice").removeClass("d-none");
+                        $('.advicex').each(function() {
+                            $(".advicex").addClass("col-lg-4 col-md-4 col-sm-6");
+                            $(".advicexv").addClass("d-none");
+                            $(".advicex").removeClass("col-lg-2 col-md-4 col-sm-6");
+                        });
                     }
 
                 } else {
@@ -831,14 +766,18 @@
                 var status = $('option:selected', '.bt_id').attr('data-status');
                 var stub = $('option:selected', '.bt_id').data('stub');
                 if (stub == 1) {
-                    console.log('stub', stub);
-                    $(".stubx").addClass("d-none");
-                    $(".stub").removeClass("d-none");
+                    $('.stubxc').each(function() {
+                        $(".stubxc").removeClass("col-md-4");
+                        $(".stubxcv").removeClass("d-none");
+                        $(".stubxc").addClass("col-md-3");
+                    });
                 }
                 if (stub == 0) {
-                    console.log('stub', stub);
-                    $(".stubx").removeClass("d-none");
-                    $(".stub").addClass("d-none");
+                    $('.stubxc').each(function() {
+                        $(".stubxc").addClass("col-md-4");
+                        $(".stubxcv").addClass("d-none");
+                        $(".stubxc").removeClass("col-md-3");
+                    });
                 }
                 if (status == 1) {
                     $(".tempElemant").removeClass("d-none");
@@ -1013,6 +952,7 @@
             }
             if (obj.locality != undefined) {
                 $("#emp_city").val(obj.locality);
+                $("#emp_city_1").val(obj.locality);
                 $('#emp_city').css('border-color', 'gray');
                 $(".0_emp_city").remove();
             } else {
@@ -1020,6 +960,7 @@
             }
             if (obj.administrative_area_level_1 != undefined) {
                 $("#emp_state").val(obj.administrative_area_level_1);
+                $("#emp_state_1").val(obj.administrative_area_level_1);
                 $('#emp_state').css('border-color', 'gray');
                 $(".0_emp_state").remove();
             } else {
@@ -1027,6 +968,7 @@
             }
             if (obj.postal_code != undefined) {
                 $("#emp_zip_code").val(obj.postal_code);
+                $("#emp_zip_code_1").val(obj.postal_code);
                 $('#emp_zip_code').css('border-color', 'gray');
                 $(".0_emp_zip_code").remove();
             } else {

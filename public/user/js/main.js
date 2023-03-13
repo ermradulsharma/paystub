@@ -95,10 +95,7 @@ function closeNav() {
 
 function checkValidationForm() {
     var ok = 1;
-    let form = $("form#submit_form_paystubx_id");
-    console.log(form);
     var formData = $("#submit_form_paystubx_id").serializeArray();
-    // console.log(formData);
     $(".removeDiv").keyup(function () {
         var id = $(this).attr("id");
         var value = $(this).val();
@@ -112,11 +109,12 @@ function checkValidationForm() {
     });
 
     $.each(formData, function (i, element) {
+        var name = element.name.replace("[]", "");
         var blockedTile = new Array("address_2", "emp_street_2", "hourly", "earning", "rate", "hours", "total", "period", "ytd_total", "period_gross_total", "ytd_gross_total", "deduction_period_tax", "deduction_period_tax_other", "advance_temp", "co_number", "file_number", "clock_vchr_number", "advice_number", "account_number_last_4", "transit_aba_number", "basic_temp", "taxes", "taxes_rate", "taxes_ytd", 'net_pay');
-        if (element.name == 'stub_no' && element.value == '') {
+        var input = $("#stub_no");
+        if (input.is(":hidden")) {
             blockedTile.push(element.name);
         }
-        var name = element.name.replace("[]", "");
 
         $(".0_" + name).remove();
         $("#" + name).css("border-color", "gray");
