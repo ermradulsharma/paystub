@@ -161,7 +161,8 @@
                                                     <option value="{{ $basic_temp->title ?? '' }}"
                                                         {{ $invoice->basic_temp == $basic_temp->title ? 'selected' : '' }}
                                                         data-src="{{ $basic_temp->images->file ?? '' }}"
-                                                        data-status="{{ $basic_temp->template_element }}">
+                                                        data-status="{{ $basic_temp->template_element }}" data-stub="{{ $basic_temp->stub_no }}"
+                                                        data-clock="{{ $basic_temp->co_no }}">
                                                         {{ $basic_temp->name }} </option>
                                                 @endforeach
                                             </select>
@@ -186,7 +187,8 @@
                                                     <option value="{{ $advance_temp->title ?? '' }}"
                                                         {{ $invoice->advance_temp == $advance_temp->title ? 'selected' : '' }}
                                                         data-src="{{ $advance_temp->images->file ?? '' }}"
-                                                        data-status="{{ $basic_temp->template_element ? true : false }}">
+                                                        data-status="{{ $advance_temp->template_element ? true : false }}" data-stub="{{ $advance_temp->stub_no }}"
+                                                        data-clock="{{ $advance_temp->co_no }}">
                                                         {{ $advance_temp->name ?? '' }} </option>
                                                 @endforeach
                                             </select>
@@ -194,10 +196,10 @@
                                                 style="font-size: 39px;"></i>
                                         </div>
                                     </div>
-                                    <div class=" mt-3 ">
+                                    {{-- <div class=" mt-3 ">
                                         <button class="viewbtn"> <a href="{{ url('template-view') }}">Click to see
                                                 Template Landscape view.This is not part of design</a></button>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>
@@ -264,7 +266,7 @@
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <div class="col-md-4">
+                                <div class="col-md-4 stubxc">
                                     <div>
                                         <label for="emp_city" class="lable">City <span class="redColor">*</span>
                                         </label>
@@ -273,7 +275,7 @@
                                             value="{{ $invoice->emp_city ?? '' }}">
                                     </div>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-4 stubxc">
                                     <div>
                                         <label for="emp_state" class="lable">State <span class="redColor">*</span>
                                         </label>
@@ -286,19 +288,29 @@
                                                 @foreach ($stateTaxes as $stateTax)
                                                     <option value="{{ $stateTax->state }}"
                                                         {{ $invoice->emp_state == $stateTax->state ? 'selected' : '' }}
-                                                        data-tax="{{ $stateTax->rate }}">{{ $stateTax->state }}</option>
+                                                        data-tax="{{ $stateTax->rate }}" >{{ $stateTax->state }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-4 stubxc">
                                     <div>
                                         <label for="emp_zip_code" class="lable">Zip Code <span
                                                 class="redColor">*</span></label>
                                         <input type="text" id="emp_zip_code" name="emp_zip_code"
                                             placeholder="Zip Code" class="w-100  input-box-font removeDiv"
                                             value="{{ $invoice->emp_zip_code ?? '' }}">
+                                    </div>
+                                </div>
+                                <div class="col-md-4 stubxc stubxcv d-none">
+                                    <div>
+                                        <label for="stub_no" class="lable">Stub No <span
+                                                class="redColor">*</span></label>
+                                        <input type="text" id="stub_no" name="stub_no"
+                                            class="w-100  input-box-font removeDiv" placeholder="1234" maxlength="6"
+                                            minlength="4"
+                                            onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')" value="{{ $invoice->stub_no ?? '' }}">
                                     </div>
                                 </div>
                             </div>
@@ -791,39 +803,39 @@
                         <div class="col-md-12 px-0">
                             <div class=" box-usa">
                                 <div class="row mb-3">
-                                    <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
+                                    <div class="col-lg-2 col-md-4 col-sm-6 mb-2 advicex advicexv d-none">
                                         <p class="p-0 m-0 " style="font-family: serif;">CO<span class="redColor">*</span>
                                         </p>
                                         <input class="earnbtn text-center " value="{{ $invoice->co_number ?? '' }}"
                                             name="co_number">
                                     </div>
-                                    <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
+                                    <div class="col-lg-2 col-md-4 col-sm-6 mb-2 advicex advicexv d-none">
                                         <p class="p-0 m-0" style="font-family: serif;">FILE.<span
                                                 class="redColor">*</span></p>
                                         <input class="earnbtn text-center " value="{{ $invoice->file_number ?? '' }}"
                                             name="file_number">
                                     </div>
-                                    <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
+                                    <div class="col-lg-2 col-md-4 col-sm-6 mb-2 advicex advicexv d-none">
                                         <p class="p-0 m-0 " style="font-family: serif;">CLOCK VCHR.<span
                                                 class="redColor">*</span>
                                         </p>
                                         <input class="earnbtn text-center "
                                             value="{{ $invoice->clock_vchr_number ?? '' }}" name="clock_vchr_number">
                                     </div>
-                                    <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
+                                    <div class="col-lg-2 col-md-4 col-sm-6 mb-2 advicex">
                                         <p class="p-0 m-0 " style="font-family: serif;">Advice Number:<span
                                                 class="redColor">*</span></p>
                                         <input class="earnbtn text-center " value="{{ $invoice->advice_number ?? '' }}"
                                             name="advice_number">
                                     </div>
-                                    <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
+                                    <div class="col-lg-2 col-md-4 col-sm-6 mb-2 advicex">
                                         <p class="p-0 m-0 " style="font-family: serif;">Account Number LAST<span
                                                 class="redColor">*</span></p>
                                         <input class="earnbtn text-center "
                                             value="{{ $invoice->account_number_last_4 ?? '' }}"
                                             name="account_number_last_4">
                                     </div>
-                                    <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
+                                    <div class="col-lg-2 col-md-4 col-sm-6 mb-2 advicex">
                                         <p class="p-0 m-0 " style="font-family: serif;">Transit ABA<span
                                                 class="redColor">*</span>
                                         </p>
@@ -855,39 +867,94 @@
     </div>
 @endsection
 @section('script')
-    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script> --}}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script>
-    <script>
-        $('.inputdatepicker').datepicker({
-            autoclose: true,
-            todayHighlight: true,
-            format: "mm/dd/yyyy",
-        });
-    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" crossorigin="anonymous"></script>
 
     <script>
         $(document).ready(function() {
-            $('#tel').usPhoneFormat({
-                format: 'xxx-xxx-xxxx',
-            });
             $('.advanceTemplate').change(function() {
-                var status = $('option:selected', '.at_id').attr('data-status');
-                console.log('status', status);
-                if (status == 1) {
-                    $(".tempElemant").removeClass("d-none");
+                var value = $('option:selected', '.at_id').attr('value');
+                if (value != '') {
+                    var status = $('option:selected', '.at_id').attr('data-status');
+                    var stub = $('option:selected', '.at_id').data('stub');
+                    if (stub == 1) {
+                        $('.stubxc').each(function() {
+                            $(".stubxc").removeClass("col-md-4");
+                            $(".stubxcv").removeClass("d-none");
+                            $(".stubxc").addClass("col-md-3");
+                        });
+                    }
+                    if (stub == 0) {
+                        $('.stubxc').each(function() {
+                            $(".stubxc").addClass("col-md-4");
+                            $(".stubxcv").addClass("d-none");
+                            $(".stubxc").removeClass("col-md-3");
+                        });
+                    }
+                    if (status == 1) {
+                        $(".tempElemant").removeClass("d-none");
+                        var clock = $('option:selected', '.at_id').data('clock');
+                        if (clock == 1) {
+                            $('.advicex').each(function() {
+                                $(".advicex").removeClass("col-lg-4 col-md-4 col-sm-6");
+                                $(".advicexv").removeClass("d-none");
+                                $(".advicex").addClass("col-lg-2 col-md-4 col-sm-6");
+                            });
+                        }
+                        if (clock == 0) {
+                            $('.advicex').each(function() {
+                                $(".advicex").addClass("col-lg-4 col-md-4 col-sm-6");
+                                $(".advicexv").addClass("d-none");
+                                $(".advicex").removeClass("col-lg-2 col-md-4 col-sm-6");
+                            });
+                        }
+
+                    } else {
+                        $(".tempElemant").addClass("d-none");
+                    }
                 } else {
+                    $('.stubxc').each(function() {
+                        $(".stubxc").addClass("col-md-4");
+                        $(".stubxcv").addClass("d-none");
+                        $(".stubxc").removeClass("col-md-3");
+                    });
                     $(".tempElemant").addClass("d-none");
                 }
                 $('option:selected', '.basicTemplate').prop("selected", false);
             });
+
             $('.basicTemplate').change(function() {
-                var status = $('option:selected', '.bt_id').attr('data-status');
-                if (status == 1) {
-                    $(".tempElemant").removeClass("d-none");
+                var value = $('option:selected', '.bt_id').attr('value');
+                if (value != '') {
+                    var status = $('option:selected', '.bt_id').attr('data-status');
+                    var stub = $('option:selected', '.bt_id').data('stub');
+                    if (stub == 1) {
+                        $('.stubxc').each(function() {
+                            $(".stubxc").removeClass("col-md-4");
+                            $(".stubxcv").removeClass("d-none");
+                            $(".stubxc").addClass("col-md-3");
+                        });
+                    }
+                    if (stub == 0) {
+                        $('.stubxc').each(function() {
+                            $(".stubxc").addClass("col-md-4");
+                            $(".stubxcv").addClass("d-none");
+                            $(".stubxc").removeClass("col-md-3");
+                        });
+                    }
+                    if (status == 1) {
+                        $(".tempElemant").removeClass("d-none");
+                    } else {
+                        $(".tempElemant").addClass("d-none");
+                    }
                 } else {
+                    $('.stubxc').each(function() {
+                        $(".stubxc").addClass("col-md-4");
+                        $(".stubxcv").addClass("d-none");
+                        $(".stubxc").removeClass("col-md-3");
+                    });
                     $(".tempElemant").addClass("d-none");
                 }
+
                 $('option:selected', '.advanceTemplate').prop("selected", false);
             });
 
@@ -907,6 +974,7 @@
                     $('#openEye').modal('show');
                 }
             });
+
             $('.basicTem').click(function() {
                 var imageattr = $('option:selected', '.bt_id').attr('data-src');
                 console.log('imageattr', imageattr);
@@ -1055,6 +1123,7 @@
             }
             if (obj.locality != undefined) {
                 $("#emp_city").val(obj.locality);
+                $("#emp_city_1").val(obj.locality);
                 $('#emp_city').css('border-color', 'gray');
                 $(".0_emp_city").remove();
             } else {
@@ -1062,6 +1131,7 @@
             }
             if (obj.administrative_area_level_1 != undefined) {
                 $("#emp_state").val(obj.administrative_area_level_1);
+                $("#emp_state_1").val(obj.administrative_area_level_1);
                 $('#emp_state').css('border-color', 'gray');
                 $(".0_emp_state").remove();
             } else {
@@ -1069,6 +1139,7 @@
             }
             if (obj.postal_code != undefined) {
                 $("#emp_zip_code").val(obj.postal_code);
+                $("#emp_zip_code_1").val(obj.postal_code);
                 $('#emp_zip_code').css('border-color', 'gray');
                 $(".0_emp_zip_code").remove();
             } else {
