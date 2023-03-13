@@ -724,68 +724,89 @@
     <script>
         $(document).ready(function() {
             $('.advanceTemplate').change(function() {
-                var status = $('option:selected', '.at_id').attr('data-status');
-                var stub = $('option:selected', '.at_id').data('stub');
-                if (stub == 1) {
-                    $('.stubxc').each(function() {
-                        $(".stubxc").removeClass("col-md-4");
-                        $(".stubxcv").removeClass("d-none");
-                        $(".stubxc").addClass("col-md-3");
-                    });
-                }
-                if (stub == 0) {
+                var value = $('option:selected', '.at_id').attr('value');
+                if (value != '') {
+                    var status = $('option:selected', '.at_id').attr('data-status');
+                    var stub = $('option:selected', '.at_id').data('stub');
+                    if (stub == 1) {
+                        $('.stubxc').each(function() {
+                            $(".stubxc").removeClass("col-md-4");
+                            $(".stubxcv").removeClass("d-none");
+                            $(".stubxc").addClass("col-md-3");
+                        });
+                    }
+                    if (stub == 0) {
+                        $('.stubxc').each(function() {
+                            $(".stubxc").addClass("col-md-4");
+                            $(".stubxcv").addClass("d-none");
+                            $(".stubxc").removeClass("col-md-3");
+                        });
+                    }
+                    if (status == 1) {
+                        $(".tempElemant").removeClass("d-none");
+                        var clock = $('option:selected', '.at_id').data('clock');
+                        if (clock == 1) {
+                            $('.advicex').each(function() {
+                                $(".advicex").removeClass("col-lg-4 col-md-4 col-sm-6");
+                                $(".advicexv").removeClass("d-none");
+                                $(".advicex").addClass("col-lg-2 col-md-4 col-sm-6");
+                            });
+                        }
+                        if (clock == 0) {
+                            $('.advicex').each(function() {
+                                $(".advicex").addClass("col-lg-4 col-md-4 col-sm-6");
+                                $(".advicexv").addClass("d-none");
+                                $(".advicex").removeClass("col-lg-2 col-md-4 col-sm-6");
+                            });
+                        }
+
+                    } else {
+                        $(".tempElemant").addClass("d-none");
+                    }
+                } else {
                     $('.stubxc').each(function() {
                         $(".stubxc").addClass("col-md-4");
                         $(".stubxcv").addClass("d-none");
                         $(".stubxc").removeClass("col-md-3");
                     });
-                }
-                if (status == 1) {
-                    $(".tempElemant").removeClass("d-none");
-                    var clock = $('option:selected', '.at_id').data('clock');
-                    if (clock == 1) {
-                        $('.advicex').each(function() {
-                            $(".advicex").removeClass("col-lg-4 col-md-4 col-sm-6");
-                            $(".advicexv").removeClass("d-none");
-                            $(".advicex").addClass("col-lg-2 col-md-4 col-sm-6");
-                        });
-                    }
-                    if (clock == 0) {
-                        $('.advicex').each(function() {
-                            $(".advicex").addClass("col-lg-4 col-md-4 col-sm-6");
-                            $(".advicexv").addClass("d-none");
-                            $(".advicex").removeClass("col-lg-2 col-md-4 col-sm-6");
-                        });
-                    }
-
-                } else {
                     $(".tempElemant").addClass("d-none");
                 }
                 $('option:selected', '.basicTemplate').prop("selected", false);
             });
 
             $('.basicTemplate').change(function() {
-                var status = $('option:selected', '.bt_id').attr('data-status');
-                var stub = $('option:selected', '.bt_id').data('stub');
-                if (stub == 1) {
-                    $('.stubxc').each(function() {
-                        $(".stubxc").removeClass("col-md-4");
-                        $(".stubxcv").removeClass("d-none");
-                        $(".stubxc").addClass("col-md-3");
-                    });
-                }
-                if (stub == 0) {
+                var value = $('option:selected', '.bt_id').attr('value');
+                if (value != '') {
+                    var status = $('option:selected', '.bt_id').attr('data-status');
+                    var stub = $('option:selected', '.bt_id').data('stub');
+                    if (stub == 1) {
+                        $('.stubxc').each(function() {
+                            $(".stubxc").removeClass("col-md-4");
+                            $(".stubxcv").removeClass("d-none");
+                            $(".stubxc").addClass("col-md-3");
+                        });
+                    }
+                    if (stub == 0) {
+                        $('.stubxc').each(function() {
+                            $(".stubxc").addClass("col-md-4");
+                            $(".stubxcv").addClass("d-none");
+                            $(".stubxc").removeClass("col-md-3");
+                        });
+                    }
+                    if (status == 1) {
+                        $(".tempElemant").removeClass("d-none");
+                    } else {
+                        $(".tempElemant").addClass("d-none");
+                    }
+                } else {
                     $('.stubxc').each(function() {
                         $(".stubxc").addClass("col-md-4");
                         $(".stubxcv").addClass("d-none");
                         $(".stubxc").removeClass("col-md-3");
                     });
-                }
-                if (status == 1) {
-                    $(".tempElemant").removeClass("d-none");
-                } else {
                     $(".tempElemant").addClass("d-none");
                 }
+
                 $('option:selected', '.advanceTemplate').prop("selected", false);
             });
 
