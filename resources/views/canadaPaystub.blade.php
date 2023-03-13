@@ -388,7 +388,7 @@
                 </div>
             </div>
             <!-- hidden values -->
-            <input type="hidden" name="days_number" hidden id="days_number">
+            <input type="hidden" name="days_number"  id="days_number" value="0" hidden>
             <!-- //hidden values -->
         </form>
     </div>
@@ -530,6 +530,7 @@
 
         function setEmpLocation(obj) {
             console.log('obj', obj);
+        }
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
     <script>
