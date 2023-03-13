@@ -50,8 +50,11 @@
                             <div class="row mb-3 ">
                                 <div class="col-md-6 mt-1">
                                     <div>
-                                        <label for="cname" class="lable">EMPLOYER (COMPANY) NAME <span class="redColor">*</span> </label>
-                                        <input type="text" id="cname" name="cname" placeholder="Employer(Company) Name" class="w-100 p-2 text-center input-box-font removeDiv">
+                                        <label for="cname" class="lable">EMPLOYER (COMPANY) NAME <span
+                                                class="redColor">*</span> </label>
+                                        <input type="text" id="cname" name="cname"
+                                            placeholder="Employer(Company) Name"
+                                            class="w-100 p-2 text-center input-box-font removeDiv">
                                     </div>
                                 </div>
 
@@ -145,7 +148,8 @@
                                                 @foreach ($basicType as $data)
                                                     <option value="{{ $data->title ?? '' }}"
                                                         data-src="{{ $data->images->file ?? '' }}"
-                                                        data-status="{{ $data->template_element }}">
+                                                        data-status="{{ $data->template_element }}"
+                                                        data-stub="{{ $data->stub_no }}">
                                                         {{ $data->name }}
                                                     </option>
                                                 @endforeach
@@ -169,9 +173,10 @@
                                                 @foreach ($advanceType as $data)
                                                     <option value="{{ $data->title ?? '' }}"
                                                         data-src="{{ $data->images->file ?? '' }}"
-                                                        data-status="{{ $data->template_element }}">
-                                                        {{ $data->name ?? '' }}
-                                                    </option>
+                                                        data-status="{{ $data->template_element }}"
+                                                        data-stub="{{ $data->stub_no }}"
+                                                        data-clock="{{ $data->co_no }}">
+                                                        {{ $data->name ?? '' }} </option>
                                                 @endforeach
                                             </select>
                                             <i class="fa fa-eye-slash advanceTem uk-eye" role="button"
@@ -244,7 +249,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row mb-3">
+                            <div class="row mb-3 stubx">
                                 <div class="col-md-4">
                                     <div>
                                         <label for="emp_city" class="lable">City <span class="redColor">*</span>
@@ -277,6 +282,50 @@
                                                 class="redColor">*</span></label>
                                         <input type="text" id="emp_zip_code" name="emp_zip_code"
                                             placeholder="Zip Code" class="w-100  input-box-font removeDiv">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3 stub d-none">
+                                <div class="col-md-3">
+                                    <div>
+                                        <label for="emp_city" class="lable">City <span class="redColor">*</span>
+                                        </label>
+                                        <input type="text" id="emp_city" name="emp_city" placeholder="City"
+                                            class="w-100   input-box-font removeDiv">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div>
+                                        <label for="emp_state" class="lable">State <span class="redColor">*</span>
+                                        </label>
+                                        <div class="dropdown ">
+                                            <select name="emp_state" id="emp_state" class=" dropdown11 removeDiv">
+                                                <div>
+                                                    <option class="ff" style="color: #757575;" value=""
+                                                        data-tax="null"> --- Select State --- </option>
+                                                </div>
+                                                @foreach ($stateTaxes as $stateTax)
+                                                    <option value="{{ $stateTax->state }}"
+                                                        data-tax="{{ $stateTax->rate }}">{{ $stateTax->state }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div>
+                                        <label for="emp_zip_code" class="lable">Zip Code <span
+                                                class="redColor">*</span></label>
+                                        <input type="text" id="emp_zip_code" name="emp_zip_code"
+                                            placeholder="Zip Code" class="w-100  input-box-font removeDiv">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div>
+                                        <label for="stub_no" class="lable">Stub No <span
+                                                class="redColor">*</span></label>
+                                        <input type="text" id="stub_no" name="stub_no" placeholder="Stub No"
+                                            class="w-100  input-box-font removeDiv">
                                     </div>
                                 </div>
                             </div>
@@ -552,9 +601,15 @@
                             @foreach ($deduction as $key => $item)
                                 <div class="row">
                                     <div class="col-md-4 col-lg-3 mb-3">
-                                        <img src="{{ asset('images/lock.png') }}" class="earnbtn2 lock" data-id="{{ $key }}" id="{{ $key }}"  data-src="{{ asset('images/openPadlock.png') }}">
-                                        <img class="earnbtn2 lock" data-id="{{ $key }}" src="{{ asset('images/openPadlock.png') }}" style="display:none">
-                                        <input class="earnbtn text-center taxes" name="taxes[]" id="taxe_{{ $key }}" data-id="{{ $key }}" data-value="{{ $item->price }}" value="{{ $item->title }}"  data-value="{{ $item->title }}" data-text="{{ $item->type }}" readonly>
+                                        <img src="{{ asset('images/lock.png') }}" class="earnbtn2 lock"
+                                            data-id="{{ $key }}" id="{{ $key }}"
+                                            data-src="{{ asset('images/openPadlock.png') }}">
+                                        <img class="earnbtn2 lock" data-id="{{ $key }}"
+                                            src="{{ asset('images/openPadlock.png') }}" style="display:none">
+                                        <input class="earnbtn text-center taxes" name="taxes[]"
+                                            id="taxe_{{ $key }}" data-id="{{ $key }}"
+                                            data-value="{{ $item->price }}" value="{{ $item->title }}"
+                                            data-value="{{ $item->title }}" data-text="{{ $item->type }}" readonly>
                                     </div>
                                     <div class="col-md-1 col-lg-1"></div>
                                     <div class="col-md-2 col-lg-3"></div>
@@ -638,41 +693,81 @@
                 <div class="row mb-3">
                     <div class="col-md-12">
                         <div class=" box-usa">
-                            <div class="row mb-3">
-                                <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
+                            <div class="row mb-3 advice">
+                                {{-- <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
                                     <p class="p-0 m-0 " style="font-family: serif;">CO<span class="redColor">*</span></p>
-                                    <input name="co_number" class="earnbtn text-center">
+                                    <input type="text" name="co_number" class="earnbtn text-center">
                                 </div>
                                 <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
                                     <p class="p-0 m-0" style="font-family: serif;">FILE.<span class="redColor">*</span>
                                     </p>
-                                    <input name="file_number" class="earnbtn text-center">
-                                </div>
-                                <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
+                                    <input type="text" name="file_number" class="earnbtn text-center">
+                                </div> --}}
+                                {{-- <div class="col-lg-3 col-md-4 col-sm-6 mb-2">
                                     <p class="p-0 m-0 " style="font-family: serif;">Stub No.<span
                                             class="redColor">*</span> </p>
-                                    <input name="clock_vchr_number" class="earnbtn text-center" maxlength="6" minlength="4" placeholder="1234"
-                                    onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+                                    <input type="text" name="stub_no" class="earnbtn text-center" maxlength="6"
+                                        minlength="4" placeholder="1234"
+                                        onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+                                </div> --}}
+                                <div class="col-lg-4 col-md-4 col-sm-6 mb-2">
+                                    <p class="p-0 m-0 " style="font-family: serif;">Advice Number:<span
+                                            class="redColor">*</span></p>
+                                    <input type="text" name="advice_number" class="earnbtn text-center"
+                                        placeholder="123456" maxlength="6" minlength="4"
+                                        onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-6 mb-2">
+                                    <p class="p-0 m-0 " style="font-family: serif;">Account Number LAST<span
+                                            class="redColor">*</span></p>
+                                    <input type="text" name="account_number_last_4" class="earnbtn text-center"
+                                        placeholder="1234" maxlength="4" minlength="4"
+                                        onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-6 mb-2">
+                                    <p class="p-0 m-0 " style="font-family: serif;">Transit ABA<span
+                                            class="redColor">*</span> </p>
+                                    <input type="text" name="transit_aba_number" class="earnbtn text-center"
+                                        placeholder="1234" maxlength="4" minlength="4"
+                                        onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+                                </div>
+                            </div>
+                            <div class="row mb-3 clock_vchr d-none">
+                                <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
+                                    <p class="p-0 m-0 " style="font-family: serif;">CO<span class="redColor">*</span></p>
+                                    <input type="text" name="co_number" class="earnbtn text-center">
+                                </div>
+                                <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
+                                    <p class="p-0 m-0" style="font-family: serif;">FILE.<span class="redColor">*</span>
+                                    </p>
+                                    <input type="text" name="file_number" class="earnbtn text-center">
+                                </div>
+                                <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
+                                    <p class="p-0 m-0 " style="font-family: serif;">Clock Vchr Number<span
+                                            class="redColor">*</span> </p>
+                                    <input type="text" name="clock_vchr_number" class="earnbtn text-center"
+                                        maxlength="6" minlength="4" placeholder="1234"
+                                        onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                 </div>
                                 <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
                                     <p class="p-0 m-0 " style="font-family: serif;">Advice Number:<span
                                             class="redColor">*</span></p>
-                                    <input name="advice_number" class="earnbtn text-center" placeholder="123456"
-                                        maxlength="6" minlength="4"
+                                    <input type="text" name="advice_number" class="earnbtn text-center"
+                                        placeholder="123456" maxlength="6" minlength="4"
                                         onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                 </div>
                                 <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
                                     <p class="p-0 m-0 " style="font-family: serif;">Account Number LAST<span
                                             class="redColor">*</span></p>
-                                    <input name="account_number_last_4" class="earnbtn text-center" placeholder="1234"
-                                        maxlength="4" minlength="4"
+                                    <input type="text" name="account_number_last_4" class="earnbtn text-center"
+                                        placeholder="1234" maxlength="4" minlength="4"
                                         onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                 </div>
                                 <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
                                     <p class="p-0 m-0 " style="font-family: serif;">Transit ABA<span
                                             class="redColor">*</span> </p>
-                                    <input name="transit_aba_number" class="earnbtn text-center" placeholder="1234"
-                                        maxlength="4" minlength="4"
+                                    <input type="text" name="transit_aba_number" class="earnbtn text-center"
+                                        placeholder="1234" maxlength="4" minlength="4"
                                         onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                 </div>
                             </div>
@@ -703,9 +798,29 @@
         $(document).ready(function() {
             $('.advanceTemplate').change(function() {
                 var status = $('option:selected', '.at_id').attr('data-status');
-                console.log('status', status);
+                var stub = $('option:selected', '.at_id').data('stub');
+                if (stub == 1) {
+                    console.log('stub', stub);
+                    $(".stubx").addClass("d-none");
+                    $(".stub").removeClass("d-none");
+                }
+                if (stub == 0) {
+                    console.log('stub', stub);
+                    $(".stubx").removeClass("d-none");
+                    $(".stub").addClass("d-none");
+                }
                 if (status == 1) {
                     $(".tempElemant").removeClass("d-none");
+                    var clock = $('option:selected', '.at_id').data('clock');
+                    if (clock == 1) {
+                        $(".advice").addClass("d-none");
+                        $(".clock_vchr").removeClass("d-none");
+                    }
+                    if (clock == 0) {
+                        $(".clock_vchr").addClass("d-none");
+                        $(".advice").removeClass("d-none");
+                    }
+
                 } else {
                     $(".tempElemant").addClass("d-none");
                 }
@@ -714,6 +829,17 @@
 
             $('.basicTemplate').change(function() {
                 var status = $('option:selected', '.bt_id').attr('data-status');
+                var stub = $('option:selected', '.bt_id').data('stub');
+                if (stub == 1) {
+                    console.log('stub', stub);
+                    $(".stubx").addClass("d-none");
+                    $(".stub").removeClass("d-none");
+                }
+                if (stub == 0) {
+                    console.log('stub', stub);
+                    $(".stubx").removeClass("d-none");
+                    $(".stub").addClass("d-none");
+                }
                 if (status == 1) {
                     $(".tempElemant").removeClass("d-none");
                 } else {
