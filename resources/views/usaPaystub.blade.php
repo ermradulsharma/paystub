@@ -659,45 +659,75 @@
                 <div class="row mb-3">
                     <div class="col-md-12">
                         <div class=" box-usa">
-                            <div class="row mb-3 advice">
-                                <div class="col-lg-4 col-md-4 col-sm-6 mb-2 advicex advicexv d-none">
-                                    <p class="p-0 m-0 " style="font-family: serif;">CO<span class="redColor">*</span></p>
-                                    <input type="text" name="co_number"  id="co_number" class="earnbtn text-center">
-                                </div>
-                                <div class="col-lg-4 col-md-4 col-sm-6 mb-2 advicex advicexv d-none">
-                                    <p class="p-0 m-0" style="font-family: serif;">FILE.<span class="redColor">*</span>
-                                    </p>
-                                    <input type="text" name="file_number"  id="file_number" class="earnbtn text-center">
-                                </div>
-                                <div class="col-lg-2 col-md-4 col-sm-6 mb-2 advicex advicexv d-none">
-                                    <p class="p-0 m-0 " style="font-family: serif;">Clock Vchr Number<span
-                                            class="redColor">*</span> </p>
-                                    <input type="text" name="clock_vchr_number" id="clock_vchr_number" class="earnbtn text-center"
-                                        maxlength="6" minlength="4" placeholder="1234"
-                                        onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
-                                </div>
-                                <div class="col-lg-4 col-md-4 col-sm-6 mb-2 advicex">
-                                    <p class="p-0 m-0 " style="font-family: serif;">Advice Number:<span
-                                            class="redColor">*</span></p>
-                                    <input type="text" name="advice_number" id="advice_number" class="earnbtn text-center"
-                                        placeholder="123456" maxlength="6" minlength="4"
-                                        onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
-                                </div>
-                                <div class="col-lg-4 col-md-4 col-sm-6 mb-2 advicex">
-                                    <p class="p-0 m-0 " style="font-family: serif;">Account Number LAST<span
-                                            class="redColor">*</span></p>
-                                    <input type="text" name="account_number_last_4" id="account_number_last_4" class="earnbtn text-center"
-                                        placeholder="1234" maxlength="4" minlength="4"
-                                        onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
-                                </div>
-                                <div class="col-lg-4 col-md-4 col-sm-6 mb-2 advicex">
-                                    <p class="p-0 m-0 " style="font-family: serif;">Transit ABA<span
-                                            class="redColor">*</span> </p>
-                                    <input type="text" name="transit_aba_number" id="transit_aba_number" class="earnbtn text-center"
-                                        placeholder="1234" maxlength="4" minlength="4"
-                                        onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+                            <div>
+                                <div class="row mb-3 advice">
+                                    <div class="col-lg-4 col-md-4 col-sm-6 mb-2 advicex advicexv d-none">
+                                        <div>
+                                            <p class="p-0 m-0 " style="font-family: serif;">CO<span
+                                                    class="redColor">*</span></p>
+                                            <input type="text" name="co_number" id="co_number"
+                                                class="earnbtn text-center">
+                                        </div>
+
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-6 mb-2 advicex advicexv d-none">
+                                        <div>
+                                            <p class="p-0 m-0" style="font-family: serif;">FILE.<span
+                                                    class="redColor">*</span>
+                                            </p>
+                                            <input type="text" name="file_number" id="file_number"
+                                                class="earnbtn text-center">
+                                        </div>
+
+                                    </div>
+                                    <div class="col-lg-2 col-md-4 col-sm-6 mb-2 advicex advicexv d-none">
+                                        <div>
+                                            <p class="p-0 m-0 " style="font-family: serif;">Clock Vchr Number<span
+                                                    class="redColor">*</span> </p>
+                                            <input type="text" name="clock_vchr_number" id="clock_vchr_number"
+                                                class="earnbtn text-center" maxlength="6" minlength="4"
+                                                placeholder="1234"
+                                                onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-lg-4 col-md-4 col-sm-6 mb-2 advicex">
+                                        <div>
+                                            <p class="p-0 m-0 " style="font-family: serif;">Advice Number:<span
+                                                    class="redColor">*</span></p>
+                                            <input type="text" name="advice_number" id="advice_number"
+                                                class="earnbtn text-center" placeholder="123456" maxlength="6"
+                                                minlength="4"
+                                                onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+                                        </div>
+
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-6 mb-2 advicex">
+                                        <div>
+                                            <p class="p-0 m-0 " style="font-family: serif;">Account Number LAST<span
+                                                    class="redColor">*</span></p>
+                                            <input type="text" name="account_number_last_4" id="account_number_last_4"
+                                                class="earnbtn text-center" placeholder="1234" maxlength="4"
+                                                minlength="4"
+                                                onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+                                        </div>
+
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-6 mb-2 advicex">
+                                        <div>
+                                            <p class="p-0 m-0 " style="font-family: serif;">Transit ABA<span
+                                                    class="redColor">*</span> </p>
+                                            <input type="text" name="transit_aba_number" id="transit_aba_number"
+                                                class="earnbtn text-center" placeholder="1234" maxlength="4"
+                                                minlength="4"
+                                                onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+                                        </div>
+
+                                    </div>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
