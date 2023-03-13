@@ -312,6 +312,15 @@ $(document).ready(function () {
         $(".hours").attr("readonly", false);
         $(".total").attr("readonly", true);
         $(".removeData").parent().removeClass("margintop-5");
+        $('.time_period').val('weekly');
+        $('.auto_calculate').val('on');
+        var date = new Date();
+        var day = date.getDate();
+        var month = date.getMonth() + 1;
+        var year = date.getFullYear();
+        var date_1 = (("" + month).length < 2 ? "0" : "") + month + "/" + (("" + day).length < 2 ? "0" : "") + day + "/" + year;
+        $(".pay_start").val(date_1);
+        dayCalculate();
         is_empty();
     });
 
@@ -577,6 +586,6 @@ $(document).ready(function () {
         return arr.filter((item, index) => arr.indexOf(item) === index);
     }
 
-    
+
 
 });
