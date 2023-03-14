@@ -108,14 +108,6 @@ function checkValidationForm() {
         removeErrorMsg(id, value);
     });
 
-    // var hiddenElements = [];
-
-    // $(formData).each(function (i, element) {
-    //     var name = element.name.replace("[]", "");
-    //     // var name = element.name;
-
-    // });
-    // console.log(hiddenElements);
     $.each(formData, function (i, element) {
         var name = element.name.replace("[]", "");
         var blockedTile = new Array("address_2", "emp_street_2", "hourly", "earning", "rate", "hours", "total", "period", "ytd_total", "period_gross_total", "ytd_gross_total", "deduction_period_tax", "deduction_period_tax_other", "advance_temp", "basic_temp", "taxes", "taxes_rate", "taxes_ytd", 'net_pay', 'note');

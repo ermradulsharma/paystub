@@ -12,7 +12,8 @@
                 <h2 class="text-light">Complete Your Order</h2>
             </div>
             <div class="w-100 text-center pb-5">
-                <h3 class="mt-2 font-weight-normal">Congratulations. Select your plan to gain unlimited access. Paystubs & Tax Forms</h3 class="mt-2">
+                <h3 class="mt-2 font-weight-normal">Congratulations. Select your plan to gain unlimited access. Paystubs
+                    & Tax Forms</h3 class="mt-2">
             </div>
         </div>
         <div class="mx-lg-5 px-lg-5">

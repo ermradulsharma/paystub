@@ -461,7 +461,7 @@ $(document).ready(function () {
                     taxes_values = parseFloat(tax_state).toFixed(2);
                 }
                 // if (taxes_text == 'deduction_8' || taxes_text == 'deduction_18') {   // Local
-                    if (taxes_text == 'deduction_3' || taxes_text == 'deduction_5') {   // live condition
+                if (taxes_text == 'deduction_3' || taxes_text == 'deduction_5') {   // live condition
                     var time_period = $(".time_period").val();
                     if (time_period == 'weekly') {
                         period = 52;

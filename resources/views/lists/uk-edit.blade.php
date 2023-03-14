@@ -18,7 +18,8 @@
 
 <!-- Modal End -->
 <!-- Modal Start -->
-<div class="modal fade" id="tempViewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="tempViewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -27,7 +28,8 @@
                 </button>
             </div>
             <div class="modal-body">
-                <embed src="" type="" id="tempView" allowtransparency="false" style="background-color : transparent;" frameborder="0" width="100%" height="800">
+                <embed src="" type="" id="tempView" allowtransparency="false" style="background-color : transparent;"
+                    frameborder="0" width="100%" height="800">
             </div>
         </div>
     </div>
@@ -50,16 +52,22 @@
                                 <h6 style="" class="base">BASIC TEMPLATES</h6>
                                 <div class="mt-4">
                                     <div class="input-group mmenu mb-3">
-                                        <select name="basic_temp" class="form-control dropdown1 text-center bt_id small-font basicTemplate" style="margin-right:10px; font-size:18px;">
+                                        <select name="basic_temp"
+                                            class="form-control dropdown1 text-center bt_id small-font basicTemplate"
+                                            style="margin-right:10px; font-size:18px;">
                                             <option value=""> --- Select Basic Templates --- </option>
                                             @foreach ($basicType as $data)
                                             @if ($data->state == 'uk' && $data->type == 'basic')
-                                            <option value="{{ $data->title ?? '' }}" data-src="{{ $data->images->file ?? '' }}" {{$invoice->basic_temp == $data->title ? 'selected' : ''}}> {{ $data->name }}
+                                            <option value="{{ $data->title ?? '' }}"
+                                                data-src="{{ $data->images->file ?? '' }}" {{$invoice->basic_temp ==
+                                                $data->title ? 'selected' : ''}}> {{ $data->name }}
                                             </option>
                                             @endif
                                             @endforeach
                                         </select>
-                                        <i data-src="{{ $data->images->file ?? '' }}" class="fa fa-eye-slash basicTem uk-eye" style="font-size: 39px;" role="button"></i>
+                                        <i data-src="{{ $data->images->file ?? '' }}"
+                                            class="fa fa-eye-slash basicTem uk-eye" style="font-size: 39px;"
+                                            role="button"></i>
                                     </div>
                                 </div>
                             </div>
@@ -72,19 +80,25 @@
                                 <h6 style="margin-left:-23px;font-weight: 900;" class="add">ADVANCED TEMPLATES</h6>
                                 <div class="mt-4">
                                     <div class="input-group mmenu mb-3" style="margin: auto;">
-                                        <select name="advance_temp" class="form-control text-center dropdown1 at_id small-font advanceTemplate" style="margin-right:10px; font-size:18px;">
+                                        <select name="advance_temp"
+                                            class="form-control text-center dropdown1 at_id small-font advanceTemplate"
+                                            style="margin-right:10px; font-size:18px;">
                                             <option value=""> --- Select Advance Templates --- </option>
                                             @foreach ($advanceType as $data)
                                             @if ($data->state == 'uk' && $data->type == 'advance')
-                                            <option value="{{ $data->title ?? '' }}" data-src="{{ $data->images->file ?? '' }}"> {{ $data->name }} </option>
+                                            <option value="{{ $data->title ?? '' }}"
+                                                data-src="{{ $data->images->file ?? '' }}"> {{ $data->name }} </option>
                                             @endif
                                             @endforeach
                                         </select>
-                                        <i data-src="{{ $data->images->file ?? '' }}" class="fa fa-eye-slash advanceTem uk-eye" role="button" style="font-size: 39px;" class=""></i>
+                                        <i data-src="{{ $data->images->file ?? '' }}"
+                                            class="fa fa-eye-slash advanceTem uk-eye" role="button"
+                                            style="font-size: 39px;" class=""></i>
                                     </div>
                                 </div>
                                 <div class=" mt-3 ">
-                                    <button class="viewbtn"> <a href="{{ url('template-view') }}">Click to see Template Landscape view.This is not part of design</a></button>
+                                    <button class="viewbtn"> <a href="{{ url('template-view') }}">Click to see Template
+                                            Landscape view.This is not part of design</a></button>
                                 </div>
                             </div>
                         </div>
@@ -100,13 +114,20 @@
                     <div class=" box-usa">
                         <div class="row mb-3" style="align-items: end;">
                             <div class="col-md-6 mt-1">
-                                <label for="cname" class="lable">EMPLOYER (COMPANY) NAME <span style="color:red;">*</span> </label>
-                                <input type="text" id="cname" name="cname" placeholder="Your Employer & Company Name" class="w-100 p-2 text-center" style="font-size:14px;" value="{{$invoice->cname ?? null}}">
+                                <label for="cname" class="lable">EMPLOYER (COMPANY) NAME <span
+                                        style="color:red;">*</span> </label>
+                                <input type="text" id="cname" name="cname" placeholder="Your Employer & Company Name"
+                                    class="w-100 p-2 text-center" style="font-size:14px;"
+                                    value="{{$invoice->cname ?? null}}">
                             </div>
 
                             <div class="col-md-6 mt-1">
-                                <label for="company_address" class="lable text-center">EMPLOYER (COMAPNY) ADDRESS <span style="color:red;">*</span></label>
-                                <input type="text" id="company_address" name="company_address" placeholder="5 Throgmorton St, London EC2N 2AD, United Kingdom" class="w-100 p-2 text-center" style="font-size:14px;" value="{{$invoice->company_address ?? null}}">
+                                <label for="company_address" class="lable text-center">EMPLOYER (COMAPNY) ADDRESS <span
+                                        style="color:red;">*</span></label>
+                                <input type="text" id="company_address" name="company_address"
+                                    placeholder="5 Throgmorton St, London EC2N 2AD, United Kingdom"
+                                    class="w-100 p-2 text-center" style="font-size:14px;"
+                                    value="{{$invoice->company_address ?? null}}">
                             </div>
                         </div>
                     </div>
@@ -120,63 +141,98 @@
                     <div class="row mb-3" style="align-items: end;">
                         <div class="col-md-6 mt-1">
                             <label for="emp_name" class="lable">EMPLOYEE NAME <span style="color:red;">*</span> </label>
-                            <input type="text" id="emp_name" value="{{$invoice->emp_name ?? null}}" name="emp_name" placeholder="Your Employer &amp; Company Name" class="w-100 p-2 text-center" style="font-size:14px;">
+                            <input type="text" id="emp_name" value="{{$invoice->emp_name ?? null}}" name="emp_name"
+                                placeholder="Your Employer &amp; Company Name" class="w-100 p-2 text-center"
+                                style="font-size:14px;">
                         </div>
 
                         <div class="col-md-6 mt-1">
-                            <label for="emp_street_1" class="lable text-center">EMPLOYEE ADDRESS 1 <span style="color:red;">*</span></label>
-                            <input type="text" id="emp_street_1" value="{{$invoice->emp_street_1 ?? null}}" name="emp_street_1" placeholder="5 Throgmorton St, London EC2N 2AD, United Kingdom" class="w-100 p-2 text-center" style="font-size:14px;">
+                            <label for="emp_street_1" class="lable text-center">EMPLOYEE ADDRESS 1 <span
+                                    style="color:red;">*</span></label>
+                            <input type="text" id="emp_street_1" value="{{$invoice->emp_street_1 ?? null}}"
+                                name="emp_street_1" placeholder="5 Throgmorton St, London EC2N 2AD, United Kingdom"
+                                class="w-100 p-2 text-center" style="font-size:14px;">
                         </div>
                         <div class="col-md-6 mt-1">
                             <label for="emp_street_2" class="lable">STREET ADDRESS 2</label>
-                            <input type="text" id="emp_street_2" value="{{$invoice->emp_street_2 ?? null}}" name="emp_street_2" placeholder="Your Employer &amp; Company Name" class="w-100 p-2 text-center" style="font-size:14px;">
+                            <input type="text" id="emp_street_2" value="{{$invoice->emp_street_2 ?? null}}"
+                                name="emp_street_2" placeholder="Your Employer &amp; Company Name"
+                                class="w-100 p-2 text-center" style="font-size:14px;">
                         </div>
 
                         <div class="col-md-6 mt-1">
-                            <label for="emp_zip_code" class="lable text-center">POSTCODE<span style="color:red;">*</span></label>
-                            <input type="text" id="emp_zip_code" value="{{$invoice->emp_zip_code ?? null}}" name="emp_zip_code" placeholder="5 Throgmorton St, London EC2N 2AD, United Kingdom" class="w-100 p-2 text-center" style="font-size:14px;">
+                            <label for="emp_zip_code" class="lable text-center">POSTCODE<span
+                                    style="color:red;">*</span></label>
+                            <input type="text" id="emp_zip_code" value="{{$invoice->emp_zip_code ?? null}}"
+                                name="emp_zip_code" placeholder="5 Throgmorton St, London EC2N 2AD, United Kingdom"
+                                class="w-100 p-2 text-center" style="font-size:14px;">
                         </div>
                     </div>
                     <div style="padding:0 !important;" class="row p-3">
-                        <div class="col-lg-5" style="color: black; text-transform:uppercase;font-size:30px; font-weight:600;">
+                        <div class="col-lg-5"
+                            style="color: black; text-transform:uppercase;font-size:30px; font-weight:600;">
                             <p class="top-heading">Earning Statement</p>
                             <div style="border:3px solid #ff5722;" class=" pay-outer mb-3">
                                 <div class="ukpay-inner ">
                                     <div class="row">
                                         <div style="margin:0 !important;" class="col-md-4 mt-3 pl-0">
-                                            <label for="pay_start" class="lable uk-lable ">Pay Start <span style="color:red;">*</span> </label>
-                                            <input type="date" id="pay_start" value="{{$invoice->pay_start ?? null}}" name="pay_start" class="input-uk" value="12-11-2022" style="font-size:14px;">
+                                            <label for="pay_start" class="lable uk-lable ">Pay Start <span
+                                                    style="color:red;">*</span> </label>
+                                            <input type="date" id="pay_start" value="{{$invoice->pay_start ?? null}}"
+                                                name="pay_start" class="input-uk" value="12-11-2022"
+                                                style="font-size:14px;">
                                         </div>
                                         <div style="margin:0 !important;" class="col-md-4 mt-3 pl-0">
-                                            <label for="pay_end" class="lable uk-lable">Pay End <span style="color:red;">*</span> </label>
-                                            <input type="date" id="pay_end" value="{{$invoice->pay_end ?? null}}" name="pay_end" class="input-uk" value="09-12-2022" style="font-size:14px;">
+                                            <label for="pay_end" class="lable uk-lable">Pay End <span
+                                                    style="color:red;">*</span> </label>
+                                            <input type="date" id="pay_end" value="{{$invoice->pay_end ?? null}}"
+                                                name="pay_end" class="input-uk" value="09-12-2022"
+                                                style="font-size:14px;">
                                         </div>
                                         <div style="margin:0 !important;" class="col-md-4 mt-3 pl-0">
-                                            <label for="pay_date" class="lable uk-lable">Pay Date <span style="color:red;">*</span> </label>
-                                            <input type="date" id="pay_date" value="{{$invoice->pay_date ?? null}}" name="pay_date" class="input-uk" value="10-12-2022" style="font-size:14px;">
+                                            <label for="pay_date" class="lable uk-lable">Pay Date <span
+                                                    style="color:red;">*</span> </label>
+                                            <input type="date" id="pay_date" value="{{$invoice->pay_date ?? null}}"
+                                                name="pay_date" class="input-uk" value="10-12-2022"
+                                                style="font-size:14px;">
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="ukpay-inner1">
                                             <div class="col-lg-8 mt-3 p-0">
-                                                <label for="pay_type" class="lable uk-lable">Pay Type<span style="color:red;">*</span> </label>
-                                                <input type="text" id="pay_type" value="{{$invoice->pay_type ?? null}}" name="pay_type" class="input-uk" value="2 Weekly" style="font-size:14px;">
+                                                <label for="pay_type" class="lable uk-lable">Pay Type<span
+                                                        style="color:red;">*</span> </label>
+                                                <input type="text" id="pay_type" value="{{$invoice->pay_type ?? null}}"
+                                                    name="pay_type" class="input-uk" value="2 Weekly"
+                                                    style="font-size:14px;">
                                             </div>
                                             <div class="col-lg-8 mt-3 p-0">
-                                                <label for="payment_method" class="lable uk-lable">Payment Mehtod<span style="color:red;">*</span> </label>
-                                                <input type="text" id="payment_method" value="{{$invoice->payment_method ?? null}}" name="payment_method" class="input-uk" value="BACS" style="font-size:14px;">
+                                                <label for="payment_method" class="lable uk-lable">Payment Mehtod<span
+                                                        style="color:red;">*</span> </label>
+                                                <input type="text" id="payment_method"
+                                                    value="{{$invoice->payment_method ?? null}}" name="payment_method"
+                                                    class="input-uk" value="BACS" style="font-size:14px;">
                                             </div>
                                             <div class="col-lg-8 mt-3 p-0">
-                                                <label for="tax_code" class="lable uk-lable">Tax Code<span style="color:red;">*</span> </label>
-                                                <input type="text" id="tax_code" value="{{$invoice->tax_code ?? null}}" name="tax_code" class="input-uk" value="1257L" style="font-size:14px;">
+                                                <label for="tax_code" class="lable uk-lable">Tax Code<span
+                                                        style="color:red;">*</span> </label>
+                                                <input type="text" id="tax_code" value="{{$invoice->tax_code ?? null}}"
+                                                    name="tax_code" class="input-uk" value="1257L"
+                                                    style="font-size:14px;">
                                             </div>
                                             <div class="col-lg-8 mt-3 p-0">
-                                                <label for="ni_number" class="lable uk-lable">NI Number<span style="color:red;">*</span> </label>
-                                                <input type="text" id="ni_number" value="{{$invoice->ni_number ?? null}}" name="ni_number" class="input-uk" value="SC 56 52 10 C" style="font-size:14px;">
+                                                <label for="ni_number" class="lable uk-lable">NI Number<span
+                                                        style="color:red;">*</span> </label>
+                                                <input type="text" id="ni_number"
+                                                    value="{{$invoice->ni_number ?? null}}" name="ni_number"
+                                                    class="input-uk" value="SC 56 52 10 C" style="font-size:14px;">
                                             </div>
                                             <div class="col-lg-8 mt-3 p-0 mb-3">
-                                                <label for="ni_table_letter" class="lable uk-lable">NI Table Letter<span style="color:red;">*</span> </label>
-                                                <input type="text" id="ni_table_letter" value="{{$invoice->ni_table_letter ?? null}}" name="ni_table_letter" class="input-uk" value="A" style="font-size:14px;">
+                                                <label for="ni_table_letter" class="lable uk-lable">NI Table Letter<span
+                                                        style="color:red;">*</span> </label>
+                                                <input type="text" id="ni_table_letter"
+                                                    value="{{$invoice->ni_table_letter ?? null}}" name="ni_table_letter"
+                                                    class="input-uk" value="A" style="font-size:14px;">
                                             </div>
                                         </div>
                                     </div>
@@ -184,13 +240,15 @@
                             </div>
                         </div>
 
-                        <div class="col-lg-7" style="color: black; text-transform:uppercase;font-size:30px; font-weight:600;">
+                        <div class="col-lg-7"
+                            style="color: black; text-transform:uppercase;font-size:30px; font-weight:600;">
                             <p class="top-heading">Payments</p>
                             <div style="border:3px solid #ff5722;padding-bottom:62px;" class=" pay-outer">
                                 <div class="ukpay-inner ">
                                     <div class="row ">
                                         <div style="margin:0 !important;" class="col-md-4 mt-4 p-0">
-                                            <p class="text-left how_p mb-0" style="font-size:18px; font-weight:300;"> Basic Pay <span class="redColor">*</span> <span> </span></p>
+                                            <p class="text-left how_p mb-0" style="font-size:18px; font-weight:300;">
+                                                Basic Pay <span class="redColor">*</span> <span> </span></p>
                                             <div class="text-center mt-2  d-flex">
                                                 <button type="button" class="hour_btn date_select">HOURLY</button>
                                                 <button type="button" class="salary_btn">SALARY</button>
@@ -204,7 +262,8 @@
                                             <button type="button" class="statementbtn">EARNING</button>
                                             <div class="margin-bottom">
                                                 @foreach($invoice->earning ?? [] as $key => $earning)
-                                                <input class="earnbtn mt-3 text-center incomeKey" data-id="000" name="earning[]" type="text" value="{{$earning}}">
+                                                <input class="earnbtn mt-3 text-center incomeKey" data-id="000"
+                                                    name="earning[]" type="text" value="{{$earning}}">
                                                 @endforeach
                                             </div>
                                             <div id="addEarning"></div>
@@ -213,7 +272,8 @@
                                             <button type="button" class="statementbtn">RATE</button>
                                             <div class="margin-bottom">
                                                 @foreach($invoice->rate ?? [] as $key => $rate)
-                                                <input class="earnbtn mt-3 text-center rateKey" type="number" id="rate_000" name="rate[]" type="text" value="{{$rate}}" >
+                                                <input class="earnbtn mt-3 text-center rateKey" type="number"
+                                                    id="rate_000" name="rate[]" type="text" value="{{$rate}}">
                                                 @endforeach
                                             </div>
                                             <div id="addEarning"></div>
@@ -222,16 +282,19 @@
                                             <button type="button" class="statementbtn">HOUR</button>
                                             <div class="margin-bottom">
                                                 @foreach($invoice->hours ?? [] as $key => $hours)
-                                                <input class="earnbtn mt-3 text-center hoursKey" type="number" id="hours_000" name="hours[]" type="text" value="{{$hours}}">
+                                                <input class="earnbtn mt-3 text-center hoursKey" type="number"
+                                                    id="hours_000" name="hours[]" type="text" value="{{$hours}}">
                                                 @endforeach
                                             </div>
                                             <div id="addEarning"></div>
                                         </div>
-                                        <div class=" col-lg-4 col-md-12 margin-bottom  mt-2  px-lg-2 px-0 addcurrentTotal" hidden>
+                                        <div class=" col-lg-4 col-md-12 margin-bottom  mt-2  px-lg-2 px-0 addcurrentTotal"
+                                            hidden>
                                             <button type="button" class="statementbtn">Current Total</button>
                                             <div class="margin-bottom">
                                                 @foreach($invoice->total ?? [] as $key => $total)
-                                                <input class="earnbtn mt-3 text-center currentTotal" type="number" id="total_000" name="total[]" type="text" value="{{$total}}">
+                                                <input class="earnbtn mt-3 text-center currentTotal" type="number"
+                                                    id="total_000" name="total[]" type="text" value="{{$total}}">
                                                 @endforeach
                                             </div>
                                             <div id="addEarning"></div>
@@ -239,7 +302,10 @@
                                     </div>
                                     <div class="row mb-3">
                                         <div class="col-xl-4 col-lg-7 col-md-4 mt-2 margin-bottom  px-lg-2 px-0">
-                                            <button type="button" class="btnCommon addEarningField"> <i class="fa fa-plus-circle pr-2" style="font-size: 22px;color: #0ec23b;padding-top: 0px;"></i>Add Earning</button>
+                                            <button type="button" class="btnCommon addEarningField"> <i
+                                                    class="fa fa-plus-circle pr-2"
+                                                    style="font-size: 22px;color: #0ec23b;padding-top: 0px;"></i>Add
+                                                Earning</button>
                                         </div>
                                     </div>
                                 </div>
@@ -256,26 +322,33 @@
                                             <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
                                                 @foreach ($deduction as $key => $item)
                                                 <img src="{{ asset('images/lock.png') }}" style="" class="earnbtn2">
-                                                <input class="input-uk text-center taxes" name="taxes[]" data-id="00{{ $key }}" data-value="{{ $item->price }}" value="{{$invoice->taxes[$key] ?? null}}">
+                                                <input class="input-uk text-center taxes" name="taxes[]"
+                                                    data-id="00{{ $key }}" data-value="{{ $item->price }}"
+                                                    value="{{$invoice->taxes[$key] ?? null}}">
                                                 @endforeach
                                             </div>
                                             <div class="col-md-5 col-lg-5 mb-3  px-lg-2 px-0">
                                                 @foreach ($deduction as $key => $tax_deduction)
-                                                <input class="input-uk text-center" readonly name="taxes_rate[]" id="tax_total_00{{ $key }}" value="{{$invoice->taxes_rate[$key] ?? null}}">
+                                                <input class="input-uk text-center" readonly name="taxes_rate[]"
+                                                    id="tax_total_00{{ $key }}"
+                                                    value="{{$invoice->taxes_rate[$key] ?? null}}">
                                                 @endforeach
                                             </div>
 
                                             {{-- <div class="col-md-5 col-lg-5 mb-3  px-lg-2 px-0">
                                                 @foreach ($deduction as $key => $item)
-                                                <input class="earnbtn mt-3 text-center currentTotal" readonly id="total_000" name="total[]" type="text" value="">
+                                                <input class="earnbtn mt-3 text-center currentTotal" readonly
+                                                    id="total_000" name="total[]" type="text" value="">
                                                 @endforeach
                                             </div> --}}
                                             <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
-                                                <button style="background-color: #85b7bc; font-weight:300" type="button" class="netpaybtn net_pay">Total Deduction</button>
+                                                <button style="background-color: #85b7bc; font-weight:300" type="button"
+                                                    class="netpaybtn net_pay">Total Deduction</button>
                                             </div>
 
                                             <div class="col-md-5 col-lg-5 mb-0 pb-0   px-lg-2 px-0">
-                                                <input type="text" name="deduction_tax" class="input-uk text-center" id="deductions" value="{{$invoice->deduction_tax ?? null}}">
+                                                <input type="text" name="deduction_tax" class="input-uk text-center"
+                                                    id="deductions" value="{{$invoice->deduction_tax ?? null}}">
                                             </div>
                                         </div>
                                     </div>
@@ -284,7 +357,8 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-lg-5" style="color: black; text-transform:uppercase;font-size:30px; font-weight:600;">
+                        <div class="col-lg-5"
+                            style="color: black; text-transform:uppercase;font-size:30px; font-weight:600;">
                             <p class="top-heading">Total Year To Date</p>
                             <div style="border:3px solid #ff5722;" class=" pay-outer mb-3">
                                 <div class="ukpay-inner ">
@@ -295,7 +369,9 @@
                                         </div>
 
                                         <div class="col-md-5 col-lg-5 mb-3  px-lg-2 px-0">
-                                            <input type="text" name="taxable_gross_pay" class="input-uk text-center" id="current_total" readonly value="{{$invoice->taxable_gross_pay ?? null}}">
+                                            <input type="text" name="taxable_gross_pay" class="input-uk text-center"
+                                                id="current_total" readonly
+                                                value="{{$invoice->taxable_gross_pay ?? null}}">
                                         </div>
                                         <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
                                             <img src="{{ asset('images/lock.png') }}" class="earnbtn2">
@@ -303,7 +379,8 @@
                                         </div>
 
                                         <div class="col-md-5 col-lg-5 mb-3  px-lg-2 px-0">
-                                            <input type="text" name="income_tax" class="input-uk  text-center" id="income_tax" value="{{$invoice->income_tax ?? null}}" data-value="">
+                                            <input type="text" name="income_tax" class="input-uk  text-center"
+                                                id="income_tax" value="{{$invoice->income_tax ?? null}}" data-value="">
                                         </div>
                                         <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
                                             <img src="{{ asset('images/lock.png') }}" class="earnbtn2">
@@ -311,7 +388,9 @@
                                         </div>
 
                                         <div class="col-md-5 col-lg-5 mb-3  px-lg-2 px-0">
-                                            <input type="text" name="employee_nic" class="input-uk  text-center" id="employee_nic" value="{{$invoice->employee_nic ?? null}}" data-value="">
+                                            <input type="text" name="employee_nic" class="input-uk  text-center"
+                                                id="employee_nic" value="{{$invoice->employee_nic ?? null}}"
+                                                data-value="">
                                         </div>
                                         <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
                                             <img src="{{ asset('images/lock.png') }}" class="earnbtn2">
@@ -319,26 +398,32 @@
                                         </div>
 
                                         <div class="col-md-5 col-lg-5 mb-3  px-lg-2 px-0">
-                                            <input type="text" name="employer_nic" class="input-uk  text-center" id="employee_nic" value="{{$invoice->employer_nic ?? null}}" data-value="">
+                                            <input type="text" name="employer_nic" class="input-uk  text-center"
+                                                id="employee_nic" value="{{$invoice->employer_nic ?? null}}"
+                                                data-value="">
                                         </div>
                                         <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
-                                            <button style="background-color:#0ec23b; font-weight:300" type="button" class="netpaybtn net_pay">Net Pay</button>
+                                            <button style="background-color:#0ec23b; font-weight:300" type="button"
+                                                class="netpaybtn net_pay">Net Pay</button>
                                         </div>
 
                                         <div class="col-md-5 col-lg-5 mb-3  px-lg-2 px-0">
-                                            <input type="text" name="net_pay" class="input-uk text-center" id="net_pay" readonly value="{{$invoice->net_pay ?? null}}">
+                                            <input type="text" name="net_pay" class="input-uk text-center" id="net_pay"
+                                                readonly value="{{$invoice->net_pay ?? null}}">
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-7" style="color: black; text-transform:uppercase;font-size:30px; font-weight:600;">
+                        <div class="col-lg-7"
+                            style="color: black; text-transform:uppercase;font-size:30px; font-weight:600;">
                             <p class="top-heading">Additional Information Here (Note)</p>
                             <div style="border:3px solid #ff5722;" class=" pay-outer mb-3">
                                 <div class="ukpay-inner ">
                                     <div class="row">
                                         <div style="padding-bottom:255px;" class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
-                                            <input style="color: #7c7370; border-color: #7c7370;" class="input-uk text-center note" value="Note here (optional) ">
+                                            <input style="color: #7c7370; border-color: #7c7370;"
+                                                class="input-uk text-center note" value="Note here (optional) ">
                                         </div>
                                     </div>
                                 </div>
@@ -349,8 +434,12 @@
                 <div class="row mt-3">
                     <div style="padding:0;" class="col-12 text-center">
                         <div class="d-flex flex-wrap justify-content-between">
-                            <button class="previewbtn text-capitalize viewTempTemplate mb-3 w-sm-100" type="button" id="button1">Preview Your Paystub <i class="fa fa-eye" style="font-size: 30px; margin-left: 7px;"></i></button>
-                            <button type="button" class="emailbtn text-capitalize sendMailButton mb-3 w-sm-100"> <i class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL PAYSTUB <i class="fa fa-download ml-4" style="font-size:24px"></i></button>
+                            <button class="previewbtn text-capitalize viewTempTemplate mb-3 w-sm-100" type="button"
+                                id="button1">Preview Your Paystub <i class="fa fa-eye"
+                                    style="font-size: 30px; margin-left: 7px;"></i></button>
+                            <button type="button" class="emailbtn text-capitalize sendMailButton mb-3 w-sm-100"> <i
+                                    class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL PAYSTUB <i
+                                    class="fa fa-download ml-4" style="font-size:24px"></i></button>
                         </div>
                     </div>
                 </div>
@@ -360,7 +449,9 @@
 </div>
 @endsection
 @section('script')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
+    integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" crossorigin="anonymous"></script>
 <script src="{{ asset('user') }}/js/uk.js"></script>
 <script>

@@ -11,7 +11,8 @@
                 </div>
             </div>
             <div class="table-responsive">
-                <table class="table text-center" style="border:3px solid #FF6161; border-style: inset;background:#E8E6E6;">
+                <table class="table text-center"
+                    style="border:3px solid #FF6161; border-style: inset;background:#E8E6E6;">
                     <thead>
                         <tr>
                             <th class="text-center" style="padding: 1.5em .5em;border:none;">Date Created</th>
@@ -28,11 +29,15 @@
                         @foreach($invoiceList as $invoice)
                         @if($invoice->type != 'w2form')
                         <tr>
-                            <th class="text-center" style="padding: 1.5em .5em;border:none;">{{date('m-d-Y', strtotime($invoice->created_at))}}</th>
+                            <th class="text-center" style="padding: 1.5em .5em;border:none;">{{date('m-d-Y',
+                                strtotime($invoice->created_at))}}</th>
                             <th class="text-center" style="padding: 1.5em .5em;border:none;">{{$invoice->title}}</th>
-                            <th class="text-center" style="padding: 1.5em .5em;border:none;">{{$invoice->reference}}</th>
+                            <th class="text-center" style="padding: 1.5em .5em;border:none;">{{$invoice->reference}}
+                            </th>
                             <th class="text-center" style="padding: .9em .5em;border:none;">
-                                <a class="btn btn-outline-dark py-2 downloiadBtn" href="{{$invoice->pdf}}" download>Download &nbsp;<i class="fa fa-arrow-circle-down 2x" aria-hidden="true"></i></a>
+                                <a class="btn btn-outline-dark py-2 downloiadBtn" href="{{$invoice->pdf}}"
+                                    download>Download &nbsp;<i class="fa fa-arrow-circle-down 2x"
+                                        aria-hidden="true"></i></a>
                             </th>
                             <th class="text-center" style="padding: 1em .5em;border:none;">
                                 <a href="{{ route('invoiceMailId', $invoice->id) }}">
@@ -45,13 +50,18 @@
                                 </a>
                             </th>
                             <th class="text-center" style="padding: 1em .5em;border:none;">
-                                <a class="delbtn" href="javascript:void(0);" onclick="event.preventDefault();if(confirm('Are you sure! you want to delete this?')){document.getElementById('delete-form-{{$invoice->id}}').submit();}"> Delete</a>
-                                <form id="delete-form-{{$invoice->id}}" action="{{ route('invoiceDelete', $invoice->id) }}" method="POST" style="display: none;">
+                                <a class="delbtn" href="javascript:void(0);"
+                                    onclick="event.preventDefault();if(confirm('Are you sure! you want to delete this?')){document.getElementById('delete-form-{{$invoice->id}}').submit();}">
+                                    Delete</a>
+                                <form id="delete-form-{{$invoice->id}}"
+                                    action="{{ route('invoiceDelete', $invoice->id) }}" method="POST"
+                                    style="display: none;">
                                     {{csrf_field()}}
                                 </form>
                             </th>
                             <th class="text-center" style="padding: 1em .5em;border:none;">
-                                <a href="javascript:void(0);" class="previewbtnInvoice text-capitalize" data-pdf="{{$invoice->pdf}}">
+                                <a href="javascript:void(0);" class="previewbtnInvoice text-capitalize"
+                                    data-pdf="{{$invoice->pdf}}">
                                     Preview Your Paystub &nbsp;<i class="fa fa-eye"></i></a>
                             </th>
                         </tr>
@@ -61,7 +71,8 @@
                 </table>
             </div>
             <div class="w-100" style="text-align: right;">
-                <a href="{{Auth::user()->expiryDate == null ? route('prizing') : route('invoiceMail')}}" class="user-checkbtn"><b>Continue to Checkout</b></a>
+                <a href="{{Auth::user()->expiryDate == null ? route('prizing') : route('invoiceMail')}}"
+                    class="user-checkbtn"><b>Continue to Checkout</b></a>
                 <h6 class="mt-3 font-weight-bold">Click on Continue, to complete your order</h6>
             </div>
         </div>
@@ -70,7 +81,8 @@
 @endsection
 @section('script')
 
-<div class="modal fade" id="tempViewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="tempViewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -79,8 +91,10 @@
                 </button>
             </div>
             <div class="modal-body">
-                <embed src="" type="" id="tempView" allowtransparency="false" style="background-color : transparent;" frameborder="0" width="100%" height="800">
-                {{-- <iframe src="" id="tempView" allowtransparency="false" style="background-color : transparent;" frameborder="0" width="100%" height="800"></iframe> --}}
+                <embed src="" type="" id="tempView" allowtransparency="false" style="background-color : transparent;"
+                    frameborder="0" width="100%" height="800">
+                {{-- <iframe src="" id="tempView" allowtransparency="false" style="background-color : transparent;"
+                    frameborder="0" width="100%" height="800"></iframe> --}}
             </div>
         </div>
     </div>
