@@ -36,6 +36,6 @@ class UserSubscriptionCommand extends Command
               User::where('id', $user->id)->update(['expiryDate' => '']);
             }
         }
-        return true;
+        return Command::SUCCESS;
     }
 }
