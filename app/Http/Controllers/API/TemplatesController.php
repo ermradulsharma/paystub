@@ -220,9 +220,20 @@ class TemplatesController extends Controller
     public function subscription(Request $request)
     {
         $requestData = $request->all();
+        if (!array_key_exists('subcription_type', $requestData)) {
+            $requestData += array('subcription_type' => '0');
+        }
         $userObj = User::find(Auth::user()->id);
         if ($requestData['type'] == 1) {
-            $userObj->expiryDate = Carbon::now();
+            if ($requestData['subcription_type'] == 1) {
+                $userObj->expiryDate = Carbon::now()->addMonth();
+            } else  if ($requestData['subcription_type'] == 3) {
+                $userObj->expiryDate = Carbon::now()->addMonths(3);
+            } else  if ($requestData['subcription_type'] == 6) {
+                $userObj->expiryDate = Carbon::now()->addMonths(6);
+            } else  {
+                $userObj->expiryDate = Carbon::now()->addDay();
+            }
         } else {
             $userObj->expiryDate = "";
         }
