@@ -190,11 +190,11 @@
                     <th></th>
                 </tr>
                 <tr>
-                    <td class="address" style="padding-left: 31px;font-size:12px;text-transform:uppercase; font-size:11px; font-weight:400;line-height:1.7; color:#000;letter-spacing:-0.5px;">
+                    <td class="address" style="padding-left: 31px;font-size:12px;text-transform:uppercase; font-size:11px; font-weight:400;line-height:1.5; color:#000;letter-spacing:-0.5px;">
                         {{ $requestData['address_1'] }} <br>
-                        {{ $requestData['city'] }} {{ $requestData['state'] }}, {{ $requestData['zip_code'] }}, USA
+                        {{ $requestData['city'] }}, {{ $requestData['zip_code'] }}<br> USA
                     </td>
-                    <td style="font-weight:600; font-size:18px;line-height:0;" class="earning">Earnings Statement</td>
+                    <td style="font-weight:600; font-size:18px;line-height:1.7;vertical-align: bottom;" class="earning">Earnings Statement</td>
                 </tr>
                 <tr>
                     <td></td>
@@ -210,16 +210,11 @@
             <section class="section_2">
                 <table>
                     <tr>
-                        <th style="width: 40%;font-size:14px;font-weight:400; padding-bottom:0px !important;padding-top:0px !important;">SSN: XXX-XX-{{ $requestData['emp_ssn'] }}</th>
-                        <th class="earning" style="width: 60%;font-weight:400 !important;padding-bottom:0px !important;padding-top:0px !important;margin:0px;font-size:14px;">{{ $requestData['emp_name'] }}</th>
-                    </tr>
-                    <tr>
-                        <td style=" padding: 0px 0px 0px 9px; font-size:14px;font-weight:400;padding-bottom:0px !important;padding-top:0px !important;"> Stub No: {{ $requestData['stub_no'] }} </td>
-                        <td class="earning"style="font-size:14px;padding-bottom:0px !important;padding-top:0px !important;"> Emp.ID.{{ $requestData['emp_id'] }} <br>
-                            {{ $requestData['emp_street_1'] }},{{ $requestData['emp_street_2'] }}
-                            {{ $requestData['emp_city'] }} {{ $requestData['emp_state'] }}
-                            {{ $requestData['emp_zip_code'] }}
-                        </td>
+                        <td  style="width: 40%;"><p style="font-size:14px;font-weight:400;">SSN: XXX-XX-{{ $requestData['emp_ssn'] }}</p><p style="padding: 0; margin:0;font-weight:400; font-size:14px;">Stub No: {{ $requestData['stub_no'] }}</p></td>
+                        <td class="earning" style="width: 60%;font-weight:400 !important;padding-bottom:0px !important;padding-top:0px !important;margin:0px;font-size:16px;">{{ $requestData['emp_name'] }}<br>Emp.ID.{{ $requestData['emp_id'] }} <br>
+                            {{ $requestData['emp_street_1'] }},
+                            {{ $requestData['emp_city'] }}
+                            {{ $requestData['emp_zip_code'] }}</td>
                     </tr>
                 </table>
             </section>
