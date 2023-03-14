@@ -2,7 +2,6 @@ var getUrl = window.location;
 var baseUrl = getUrl.protocol + "//" + getUrl.host + "/";
 var userAuth = 0;
 var okk = 0;
-console.log(baseUrl);
 $(".registerBtn").click(function () {
     $("#loginModal").modal("show");
     userAuth = 0;
@@ -108,14 +107,6 @@ function checkValidationForm() {
         removeErrorMsg(id, value);
     });
 
-    // var hiddenElements = [];
-
-    // $(formData).each(function (i, element) {
-    //     var name = element.name.replace("[]", "");
-    //     // var name = element.name;
-
-    // });
-    // console.log(hiddenElements);
     $.each(formData, function (i, element) {
         var name = element.name.replace("[]", "");
         var blockedTile = new Array("address_2", "emp_street_2", "hourly", "earning", "rate", "hours", "total", "period", "ytd_total", "period_gross_total", "ytd_gross_total", "deduction_period_tax", "deduction_period_tax_other", "advance_temp", "basic_temp", "taxes", "taxes_rate", "taxes_ytd", 'net_pay', 'note');
@@ -132,7 +123,6 @@ function checkValidationForm() {
             $("#" + name).parent().parent('div').append("<span class='text-danger error_div 0_" + name + "' style='font-size:14px;'>This field can't be empty.</span>");
             ok = 0;
         }
-        console.log('blockedTile', blockedTile);
     });
     return ok;
 }

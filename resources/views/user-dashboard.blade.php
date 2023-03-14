@@ -32,7 +32,8 @@
                             </div>
                             <div class="col-md-4 pt-2" style="border-right: 5px solid red; border-left: 3px solid red;">
                                 <p class="w2p">a Employee's social security number</p>
-                                <input type="text" id="fname" name="fname" placeholder="enter text" class="w-100 p-2 mb-3"><br>
+                                <input type="text" id="fname" name="fname" placeholder="enter text"
+                                    class="w-100 p-2 mb-3"><br>
                             </div>
                             <div class="col-md-4 pt-3">
                                 <p class="w2p">For offical use only <i class="fa fa-play" aria-hidden="true"></i></p>
@@ -50,15 +51,18 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <p class="w2p">b Employer Identification Number (EIN)</p>
-                                        <input type="text" id="fname" name="fname" placeholder="enter text" class=" p-2 w-100 p-2"><br>
+                                        <input type="text" id="fname" name="fname" placeholder="enter text"
+                                            class=" p-2 w-100 p-2"><br>
                                     </div>
                                     <div class="col-md-6">
                                         <p class="w2p ">d Control Number</p>
-                                        <input type="text" id="fname" name="fname" placeholder="enter text" class="w-100 p-2 p-2"><br>
+                                        <input type="text" id="fname" name="fname" placeholder="enter text"
+                                            class="w-100 p-2 p-2"><br>
                                     </div>
                                     <div class="col-md-12 mt-3">
                                         <p class="w2p">c Employer's Name, Address, Zipcode </p>
-                                        <textarea id="w3review" name="w3review" rows="4" cols="30" placeholder="Please Enter" class="w-100"></textarea>
+                                        <textarea id="w3review" name="w3review" rows="4" cols="30"
+                                            placeholder="Please Enter" class="w-100"></textarea>
                                     </div>
 
                                 </div>
@@ -69,15 +73,18 @@
 
                                     <div class="col-md-6 mt-3">
                                         <p class="w2p">e Employee's First Name & Initial</p>
-                                        <input type="text" id="fname" name="fname" placeholder="enter text" class="w-100 p-2"><br>
+                                        <input type="text" id="fname" name="fname" placeholder="enter text"
+                                            class="w-100 p-2"><br>
                                     </div>
                                     <div class="col-md-6 mt-3">
                                         <p class="w2p">Last Name</p>
-                                        <input type="text" id="fname" name="fname" placeholder="enter text" class="w-100 p-2"><br>
+                                        <input type="text" id="fname" name="fname" placeholder="enter text"
+                                            class="w-100 p-2"><br>
                                     </div>
                                     <div class="col-md-12 mt-3">
                                         <p class="w2p">f Employee's Name, Address, Zipcode </p>
-                                        <textarea id="w3review" name="w3review" rows="4" cols="30" placeholder="Please Enter" class="w-100"></textarea>
+                                        <textarea id="w3review" name="w3review" rows="4" cols="30"
+                                            placeholder="Please Enter" class="w-100"></textarea>
                                     </div>
 
                                 </div>
@@ -87,56 +94,67 @@
                         <div class="row mt-3">
                             <div class="col-md-3">
                                 <p class="w2p">1 Wages, Tips, Other compensation </p>
-                                <input type="text" id="fname" name="fname" placeholder="enter text" class="w-100 p-2"><br>
+                                <input type="text" id="fname" name="fname" placeholder="enter text"
+                                    class="w-100 p-2"><br>
                             </div>
                             <div class="col-md-3">
                                 <p class="w2p">2 Fedral Income Tax Field</p>
-                                <input type="text" id="fname" name="fname" placeholder="enter text" class="w-100 p-2"><br>
+                                <input type="text" id="fname" name="fname" placeholder="enter text"
+                                    class="w-100 p-2"><br>
                             </div>
 
                             <div class="col-md-3">
                                 <p class="w2p">3 Social Security Wages </p>
-                                <input type="text" id="fname" name="fname" placeholder="enter text" class="w-100 p-2"><br>
+                                <input type="text" id="fname" name="fname" placeholder="enter text"
+                                    class="w-100 p-2"><br>
                             </div>
 
                             <div class="col-md-3">
                                 <p class="w2p">4 Social Security tax withheld</p>
-                                <input type="text" id="fname" name="fname" placeholder="enter text" class="w-100 p-2"><br>
+                                <input type="text" id="fname" name="fname" placeholder="enter text"
+                                    class="w-100 p-2"><br>
                             </div>
                         </div>
                         <div class="row mt-3">
                             <div class="col-md-3">
                                 <p class="w2p">5 Medicare Wages & tips</p>
-                                <input type="text" id="fname" name="fname" placeholder="enter text" class="w-100 p-2"><br>
+                                <input type="text" id="fname" name="fname" placeholder="enter text"
+                                    class="w-100 p-2"><br>
                             </div>
                             <div class="col-md-3">
                                 <p class="w2p">6 Medicare tax withheld</p>
-                                <input type="text" id="fname" name="fname" placeholder="enter text" class="w-100 p-2"><br>
+                                <input type="text" id="fname" name="fname" placeholder="enter text"
+                                    class="w-100 p-2"><br>
                             </div>
 
                             <div class="col-md-3">
                                 <p class="w2p">7 Social Security tips </p>
-                                <input type="text" id="fname" name="fname" placeholder="enter text" class="w-100 p-2"><br>
+                                <input type="text" id="fname" name="fname" placeholder="enter text"
+                                    class="w-100 p-2"><br>
                             </div>
 
                             <div class="col-md-3">
                                 <p class="w2p">8 Allocated tips</p>
-                                <input type="text" id="fname" name="fname" placeholder="enter text" class="w-100 p-2"><br>
+                                <input type="text" id="fname" name="fname" placeholder="enter text"
+                                    class="w-100 p-2"><br>
                             </div>
                         </div>
                         <div class="row mt-3">
                             <div class="col-md-4">
                                 <p class="w2p">9 Disabled</p>
-                                <input type="text" id="fname" name="fname" placeholder="enter text" class="w-100 p-2"><br>
+                                <input type="text" id="fname" name="fname" placeholder="enter text"
+                                    class="w-100 p-2"><br>
                             </div>
                             <div class="col-md-4">
                                 <p class="w2p">10 Dependent care benefits</p>
-                                <input type="text" id="fname" name="fname" placeholder="enter text" class="w-100 p-2"><br>
+                                <input type="text" id="fname" name="fname" placeholder="enter text"
+                                    class="w-100 p-2"><br>
                             </div>
 
                             <div class="col-md-4">
                                 <p class="w2p">11 Nonqualified plans</p>
-                                <input type="text" id="fname" name="fname" placeholder="enter text" class="w-100 p-2"><br>
+                                <input type="text" id="fname" name="fname" placeholder="enter text"
+                                    class="w-100 p-2"><br>
                             </div>
                         </div>
                         <div class="row mt-3">
@@ -191,15 +209,16 @@
                             </div>
                             <div class="col-md-6 mt-3">
                                 <p class="w2p">14 Other </p>
-                                <textarea id="w3review" name="w3review" rows="4" cols="30" placeholder="Please Enter" style="width:100%;"></textarea>
+                                <textarea id="w3review" name="w3review" rows="4" cols="30" placeholder="Please Enter"
+                                    style="width:100%;"></textarea>
                             </div>
                         </div>
                         <div class="row mt-3">
                             <div class="col-md-3">
                                 <label for="fname" class="lable w2p">15 State <span style="color:red;">
                                         <span style="color:red;">
-                                            <spam>
-                                                <spam></label><br>
+                                            <span>
+                                                <span></label><br>
                                 <div class="dropdown ">
                                     <form action="/action_page.php">
                                         <select name="cars" id="cars" class=" dropdown11">
@@ -212,26 +231,26 @@
                                 </div>
                             </div>
                             <div class="col-md-3">
-                                <label for="fname" class="lable w2p">Employer's State ID Number<spam style="color:red;">
-                                        <spam style="color:red;">
-                                            <spam>
-                                                <spam></label><br>
+                                <label for="fname" class="lable w2p">Employer's State ID Number<span style="color:red;">
+                                        <span style="color:red;">
+                                            <span>
+                                                <span></label><br>
 
                                 <input type="text" class="form-control" placeholder="Please Enter" name="usrname">
                             </div>
 
                             <div class="col-md-3">
-                                <label for="fname" class="lable w2p">16 State wages, tips, etc.<spam style="color:red;">
-                                        <spam style="color:red;">*<spam>
-                                                <spam></label><br>
+                                <label for="fname" class="lable w2p">16 State wages, tips, etc.<span style="color:red;">
+                                        <span style="color:red;">*<span>
+                                                <span></label><br>
 
                                 <input type="text" class="form-control" placeholder="Please Enter" name="usrname">
                             </div>
 
                             <div class="col-md-3">
-                                <label for="fname" class="lable w2p">17 State Income Tax<spam style="color:red;">
-                                        <spam style="color:red;">*<spam>
-                                                <spam></label><br>
+                                <label for="fname" class="lable w2p">17 State Income Tax<span style="color:red;">
+                                        <span style="color:red;">*<span>
+                                                <span></label><br>
 
                                 <input type="text" class="form-control" placeholder="Please Enter" name="usrname">
                             </div>
@@ -241,28 +260,28 @@
 
                         <div class="row mt-4">
                             <div class="col-md-4">
-                                <label for="fname" class="lable w2p">18 Local Wages Tips etc<spam style="color:red;">
-                                        <spam style="color:red;">
-                                            <spam>
-                                                <spam></label><br>
+                                <label for="fname" class="lable w2p">18 Local Wages Tips etc<span style="color:red;">
+                                        <span style="color:red;">
+                                            <span>
+                                                <span></label><br>
 
                                 <input type="text" class="form-control" placeholder="Please Enter" name="usrname">
 
                             </div>
                             <div class="col-md-4">
-                                <label for="fname" class="lable w2p">19 Local Income Tax<spam style="color:red;">
-                                        <spam style="color:red;">
-                                            <spam>
-                                                <spam></label><br>
+                                <label for="fname" class="lable w2p">19 Local Income Tax<span style="color:red;">
+                                        <span style="color:red;">
+                                            <span>
+                                                <span></label><br>
 
                                 <input type="text" class="form-control" placeholder="Please Enter" name="usrname">
 
                             </div>
 
                             <div class="col-md-4 mb-4">
-                                <label for="fname" class="lable w2p">20 Localitiy Name<spam style="color:red;">
-                                        <spam style="color:red;">*<spam>
-                                                <spam></label><br>
+                                <label for="fname" class="lable w2p">20 Localitiy Name<span style="color:red;">
+                                        <span style="color:red;">*<span>
+                                                <span></label><br>
 
                                 <input type="text" class="form-control" placeholder="Please Enter" name="usrname">
                             </div>
@@ -276,15 +295,15 @@
                 <div class="container" style="max-width: 1452px;">
                     <div class="row">
                         <div class="col-md-6">
-                            <p class="w2p">Form<spam style="font-size: 47px;">W-2</spam>
-                                <spam style="font-size: 26px;">Wage and Tax Statement</spam>
+                            <p class="w2p">Form<span style="font-size: 47px;">W-2</span>
+                                <span style="font-size: 26px;">Wage and Tax Statement</span>
                             </p>
                             <p class="w2p">
-                                <spam style="font-size: 18px; font-weight: 900;">Copy A-For Social Security
-                                    Administration.</spam>
-                                <spam style="font-weight: 500; font-size: 17px;"> Send this entire page with Form W-3 to
+                                <span style="font-size: 18px; font-weight: 900;">Copy A-For Social Security
+                                    Administration.</span>
+                                <span style="font-weight: 500; font-size: 17px;"> Send this entire page with Form W-3 to
                                     the Social Security Administration; photocopies are<b> not</b>
-                                    acceptable.</spam>
+                                    acceptable.</span>
                             </p>
                         </div>
 
@@ -301,7 +320,8 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12 text-center">
-                            <h3 class="w2p" style="font-size:x-large;">Do Not Cut, Fold Or Staple Form on This Page </h3>
+                            <h3 class="w2p" style="font-size:x-large;">Do Not Cut, Fold Or Staple Form on This Page
+                            </h3>
                         </div>
 
                     </div>
@@ -317,12 +337,15 @@
 
 
                 <div class="text-left mt-4 ">
-                    <a class="previewbtn btn btn-block" style="text-decoration:none;" href="{{'preview-pdf'}}" target="_blank">Preview Below Check <i class="fa fa-eye" style="font-size: 30px; margin-left: 7px;"></i> </a>
+                    <a class="previewbtn btn btn-block" style="text-decoration:none;" href="{{'preview-pdf'}}"
+                        target="_blank">Preview Below Check <i class="fa fa-eye"
+                            style="font-size: 30px; margin-left: 7px;"></i> </a>
 
 
                 </div>
                 <div class="text-right mt-4 ">
-                    <a class="emailbtn  btn btn-block" style="text-decoration:none;" target="_blank" href="{{'generate-pdf'}}"> Download
+                    <a class="emailbtn  btn btn-block" style="text-decoration:none;" target="_blank"
+                        href="{{'generate-pdf'}}"> Download
                         <i class="fa fa-download ml-4" style="font-size:24px"></i> </a>
                 </div>
             </div>

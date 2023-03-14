@@ -173,7 +173,6 @@ $(document).ready(function () {
 
     $(".hourly").keyup(function () {
         var id = $(this).val();
-        console.log('1234567', id);
         if (id != "NaN") {
             $("#rate_0").val(parseFloat(id).toFixed(2));
             $("#total_" + i).val("");
@@ -315,10 +314,7 @@ $(document).ready(function () {
         $('.time_period').val('weekly');
         $('.auto_calculate').val('on');
         var date = new Date();
-        var day = date.getDate();
-        var month = date.getMonth() + 1;
-        var year = date.getFullYear();
-        var date_1 = (("" + month).length < 2 ? "0" : "") + month + "/" + (("" + day).length < 2 ? "0" : "") + day + "/" + year;
+        var date_1 = moment(date).format("MM/DD/YYYY");
         $(".pay_start").val(date_1);
         dayCalculate();
         is_empty();
@@ -334,10 +330,7 @@ $(document).ready(function () {
         $('.time_period').val('monthly');
         $('.auto_calculate').val('on');
         var date = new Date();
-        var day = date.getDate();
-        var month = date.getMonth() + 1;
-        var year = date.getFullYear();
-        var date_1 = (("" + month).length < 2 ? "0" : "") + month + "/" + (("" + day).length < 2 ? "0" : "") + day + "/" + year;
+        var date_1 = moment(date).format("MM/DD/YYYY");
         $(".pay_start").val(date_1);
         dayCalculate();
         $(".rate").val("");
@@ -442,7 +435,6 @@ $(document).ready(function () {
 
     function default_tax() {
         var period_gross_total = $("#period_gross_total").val();
-        console.log('period_gross_total', period_gross_total);
         var ytd_gross_total = $("#ytd_gross_total").val();
         var deduction_period_tax_other = parseFloat($("#deduction_period_tax_other").val() || 0.0);
         var ytd_deduction_period_tax_other = parseFloat($("#ytd_deduction_period_tax_other").val() || 0.0);
@@ -461,7 +453,7 @@ $(document).ready(function () {
                     taxes_values = parseFloat(tax_state).toFixed(2);
                 }
                 // if (taxes_text == 'deduction_8' || taxes_text == 'deduction_18') {   // Local
-                    if (taxes_text == 'deduction_3' || taxes_text == 'deduction_5') {   // live condition
+                if (taxes_text == 'deduction_3' || taxes_text == 'deduction_5') {   // live condition
                     var time_period = $(".time_period").val();
                     if (time_period == 'weekly') {
                         period = 52;

@@ -1,5 +1,4 @@
 @extends('Admin.layouts.default')
 @section('content')
-<livewire:deductions/>
+<livewire:deductions />
 @endsection
-

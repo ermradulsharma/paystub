@@ -1,5 +1,4 @@
 @extends('Admin.layouts.default')
 @section('content')
-<livewire:templates/>
+<livewire:templates />
 @endsection
-
