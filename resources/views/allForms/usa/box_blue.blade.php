@@ -376,12 +376,15 @@
         <section class="bg-img">
             <div class="container" style=" margin-top:40px; width:100%;">
                 <div class="row" style="display: flex;justify-content: space-between;padding: 0px 14px;">
-                    <div style="width: 50%;float:left;position: relative; left:20px;">
-                        <p style="font-size: 13px; margin: 0;">{{ $requestData['cname'] }}</p>
-                        <p style="font-size: 13px; margin: 0;"> {{ $requestData['emp_street_1'] }}VD</p>
-                        <P style="font-size: 13px; margin: 0;">{{ $requestData['emp_city'] }}</P>
-                        <P style="font-size: 13px; margin: 0;">{{ $requestData['emp_state'] }},
-                            {{ $requestData['emp_zip_code'] }}
+                    <div style="width: 50%;float:left; position: relative; top:35px;">
+                        <p><td style="font-size:14px;text-align:left;  width:55%;">
+                            {{ $requestData['emp_name'] }}</td></p>
+                        <p style="font-size: 11px; margin: 0; text-transform:uppercase;color:black;font-weight:500;">{{ $requestData['cname'] }}</p>
+                        <p style="font-size: 11px; margin: 0;text-transform:uppercase;color:black;font-weight:500;">{{ $requestData['address_1'] }}</p>
+                        <P style="font-size: 11px; margin: 0;text-transform:uppercase;color:black;font-weight:500;">{{ $requestData['address_2'] }}</P>
+                        <P style="font-size: 11px; margin: 0;text-transform:uppercase;color:black;font-weight:500;">{{ $requestData['city'] }}
+                            {{ $requestData['state'] }},
+                            {{ $requestData['zip_code'] }}
                         </P>
                     </div>
                     <div style="width: 50%;float:right;text-align:right;position: relative; right:20px;">
