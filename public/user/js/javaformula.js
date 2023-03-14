@@ -25,589 +25,589 @@ function getNewFederalTaxArray(a) {
 }
 
 var FTweekly = {
-        single: [{
-            0: {
-                subtract: 73,
-                rate: .1
-            },
-            260: {
-                subtract: 104.17,
-                rate: .12
-            },
-            832: {
-                subtract: 435.00,
-                rate: .22
-            },
-            1692: {
-                subtract: 539.75,
-                rate: .24
-            },
-            3164: {
-                subtract: 1195.81,
-                rate: .32
-            },
-            3998: {
-                subtract: 1436.00,
-                rate: .35
-            },
-            9887: {
-                subtract: 1892.81,
-                rate: .37
-            }
-        }, {
-            0: {
-                subtract: 153.80,
-                rate: .1
-            },
-            340.80: {
-                subtract: 184.97,
-                rate: .12
-            },
-            912.80: {
-                subtract: 515.80,
-                rate: .22
-            },
-            1772.80: {
-                subtract: 620.55,
-                rate: .24
-            },
-            3244.80: {
-                subtract: 1276.61,
-                rate: .32
-            },
-            4078.80: {
-                subtract: 1516.80,
-                rate: .35
-            },
-            9967.80: {
-                subtract: 1973.61,
-                rate: .37
-            }
-        }, {
-            0: {
-                subtract: 234.60,
-                rate: .1
-            },
-            421.60: {
-                subtract: 265.77,
-                rate: .12
-            },
-            993.60: {
-                subtract: 596.60,
-                rate: .22
-            },
-            1853.60: {
-                subtract: 701.35,
-                rate: .24
-            },
-            3325.60: {
-                subtract: 1353.41,
-                rate: .32
-            },
-            4159.60: {
-                subtract: 1597.60,
-                rate: .35
-            },
-            10048.60: {
-                subtract: 2054.41,
-                rate: .37
-            }
-        }, {
-            0: {
-                subtract: 315.40,
-                rate: .1
-            },
-            502.40: {
-                subtract: 346.57,
-                rate: .12
-            },
-            1074.40: {
-                subtract: 677.40,
-                rate: .22
-            },
-            1934.40: {
-                subtract: 782.15,
-                rate: .24
-            },
-            3406.40: {
-                subtract: 1438.21,
-                rate: .32
-            },
-            4240.40: {
-                subtract: 1678.40,
-                rate: .35
-            },
-            10129.40: {
-                subtract: 2135.21,
-                rate: .37
-            }
-        }, {
-            0: {
-                subtract: 396.20,
-                rate: .1
-            },
-            583.20: {
-                subtract: 427.37,
-                rate: .12
-            },
-            1155.20: {
-                subtract: 758.20,
-                rate: .22
-            },
-            2015.20: {
-                subtract: 862.95,
-                rate: .24
-            },
-            3487.20: {
-                subtract: 1519.01,
-                rate: .32
-            },
-            4321.20: {
-                subtract: 1759.20,
-                rate: .35
-            },
-            10210.20: {
-                subtract: 2216.01,
-                rate: .37
-            }
-        }, {
-            0: {
-                subtract: 477,
-                rate: .1
-            },
-            664: {
-                subtract: 508.17,
-                rate: .12
-            },
-            1236: {
-                subtract: 839,
-                rate: .22
-            },
-            2096: {
-                subtract: 943.75,
-                rate: .24
-            },
-            3568: {
-                subtract: 1599.81,
-                rate: .32
-            },
-            4402: {
-                subtract: 1840,
-                rate: .35
-            },
-            10291: {
-                subtract: 2296.81,
-                rate: .37
-            }
-        }, {
-            0: {
-                subtract: 557.80,
-                rate: .1
-            },
-            744.80: {
-                subtract: 588.97,
-                rate: .12
-            },
-            1316.80: {
-                subtract: 919.80,
-                rate: .22
-            },
-            2176.80: {
-                subtract: 1024.55,
-                rate: .24
-            },
-            3648.80: {
-                subtract: 1680.61,
-                rate: .32
-            },
-            4482.80: {
-                subtract: 1920.80,
-                rate: .35
-            },
-            10371.80: {
-                subtract: 2377.61,
-                rate: .37
-            }
-        }, {
-            0: {
-                subtract: 638.60,
-                rate: .1
-            },
-            825.60: {
-                subtract: 669.77,
-                rate: .12
-            },
-            1397.60: {
-                subtract: 1000.60,
-                rate: .22
-            },
-            2257.60: {
-                subtract: 1105.35,
-                rate: .24
-            },
-            3729.60: {
-                subtract: 1761.41,
-                rate: .32
-            },
-            4563.60: {
-                subtract: 2001.60,
-                rate: .35
-            },
-            10452.60: {
-                subtract: 2458.41,
-                rate: .37
-            }
-        }, {
-            0: {
-                subtract: 719.40,
-                rate: .1
-            },
-            906.40: {
-                subtract: 750.57,
-                rate: .12
-            },
-            1478.40: {
-                subtract: 1081.40,
-                rate: .22
-            },
-            2338.40: {
-                subtract: 1186.15,
-                rate: .24
-            },
-            3810.40: {
-                subtract: 1842.21,
-                rate: .32
-            },
-            4644.40: {
-                subtract: 2082.40,
-                rate: .35
-            },
-            10533.40: {
-                subtract: 2539.21,
-                rate: .37
-            }
-        }, {
-            0: {
-                subtract: 800.20,
-                rate: .1
-            },
-            987.20: {
-                subtract: 831.37,
-                rate: .12
-            },
-            1559.20: {
-                subtract: 1162.20,
-                rate: .22
-            },
-            2419.20: {
-                subtract: 1266.95,
-                rate: .24
-            },
-            3891.20: {
-                subtract: 1923.01,
-                rate: .32
-            },
-            4725.20: {
-                subtract: 2163.20,
-                rate: .35
-            },
-            10614.20: {
-                subtract: 2620.01,
-                rate: .37
-            }
-        }],
-        married: [{
-            0: {
-                subtract: 227,
-                rate: .1
-            },
-            600: {
-                subtract: 289.17,
-                rate: .12
-            },
-            1745: {
-                subtract: 950.91,
-                rate: .22
-            },
-            3465: {
-                subtract: 1160.42,
-                rate: .24
-            },
-            6409: {
-                subtract: 2472.56,
-                rate: .32
-            },
-            8077: {
-                subtract: 2952.94,
-                rate: .35
-            },
-            12003: {
-                subtract: 3442.14,
-                rate: .37
-            }
-        }, {
-            0: {
-                subtract: 307.80,
-                rate: .1
-            },
-            680.80: {
-                subtract: 369.97,
-                rate: .12
-            },
-            1825.80: {
-                subtract: 1031.71,
-                rate: .22
-            },
-            3545.80: {
-                subtract: 1241.22,
-                rate: .24
-            },
-            6489.80: {
-                subtract: 2553.36,
-                rate: .32
-            },
-            8157.80: {
-                subtract: 3033.74,
-                rate: .35
-            },
-            12083.80: {
-                subtract: 3522.94,
-                rate: .37
-            }
-        }, {
-            0: {
-                subtract: 388.60,
-                rate: .1
-            },
-            761.60: {
-                subtract: 450.77,
-                rate: .12
-            },
-            1906.60: {
-                subtract: 1112.51,
-                rate: .22
-            },
-            3626.60: {
-                subtract: 1322.02,
-                rate: .24
-            },
-            6570.60: {
-                subtract: 2634.16,
-                rate: .32
-            },
-            8238.60: {
-                subtract: 3114.54,
-                rate: .35
-            },
-            12164.60: {
-                subtract: 3603.74,
-                rate: .37
-            }
-        }, {
-            0: {
-                subtract: 469.40,
-                rate: .1
-            },
-            842.40: {
-                subtract: 531.57,
-                rate: .12
-            },
-            1987.40: {
-                subtract: 1193.31,
-                rate: .22
-            },
-            3707.40: {
-                subtract: 1402.82,
-                rate: .24
-            },
-            6651.40: {
-                subtract: 2714.96,
-                rate: .32
-            },
-            8319.40: {
-                subtract: 3195.34,
-                rate: .35
-            },
-            12245.40: {
-                subtract: 3684.54,
-                rate: .37
-            }
-        }, {
-            0: {
-                subtract: 550.20,
-                rate: .1
-            },
-            923.20: {
-                subtract: 612.37,
-                rate: .12
-            },
-            2068.20: {
-                subtract: 1274.11,
-                rate: .22
-            },
-            3788.20: {
-                subtract: 1483.62,
-                rate: .24
-            },
-            6732.20: {
-                subtract: 2795.76,
-                rate: .32
-            },
-            8400.20: {
-                subtract: 3276.14,
-                rate: .35
-            },
-            12326.20: {
-                subtract: 3765.34,
-                rate: .37
-            }
-        }, {
-            0: {
-                subtract: 631,
-                rate: .1
-            },
-            1004: {
-                subtract: 693.17,
-                rate: .12
-            },
-            2149: {
-                subtract: 1354.91,
-                rate: .22
-            },
-            3869: {
-                subtract: 1564.42,
-                rate: .24
-            },
-            6813: {
-                subtract: 2876.56,
-                rate: .32
-            },
-            8481: {
-                subtract: 3356.94,
-                rate: .35
-            },
-            12407: {
-                subtract: 3846.14,
-                rate: .37
-            }
-        }, {
-            0: {
-                subtract: 711.80,
-                rate: .1
-            },
-            1084.80: {
-                subtract: 773.97,
-                rate: .12
-            },
-            2229.80: {
-                subtract: 1435.71,
-                rate: .22
-            },
-            3949.80: {
-                subtract: 1645.22,
-                rate: .24
-            },
-            6893.80: {
-                subtract: 2957.36,
-                rate: .32
-            },
-            8561.80: {
-                subtract: 3437.74,
-                rate: .35
-            },
-            12487.80: {
-                subtract: 3926.94,
-                rate: .37
-            }
-        }, {
-            0: {
-                subtract: 792.60,
-                rate: .1
-            },
-            1165.60: {
-                subtract: 854.77,
-                rate: .12
-            },
-            2310.60: {
-                subtract: 1516.51,
-                rate: .22
-            },
-            4030.60: {
-                subtract: 1726.02,
-                rate: .24
-            },
-            6974.60: {
-                subtract: 3038.16,
-                rate: .32
-            },
-            8642.60: {
-                subtract: 3518.54,
-                rate: .35
-            },
-            12568.60: {
-                subtract: 4007.74,
-                rate: .37
-            }
-        }, {
-            0: {
-                subtract: 873.40,
-                rate: .1
-            },
-            1246.40: {
-                subtract: 935.57,
-                rate: .12
-            },
-            2391.40: {
-                subtract: 1597.31,
-                rate: .22
-            },
-            4111.40: {
-                subtract: 1806.82,
-                rate: .24
-            },
-            7055.40: {
-                subtract: 3118.96,
-                rate: .32
-            },
-            8723.40: {
-                subtract: 3599.34,
-                rate: .35
-            },
-            12649.40: {
-                subtract: 4088.54,
-                rate: .37
-            }
-        }, {
-            0: {
-                subtract: 954.20,
-                rate: .1
-            },
-            1327.20: {
-                subtract: 1016.37,
-                rate: .12
-            },
-            2472.20: {
-                subtract: 1678.11,
-                rate: .22
-            },
-            4192.20: {
-                subtract: 1887.62,
-                rate: .24
-            },
-            7136.20: {
-                subtract: 3199.76,
-                rate: .32
-            },
-            8804.20: {
-                subtract: 3680.14,
-                rate: .35
-            },
-            12730.20: {
-                subtract: 4169.34,
-                rate: .37
-            }
-        }]
-    },
+    single: [{
+        0: {
+            subtract: 73,
+            rate: .1
+        },
+        260: {
+            subtract: 104.17,
+            rate: .12
+        },
+        832: {
+            subtract: 435.00,
+            rate: .22
+        },
+        1692: {
+            subtract: 539.75,
+            rate: .24
+        },
+        3164: {
+            subtract: 1195.81,
+            rate: .32
+        },
+        3998: {
+            subtract: 1436.00,
+            rate: .35
+        },
+        9887: {
+            subtract: 1892.81,
+            rate: .37
+        }
+    }, {
+        0: {
+            subtract: 153.80,
+            rate: .1
+        },
+        340.80: {
+            subtract: 184.97,
+            rate: .12
+        },
+        912.80: {
+            subtract: 515.80,
+            rate: .22
+        },
+        1772.80: {
+            subtract: 620.55,
+            rate: .24
+        },
+        3244.80: {
+            subtract: 1276.61,
+            rate: .32
+        },
+        4078.80: {
+            subtract: 1516.80,
+            rate: .35
+        },
+        9967.80: {
+            subtract: 1973.61,
+            rate: .37
+        }
+    }, {
+        0: {
+            subtract: 234.60,
+            rate: .1
+        },
+        421.60: {
+            subtract: 265.77,
+            rate: .12
+        },
+        993.60: {
+            subtract: 596.60,
+            rate: .22
+        },
+        1853.60: {
+            subtract: 701.35,
+            rate: .24
+        },
+        3325.60: {
+            subtract: 1353.41,
+            rate: .32
+        },
+        4159.60: {
+            subtract: 1597.60,
+            rate: .35
+        },
+        10048.60: {
+            subtract: 2054.41,
+            rate: .37
+        }
+    }, {
+        0: {
+            subtract: 315.40,
+            rate: .1
+        },
+        502.40: {
+            subtract: 346.57,
+            rate: .12
+        },
+        1074.40: {
+            subtract: 677.40,
+            rate: .22
+        },
+        1934.40: {
+            subtract: 782.15,
+            rate: .24
+        },
+        3406.40: {
+            subtract: 1438.21,
+            rate: .32
+        },
+        4240.40: {
+            subtract: 1678.40,
+            rate: .35
+        },
+        10129.40: {
+            subtract: 2135.21,
+            rate: .37
+        }
+    }, {
+        0: {
+            subtract: 396.20,
+            rate: .1
+        },
+        583.20: {
+            subtract: 427.37,
+            rate: .12
+        },
+        1155.20: {
+            subtract: 758.20,
+            rate: .22
+        },
+        2015.20: {
+            subtract: 862.95,
+            rate: .24
+        },
+        3487.20: {
+            subtract: 1519.01,
+            rate: .32
+        },
+        4321.20: {
+            subtract: 1759.20,
+            rate: .35
+        },
+        10210.20: {
+            subtract: 2216.01,
+            rate: .37
+        }
+    }, {
+        0: {
+            subtract: 477,
+            rate: .1
+        },
+        664: {
+            subtract: 508.17,
+            rate: .12
+        },
+        1236: {
+            subtract: 839,
+            rate: .22
+        },
+        2096: {
+            subtract: 943.75,
+            rate: .24
+        },
+        3568: {
+            subtract: 1599.81,
+            rate: .32
+        },
+        4402: {
+            subtract: 1840,
+            rate: .35
+        },
+        10291: {
+            subtract: 2296.81,
+            rate: .37
+        }
+    }, {
+        0: {
+            subtract: 557.80,
+            rate: .1
+        },
+        744.80: {
+            subtract: 588.97,
+            rate: .12
+        },
+        1316.80: {
+            subtract: 919.80,
+            rate: .22
+        },
+        2176.80: {
+            subtract: 1024.55,
+            rate: .24
+        },
+        3648.80: {
+            subtract: 1680.61,
+            rate: .32
+        },
+        4482.80: {
+            subtract: 1920.80,
+            rate: .35
+        },
+        10371.80: {
+            subtract: 2377.61,
+            rate: .37
+        }
+    }, {
+        0: {
+            subtract: 638.60,
+            rate: .1
+        },
+        825.60: {
+            subtract: 669.77,
+            rate: .12
+        },
+        1397.60: {
+            subtract: 1000.60,
+            rate: .22
+        },
+        2257.60: {
+            subtract: 1105.35,
+            rate: .24
+        },
+        3729.60: {
+            subtract: 1761.41,
+            rate: .32
+        },
+        4563.60: {
+            subtract: 2001.60,
+            rate: .35
+        },
+        10452.60: {
+            subtract: 2458.41,
+            rate: .37
+        }
+    }, {
+        0: {
+            subtract: 719.40,
+            rate: .1
+        },
+        906.40: {
+            subtract: 750.57,
+            rate: .12
+        },
+        1478.40: {
+            subtract: 1081.40,
+            rate: .22
+        },
+        2338.40: {
+            subtract: 1186.15,
+            rate: .24
+        },
+        3810.40: {
+            subtract: 1842.21,
+            rate: .32
+        },
+        4644.40: {
+            subtract: 2082.40,
+            rate: .35
+        },
+        10533.40: {
+            subtract: 2539.21,
+            rate: .37
+        }
+    }, {
+        0: {
+            subtract: 800.20,
+            rate: .1
+        },
+        987.20: {
+            subtract: 831.37,
+            rate: .12
+        },
+        1559.20: {
+            subtract: 1162.20,
+            rate: .22
+        },
+        2419.20: {
+            subtract: 1266.95,
+            rate: .24
+        },
+        3891.20: {
+            subtract: 1923.01,
+            rate: .32
+        },
+        4725.20: {
+            subtract: 2163.20,
+            rate: .35
+        },
+        10614.20: {
+            subtract: 2620.01,
+            rate: .37
+        }
+    }],
+    married: [{
+        0: {
+            subtract: 227,
+            rate: .1
+        },
+        600: {
+            subtract: 289.17,
+            rate: .12
+        },
+        1745: {
+            subtract: 950.91,
+            rate: .22
+        },
+        3465: {
+            subtract: 1160.42,
+            rate: .24
+        },
+        6409: {
+            subtract: 2472.56,
+            rate: .32
+        },
+        8077: {
+            subtract: 2952.94,
+            rate: .35
+        },
+        12003: {
+            subtract: 3442.14,
+            rate: .37
+        }
+    }, {
+        0: {
+            subtract: 307.80,
+            rate: .1
+        },
+        680.80: {
+            subtract: 369.97,
+            rate: .12
+        },
+        1825.80: {
+            subtract: 1031.71,
+            rate: .22
+        },
+        3545.80: {
+            subtract: 1241.22,
+            rate: .24
+        },
+        6489.80: {
+            subtract: 2553.36,
+            rate: .32
+        },
+        8157.80: {
+            subtract: 3033.74,
+            rate: .35
+        },
+        12083.80: {
+            subtract: 3522.94,
+            rate: .37
+        }
+    }, {
+        0: {
+            subtract: 388.60,
+            rate: .1
+        },
+        761.60: {
+            subtract: 450.77,
+            rate: .12
+        },
+        1906.60: {
+            subtract: 1112.51,
+            rate: .22
+        },
+        3626.60: {
+            subtract: 1322.02,
+            rate: .24
+        },
+        6570.60: {
+            subtract: 2634.16,
+            rate: .32
+        },
+        8238.60: {
+            subtract: 3114.54,
+            rate: .35
+        },
+        12164.60: {
+            subtract: 3603.74,
+            rate: .37
+        }
+    }, {
+        0: {
+            subtract: 469.40,
+            rate: .1
+        },
+        842.40: {
+            subtract: 531.57,
+            rate: .12
+        },
+        1987.40: {
+            subtract: 1193.31,
+            rate: .22
+        },
+        3707.40: {
+            subtract: 1402.82,
+            rate: .24
+        },
+        6651.40: {
+            subtract: 2714.96,
+            rate: .32
+        },
+        8319.40: {
+            subtract: 3195.34,
+            rate: .35
+        },
+        12245.40: {
+            subtract: 3684.54,
+            rate: .37
+        }
+    }, {
+        0: {
+            subtract: 550.20,
+            rate: .1
+        },
+        923.20: {
+            subtract: 612.37,
+            rate: .12
+        },
+        2068.20: {
+            subtract: 1274.11,
+            rate: .22
+        },
+        3788.20: {
+            subtract: 1483.62,
+            rate: .24
+        },
+        6732.20: {
+            subtract: 2795.76,
+            rate: .32
+        },
+        8400.20: {
+            subtract: 3276.14,
+            rate: .35
+        },
+        12326.20: {
+            subtract: 3765.34,
+            rate: .37
+        }
+    }, {
+        0: {
+            subtract: 631,
+            rate: .1
+        },
+        1004: {
+            subtract: 693.17,
+            rate: .12
+        },
+        2149: {
+            subtract: 1354.91,
+            rate: .22
+        },
+        3869: {
+            subtract: 1564.42,
+            rate: .24
+        },
+        6813: {
+            subtract: 2876.56,
+            rate: .32
+        },
+        8481: {
+            subtract: 3356.94,
+            rate: .35
+        },
+        12407: {
+            subtract: 3846.14,
+            rate: .37
+        }
+    }, {
+        0: {
+            subtract: 711.80,
+            rate: .1
+        },
+        1084.80: {
+            subtract: 773.97,
+            rate: .12
+        },
+        2229.80: {
+            subtract: 1435.71,
+            rate: .22
+        },
+        3949.80: {
+            subtract: 1645.22,
+            rate: .24
+        },
+        6893.80: {
+            subtract: 2957.36,
+            rate: .32
+        },
+        8561.80: {
+            subtract: 3437.74,
+            rate: .35
+        },
+        12487.80: {
+            subtract: 3926.94,
+            rate: .37
+        }
+    }, {
+        0: {
+            subtract: 792.60,
+            rate: .1
+        },
+        1165.60: {
+            subtract: 854.77,
+            rate: .12
+        },
+        2310.60: {
+            subtract: 1516.51,
+            rate: .22
+        },
+        4030.60: {
+            subtract: 1726.02,
+            rate: .24
+        },
+        6974.60: {
+            subtract: 3038.16,
+            rate: .32
+        },
+        8642.60: {
+            subtract: 3518.54,
+            rate: .35
+        },
+        12568.60: {
+            subtract: 4007.74,
+            rate: .37
+        }
+    }, {
+        0: {
+            subtract: 873.40,
+            rate: .1
+        },
+        1246.40: {
+            subtract: 935.57,
+            rate: .12
+        },
+        2391.40: {
+            subtract: 1597.31,
+            rate: .22
+        },
+        4111.40: {
+            subtract: 1806.82,
+            rate: .24
+        },
+        7055.40: {
+            subtract: 3118.96,
+            rate: .32
+        },
+        8723.40: {
+            subtract: 3599.34,
+            rate: .35
+        },
+        12649.40: {
+            subtract: 4088.54,
+            rate: .37
+        }
+    }, {
+        0: {
+            subtract: 954.20,
+            rate: .1
+        },
+        1327.20: {
+            subtract: 1016.37,
+            rate: .12
+        },
+        2472.20: {
+            subtract: 1678.11,
+            rate: .22
+        },
+        4192.20: {
+            subtract: 1887.62,
+            rate: .24
+        },
+        7136.20: {
+            subtract: 3199.76,
+            rate: .32
+        },
+        8804.20: {
+            subtract: 3680.14,
+            rate: .35
+        },
+        12730.20: {
+            subtract: 4169.34,
+            rate: .37
+        }
+    }]
+},
     FTbiweekly = {
         single: [{
             0: {

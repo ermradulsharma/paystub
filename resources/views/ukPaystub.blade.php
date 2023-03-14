@@ -200,8 +200,8 @@
                                                 <input
                                                     style="color:#140303f5;border:1px solid #110303fe;padding:0px 6px !important; height:40px; appearance: none;"
                                                     type="text" id="pay_end" name="pay_end" placeholder="12-11-2022"
-                                                    class="input-uk removeDiv pay_start datepicker inputdatepicker"
-                                                    data-id="pay_start" value="<?php echo date('m/d/Y'); ?>">
+                                                    class="input-uk removeDiv pay_end datepicker inputdatepicker"
+                                                    data-id="pay_end" value="<?php echo date('m/d/Y'); ?>">
                                             </div>
 
                                         </div>
@@ -212,8 +212,8 @@
                                                 <input
                                                     style="color:#140303f5;border:1px solid #110303fe;padding:0px 6px !important; height:40px; appearance: none;"
                                                     type="text" id="pay_date" name="pay_date" placeholder="12-11-2022"
-                                                    class="input-uk removeDiv pay_start datepicker inputdatepicker"
-                                                    data-id="pay_start" value="<?php echo date('m/d/Y'); ?>">
+                                                    class="input-uk removeDiv pay_date datepicker inputdatepicker"
+                                                    data-id="pay_date" value="<?php echo date('m/d/Y'); ?>">
                                             </div>
 
                                         </div>

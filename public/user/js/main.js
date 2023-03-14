@@ -2,7 +2,6 @@ var getUrl = window.location;
 var baseUrl = getUrl.protocol + "//" + getUrl.host + "/";
 var userAuth = 0;
 var okk = 0;
-console.log(baseUrl);
 $(".registerBtn").click(function () {
     $("#loginModal").modal("show");
     userAuth = 0;
@@ -124,7 +123,6 @@ function checkValidationForm() {
             $("#" + name).parent().parent('div').append("<span class='text-danger error_div 0_" + name + "' style='font-size:14px;'>This field can't be empty.</span>");
             ok = 0;
         }
-        console.log('blockedTile', blockedTile);
     });
     return ok;
 }
