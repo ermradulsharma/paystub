@@ -20,7 +20,8 @@
 <!-- Modal End -->
 <!-- Modal Start -->
 <div class="modal fade" id="tempViewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true"> <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="btn btn-secondary close" data-bs-dismiss="modal" aria-label="Close">
@@ -159,8 +160,8 @@
                                             <option value="{{ $basic_temp->title ?? '' }}" {{ $invoice->basic_temp ==
                                                 $basic_temp->title ? 'selected' : '' }}
                                                 data-src="{{ $basic_temp->images->file ?? '' }}"
-                                                data-status="{{ $basic_temp->template_element }}" data-stub="{{
-                                                $basic_temp->stub_no }}"
+                                                data-status="{{ $basic_temp->template_element }}"
+                                                data-stub="{{ $basic_temp->stub_no }}"
                                                 data-clock="{{ $basic_temp->co_no }}">
                                                 {{ $basic_temp->name }} </option>
                                             @endforeach
@@ -282,7 +283,7 @@
                                             @foreach ($stateTaxes as $stateTax)
                                             <option value="{{ $stateTax->state }}" {{ $invoice->emp_state ==
                                                 $stateTax->state ? 'selected' : '' }}
-                                                data-tax="{{ $stateTax->rate }}" >{{ $stateTax->state }}</option>
+                                                data-tax="{{ $stateTax->rate }}">{{ $stateTax->state }}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -365,7 +366,8 @@
                                             }}>Single
                                         </option>
                                         <option value="married" {{ $invoice->marital_status == 'married' ? 'selected' :
-                                            '' }}>Married
+                                            '' }}>
+                                            Married
                                         </option>
                                         <option value="other" {{ $invoice->marital_status == 'other' ? 'selected' : ''
                                             }}>Prefered top
@@ -385,12 +387,14 @@
                                         <option value="weekly" {{ $invoice->time_period == 'weekly' ? 'selected' : ''
                                             }}>Weekly</option>
                                         <option value="bi-weekly" {{ $invoice->time_period == 'bi-weekly' ? 'selected' :
-                                            '' }}>Bi-Weekly
+                                            '' }}>
+                                            Bi-Weekly
                                         </option>
                                         <option value="monthly" {{ $invoice->time_period == 'monthly' ? 'selected' : ''
                                             }}>Monthly</option>
                                         <option value="bi-monthly" {{ $invoice->time_period == 'bi-monthly' ? 'selected'
-                                            : '' }}>Bi-Monthly
+                                            : '' }}>
+                                            Bi-Monthly
                                         </option>
                                     </select>
                                 </div>
@@ -843,7 +847,6 @@
 @endsection
 @section('script')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" crossorigin="anonymous"></script>
-
 <script>
     $(document).ready(function() {
             $('.advanceTemplate').change(function() {
@@ -896,7 +899,6 @@
                 }
                 $('option:selected', '.basicTemplate').prop("selected", false);
             });
-
             $('.basicTemplate').change(function() {
                 var value = $('option:selected', '.bt_id').attr('value');
                 if (value != '') {
@@ -931,23 +933,6 @@
                 }
 
                 $('option:selected', '.advanceTemplate').prop("selected", false);
-            });
-
-            $('.basicTem').click(function() {
-                var imageattr = $('option:selected', '.bt_id').attr('data-src');
-                console.log('imageattr', imageattr);
-                $('.setImage').attr('src', imageattr);
-                if (imageattr != null && imageattr != undefined) {
-                    $('#openEye').modal('show');
-                }
-            });
-
-            $('.advanceTem').click(function() {
-                var imageattr = $('option:selected', '.at_id').attr('data-src');
-                $('.setImage').attr('src', imageattr);
-                if (imageattr != null && imageattr != undefined) {
-                    $('#openEye').modal('show');
-                }
             });
 
             $('.basicTem').click(function() {
