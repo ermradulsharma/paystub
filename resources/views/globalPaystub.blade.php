@@ -666,7 +666,7 @@
                                             <p class="p-0 m-0 " style="font-family: serif;">CO<span
                                                     class="redColor">*</span></p>
                                             <input type="text" name="co_number" id="co_number"
-                                                class="earnbtn text-center">
+                                                class="earnbtn removeDiv text-center">
                                         </div>
 
                                     </div>
@@ -676,7 +676,7 @@
                                                     class="redColor">*</span>
                                             </p>
                                             <input type="text" name="file_number" id="file_number"
-                                                class="earnbtn text-center">
+                                                class="earnbtn removeDiv text-center">
                                         </div>
 
                                     </div>
@@ -685,7 +685,7 @@
                                             <p class="p-0 m-0 " style="font-family: serif;">Clock Vchr Number<span
                                                     class="redColor">*</span> </p>
                                             <input type="text" name="clock_vchr_number" id="clock_vchr_number"
-                                                class="earnbtn text-center" maxlength="6" minlength="4"
+                                                class="earnbtn removeDiv text-center" maxlength="6" minlength="4"
                                                 placeholder="1234"
                                                 onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                         </div>
@@ -697,7 +697,7 @@
                                             <p class="p-0 m-0 " style="font-family: serif;">Advice Number:<span
                                                     class="redColor">*</span></p>
                                             <input type="text" name="advice_number" id="advice_number"
-                                                class="earnbtn text-center" placeholder="123456" maxlength="6"
+                                                class="earnbtn removeDiv text-center" placeholder="123456" maxlength="6"
                                                 minlength="4"
                                                 onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                         </div>
@@ -708,7 +708,7 @@
                                             <p class="p-0 m-0 " style="font-family: serif;">Account Number LAST<span
                                                     class="redColor">*</span></p>
                                             <input type="text" name="account_number_last_4" id="account_number_last_4"
-                                                class="earnbtn text-center" placeholder="1234" maxlength="4"
+                                                class="earnbtn removeDiv text-center" placeholder="1234" maxlength="4"
                                                 minlength="4"
                                                 onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                         </div>
@@ -719,7 +719,7 @@
                                             <p class="p-0 m-0 " style="font-family: serif;">Transit ABA<span
                                                     class="redColor">*</span> </p>
                                             <input type="text" name="transit_aba_number" id="transit_aba_number"
-                                                class="earnbtn text-center" placeholder="1234" maxlength="4"
+                                                class="earnbtn removeDiv text-center" placeholder="1234" maxlength="4"
                                                 minlength="4"
                                                 onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                         </div>
