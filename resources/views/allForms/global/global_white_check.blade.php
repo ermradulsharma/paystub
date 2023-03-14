@@ -190,14 +190,13 @@
             </tr>
             <tr>
                 <td></td>
-                <td style="">Exemptions/Alowances:{{ $requestData['exemptions'] }}</td>
-                <td style=""><b> {{ $requestData['emp_street_1'] }} {{ $requestData['emp_street_2'] }}</b> </td>
+                <td style="padding-left:40px;">Federal: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1</td>
+                <td style=""><b>{{ $requestData['emp_city'] }} {{ $requestData['emp_state'] }} {{ $requestData['emp_zip_code'] }}</b> </td>
             </tr>
-
             <tr>
                 <td></td>
-                <td>Federal: 1</td>
-                <td style=""><b>{{ $requestData['emp_city'] }} {{ $requestData['emp_state'] }} {{ $requestData['emp_zip_code'] }}</b> </td>
+                <td style="padding-bottom: 30px;padding-left:40px;">NY:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; 1</td>
+                <td> </td>
             </tr>
             <tr>
                 <td></td>
@@ -260,8 +259,8 @@
                 <table class="table-data" style="width: 50%;">
                     <thead style="font-size:14px;">
 
-                        <th style="border-bottom: 2px solid #000;">DEDUCTIONS</th>
-                        <th style="border-bottom: 2px solid #000; text-align:center;" colspan="" class=""> STATUTORY</th>
+                        <th style="border-bottom: 2px solid #000;">Deductions</th>
+                        <th style="border-bottom: 2px solid #000; text-align:center;" colspan="" class=""> Statutory</th>
                         <th class="sat" style="border-bottom: 2px solid #000; text-align:right; width: 40%"></th>
                     </thead>
                     @foreach ($requestData['taxes'] ?? [] as $key => $taxes)
@@ -286,7 +285,7 @@
                     <br>
                     <thead style="border-bottom: 2px solid #000;">
                         <th></th>
-                        <th class="td" colspan="3" style="border-bottom: 2px solid black; margin-bottom:30px;">OTHER </th>
+                        <th class="td" colspan="3" style="border-bottom: 2px solid black; margin-bottom:30px;">Other     </th>
                     </thead>
                     <tr>
                         <td colspan="7"></td>

@@ -41,7 +41,7 @@
         .section_2 {
             background: #5AA6BA;
             color: white;
-            padding: 15px 15px 30px;
+            padding: 15px 15px;
             overflow: hidden;
             margin-top: 10px;
         }
@@ -65,6 +65,7 @@
             color: #5b615d;
             padding-top: 8px;
             padding-bottom: 8px;
+            font-size:14px;
         }
 
         #color {
@@ -190,7 +191,8 @@
                     <th></th>
                 </tr>
                 <tr>
-                    <td class="address" style="padding-left: 31px;font-size:12px;"> {{ $requestData['address_1'] }} <br>
+                    <td class="address" style="padding-left: 31px;font-size:12px;line-height:1.7;text-transform:uppercase;">
+                        {{ $requestData['address_1'] }} <br>
                         {{ $requestData['city'] }} {{ $requestData['state'] }}, {{ $requestData['zip_code'] }}, USA
                     </td>
                     <td style="font-weight:600; font-size:18px;" class="earning">Earnings Statement</td>
@@ -198,24 +200,25 @@
                 <tr>
                     <td></td>
                     <td>
-                        <p class="earning"style="font-size:12px;"> Pay Period: {{ date('M d, Y', strtotime($requestData['pay_start'])) }} to
-                            {{ date('M d, Y', strtotime($requestData['pay_end'])) }} <br> pay date:
-                            {{ date('M d, Y', strtotime($requestData['pay_date'])) }} </p>
+                        <p class="earning" style="font-size:12px;"> Pay Period: {{ date('M d, Y', strtotime($requestData['pay_start'])) }} to
+                            {{ date('M d, Y', strtotime($requestData['pay_end'])) }} <br> Pay Date:
+                            {{ date('M d, Y', strtotime($requestData['pay_date'])) }}</p>
                     </td>
                 </tr>
             </table>
             <section class="section_2">
                 <table>
                     <tr>
-                        <th style="width: 40%;font-size:13px;">SSN: XXX-XX-{{ $requestData['emp_ssn'] }}</th>
-                        <th class="earning" style="width: 60%;">{{ $requestData['emp_name'] }}</th>
+                        <th style="width: 40%;font-size:14px;font-weight:400; padding-bottom:0px !important;padding-top:0px !important;">SSN: XXX-XX-{{ $requestData['emp_ssn'] }}</th>
+                        <th class="earning" style="width: 60%;font-weight:400 !important;padding-bottom:0px !important;padding-top:0px !important;margin:0px;font-size:14px;">{{ $requestData['emp_name'] }}</th>
                     </tr>
                     <tr>
-                        <td style=" padding: 9px;"> Stub No: {{ $requestData['stub_no'] }} </td>
-                        <td class="earning"style="font-size:13px"> Emp.ID.{{ $requestData['emp_id'] }} <br>
-                            {{ $requestData['emp_street_1'] }}, {{ $requestData['emp_street_2'] }}
+                        <td style=" padding: 0px 0px 0px 9px; font-size:14px;font-weight:400;padding-bottom:0px !important;padding-top:0px !important;"> Stub No: {{ $requestData['stub_no'] }} </td>
+                        <td class="earning"style="font-size:14px;padding-bottom:0px !important;padding-top:0px !important;"> Emp.ID.{{ $requestData['emp_id'] }} <br>
+                            {{ $requestData['emp_street_1'] }},{{ $requestData['emp_street_2'] }}
                             {{ $requestData['emp_city'] }} {{ $requestData['emp_state'] }}
-                            {{ $requestData['emp_zip_code'] }} </td>
+                            {{ $requestData['emp_zip_code'] }}
+                        </td>
                     </tr>
                 </table>
             </section>
@@ -229,16 +232,17 @@
                         <td class="heading1" id="alignR">YTD</td>
                     </tr>
                     @foreach ($requestData['earning'] as $key => $earn)
-                        <tr>
-                            <td id="color">{{ $earn }}</td>
-                            <td id="color">{{ $requestData['currency'] }}
-                                {{ number_format($requestData['rate'][$key], 2) }} </td>
-                            <td colspan="2" id="color">{{ $requestData['hours'][$key] }}</td>
-                            <td id="color" class="alignR">{{ $requestData['currency'] }}
-                                {{ number_format($requestData['period'][$key], 2) }} </td>
-                            <td id="color" class="alignR">{{ $requestData['currency'] }}
-                                {{ number_format($requestData['ytd_total'][$key], 2) }} </td>
-                        </tr>
+                    <tr>
+                        <td id="color" style="font-size:13px;">{{ $earn }}</td>
+                        <td id="color" style="font-size:13px;">{{ $requestData['currency'] }}
+                            {{ number_format($requestData['rate'][$key], 2) }}
+                        </td>
+                        <td colspan="2" id="color"style="font-size:13px;">{{ number_format($requestData['hours'][$key]) }}</td>
+                        <td id="color" class="alignR"style="font-size:13px;">{{ $requestData['currency'] }}
+                            {{ number_format($requestData['period'][$key], 2) }} </td>
+                        <td id="color" class="alignR"style="font-size:13px;">{{ $requestData['currency'] }}
+                            {{ number_format($requestData['ytd_total'][$key], 2) }} </td>
+                    </tr>
                     @endforeach
 
                     <tr style="padding-top: -200px;">
@@ -252,9 +256,9 @@
                     <tfoot class="tfooter" style="background:#5AA6BA ; color:white">
                         <tr>
                             <th colspan="4"></th>
-                            <th style="font-weight: 100;" id="alignR">{{ $requestData['currency'] }}
+                            <th style="font-weight: 400;font-size:13px;" id="alignR">{{ $requestData['currency'] }}
                                 {{ number_format($requestData['period_gross_total'], 2) }} </th>
-                            <th style=" font-weight: 100;" id="alignR">{{ $requestData['currency'] }}
+                            <th style=" font-weight: 400;font-size:13px;" id="alignR">{{ $requestData['currency'] }}
                                 {{ number_format($requestData['ytd_gross_total'], 2) }} </th>
                         </tr>
                     </tfoot>
@@ -269,14 +273,14 @@
                         <td class="heading1" id="alignR">YTD</td>
                     </tr>
                     @foreach ($requestData['taxes'] ?? [] as $key => $taxes)
-                        <tr>
-                            <td></td>
-                            <td class="data" id="color">{{ $taxes }}</td>
-                            <td id="color" class="alignR">{{ $requestData['currency'] }}
-                                {{ number_format($requestData['taxes_rate'][$key], 2) }} </td>
-                            <td id="color" class="alignR">{{ $requestData['currency'] }}
-                                {{ number_format($requestData['taxes_ytd'][$key], 2) }} </td>
-                        </tr>
+                    <tr>
+                        <td></td>
+                        <td class="data" id="color"style="font-size:13px;">{{ $taxes }}</td>
+                        <td id="color" class="alignR"style="font-size:13px;">{{ $requestData['currency'] }}
+                            {{ number_format($requestData['taxes_rate'][$key], 2) }} </td>
+                        <td id="color" class="alignR"style="font-size:13px;">{{ $requestData['currency'] }}
+                            {{ number_format($requestData['taxes_ytd'][$key], 2) }} </td>
+                    </tr>
                     @endforeach
                     @if (count($requestData['tax_deduction'] ?? []) > 0)
                         <tr>
@@ -298,29 +302,31 @@
                     @endif
                     <tfoot class="tfooter " style="background:#5AA6BA ; color:white">
                         <tr>
-                            <th colspan="2">Net Pay</th>
-                            <th style="font-weight: 100;" id="alignR">{{ $requestData['currency'] }}
+                            <th colspan="2" style="font-weight: 400 !important;font-size:13px">Net Pay</th>
+                            <th style="font-weight: 400 !important;font-size:13px" id="alignR">{{ $requestData['currency'] }}
                                 {{ number_format($requestData['total_net_pay'], 2) }} </th>
-                            <th style=" font-weight: 100;" id="alignR">{{ $requestData['currency'] }}
+                            <th style=" font-weight: 400 !important;font-size:13px" id="alignR">{{ $requestData['currency'] }}
                                 {{ number_format($requestData['total_ytd_net_pay'], 2) }} </th>
                         </tr>
                     </tfoot>
                 </table>
-                <p style="margin-top:25px; color:#555555;">Your taxes and deductions for this period are
+                <p style="margin-top:25px; color:#555555;font-size:14px;">Your taxes and deductions for this period are
                     {{ $requestData['currency'] }} {{ number_format($requestData['deduction_tax'], 2) }} </p>
             </section>
 
             <section class="bg-img">
                 <div class="container" style=" margin-top:60px; width:95%; padding:0px 20px;">
                     <div class="row" style="display: flex;justify-content: space-between;padding: 0px 14px;">
-                        <div style="width: 50%;float:left;">
-                            <p style="font-size: 13px; margin: 0;">{{ $requestData['cname'] }}</p>
-                            <p style="font-size: 13px; margin: 0;">{{ $requestData['address_1'] }}</p>
-                            <P style="font-size: 13px; margin: 0;">{{ $requestData['address_2'] }}</P>
-                            <P style="font-size: 13px; margin: 0;">{{ $requestData['city'] }}
-                                {{ $requestData['state'] }}, {{ $requestData['zip_code'] }} </P>
+                        <div style="width: 50%;float:left; position: relative; top:35px;">
+                            <p style="font-size: 11px; margin: 0; text-transform:uppercase;color:black;font-weight:500;">{{ $requestData['cname'] }}</p>
+                            <p style="font-size: 11px; margin: 0;text-transform:uppercase;color:black;font-weight:500;">{{ $requestData['address_1'] }}</p>
+                            <P style="font-size: 11px; margin: 0;text-transform:uppercase;color:black;font-weight:500;">{{ $requestData['address_2'] }}</P>
+                            <P style="font-size: 11px; margin: 0;text-transform:uppercase;color:black;font-weight:500;">{{ $requestData['city'] }}
+                                {{ $requestData['state'] }},
+                                {{ $requestData['zip_code'] }}
+                            </P>
                         </div>
-                        <div style="width: 50%;float:right;text-align:right; margin-top:4px;">
+                        <div style="width: 50%;float:right;text-align:right; margin-top:6px;">
                             <h6 style="font-size: 14px; margin-bottom: 6px;">
                                 <span>00000{{ $requestData['advice_number'] }}</span>
                             </h6>
@@ -330,7 +336,7 @@
                     </div>
                     <table style="width: 95%; margin: 160px auto 0px;">
                         <tr>
-                            <td style="font-size:14px;text-align:left;  width:55%;">
+                            <td style="font-size:12px;text-align:left; width:55%; font-weight:bold;text-transform:uppercase; letter-spacing: -0.5px;">
                                 {{ $requestData['emp_name'] }}</td>
                             <td style="text-align: right; font-size:12px; width:20%;">
                                 XXXXX{{ $requestData['account_number_last_4'] }}</td>
