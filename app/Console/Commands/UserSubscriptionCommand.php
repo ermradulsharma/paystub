@@ -6,7 +6,7 @@ use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Console\Command;
 
-class UserSubscription extends Command
+class UserSubscriptionCommand extends Command
 {
     /**
      * The name and signature of the console command.
@@ -36,6 +36,6 @@ class UserSubscription extends Command
               User::where('id', $user->id)->update(['expiryDate' => '']);
             }
         }
-        return Command::SUCCESS;
+        return true;
     }
 }
