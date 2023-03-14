@@ -14,7 +14,7 @@ class Kernel extends ConsoleKernel
      * @return void
      */
     protected $commands = [
-        'app\Console\Commands\UserSubscription',
+        'app\Console\commands\UserSubscription',
     ];
 
     protected function schedule(Schedule $schedule)
