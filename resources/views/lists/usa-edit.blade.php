@@ -55,7 +55,7 @@
                                             class="redColor">*</span> </label>
                                     <input type="text" id="cname" name="cname" value="{{ $invoice->cname ?? '' }}"
                                         placeholder="Your Employer & Company Name"
-                                        class="w-100 p-2 text-center textInputFontSize removeDiv">
+                                        class="w-100 p-2 textInputFontSize removeDiv">
                                 </div>
                             </div>
 
