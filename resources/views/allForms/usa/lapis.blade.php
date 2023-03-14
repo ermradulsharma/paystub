@@ -325,7 +325,7 @@
                         </div>
                         <div style="width: 50%;float:right;text-align:right; margin-top:4px;">
                             <h6 style="font-size: 14px; margin-bottom: 6px;">
-                                <span>{{ $requestData['advice_number'] }}</span>
+                                <span>00000{{ $requestData['advice_number'] }}</span>
                             </h6>
                             <p> <span style="font-weight:800;"></span>
                                 {{ date('m/d/y', strtotime($requestData['pay_date'])) }} </p>

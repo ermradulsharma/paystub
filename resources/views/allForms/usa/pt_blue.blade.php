@@ -117,12 +117,12 @@
                 <div style="width: 60%;float:left;">
                     <h6 style="font-size: 17px; margin-bottom: 0;"> {{ $requestData['cname'] }}</h6>
                     <p style="font-size: 14px; margin: 0;"> {{ $requestData['address_1'] }}
-                        {{ $requestData['address_2'] }}</br>{{ $requestData['city'] }} {{ $requestData['state'] }},
+                        {{ $requestData['address_2'] }}<br>{{ $requestData['city'] }} {{ $requestData['state'] }},
                         {{ $requestData['zip_code'] }}</p>
                 </div>
                 <div style="width:40%;float:right;">
                     <h6 style="font-size: 15px; margin-bottom: 0; padding-left:12%;">Advice Number:
-                        <span>XXXXX{{ $requestData['advice_number'] }}</span>
+                        <span>00000{{ $requestData['advice_number'] }}</span>
                     </h6>
                     <br>
                     <br>
@@ -163,7 +163,7 @@
                     </b>
                     <P style="margin: 0px 0 0 0; font-size:  12px;"> {{ $requestData['address_1'] }} </P>
                     <p style="margin: 0px 0 0 0;font-size: 12px;">{{ $requestData['address_2'] }}
-                        </br>{{ $requestData['city'] }} {{ $requestData['state'] }}, {{ $requestData['zip_code'] }}
+                        <br>{{ $requestData['city'] }} {{ $requestData['state'] }}, {{ $requestData['zip_code'] }}
                     </p>
                 </div>
             </div>

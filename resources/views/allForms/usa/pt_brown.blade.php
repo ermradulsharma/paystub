@@ -122,7 +122,7 @@
                 </div>
                 <div style="width:40%;float:right;">
                     <h6 style="font-size: 15px; margin-bottom: 0; padding-left:12%;">Advice Number:
-                        <span>XXXXX{{ $requestData['advice_number'] }}</span>
+                        <span>00000{{ $requestData['advice_number'] }}</span>
                     </h6>
                     <br>
                     <br>

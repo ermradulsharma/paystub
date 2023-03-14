@@ -226,7 +226,7 @@
                 </tr>
                 <tr>
                     <td class="address" style="padding-left: 14px;"> {{ $requestData['address_1'] }}
-                        {{ $requestData['address_2'] }} {{ $requestData['city'] }} </br> {{ $requestData['state'] }},
+                        {{ $requestData['address_2'] }} {{ $requestData['city'] }} <br> {{ $requestData['state'] }},
                         {{ $requestData['zip_code'] }} </td>
                     <td colspan="4"></td>
                 </tr>
@@ -301,8 +301,8 @@
 
                             <tr>
                                 <td colspan="4" class="address" style="padding-left: 11px;">
-                                    {{ $requestData['cname'] }} <br> {{ $requestData['address_1'] }} </br>
-                                    {{ $requestData['address_2'] }} </br> {{ $requestData['city'] }}
+                                    {{ $requestData['cname'] }} <br> {{ $requestData['address_1'] }} <br>
+                                    {{ $requestData['address_2'] }} <br> {{ $requestData['city'] }}
                                     {{ $requestData['state'] }}, {{ $requestData['zip_code'] }} <br>
                                     {{ $requestData['tel'] }} </td>
                             </tr>
@@ -332,8 +332,8 @@
 
                     </tr>
                     <tr>
-                        <td> {{ $requestData['emp_street_1'] }}</br>
-                            {{ $requestData['emp_street_2'] }}</br>{{ $requestData['emp_city'] }}
+                        <td> {{ $requestData['emp_street_1'] }}<br>
+                            {{ $requestData['emp_street_2'] }}<br>{{ $requestData['emp_city'] }}
                             {{ $requestData['emp_state'] }}, {{ $requestData['emp_zip_code'] }} </td>
                         <td> {{ $requestData['emp_ssn'] }}</td>
                         <td> {{ $requestData['emp_id'] }}</td>

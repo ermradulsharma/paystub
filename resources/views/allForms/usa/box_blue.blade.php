@@ -179,7 +179,7 @@
                     <tr>
                         <td></td>
                         <td>Exemptions/Alowances:<b>{{ $requestData['exemptions'] }}</b></td>
-                        <td style="font-size: 14px;"> {{ $requestData['emp_street_1'] }} </br>
+                        <td style="font-size: 14px;"> {{ $requestData['emp_street_1'] }} <br>
                             {{ $requestData['emp_city'] }} </td>
                     </tr>
                     <tr>
@@ -236,7 +236,7 @@
                         <td><b>{{ number_format($requestData['ytd_total'][$key], 2) }}</b></td>
                     </tr>
                 @endforeach
-                </br> </br>
+                <br> <br>
                 <tr>
                     <td></td>
                     <td colspan="3"
@@ -249,7 +249,7 @@
                 </tr>
 
 
-                </br> </br> </br> </br>
+                <br> <br> <br> <br>
 
             </table>
         </section>
@@ -386,7 +386,7 @@
                     </div>
                     <div style="width: 50%;float:right;text-align:right;position: relative; right:20px;">
                         <h6 style="font-size: 14px; margin-bottom: 0; position: relative; top:-8px;">
-                            <span style="">{{ $requestData['advice_number'] }}</span>
+                            <span style="">00000{{ $requestData['advice_number'] }}</span>
                         </h6>
                         <p style=" position: relative; top:-18px; font-size:13px;">
                             <span style="font-weight:800;"></span>

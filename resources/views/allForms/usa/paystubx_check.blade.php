@@ -181,11 +181,11 @@
                         <td style="font-weight:800;font-size:16px;">{{ $requestData['cname'] }}</td>
                     </tr>
                     <tr>
-                        <td>{{ $requestData['address_1'] }}</br>{{ $requestData['address_1'] }}</br>{{ $requestData['city'] }}
+                        <td>{{ $requestData['address_1'] }}<br>{{ $requestData['address_1'] }}<br>{{ $requestData['city'] }}
                             {{ $requestData['state'] }},
                             {{ $requestData['zip_code'] }}
                         </td>
-                    </tr></br></br></br>
+                    </tr><br><br><br>
                     <tr>
                         <td>Social Security Number:{{ $requestData['emp_ssn'] }}
                         </td>
@@ -221,13 +221,13 @@
                                 Date:&nbsp;&nbsp;&nbsp;&nbsp;<span
                                     style="text-align:right;">{{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</span></b>
                         </td>
-                    </tr></br></br></br>
+                    </tr><br><br><br>
                     <tr>
                         <td style="font-weight: 800; font-size:16px;">{{ $requestData['emp_name'] }}</td>
 
                     </tr>
                     <tr>
-                        <td> {{ $requestData['emp_street_1'] }},{{ $requestData['emp_city'] }}</br>
+                        <td> {{ $requestData['emp_street_1'] }},{{ $requestData['emp_city'] }}<br>
                             {{ $requestData['emp_state'] }},
                             {{ $requestData['emp_zip_code'] }},USA
                         </td>
@@ -262,7 +262,7 @@
                                     {{ number_format($requestData['ytd_total'][$key], 2) }}</td>
                             </tr>
                         @endforeach
-                        </br>
+                        <br>
                         <tr>
                             <th style=" width:20%;"></th>
                             <th style=" width:20%;"></th>
@@ -326,7 +326,7 @@
                                     {{ number_format($requestData['ytd_tax_deduction'][$key], 2) }}</td>
                             </tr>
                         @endforeach
-                        </br></br>
+                        <br><br>
                         <tr>
                             <td style="width:20%;"></td>
                             <td style="width:20%; text-align:center;" colspan="">Total Deduction</td>
@@ -336,7 +336,7 @@
                             <td style="text-align:right; padding-right:15px;width:20%; "><b>
                                     {{ number_format($requestData['ytd_gross_total'], 2) }}</b></td>
                         </tr>
-                        </br>
+                        <br>
                         <tr>
                             <td style="width:20%;"></td>
                             <th style="width:20%; text-align:left; padding-left:15px;" colspan="">NET PAY</th>
@@ -371,13 +371,13 @@
                     </div>
                     <div style="width: 50%;float:right;padding-bottom: 10px;">
                         <h6 style="font-size: 17px; ">
-                            <p style="text-align:right;margin-right:80px;">{{ $requestData['advice_number'] }}</p>
+                            <p style="text-align:right;margin-right:80px;">00000{{ $requestData['advice_number'] }}</p>
                             {{-- <p style="text-align:right;margin-right:60px;">
                                 {{ date('m/d/y', strtotime($requestData['pay_date'])) }}</p> --}}
                         </h6>
 
-                        </br>
-                        </br>
+                        <br>
+                        <br>
                         {{-- <P style="font-size: 10px;margin: 0;">
                             <span style="font-weight:800;">Check Nuumber:</span>
                             {{ $requestData['account_number_last_4'] }}
