@@ -166,20 +166,20 @@
         <section class="invoiceborder">
             <table>
                 <tr>
-                    <th style="padding-left: 31px;padding-top:0; padding-bottom:0;"> {{ $requestData['cname'] }}</th>
-                    <th></th>
+                    <td style="padding-left: 31px;padding-top:0px; padding-bottom:0;font-size:17px;text-transform:uppercase;"> <b>{{ $requestData['cname'] }}</b></td>
+
                 </tr>
                 <tr>
-                    <td class="address" style="padding-left: 31px;font-size:12px;text-transform:uppercase; font-size:11px; font-weight:400;line-height:1.5; color:#000;letter-spacing:-0.5px;">
+                    <td class="address" style="padding-left: 31px;font-size:16px;text-transform:uppercase; font-weight:400;line-height:1.5; color:#000;letter-spacing:-0.5px;padding-top:0; padding-bottom:0;">
                         {{ $requestData['address_1'] }} <br>
                         {{ $requestData['city'] }}, {{ $requestData['zip_code'] }}<br> USA
                     </td>
-                    <td style="font-weight:600; font-size:18px;line-height:1.7;vertical-align: bottom;" class="earning">Earnings Statement</td>
+                    <td style="font-weight:600; font-size:18px;line-height:1.9;vertical-align: center;" class="earning">Earnings Statement</td>
                 </tr>
                 <tr>
                     <td></td>
-                    <td>
-                        <p class="earning"style="font-size:12px;"> Pay Period: {{ date('M d, Y', strtotime($requestData['pay_start'])) }} to
+                    <td style="">
+                        <p class="earning"style="font-size:13px; margin-top:-40px;"> Pay Period: {{ date('M d, Y', strtotime($requestData['pay_start'])) }} to
                             {{ date('M d, Y', strtotime($requestData['pay_end'])) }} <br> Pay Date:
                             {{ date('M d, Y', strtotime($requestData['pay_date'])) }}
                         </p>
@@ -224,10 +224,10 @@
                     <tfoot class="tfooter" style="background:#b62ebd;">
                         <tr style=" color:white; height:20%;">
                             <th colspan="3"></th>
-                            <th class="tax-align-c" style="font-weight: 100; height: 45px; padding-right: 45px;">
+                            <th class="tax-align-c" style="font-weight: 100; height: 45px; text-align:right; padding-right: 0px;font-size:13px">
                                 {{ $requestData['currency'] }}
                                 {{ number_format($requestData['period_gross_total'], 2) }} </th>
-                            <th class="tax-align-r" style="font-weight: 100; height: 47px">
+                            <th class="tax-align-r" style="font-weight: 100; height: 47px;font-size:13px">
                                 {{ $requestData['currency'] }} {{ number_format($requestData['ytd_gross_total'], 2) }}
                             </th>
                         </tr>

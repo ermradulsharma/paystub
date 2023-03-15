@@ -204,7 +204,7 @@
                 </table>
             </div>
             <div class="cols2">
-                <h3 style="padding: 0px; margin:0px;">Earnings Statement</h3>
+                <h3 style="padding: 0px; margin:0px; font-size:25px;">Earnings Statement</h3>
                 <table style="width:100%;">
                     <tr>
                         <td>Period Start:&nbsp;&nbsp;&nbsp; {{ date('m/d/Y', strtotime($requestData['pay_start'])) }}</td>

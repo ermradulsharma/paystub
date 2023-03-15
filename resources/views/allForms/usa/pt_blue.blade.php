@@ -16,9 +16,7 @@
             padding: 2px;
         }
 
-        .bb {
-            border: 1px solid red;
-        }
+
 
         th {
             background-color: #43407a;
@@ -119,7 +117,7 @@
                 <div style="width: 60%;float:left;">
                     <h6 style="font-size: 14px; margin-bottom: 0;text-transform:uppercase;"> {{ $requestData['cname'] }}</h6>
                     <p style="font-size: 14px; margin: 0;text-transform:uppercase;"> {{ $requestData['address_1'] }}
-                        {{ $requestData['address_2'] }}<br>{{ $requestData['city'] }} {{ $requestData['state'] }},
+                        {{ $requestData['address_2'] }}<br>{{ $requestData['city'] }} <br>{{ $requestData['state'] }},
                         {{ $requestData['zip_code'] }}</p>
                 </div>
                 <div style="width:40%;float:right;">
@@ -140,13 +138,13 @@
             </div>
             <div style="width: 100%; margin: 30px auto 0;font-size: 15px; padding: 0 0px 0px 0px;">
                 <div style="padding: 0px 20px;">
-                    <span>Pay to:<b style="text-transform:uppercase; padding-left:10px;font-size:13px;"> {{ $requestData['emp_name'] }} </b></span>
+                    <span>Pay To:<b style="text-transform:uppercase; padding-left:10px;font-size:13px;"> {{ $requestData['emp_name'] }} </b></span>
                     <span style="margin: 0; float:right;font-weight:bold;">Amount</span>
                     <span style="margin: 0; float:right; padding-left:10px; margin-right: 11px;">Transit ABA</span>
                     <span style="margin: 0; float:right;padding-left:10px; margin-right: 11px;">Account Number</span>
                     <hr style="margin-top: 10px;">
                     <span
-                        style="margin: 0;float:right;margin-left: 20px;font-weight:bold; font-size:20px;">{{ $requestData['currency'] }}{{ $requestData['total_net_pay'] }}</span>
+                        style="margin: 0;float:right;margin-left: 20px;font-weight:bold; font-size:16px;">{{ $requestData['currency'] }}{{ $requestData['total_net_pay'] }}</span>
 
 
                     <span
@@ -154,7 +152,7 @@
 
 
                     <span
-                        style="margin: 0;float:right; margin-right: 30px; ">XXXXXX{{ $requestData['account_number_last_4'] }}</span>
+                        style="margin: 0;float:right; margin-left: 30px; ">XXXXXX{{ $requestData['account_number_last_4'] }}</span>
                 </div>
             </div>
             <div

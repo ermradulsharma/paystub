@@ -138,22 +138,22 @@
         <div style="max-width: 100%; margin: auto; padding: 10px 10px;">
             <table style="width:100%; border-left:2px solid#464646; border-right:2px solid#464646;">
                 <thead style="border:none !important;color:white; background-color:darkgrey; ">
-                    <th style="font-size: 14px;text-align:left;padding:0px 0px 0px 25px; margin:0px; font-weight:400;  ">{{ $requestData['cname'] }}</th>
-                    <th
+                    <td style="font-size: 14px;text-align:left;padding:0px 0px 0px 25px; margin:0px; font-weight:400;  ">{{ $requestData['cname'] }}</td>
+                    <td
                         style="font-size: 17px;padding-top:20px; text-align: right; padding-right:12px; padding-bottom:none;text-transform: uppercase;">
-                        Earnings Statement</th>
+                        Earnings Statement</td>
                 </thead>
                 <tr style="color:white; background-color:darkgrey; ">
-                    <td style="font-size: 13px;padding-left: 24px;padding-bottom: 8px;  " colspan="2">
+                    <td style="font-size: 13px;padding-left: 24px;padding-bottom: 8px; " colspan="2">
                         {{ $requestData['address_1'] }}{{ $requestData['city'] }} {{ $requestData['state'] }},
                         {{ $requestData['zip_code'] }}, USA </td>
                 </tr>
             </table>
             <table style="width:100%; border-left:2px solid#464646; border-right:2px solid#464646;">
                 <thead style="border-top:none; border-left:2px solid#464646;height:35px;">
-                    <th class="padding" colspan="2" style="text-align: left; padding-left:20px; color:black;">
-                        {{ $requestData['emp_name'] }} </th>
-                    <td class="padding" colspan="6" style="text-align: left; border-right:2px solid #464646;font-size:14px; color:#464646">
+                    <td class="padding" colspan="2" style="text-align: left; padding-left:20px; color:black;font-size:15px;">
+                        <b>{{ $requestData['emp_name'] }} </b></td>
+                    <td class="padding" colspan="6" style="text-align: left; border-right:2px solid #464646;font-size:15px; color:#464646">
                         {{ $requestData['emp_street_1'] }},{{ $requestData['emp_city'] }}
                         {{ $requestData['emp_state'] }}, {{ $requestData['emp_zip_code'] }} </td>
                 </thead>

@@ -282,7 +282,7 @@
                             <br>
                             <tr>
                                 <td class="hadding" style="text-align: left; font-weight:800;">DEDUCTION TOTAL</td>
-                                <td>{{ number_format($requestData['period_gross_total'], 2) }}</td>
+                                <td style="ba">{{ number_format($requestData['period_gross_total'], 2) }}</td>
                                 <td>{{ number_format($requestData['ytd_gross_total'], 2) }}</td>
                             </tr>
                         </tbody>
@@ -310,11 +310,9 @@
                 <div class="column2">
                     <table class="tablewidth">
                         <tr>
-                            <td style="width:60px"></td>
-                            <th class="hadding" style="text-align: left; font-weight:800;">Net Pay</th>
-                            <td style="text-align: right;">{{ number_format($requestData['total_net_pay'], 2) }}</td>
-                            <td style="text-align: center;">{{ number_format($requestData['total_ytd_net_pay'], 2) }}
-                            </td>
+                            <td class="hadding" style="text-align:right;padding-left:50px; font-weight:800;">NET PAY</td>
+                            <td style="text-align:right;padding-left:0px">{{ number_format($requestData['period_gross_total'], 2) }}</td>
+                            <td style="text-align: right;padding-right:20px; ">{{ number_format($requestData['ytd_gross_total'], 2) }}</td>
                         </tr>
                     </table>
                 </div>

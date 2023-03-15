@@ -49,9 +49,9 @@
 
             background: #D8E3F7;
             color: black;
-            height: 62px;
+            height: 65px;
             overflow: hidden;
-            padding-top: 15px;
+            padding: 15px;
         }
 
         table {
@@ -218,17 +218,20 @@
         <section class="invoiceborder">
             <table>
                 <tr>
-                    <th style="padding-left: 13px;font-size: 20px;"> {{ $requestData['cname'] }}</th>
+                    <th style="padding-left: 13px;font-size: 20px;"></th>
                     <th></th>
                     <th></th>
                     <th></th>
                     <th></th>
                 </tr>
                 <tr>
-                    <td class="address" style="padding-left: 14px;"> {{ $requestData['address_1'] }}
-                        {{ $requestData['address_2'] }} {{ $requestData['city'] }} <br> {{ $requestData['state'] }},
-                        {{ $requestData['zip_code'] }} </td>
-                    <td colspan="4"></td>
+                    <td class="address" style="text-transform:none; font-weight:600;line-height:1.5; color:#000;letter-spacing:-0.5px;">
+                    <p style="padding: 0; margin:0;font-weight:500; font-size:30px;"> {{ $requestData['cname'] }}</p>
+
+                        <p style="padding: 0; margin:0;font-size:22px; font-weight:400;">{{ $requestData['address_1'] }} <br>
+                            {{ $requestData['city'] }}, {{ $requestData['zip_code'] }}</p>
+                    </td>
+
                 </tr>
                 <tr>
                     <th colspan="5" class="earning"></th>
@@ -256,16 +259,16 @@
             <section class="section_2">
                 <table>
                     <tr>
-                        <td style="font-size:19px; font-weight:400; text-transform: capitalize;">Pay {{ $word }}
+                        <td style="font-size:16px; font-weight:400; text-transform: capitalize;">Pay {{ $word }}
                             and {{ $digit_1 }} cents</td>
-                        <th class="earning">{{ $requestData['currency'] }}
+                        <th style="font-weight:400;" class="earning">{{ $requestData['currency'] }}
                             {{ number_format($requestData['total_net_pay'], 2) }}</th>
                     </tr>
                     <tr>
                         <td style=" padding: 9px;">
                             <!-- Stub No: {{ $requestData['stub_no'] }} -->
                         </td>
-                        <td class="earning">
+                        <td style="font-size:15px; color:#515c6b;" class="earning">
                             This is not a check
                         </td>
                     </tr>
@@ -274,19 +277,9 @@
             <section style="padding-top: 16px; width:400px;">
                 <table>
                     <tr>
-                        <td>Pay to the order of</td>
-                        <td>{{ $requestData['emp_street_1'] }}
+                        <td style="color: #515c6b;  vertical-align:top;"><p style="font-size:18px;">Pay to the order of</p></td>
+                        <td style="text-transform: uppercase;font-size:16px; padding-left:30px;"><p>{{ $requestData['emp_street_1'] }}<br>{{ $requestData['emp_street_2'] }}<br>{{ $requestData['emp_city'] }}<br>{{ $requestData['emp_zip_code'] }} </p>
                         </td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td> {{ $requestData['emp_street_2'] }} </td>
-                    </tr>
-
-                    <tr>
-                        <td></td>
-                        <td> {{ $requestData['emp_city'] }} {{ $requestData['emp_state'] }}
-                            {{ $requestData['emp_zip_code'] }} </td>
                     </tr>
                 </table>
             </section>
@@ -300,10 +293,10 @@
 
 
                             <tr>
-                                <td colspan="4" class="address" style="padding-left: 11px;">
+                                <td colspan="4" class="address" style="padding-left: 11px; text-transform:uppercase;">
                                     {{ $requestData['cname'] }} <br> {{ $requestData['address_1'] }} <br>
-                                    {{ $requestData['address_2'] }} <br> {{ $requestData['city'] }}
-                                    {{ $requestData['state'] }}, {{ $requestData['zip_code'] }} <br>
+                                    {{ $requestData['address_2'] }}, {{ $requestData['city'] }},
+                                    {{ $requestData['zip_code'] }} <br>
                                     {{ $requestData['tel'] }} </td>
                             </tr>
 
@@ -313,7 +306,7 @@
                     <div class="col2">
                         <table style="width:100%;">
                             <tr>
-                                <td style="color:#0000b6; font-size:16px;"> Earnings Statement
+                                <td style="color:#1c3d86; font-size:18px; font-weight:600;"> Earnings Statement
                                 </td>
                             </tr>
                         </table>
@@ -332,9 +325,9 @@
 
                     </tr>
                     <tr>
-                        <td> {{ $requestData['emp_street_1'] }}<br>
+                        <td style="text-transform: uppercase;padding:10px 0px;"> {{ $requestData['emp_street_1'] }}<br>
                             {{ $requestData['emp_street_2'] }}<br>{{ $requestData['emp_city'] }}
-                            {{ $requestData['emp_state'] }}, {{ $requestData['emp_zip_code'] }} </td>
+                            , {{ $requestData['emp_zip_code'] }} </td>
                         <td> {{ $requestData['emp_ssn'] }}</td>
                         <td> {{ $requestData['emp_id'] }}</td>
                         <td> {{ date('m/d/Y', strtotime($requestData['pay_start'])) }} </td>
@@ -416,17 +409,17 @@
             </table>
             <table class="tabl3" style="width:30%;float: right;">
                 <tr style="">
-                    <th class="hadding" style=" background: #264FAB; color:white; "> Check No.</th>
+                    <td class="hadding" style=" background: #264FAB; color:white;text-align:center; "> Check No.</td>
                     <td class="hadding section" style=" text-align: right;">000000 </td>
                 <tr>
 
                 <tr style="border-top: 2px solid white;">
-                    <th class="hadding " style=" background: #264FAB; color:white; "> Net Pay </th>
+                    <td class="hadding " style=" background: #264FAB; color:white; text-align:center;"> Net Pay </td>
                     <td class="hadding section" style="text-align: right;"> {{ $requestData['currency'] }}
                         {{ number_format($requestData['total_net_pay'], 2) }} </td>
                 </tr>
                 <tr style="border-top: 2px solid white;">
-                    <th class="hadding" style=" background: #264FAB; color:white;"> YTD Net Pay</th>
+                    <td class="hadding" style=" background: #264FAB; color:white;text-align:center;"> YTD Net Pay</td>
                     <td class="hadding section" style="text-align: right;"> {{ $requestData['currency'] }}
                         {{ number_format($requestData['total_ytd_net_pay'], 2) }} </td>
                 </tr>

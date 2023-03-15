@@ -149,7 +149,7 @@
             <tr>
                 <td></td>
                 <td style="font-size:25px; font-weight:500;" class="table-data" rowspan="2"> {{ $requestData['cname'] }} </td>
-                <td style="font-size:25px; font-weight:500;">Earnings Statement</td>
+                <td style="font-size:25px; font-weight:500;background-color:Red;">Earnings Statement</td>
             </tr>
             <tr>
                 <td></td>
