@@ -185,7 +185,7 @@ function viewPDF() {
                     $("#" + element.key).focus();
                 }
                 $("#" + element.key).css("border-color", "red");
-                $("#" + element.key).parent().parent().children("div").append('<div class="text-danger error_div 0_' + element.key + '">' + element.message + "</div>");
+                $("#" + element.key).parent().children("div").append('<span class="text-danger error_div 0_' + element.key + '">' + element.message + "</span>");
             });
             document.getElementById("loaderDiv").style.display = "none";
         },
