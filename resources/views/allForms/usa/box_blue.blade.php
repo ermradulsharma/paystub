@@ -203,7 +203,7 @@
                         <td></td>
                         <td style="text-transform: uppercase;font-size:16px; "> <b>{{ $requestData['city'] }},
                                 {{ $requestData['zip_code'] }}</b></td>
-                        <td style="border-bottom: 2px solid #000;">
+                        <td style="border-bottom: 2px solid #000; padding-bottom:10px;">
                             <b style="font-size:15px;">{{ date('m/d/y', strtotime($requestData['pay_start'])) }}&nbsp; &nbsp; &nbsp;  - &nbsp; &nbsp; &nbsp;
                             {{ date('m/d/y', strtotime($requestData['pay_end'])) }}</b></td>
                     </tr>
@@ -242,7 +242,7 @@
                         &nbsp;Gross
                         Pay&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         {{ number_format($requestData['total_net_pay'], 2) }}</td>
-                    <td style="">{{ number_format($requestData['total_ytd_net_pay'], 2) }}</td>
+                    <td style=""><b>{{ number_format($requestData['total_ytd_net_pay'], 2) }}</b></td>
                 </tr>
                 <br> <br> <br> <br>
             </table>
@@ -298,7 +298,7 @@
                             &nbsp;Net
                             Pay&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             {{ number_format($requestData['total_net_pay'], 2) }} </td>
-                        <td style="">{{ number_format($requestData['total_ytd_net_pay'], 2) }}</td>
+                        <td style=""><b>{{ number_format($requestData['total_ytd_net_pay'], 2) }}</b></td>
                     </tr>
                 </table>
             </section>
@@ -374,7 +374,7 @@
                         <h6 style="font-size: 14px; margin-bottom: 6px;font-weight:400;">
                             <span>00000{{ $requestData['advice_number'] }}</span>
                         </h6>
-                        <p style="font-size: 13px; margin-top:-4px;padding-right:25px;">
+                        <p style="font-size: 13px; margin-top:-4px;padding-right:0px; text-align:right;">
                             <span style="font-weight:400;"></span>
                             {{ date('m/d/y', strtotime($requestData['pay_date'])) }}
                         </p>

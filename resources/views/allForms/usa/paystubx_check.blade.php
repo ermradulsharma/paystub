@@ -154,14 +154,14 @@
                 <td style="padding-right: 20px;">CO</td>
                 <td style="padding-right: 20px;">FILE</td>
                 <td style="padding-right: 20px;">DEPT.</td>
-                <td style="padding-right: 20px;">CLOCK VCHR</td>
+                <td style="padding-right: 20px;">CLOCK VCHR.</td>
             </tr>
             <tr>
                 <td></td>
                 <td>{{ $requestData['co_number'] }}</td>
                 <td>{{ $requestData['file_number'] }}</td>
                 <td>201094</td>
-                <td style="padding-right: 10px;">{{ $requestData['clock_vchr_number'] }}</td>
+                <td style="padding-right: 10px;">NO.{{ $requestData['clock_vchr_number'] }}</td>
             </tr>
         </table>
 
@@ -174,7 +174,7 @@
             <div class="col0">
             </div>
             <div class="col1">
-                <table style="width: 100%;">
+                <table style="width: 100%;padding-bottom:25px;">
                     <tr>
                         <td style="font-weight:800;font-size:14px; text-transform:uppercase">{{ $requestData['cname'] }}
                         </td>
@@ -185,7 +185,9 @@
                             ,
                             {{ $requestData['zip_code'] }}<br>USA
                         </td>
-                    </tr><br><br><br>
+                    </tr>
+                </table>
+                <table>
                     <tr>
                         <td style="font-size: 18px; line-height:1.2;">Social Security Number:{{ $requestData['emp_ssn'] }}<br>
                             Marital Status:{{ $requestData['marital_status'] }}<br>

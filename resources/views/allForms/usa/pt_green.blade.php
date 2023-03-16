@@ -73,6 +73,9 @@
             border-left: 1px solid #3e787a;
 
         }
+        .border-bottom{
+            border-bottom:1px solid white;
+        }
 
         .container {
             background-image: url("images/texture-blue.png");
@@ -177,20 +180,20 @@
 
         <table class="top">
             <td colspan="" style="border: 1px solid white;text-align: center; color: #3e787a;">----DETATCH ALONG
-                PERFORMATION-----------</td>
-            <td style="border: 1px solid white; text-align: center; color: #3e787a;">----KEEP LOWER PART FOR YOUR
-                RECODE-----------</td>
+                PERFORMATION----</td>
+            <td style="border: 1px solid white; text-align: center; color: #3e787a;">KEEP LOWER PART FOR YOUR
+                RECODE</td>
         </table>
 
 
         <table class="top">
             <tr>
-                <th colspan="" class="hadding">EMPLOYEE NAME</th>
-                <th class="hadding">COMPANY NAME</th>
-                <th class="hadding">CLIENT NO.</th>
-                <th class="hadding">EMP NO.</th>
-                <th class="hadding">SOCIAL SECURITY NO.</th>
-                <th class="hadding">CHECK DATE</th>
+                <th style="border-right:1px solid white;" colspan="" class="hadding">EMPLOYEE NAME</th>
+                <th style="border-right:1px solid white;" class="hadding">COMPANY NAME</th>
+                <th style="border-right:1px solid white;" class="hadding">CLIENT NO.</th>
+                <th style="border-right:1px solid white;" class="hadding">EMP NO.</th>
+                <th style="border-right:1px solid white;" class="hadding">SOCIAL SECURITY NO.</th>
+                <th style="border-right:1px solid white;" class="hadding">CHECK DATE</th>
                 <th class="hadding">CHECK NO.</th>
             </tr>
 
@@ -223,7 +226,7 @@
                 <th class="hadding">CHECK AMT.</th>
                 <th class="hadding">FED.TAXABLE</th>
             </tr>
-            <tr style="background-color: #f2f2f2;">
+            <tr class="border-bottom" style="background-color: #fff;">
                 <td style="color: #3e787a;border-right: 1px solid #3e787a; text-align:center;font-size:12px; font-weight:bold;">THIS CHECK</td>
                 <td style="font-size:13px; text-align:Center; font-weight:bold">{{ $requestData['currency'] }}{{ number_format($requestData['period_gross_total'], 2) }}</td>
                 <td style=" border-right: 1px solid #3e787a; border-left: 1px solid #3e787a; font-size:13px; text-align:Center; font-weight:bold"> 0.00</td>

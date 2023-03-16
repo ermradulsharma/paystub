@@ -79,6 +79,9 @@
             width: 100%;
             background-position: top;
         }
+        .border-bottom{
+            border-bottom: 1px solid #fff;
+        }
 
         .watermark {
             position: absolute;
@@ -177,19 +180,17 @@
         <table class="top">
             <td colspan="" style="border: 1px solid white;text-align: center; color: #43407a;">----DETATCH ALONG
                 PERFORMATION-----------</td>
-            <td style="border: 1px solid white; text-align: center; color: #43407a;">----KEEP LOWER PART FOR YOUR
-                RECODE-----------</td>
+            <td style="border: 1px solid white; text-align: center; color: #43407a;">KEEP LOWER PART FOR YOUR
+                RECODE</td>
         </table>
-
-
         <table class="top">
             <tr>
-                <th colspan="" class="hadding">EMPLOYEE NAME</th>
-                <th class="hadding">COMPANY NAME</th>
-                <th class="hadding">CLIENT NO.</th>
-                <th class="hadding">EMP NO.</th>
-                <th class="hadding">SOCIAL SECURITY NO.</th>
-                <th class="hadding">CHECK DATE</th>
+                <th style="border-right:1px solid white;" colspan="" class="hadding">EMPLOYEE NAME</th>
+                <th style="border-right:1px solid white;" class="hadding">COMPANY NAME</th>
+                <th style="border-right:1px solid white;" class="hadding">CLIENT NO.</th>
+                <th style="border-right:1px solid white;" class="hadding">EMP NO.</th>
+                <th style="border-right:1px solid white;" class="hadding">SOCIAL SECURITY NO.</th>
+                <th style="border-right:1px solid white;" class="hadding">CHECK DATE</th>
                 <th class="hadding">CHECK NO.</th>
             </tr>
 
@@ -222,8 +223,8 @@
                 <th class="hadding">CHECK AMT.</th>
                 <th class="hadding">FED.TAXABLE</th>
             </tr>
-            <tr style="background-color: #f2f2f2;">
-                <td style="color: #43407a;border-right: 1px solid #43407a; text-align:center;font-size:12px; font-weight:bold">THIS CHECK</td>
+            <tr class="border-bottom" style="background-color: #ffff;">
+                <td style="color: #43407a;border-right: 1px solid #43407a; text-align:center;font-size:12px; font-weight:bold;">THIS CHECK</td>
                 <td style="font-size:13px;text-align:center; font-weight:bold">{{ $requestData['currency'] }}{{ number_format($requestData['period_gross_total'], 2) }}</td>
                 <td style=" border-right: 1px solid #43407a; border-left: 1px solid #43407a;font-size:13px;text-align:center; font-weight:bold "> 0.00</td>
                 <td style="font-size:13px;text-align:center; font-weight:bold">{{ $requestData['currency'] }}{{ number_format($requestData['deduction_tax'], 2) }}</td>
@@ -233,7 +234,6 @@
                 <td style="font-size:13px;text-align:center; font-weight:bold">{{ $requestData['currency'] }}{{ number_format($requestData['total_net_pay'], 2) }}</td>
                 <td style="border-left: 1px solid #43407a;font-size:13px;text-align:center; font-weight:bold ">{{ $requestData['currency'] }}2,500.00</td>
             </tr>
-
             <tr>
                 <td style="color: #43407a;border-right: 1px solid #43407a;text-align:center;font-size:12px; font-weight:bold;">YEAR-TO-DATE</td>
                 <td style="font-size:13px;text-align:center; font-weight:bold"> {{ $requestData['currency'] }}{{ number_format($requestData['ytd_gross_total'], 2) }}</td>
