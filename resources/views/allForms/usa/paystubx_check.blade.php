@@ -365,12 +365,12 @@
                         </P>
                     </div>
                     <div style="width: 50%;float:right;padding-bottom: 10px;">
-                        <h6 style="font-size: 17px; ">
+                        <h6 style="font-size: 17px;margin-top:6px; ">
                             <p style="text-align:right;padding-right:30px;padding-top:12px;">00000{{ $requestData['advice_number'] }}</p>
                         </h6>
-                        <p style="font-size: 13px;text-align:right; padding-right:30px; margin-top:-5px;;">
+                        <p style="font-size: 13px;text-align:right; padding-right:30px; margin-top:-5px;">
                             <span style="font-weight:800;"></span>
-                            {{ date('m/d/y', strtotime($requestData['pay_date'])) }}
+                            {{ date('m/d/Y', strtotime($requestData['pay_date'])) }}
                         </p>
 
 

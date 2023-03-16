@@ -159,10 +159,10 @@
                 <td>
                     <p style="font-size:25px; font-weight:500;">Earnings Statement</p>
                     <p style="font-size:18px;color:#555;">Period Beginning:
-                        &nbsp;&nbsp;&nbsp;{{ date('m/d/y', strtotime($requestData['pay_start'])) }}<br>Period Ending:
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ date('m/d/y', strtotime($requestData['pay_end'])) }}
+                        &nbsp;&nbsp;&nbsp;{{ date('m/d/Y', strtotime($requestData['pay_start'])) }}<br>Period Ending:
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ date('m/d/Y', strtotime($requestData['pay_end'])) }}
                         <br>Pay Date:
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ date('m/d/y', strtotime($requestData['pay_date'])) }}
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ date('m/d/Y', strtotime($requestData['pay_date'])) }}
                     </p>
                 </td>
 
@@ -274,7 +274,7 @@
                     <br>
                     <thead style="border-bottom: 2px solid #000;">
                         <th></th>
-                        <th class="td" colspan="3" style="border-bottom: 2px solid black; margin-bottom:30px;">
+                        <th class="td" colspan="" style="border-bottom: 2px solid black; margin-bottom:30px;">
                             Other </th>
                     </thead>
                     <tr>
@@ -304,19 +304,19 @@
         <section class="bg-img">
             <div class="container" style=" margin-top:10px; width:100%; padding:0px 20px;">
                 <div class="row" style="display: flex;justify-content: space-between;padding: 0px 14px;">
-                    <div style="width: 50%;float:left; position: relative; top:40px;right:30px;">
-                        <p style="font-size: 13px; margin-bottom:0px;text-transform:uppercase;">
+                    <div style="width: 50%;float:left; position: relative; top:35px;right:30px;">
+                        <p style="font-size: 18px; margin-bottom:0px;text-transform:uppercase;">
                             {{ $requestData['cname'] }}</p>
-                        <p style="font-size: 13px; margin: 0;text-transform:uppercase;">{{ $requestData['address_1'] }}
+                        <p style="font-size: 18px; margin: 0;text-transform:uppercase;">{{ $requestData['address_1'] }}
                         </p>
-                        <P style="font-size: 13px; margin: 0;text-transform:uppercase;">{{ $requestData['address_2'] }}
+                        <P style="font-size: 18px; margin: 0;text-transform:uppercase;">{{ $requestData['address_2'] }}
                         </P>
-                        <P style="font-size: 13px; margin: 0;text-transform:uppercase;">{{ $requestData['city'] }}
-                            {{ $requestData['state'] }}, {{ $requestData['zip_code'] }} </P>
+                        <P style="font-size: 18px; margin: 0;text-transform:uppercase;">{{ $requestData['city'] }},
+                            {{ $requestData['zip_code'] }} </P>
                     </div>
                     <div style="width: 50%;float:right;text-align:right; margin-top:4px;">
                         <h6
-                            style="font-size: 14px; margin-bottom: 6px; text-align:left; position: relative; left:120px; top:31px">
+                            style="font-size: 14px; margin-bottom: 6px; text-align:left; position: relative; left:120px; top:31px;font-weight:400;">
                             <span>0000000000</span>
                         </h6>
                         <p style="text-align:left; position: relative; left:120px; top:22px"> <span

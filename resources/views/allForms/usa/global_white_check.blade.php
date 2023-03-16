@@ -51,7 +51,7 @@
 
         .column1 {
             float: left;
-            width: 50%;
+            width: 60%;
         }
 
         .column2 {
@@ -157,10 +157,10 @@
                 <td>
                     <p style="font-size:25px; font-weight:500;">Earnings Statement</p>
                     <p style="font-size:18px;color:#555;">Period Beginning:
-                        &nbsp;&nbsp;&nbsp;{{ date('m/d/y', strtotime($requestData['pay_start'])) }}<br>Period Ending:
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ date('m/d/y', strtotime($requestData['pay_end'])) }}
+                        &nbsp;&nbsp;&nbsp;{{ date('m/d/Y', strtotime($requestData['pay_start'])) }}<br>Period Ending:
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ date('m/d/Y', strtotime($requestData['pay_end'])) }}
                         <br>Pay Date:
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ date('m/d/y', strtotime($requestData['pay_date'])) }}
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ date('m/d/Y', strtotime($requestData['pay_date'])) }}
                     </p>
                 </td>
 
@@ -185,28 +185,33 @@
             <div class="row" style="width: 100%;">
                 <div class="column1">
                     <table class="tablealign">
-                        <thead style="font-size:14px;">
-                            <th style="text-align: left; ">Earnings</th>
-                            <th>rate</th>
-                            <th>hours</th>
-                            <th style=" margin-left:2px;">this period</th>
-                            <th style=" margin-left:2px;">year to date</th>
+                        <thead style="font-size:14px; ">
+                            <th style="text-align: left;width:21%; ">Earnings</th>
+                            <th style="text-align: right;margin-left:2px;width:19%;">rate</th>
+                            <th style="text-align: center;margin-left:2px;width:23%;">hours</th>
+                            <th style="width:17%;text-align:center;">this period</th>
+                            <th style=" margin-left:2px;width:20%;">year to date</th>
                         </thead>
                         <tbody style="font-size:13px;">
                             @foreach ($requestData['earning'] as $key => $earn)
                             <tr>
                                 <td style="text-align: left;">{{ $earn }}</td>
-                                <td>{{ number_format($requestData['rate'][$key],2) }}</td>
+                                <td style="text-align: right">{{ number_format($requestData['rate'][$key],2) }}</td>
                                 <td style="text-align: center;">{{ number_format($requestData['hours'][$key],2) }}</td>
-                                <td> {{ number_format($requestData['total'][$key],2) }} </td>
+                                <td style="text-align: center;"> {{ number_format($requestData['total'][$key],2) }} </td>
                                 <td> {{ number_format($requestData['ytd_total'][$key],2) }} </td>
                             </tr>
                             @endforeach
 
                         </tbody>
+                        <br>
+
                         <tr>
-                            <td style="text-align:right; font-size:14px; border-bottom:2px solid black; border-top:2px solid black;" colspan="3"><b>Gross Pay</b></td>
-                            <td style="font-size:14px; border-bottom:2px solid black;border-top:2px solid black; text-align: right;"> <b>{{ $requestData['currency'] }} {{ number_format($requestData['total_net_pay'],2) }}</b> </td>
+                            <td></td>
+                            <td style="text-align: left; font-size:14px; border-bottom:2px solid black; border-top:2px solid black;" colspan="2"><b>Gross Pay</b></td>
+                            <td style="font-size:14px; border-bottom:2px solid black; border-top:2px solid black;text-align:right;">
+                                {{ $requestData['currency'] }}{{ number_format($requestData['total_net_pay'],2) }}
+                            </td>
                         </tr>
                     </table>
                 </div>
@@ -218,7 +223,7 @@
                             <td colspan="3" style="text-align: left;">Other Benefits and</td>
                         </tr>
                         <tr>
-                            <td class="borderbottam" style="font-weight: bold;">Information</td>
+                            <td class="borderbottam" style="font-weight: bold;text-align:left;">Information</td>
                             <td class="borderbottam">this period</td>
                             <td class="borderbottam">total to date</td>
                         </tr>
@@ -233,17 +238,17 @@
 
         <section style="margin-top:30px;">
             <section>
-                <table class="table-data" style="width: 50%;">
-                    <thead style="font-size:14px;">
+                <table class="table-data" style="width: 48%;">
+                    <tr style="font-size:14px;">
 
-                        <th style="border-bottom: 2px solid #000;">Deductions</th>
-                        <th style="border-bottom: 2px solid #000; text-align:center;" colspan="" class=""> Statutory</th>
-                        <th class="sat" style="border-bottom: 2px solid #000; text-align:right; width: 40%"></th>
-                    </thead>
+                        <td style="" style="border-bottom: 2px solid #000;">Deductions</td>
+                        <td style="border-bottom: 2px solid #000; text-align:left;" colspan="3" class=""> Statutory</td>
+
+                    </tr>
                     @foreach ($requestData['taxes'] ?? [] as $key => $taxes)
                     <tr>
                         <td></td>
-                        <td style="text-align: left;  ">{{ $taxes }}</td>
+                        <td colspan="2" style="text-align: left;  ">{{ $taxes }}</td>
                         <td style="text-align: right;"> {{ number_format($requestData['taxes_rate'][$key],2) }} </td>
 
                     </tr>
@@ -260,10 +265,13 @@
                     @endforeach
 
                     <br>
-                    <thead style="border-bottom: 2px solid #000;">
-                        <th></th>
-                        <th class="td" colspan="3" style="border-bottom: 2px solid black; margin-bottom:30px;">Other </th>
-                    </thead>
+                    <tr>
+                        <td></td>
+                        <td style="text-align: left; font-size:14px; border-bottom:2px solid black; " colspan="2"><b>Other</b></td>
+                        <td style="font-size:14px; border-bottom:2px solid black;">
+
+                        </td>
+                    </tr>
                     <tr>
                         <td colspan="7"></td>
                     </tr>
@@ -273,7 +281,8 @@
                     <br>
                     <br>
                     <tr>
-                        <td style="text-align: left; font-size:14px; border-bottom:2px solid black; border-top:2px solid black;" colspan="3"><b>Net Pay</b></td>
+                        <td></td>
+                        <td style="text-align: left; font-size:14px; border-bottom:2px solid black; border-top:2px solid black;" colspan="2"><b>Net Pay</b></td>
                         <td style="font-size:14px; border-bottom:2px solid black; border-top:2px solid black;">
                             {{ $requestData['currency'] }}{{ number_format($requestData['total_net_pay'],2) }}
                         </td>

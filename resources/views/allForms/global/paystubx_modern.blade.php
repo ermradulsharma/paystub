@@ -93,7 +93,7 @@
         .col1 {
             float: left;
             width: 40%;
-            margin-left: 20%;
+            margin-left: 80px;
 
         }
 
@@ -173,11 +173,11 @@
             </tr>
             <tr>
 
-                <td>{{ $requestData['co_number'] }}</td>
-                <td>{{ $requestData['file_number'] }}</td>
+                <td>SBINC{{ $requestData['co_number'] }}</td>
+                <td>5562{{ $requestData['file_number'] }}</td>
                 <td>00000</td>
-                <td>{{ $requestData['clock_vchr_number'] }}</td>
-                <td>{{ $requestData['advice_number'] }}</td>
+                <td>28909{{ $requestData['clock_vchr_number'] }}</td>
+                <td>34563{{ $requestData['advice_number'] }}</td>
             </tr>
         </table>
 
@@ -207,13 +207,13 @@
                 <h3 style="padding: 0px; margin:0px; font-size:25px;">Earnings Statement</h3>
                 <table style="width:100%;">
                     <tr>
-                        <td>Period Start:&nbsp;&nbsp;&nbsp; {{ date('m/d/Y', strtotime($requestData['pay_start'])) }}</td>
+                        <td style="font-size:13px;color:#555;">Period Start:&nbsp;&nbsp;&nbsp; {{ date('m/d/Y', strtotime($requestData['pay_start'])) }}</td>
                     </tr>
                     <tr>
-                        <td>Period Start:&nbsp;&nbsp;&nbsp;{{ date('m/d/Y', strtotime($requestData['pay_end'])) }}</td>
+                        <td style="font-size:13px;color:#555;">Period Start:&nbsp;&nbsp;&nbsp;{{ date('m/d/Y', strtotime($requestData['pay_end'])) }}</td>
                     </tr>
                     <tr>
-                        <td style="padding-bottom: 30px;">Pay Ending:&nbsp;&nbsp;&nbsp; {{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</td>
+                        <td style="padding-bottom: 30px;font-size:13px;color:#555;">Pay Ending:&nbsp;&nbsp;&nbsp; {{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</td>
                     </tr>
                     <tr>
                         <td>{{ $requestData['emp_street_1'] }} <br> {{ $requestData['emp_city'] }}
@@ -233,7 +233,7 @@
             <div class="row1 " style="margin-top: 60px;">
                 <div class="column1">
                     <table style="width: 100%;" class="tds">
-                        <tr>
+                        <tr style="border-bottom:2px solid black;">
                             <td style="text-align: left;"><b>Earning</b></td>
                             <td><b>Rate</b></td>
                             <td><b>Hours</b></td>
@@ -261,10 +261,11 @@
                         <br>
                         <tr>
                             <td></td>
-                            <td colspan="2" class="borderback"><b>GROSS PAY</b> </td>
-                            <td class="borderback"> <b> {{ $requestData['currency'] }}
-                                    {{ number_format($requestData['deduction_tax'], 2) }} </b> </td>
-                            <td><b>{{ number_format($requestData['ytd_deduction_tax'], 2) }} </b></td>
+                            <td colspan="2" class="borderback" style="text-align:left;"><b>Gross Pay</b></td>
+                            <td class="borderback"> <b>
+                                    {{ $requestData['currency'] }}{{ number_format($requestData['total_net_pay'], 2) }}</b>
+                            </td>
+                            <td><b>{{ number_format($requestData['total_ytd_net_pay'], 2) }}</b></td>
                         </tr>
                     </table>
                 </div>
@@ -370,7 +371,7 @@
 
                         <tr>
                             <td>
-                                <b>Pay Day:</b> {{ date('m/d/Y', strtotime($requestData['pay_date'])) }}
+                                <b>Pay Day:</b> <Span style="padding-left:45px;">{{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</Span>
                             </td>
                         </tr>
                     </table>

@@ -325,7 +325,7 @@
                             </h6>
                             <p style="font-size: 13px;">
                                 <span style="font-weight:400;"></span>
-                                {{ date('m/d/y', strtotime($requestData['pay_date'])) }}
+                                {{ date('m/d/Y', strtotime($requestData['pay_date'])) }}
                             </p>
                         </div>
                     </div>
