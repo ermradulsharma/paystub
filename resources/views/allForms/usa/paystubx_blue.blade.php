@@ -136,17 +136,12 @@
         @endif
         @endauth
         <div style="max-width: 100%; margin: auto; padding: 10px 10px;">
-            <table style="width:100%; border-left:2px solid#464646; border-right:2px solid#464646;">
-                <thead style="border:none !important;color:white; background-color:darkgrey; ">
-                    <td style="font-size: 14px;text-align:left;padding:0px 0px 0px 25px; margin:0px; font-weight:400;  ">{{ $requestData['cname'] }}</td>
+            <table style="width:100%; border-left:2px solid#464646; border-right:2px solid#464646;background-color:darkgray;color:white;">
+                <tr>
+                    <td style="font-size: 16px;text-align: left;padding:10px 0px 10px 25px;">{{ $requestData['cname'] }}<br>  {{ $requestData['address_1'] }}{{ $requestData['city'] }}{{ $requestData['state'] }}, {{ $requestData['zip_code'] }}, CA</td>
                     <td
-                        style="font-size: 17px;padding-top:20px; text-align: right; padding-right:12px; padding-bottom:none;text-transform: uppercase;">
+                        style="font-size: 20px;text-align:right;padding:10px 12px 8px 10px;">
                         Earnings Statement</td>
-                </thead>
-                <tr style="color:white; background-color:darkgrey; ">
-                    <td style="font-size: 13px;padding-left: 24px;padding-bottom: 8px; " colspan="2">
-                        {{ $requestData['address_1'] }}{{ $requestData['city'] }} {{ $requestData['state'] }},
-                        {{ $requestData['zip_code'] }}, USA </td>
                 </tr>
             </table>
             <table style="width:100%; border-left:2px solid#464646; border-right:2px solid#464646;">

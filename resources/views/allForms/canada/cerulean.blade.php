@@ -134,19 +134,13 @@
                 <div class="watermark"></div>
             @endif
         @endauth
-        <div style="max-width: 100%; margin: auto; padding: 10px 10px; bordar-top:2px solid red">
-            <table style="width:100%; border-left:2px solid#464646; border-right:2px solid#464646;">
-                <thead style="border:none !important;color:white; background-color:darkgrey; ">
-                    <th style="font-size: 16px;text-align: left;padding-left: 25px;">{{ $requestData['cname'] }}</th>
-                    <th
-                        style="font-size: 20px;padding-top:10px;text-align: right;padding-right: 12px;padding-bottom: none;">
-                        Earnings Statement</th>
-                </thead>
-                <tr style="color:white; background-color:darkgrey; ">
-                    <td style="font-size: 14px;padding-left: 24px;padding-bottom: 12px; " colspan="2">
-                        {{ $requestData['address_1'] }}{{ $requestData['city'] }}
-                        {{ $requestData['state'] }}, {{ $requestData['zip_code'] }}, CA
-                    </td>
+        <div style="max-width: 100%; margin: auto; padding: 10px 10px;">
+            <table style="width:100%; border-left:2px solid#464646; border-right:2px solid#464646;background-color:darkgray;color:white;">
+                <tr>
+                    <td style="font-size: 16px;text-align: left;padding-left: 25px;">{{ $requestData['cname'] }}<br>  {{ $requestData['address_1'] }}{{ $requestData['city'] }}{{ $requestData['state'] }}, {{ $requestData['zip_code'] }}, CA</td>
+                    <td
+                        style="font-size: 20px;padding:10px 12px 8px 10px;">
+                        Earnings Statement</td>
                 </tr>
             </table>
             <table style="width:100%; border-left:2px solid#464646; border-right:2px solid#464646;">
