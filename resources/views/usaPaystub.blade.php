@@ -862,7 +862,7 @@
         });
     </script>
     <script
-        src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyDpavHXELJMJvIHifFPN6tBBiFSXKGpy2g">
+        src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyDpavHXELJMJvIHifFPN6tBBiFSXKGpy2g&callback=Function.prototype">
     </script>
     <script>
         var searchInput = 'address_1';
