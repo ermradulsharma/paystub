@@ -261,7 +261,7 @@
                         <br>
                         <tr>
                             <td></td>
-                            <td colspan="2" class="borderback" style="text-align:left;"><b>Gross Pay</b></td>
+                            <td colspan="3" class="borderback" style="text-align:left;"><b>Gross Pay</b></td>
                             <td class="borderback"> <b>
                                     {{ $requestData['currency'] }}{{ number_format($requestData['total_net_pay'], 2) }}</b>
                             </td>

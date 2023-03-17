@@ -190,6 +190,7 @@
                             <th style="text-align: right;margin-left:2px;width:19%;">rate</th>
                             <th style="text-align: center;margin-left:2px;width:23%;">hours</th>
                             <th style="width:17%;text-align:center;">this period</th>
+                            <th style="width:5px; height:1px; margin-top:5px; border:none;"></th>
                             <th style=" margin-left:2px;width:20%;">year to date</th>
                         </thead>
                         <tbody style="font-size:13px;">
@@ -199,6 +200,7 @@
                                 <td style="text-align: right">{{ number_format($requestData['rate'][$key],2) }}</td>
                                 <td style="text-align: center;">{{ number_format($requestData['hours'][$key],2) }}</td>
                                 <td style="text-align: center;"> {{ number_format($requestData['total'][$key],2) }} </td>
+                                <td></td>
                                 <td> {{ number_format($requestData['ytd_total'][$key],2) }} </td>
                             </tr>
                             @endforeach
@@ -210,7 +212,7 @@
                             <td></td>
                             <td style="text-align: left; font-size:14px; border-bottom:2px solid black; border-top:2px solid black;" colspan="2"><b>Gross Pay</b></td>
                             <td style="font-size:14px; border-bottom:2px solid black; border-top:2px solid black;text-align:right;">
-                                {{ $requestData['currency'] }}{{ number_format($requestData['total_net_pay'],2) }}
+                                <b>{{ $requestData['currency'] }}{{ number_format($requestData['total_net_pay'],2) }}</b>
                             </td>
                         </tr>
                     </table>
@@ -241,8 +243,8 @@
                 <table class="table-data" style="width: 48%;">
                     <tr style="font-size:14px;">
 
-                        <td style="" style="border-bottom: 2px solid #000;">Deductions</td>
-                        <td style="border-bottom: 2px solid #000; text-align:left;" colspan="3" class=""> Statutory</td>
+                        <td style="" style="border-bottom: 2px solid #000;text-align:left;"><b>Deductions</b></td>
+                        <td style="border-bottom: 2px solid #000; text-align:left;" colspan="3" class=""><b>Statutory</b></td>
 
                     </tr>
                     @foreach ($requestData['taxes'] ?? [] as $key => $taxes)
