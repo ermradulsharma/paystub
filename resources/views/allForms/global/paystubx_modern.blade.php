@@ -242,7 +242,7 @@
                     <td style="width:52%;">
                         <table class="emploayer_info_1" style="position:relative; bottom:30px;">
                             <tr><td>Texable Marital Status: {{ $requestData['marital_status'] }} </td></tr>
-                            <tr><td> Examptions/Allowances:{{ $requestData['exemptions'] }} </td></tr>
+                            <tr><td> Examptions/Allowances: {{ $requestData['exemptions'] }} </td></tr>
                             <tr><td>Federal:0 </td></tr>
                         </table>
                     </td>

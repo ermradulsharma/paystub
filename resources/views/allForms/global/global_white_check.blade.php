@@ -303,7 +303,7 @@
 
         <section class="bg-img">
             <div class="container" style=" margin-top:10px; width:100%; padding:0px  20px;">
-                <div class="row" style="display: flex;justify-content: space-between;padding: 0px 14px;">
+                <div class="row" style="display: flex;justify-content: space-between; padding: 0px 14px;">
                     <div style="width: 50%; float:left; position: relative; top:35px; right:0px; left:70px;">
                         <p style="font-size: 15px; margin-bottom:0px; text-transform:uppercase;">{{ $requestData['cname'] }}</p>
                         <p style="font-size: 15px; margin: 0; text-transform:uppercase;">{{ $requestData['address_1'] }} </p>
@@ -313,15 +313,14 @@
                     <div style="width: 50%;float:right;text-align:right; margin-top:4px;">
                         <h6 style="font-size: 14px; margin-bottom: 6px; text-align:center; left:40px; position: relative;  top:28px;font-weight:400;"> <span>0000000000</span> </h6>
                         <h6 style="font-size: 14px; text-align:center; left:40px; position: relative; font-weight:400;"> <span>{{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</span> </h6>
-                        {{-- <p style="text-align:center; position: relative; left:40px; top:17px;font-size: 14px;"> <span style="font-weight:800; "></span><span style="">{{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</span> </p> --}}
                     </div>
                 </div>
                 <table>
                     <tr>
                         <td style="width:10%;"></td>
                         <td style="font-size:15px; padding-top:30px; width:50%;padding-left:10px;"> {{ $requestData['emp_name'] }}</td>
-                        <td style="font-size:15px; width:23%;padding-top:30px; text-align:left;"> XXXXX{{ $requestData['account_number_last_4'] }}</td>
-                        <td style="font-size:15px; width:17%;padding-top:30px; text-align:right; padding-right:17px;" > {{ $requestData['currency'] }} {{ number_format($requestData['total_net_pay'], 2) }}</td>
+                        <td style="font-size:15px; width:23%; padding-top:30px; text-align:left;"> XXXXX{{ $requestData['account_number_last_4'] }}</td>
+                        <td style="font-size:15px; width:17%; padding-top:30px; text-align:right; padding-right:17px;" > {{ $requestData['currency'] }} {{ number_format($requestData['total_net_pay'], 2) }}</td>
                     </tr>
                 </table>
             </div>

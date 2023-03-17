@@ -192,7 +192,7 @@
                     <tr>
                         <td></td>
                         <td style="font-weight: bold;font-size:18px;"> {{ $requestData['cname'] }}</td>
-                        <td style="color: #555;font-size:15px;">PAY DATE: <b style="color: #000;font-size:15px;"> {{ date('m/d/y', strtotime($requestData['pay_date'])) }}</b></td>
+                        <td style="color: #555;font-size:15px;">PAY DATE: <b style="color: #000;font-size:15px;"> {{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</b></td>
                     </tr>
                     <tr>
                         <td></td>
@@ -204,8 +204,8 @@
                         <td style="text-transform: uppercase;font-size:16px; "> <b>{{ $requestData['city'] }},
                                 {{ $requestData['zip_code'] }}</b></td>
                         <td style="border-bottom: 2px solid #000; padding-bottom:10px;">
-                            <b style="font-size:15px;">{{ date('m/d/y', strtotime($requestData['pay_start'])) }}&nbsp; &nbsp; &nbsp;  - &nbsp; &nbsp; &nbsp;
-                            {{ date('m/d/y', strtotime($requestData['pay_end'])) }}</b></td>
+                            <b style="font-size:15px;">{{ date('m/d/Y', strtotime($requestData['pay_start'])) }}&nbsp; &nbsp; &nbsp;  - &nbsp; &nbsp; &nbsp;
+                            {{ date('m/d/Y', strtotime($requestData['pay_end'])) }}</b></td>
                     </tr>
                     <tr>
                         <td colspan="7"></td>
@@ -267,18 +267,19 @@
                         </tr>
                     @endforeach
 
-                    @foreach ($requestData['tax_deduction'] ?? [] as $key => $tax_deduction)
+                   {{--  @foreach ($requestData['tax_deduction'] ?? [] as $key => $tax_deduction)
                         <tr>
                             <td></td>
                             <td style="text-align: left;" colspan="2">{{ $tax_deduction }}</td>
                             <td><b>{{ number_format($requestData['period_tax_deduction'][$key], 2) }}</b> </td>
-                            <td><b>{{ number_format($requestData['ytd_tax_deduction'][$key], 2) }}</b> /td>
+                            <td><b>{{ number_format($requestData['ytd_tax_deduction'][$key], 2) }}</b> </td>
                         </tr>
-                    @endforeach
+                    @endforeach --}}
                     <br>
+                    @if (count($requestData['tax_deduction'] ?? []) > 0)
                     <thead style="border-bottom: 2px solid #000;">
                         <th></th>
-                        <th class="td" colspan="4">OTHER</th>
+                        <th class="td" colspan="3">OTHER</th>
                     </thead>
                     @foreach ($requestData['tax_deduction'] ?? [] as $key => $tax_deduction)
                         <tr>
@@ -288,7 +289,7 @@
                             <td><b>{{ number_format($requestData['ytd_tax_deduction'][$key], 2) }}</b> </td>
                         </tr>
                     @endforeach
-
+                    @endif
                     <br> <br> <br>
 
                     <tr>
