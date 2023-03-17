@@ -233,7 +233,7 @@
                         <tr>
 
                             <td colspan="4" style="font-size: 12px; text-align:left;">Company Telephone Number:{{ $requestData['tel'] }} </td>
-                           
+
                         </tr>
                     </table>
                 </div>
