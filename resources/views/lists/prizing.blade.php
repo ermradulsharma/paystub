@@ -20,7 +20,7 @@
             <div class="m-lg-5 px-lg-5">
                 <div class="row">
                     <div class="col-lg-4 d-flex justify-content-center">
-                        <div class="prizebox suscription" role="button">
+                        <div class="prizebox suscription" role="button" data-plan="1">
                             <h3 class="my-5 pb-5 prizeh3">1 Month</h3>
                             <div class="mx-4">
                                 <div class="d-flex listItem">
@@ -47,7 +47,7 @@
                     </div>
 
                     <div class="col-lg-4 d-flex justify-content-center">
-                        <div class="prizebox1 suscription" role="button">
+                        <div class="prizebox1 suscription" role="button" data-plan="2">
                             <h3 class="my-5 pb-5 prizeh3">3 Month</h3>
                             <div class="mx-4">
                                 <div class="d-flex listItem">
@@ -74,7 +74,7 @@
                     </div>
 
                     <div class="col-lg-4 d-flex justify-content-center">
-                        <div class="prizebox2 suscription" role="button">
+                        <div class="prizebox2 suscription" role="button" data-plan="3">
                             <h3 class="my-5 pb-5 prizeh3">6 Month</h3>
                             <div class="mx-4">
                                 <div class="d-flex listItem">
@@ -191,15 +191,20 @@
 
 @section('script')
 <script>
+
     $('.suscription').click(function() {
-        document.getElementById("loaderDiv").style.display = "block";
-        setTimeout(function() {
-            toastr.success("Subscription has been purchased successfully.");
-        }, 1000);
-        setTimeout(function() {
-            document.getElementById("loaderDiv").style.display = "none";
-            window.location.href = "{{route('subscription')}}";
-        }, 2000);
+        var planId = $(this).data('plan');
+        
+        window.location.href = "{{route('processTransaction')}}?plan="+planId;
+        return false;
+        // document.getElementById("loaderDiv").style.display = "block";
+        // setTimeout(function() {
+        //     toastr.success("Subscription has been purchased successfully.");
+        // }, 1000);
+        // setTimeout(function() {
+        //     document.getElementById("loaderDiv").style.display = "none";
+        //     window.location.href = "{{route('subscription')}}";
+        // }, 2000);
     });
 </script>
 @endsection
