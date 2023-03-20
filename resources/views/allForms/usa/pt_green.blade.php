@@ -220,7 +220,7 @@
         </table>
         <table>
             <tr>
-                <td style="font-size:12px; text-align:Center; font-weight:bold"> {{ $requestData['emp_street_1'] }}, {{ $requestData['emp_street_2'] }}
+                <td style="font-size:12px;padding-left:15px; font-weight:bold"> {{ $requestData['emp_street_1'] }}, {{ $requestData['emp_street_2'] }}
                     {{ $requestData['emp_city'] }} {{ $requestData['emp_state'] }},
                     {{ $requestData['emp_zip_code'] }} </td>
                 <td style="font-size:12px; font-weight:bold"><b>Pay Period: {{ date('m/d/y', strtotime($requestData['pay_start'])) }}</b></td>
@@ -237,7 +237,7 @@
                             id="backcolor">
                             <td style="font-size:10px; font-weight:bold;text-align:center;  border-right:1px solid  #3e787a; ">WAGES</td>
                             <td style="font-size:10px; font-weight:bold;text-align:center; border-right:1px solid  #3e787a;">HOURS</td>
-                            <td style="border-right:1px solid  #3e787a;">RATE</td>
+                            <td style="border-right:1px solid  #3e787a; text-align:center;">RATE</td>
                             <td style="font-size:10px; font-weight:bold;text-align:center; border-right:1px solid  #3e787a;"> AMOUNT <br>THIS CHECK</td>
                             <td style="font-size:10px; font-weight:bold;text-align:center;">AMOUNT<br> YEAR-TO-DATE</td>
                         </thead>

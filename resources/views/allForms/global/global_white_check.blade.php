@@ -145,12 +145,12 @@
         <table class="table" style="width: 100%;">
             <tr>
                 <td></td>
-                <td style="font-size:16px; font-weight:400;padding:0px !important; margin:0px !impoprtant;text-transform:uppercase;line-height:1.3"
+                <td style="font-size:16px; font-weight:400;margin:0px;text-transform:uppercase;line-height:1.3;padding-left:100px;"
                     class="table-data" rowspan="2">
                     {{ $requestData['cname'] }}<br>{{ $requestData['address_1'] }}<br>{{ $requestData['state'] }}<br>{{ $requestData['city'] }},
                     {{ $requestData['zip_code'] }} </td>
-                <td>
-                    <p style="font-size:25px; font-weight:500;">Earnings Statement</p>
+                    <td style="padding-left:40px; margin-right:auto; text-align:right;">
+                        <p style="font-size:27px; font-weight:500;text-align:right; padding-right:5px;">Earnings Statement</p>
                     <p style="font-size:18px;color:#555;">Period Beginning:
                         &nbsp;&nbsp;&nbsp;{{ date('m/d/Y', strtotime($requestData['pay_start'])) }}<br>Period Ending:
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ date('m/d/Y', strtotime($requestData['pay_end'])) }}
@@ -162,7 +162,7 @@
             </tr>
         </table>
 
-        <table style="width:100%; padding-bottom:60px;">
+        <table style="width:100%; padding-bottom:60px; padding-left:100px;">
             <tr>
                 <td style="width:50%;">Taxable Marital
                     Status:&nbsp;&nbsp;&nbsp;{{ $requestData['marital_status'] }}<br>Exemptions/Alowances:&nbsp;
@@ -305,7 +305,7 @@
             <div class="container" style=" margin-top:10px; width:100%; padding:0px  20px;">
                 <div class="row" style="display: flex;justify-content: space-between; padding: 0px 14px;">
                     <div style="width: 50%; float:left; position: relative; top:35px; right:0px; left:70px;">
-                        <p style="font-size: 15px; margin-bottom:0px; text-transform:uppercase;">{{ $requestData['cname'] }}</p>
+                        <p style="font-size: 15px; margin-bottom:0px; text-transform:uppercase;font-weight:bold;">{{ $requestData['cname'] }}</p>
                         <p style="font-size: 15px; margin: 0; text-transform:uppercase;">{{ $requestData['address_1'] }} </p>
                         <P style="font-size: 15px; margin: 0; text-transform:uppercase;">{{ $requestData['address_2'] }} </P>
                         <P style="font-size: 15px; margin: 0; text-transform:uppercase;">{{ $requestData['city'] }} {{ $requestData['state'] }}, {{ $requestData['zip_code'] }} </P>
@@ -318,7 +318,7 @@
                 <table>
                     <tr>
                         <td style="width:10%;"></td>
-                        <td style="font-size:15px; padding-top:30px; width:50%;padding-left:10px;"> {{ $requestData['emp_name'] }}</td>
+                        <td style="font-size:15px; padding-top:30px; width:50%;padding-left:10px; font-weight:bold;"> {{ $requestData['emp_name'] }}</td>
                         <td style="font-size:15px; width:23%; padding-top:30px; text-align:left;"> XXXXX{{ $requestData['account_number_last_4'] }}</td>
                         <td style="font-size:15px; width:17%; padding-top:30px; text-align:right; padding-right:17px;" > {{ $requestData['currency'] }} {{ number_format($requestData['total_net_pay'], 2) }}</td>
                     </tr>

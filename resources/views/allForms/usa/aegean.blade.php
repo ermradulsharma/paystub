@@ -271,8 +271,8 @@
                     @foreach ($requestData['taxes'] ?? [] as $key => $taxes)
                         <tr>
                             <td></td>
-                            <td class="data" id="color" style="font-size:13px">{{ $taxes }}</td>
-                            <td id="color" class="alignR" style="font-size:13px">{{ $requestData['currency'] }}
+                            <td class="data" id="color" style="font-size:13px;">{{ $taxes }}</td>
+                            <td id="color" class="alignR" style="font-size:13px;">{{ $requestData['currency'] }}
                                 {{ number_format($requestData['taxes_rate'][$key], 2) }}</td>
                             <td id="color" class="alignR"style="font-size:13px">{{ $requestData['currency'] }}
                                 {{ number_format($requestData['taxes_ytd'][$key], 2) }}</td>

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Uk pin blue</title>
+    <title>Uk pin #6166b1</title>
 </head>
 <style>
     body {
@@ -110,18 +110,18 @@
             <table style="width:100%; height:px;" class="ltd">
                 <thead>
                     <tr>
-                        <th style="border-right:1px solid blue;">Employee No</th>
-                        <th style="border-right:1px solid blue;">Employee Name </th>
-                        <th style="border-right:1px solid blue;">Process Date </th>
+                        <th style="border-right:1px solid #6166b1;">Employee No</th>
+                        <th style="border-right:1px solid #6166b1;">Employee Name </th>
+                        <th style="border-right:1px solid #6166b1;">Process Date </th>
                         <th> National Insurance Number</th>
                     </tr>
                 </thead>
                 <tr>
-                    <td class="center" style="border-right:1px solid blue;">12345</td>
-                    <td class="center" style="border-right:1px solid blue;">{{ $requestData['emp_name'] }}</td>
-                    <td class="center" style="border-right:1px solid blue;">
+                    <td class="center" style="border-right:1px solid #6166b1;font-size:18px;color:#6f6f6f;text-transform:capitalize;">12345</td>
+                    <td class="center" style="border-right:1px solid #6166b1;font-size:18px;color:#6f6f6f;text-transform:capitalize;">{{ $requestData['emp_name'] }}</td>
+                    <td class="center" style="border-right:1px solid #6166b1;font-size:18px;color:#6f6f6f;text-transform:capitalize;">
                         {{ date('d/m/Y', strtotime($requestData['pay_date'])) }}</td>
-                    <td class="center">{{ $requestData['ni_number'] }}</td>
+                    <td class="center" style="font-size:18px;color:#6f6f6f;text-transform:capitalize;">{{ $requestData['ni_number'] }}</td>
                 </tr>
             </table>
         </section>
@@ -138,10 +138,10 @@
                 </thead>
                 @foreach ($requestData['earning'] as $key => $earn)
                     <tr>
-                        <td class="l-align">{{ $earn }}</td>
-                        <td class="bold">{{ $requestData['hours'][$key] }}</td>
-                        <td class="bold">{{ number_format($requestData['rate'][$key], 2) }}</td>
-                        <td style="border-right:1px solid #0a2e7b" class="bold">
+                        <td class="l-align" style="font-size:18px;color:#6f6f6f;text-transform:capitalize;">{{ $earn }}</td>
+                        <td class="bold" style="font-size:18px;color:#6f6f6f;text-transform:capitalize;">{{ $requestData['hours'][$key] }}</td>
+                        <td class="bold" style="font-size:18px;color:#6f6f6f;text-transform:capitalize;">{{ number_format($requestData['rate'][$key], 2) }}</td>
+                        <td style="border-right:1px solid #0a2e7b;font-size:18px;color:#6f6f6f;text-transform:capitalize;" class="bold">
                             {{ number_format($requestData['total'][$key], 2) }}</td>
                     </tr>
                 @endforeach
@@ -159,9 +159,10 @@
                 <tbody>
                     @foreach ($requestData['taxes'] ?? [] as $key => $taxes)
                         <tr>
-                            <td colspan="4">{{ $taxes }}</td>
-                            <td>{{ number_format($requestData['taxes_rate'][$key], 2) }}</td>
+                            <td colspan="4" style="font-size:18px;color:#6f6f6f;text-transform:capitalize;">{{ $taxes }}</td>
+                            <td style="font-size:18px;color:#6f6f6f;text-transform:capitalize;">{{ number_format($requestData['taxes_rate'][$key], 2) }}</td>
                         </tr>
+
                     @endforeach
                 </tbody>
             </table>
@@ -171,16 +172,16 @@
             <table
                 style="width:40%; float:left; border:1px solid #4a50b2; border-radius:10px; height: 195px; margin-top:10px; padding-left:10px;">
                 <tr>
-                    <td>{{ $requestData['emp_name'] }}</td>
+                    <td style="font-size:18px; text-transform:capitalize;color:#6f6f6f;">{{ $requestData['emp_name'] }}</td>
                 </tr>
                 <tr>
-                    <td>{{ $requestData['emp_street_1'] }}</td>
+                    <td style="font-size:18px; text-transform:capitalize;color:#6f6f6f;">{{ $requestData['emp_street_1'] }}</td>
                 </tr>
                 <tr>
-                    <td>{{ $requestData['emp_street_2'] ?? '' }}</td>
+                    <td style="font-size:18px; text-transform:capitalize;color:#6f6f6f;">{{ $requestData['emp_street_2'] ?? '' }}</td>
                 </tr>
                 <tr>
-                    <td>{{ $requestData['emp_zip_code'] }}</td>
+                    <td style="font-size:18px; text-transform:capitalize;color:#6f6f6f;">{{ $requestData['emp_zip_code'] }}</td>
                 </tr>
             </table>
 
@@ -192,13 +193,13 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="left">Pay</td>
-                        <td style="text-align:right">{{ number_format($requestData['taxable_gross_pay'], 2) }}</td>
+                        <td class="left" style="padding-left:20px;font-size:18px;color:#6f6f6f;">Pay</td>
+                        <td style="text-align:right;padding-right:20px;font-size:18px;color:#6f6f6f;">{{ number_format($requestData['taxable_gross_pay'], 2) }}</td>
                     </tr>
                     <tr>
 
-                        <td class="left">Pay Tax</td>
-                        <td style="text-align:right">{{ number_format($requestData['deduction_tax'], 2) }}</td>
+                        <td class="left" style="padding-left:20px; font-size:18px;color:#6f6f6f;">Pay Tax</td>
+                        <td style="text-align:right;padding-right:20px;font-size:18px;color:#6f6f6f;">{{ number_format($requestData['deduction_tax'], 2) }}</td>
                     </tr>
                 </tbody>
 
@@ -230,13 +231,13 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="left">Pay</td>
-                        <td style="text-align:right">{{ number_format($requestData['taxable_gross_pay'], 2) }}</td>
+                        <td class="left"style="padding-left:20px;font-size:18px;color:#6f6f6f;">Pay</td>
+                        <td style="text-align:right;padding-right:20px;font-size:18px;color:#6f6f6f;">{{ number_format($requestData['taxable_gross_pay'], 2) }}</td>
                     </tr>
                     <tr>
 
-                        <td class="left">Pay Tax</td>
-                        <td style="text-align:right">{{ number_format($requestData['deduction_tax'], 2) }}</td>
+                        <td class="left" style="padding-left:20px;font-size:18px;color:#6f6f6f;">Pay Tax</td>
+                        <td style="text-align:right;padding-right:20px;font-size:18px;color:#6f6f6f;">{{ number_format($requestData['deduction_tax'], 2) }}</td>
                     </tr>
                 </tbody>
 
@@ -264,7 +265,7 @@
         <section style="width: 100%; margin-top:220px;">
             <table style="width:69.7%; border:1px solid #4a50b2; border-radius:10px;">
                 <tr>
-                    <td style="font-size:13px; padding:5px 10px;line-height:1.5;">{{ $requestData['cname'] }},
+                    <td style=" padding:5px 10px;line-height:1.5;font-size:18px;color:#6f6f6f;">{{ $requestData['cname'] }},
                         {{ $requestData['company_address' ?? ''] }}, UK<br> Pay Method -
                         {{ $requestData['payment_method'] }} Tax Code - {{ $requestData['tax_code'] }} Pay Period -
                         {{ $requestData['pay_type'] }} P - 10</td>
@@ -274,8 +275,8 @@
             <table
                 style="width:29.5%; float:right; border:1px solid #4a50b2; border-radius:10px; margin-top:-52px; padding:13px 10px 13px 10px; background-color:#f4f4fc;">
                 <tr>
-                    <td style="color:#4a50b2; font-size:16px; font-weight:600;">Net Pay</td>
-                    <td>{{ number_format($requestData['net_pay'], 2) }}</td>
+                    <td style="color:#4a50b2; font-size:18px; font-weight:800;">Net Pay</td>
+                    <td><b style="text-align: right; font-size:18px;">{{ number_format($requestData['net_pay'], 2) }}</b></td>
                 </tr>
             </table>
         </section>

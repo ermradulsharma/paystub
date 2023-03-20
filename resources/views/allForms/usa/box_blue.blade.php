@@ -203,7 +203,7 @@
                         <td></td>
                         <td style="text-transform: uppercase;font-size:16px; "> <b>{{ $requestData['city'] }},
                                 {{ $requestData['zip_code'] }}</b></td>
-                        <td style="border-bottom: 2px solid #000; padding-bottom:10px;">
+                        <td style="border-bottom: 2px solid #000; ">
                             <b style="font-size:15px;">{{ date('m/d/Y', strtotime($requestData['pay_start'])) }}&nbsp; &nbsp; &nbsp;  - &nbsp; &nbsp; &nbsp;
                             {{ date('m/d/Y', strtotime($requestData['pay_end'])) }}</b></td>
                     </tr>
@@ -390,8 +390,8 @@
                         <td></td>
                         <td style="text-align:right;font-size:12px; width:15%;">
                             XXXXX{{ $requestData['transit_aba_number'] }}</td>
-                        <td style="text-align:right;font-size:12px; width:15%;">
-                            <b>{{ number_format($requestData['total_net_pay'], 2) }}</b> </td>
+                            <td style="text-align:right;font-size:12px; width:15%;">
+                                {{ number_format($requestData['total_net_pay'], 2) }} </td>
                     </tr>
                 </table>
             </div>

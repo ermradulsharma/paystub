@@ -176,7 +176,7 @@
             </table>
             <table style="border-bottom:1.5px solid black; width:88%; margin-top:0px;">
                 <tr style=" ">
-                    <td style="width:100%; text-align:center; margin-top:0px;font-size:16px;">{{ $word }} and
+                    <td style="width:100%; text-align:center; margin-top:0px;font-size:16px; text-transform: capitalize;">{{ $word }} and
                         {{ (int) $decimal }}/100</td>
 
                 </tr>

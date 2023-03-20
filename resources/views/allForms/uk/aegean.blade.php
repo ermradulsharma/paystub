@@ -5,7 +5,7 @@
     <title>Uk Basic tawny</title>
 
     <style>
-       
+
         * {
             padding: 0px;
             margin: 0px;
@@ -52,103 +52,101 @@
 
         <section style="width: 100%; background-color: #deecff; padding-top:30px;padding-bottom:60px;">
             <section style="width: 100%; margin-top:20px;">
-                <table style="width: 99%; border:1px solid #0054ff; padding:5px; margin-left:5px; margin-right:5px; border-radius:7px;background: white;">
+                <table style="width: 99%; border:3px solid #0054ff; padding:5px; margin-left:5px; margin-right:5px; border-radius:7px;background: white;">
                     <thead>
                         <tr>
-                            <th style="font-size:16px"><b>{{ $requestData['cname'] ?? '' }}</b> </th>
+                            <th style="font-size:22px;font-weight:bold;text-transform: capitalize;"><b>{{ $requestData['cname'] ?? '' }}</b> </th>
                         </tr>
                         <tr>
-                            <th> {{ $requestData['company_address'] ?? '' }}, United Kingdom </th>
+                            <th style="text-transform: capitalize;font-size:16px; font-weight:600;"> {{ $requestData['company_address'] ?? '' }}, United Kingdom </th>
                         </tr>
                     </thead>
                 </table>
             </section>
 
             <section style="width:100%;">
-                <table style="width: 27%; float:left; border:1px solid #0054ff; border-radius:7px; margin-top:150px; height:120px;margin-left:20px;padding-left:20px; padding-top:10px; margin-bottom:300px;background: white;">
+                <table style="width: 27%; float:left; border:3px solid #0054ff; border-radius:7px; margin-top:150px; height:120px;margin-left:20px;padding-left:20px; padding-top:10px; margin-bottom:300px;background: white;">
                     <thead>
                         <tr>
-                            <th style="text-align: left; font-size:15px;"><B>{{ $requestData['emp_name'] }}</B></th>
+                            <th style="text-align: left; font-size:20px;font-weight:bold; text-transform:capitalize;"><B>{{ $requestData['emp_name'] }}</B></th>
                         </tr>
                         <tr>
-                            <td>{{ $requestData['emp_street_1'] }}</td>
+                            <td style="font-size:14px; text-transform:uppercase;">{{ $requestData['emp_street_1'] }}</td>
                         </tr>
                         <tr>
-                            <td>{{ $requestData['emp_street_2'] ?? '' }}</td>
+                            <td style="font-size:14px; text-transform:uppercase;">{{ $requestData['emp_street_2'] ?? '' }}</td>
                         </tr>
                         <tr>
-                            <td>{{ $requestData['emp_zip_code'] }}</td>
+                            <td style="font-size:14px; text-transform:uppercase;">{{ $requestData['emp_zip_code'] }}</td>
                         </tr>
                     </thead>
                 </table>
 
 
-                <table style="width: 34%; float:right;  border:1px solid #0054ff; border-radius:7px; margin-top:10px; margin-left:6px;margin-right:6px;height:359px; background: white;padding-left:10px;">
+                <table style="width: 34%; float:right;  border:3px solid #0054ff; border-radius:7px; margin-top:10px; margin-left:6px;margin-right:6px;height:359px; background: white;padding-left:10px;">
                     <thead>
                         <tr>
-                            <th style="font-size: 15px; text-align:center;"><b>Payments</b></th>
+                            <th style="font-size: 18px; text-align:center;"><b>Payments</b></th>
                         </tr>
                         @foreach ($requestData['earning'] as $key => $earn)
                         <tr>
-                            <td>{{ $earn }}</td>
-                            <td>{{ number_format($requestData['total'][$key], 2) }}</td>
+                            <td style="font-size:17px;">{{ $earn }}</td>
+                            <td style="font-size:17px;"><b>{{ number_format($requestData['total'][$key], 2) }}</b></td>
                         </tr>
                         @endforeach
                         <tr>
-                            <td><b>Total Payment</b></td>
-                            <td><b>{{ number_format($requestData['taxable_gross_pay'],2) }}</b></td>
+                            <td style="font-size:17px;"><b>Total Payment</b></td>
+                            <td style="font-size:17px;"><b>{{ number_format($requestData['taxable_gross_pay'],2) }}</b></td>
                         </tr>
+                        <br>
                         <tr>
-                            <th style="font-size: 15px; text-align:center;"><b>Deductions</b></th>
+                            <th style="font-size: 18px; text-align:center;"><b>Deductions</b></th>
                         </tr>
                         @foreach ($requestData['taxes'] ?? [] as $key => $taxes)
                         <tr>
-                            <td>{{ $taxes }}</td>
-                            <td><b>{{ number_format($requestData['taxes_rate'][$key],2) }}</b></td>
+                            <td style="font-size:17px;">{{ $taxes }}</td>
+                            <td style="font-size:17px;"><b>{{ number_format($requestData['taxes_rate'][$key],2) }}</b></td>
                         </tr>
                         @endforeach
                         <tr>
-                            <td><b>Total Deductions</b></td>
-                            <td><b>{{ $requestData['deduction_tax'] }}</b></td>
+                            <td style="font-size:17px;"><b>Total Deductions</b></td>
+                            <td style="font-size:17px;"><b>{{ $requestData['deduction_tax'] }}</b></td>
                         </tr>
                     </thead>
                 </table>
 
-                <table style="width: 34%; float:right; border:1px solid #0054ff; border-radius:7px; margin-top:10px;margin-bottom:20px; padding-left:10px; height:200px; background: white;">
+                <table style="width: 34%; float:right; border:3px solid #0054ff; border-radius:7px; margin-top:10px;margin-bottom:20px; padding-left:10px; height:200px; background: white;">
                     <thead>
                         <tr>
-                            <td>Pay Period</td>
-                            <td><b>wk 39</b></td>
+                            <td style="font-size: 17px;">Pay Period</td>
+                            <td style="font-size: 16px;text-transform: capitalize;"><b>wk 39</b></td>
                         </tr>
                         <tr>
-                            <td>Pay Date</td>
-                            <td><b>{{ date('d-F-Y', strtotime($requestData['pay_date'])) }}</b></td>
+                            <td style="font-size: 17px;">Pay Date</td>
+                            <td style="font-size: 16px;text-transform: capitalize;"><b>{{ date('d-F-Y', strtotime($requestData['pay_date'])) }}</b></td>
                         </tr>
                         <tr>
-                            <td>Pay Type</td>
-                            <td><b>{{ $requestData['pay_type'] }}</b></td>
+                            <td style="font-size: 17px;text-transform: capitalize;">Pay Type</td>
+                            <td style="font-size: 16px;text-transform: capitalize;"><b>{{ $requestData['pay_type'] }}</b></td>
                         </tr>
                         <tr>
-                            <td>Payment Method</td>
-                            <td><b>{{ $requestData['payment_method'] }}</b></td>
+                            <td style="font-size: 17px;">Payment Method</td>
+                            <td style="font-size: 16px;text-transform:uppercase;"><b>{{ $requestData['payment_method'] }}</b></td>
                         </tr>
+                       <br>
+
                         <tr>
-                            <td></td>
-                            <td></td>
+                            <td style="font-size: 17px;">Tax Code</td>
+                            <td style="font-size: 16px;text-transform:uppercase;"><b>{{ $requestData['tax_code'] }}</b></td>
                         </tr>
 
                         <tr>
-                            <td>Tax Code</td>
-                            <td><b>{{ $requestData['tax_code'] }}</b></td>
-                        </tr>
-
-                        <tr>
-                            <td>NI Number</td>
-                            <td><b>{{ $requestData['ni_number'] }}</b></td>
+                            <td style="font-size: 17px;">NI Number</td>
+                            <td style="font-size: 16px;text-transform:uppercase;"><b>{{ $requestData['ni_number'] }}</b></td>
                         </tr>
                         <tr>
-                            <td>NI Table Letter</td>
-                            <td><b>{{ $requestData['ni_table_letter'] }}</b></td>
+                            <td style="font-size: 17px;">NI Table Letter</td>
+                            <td style="font-size: 16px;text-transform:uppercase;"><b>{{ $requestData['ni_table_letter'] }}</b></td>
                         </tr>
 
                     </thead>
@@ -163,41 +161,41 @@
                         </tr>
                     </thead>
                 </table>
-                <table style="width: 34%;  float:right; border:1px solid #0054ff; border-radius:7px; margin-top: -145px; height:150px;background: white;padding-left:10px;">
+                <table style="width: 34%;  float:right; border:3px solid #0054ff; border-radius:7px; margin-top: -138px; height:150px;background: white;padding-left:10px;">
                     <thead>
                         <tr>
-                            <th style="font-size:15px;"><b>Year To Date</b></th>
+                            <th style="font-size:18px;text-transform: capitalize; text-align:center; padding-left:20px;"><b>Year To Date</b></th>
                         </tr>
                         <tr>
-                            <td>Taxable Gross Pay</td>
-                            <td style="text-align: right;"><b>{{ number_format($requestData['taxable_gross_pay'],2) }}</b></td>
+                            <td style="font-size:16px;">Taxable Gross Pay</td>
+                            <td style="text-align: right; font-size:16px; padding-right:10px;"><b>{{ number_format($requestData['taxable_gross_pay'],2) }}</b></td>
                         </tr>
                         <tr>
-                            <td>Income Tax</td>
-                            <td style="text-align: right;"><b>{{ number_format($requestData['income_tax'],2) }}</b></td>
+                            <td style="font-size:16px;">Income Tax</td>
+                            <td style="text-align: right; font-size:16px; padding-right:10px;"><b>{{ number_format($requestData['income_tax'],2) }}</b></td>
                         </tr>
                         <tr>
-                            <td>Employee NIC</td>
-                            <td style="text-align: right;"><b>{{ number_format($requestData['employee_nic'],2) }}</b></td>
+                            <td style="font-size:16px;">Employee NIC</td>
+                            <td style="text-align: right; font-size:16px; padding-right:10px;"><b>{{ number_format($requestData['employee_nic'],2) }}</b></td>
                         </tr>
                         <tr>
-                            <td>Employee NIC</td>
-                            <td style="text-align: right;"><b>{{ number_format($requestData['employer_nic'],2) }}</b></td>
+                            <td style="font-size:16px;">Employee NIC</td>
+                            <td style="text-align: right; font-size:16px; padding-right:10px;"><b>{{ number_format($requestData['employer_nic'],2) }}</b></td>
                         </tr>
                     </thead>
                 </table>
             </section>
             <section style="width: 100%;">
-                <table style="width:60%; border:1px solid #0054ff; border-radius:7px;margin-top:13px; margin-left:35px;background: white;">
+                <table style="width:60%; border:3px solid #0054ff; border-radius:7px;margin-top:25px; margin-left:35px;background: white;">
                     <thead style="text-align:left; border-radius:7px;">
-                        <td style="padding: 15px;">Additional Information Here (Note)</td>
+                        <td style="padding: 15px;font-size:22px;text-transform: capitalize;padding: 12px 10px;">Additional Information Here (Note)</td>
                     </thead>
                 </table>
 
-                <table style="width:34%; float:right; border:1px solid #0054ff; border-radius:7px; text-align: left;margin-top: -52px; margin-right: 5px;background: white;">
+                <table style="width:34%; float:right; border:3px solid #0054ff; border-radius:7px; text-align: left;margin-top: -60px; margin-right: 5px;background: white;">
                     <thead style="">
-                        <th style="text-align:left;padding: 16px 10px; font-size:15px;"><b>Net Pay</b></th>
-                        <th style="font-size:16px;"><b>{{ number_format($requestData['net_pay'],2) }}</b></th>
+                        <th style="text-align:left;padding: 12px 10px; font-size:22px;font-weight:bold"><b>Net Pay</b></th>
+                        <th style="font-size:22px;font-weight:bold"><b>{{ number_format($requestData['net_pay'],2) }}</b></th>
                     </thead>
                 </table>
             </section>

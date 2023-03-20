@@ -369,7 +369,7 @@
                             <tr>
                                 <td></td>
                                 <td colspan="2" class="borderback" style="text-align:left; padding-left:10px;"><b>Net Pay</b></td>
-                                <td class="borderback"> <b> {{ $requestData['currency'] }}{{ number_format($requestData['total_net_pay'], 2) }}</b></td>
+                                <td class="borderback">  {{ $requestData['currency'] }}{{ number_format($requestData['total_net_pay'], 2) }}</td>
                                 <td><b>{{ number_format($requestData['total_ytd_net_pay'], 2) }}</b></td>
                             </tr>
                         </table>
@@ -393,7 +393,7 @@
         <div class="container" style=" margin-top:50px; width:100%;">
             <div class="row">
                 <div class="col1">
-                    <table style="width:100%;padding-left:17px;">
+                    <table style="width:100%;padding-left:35px;">
                         <tr>
                             <td style="text-transform: uppercase; font-size:10px;"> {{ $requestData['cname'] }}<br>
                                 {{ $requestData['address_1'] }} <br>
@@ -405,13 +405,13 @@
                 <div class="col2" style="text-align:right;">
                     <table style="width:100%;">
                         <tr>
-                            <td><b>Payroll check #:</b>09985178967</span> </td>
+                            <td><b>Payroll check #:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </b>09985178967</span> </td>
                         </tr>
 
                         <tr>
                             <td>
-                                <b>Pay Day:</b> <Span
-                                    style="padding-left:45px;">{{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</Span>
+                                <b>Pay Date:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</b> <Span
+                                    style="padding-left:44px;">{{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</Span>
                             </td>
                         </tr>
                     </table>
@@ -431,7 +431,7 @@
                 <tr style="border-bottom: 1px solid;">
                     <td></td>
                     <td>Pay to the<br>order off:</td>
-                    <td> {{ $requestData['emp_name'] }}</td>
+                    <td style="font-size:14px; font-weight:500;">{{ $requestData['emp_name'] }}</td>
                     <td></td>
                 </tr>
 
@@ -439,7 +439,7 @@
                     <td></td>
                     <td>This amount:</td>
                     <td
-                        style="padding: 3px 170px 3px 0px; border-left:none;  background-color: #98919145; border-right:2px solid #000; border-top:2px solid #000; border-bottom:2px solid #000; font-size:10px:">
+                        style="padding: 3px 170px 3px 0px; border-left:none;  background-color: #98919145; border-right:2px solid #000; border-top:2px solid #000; border-bottom:2px solid #000; font-size:11px;text-transform:uppercase;font-weight:600;">
                         {{ $word }} and {{ $digit_1 }} cents</td>
                     <td colspan="2" style=" text-align: right;">
                         {{ number_format($requestData['total_net_pay'], 2) }} </td>
