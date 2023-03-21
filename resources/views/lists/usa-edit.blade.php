@@ -744,13 +744,13 @@
                                 <div class="col-md-2 mb-2">
                                     <p class="p-0 m-0 text-center" style="font-family: serif;">Current Gross</p>
                                     <input type="text" name="deduction_tax" value="{{ $invoice->deduction_tax ?? '' }}"
-                                        class="earnbtn deduction_tax text-center" value="" />
+                                        class="earnbtn deduction_tax text-center" />
                                 </div>
                                 <div class="col-md-2 mb-2">
                                     <p class="p-0 m-0 text-center" style="font-family: serif;">YTD Gross</p>
                                     <input type="text" name="ytd_deduction_tax"
                                         value="{{ $invoice->ytd_deduction_tax ?? '' }}"
-                                        class="earnbtn ytd_deduction_tax text-center" value="" />
+                                        class="earnbtn ytd_deduction_tax text-center" />
                                 </div>
                             </div>
                             <div class="row mb-3 mt-5">
@@ -764,12 +764,12 @@
                                 <div class="col-md-2 mb-2">
                                     <p class="p-0 m-0 text-center" style="font-family: serif;">Net Pay</p>
                                     <input name="total_net_pay" value="{{ $invoice->total_net_pay ?? '' }}"
-                                        class="earnbtn text-center total_net_pay" value="">
+                                        class="earnbtn text-center total_net_pay">
                                 </div>
                                 <div class="col-md-2 mb-2">
                                     <p class="p-0 m-0 text-center" style="font-family: serif;">YTD Net pay</p>
                                     <input name="total_ytd_net_pay" value="{{ $invoice->total_ytd_net_pay ?? '' }}"
-                                        class="earnbtn text-center total_ytd_net_pay" value="">
+                                        class="earnbtn text-center total_ytd_net_pay">
                                 </div>
                             </div>
                         </div>
@@ -800,27 +800,35 @@
                                             class="redColor">*</span>
                                     </p>
                                     <input class="earnbtn text-center " value="{{ $invoice->clock_vchr_number ?? '' }}"
-                                        name="clock_vchr_number">
+                                        name="clock_vchr_number" maxlength="6" minlength="4"
+                                        placeholder="1234"
+                                        onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                 </div>
                                 <div class="col-lg-2 col-md-4 col-sm-6 mb-2 advicex">
                                     <p class="p-0 m-0 " style="font-family: serif;">Advice Number:<span
                                             class="redColor">*</span></p>
                                     <input class="earnbtn text-center " value="{{ $invoice->advice_number ?? '' }}"
-                                        name="advice_number">
+                                        name="advice_number" placeholder="123456" maxlength="6"
+                                        minlength="4"
+                                        onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                 </div>
                                 <div class="col-lg-2 col-md-4 col-sm-6 mb-2 advicex">
                                     <p class="p-0 m-0 " style="font-family: serif;">Account Number LAST<span
                                             class="redColor">*</span></p>
                                     <input class="earnbtn text-center "
                                         value="{{ $invoice->account_number_last_4 ?? '' }}"
-                                        name="account_number_last_4">
+                                        name="account_number_last_4" placeholder="1234" maxlength="4"
+                                        minlength="4"
+                                        onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                 </div>
                                 <div class="col-lg-2 col-md-4 col-sm-6 mb-2 advicex">
                                     <p class="p-0 m-0 " style="font-family: serif;">Transit ABA<span
                                             class="redColor">*</span>
                                     </p>
                                     <input class="earnbtn text-center " value="{{ $invoice->transit_aba_number ?? '' }}"
-                                        name="transit_aba_number">
+                                        name="transit_aba_number" placeholder="1234" maxlength="4"
+                                        minlength="4"
+                                        onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                 </div>
                             </div>
                         </div>
