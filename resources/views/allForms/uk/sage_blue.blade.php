@@ -265,7 +265,7 @@
         <section style="width: 100%; margin-top:220px;">
             <table style="width:69.7%; border:1px solid #4a50b2; border-radius:10px;">
                 <tr>
-                    <td style=" padding:5px 10px;line-height:1.5;font-size:18px;color:#6f6f6f;">{{ $requestData['cname'] }},
+                    <td style=" padding:5px 10px;line-height:1.5;font-size:13px;color:#6f6f6f;">{{ $requestData['cname'] }},
                         {{ $requestData['company_address' ?? ''] }}, UK<br> Pay Method -
                         {{ $requestData['payment_method'] }} Tax Code - {{ $requestData['tax_code'] }} Pay Period -
                         {{ $requestData['pay_type'] }} P - 10</td>
@@ -273,7 +273,7 @@
             </table>
 
             <table
-                style="width:29.5%; float:right; border:1px solid #4a50b2; border-radius:10px; margin-top:-52px; padding:13px 10px 13px 10px; background-color:#f4f4fc;">
+                style="width:29.5%; float:right; border:1px solid #4a50b2; border-radius:10px; margin-top:-55px; padding:13px 10px 13px 10px; background-color:#f4f4fc;">
                 <tr>
                     <td style="color:#4a50b2; font-size:18px; font-weight:800;">Net Pay</td>
                     <td><b style="text-align: right; font-size:18px;">{{ number_format($requestData['net_pay'], 2) }}</b></td>
