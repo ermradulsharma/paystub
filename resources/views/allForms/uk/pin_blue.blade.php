@@ -202,9 +202,9 @@
                                     <b>{{ $requestData['cname'] }}, UK</b></td>
                             </tr>
                             <tr>
-                                <td style=" padding-bottom:8px;font-size:13px;"><b>Tax code:</b>
+                                <td style=" padding-bottom:8px;font-size:13px;"><b>Tax Code:</b>
                                     {{ $requestData['tax_code'] }} </td>
-                                <td style=" padding-bottom:8px;font-size:13px;"><b>NI table:</b>
+                                <td style=" padding-bottom:8px;font-size:13px;"><b>NI Table:</b>
                                     {{ $requestData['ni_table_letter'] }} </td>
                                 <td style=" padding-bottom:8px;font-size:13px;"><b>Dept:</b> Defualt</td>
                                 <td style=" padding-bottom:8px;font-size:13px;"><b>Tax Period:</b>

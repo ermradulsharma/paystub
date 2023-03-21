@@ -391,7 +391,7 @@
                         <td style="text-align:right;font-size:12px; width:15%;">
                             XXXXX{{ $requestData['transit_aba_number'] }}</td>
                             <td style="text-align:right;font-size:12px; width:15%;">
-                                {{ number_format($requestData['total_net_pay'], 2) }} </td>
+                               <b>{{ $requestData['currency'] }} {{ number_format($requestData['total_net_pay'], 2) }} </b> </td>
                     </tr>
                 </table>
             </div>

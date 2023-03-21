@@ -246,13 +246,13 @@
                             </tr>
                             <tr class=" ytd">
                                 <td id="cols" class="head2">
-                                    {{ number_format($requestData['ytd_gross_total'], 2) }}
+                                    {{ $requestData['currency'] }}{{ number_format($requestData['ytd_gross_total'], 2) }}
                                 </td>
                                 <td id="cols" class="head2">
-                                    {{ number_format($requestData['ytd_deduction_tax'], 2) }}
+                                    {{ $requestData['currency'] }}{{ number_format($requestData['ytd_deduction_tax'], 2) }}
                                 </td>
                                 <td id="cols" class="head2">
-                                    {{ number_format($requestData['total_ytd_net_pay'], 2) }}
+                                    {{ $requestData['currency'] }}{{ number_format($requestData['total_ytd_net_pay'], 2) }}
                                 </td>
                             </tr>
                         </table>
@@ -267,10 +267,10 @@
                             </tr>
                             <tr class=" ytd">
                                 <td id="cols" class="head2">
-                                    {{ number_format($requestData['period_gross_total'], 2) }}
+                                    {{ $requestData['currency'] }}{{ number_format($requestData['period_gross_total'], 2) }}
                                 </td>
                                 <td id="cols" class="head2">
-                                    {{ number_format($requestData['deduction_tax'], 2) }}
+                                    {{ $requestData['currency'] }}{{ number_format($requestData['deduction_tax'], 2) }}
                                 </td>
                                 <td id="cols" class="head2" style="border-right: none !important;">
                                     {{ $requestData['currency'] }}

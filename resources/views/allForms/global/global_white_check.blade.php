@@ -318,9 +318,9 @@
                 <table>
                     <tr>
                         <td style="width:10%;"></td>
-                        <td style="font-size:15px; padding-top:30px; width:50%;padding-left:10px; font-weight:bold;"> {{ $requestData['emp_name'] }}</td>
-                        <td style="font-size:15px; width:23%; padding-top:30px; text-align:left;"> XXXXX{{ $requestData['account_number_last_4'] }}</td>
-                        <td style="font-size:15px; width:17%; padding-top:30px; text-align:right; padding-right:17px;" > {{ $requestData['currency'] }} {{ number_format($requestData['total_net_pay'], 2) }}</td>
+                        <td style="font-size:15px; padding-top:30px; width:50%;padding-left:10px; font-weight:bold;">{{ $requestData['emp_name'] }}</td>
+                        <td style="font-size:15px; width:23%;padding-top:30px; text-align:left;"> <b>XXXXX{{ $requestData['account_number_last_4'] }}</b></td>
+                        <td style="font-size:15px; width:17%;padding-top:30px; text-align:right; padding-right:17px;" > <b>{{ $requestData['currency'] }} {{ number_format($requestData['total_net_pay'], 2) }}</b></td>
                     </tr>
                 </table>
             </div>

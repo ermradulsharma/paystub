@@ -221,7 +221,7 @@
                     @endforeach
                     <br>
                     <br>
-                    <tfoot class="tfooter" style="background:#b62ebd;">
+                    <tbody class="tfooter" style="background:#b62ebd;">
                         <tr style=" color:white; height:20%;">
                             <th colspan="3"></th>
                             <th class="tax-align-c" style="font-weight: 100; height: 45px; text-align:right; padding-right: 0px;font-size:13px">
@@ -231,7 +231,7 @@
                                 {{ $requestData['currency'] }} {{ number_format($requestData['ytd_gross_total'], 2) }}
                             </th>
                         </tr>
-                    </tfoot>
+                    </tbody>
                 </table>
             </section>
             <section class="tablesection">
