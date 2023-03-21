@@ -48,8 +48,8 @@ $(document).ready(function () {
             $("#addYtdTotal").append(addYtdTotal);
             $("#add_deduction").append(add_deduction);
         }
-        i++;
-
+        // i++;
+        console.log('1', i);
         $(".calculation").keyup(function () {
             var id = $(this).data("id");
             calculation(id);
@@ -81,14 +81,13 @@ $(document).ready(function () {
             x++;
             $(wrapper_2).append(fieldHTML);
         }
-        x++;
 
         $(".tax_deduction").keyup(function () {
-            var id = $(this).val();
+            var id = $(this).data('id');
             var deduction_period_tax = $("#deduction_period_tax").val() || 0.0;
             var tax_deduction = 0;
             $(".tax_deduction").each(function () {
-                tax_deduction += parseFloat(this.value || 0.0).toFixed(2);
+                tax_deduction += Number($(this).val()) || 0.0;
             });
             setTimeout(function () {
                 tax_deduction = tax_deduction;
@@ -106,7 +105,7 @@ $(document).ready(function () {
             var ytd_deduction_period_tax = $("#ytd_deduction_period_tax").val() || 0.0;
             var ytd_tax = 0.0;
             $(".ytd_tax").each(function () {
-                ytd_tax += parseFloat(this.value || 0.0).toFixed(2);
+                ytd_tax += Number($(this).val()) || 0.00;
             });
             setTimeout(function () {
                 ytd_tax = ytd_tax;
@@ -126,7 +125,7 @@ $(document).ready(function () {
         var deduction_period_tax = $("#deduction_period_tax").val() || 0.0;
         var tax_deduction = 0.0;
         $(".tax_deduction").each(function () {
-            tax_deduction += parseFloat(this.value || 0.0).toFixed(2);
+            tax_deduction += Number($(this).val()) || 0.00;
         });
         setTimeout(function () {
             tax_deduction = tax_deduction;
@@ -144,7 +143,7 @@ $(document).ready(function () {
         var ytd_deduction_period_tax = $("#ytd_deduction_period_tax").val() || 0.0;
         var ytd_tax = 0.0;
         $(".ytd_tax").each(function () {
-            ytd_tax += parseFloat(this.value || 0.0).toFixed(2);
+            ytd_tax += Number($(this).val()) || 0.00;
         });
         setTimeout(function () {
             ytd_tax = ytd_tax;
