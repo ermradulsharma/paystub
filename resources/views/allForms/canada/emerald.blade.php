@@ -236,7 +236,7 @@
                         </table>
                     </div>
                 </div>
-                <div class="row" style=" border:3px solid #8a898a; ">
+                <div class="row" style=" border:3px solid #8a898a;">
                     <div class="column1">
                         <table id="bottomtable" style="width:100%; background-color:white;">
                             <tr class="">
