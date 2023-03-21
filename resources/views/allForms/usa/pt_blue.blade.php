@@ -122,7 +122,7 @@
                     <p style="font-size: 14px; margin: 0;text-transform:uppercase;"> {{ $requestData['address_1'] }}<br>{{ $requestData['city'] }} <br>{{ $requestData['state'] }}, {{ $requestData['zip_code'] }}</p>
                 </div>
                 <div style="width:40%;float:right;">
-                    <h6 style="font-size: 13px; margin-bottom: 0; padding-left:12%;text-transform:uppercase;">Advice Number: <span style="font-size: 13px;text-transform:uppercase;">00000{{ $requestData['advice_number'] }}</span> </h6>
+                    <h6 style="font-size: 16px; margin-bottom: 0; padding-left:12%;text-transform:capitalize;">Advice Number: <span style="font-size: 13px;text-transform:uppercase;">00000{{ $requestData['advice_number'] }}</span> </h6>
                     <br>
                     <br>
                     <P style="font-size: 14px;margin: 0; text-align:right; padding-right:25%;"><span style="font-weight:800;padding-right:20px;">Check Number:</span> 1775 </P>

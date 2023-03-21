@@ -305,7 +305,7 @@
             <div class="container" style=" margin-top:10px; width:100%; padding:0px  20px;">
                 <div class="row" style="display: flex;justify-content: space-between; padding: 0px 14px;">
                     <div style="width: 50%; float:left; position: relative; top:35px; right:0px; left:70px;">
-                        <p style="font-size: 15px; margin-bottom:0px; text-transform:uppercase;font-weight:bold;">{{ $requestData['cname'] }}</p>
+                        <p style="font-size: 15px; margin-bottom:0px; text-transform:uppercase;">{{ $requestData['cname'] }}</p>
                         <p style="font-size: 15px; margin: 0; text-transform:uppercase;">{{ $requestData['address_1'] }} </p>
                         <P style="font-size: 15px; margin: 0; text-transform:uppercase;">{{ $requestData['address_2'] }} </P>
                         <P style="font-size: 15px; margin: 0; text-transform:uppercase;">{{ $requestData['city'] }} {{ $requestData['state'] }}, {{ $requestData['zip_code'] }} </P>

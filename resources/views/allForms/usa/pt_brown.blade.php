@@ -127,7 +127,7 @@
                         {{ $requestData['zip_code'] }}</p>
                 </div>
                 <div style="width:40%;float:right;">
-                    <h6 style="font-size: 13px; margin-bottom: 0; padding-left:12%;text-transform:uppercase;">Advice
+                    <h6 style="font-size: 16px; margin-bottom: 0; padding-left:12%;text-transform-capitalize;">Advice
                         Number: <span
                             style="font-size: 13px;text-transform:uppercase;">00000{{ $requestData['advice_number'] }}</span>
                     </h6>
