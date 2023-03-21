@@ -235,7 +235,7 @@
                         <table id="bottomtable" style="width:100%; background-color:white;">
                             <tr class="">
                                 <th id="cols" class="head1">YTD GROSS</th>
-                                <th id="cols" class="head1">YTD EDUCATIONS</th>
+                                <th id="cols" class="head1">YTD DEDUCTIONS</th>
                                 <th id="cols" class="head1">YTD NET PAY</th>
                             </tr>
                             <tr class=" ytd">
