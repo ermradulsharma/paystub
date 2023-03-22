@@ -191,7 +191,7 @@
     <div class="section_2">
         <table style="width: 100%;">
             <thead style="background-color: #a9a9a9;  ">
-                <th style="text-align:left;font-size:16px;"><span style="padding-right:8px;">#</span>767767</th>
+                <th style="text-align:left;font-size:17px;font-family: 'Poppins', sans-serif; font-weight:bold; letter-spacing:0.5;"><span style="padding-right:8px;">#</span>767767</th>
                 <th style="text-align:right; padding-right:20px; font-size:16px; text-transform: uppercase; font-weight:900"> Earning Statement </th>
             </thead>
         </table>
@@ -202,10 +202,10 @@
             <div class="col1">
                 <table>
                     <tr>
-                        <td style="font-size: 16px;font-family: 'Poppins', sans-serif; "><b>{{ $requestData['cname'] }}</b></td>
+                        <td style="font-size: 17px;font-family: 'Poppins', sans-serif;font-weight:bold; "><b>{{ $requestData['cname'] }}</b></td>
                     </tr>
                     <tr>
-                        <td style="font-size: 14px; padding-bottom:20px;font-family: 'Poppins', sans-serif;">{{ $requestData['address_1'] }},<br>{{ $requestData['city'] }} {{ $requestData['state'] }}, {{ $requestData['zip_code'] }}, USA </td>
+                        <td style="font-size: 16px; padding-bottom:20px;font-family: 'Poppins', sans-serif;font-weight:400;">{{ $requestData['address_1'] }},<br>{{ $requestData['city'] }} {{ $requestData['state'] }}, {{ $requestData['zip_code'] }}, USA </td>
                     </tr>
                     <tr>
                         <td style="margin-top: 10px; text-transform:capitalize;font-size: 14px;"><span style="font-weight: 500;font-size: 14px;">Marital Status: </span>{{ $requestData['marital_status'] }} </td>

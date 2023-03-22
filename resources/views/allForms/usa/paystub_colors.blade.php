@@ -91,6 +91,7 @@
             font-size: 14px;
             color: #555555;
             font-family: 'Poppins', sans-serif;
+            font-weight: bold;
 
         }
 
@@ -236,7 +237,7 @@
                     </tr>
                     @foreach ($requestData['earning'] as $key => $earn)
                         <tr>
-                            <td class="heading2 tax-align-l" style="padding-left: 18px;">{{ $earn }}</td>
+                            <td class="heading2 tax-align-l" style="padding-left: 18px;text-transform:capitalize;">{{ $earn }}</td>
                             <td class="heading2" style="color: #000">{{ $requestData['currency'] }}
                                 {{ number_format($requestData['rate'][$key], 2) }} </td>
                             <td class="heading2" style="color: #000">{{ number_format($requestData['hours'][$key], 2) }}</td>
@@ -253,10 +254,10 @@
                         <tr style=" color:white; height:20%;">
                             <th colspan="3"></th>
                             <th class="tax-align-c"
-                                style="font-weight: 100; height: 45px; text-align:right; padding-right: 0px;font-size:13px">
+                                style="font-weight: 400; height: 45px; text-align:right; padding-right: 0px;font-size:13px;font-family: 'Poppins', sans-serif;">
                                 {{ $requestData['currency'] }}
                                 {{ number_format($requestData['period_gross_total'], 2) }} </th>
-                            <th class="tax-align-r" style="font-weight: 100; height: 47px;font-size:13px">
+                            <th class="tax-align-r" style="font-weight: 400; height: 47px;font-size:13px;font-family: 'Poppins', sans-serif;">
                                 {{ $requestData['currency'] }} {{ number_format($requestData['ytd_gross_total'], 2) }}
                             </th>
                         </tr>
@@ -305,10 +306,10 @@
                     <tfoot class="tfooter " style="background:#b62ebd; line-height:1.6;">
                         <tr style="color:white;">
                             <th colspan="2" style="height: 47px; padding-left: 18px;font-size:13px;font-family: 'Poppins', sans-serif;">Net Pay</th>
-                            <th class="tax-align-r" style="height: 47px; font-weight: 100;font-size:13px;font-family: 'Poppins', sans-serif;">
+                            <th class="tax-align-r" style="height: 47px; font-weight: bold;font-size:13px;font-family: 'Poppins', sans-serif;">
                                 {{ $requestData['currency'] }} {{ number_format($requestData['total_net_pay'], 2) }}
                             </th>
-                            <th class="tax-align-r" style="height: 47px; font-weight: 100;font-size:13px;">
+                            <th class="tax-align-r" style="height: 47px; font-weight: bold;font-size:13px;font-family: 'Poppins', sans-serif;">
                                 {{ $requestData['currency'] }}
                                 {{ number_format($requestData['total_ytd_net_pay'], 2) }} </th>
                         </tr>
