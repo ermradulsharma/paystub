@@ -12,7 +12,7 @@
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200&display=swap');
-
+        @import url('https://fonts.cdnfonts.com/css/arial-2');
 
     </style>
     <style>
@@ -182,20 +182,15 @@
         <section class="invoiceborder">
             <table>
                 <tr>
-                    <td
-                        style="padding-top:0px; padding-bottom:0;font-size:25px;text-transform:Captilize; font-family: 'Poppins', sans-serif; font-weight:300;">
-                       <b>{{ $requestData['cname'] }}</b>
-                    </td>
+                    <td style="padding-top:0px; padding-bottom:0; font-size:30px; text-transform:Captilize; font-family: 'Arial', sans-serif; font-weight:bold;"> {{ $requestData['cname'] }} </td>
 
                 </tr>
                 <tr>
-                    <td class="address"
-                        style="font-size:16px;text-transform:uppercase; font-weight:400;line-height:1.5; color:#000;letter-spacing:-0.5px;padding-top:0; padding-bottom:0; font-family: 'Poppins', sans-serif;">
+                    <td class="address" style="font-size:20px; text-transform:uppercase; font-weight:400; line-height:1.2; color:#000; letter-spacing:-0.5px; padding-top:0; padding-bottom:0; font-family: 'Arial', sans-serif;">
                         {{ $requestData['address_1'] }} <br>
                         {{ $requestData['city'] }}, {{ $requestData['zip_code'] }}<br> USA
                     </td>
-                    <td style=" font-size:18px;line-height:1.9;vertical-align: center;font-family: 'Poppins', sans-serif; font-weight:500;" class="earning">
-                        <b>Earnings Statement</b></td>
+                    <td style=" font-size:18px; line-height:1.9; vertical-align: center; font-family: 'Arial', sans-serif; font-weight:bold;" class="earning">Earnings Statement</td>
                 </tr>
                 <tr>
                     <td></td>
