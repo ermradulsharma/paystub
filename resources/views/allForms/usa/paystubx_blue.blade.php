@@ -153,7 +153,7 @@
         <div style="max-width: 100%; margin: auto; padding: 10px 10px;">
             <table style="width:100%; border-left:2px solid#464646; border-right:2px solid#464646;background-color:darkgray;color:white;">
                 <tr>
-                    <td style="font-size: 18px;text-align: left;padding:10px 0px 10px 25px;"><span style="font-size: 18px;">{{ $requestData['cname'] }}</span><br>  {{ $requestData['address_1'] }}{{ $requestData['city'] }}{{ $requestData['state'] }}, {{ $requestData['zip_code'] }}, CA</td>
+                    <td style="font-size: 18px;text-align: left;padding:10px 0px 10px 25px;"><span style="font-size: 18px;">{{ $requestData['cname'] }}</span><br>  {{ $requestData['address_1'] }} {{ $requestData['city'] }} {{ $requestData['state'] }}, {{ $requestData['zip_code'] }}, CA</td>
                     <td
                         style="font-size: 21px;text-align:right;padding:10px 12px 8px 10px;text-transform:uppercase;  font-family: 'Arial', sans-serif;font-weight:bold;">
                         Earnings Statement</td>
