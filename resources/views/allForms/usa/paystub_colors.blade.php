@@ -172,7 +172,7 @@
                 <tr>
                     <td class="address" style="padding-left: 31px;font-size:16px;text-transform:uppercase; font-weight:400;line-height:1.5; color:#000;letter-spacing:-0.5px;padding-top:0; padding-bottom:0;">
                         {{ $requestData['address_1'] }} <br>
-                        {{ $requestData['city'] }}, {{ $requestData['zip_code'] }}<br> USA
+                        {{ $requestData['city'] }},{{ $requestData['state'] }} {{ $requestData['zip_code'] }}<br> USA
                     </td>
                     <td style="font-weight:600; font-size:18px;line-height:1.9;vertical-align: center;" class="earning">Earnings Statement</td>
                 </tr>

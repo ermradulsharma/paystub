@@ -108,8 +108,9 @@
                                     <div>
                                         <label for="state" class="lable">State <span class="redColor">*</span>
                                         </label>
+                                        <input type="hidden" name="state" id="state_0">
                                         <div class="dropdown ">
-                                            <select name="state" id="state" class="state dropdown11 removeDiv">
+                                            <select id="state" class="state dropdown11 removeDiv">
                                                 <option value=""> --- Select State --- </option>
                                                 @foreach ($stateTaxes as $stateTax)
                                                     <option value="{{ $stateTax->state }}">{{ $stateTax->state }}</option>
@@ -885,9 +886,14 @@
                         for (var j = 0; j < near_place.address_components[i].types.length; j++) {
                             obj[near_place.address_components[i].types[j]] = near_place.address_components[
                                 i].long_name;
+                            if(near_place.address_components[i].types['0'] == 'administrative_area_level_1'){
+                                $('#state_0').val(near_place.address_components[i].short_name);
+                            }
+
                         }
                     }
                     setLocation(obj);
+                    console.log(obj);
                 }
             });
         });
