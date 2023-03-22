@@ -16,6 +16,10 @@
     </style>
 </head>
 <style>
+     @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+         @font-face {
+            font-family: 'Open Sans', sans-serif;
+        }
     @font-face {
         font-family: 'MICR';
         src: url('FONT/MICR-Plain.woff2') format('woff2'),
@@ -24,6 +28,7 @@
         font-style: normal;
         font-display: swap;
     }
+
 
     table {
         border-collapse: collapse;
@@ -89,7 +94,7 @@
     .border-line:before {
         position: absolute;
         content: "";
-        top: 175px;
+        top: 180px;
         left: 80px;
         right: 0;
         background-image: url("images/border-line.png");
@@ -133,18 +138,18 @@
         <table style="width:100%;">
             <tr style="width:100%;">
                 <td colspan=""
-                    style=" padding-left:50px; padding-top:0px; padding-bottom:0px; padding-right:0px; font-weight:800; font-size:25px;">
+                    style=" padding-left:50px; padding-top:0px; padding-bottom:0px; padding-right:0px; font-weight:bold; font-size:25px;font-family: 'Open Sans', sans-serif;">
                     {{ $requestData['cname'] }}</td>
                 <td></td>
                 <td style="font-size:14px;text-align:right;"><b>No: 17658</b></td>
             </tr>
             <tr>
-                <td style="padding-left:50px; padding-top:0px; padding-bottom:30px; padding-right:0px; font-size:14px;">
+                <td style="padding-left:50px; padding-top:0px; padding-bottom:30px; padding-right:0px; font-size:14px;font-family: 'Open Sans', sans-serif;">
                     {{ $requestData['address_1'] }} {{ $requestData['city'] }} <br> {{ $requestData['state'] }},
                     {{ $requestData['zip_code'] }}</td>
                 <td></td>
-                <td style="font-size:14px; text-align:right; width:250px;">Date:
-                    {{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</td>
+                <td style="font-size:14px; text-align:right; width:250px;font-family: 'Open Sans', sans-serif;">Date
+                    <span style="padding-left:5px;">{{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</span></td>
             </tr>
             <tr>
                 <td></td>
@@ -162,13 +167,13 @@
         <table>
             <table class="table1 " style="width:100%;">
                 <tr class="border-line" style="width:100%;">
-                    <td style=" width:100%;font-size:14px;">Pay To The<br>
+                    <td style=" width:100%;font-size:15px; font-weight:500;">Pay To The<br>
                         Order Of
                     </td>
-                    <td style=" font-size:15px;text-align:left; width:100%; margin:0 auto;">
+                    <td style=" font-size:16px;text-align:left; width:100%; margin:0 auto;font-family: 'Open Sans', sans-serif; font-weight:bold; ">
                         <b>{{ $requestData['emp_name'] ?? '' }}</b>
                     </td>
-                    <td style="width:100%; text-align:right; margin-top:20px;font-size:14px;">
+                    <td style="width:100%; text-align:right; margin-top:20px;font-size:14px;font-family: 'Open Sans', sans-serif;">
                         <b>{{ $requestData['currency'] ?? '' }}
                             **{{ number_format($requestData['total_net_pay'], 2) }}</b>
                     </td>
@@ -176,7 +181,7 @@
             </table>
             <table style="border-bottom:1.5px solid black; width:88%; margin-top:0px;">
                 <tr style=" ">
-                    <td style="width:100%; text-align:center; margin-top:0px;font-size:16px; text-transform: capitalize;">{{ $word }} and
+                    <td style="width:100%;font-size:16px; text-align:center; margin-top:0px;font-size:16px; text-transform: capitalize;font-family: 'Open Sans', sans-serif;">{{ $word }} and
                         {{ (int) $decimal }}/100</td>
 
                 </tr>
@@ -185,7 +190,7 @@
         <div class="shrapdana">
             <table style="padding-top:60px;margin-top: 30px;">
                 <tr>
-                    <td style="font-size:14px; padding-right:30px;">Memo: </td>
+                    <td style="font-size:16px; padding-right:30px;">Memo: </td>
                     <td colspan="2" style="font-size: 23px; letter-spacing: -1.5px; padding-right:50px;">FOR RECORDS PURPOSES ONLY</td>
                     <td>----------------------------------------------------------------</td>
                 </tr>
@@ -204,8 +209,8 @@
             <div class="col1">
                 <table style="width:100%;">
                     <tr>
-                        <td style="font-weight: bold;">{{ $requestData['cname'] ?? '' }}</td>
-                        <td style="font-weight: bold;">{{ $requestData['emp_name'] }}</td>
+                        <td style="font-weight: bold;font-family: 'Open Sans', sans-serif;">{{ $requestData['cname'] ?? '' }}</td>
+                        <td style="font-weight: bold;font-family: 'Open Sans', sans-serif;">{{ $requestData['emp_name'] }}</td>
 
                     </tr>
                     <tr>

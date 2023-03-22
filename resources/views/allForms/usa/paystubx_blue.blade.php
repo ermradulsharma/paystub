@@ -8,7 +8,12 @@
 
     <title>Paystub_blue</title>
 
+
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200&display=swap');
+         @font-face {
+            font-family: 'Poppins', sans-serif;
+        }
         * {
             padding: 0px;
             margin: 0px;
@@ -46,11 +51,14 @@
             color: #464646;
             font-weight: 500;
             border-right: 2px solid #464646;
+            font-family: 'Poppins', sans-serif;
+            font-weight:bold;
         }
 
         .head2 {
             border-right: 2px solid #464646;
             padding: 5px 0 2.2em 0;
+            font-size:14px;
         }
 
         .padding {
@@ -140,7 +148,7 @@
                 <tr>
                     <td style="font-size: 16px;text-align: left;padding:10px 0px 10px 25px;">{{ $requestData['cname'] }}<br>  {{ $requestData['address_1'] }}{{ $requestData['city'] }}{{ $requestData['state'] }}, {{ $requestData['zip_code'] }}, CA</td>
                     <td
-                        style="font-size: 20px;text-align:right;padding:10px 12px 8px 10px;">
+                        style="font-size: 18px;text-align:right;padding:10px 12px 8px 10px;text-transform:uppercase; font-family: 'Poppins', sans-serif;font-weight:bold;">
                         Earnings Statement</td>
                 </tr>
             </table>

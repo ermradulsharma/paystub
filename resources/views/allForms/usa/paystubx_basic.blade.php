@@ -7,9 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Paystubx Template</title>
     <style>
+         @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200&display=swap');
+         @font-face {
+            font-family: 'Poppins', sans-serif;
+        }
         .infomation {
             border: 2px solid darkgrey;
             border-top: none;
+
         }
 
         .bodertop {
@@ -52,6 +57,7 @@
         .col1 {
             float: left;
             width: 40%;
+            padding-left:5px;
         }
 
         .col2 {
@@ -73,6 +79,7 @@
         .column1 {
             float: left;
             width: 60%;
+            padding-left:5px;
         }
 
         .column2 {
@@ -195,16 +202,16 @@
             <div class="col1">
                 <table>
                     <tr>
-                        <td style="font-size: 15px;"><b>{{ $requestData['cname'] }}</b></td>
+                        <td style="font-size: 16px;font-family: 'Poppins', sans-serif; "><b>{{ $requestData['cname'] }}</b></td>
                     </tr>
                     <tr>
-                        <td style="font-size: 15px; padding-bottom:20px;">{{ $requestData['address_1'] }},<br>{{ $requestData['city'] }} {{ $requestData['state'] }}, {{ $requestData['zip_code'] }}, USA </td>
+                        <td style="font-size: 14px; padding-bottom:20px;font-family: 'Poppins', sans-serif;">{{ $requestData['address_1'] }},<br>{{ $requestData['city'] }} {{ $requestData['state'] }}, {{ $requestData['zip_code'] }}, USA </td>
                     </tr>
                     <tr>
-                        <td style="margin-top: 10px;"><span style="font-weight: 500;">Marital Status: </span>{{ $requestData['marital_status'] }} </td>
+                        <td style="margin-top: 10px; text-transform:capitalize;font-size: 14px;"><span style="font-weight: 500;font-size: 14px;">Marital Status: </span>{{ $requestData['marital_status'] }} </td>
                     </tr>
                     <tr>
-                        <td style="padding-bottom:15px;"> <span style="font-weight: 500; ">Exemptions: </span> {{ $requestData['exemptions'] }}</td>
+                        <td style="padding-bottom:15px;font-size: 14px;"> <span style="font-weight: 500;font-size: 14px; ">Exemptions: </span> {{ $requestData['exemptions'] }}</td>
                     </tr>
                 </table>
             </div>
@@ -212,21 +219,21 @@
             <div class="col2">
                 <table>
                     <tr>
-                        <td> <span style="font-weight: 500;">Pay Period:</span> <span> {{ date('m/d/Y', strtotime($requestData['pay_start'])) }} - {{ date('m/d/Y', strtotime($requestData['pay_end'])) }}</span></td>
+                        <td> <span style="font-weight: 500;font-size: 14px;">Pay Period:</span> <span> {{ date('m/d/Y', strtotime($requestData['pay_start'])) }} - {{ date('m/d/Y', strtotime($requestData['pay_end'])) }}</span></td>
                     </tr>
 
                     <tr>
-                        <td> <span style="font-weight: 500;">Pay Date:</span><span> {{ date('m/d/Y', strtotime($requestData['pay_date'])) }} </span></td>
+                        <td> <span style="font-weight: 500;font-size: 14px;">Pay Date:</span><span> {{ date('m/d/Y', strtotime($requestData['pay_date'])) }} </span></td>
                     </tr>
                     <tr>
-                        <td><span style="font-weight: 500; ">Employee #: </span> <span> {{ $requestData['emp_id'] }}</span></td>
+                        <td><span style="font-weight: 500;font-size: 14px; ">Employee #: </span> <span> {{ $requestData['emp_id'] }}</span></td>
                     </tr>
                     <tr>
-                        <td style="padding-top:8px;"> {{ $requestData['emp_street_1'] }}, <br> {{ $requestData['emp_city'] }} {{ $requestData['emp_state'] }},{{ $requestData['emp_zip_code'] }}, USA </td>
+                        <td style="padding-top:8px;font-size: 14px;"> {{ $requestData['emp_street_1'] }}, <br> {{ $requestData['emp_city'] }} {{ $requestData['emp_state'] }},{{ $requestData['emp_zip_code'] }}, USA </td>
                     </tr>
 
                     <tr>
-                        <td><span style="font-weight: 500;">Social Security#:</span> <span> ***-**-{{ $requestData['emp_ssn'] }}</span></td>
+                        <td><span style="font-weight: 500;font-size: 14px;">Social Security#:</span> <span> ***-**-{{ $requestData['emp_ssn'] }}</span></td>
                     </tr>
                 </table>
             </div>
