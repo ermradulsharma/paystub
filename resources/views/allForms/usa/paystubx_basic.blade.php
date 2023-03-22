@@ -9,7 +9,6 @@
     <style>
          @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200&display=swap');
          @import url('https://fonts.cdnfonts.com/css/arial-2');
-         @import url('https://fonts.cdnfonts.com/css/times-new-roman');
          @import url('https://fonts.cdnfonts.com/css/times');
 
 
@@ -214,13 +213,13 @@
                         <td style="font-size: 20px; font-family: 'Arial', sans-serif;font-weight:bold;"><b>{{ $requestData['cname'] }}</b></td>
                     </tr>
                     <tr>
-                        <td style="font-size: 20px; padding-bottom:20px; font-family: 'Times', sans-serif; text-transform:capitalize;line-height:1.2;">{{ $requestData['address_1'] }},<br>{{ $requestData['city'] }} {{ $requestData['state'] }}, {{ $requestData['zip_code'] }}, USA </td>
+                        <td style="font-size: 21px; padding-bottom:20px; font-family: 'Times', sans-serif; text-transform:capitalize;line-height:1.2;">{{ $requestData['address_1'] }},<br>{{ $requestData['city'] }} {{ $requestData['state'] }}, {{ $requestData['zip_code'] }}, USA </td>
                     </tr>
                     <tr>
-                        <td style="margin-top: 10px; text-transform:capitalize;font-size: 15px;"><span style="font-weight: 500;font-size: 15px;">Marital Status: </span>{{ $requestData['marital_status'] }} </td>
+                        <td style="margin-top: 10px; text-transform:capitalize;font-size: 15px;font-family: 'Times', sans-serif;"><span style="font-weight: 500;font-size: 15px;">Marital Status: </span>{{ $requestData['marital_status'] }} </td>
                     </tr>
                     <tr>
-                        <td style="padding-bottom:15px;font-size: 15px;"> <span style="font-weight: 500;font-size: 15px; ">Exemptions: </span> {{ $requestData['exemptions'] }}</td>
+                        <td style="padding-bottom:15px;font-size: 15px;font-family: 'Times', sans-serif;"> <span style="font-weight: 500;font-size: 15px; ">Exemptions: </span> {{ $requestData['exemptions'] }}</td>
                     </tr>
                 </table>
             </div>
