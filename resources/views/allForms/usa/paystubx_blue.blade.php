@@ -8,7 +8,19 @@
 
     <title>Paystub_blue</title>
 
+
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+        @import url('https://fonts.cdnfonts.com/css/arial-2');
+        @import url('https://fonts.cdnfonts.com/css/times');
+
+         @font-face {
+             font-family: 'Arial', sans-serif;
+        }
+        @font-face {
+            font-family: 'Times New Roman', sans-serif;
+        }
         * {
             padding: 0px;
             margin: 0px;
@@ -46,11 +58,14 @@
             color: #464646;
             font-weight: 500;
             border-right: 2px solid #464646;
+             font-family: 'Arial', sans-serif;
+            font-weight:bold;
         }
 
         .head2 {
             border-right: 2px solid #464646;
             padding: 5px 0 2.2em 0;
+            font-size:14px;
         }
 
         .padding {
@@ -138,9 +153,9 @@
         <div style="max-width: 100%; margin: auto; padding: 10px 10px;">
             <table style="width:100%; border-left:2px solid#464646; border-right:2px solid#464646;background-color:darkgray;color:white;">
                 <tr>
-                    <td style="font-size: 16px;text-align: left;padding:10px 0px 10px 25px;">{{ $requestData['cname'] }}<br>  {{ $requestData['address_1'] }}{{ $requestData['city'] }}{{ $requestData['state'] }}, {{ $requestData['zip_code'] }}, CA</td>
+                    <td style="font-size: 18px;text-align: left;padding:10px 0px 10px 25px;"><span style="font-size: 18px;">{{ $requestData['cname'] }}</span><br>  {{ $requestData['address_1'] }} {{ $requestData['city'] }} {{ $requestData['state'] }}, {{ $requestData['zip_code'] }}, CA</td>
                     <td
-                        style="font-size: 20px;text-align:right;padding:10px 12px 8px 10px;">
+                        style="font-size: 21px;text-align:right;padding:10px 12px 8px 10px;text-transform:uppercase;  font-family: 'Arial', sans-serif;font-weight:bold;">
                         Earnings Statement</td>
                 </tr>
             </table>
@@ -148,7 +163,7 @@
                 <thead style="border-top:none; border-left:2px solid#464646;height:35px;">
                     <td class="padding" colspan="2" style="text-align: left; padding-left:20px; color:black;font-size:15px;">
                         <b>{{ $requestData['emp_name'] }} </b></td>
-                    <td class="padding" colspan="6" style="text-align: left; border-right:2px solid #464646;font-size:15px; color:#464646">
+                    <td class="padding" colspan="6" style="text-align: left; border-right:2px solid #464646;font-size:18px; color:#464646;font-family: 'Roboto', sans-serif;">
                         {{ $requestData['emp_street_1'] }},{{ $requestData['emp_city'] }}
                         {{ $requestData['emp_state'] }}, {{ $requestData['emp_zip_code'] }} </td>
                 </thead>

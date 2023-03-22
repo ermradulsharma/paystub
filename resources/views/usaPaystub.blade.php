@@ -910,7 +910,7 @@
                 $('#emp_street_1').css('border-color', 'gray');
                 $('.0_address_1').remove();
             } else {
-                $("#address_1").val(obj.street_number + ', ' + obj.route);
+                $("#address_1").val(obj.street_number + ' ' + obj.route);
                 $('#emp_street_1').css('border-color', 'gray');
                 $('.0_address_1').remove();
             }
@@ -983,7 +983,7 @@
                 $('#emp_street_1').css('border-color', 'gray');
                 $('.0_emp_street_1').remove();
             } else {
-                $("#emp_street_1").val(obj.street_number + ', ' + obj.route);
+                $("#emp_street_1").val(obj.street_number + ' ' + obj.route);
                 $('#emp_street_1').css('border-color', 'gray');
                 $('.0_emp_street_1').remove();
             }

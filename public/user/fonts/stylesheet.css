@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'MICR Encoding';
+    src: url('MICREncoding.woff2') format('woff2'),
+        url('MICREncoding.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
