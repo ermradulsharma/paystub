@@ -881,15 +881,14 @@
                     for (var i = 0; i < near_place.address_components.length; i++) {
                         for (var j = 0; j < near_place.address_components[i].types.length; j++) {
                             obj[near_place.address_components[i].types[j]] = near_place.address_components[
-                                i].long_name;
+                                i].short_name;
                             if(near_place.address_components[i].types['0'] == 'administrative_area_level_1'){
-                                $('#state_0').val(near_place.address_components[i].short_name);
+                                $('#state').val(near_place.address_components[i].long_name);
                             }
 
                         }
                     }
                     setLocation(obj);
-                    // console.log(obj);
                 }
             });
         });
@@ -925,7 +924,7 @@
                 $("#city").val('');
             }
             if (obj.administrative_area_level_1 != undefined) {
-                $("#state").val(obj.administrative_area_level_1);
+                $("#state_0").val(obj.administrative_area_level_1);
                 $('#state').css('border-color', 'gray');
                 $('.0_state').remove();
             } else {
@@ -959,9 +958,9 @@
                     for (var i = 0; i < near_place.address_components.length; i++) {
                         for (var j = 0; j < near_place.address_components[i].types.length; j++) {
                             obj[near_place.address_components[i].types[j]] = near_place.address_components[
-                                i].long_name;
+                                i].short_name;
                                 if(near_place.address_components[i].types['0'] == 'administrative_area_level_1'){
-                                $('#emp_state_0').val(near_place.address_components[i].short_name);
+                                $('#emp_state').val(near_place.address_components[i].long_name);
                             }
                         }
                     }
@@ -996,15 +995,13 @@
             }
             if (obj.locality != undefined) {
                 $("#emp_city").val(obj.locality);
-                $("#emp_city_1").val(obj.locality);
                 $('#emp_city').css('border-color', 'gray');
                 $(".0_emp_city").remove();
             } else {
                 $("#emp_city").val('');
             }
             if (obj.administrative_area_level_1 != undefined) {
-                $("#emp_state").val(obj.administrative_area_level_1);
-                $("#emp_state_1").val(obj.administrative_area_level_1);
+                $("#emp_state_0").val(obj.administrative_area_level_1);
                 $('#emp_state').css('border-color', 'gray');
                 $(".0_emp_state").remove();
             } else {
@@ -1012,7 +1009,6 @@
             }
             if (obj.postal_code != undefined) {
                 $("#emp_zip_code").val(obj.postal_code);
-                $("#emp_zip_code_1").val(obj.postal_code);
                 $('#emp_zip_code').css('border-color', 'gray');
                 $(".0_emp_zip_code").remove();
             } else {
