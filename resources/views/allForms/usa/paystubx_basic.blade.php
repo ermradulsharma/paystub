@@ -213,7 +213,7 @@
                         <td style="font-size: 20px; font-family: 'Arial', sans-serif;font-weight:bold;"><b>{{ $requestData['cname'] }}</b></td>
                     </tr>
                     <tr>
-                        <td style="font-size: 21px; padding-bottom:20px; font-family: 'Times', sans-serif; text-transform:capitalize;line-height:1.2;">{{ $requestData['address_1'] }},<br>{{ $requestData['city'] }} {{ $requestData['state'] }}, {{ $requestData['zip_code'] }}, USA </td>
+                        <td style="font-size: 18px; padding-bottom:20px; font-family: 'Times', sans-serif; text-transform:capitalize;line-height:1.2;">{{ $requestData['address_1'] }}<br>{{ $requestData['city'] }}, {{ $requestData['state'] }}. {{ $requestData['zip_code'] }}, USA </td>
                     </tr>
                     <tr>
                         <td style="margin-top: 10px; text-transform:capitalize;font-size: 15px;font-family: 'Times', sans-serif;"><span style="font-weight: 500;font-size: 15px;">Marital Status: </span>{{ $requestData['marital_status'] }} </td>
@@ -237,11 +237,11 @@
                         <td><span style="font-weight: 500;font-size: 15px; ">Employee #: </span> <span style="font-size: 15px;"> {{ $requestData['emp_id'] }}</span></td>
                     </tr>
                     <tr>
-                        <td style="padding-top:8px;font-size: 15px;"> {{ $requestData['emp_street_1'] }}, <br> {{ $requestData['emp_city'] }} {{ $requestData['emp_state'] }},{{ $requestData['emp_zip_code'] }}, USA </td>
+                        <td style="padding-top:8px;font-size: 15px;"> {{ $requestData['emp_name'] }} <br> {{ $requestData['emp_street_1'] }} <br> {{ $requestData['emp_city'] }}, {{ $requestData['emp_state'] }}. {{ $requestData['emp_zip_code'] }}, USA </td>
                     </tr>
 
                     <tr>
-                        <td><span style="font-weight: 500;font-size: 15px;">Social Security#:</span> <span style="font-size: 15px;"> ***-**-{{ $requestData['emp_ssn'] }}</span></td>
+                        <td><span style="font-weight: 500;font-size: 15px;">Social Security #: ***-**-</span><span style="font-size: 15px;">{{ $requestData['emp_ssn'] }}</span></td>
                     </tr>
                 </table>
             </div>
