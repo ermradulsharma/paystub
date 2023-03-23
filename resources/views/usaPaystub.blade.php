@@ -108,12 +108,12 @@
                                     <div>
                                         <label for="state" class="lable">State <span class="redColor">*</span>
                                         </label>
-                                        <input type="hidden" name="state" id="state_0">
+                                        {{-- <input type="hidden" name="state" id="state_0"> --}}
                                         <div class="dropdown ">
-                                            <select id="state" class="state dropdown11 removeDiv">
+                                            <select id="state" name="state" class="state dropdown11 removeDiv">
                                                 <option value=""> --- Select State --- </option>
                                                 @foreach ($stateTaxes as $stateTax)
-                                                    <option value="{{ $stateTax->state }}">{{ $stateTax->state }}</option>
+                                                    <option value="{{ $stateTax->state_code }}">{{ $stateTax->state }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -264,13 +264,13 @@
                                         <label for="emp_state" class="lable">State <span class="redColor">*</span>
                                         </label>
                                         <div class="dropdown ">
-                                            <input type="hidden" name="emp_state" id="emp_state_0">
-                                            <select id="emp_state" class=" dropdown11 removeDiv">
+                                            {{-- <input type="hidden" name="emp_state" id="emp_state_0"> --}}
+                                            <select id="emp_state" name="emp_state" class=" dropdown11 removeDiv">
                                                 <div>
                                                     <option class="ff" style="color: #757575;" value="" data-tax="null"> --- Select State --- </option>
                                                 </div>
                                                 @foreach ($stateTaxes as $stateTax)
-                                                    <option value="{{ $stateTax->state }}" data-tax="{{ $stateTax->rate }}">{{ $stateTax->state }}</option>
+                                                    <option value="{{ $stateTax->state_code }}" data-tax="{{ $stateTax->rate }}">{{ $stateTax->state }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -312,7 +312,7 @@
                                             <select name="emp_your_state" id="emp_your_state" class=" dropdown11 tax_rate removeDiv">
                                                 {{-- <option value="">Choose your State</option> --}}
                                                 @foreach ($stateTaxes as $stateTax)
-                                                    <option value="{{ $stateTax->state }}"
+                                                    <option value="{{ $stateTax->state_code }}"
                                                         data-tax="{{ $stateTax->rate }}">{{ $stateTax->state }}</option>
                                                 @endforeach
                                             </select>
@@ -882,9 +882,9 @@
                         for (var j = 0; j < near_place.address_components[i].types.length; j++) {
                             obj[near_place.address_components[i].types[j]] = near_place.address_components[
                                 i].short_name;
-                            if(near_place.address_components[i].types['0'] == 'administrative_area_level_1'){
-                                $('#state').val(near_place.address_components[i].long_name);
-                            }
+                            // if(near_place.address_components[i].types['0'] == 'administrative_area_level_1'){
+                            //     $('#state').val(near_place.address_components[i].long_name);
+                            // }
 
                         }
                     }
@@ -924,7 +924,7 @@
                 $("#city").val('');
             }
             if (obj.administrative_area_level_1 != undefined) {
-                $("#state_0").val(obj.administrative_area_level_1);
+                $("#state").val(obj.administrative_area_level_1);
                 $('#state').css('border-color', 'gray');
                 $('.0_state').remove();
             } else {
@@ -959,9 +959,9 @@
                         for (var j = 0; j < near_place.address_components[i].types.length; j++) {
                             obj[near_place.address_components[i].types[j]] = near_place.address_components[
                                 i].short_name;
-                                if(near_place.address_components[i].types['0'] == 'administrative_area_level_1'){
-                                $('#emp_state').val(near_place.address_components[i].long_name);
-                            }
+                            //     if(near_place.address_components[i].types['0'] == 'administrative_area_level_1'){
+                            //     $('#emp_state').val(near_place.address_components[i].long_name);
+                            // }
                         }
                     }
                     setEmpLocation(obj);
@@ -1001,7 +1001,7 @@
                 $("#emp_city").val('');
             }
             if (obj.administrative_area_level_1 != undefined) {
-                $("#emp_state_0").val(obj.administrative_area_level_1);
+                $("#emp_state").val(obj.administrative_area_level_1);
                 $('#emp_state').css('border-color', 'gray');
                 $(".0_emp_state").remove();
             } else {

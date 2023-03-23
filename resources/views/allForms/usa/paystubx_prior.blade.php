@@ -1,139 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <title>paystubs-prior</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Paystubs Prior</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    {{-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script> --}}
     <style>
-        #watermark {
-            position: fixed;
-            top: 10cm;
-            bottom: 0cm;
-            left: 3cm;
-            width: 500px;
-            height: 400px;
-            z-index: -1000;
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+        @font-face {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        @font-face {
+            font-family: 'MICR', sans-serif;
+            src: url("{{asset('fonts/micr-encoding.regular.ttf')}}") format('ttf');
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td {
+            padding: 3px;
+            font-size: 12px;
+        }
+
+        th {
+            font-size: 13px;
+        }
+
+        .row1::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .column1 {
+            float: left;
+            width: 55%;
+            padding-right: 10px;
+            margin-right: 20px;
+
+        }
+
+        .column2 {
+            float: left;
+            width: 38%;
+
+            padding-left: 5px;
+        }
+
+        .row2::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .col1 {
+            float: left;
+            width: 45%;
+            padding-right: 5px;
+        }
+
+        .col2 {
+            float: left;
+            width: 50%;
+            padding-left: 5px;
+        }
+
+        .shrapdana {
+            max-width: 100%;
+        }
+
+        .border-line {
+            position: relative;
+        }
+
+        .border-line:before {
+            position: absolute;
+            content: "";
+            top: 180px;
+            left: 80px;
+            right: 0;
+            background-image: url("images/border-line.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+            max-width: 550px;
+            height: 1px;
+            margin: 0 auto;
+
+        }
+
+        .watermark {
+            position: absolute;
+            width: 100%;
+            height: 700px;
+            top: 50px;
+            left: 0px;
+            right: 0;
+            background-image: url("http://44.202.105.74/user/water.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+
+
+        .bg-img2 {
+            position: relative;
         }
     </style>
 </head>
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200&display=swap');
-
-    @font-face {
-        font-family: 'Poppins', sans-serif;
-    }
-
-    @font-face {
-        font-family: 'MICR Encoding';
-        src: url('user/fonts/MICREncoding.woff') format('woff');
-        font-weight: bold;
-
-
-    }
-
-    body {
-        font-family: 'MICR Encoding';
-    }
-
-    table {
-        border-collapse: collapse;
-        width: 100%;
-    }
-
-    td {
-        padding: 3px;
-        font-size: 12px;
-    }
-
-    th {
-        font-size: 13px;
-    }
-
-    .row1::after {
-        content: "";
-        clear: both;
-        display: table;
-    }
-
-    .column1 {
-        float: left;
-        width: 55%;
-        padding-right: 10px;
-        margin-right: 20px;
-
-    }
-
-    .column2 {
-        float: left;
-        width: 38%;
-
-        padding-left: 5px;
-    }
-
-    .row2::after {
-        content: "";
-        clear: both;
-        display: table;
-    }
-
-    .col1 {
-        float: left;
-        width: 45%;
-        padding-right: 5px;
-    }
-
-    .col2 {
-        float: left;
-        width: 50%;
-        padding-left: 5px;
-    }
-
-    .shrapdana {
-        max-width: 100%;
-    }
-
-    .border-line {
-        position: relative;
-    }
-
-    .border-line:before {
-        position: absolute;
-        content: "";
-        top: 180px;
-        left: 80px;
-        right: 0;
-        background-image: url("images/border-line.png");
-        background-repeat: no-repeat;
-        background-size: cover;
-        width: 100%;
-        max-width: 550px;
-        height: 1px;
-        margin: 0 auto;
-
-    }
-
-    .watermark {
-        position: absolute;
-        width: 100%;
-        height: 700px;
-        top: 50px;
-        left: 0px;
-        right: 0;
-        background-image: url("http://44.202.105.74/user/water.png");
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-
-    .micrcode {
-        font-family: 'MICR Encoding';
-
-    }
-
-    .bg-img2 {
-        position: relative;
-    }
-</style>
-
 <body>
     <main class="bg-img2">
         @guest
@@ -186,11 +168,11 @@
             <table style="padding-top:60px;margin-top: 30px;">
                 <tr>
                     <td style="font-size:16px; padding-right:30px;">Memo: </td>
-                    <td colspan="2" style="font-size: 23px; letter-spacing: -1.5px; padding-right:50px;">FOR RECORDS PURPOSES ONLY</td>
+                    <td colspan="2" style="font-size: 23px; letter-spacing: -1.5px; padding-right:50px; font-family: 'Amiri', serif; ">FOR RECORDS PURPOSES ONLY</td>
                     <td>----------------------------------------------------------------</td>
                 </tr>
-                <tr>
-                    <td class="micrcode" colspan="3" style="padding-top:30px; font-size:20px; text-align:right; font-family: cursive; letter-spacing:3px;">"98745687T58T43098584598"</td>
+                <tr class="micrcode">
+                    <td class="micrcode" colspan="3" style="padding-top:30px; font-size:20px; text-align:right; letter-spacing:3px;">"98745687T58T43098584598"</td>
                 </tr>
             </table>
         </div>
@@ -305,5 +287,4 @@
         </div>
     </main>
 </body>
-
 </html>
