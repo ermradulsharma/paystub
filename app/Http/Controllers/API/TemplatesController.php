@@ -286,6 +286,9 @@ class TemplatesController extends Controller
         if (!array_key_exists('subcription_type', $requestData)) {
             $requestData += array('subcription_type' => '0');
         }
+        if (!array_key_exists('expiryDate', $requestData)) {
+            $requestData += array('expiryDate' => Carbon::now());
+        }
         $userObj = User::find(Auth::user()->id);
         if ($requestData['type'] == 1) {
             if ($requestData['subcription_type'] == 1) {
