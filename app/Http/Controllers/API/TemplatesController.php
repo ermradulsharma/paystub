@@ -282,31 +282,40 @@ class TemplatesController extends Controller
 
     public function subscription(Request $request)
     {
-        $requestData = $request->all();
-        if (!array_key_exists('subcription_type', $requestData)) {
-            $requestData += array('subcription_type' => '0');
-        }
-        if (!array_key_exists('expiryDate', $requestData)) {
-            $requestData += array('expiryDate' => Carbon::now());
-        }
-        $userObj = User::find(Auth::user()->id);
-        if ($requestData['type'] == 1) {
-            if ($requestData['subcription_type'] == 1) {
-                $userObj->expiryDate = Carbon::now()->addMonth();
-            } else  if ($requestData['subcription_type'] == 3) {
-                $userObj->expiryDate = Carbon::now()->addMonths(3);
-            } else  if ($requestData['subcription_type'] == 6) {
-                $userObj->expiryDate = Carbon::now()->addMonths(6);
-            } else {
-                $userObj->expiryDate = Carbon::now()->addDay();
+        $response['message'] = "";
+        $response['status'] = STATUS_BAD_REQUEST;
+        $response['success'] = FALSE;
+        try {
+            $requestData = $request->all();
+            // if (!array_key_exists('subcription_type', $requestData)) {
+            //     $requestData += array('subcription_type' => '0');
+            // }
+            if (!array_key_exists('expiryDate', $requestData)) {
+                $requestData += array('expiryDate' => Carbon::now());
             }
-        } else {
-            $userObj->expiryDate = "";
+            $userObj = User::find(Auth::user()->id);
+            if ($requestData['type'] == 1) {
+                if ($requestData['subcription_type'] == 1) {
+                    $userObj->expiryDate = Carbon::now()->addMonth();
+                } else  if ($requestData['subcription_type'] == 3) {
+                    $userObj->expiryDate = Carbon::now()->addMonths(3);
+                } else  if ($requestData['subcription_type'] == 6) {
+                    $userObj->expiryDate = Carbon::now()->addMonths(6);
+                } else {
+                    $userObj->expiryDate = Carbon::now()->addDay();
+                }
+            } else {
+                $userObj->expiryDate = "";
+            }
+            $userObj->save();
+            $response['success'] = true;
+            $response['message'] = "Data saved successfully";
+            $response['status'] = STATUS_OK;
+        } catch (Exception $e) {
+            $response['message'] = $e->getMessage() . ' Line No ' . $e->getLine() . ' in File' . $e->getFile();
+            Log::error($e->getTraceAsString());
+            $response['status'] = STATUS_GENERAL_ERROR;
         }
-        $userObj->save();
-        $response['success'] = true;
-        $response['message'] = "Data saved successfully";
-        $response['status'] = STATUS_OK;
         return response()->json($response, $response['status']);
     }
 }
