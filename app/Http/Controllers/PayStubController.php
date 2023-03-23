@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Currency;
 use App\Models\Deduction;
 use App\Models\PaySlip;
+use App\Models\Plan;
 use App\Models\StateTax;
 use App\Models\Template;
 use Illuminate\Http\Request;
@@ -67,6 +68,7 @@ class PayStubController extends Controller
 
     public function prizing(Request $request)
     {
-        return view('lists.prizing');
+        $plans = Plan::orderBy('id')->get();
+        return view('lists.prizing',compact('plans'));
     }
 }

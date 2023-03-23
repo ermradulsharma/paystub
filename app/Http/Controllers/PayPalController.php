@@ -3,6 +3,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Srmklive\PayPal\Services\PayPal as PayPalClient;
 use Session;
+use App\Models\Plan;
+use App\Models\Subcription;
+use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
+
 class PayPalController extends Controller
 {
     /**
@@ -32,21 +37,22 @@ class PayPalController extends Controller
                 ->route('prizing')
                 ->with('error', 'Please choose plan.');
         }
-        $prize = 00.00;
-        if($request->plan == 1){
-            $prize = 09.99;
-        }else if($request->plan == 2){
-            $prize = 19.99;
-        }else if($request->plan == 3){
-            $prize = 29.99;
+        $planId = $request->plan;
+        $planDetail = Plan::where('id',$planId)->first();
+        if(!$planDetail){
+            redirect()
+            ->route('prizing')
+            ->with('error', 'Please choose plan.');
         }
+        $prize = $planDetail->prize;
+
         $provider = new PayPalClient;
         $provider->setApiCredentials(config('paypal'));
         $paypalToken = $provider->getAccessToken();
         $response = $provider->createOrder([
             "intent" => "CAPTURE",
             "application_context" => [
-                "return_url" => route('successTransaction'),
+                "return_url" => route('successTransaction',$planId),
                 "cancel_url" => route('cancelTransaction'),
             ],
             "purchase_units" => [
@@ -80,13 +86,33 @@ class PayPalController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function successTransaction(Request $request)
+    public function successTransaction(Request $request,$planId)
     {
         $provider = new PayPalClient;
         $provider->setApiCredentials(config('paypal'));
         $provider->getAccessToken();
         $response = $provider->capturePaymentOrder($request['token']);
+
         if (isset($response['status']) && $response['status'] == 'COMPLETED') {
+            $expiry_date = date('Y-m-d H:i:s');
+            $planDetail = Plan::where('id',$planId)->first();
+            $expiry_date = date('Y-m-d', strtotime("+".$planDetail->plan_duration)).' 23:59:59';
+            if($planDetail->plan_duration == 'unlimited'){
+                $expiry_date = '';
+            }else if($planDetail->plan_duration == '24 Hours'){
+                $expiry_date = date('Y-m-d').' 23:59:59';
+            }
+            $subcriptionObj                         = new Subcription();
+            $subcriptionObj->user_id                = Auth::user()->id;
+            $subcriptionObj->plan_id                = $planId;
+            $subcriptionObj->transaction_id         = $response['id'];
+            $subcriptionObj->start_date             = date('Y-m-d H:i:s');
+            $subcriptionObj->expiry_date            = $expiry_date;
+            $subcriptionObj->transaction_status     = $response['status'] ?? '';
+            $subcriptionObj->created_at             = date('Y-m-d H:i:s');
+            $subcriptionObj->updated_at             = date('Y-m-d H:i:s');
+            $subcriptionObj->save();
+
             return redirect()
                 ->route('prizing')
                 ->with('message', 'Transaction complete.');

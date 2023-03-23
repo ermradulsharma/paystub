@@ -78,7 +78,7 @@ Route::post('templates', [TemplateFormController::class, 'templates'])->name('te
 Route::post('canada/templates', [TemplateFormController::class, 'canadaTemplates'])->name('canada.templates');
 Route::post('uk/templates', [TemplateFormController::class, 'unitedKingdomTemplates'])->name('uk.templates');
 
-Route::group(['middleware' => ['auth']], function () {
+Route::group(['middleware' => ['auth'],'namespace'=>'App\Http\Controllers'], function () {
     Route::post('logout', [LoginController::class, 'logout'])->name('logout');
     Route::group(['name' => 'admin', 'prefix' => 'admin', 'middleware' => ['userCheck']], function () {
         Route::get('welcome', function () {
@@ -106,11 +106,12 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('invoiceEdit/{id}', [TemplateFormController::class, 'edit'])->name('invoiceEdit');
     Route::get('prizing', [PayStubController::class, 'prizing'])->name('prizing');
     Route::get('subscription', [TemplateFormController::class, 'subscription'])->name('subscription');
+    Route::resource('admin/plans', 'PlanController');
 
 
 });
 
 Route::get('create-transaction', [PayPalController::class, 'createTransaction'])->name('createTransaction');
     Route::get('process-transaction', [PayPalController::class, 'processTransaction'])->name('processTransaction');
-    Route::get('success-transaction', [PayPalController::class, 'successTransaction'])->name('successTransaction');
+    Route::get('success-transaction/{planId}', [PayPalController::class, 'successTransaction'])->name('successTransaction');
     Route::get('cancel-transaction', [PayPalController::class, 'cancelTransaction'])->name('cancelTransaction');
