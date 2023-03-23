@@ -264,15 +264,13 @@
                                         <label for="emp_state" class="lable">State <span class="redColor">*</span>
                                         </label>
                                         <div class="dropdown ">
-                                            <select name="emp_state" id="emp_state" class=" dropdown11 removeDiv">
+                                            <input type="hidden" name="emp_state" id="emp_state_0">
+                                            <select id="emp_state" class=" dropdown11 removeDiv">
                                                 <div>
-                                                    <option class="ff" style="color: #757575;" value=""
-                                                        data-tax="null"> ---
-                                                        Select State --- </option>
+                                                    <option class="ff" style="color: #757575;" value="" data-tax="null"> --- Select State --- </option>
                                                 </div>
                                                 @foreach ($stateTaxes as $stateTax)
-                                                    <option value="{{ $stateTax->state }}"
-                                                        data-tax="{{ $stateTax->rate }}">{{ $stateTax->state }}</option>
+                                                    <option value="{{ $stateTax->state }}" data-tax="{{ $stateTax->rate }}">{{ $stateTax->state }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -309,11 +307,9 @@
                             <div class="row mb-3">
                                 <div class="col-md-3 mt-4">
                                     <div>
-                                        <label for="emp_your_state" class="lable">SELECT YOUR STATE <span
-                                                class="redColor">*</span> </label>
+                                        <label for="emp_your_state" class="lable">SELECT YOUR STATE <span class="redColor">*</span> </label>
                                         <div class="dropdown ">
-                                            <select name="emp_your_state" id="emp_your_state"
-                                                class=" dropdown11 tax_rate removeDiv">
+                                            <select name="emp_your_state" id="emp_your_state" class=" dropdown11 tax_rate removeDiv">
                                                 {{-- <option value="">Choose your State</option> --}}
                                                 @foreach ($stateTaxes as $stateTax)
                                                     <option value="{{ $stateTax->state }}"
@@ -893,7 +889,7 @@
                         }
                     }
                     setLocation(obj);
-                    console.log(obj);
+                    // console.log(obj);
                 }
             });
         });
@@ -964,6 +960,9 @@
                         for (var j = 0; j < near_place.address_components[i].types.length; j++) {
                             obj[near_place.address_components[i].types[j]] = near_place.address_components[
                                 i].long_name;
+                                if(near_place.address_components[i].types['0'] == 'administrative_area_level_1'){
+                                $('#emp_state_0').val(near_place.address_components[i].short_name);
+                            }
                         }
                     }
                     setEmpLocation(obj);
