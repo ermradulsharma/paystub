@@ -38,6 +38,6 @@ Route::group(['namespace' => 'Api', 'middleware' => ['\App\Http\Middleware\LogAf
         Route::post('edit-form-data', [TemplatesController::class, 'editFormData']);
         Route::post('download-pdf', [TemplatesController::class, 'generatePdf']);
         Route::post('subscription', [TemplatesController::class, 'subscription']);
-        Route::post('invoice', [TemplatesController::class, 'invoiceMail']);
+        // Route::post('invoice', [TemplatesController::class, 'invoiceMail']);
     });
 });

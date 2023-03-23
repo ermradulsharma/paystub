@@ -96,6 +96,11 @@ class TemplatesController extends Controller
             }
             $path = public_path() . '/uploads/mailData';
             File::isDirectory($path) or File::makeDirectory($path, 0777, true, true);
+
+            if (Auth::user()->expiryDate != '') {
+                $requestData['watermark'] = 'no';
+            }
+
             $invoiceData['requestData'] = $requestData;
             $pdf = PDF::loadView('allForms/' . $request->form_type . '/' . $pageName, $invoiceData)->setPaper('a4', 'portrait');
             $fileName =  date('_d_m_Y_h_i_s') . '.pdf';
@@ -219,7 +224,7 @@ class TemplatesController extends Controller
         return response()->json($response, $response['status']);
     }
 
-    public function invoiceMail(Request $request)
+    /* public function invoiceMail(Request $request)
     {
 
         $response['message'] = "";
@@ -240,7 +245,7 @@ class TemplatesController extends Controller
 
                 $path = public_path('/uploads/mailData');
                 File::isDirectory($path) or File::makeDirectory($path, 0777, true, true);
-                $invoiceData['requestData'] = $requestData;
+                return        $invoiceData['requestData'] = $requestData;
                 $pdf = PDF::loadView('allForms/' . $requestData['form_type'] . '/' . $pageName, $invoiceData)->setPaper('a4', 'portrait');
                 $fileName =  date('_d_m_Y_h_i_s') . '.pdf';
                 $pdf->save($path . '/' . $fileName);
@@ -273,7 +278,7 @@ class TemplatesController extends Controller
             $response['message'] = $e->getMessage() . ' Line No ' . $e->getLine() . ' in File' . $e->getFile();
         }
         return response()->json($response, $response['status']);
-    }
+    } */
 
     public function subscription(Request $request)
     {
