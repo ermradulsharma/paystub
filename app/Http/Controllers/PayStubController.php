@@ -68,9 +68,13 @@ class PayStubController extends Controller
     }
 
     public function prizing(Request $request)
-    {   dump(Carbon::now());
-    {   dd(Carbon::now()->addDay(1));
-        $plans = Plan::orderBy('id')->get();
-        return view('lists.prizing',compact('plans'));
+    {
+        try{
+            $plans = Plan::orderBy('id')->get();
+            return view('lists.prizing',compact('plans'));
+        }catch(\Exception $e){
+            Log::info('Prizing Function', array('Exception' => $e->getMessage()));
+            return redirect()->back()->with('error',$e->getMessage());
+        }
     }
 }

@@ -17,9 +17,9 @@ return new class extends Migration
             $table->id();
             $table->string('name',150)->nullable(false);
             $table->double('price',2)->nullable(false);
-            $table->string('plan_duration',150)->nullable(false);
+            $table->string('plan_duration')->nullable(false);
+            $table->enum('plan_type',['hourly','daily','monthly','yearly'])->nullable(false);
             $table->string('description');
-
             $table->bigInteger('created_by')->nullable(false);
             $table->timestamps();
         });
