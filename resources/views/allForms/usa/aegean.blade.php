@@ -187,7 +187,7 @@
                     <td style="padding-top:0px; padding-bottom:0; font-size:21px; text-transform:Captilize; font-family: Arial, Helvetica, sans-serif; font-weight:bold ">{{ $requestData['cname'] }} </td>
                 </tr>
                 <tr>
-                    <td class="address" style="font-size:16px; text-transform:uppercase; font-weight:400; line-height:1.2; color:#000; letter-spacing:-0.5px; padding-top:0; padding-bottom:0; font-family: Arial, Helvetica, sans-serif; ">{{ $requestData['address_1'] }} <br> {{ $requestData['city'] }}, {{ $requestData['zip_code'] }}<br> USA </td>
+                    <td class="address" style="font-size:16px; text-transform:uppercase; font-weight:400; line-height:1.2; color:#000; letter-spacing:-0.5px; padding-top:0; padding-bottom:0; font-family: Arial, Helvetica, sans-serif; ">{{ $requestData['address_1'] }} <br> {{ $requestData['city'] }} {{ $requestData['state'] }}. {{ $requestData['zip_code'] }}<br> USA </td>
                     <td style=" font-size:20px; vertical-align: center; font-family: Arial, Helvetica, sans-serif;  font-weight:bold;" class="earning">Earnings Statement</td>
                 </tr>
                 <tr>
@@ -200,7 +200,7 @@
                 <table>
                     <tr>
                         <td style="width: 40%;"> <p style="font-size:14px;font-weight:400; font-family: Arial, Helvetica, sans-serif; ">SSN: XXX-XX-{{$requestData['emp_ssn'] }}</p> <p style="padding: 0; margin:0;font-weight:400; font-size:14px; font-family: Arial, Helvetica, sans-serif; ">Stub No: {{ $requestData['stub_no'] }}</p></td>
-                        <td class="earning" style="width: 60%;font-weight:400 !important;padding-bottom:0px !important;padding-top:0px !important;margin:0px;font-size:16px; font-family: Arial, Helvetica, sans-serif; color:#f7f0f9;">{{ $requestData['emp_name'] }} <br>Emp.ID. {{ $requestData['emp_id'] }} <br> {{ $requestData['emp_street_1'] }}, {{ $requestData['emp_city'] }} {{ $requestData['emp_zip_code'] }}</td>
+                        <td class="earning" style="width: 60%;font-weight:400 !important;padding-bottom:0px !important;padding-top:0px !important;margin:0px;font-size:16px; font-family: Arial, Helvetica, sans-serif; color:#f7f0f9;">{{ $requestData['emp_name'] }} <br>Emp.ID. {{ $requestData['emp_id'] }} <br> {{ $requestData['emp_street_1'] }}, {{ $requestData['emp_city'] }}, {{ $requestData['emp_state'] }} {{ $requestData['emp_zip_code'] }}</td>
                     </tr>
                 </table>
             </section>
@@ -280,7 +280,7 @@
                         </tr>
                     </tfoot>
                 </table>
-                <p style="margin-top:25px; color:#587193; font-size:14px;font-family: Arial, Helvetica, sans-serif; ">Your taxes and deductions for this period are<span style="color: #555555">{{ $requestData['currency'] }} {{ number_format($requestData['deduction_tax'], 2) }}</span></p>
+                <p style="margin-top:25px; color:#587193; font-size:14px;font-family: Arial, Helvetica, sans-serif; ">Your taxes and deductions for this period are<span style="color: #555555"> {{ $requestData['currency'] }}{{ number_format($requestData['deduction_tax'], 2) }}</span></p>
             </section>
 
 
@@ -291,26 +291,11 @@
                     <td>
                         <table style="width:95%; padding-bottom:72px;">
                             <tr>
-                                <td style=" padding-top:20px;">
-                                    <p
-                                        style="font-size: 11px; margin: 0; text-transform:uppercase;color:black;font-weight:500;">
-                                        {{
-                                        $requestData['cname'] }}</p>
-                                    <p
-                                        style="font-size: 11px; margin: 0;text-transform:uppercase;color:black;font-weight:500;">
-                                        {{
-                                        $requestData['address_1'] }}</p>
-                                    <P
-                                        style="font-size: 11px; margin: 0;text-transform:uppercase;color:black;font-weight:500;">
-                                        {{
-                                        $requestData['address_2'] }}</P>
-                                    <P
-                                        style="font-size: 11px; margin: 0;text-transform:uppercase;color:black;font-weight:500;">
-                                        {{
-                                        $requestData['city'] }}
-                                        {{ $requestData['state'] }},
-                                        {{ $requestData['zip_code'] }}
-                                    </P>
+                                <td style="padding-top:20px;">
+                                    <p style="font-size: 11px; margin: 0; text-transform:uppercase; color:black; font-weight:500;"> {{ $requestData['cname'] }}</p>
+                                    <p style="font-size: 11px; margin: 0; text-transform:uppercase; color:black; font-weight:500;"> {{ $requestData['address_1'] }}</p>
+                                    <P style="font-size: 11px; margin: 0; text-transform:uppercase; color:black; font-weight:500;"> {{ $requestData['address_2'] }}</P>
+                                    <P style="font-size: 11px; margin: 0; text-transform:uppercase; color:black; font-weight:500;"> {{ $requestData['city'] }} {{ $requestData['state'] }}. {{ $requestData['zip_code'] }}  </P>
                                 </td>
                                 <td style="padding-top:20px; text-align:right; padding-right:20px;">
                                     <p style="font-size: 13px; margin-bottom: 7px;font-weight:400;">
