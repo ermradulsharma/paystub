@@ -9,6 +9,11 @@
     <title>Document</title>
 
     <style>
+         @import url('https://fonts.cdnfonts.com/css/arial-2');
+       @font-face {
+            font-family: 'Arial', sans-serif;
+           font-weight:400;
+       }
         .grid-container {
             display: grid;
             grid-template-columns: 50% 50%;
@@ -225,10 +230,10 @@
                     <th></th>
                 </tr>
                 <tr>
-                    <td class="address" style="text-transform:none; font-weight:600;line-height:1.5; color:#000;letter-spacing:-0.5px;">
-                    <p style="padding: 0; margin:0;font-weight:500; font-size:30px;"> {{ $requestData['cname'] }}</p>
+                    <td class="address" style="text-transform:none;  color:#000;letter-spacing:-0.5px;text-transform:capitalize;">
+                    <p style="padding: 0; margin:0; font-size:30px;font-family: Arial, Helvetica, sans-serif; font-weight:400;"> {{ $requestData['cname'] }}</p>
 
-                        <p style="padding: 0; margin:0;font-size:22px; font-weight:400;">{{ $requestData['address_1'] }} <br>
+                        <p style="padding: 0; margin:0;font-size:22px; font-weight:400;font-family: Arial, Helvetica, sans-serif;line-height:1;">{{ $requestData['address_1'] }} <br>
                             {{ $requestData['city'] }}, {{ $requestData['zip_code'] }}</p>
                     </td>
 
@@ -271,8 +276,8 @@
             <section style="padding-top: 16px; width:400px;">
                 <table>
                     <tr>
-                        <td style="color: #515c6b;  vertical-align:top;"><p style="font-size:18px;">Pay to the order of</p></td>
-                        <td style="text-transform: uppercase;font-size:16px; padding-left:30px;"><p>{{ $requestData['emp_street_1'] }}<br>{{ $requestData['emp_city'] }}<br>{{ $requestData['emp_zip_code'] }} </p></td>
+                        <td style="color: #515c6b;  vertical-align:top;"><p style="font-size:18px;font-family: Arial, Helvetica, sans-serif;">Pay to the order of</p></td>
+                        <td style="text-transform: uppercase;font-size:16px; padding-left:30px;font-family: Arial, Helvetica, sans-serif;background-color:red;"><p>{{ $requestData['emp_street_1'] }}<br>{{ $requestData['emp_city'] }}<br>{{ $requestData['emp_zip_code'] }} </p></td>
                     </tr>
                 </table>
             </section>
