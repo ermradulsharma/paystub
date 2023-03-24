@@ -11,7 +11,6 @@
         @import url('https://fonts.cdnfonts.com/css/arial-2');
         @font-face {
              font-family: Arial, Helvetica, sans-serif;
-            font-weight:400;
         }
     </style>
     <style>
@@ -104,7 +103,7 @@
         }
 
         .sidebar {
-            background-image: url("images/blue-right.png");
+            background-image: url("images/long1.png");
             background-repeat: no-repeat;
             background-size: contain;
             width: 100%;
@@ -292,12 +291,12 @@
                         <table style="width:95%; padding-bottom:72px;">
                             <tr>
                                 <td style="padding-top:20px;">
-                                    <p style="font-size: 11px; margin: 0; text-transform:uppercase; color:black; font-weight:500;"> {{ $requestData['cname'] }}</p>
-                                    <p style="font-size: 11px; margin: 0; text-transform:uppercase; color:black; font-weight:500;"> {{ $requestData['address_1'] }}</p>
-                                    <P style="font-size: 11px; margin: 0; text-transform:uppercase; color:black; font-weight:500;"> {{ $requestData['address_2'] }}</P>
-                                    <P style="font-size: 11px; margin: 0; text-transform:uppercase; color:black; font-weight:500;"> {{ $requestData['city'] }} {{ $requestData['state'] }}. {{ $requestData['zip_code'] }}  </P>
+                                    <p style="font-size: 14px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:capitalize;font-weight:400;"> {{ $requestData['cname'] }}</p>
+                                    <p style="font-size: 12px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:400;"> {{ $requestData['address_1'] }}</p>
+                                    <P style="font-size: 12px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:400;"> {{ $requestData['address_2'] }}</P>
+                                    <P style="font-size: 12px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:400;"> {{ $requestData['city'] }} {{ $requestData['state'] }}. {{ $requestData['zip_code'] }}  </P>
                                 </td>
-                                <td style="padding-top:20px; text-align:right; padding-right:20px;">
+                                <td style="padding-top:30px; text-align:right; padding-right:10px;">
                                     <p style="font-size: 13px; margin-bottom: 7px;font-weight:400;">
                                         <span>00000{{ $requestData['advice_number'] }}</span>
                                     </p>
