@@ -115,16 +115,15 @@
 
         }
         .bottom{
-            background-image: url("images/blue-bottom.png");
+            background-image: url("images/bottom-white0.png");
             background-repeat: no-repeat;
-            background-size: contain;
+            background-size: cover;
             width: 100%;
-            height: 100%;
+            height: 4%;
             position:fixed;
             z-index: 5;
             left:13px;
             top:101%;
-
 
         }
 
@@ -183,10 +182,10 @@
         <section class="invoiceborder">
             <table>
                 <tr>
-                    <td style="padding-top:0px; padding-bottom:0; font-size:21px; text-transform:Captilize; font-family: Arial, Helvetica, sans-serif; font-weight:bold ">{{ $requestData['cname'] }} </td>
+                    <td style="padding-top:0px; padding-bottom:0; font-size:21px; text-transform:capitalize;font-family: Arial, Helvetica, sans-serif; font-weight:bold ">{{ $requestData['cname'] }} </td>
                 </tr>
                 <tr>
-                    <td class="address" style="font-size:16px; text-transform:uppercase; font-weight:400; line-height:1.2; color:#000; letter-spacing:-0.5px; padding-top:0; padding-bottom:0; font-family: Arial, Helvetica, sans-serif; ">{{ $requestData['address_1'] }} <br> {{ $requestData['city'] }} {{ $requestData['state'] }}. {{ $requestData['zip_code'] }}<br> USA </td>
+                    <td class="address" style="font-size:15px; text-transform:uppercase; font-weight:400; line-height:1.2; color:#000; letter-spacing:-0.5px; padding-top:0; padding-bottom:0; font-family: Arial, Helvetica, sans-serif; ">{{ $requestData['address_1'] }} <br> {{ $requestData['city'] }} {{ $requestData['state'] }}. {{ $requestData['zip_code'] }}<br> USA </td>
                     <td style=" font-size:20px; vertical-align: center; font-family: Arial, Helvetica, sans-serif;  font-weight:bold;" class="earning">Earnings Statement</td>
                 </tr>
                 <tr>

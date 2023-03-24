@@ -277,7 +277,7 @@
                 <table>
                     <tr>
                         <td style="color: #515c6b;  vertical-align:top;"><p style="font-size:18px;font-family: Arial, Helvetica, sans-serif;">Pay to the order of</p></td>
-                        <td style="text-transform: uppercase;font-size:16px; padding-left:30px;font-family: Arial, Helvetica, sans-serif;background-color:red;"><p>{{ $requestData['emp_street_1'] }}<br>{{ $requestData['emp_city'] }}<br>{{ $requestData['emp_zip_code'] }} </p></td>
+                        <td style="text-transform: capitalize;font-size:20px; color:#1a1a1a;"><p style="font-family: Arial, Helvetica, sans-serif;">{{ $requestData['emp_street_1'] }}<br>{{ $requestData['emp_city'] }}<br>{{ $requestData['emp_zip_code'] }} </p></td>
                     </tr>
                 </table>
             </section>
@@ -286,10 +286,10 @@
                     <div class="col1">
                         <table style="width:100%;">
                             <tr>
-                                <th colspan="4" style="padding-top: 41px;">Company Intormation</th>
+                                <th colspan="4" style="padding-top: 41px;font-family: Arial, Helvetica, sans-serif;font-size:13px;">Company Intormation</th>
                             </tr>
                             <tr>
-                                <td colspan="4" class="address" style="padding-left: 11px; text-transform:uppercase;">{{ $requestData['cname'] }} <br> {{ $requestData['address_1'] }} <br> {{ $requestData['city'] }}, {{ $requestData['zip_code'] }} <br> {{ $requestData['tel'] }} </td>
+                                <td colspan="4" class="address" style="padding-left: 11px; text-transform:capitalize;font-family: Arial, Helvetica, sans-serif;">{{ $requestData['cname'] }} <br> {{ $requestData['address_1'] }} <br> {{ $requestData['city'] }}, {{ $requestData['zip_code'] }} <br> {{ $requestData['tel'] }} </td>
                             </tr>
                         </table>
                     </div>
@@ -297,7 +297,7 @@
                     <div class="col2">
                         <table style="width:100%;">
                             <tr>
-                                <td style="color:#1c3d86; font-size:18px; font-weight:600;"> Earnings Statement</td>
+                                <td style="color:#1c3d86; font-size:18px; font-weight:bold;font-family: Arial, Helvetica, sans-serif;"> Earnings Statement</td>
                             </tr>
                         </table>
                     </div>
@@ -315,7 +315,7 @@
 
                     </tr>
                     <tr>
-                        <td style="text-transform: uppercase;padding:10px 0px;"> {{ $requestData['emp_street_1'] }}<br>{{ $requestData['emp_city'] }}, {{ $requestData['emp_zip_code'] }} </td>
+                        <td style="text-transform:capitalize;padding:10px 0px;"> {{ $requestData['emp_street_1'] }}<br>{{ $requestData['emp_city'] }}, {{ $requestData['emp_zip_code'] }} </td>
                         <td> {{ $requestData['emp_ssn'] }}</td>
                         <td> {{ $requestData['emp_id'] }}</td>
                         <td> {{ date('m/d/Y', strtotime($requestData['pay_start'])) }} </td>
