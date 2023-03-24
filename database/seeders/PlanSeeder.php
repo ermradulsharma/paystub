@@ -20,7 +20,7 @@ class PlanSeeder extends Seeder
             $plans = array(
                 [
                     'name'              => '24 Hours',
-                    'prize'             => '3.99',
+                    'price'             => '3.99',
                     "plan_duration"     => '24 Hours',
                     "description"       => 'Unlimited Paystub Access',
                     "created_by"        => 1,
@@ -30,7 +30,7 @@ class PlanSeeder extends Seeder
                 ],
                 [
                     'name'              => '1 Month',
-                    'prize'             => '9.99',
+                    'price'             => '9.99',
                     "plan_duration"     => '1 month',
                     "description"       => 'Unlimited Paystub Access',
                     "created_by"        => 1,
@@ -39,7 +39,7 @@ class PlanSeeder extends Seeder
                 ],
                 [
                     'name'              => '3 Month',
-                    'prize'             => '19.99',
+                    'price'             => '19.99',
                     "plan_duration"     => '3 month',
                     "description"       => 'Unlimited Paystub Access, save 33%',
                     "created_by"        => 1,
@@ -48,7 +48,7 @@ class PlanSeeder extends Seeder
                 ],
                 [
                     'name'              => '6 Month',
-                    'prize'             => '29.99',
+                    'price'             => '29.99',
                     "plan_duration"     => '6 month',
                     "description"       => 'Unlimited Paystub Access, save 53%',
                     "created_by"        => 1,
@@ -57,7 +57,7 @@ class PlanSeeder extends Seeder
                 ],
                 [
                     'name'              => 'Life Time',
-                    'prize'             => '99.99',
+                    'price'             => '99.99',
                     "plan_duration"     => 'unlimited',
                     "description"       => 'Unlimited Paystub Access',
                     "created_by"        => 1,

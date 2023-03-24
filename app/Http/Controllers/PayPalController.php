@@ -44,7 +44,7 @@ class PayPalController extends Controller
             ->route('prizing')
             ->with('error', 'Please choose plan.');
         }
-        $prize = $planDetail->prize;
+        $price = $planDetail->price;
 
         $provider = new PayPalClient;
         $provider->setApiCredentials(config('paypal'));
@@ -59,7 +59,7 @@ class PayPalController extends Controller
                 0 => [
                     "amount" => [
                         "currency_code" => "USD",
-                        "value" => $prize
+                        "value" => $price
                     ]
                 ]
             ]
