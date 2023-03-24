@@ -104,7 +104,7 @@
         }
 
         .sidebar {
-            background-image: url("images/right01.png");
+            background-image: url("images/photopea1.png");
             background-repeat: no-repeat;
             background-size: contain;
             width: 100%;
@@ -116,7 +116,7 @@
 
         }
         .bottom{
-            background-image: url("images/b1.png");
+            background-image: url("images/blue-bottom.png");
             background-repeat: no-repeat;
             background-size: contain;
             width: 100%;
