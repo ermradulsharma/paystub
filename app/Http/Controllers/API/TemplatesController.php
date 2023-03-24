@@ -286,6 +286,7 @@ class TemplatesController extends Controller
         $response['status'] = STATUS_BAD_REQUEST;
         $response['success'] = FALSE;
         try {
+            // return Carbon::now()->toTimeString();
             $requestData = $request->all();
             // if (!array_key_exists('subcription_type', $requestData)) {
             //     $requestData += array('subcription_type' => '0');
@@ -301,8 +302,10 @@ class TemplatesController extends Controller
                     $userObj->expiryDate = Carbon::now()->addMonths(3);
                 } else  if ($requestData['subcription_type'] == 6) {
                     $userObj->expiryDate = Carbon::now()->addMonths(6);
+                } else  if ($requestData['subcription_type'] == 99) {
+                    $userObj->expiryDate = Carbon::now()->addYears(99);
                 } else {
-                    $userObj->expiryDate = Carbon::now()->addDay();
+                    $userObj->expiryDate = Carbon::now()->addHours(24);
                 }
             } else {
                 $userObj->expiryDate = "";
