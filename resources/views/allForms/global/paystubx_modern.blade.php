@@ -395,10 +395,7 @@
                 <div class="col1">
                     <table style="width:100%;padding-left:35px;">
                         <tr>
-                            <td style="text-transform: uppercase; font-size:10px;"> {{ $requestData['cname'] }}<br>
-                                {{ $requestData['address_1'] }} <br>
-                                {{ $requestData['city'] }} <br>{{ $requestData['state'] }},
-                                {{ $requestData['zip_code'] }} </td>
+                            <td style="text-transform: uppercase; font-size:10px;"> {{ $requestData['cname'] }}<br> {{ $requestData['address_1'] }} <br> {{ $requestData['address_2'] ?? '' }} <br>{{ $requestData['city'] }}, {{ $requestData['state'] }} {{ $requestData['zip_code'] }} </td>
                         </tr>
                     </table>
                 </div>
@@ -409,10 +406,7 @@
                         </tr>
 
                         <tr>
-                            <td>
-                                <b>Pay Date:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</b> <Span
-                                    style="padding-left:44px;">{{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</Span>
-                            </td>
+                            <td> <b>Pay Date:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</b> <Span style="padding-left:44px;">{{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</Span> </td>
                         </tr>
                     </table>
                 </div>
@@ -438,11 +432,8 @@
                 <tr>
                     <td></td>
                     <td>This amount:</td>
-                    <td
-                        style="padding: 3px 170px 3px 0px; border-left:none;  background-color: #98919145; border-right:2px solid #000; border-top:2px solid #000; border-bottom:2px solid #000; font-size:11px;text-transform:uppercase;font-weight:600;">
-                        {{ $word }} and {{ $digit_1 }} cents</td>
-                    <td colspan="2" style=" text-align: right;">
-                        {{ number_format($requestData['total_net_pay'], 2) }} </td>
+                    <td style="padding: 3px 170px 3px 0px; border-left:none;  background-color: #98919145; border-right:2px solid #000; border-top:2px solid #000; border-bottom:2px solid #000; font-size:11px;text-transform:uppercase;font-weight:600;">{{ $word }} and {{ $digit_1 }} cents</td>
+                    <td colspan="2" style=" text-align: right;"> {{ number_format($requestData['total_net_pay'], 2) }} </td>
                 </tr>
             </table>
 
@@ -461,9 +452,7 @@
 
             <table style="width:100%;">
                 <tr>
-                    <td
-                        style="font-size:14px; text-align:right; letter-spacing:1.5px; font-weight:bold; padding-right:15px;">
-                        DIRECT DEPOSIT - DO NOT CASH - THIS IS NOT A CHECK</td>
+                    <td style="font-size:14px; text-align:right; letter-spacing:1.5px; font-weight:bold; padding-right:15px;"> DIRECT DEPOSIT - DO NOT CASH - THIS IS NOT A CHECK</td>
                 </tr>
                 <br>
                 <tr>
