@@ -26,7 +26,7 @@
                                     <h3 class="my-5 pb-5 prizeh3">{{$plan->name}}</h3>
                                     <div class="right-img">
                                         <img src="images/green1.png">
-                                       <div class="value-text"><p>{{$plan->price}}</p></div>
+                                       <div class="value-text"><p>${{$plan->price}}</p></div>
                                     </div>
                                     <div class="mx-4">
                                         <div class="d-flex listItem">

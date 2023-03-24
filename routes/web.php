@@ -106,12 +106,12 @@ Route::group(['middleware' => ['auth'],'namespace'=>'App\Http\Controllers'], fun
     Route::get('invoiceEdit/{id}', [TemplateFormController::class, 'edit'])->name('invoiceEdit');
     Route::get('prizing', [PayStubController::class, 'prizing'])->name('prizing');
     Route::get('subscription', [TemplateFormController::class, 'subscription'])->name('subscription');
-    Route::resource('admin/plans', 'PlanController');
+    // Route::resource('admin/plans', 'PlanController');
 
 
 });
 
-Route::get('create-transaction', [PayPalController::class, 'createTransaction'])->name('createTransaction');
+    Route::get('create-transaction', [PayPalController::class, 'createTransaction'])->name('createTransaction');
     Route::get('process-transaction', [PayPalController::class, 'processTransaction'])->name('processTransaction');
     Route::get('success-transaction/{planId}', [PayPalController::class, 'successTransaction'])->name('successTransaction');
     Route::get('cancel-transaction', [PayPalController::class, 'cancelTransaction'])->name('cancelTransaction');

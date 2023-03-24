@@ -10,6 +10,7 @@ use App\Models\StateTax;
 use App\Models\Template;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 
 class PayStubController extends Controller
 {
@@ -67,7 +68,8 @@ class PayStubController extends Controller
     }
 
     public function prizing(Request $request)
-    {
+    {   dump(Carbon::now());
+    {   dd(Carbon::now()->addDay(1));
         $plans = Plan::orderBy('id')->get();
         return view('lists.prizing',compact('plans'));
     }

@@ -5,6 +5,7 @@ use Srmklive\PayPal\Services\PayPal as PayPalClient;
 use Session;
 use App\Models\Plan;
 use App\Models\Subcription;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 
@@ -102,8 +103,9 @@ class PayPalController extends Controller
             }else if($planDetail->plan_duration == '24 Hours'){
                 $expiry_date = date('Y-m-d').' 23:59:59';
             }
+            $userId = Auth::user()->id;
             $subcriptionObj                         = new Subcription();
-            $subcriptionObj->user_id                = Auth::user()->id;
+            $subcriptionObj->user_id                = $userId;
             $subcriptionObj->plan_id                = $planId;
             $subcriptionObj->transaction_id         = $response['id'];
             $subcriptionObj->start_date             = date('Y-m-d H:i:s');
@@ -111,7 +113,11 @@ class PayPalController extends Controller
             $subcriptionObj->transaction_status     = $response['status'] ?? '';
             $subcriptionObj->created_at             = date('Y-m-d H:i:s');
             $subcriptionObj->updated_at             = date('Y-m-d H:i:s');
-            $subcriptionObj->save();
+            if($subcriptionObj->save()){
+                $userObj = User::where('id',$userId)->first();
+                $userObj->expiryDate = $subcriptionObj->expiry_date;
+                $userObj->save();
+            }
 
             return redirect()
                 ->route('prizing')
