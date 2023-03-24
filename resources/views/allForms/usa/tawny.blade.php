@@ -347,33 +347,18 @@
         </section>
         <section style="position: fixed; bottom:15px; width:95%; left:60px;padding-top:20px;">
             <table>
-                <tr style="">
+                <tr>
                     <td>
                         <table style="width:95%; padding-bottom:72px;">
                             <tr>
-                                <td style=" padding-top:20px;">
-                                    <p
-                                        style="font-size: 11px; margin: 0; text-transform:uppercase;color:black;font-weight:500;">
-                                        {{
-                                        $requestData['cname'] }}</p>
-                                    <p
-                                        style="font-size: 11px; margin: 0;text-transform:uppercase;color:black;font-weight:500;">
-                                        {{
-                                        $requestData['address_1'] }}</p>
-                                    <P
-                                        style="font-size: 11px; margin: 0;text-transform:uppercase;color:black;font-weight:500;">
-                                        {{
-                                        $requestData['address_2'] }}</P>
-                                    <P
-                                        style="font-size: 11px; margin: 0;text-transform:uppercase;color:black;font-weight:500;">
-                                        {{
-                                        $requestData['city'] }}
-                                        {{ $requestData['state'] }},
-                                        {{ $requestData['zip_code'] }}
-                                    </P>
+                                <td style="padding-top:20px;">
+                                    <p style="font-size: 14px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:capitalize;font-weight:400;"> {{ $requestData['cname'] }}</p>
+                                    <p style="font-size: 12px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:400;"> {{ $requestData['address_1'] }}</p>
+                                    <P style="font-size: 12px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:400;"> {{ $requestData['address_2'] }}</P>
+                                    <P style="font-size: 12px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:400;"> {{ $requestData['city'] }} {{ $requestData['state'] }}. {{ $requestData['zip_code'] }}  </P>
                                 </td>
-                                <td style="padding-top:20px; text-align:right; padding-right:20px;">
-                                    <p style="font-size: 13px; margin-bottom: 7px;font-weight:400;">
+                                <td style="padding-top:30px; text-align:right; padding-right:10px;">
+                                    <p style="font-size: 13px; margin-bottom: 8px;font-weight:400;">
                                         <span>00000{{ $requestData['advice_number'] }}</span>
                                     </p>
                                     <p style="font-size: 13px;">
@@ -385,7 +370,7 @@
                         </table>
                     </td>
                 </tr>
-                <tr style="">
+                <tr>
                     <td>
                         <table style="width:95%;">
                             <tr class="bottom-content">
