@@ -124,9 +124,9 @@
         .bottom{
             background-image: url("images/bottom.png");
             background-repeat: no-repeat;
-            background-size: contain;
+            background-size: cover;
             width: 100%;
-            height: 100%;
+            height: 4%;
             position:fixed;
             z-index: 5;
             left:13px;
