@@ -183,7 +183,7 @@
                                 <th class="padding" style="text-align: left; padding-left:20px;font-size:12px;">INCOME</th>
                                 <th class="padding" style="text-align:left;font-size:12px;">RATE</th>
                                 <th class="padding" style="text-align:left;font-size:12px;">HOURS</th>
-                                <th class="padding" style="text-align:left;font-size:12px;">CURRENT TOTAL</th>
+                                <th class="padding" style="text-align:center;font-size:12px;">CURRENT TOTAL</th>
                             </thead>
                             <tbody>
                                 @foreach ($requestData['earning'] as $key => $earn)

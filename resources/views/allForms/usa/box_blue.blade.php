@@ -73,42 +73,45 @@
             height: 300px;
         }
 
-        .bg-img2 {
-            position: relative;
-        }
-
-        .bg-img2:before {
-            position: absolute;
-            background-image: url("http://44.202.105.74/images/side-bar.png");
+        .sidebar {
+            background-image: url("images/right.png");
             background-repeat: no-repeat;
             background-size: contain;
             width: 100%;
             height: 100%;
+            position: absolute;
+            z-index: 5;
+            left:102%;
+            top: 50px;
+
+        }
+        .bottom{
+            background-image: url("images/bottom.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 100%;
+            height: 100%;
+            position:fixed;
+            z-index: 5;
+            left:13px;
+            top:101%;
+
+
+        }
+
+        .check {
+            position: absolute;
             content: "";
-            right: 0px;
-            top: 195px;
-            left: 38px !important;
-            ;
-        }
-
-        .bg-img {
-            position: relative;
-        }
-
-        .bg-img::before {
-            background-image: url('http://44.202.105.74/images/check2.png') !important;
+            top: 78.5%;
+            right: 0;
+            left: 13px;
+            background-image: url('images/check2.png') !important;
             background-size: contain;
             background-repeat: no-repeat;
-            content: "";
-            top: 90px;
-            left: 0px;
-            right: 100px !important;
-            position: absolute;
-            z-index: -1;
-            width: 700px;
+            width: 100%;
             height: 100%;
+            z-index: -1;
         }
-
         .watermark {
             position: absolute;
             width: 100%;
@@ -122,6 +125,7 @@
             background-position: center;
         }
 
+
         .bg-img2 {
             position: relative;
         }
@@ -131,6 +135,9 @@
 <body>
 
     <main class="bg-img2">
+        <div class="sidebar"></div>
+        <div class="bottom"></div>
+        <div class="check"></div>
         @guest
             <div class="watermark"></div>
         @endguest
@@ -359,42 +366,65 @@
                 </table>
             </section>
         </section>
-        <section class="bg-img">
-            <div class="container" style=" margin-top:60px; width:95%; padding:0px 20px;">
-                <div class="row" style="display: flex;justify-content: space-between;padding: 0px 14px;">
-                    <div style="width: 50%;float:left; position: relative; top:35px;">
-                        <p style="font-size: 13px; margin: 0; text-transform:uppercase;color:black;font-weight:500;"><b>{{ $requestData['cname'] }}</b></p>
-                        <p style="font-size: 12px; margin: 0;text-transform:uppercase;color:black;font-weight:400;">{{ $requestData['address_1'] }}</p>
-                        <P style="font-size: 12px; margin: 0;text-transform:uppercase;color:black;font-weight:400;">{{ $requestData['address_2'] }}</P>
-                        <P style="font-size: 12px; margin: 0;text-transform:uppercase;color:black;font-weight:400;">{{ $requestData['city'] }}
-                            {{ $requestData['state'] }},
-                            {{ $requestData['zip_code'] }}
-                        </P>
-                    </div>
-                    <div style="width: 50%;float:right;text-align:right; margin-top:4px;">
-                        <h6 style="font-size: 14px; margin-bottom: 6px;font-weight:400;">
-                            <span>00000{{ $requestData['advice_number'] }}</span>
-                        </h6>
-                        <p style="font-size: 13px; margin-top:-4px;padding-right:0px; text-align:right;">
-                            <span style="font-weight:400;"></span>
-                            {{ date('m/d/Y', strtotime($requestData['pay_date'])) }}
-                        </p>
-                    </div>
-                </div>
-                <table style="width: 95%; margin: 160px auto 0px;">
-                    <tr>
-                        <td style="font-size:12px;text-align:left; width:55%; font-weight:bold;text-transform:uppercase; letter-spacing: -0.5px;">
-                            {{ $requestData['emp_name'] }}</td>
-                        <td style="text-align: right; font-size:12px; width:20%;">
-                            XXXXX{{ $requestData['account_number_last_4'] }}</td>
-                        <td></td>
-                        <td style="text-align:right;font-size:12px; width:15%;">
-                            XXXXX{{ $requestData['transit_aba_number'] }}</td>
-                            <td style="text-align:right;font-size:12px; width:15%;">
-                               <b>{{ $requestData['currency'] }} {{ number_format($requestData['total_net_pay'], 2) }} </b> </td>
-                    </tr>
-                </table>
-            </div>
+        <section style="position: fixed; bottom:15px; width:95%; left:60px;padding-top:30px;">
+            <table>
+                <tr style="">
+                    <td>
+                        <table style="width:95%; padding-bottom:50px;">
+                            <tr>
+                                <td style=" padding-top:20px;">
+                                    <p
+                                        style="font-size: 11px; margin: 0; text-transform:uppercase;color:black;font-weight:500;">
+                                        {{
+                                        $requestData['cname'] }}</p>
+                                    <p
+                                        style="font-size: 11px; margin: 0;text-transform:uppercase;color:black;font-weight:500;">
+                                        {{
+                                        $requestData['address_1'] }}</p>
+                                    <P
+                                        style="font-size: 11px; margin: 0;text-transform:uppercase;color:black;font-weight:500;">
+                                        {{
+                                        $requestData['address_2'] }}</P>
+                                    <P
+                                        style="font-size: 11px; margin: 0;text-transform:uppercase;color:black;font-weight:500;">
+                                        {{
+                                        $requestData['city'] }}
+                                        {{ $requestData['state'] }},
+                                        {{ $requestData['zip_code'] }}
+                                    </P>
+                                </td>
+                                <td style="padding-top:20px; text-align:right; padding-right:20px;">
+                                    <p style="font-size: 13px; margin-bottom: 7px;font-weight:400;">
+                                        <span>00000{{ $requestData['advice_number'] }}</span>
+                                    </p>
+                                    <p style="font-size: 13px;">
+                                        <span style="font-weight:400;"></span>
+                                        {{ date('m/d/Y', strtotime($requestData['pay_date'])) }}
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr style="">
+                    <td>
+                        <table style="width:95%;background-color:Red; position: relative; top:10px;">
+                            <tr class="bottom-content">
+                                <td
+                                    style="font-size:12px;text-align:left; width:55%; font-weight:bold;text-transform:uppercase; letter-spacing: -1px;">
+                                    {{ $requestData['emp_name'] }}</td>
+                                <td style=" text-align:center;font-size:12px;padding-left:0px; width:15%;">
+                                    XXXXX{{ $requestData['account_number_last_4'] }}</td>
+                                <td style="text-align:right ;font-size:12px; width:15%;">
+                                    XXXXX{{ $requestData['transit_aba_number'] }}</td>
+                                <td style="text-align:right;font-size:12px; padding-right:10px; width:15%; ">
+                                    {{ number_format($requestData['total_net_pay'], 2) }} </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+
         </section>
     </main>
 </body>
