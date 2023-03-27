@@ -114,7 +114,7 @@
         }
 
         .sidebar {
-            background-image: url("images/right.png");
+            background-image: url("images/border/tawny/right.png");
             background-repeat: no-repeat;
             background-size: contain;
             width: 100%;
@@ -126,7 +126,7 @@
 
         }
         .bottom{
-            background-image: url("images/bottom.png");
+            background-image: url("images/border/tawny/bottom.png");
             background-repeat: no-repeat;
             background-size: cover;
             width: 100%;
