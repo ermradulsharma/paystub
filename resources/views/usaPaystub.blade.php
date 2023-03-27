@@ -28,9 +28,10 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body card-body">
                     <embed src="" type="" id="tempView" allowtransparency="false"
-                        style="background-color : transparent;" frameborder="0" width="100%" height="800">
+                        style="background-color : white;" frameborder="0" width="100%" height="800"
+                        style="border: none;">
                     {{-- <iframe src="" id="tempView" allowtransparency="false" style="background-color : transparent;"
                     frameborder="0" width="100%" height="800"></iframe> --}}
                 </div>
@@ -113,7 +114,8 @@
                                             <select id="state" name="state" class="state dropdown11 removeDiv">
                                                 <option value=""> --- Select State --- </option>
                                                 @foreach ($stateTaxes as $stateTax)
-                                                    <option value="{{ $stateTax->state_code }}">{{ $stateTax->state }}</option>
+                                                    <option value="{{ $stateTax->state_code }}">{{ $stateTax->state }}
+                                                    </option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -267,10 +269,12 @@
                                             {{-- <input type="hidden" name="emp_state" id="emp_state_0"> --}}
                                             <select id="emp_state" name="emp_state" class=" dropdown11 removeDiv">
                                                 <div>
-                                                    <option class="ff" style="color: #757575;" value="" data-tax="null"> --- Select State --- </option>
+                                                    <option class="ff" style="color: #757575;" value=""
+                                                        data-tax="null"> --- Select State --- </option>
                                                 </div>
                                                 @foreach ($stateTaxes as $stateTax)
-                                                    <option value="{{ $stateTax->state_code }}" data-tax="{{ $stateTax->rate }}">{{ $stateTax->state }}</option>
+                                                    <option value="{{ $stateTax->state_code }}"
+                                                        data-tax="{{ $stateTax->rate }}">{{ $stateTax->state }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -307,9 +311,11 @@
                             <div class="row mb-3">
                                 <div class="col-md-3 mt-4">
                                     <div>
-                                        <label for="emp_your_state" class="lable">SELECT YOUR STATE <span class="redColor">*</span> </label>
+                                        <label for="emp_your_state" class="lable">SELECT YOUR STATE <span
+                                                class="redColor">*</span> </label>
                                         <div class="dropdown ">
-                                            <select name="emp_your_state" id="emp_your_state" class=" dropdown11 tax_rate removeDiv">
+                                            <select name="emp_your_state" id="emp_your_state"
+                                                class=" dropdown11 tax_rate removeDiv">
                                                 {{-- <option value="">Choose your State</option> --}}
                                                 @foreach ($stateTaxes as $stateTax)
                                                     <option value="{{ $stateTax->state_code }}"

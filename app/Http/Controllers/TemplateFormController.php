@@ -55,7 +55,7 @@ class TemplateFormController extends Controller
         File::isDirectory($path) or File::makeDirectory($path, 0777, true, true);
         $invoiceData['requestData'] = $requestData;
         // return view('allForms/' . $request->form_type . '/' . $pageName, compact('invoiceData', 'requestData'));
-        $pdf = PDF::loadView('allForms/' . $request->form_type . '/' . $pageName, $invoiceData)->setPaper('a4', 'portrait');
+        $pdf = PDF::loadView('allForms/' . $request->form_type . '/' . $pageName, $invoiceData)->setPaper('a4', 'portrait')->set_option('isRemoteEnabled', true);
         //    return $pdf->stream($pageName.'.pdf');
         $fileName =  date('_d_m_Y_h_i_s') . '.pdf';
         $pdf->save($path . '/' . $fileName);
