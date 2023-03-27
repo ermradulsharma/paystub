@@ -114,7 +114,7 @@
         }
 
         .sidebar {
-            background-image: url("images/long1.png");
+            background-image: url("images/border/lapis/right.png");
             background-repeat: no-repeat;
             background-size: contain;
             width: 100%;
@@ -126,7 +126,7 @@
 
         }
         .bottom{
-            background-image: url("images/bottom-white0.png");
+            background-image: url("images/border/lapis/bootom.png");
             background-repeat: no-repeat;
             background-size: cover;
             width: 100%;
