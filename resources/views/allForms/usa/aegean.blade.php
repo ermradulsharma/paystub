@@ -177,12 +177,6 @@
 </head>
 
 <body>
-    {{-- @php
-    $svgContent = public_path('images/jucafunko.svg');
-    $encodedSvg = base64_encode($svgContent);
-    print_r($encodedSvg);
-    @endphp --}}
-
     <main class="bg-img2">
         {{-- <img src="{{ public_path('images/jucafunko.svg') }}">
         <img src="data:image/svg+xml;base64,{{ $encodedSvg }}"> --}}
