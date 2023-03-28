@@ -234,7 +234,7 @@
                     <p style="padding: 0; margin:0; font-size:30px;font-family: Arial, Helvetica, sans-serif; font-weight:400;"> {{ $requestData['cname'] }}</p>
 
                         <p style="padding: 0; margin:0;font-size:22px; font-weight:400;font-family: Arial, Helvetica, sans-serif;line-height:1;">{{ $requestData['address_1'] }} <br>
-                            {{ $requestData['city'] }}, {{ $requestData['zip_code'] }}</p>
+                            {{ $requestData['city'] }}, {{ $requestData['state'] }} {{ $requestData['zip_code'] }}</p>
                     </td>
 
                 </tr>
@@ -277,7 +277,7 @@
                 <table>
                     <tr>
                         <td style="color: #515c6b;  vertical-align:top;"><p style="font-size:18px;font-family: Arial, Helvetica, sans-serif;">Pay to the order of</p></td>
-                        <td style="text-transform: capitalize;font-size:20px; color:#1a1a1a;"><p style="font-family: Arial, Helvetica, sans-serif;">{{ $requestData['emp_street_1'] }}<br>{{ $requestData['emp_city'] }}<br>{{ $requestData['emp_zip_code'] }} </p></td>
+                        <td style="text-transform: capitalize;font-size:20px; color:#1a1a1a;"><p style="font-family: Arial, Helvetica, sans-serif;">{{ $requestData['emp_name'] }} <br> {{ $requestData['emp_street_1'] }}<br>{{ $requestData['emp_city'] }}, {{ $requestData['emp_state'] }} {{ $requestData['emp_zip_code'] }} </p></td>
                     </tr>
                 </table>
             </section>
@@ -289,7 +289,7 @@
                                 <th colspan="4" style="padding-top: 41px;font-family: Arial, Helvetica, sans-serif;font-size:13px;">Company Intormation</th>
                             </tr>
                             <tr>
-                                <td colspan="4" class="address" style="padding-left: 11px; text-transform:capitalize;font-family: Arial, Helvetica, sans-serif;">{{ $requestData['cname'] }} <br> {{ $requestData['address_1'] }} <br> {{ $requestData['city'] }}, {{ $requestData['zip_code'] }} <br> {{ $requestData['tel'] }} </td>
+                                <td colspan="4" class="address" style="padding-left: 11px; text-transform:capitalize;font-family: Arial, Helvetica, sans-serif;">{{ $requestData['cname'] }} <br> {{ $requestData['address_1'] }} {{ $requestData['city'] }}, {{ $requestData['state'] }} {{ $requestData['zip_code'] }} <br> {{ $requestData['tel'] }} </td>
                             </tr>
                         </table>
                     </div>

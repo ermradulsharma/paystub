@@ -182,10 +182,7 @@
 
                     <tr>
                         <td></td>
-                        <td class="table-data" rowspan="2"> <button class="employee-box"
-                                style=" border:1px solid black; border-radius:2px; padding:5px 10px 5px 5px;background-color:#88848445"><span
-                                    class="text">EMPLOYEE ID: {{ $requestData['emp_id'] }}</span><span>SSN:
-                                    {{ $requestData['emp_ssn'] }}</span> </button></td>
+                        <td class="table-data" rowspan="2"> <button class="employee-box" style=" border:1px solid black; border-radius:2px; padding:5px 10px 5px 5px;background-color:#88848445"><span class="text">EMPLOYEE ID: {{ $requestData['emp_id'] }}</span><span>SSN: XXX-XX-{{ $requestData['emp_ssn'] }}</span> </button></td>
                         <td style="font-size:25px; font-weight:500;">Earnings Statement</td>
                     </tr>
                     <tr>
@@ -201,18 +198,13 @@
                     <tr>
                         <td></td>
                         <td style="padding:0px;font-size:18px;color: #555;">Marital Status:
-                            <b style="text-transform: capitalize;"> <Span
-                                    style="color: #000">{{ $requestData['marital_status'] }}</Span></b>
-                            <br>
-                            Exemptions/Alowances:<b style="color: #000">{{ $requestData['exemptions'] }}</b><br>
-                            State: <b style="text-transform: capitalize;color: #000;">
-                                {{ $requestData['emp_state'] }}</b>
+                            <b style="text-transform: capitalize;"> <Span style="color: #000">{{ $requestData['marital_status'] }}</Span></b>
+                            <br> Exemptions/Alowances:<b style="color: #000">{{ $requestData['exemptions'] }}</b><br> State: <b style="text-transform: capitalize;color: #000;"> {{ $requestData['emp_state'] }}</b>
 
                         </td>
-                        <td
-                            style="font-size: 15px; text-transform: uppercase;padding:0px; font-weight:500; padding-bottom:30px;">
-                            {{ $requestData['emp_name'] }}<br>{{ $requestData['emp_street_1'] }} <br>
-                            {{ $requestData['emp_city'] }},
+                        <td style="font-size: 15px; text-transform: uppercase;padding:0px; font-weight:500; padding-bottom:30px;">
+                            {{ $requestData['emp_name'] }}<br>{{ $requestData['emp_street_1'] }} {{ $requestData['emp_street_2'] ?? '' }} <br>
+                            {{ $requestData['emp_city'] }} {{ $requestData['emp_state'] }}.
                             {{ $requestData['emp_zip_code'] }}
 
                         </td>
@@ -223,24 +215,17 @@
                     <tr>
                         <td></td>
                         <td style="font-weight: bold;font-size:18px;"> {{ $requestData['cname'] }}</td>
-                        <td style="color: #555;font-size:15px;">PAY DATE: <b style="color: #000;font-size:15px;">
-                                {{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</b></td>
+                        <td style="color: #555;font-size:15px;">PAY DATE: <b style="color: #000;font-size:15px;"> {{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</b></td>
                     </tr>
                     <tr>
                         <td></td>
-                        <td style="text-transform: uppercase;font-size:16px;"><B>{{ $requestData['address_1'] }}</B>
-                        </td>
+                        <td style="text-transform: uppercase;font-size:16px;"><B>{{ $requestData['address_1'] }}</B> </td>
                         <td style="color: #555; font-size:15px;">PEPORTING PERIOD: </td>
                     </tr>
                     <tr>
                         <td></td>
-                        <td style="text-transform: uppercase;font-size:16px; "> <b>{{ $requestData['city'] }},
-                                {{ $requestData['zip_code'] }}</b></td>
-                        <td style="border-bottom: 2px solid #000; ">
-                            <b style="font-size:15px;">{{ date('m/d/Y', strtotime($requestData['pay_start'])) }}&nbsp;
-                                &nbsp; &nbsp; - &nbsp; &nbsp; &nbsp;
-                                {{ date('m/d/Y', strtotime($requestData['pay_end'])) }}</b>
-                        </td>
+                        <td style="text-transform: uppercase;font-size:16px; "> <b>{{ $requestData['city'] }}, {{ $requestData['state'] }} {{ $requestData['zip_code'] }}</b></td>
+                        <td style="border-bottom: 2px solid #000; "> <b style="font-size:15px;">{{ date('m/d/Y', strtotime($requestData['pay_start'])) }}&nbsp; &nbsp; &nbsp; - &nbsp; &nbsp; &nbsp; {{ date('m/d/Y', strtotime($requestData['pay_end'])) }}</b></td>
                     </tr>
                     <tr>
                         <td colspan="7"></td>
@@ -272,11 +257,7 @@
                 <br> <br>
                 <tr>
                     <td></td>
-                    <td colspan="3"
-                        style="text-align: left; font-weight:bold; border:1px solid black;  background-color:#88848445;border-radius:2px; height:25px;">
-                        &nbsp;Gross
-                        Pay&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        {{ number_format($requestData['total_net_pay'], 2) }}</td>
+                    <td colspan="3" style="text-align: left; font-weight:bold; border:1px solid black;  background-color:#88848445;border-radius:2px; height:25px;"> &nbsp;Gross Pay&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ number_format($requestData['total_net_pay'], 2) }}</td>
                     <td style=""><b>{{ number_format($requestData['total_ytd_net_pay'], 2) }}</b></td>
                 </tr>
                 <br> <br> <br> <br>
@@ -442,8 +423,8 @@
                                     <P style="font-size: 12px; margin: 0;color:black; font-family: 'Arial Rounded MT Bold', sans-serif; text-transform:uppercase; font-weight:bold;"> {{ $requestData['address_2'] }}</P>
                                     <P style="font-size: 12px; margin: 0;color:black; font-family: 'Arial Rounded MT Bold', sans-serif; text-transform:uppercase; font-weight:bold;"> {{ $requestData['city'] }} {{ $requestData['state'] }}. {{ $requestData['zip_code'] }}  </P>
                                 </td>
-                                <td style="padding-top:8px; text-align:right; position: relative; left:22px;">
-                                    <p style="font-size: 14px; margin-bottom: 5px; font-family: Arial, Helvetica, sans-serif; font-weight: 400"> <span>00000{{ $requestData['advice_number'] }}</span></p>
+                                <td style="padding-top:8px; text-align:right; position: relative; left:25px;">
+                                    <p style="font-size: 14px; margin-bottom: 5px; font-family: Arial, Helvetica, sans-serif; font-weight: 400;"> <span>00000{{ $requestData['advice_number'] }}</span></p>
                                     <p style="font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: 400;margin-top:-1px;">{{ date('m/d/Y', strtotime($requestData['pay_date'])) }} </p>
                                 </td>
                             </tr>

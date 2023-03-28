@@ -6,13 +6,22 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200&display=swap');
-       @import url('https://fonts.cdnfonts.com/css/arial-2');
-       @font-face {
-            font-family: 'Arial', sans-serif;
-           font-weight:400;
-       }
-   </style>
-    <style>
+        @import url('https://fonts.cdnfonts.com/css/arial-2');
+        @import url('https://fonts.cdnfonts.com/css/arial-mt');
+        @import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700;800;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Arimo:ital@1&display=swap');
+
+        @font-face {
+            font-family: Arial, Helvetica, sans-serif;
+            font-family: 'Arial MT', sans-serif;
+            font-family: 'Arial MT Narrow', sans-serif;
+            font-family: 'Arial Rounded MT', sans-serif;
+            font-family: 'Arial Rounded MT Bold', sans-serif;
+            font-family: 'ArialMT', sans-serif;
+            font-family: 'Arial MT Black', sans-serif;
+            font-family: 'Maven Pro', sans-serif;
+            font-family: 'Arimo', sans-serif;
+        }
         th {
             text-align: left;
         }
@@ -212,15 +221,14 @@
                     </tr>
                     <tr>
                         <td style="font-size:14px; text-transform:uppercase;line-height:1.5;font-family: 'Arial', sans-serif;">
-                            {{ $requestData['address_1'] }}<br>{{ $requestData['city'] }},
+                            {{ $requestData['address_1'] }}<br>{{ $requestData['city'] }} {{ $requestData['state'] }}.
                             {{ $requestData['zip_code'] }}<br> USA
                         </td>
                     </tr>
                 </table>
                 <table style="position: relative; top:30px;">
                     <tr>
-                        <td style="font-size: 15px; line-height:1.2; text-transform: capitalize;font-family: 'Arial', sans-serif;">Social Security
-                            Number:{{ $requestData['emp_ssn'] }}<br> Marital Status:
+                        <td style="font-size: 15px; line-height:1.2; text-transform: capitalize;font-family: 'Arial', sans-serif;">Social Security Number: ***-**-{{ $requestData['emp_ssn'] }}<br> Marital Status:
                             {{ $requestData['marital_status'] }}<br> Expectations/Allowances:
                             {{ $requestData['exemptions'] }} </td>
                     </tr>
@@ -255,9 +263,7 @@
 
                     </tr>
                     <tr>
-                        <td style="text-transform: uppercase;font-family: Arial, Helvetica, sans-serif;font-size:17px;">
-                            {{ $requestData['emp_street_1'] }},{{ $requestData['emp_city'] }}<br>
-                            {{ $requestData['emp_zip_code'] }},USA </td>
+                        <td style="text-transform: uppercase;font-family: Arial, Helvetica, sans-serif;font-size:17px;"> {{ $requestData['emp_street_1'] }} <br> {{ $requestData['emp_city'] }}, {{ $requestData['emp_state'] }}. {{ $requestData['emp_zip_code'] }}, USA </td>
                     </tr>
                 </table>
                 </table>
@@ -310,7 +316,7 @@
                             <th style="font-family: Arial, Helvetica, sans-serif;">Important Notes</th>
                         </tr>
                         <tr>
-                            <td style="font-family: Arial, Helvetica, sans-serif; ">Company Telephone Number:{{ $requestData['tel'] }}</td>
+                            <td style="font-family: Arial, Helvetica, sans-serif; font-size:12px;">Company Telephone Number:{{ $requestData['tel'] }}</td>
                         </tr>
                     </table>
                 </div>
