@@ -11,6 +11,24 @@
 
     <style>
         @import url('https://fonts.cdnfonts.com/css/arial-2');
+         @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200&display=swap');
+        @import url('https://fonts.cdnfonts.com/css/arial-2');
+        @import url('https://fonts.cdnfonts.com/css/arial-mt');
+        @import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700;800;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Arimo:ital@1&display=swap');
+
+        @font-face {
+            font-family: Arial, Helvetica, sans-serif;
+            font-family: 'Arial MT', sans-serif;
+            font-family: 'Arial MT Narrow', sans-serif;
+            font-family: 'Arial Rounded MT', sans-serif;
+            font-family: 'Arial Rounded MT Bold', sans-serif;
+            font-family: 'ArialMT', sans-serif;
+            font-family: 'Arial MT Black', sans-serif;
+            font-family: 'Maven Pro', sans-serif;
+            font-family: 'Arimo', sans-serif;
+        }
+
 
         body {
             color: #000;
@@ -75,7 +93,7 @@
             height: 300px;
         }
 
-        .sidebar {
+        /* .sidebar {
             background-image: url("images/border/box_blue/right.png");
             background-repeat: no-repeat;
             background-size: contain;
@@ -114,7 +132,7 @@
             width: 100%;
             height: 100%;
             z-index: -1;
-        }
+        } */
 
         .watermark {
             position: absolute;
@@ -139,9 +157,8 @@
 <body>
 
     <main class="bg-img2">
-        <div class="sidebar"></div>
-        <div class="bottom"></div>
-        <div class="check"></div>
+        <img src="{{ public_path('images/border/box_blue/box-blue.svg') }}" style="position: absolute; top: 0px; right:0px;left: 0px; width:106%; height:105%;  z-index: -1;">
+        <img src="{{ public_path('images/check01.svg') }}" style="position: absolute; top:74.6%; width:100.79%; height:25%;  z-index: -1; right:0px; left:0px;">
         @guest
             <div class="watermark"></div>
         @endguest
@@ -150,6 +167,7 @@
                 <div class="watermark"></div>
             @endif
         @endauth
+        <section class="invoiceborder">
         <div class="row1">
             <div class="column1">
                 <table style="width: 100%; margin:0px auto 0px 0px;">
@@ -376,21 +394,22 @@
                 </table>
             </section>
         </section>
-        <section style="position: fixed; bottom:15px; width:95%; left:60px;padding-top:20px;">
+        </section>
+        <section style="position: fixed; bottom:65px; width:95%; left:60px; padding-top:20px;">
             <table style="width:95%; padding-bottom:0px;">
                 <tr>
                     <td>
                         <table style="width:100%; padding-bottom:57px;">
                             <tr>
                                 <td style="padding-top:20px;">
-                                    <p style="font-size: 14px; margin:0; color:black;font-family: Arial, Helvetica, sans-serif; text-transform:capitalize;font-weight:400;"> {{ $requestData['cname'] }}</p>
-                                    <p style="font-size: 12px; margin:0; color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:400;"> {{ $requestData['address_1'] }}</p>
-                                    <P style="font-size: 12px; margin:0; color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:400;"> {{ $requestData['address_2'] }}</P>
-                                    <P style="font-size: 12px; margin:0; color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:400;"> {{ $requestData['city'] }} {{ $requestData['state'] }}. {{ $requestData['zip_code'] }} </P>
+                                    <p style="font-size: 14px; margin: 0;color:black; font-family: 'Arial Rounded MT Bold', sans-serif; text-transform:capitalize; font-weight:bold;"> {{ $requestData['cname'] }}</p>
+                                    <p style="font-size: 12px; margin: 0;color:black; font-family: 'Arial Rounded MT Bold', sans-serif; text-transform:uppercase; font-weight:bold;"> {{ $requestData['address_1'] }}</p>
+                                    <P style="font-size: 12px; margin: 0;color:black; font-family: 'Arial Rounded MT Bold', sans-serif; text-transform:uppercase; font-weight:bold;"> {{ $requestData['address_2'] }}</P>
+                                    <P style="font-size: 12px; margin: 0;color:black; font-family: 'Arial Rounded MT Bold', sans-serif; text-transform:uppercase; font-weight:bold;"> {{ $requestData['city'] }} {{ $requestData['state'] }}. {{ $requestData['zip_code'] }}  </P>
                                 </td>
-                                <td style="text-align:right; position: relative; left:22px;">
-                                    <p style="font-size: 13px; margin:0; font-weight:400;"> 00000{{ $requestData['advice_number'] }}</p>
-                                    <p style="font-size: 13px; margin-bottom:1px; font-weight:400;">{{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</p>
+                                <td style="padding-top:0px; text-align:right; position: relative; left:22px;">
+                                    <p style="font-size: 14px; margin-bottom: 5px; font-family: Arial, Helvetica, sans-serif; font-weight: 400"> <span>00000{{ $requestData['advice_number'] }}</span></p>
+                                    <p style="font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: 400;margin-top:-1px;">{{ date('m/d/Y', strtotime($requestData['pay_date'])) }} </p>
                                 </td>
                             </tr>
                         </table>
@@ -400,10 +419,10 @@
                     <td>
                         <table style="width:100%;">
                             <tr class="bottom-content">
-                                <td style="font-size:12px;text-align:left; width:55%; font-weight:bold;text-transform:uppercase; letter-spacing: -1px;"> {{ $requestData['emp_name'] }}</td>
-                                <td style=" text-align:center;font-size:12px;padding-left:0px; width:15%;"> XXXXX{{ $requestData['account_number_last_4'] }}</td>
-                                <td style="text-align:right ;font-size:12px; width:15%;"> XXXXX{{ $requestData['transit_aba_number'] }}</td>
-                                <td style="text-align:right;font-size:12px; padding-right:10px; width:15%; "> {{ number_format($requestData['total_net_pay'], 2) }} </td>
+                                <td style="font-size:14px; text-align:left; width:45%; font-weight:bold;text-transform:uppercase; letter-spacing: -1px;font-family: 'Arial Rounded MT Bold', sans-serif;"> {{ $requestData['emp_name'] }}</td>
+                                <td style=" text-align:center;font-size:14px;padding-left:0px; width:20%;font-family: 'Arial Rounded MT Bold', sans-serif;"> XXXXX{{ $requestData['account_number_last_4'] }}</td>
+                                <td style="text-align:center ;font-size:14px; width:20%;font-family: 'Arial Rounded MT Bold', sans-serif;"> XXXXX{{ $requestData['transit_aba_number'] }}</td>
+                                <td style="text-align:right;font-size:14px; padding-right:10px; width:15%;font-family: 'Arial Rounded MT Bold', sans-serif; font-weight:bold; ">{{ $requestData['currency'] }} {{ number_format($requestData['total_net_pay'], 2) }} </td>
                             </tr>
                         </table>
                     </td>

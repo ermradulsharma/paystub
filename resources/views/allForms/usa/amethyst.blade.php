@@ -113,7 +113,7 @@
             text-align: right
         }
 
-        .sidebar {
+        /* .sidebar {
             background-image: url("images/border/amethyst/right.png");
             background-repeat: no-repeat;
             background-size: contain;
@@ -136,18 +136,18 @@
             left:13px;
             top:101%;
 
-        }
+        } */
 
         .check {
             position: absolute;
             content: "";
             top: 78.5%;
             right: 0;
-            left: 13px;
+            left: 0;
             background-image: url('images/check2.png') !important;
             background-size: contain;
             background-repeat: no-repeat;
-            width: 100%;
+            width: 102%;
             height: 100%;
             z-index: -1;
         }
@@ -175,14 +175,11 @@
         }
     </style>
 </head>
-
-
 <body>
 
     <main class="bg-img2">
-        <div class="sidebar"></div>
-        <div class="bottom"></div>
-        <div class="check"></div>
+        <img src="{{ public_path('images/border/amethyst/amethyst.svg') }}" style="position: absolute; top: 0px; right:0px;left: 0px; width:106%; height:105%;  z-index: -1;">
+        <img src="{{ public_path('images/check01.svg') }}" style="position: absolute; top:75.8%; width:100.79%; height:25%;  z-index: -1; right:0px; left:0px;">
         @guest
             <div class="watermark"></div>
         @endguest
@@ -294,7 +291,7 @@
 
 
         </section>
-        <section style="position: fixed; bottom:15px; width:95%; left:60px;padding-top:20px;">
+        <section style="position: fixed; bottom:55px; width:95%; left:60px; padding-top:20px;">
             <table>
                 <tr>
                     <td>
@@ -316,17 +313,18 @@
                 </tr>
                 <tr>
                     <td>
-                        <table style="width:95%;">
+                        <table style="width:95%; position: relative; bottom:10px;">
                             <tr class="bottom-content">
-                                <td style="font-size:14px; text-align:left; width:55%; font-weight:bold;text-transform:uppercase; letter-spacing: -1px;"> {{ $requestData['emp_name'] }}</td>
-                                <td style="text-align:center; font-size:14px; padding-left:0px; width:15%;"> XXXXX{{ $requestData['account_number_last_4'] }}</td>
-                                <td style="text-align:right; font-size:14px;  width:15%;">  XXXXX{{ $requestData['transit_aba_number'] }}</td>
+                                <td style="font-size:14px; text-align:left; width:45%; font-weight:bold;text-transform:uppercase; letter-spacing: -1px;"> {{ $requestData['emp_name'] }}</td>
+                                <td style="text-align:center; font-size:14px;  width:20%;"> XXXXX{{ $requestData['account_number_last_4'] }}</td>
+                                <td style="text-align:center; font-size:14px;  width:20%;">  XXXXX{{ $requestData['transit_aba_number'] }}</td>
                                 <td style="text-align:right; font-size:14px;  padding-right:10px; width:15%; "> {{ number_format($requestData['total_net_pay'], 2) }} </td>
                             </tr>
                         </table>
                     </td>
                 </tr>
             </table>
+
         </section>
     </main>
 </body>
