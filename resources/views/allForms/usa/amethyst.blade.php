@@ -179,7 +179,7 @@
 
     <main class="bg-img2">
         <img src="{{ public_path('images/border/amethyst/amethyst.svg') }}" style="position: absolute; top: 0px; right:0px;left: 0px; width:106%; height:105%;  z-index: -1;">
-        <img src="{{ public_path('images/check01.svg') }}" style="position: absolute; top:75.8%; width:100.79%; height:25%;  z-index: -1; right:0px; left:0px;">
+        <img src="{{ public_path('images/check01.svg') }}" style="position: absolute; top:74.8%; width:100.79%; height:25%;  z-index: -1; right:0px; left:0px;">
         @guest
             <div class="watermark"></div>
         @endguest
@@ -291,7 +291,7 @@
 
 
         </section>
-        <section style="position: fixed; bottom:55px; width:95%; left:60px; padding-top:20px;">
+        <section style="position: fixed; bottom:55px; width:95%; left:40px; padding-top:20px;">
             <table>
                 <tr>
                     <td>
@@ -303,7 +303,7 @@
                                     <P style="font-size: 12px; margin: 0;color:black; font-family: 'Arial Rounded MT Bold', sans-serif; text-transform:uppercase; font-weight:bold;"> {{ $requestData['address_2'] }}</P>
                                     <P style="font-size: 12px; margin: 0;color:black; font-family: 'Arial Rounded MT Bold', sans-serif; text-transform:uppercase; font-weight:bold;"> {{ $requestData['city'] }} {{ $requestData['state'] }}. {{ $requestData['zip_code'] }}  </P>
                                 </td>
-                                <td style="padding-top:30px; text-align:right; position: relative; left:22px;">
+                                <td style="padding-top:5px; text-align:right; position: relative; left:22px;">
                                     <p style="font-size: 14px; margin-bottom: 5px; font-family: Arial, Helvetica, sans-serif; font-weight: 400"> <span>00000{{ $requestData['advice_number'] }}</span></p>
                                     <p style="font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: 400">{{ date('m/d/Y', strtotime($requestData['pay_date'])) }} </p>
                                 </td>
@@ -313,12 +313,12 @@
                 </tr>
                 <tr>
                     <td>
-                        <table style="width:95%; position: relative; bottom:10px;">
+                        <table style="width:100%; position: relative; bottom:10px;">
                             <tr class="bottom-content">
-                                <td style="font-size:14px; text-align:left; width:45%; font-weight:bold;text-transform:uppercase; letter-spacing: -1px;"> {{ $requestData['emp_name'] }}</td>
-                                <td style="text-align:center; font-size:14px;  width:20%;"> XXXXX{{ $requestData['account_number_last_4'] }}</td>
-                                <td style="text-align:center; font-size:14px;  width:20%;">  XXXXX{{ $requestData['transit_aba_number'] }}</td>
-                                <td style="text-align:right; font-size:14px;  padding-right:10px; width:15%; "> {{ number_format($requestData['total_net_pay'], 2) }} </td>
+                                <td style="font-size:14px; text-align:left; width:40%; font-weight:bold;text-transform:uppercase; letter-spacing: -1px;"> {{ $requestData['emp_name'] }}</td>
+                                <td style="text-align:right; font-size:14px;  width:22.7%; "> XXXXX{{ $requestData['account_number_last_4'] }}</td>
+                                <td style="text-align:center; font-size:14px;  width:20%; padding-left:3px; ">  XXXXX{{ $requestData['transit_aba_number'] }}</td>
+                                <td style="text-align:right; font-size:14px;  width:17.3%;padding-right:20px;"> {{ number_format($requestData['total_net_pay'], 2) }} </td>
                             </tr>
                         </table>
                     </td>

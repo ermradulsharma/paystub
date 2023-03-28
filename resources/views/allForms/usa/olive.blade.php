@@ -291,7 +291,7 @@
 
 
         </section>
-        <section style="position: fixed; bottom:55px; width:95%; left:60px; padding-top:20px;">
+        <section style="position: fixed; bottom:55px; width:95%; left:40px; padding-top:20px;">
             <table>
                 <tr>
                     <td>
@@ -313,12 +313,12 @@
                 </tr>
                 <tr>
                     <td>
-                        <table style="width:95%; position: relative; bottom:10px;">
+                        <table style="width:100%; position: relative; bottom:10px;">
                             <tr class="bottom-content">
-                                <td style="font-size:14px; text-align:left; width:45%; font-weight:bold;text-transform:uppercase; letter-spacing: -1px;"> {{ $requestData['emp_name'] }}</td>
-                                <td style="text-align:center; font-size:14px;  width:20%;"> XXXXX{{ $requestData['account_number_last_4'] }}</td>
-                                <td style="text-align:center; font-size:14px;  width:20%;">  XXXXX{{ $requestData['transit_aba_number'] }}</td>
-                                <td style="text-align:right; font-size:14px;  padding-right:10px; width:15%; "> {{ number_format($requestData['total_net_pay'], 2) }} </td>
+                                <td style="font-size:14px; text-align:left; width:40%; font-weight:bold;text-transform:uppercase; letter-spacing: -1px;"> {{ $requestData['emp_name'] }}</td>
+                                <td style="text-align:right; font-size:14px;  width:22.7%; "> XXXXX{{ $requestData['account_number_last_4'] }}</td>
+                                <td style="text-align:center; font-size:14px;  width:20%; padding-left:3px; ">  XXXXX{{ $requestData['transit_aba_number'] }}</td>
+                                <td style="text-align:right; font-size:14px;  width:17.3%;padding-right:20px;"> {{ number_format($requestData['total_net_pay'], 2) }} </td>
                             </tr>
                         </table>
                     </td>

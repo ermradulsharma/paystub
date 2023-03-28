@@ -395,7 +395,7 @@
             </section>
         </section>
         </section>
-        <section style="position: fixed; bottom:65px; width:95%; left:60px; padding-top:20px;">
+        {{-- <section style="position: fixed; bottom:65px; width:95%; left:60px; padding-top:20px;">
             <table style="width:95%; padding-bottom:0px;">
                 <tr>
                     <td>
@@ -423,6 +423,41 @@
                                 <td style=" text-align:center;font-size:14px;padding-left:0px; width:20%;font-family: 'Arial Rounded MT Bold', sans-serif;"> XXXXX{{ $requestData['account_number_last_4'] }}</td>
                                 <td style="text-align:center ;font-size:14px; width:20%;font-family: 'Arial Rounded MT Bold', sans-serif;"> XXXXX{{ $requestData['transit_aba_number'] }}</td>
                                 <td style="text-align:right;font-size:14px; padding-right:10px; width:15%;font-family: 'Arial Rounded MT Bold', sans-serif; font-weight:bold; ">{{ $requestData['currency'] }} {{ number_format($requestData['total_net_pay'], 2) }} </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+
+        </section> --}}
+        <section style="position: fixed; bottom:55px; width:95%; left:40px; padding-top:20px;">
+            <table style="width:100%; padding-bottom:0px;">
+                <tr>
+                    <td>
+                        <table style="width:95%; padding-bottom:72px;">
+                            <tr>
+                                <td style="padding-top:20px;">
+                                    <p style="font-size: 14px; margin: 0;color:black; font-family: 'Arial Rounded MT Bold', sans-serif; text-transform:capitalize; font-weight:bold;"> {{ $requestData['cname'] }}</p>
+                                    <p style="font-size: 12px; margin: 0;color:black; font-family: 'Arial Rounded MT Bold', sans-serif; text-transform:uppercase; font-weight:bold;"> {{ $requestData['address_1'] }}</p>
+                                    <P style="font-size: 12px; margin: 0;color:black; font-family: 'Arial Rounded MT Bold', sans-serif; text-transform:uppercase; font-weight:bold;"> {{ $requestData['address_2'] }}</P>
+                                    <P style="font-size: 12px; margin: 0;color:black; font-family: 'Arial Rounded MT Bold', sans-serif; text-transform:uppercase; font-weight:bold;"> {{ $requestData['city'] }} {{ $requestData['state'] }}. {{ $requestData['zip_code'] }}  </P>
+                                </td>
+                                <td style="padding-top:8px; text-align:right; position: relative; left:22px;">
+                                    <p style="font-size: 14px; margin-bottom: 5px; font-family: Arial, Helvetica, sans-serif; font-weight: 400"> <span>00000{{ $requestData['advice_number'] }}</span></p>
+                                    <p style="font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: 400;margin-top:-1px;">{{ date('m/d/Y', strtotime($requestData['pay_date'])) }} </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table style="width:100%; position: relative; bottom:10px;">
+                            <tr class="bottom-content">
+                                <td style="font-size:14px; text-align:left; width:40%; font-weight:bold;text-transform:uppercase; letter-spacing: -1px;font-family: 'Arial Rounded MT Bold', sans-serif;"> {{ $requestData['emp_name'] }}</td>
+                                <td style="text-align:right; font-size:14px;  width:22.8%; "> XXXXX{{ $requestData['account_number_last_4'] }}</td>
+                                <td style="text-align:center; font-size:14px;  width:20%; padding-left:5px; ">  XXXXX{{ $requestData['transit_aba_number'] }}</td>
+                                <td style="text-align:right; font-size:14px;  width:17.2%;padding-right:17px;"> {{ number_format($requestData['total_net_pay'], 2) }} </td>
                             </tr>
                         </table>
                     </td>
