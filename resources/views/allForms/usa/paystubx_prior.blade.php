@@ -9,24 +9,33 @@
     {{-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script> --}}
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;1,100&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700;800;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Arimo:ital@1&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-        @import url('https://fonts.cdnfonts.com/css/times');
         @import url('https://fonts.cdnfonts.com/css/roman-new-times');
+        @import url('https://fonts.cdnfonts.com/css/times');
+        @import url('https://fonts.cdnfonts.com/css/arial-2');
+        @import url('https://fonts.cdnfonts.com/css/arial-mt');
 
-        @font-face{
+        @font-face {
+            font-family: 'Arial, Helvetica', sans-serif;
+            font-family: 'Arial MT', sans-serif;
+            font-family: 'Arial MT Narrow', sans-serif;
+            font-family: 'Arial Rounded MT', sans-serif;
+            font-family: 'Arial Rounded MT Bold', sans-serif;
+            font-family: 'ArialMT', sans-serif;
+            font-family: 'Arial MT Black', sans-serif;
+            font-family: 'Maven Pro', sans-serif;
+            font-family: 'Arimo', sans-serif;
+            font-family: 'Times New Roman', sans-serif;
             font-family: 'PT Sans Narrow', sans-serif;
-        }
-
-
-        @font-face {
             font-family: 'Poppins', sans-serif;
-        }
-
-        @font-face {
             font-family: 'MICR', sans-serif;
             src: url("{{asset('fonts/micr-encoding.regular.ttf')}}") format('ttf');
         }
+
         table {
             border-collapse: collapse;
             width: 100%;
