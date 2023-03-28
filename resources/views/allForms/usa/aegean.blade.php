@@ -133,7 +133,7 @@
             height: 4%;
             position:fixed;
             z-index: 5;
-            left:13px;
+            left:14px;
             top:101%;
 
         }
@@ -143,7 +143,7 @@
             content: "";
             top: 78.5%;
             right: 0;
-            left: 13px;
+            left: 14px;
             background-image: url('images/check2.png') !important;
             background-size: contain;
             background-repeat: no-repeat;
@@ -178,10 +178,11 @@
 
 <body>
     <main class="bg-img2">
-        {{-- <img src="{{ public_path('images/jucafunko.svg') }}">
-        <img src="data:image/svg+xml;base64,{{ $encodedSvg }}"> --}}
-        <div class="sidebar"></div>
-        <div class="bottom"></div>
+        <img src="{{ public_path('images/bordeer-right.svg') }}" style="position: absolute; top: -20px; left: 102%; width:6%; height:110%;  z-index: -1;">
+        <img src="{{ public_path('images/bottom.svg') }}" style="position: absolute; bottom:0; width:100%; height:48%;  z-index: -1;">
+        {{-- <img src="data:image/svg+xml;base64,{{ $encodedSvg }}"> --}}
+        {{-- <div class="sidebar"></div> --}}
+        {{-- <div class="bottom"></div> --}}
         <div class="check"></div>
         @guest
         <div class="watermark"></div>
@@ -191,7 +192,7 @@
         <div class="watermark"></div>
         @endif
         @endauth
-        <section class="invoiceborder">
+        <section class="invoiceborder" style="width:100%;">
             <table>
                 <tr>
                     <td style="padding-top:0px; padding-bottom:0; font-size:21px; text-transform:capitalize;font-family: Arial, Helvetica, sans-serif; font-weight:bold ">{{ $requestData['cname'] }} </td>
@@ -295,7 +296,7 @@
 
 
         </section>
-        <section style="position: fixed; bottom:15px; width:95%; left:60px;padding-top:20px;">
+        <section style="position: fixed; bottom:15px; width:95%; left:60px; padding-top:20px;">
             <table>
                 <tr>
                     <td>
@@ -330,8 +331,6 @@
             </table>
 
         </section>
-
-
     </main>
 
 </body>
