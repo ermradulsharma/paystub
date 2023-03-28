@@ -6,7 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Global White Check</title>
     <style>
-         @import url('https://fonts.cdnfonts.com/css/arial-2');
+           @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200&display=swap');
+        @import url('https://fonts.cdnfonts.com/css/arial-2');
+        @import url('https://fonts.cdnfonts.com/css/arial-mt');
+        @import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700;800;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Arimo:ital@1&display=swap');
+
+        @font-face {
+            font-family: Arial, Helvetica, sans-serif;
+            font-family: 'Arial MT', sans-serif;
+            font-family: 'Arial MT Narrow', sans-serif;
+            font-family: 'Arial Rounded MT', sans-serif;
+            font-family: 'Arial Rounded MT Bold', sans-serif;
+            font-family: 'ArialMT', sans-serif;
+            font-family: 'Arial MT Black', sans-serif;
+            font-family: 'Maven Pro', sans-serif;
+            font-family: 'Arimo', sans-serif;
+        }
         body {
             color: #000;
             font-size: 14px;
