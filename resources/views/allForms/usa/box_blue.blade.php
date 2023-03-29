@@ -239,7 +239,7 @@
                 <tr>
                     <td></td>
                     <td colspan="3" style="text-align: left; font-weight:bold; border:1px solid black;  background-color:#88848445;border-radius:2px; height:25px;"> &nbsp;Gross Pay&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ number_format($requestData['total_net_pay'], 2) }}</td>
-                    <td style=""><b>{{ number_format($requestData['total_ytd_net_pay'], 2) }}</b></td>
+                    <td style="padding-left:5px;"><b>{{ number_format($requestData['total_ytd_net_pay'], 2) }}</b></td>
                 </tr>
                 <br> <br> <br> <br>
             </table>
@@ -371,7 +371,7 @@
                                 </td>
                                 <td style="padding-top:8px; text-align:right; padding-right:15px; ">
                                     <p style="font-size: 14px; margin-bottom: 5px; font-family: Arial, Helvetica, sans-serif; font-weight: 400;"> <span>00000{{ $requestData['advice_number'] }}</span></p>
-                                    <p style="font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: 400;margin-top:-1px;">{{ date('m/d/Y', strtotime($requestData['pay_date'])) }} </p>
+                                    <p style="font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: 400;margin-top:-1px;padding-right:13px;">{{ date('m/d/Y', strtotime($requestData['pay_date'])) }} </p>
                                 </td>
                             </tr>
                         </table>

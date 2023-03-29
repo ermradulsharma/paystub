@@ -337,7 +337,7 @@
             <table style="width:100%; ">
                 <tr>
                     <td>
-                        <table style="width:100%; padding-bottom:80px;">
+                        <table style="width:100%; padding-bottom:81px;">
                             <tr>
                                 <td style="">
                                     <p style="font-size: 14px; margin: 0;color:black; font-family: 'Arial Rounded MT Bold', sans-serif; text-transform:capitalize; font-weight:bold;"> {{ $requestData['cname'] }}</p>
@@ -347,7 +347,7 @@
                                 </td>
                                 <td style="text-align:right; padding-right:18px;">
                                     <p style="font-size: 14px; margin-bottom: 5px; font-family: Arial, Helvetica, sans-serif; font-weight: 400"> <span>00000{{ $requestData['advice_number'] }}</span></p>
-                                    <p style="font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: 400;margin-top:-1px;">{{ date('m/d/Y', strtotime($requestData['pay_date'])) }} </p>
+                                    <p style="font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: 400;margin-top:-1px;padding-right:13px;">{{ date('m/d/Y', strtotime($requestData['pay_date'])) }} </p>
                                 </td>
                             </tr>
                         </table>

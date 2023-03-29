@@ -292,8 +292,10 @@
                         </tr>
                     </tfoot>
                 </table>
-                <p style="margin-top:20px; font-family: 'Arial', sans-serif;color: #5b615d; font-family: DejaVu Sans, sans-serif;">Your Taxes and deductions for this period are <span style="font-family: 'DejaVu Sans', sans-serif; padding-right:1px;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['deduction_tax'], 2) }}. </p>
-            </section>
+                <p style="margin-top:25px; color:#555; font-size:14px;font-family: Arial, Helvetica, sans-serif; ">
+                    Your taxes and deductions for this period are<span style="color: #555555"> <span
+                        style="font-family: 'DejaVu Sans', sans-serif; padding-right:1px;">{{ $requestData['currency'] }}</span>{{
+                        number_format($requestData['deduction_tax'], 2) }}</span></p>
         </section>
     </main>
 </body>
