@@ -318,7 +318,7 @@
                     <div class="col2">
                         <table style="width:100%;">
                             <tr>
-                                <td style="color:#1c3d86; font-size:18px; font-weight:bold;font-family: Arial, Helvetica, sans-serif;"> Earnings Statement</td>
+                                <td style="color:#1c3d86; font-size:16px; font-weight:bold;font-family: Arial, Helvetica, sans-serif;"> Earnings Statement</td>
                             </tr>
                         </table>
                     </div>
@@ -377,7 +377,7 @@
                         @foreach ($requestData['taxes'] ?? [] as $key => $taxes)
                             <tr>
                                 <td style="background-color:#f4f2f2;">{{ $taxes }}</td>
-                                <td>{{ number_format($requestData['taxes_rate'][$key], 2) }}</td>
+                                <td style=" text-align:center;">{{ number_format($requestData['taxes_rate'][$key], 2) }}</td>
                                 <td style="text-align:center;">{{ number_format($requestData['taxes_ytd'][$key], 2) }}
                                 </td>
                             </tr>
@@ -385,8 +385,8 @@
                         @foreach ($requestData['tax_deduction'] ?? [] as $key => $tax_deduction)
                             <tr>
                                 <td style="background-color:#f4f2f2;">{{ $tax_deduction }}</td>
-                                <td>{{ number_format($requestData['period_tax_deduction'][$key], 2) }}</td>
-                                <td style="text-align:center;">
+                                <td style="text-align:right;">{{ number_format($requestData['period_tax_deduction'][$key], 2) }}</td>
+                                <td style="text-align:right;">
                                     {{ number_format($requestData['ytd_tax_deduction'][$key], 2) }}</td>
                             </tr>
                         @endforeach
@@ -395,12 +395,12 @@
             </div>
             <table class="tfooter " style="background-color: #5ae4f8; color:white; width:100%;">
                 <tr>
-                    <td style="background: #264FAB; width:140px; padding-left:15px; padding-right:15px; text-align:center;"> Gross Earnings</td>
-                    <td class="section" style="color:black;text-align:right;"> {{ number_format($requestData['period_gross_total'], 2) }}</td>
-                    <td class="section" style="color:black;text-align:right; padding-right:5px;"> {{ number_format($requestData['ytd_gross_total'], 2) }}</td>
-                    <td class="section" style="background-color: #264FAB; width:130px;padding-left:15px; padding-right:15px; text-align:center; margin-left:10px;"> Gross Deductions</td>
-                    <td class="section" style="color:black;width:65px; text-align:right; padding-right:5px;"> {{ number_format($requestData['deduction_tax'], 2) }} </td>
-                    <td class="section" style="color:black;width:70px;text-align:right; padding-right:10px;"> {{ number_format($requestData['ytd_deduction_tax'], 2) }} </td>
+                    <td style="background: #264FAB; width:140px; padding-left:15px; padding-right:15px; text-align:left;"> Gross Earnings</td>
+                    <td class="section" style="color:black;padding-left:56px;"> {{ number_format($requestData['period_gross_total'], 2) }}</td>
+                    <td class="section" style="color:black;text-align:right; padding-right:13px; "> {{ number_format($requestData['ytd_gross_total'], 2) }}</td>
+                    <td class="section" style="background-color: #264FAB; width:105px;padding-left:15px; padding-right:15px; text-align:center; margin-left:10px;"> Gross Deductions</td>
+                    <td class="section" style="color:black;width:67px; text-align:right;"> {{ number_format($requestData['deduction_tax'], 2) }} </td>
+                    <td class="section" style="color:black;width:67px;text-align:right;padding-right:30px; "> {{ number_format($requestData['ytd_deduction_tax'], 2) }} </td>
                 </tr>
             </table>
             <table class="tabl3" style="width:30%;float: right;">
