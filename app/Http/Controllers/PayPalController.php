@@ -122,8 +122,8 @@ class PayPalController extends Controller
                     $userObj->save();
                 }
 
-                return redirect()
-                    ->route('prizing')
+                return back()
+                    ->route('usa.payStub')
                     ->with('message', 'Transaction complete.');
             } else {
                 return redirect()

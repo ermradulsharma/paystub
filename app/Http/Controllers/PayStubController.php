@@ -11,6 +11,7 @@ use App\Models\Template;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
+use Log;
 
 class PayStubController extends Controller
 {
@@ -69,12 +70,7 @@ class PayStubController extends Controller
 
     public function prizing(Request $request)
     {
-        try{
-            $plans = Plan::orderBy('id')->get();
-            return view('lists.prizing',compact('plans'));
-        }catch(\Exception $e){
-            Log::info('Prizing Function', array('Exception' => $e->getMessage()));
-            return redirect()->back()->with('error',$e->getMessage());
-        }
+        $plans = Plan::orderBy('id')->get();
+        return view('lists.prizing', compact('plans'));
     }
 }
