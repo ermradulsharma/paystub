@@ -13,6 +13,7 @@ use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 
 class TemplatesController extends Controller
 {
@@ -95,6 +96,11 @@ class TemplatesController extends Controller
             }
             $path = public_path() . '/uploads/mailData';
             File::isDirectory($path) or File::makeDirectory($path, 0777, true, true);
+
+            if (Auth::user()->expiryDate != '') {
+                $requestData['watermark'] = 'no';
+            }
+
             $invoiceData['requestData'] = $requestData;
             $pdf = PDF::loadView('allForms/' . $request->form_type . '/' . $pageName, $invoiceData)->setPaper('a4', 'portrait');
             $fileName =  date('_d_m_Y_h_i_s') . '.pdf';
@@ -217,30 +223,123 @@ class TemplatesController extends Controller
         }
         return response()->json($response, $response['status']);
     }
+
+    /* public function invoiceMail(Request $request)
+    {
+
+        $response['message'] = "";
+        $response['status'] = STATUS_BAD_REQUEST;
+        $response['success'] = FALSE;
+        try {
+            $paySlipObj = PaySlip::where(['user_id' => Auth::user()->id])->exists();
+            if ($paySlipObj) {
+                $invoice = PaySlip::where(['user_id' => Auth::user()->id])->first();
+                if ($request->id != null) {
+                    $invoice = $invoice->where('id', $request->id);
+                }
+                $invoice = $invoice->orderBy('id', 'desc')->first();
+                $requestData = json_decode($invoice->data);
+                $requestData = collect($requestData);
+                $requestData['watermark'] = 'no';
+                $pageName = $requestData['advance_temp'] ?? $requestData['basic_temp'];
+
+                $path = public_path('/uploads/mailData');
+                File::isDirectory($path) or File::makeDirectory($path, 0777, true, true);
+                return        $invoiceData['requestData'] = $requestData;
+                $pdf = PDF::loadView('allForms/' . $requestData['form_type'] . '/' . $pageName, $invoiceData)->setPaper('a4', 'portrait');
+                $fileName =  date('_d_m_Y_h_i_s') . '.pdf';
+                $pdf->save($path . '/' . $fileName);
+                if ($invoice) {
+                    $mailData = [
+                        'email' => Auth::user()->email,
+                        'title' => 'Please find attachment file'
+                    ];
+                    $moreData = [];
+                    $file = public_path('/uploads/mailData/' . basename($fileName));
+                    try {
+                        Mail::send('mail.invoice_mail', $moreData, function ($message) use ($mailData, $file) {
+                            $message->to($mailData['email']);
+                            $message->subject($mailData['title']);
+                            $message->attach($file);
+                        });
+                        $response['message'] = "Please check your mail";
+                        $response['status'] = STATUS_OK;
+                        $response['success'] = TRUE;
+                        return response()->json($response, $response['status']);
+                    } catch (\Exception $e) {
+                        $response['message'] = $e->getMessage() . ' Line No ' . $e->getLine() . ' in File' . $e->getFile();
+                    }
+                }
+            } else {
+                $response['message'] = "Please choose Paystub pay slip";
+                return response()->json($response, 422);
+            }
+        } catch (Exception $e) {
+            $response['message'] = $e->getMessage() . ' Line No ' . $e->getLine() . ' in File' . $e->getFile();
+        }
+        return response()->json($response, $response['status']);
+    } */
+
     public function subscription(Request $request)
     {
-        $requestData = $request->all();
-        if (!array_key_exists('subcription_type', $requestData)) {
-            $requestData += array('subcription_type' => '0');
-        }
-        $userObj = User::find(Auth::user()->id);
-        if ($requestData['type'] == 1) {
-            if ($requestData['subcription_type'] == 1) {
-                $userObj->expiryDate = Carbon::now()->addMonth();
-            } else  if ($requestData['subcription_type'] == 3) {
-                $userObj->expiryDate = Carbon::now()->addMonths(3);
-            } else  if ($requestData['subcription_type'] == 6) {
-                $userObj->expiryDate = Carbon::now()->addMonths(6);
-            } else  {
-                $userObj->expiryDate = Carbon::now()->addDay();
+        $response['message'] = "";
+        $response['status'] = STATUS_BAD_REQUEST;
+        $response['success'] = FALSE;
+        try {
+            // return Carbon::now()->toTimeString();
+            $requestData = $request->all();
+            // if (!array_key_exists('subcription_type', $requestData)) {
+            //     $requestData += array('subcription_type' => '0');
+            // }
+            if (!array_key_exists('expiryDate', $requestData)) {
+                $requestData += array('expiryDate' => Carbon::now());
             }
-        } else {
-            $userObj->expiryDate = "";
+            $userObj = User::find(Auth::user()->id);
+            if ($requestData['type'] == 1) {
+                if ($requestData['subcription_type'] == 1) {
+                    $userObj->expiryDate = Carbon::now()->addMonth();
+                } else  if ($requestData['subcription_type'] == 3) {
+                    $userObj->expiryDate = Carbon::now()->addMonths(3);
+                } else  if ($requestData['subcription_type'] == 6) {
+                    $userObj->expiryDate = Carbon::now()->addMonths(6);
+                } else  if ($requestData['subcription_type'] == 99) {
+                    $userObj->expiryDate = Carbon::now()->addYears(99);
+                } else {
+                    $userObj->expiryDate = Carbon::now()->addHours(24);
+                }
+            } else {
+                $userObj->expiryDate = "";
+            }
+            $userObj->save();
+            $response['success'] = true;
+            $response['message'] = "Data saved successfully";
+            $response['status'] = STATUS_OK;
+        } catch (Exception $e) {
+            $response['message'] = $e->getMessage() . ' Line No ' . $e->getLine() . ' in File' . $e->getFile();
+            Log::error($e->getTraceAsString());
+            $response['status'] = STATUS_GENERAL_ERROR;
         }
-        $userObj->save();
-        $response['success'] = true;
-        $response['message'] = "Data saved successfully";
-        $response['status'] = STATUS_OK;
+        return response()->json($response, $response['status']);
+    }
+
+    public function checkSubscription(Request $request)
+    {
+        $response['message'] = "";
+        $response['status'] = STATUS_BAD_REQUEST;
+        $response['success'] = FALSE;
+        try {
+            $userObj = User::find(Auth::user()->id)->select('expiryDate')->first();
+            $expiry = Carbon::parse($userObj->expiryDate)->format('m-d-Y');
+            $userObj->expiryDate = $expiry;
+            $response['data'] = $userObj;
+            $response['success'] = true;
+            $response['message'] = "Expiry Date";
+            $response['status'] = STATUS_OK;
+        } catch (Exception $e) {
+            $response['message'] = $e->getMessage() . ' Line No ' . $e->getLine() . ' in File' . $e->getFile();
+            Log::error($e->getTraceAsString());
+            $response['status'] = STATUS_GENERAL_ERROR;
+        }
         return response()->json($response, $response['status']);
     }
 }

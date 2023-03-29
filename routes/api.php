@@ -38,5 +38,7 @@ Route::group(['namespace' => 'Api', 'middleware' => ['\App\Http\Middleware\LogAf
         Route::post('edit-form-data', [TemplatesController::class, 'editFormData']);
         Route::post('download-pdf', [TemplatesController::class, 'generatePdf']);
         Route::post('subscription', [TemplatesController::class, 'subscription']);
+        Route::get('check-subscription', [TemplatesController::class, 'checkSubscription']);
+        // Route::post('invoice', [TemplatesController::class, 'invoiceMail']);
     });
 });

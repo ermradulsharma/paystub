@@ -40,7 +40,7 @@ class UserController extends Controller
 
         $user->code = $code;
         if ($user->save()) {
-            $response['data'] = User::select('email')->find($user->id);
+            $response['data'] = User::select('email',)->find($user->id);
             $response['success'] = TRUE;
             $response['message'] = "Verification code sent successfully";
             $response['status'] = STATUS_OK;

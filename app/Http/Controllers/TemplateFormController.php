@@ -27,8 +27,8 @@ class TemplateFormController extends Controller
     {
         $invoiceData = PaySlip::where(['user_id' => Auth::user()->id, 'id' => $id])->first() ?? [];
         $deduction = Deduction::where('state', $invoiceData->type)->orderBy('id', 'asc')->get();
-        $basicType = Template::where(['state' => $invoiceData->type, 'type' => 'basic', 'status' => 1])->with('images')->get();
-        $advanceType = Template::where(['state' => $invoiceData->type, 'type' => 'advance', 'status' => 1])->with('images')->get();
+        $basicType = Template::where(['state' => $invoiceData->type, 'type' => 'basic', 'status' => 1])->orderBy('title')->with('images')->get();
+        $advanceType = Template::where(['state' => $invoiceData->type, 'type' => 'advance', 'status' => 1])->orderBy('title')->with('images')->get();
         $stateTaxes = StateTax::get();
         $currencies = Currency::get();
         return view('lists/' . $invoiceData->type . '-edit', compact('basicType', 'advanceType', 'deduction', 'stateTaxes', 'currencies', 'invoiceData'));
@@ -54,7 +54,8 @@ class TemplateFormController extends Controller
         $path = public_path() . '/uploads/mailData';
         File::isDirectory($path) or File::makeDirectory($path, 0777, true, true);
         $invoiceData['requestData'] = $requestData;
-        $pdf = PDF::loadView('allForms/' . $request->form_type . '/' . $pageName, $invoiceData)->setPaper('a4', 'portrait');
+        // return view('allForms/' . $request->form_type . '/' . $pageName, compact('invoiceData', 'requestData'));
+        $pdf = PDF::loadHtml(View('allForms/' . $request->form_type . '/' . $pageName, $invoiceData))->setPaper('a4', 'portrait')->set_option('isRemoteEnabled', true);
         //    return $pdf->stream($pageName.'.pdf');
         $fileName =  date('_d_m_Y_h_i_s') . '.pdf';
         $pdf->save($path . '/' . $fileName);
