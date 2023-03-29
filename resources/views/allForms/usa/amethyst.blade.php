@@ -265,7 +265,7 @@
             </tfoot>
           </table>
           <p style="margin-top:25px; color:#587193; font-size:14px;font-family: Arial, Helvetica, sans-serif; "> Your taxes and deductions for this period are <span style="color: #555555">
-              <span style="font-family: 'DejaVu Sans', sans-serif; padding-right:1px;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['deduction_tax'], 2) }}
+              ays{{ number_format($requestData['deduction_tax'], 2) }}
             </span>
           </p>
         </section>
