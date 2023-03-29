@@ -132,7 +132,7 @@
         }
 
 
-        .background:before {
+        /* .background:before {
             background-image: url("images/bg-lines1.png");
             background-repeat: no-repeat;
             background-size: cover;
@@ -149,7 +149,7 @@
 
         .background {
             position: relative;
-        }
+        } */
 
         .watermark {
             position: absolute;
@@ -214,9 +214,6 @@
                 </tr>
             </table>
         </section>
-
-
-
         <div class="row2">
             <h3 style="text-align: center; max-width:230px; margin:0 0px 0 auto; padding-bottom:25px; text-transform:capitalize; font-size:22px; font-weight:bold;font-family: 'Arial', sans-serif;">
                 Earnings Statement</h3>
@@ -281,9 +278,11 @@
         </div>
 
         <section class="">
-            <div class="row1 background" style="margin-top: 60px;">
+            <div class="row1" style="margin-top: 60px;">
                 <div class="column1">
                     <table style="width: 100%;">
+                        <img src="{{ public_path('images/lines.svg') }}"
+            style="position: absolute; top: 30%; right:0px;left: 13%;  z-index: -1; width:51%; height:45%;">
                         <tr>
                             <th style="width:20%;font-size:14px;font-family: Arial, Helvetica, sans-serif; font-weight:bold;">Earnings</th>
                             <th style="width:18%;text-align:left; padding-left:14px;font-size:14px;font-family: Arial, Helvetica, sans-serif; font-weight:bold;">Rate</th>
@@ -321,6 +320,8 @@
 
                 <div class="column2">
                     <table style="width: 100%;">
+                        <img src="{{ public_path('images/lines.svg') }}"
+                        style="position: absolute; top: 30%; right:0px;left: 0; z-index: -1; width:35%; height:45%;">
                         <tr style="border-bottom: 2px solid black; ">
                             <th style="font-family: Arial, Helvetica, sans-serif;">Important Notes</th>
                         </tr>
