@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
 @section('content')
 
 
@@ -19,86 +19,59 @@
         <div class="mx-lg-5 px-lg-5">
             <div class="m-lg-5 px-lg-5">
                 <div class="row">
-                    <div class="col-lg-4 d-flex justify-content-center">
-                        <div class="prizebox suscription" role="button" data-plan="1">
-                            <h3 class="my-5 pb-5 prizeh3">1 Month</h3>
-                            <div class="mx-4">
-                                <div class="d-flex listItem">
-                                    <i class="fa fa-check priceicon"></i>
-                                    <p class="prize-p">Unlimited Paystubs</p>
-                                </div>
-
-                                <div class="d-flex listItem">
-                                    <i class="fa fa-check priceicon"></i>
-                                    <p class="prize-p">Get access to Templates</p>
-                                </div>
-
-                                <div class="d-flex listItem">
-                                    <i class="fa fa-check priceicon"></i>
-                                    <p class="prize-p">Customize your Paystubs</p>
-                                </div>
-
-                                <div class="d-flex listItem">
-                                    <i class="fa fa-check priceicon"></i>
-                                    <p class="prize-p">Email / Download</p>
+                    @if(isset($plans) && $plans->count() > 0)
+                        @foreach ( $plans as $key => $plan)
+                            <div class="col-lg-4 d-flex justify-content-center">
+                                <div class="prizebox2 suscription" role="button" data-plan="{{$plan->id}}">
+                                    <h3 class="my-5 pb-5 prizeh3">{{$plan->name}}</h3>
+                                    <div class="right-img">
+                                        <img src="images/green1.png">
+                                       <div class="value-text"><p>${{$plan->price}}</p></div>
+                                    </div>
+                                    <div class="mx-4">
+                                        <div class="d-flex listItem">
+                                            <i class="fa fa-check priceicon"></i>
+                                            <p class="prize-p">{{$plan->description}}</p>
+                                        </div>
+                                        {{-- <div class="d-flex listItem">
+                                            <i class="fa-sharp fa-solid fa-dollar-sign priceicon"></i>
+                                            <p class="prize-p">{{$plan->prize}}</p>
+                                        </div> --}}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="col-lg-4 d-flex justify-content-center">
-                        <div class="prizebox1 suscription" role="button" data-plan="2">
-                            <h3 class="my-5 pb-5 prizeh3">3 Month</h3>
-                            <div class="mx-4">
-                                <div class="d-flex listItem">
-                                    <i class="fa fa-check priceicon"></i>
-                                    <p class="prize-p">Unlimited Paystubs</p>
-                                </div>
 
-                                <div class="d-flex listItem">
-                                    <i class="fa fa-check priceicon"></i>
-                                    <p class="prize-p">Get access to Templates</p>
-                                </div>
+                            {{-- @if($plan->name == '6 Month')
+                                <div class="col-lg-4 d-flex justify-content-center">
+                                    <div class="prizebox2 suscription" role="button" data-plan="{{$plan->id}}">
+                                        <h3 class="my-5 pb-5 prizeh3">{{$plan->name}}</h3>
+                                        <div class="mx-4">
+                                            <div class="d-flex listItem">
+                                                <i class="fa fa-check priceicon"></i>
+                                                <p class="prize-p">{{$plan->paystub_access}} Paystubs</p>
+                                            </div>
 
-                                <div class="d-flex listItem">
-                                    <i class="fa fa-check priceicon"></i>
-                                    <p class="prize-p">Customize your Paystubs</p>
-                                </div>
+                                            <div class="d-flex listItem">
+                                                <i class="fa {{$plan->template_access == '1' ? 'fa-check priceicon' : 'fa-xmark priceiconx'}} "></i>
+                                                <p class="prize-p">Get access to Templates</p>
+                                            </div>
 
-                                <div class="d-flex listItem">
-                                    <i class="fa fa-check priceicon"></i>
-                                    <p class="prize-p">Email / Download</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                                            <div class="d-flex listItem">
+                                                <i class="fa {{$plan->paystub_customize == '1' ? 'fa-check priceicon' : 'fa-xmark priceiconx'}}"></i>
+                                                <p class="prize-p">Customize your Paystubs</p>
+                                            </div>
 
-                    <div class="col-lg-4 d-flex justify-content-center">
-                        <div class="prizebox2 suscription" role="button" data-plan="3">
-                            <h3 class="my-5 pb-5 prizeh3">6 Month</h3>
-                            <div class="mx-4">
-                                <div class="d-flex listItem">
-                                    <i class="fa fa-check priceicon"></i>
-                                    <p class="prize-p">Unlimited Paystubs</p>
+                                            <div class="d-flex listItem">
+                                                <i class="fa {{$plan->email_download == '1' ? 'fa-check priceicon' : 'fa-xmark priceiconx'}}"></i>
+                                                <p class="prize-p">Email / Download</p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-
-                                <div class="d-flex listItem">
-                                    <i class="fa fa-check priceicon"></i>
-                                    <p class="prize-p">Get access to Templates</p>
-                                </div>
-
-                                <div class="d-flex listItem">
-                                    <i class="fa fa-check priceicon"></i>
-                                    <p class="prize-p">Customize your Paystubs</p>
-                                </div>
-
-                                <div class="d-flex listItem">
-                                    <i class="fa fa-check priceicon"></i>
-                                    <p class="prize-p">Email / Download</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                            @endif --}}
+                        @endforeach
+                    @endif
                 </div>
             </div>
         </div>
@@ -194,7 +167,7 @@
 
     $('.suscription').click(function() {
         var planId = $(this).data('plan');
-        
+
         window.location.href = "{{route('processTransaction')}}?plan="+planId;
         return false;
         // document.getElementById("loaderDiv").style.display = "block";
