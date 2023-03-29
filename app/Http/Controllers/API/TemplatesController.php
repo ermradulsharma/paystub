@@ -328,7 +328,8 @@ class TemplatesController extends Controller
         $response['status'] = STATUS_BAD_REQUEST;
         $response['success'] = FALSE;
         try {
-            $response['data'] =  User::find(Auth::user()->id)->select('expiryDate')->first();
+            $userObj = User::find(Auth::user()->id)->select('expiryDate')->first();
+            $response['data'] = Carbon::parse($userObj->expiryDate)->format('m-d-Y');
             $response['success'] = true;
             $response['message'] = "Expiry Date";
             $response['status'] = STATUS_OK;
