@@ -311,8 +311,6 @@
                         style="font-family: 'DejaVu Sans', sans-serif; padding-right:1px;">{{ $requestData['currency'] }}</span>{{
                         number_format($requestData['deduction_tax'], 2) }}</span></p>
             </section>
-
-
         </section>
         <section style="position: fixed; bottom:55px; width:95%; left:40px;">
             <table>
@@ -337,7 +335,7 @@
                                         style="font-size: 14px; margin-bottom: 5px; font-family: Arial, Helvetica, sans-serif; font-weight: 400">
                                         <span>00000{{ $requestData['advice_number'] }}</span></p>
                                     <p
-                                        style="font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: 400">
+                                        style="font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: 400;padding-right:13px;">
                                         {{ date('m/d/Y', strtotime($requestData['pay_date'])) }} </p>
                                 </td>
                             </tr>
