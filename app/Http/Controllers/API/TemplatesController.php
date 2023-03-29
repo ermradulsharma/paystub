@@ -321,4 +321,22 @@ class TemplatesController extends Controller
         }
         return response()->json($response, $response['status']);
     }
+
+    public function checkSubscription(Request $request)
+    {
+        $response['message'] = "";
+        $response['status'] = STATUS_BAD_REQUEST;
+        $response['success'] = FALSE;
+        try {
+            $response['data'] =  User::find(Auth::user()->id)->select('expiryDate')->first();
+            $response['success'] = true;
+            $response['message'] = "Expiry Date";
+            $response['status'] = STATUS_OK;
+        } catch (Exception $e) {
+            $response['message'] = $e->getMessage() . ' Line No ' . $e->getLine() . ' in File' . $e->getFile();
+            Log::error($e->getTraceAsString());
+            $response['status'] = STATUS_GENERAL_ERROR;
+        }
+        return response()->json($response, $response['status']);
+    }
 }
