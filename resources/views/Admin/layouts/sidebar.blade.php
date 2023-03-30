@@ -27,6 +27,13 @@
                 <span>Deduction</span>
             </a>
         </li>
+
+        <li class="nav-item">
+            <a class="nav-link collapsed {{request()->is('settings') ? 'active' : ''}}" href="{{('settings')}}">
+                <i class="bi bi-gear"></i>
+                <span>Setting</span>
+            </a>
+        </li>
     </ul>
 
 </aside><!-- End Sidebar-->

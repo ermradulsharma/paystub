@@ -5,6 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Setting;
 use App\Models\Currency;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Hash;
+use App\Models\User;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+
 class SettingController extends Controller
 {
     /**
@@ -35,9 +42,15 @@ class SettingController extends Controller
                 $notification = $notificationObj->value ?? "[]";
                 $notification = json_decode($notification, true);
 
+                $currencyObj = Setting::where('name', 'paypal_configuration')->first();
+                $currencyObj = $currencyObj->value ?? "[]";
+                $currencyData = json_decode($currencyObj, true);
+
+                $userObj = User::find(Auth::user()->id);
+
                 $currencies = Currency::pluck('name','name')->all();
 
-                return view('admin.setting')->with(compact('data', 'settings', 'smtp', 'notification','currencies'));
+                return view('admin.setting')->with(compact('data', 'settings', 'smtp', 'notification','currencies','currencyData','userObj'));
             }
 
             try {
@@ -51,20 +64,41 @@ class SettingController extends Controller
                     $rules['password'] = 'required|min:6|confirmed';
                     $validator = Validator::make($request->all(), $rules);
                     if ($validator->fails()) {
-                        $errorResponse = validation_error_response($validator->errors()->toArray());
-                        return redirect()->back()->with('error', $errorResponse['message']);
+
+                        return redirect()->route('settings')->withErrors($validator)->withInput();
                     }
                     $userObj = User::find(Auth::user()->id);
                     if (!Hash::check($request->get('old_password'), $userObj->password)) {
-                        $response['message'] = WRONG_PASSWORD;
-                        return redirect()->back()->with('error',  $response['message']);
+                        $response['message'] = 'Current password is worng';
+                        return redirect()->route('settings')->with('error',  $response['message']);
                     }
                     $userObj->password = Hash::make($requestData['password']);
                     if ($userObj->save()) {
-                        return redirect()->back()->with('success', 'Password changed successfully');
+                        return redirect()->route('settings')->with('success', 'Password changed successfully');
                     } else {
-                        return redirect()->back()->with('error', 'Wrong old password');
+                        return redirect()->route('settings')->with('error', 'Wrong old password');
                     }
+                }
+
+                if ($requestData['request_type'] == 'personal_info') {
+
+                        $rules['first_name'] = 'required|min:3';
+                        $rules['last_name'] = 'required|min:3';
+                        $rules['email'] = 'required|email|email:rfc,dns|unique:users,email,'.Auth::user()->id;
+                        $validator = Validator::make($request->all(), $rules);
+                        if ($validator->fails()) {
+                            return redirect()->route('settings')->withErrors($validator)->withInput();
+                        }
+                        $userObj = User::where('id',Auth::user()->id)->first();
+                        $userObj->first_name = $requestData['first_name'] ?? '';
+                        $userObj->last_name = $requestData['last_name'] ?? '';
+                        $userObj->name = (($requestData['first_name'] ?? '').' '.($requestData['last_name'] ?? ''));
+                        $userObj->email = $requestData['email'] ?? '';
+                        if ($userObj->save()) {
+                            return redirect()->route('settings')->with('message', 'Personal info changed successfully');
+                        } else {
+                            return redirect()->route('settings')->with('error', 'Something went wrong');
+                        }
                 }
 
                 if ($requestData['request_type'] == 'smtp') {
@@ -88,7 +122,7 @@ class SettingController extends Controller
 
                     $settingObj->value = $jsonData;
                     $settingObj->save();
-                    return redirect()->back()->with('success', 'SMTP setting updated successfully');
+                    return redirect()->route('settings')->with('success', 'SMTP setting updated successfully');
                 }
 
                 if ($requestData['request_type'] == 'debug_mode') {
@@ -108,7 +142,7 @@ class SettingController extends Controller
 
                     $settingObj->value = $jsonData;
                     $settingObj->save();
-                    return redirect()->back()->with('success', 'Debug mode updated successfully');
+                    return redirect()->route('settings')->with('success', 'Debug mode updated successfully');
                 }
 
                 if ($requestData['request_type'] == 'push_notification_server_key') {
@@ -128,7 +162,7 @@ class SettingController extends Controller
 
                     $settingObj->value = $jsonData;
                     $settingObj->save();
-                    return redirect()->back()->with('success', 'Push notification server key updated successfully');
+                    return redirect()->route('settings')->with('success', 'Push notification server key updated successfully');
                 }
 
                 if ($requestData['request_type'] == 'paypal_configuration') {
@@ -142,7 +176,7 @@ class SettingController extends Controller
                     ];
 
                     $jsonData = json_encode($paypalDetails);
-                     dd($jsonData);
+
                     $settingObj = Setting::where('name', 'paypal_configuration')->first();
 
                     if (!$settingObj) {
@@ -153,10 +187,10 @@ class SettingController extends Controller
 
                     $settingObj->value = $jsonData;
                     $settingObj->save();
-                    return redirect()->back()->with('success', 'Paypal configuration updated successfully');
+                    return redirect()->route('settings')->with('success', 'Paypal configuration updated successfully');
                 }
             } catch (\Exception $e) {
-                return redirect()->back()->with('error', $e->getMessage());
+                return redirect()->route('settings')->with('error', $e->getMessage());
             }
 
     }

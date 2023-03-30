@@ -97,6 +97,7 @@ Route::group(['middleware' => ['auth'],'namespace'=>'App\Http\Controllers'], fun
         Route::get('deduction', function () {
             return view('Admin/deduction');
         });
+        Route::match(['GET', 'POST'], 'settings', [SettingController::class, 'settings'])->name('settings');
     });
 
     Route::post('usaStoreData', [TemplateFormController::class, 'usaStoreData'])->name('usaStoreData');
@@ -107,8 +108,7 @@ Route::group(['middleware' => ['auth'],'namespace'=>'App\Http\Controllers'], fun
     Route::get('invoiceEdit/{id}', [TemplateFormController::class, 'edit'])->name('invoiceEdit');
     Route::get('prizing', [PayStubController::class, 'prizing'])->name('prizing');
     Route::get('subscription', [TemplateFormController::class, 'subscription'])->name('subscription');
-    // Route::resource('settings',SettingController::class);
-    Route::match(['GET', 'POST'], 'settings', [SettingController::class, 'settings'])->name('settings');
+    // Route::match(['GET', 'POST'], 'settings', [SettingController::class, 'settings'])->name('settings');
 
 });
 

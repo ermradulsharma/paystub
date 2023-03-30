@@ -16,7 +16,7 @@
         "laravel/socialite": "^5.6",
         "laravel/tinker": "^2.7",
         "laravel/ui": "^4.2",
-        "livewire/livewire": "^2.10",
+        "livewire/livewire": "^2.12",
         "riskihajar/terbilang": "^1.2"
     },
     "require-dev": {

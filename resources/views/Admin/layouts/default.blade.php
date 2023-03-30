@@ -55,9 +55,36 @@
     <script src="{{asset('Admin/assets')}}/vendor/tinymce/tinymce.min.js"></script>
     <script src="{{asset('Admin/assets')}}/vendor/php-email-form/validate.js"></script>
     <script class="cssdeck" src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.1.1/bootstrap.min.js"></script>
+
+    <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
     <!-- Template Main JS File -->
     <script src="{{asset('Admin/assets')}}/js/main.js"></script>
 
+@if ($errors->any())
+    @foreach ($errors->all() as $error)
+        <script>
+            toastr.error('{{ $error }}');
+        </script>
+    @endforeach
+@endif
+@if (Session::has('success'))
+    <script>
+    toastr.success("{{ Session::get('success') }}");
+    </script>
+@endif
+
+    @if (Session::has('message'))
+    <script>
+        toastr.success("{{ Session::get('message') }}");
+    </script>
+    @endif
+    @if (Session::has('error'))
+    <script>
+        toastr.error("{{ Session::get('error') }}");
+    </script>
+    @endif
 </body>
 
 </html>
