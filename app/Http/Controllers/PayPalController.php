@@ -121,17 +121,18 @@ class PayPalController extends Controller
                     $userObj->expiryDate = $subcriptionObj->expiry_date;
                     $userObj->save();
                 }
+                Log::info('Success Transaction Success', array('Exception' =>'Success'));
+                return redirect(route('welcome'));
 
-                return back()
-                    ->route('usa.payStub')
-                    ->with('message', 'Transaction complete.');
+
             } else {
-                return redirect()
-                    ->route('prizing')
-                    ->with('error', $response['message'] ?? 'Something went wrong.');
+                Log::info('Success Transaction failed', array('Exception' =>'failed'));
+                return redirect(route('prizing'));
             }
         }catch(\Exception $e){
             Log::info('Success Transaction Function', array('Exception' => $e->getMessage()));
+            return redirect(route('prizing'));
+
         }
     }
 
