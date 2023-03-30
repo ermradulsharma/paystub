@@ -102,6 +102,18 @@ class SettingController extends Controller
                 }
 
                 if ($requestData['request_type'] == 'smtp') {
+                        $rules['smtp_email'] = 'required|email|email:rfc,dns';
+                        $rules['smtp_password'] = 'required|min:6';
+                        $rules['smtp_host'] = 'required';
+                        $rules['smtp_port'] = 'required';
+                        $rules['smtp_from_address'] = 'required|email|email:rfc,dns';
+                        $rules['smtp_from_name'] = 'required|min:3';
+
+                        $validator = Validator::make($request->all(), $rules);
+                        if ($validator->fails()) {
+                            return redirect()->route('settings')->withErrors($validator)->withInput();
+                        }
+
                     $smtp = [
                         'email' => $requestData['smtp_email'],
                         'password' => $requestData['smtp_password'],
@@ -146,6 +158,13 @@ class SettingController extends Controller
                 }
 
                 if ($requestData['request_type'] == 'push_notification_server_key') {
+                            $rules['push_notification_server_key'] = 'required';
+
+
+                        $validator = Validator::make($request->all(), $rules);
+                        if ($validator->fails()) {
+                            return redirect()->route('settings')->withErrors($validator)->withInput();
+                        }
                     $push_notification_server_key = [
                         'push_notification_server_key' => $requestData['push_notification_server_key'] ?? NULL
                     ];
