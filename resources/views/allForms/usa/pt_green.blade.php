@@ -209,11 +209,10 @@
                     </b>
                     <P
                         style="margin: 0px 0 0 0; font-size:  14px;text-transform:uppercase;font-family: Arial, Helvetica, sans-serif;">
-                        {{ $requestData['address_1'] }} </P>
+                        {{ $requestData['emp_street_1'] }} </P>
                     <p
                         style="margin: 0px 0 0 0;font-size: 14px;text-transform:uppercase;font-family: Arial, Helvetica, sans-serif;">
-                         {{ $requestData['city'] }} {{ $requestData['state'] }}, {{
-                        $requestData['zip_code'] }} </p>
+                         {{ $requestData['emp_city'] }}, {{ $requestData['emp_state'] }} {{ $requestData['emp_zip_code'] }} </p>
                 </div>
             </div>
             <div
@@ -326,14 +325,9 @@
         </table>
         <table>
             <tr>
-                <td style="font-size:12px; font-weight:bold;padding-left:15px;"> {{ $requestData['emp_street_1'] }}, {{
-                    $requestData['emp_street_2'] }}
-                    {{ $requestData['emp_city'] }} {{ $requestData['emp_state'] }},
-                    {{ $requestData['emp_zip_code'] }} </td>
-                <td style="font-size:12px; font-weight:bold"><b>Pay Period: {{ date('m/d/y',
-                        strtotime($requestData['pay_start'])) }}</b></td>
-                <td style="font-size:12px; font-weight:bold"><b>{{ date('l m/d/y', strtotime($requestData['pay_end']))
-                        }}</b></td>
+                <td style="font-size:12px; font-weight:bold;padding-left:15px;"> {{ $requestData['emp_street_1'] }}, {{ $requestData['emp_city'] }}, {{ $requestData['emp_state'] }} {{ $requestData['emp_zip_code'] }} </td>
+                <td style="font-size:12px; font-weight:bold"><b>Pay Period: {{ date('m/d/y', strtotime($requestData['pay_start'])) }}</b></td>
+                <td style="font-size:12px; font-weight:bold"><b>{{ date('l m/d/y', strtotime($requestData['pay_end'])) }}</b></td>
             </tr>
         </table>
 
@@ -342,18 +336,12 @@
             <div class="row roww">
                 <div class="col1">
                     <table style="width: 100%;">
-                        <thead style="border-top:none;border-left:none; border-right:none; color:#3e787a;"
-                            id="backcolor">
-                            <td
-                                style="font-size:10px; font-weight:bold;text-align:center;  border-right:1px solid  #3e787a; ">
-                                WAGES</td>
-                            <td
-                                style="font-size:10px; font-weight:bold;text-align:center; border-right:1px solid  #3e787a;">
-                                HOURS</td>
-                            <td
-                                style="font-size:10px; font-weight:bold;text-align:center; border-right:1px solid  #3e787a;">
-                                AMOUNT <br>THIS CHECK</td>
-                            <td style="font-size:10px; font-weight:bold;text-align:center;">AMOUNT<br> YEAR-TO-DATE</td>
+                        <thead style="border-top:none;border-left:none; border-right:none; color:#3e787a;" id="backcolor">
+                            <td style="font-size:10px; font-weight:bold;text-align:center;  border-right:1px solid  #3e787a; ">WAGES</td>
+                            <td style="font-size:10px; font-weight:bold;text-align:center; border-right:1px solid  #3e787a;">HOURS</td>
+                            <td style="font-size:10px; font-weight:bold;text-align:center; border-right:1px solid  #3e787a; text-transform:uppercase;">Rate</td>
+                            <td style="font-size:10px; font-weight:bold;text-align:center; border-right:1px solid  #3e787a;">AMOUNT <br>THIS CHECK</td>
+                            <td style="font-size:10px; font-weight:bold;text-align:center; border-right:1px solid  #3e787a;">AMOUNT<br>YEAR-TO-DATE</td>
                         </thead>
                         <tbody>
                             @foreach ($requestData['earning'] as $key => $earn)
