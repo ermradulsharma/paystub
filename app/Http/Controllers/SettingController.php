@@ -166,6 +166,16 @@ class SettingController extends Controller
                 }
 
                 if ($requestData['request_type'] == 'paypal_configuration') {
+                        $rules['paypal_mode'] = 'required';
+                        $rules['client_id'] = 'required|min:10';
+                        $rules['client_secret'] = 'required|min:10';
+                        $rules['app_id'] = 'required|min:8';
+                        $rules['currency'] = 'required|min:3';
+
+                        $validator = Validator::make($request->all(), $rules);
+                        if ($validator->fails()) {
+                            return redirect()->route('settings')->withErrors($validator)->withInput();
+                        }
 
                     $paypalDetails = [
                         "paypal_mode" => $requestData['paypal_mode'] ?? '',
