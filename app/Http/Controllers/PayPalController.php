@@ -174,7 +174,7 @@ class PayPalController extends Controller
         try {
             return redirect()
                 ->route('prizing')
-                ->with('error', $response['message'] ?? 'You have canceled the transaction.');
+                ->with('error', $response['message'] ?? 'you have cancelled the transaction.');
         } catch (\Exception $e) {
             Log::info('Cancel Transaction Function', array('Exception' => $e->getMessage()));
         }
