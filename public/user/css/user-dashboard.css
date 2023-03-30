@@ -204,7 +204,8 @@ th {
     margin-bottom: 34px;
     background-color: white;
 }
-.right-img {
+
+.asdf {
     max-width: 164px;
     margin: -45px -38px 0 auto;
     display: flex;
@@ -212,15 +213,18 @@ th {
     position: relative;
     height: 75px;
 }
-.right-img img {
+
+.asdf img {
     width: 100%;
 }
+
 .value-text {
     position: absolute;
     top: 0px;
     left: 0;
     right: 0;
 }
+
 .value-text p {
     color: #fff;
     font-size: 30px;
@@ -253,6 +257,7 @@ th {
     color: green;
 
 }
+
 .priceiconx {
     font-size: 30px;
     color: rgb(16, 17, 16);
