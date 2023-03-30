@@ -147,10 +147,10 @@
 
 <body>
     <main class="bg-img2">
-        <img src="{{ public_path('images/border/amethyst/amethyst.svg') }}"
+        <img src="{{ public_path('images/border/amethyst/amethyst2.svg') }}"
             style="position: absolute; top: 0px; right:0px;left: 0px; width:106%; height:105%;  z-index: -1;">
         <img src="{{ public_path('images/check01.svg') }}"
-            style="position: absolute; top:74.8%; width:100.79%; height:25%;  z-index: -1; right:0px; left:0px;"> @guest
+            style="position: absolute; top:75.8%; width:100.79%; height:25%;  z-index: -1; right:0px; left:0px;"> @guest
         <div class="watermark"></div> @endguest @auth @if(Auth::user()->expiryDate == '' ||
         !isset($requestData['watermark'])) <div class="watermark"></div> @endif @endauth <section class="invoiceborder">
             <table>
@@ -319,7 +319,7 @@
             <table>
                 <tr>
                     <td>
-                        <table style="width:100%;padding-bottom:74px;">
+                        <table style="width:100%;padding-bottom:64px;">
                             <tr>
                                 <td style="">
                                     <p
