@@ -50,7 +50,7 @@ class SettingController extends Controller
 
                 $currencies = Currency::pluck('name','name')->all();
 
-                return view('admin.setting')->with(compact('data', 'settings', 'smtp', 'notification','currencies','currencyData','userObj'));
+                return view('Admin.setting')->with(compact('data', 'settings', 'smtp', 'notification','currencies','currencyData','userObj'));
             }
 
             try {
