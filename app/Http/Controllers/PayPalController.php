@@ -153,11 +153,11 @@ class PayPalController extends Controller
     public function checkExpiry()
     {
         try {
-            $subcriberData = User::where('expiryDate', '!=', '')->where('expiryDate', '<=', Carbon::now()->format('Y-m-d') . ' 23:59:59')->get();
+            $subcriberData = User::where('expiryDate', '!=', '')->where('expiryDate', '<=', Carbon::now())->get();
             foreach ($subcriberData as $key => $user) {
                 User::where('id', $user->id)->update(['expiryDate' => '']);
             }
-            Log::info('Check Expiry Message', array('Success' => 'Cron successfully completed on ' . Carbon::now()->format('Y-m-d H:i:s')));
+            Log::info('Check Expiry Message', array('Success' => 'Cron successfully completed on ' . Carbon::now()));
         } catch (\Exception $e) {
             Log::info('Check Expiry Message', array('Exception' => $e->getMessage()));
         }
