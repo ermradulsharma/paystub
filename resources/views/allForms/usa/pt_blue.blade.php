@@ -159,7 +159,7 @@
             style="border-right: 1px solid   #43407a; margin: auto;border-top: 1px solid   #43407a; border-left: 1px solid   #43407a; border-bottom:none;padding: 0 0px 0px 0px;">
             <div class="row" style="display: flex; display: flex;justify-content: space-between;padding: 0px 14px;">
                 <div style="width: 60%;float:left;">
-                    <h6 style="font-size: 14px; margin-bottom: 0;text-transform:uppercase;"> {{ $requestData['cname'] }}
+                    <h6 style="font-size: 15px; margin-bottom: 0;text-transform:capitalize;"> {{ $requestData['cname'] }}
                     </h6>
                     <p style="font-size: 14px; margin: 0;text-transform:uppercase;"> {{ $requestData['address_1']
                         }}<br>{{ $requestData['city'] }} <br>{{ $requestData['state'] }}, {{ $requestData['zip_code'] }}
@@ -171,10 +171,10 @@
                             $requestData['advice_number'] }}</span> </h6>
                     <br>
                     <br>
-                    <P style="font-size: 14px;margin: 0; text-align:right; padding-right:25%;"><span
-                            style="font-weight:800;padding-right:20px;">Check Number:</span> 1775 </P>
-                    <P style="font-size: 14px;margin: 0;  text-align:right;  padding-right:25%;margin-top:10px;"> <span
-                            style="font-weight:800; padding-right:20px;">Date:</span><b>{{ date('m/d/y',
+                    <P style="font-size: 14px;margin: 0; text-align:right; padding-right:25%;font-weight:bold;font-family: Arial, Helvetica, sans-serif;"><span
+                            style="font-weight:bold;padding-right:20px;">Check No:</span> 1775 </P>
+                    <P style="font-size: 14px;margin: 0;  text-align:right;  padding-right:25%;margin-top:10px;font-family: Arial, Helvetica, sans-serif;font-weight:bold;"> <span
+                            style=" padding-right:20px;">Date:</span><b>{{ date('m/d/y',
                             strtotime($requestData['pay_date'])) }}</b> </P>
                 </div>
             </div>

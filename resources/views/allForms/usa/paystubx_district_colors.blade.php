@@ -268,7 +268,7 @@
                     <td></td>
                     <td></td>
                     <td>
-                        <p class="earning" style="font-size: 16px">
+                        <p class="earning" style="font-size: 16px;font-weight:400;font-family: Arial, Helvetica, sans-serif;">
                             {{ date('F d, Y', strtotime($requestData['pay_date'])) }} </p>
                     </td>
                 </tr>
