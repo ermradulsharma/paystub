@@ -24,7 +24,7 @@
                             <div class="col-lg-4 d-flex justify-content-center">
                                 <div class="prizebox2 suscription" role="button" data-plan="{{$plan->id}}">
                                     <h3 class="my-5 pb-5 prizeh3">{{$plan->name}}</h3>
-                                    <div class="right-img">
+                                    <div class="right-img asdf">
                                         <img src="images/green1.png">
                                        <div class="value-text"><p>${{$plan->price}}</p></div>
                                     </div>
