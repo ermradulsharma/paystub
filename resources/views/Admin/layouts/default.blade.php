@@ -6,14 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Paustub X | Dashboard</title>
-    <meta
-        content="There's no need for complex and costly desktop software. Save time and money with Paystubx free online pay stub maker that creates pay stubs to include all companies, employment, income, and deduction information. No software needed for creating Global Payslip, Paystub or Payroll."
-        name="description">
+    <meta content="" name="description">
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="{{asset('Admin/assets')}}/img/payStubX.webp" rel="icon">
-    <link href="{{asset('Admin/assets')}}/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="{{ asset('Admin/assets') }}/img/payStubX.webp" rel="icon">
+    <link href="{{ asset('Admin/assets') }}/img/apple-touch-icon.png" rel="apple-touch-icon">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.gstatic.com" rel="preconnect">
@@ -23,16 +21,16 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
     <!-- Vendor CSS Files -->
 
-    <link href="{{asset('Admin/assets')}}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="{{asset('Admin/assets')}}/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="{{asset('Admin/assets')}}/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="{{ asset('Admin/assets') }}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ asset('Admin/assets') }}/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    {{-- <link href="{{asset('Admin/assets')}}/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
     <link href="{{asset('Admin/assets')}}/vendor/quill/quill.snow.css" rel="stylesheet">
     <link href="{{asset('Admin/assets')}}/vendor/quill/quill.bubble.css" rel="stylesheet">
-    <link href="{{asset('Admin/assets')}}/vendor/remixicon/remixicon.css" rel="stylesheet">
-    <link href="{{asset('Admin/assets')}}/vendor/simple-datatables/style.css" rel="stylesheet">
+    <link href="{{asset('Admin/assets')}}/vendor/remixicon/remixicon.css" rel="stylesheet"> --}}
+    <link href="{{ asset('Admin/assets') }}/vendor/simple-datatables/style.css" rel="stylesheet">
 
     <!-- Template Main CSS File -->
-    <link href="{{asset('Admin/assets')}}/css/style.css" rel="stylesheet">
+    <link href="{{ asset('Admin/assets') }}/css/style.css" rel="stylesheet">
 
     @livewireStyles
 </head>
@@ -46,44 +44,44 @@
             class="bi bi-arrow-up-short"></i></a>
 
     <!-- Vendor JS Files -->
-    <script src="{{asset('Admin/assets')}}/vendor/apexcharts/apexcharts.min.js"></script>
-    <script src="{{asset('Admin/assets')}}/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="{{asset('Admin/assets')}}/vendor/chart.js/chart.umd.js"></script>
+    {{-- <script src="{{asset('Admin/assets')}}/vendor/apexcharts/apexcharts.min.js"></script> --}}
+    <script src="{{ asset('Admin/assets') }}/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    {{-- <script src="{{asset('Admin/assets')}}/vendor/chart.js/chart.umd.js"></script>
     <script src="{{asset('Admin/assets')}}/vendor/echarts/echarts.min.js"></script>
-    <script src="{{asset('Admin/assets')}}/vendor/quill/quill.min.js"></script>
-    <script src="{{asset('Admin/assets')}}/vendor/simple-datatables/simple-datatables.js"></script>
-    <script src="{{asset('Admin/assets')}}/vendor/tinymce/tinymce.min.js"></script>
-    <script src="{{asset('Admin/assets')}}/vendor/php-email-form/validate.js"></script>
+    <script src="{{asset('Admin/assets')}}/vendor/quill/quill.min.js"></script> --}}
+    <script src="{{ asset('Admin/assets') }}/vendor/simple-datatables/simple-datatables.js"></script>
+    {{-- <script src="{{asset('Admin/assets')}}/vendor/tinymce/tinymce.min.js"></script>
+    <script src="{{asset('Admin/assets')}}/vendor/php-email-form/validate.js"></script> --}}
     <script class="cssdeck" src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.1.1/bootstrap.min.js"></script>
 
     <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
     <!-- Template Main JS File -->
-    <script src="{{asset('Admin/assets')}}/js/main.js"></script>
+    <script src="{{ asset('Admin/assets') }}/js/main.js"></script>
 
-@if ($errors->any())
-    @foreach ($errors->all() as $error)
+    @if ($errors->any())
+        @foreach ($errors->all() as $error)
+            <script>
+                toastr.error('{{ $error }}');
+            </script>
+        @endforeach
+    @endif
+    @if (Session::has('success'))
         <script>
-            toastr.error('{{ $error }}');
+            toastr.success("{{ Session::get('success') }}");
         </script>
-    @endforeach
-@endif
-@if (Session::has('success'))
-    <script>
-    toastr.success("{{ Session::get('success') }}");
-    </script>
-@endif
+    @endif
 
     @if (Session::has('message'))
-    <script>
-        toastr.success("{{ Session::get('message') }}");
-    </script>
+        <script>
+            toastr.success("{{ Session::get('message') }}");
+        </script>
     @endif
     @if (Session::has('error'))
-    <script>
-        toastr.error("{{ Session::get('error') }}");
-    </script>
+        <script>
+            toastr.error("{{ Session::get('error') }}");
+        </script>
     @endif
 </body>
 
