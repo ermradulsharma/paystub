@@ -4,6 +4,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PayStubController;
 use App\Http\Controllers\TemplateFormController;
 use App\Http\Controllers\PayPalController;
+use App\Http\Controllers\SettingController;
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\Routing\Router;
 
@@ -106,7 +107,8 @@ Route::group(['middleware' => ['auth'],'namespace'=>'App\Http\Controllers'], fun
     Route::get('invoiceEdit/{id}', [TemplateFormController::class, 'edit'])->name('invoiceEdit');
     Route::get('prizing', [PayStubController::class, 'prizing'])->name('prizing');
     Route::get('subscription', [TemplateFormController::class, 'subscription'])->name('subscription');
-   
+    // Route::resource('settings',SettingController::class);
+    Route::match(['GET', 'POST'], 'settings', [SettingController::class, 'settings'])->name('settings');
 
 });
 
