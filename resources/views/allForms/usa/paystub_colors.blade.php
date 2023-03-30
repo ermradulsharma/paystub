@@ -203,7 +203,7 @@
                     <td style="padding-top:0px; padding-bottom:0; font-size:30px; text-transform:Captilize; font-family: 'Arial', sans-serif; font-weight:bold;"> {{ $requestData['cname'] }} </td>
                 </tr>
                 <tr>
-                    <td class="address" style="font-size:20px; text-transform:uppercase; font-weight:400; line-height:1.2; color:#000; letter-spacing:-0.5px; padding-top:0; padding-bottom:0; font-family: 'Arial', sans-serif;"> {{ $requestData['address_1'] }} <br> {{ $requestData['city'] }} {{ $requestData['state'] }}. {{ $requestData['zip_code'] }}<br> USA</td>
+                    <td class="address" style="font-size:20px; text-transform:uppercase; font-weight:400; line-height:1.2; color:#000;letter-spacing:-0.5px; padding-top:0; padding-bottom:0; font-family: 'Arial', sans-serif;"> {{ $requestData['address_1'] }} <br> {{ $requestData['city'] }} {{ $requestData['state'] }}. {{ $requestData['zip_code'] }}<br> USA</td>
                     <td style=" font-size:20px; line-height:1.9; vertical-align: center; font-family: 'Arial', sans-serif; font-weight:bold;" class="earning">Earnings Statement</td>
                 </tr>
                 <tr>
@@ -292,8 +292,10 @@
                         </tr>
                     </tfoot>
                 </table>
-                <p style="margin-top:20px; font-family: 'Arial', sans-serif;color: #5b615d; font-family: DejaVu Sans, sans-serif;">Your Taxes and deductions for this period are <span style="font-family: 'DejaVu Sans', sans-serif; padding-right:1px;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['deduction_tax'], 2) }}. </p>
-            </section>
+                <p style="margin-top:25px; color:#555; font-size:14px;font-family: Arial, Helvetica, sans-serif; ">
+                    Your taxes and deductions for this period are<span style="color: #555555"> <span
+                        style="font-family: 'DejaVu Sans', sans-serif; padding-right:1px;">{{ $requestData['currency'] }}</span>{{
+                        number_format($requestData['deduction_tax'], 2) }}</span></p>
         </section>
     </main>
 </body>

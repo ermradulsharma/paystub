@@ -226,7 +226,7 @@
                 <div class="column1">
                     <table style="width: 100%;">
                         <img src="{{ public_path('images/lines.svg') }}"
-            style="position: absolute; top: 28%; right:0px;left: 13%;  z-index: -1; width:51%; height:44%;">
+            style="position: absolute; top: 29%; right:0px;left: 13%;  z-index: -1; width:51%; height:44%;">
                         <tr>
                             <th style="width:20%;font-size:14px;font-family: Arial, Helvetica, sans-serif; font-weight:bold;">Earnings</th>
                             <th style="width:18%;text-align:left; padding-left:14px;font-size:14px;font-family: Arial, Helvetica, sans-serif; font-weight:bold;">Rate</th>
@@ -265,7 +265,7 @@
                 <div class="column2">
                     <table style="width: 100%;">
                         <img src="{{ public_path('images/lines.svg') }}"
-                        style="position: absolute; top: 28%; right:0px;left: 0;  z-index: -1; width:35%; height:44%;">
+                        style="position: absolute; top: 29%; right:0px;left: 0;  z-index: -1; width:35%; height:44%;">
                         <tr style="border-bottom: 2px solid black; ">
                             <th style="font-family: Arial, Helvetica, sans-serif;">Important Notes</th>
                         </tr>
@@ -337,17 +337,17 @@
             <table style="width:100%; ">
                 <tr>
                     <td>
-                        <table style="width:100%; padding-bottom:80px;">
+                        <table style="width:100%; padding-bottom:73px;">
                             <tr>
                                 <td style="">
-                                    <p style="font-size: 14px; margin: 0;color:black; font-family: 'Arial Rounded MT Bold', sans-serif; text-transform:capitalize; font-weight:bold;"> {{ $requestData['cname'] }}</p>
-                                    <p style="font-size: 12px; margin: 0;color:black; font-family: 'Arial Rounded MT Bold', sans-serif; text-transform:uppercase; font-weight:bold;"> {{ $requestData['address_1'] }}</p>
-                                    <P style="font-size: 12px; margin: 0;color:black; font-family: 'Arial Rounded MT Bold', sans-serif; text-transform:uppercase; font-weight:bold;"> {{ $requestData['address_2'] }}</P>
-                                    <P style="font-size: 12px; margin: 0;color:black; font-family: 'Arial Rounded MT Bold', sans-serif; text-transform:uppercase; font-weight:bold;"> {{ $requestData['city'] }} {{ $requestData['state'] }}. {{ $requestData['zip_code'] }}  </P>
+                                    <p style="font-size: 14px; margin: 0;color:black; font-family: 'Arial Rounded MT Bold', sans-serif; text-transform:uppercase; font-weight:bold;"> {{ $requestData['cname'] }}</p>
+                                    <p style="font-size: 12px; margin: 0;color:black; font-family: 'Arial Rounded MT Bold', sans-serif; text-transform:uppercase; font-weight:400;"> {{ $requestData['address_1'] }}</p>
+                                    <P style="font-size: 12px; margin: 0;color:black; font-family: 'Arial Rounded MT Bold', sans-serif; text-transform:uppercase; font-weight:400;"> {{ $requestData['address_2'] }}</P>
+                                    <P style="font-size: 12px; margin: 0;color:black; font-family: 'Arial Rounded MT Bold', sans-serif; text-transform:uppercase; font-weight:400;"> {{ $requestData['city'] }} {{ $requestData['state'] }}. {{ $requestData['zip_code'] }}<br>USA</P>
                                 </td>
                                 <td style="text-align:right; padding-right:18px;">
                                     <p style="font-size: 14px; margin-bottom: 5px; font-family: Arial, Helvetica, sans-serif; font-weight: 400"> <span>00000{{ $requestData['advice_number'] }}</span></p>
-                                    <p style="font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: 400;margin-top:-1px;">{{ date('m/d/Y', strtotime($requestData['pay_date'])) }} </p>
+                                    <p style="font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: 400;margin-top:-1px;padding-right:5px;">{{ date('m/d/Y', strtotime($requestData['pay_date'])) }} </p>
                                 </td>
                             </tr>
                         </table>
@@ -358,9 +358,11 @@
                         <table style="width:100%; position: relative; bottom:10px;">
                             <tr class="bottom-content">
                                 <td style="font-size:14px; text-align:left; width:40%; font-weight:bold;text-transform:uppercase; letter-spacing: -1px;font-family: 'Arial Rounded MT Bold', sans-serif;"> {{ $requestData['emp_name'] }}</td>
-                                <td style="text-align:right; font-size:14px;  width:22.8%; "> XXXXX{{ $requestData['account_number_last_4'] }}</td>
-                                <td style="text-align:center; font-size:14px;  width:20%; padding-left:5px; ">  XXXXX{{ $requestData['transit_aba_number'] }}</td>
-                                <td style="text-align:right; font-size:14px;  width:17.2%;padding-right:17px;"> {{ number_format($requestData['total_net_pay'], 2) }} </td>
+                                <td style="text-align:right; font-size:14px;  width:22.8%;font-family: Arial, Helvetica, sans-serif; "> XXXXX{{ $requestData['account_number_last_4'] }}</td>
+                                <td style="text-align:center; font-size:14px;  width:20%; padding-left:5px; font-family: Arial, Helvetica, sans-serif;">  XXXXX{{ $requestData['transit_aba_number'] }}</td>
+                                <td style="text-align:right; font-size:14px;  width:17.2%;padding-right:20px;font-weight:bold;font-family: Arial, Helvetica, sans-serif;"><span
+                                    style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency']
+                                    }}</span>{{ number_format($requestData['total_net_pay'], 2) }} </td>
                             </tr>
                         </table>
                     </td>

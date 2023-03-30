@@ -268,7 +268,7 @@
                     <td></td>
                     <td></td>
                     <td>
-                        <p class="earning" style="font-size: 16px">
+                        <p class="earning" style="font-size: 16px;font-weight:400;font-family: Arial, Helvetica, sans-serif;">
                             {{ date('F d, Y', strtotime($requestData['pay_date'])) }} </p>
                     </td>
                 </tr>
@@ -400,7 +400,7 @@
                     <td class="section" style="color:black;text-align:right; padding-right:13px; "> {{ number_format($requestData['ytd_gross_total'], 2) }}</td>
                     <td class="section" style="background-color: #264FAB; width:105px;padding-left:15px; padding-right:15px; text-align:center; margin-left:10px;"> Gross Deductions</td>
                     <td class="section" style="color:black;width:67px; text-align:right;"> {{ number_format($requestData['deduction_tax'], 2) }} </td>
-                    <td class="section" style="color:black;width:67px;text-align:right;padding-right:30px; "> {{ number_format($requestData['ytd_deduction_tax'], 2) }} </td>
+                    <td class="section" style="color:black;width:67px;text-align:right;padding-right:22px; "> {{ number_format($requestData['ytd_deduction_tax'], 2) }} </td>
                 </tr>
             </table>
             <table class="tabl3" style="width:30%;float: right;">

@@ -159,10 +159,10 @@
             style="border-right: 1px solid   #43407a; margin: auto;border-top: 1px solid   #43407a; border-left: 1px solid   #43407a; border-bottom:none;padding: 0 0px 0px 0px;">
             <div class="row" style="display: flex; display: flex;justify-content: space-between;padding: 0px 14px;">
                 <div style="width: 60%;float:left;">
-                    <h6 style="font-size: 14px; margin-bottom: 0;text-transform:uppercase;"> {{ $requestData['cname'] }}
+                    <h6 style="font-size: 15px; margin-bottom: 0;text-transform:capitalize;"> {{ $requestData['cname'] }}
                     </h6>
                     <p style="font-size: 14px; margin: 0;text-transform:uppercase;"> {{ $requestData['address_1']
-                        }}<br>{{ $requestData['city'] }} <br>{{ $requestData['state'] }}, {{ $requestData['zip_code'] }}
+                        }}<br>{{ $requestData['city'] }}, {{ $requestData['state'] }} {{ $requestData['zip_code'] }}
                     </p>
                 </div>
                 <div style="width:40%;float:right;">
@@ -171,48 +171,53 @@
                             $requestData['advice_number'] }}</span> </h6>
                     <br>
                     <br>
-                    <P style="font-size: 14px;margin: 0; text-align:right; padding-right:25%;"><span
-                            style="font-weight:800;padding-right:20px;">Check Number:</span> 1775 </P>
-                    <P style="font-size: 14px;margin: 0;  text-align:right;  padding-right:25%;margin-top:10px;"> <span
-                            style="font-weight:800; padding-right:20px;">Date:</span><b>{{ date('m/d/y',
+                    <P style="font-size: 14px;margin: 0; text-align:right; padding-right:25%;font-weight:bold;font-family: Arial, Helvetica, sans-serif;"><span
+                            style="font-weight:bold;padding-right:20px;">Check No:</span> 1775 </P>
+                    <P style="font-size: 14px;margin: 0;  text-align:right;  padding-right:25%;margin-top:10px;font-family: Arial, Helvetica, sans-serif;font-weight:bold;"> <span
+                            style=" padding-right:20px;">Date:</span><b>{{ date('m/d/y',
                             strtotime($requestData['pay_date'])) }}</b> </P>
                 </div>
             </div>
-            <div style="width: 100%; margin: 30px auto 0;font-size: 15px; padding: 0 0px 0px 0px;">
-                <div style="padding: 0px 20px;">
-                    <span>Pay To:<b style="text-transform:uppercase; padding-left:10px;font-size:13px;"> {{
-                            $requestData['emp_name'] }} </b></span>
-                    <span style="margin: 0; float:right; font-weight:bold;">Amount</span>
-                    <span style="margin: 0; float:right; padding-left:10px; margin-right: 11px;">Transit ABA</span>
-                    <span style="margin: 0; float:right; padding-left:10px; margin-right: 11px;">Account Number</span>
-                    <hr style="margin-top: 10px;">
-                    <span style="margin: 0; float:right; margin-left: 20px;font-weight:bold; font-size:16px;"><span
+            <div style="padding-top:30px;">
+                <table style="">
+                    <tr style="border-right:none; border-left:none; border-top:none;">
+                        <td style="text-transform:capitalize; font-size:13px; padding-left:15px; "><span style="font-family: 'Arial Rounded MT Bold', sans-serif;font-weight:bold;">Pay To:</span><b style="text-transform:uppercase; padding-left:10px;font-size:14px;"> {{
+                            $requestData['emp_name'] }} </b></td>
+                        <td style="text-transform:capitalize; font-size:13px;">Account Number</td>
+                        <td style="text-transform:capitalize; font-size:13px;padding-left:15px;">Transit ABA</td>
+                        <td style="text-transform:capitalize; font-size:13px; padding-left:28px;font-weight:bold;">Amount</td>
+                    </tr>
+                    <tr style="border-right:none; border-left:none; border-bottom:none;">
+                        <td></td>
+                        <td style="text-transform:capitalize; font-size:15px;padding-left:5px;">XXXXXX{{$requestData['account_number_last_4'] }}</td>
+
+                        <td style="text-transform:capitalize; font-size:15px;">XXXXX{{ $requestData['transit_aba_number']}}</td>
+
+                        <td style="text-transform:capitalize; font-size:17px; font-weight:bold;"><span
                             style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span>{{
-                        $requestData['total_net_pay'] }}</span>
-                    <span style="margin: 0; float:right; margin-left: 30px;">XXXXX{{ $requestData['transit_aba_number']
-                        }}</span>
-                    <span style="margin: 0; float:right; margin-left: 30px; ">XXXXXX{{
-                        $requestData['account_number_last_4'] }}</span>
-                </div>
+                        $requestData['total_net_pay'] }}</td>
+                    </tr>
+                </table>
             </div>
+
             <div style="width: 50%;margin: 0px 0 0 100px; padding:0px 30px;">
                 <div style="padding:50px 0px 19px;">
                     <b>
                         <p
-                            style="margin: 0px 0 0 0; font-size: 12px; font-weight:bold; text-transform:uppercase; font-family: Arial, Helvetica, sans-serif;">
+                            style="margin: 0px 0 0 0; font-size: 14px; font-weight:bold; text-transform:uppercase; font-family: Arial, Helvetica, sans-serif;">
                             {{ $requestData['emp_name'] }} </p>
                     </b>
                     <P
-                        style="margin: 0px 0 0 0; font-size:  12px;text-transform:uppercase;font-family: Arial, Helvetica, sans-serif;">
+                        style="margin: 0px 0 0 0; font-size:  14px;text-transform:uppercase;font-family: Arial, Helvetica, sans-serif;">
                         {{ $requestData['address_1'] }} </P>
                     <p
-                        style="margin: 0px 0 0 0;font-size: 12px;text-transform:uppercase;font-family: Arial, Helvetica, sans-serif;">
-                        {{ $requestData['address_2'] }} <br>{{ $requestData['city'] }} {{ $requestData['state'] }}, {{
+                        style="margin: 0px 0 0 0;font-size: 14px;text-transform:uppercase;font-family: Arial, Helvetica, sans-serif;">
+                         {{ $requestData['city'] }} {{ $requestData['state'] }}, {{
                         $requestData['zip_code'] }} </p>
                 </div>
             </div>
             <div
-                style="width: 100%;  background-color: #43407a; text-align: center; color: aliceblue; font-size: 12px;">
+                style="width: 100%;  background-color: #43407a; text-align: center; color: aliceblue; font-size: 8px;padding:4px 0px;">
                 <p style="margin: 0;">THE FACE OF THIS DOCUMNET HAS A COLOURED BACKGROUND-NOT A WHITE BACKGROUND</p>
             </div>
         </div>
