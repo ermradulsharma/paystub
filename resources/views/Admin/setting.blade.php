@@ -10,7 +10,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="row">
-                    <div class="col-lg-6">
+                    <div class="col-lg-4">
                         {{-- ******************************************************* SMTP ******************************************************* --}}
                         <div class="card">
                             <div class="card-header">
@@ -66,7 +66,7 @@
 
 
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-4">
                         <div class="card">
                             <div class="card-header">
                                 <h4 class="d-flex align-items-center">Paypal Configuration</h4>
@@ -76,11 +76,11 @@
                                     @csrf
                                     <input type="hidden" name="request_type" value="paypal_configuration">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="paypal_mode" id="paypal-sandbox" value="SandBox" {{($currencyData['paypal_mode']=='SandBox' ? 'checked' : '')}}>
+                                        <input class="form-check-input" type="radio" name="paypal_mode" id="paypal-sandbox" value="SandBox" {{(isset($currencyData['paypal_mode']) && $currencyData['paypal_mode'] =='SandBox' ? 'checked' : '')}}>
                                         <label class="form-check-label" for="paypal-sandbox">SandBox</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="paypal_mode" id="paypal-live" value="Live" {{($currencyData['paypal_mode']=='Live' ? 'checked' : '')}}>
+                                        <input class="form-check-input" type="radio" name="paypal_mode" id="paypal-live" value="Live" {{(isset($currencyData['paypal_mode']) && $currencyData['paypal_mode'] =='Live' ? 'checked' : '')}}>
                                         <label class="form-check-label" for="paypal-live">Production</label>
                                     </div>
                                     <div class="form-group">
@@ -100,7 +100,7 @@
                                         <select name="currency" id="currency_dropdown" class="form-control">
                                             <option value="">Select Currency</option>
                                             @foreach ($currencies as $key => $currency)
-                                                <option value="{{$currency}}" @if($currencyData['currency'] == $currency) selected @endif>{{$currency}}</option>
+                                                <option value="{{$currency}}" @if(isset($currencyData['currency']) && $currencyData['currency'] == $currency) selected @endif>{{$currency}}</option>
                                             @endforeach
                                         </select>
 
