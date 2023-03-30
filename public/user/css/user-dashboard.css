@@ -204,20 +204,6 @@ th {
     margin-bottom: 34px;
     background-color: white;
 }
-
-/* .prizebox2::before {
-    position: absolute;
-    content: "";
-    width: 343px;
-    height: 70px;
-    background-image: url(/images/green1.png);
-    left: 205px;
-    top: 100px;
-    border-radius: 4px;
-    background-repeat: no-repeat;
-    background-size: contain;
-
-} */
 .right-img {
     max-width: 164px;
     margin: -45px -38px 0 auto;
