@@ -39,9 +39,7 @@ class PayPalController extends Controller
     {
         try {
             if (!$request->has('plan')) {
-                redirect()
-                    ->route('prizing')
-                    ->with('error', 'Please choose plan.');
+                redirect()->route('prizing')->with('error', 'Please choose plan.');
             }
             $planId = $request->plan;
             $planDetail = Plan::where('id', $planId)->first();
@@ -106,7 +104,7 @@ class PayPalController extends Controller
                 $subcriptionObj->user_id                = $userId;
                 $subcriptionObj->plan_id                = $planId;
                 $subcriptionObj->transaction_id         = $response['id'];
-                $subcriptionObj->start_date             = date('Y-m-d H:i:s');
+                $subcriptionObj->start_date             = Carbon::now();
                 $subcriptionObj->expiry_date            = $expiry_date;
                 $subcriptionObj->transaction_status     = $response['status'] ?? '';
                 if ($subcriptionObj->save()) {
@@ -128,22 +126,23 @@ class PayPalController extends Controller
     private function getExpiryDate($planDetail)
     {
         try {
+
             $expiryDate = Carbon::now();
             switch ($planDetail->plan_type) {
                 case "hourly":
-                    return $expiryDate->format('Y-m-d') . ' 23:59:59';
+                    return $expiryDate->addHours($planDetail->plan_duration);
                     break;
                 case "daily":
-                    return $expiryDate->addDay($planDetail->plan_duration)->format('Y-m-d') . ' 23:59:59';
+                    return $expiryDate->addDay($planDetail->plan_duration);
                     break;
                 case "monthly":
-                    return $expiryDate->addMonth($planDetail->plan_duration)->format('Y-m-d') . ' 23:59:59';
+                    return $expiryDate->addMonths($planDetail->plan_duration);
                     break;
                 case "yearly":
-                    return $expiryDate->addYear($planDetail->plan_duration)->format('Y-m-d') . ' 23:59:59';
+                    return $expiryDate->addYears($planDetail->plan_duration);
                     break;
                 default:
-                    return $expiryDate->format('Y-m-d') . ' 23:59:59';
+                    return $expiryDate;
             }
         } catch (\Exception $e) {
             Log::info('Get ExpiryDate Function', array('Exception' => $e->getMessage()));
