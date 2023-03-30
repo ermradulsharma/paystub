@@ -170,17 +170,17 @@
                 </tr>
                 <tr>
                     <td class="address"
-                        style="font-size:14px; text-transform:uppercase; line-height:1.2; color:#000;  padding-top:0; padding-bottom:0; font-family: 'Arial', sans-serif; font-weight:400;">
+                        style="font-size:14px; text-transform:uppercase; line-height:1.4; color:#000;  padding-top:0; padding-bottom:0;  font-family: 'Arial Rounded MT Bold', sans-serif;">
                         {{ $requestData['address_1'] }} <br> {{ $requestData['city'] }} {{ $requestData['state'] }}. {{
                         $requestData['zip_code'] }}<br> USA</td>
-                    <td style=" font-size:20px; vertical-align: center; font-family: Arial, Helvetica, sans-serif;  font-weight:bold;"
+                    <td style=" font-size:20px;font-family: Arial, Helvetica, sans-serif;  font-weight:bold;color:#010202;"
                         class="earning">Earnings Statement</td>
                 </tr>
                 <tr>
                     <td></td>
                     <td>
                         <p class="earning"
-                            style="font-size:13px; margin-top:-30px;  font-family: 'Maven Pro', sans-serif;  padding-top:10px; line-height:1.5;">
+                            style="font-size:13px; margin-top:-25px;  font-family: 'Maven Pro', sans-serif;  padding-top:10px; line-height:1.5;">
                             Pay Period: {{ date('M d, Y', strtotime($requestData['pay_start'])) }} to {{ date('M d, Y',
                             strtotime($requestData['pay_end'])) }} <br> Pay Date: {{ date('M d, Y',
                             strtotime($requestData['pay_date'])) }} </p>
@@ -320,13 +320,13 @@
                             <tr>
                                 <td style="">
                                     <p
-                                        style="font-size: 14px; margin: 0;color:black; font-family: 'Arial', sans-serif; font-weight:400; text-transform:capitalize;">
+                                        style="font-size: 14px; margin: 0;color:black;  font-family: 'Arial Rounded MT Bold', sans-serif; text-transform:capitalize;">
                                         {{ $requestData['cname'] }}</p>
                                     <p
-                                        style="font-size: 12px; margin: 0;color:black; font-family: 'Arial', sans-serif; font-weight:400; text-transform:uppercase;">
+                                        style="font-size: 12px; margin: 0;color:black;  font-family: 'Arial Rounded MT Bold', sans-serif; text-transform:uppercase;">
                                         {{ $requestData['address_1'] }}</p>
                                     <P
-                                        style="font-size: 12px; margin: 0;color:black; font-family: 'Arial', sans-serif; font-weight:400; text-transform:uppercase;">
+                                        style="font-size: 12px; margin: 0;color:black;  font-family: 'Arial Rounded MT Bold', sans-serif; text-transform:uppercase;">
                                         {{ $requestData['city'] }} {{ $requestData['state'] }}. {{
                                         $requestData['zip_code'] }}<br>USA</P>
                                 </td>
