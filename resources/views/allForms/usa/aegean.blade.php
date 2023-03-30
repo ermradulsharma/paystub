@@ -219,7 +219,7 @@
                     <tr>
                         <td id="color" style="font-size:15px;color:#587193;text-transform:capitalize;">{{ $earn }}</td>
                         <td id="color" style="font-size:15px;color:#000 !important;"><span
-                                style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span>{{
+                                style="font-family: 'DejaVu Sans', sans-serif;padding-left:1px;">{{ $requestData['currency'] }}</span>{{
                             number_format($requestData['rate'][$key], 2) }}</td>
                         <td colspan="2" id="color" style="color:#000;font-size:15px;">{{ $requestData['hours'][$key] }}</td>
                         <td id="color" style="font-size:15px; color:#000;" class="alignR"><span
