@@ -5,8 +5,13 @@
     <title>uk pin blue</title>
 </head>
 <style>
+     @import url('https://fonts.cdnfonts.com/css/myriad-pro');
+ @font-face{
+    font-family: 'Myriad Pro', sans-serif;
+ }
     body {
         font-size: 13px;
+        font-family: 'Myriad Pro', sans-serif;
     }
 
     table {
@@ -150,7 +155,7 @@
                             </tr>
                         @endforeach
                         <tr>
-                            <td class="l-align"style="font-size:15px;"><b>Total Deduction</b></td>
+                            <td class="l-align"style="font-size:15px;"><b>Total Deductions</b></td>
                             <td style="border-right:1px solid #0a2e7b;font-size:15px" class="bold">
                                 {{ number_format($requestData['deduction_tax'], 2) }}</td>
                         </tr>
@@ -170,7 +175,7 @@
                 <tr>
                     <td style="border-right:1px solid #0a2e7b;">
                         <h6
-                            style="padding-left:10px !important;text-align:left;font-size:15px; font-weight:800;padding:0px; margin:0px;text-transform:capitalize;font-size:15px;">
+                            style="padding-left:10px !important;text-align:left;font-size:15px; font-weight:bold;padding:0px; margin:0px;text-transform:capitalize;font-size:15px;">
                             {{ $requestData['emp_name'] }}</h6>
                         <p
                             style="padding-left:10px !important;text-align:left;padding: 0px; margin:0px;text-transform:capitalize;font-size:15px;">
@@ -241,26 +246,26 @@
                         <table>
                             <tr>
                                 <td colspan="5"
-                                    style="width:80%; text-align:left; font-size:16px; padding-left:5px;">
+                                    style="width:80%; text-align:left; font-size:16px; padding-left:5px;text-transform:capitalize;">
                                     <b>{{ $requestData['cname'] }}, UK</b></td>
                             </tr>
                             <tr>
-                                <td style=" padding-bottom:8px;font-size:13px;"><b>Tax Code:</b>
-                                    {{ $requestData['tax_code'] }} </td>
-                                <td style=" padding-bottom:8px;font-size:13px;"><b>NI Table:</b>
-                                    {{ $requestData['ni_table_letter'] }} </td>
-                                <td style=" padding-bottom:8px;font-size:13px;"><b>Dept:</b> Defualt</td>
-                                <td style=" padding-bottom:8px;font-size:13px;"><b>Tax Period:</b>
-                                    {{ date('F-Y', strtotime($requestData['pay_date'])) }}</td>
-                                <td style=" padding-bottom:8px;font-size:13px;"><b>Payment Method:</b>
-                                    {{ $requestData['payment_method'] }}</td>
+                                <td style="padding-bottom:8px;font-size:11px;padding-left:5px;text-align:left;"><b>Tax Code:</b><span style="text-transform:capitalize;"></span>{{ $requestData['tax_code'] }}</td>
+
+                                <td style=" padding-bottom:8px;font-size:11px;padding-left:5px;text-align:left;text"><b>NI Table:</b>
+                                    <span style="text-transform:uppercase;">{{ $requestData['ni_table_letter'] }} </span></td>
+                                <td style=" padding-bottom:8px;font-size:11px;padding-left:5px;text-align:left;"><b>Dept:</b> Defualt</td>
+                                <td style=" padding-bottom:8px;font-size:11px;padding-left:5px;text-align:left;"><b>Tax Period:</b>
+                                    <Span style="text-transform:capitalize;"></Span>{{ date('F-Y', strtotime($requestData['pay_date'])) }}</td>
+                                <td style=" padding-bottom:8px;font-size:11px;padding-left:5px;text-align:left;"><b>Payment Method:</b>
+                                    <span style="text-transform:uppercase;">{{ $requestData['payment_method'] }}</span></td>
                             </tr>
                         </table>
                     </td>
                     <td style="width:20%;text-align:right;"><button class="bold"
                             style="text-align:right;border: 1px solid #0a2e7b; background-color:white; border-radius:7px; padding:17px 10px 17px 10px; width:130px; position: relative; "><span
-                                style="background-color:#302aa5; font-size:15px; font-weight:800; padding:18px 8px; border-radius:5px 0px 0px 5px; position: absolute; top:0px; left:0; color:white;">NET
-                                PAY</span> <span style="font-size:15px;">{{ number_format($requestData['net_pay'], 2) }}</span></button></td>
+                                style="background-color:#302aa5; font-size:15px; font-weight:400; padding:18px 8px; border-radius:5px 0px 0px 5px; position: absolute; top:0px; left:0; color:white;font-family: 'Myriad Pro', sans-serif;">NET
+                                PAY</span> <span style="font-size:15px;font-family: 'Myriad Pro', sans-serif;">{{ number_format($requestData['net_pay'], 2) }}</span></button></td>
                 </tr>
             </table>
         </section>
