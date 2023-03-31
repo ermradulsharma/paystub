@@ -22,7 +22,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('user') }}/css/user-dashboard.css">
     <meta name="google-signin-scope" content="mradulsharma786@gmail.com">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <meta name="google-signin-client_id" content="591203490500-qhhuetedb04td78u7d9bubhsqh0fuejs.apps.googleusercontent.com">
+    <meta name="google-signin-client_id" content="761072364779-gs2ipfbbpflaasmbs1go28kvkg4j8a08.apps.googleusercontent.com">
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <style>
