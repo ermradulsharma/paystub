@@ -112,7 +112,7 @@ class PayPalController extends Controller
                     $userObj->expiryDate = $subcriptionObj->expiry_date;
                     $userObj->save();
                 }
-                return redirect()->route('welcome')->with('message', $response['message'] ?? 'Transaction completed successfully');
+                return redirect()->route('invoiceList')->with('message', $response['message'] ?? 'Transaction completed successfully');
             } else {
                 return redirect()->back()->with('message', $response['message'] ?? 'Something went wrong. Please try again later');
             }

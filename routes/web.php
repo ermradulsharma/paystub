@@ -66,7 +66,7 @@ Route::get('userDashboard', function () {
 
 
 
-Route::get('auth/Login', [LoginController::class, 'loginWithGoogle'])->name('login.google');
+Route::get('auth/login', [LoginController::class, 'loginWithGoogle'])->name('login.google');
 Route::match(['get', 'post'], 'google/callback', [LoginController::class, 'callbackFromGoogle'])->name('google.callback');
 Route::post('loginWithOtp', [LoginController::class, 'loginWithOtp'])->name('loginWithOtp');
 Route::get('loginWithOtp', function () {
