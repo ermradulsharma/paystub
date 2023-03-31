@@ -98,11 +98,14 @@ class PayPalController extends Controller
             if (isset($response['status']) && $response['status'] == 'COMPLETED') {
                 $planDetail = Plan::where('id', $planId)->first();
                 $expiry_date = $this->getExpiryDate($planDetail);
-
                 $userId = Auth::user()->id;
-                $subcriptionObj                         = new Subcription();
+                $subcriptionObj = Subcription::where('plan_id',$planId)->where('country',$planDetail->country)->first();
+                if(!$subcriptionObj){
+                    $subcriptionObj                         = new Subcription();
+                }
                 $subcriptionObj->user_id                = $userId;
                 $subcriptionObj->plan_id                = $planId;
+                $subcriptionObj->country                = $planDetail->country;
                 $subcriptionObj->transaction_id         = $response['id'];
                 $subcriptionObj->start_date             = Carbon::now();
                 $subcriptionObj->expiry_date            = $expiry_date;
