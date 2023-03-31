@@ -6,10 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Global White Check</title>
     <style>
-         @import url('https://fonts.cdnfonts.com/css/arial-2');
+       @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700;800;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Arimo:ital@1&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+        @import url('https://fonts.cdnfonts.com/css/roman-new-times');
+        @import url('https://fonts.cdnfonts.com/css/times');
+        @import url('https://fonts.cdnfonts.com/css/arial-2');
+        @import url('https://fonts.cdnfonts.com/css/arial-mt');
+
+        @font-face {
+            font-family: 'Arial, Helvetica', sans-serif;
+            font-family: 'Arial MT', sans-serif;
+            font-family: 'Arial MT Narrow', sans-serif;
+            font-family: 'Arial Rounded MT', sans-serif;
+            font-family: 'Arial Rounded MT Bold', sans-serif;
+            font-family: 'ArialMT', sans-serif;
+            font-family: 'Arial MT Black', sans-serif;
+            font-family: 'Maven Pro', sans-serif;
+            font-family: 'Arimo', sans-serif;
+            font-family: 'Times New Roman', sans-serif;
+            font-family: 'PT Sans Narrow', sans-serif;
+            font-family: 'Poppins', sans-serif;
+            font-family: 'MICR', sans-serif;
+            src: url("{{asset('fonts/micr-encoding.regular.ttf')}}") format('ttf');
+        }
         body {
             color: #000;
             font-size: 14px;
+
         }
 
         .table {
@@ -94,7 +120,7 @@
         }
 
         .bg-img::before {
-            background-image: url("images/global-white2.png");
+            background-image: url("images/global-white.png");
             background-size: contain;
             background-repeat: no-repeat;
             content: "";
@@ -146,9 +172,9 @@
         <table class="table" style="width: 100%;">
             <tr>
                 <td></td>
-                <td style="font-size: 16px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;padding-left:100px;font-weight:400;"
+                <td style=" margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;padding-left:100px;font-weight:400;font-size:18px;"
                     class="table-data" rowspan="2">
-                    <b style="font-size:20px; font-weight:bold;">{{ $requestData['cname'] }}</b><br>{{ $requestData['address_1'] }}<br>{{ $requestData['state'] }}<br>{{ $requestData['city'] }},
+                    {{ $requestData['cname'] }}<br>{{ $requestData['address_1'] }}<br>{{ $requestData['state'] }}<br>{{ $requestData['city'] }},
                     {{ $requestData['zip_code'] }} </td>
                     <td style="padding-left:40px; margin-right:auto; text-align:right;">
                     <p style="font-size:26px; font-weight:bold;text-align:right; padding-right:0px;font-family: 'Arial', sans-serif;">Earnings Statement</p>
@@ -169,7 +195,7 @@
                     Status:&nbsp;&nbsp;&nbsp;{{ $requestData['marital_status'] }}<br>Exemptions/Alowances:&nbsp;
                     {{ $requestData['exemptions'] }}<br><span style="text-align: center;padding-left:42px;">Federal:
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        1</span><br><span style="padding-left:46px;">NY:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;1</span>
+                        1</span><br><span style="padding-left:46px;">NY:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;&nbsp;1</span>
 
                 </td>
                 <td style="font-size:16px; width:50%; padding-left:100px;font-family: Arial, Helvetica, sans-serif; font-weight:bold;">
@@ -248,7 +274,7 @@
                 @foreach ($requestData['taxes'] ?? [] as $key => $taxes)
                 <tr>
                     <td></td>
-                    <td colspan="2" style="text-align: left; font-size:15px;font-family: Arial, Helvetica, sans-serif; ">{{ $taxes }}</td>
+                    <td colspan="2" style="text-align: left; font-size:15px;font-family: Arial, Helvetica, sans-serif;text-transform:capitalize; ">{{ $taxes }}</td>
                     <td style="text-align: right;font-size:15px;font-family: Arial, Helvetica, sans-serif;"> {{ number_format($requestData['taxes_rate'][$key],2) }} </td>
                 </tr>
                 @endforeach
@@ -278,15 +304,10 @@
                 <tr>
                     <td></td>
                     <td style="text-align: left; font-size:15px; border-bottom:3px solid black; border-top:3px solid black;font-family: Arial, Helvetica, sans-serif;" colspan="2"><b>Net Pay</b></td>
-                    <td style="font-size:15px; border-bottom:3px solid black; border-top:3px solid black;font-family: Arial, Helvetica, sans-serif;"> {{ $requestData['currency'] }}{{ number_format($requestData['total_net_pay'],2) }} </td>
+                    <td style="font-size:15px; border-bottom:3px solid black; border-top:3px solid black;font-family: Arial, Helvetica, sans-serif;"><span
+                        style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['total_net_pay'],2) }} </td>
                 </tr>
             </table>
-            {{-- <table class="table-data" style="width: 48%;">
-                <tr style="font-size:15px;">
-                    <td style="width:28%"></td>
-                    <td style="text-align:left;" colspan="5">Your federal taxable wages this period are <br> {{ $requestData['currency'] }} {{ number_format($requestData['total_net_pay'],2) }}</td>
-                </tr>
-            </table> --}}
         </section>
 
         <section>
@@ -295,7 +316,8 @@
                     <table class="tablealign">
                         <tr style="font-size:15px;">
                             <td style="width:17%"></td>
-                            <td style="text-align:left;font-family: Arial, Helvetica, sans-serif;">Your federal taxable wages this period are <br> {{ $requestData['currency'] }} {{ number_format($requestData['total_net_pay'],2) }}</td>
+                            <td style="text-align:left;font-family: Arial, Helvetica, sans-serif;">Your federal taxable wages this period are <br> <span
+                                style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['total_net_pay'],2) }}</td>
                         </tr>
                     </table>
                 </div>
@@ -303,16 +325,16 @@
         </section>
 
         <section class="bg-img">
-            <div class="container" style=" margin-top:10px; width:100%; padding:0px  20px;">
+            <div class="container" style=" margin-top:10px; width:100%; padding:0px 20px;">
                 <div class="row" style="display: flex;justify-content: space-between;padding: 0px 14px;">
-                    <div style="width: 50%; float:left; position: relative; top:35px; right:0px; left:70px;">
-                        <p style="font-size: 14px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:400;">{{ $requestData['cname'] }}</p>
-                        <p style="font-size: 14px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:400;">{{ $requestData['address_1'] }} </p>
-                        <P style="font-size: 14px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:400;">{{ $requestData['address_2'] }} </P>
-                        <P style="font-size: 14px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:400;">{{ $requestData['city'] }} {{ $requestData['state'] }}, {{ $requestData['zip_code'] }} </P>
+                    <div style="width: 50%; float:left; position: relative; top:45px; right:0px; left:70px;">
+                        <p style="font-size: 18px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;">{{ $requestData['cname'] }}</p>
+                        <p style="font-size: 18px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;">{{ $requestData['address_1'] }} </p>
+                        <P style="font-size: 18px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;">{{ $requestData['address_2'] }} </P>
+                        <P style="font-size: 18px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;">{{ $requestData['city'] }} {{ $requestData['state'] }}, {{ $requestData['zip_code'] }} </P>
                     </div>
-                    <div style="width: 50%;float:right;text-align:right; margin-top:4px;">
-                        <h6 style="font-size: 14px; margin-bottom: 6px; text-align:center; left:40px; position: relative;  top:28px;font-weight:400;"> <span>0000000000</span> </h6>
+                    <div style="width: 50%;float:right;text-align:right;">
+                        <h6 style="font-size: 14px; margin-bottom: 2px; text-align:center; left:40px; position: relative;  top:31px;font-weight:400;"> <span>0000000000</span> </h6>
                         <h6 style="font-size: 14px; text-align:center; left:40px; position: relative; font-weight:400;"> <span>{{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</span> </h6>
                         {{-- <p style="text-align:center; position: relative; left:40px; top:17px;font-size: 14px;"> <span style="font-weight:800; "></span><span style="">{{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</span> </p> --}}
                     </div>
@@ -320,9 +342,10 @@
                 <table>
                     <tr>
                         <td style="width:10%;"></td>
-                        <td style="font-size:15px; padding-top:30px; width:50%;padding-left:10px; font-weight:bold;font-family: Arial, Helvetica, sans-serif;">{{ $requestData['emp_name'] }}</td>
-                        <td style="font-size:15px; width:23%;padding-top:30px; text-align:left;font-family: Arial, Helvetica, sans-serif;"> XXXXX<b>{{ $requestData['account_number_last_4'] }}</b></td>
-                        <td style="font-size:15px; width:17%;padding-top:30px; text-align:right; padding-right:17px;font-family: Arial, Helvetica, sans-serif;" > <b>{{ $requestData['currency'] }} {{ number_format($requestData['total_net_pay'], 2) }}</b></td>
+                        <td style="font-size:15px; padding-top:40px; width:50%;padding-left:10px; font-weight:bold;font-family: Arial, Helvetica, sans-serif;">{{ $requestData['emp_name'] }}</td>
+                        <td style="font-size:15px; width:23%;padding-top:40px !important; text-align:left;font-family: Arial, Helvetica, sans-serif;padding-left:18px;"> XXXXX<b>{{ $requestData['account_number_last_4'] }}</b></td>
+                        <td style="font-size:15px; width:17%;padding-top:40px; text-align:right; padding-right:25px;font-family: Arial, Helvetica, sans-serif;"><b><span
+                            style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['total_net_pay'], 2) }}</b></td>
                     </tr>
                 </table>
             </div>
