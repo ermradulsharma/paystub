@@ -6,7 +6,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <meta name="google-signin-client_id"
+    content="802702825376-57405b5o70d0l41mkh9q8ta86ig71rkb.apps.googleusercontent.com">
     <!-- Bootstrap CSS  -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
@@ -14,17 +15,20 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;800&family=Public+Sans:wght@300&display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;800&family=Public+Sans:wght@300&display=swap">
 
     <!-- Responsive CSS Style -->
     <link rel="stylesheet" type="text/css" href="{{ asset('user') }}/css/style.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('user') }}/css/newstyle.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('user') }}/css/user-dashboard.css">
-    <meta name="google-signin-scope" content="mradulsharma786@gmail.com">
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <meta name="google-signin-client_id" content="507601526833-su38kb3oldfci2ks5g3kve4t6jiua8o4.apps.googleusercontent.com">
+    <meta name="google-signin-scope" content="rajputumesh117@gmail.com">
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+
+        {{-- <script src="https://apis.google.com/js/api.js" async defer></script> --}}
+
+
     <style>
         select,
         select option {
@@ -36,6 +40,7 @@
 </head>
 
 <body>
+
     <div class="container" style="max-width:1500px">
         <ul class="nav nav-justified navbar" style="max-width: 1445px;">
             <li class="nav-item"> <a href="{{ route('welcome') }}"><img class="mr-3 mt-5"
@@ -280,8 +285,9 @@
             </div>
         </div>
     </div>
-
     <!-- End Footer Section -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -307,8 +313,6 @@
             console.log('Name: ' + profile.getName());
             console.log('Image URL: ' + profile.getImageUrl());
             console.log('Email: ' + profile.getEmail());
-            //pass information to server to insert or update the user record
-            // update_user_data(profile);
         }
     </script>
     <style>
