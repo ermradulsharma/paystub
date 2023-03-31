@@ -25,4 +25,14 @@ class Image extends Model
         }
         return "";
     }
+
+    public function getThumbnailAttribute($image = null)
+    {
+        if ($image != "") {
+            if ($this->module_type == "App\Models\Template") {
+                return asset("storage/watermark/" . $image);
+            }
+        }
+        return "";
+    }
 }

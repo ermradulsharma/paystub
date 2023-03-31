@@ -3,9 +3,10 @@
 use App\Models\Image;
 // use PDF;
 
-function uploadImage($module, $module_id, $files, $path = "images", $name = null)
+function uploadImage($module, $module_id, $files , $path = "images", $name = null)
 {
     $path =  IMAGE_UPLOAD_PATH . $path;
+
     if (is_object($files)) {
         $file = $files;
         $extension = $file->extension();
@@ -20,16 +21,19 @@ function uploadImage($module, $module_id, $files, $path = "images", $name = null
         } else if (strstr($extension, "pdf")) {
             $fileType = "pdf";
         }
-        $image = new Image();
-        $image->module_type = $module;
-        $image->module_id = $module_id;
+        $image = Image::where(['module_type' => $module, 'module_id' => $module_id])->first();
+        if(!$image){
+            $image = new Image();
+            $image->module_type = $module;
+            $image->module_id = $module_id;
+        }
         $image->file = $fileName;
         $image->file_type = $fileType;
         $image->file_extension = $extension;
-        $image->thumbnail = "";
+        $image->thumbnail = '';
         $image->save();
     }
-    return "success";
+    return $image->id;
 }
 
 function deleteImage($module, $id, $path = null)

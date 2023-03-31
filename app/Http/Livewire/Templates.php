@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Image;
 use App\Models\Template;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -11,7 +12,8 @@ class Templates extends Component
     use WithFileUploads;
     public $title, $type, $state, $description, $tempId, $confirming;
     public $next = 1;
-    public $file;
+    public $image;
+    public $watermark;
     public $page_title = "Add Template";
 
     public function render()
@@ -30,7 +32,8 @@ class Templates extends Component
     public function resetForm()
     {
         $this->title = "";
-        $this->file = "";
+        $this->image = "";
+        $this->watermark = "";
         $this->type = "";
         $this->state = "";
         $this->tempId = null;
@@ -49,7 +52,8 @@ class Templates extends Component
                 'title' => 'required',
                 'type' => 'required',
                 'state' => 'required',
-                'file' => 'required', // 1MB Max
+                'image' => 'required', // 1MB Max
+                'watermark' => 'required',
             ]);
         }
 
@@ -66,10 +70,26 @@ class Templates extends Component
         $tempObj->state = $this->state;
 
         $tempObj->save();
-        if ($this->file) {
+        if ($this->image) {
             deleteImage('App\Models\Template', $this->tempId ?? 0, 'templates');
-            uploadImage("App\Models\Template", $tempObj->id, $this->file, 'templates', $tempObj->title);
+            uploadImage("App\Models\Template", $tempObj->id, $this->image, 'templates', $tempObj->title);
         }
+
+        $pathwatermark =  IMAGE_UPLOAD_PATH . 'watermark';
+
+        if ($this->watermark) {
+            $watermark = $this->watermark;
+            $ext = $watermark->extension();
+            $filewatermark = date('dmY-his-') . uniqid() . '.' . $ext;
+            $watermark->storeAs($pathwatermark, $filewatermark);
+
+            $image = Image::where(['module_type' => 'App\Models\Template', 'module_id' => $this->tempId])->first();
+            if($image){
+                $image->thumbnail = $filewatermark;
+                $image->save();
+            }
+        }
+
         $msg = "Template Updated successfully.";
 
         $this->resetForm();
@@ -111,6 +131,7 @@ class Templates extends Component
     public function deleteTemplate($id)
     {
         deleteImage('App\Models\Template',  $id ?? 0, 'templates');
+        deleteImage('App\Models\Template',  $id ?? 0, 'watermark;');
         Template::find($id)->delete();
         session()->flash('success', 'Template deleted successfully.');
     }

@@ -17,5 +17,6 @@ class DatabaseSeeder extends Seeder
         $this->call(AdminSeeder::class);
         $this->call(StateTaxSeeder::class);
         $this->call(PlanSeeder::class);
+        $this->call(CurrencySeeder::class);
     }
 }
