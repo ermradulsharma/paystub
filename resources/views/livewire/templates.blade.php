@@ -145,13 +145,31 @@
                                                 <div class="row mb-3">
                                                     <label class="col-sm-3 col-form-label">File Upload</label>
                                                     <div class="col-sm-8">
-                                                        <input class="form-control" wire:model="file" type="file"
-                                                            id="file">
-                                                        @error('file')
+                                                        <input class="form-control" wire:model="image" type="file"
+                                                            id="image">
+                                                        {{-- @if ($image)
+                                                            <img src="{{ $image->temporaryUrl() }}" width="60">
+                                                        @endif --}}
+                                                        @error('image')
                                                             <div class="mt-3 text-danger">* {{ $message }}</div>
                                                         @enderror
                                                     </div>
                                                 </div>
+
+                                                <div class="row mb-3">
+                                                    <label class="col-sm-3 col-form-label">File With Watermark</label>
+                                                    <div class="col-sm-8">
+                                                        <input class="form-control" wire:model="watermark" type="file"
+                                                            id="watermark">
+                                                        {{-- @if ($watermark)
+                                                            <img src="{{ $watermark->temporaryUrl() }}" width="60">
+                                                        @endif --}}
+                                                        @error('watermark')
+                                                            <div class="mt-3 text-danger">* {{ $message }}</div>
+                                                        @enderror
+                                                    </div>
+                                                </div>
+
                                                 <div class="text-center mt-5">
                                                     <button type="submit" class="btn btn-primary"
                                                         style="float:right;">Submit</button>
