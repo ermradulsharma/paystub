@@ -50,13 +50,11 @@ class LoginController extends Controller
             if ($existEmail->save()) {
                 Auth::login($existEmail);
                 $response['message'] = "Login successfully";
-                $response['user_type'] = $existUser->role_id == 1 ? 'Admin' : 'User';
             }
         } else {
-            $existUser = User::where(['social_id' => $request->sub])->first();
+            $existUser = User::where('social_id',$request->sub)->first();
             Auth::login($existUser);
             $response['message'] = "Login successfully";
-            $response['user_type'] = $existUser->role_id == 1 ? 'Admin' : 'User';
         }
         return response()->json($response, 200);
     }
