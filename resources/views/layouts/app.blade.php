@@ -120,9 +120,9 @@
                     <div class="google-btn mt-4" style="text-align: -webkit-center;">
                         <div id="g_id_onload"
                             data-client_id="802702825376-57405b5o70d0l41mkh9q8ta86ig71rkb.apps.googleusercontent.com"
-                            data-callback="handleCredentialResponse" data-ux_mode="popup" data-auto_prompt="false">
+                            data-callback="handleCredentialResponse" data-dismiss="modal" data-ux_mode="popup" data-auto_prompt="false">
                         </div>
-                        <div class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="filled_blue" data-text="signin_with" data-size="large" data-logo_alignment="left"></div>
+                        <div class="g_id_signin" data-dismiss="modal" data-type="standard" data-shape="rectangular" data-theme="filled_blue" data-text="signin_with" data-size="large" data-logo_alignment="left"></div>
                     </div>
                     <div class="text-center mt-4 mb-4">
                         <img src="{{ asset('images/Group 3.png') }}" style="width:130px;">
@@ -283,10 +283,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script>
 
     <script>
-        $('#gsi_562711_547905').click(function(){
-            $("#loginModal").modal("hide");
-        })
-
+        //
       </script>
     <script>
         $('.inputdatepicker').datepicker({

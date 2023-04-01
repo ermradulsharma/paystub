@@ -36,24 +36,27 @@ class LoginController extends Controller
      */
     public function callbackFromGoogle(Request $request)
     {
-        $findUser = User::where('social_id', $request->sub)->first();
-        if ($findUser) {
-            Auth::login($findUser);
-            $response['message'] = "Login successfully";
-            $response['user_type'] = $findUser->role_id == 1 ? 'Admin' : 'User';
-        } else {
-            $newUser = new User;
-            $newUser->first_name = $request->given_name;
-            $newUser->last_name = $request->family_name;
-            $newUser->email = $request->email;
-            $newUser->name = $request->name;
-            $newUser->social_id = $request->sub;
-            $newUser->password = Hash::make('123456dummy');
-            if ($newUser->save()) {
-                Auth::login($newUser);
-                $response['message'] = "Login successfully";
-                $response['user_type'] = $newUser->role_id == 1 ? 'Admin' : 'User';
+        $existUser = User::where(['email' => $request->email, 'social_id' => $request->sub])->exists();
+        if (!$existUser) {
+            $existEmail = User::where(['email' => $request->email])->first();
+            if (!$existEmail) {
+                $existEmail = new User;
+                $existEmail->password = Hash::make('123456dummy');
             }
+            $existEmail->first_name = $request->given_name;
+            $existEmail->last_name = $request->family_name;
+            $existEmail->name = $request->name;
+            $existEmail->social_id = $request->sub;
+            if ($existEmail->save()) {
+                Auth::login($existEmail);
+                $response['message'] = "Login successfully";
+                $response['user_type'] = $existUser->role_id == 1 ? 'Admin' : 'User';
+            }
+        } else {
+            $existUser = User::where(['social_id' => $request->sub])->first();
+            Auth::login($existUser);
+            $response['message'] = "Login successfully";
+            $response['user_type'] = $existUser->role_id == 1 ? 'Admin' : 'User';
         }
         return response()->json($response, 200);
     }
