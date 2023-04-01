@@ -36,23 +36,24 @@ class LoginController extends Controller
      */
     public function callbackFromGoogle(Request $request)
     {
-        $existUser = User::where(['email' => $request->email, 'social_id' => $request->sub])->exists();
+        $existUser = User::where(['social_id' => $request->sub])->exists();
         if (!$existUser) {
             $existEmail = User::where(['email' => $request->email])->first();
             if (!$existEmail) {
                 $existEmail = new User;
+                $existEmail->email = $request->email;
                 $existEmail->password = Hash::make('123456dummy');
             }
+            $existEmail->social_id = $request->sub;
             $existEmail->first_name = $request->given_name;
             $existEmail->last_name = $request->family_name;
             $existEmail->name = $request->name;
-            $existEmail->social_id = $request->sub;
             if ($existEmail->save()) {
                 Auth::login($existEmail);
                 $response['message'] = "Login successfully";
             }
         } else {
-            $existUser = User::where('social_id',$request->sub)->first();
+            $existUser = User::where(['social_id' => $request->sub])->first();
             Auth::login($existUser);
             $response['message'] = "Login successfully";
         }
