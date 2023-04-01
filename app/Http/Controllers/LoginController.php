@@ -24,32 +24,9 @@ class LoginController extends Controller
      */
 
 
-    public function loginWithGoogle()
+    public function loginWithGoogle(Request $request)
     {
-        return Socialite::driver('google')->stateless()->redirect();
-    }
-
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function callbackFromGoogle()
-    {
-        $user = Socialite::driver('google')->stateless()->user();
-        //$user = Socialite::driver('google')->user();
-        $findUser = User::where('social_id', $user->id)->first();
-        if ($findUser) {
-            Auth::login($findUser);
-        } else {
-            $newUser = User::updateOrCreate(['email' => $user->email], [
-                'name' => $user->name,
-                'social_id' => $user->id,
-                'password' => Hash::make('123456dummy')
-            ]);
-            Auth::login($newUser);
-        }
-        return redirect(route('invoiceList'));
+       //
     }
 
     public function logout(Request $request)
@@ -167,4 +144,9 @@ class LoginController extends Controller
         $response['type'] = $user->role_id;
         return response()->json($response, 200);
     }
+
+    // public function loginWithGoogle(Type $var = null)
+    // {
+    //     # code...
+    // }
 }
