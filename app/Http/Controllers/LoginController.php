@@ -26,7 +26,36 @@ class LoginController extends Controller
 
     public function loginWithGoogle(Request $request)
     {
-       //
+        //
+    }
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function callbackFromGoogle(Request $request)
+    {
+        $findUser = User::where('social_id', $request->sub)->first();
+        if ($findUser) {
+            Auth::login($findUser);
+            $response['message'] = "Login successfully";
+            $response['user_type'] = $findUser->role_id == 1 ? 'Admin' : 'User';
+        } else {
+            $newUser = new User;
+            $newUser->first_name = $request->given_name;
+            $newUser->last_name = $request->family_name;
+            $newUser->email = $request->email;
+            $newUser->name = $request->name;
+            $newUser->social_id = $request->sub;
+            $newUser->password = Hash::make('123456dummy');
+            if ($newUser->save()) {
+                Auth::login($newUser);
+                $response['message'] = "Login successfully";
+                $response['user_type'] = $newUser->role_id == 1 ? 'Admin' : 'User';
+            }
+        }
+        return response()->json($response, 200);
     }
 
     public function logout(Request $request)
