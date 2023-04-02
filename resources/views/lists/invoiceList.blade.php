@@ -26,7 +26,7 @@
                         </thead>
                         <tbody>
                             @foreach ($invoiceList as $key => $invoice)
-                            {{$invoice}}
+                            {{-- {{$invoice}} --}}
                                 @if ($invoice->type != 'w2form')
 
                                     @if($key == 0)

@@ -22,7 +22,7 @@ class PaySlip extends Model
 
     public function getMembershipAttribute()
     {
-       $subcription =  Subcription::where(['user_id' => Auth::id(), 'country' => $this->form_type])->whereDate('expiry_date', '>=' ,Carbon::now())->first();
+       $subcription =  Subcription::where(['user_id' => Auth::id(), 'country' => $this->type])->whereDate('expiry_date', '>=' ,Carbon::now())->first();
        if($subcription){
             return 1;
        }else{
