@@ -25,8 +25,13 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($invoiceList as $invoice)
+                            @foreach ($invoiceList as $key => $invoice)
+                            {{$invoice}}
                                 @if ($invoice->type != 'w2form')
+
+                                    @if($key == 0)
+                                        @php($membership = $invoice->membership)
+                                    @endif
                                     <tr>
                                         <th class="text-center" style="padding: 1.5em .5em;border:none;">{{ date('m-d-Y', strtotime($invoice->created_at)) }} </th>
                                         <th class="text-center" style="padding: 1.5em .5em;border:none;">{{ $invoice->title }}</th>
@@ -65,8 +70,9 @@
                         </tbody>
                     </table>
                 </div>
+
                 <div class="w-100" style="text-align: right;">
-                    <a href="{{ Auth::user()->expiryDate == '' ? route('prizing') : route('invoiceMail') }}"
+                    <a href="{{ $membership == 0 ? route('prizing') : route('invoiceMail') }}"
                         class="user-checkbtn"><b>Continue to Checkout</b></a>
                     <h6 class="mt-3 font-weight-bold">Click on Continue, to complete your order</h6>
                 </div>

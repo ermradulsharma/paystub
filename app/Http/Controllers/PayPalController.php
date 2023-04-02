@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\PaySlip;
 use Illuminate\Http\Request;
 use Srmklive\PayPal\Services\PayPal as PayPalClient;
 use Session;
@@ -98,14 +99,15 @@ class PayPalController extends Controller
             if (isset($response['status']) && $response['status'] == 'COMPLETED') {
                 $planDetail = Plan::where('id', $planId)->first();
                 $expiry_date = $this->getExpiryDate($planDetail);
+                $countryObj = PaySlip::where('user_id', Auth::user()->id)->orderBy('id', 'desc')->first();
                 $userId = Auth::user()->id;
-                $subcriptionObj = Subcription::where('plan_id',$planId)->where('country',$planDetail->country)->first();
-                if(!$subcriptionObj){
+                $subcriptionObj = Subcription::where(['plan_id' => $planId, 'country' => $countryObj->type])->first();
+                if (!$subcriptionObj) {
                     $subcriptionObj                         = new Subcription();
                 }
                 $subcriptionObj->user_id                = $userId;
                 $subcriptionObj->plan_id                = $planId;
-                $subcriptionObj->country                = $planDetail->country;
+                $subcriptionObj->country                = $countryObj->type;
                 $subcriptionObj->transaction_id         = $response['id'];
                 $subcriptionObj->start_date             = Carbon::now();
                 $subcriptionObj->expiry_date            = $expiry_date;
