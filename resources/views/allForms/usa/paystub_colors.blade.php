@@ -200,7 +200,7 @@
         <section class="invoiceborder">
             <table>
                 <tr>
-                    <td style="padding-top:0px; padding-bottom:0; font-size:30px; text-transform:Captilize; font-family: 'Arial', sans-serif; font-weight:bold;"> {{ $requestData['cname'] }} </td>
+                    <td style="padding-top:0px; padding-bottom:0; font-size:30px; text-transform:capitalize; font-family: 'Arial', sans-serif; font-weight:bold;"> {{ $requestData['cname'] }} </td>
                 </tr>
                 <tr>
                     <td class="address" style="font-size:20px; text-transform:uppercase; font-weight:400; line-height:1.2; color:#000;letter-spacing:-0.5px; padding-top:0; padding-bottom:0; font-family: 'Arial', sans-serif;"> {{ $requestData['address_1'] }} <br> {{ $requestData['city'] }} {{ $requestData['state'] }}. {{ $requestData['zip_code'] }}<br> USA</td>
@@ -226,7 +226,7 @@
                 <table>
                     <tr>
                         <td class="heading1 tax-align-left" style="padding-left: 18px;width:20%;">Earnings</td>
-                        <td class="heading1" style="color: #000;width:15%;"> Rate</td>
+                        <td class="heading1" style="color: #000;width:15%;padding-left:10px;color:black;"> Rate</td>
                         <td class="heading1" style="text-align:center;width:15%;">Hours</td>
                         <td class="heading1" style="padding-left: 45px; text-align:right;width:30%;">This Period</td>
                         <td class="heading1 tax-align-r" style="width:20%;">YTD</td>

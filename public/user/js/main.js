@@ -9,6 +9,51 @@ $(".registerBtn").click(function () {
 $(".close").click(function () {
     $(".modal").modal("hide");
 });
+
+function handleCredentialResponse(response) {
+    function decodeJwtResponse (token) {
+      var base64Url = token.split('.')[1];
+      var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+      var jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
+      return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+      }).join(''));
+      return JSON.parse(jsonPayload);
+    }
+     const responsePayload = decodeJwtResponse(response.credential);
+    //  console.log(responsePayload);
+     $.ajax({
+        url: baseUrl + "google/callback",
+        type: "POST",
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        data: responsePayload,
+        success: function (response) {
+            $("#loginModal").modal("hide");
+            toastr.success(response.message);
+            $(".registerBtn").removeClass("d-block");
+            $(".registerBtn").addClass("d-none");
+            $(".sendMailButton").removeClass("d-none");
+            $(".sendMailButton").addClass("d-block");
+            $(".logoutDiv").removeClass("d-none");
+            if (response.user_type == "Admin") {
+                window.location.href = baseUrl + "admin/dashboard";
+            }
+            if (userAuth == 1) {
+                if (okk == 1) {
+                    usaStoreData();
+                }
+            }
+        },
+        error: function (err) {
+            error = err.responseJSON;
+            toastr.error(error.message);
+        },
+    });
+    return false;
+  }
+
+
 $("#sendOTPForm").on("submit", function () {
     $.ajax({
         url: baseUrl + "sendOtp",

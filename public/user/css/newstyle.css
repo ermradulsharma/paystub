@@ -710,14 +710,12 @@ color: #027bff !important;
     font-weight: 500;
 }
 
-.google-btn {
+/* .google-btn {
     width: 203px;
     height: 54px;
-    background-color: google-blue;
     border-radius: 6px;
-    box-shadow: 0 3px 4px 0 rgb(0 0 0 / 25%);
     margin: auto;
-}
+} */
 
 .basicpay {
     display: contents;
