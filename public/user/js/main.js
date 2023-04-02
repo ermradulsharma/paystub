@@ -51,19 +51,10 @@ function handleCredentialResponse(response) {
         },
     });
     return false;
-
-    //  console.log("responsePayload", responsePayload)
-    //  console.log("ID: " + responsePayload.sub);
-    //  console.log('Full Name: ' + responsePayload.name);
-    //  console.log('Given Name: ' + responsePayload.given_name);
-    //  console.log('Family Name: ' + responsePayload.family_name);
-    //  console.log("Image URL: " + responsePayload.picture);
-    //  console.log("Email: " + responsePayload.email);
   }
 
 
 $("#sendOTPForm").on("submit", function () {
-    // document.getElementById("loaderDiv").style.display = "block";
     $.ajax({
         url: baseUrl + "sendOtp",
         type: "POST",
