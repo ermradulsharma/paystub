@@ -283,14 +283,13 @@
                 $digit_1 = Terbilang::make($decimal);
             @endphp
             <section class="section_2">
-                <table>
+                <table style="width:100%">
                     <tr>
-                        <td style="font-size:18px; font-weight:400; text-transform: capitalize;">Pay {{ $word }} and {{ $digit_1 }} cents</td>
+                        <td style="text-align:left; padding-left:5px; font-size:17px; font-weight:400; text-transform: capitalize; width:77%;" rowspan="2" >Pay {{ $word }} and {{ $digit_1 }} cents</td>
                         <th style="font-weight:400;" class="earning">{{ $requestData['currency'] }} {{ number_format($requestData['total_net_pay'], 2) }}</th>
                     </tr>
                     <tr>
-                        <td style=" padding: 9px;"> </td>
-                        <td style="font-size:15px; color:#515c6b;" class="earning"> This is not a check </td>
+                        <td style="font-size:15px; color:#515c6b;text-align:right;" class="earning"> This is not a check </td>
                     </tr>
                 </table>
             </section>
