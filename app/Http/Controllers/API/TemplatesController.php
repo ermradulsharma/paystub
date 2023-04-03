@@ -286,26 +286,22 @@ class TemplatesController extends Controller
         $response['status'] = STATUS_BAD_REQUEST;
         $response['success'] = FALSE;
         try {
-            // return Carbon::now()->toTimeString();
             $requestData = $request->all();
-            // if (!array_key_exists('subcription_type', $requestData)) {
-            //     $requestData += array('subcription_type' => '0');
-            // }
             if (!array_key_exists('expiryDate', $requestData)) {
                 $requestData += array('expiryDate' => Carbon::now());
             }
             $userObj = User::find(Auth::user()->id);
             if ($requestData['type'] == 1) {
                 if ($requestData['subcription_type'] == 1) {
-                    $userObj->expiryDate = Carbon::now()->addMonth();
+                    $userObj->expiryDate = Carbon::now()->addMonth()->format('m-d-Y H:i:s');
                 } else  if ($requestData['subcription_type'] == 3) {
-                    $userObj->expiryDate = Carbon::now()->addMonths(3);
+                    $userObj->expiryDate = Carbon::now()->addMonths(3)->format('m-d-Y H:i:s');
                 } else  if ($requestData['subcription_type'] == 6) {
-                    $userObj->expiryDate = Carbon::now()->addMonths(6);
+                    $userObj->expiryDate = Carbon::now()->addMonths(6)->format('m-d-Y H:i:s');
                 } else  if ($requestData['subcription_type'] == 99) {
-                    $userObj->expiryDate = Carbon::now()->addYears(99);
+                    $userObj->expiryDate = Carbon::now()->addYears(99)->format('m-d-Y H:i:s');
                 } else {
-                    $userObj->expiryDate = Carbon::now()->addHours(24);
+                    $userObj->expiryDate = Carbon::now()->addHours(24)->format('m-d-Y H:i:s');
                 }
             } else {
                 $userObj->expiryDate = "";
@@ -329,11 +325,11 @@ class TemplatesController extends Controller
         $response['success'] = FALSE;
         try {
             $userObj = User::find(Auth::user()->id)->select('expiryDate')->orderBy('id', 'desc')->first();
-            if($userObj->expiryDate != ''){
-                $expiry = date('m-d-Y', strtotime($userObj->expiryDate));
-            }
+            // if($userObj->expiryDate != ''){
+            //     $expiry = date('m-d-Y', strtotime($userObj->expiryDate));
+            // }
              //Carbon::parse($userObj->expiryDate)->format('m-d-Y');
-            $userObj->expiryDate = $expiry ?? '';
+            // $userObj->expiryDate = $expiry ?? '';
             $response['data'] = $userObj;
             $response['success'] = true;
             $response['message'] = "Expiry Date";
