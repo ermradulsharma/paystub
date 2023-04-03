@@ -293,15 +293,15 @@ class TemplatesController extends Controller
             $userObj = User::find(Auth::user()->id);
             if ($requestData['type'] == 1) {
                 if ($requestData['subcription_type'] == 1) {
-                    $userObj->expiryDate = Carbon::now()->addMonth()->format('m-d-Y H:i:s');
+                    $userObj->expiryDate = Carbon::now()->addMonth();
                 } else  if ($requestData['subcription_type'] == 3) {
-                    $userObj->expiryDate = Carbon::now()->addMonths(3)->format('m-d-Y H:i:s');
+                    $userObj->expiryDate = Carbon::now()->addMonths(3);
                 } else  if ($requestData['subcription_type'] == 6) {
-                    $userObj->expiryDate = Carbon::now()->addMonths(6)->format('m-d-Y H:i:s');
+                    $userObj->expiryDate = Carbon::now()->addMonths(6);
                 } else  if ($requestData['subcription_type'] == 99) {
-                    $userObj->expiryDate = Carbon::now()->addYears(99)->format('m-d-Y H:i:s');
+                    $userObj->expiryDate = Carbon::now()->addYears(99);
                 } else {
-                    $userObj->expiryDate = Carbon::now()->addHours(24)->format('m-d-Y H:i:s');
+                    $userObj->expiryDate = Carbon::now()->addHours(24);
                 }
             } else {
                 $userObj->expiryDate = "";
