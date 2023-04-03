@@ -176,9 +176,9 @@
                                                     <div class="col-sm-8">
                                                         <input class="form-control" wire:model="watermark" type="file"
                                                             id="watermark">
-                                                        {{-- @if ($watermark)
+                                                        @if ($watermark)
                                                             <img src="{{ $watermark->temporaryUrl() }}" width="60">
-                                                        @endif --}}
+                                                        @endif
                                                         @error('watermark')
                                                             <div class="mt-3 text-danger">* {{ $message }}</div>
                                                         @enderror
