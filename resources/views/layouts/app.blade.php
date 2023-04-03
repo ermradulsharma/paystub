@@ -200,9 +200,10 @@
                         </div>
 
                         <h5 style="color: #457bbe;" class="mt-4 text-center">Almost There!</h5>
-                        <p style="color: #02030359;font-size: 14px;font-family: serif; text-transform:capitalize;"
-                            class="text-center">Enter the
-                            verification code sent to you</p>
+                        <p style="color: #000;font-size: 14px;font-family: serif; text-transform:capitalize; margin-bottom:0px;"
+                            class="text-center">Enter the verification code sent to you</p>
+                            <span style="color: #02030359;font-size: 10px;font-family: serif; text-transform:capitalize;"
+                            class="text-center">Check spam if not found in inbox</span>
                         <form id="loginOtp" action="{{ url('loginWithOtp') }}" method="POST" class="text-center">
                             @csrf
                             <div class="px-lg-5">

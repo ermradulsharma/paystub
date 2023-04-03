@@ -32,7 +32,7 @@
                                     <th>Type</th>
                                     <th>Title</th>
                                     <th>Image</th>
-                                    <th>With Watermark</th>
+                                    {{-- <th>With Watermark</th> --}}
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
@@ -58,7 +58,7 @@
                                                 @endif
                                             </a>
                                         </td>
-                                        <td>
+                                        {{-- <td>
                                             <a href="{{ asset($template->images->thumbnail ?? '') }}" target="blank">
                                                 @if (!empty($template->images->file_type))
                                                     @if ($template->images->file_type != 'pdf')
@@ -70,7 +70,7 @@
                                                     @endif
                                                 @endif
                                             </a>
-                                        </td>
+                                        </td> --}}
                                         <td>
                                             <div class="form-check form-switch">
                                                 <input class="form-check-input"

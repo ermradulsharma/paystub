@@ -11,6 +11,7 @@ use App\Models\Subcription;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
+use Exception;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
 use PhpParser\Node\Stmt\TryCatch;
@@ -79,7 +80,7 @@ class PayPalController extends Controller
             } else {
                 return redirect()->route('createTransaction')->with('error', $response['message'] ?? 'Something went wrong.');
             }
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             Log::info('Process Transaction Function', array('Exception' => $e->getMessage()));
         }
     }

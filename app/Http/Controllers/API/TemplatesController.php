@@ -329,7 +329,7 @@ class TemplatesController extends Controller
         $response['success'] = FALSE;
         try {
             $userObj = User::find(Auth::user()->id)->select('expiryDate')->first();
-            $expiry = Carbon::parse($userObj->expiryDate)->format('m-d-Y');
+            $expiry = date('m-d-Y', strtotime($userObj->expiryDate)); //Carbon::parse($userObj->expiryDate)->format('m-d-Y');
             $userObj->expiryDate = $expiry;
             $response['data'] = $userObj;
             $response['success'] = true;
