@@ -329,8 +329,8 @@
                     <div style="width: 50%; float:left; position: relative; top:45px; right:0px; left:70px;">
                         <p style="font-size: 14px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:400;">{{ $requestData['cname'] }}</p>
                         <p style="font-size: 14px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:400;">{{ $requestData['address_1'] }} </p>
-                        <P style="font-size: 14px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:400;">{{ $requestData['address_2'] }} </P>
-                        <P style="font-size: 14px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:400;">{{ $requestData['city'] }} {{ $requestData['state'] }}, {{ $requestData['zip_code'] }} </P>
+                        {{-- <P style="font-size: 14px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:400;">{{ $requestData['address_2'] }} </P> --}}
+                        <P style="font-size: 14px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:400;">{{ $requestData['city'] }}, {{ $requestData['state'] }} {{ $requestData['zip_code'] }} </P>
                     </div>
                     <div style="width: 50%;float:right;text-align:right;">
                         <h6 style="font-size: 14px; margin-bottom: 2px; text-align:center; left:40px; position: relative;  top:31px;font-weight:400;"> <span>0000000000</span> </h6>
