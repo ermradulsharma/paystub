@@ -117,7 +117,7 @@
 
                 <!-- Modal body -->
                 <div class="modal-body">
-                    <div class="google-btn mt-4" style="text-align: -webkit-center;">
+                    <div class="google-btn mt-4" style="text-align: -webkit-center; text-align: -moz-center;">
                         <div id="g_id_onload"
                             data-client_id="802702825376-57405b5o70d0l41mkh9q8ta86ig71rkb.apps.googleusercontent.com"
                             data-callback="handleCredentialResponse" data-dismiss="modal" data-ux_mode="popup" data-auto_prompt="false">
