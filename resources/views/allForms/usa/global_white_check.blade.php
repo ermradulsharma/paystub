@@ -173,7 +173,7 @@
                 <td></td>
                 <td style="font-size: 16px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;padding-left:100px;font-weight:400;"
                     class="table-data" rowspan="2">
-                    <b style="font-size:23px; font-weight:bold;">{{ $requestData['cname'] }}</b><br>{{ $requestData['address_1'] }}<br>{{ $requestData['state'] }}<br>{{ $requestData['city'] }},
+                    <b style="font-size:23px; font-weight:bold;">{{ $requestData['cname'] }}</b><br>{{ $requestData['address_1'] }}<br>{{ $requestData['city'] }}, {{ $requestData['state'] }}
                     {{ $requestData['zip_code'] }} </td>
                     <td style="padding-left:40px; margin-right:auto; text-align:right;">
                     <p style="font-size:26px; font-weight:bold;text-align:right; padding-right:0px;font-family: 'Arial', sans-serif;">Earnings Statement</p>
