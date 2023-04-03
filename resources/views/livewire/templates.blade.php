@@ -32,12 +32,14 @@
                                     <th>Type</th>
                                     <th>Title</th>
                                     <th>Image</th>
+                                    <th>With Watermark</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($templateCollection as $key => $template)
+                                {{-- {{$template->images->thumbnail}} --}}
                                     <tr>
                                         <td>{{ $key + 1 }}</td>
                                         <td class="text-uppercase">{{ $template->state }}</td>
@@ -49,6 +51,19 @@
                                                     @if ($template->images->file_type != 'pdf')
                                                         <img width="200px" height="150px"
                                                             src="{{ $template->images->file ?? '' }}" />
+                                                    @else
+                                                        <i class="fa fa-file-pdf-o"
+                                                            style="font-size:48px;color:red"></i>
+                                                    @endif
+                                                @endif
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a href="{{ asset($template->images->thumbnail ?? '') }}" target="blank">
+                                                @if (!empty($template->images->file_type))
+                                                    @if ($template->images->file_type != 'pdf')
+                                                        <img width="200px" height="150px"
+                                                            src="{{ $template->images->thumbnail ?? '' }}" />
                                                     @else
                                                         <i class="fa fa-file-pdf-o"
                                                             style="font-size:48px;color:red"></i>
