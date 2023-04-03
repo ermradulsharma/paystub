@@ -400,18 +400,6 @@
                             {{ number_format($requestData['taxes_rate'][$key], 2) }} </td>
                     </tr>
                 @endforeach
-
-                @foreach ($requestData['tax_deduction'] ?? [] as $key => $tax_deduction)
-                    <tr>
-                        <td></td>
-                        <td
-                            style="text-align: left; padding-right:25px;font-size:15px;font-family: Arial, Helvetica, sans-serif;">
-                            {{ $tax_deduction }}</td>
-                        <td style="text-align: right;font-size:15px;font-family: Arial, Helvetica, sans-serif;">
-                            {{ number_format($requestData['period_tax_deduction'][$key], 2) }}</td>
-                    </tr>
-                @endforeach
-
                 <br>
                 <tr>
                     <td></td>
@@ -419,6 +407,15 @@
                         colspan="2"><b>Other</b></td>
                     <td style="font-size:15px; border-bottom:3px solid black;"></td>
                 </tr>
+                @if (count($requestData['tax_deduction'] ?? []) > 0)
+                    @foreach ($requestData['tax_deduction'] ?? [] as $key => $tax_deduction)
+                    <tr>
+                        <td></td>
+                        <td colspan="2" style="text-align: left; font-size:15px;font-family: Arial, Helvetica, sans-serif; ">{{ $tax_deduction }}</td>
+                        <td style="text-align: right;font-size:15px;font-family: Arial, Helvetica, sans-serif;">{{ number_format($requestData['period_tax_deduction'][$key], 2) }} </td>
+                    </tr>
+                    @endforeach
+                @endif
                 <tr>
                     <td colspan="7"></td>
                 </tr>

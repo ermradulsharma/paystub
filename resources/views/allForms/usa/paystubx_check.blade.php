@@ -202,21 +202,20 @@
                         <td style="text-align: left;font-family: Arial, Helvetica, sans-serif;"><b>{{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</b></td>
 
                     </tr>
-                    <table style="position: relative; top:58px;">
+                </table>
+                <table style="position: relative; top:58px;">
                     <tr>
-                        <td style="font-weight: bold; font-size:14px;text-transform: uppercase;font-family: Arial, Helvetica, sans-serif;">
-                            {{ $requestData['emp_name'] }}</td>
-
+                        <td style="font-weight: bold; font-size:14px;text-transform: uppercase;font-family: Arial, Helvetica, sans-serif;"> {{ $requestData['emp_name'] }}</td>
                     </tr>
                     <tr>
                         <td style="text-transform: uppercase;font-family: Arial, Helvetica, sans-serif;font-size:14px;"> {{ $requestData['emp_street_1'] }}</td>
                     </tr>
                     <tr>
-                        <td style="text-transform: uppercase;font-family: Arial, Helvetica, sans-serif;font-size:14px;">  {{ $requestData['emp_city'] }}, {{ $requestData['emp_state'] }}. {{ $requestData['emp_zip_code'] }}, USA </td>
+                        <td style="text-transform: uppercase;font-family: Arial, Helvetica, sans-serif;font-size:14px;">{{ $requestData['emp_city'] }}, {{ $requestData['emp_state'] }}. {{ $requestData['emp_zip_code'] }}, USA</td>
                     </tr>
 
                 </table>
-                </table>
+
 
             </div>
         </div>
