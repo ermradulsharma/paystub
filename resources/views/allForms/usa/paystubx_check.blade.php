@@ -137,15 +137,15 @@
                                 <td style="font-family: Arial, Helvetica, sans-serif;">CO1.</td>
                                 <td style="font-family: Arial, Helvetica, sans-serif;">FILE</td>
                                 <td style="font-family: Arial, Helvetica, sans-serif;">DEPT.</td>
-                                <td style="font-family: Arial, Helvetica, sans-serif;">CLOCK</td>
-                                <td style="font-family: Arial, Helvetica, sans-serif;">NUMBER</td>
+                                <td style="font-family: Arial, Helvetica, sans-serif;">CLOCK VCHR.</td>
+                                {{-- <td style="font-family: Arial, Helvetica, sans-serif;">NUMBER</td> --}}
                             </tr>
                             <tr>
                                 <td style="font-family: Arial, Helvetica, sans-serif;">{{ $requestData['co_number'] }}</td>
                                 <td  style="font-family: Arial, Helvetica, sans-serif;">{{ $requestData['file_number'] }}</td>
                                 <td style="font-family: Arial, Helvetica, sans-serif;">00000</td>
-                                <td style="font-family: Arial, Helvetica, sans-serif;">{{ $requestData['clock_vchr_number'] }}</td>
-                                <td style="font-family: Arial, Helvetica, sans-serif;">{{ $requestData['advice_number'] }}</td>
+                                <td style="font-family: Arial, Helvetica, sans-serif;">NO. {{ $requestData['clock_vchr_number'] }}</td>
+                                {{-- <td style="font-family: Arial, Helvetica, sans-serif;">{{ $requestData['advice_number'] }}</td> --}}
                             </tr>
                         </table>
                     </td>
@@ -225,8 +225,7 @@
             <div class="row1" style="margin-top: 60px;">
                 <div class="column1">
                     <table style="width: 100%;">
-                        <img src="{{ public_path('images/lines.svg') }}"
-            style="position: absolute; top: 29%; right:0px;left: 13%;  z-index: -1; width:51%; height:44%;">
+                        <img src="{{ public_path('images/lines.svg') }}" style="position: absolute; top: 29%; right:0px;left: 13%;  z-index: -1; width:51%; height:44%;">
                         <tr>
                             <th style="width:20%;font-size:14px;font-family: Arial, Helvetica, sans-serif; font-weight:bold;">Earnings</th>
                             <th style="width:18%;text-align:left; padding-left:14px;font-size:14px;font-family: Arial, Helvetica, sans-serif; font-weight:bold;">Rate</th>
