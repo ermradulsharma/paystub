@@ -161,8 +161,7 @@
                 <div style="width: 60%;float:left;">
                     <h6 style="font-size: 15px; margin-bottom: 0;text-transform:capitalize;"> {{ $requestData['cname'] }}
                     </h6>
-                    <p style="font-size: 14px; margin: 0;text-transform:uppercase;"> {{ $requestData['address_1']
-                        }}<br>{{ $requestData['city'] }}, {{ $requestData['state'] }} {{ $requestData['zip_code'] }}
+                    <p style="font-size: 14px; margin: 0;text-transform:uppercase;"> {{ $requestData['address_1'] }}<br>{{ $requestData['address_2'] }}<br>{{ $requestData['city'] }}, {{ $requestData['state'] }} {{ $requestData['zip_code'] }}
                     </p>
                 </div>
                 <div style="width:40%;float:right;">
@@ -325,7 +324,7 @@
         </table>
         <table>
             <tr>
-                <td style="font-size:12px; font-weight:bold;padding-left:15px;"> {{ $requestData['emp_street_1'] }}, {{ $requestData['emp_city'] }}, {{ $requestData['emp_state'] }} {{ $requestData['emp_zip_code'] }} </td>
+                <td style="font-size:12px; font-weight:bold;padding-left:15px;">{{ $requestData['emp_name'] }} {{ $requestData['emp_street_1'] }} {{ $requestData['emp_city'] }}, {{ $requestData['emp_state'] }} {{ $requestData['emp_zip_code'] }} </td>
                 <td style="font-size:12px; font-weight:bold"><b>Pay Period: {{ date('m/d/y', strtotime($requestData['pay_start'])) }}</b></td>
                 <td style="font-size:12px; font-weight:bold"><b>{{ date('l m/d/y', strtotime($requestData['pay_end'])) }}</b></td>
             </tr>
