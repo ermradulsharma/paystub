@@ -190,13 +190,13 @@
                 </table>
             </section>
             <section style="width: 100%;">
-                <table style="width:60%; border:3px solid #0054ff; border-radius:7px;margin-top:25px; margin-left:35px;background: white;">
+                <table style="width:65%; border:3px solid #0054ff; border-radius:7px;margin-top:25px; margin-left:6px;background: white;">
                     <thead style="text-align:left; border-radius:7px;">
                         <td style="padding: 15px;font-size:22px;text-transform: capitalize;padding: 12px 10px;font-family: 'Myriad Pro', sans-serif;">Additional Information Here (Note)</td>
                     </thead>
                 </table>
 
-                <table style="width:34%; float:right; border:3px solid #0054ff; border-radius:7px; text-align: left;margin-top: -60px; margin-right: 5px;background: white;">
+                <table style="width:33%; float:right; border:3px solid #0054ff; border-radius:7px; text-align: left;margin-top: -62px; margin-right: 5px;background: white;">
                     <thead style="">
                         <th style="text-align:left;padding: 12px 10px; font-size:22px;font-weight:bold;font-family: 'Myriad Pro', sans-serif;"><b>Net Pay</b></th>
                         <th style="font-size:22px;font-weight:bold;font-family: 'Myriad Pro', sans-serif;"><b>{{ number_format($requestData['net_pay'],2) }}</b></th>

@@ -135,7 +135,7 @@
         .dotted-line{
             border: 1px dashed black;
             position: relative;
-            top:16.5%;
+            top:80px;
             left:5px;
         }
     </style>

@@ -4,7 +4,6 @@ use App\Models\Image;
 use App\Models\PaySlip;
 use \File;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Mail;
 use \PDF;
 
