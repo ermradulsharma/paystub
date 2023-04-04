@@ -70,8 +70,8 @@ class PayStubController extends Controller
 
     public function prizing(Request $request)
     {
-        $country = $request->country ?? 'usa';
-        $plans = Plan::where('country',$country)->orderBy('id')->get();
+        // $country = $request->country ?? 'usa';
+        $plans = Plan::orderBy('id', 'desc')->get();
         return view('lists.prizing', compact('plans'));
     }
 }

@@ -111,6 +111,12 @@
         .templete_elements {
             width: 100%;
         }
+        .dotted-line{
+            border: 1px dashed black;
+            position: relative;
+            top:18.5%;
+            left:5px;
+        }
     </style>
 </head>
 
@@ -319,12 +325,12 @@
                 </div>
             </div>
         </section>
-
+<div class="dotted-line"></div>
         <section style="position: fixed; bottom:55px; width:95%; left:40px; ">
             <table style="width:100%; ">
                 <tr>
                     <td>
-                        <table style="width:100%; padding-bottom:73px;">
+                        <table style="width:100%; padding-bottom:66px;">
                             <tr>
                                 <td style="">
                                     <p style="font-size: 14px; margin: 0;color:black; font-family: 'Arial Rounded MT Bold', sans-serif; text-transform:uppercase; font-weight:bold;"> {{ $requestData['cname'] }}</p>
@@ -344,7 +350,7 @@
                     <td>
                         <table style="width:100%; position: relative; bottom:10px;">
                             <tr class="bottom-content">
-                                <td style="font-size:14px; text-align:left; width:40%; font-weight:bold;text-transform:uppercase; letter-spacing: -1px;font-family: 'Arial Rounded MT Bold', sans-serif;"> {{ $requestData['emp_name'] }}</td>
+                                <td style="font-size:14px; text-align:left; width:40%; font-weight:bold;text-transform:uppercase; font-family: 'Arial Rounded MT Bold', sans-serif;"> {{ $requestData['emp_name'] }}</td>
                                 <td style="text-align:right; font-size:14px;  width:22.8%;font-family: Arial, Helvetica, sans-serif; "> XXXXX{{ $requestData['account_number_last_4'] }}</td>
                                 <td style="text-align:center; font-size:14px;  width:20%; padding-left:5px; font-family: Arial, Helvetica, sans-serif;">  XXXXX{{ $requestData['transit_aba_number'] }}</td>
                                 <td style="text-align:right; font-size:14px;  width:17.2%;padding-right:20px;font-weight:bold;font-family: Arial, Helvetica, sans-serif;"><span
