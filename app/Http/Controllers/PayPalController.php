@@ -114,11 +114,15 @@ class PayPalController extends Controller
                 $subcriptionObj->expiry_date            = $expiry_date;
                 $subcriptionObj->transaction_status     = $response['status'] ?? '';
                 if ($subcriptionObj->save()) {
-                    $userObj = User::where('id', $userId)->first();
+                    $userObj = User::find($userId);
                     $userObj->expiryDate = $subcriptionObj->expiry_date;
-                    $userObj->save();
+                    if ($userObj->save()) {
+                        $invoice = invoiceMail($userId);
+                    }
                 }
-                return redirect()->route('invoiceList')->with('message', $response['message'] ?? 'Transaction completed successfully');
+                if ($invoice == 'success') {
+                    return redirect()->route('invoiceList')->with('message', $response['message'] ?? 'Transaction completed successfully');
+                }
             } else {
                 return redirect()->back()->with('message', $response['message'] ?? 'Something went wrong. Please try again later');
             }
