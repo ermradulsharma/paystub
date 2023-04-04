@@ -38,24 +38,7 @@ class HomeController extends Controller
 
     public function updatePassword(Request $request)
     {
-        return "123456789";
         $requestData = $request->all();
-        $rules['old_password'] = 'required|min:8';
-        $rules['password'] = 'required|min:8|confirmed';
-        $validator = Validator::make($request->all(), $rules);
-        if ($validator->fails()) {
-            return back()->withErrors($validator)->withInput();
-        }
-        $userObj = User::find(Auth::user()->id);
-        if (!Hash::check($request->get('old_password'), $userObj->password)) {
-            $response['message'] = 'Current password is worng';
-            return back()->with('error',  $response['message']);
-        }
-        $userObj->password = Hash::make($requestData['password']);
-        if ($userObj->save()) {
-            return back()->with('success', 'Password changed successfully');
-        } else {
-            return back()->with('error', 'Wrong old password');
-        }
+        return response()->json([$requestData]);
     }
 }
