@@ -2,11 +2,11 @@
 
 use App\Models\Image;
 use App\Models\PaySlip;
-use PDF;
+use \File;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Mail;
-
+use \PDF;
 
 function uploadImage($module, $module_id, $files, $path = "images", $name = null)
 {
