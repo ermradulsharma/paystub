@@ -63,10 +63,9 @@ i.fa.fa-lock.lock {
     color: #5a5858;
 }
 input.contact-box {
-    width: 100%;
+    width: 94%;
     padding: 8px 12px;
     border-radius: 5px;
-    margin: 0px 0px 20px;
 }
 label.label-text {
     font-size: 10px;
@@ -82,8 +81,18 @@ input.contact-box:hover {
 
 }
 p.mail-text {
-    margin: 15px 0px 15px;
+    margin: 15px 0px 0px;
     padding: 0;
+}
+i.fa.fa-eye-slash.eye-icon {
+    font-size: 20px;
+    position: relative;
+    right: 30px;
+}
+i.eye-icon.fa.fa-eye{
+    font-size: 20px;
+    position: relative;
+    right: 30px;
 }
 /* user profile css end */
 
