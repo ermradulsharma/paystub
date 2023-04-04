@@ -121,7 +121,7 @@ class PayPalController extends Controller
                     }
                 }
                 if ($invoice == 'success') {
-                    return redirect()->route('invoiceList')->with('message', $response['message'] ?? 'Transaction completed successfully');
+                    return redirect()->route('profile')->with('message', $response['message'] ?? 'Transaction completed successfully');
                 }
             } else {
                 return redirect()->back()->with('message', $response['message'] ?? 'Something went wrong. Please try again later');
