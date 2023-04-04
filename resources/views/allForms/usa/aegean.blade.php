@@ -144,6 +144,12 @@
             padding-top: 60px;
 
         }
+        .dotted-line{
+            border: 1px dashed black;
+            position: relative;
+            top:17.5%;
+            left:5px;
+        }
     </style>
 </head>
 
@@ -312,6 +318,7 @@
                         number_format($requestData['deduction_tax'], 2) }}</span></p>
             </section>
         </section>
+        <div class="dotted-line"></div>
         <section style="position: fixed; bottom:55px; width:95%; left:40px;">
             <table>
                 <tr>
@@ -320,7 +327,7 @@
                             <tr>
                                 <td style="">
                                     <p
-                                        style="font-size: 14px; margin: 0;color:black;  font-family: 'Arial Rounded MT Bold', sans-serif; text-transform:capitalize;">
+                                        style="font-size: 14px; margin: 0;color:black;  font-family: 'Arial Rounded MT Bold', sans-serif; text-transform:capitalize;font-weight:bold;">
                                         {{ $requestData['cname'] }}</p>
                                     <p
                                         style="font-size: 12px; margin: 0;color:black;  font-family: 'Arial Rounded MT Bold', sans-serif; text-transform:uppercase;">
@@ -347,7 +354,7 @@
                         <table style="width:100%; position: relative; bottom:10px;">
                             <tr class="bottom-content">
                                 <td
-                                    style="font-size:14px; text-align:left; width:40%; font-weight:bold;text-transform:uppercase; letter-spacing: -1px;">
+                                    style="font-size:14px; text-align:left; width:40%; font-weight:bold;text-transform:uppercase;">
                                     {{ $requestData['emp_name'] }}</td>
                                 <td style="text-align:right; font-size:14px;  width:22.7%; "> XXXXX{{
                                     $requestData['account_number_last_4'] }}</td>

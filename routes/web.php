@@ -64,7 +64,9 @@ Route::get('userDashboard', function () {
     return view('user-dashboard');
 });
 
-
+Route::get('profile', function () {
+    return view('user-profile');
+})->name('profile');
 
 Route::post('auth/login', [LoginController::class, 'loginWithGoogle'])->name('login.google');
 Route::match(['get', 'post'], 'google/callback', [LoginController::class, 'callbackFromGoogle'])->name('google.callback');
