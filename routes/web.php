@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PayStubController;
 use App\Http\Controllers\TemplateFormController;
@@ -64,9 +65,7 @@ Route::get('userDashboard', function () {
     return view('user-dashboard');
 });
 
-Route::get('profile', function () {
-    return view('user-profile');
-})->name('profile');
+
 
 Route::post('auth/login', [LoginController::class, 'loginWithGoogle'])->name('login.google');
 Route::match(['get', 'post'], 'google/callback', [LoginController::class, 'callbackFromGoogle'])->name('google.callback');
@@ -111,6 +110,8 @@ Route::group(['middleware' => ['auth'],'namespace'=>'App\Http\Controllers'], fun
     Route::get('prizing', [PayStubController::class, 'prizing'])->name('prizing');
     Route::get('subscription', [TemplateFormController::class, 'subscription'])->name('subscription');
     // Route::match(['GET', 'POST'], 'settings', [SettingController::class, 'settings'])->name('settings');
+    Route::get('profile', [HomeController::class, 'userDetails'])->name('profile');
+    Route::post('update-password', [HomeController::class, 'userDetails'])->name('update-password');
 
 });
 

@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class HomeController extends Controller
 {
@@ -24,5 +28,17 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
+    }
+
+    public function userDetails(Request $request)
+    {
+        $userObj = User::find(Auth::user()->id);
+        return view('user-profile', compact('userObj'));
+    }
+
+    public function updatePassword(Request $request)
+    {
+        $requestData = $request->all();
+        return response()->json([$requestData]);
     }
 }
