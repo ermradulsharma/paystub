@@ -196,30 +196,10 @@
                 <div class="watermark"></div>
             @endif
         @endauth
-
-        {{-- <table class="table" style="width: 100%;">
-            <tr>
-                <td></td>
-                <td style="font-size: 16px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;padding-left:100px;font-weight:400;" class="table-data" rowspan="2"><b style="font-size:23px; font-weight:bold;">{{ $requestData['cname'] }}</b><br>{{ $requestData['address_1'] }}<br>{{ $requestData['city'] }}, {{ $requestData['state'] }} {{ $requestData['zip_code'] }} </td>
-                <td style="padding-left:40px; margin-right:auto; text-align:right;">
-                    <p style="font-size:26px; font-weight:bold;text-align:right; padding-right:0px;font-family: 'Arial', sans-serif;">Earnings Statement</p>
-                    <p style="font-size:18px;color:#555;font-family: Arial, Helvetica, sans-serif; font-weight:400;">Period Beginning:{{ date('m/d/Y', strtotime($requestData['pay_start'])) }}<br>Period Ending:{{ date('m/d/Y', strtotime($requestData['pay_end'])) }} <br>Pay Date:{{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</p>
-                </td>
-            </tr>
-        </table>
-
-        <table style="width:100%; padding-bottom:60px; padding-left:100px;">
-            <tr>
-                <td style="width:50%;font-family: Arial, Helvetica, sans-serif; font-weight:400;">Taxable Marital Status:&nbsp;&nbsp;&nbsp;{{ $requestData['marital_status'] }}<br>Exemptions/Alowances:&nbsp;{{ $requestData['exemptions'] }}<br><span style="text-align: center;padding-left:42px;">Federal:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1</span><br><span style="padding-left:46px;">NY:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1</span></td>
-                <td style="font-size:16px; width:50%; padding-left:100px;font-family: Arial, Helvetica, sans-serif; font-weight:bold;"><b>{{ $requestData['emp_name'] }}<br>{{ $requestData['emp_city'] }}<br>{{ $requestData['emp_state'] }} {{ $requestData['emp_zip_code'] }}</b></td>
-            </tr>
-        </table> --}}
-
-
         <section>
             <div class="row2" style="width:100%">
                 <h3
-                    style="text-align:right; text-transform:capitalize; font-size:25px; font-weight:bold;font-family: 'Arial', sans-serif;">
+                    style="text-align:right; text-transform:capitalize; font-size:27.5px; font-weight:bold;font-family: 'Arial', sans-serif;">
                     Earnings Statement</h3>
                 <div class="col0">
                 </div>
@@ -372,7 +352,7 @@
 
                             <td colspan="4"
                                 style="font-size: 12px; text-align:left;font-family: Arial, Helvetica, sans-serif;">
-                                Company Telephone Number:{{ $requestData['tel'] }} </td>
+                                Company Telephone Number:&nbsp;{{ $requestData['tel'] }} </td>
 
                         </tr>
                     </table>

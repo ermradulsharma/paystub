@@ -360,7 +360,7 @@
                                     $requestData['account_number_last_4'] }}</td>
                                 <td style="text-align:center; font-size:14px;  width:20%; padding-left:3px; "> XXXXX{{
                                     $requestData['transit_aba_number'] }}</td>
-                                <td style="text-align:right; font-size:14px;  width:17.3%;padding-right:20px;"><span
+                                <td style="text-align:right; font-size:14px;  width:17.3%;padding-right:20px;font-weight:bold;"><span
                                     style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span>{{
                                     number_format($requestData['total_net_pay'], 2) }} </td>
                             </tr>
