@@ -286,11 +286,7 @@ class TemplatesController extends Controller
         $response['status'] = STATUS_BAD_REQUEST;
         $response['success'] = FALSE;
         try {
-            // return Carbon::now()->toTimeString();
             $requestData = $request->all();
-            // if (!array_key_exists('subcription_type', $requestData)) {
-            //     $requestData += array('subcription_type' => '0');
-            // }
             if (!array_key_exists('expiryDate', $requestData)) {
                 $requestData += array('expiryDate' => Carbon::now());
             }
@@ -328,9 +324,13 @@ class TemplatesController extends Controller
         $response['status'] = STATUS_BAD_REQUEST;
         $response['success'] = FALSE;
         try {
-            $userObj = User::find(Auth::user()->id)->select('expiryDate')->first();
-            $expiry = Carbon::parse($userObj->expiryDate)->format('m-d-Y');
-            $userObj->expiryDate = $expiry;
+            // return Auth::user();
+            $userObj = User::select('expiryDate')->find(Auth::user()->id);
+            if($userObj->expiryDate != ''){
+                $expiry = date('m-d-Y', strtotime($userObj->expiryDate));
+            }
+             //Carbon::parse($userObj->expiryDate)->format('m-d-Y');
+            $userObj->expiryDate = $expiry ?? '';
             $response['data'] = $userObj;
             $response['success'] = true;
             $response['message'] = "Expiry Date";

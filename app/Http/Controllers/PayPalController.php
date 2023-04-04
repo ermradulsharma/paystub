@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\PaySlip;
 use Illuminate\Http\Request;
 use Srmklive\PayPal\Services\PayPal as PayPalClient;
 use Session;
@@ -10,6 +11,7 @@ use App\Models\Subcription;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
+use Exception;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
 use PhpParser\Node\Stmt\TryCatch;
@@ -78,7 +80,7 @@ class PayPalController extends Controller
             } else {
                 return redirect()->route('createTransaction')->with('error', $response['message'] ?? 'Something went wrong.');
             }
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             Log::info('Process Transaction Function', array('Exception' => $e->getMessage()));
         }
     }
@@ -98,24 +100,29 @@ class PayPalController extends Controller
             if (isset($response['status']) && $response['status'] == 'COMPLETED') {
                 $planDetail = Plan::where('id', $planId)->first();
                 $expiry_date = $this->getExpiryDate($planDetail);
+                $countryObj = PaySlip::where('user_id', Auth::user()->id)->orderBy('id', 'desc')->first();
                 $userId = Auth::user()->id;
-                $subcriptionObj = Subcription::where('plan_id',$planId)->where('country',$planDetail->country)->first();
-                if(!$subcriptionObj){
+                $subcriptionObj = Subcription::where(['plan_id' => $planId, 'country' => $countryObj->type])->first();
+                if (!$subcriptionObj) {
                     $subcriptionObj                         = new Subcription();
                 }
                 $subcriptionObj->user_id                = $userId;
                 $subcriptionObj->plan_id                = $planId;
-                $subcriptionObj->country                = $planDetail->country;
+                $subcriptionObj->country                = $countryObj->type;
                 $subcriptionObj->transaction_id         = $response['id'];
                 $subcriptionObj->start_date             = Carbon::now();
                 $subcriptionObj->expiry_date            = $expiry_date;
                 $subcriptionObj->transaction_status     = $response['status'] ?? '';
                 if ($subcriptionObj->save()) {
-                    $userObj = User::where('id', $userId)->first();
+                    $userObj = User::find($userId);
                     $userObj->expiryDate = $subcriptionObj->expiry_date;
-                    $userObj->save();
+                    if ($userObj->save()) {
+                        $invoice = invoiceMail($userId);
+                    }
                 }
-                return redirect()->route('welcome')->with('message', $response['message'] ?? 'Transaction completed successfully');
+                if ($invoice == 'success') {
+                    return redirect()->route('invoiceList')->with('message', $response['message'] ?? 'Transaction completed successfully');
+                }
             } else {
                 return redirect()->back()->with('message', $response['message'] ?? 'Something went wrong. Please try again later');
             }

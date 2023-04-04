@@ -228,14 +228,11 @@
                 <div class="col1">
                     <table style="padding-top:7px;">
                         <tr>
-                            <td style="font-size: 19px; font-family: 'Arial', sans-serif;font-weight:bold;"><b>{{
+                            <td style="font-size: 19px; font-family: 'Arial', sans-serif;font-weight:bold;" ><b>{{
                                     $requestData['cname'] }}</b></td>
                         </tr>
                         <tr>
-                            <td
-                                style="font-size: 19px; line-height:0.9; padding-bottom:20px; font-family: 'Times', sans-serif; text-transform:capitalize;">
-                                {{ $requestData['address_1'] }}<br>{{ $requestData['city'] }}, {{ $requestData['state']
-                                }}. {{ $requestData['zip_code'] }}, USA </td>
+                            <td style="font-size: 19px; line-height:1.2; padding-bottom:16px; font-family: 'Times', sans-serif; text-transform:capitalize;">{{ $requestData['address_1'] }}<br>{{ $requestData['city'] }}, {{ $requestData['state'] }}. {{ $requestData['zip_code'] }}, USA</td>
                         </tr>
                         <tr>
                             <td

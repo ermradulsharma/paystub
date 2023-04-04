@@ -274,9 +274,9 @@
                     @endforeach --}}
                     <br>
                     @if (count($requestData['tax_deduction'] ?? []) > 0)
-                        <thead style="border-bottom: 2px solid #000;">
+                        <thead>
                             <th></th>
-                            <th class="td" colspan="3">OTHER</th>
+                            <th  style="border-bottom: 2px solid #000;" class="td" colspan="4">OTHER</th>
                         </thead>
                         @foreach ($requestData['tax_deduction'] ?? [] as $key => $tax_deduction)
                             <tr>

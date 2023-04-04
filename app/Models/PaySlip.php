@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use PDF;
 use File;
+use Illuminate\Support\Facades\Auth;
+
 class PaySlip extends Model
 {
     use HasFactory;
@@ -13,6 +16,18 @@ class PaySlip extends Model
     public function getPdfAttribute($pdf = null)
     {
         return asset('uploads/mailData/' . $pdf);
+    }
+
+    protected $appends = ['membership'];
+
+    public function getMembershipAttribute()
+    {
+       $subcription =  Subcription::where(['user_id' => Auth::id(), 'country' => $this->type])->whereDate('expiry_date', '>=' ,Carbon::now())->first();
+       if($subcription){
+            return 1;
+       }else{
+            return 0;
+       }
     }
 
     static function generatePDF($request)

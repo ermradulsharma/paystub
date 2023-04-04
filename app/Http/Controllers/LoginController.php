@@ -24,9 +24,9 @@ class LoginController extends Controller
      */
 
 
-    public function loginWithGoogle()
+    public function loginWithGoogle(Request $request)
     {
-        return Socialite::driver('google')->stateless()->redirect();
+        //
     }
 
     /**
@@ -34,22 +34,30 @@ class LoginController extends Controller
      *
      * @return void
      */
-    public function callbackFromGoogle()
+    public function callbackFromGoogle(Request $request)
     {
-        $user = Socialite::driver('google')->stateless()->user();
-        //$user = Socialite::driver('google')->user();
-        $findUser = User::where('social_id', $user->id)->first();
-        if ($findUser) {
-            Auth::login($findUser);
+        $existUser = User::where(['social_id' => $request->sub])->exists();
+        if (!$existUser) {
+            $existEmail = User::where(['email' => $request->email])->first();
+            if (!$existEmail) {
+                $existEmail = new User;
+                $existEmail->email = $request->email;
+                $existEmail->password = Hash::make('123456dummy');
+            }
+            $existEmail->social_id = $request->sub;
+            $existEmail->first_name = $request->given_name;
+            $existEmail->last_name = $request->family_name;
+            $existEmail->name = $request->name;
+            if ($existEmail->save()) {
+                Auth::login($existEmail);
+                $response['message'] = "Login successfully";
+            }
         } else {
-            $newUser = User::updateOrCreate(['email' => $user->email], [
-                'name' => $user->name,
-                'social_id' => $user->id,
-                'password' => Hash::make('123456dummy')
-            ]);
-            Auth::login($newUser);
+            $existUser = User::where(['social_id' => $request->sub])->first();
+            Auth::login($existUser);
+            $response['message'] = "Login successfully";
         }
-        return redirect(route('invoiceList'));
+        return response()->json($response, 200);
     }
 
     public function logout(Request $request)
@@ -167,4 +175,9 @@ class LoginController extends Controller
         $response['type'] = $user->role_id;
         return response()->json($response, 200);
     }
+
+    // public function loginWithGoogle(Type $var = null)
+    // {
+    //     # code...
+    // }
 }

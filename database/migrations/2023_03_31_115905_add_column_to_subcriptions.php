@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('subcriptions', function (Blueprint $table) {
-            $table->string('country')->after('plan_id');
+            $table->string('country')->after('plan_id')->nullable();
         });
     }
 

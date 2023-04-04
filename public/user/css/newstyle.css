@@ -1,3 +1,100 @@
+.user-profile .container{
+    box-shadow: 0 0 8px rgba(0,0,0,.14);
+    max-width: 1400px;
+    margin:0 auto;
+    height: 95vh;
+}
+section.user-profile {
+    height: 100vh;
+}
+/* .left-sidebar{
+    border-right:1px solid #ddd;
+} */
+.right-side-bar {
+    padding: 10px;
+}
+.hover:hover {
+    background-color: #e6eef9;
+}
+.hover{
+    transition: all 0.3s ease-in-out;
+    align-items: center;
+}
+i.fa.fa-envelope.profile-icon {
+    font-size: 20px;
+    color: #5a5858;
+}
+.user-text h4 {
+    font-size: 17px;
+    margin: 0;
+}
+.profile-icon-outer {
+    width: 40px;
+    height: 40px;
+    background-color: rgb(128, 128, 128,0.3);
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    align-items: center;
+    margin-right: 25px;
+
+}
+.profile-outer:last-child{
+    margin-bottom: 0;
+}
+.edit-icon {
+    width: 30px;
+    height: 30px;
+    border: 1px solid blue;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+}
+.profile-outer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 350px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+i.fa.fa-lock.lock {
+    font-size: 25px;
+    color: #5a5858;
+}
+input.contact-box {
+    width: 94%;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+label.label-text {
+    font-size: 10px;
+    background-color: #fff;
+    padding: 5px;
+    position: relative;
+    top: 20px;
+    left: 5px;
+}
+input.contact-box:hover {
+    background: #fff !important;
+    color:black !important;
+
+}
+p.mail-text {
+    margin: 15px 0px 0px;
+    padding: 0;
+}
+i.fa.fa-eye-slash.eye-icon {
+    font-size: 20px;
+    position: relative;
+    right: 30px;
+}
+i.eye-icon.fa.fa-eye{
+    font-size: 20px;
+    position: relative;
+    right: 30px;
+}
+/* user profile css end */
 
 .input-box-font {
     padding: 6px !important;
@@ -708,15 +805,6 @@ color: #027bff !important;
     padding: 0px 225px 2px 4px;
     font-family: 'Outfit', sans-serif;
     font-weight: 500;
-}
-
-.google-btn {
-    width: 203px;
-    height: 54px;
-    background-color: google-blue;
-    border-radius: 6px;
-    box-shadow: 0 3px 4px 0 rgb(0 0 0 / 25%);
-    margin: auto;
 }
 
 .basicpay {
