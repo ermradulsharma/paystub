@@ -307,7 +307,7 @@ class TemplatesController extends Controller
             } else {
                 $userObj->expiryDate = "";
             }
-            $userObj->subcription_type = $requestData['subcription_type'];
+            $userObj->subscription_type = $requestData['subcription_type'];
             $userObj->save();
             $response['success'] = true;
             $response['message'] = "Data saved successfully";
@@ -327,7 +327,7 @@ class TemplatesController extends Controller
         $response['success'] = FALSE;
         try {
             // return Auth::user();
-            $userObj = User::select('expiryDate', 'subcription_type')->find(Auth::user()->id);
+            $userObj = User::select('expiryDate', 'subscription_type')->find(Auth::user()->id);
             if($userObj->expiryDate != ''){
                 $expiry = date('m-d-Y', strtotime($userObj->expiryDate));
             }
