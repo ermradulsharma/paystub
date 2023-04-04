@@ -28,9 +28,10 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body card-body">
                     <embed src="" type="" id="tempView" allowtransparency="false"
-                        style="background-color : transparent;" frameborder="0" width="100%" height="800">
+                        style="background-color : white;" frameborder="0" width="100%" height="800"
+                        style="border: none;">
                     {{-- <iframe src="" id="tempView" allowtransparency="false" style="background-color : transparent;"
                     frameborder="0" width="100%" height="800"></iframe> --}}
                 </div>
@@ -415,6 +416,10 @@
                                                     ({{ $currency->name }})
                                                 </option>
                                             @endforeach
+                                            {{-- <option value="$">Dollar $</option>
+                                        <option value="€">Euro €</option>
+                                        <option value="£">Pound £</option>
+                                        <option value="¥">Yen ¥</option> --}}
                                         </select>
                                     </div>
 
@@ -665,7 +670,9 @@
                                             <p class="p-0 m-0 " style="font-family: serif;">CO<span
                                                     class="redColor">*</span></p>
                                             <input type="text" name="co_number" id="co_number"
-                                                class="earnbtn removeDiv text-center">
+                                                class="earnbtn removeDiv text-center" maxlength="4" minlength="4"
+                                                placeholder="1234"
+                                                onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                         </div>
 
                                     </div>
@@ -675,7 +682,9 @@
                                                     class="redColor">*</span>
                                             </p>
                                             <input type="text" name="file_number" id="file_number"
-                                                class="earnbtn removeDiv text-center">
+                                                class="earnbtn removeDiv text-center" maxlength="6" minlength="4"
+                                                placeholder="1234"
+                                                onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                         </div>
 
                                     </div>

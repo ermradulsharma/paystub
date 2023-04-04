@@ -294,6 +294,7 @@ class TemplatesController extends Controller
             if ($requestData['type'] == 1) {
                 if ($requestData['subcription_type'] == 1) {
                     $userObj->expiryDate = Carbon::now()->addMonth();
+
                 } else  if ($requestData['subcription_type'] == 3) {
                     $userObj->expiryDate = Carbon::now()->addMonths(3);
                 } else  if ($requestData['subcription_type'] == 6) {
@@ -306,6 +307,7 @@ class TemplatesController extends Controller
             } else {
                 $userObj->expiryDate = "";
             }
+            $userObj->subscription_type = $requestData['subcription_type'];
             $userObj->save();
             $response['success'] = true;
             $response['message'] = "Data saved successfully";
@@ -325,7 +327,7 @@ class TemplatesController extends Controller
         $response['success'] = FALSE;
         try {
             // return Auth::user();
-            $userObj = User::select('expiryDate')->find(Auth::user()->id);
+            $userObj = User::select('expiryDate', 'subscription_type')->find(Auth::user()->id);
             if($userObj->expiryDate != ''){
                 $expiry = date('m-d-Y', strtotime($userObj->expiryDate));
             }
