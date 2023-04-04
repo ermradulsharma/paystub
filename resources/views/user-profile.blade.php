@@ -14,7 +14,6 @@
                                     <div class="user-text">
                                         <h4>My Account</h4>
                                     </div>
-
                                 </div>
                             </div>
 
@@ -31,12 +30,9 @@
                                     <div class="user-text">
                                         <h4 style="color:#0f4386">User Profile</h4>
                                     </div>
-
                                 </div>
                             </div>
-
                         </div>
-
                     </div>
                 </div>
                 <div class="col-lg-9 col-md-9" style="padding: 0;">
@@ -51,7 +47,7 @@
                                 </div>
                                 <div class="user-center-text">
                                     <h6 style="padding: 0; margin:0px;color: #5a5858;">Contact Name</h6>
-                                    <p style="padding:0px;margin:0px;">Mike Bitch</p>
+                                    <p style="padding:0px;margin:0px;">{{ $userObj->name ?? '' }}</p>
                                 </div>
                             </div>
 
@@ -66,7 +62,7 @@
                                 </div>
                                 <div class="user-center-text">
                                     <h6 style="padding: 0; margin:0px;color: #5a5858;">Email Address</h6>
-                                    <p style="padding:0px;margin:0px;">kgurwinder400@gmail.com</p>
+                                    <p style="padding:0px;margin:0px;">{{ $userObj->email ?? '' }}</p>
                                 </div>
                             </div>
 
@@ -81,7 +77,7 @@
                                 </div>
                                 <div class="user-center-text">
                                     <h6 style="padding: 0; margin:0px;color: #5a5858;">Password</h6>
-                                    <p style="padding:0px;margin:0px;">*********</p>
+                                    <p style="padding:0px;margin:0px;">{{ $userObj->password ?? '*********' }}</p>
                                 </div>
                             </div>
 
@@ -98,7 +94,6 @@
     <div class="modal fade" id="userName">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-
                 <!-- Modal Header -->
                 <div class="modal-header" style="background: #115caecf;">
                     <h4 class="modal-title" style="text-transform: capitalize;color:#fff;">Change Contact Name</h4>
@@ -111,7 +106,7 @@
                 <div class="modal-body pb-4" style="box-shadow: 0 0 8px rgba(0,0,0,.14);padding-top:0;">
                     <form>
                         <label class="label-text" for="css">Contact Name<span style="color:red;">*</span></label>
-                        <input class="contact-box" type="text" placeholder="Contact Name">
+                        <input class="contact-box" type="text" name="name" placeholder="Contact Name">
                     </form>
                 </div>
                 <div class="modal-footer" style="display: inline-block;">
@@ -143,15 +138,12 @@
                     <form>
                         <div class="contact-box-outer">
                             <label class="label-text" for="css">Password<span style="color:red;">*</span></label>
-                            <input class="contact-box" type="text" placeholder="Password">
+                            <input class="contact-box" type="text" placeholder="Password" name="password">
                             <i id="eye-icon_00" class="fa fa-eye-slash eye-icon" data-id="00"></i>
                         </div>
                         <label class="label-text" for="css">Email Address<span style="color:red;">*</span></label>
-                        <input class="contact-box" type="text" placeholder="Email Address">
-
+                        <input class="contact-box" type="text" placeholder="Email Address" name="email">
                     </form>
-
-
                 </div>
                 <div class="modal-footer" style="display: inline-block;">
                     <div class="d-flex justify-content-between pt-2">
@@ -179,38 +171,41 @@
                 <!-- Modal body -->
                 <div class="modal-body pb-4" style="box-shadow: 0 0 8px rgba(0,0,0,.14);padding-top:0;">
                     <p class="mail-text">Set a new password for ypur account.</p>
-                    <form>
+                    <form id='passwordUpdate' action={{ url('update-password') }} method="POST">
+                        @csrf
+                        <input type="hidden" name="updatepassword" id="updatepassword" value="updatepassword">
                         <div class="contact-box-outer">
                             <label class="label-text" for="css">Current Password<span
                                     style="color:red;">*</span></label>
-                            <input class="contact-box" type="text" placeholder="Current Password">
+                            <input class="contact-box" type="text" placeholder="Current Password"
+                                name="current_password" id="current_password">
                             <i id="eye-icon_01" class="fa fa-eye-slash eye-icon" data-id="01" data-src="01"></i>
                         </div>
                         <div class="contact-box-outer">
                             <label class="label-text" for="css">New Password<span
                                     style="color:red;">*</span></label>
-                            <input class="contact-box" type="text" placeholder="New Password">
+                            <input class="contact-box" type="text" placeholder="New Password" name="new_password"
+                                id="new_password">
                             <i id="eye-icon_02" class="fa fa-eye-slash eye-icon" data-id="02"></i>
                         </div>
                         <div class="contact-box-outer">
                             <label class="label-text" for="css">Confirm Password<span
                                     style="color:red;">*</span></label>
-                            <input class="contact-box" type="text" placeholder="Confirm Password">
-                            <i id="eye-icon_03" class="fa fa-eye-slash eye-icon" data-id="03"></i>
+                            <input class="contact-box" type="text" placeholder="Confirm Password"
+                                name="confirm_password" id="confirm_password">
+                            <i id="eye-icon_03" class="fa fa-eye-slash eye-icon" src="eye-icon" data-id="03"></i>
                         </div>
-
+                        {{-- <div class="modal-footer" style="display: inline-block;"> --}}
+                        <div class="d-flex justify-content-between pt-2">
+                            <button class="btn-secondary" data-bs-dismiss="modal"
+                                style="border-radius:20px; border:none;font-size:12px; padding:5px 10px;">Cancel</button>
+                            <button type="submit" class="btn-danger passwordButton"
+                                style="border-radius:20px; border:none;font-size:12px; padding:5px 15px;">Save</button>
+                        </div>
+                        {{-- </div> --}}
                     </form>
-
-
                 </div>
-                <div class="modal-footer" style="display: inline-block;">
-                    <div class="d-flex justify-content-between pt-2">
-                        <button class="btn-secondary" data-bs-dismiss="modal"
-                            style="border-radius:20px; border:none;font-size:12px; padding:5px 10px;">Cancel</button>
-                        <button class="btn-danger"
-                            style="border-radius:20px; border:none;font-size:12px; padding:5px 15px;">Save</button>
-                    </div>
-                </div>
+
             </div>
         </div>
     </div>
@@ -220,34 +215,27 @@
         $(".username").click(function() {
             $("#userName").modal("show");
         });
-    </script>
-    <script>
+
         $(".username2").click(function() {
             $("#userName2").modal("show");
         });
-    </script>
-    <script>
+
         $(".username3").click(function() {
             $("#userName3").modal("show");
         });
-    </script>
-    <script>
+
         $('.eye-icon').click(function() {
             var id = $(this).data('id');
-            $("#eye-icon_" + id).removeClass("fa-eye-slash");
-            $("#eye-icon_" + id).addClass("fa-eye");
-        });
-    </script>
+            var clr = $(this).attr('src');
+            if (clr = 'eye-icon') {
+                $("#eye-icon_" + id).removeClass("fa fa-eye-slash eye-icon");
+                $("#eye-icon_" + id).addClass("fa fa-eye eye-icon");
+            } else {
+                $("#eye-icon_" + id).addClass("fa fa-eye-slash eye-icon");
+                $("#eye-icon_" + id).removeClass("fa fa-eye eye-icon");
+            }
 
-    {{-- $('.lock').click(function () {
-    var id = $(this).data('id');
-    var img = $(this).attr('src');
-    if (img == 'https://paystubx.com/images/lock.png') {
-        $("#" + id).attr('src', 'https://paystubx.com/images/unlock.png');
-        $("#taxe_" + id).attr("readonly", false);
-    } else {
-        $("#" + id).attr('src', 'https://paystubx.com/images/lock.png');
-        $("#taxe_" + id).attr("readonly", true);
-    }
-}); --}}
+        });
+        
+    </script>
 @endsection
