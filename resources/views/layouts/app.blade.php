@@ -218,6 +218,42 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade logoutModal" id="logoutModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header" style="background: #115caecf;">
+                    <h4 class="modal-title"><img src="{{ asset('/') }}images/Paystub X.webp" class="icon"></h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <h5 class="text-center" style="text-transform:capitalize;">Verify your Email Address</h5>
+                    <div class=" text-center mt-4">
+                        <div class="mail">
+                            <img src="https://cdn4.iconfinder.com/data/icons/social-media-logos-6/512/112-gmail_email_mail-512.png"
+                                class="mailpic">
+                        </div>
+
+                        <h5 style="color: #457bbe;" class="mt-4 text-center">Almost There!</h5>
+                        <p style="color: #000;font-size: 14px;font-family: serif; text-transform:capitalize; margin-bottom:0px;"
+                            class="text-center">Enter the verification code sent to you</p>
+                            <span style="color: #02030359;font-size: 10px;font-family: serif; text-transform:capitalize;"
+                            class="text-center">Check spam if not found in inbox</span>
+                        <form id="loginOtp" action="{{ url('loginWithOtp') }}" method="POST" class="text-center">
+                            @csrf
+                            <div class="px-lg-5">
+                                <input type="hidden" id="hidden_email" name="email" class="d-none">
+                                <input type="text" id="Verificationcode" name="code"
+                                    class="form-control formm py-4" placeholder="Verification Code *">
+                            </div>
+                            <button class="previewbtn mt-5" type="submit">Verify</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Start Footer Section -->
     <div class="footerSection">
         <div class="container" style="max-width:1550px; margin:0 auto; padding:0px 20px;">
