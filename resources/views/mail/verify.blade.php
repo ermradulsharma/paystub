@@ -40,11 +40,7 @@
                         align="center" cellpadding="0" cellspacing="0">
                         <tr>
                             <td style="text-align:center;">
-                                <a style="border:2px solid #f56b08; padding:20px 90px;background-color: #fff;"
-                                    href="https://rakeshmandal.com" title="logo" target="_blank">
-                                    <img width="80" src="{{asset('images/Paystub X.webp')}}" title="logo" alt="logo">
-
-                                </a>
+                                <a style="border:2px solid #f56b08; padding:20px 90px;" target="_blank"><img width="80" src="{{asset('images/Paystub X.webp')}}" title="logo" alt="logo"></a>
                             </td>
                         </tr>
                         <tr>
