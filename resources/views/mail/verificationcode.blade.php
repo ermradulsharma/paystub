@@ -82,7 +82,7 @@
                 </tr>
                 <tr>
                     <td style="letter-spacing: 4px; text-align:center;padding-bottom:15px;"><span
-                            style="border:1px solid rgba(86, 86,86,0.6); ;padding:3px 6px;">{{$user_data['otp']}}</span></td>
+                            style="border:1px solid rgba(86, 86,86,0.6); ;padding:3px 6px;">226542</span></td>
 
                 </tr>
                 <tr>
