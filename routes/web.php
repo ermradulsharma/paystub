@@ -22,7 +22,7 @@ use Symfony\Component\Routing\Router;
 
 Route::get('/', function () {
     return view('welcome');
-})->name('welcome'); 
+})->name('welcome');
 Route::match(['get', 'post'], 'usa/paystub', [PayStubController::class, 'usaPayStub'])->name('usa.payStub');
 
 Route::match(['get', 'post'], 'global', [PayStubController::class, 'templateGlobal'])->name('global');
@@ -73,7 +73,7 @@ Route::post('loginWithOtp', [LoginController::class, 'loginWithOtp'])->name('log
 Route::get('loginWithOtp', function () {
     return view('auth/OtpLogin');
 })->name('loginWithOtp');
-Route::any('sendOtp', [LoginController::class, 'sendOtp']);
+Route::any('sendOtp', [LoginController::class, 'sendOtp'])->name('sendOtp');
 Route::post('login', [LoginController::class, 'login']);
 
 Route::post('templates', [TemplateFormController::class, 'templates'])->name('templates');
@@ -111,7 +111,9 @@ Route::group(['middleware' => ['auth'],'namespace'=>'App\Http\Controllers'], fun
     Route::get('subscription', [TemplateFormController::class, 'subscription'])->name('subscription');
     // Route::match(['GET', 'POST'], 'settings', [SettingController::class, 'settings'])->name('settings');
     Route::get('profile', [HomeController::class, 'userDetails'])->name('profile');
+    Route::post('profile/details/save', [HomeController::class, 'storeDetails'])->name('store.details');
     Route::post('update-password', [HomeController::class, 'userDetails'])->name('update-password');
+    Route::post('change-password', [HomeController::class, 'changePassword'])->name('changePassword');
 
 });
 

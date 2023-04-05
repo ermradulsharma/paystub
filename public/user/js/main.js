@@ -6,6 +6,12 @@ $(".registerBtn").click(function () {
     $("#loginModal").modal("show");
     userAuth = 0;
 });
+
+$(".btn-logout").click(function () {
+    $("#logoutModal").modal("show");
+    userAuth = 0;
+});
+
 $(".close").click(function () {
     $(".modal").modal("hide");
 });
@@ -66,6 +72,7 @@ $("#sendOTPForm").on("submit", function () {
                 $("#login_email").val(response.email);
                 $("#loginPasswordModal").modal("show");
             } else {
+                startTimer();
                 $("#otpModal").modal("show");
                 $("#hidden_email").val(response.email);
                 toastr.success(response.message);
@@ -128,6 +135,22 @@ $("#adminLogin").on("submit", function () {
     });
     return false;
 });
+
+function startTimer() {
+    var elementLink = document.getElementById("resendOtpButton");
+    elementLink.classList.remove('pointer-active');
+    elementLink.classList.add('pointer-disable');
+    var timeleft = 30;
+    var downloadTimer = setInterval(function(){
+        timeleft--;
+        document.getElementById("resendTimeOut").textContent = timeleft;
+        if(timeleft <= 0){
+            clearInterval(downloadTimer);
+            elementLink.classList.add('pointer-active');
+            elementLink.classList.remove('pointer-disable');
+        }
+    },1000);
+}
 
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
