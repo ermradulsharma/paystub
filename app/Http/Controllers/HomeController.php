@@ -36,6 +36,13 @@ class HomeController extends Controller
         return view('user-profile', compact('userObj'));
     }
 
+    public function verificationCode(Request $request)
+    {
+
+        $userObj = User::find(Auth::user()->id);
+        return view('mail.verificationcode', compact('userObj'));
+    }
+
     public function updatePassword(Request $request)
     {
         $requestData = $request->all();
