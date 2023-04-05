@@ -1,11 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-US">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <style>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <title>New Account Email Template</title>
+    <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+    <meta name="description" content="New Account Email Template.">
+    <style type="text/css">
+        a:hover {
+            text-decoration: underline !important;
+        }
+
         @import url('https://fonts.cdnfonts.com/css/myriad-pro');
 
         @font-face {
@@ -17,118 +22,127 @@
 
         }
 
-        .email-verification {
-            padding: 10px;
-            background-color: #eaeaea;
-
-        }
-
-        .logo {
-            width: 100%;
-            max-width: 80px;
-            padding: 20px 70px;
-            border: 2px solid #f26e20;
-            background-color: #fff;
-        }
-
-        .footer-section {
-            padding-top: 15px;
-            background-color: #eaeaea;
-        }
-
-        table {
-            width: 100%;
-        }
-
         ul li {
             list-style: none;
         }
-
-        ul.social-icons {
-            padding: 0px 0px 20px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        ul.social-icons li {
-            margin-right: 10px;
-        }
-
-        ul.social-icons li:last-child {
-            margin-right: 0;
-        }
     </style>
 </head>
-<body>
-    <main style=" max-width: 500px;margin:50px auto;background-color:#4472c4;padding:35px 20px;">
-        <section class="email-verification">
-            <table style="background-color:#fff;padding:10px 20px;">
-                <tr>
-                    <td style="text-align: center; position: relative; bottom:60px;"><img class="logo"
-                            src="images/Paystub X.webp"></td>
-                </tr>
-                <tr>
-                    <td style="text-align: center"><img src="images/laptop.png"></td>
-                </tr>
-                <tr>
-                    <td style="color:#676767;font-weight:bold;padding-bottom:15px; padding-top:10px;font-size:15px;">Your
-                        Paystubx E-Mail Verification</td>
-                </tr>
-                <tr>
-                    <td style="font-size: 12px; color:rgba(86, 86,86,0.9); padding-bottom:15px;">Your one step closing to
-                        accessing Paystub Acccount! Please enter the code below to confirm your email
-                        address.</td>
-                </tr>
-                <tr>
-                    <td style="letter-spacing: 4px; text-align:center;padding-bottom:15px;"><span
-                            style="border:1px solid rgba(86, 86,86,0.6); ;padding:3px 6px;">{{$user_data['otp']}}</span></td>
 
-                </tr>
-                <tr>
-                    <td style="color: rgba(86, 86,86,0.9); text-align:center;padding-bottom:20px;">This code expires in 24
-                        hours.</td>
-                </tr>
-                <tr>
-                    <td style="font-size: 12px; color:rgba(86, 86,86,0.9); padding-bottom:15px;">Use the verification code
-                        provided to start using your paystubx account.if to did not make this request, please ignore this
-                        email.</td>
-                </tr>
-                <tr>
-                    <td style="color:rgba(86, 86,86,0.9); font-size:14px; ">Welcome,</td>
-                </tr>
-                <tr>
-                    <td style="font-size: 14px;color:rgba(86, 86,86,0.9);"><b style="color: #000;">Paystub<span
-                                style="color: red;">X</span></b> Support</td>
-                </tr>
-                <tr>
-                    <td style="font-size: 14px; color:#4472c4;">Support@Paystubx.com</td>
-                </tr>
-            </table>
-        </section>
-        <section class="footer-section">
-            <div class="footer-content">
-                <p style="text-align: center;padding:0;">Create Pay stubs on the go!</p>
-            </div>
-            <div class="row" style="display: flex; justify-content:center;">
-                <img style="max-width: 100px; height:30px; margin-right:10px;" src="images/1app.png">
-                <img style="max-width: 100px; height:30px;" src="images/1google.png">
-            </div>
-            <div class="footer-content">
-                <p style="text-align: center">Follow us on social media</p>
-            </div>
-            <ul class="social-icons">
-                <li><a><img src="images/icons/fb.png"></a></li>
-                <li><a><img src="images/icons/in.png"></a></li>
-                <li><a><img src="images/icons/instagram.png"></a></li>
-                <li><a><img src="images/icons/pin.png"></a></li>
-                <li><a><img src="images/icons/twitter.png"></a></li>
-                <li><a><img src="images/icons/youtube.png"></a></li>
-                </div>
+<body marginheight="0" topmargin="0" marginwidth="0" style="margin: 0px; background-color: #fff;" leftmargin="0">
+    <section style="background-color:#4472c4; max-width:700px; width:100%;margin:0 auto; padding:40px 20px;">
+        <!-- 100% body table -->
+        <table style="max-width:700px;margin:0 auto;" cellspacing="0"  cellpadding="0" width="100%"
+            style="@import url(https://fonts.googleapis.com/css?family=Rubik:300,400,500,700|Open+Sans:300,400,600,700); font-family: 'Open Sans', sans-serif;">
+            <tr>
+                <td>
 
-        </section>
-    </main>
+                    <table style="background-color: #f2f3f8; max-width:670px; margin:0 auto;" width="100%"
+                        align="center" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td style="text-align:center;">
+                                <a style="border:2px solid #f56b08; padding:20px 90px;background-color: #fff;"
+                                    href="https://rakeshmandal.com" title="logo" target="_blank">
+                                    <img width="80" src="https://paystubx.com/images/Paystub X.webp" title="logo" alt="logo">
+
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height:20px;">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <table width="95%"  align="center" cellpadding="0" cellspacing="0"
+                                    style="max-width:670px; background:#fff; border-radius:3px; text-align:center;-webkit-box-shadow:0 6px 18px 0 rgba(0,0,0,.06);-moz-box-shadow:0 6px 18px 0 rgba(0,0,0,.06);box-shadow:0 6px 18px 0 rgba(0,0,0,.06);">
+                                    <tr>
+                                        <td style="padding:0 20px;">
+                                            <p style="text-align: center;"><img style="text-align: center;padding-top:15px;"
+                                                    src="images/laptop.png"></p>
+                                            <h3 style="text-align: left;color:#686767; font-size:15px;">Your Paystubx
+                                                E-Mail Verification</h3>
+                                            <p
+                                                style="font-size:13px; color:rgba(86, 86,86,0.9); margin:8px 0 0; line-height:24px;text-align:left;padding-bottom:25px;">
+                                                Your one step closing to
+                                                accessing Paystub Acccount! Please enter the code below to confirm your
+                                                email
+                                                address.
+                                            </p>
+
+
+                                            <p
+                                                style="letter-spacing: 10px; padding:4px 8px;border:1px solid rgba(86, 86,86,0.5);width:120px; margin:0 auto;">
+                                                123456
+
+                                            </p>
+
+                                            <p style="text-align: center;color:rgba(86, 86,86,0.9);font-size:13px;">This code expires
+                                                in 24
+                                                hours.</p>
+                                            <p
+                                                style="font-size:13px; color:rgba(86, 86,86,0.9); margin:8px 0 0; line-height:24px;text-align:left;padding-bottom:25px;">
+                                                Use the verification code
+                                                provided to start using your paystubx account.if to did not make this
+                                                request, please ignore this
+                                                email.
+                                            </p>
+                                            <p
+                                                style="padding: 0; margin:0;text-align:left;color:rgba(86, 86,86,0.9);line-height:1.5;">
+                                                Welcome,</p>
+                                            <p
+                                                style="padding: 0;margin:0;font-size: 14px;color:rgba(86, 86,86,0.9); text-align:left;line-height:1.5;">
+                                                <b style="color: #000;">Paystub<SPAN
+                                                        style="color: red;">X</SPAN></b>Support
+                                            </p>
+                                            <p
+                                                style="padding: 0;margin:0;text-align:left;font-size: 14px; color:#4472c4;line-height:1.5;">
+                                                Support@Paystubx.com</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="height:40px;">&nbsp;</td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height:20px;">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center;">
+                                <p style="font-size:13px;text-align: center;margin:0;padding:0 0 15px;color:rgba(86, 86,86,0.9)">
+                                    Create Pay stubs on the go! </p>
+                                <p style="text-align: center;padding:0;margin:0;">
+                                    <img style="max-width: 100px; height:30px; margin-right:10px;"
+                                        src="images/1app.png">
+                                    <img style="max-width: 100px; height:30px;" src="images/1google.png">
+                                </p>
+                                <p style="text-align: center;color:rgba(86, 86,86,0.9);font-size:13px;">Follow us on social media</p>
+                                <ul class="social-icons" style="width:48%; margin:0 auto;">
+                                    <li style="float: left;margin-right:6px;"><a href="https://www.google.com/"><img src="images/icons/fb.png"></a>
+                                    </li>
+                                    <li style="float: left;margin-right:6px;"><a href="https://www.google.com/"><img src="images/icons/in.png"></a>
+                                    </li>
+                                    <li style="float: left;margin-right:6px;"><a href="https://www.google.com/"><img
+                                                src="images/icons/instagram.png"></a></li>
+                                    <li style="float: left;margin-right:6px;"><a href="https://www.google.com/"><img src="images/icons/pin.png"></a>
+                                    </li>
+                                    <li style="float: left;margin-right:6px;"><a href="https://www.google.com/"><img
+                                                src="images/icons/twitter.png"></a></li>
+                                    <li style="float: left;"><a href="https://www.google.com/"><img src="images/icons/youtube.png"></a></li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="">&nbsp;</td>
+                        </tr>
+                    </table>
+
+                </td>
+            </tr>
+        </table>
+        <!--/100% body table-->
+    </section>
+
 </body>
+
 </html>
-
-

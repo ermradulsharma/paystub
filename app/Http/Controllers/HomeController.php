@@ -40,7 +40,7 @@ class HomeController extends Controller
     {
 
         $userObj = User::find(Auth::user()->id);
-        return view('mail.verificationcode', compact('userObj'));
+        return view('mail.verify', compact('userObj'));
     }
 
     public function updatePassword(Request $request)
