@@ -45,7 +45,7 @@ ul.social-icons li:last-child{
     margin-right: 0;
 }
 </style>
-<main style=" max-width: 500px;margin:15% auto;background-color:#4472c4;padding:35px 20px;">
+<main style=" max-width: 500px;margin:50px auto;background-color:#4472c4;padding:35px 20px;">
 <section class="email-verification">
     <table style="background-color:#fff;padding:10px 20px;">
         <tr>
