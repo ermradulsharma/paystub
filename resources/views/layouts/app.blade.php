@@ -57,22 +57,14 @@
                 @guest
                     <a class="btn btn-lg py-2 w-100 mt-5 btn-danger login registerBtn" href="javascript:void(0);">LOGIN</a>
                     <div class="d-none logoutDiv">
-                        <a class="btn btn-lg py-2 w-100 mt-5 btn-danger "
-                            style="width: 120px !important;padding: 6px 0 !important;" href="javascript:void(0);"
-                            onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i
-                                class="fa fa-sign-out"></i> Log out</a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            {{ csrf_field() }}
-                        </form>
+                        <a class="btn btn-lg py-2 w-100 mt-5 btn-logout btn-danger "
+                            style="width: 120px !important;padding: 6px 0 !important;" href="javascript:void(0);"><i
+                                class="fa fa-sign-out"></i>Log out</a>
                     </div>
                 @else
-                    <a class="btn btn-lg py-2 w-100 mt-5 btn-danger"
-                        style="width: 120px !important;padding: 6px 0 !important;" href="javascript:void(0);"
-                        onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i
+                    <a class="btn btn-lg py-2 w-100 mt-5 btn-logout btn-danger "
+                        style="width: 120px !important;padding: 6px 0 !important;" href="javascript:void(0);"><i
                             class="fa fa-sign-out"></i> Log out</a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        {{ csrf_field() }}
-                    </form>
                 @endguest
             </li>
         </ul>
@@ -204,6 +196,8 @@
                             class="text-center">Enter the verification code sent to you</p>
                             <span style="color: #02030359;font-size: 10px;font-family: serif; text-transform:capitalize;"
                             class="text-center">Check spam if not found in inbox</span>
+                            <p class="resend-otp"><a id="resendOtpButton"class="pointer-disable" style="" href="JavaScript:void(0);" disabled>Resend  OTP </a><i class="fa fa-clock-o clock"></i><span id="resendTimeOut">30</span></p>
+
                         <form id="loginOtp" action="{{ url('loginWithOtp') }}" method="POST" class="text-center">
                             @csrf
                             <div class="px-lg-5">
@@ -228,26 +222,15 @@
                 </div>
                 <!-- Modal body -->
                 <div class="modal-body">
-                    <h5 class="text-center" style="text-transform:capitalize;">Verify your Email Address</h5>
+                    <h5 class="text-center" style="text-transform:capitalize;">Are you sure? You want to logout</h5>
                     <div class=" text-center mt-4">
-                        <div class="mail">
-                            <img src="https://cdn4.iconfinder.com/data/icons/social-media-logos-6/512/112-gmail_email_mail-512.png"
-                                class="mailpic">
-                        </div>
+                        {{-- <h5 style="color: #457bbe;" class="mt-4 text-center">Almost There!</h5> --}}
 
-                        <h5 style="color: #457bbe;" class="mt-4 text-center">Almost There!</h5>
-                        <p style="color: #000;font-size: 14px;font-family: serif; text-transform:capitalize; margin-bottom:0px;"
-                            class="text-center">Enter the verification code sent to you</p>
-                            <span style="color: #02030359;font-size: 10px;font-family: serif; text-transform:capitalize;"
-                            class="text-center">Check spam if not found in inbox</span>
-                        <form id="loginOtp" action="{{ url('loginWithOtp') }}" method="POST" class="text-center">
+                        <form id="loginOtp" action="{{ route('logout') }}" method="POST" class="text-center">
                             @csrf
-                            <div class="px-lg-5">
-                                <input type="hidden" id="hidden_email" name="email" class="d-none">
-                                <input type="text" id="Verificationcode" name="code"
-                                    class="form-control formm py-4" placeholder="Verification Code *">
-                            </div>
-                            <button class="previewbtn mt-5" type="submit">Verify</button>
+
+                            <button class="previewbtn mt-5" type="submit">Yes</button>
+                            <button class="previewbtn mt-5 bottom-close" type="button">NO</button>
                         </form>
                     </div>
                 </div>
@@ -328,6 +311,24 @@
             todayHighlight: true,
             format: "mm/dd/yyyy",
         }).datepicker('setDate', 'today');
+
+        $("#resendOtpButton").click(function() {
+            var email = $('#hidden_email').val();
+            startTimer();
+            $.ajax({
+            url: "{{route('sendOtp')}}?email="+email,
+            success:function(data){
+                console.log('data',data);
+                    if($.isEmptyObject(data.error)){
+                        toastr.success(data.message);
+
+                    }else{
+                        printErrorMsg(data.error);
+                    }
+            }
+            });
+        });
+
     </script>
     <script src="{{ asset('user') }}/js/main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
