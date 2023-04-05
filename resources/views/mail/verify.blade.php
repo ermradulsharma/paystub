@@ -1,5 +1,3 @@
-@component('mail::message')
-# {{$user_data['type']}}
 
 <style>
     @import url('https://fonts.cdnfonts.com/css/myriad-pro');
@@ -122,4 +120,3 @@
 
     </section>
 </main>
-@endcomponent
