@@ -142,12 +142,7 @@
         .bottom-content {
             padding-top: 80px;
         }
-        .dotted-line{
-            border: 1px dashed black;
-            position: relative;
-            top:60px;
-            left:5px;
-        }
+
     </style>
 </head>
 
@@ -155,7 +150,7 @@
     <main class="bg-img2">
         <img src="{{ public_path('images/border/amethyst/amethyst.svg') }}"
             style="position: absolute; top: 0px; right:0px;left: 0px; width:106%; height:105%;  z-index: -1;">
-        <img src="{{ public_path('images/check01.svg') }}"
+        <img src="{{ public_path('images/check2.svg') }}"
             style="position: absolute; top:74.8%; width:100.79%; height:25%;  z-index: -1; right:0px; left:0px;"> @guest
         <div class="watermark"></div> @endguest @auth @if(Auth::user()->expiryDate == '' ||
         !isset($requestData['watermark'])) <div class="watermark"></div> @endif @endauth <section class="invoiceborder">
@@ -286,8 +281,14 @@
                     </tr> @foreach ($requestData['tax_deduction'] ?? [] as $key => $tax_deduction) <tr>
                         <td></td>
                         <td class="data" id="color">{{ $tax_deduction }}</td>
-                        <td id="color" class="alignR" style="font-size:15px; font-family: Arial, Helvetica, sans-serif;">{{ $requestData['currency'] }} {{ number_format($requestData['period_tax_deduction'][$key], 2) }}</td>
-                        <td id="color" class="alignR" style="font-size:15px; font-family: Arial, Helvetica, sans-serif;">{{ $requestData['currency'] }} {{ number_format($requestData['ytd_tax_deduction'][$key], 2) }} </td>
+                        <td id="color" class="alignR"
+                            style="font-size:15px; font-family: Arial, Helvetica, sans-serif;">{{
+                            $requestData['currency'] }} {{ number_format($requestData['period_tax_deduction'][$key], 2)
+                            }}</td>
+                        <td id="color" class="alignR"
+                            style="font-size:15px; font-family: Arial, Helvetica, sans-serif;">{{
+                            $requestData['currency'] }} {{ number_format($requestData['ytd_tax_deduction'][$key], 2) }}
+                        </td>
                     </tr>
                     @endforeach
                     @endif
@@ -315,12 +316,11 @@
                         number_format($requestData['deduction_tax'], 2) }}</span></p>
             </section>
         </section>
-        <div class="dotted-line"></div>
         <section style="position: fixed; bottom:55px; width:95%; left:40px;">
             <table>
                 <tr>
                     <td>
-                        <table style="width:100%;padding-bottom:74px;">
+                        <table style="width:100%;padding-bottom:65px;">
                             <tr>
                                 <td style="">
                                     <p
@@ -337,7 +337,8 @@
                                 <td style="text-align:right;padding-right:20px;">
                                     <p
                                         style="font-size: 14px; margin-bottom: 5px; font-family: Arial, Helvetica, sans-serif; font-weight: 400">
-                                        <span>00000{{ $requestData['advice_number'] }}</span></p>
+                                        <span>00000{{ $requestData['advice_number'] }}</span>
+                                    </p>
                                     <p
                                         style="font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: 400;padding-right:5px;">
                                         {{ date('m/d/Y', strtotime($requestData['pay_date'])) }} </p>
@@ -358,8 +359,9 @@
                                     $requestData['account_number_last_4'] }}</td>
                                 <td style="text-align:center; font-size:14px;  width:20%; padding-left:3px; "> XXXXX{{
                                     $requestData['transit_aba_number'] }}</td>
-                                <td style="text-align:right; font-size:14px;  width:17.3%;padding-right:20px;font-weight:bold;"><span
-                                        style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency']
+                                <td
+                                    style="text-align:right; font-size:14px;  width:17.3%;padding-right:20px;font-weight:bold;">
+                                    <span style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency']
                                         }}</span>{{ number_format($requestData['total_net_pay'], 2) }} </td>
                             </tr>
                         </table>
