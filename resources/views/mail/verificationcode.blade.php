@@ -33,7 +33,7 @@
         list-style: none;
     }
     ul.social-icons {
-    padding: 0;
+    padding: 0px 0px 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
