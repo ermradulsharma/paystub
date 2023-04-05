@@ -142,11 +142,12 @@
         .bottom-content {
             padding-top: 80px;
         }
-        .dotted-line{
+
+        .dotted-line {
             border: 1px dashed black;
             position: relative;
-            top:50px;
-            left:5px;
+            top: 50px;
+            left: 5px;
         }
     </style>
 </head>
@@ -343,7 +344,8 @@
                                 <td style="text-align:right;padding-right:20px;">
                                     <p
                                         style="font-size: 14px; margin-bottom: 5px; font-family: Arial, Helvetica, sans-serif; font-weight: 400">
-                                        <span>00000{{ $requestData['advice_number'] }}</span></p>
+                                        <span>00000{{ $requestData['advice_number'] }}</span>
+                                    </p>
                                     <p
                                         style="font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: 400;padding-right:5px;">
                                         {{ date('m/d/Y', strtotime($requestData['pay_date'])) }} </p>
@@ -364,8 +366,9 @@
                                     $requestData['account_number_last_4'] }}</td>
                                 <td style="text-align:center; font-size:14px;  width:20%; padding-left:3px; "> XXXXX{{
                                     $requestData['transit_aba_number'] }}</td>
-                                <td style="text-align:right; font-size:14px;  width:17.3%;padding-right:20px;font-weight:bold;"><span
-                                        style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency']
+                                <td
+                                    style="text-align:right; font-size:14px;  width:17.3%;padding-right:20px;font-weight:bold;">
+                                    <span style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency']
                                         }}</span>{{ number_format($requestData['total_net_pay'], 2) }} </td>
                             </tr>
                         </table>

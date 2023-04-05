@@ -250,7 +250,9 @@
                         <table class="info_1">
                             <tr><td style="text-transform:uppercase; font-size:10px;"> {{ $requestData['cname'] }} </td></tr>
                             <tr><td style="text-transform:uppercase; font-size:10px;"> {{ $requestData['address_1'] }}</td></tr>
+                            @if($requestData['address_2'] != '')
                             <tr><td style="text-transform:uppercase; font-size:10px;">{{ $requestData['address_2'] }} </td></tr>
+                            @endif
                             <tr><td style="text-transform:uppercase; font-size:10px;">{{ $requestData['city'] }}, {{ $requestData['state'] }} {{ $requestData['zip_code'] }} </td></tr>
                         </table>
                     </td>

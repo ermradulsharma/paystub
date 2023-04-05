@@ -365,7 +365,7 @@
                                 <td style="padding-top:20px;">
                                     <p style="font-size: 14px; margin: 0;color:black; font-family: 'Arial Rounded MT Bold', sans-serif; text-transform:capitalize; font-weight:bold;"> {{ $requestData['cname'] }}</p>
                                     <p style="font-size: 12px; margin: 0;color:black; font-family: 'Arial Rounded MT Bold', sans-serif; text-transform:uppercase; "> {{ $requestData['address_1'] }}</p>
-                                    <P style="font-size: 12px; margin: 0;color:black; font-family: 'Arial Rounded MT Bold', sans-serif; text-transform:uppercase; "> {{ $requestData['address_2'] }}</P>
+                                    @if($requestData['address_2'] != '')<P style="font-size: 12px; margin: 0;color:black; font-family: 'Arial Rounded MT Bold', sans-serif; text-transform:uppercase; "> {{ $requestData['address_2'] }}</P>@endif
                                     <P style="font-size: 12px; margin: 0;color:black; font-family: 'Arial Rounded MT Bold', sans-serif; text-transform:uppercase; "> {{ $requestData['city'] }} {{ $requestData['state'] }}. {{ $requestData['zip_code'] }}  </P>
                                 </td>
                                 <td style="padding-top:10px; text-align:right; padding-right:15px; ">
