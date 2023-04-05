@@ -214,8 +214,8 @@
                         <tr>
                             <td
                                 style="font-size:14px; text-transform:uppercase;line-height:1.5;font-family: 'Arial', sans-serif;">
-                                {{ $requestData['address_1'] }}<br>{{ $requestData['city'] }}
-                                {{ $requestData['state'] }}.
+                                {{ $requestData['address_1'] }}<br>{{ $requestData['city'] }},
+                                {{ $requestData['state'] }}
                                 {{ $requestData['zip_code'] }}
                             </td>
                         </tr>
