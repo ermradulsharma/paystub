@@ -111,12 +111,6 @@
         .templete_elements {
             width: 100%;
         }
-        .dotted-line{
-            border: 1px dashed black;
-            position: relative;
-            top:135px;
-            left:5px;
-        }
     </style>
 </head>
 
@@ -124,7 +118,7 @@
 
     <main class="bg-img2">
         <img src="{{ public_path('images/border/amethyst/amethyst.svg') }}" style="position: absolute; top: 0px; right:0px;left: 0px; width:106%; height:105%;  z-index: -1;">
-        <img src="{{ public_path('images/check01.svg') }}" style="position: absolute; top:74.8%; width:100.79%; height:25%;  z-index: -1; right:0px; left:0px;">
+        <img src="{{ public_path('images/check2.svg') }}" style="position: absolute; top:74.8%; width:100.79%; height:25%;  z-index: -1; right:0px; left:0px;">
         @guest
             <div class="watermark"></div>
         @endguest
@@ -325,12 +319,11 @@
                 </div>
             </div>
         </section>
-<div class="dotted-line"></div>
         <section style="position: fixed; bottom:55px; width:95%; left:40px; ">
             <table style="width:100%; ">
                 <tr>
                     <td>
-                        <table style="width:100%; padding-bottom:66px;">
+                        <table style="width:100%; padding-bottom:56px;">
                             <tr>
                                 <td style="">
                                     <p style="font-size: 14px; margin: 0;color:black; font-family: 'Arial Rounded MT Bold', sans-serif; text-transform:uppercase; font-weight:bold;"> {{ $requestData['cname'] }}</p>

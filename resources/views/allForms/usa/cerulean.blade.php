@@ -143,12 +143,6 @@
             padding-top: 80px;
         }
 
-        .dotted-line {
-            border: 1px dashed black;
-            position: relative;
-            top: 60px;
-            left: 5px;
-        }
     </style>
 </head>
 
@@ -156,7 +150,7 @@
     <main class="bg-img2">
         <img src="{{ public_path('images/border/amethyst/amethyst.svg') }}"
             style="position: absolute; top: 0px; right:0px;left: 0px; width:106%; height:105%;  z-index: -1;">
-        <img src="{{ public_path('images/check01.svg') }}"
+        <img src="{{ public_path('images/check2.svg') }}"
             style="position: absolute; top:74.8%; width:100.79%; height:25%;  z-index: -1; right:0px; left:0px;"> @guest
         <div class="watermark"></div> @endguest @auth @if(Auth::user()->expiryDate == '' ||
         !isset($requestData['watermark'])) <div class="watermark"></div> @endif @endauth <section class="invoiceborder">
@@ -322,12 +316,11 @@
                         number_format($requestData['deduction_tax'], 2) }}</span></p>
             </section>
         </section>
-        <div class="dotted-line"></div>
         <section style="position: fixed; bottom:55px; width:95%; left:40px;">
             <table>
                 <tr>
                     <td>
-                        <table style="width:100%;padding-bottom:74px;">
+                        <table style="width:100%;padding-bottom:65px;">
                             <tr>
                                 <td style="">
                                     <p
