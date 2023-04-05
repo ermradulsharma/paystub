@@ -42,7 +42,7 @@
                             <td style="text-align:center;">
                                 <a style="border:2px solid #f56b08; padding:20px 90px;background-color: #fff;"
                                     href="https://rakeshmandal.com" title="logo" target="_blank">
-                                    <img width="80" src="   " title="logo" alt="logo">
+                                    <img width="80" src="{{asset('images/Paystub X.webp')}}" title="logo" alt="logo">
 
                                 </a>
                             </td>
@@ -57,7 +57,7 @@
                                     <tr>
                                         <td style="padding:0 20px;">
                                             <p style="text-align: center;"><img style="text-align: center;padding-top:15px;"
-                                                    src="https://paystubx.com/images/laptop.png"></p>
+                                                    src="{{asset("images/laptop.png")}}"></p>
                                             <h3 style="text-align: left;color:#686767; font-size:15px;">Your Paystubx
                                                 E-Mail Verification</h3>
                                             <p
@@ -71,7 +71,7 @@
 
                                             <p
                                                 style="letter-spacing: 10px; padding:4px 8px;border:1px solid rgba(86, 86,86,0.5);width:120px; margin:0 auto;">
-                                                123456
+                                                {{$user_data['otp']}}
 
                                             </p>
 
@@ -113,22 +113,22 @@
                                     Create Pay stubs on the go! </p>
                                 <p style="text-align: center;padding:0;margin:0;">
                                     <img style="max-width: 100px; height:30px; margin-right:10px;"
-                                        src="images/1app.png">
-                                    <img style="max-width: 100px; height:30px;" src="images/1google.png">
+                                        src="{{asset('images/1app.png')}}">
+                                    <img style="max-width: 100px; height:30px;" src="{{asset('images/1google.png')}}">
                                 </p>
                                 <p style="text-align: center;color:rgba(86, 86,86,0.9);font-size:13px;">Follow us on social media</p>
                                 <ul class="social-icons" style="width:48%; margin:0 auto;">
-                                    <li style="float: left;margin-right:6px;"><a href="https://www.google.com/"><img src="https://paystubx.com/images/icons/fb.png"></a>
+                                    <li style="float: left;margin-right:6px;"><a href="https://www.google.com/"><img src="{{asset('images/icons/fb.png')}}"></a>
                                     </li>
-                                    <li style="float: left;margin-right:6px;"><a href="https://www.google.com/"><img src="https://paystubx.com/images/icons/in.png"></a>
-                                    </li>
-                                    <li style="float: left;margin-right:6px;"><a href="https://www.google.com/"><img
-                                                src="images/icons/instagram.png"></a></li>
-                                    <li style="float: left;margin-right:6px;"><a href="https://www.google.com/"><img src="https://paystubx.com/images/icons/pin.png"></a>
+                                    <li style="float: left;margin-right:6px;"><a href="https://www.google.com/"><img src="{{asset('images/icons/in.png')}}"></a>
                                     </li>
                                     <li style="float: left;margin-right:6px;"><a href="https://www.google.com/"><img
-                                                src="https://paystubx.com/images/icons/twitter.png"></a></li>
-                                    <li style="float: left;"><a href="https://www.google.com/"><img src="https://paystubx.com/images/icons/youtube.png"></a></li>
+                                                src="{{asset('images/icons/instagram.png')}}"></a></li>
+                                    <li style="float: left;margin-right:6px;"><a href="https://www.google.com/"><img src="{{asset('images/icons/pin.png')}}"></a>
+                                    </li>
+                                    <li style="float: left;margin-right:6px;"><a href="https://www.google.com/"><img
+                                                src="{{asset('images/icons/twitter.png')}}"></a></li>
+                                    <li style="float: left;"><a href="https://www.google.com/"><img src="{{asset('images/icons/youtube.png')}}"></a></li>
                                 </ul>
                             </td>
                         </tr>
