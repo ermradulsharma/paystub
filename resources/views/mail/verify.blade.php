@@ -107,7 +107,7 @@
                         <img style="max-width: 100px; height:30px;" src="{{asset('images/1google.png')}}">
                     </p>
                     <p style="text-align: center;color:rgba(86, 86,86,0.9);font-size:13px;">Follow us on social media</p>
-                    <ul class="social-icons" style="width:48%; margin:0 auto;">
+                    <ul class="social-icons" style="width:36%; margin:0 auto;">
                         <li style="float: left; margin-left:0px;"><a href="https://www.google.com/"><img style="width: 30px;"
                                     src="{{asset('images/icons/facebook.png')}}"></a>
                         </li>
