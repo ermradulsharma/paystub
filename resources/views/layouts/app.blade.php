@@ -71,7 +71,7 @@
                         <a style="position: relative; z-index:1;"><img style="width: 35px;" src="{{ asset('images/profile1.png')}}"></a>
                     </div>
                         <div class="dropdown">
-                            <button onclick="myFunction()" class="dropbtn"> Hi {{ \Auth::user()->first_name }}<span style="padding-left:5px; "><i style="" class='fa fa-angle-down'></i></span></button>
+                            <button onclick="myFunction()" class="dropbtn"> Hi {{ \Auth::user()->first_name }} <a  style="padding-left:5px; "><i class='fa fa-angle-down'></i></a></button>
                             <div id="myDropdown" class="dropdown-content">
                                 <a href="{{ route('invoiceList') }}">Order History</a>
                                 <a href="{{ route('profile') }}">My Account</a>
