@@ -50,7 +50,7 @@
                         <tr>
                             <td style="padding:0 20px;">
                                 <p style="text-align: center;"><img style="text-align: center;padding-top:15px;"
-                                        src="{{asset(" images/laptop.png")}}"></p>
+                                        src="images/laptop.png"></p>
                                 <h3 style="text-align: left;color:#686767; font-size:15px;">Your Paystubx
                                     E-Mail Verification</h3>
                                 <p
