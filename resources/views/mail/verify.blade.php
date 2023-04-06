@@ -29,26 +29,25 @@
 </head>
 
 <body marginheight="0" topmargin="0" marginwidth="0" style="margin: 0px; background-color: #fff;" leftmargin="0">
-    <section style="background-color:#4472c4; max-width:700px; width:100%;margin:0 auto; padding:40px 20px;">
         <!-- 100% body table -->
         <table style="max-width:700px;margin:0 auto;" cellspacing="0"  cellpadding="0" width="100%"
             style="@import url(https://fonts.googleapis.com/css?family=Rubik:300,400,500,700|Open+Sans:300,400,600,700); font-family: 'Open Sans', sans-serif;">
             <tr>
+                <tr>
+                    <td style="text-align:center;padding-bottom:20px;">
+                        <a style=""
+                            href="#" title="logo" target="_blank">
+                            <img width="230" src="images/Paystub X.webp" title="logo" alt="logo">
+
+                        </a>
+                    </td>
+                </tr>
                 <td>
 
                     <table style="background-color: #f2f3f8; max-width:670px; margin:0 auto;" width="100%"
                         align="center" cellpadding="0" cellspacing="0">
                         <tr>
-                            <td style="text-align:center;">
-                                <a style="border:2px solid #f56b08; padding:20px 90px;background-color: #fff;"
-                                    href="https://rakeshmandal.com" title="logo" target="_blank">
-                                    <img width="80" src="images/Paystub X.webp" title="logo" alt="logo">
-
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="height:20px;">&nbsp;</td>
+                            <td style="height:15px;">&nbsp;</td>
                         </tr>
                         <tr>
                             <td>
@@ -70,7 +69,7 @@
 
 
                                             <p
-                                                style="letter-spacing: 10px; padding:4px 8px;border:1px solid rgba(86, 86,86,0.5);width:120px; margin:0 auto;">
+                                                style="letter-spacing: 10px; padding:4px 8px;border:1px solid rgba(86, 86,86,0.5);width:120px; margin:0 auto;text-align:center;color:#000;">
                                                 123456
 
                                             </p>
@@ -118,17 +117,17 @@
                                 </p>
                                 <p style="text-align: center;color:rgba(86, 86,86,0.9);font-size:13px;">Follow us on social media</p>
                                 <ul class="social-icons" style="width:48%; margin:0 auto;">
-                                    <li style="float: left;margin-right:6px;"><a href="https://www.google.com/"><img src="images/icons/fb.png"></a>
+                                    <li style="float: left;margin-right:6px;"><a href="https://www.google.com/"><img style="width: 30px;" src="images/icons/facebook.png"></a>
                                     </li>
-                                    <li style="float: left;margin-right:6px;"><a href="https://www.google.com/"><img src="images/icons/in.png"></a>
+                                    <li style="float: left;margin-right:6px;"><a href="https://www.google.com/"><img style="width:30px;" src="images/icons/linkdin.png"></a>
                                     </li>
-                                    <li style="float: left;margin-right:6px;"><a href="https://www.google.com/"><img
+                                    <li style="float: left;margin-right:6px;"><a href="https://www.google.com/"><img style="width:30px;"
                                                 src="images/icons/instagram.png"></a></li>
-                                    <li style="float: left;margin-right:6px;"><a href="https://www.google.com/"><img src="images/icons/pin.png"></a>
+                                    <li style="float: left;margin-right:6px;"><a href="https://www.google.com/"><img style="width:30px;" src="images/icons/pintrest.png"></a>
                                     </li>
-                                    <li style="float: left;margin-right:6px;"><a href="https://www.google.com/"><img
+                                    <li style="float: left;margin-right:6px;"><a href="https://www.google.com/"><img style="width: 30px;"
                                                 src="images/icons/twitter.png"></a></li>
-                                    <li style="float: left;"><a href="https://www.google.com/"><img src="images/icons/youtube.png"></a></li>
+                                    <li style="float: left;"><a href="https://www.google.com/"><img style="width:30px;" src="images/icons/youtube.png"></a></li>
                                 </ul>
                             </td>
                         </tr>
@@ -141,7 +140,6 @@
             </tr>
         </table>
         <!--/100% body table-->
-    </section>
 
 </body>
 
