@@ -115,7 +115,7 @@ class HomeController extends Controller
         }
 
         if($request->type == 'user-password'){
-            
+
             $validator = Validator::make($request->all(), [
                 'password' => 'required|min:6|confirmed',
             ]);

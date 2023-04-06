@@ -156,7 +156,7 @@
         @endif
         @endauth
         <div class="container"
-            style="border-right: 1px solid   #43407a; margin: auto;border-top: 1px solid   #43407a; border-left: 1px solid   #43407a; border-bottom:none;padding: 0 0px 0px 0px;">
+            style="border-right: 1px solid   #43407a; margin: 0;border-top: 1px solid   #43407a; border-left: 1px solid   #43407a; border-bottom:none;padding: 0 0px 0px 0px;">
             <div class="row" style="display: flex; display: flex;justify-content: space-between;padding: 0px 14px;">
                 <div style="width: 60%;float:left;">
                     <h6 style="font-size: 15px; margin-bottom: 0;text-transform:capitalize;"> {{ $requestData['cname'] }}
@@ -223,8 +223,8 @@
         </div>
 
         <table class="top">
-            <td colspan="" style="border: 1px solid white;text-align: center; color: #43407a;">----DETATCH ALONG
-                PERFORMATION-----------</td>
+            <td colspan="" style="border: 1px solid white;text-align: center; color: #43407a;"><img src="images/left-up.png">DETATCH ALONG
+                PERFORMATION<img src="images/right-up.png"></td>
             <td style="border: 1px solid white; text-align: center; color: #43407a;">KEEP LOWER PART FOR YOUR RECODE
             </td>
         </table>
@@ -248,7 +248,7 @@
                 <td
                     style="border-right: 1px solid #43407a; border-left: 1px solid #43407a;font-size:13px;text-align:center; font-weight:bold">
                     {{ $requestData['emp_id'] }} </td>
-                <td style="font-size:13px;text-align:center; font-weight:bold">{{ $requestData['emp_ssn'] }} </td>
+                <td style="font-size:13px;text-align:center; font-weight:bold">XXX-XX-1234</td>
                 <td
                     style="border-right: 1px solid #43407a; border-left: 1px solid #43407a;font-size:13px;text-align:center; font-weight:bold ">
                     {{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</td>
@@ -387,7 +387,7 @@
                             <tr style="border: none;">
                                 <td colspan="3"
                                     style="text-align:left;font-size:12px; font-weight:bold; text-align:left; padding-left:20px;">
-                                    Total Wages</td>
+                                    Total Wages:</td>
                                 <td style="font-size:12px; font-weight:bold; text-align:right; padding-right:20px;">
                                     <span style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency']
                                         }}</span>{{ number_format($requestData['period_gross_total'], 2) }}</td>
@@ -448,7 +448,7 @@
                             @endforeach
                             <tr style="border:none;">
                                 <td style="font-size:12px; font-weight:bold; text-align:left; padding-left:20px;">Total
-                                    Taxes</td>
+                                    Taxes:</td>
                                 <td style="font-size:12px; font-weight:bold; text-align:right; padding-right:12px;">
                                     <span style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency']
                                         }}</span>{{ number_format($requestData['deduction_tax'], 2) }} </td>

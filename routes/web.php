@@ -120,6 +120,7 @@ Route::group(['middleware' => ['auth'],'namespace'=>'App\Http\Controllers'], fun
     Route::post('account/delete', [HomeController::class, 'accountDelete'])->name('delete.account');
     Route::post('update-password', [HomeController::class, 'userDetails'])->name('update-password');
     Route::post('change-password', [HomeController::class, 'changePassword'])->name('changePassword');
+    Route::get('forgotpassword', [HomeController::class, 'forgotpassword'])->name('forgotpassword');
 
 });
 
