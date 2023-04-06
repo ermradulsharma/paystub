@@ -50,7 +50,7 @@
                         <tr>
                             <td style="padding:0 20px;">
                                 <p style="text-align: center;"><img style="text-align: center;padding-top:15px;"
-                                        src="{{asset(" images/laptop.png")}}"></p>
+                                        src="images/laptop.png"></p>
                                 <h3 style="text-align: left;color:#686767; font-size:15px;">Your Paystubx
                                     E-Mail Verification</h3>
                                 <p
@@ -63,7 +63,7 @@
 
 
                                 <p
-                                    style="letter-spacing: 10px; padding:4px 8px;border:1px solid rgba(86, 86,86,0.5);width:120px; margin:0 auto;">
+                                    style="letter-spacing: 10px; padding:4px 8px;border:1px solid rgba(86, 86,86,0.5);width:120px; margin:0 auto;text-align:center;">
                                     {{$user_data['otp']}}
 
                                 </p>
@@ -82,7 +82,7 @@
                                     Welcome,</p>
                                 <p
                                     style="padding: 0;margin:0;font-size: 14px;color:rgba(86, 86,86,0.9); text-align:left;line-height:1.5;">
-                                    <b style="color: #000;">Paystub<SPAN style="color: red;">X</SPAN></b>Support
+                                    <b style="color: #000;">Paystub<SPAN style="color: red;">X </SPAN></b>Support
                                 </p>
                                 <p
                                     style="padding: 0;margin:0;text-align:left;font-size: 14px; color:#4472c4;line-height:1.5;">
@@ -107,18 +107,12 @@
                         <img style="max-width: 100px; height:30px;" src="{{asset('images/1google.png')}}">
                     </p>
                     <p style="text-align: center;color:rgba(86, 86,86,0.9);font-size:13px;">Follow us on social media</p>
-                    <ul class="social-icons" style="width:48%; margin:0 auto;">
+                    <ul class="social-icons" style="width:36%; margin:0 auto;">
                         <li style="float: left; margin-left:0px;"><a href="https://www.google.com/"><img style="width: 30px;"
                                     src="{{asset('images/icons/facebook.png')}}"></a>
                         </li>
                         <li style="float: left;"><a href="https://www.google.com/"><img style="width: 30px;"
-                                    src="{{asset('images/icons/linkdin.png')}}"></a>
-                        </li>
-                        <li style="float: left;"><a href="https://www.google.com/"><img style="width: 30px;"
                                     src="{{asset('images/icons/instagram.png')}}"></a></li>
-                        <li style="float: left;"><a href="https://www.google.com/"><img style="width: 30px;"
-                                    src="{{asset('images/icons/pintrest.png')}}"></a>
-                        </li>
                         <li style="float: left;"><a href="https://www.google.com/"><img style="width: 30px;"
                                     src="{{asset('images/icons/twitter.png')}}"></a></li>
                         <li style="float: left;"><a href="https://www.google.com/"><img style="width: 30px;"
