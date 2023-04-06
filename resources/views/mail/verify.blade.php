@@ -30,16 +30,16 @@
 
 <body marginheight="0" topmargin="0" marginwidth="0" style="margin: 0px; background-color: #fff;" leftmargin="0">
     <!-- 100% body table -->
-    <table style="background-color: #f2f3f8; max-width:670px; margin:0 auto;" width="100%" align="center"
+    <table style="background-color: #f2f3f8; max-width:670px; margin:30px auto;" width="100%" align="center"
         cellpadding="0" cellspacing="0">
         <tr>
-            <td style="text-align:center;">
-                <a style="border:2px solid #f56b08; padding:20px 90px;" target="_blank"><img width="80"
+            <td style="text-align:center;padding-bottom:10px;">
+                <a style="" target="_blank"><img width="230px"
                         src="{{asset('images/Paystub X.webp')}}" title="logo" alt="logo"></a>
             </td>
         </tr>
         <tr>
-            <td style="height:20px;">&nbsp;</td>
+            <td style="height:15px;">&nbsp;</td>
         </tr>
         <tr>
             <td>
@@ -106,20 +106,20 @@
                 </p>
                 <p style="text-align: center;color:rgba(86, 86,86,0.9);font-size:13px;">Follow us on social media</p>
                 <ul class="social-icons" style="width:48%; margin:0 auto;">
-                    <li style="float: left;margin-right:6px;"><a href="https://www.google.com/"><img
+                    <li style="float: left;margin-right:6px;"><a href="https://www.google.com/"><img style="width: 30px;"
                                 src="{{asset('images/icons/fb.png')}}"></a>
                     </li>
-                    <li style="float: left;margin-right:6px;"><a href="https://www.google.com/"><img
-                                src="{{asset('images/icons/in.png')}}"></a>
+                    <li style="float: left;margin-right:6px;"><a href="https://www.google.com/"><img style="width: 30px;"
+                                src="{{asset('images/icons/linkedin.png')}}"></a>
                     </li>
-                    <li style="float: left;margin-right:6px;"><a href="https://www.google.com/"><img
+                    <li style="float: left;margin-right:6px;"><a href="https://www.google.com/"><img style="width: 30px;"
                                 src="{{asset('images/icons/instagram.png')}}"></a></li>
-                    <li style="float: left;margin-right:6px;"><a href="https://www.google.com/"><img
-                                src="{{asset('images/icons/pin.png')}}"></a>
+                    <li style="float: left;margin-right:6px;"><a href="https://www.google.com/"><img style="width: 30px;"
+                                src="{{asset('images/icons/pintrest.png')}}"></a>
                     </li>
-                    <li style="float: left;margin-right:6px;"><a href="https://www.google.com/"><img
+                    <li style="float: left;margin-right:6px;"><a href="https://www.google.com/"><img style="width: 30px;"
                                 src="{{asset('images/icons/twitter.png')}}"></a></li>
-                    <li style="float: left;"><a href="https://www.google.com/"><img
+                    <li style="float: left;"><a href="https://www.google.com/"><img style="width: 30px;"
                                 src="{{asset('images/icons/youtube.png')}}"></a></li>
                 </ul>
             </td>
