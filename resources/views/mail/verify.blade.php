@@ -64,7 +64,7 @@
 
                                 <p
                                     style="letter-spacing: 10px; padding:4px 8px;border:1px solid rgba(86, 86,86,0.5);width:120px; margin:0 auto;text-align:center;">
-                                    {{$user_data['otp']}}
+                                   123456
 
                                 </p>
 

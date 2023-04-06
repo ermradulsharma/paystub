@@ -195,18 +195,18 @@
                     <div class="column1">
                         <table class="colortable" style="width:100%;">
                             <thead id="colourborder" style="border-right:2px solid #264fab;font-size:13px;">
-                                <th class="padding" style="text-align: left; padding-left:20px;font-size:12px;">INCOME</th>
-                                <th class="padding" style="text-align:left;font-size:12px;">RATE</th>
-                                <th class="padding" style="text-align:left;font-size:12px;">HOURS</th>
-                                <th class="padding" style="text-align:center;font-size:12px;">CURRENT TOTAL</th>
+                                <th class="padding" style="text-align: left; padding-left:20px;font-size:12px; width:20%;">INCOME</th>
+                                <th class="padding" style="text-align:left;font-size:12px;width:20%;">RATE</th>
+                                <th class="padding" style="text-align:left;font-size:12px;width:20%;padding-left:8px;">HOURS</th>
+                                <th class="padding" style="text-align:center;font-size:12px;width:40%;">CURRENT TOTAL</th>
                             </thead>
                             <tbody>
                                 @foreach ($requestData['earning'] as $key => $earn)
                                     <tr>
-                                        <td id="fica" style="padding:left 20px;font-size:13px;"> {{ $earn }}</td>
-                                        <td> {{ number_format($requestData['rate'][$key], 2) }}</td>
-                                        <td style="text-align:center;font-size:13px; "> {{ number_format($requestData['hours'][$key], 2) }}</td>
-                                        <td style="text-align:center; padding-right:4px;font-size:13px; font-family: DejaVu Sans, sans-serif;"><span style="font-family: 'DejaVu Sans', sans-serif; padding-right:1px;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['total'][$key], 2) }} </td>
+                                        <td id="fica" style="padding:left 20px;font-size:13px;width:20%;"> {{ $earn }}</td>
+                                        <td style="width:20%;"> {{ number_format($requestData['rate'][$key], 2) }}</td>
+                                        <td style="text-align:center;font-size:13px;width:20%; "> {{ number_format($requestData['hours'][$key], 2) }}</td>
+                                        <td style="text-align:center; padding-right:4px;font-size:13px; font-family: DejaVu Sans, sans-serif;w"><span style="font-family: 'DejaVu Sans', sans-serif; padding-right:1px;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['total'][$key], 2) }} </td>
                                     </tr>
                                 @endforeach
                             </tbody>
@@ -215,16 +215,16 @@
                     <div class="column2">
                         <table class="colortable" style="width:100%; border-right:2px solid#464646;">
                             <thead id="colourborder" style="border-left:2px solid #264fab">
-                                <th class="padding" style="text-align: center;font-size:12px; ">DEDUCTIONS</th>
-                                <th class="padding" style="font-size:12px;">CURRENT TOTAL</th>
-                                <th class="padding" style="font-size:12px;">YEAR TO DATE</th>
+                                <th class="padding" style="text-align: center;font-size:12px;width:40%; ">DEDUCTIONS</th>
+                                <th class="padding" style="font-size:12px;width:30%;">CURRENT TOTAL</th>
+                                <th class="padding" style="font-size:12px; width:30%;">YEAR TO DATE</th>
                             </thead>
                             <tbody id="borderleft">
                                 @foreach ($requestData['taxes'] ?? [] as $key => $taxes)
                                     <tr>
-                                        <td id="fica" style="padding:left 10px;font-size:13px;">{{ $taxes }}</td>
-                                        <td style="text-align: center;font-size:13px; font-family: DejaVu Sans, sans-serif;"><span style="font-family: 'DejaVu Sans', sans-serif; padding-right:1px;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['taxes_rate'][$key], 2) }} </td>
-                                        <td style="text-align: center;font-size:13px; font-family: DejaVu Sans, sans-serif;"><span style="font-family: 'DejaVu Sans', sans-serif; padding-right:1px;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['taxes_ytd'][$key], 2) }} </td>
+                                        <td id="fica" style="padding:left 8px;font-size:11px;width:40%;">{{ $taxes }}</td>
+                                        <td style="text-align: center;font-size:13px; font-family: DejaVu Sans, sans-serif;width:30%;"><span style="font-family: 'DejaVu Sans', sans-serif; padding-right:1px;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['taxes_rate'][$key], 2) }} </td>
+                                        <td style="text-align: center;font-size:13px; font-family: DejaVu Sans, sans-serif;width:30%;"><span style="font-family: 'DejaVu Sans', sans-serif; padding-right:1px;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['taxes_ytd'][$key], 2) }} </td>
                                     </tr>
                                 @endforeach
                                 @foreach ($requestData['tax_deduction'] ?? [] as $key => $tax_deduction)
