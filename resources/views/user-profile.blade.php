@@ -28,7 +28,7 @@
                                 </div>
                                 <div class="col-lg-10">
                                     <div class="user-text">
-                                        <h4 style="color:#0f4386">User Profile</h4>
+                                        <h4 style="color:#0f4386">My Account</h4>
                                     </div>
                                 </div>
                             </div>

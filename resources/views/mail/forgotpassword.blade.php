@@ -26,11 +26,11 @@
             list-style: none;
         }
 
-        .reset-button {
+        .reset-button a {
             padding: 6px 25px;
             background: #fd280a;
             border-radius: 5px;
-            color: #fff;
+            color: #fff !important;
             font-size: 15px;
             text-decoration: none;
             display: inline-block;
@@ -51,7 +51,7 @@
             <tr>
                 <td style="text-align:center;padding-bottom:10px;">
                     <a style="max-width:200px;" target="_blank"><img style="display: flex;
-                        margin: 0 auto;" width="200px;" src="{{asset('images/transparent-logo .png')}}" title="logo"
+                        margin: 0 auto;" width="200px;" src="{{asset('images/transparent-logo.png')}}" title="logo"
                             alt="logo"></a>
                 </td>
             </tr>
@@ -71,8 +71,7 @@
                                     the button below to reset it.This password is reset is valid only for the next 24
                                     hours.
                                 </p>
-                                <p style="padding-bottom: 15px;"><a class="reset-button" style="
-                                ">Reset Password</a></p>
+                                <p style="padding-bottom: 15px;color:white;"><a class="reset-button" style="color:#fff !important;">Reset Password</a></p>
                                 <p
                                     style="font-size:13px; color:rgba(86, 86,86,0.9); margin:8px 0 0; line-height:24px;text-align:left;padding-bottom:25px;">
                                     If you did not make this request,Please ignore this email.
