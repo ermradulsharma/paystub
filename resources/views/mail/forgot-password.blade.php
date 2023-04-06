@@ -78,7 +78,8 @@
                                         Password</a></p>
                                 <p
                                     style="font-size:13px; color:rgba(86, 86,86,0.9); margin:8px 0 0; line-height:24px;text-align:left;padding-bottom:25px;">
-                                    If you did not make this request, Please ignore this email.</p>
+                                    If you did not make this request, Please ignore this email.
+                                </p>
                                 <p
                                     style="padding: 0; margin:0;text-align:left;color:rgba(86, 86,86,0.9);line-height:1.7;">
                                     Thank you,</p>
