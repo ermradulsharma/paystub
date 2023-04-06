@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use App\Mail\VerifyEmailSend;
 
 class HomeController extends Controller
 {
@@ -33,19 +34,112 @@ class HomeController extends Controller
     public function userDetails(Request $request)
     {
         $userObj = User::find(Auth::user()->id);
+        // dd($userObj);
         return view('user-profile', compact('userObj'));
     }
 
-    public function verificationCode(Request $request)
-    {
+    public function storeDetails(Request $request){
+        $userId = Auth::user()->id;
+        if($request->type == 'user-name'){
+            $validator = Validator::make($request->all(), [
+                'uname' => 'required|min:3',
+            ]);
 
-        $userObj = User::find(Auth::user()->id);
-        return view('mail.verify', compact('userObj'));
+            if ($validator->fails()) {
+                return response()->json([
+                            'error' => $validator->errors()->all()
+                        ]);
+            }
+            $userObj = User::where('id',$userId)->first();
+            if(!$userObj){
+                return response()->json(['error' => ['User not found']]);
+            }
+            $userObj->name = $request->uname ?? '';
+            if(!$userObj->save()){
+                return response()->json(['error' => ['Something went wrong.']]);
+            }
+            $request->session()->flash('message', 'Name saved successfully.');
+            return response()->json(['message' => 'Name saved successfully.']);
+        }
+
+        if($request->type == 'user-email'){
+            $validator = Validator::make($request->all(), [
+                'email' => 'email:rfc,dns|unique:users,email,'.$userId,
+            ]);
+
+            if ($validator->fails()) {
+                return response()->json([
+                            'error' => $validator->errors()->all()
+                        ]);
+            }
+
+                $code = 4321; // ?? rand(1000, 9999);
+                $mailData = [];
+                $mailData['name'] = $request->email;
+                $mailData['otp'] = $code;
+                $mailData['type'] = 'E-mail Verification';
+                $mailData['subject'] = 'Verify E-mail';
+                \Mail::to($request->email)->send(new VerifyEmailSend($mailData));
+
+                $userObj = User::where('id',$userId)->first();
+                if(!$userObj){
+                    return response()->json(['error' => ['User not found']]);
+                }
+                $userObj->code = $code;
+                if(!$userObj->save()){
+                    return response()->json(['error' => ['Something went wrong.']]);
+                }
+
+                $response['message'] = "Verification code sent successfully";
+                $response['email'] = $request->email;
+                return response()->json($response, 200);
+        }
+
+        if ($request->type == 'verify-email') {
+
+            $userObj = User::where('id',$userId)->first();
+            if(!$userObj){
+                return response()->json(['error' => ['User not found']]);
+            }
+
+            if($userObj->code != $request->code){
+                return response()->json(['error' => ['You entered wrong otp.']]);
+            }
+            $userObj->email = $request->email;
+
+            if(!$userObj->save()){
+                return response()->json(['error' => ['Something went wrong.']]);
+            }
+            return response()->json(['message' => 'Email updated successfully.']);
+        }
     }
 
     public function updatePassword(Request $request)
     {
         $requestData = $request->all();
         return response()->json([$requestData]);
+    }
+
+    public function changePassword(Request $request)
+    {
+        $response = [];
+        $response['success'] = FALSE;
+        $requestData = $request->all();
+
+        $rules['new_password'] = 'required|min:6';
+        $rules['confirm_password'] = 'required|min:6';
+        $validator = Validator::make($request->all(), $rules);
+        if ($validator->fails()) {
+            return redirect()->route('profile')->withErrors($validator)->withInput();
+        }
+        $requestData = $request->all();
+        $userId = $request->user()->id;
+        $userObj = User::find($userId);
+        $userObj->password = bcrypt($requestData['new_password']);
+        $userObj->save();
+        $response['success'] = TRUE;
+        $response['status'] = STATUS_OK;
+        return redirect()->back()->with('message', 'Password changed successfully');
+
     }
 }
