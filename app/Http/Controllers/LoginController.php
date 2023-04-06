@@ -55,6 +55,7 @@ class LoginController extends Controller
         } else {
             $existUser = User::where(['social_id' => $request->sub])->first();
             Auth::login($existUser);
+            $response['data'] = $existUser->first_name;
             $response['message'] = "Login successfully";
         }
         return response()->json($response, 200);

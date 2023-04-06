@@ -55,7 +55,7 @@
                                     E-Mail Verification</h3>
                                 <p
                                     style="font-size:13px; color:rgba(86, 86,86,0.9); margin:8px 0 0; line-height:24px;text-align:left;padding-bottom:25px;">
-                                    Your one step closing to
+                                    You're one step closing to
                                     accessing Paystub Acccount! Please enter the code below to confirm your
                                     email
                                     address.
@@ -74,7 +74,7 @@
                                 <p
                                     style="font-size:13px; color:rgba(86, 86,86,0.9); margin:8px 0 0; line-height:24px;text-align:left;padding-bottom:25px;">
                                     Use the verification code
-                                    provided to start using your paystubx account.if to did not make this
+                                    provided to start using your paystubx account. If to did not make this
                                     request, please ignore this
                                     email.
                                 </p>
@@ -84,9 +84,7 @@
                                     style="padding: 0;margin:0;font-size: 14px;color:rgba(86, 86,86,0.9); text-align:left;line-height:1.7;">
                                     <b style="color: #000;">Paystub<SPAN style="color: red;">X </SPAN></b>Support
                                 </p>
-                                <p
-                                    style="padding: 0;margin:0;text-align:left;font-size: 14px; color:#4472c4;line-height:1.7;">
-                                    Support@Paystubx.com</p>
+                                <p style="padding: 0;margin:0;text-align:left;font-size: 14px; color:#4472c4;line-height:1.7;"><a href="mailto:support@paystubx.com">support@paystubx.com</a></p>
                             </td>
                         </tr>
                         <tr>
