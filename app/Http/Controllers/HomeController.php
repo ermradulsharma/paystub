@@ -59,8 +59,8 @@ class HomeController extends Controller
             if(!$userObj->save()){
                 return response()->json(['error' => ['Something went wrong.']]);
             }
-            $request->session()->flash('message', 'Name saved successfully.');
-            return response()->json(['message' => 'Name saved successfully.']);
+            $request->session()->flash('message', 'Profile updated successfully.');
+            return response()->json(['message' => 'Profile updated successfully.']);
         }
 
         if($request->type == 'user-email'){
