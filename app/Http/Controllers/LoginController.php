@@ -143,7 +143,7 @@ class LoginController extends Controller
             $response['message'] = $validator->errors()->first();
             return response()->json($response, 301);
         }
-        $code = 1234; // ?? rand(1000, 9999);
+        $code = rand(100000, 999999);
         $user  = User::where('email', request('email'))->first();
         if (!$user) {
             $user = new User;
@@ -181,5 +181,5 @@ class LoginController extends Controller
     // {
     //     # code...
     // }
-    
+
 }

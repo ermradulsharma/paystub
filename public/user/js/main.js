@@ -59,7 +59,7 @@ function handleCredentialResponse(response) {
     return false;
   }
 
-
+ 
 $("#sendOTPForm").on("submit", function () {
     $.ajax({
         url: baseUrl + "sendOtp",
