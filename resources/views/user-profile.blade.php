@@ -269,7 +269,7 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
-                    <h5 class="text-center" style="text-transform:capitalize;">Do you want to delete account?</h5>
+                    <h5 class="text-center" style="text-transform:capitalize;">Do you want to delete your account?</h5>
                     <div class=" text-center mt-4">
                         {{-- <h5 style="color: #457bbe;" class="mt-4 text-center">Almost There!</h5> --}}
                         <form id="loginOtp" action="{{ route('delete.account') }}" method="POST" class="text-center">

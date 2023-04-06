@@ -76,7 +76,7 @@
                         Paystubx E-Mail Verification</td>
                 </tr>
                 <tr>
-                    <td style="font-size: 12px; color:rgba(86, 86,86,0.9); padding-bottom:15px;">Your one step closing to
+                    <td style="font-size: 12px; color:rgba(86, 86,86,0.9); padding-bottom:15px;">You are one step closing to
                         accessing Paystub Acccount! Please enter the code below to confirm your email
                         address.</td>
                 </tr>
@@ -102,7 +102,7 @@
                                 style="color: red;">X</span></b> Support</td>
                 </tr>
                 <tr>
-                    <td style="font-size: 14px; color:#4472c4;">Support@Paystubx.com</td>
+                    <td style="font-size: 14px; color:#4472c4;">support@paystubx.com</td>
                 </tr>
             </table>
         </section>

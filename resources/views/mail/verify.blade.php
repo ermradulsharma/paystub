@@ -55,7 +55,7 @@
                                     E-Mail Verification</h3>
                                 <p
                                     style="font-size:13px; color:rgba(86, 86,86,0.9); margin:8px 0 0; line-height:24px;text-align:left;padding-bottom:25px;">
-                                    Your one step closing to
+                                    You are one step closing to
                                     accessing Paystub Acccount! Please enter the code below to confirm your
                                     email
                                     address.
@@ -86,7 +86,7 @@
                                 </p>
                                 <p
                                     style="padding: 0;margin:0;text-align:left;font-size: 14px; color:#4472c4;line-height:1.7;">
-                                    Support@Paystubx.com</p>
+                                    support@paystubx.com</p>
                             </td>
                         </tr>
                         <tr>
