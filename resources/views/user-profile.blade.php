@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-lg-3 col-md-3" style="padding: 0;border-right:1px solid #ddd;height:95vh;">
                     <div class="col-lg-12 col-md-12" style="padding: 0;">
-                        <div class="left-sidebar">
+                        {{-- <div class="left-sidebar">
                             <div class="row hover" style="padding: 10px 0px;border-bottom:1px solid #ddd;">
                                 <div class="col-lg-2">
                                     <img src="images/my-account.png">
@@ -17,7 +17,7 @@
                                 </div>
                             </div>
 
-                        </div>
+                        </div> --}}
 
                     </div>
                     <div class="col-lg-12 col-md-12" style="padding: 0; ">

@@ -55,35 +55,30 @@
                     href="{{ route('w2form') }}" style="width: 143px !important;">W-2 FORM</a> </li>
             <li class="nav-item d-flex justify-content-center align-items-baseline " style="margin-top:45px;">
                 @guest
-                {{-- <a class="btn btn-lg py-2 w-100 mt-5 btn-danger login registerBtn"
-                    href="javascript:void(0);">LOGIN</a>
-                <div class="d-none logoutDiv">
-                    <a class="btn btn-lg py-2 w-100 mt-5 btn-logout btn-danger "
-                        style="width: 120px !important;padding: 6px 0 !important;" href="javascript:void(0);"><i
-                            class="fa fa-sign-out"></i>Log out</a>
-                </div> --}}
+                    <a class="btn btn-lg py-2 w-100 btn-danger login registerBtn"
+                        href="javascript:void(0);">LOGIN</a>
 
-                    <div class="user-icon"><a style="position: relative; z-index:1;"><img style="width: 35px;" src="{{ asset('images/profile1.png')}}"></a></div>
-                    <div class="dropdown">
-                    <button onclick="myFunction()" class="dropbtn"> Hi Mike Bitch<span style="padding-left:5px; "><i
-                                style="" class='fa fa-angle-down'></i></span></button>
-                    <div id="myDropdown" class="dropdown-content">
-                        <a href="#">Order History</a>
-                        <a href="#">My Account</a>
-                    </div>
-
-                </div>
-                <div class="logout"> <a><img style="width: 22px;" src="{{ asset('images/logout01.png')}}"></a></div>
-
+                    {{-- <div class="d-none logoutDiv">
+                        <a class="btn btn-lg py-2 w-100 mt-5 btn-logout btn-danger "
+                            style="width: 120px !important;padding: 6px 0 !important;" href="javascript:void(0);"><i
+                                class="fa fa-sign-out"></i>Log out</a>
+                    </div> --}}
                 @else
-
-
                     {{-- <a class="btn btn-lg py-2 w-100 mt-5 btn-logout btn-danger "
                         style="width: 120px !important;padding: 6px 0 !important;" href="javascript:void(0);"><i
                             class="fa fa-sign-out"></i> Log out</a> --}}
-
-
-                    @endguest
+                    <div class="user-icon">
+                        <a style="position: relative; z-index:1;"><img style="width: 35px;" src="{{ asset('images/profile1.png')}}"></a>
+                    </div>
+                        <div class="dropdown">
+                            <button onclick="myFunction()" class="dropbtn"> Hi {{ \Auth::user()->first_name }}<span style="padding-left:5px; "><i style="" class='fa fa-angle-down'></i></span></button>
+                            <div id="myDropdown" class="dropdown-content">
+                                <a href="{{ route('invoiceList') }}">Order History</a>
+                                <a href="{{ route('profile') }}">My Account</a>
+                            </div>
+                        </div>
+                    <div class="logout"> <a class="btn-logout" href="javascript:void(0);"><img style="width: 22px;" src="{{ asset('images/logout01.png')}}"></a></div>
+                @endguest
             </li>
         </ul>
     </div>

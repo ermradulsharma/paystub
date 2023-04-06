@@ -113,6 +113,7 @@ $("#loginOtp").on("submit", function () {
                         usaStoreData();
                     }
                 }
+                location.reload(true);
             }
         },
         error: function (err) {
