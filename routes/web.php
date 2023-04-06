@@ -114,6 +114,7 @@ Route::group(['middleware' => ['auth'],'namespace'=>'App\Http\Controllers'], fun
     Route::post('profile/details/save', [HomeController::class, 'storeDetails'])->name('store.details');
     Route::post('update-password', [HomeController::class, 'userDetails'])->name('update-password');
     Route::post('change-password', [HomeController::class, 'changePassword'])->name('changePassword');
+    Route::get('forgotpassword', [HomeController::class, 'forgotpassword'])->name('forgotpassword');
 
 });
 

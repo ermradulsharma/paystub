@@ -62,9 +62,10 @@
                                 class="fa fa-sign-out"></i>Log out</a>
                     </div>
                 @else
-                    <a class="btn btn-lg py-2 w-100 mt-5 btn-logout btn-danger "
+                    {{-- <a class="btn btn-lg py-2 w-100 mt-5 btn-logout btn-danger "
                         style="width: 120px !important;padding: 6px 0 !important;" href="javascript:void(0);"><i
-                            class="fa fa-sign-out"></i> Log out</a>
+                            class="fa fa-sign-out"></i> Log out</a> --}}
+                            
                 @endguest
             </li>
         </ul>

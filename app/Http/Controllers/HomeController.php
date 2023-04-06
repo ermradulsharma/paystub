@@ -142,4 +142,8 @@ class HomeController extends Controller
         return redirect()->back()->with('message', 'Password changed successfully');
 
     }
+    public function forgotpassword(Request $request){
+        return view('mail.forgotpassword');
+    }
+
 }
