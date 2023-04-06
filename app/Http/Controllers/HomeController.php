@@ -74,7 +74,7 @@ class HomeController extends Controller
                         ]);
             }
 
-                $code = 4321; // ?? rand(1000, 9999);
+                $code = rand(100000, 999999);
                 $mailData = [];
                 $mailData['name'] = $request->email;
                 $mailData['otp'] = $code;
