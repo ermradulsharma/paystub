@@ -124,6 +124,7 @@ class LoginController extends Controller
         Auth::login($user);
         $response['message'] = "Login successfully";
         $response['user_type'] = $user->role_id == 1 ? 'Admin' : 'User';
+        $response['firstName'] = $user->first_name ?? '';
         return response()->json($response, 200);
     }
 
@@ -180,4 +181,5 @@ class LoginController extends Controller
     // {
     //     # code...
     // }
+    
 }

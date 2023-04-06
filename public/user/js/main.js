@@ -12,7 +12,7 @@ $(".btn-logout").click(function () {
     userAuth = 0;
 });
 
-$(".close").click(function () {
+$(".close, .bottom-close").click(function () {
     $(".modal").modal("hide");
 });
 
@@ -92,19 +92,26 @@ $("#loginOtp").on("submit", function () {
         type: "POST",
         data: $(this).serialize(),
         success: function (response) {
-            $("#otpModal").modal("hide");
-            toastr.success(response.message);
-            $(".registerBtn").removeClass("d-block");
-            $(".registerBtn").addClass("d-none");
-            $(".sendMailButton").removeClass("d-none");
-            $(".sendMailButton").addClass("d-block");
-            $(".logoutDiv").removeClass("d-none");
-            if (response.user_type == "Admin") {
-                window.location.href = baseUrl + "admin/dashboard";
-            }
-            if (userAuth == 1) {
-                if (okk == 1) {
-                    usaStoreData();
+
+            if(response.firstName == ""){
+                $("#otpModal").modal("hide");
+                $("#setName").modal("show");
+            }else{
+                $("#otpModal").modal("hide");
+                toastr.success(response.message);
+                $(".registerBtn").removeClass("d-block");
+                $(".registerBtn").addClass("d-none");
+                $(".sendMailButton").removeClass("d-none");
+                $(".sendMailButton").addClass("d-block");
+                $(".logoutDiv").removeClass("d-none");
+                if (response.user_type == "Admin") {
+                    window.location.href = baseUrl + "admin/dashboard";
+                }
+
+                if (userAuth == 1) {
+                    if (okk == 1) {
+                        usaStoreData();
+                    }
                 }
             }
         },
@@ -115,6 +122,34 @@ $("#loginOtp").on("submit", function () {
     });
     return false;
 });
+
+$("#forgotPassword").on("submit", function () {
+    $.ajax({
+        url: $(this).attr("action"),
+        type: "POST",
+        data: $(this).serialize(),
+        success: function (data) {
+
+            if($.isEmptyObject(data.error)){
+                // alert(data.message);
+                toastr.success(data.message);
+                location.reload(true);
+            }else{
+                printErrorMsg(data.error);
+            }
+        },
+        error: function (err) {
+            printErrorMsg (err);
+        },
+    });
+    return false;
+});
+
+function printErrorMsg (msg) {
+    $.each( msg, function( key, value ) {
+        toastr.error(value);
+    });
+}
 
 $("#adminLogin").on("submit", function () {
     $.ajax({

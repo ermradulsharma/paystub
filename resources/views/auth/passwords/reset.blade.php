@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.resetPwd')
 
 @section('content')
 <div class="container">
@@ -8,12 +8,12 @@
                 <div class="card-header">{{ __('Reset Password') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('password.update') }}">
+                    <form method="POST" action="{{ route('password.update',$data['token']) }}">
                         @csrf
 
-                        <input type="hidden" name="token" value="{{ $token }}">
+                        <input type="hidden" name="token" value="{{ $data['token'] }}">
 
-                        <div class="row mb-3">
+                        {{-- <div class="row mb-3">
                             <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
 
                             <div class="col-md-6">
@@ -25,9 +25,9 @@
                                     </span>
                                 @enderror
                             </div>
-                        </div>
+                        </div> --}}
 
-                        <div class="row mb-3">
+                        {{-- <div class="row mb-3">
                             <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
 
                             <div class="col-md-6">
@@ -47,6 +47,24 @@
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
+                        </div> --}}
+
+
+                        @csrf
+                        <input type="hidden" value="user-password" name="type">
+                        <div class="contact-box-outer">
+                            <label class="label-text" for="css">New Password<span
+                                    style="color:red;">*</span></label>
+                                    <input class="contact-box" type="password" placeholder="New Password"
+                                    name="password" class="form-control show-password-sd" id="new_password"required>
+                                <i id="eye-icon_03" toggle="#password-field" class="fa fa-eye-slash eye-icon new-toggle-password" data-id="02"></i>
+                        </div>
+                        <div class="contact-box-outer">
+                            <label class="label-text" for="css">Confirm Password<span
+                                    style="color:red;">*</span></label>
+                                    <input class="contact-box" type="password" placeholder="Confirm Password"
+                                    name="password_confirmation" class="form-control show-password-sd" id="confirm_password"required>
+                                <i id="eye-icon_03" toggle="#password-field" class="fa fa-eye-slash eye-icon confirm-toggle-password" data-id="02"></i>
                         </div>
 
                         <div class="row mb-0">
@@ -63,3 +81,11 @@
     </div>
 </div>
 @endsection
+
+
+
+
+
+
+
+

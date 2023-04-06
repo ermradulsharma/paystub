@@ -43,16 +43,16 @@
                         <div class="profile-outer">
                             <div class="d-flex">
                                 <div class="profile-icon-outer">
-                                    <i class="fa fa-envelope profile-icon"></i>
+                                    <i class="fa fa-user user"></i>
                                 </div>
                                 <div class="user-center-text">
                                     <h6 style="padding: 0; margin:0px;color: #5a5858;">Contact Name</h6>
-                                    <p style="padding:0px;margin:0px;">{{ $userObj->name ?? '' }}</p>
+                                    <p style="padding:0px;margin:0px;">{{ $userObj->first_name ?? '' }}</p>
                                 </div>
                             </div>
 
                             <div class="edit-icon">
-                                <img class="username" style="width: 15px;" data-name ="{{ $userObj->name ?? '' }}" src="images/pen-solid.svg">
+                                <img class="username" style="width: 15px;" data-name ="{{ $userObj->first_name ?? '' }}" src="images/pen-solid.svg">
                             </div>
                         </div>
                         <div class="profile-outer">
@@ -85,6 +85,17 @@
                                 <img class="username3" style="width: 15px;" src="images/pen-solid.svg">
                             </div>
                         </div>
+                        <div class="profile-outer">
+                            <div class="d-flex trash-account">
+                                <div class="profile-icon-outer" style="background-color:#ff5015;">
+                                    <i class="fa fa-trash-o trash"></i>
+                                </div>
+                                <div class="user-center-text">
+                                    <h6 style="padding: 0; margin:0px;color: #5a5858;">Delete Account</h6>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -122,6 +133,7 @@
             </div>
         </div>
     </div>
+
     <div class="modal fade" id="userName2">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -217,45 +229,61 @@
                 <!-- Modal body -->
                 <div class="modal-body pb-4" style="box-shadow: 0 0 8px rgba(0,0,0,.14);padding-top:0;">
                     <p class="mail-text">Set a new password for your account.</p>
-                    <form id='passwordUpdate' action={{ route('changePassword') }} method="POST">
+                    <form id="passwordUpdate" method="post" action="{{route('store.details')}}">
                         @csrf
-                        <input type="hidden" name="updatepassword" id="updatepassword" value="updatepassword">
-                        <!-- <div class="contact-box-outer">
-                            <label class="label-text" for="css">Current Password<span
-                                    style="color:red;">*</span></label>
-                            <input class="contact-box" type="text" placeholder="Current Password"
-                                name="current_password" id="current_password">
-                            <i id="eye-icon_01" class="fa fa-eye-slash eye-icon" data-id="01" data-src="01"></i>
-                        </div> -->
+                        <input type="hidden" value="user-password" name="type">
                         <div class="contact-box-outer">
                             <label class="label-text" for="css">New Password<span
                                     style="color:red;">*</span></label>
-                            <input class="contact-box" type="text" placeholder="New Password" name="new_password"
-                                id="new_password"class="form-control show-password-sd" placeholder="Current Password"
-                                                required>
-                            <i id="eye-icon_02" class="fa fa-eye-slash eye-icon" data-id="02"></i>
+                                    <input class="contact-box" type="password" placeholder="New Password"
+                                    name="password" class="form-control show-password-sd" id="new_password"required>
+                                <i id="eye-icon_03" toggle="#password-field" class="fa fa-eye-slash eye-icon new-toggle-password" data-id="02"></i>
                         </div>
                         <div class="contact-box-outer">
                             <label class="label-text" for="css">Confirm Password<span
                                     style="color:red;">*</span></label>
-                            <input class="contact-box" type="text" placeholder="Confirm Password"
-                                name="confirm_password" class="form-control show-password-sd" id="confirm_password"required>
-                            <i id="eye-icon_03" class="fa fa-eye-slash eye-icon" src="eye-icon" data-id="03"></i>
+                                    <input class="contact-box" type="password" placeholder="Confirm Password"
+                                    name="password_confirmation" class="form-control show-password-sd" id="confirm_password"required>
+                                <i id="eye-icon_03" toggle="#password-field" class="fa fa-eye-slash eye-icon confirm-toggle-password" data-id="02"></i>
                         </div>
-                        {{-- <div class="modal-footer" style="display: inline-block;"> --}}
+                    </form>
                         <div class="d-flex justify-content-between pt-2">
                             <button class="btn-secondary" data-bs-dismiss="modal"
                                 style="border-radius:20px; border:none;font-size:12px; padding:5px 10px;">Cancel</button>
-                            <button type="submit" class="btn-danger passwordButton"
+                            <button class="btn-danger" id="store-password"
                                 style="border-radius:20px; border:none;font-size:12px; padding:5px 15px;">Save</button>
                         </div>
-                        {{-- </div> --}}
-                    </form>
                 </div>
+
+
 
             </div>
         </div>
     </div>
+
+    <div class="modal fade trashModal" id="deleteAcModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header" style="background: #115caecf;">
+                    <h4 class="modal-title"><img src="{{ asset('/') }}images/Paystub X.webp" class="icon"></h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <h5 class="text-center" style="text-transform:capitalize;">Do you want to delete account?</h5>
+                    <div class=" text-center mt-4">
+                        {{-- <h5 style="color: #457bbe;" class="mt-4 text-center">Almost There!</h5> --}}
+                        <form id="loginOtp" action="{{ route('delete.account') }}" method="POST" class="text-center">
+                            @csrf
+
+                            <button class="previewbtn mt-5" type="submit">Yes</button>
+                            <button class="previewbtn mt-5 bottom-close" type="button">NO</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 @endsection
 @section('script')
     <script>
@@ -305,6 +333,14 @@
             $("#userName3").modal("show");
         });
 
+        $(".trash-account").click(function() {
+            $("#deleteAcModal").modal("show");
+        });
+
+        $("#store-password").click(function(e){
+            submitUserData($('#passwordUpdate')[0]);
+        });
+
         $("#resendOtpButton").click(function() {
             var email = $('#hidden_email').val();
             startTimer();
@@ -322,12 +358,22 @@
             });
         });
 
+        $(document).on('click', '.confirm-toggle-password', function() {
+          $(this).toggleClass("fa-eye fa-eye-slash");
+           var input = $("#confirm_password");
+           input.attr('type') === 'password' ? input.attr('type','text') : input.attr('type','password')
+        });
 
+        $(document).on('click', '.new-toggle-password', function() {
+          $(this).toggleClass("fa-eye fa-eye-slash");
+           var input = $("#new_password");
+           input.attr('type') === 'password' ? input.attr('type','text') : input.attr('type','password')
+        });
 
 
 
         function submitUserData(form){
-            console.log('method-',form.method);
+
             $.ajax({
             type:'POST',
             url: form.action,

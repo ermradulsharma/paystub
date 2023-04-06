@@ -4,7 +4,7 @@ use App\Models\Image;
 use App\Models\PaySlip;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
-use PDF;
+use \PDF;
 
 function uploadImage($module, $module_id, $files, $path = "images", $name = null)
 {
@@ -97,4 +97,15 @@ function invoiceMail($user_id)
         }
     }
     return 0;
+}
+
+function generateRandomToken($length = 10, $string = 'xyz')
+{
+    $characters = $string . '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ' . time();
+    $charactersLength = strlen($characters);
+    $randomString = '';
+    for ($i = 0; $i < $length; $i++) {
+        $randomString .= $characters[rand(0, $charactersLength - 1)];
+    }
+    return $randomString;
 }

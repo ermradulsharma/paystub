@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use App\Mail\VerifyEmailSend;
+use Illuminate\Support\Facades\Log;
 
 class HomeController extends Controller
 {
@@ -54,7 +55,7 @@ class HomeController extends Controller
             if(!$userObj){
                 return response()->json(['error' => ['User not found']]);
             }
-            $userObj->name = $request->uname ?? '';
+            $userObj->first_name = $request->uname ?? '';
             if(!$userObj->save()){
                 return response()->json(['error' => ['Something went wrong.']]);
             }
@@ -112,6 +113,30 @@ class HomeController extends Controller
             }
             return response()->json(['message' => 'Email updated successfully.']);
         }
+
+        if($request->type == 'user-password'){
+            
+            $validator = Validator::make($request->all(), [
+                'password' => 'required|min:6|confirmed',
+            ]);
+
+            if ($validator->fails()) {
+                return response()->json([
+                            'error' => $validator->errors()->all()
+                        ]);
+            }
+            $userObj = User::where('id',$userId)->first();
+            if(!$userObj){
+                return response()->json(['error' => ['User not found']]);
+            }
+            $userObj->password = bcrypt($request->password);
+            if(!$userObj->save()){
+                return response()->json(['error' => ['Something went wrong.']]);
+            }
+            $request->session()->flash('message', 'Password changed successfully.');
+            return response()->json(['message' => 'Password changed successfully.']);
+
+        }
     }
 
     public function updatePassword(Request $request)
@@ -141,5 +166,20 @@ class HomeController extends Controller
         $response['status'] = STATUS_OK;
         return redirect()->back()->with('message', 'Password changed successfully');
 
+    }
+
+    public function accountDelete(Request $request){
+
+        try{
+            $user = User::find(Auth::user()->id);
+            Auth::logout();
+            if ($user->delete()) {
+                return redirect()->route('welcome')->with('message', 'Your account has been deleted!');
+            }
+
+        } catch (\Exception $e) {
+            Log::info('User Delete Function', array('Exception' => $e->getMessage()));
+            return redirect()->route('profile')->with('error', 'Something went wrong.');
+        }
     }
 }

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\PayStubController;
 use App\Http\Controllers\TemplateFormController;
 use App\Http\Controllers\PayPalController;
@@ -76,6 +77,10 @@ Route::get('loginWithOtp', function () {
 Route::any('sendOtp', [LoginController::class, 'sendOtp'])->name('sendOtp');
 Route::post('login', [LoginController::class, 'login']);
 
+Route::post('forgot/password', [ForgotPasswordController::class, 'forgotPassword'])->name('forgot.password');
+Route::get('password/reset/{token}', [ForgotPasswordController::class, 'resetPasswordFromWeb'])->name('password.reset');
+Route::post('password/update/{token}', [ForgotPasswordController::class, 'passwordUpdate'])->name('password.update');
+
 Route::post('templates', [TemplateFormController::class, 'templates'])->name('templates');
 Route::post('canada/templates', [TemplateFormController::class, 'canadaTemplates'])->name('canada.templates');
 Route::post('uk/templates', [TemplateFormController::class, 'unitedKingdomTemplates'])->name('uk.templates');
@@ -112,6 +117,7 @@ Route::group(['middleware' => ['auth'],'namespace'=>'App\Http\Controllers'], fun
     // Route::match(['GET', 'POST'], 'settings', [SettingController::class, 'settings'])->name('settings');
     Route::get('profile', [HomeController::class, 'userDetails'])->name('profile');
     Route::post('profile/details/save', [HomeController::class, 'storeDetails'])->name('store.details');
+    Route::post('account/delete', [HomeController::class, 'accountDelete'])->name('delete.account');
     Route::post('update-password', [HomeController::class, 'userDetails'])->name('update-password');
     Route::post('change-password', [HomeController::class, 'changePassword'])->name('changePassword');
 

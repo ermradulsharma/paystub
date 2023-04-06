@@ -128,8 +128,41 @@
                             <input type="email" id="email" name="email" class="form-control formm  py-4"
                                 placeholder="Email *">
                         </div>
+                        <p class="resend-otp"><a id="forgotPasswordButton" href="JavaScript:void(0);" >Forgot Password?</a></p>
                         <button class="previewbtn mt-5" type="submit">Continue</button>
                     </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="forgotPasswordModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header" style="background: #115caecf;">
+                    <h4 class="modal-title" style="text-transform: capitalize;color:#fff;">Forgot Your Password</h4>
+                    <button type="button"
+                        style="border: none; background-color:transparent; color:#fff;font-size:20px;padding:0;"
+                        class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body pb-4" style="box-shadow: 0 0 8px rgba(0,0,0,.14);padding-top:0;">
+                    <p class="mail-text">Please enter your registered email address, and we'll send you a link to reset your password.</p>
+                    <form id="forgotPassword" method="post" action="{{route('forgot.password')}}">
+                        @csrf
+                        <label class="label-text" for="css">Email Address<span style="color:red;">*</span></label>
+                        <input class="contact-box" type="text" id="user-email" placeholder="Email Address" name="email">
+                    </form>
+                </div>
+                <div class="modal-footer" style="display: inline-block;">
+                    <div class="d-flex justify-content-between pt-2">
+                    <a style="color: red;" id="backToSignin" href="JavaScript:void(0);">Back to Sign in</a>
+                        <button class="btn-danger" onclick="$('#forgotPassword').submit();"
+                            style="border-radius:20px; border:none;font-size:12px; padding:5px 15px;">Send Password Reset Link</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -222,7 +255,7 @@
                 </div>
                 <!-- Modal body -->
                 <div class="modal-body">
-                    <h5 class="text-center" style="text-transform:capitalize;">Are you sure? You want to logout</h5>
+                    <h5 class="text-center" style="text-transform:capitalize;">Do you want to logout?</h5>
                     <div class=" text-center mt-4">
                         {{-- <h5 style="color: #457bbe;" class="mt-4 text-center">Almost There!</h5> --}}
 
@@ -232,6 +265,38 @@
                             <button class="previewbtn mt-5" type="submit">Yes</button>
                             <button class="previewbtn mt-5 bottom-close" type="button">NO</button>
                         </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="setName">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header" style="background: #115caecf;">
+                    <h4 class="modal-title" style="text-transform: capitalize;color:#fff;">Set Your Name</h4>
+                    <button type="button"
+                        style="border: none; background-color:transparent; color:#fff;font-size:20px;padding:0;"
+                        class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body pb-4" style="box-shadow: 0 0 8px rgba(0,0,0,.14);padding-top:0;">
+                    <form id="userNameForm" method="post" action="{{route('store.details')}}">
+                        @csrf
+                        <input type="hidden" value="user-name" name="type">
+                        <label class="label-text" for="css">First Name<span style="color:red;">*</span></label>
+                        <input class="contact-box" type="text" name="uname" id="user-name" placeholder="First Name">
+                    </form>
+                </div>
+                <div class="modal-footer" style="display: inline-block;">
+                    <div class="d-flex justify-content-between pt-2">
+                        <button class="btn-secondary" data-bs-dismiss="modal"
+                            style="border-radius:20px; border:none;font-size:12px; padding:5px 10px;">Cancel</button>
+                        <button class="btn-danger" id="set-name"
+                            style="border-radius:20px; border:none;font-size:12px; padding:5px 15px;" >Save</button>
                     </div>
                 </div>
             </div>
@@ -306,6 +371,34 @@
         //
       </script>
     <script>
+        $('#forgotPasswordButton').click(function(){
+            $("#loginModal").modal("hide");
+            $("#forgotPasswordModal").modal("show");
+        });
+
+        $('#backToSignin').click(function(){
+            $("#forgotPasswordModal").modal("hide");
+            $("#loginModal").modal("show");
+        });
+
+        $("#set-name").click(function(e){
+            var form = $('#userNameForm')[0];
+            $.ajax({
+            type:'POST',
+            url: form.action,
+            data: $(form).serialize(),
+            success:function(data){
+                console.log('data',data);
+                    if($.isEmptyObject(data.error)){
+                        // alert(data.message);
+                        toastr.success(data.message);
+                        location.reload(true);
+                    }else{
+                        printErrorMsg(data.error);
+                    }
+            }
+            });
+        });
         $('.inputdatepicker').datepicker({
             autoclose: true,
             todayHighlight: true,
