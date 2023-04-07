@@ -117,6 +117,7 @@ class HomeController extends Controller
         if($request->type == 'user-password'){
 
             $validator = Validator::make($request->all(), [
+                'currentPassword' => 'required|min:6',
                 'password' => 'required|min:6|confirmed',
             ]);
 
@@ -129,12 +130,42 @@ class HomeController extends Controller
             if(!$userObj){
                 return response()->json(['error' => ['User not found']]);
             }
+            if(!Hash::check($request->currentPassword, $userObj->password)){
+                return response()->json(['error' => ['Current password not match.']]);
+            }
             $userObj->password = bcrypt($request->password);
             if(!$userObj->save()){
                 return response()->json(['error' => ['Something went wrong.']]);
             }
             $request->session()->flash('message', 'Password changed successfully.');
             return response()->json(['message' => 'Password changed successfully.']);
+
+        }
+
+        if($request->type == 'setup-account'){
+            // dd($request->all());
+            $validator = Validator::make($request->all(), [
+                'uname' => 'required|min:3',
+                'password' => 'required|min:6|confirmed',
+            ]);
+
+            if ($validator->fails()) {
+                return response()->json([
+                            'error' => $validator->errors()->all()
+                        ]);
+            }
+            $userObj = User::where('id',$userId)->first();
+            if(!$userObj){
+                return response()->json(['error' => ['User not found']]);
+            }
+            $userObj->first_name = $request->uname ?? '';
+            $userObj->password = bcrypt($request->password);
+            $userObj->is_completed = '1';
+            if(!$userObj->save()){
+                return response()->json(['error' => ['Something went wrong.']]);
+            }
+            $request->session()->flash('message', 'Account setup successfully.');
+            return response()->json(['message' => 'Account setup successfully.']);
 
         }
     }
