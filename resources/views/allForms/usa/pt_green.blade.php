@@ -242,11 +242,11 @@
                 <td
                     style="border-right: 1px solid #3e787a; border-left: 1px solid #3e787a;font-size:13px; text-align:Center; font-weight:bold">
                     {{ $requestData['cname'] }} </td>
-                <td style="font-size:13px; font-weight:bold;text-align:center;">{{ $requestData['emp_ssn'] }} </td>
+                <td style="font-size:13px; font-weight:bold;text-align:center;">1234</td>
                 <td
                     style="border-right: 1px solid #3e787a; border-left: 1px solid #3e787a;font-size:13px; text-align:Center; font-weight:bold">
                     {{ $requestData['emp_id'] }} </td>
-                <td style="font-size:13px; font-weight:bold;text-align:center;">XXX-XX-1234</td>
+                <td style="font-size:13px; font-weight:bold;text-align:center;">XXX-XX-{{ $requestData['emp_ssn'] }}</td>
                 <td
                     style="border-right: 1px solid #3e787a; border-left: 1px solid #3e787a;font-size:13px; text-align:Center; font-weight:bold ">
                     {{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</td>
