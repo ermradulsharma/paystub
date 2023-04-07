@@ -94,7 +94,6 @@ class UserController extends Controller
 
     public function updateProfile(Request $request)
     {
-        dd($request->all());
         $response = [];
         $response['success'] = FALSE;
         $response['status'] = STATUS_BAD_REQUEST;
@@ -123,11 +122,12 @@ class UserController extends Controller
         }
 
         $user->first_name = $request->uname ?? '';
+        $user->is_completed = 1;
         $user->password = bcrypt($request->password);
         if ($user->save()) {
             $response['success'] = TRUE;
             $response['is_completed'] = $user->is_completed;
-            $response['message'] = "Login successfully";
+            $response['message'] = "Profile update successfully";
             $response['status'] = STATUS_OK;
         }
         return response()->json($response, 200);
