@@ -92,6 +92,47 @@ class UserController extends Controller
         return response()->json($response, 200);
     }
 
+    public function updateProfile(Request $request)
+    {
+        dd($request->all());
+        $response = [];
+        $response['success'] = FALSE;
+        $response['status'] = STATUS_BAD_REQUEST;
+
+        $rules = [
+            'uname' => 'required|min:3',
+            'password' => 'required|min:6',
+        ];
+
+        $messages = [
+            'uname.required' => 'The username cannot be empty.',
+            'uname.min' => 'Username has at least 3 characters.',
+            'password.required' => 'The Password code cannot be empty',
+            'password.min' => 'Password has at least 6 characters',
+        ];
+        $validator = Validator::make($request->all(), $rules, $messages);
+        if ($validator->fails()) {
+            $response['message'] = $validator->errors()->first();
+            return response()->json($response, 301);
+        }
+
+       $user  = User::find(Auth::user()->id);
+        if (!$user) {
+            $response['message'] = "User not exist.";
+            return response()->json($response, 301);
+        }
+
+        $user->first_name = $request->uname ?? '';
+        $user->password = bcrypt($request->password);
+        if ($user->save()) {
+            $response['success'] = TRUE;
+            $response['is_completed'] = $user->is_completed;
+            $response['message'] = "Login successfully";
+            $response['status'] = STATUS_OK;
+        }
+        return response()->json($response, 200);
+    }
+
     public function loginWithPassword(Request $request)
     {
         $response = [];
@@ -125,7 +166,7 @@ class UserController extends Controller
             return response()->json($response, 301);
         }
         Auth::login($user);
-
+        $user->save();
         $response['token'] = $user->createToken($user->id . ' token ')->accessToken;
         $response['success'] = TRUE;
         $response['is_completed'] = $user->is_completed;
