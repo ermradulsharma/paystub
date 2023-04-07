@@ -146,12 +146,13 @@ class LoginController extends Controller
             return response()->json($response, 301);
         }
         $code = rand(100000, 999999);
-        $user  = User::where('email', request('email'))->where('is_completed', '1')->first();
+        $user  = User::where('email', request('email'))->first();
         if (!$user) {
-            User::where('email', request('email'))->where('is_completed', '0')->delete();
+            //User::where('email', request('email'))->where('is_completed', '0')->delete();
             $user = new User;
             $user->email = $request->email;
-
+        }
+        if($user->is_completed == '0'){
             if ($user->email != "") {
                 $mailData = [];
                 $mailData['name'] = $request->email;
@@ -165,7 +166,6 @@ class LoginController extends Controller
             $user->save();
             $response['message'] = "Verification code sent successfully";
         }
-
 
         /* $moreData = [
             "otp" => $code
