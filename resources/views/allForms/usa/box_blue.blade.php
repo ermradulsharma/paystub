@@ -354,7 +354,7 @@
             <table style="width:100%; padding-bottom:0px;">
                 <tr>
                     <td>
-                        <table style="width:100%; padding-bottom:60px;">
+                        <table style="width:100%; padding-bottom:63px;">
                             <tr>
                                 <td style="padding-top:20px;">
                                     <p style="font-size: 14px; margin: 0;color:black; font-family: 'Arial Rounded MT Bold', sans-serif; text-transform:capitalize; font-weight:bold;"> {{ $requestData['cname'] }}</p>

@@ -432,7 +432,7 @@
                             @foreach ($requestData['tax_deduction'] ?? [] as $key => $tax_deduction)
                             <tr style="border:none;">
                                 <td
-                                    style="font-size:12px; width:30%; font-weight:bold; text-align:left; padding-left:20px;">
+                                    style="font-size:12px; width:30%; font-weight:bold; text-align:left; padding-left:20px;text-transform:capitalize;">
                                     {{ $tax_deduction }}</td>
                                 <td
                                     style="font-size:12px; width:30%; font-weight:bold; text-align:right; padding-right:12px;">
