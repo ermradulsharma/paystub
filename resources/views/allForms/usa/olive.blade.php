@@ -354,7 +354,7 @@
                                 </td>
                                 <td style="text-align:right; font-size:14px;  width:22.7%; padding-right:5px;"> XXXXX{{
                                     $requestData['account_number_last_4'] }}</td>
-                                <td style="text-align:center; font-size:14px;  width:20%; padding-left:3px; "> XXXXX{{
+                                <td style="text-align:center; font-size:14px;  width:20%; padding-right:7px; "> XXXXX{{
                                     $requestData['transit_aba_number'] }}</td>
                                 <td style="text-align:right; font-size:14px;  width:17.3%;padding-right:25px;font-weight:bold;"><span
                                         style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency']

@@ -344,7 +344,7 @@
                             <tr class="bottom-content">
                                 <td style="font-size:14px; text-align:left; width:40%; font-weight:bold;text-transform:uppercase; font-family: 'Arial Rounded MT Bold', sans-serif;"> {{ $requestData['emp_name'] }}</td>
                                 <td style="text-align:right; font-size:14px;  width:22.8%;font-family: Arial, Helvetica, sans-serif;padding-right:6px; "> XXXXX{{ $requestData['account_number_last_4'] }}</td>
-                                <td style="text-align:center; font-size:14px;  width:20%; padding-left:5px; font-family: Arial, Helvetica, sans-serif;">  XXXXX{{ $requestData['transit_aba_number'] }}</td>
+                                <td style="text-align:center; font-size:14px;  width:20%; padding-left:5px; font-family: Arial, Helvetica, sans-serif;padding-right:7px;">  XXXXX{{ $requestData['transit_aba_number'] }}</td>
                                 <td style="text-align:right; font-size:14px;  width:17.2%;padding-right:25px;font-weight:bold;font-family: Arial, Helvetica, sans-serif;"><span
                                     style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency']
                                     }}</span>{{ number_format($requestData['total_net_pay'], 2) }} </td>

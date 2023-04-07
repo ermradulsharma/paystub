@@ -235,7 +235,7 @@
                         <tr>
                             <td class="heading2 tax-align-l" style="padding-left: 18px;text-transform:capitalize;">  {{ $earn }}</td>
                             <td class="heading2" style="color: #000; font-family: DejaVu Sans, sans-serif;"><span style="font-family: 'DejaVu Sans', sans-serif; padding-right:1px;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['rate'][$key], 2) }} </td>
-                            <td class="heading2" style="color: #000;text-align:center; padding-right:10px;"> {{ number_format($requestData['hours'][$key], 2) }}</td>
+                            <td class="heading2" style="color: #000;text-align:center; padding-left:5px;"> {{ number_format($requestData['hours'][$key], 2) }}</td>
                             <td class="heading2" style="padding-right:20px;text-align:right;color: #000; font-family: DejaVu Sans, sans-serif;">  <span style="font-family: 'DejaVu Sans', sans-serif; padding-right:1px;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['period'][$key], 2) }} </td>
                             <td class="heading2 tax-align-r" style="color: #000; font-family: DejaVu Sans, sans-serif;"><span style="font-family: 'DejaVu Sans', sans-serif; padding-right:1px;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['ytd_total'][$key], 2) }} </td>
                         </tr>

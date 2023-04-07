@@ -222,8 +222,8 @@
         </div>
 
         <table class="top">
-            <td colspan="" style="border: 1px solid white;text-align: center; color: #43407a;"><img style="position: relative; right:3px;" src="images/left-up.png">DETATCH ALONG
-                PERFORMATION<img style="position: relative; left:3px;" src="images/right-up.png"></td>
+            <td colspan="" style="border: 1px solid white;text-align: center; color: #43407a;"><img style="position: relative; right:3px;" src="images/left-up.png">DETACH ALONG
+                PERFORATION<img style="position: relative; left:3px;" src="images/right-up.png"></td>
             <td style="border: 1px solid white; text-align: center; color: #43407a;">KEEP LOWER PART FOR YOUR RECORDS
             </td>
         </table>

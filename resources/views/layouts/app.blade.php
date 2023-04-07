@@ -17,6 +17,7 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;800&family=Public+Sans:wght@300&display=swap">
 
+
     <!-- Responsive CSS Style -->
     <link rel="stylesheet" type="text/css" href="{{ asset('user') }}/css/style.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('user') }}/css/newstyle.css">
@@ -53,7 +54,7 @@
             <li class="nav-item ml-3"> <a
                     class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('w2form*') ? 'active' : '' }}"
                     href="{{ route('w2form') }}" style="width: 143px !important;">W-2 FORM</a> </li>
-            <li class="nav-item d-flex justify-content-center align-items-baseline " style="margin-top:45px;">
+            <li class="nav-item d-flex justify-content-center  " style="">
                 @guest
                     <a class="btn btn-lg py-2 w-100 btn-danger login registerBtn" href="javascript:void(0);">LOGIN</a>
                     <div class="dropdown d-none logoutDiv">
@@ -70,21 +71,36 @@
                 @endguest
 
                 @auth
-                    <div class="user-icon">
+                    {{-- <div class="user-icon">
                         <a style="position: relative; z-index:1;"><img style="width: 35px;"
                                 src="{{ asset('images/profile1.png') }}"></a>
                     </div>
                     <div class="dropdown-button">
                         <button onclick="myFunction()" class="dropbtn"> Hi
-                            {{ Auth::user()->first_name ?? '' }} <a style="padding-left:5px; "><i
-                                    class='fa fa-angle-down'></i></a></button>
+                            {{ Auth::user()->first_name ?? '' }} <i
+                                    class='fa fa-angle-down'></i></button>
                         <div id="myDropdown" class="dropdown-content">
                             <a href="{{ route('invoiceList') }}">Order History</a>
                             <a href="{{ route('profile') }}">My Account</a>
                         </div>
                     </div>
                     <div class="logout"> <a class="btn-logout" href="javascript:void(0);"><img style="width: 22px;"
-                                src="{{ asset('images/logout01.png') }}"></a></div>
+                                src="{{ asset('images/logout01.png') }}"></a></div> --}}
+                                <div class="container">
+                                    <div class="user-icon"><img src="images/profile1.png"></div>
+                                    <div class="logout"><a><img src="images/logout01.png"></a></div>
+                                    <div class="dropbtn">
+                                      <button class="btn btn-default dropdown-toggle navright-btn" type="button" id="menu1" data-toggle="dropdown">Hi Mike Bitch
+                                      <span class="caret"></span></button>
+                                      <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Order History</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">My Account</a></li>
+                                      </ul>
+                                    </div>
+
+                                  </div>
+
+
                 @endauth
                 {{-- <div class="d-none logoutDiv">
                         <a class="btn btn-lg py-2 w-100 mt-5 btn-logout btn-danger "
@@ -464,6 +480,7 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script>
 
+
 <script>
     //
 </script>
@@ -658,6 +675,48 @@
         }
     }
 </script>
+
+
+<script>
+    $(document).ready(function () {
+    (function ($) {
+        var toggle = '[data-toggle="droppanel"]';
+        function clearMenus(e) {
+            var panel = $(e.data).not(e.exclude);
+            var $ddMenu = panel.find(".dropdown-menu");
+            $ddMenu.slideUp();
+        }
+        function toggleMenu(e) {
+            var $this = $(this), $parent, selector;
+            if ($this.is('.disabled, :disabled')) return;
+            selector = $this.attr('data-target');
+            if (!selector) {
+                selector = $this.attr('href');
+                selector = selector && selector.replace(/.*(?=#[^\s]*$)/, ''); //strip for ie7
+            }
+            $parent = $(selector);
+            $parent.length || ($parent = $this.parent());
+            var $ddMenu = $parent.find(".dropdown-menu");
+            $ddMenu.slideToggle(function (evt) {
+                if ($(this).css("display") == "block") {
+                    $('html').trigger({ type: 'click', exclude: $parent });
+                    $parent.addClass('open');
+                    $(this).css("display", "");
+                    $parent.trigger({ type: 'droppanel.show', panel: $parent });
+                }
+                else { $parent.removeClass('open'); }
+            });
+
+            return false;
+        }
+        $('html').on('click.dropdown.data-api', null, '.droppanel', clearMenus);
+        $('body').on('click.dropdown', '.droppanel', function (e) { e.stopPropagation(); })
+                    .on('click.dropdown.data-api', toggle, toggleMenu);
+    } (jQuery));
+
+});
+</script>
+
 </body>
 
 </html>
