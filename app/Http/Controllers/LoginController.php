@@ -123,12 +123,16 @@ class LoginController extends Controller
         $user->code = null;
         $user->email_verified_at = Carbon::now();
         $user->save();
-        Auth::login($user);
+
+        Auth::login($user);//
+
         $response['message'] = "Login successfully";
         $response['user_type'] = $user->role_id == 1 ? 'Admin' : 'User';
         $response['firstName'] = $user->first_name ?? '';
         return response()->json($response, 200);
     }
+
+
 
     public function sendOtp(Request $request)
     {
