@@ -55,7 +55,7 @@
                                     E-Mail Verification</h3>
                                 <p
                                     style="font-size:13px; color:rgba(86, 86,86,0.9); margin:8px 0 0; line-height:24px;text-align:left;padding-bottom:25px;">
-                                    You are one step closing to
+                                    You are one step closer to
                                     accessing Paystub Acccount! Please enter the code below to confirm your
                                     email
                                     address.
