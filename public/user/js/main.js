@@ -68,7 +68,7 @@ $("#sendOTPForm").on("submit", function () {
         success: function (response) {
             $("#loginModal").modal("hide");
 
-            if (response.type == 1) {
+            if (response.type == '1') {
                 $("#login_email").val(response.email);
                 $("#loginPasswordModal").modal("show");
             } else {

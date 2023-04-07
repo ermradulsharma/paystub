@@ -29,6 +29,8 @@ class AdminSeeder extends Seeder
                 'role_id' => 1,
                 'country_code' => '+91',
                 'mobile' => '9988776655',
+                'is_completed' => '1',
+
             ]);
             User::create([
                 'username' => ADMIN_USERNAME,
@@ -40,6 +42,7 @@ class AdminSeeder extends Seeder
                 'role_id' => 1,
                 'country_code' => '+91',
                 'mobile' => '9988776655',
+                'is_completed' => '1',
             ]);
             User::create([
                 'username' => DEVELOPER_USERNAME,
@@ -51,6 +54,7 @@ class AdminSeeder extends Seeder
                 'role_id' => 1,
                 'country_code' => '+91',
                 'mobile' => '9988776655',
+                'is_completed' => '1',
             ]);
         }
     }
