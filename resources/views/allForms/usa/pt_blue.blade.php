@@ -161,8 +161,7 @@
                 <div style="width: 60%;float:left;">
                     <h6 style="font-size: 15px; margin-bottom: 0;text-transform:capitalize;"> {{ $requestData['cname'] }}
                     </h6>
-                    <p style="font-size: 14px; margin: 0;text-transform:uppercase;"> {{ $requestData['address_1'] }} @if($requestData['address_2'] != '')<br>
-                        {{ $requestData['address_2'] }} @endif<br>{{ $requestData['city'] }}, {{ $requestData['state'] }} {{ $requestData['zip_code'] }}
+                    <p style="font-size: 14px; margin: 0;text-transform:uppercase;"> {{ $requestData['address_1'] }}<br>{{ $requestData['city'] }}, {{ $requestData['state'] }} {{ $requestData['zip_code'] }}
                     </p>
                 </div>
                 <div style="width:40%;float:right;">
@@ -223,9 +222,9 @@
         </div>
 
         <table class="top">
-            <td colspan="" style="border: 1px solid white;text-align: center; color: #43407a;"><img src="images/left-up.png">DETATCH ALONG
-                PERFORMATION<img src="images/right-up.png"></td>
-            <td style="border: 1px solid white; text-align: center; color: #43407a;">KEEP LOWER PART FOR YOUR RECODE
+            <td colspan="" style="border: 1px solid white;text-align: center; color: #43407a;"><img style="position: relative; right:3px;" src="images/left-up.png">DETATCH ALONG
+                PERFORMATION<img style="position: relative; left:3px;" src="images/right-up.png"></td>
+            <td style="border: 1px solid white; text-align: center; color: #43407a;">KEEP LOWER PART FOR YOUR RECORDS
             </td>
         </table>
         <table class="top">
@@ -413,7 +412,7 @@
                                 AMOUNT<br>YEAR-TO-DATE </td>
                         </thead>
 
-                        <tbody style=" ">
+                        <tbody style="">
                             @foreach ($requestData['taxes'] ?? [] as $key => $taxes)
                             <tr style="border:none;">
                                 <td
@@ -436,12 +435,12 @@
                                     style="font-size:12px; width:30%; font-weight:bold; text-align:left; padding-left:20px;">
                                     {{ $tax_deduction }}</td>
                                 <td
-                                    style="font-size:12px; width:30%; font-weight:bold; text-align:center; padding-right:12px;">
+                                    style="font-size:12px; width:30%; font-weight:bold; text-align:right; padding-right:12px;">
                                     <span style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency']
                                         }}</span> {{ number_format($requestData['period_tax_deduction'][$key], 2) }}
                                 </td>
                                 <td
-                                    style="font-size:12px; width:30%; font-weight:bold; text-align:center;padding-right:12px;">
+                                    style="font-size:12px; width:30%; font-weight:bold; text-align:right;padding-right:12px;">
                                     <span style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency']
                                         }}</span> {{ number_format($requestData['ytd_tax_deduction'][$key], 2) }}</td>
                             </tr>

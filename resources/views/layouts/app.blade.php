@@ -74,7 +74,7 @@
                         <a style="position: relative; z-index:1;"><img style="width: 35px;"
                                 src="{{ asset('images/profile1.png') }}"></a>
                     </div>
-                    <div class="dropdown">
+                    <div class="dropdown-button">
                         <button onclick="myFunction()" class="dropbtn"> Hi
                             {{ Auth::user()->first_name ?? '' }} <a style="padding-left:5px; "><i
                                     class='fa fa-angle-down'></i></a></button>
