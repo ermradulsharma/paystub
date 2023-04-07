@@ -118,7 +118,7 @@
 
     <main class="bg-img2">
         <img src="{{ public_path('images/border/amethyst/amethyst.svg') }}" style="position: absolute; top: 0px; right:0px;left: 0px; width:106%; height:105%;  z-index: -1;">
-        <img src="{{ public_path('images/check2.svg') }}" style="position: absolute; top:74.8%; width:100.79%; height:25%;  z-index: -1; right:0px; left:0px;">
+        <img src="{{ public_path('images/check2.svg') }}" style="position: absolute; top:75.4%; width:100.2%; height:25%;  z-index: -1; right:0px; left:0px;">
         @guest
             <div class="watermark"></div>
         @endguest
@@ -323,7 +323,7 @@
             <table style="width:100%; ">
                 <tr>
                     <td>
-                        <table style="width:100%; padding-bottom:65px;">
+                        <table style="width:100%; padding-bottom:58px;">
                             <tr>
                                 <td style="">
                                     <p style="font-size: 14px; margin: 0;color:black; font-family: 'Arial Rounded MT Bold', sans-serif; text-transform:uppercase; font-weight:bold;"> {{ $requestData['cname'] }}</p>
@@ -340,12 +340,12 @@
                 </tr>
                 <tr>
                     <td>
-                        <table style="width:100%; position: relative; bottom:10px;">
+                        <table style="width:100%; position: relative; bottom:5px;">
                             <tr class="bottom-content">
                                 <td style="font-size:14px; text-align:left; width:40%; font-weight:bold;text-transform:uppercase; font-family: 'Arial Rounded MT Bold', sans-serif;"> {{ $requestData['emp_name'] }}</td>
-                                <td style="text-align:right; font-size:14px;  width:22.8%;font-family: Arial, Helvetica, sans-serif; "> XXXXX{{ $requestData['account_number_last_4'] }}</td>
+                                <td style="text-align:right; font-size:14px;  width:22.8%;font-family: Arial, Helvetica, sans-serif;padding-right:6px; "> XXXXX{{ $requestData['account_number_last_4'] }}</td>
                                 <td style="text-align:center; font-size:14px;  width:20%; padding-left:5px; font-family: Arial, Helvetica, sans-serif;">  XXXXX{{ $requestData['transit_aba_number'] }}</td>
-                                <td style="text-align:right; font-size:14px;  width:17.2%;padding-right:20px;font-weight:bold;font-family: Arial, Helvetica, sans-serif;"><span
+                                <td style="text-align:right; font-size:14px;  width:17.2%;padding-right:25px;font-weight:bold;font-family: Arial, Helvetica, sans-serif;"><span
                                     style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency']
                                     }}</span>{{ number_format($requestData['total_net_pay'], 2) }} </td>
                             </tr>

@@ -140,7 +140,7 @@
 
     <main class="bg-img2">
         <img src="{{ public_path('images/border/box_blue/box-blue.svg') }}" style="position: absolute; top: 0px; right:0px;left: 0px; width:106%; height:105%;  z-index: -1;">
-        <img src="{{ public_path('images/check2.svg') }}" style="position: absolute; top:74.6%; width:100.79%; height:25%;  z-index: -1; right:0px; left:0px;">
+        <img src="{{ public_path('images/check2.svg') }}" style="position: absolute; top:75.6%; width:100.20%; height:25%;  z-index: -1; right:0px; left:0px;">
         @guest
             <div class="watermark"></div>
         @endguest
@@ -354,7 +354,7 @@
             <table style="width:100%; padding-bottom:0px;">
                 <tr>
                     <td>
-                        <table style="width:100%; padding-bottom:63px;">
+                        <table style="width:100%; padding-bottom:52px;">
                             <tr>
                                 <td style="padding-top:20px;">
                                     <p style="font-size: 14px; margin: 0;color:black; font-family: 'Arial Rounded MT Bold', sans-serif; text-transform:capitalize; font-weight:bold;"> {{ $requestData['cname'] }}</p>
@@ -371,12 +371,12 @@
                 </tr>
                 <tr>
                     <td>
-                        <table style="width:100%; position: relative; bottom:10px;">
+                        <table style="width:100%; position: relative; bottom:0px;">
                             <tr class="bottom-content">
                                 <td style="font-size:14px; text-align:left; width:40%; font-weight:bold;text-transform:uppercase;font-family: 'Arial Rounded MT Bold', sans-serif;"> {{ $requestData['emp_name'] }}</td>
-                                <td style="text-align:right; font-size:14px;  width:22.8%; "> XXXXX{{ $requestData['account_number_last_4'] }}</td>
-                                <td style="text-align:center; font-size:14px;  width:20%; padding-left:5px; ">  XXXXX{{ $requestData['transit_aba_number'] }}</td>
-                                <td style="text-align:right; font-size:14px;  width:17.2%;padding-right:17px;font-weight:bold;"><span
+                                <td style="text-align:right; font-size:14px;  width:22.8%;padding-right:5px; "> XXXXX{{ $requestData['account_number_last_4'] }}</td>
+                                <td style="text-align:right; font-size:14px;  width:20%; padding-right:25px; ">  XXXXX{{ $requestData['transit_aba_number'] }}</td>
+                                <td style="text-align:right; font-size:14px;  width:17.2%;padding-right:22px;font-weight:bold;"><span
                                     style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency']
                                     }}</span>{{ number_format($requestData['total_net_pay'], 2) }} </td>
                             </tr>
