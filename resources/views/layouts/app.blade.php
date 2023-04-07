@@ -87,8 +87,8 @@
                     <div class="logout"> <a class="btn-logout" href="javascript:void(0);"><img style="width: 22px;"
                                 src="{{ asset('images/logout01.png') }}"></a></div> --}}
                                 <div class="container">
-                                    <div class="user-icon"><img src="images/profile1.png"></div>
-                                    <div class="logout"><a><img src="images/logout01.png"></a></div>
+                                    <div class="user-icon" style="">{{ asset('images/profile1.png') }}</div>
+                                    <div class="logout"><a>{{ asset('images/logout01.png') }}</a></div>
                                     <div class="dropbtn">
                                       <button class="btn btn-default dropdown-toggle navright-btn" type="button" id="menu1" data-toggle="dropdown">Hi Mike Bitch
                                       <span class="caret"></span></button>
