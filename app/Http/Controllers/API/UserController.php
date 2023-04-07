@@ -41,6 +41,7 @@ class UserController extends Controller
 
         $user->code = $code;
         if ($user->save()) {
+            $response['is_completed'] = $user->is_completed;
             $response['data'] = User::select('email',)->find($user->id);
             $response['success'] = TRUE;
             $response['message'] = "Verification code sent successfully";
@@ -122,7 +123,7 @@ class UserController extends Controller
         }
 
         $user->first_name = $request->uname ?? '';
-        $user->is_completed = 1;
+        $user->is_completed = "1";
         $user->password = bcrypt($request->password);
         if ($user->save()) {
             $response['success'] = TRUE;
