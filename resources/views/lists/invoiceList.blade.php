@@ -3,14 +3,14 @@
     <div class="my-5">
         <div class="container py-5" style="max-width: 1500px;">
             <div class="row" style="margin:0 auto;">
-                <div class="w-100" style="text-align: right;">
+                {{-- <div class="w-100" style="text-align: right;">
                     <div class="d-flex justify-content-end">
                         <a href="{{ route('profile') }}"><img src="{{ asset('images/user1.png') }}" alt=""
                                 width="35px;" height="35px"></a>
 
-                        <h5 class="mt-2 ml-2 font-weight-bold"> Welcome, {{ Auth::user()->email ?? '' }}</h5>
+                        <h5 class="mt-2 ml-2 font-weight-bold"> Welcome, {{ ucfirst(Auth::user()->first_name ?? '') }}</h5>
                     </div>
-                </div>
+                </div> --}}
                 <div class="table-responsive">
                     <table class="table text-center"
                         style="border:3px solid #FF6161; border-style: inset;background:#E8E6E6;">

@@ -123,12 +123,16 @@ class LoginController extends Controller
         $user->code = null;
         $user->email_verified_at = Carbon::now();
         $user->save();
-        Auth::login($user);
+
+        Auth::login($user);//
+
         $response['message'] = "Login successfully";
         $response['user_type'] = $user->role_id == 1 ? 'Admin' : 'User';
         $response['firstName'] = $user->first_name ?? '';
         return response()->json($response, 200);
     }
+
+
 
     public function sendOtp(Request $request)
     {
@@ -146,12 +150,13 @@ class LoginController extends Controller
             return response()->json($response, 301);
         }
         $code = rand(100000, 999999);
-        $user  = User::where('email', request('email'))->where('is_completed', '1')->first();
+        $user  = User::where('email', request('email'))->first();
         if (!$user) {
-            User::where('email', request('email'))->where('is_completed', '0')->delete();
+            //User::where('email', request('email'))->where('is_completed', '0')->delete();
             $user = new User;
             $user->email = $request->email;
-
+        }
+        if($user->is_completed == '0'){
             if ($user->email != "") {
                 $mailData = [];
                 $mailData['name'] = $request->email;
@@ -165,7 +170,6 @@ class LoginController extends Controller
             $user->save();
             $response['message'] = "Verification code sent successfully";
         }
-
 
         /* $moreData = [
             "otp" => $code

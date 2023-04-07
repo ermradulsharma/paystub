@@ -28,6 +28,7 @@ Route::group(['namespace' => 'Api', 'middleware' => ['\App\Http\Middleware\LogAf
     Route::post('template-preview', [TemplatesController::class, 'templatesPreview']);
     Route::post('send-otp', [UserController::class, 'sendOtp']);
     Route::post('login', [UserController::class, 'loginWithOtp']);
+    Route::post('email-login', [UserController::class, 'loginWithPassword']);
     Route::post('social-login', [UserController::class, 'socialLogin']);
     Route::post('generate-pdf', [TemplatesController::class, 'generatePdf']);
     Route::group(['middleware' => ['auth:api']], function () {

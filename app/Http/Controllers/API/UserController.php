@@ -7,6 +7,7 @@ use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
@@ -83,10 +84,54 @@ class UserController extends Controller
         if ($user->save()) {
             $response['token'] = $user->createToken($user->id . ' token ')->accessToken;
             $response['success'] = TRUE;
+            $response['is_completed'] = $user->is_completed;
             $response['message'] = "Login successfully";
             $response['status'] = STATUS_OK;
         }
         DB::commit();
+        return response()->json($response, 200);
+    }
+
+    public function loginWithPassword(Request $request)
+    {
+        $response = [];
+        $response['success'] = FALSE;
+        $response['status'] = STATUS_BAD_REQUEST;
+        Log::info($request);
+        DB::beginTransaction();
+        $rules = [
+            'email' => 'required|email:rfc,dns',
+            'password' => 'required|min:6'
+        ];
+
+        $messages = [
+            'email.required' => 'The email cannot be empty.',
+            'email.email' => 'Please enter valid email.',
+            'password.required' => 'The Password code cannot be empty',
+            'password.min' => 'Password has at least 6 characters',
+        ];
+        $validator = Validator::make($request->all(), $rules, $messages);
+        if ($validator->fails()) {
+            $response['message'] = $validator->errors()->first();
+            return response()->json($response, 301);
+        }
+        $user  = User::where(['email' => $request->email])->first();
+        if (!$user) {
+            $response['message'] = "Email doesn't exist.";
+            return response()->json($response, 301);
+        }
+        if(!Hash::check($request->password, $user->password)){
+            $response['message'] = "Incorrect password.";
+            return response()->json($response, 301);
+        }
+        Auth::login($user);
+
+        $response['token'] = $user->createToken($user->id . ' token ')->accessToken;
+        $response['success'] = TRUE;
+        $response['is_completed'] = $user->is_completed;
+        $response['message'] = "Login successfully";
+        $response['status'] = STATUS_OK;
+
         return response()->json($response, 200);
     }
 
