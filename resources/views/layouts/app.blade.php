@@ -205,7 +205,7 @@
                     </div>
                     <p class="resend-otp"><a id="forgotPasswordButton" href="JavaScript:void(0);">Forgot
                             Password?</a></p>
-                    <button class="previewbtn mt-5" type="submit">Continue</button>
+                    <button class="previewbtn mt-5" type="submit">Login</button>
                 </form>
             </div>
         </div>
@@ -259,7 +259,7 @@
 
             <!-- Modal body -->
             <div class="modal-body">
-                <h2 class="text-center" style="color: #457bbe;">Admin Login</h2>
+                <h2 class="text-center" style="color: #457bbe;">Login</h2>
                 <p class="text-center"></p>
 
                 <form id="adminLogin" action="{{ url('login') }}" method="POST">
@@ -358,7 +358,7 @@
         <div class="modal-content">
             <!-- Modal Header -->
             <div class="modal-header" style="background: #115caecf;">
-                <h4 class="modal-title" style="text-transform: capitalize;color:#fff;">Set Your Name</h4>
+                <h4 class="modal-title" style="text-transform: capitalize;color:#fff;">Set My Account</h4>
                 <button type="button"
                     style="border: none; background-color:transparent; color:#fff;font-size:20px;padding:0;"
                     class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
@@ -368,10 +368,24 @@
             <div class="modal-body pb-4" style="box-shadow: 0 0 8px rgba(0,0,0,.14);padding-top:0;">
                 <form id="userNameForm" method="post" action="{{ route('store.details') }}">
                     @csrf
-                    <input type="hidden" value="user-name" name="type">
+                    <input type="hidden" value="setup-account" name="type">
                     <label class="label-text" for="css">First Name<span style="color:red;">*</span></label>
                     <input class="contact-box" type="text" name="uname" id="user-name"
                         placeholder="First Name">
+                        <div class="contact-box-outer">
+                            <label class="label-text" for="css">New Password<span
+                                    style="color:red;">*</span></label>
+                                    <input class="contact-box" type="password" placeholder="New Password"
+                                    name="password" class="form-control show-password-sd" id="new_password"required>
+                                <i id="eye-icon_03" toggle="#password-field" class="fa fa-eye-slash eye-icon new-toggle-password" data-id="02"></i>
+                        </div>
+                        <div class="contact-box-outer">
+                            <label class="label-text" for="css">Confirm Password<span
+                                    style="color:red;">*</span></label>
+                                    <input class="contact-box" type="password" placeholder="Confirm Password"
+                                    name="password_confirmation" class="form-control show-password-sd" id="confirm_password"required>
+                                <i id="eye-icon_03" toggle="#password-field" class="fa fa-eye-slash eye-icon confirm-toggle-password" data-id="02"></i>
+                        </div>
                 </form>
             </div>
             <div class="modal-footer" style="display: inline-block;">
@@ -503,6 +517,18 @@
                 }
             }
         });
+    });
+
+    $(document).on('click', '.confirm-toggle-password', function() {
+        $(this).toggleClass("fa-eye fa-eye-slash");
+        var input = $("#confirm_password");
+        input.attr('type') === 'password' ? input.attr('type','text') : input.attr('type','password')
+    });
+
+    $(document).on('click', '.new-toggle-password', function() {
+        $(this).toggleClass("fa-eye fa-eye-slash");
+        var input = $("#new_password");
+        input.attr('type') === 'password' ? input.attr('type','text') : input.attr('type','password')
     });
 </script>
 <script src="{{ asset('user') }}/js/main.js"></script>

@@ -232,19 +232,28 @@
                     <form id="passwordUpdate" method="post" action="{{route('store.details')}}">
                         @csrf
                         <input type="hidden" value="user-password" name="type">
+
+                        <div class="contact-box-outer">
+                            <div class="contact-box-outer">
+                                <label class="label-text" for="css">Password<span style="color:red;">*</span></label>
+                                <input class="contact-box" type="password" placeholder="Password" name="currentPassword">
+                                <i id="eye-icon_00" toggle="#password-field" class="fa fa-eye-slash eye-icon show-password" data-id="02"></i>
+                            </div>
+                        </div>
+
                         <div class="contact-box-outer">
                             <label class="label-text" for="css">New Password<span
                                     style="color:red;">*</span></label>
                                     <input class="contact-box" type="password" placeholder="New Password"
                                     name="password" class="form-control show-password-sd" id="new_password"required>
-                                <i id="eye-icon_03" toggle="#password-field" class="fa fa-eye-slash eye-icon new-toggle-password" data-id="02"></i>
+                                <i id="eye-icon_03" toggle="#password-field" class="fa fa-eye-slash eye-icon show-password" data-id="02"></i>
                         </div>
                         <div class="contact-box-outer">
                             <label class="label-text" for="css">Confirm Password<span
                                     style="color:red;">*</span></label>
                                     <input class="contact-box" type="password" placeholder="Confirm Password"
                                     name="password_confirmation" class="form-control show-password-sd" id="confirm_password"required>
-                                <i id="eye-icon_03" toggle="#password-field" class="fa fa-eye-slash eye-icon confirm-toggle-password" data-id="02"></i>
+                                <i id="eye-icon_03" toggle="#password-field" class="fa fa-eye-slash eye-icon show-password" data-id="02"></i>
                         </div>
                     </form>
                         <div class="d-flex justify-content-between pt-2">
@@ -358,17 +367,23 @@
             });
         });
 
-        $(document).on('click', '.confirm-toggle-password', function() {
+        // $(document).on('click', '.confirm-toggle-password', function() {
+        //   $(this).toggleClass("fa-eye fa-eye-slash");
+        //    var input = $("#confirm_password");
+        //    input.attr('type') === 'password' ? input.attr('type','text') : input.attr('type','password')
+        // });
+
+        $(document).on('click', '.show-password', function() {
           $(this).toggleClass("fa-eye fa-eye-slash");
-           var input = $("#confirm_password");
+           var input = $(this).prev('input');
            input.attr('type') === 'password' ? input.attr('type','text') : input.attr('type','password')
         });
 
-        $(document).on('click', '.new-toggle-password', function() {
-          $(this).toggleClass("fa-eye fa-eye-slash");
-           var input = $("#new_password");
-           input.attr('type') === 'password' ? input.attr('type','text') : input.attr('type','password')
-        });
+        // $(document).on('click', '.new-toggle-password', function() {
+        //   $(this).toggleClass("fa-eye fa-eye-slash");
+        //    var input = $("#new_password");
+        //    input.attr('type') === 'password' ? input.attr('type','text') : input.attr('type','password')
+        // });
 
 
 
