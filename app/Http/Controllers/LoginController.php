@@ -155,7 +155,9 @@ class LoginController extends Controller
             //User::where('email', request('email'))->where('is_completed', '0')->delete();
             $user = new User;
             $user->email = $request->email;
+            $user->is_completed = '0';
         }
+
         if($user->is_completed == '0'){
             if ($user->email != "") {
                 $mailData = [];
