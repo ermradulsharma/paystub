@@ -56,7 +56,7 @@
                     href="{{ route('w2form') }}" style="width: 143px !important;">W-2 FORM</a> </li>
             <li class="nav-item d-flex justify-content-center  " style="">
                 @guest
-                    <a class="btn btn-lg py-2 w-100 btn-danger login registerBtn" href="javascript:void(0);">LOGIN</a>
+                    <a class="btn btn-lg py-2 w-100 btn-danger login registerBtn"  style="margin-top: 42px;" href="javascript:void(0);">LOGIN</a>
                     <div class="dropdown d-none logoutDiv">
                         <button onclick="myFunction()" class="dropbtn"> Hi
                             {{ Auth::user()->first_name ?? '' }} <a style="padding-left:5px; "><i
@@ -87,19 +87,22 @@
                     <div class="logout"> <a class="btn-logout" href="javascript:void(0);"><img style="width: 22px;"
                                 src="{{ asset('images/logout01.png') }}"></a></div> --}}
                                 <div class="container">
-                                    <div class="user-icon" style="">{{ asset('images/profile1.png') }}</div>
-                                    <div class="logout"><a>{{ asset('images/logout01.png') }}</a></div>
+                                    <!-- <div class="user-icon" style="">{{ asset('images/profile1.png') }}</div>
+                                    <div class="logout"><a>{{ asset('images/logout01.png') }}</a></div> -->
+                                    <div class="user-icon" style="">  <img style="width: 44px;"
+                                        src="{{ asset('images/profile1.png') }}"></div>
                                     <div class="dropbtn">
                                       <button class="btn btn-default dropdown-toggle navright-btn" type="button" id="menu1" data-toggle="dropdown">Hi Mike Bitch
                                       <span class="caret"></span></button>
                                       <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Order History</a></li>
-                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">My Account</a></li>
+                                      <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('invoiceList') }}">Order History</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('profile') }}">My Account</a></li>
                                       </ul>
                                     </div>
 
                                   </div>
-
+                                  <div class="logout"> <a class="btn-logout" href="javascript:void(0);"><img style="width: 40px;"
+                                    src="{{ asset('images/logout01.png') }}"></a></div>
 
                 @endauth
                 {{-- <div class="d-none logoutDiv">
