@@ -216,6 +216,7 @@ class UserController extends Controller
             }
             $userObj->device_token = $post_data['device_token'] ?? "";
             $userObj->email_verified_at = Carbon::now();
+            $userObj->is_completed = '1';
             $userObj->device_type = $post_data['device_type'] ?? "";
             if ($userObj->save()) {
                 $response['token'] = $userObj->createToken($userObj->id . ' token ')->accessToken;
