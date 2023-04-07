@@ -432,15 +432,15 @@
                             @foreach ($requestData['tax_deduction'] ?? [] as $key => $tax_deduction)
                             <tr style="border:none;">
                                 <td
-                                    style="font-size:12px; width:30%; font-weight:bold; text-align:left; padding-left:20px;background-color:red;">
+                                    style="font-size:12px; width:30%; font-weight:bold; text-align:left; padding-left:20px;">
                                     {{ $tax_deduction }}</td>
                                 <td
-                                    style="font-size:12px; width:30%; font-weight:bold; text-align:center; padding-right:12px;">
+                                    style="font-size:12px; width:30%; font-weight:bold; text-align:right; padding-right:12px;">
                                     <span style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency']
                                         }}</span> {{ number_format($requestData['period_tax_deduction'][$key], 2) }}
                                 </td>
                                 <td
-                                    style="font-size:12px; width:30%; font-weight:bold; text-align:center;padding-right:12px;">
+                                    style="font-size:12px; width:30%; font-weight:bold; text-align:center;background-color:red;">
                                     <span style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency']
                                         }}</span> {{ number_format($requestData['ytd_tax_deduction'][$key], 2) }}</td>
                             </tr>
