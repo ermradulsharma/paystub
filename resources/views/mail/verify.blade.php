@@ -55,8 +55,8 @@
                                     E-Mail Verification</h3>
                                 <p
                                     style="font-size:13px; color:rgba(86, 86,86,0.9); margin:8px 0 0; line-height:24px;text-align:left;padding-bottom:25px;">
-                                    You are one step closing to
-                                    accessing Paystub Acccount! Please enter the code below to confirm your
+                                    You are one step closer to
+                                    accessing Paystubx Acccount! Please enter the code below to confirm your
                                     email
                                     address.
                                 </p>
@@ -74,7 +74,7 @@
                                 <p
                                     style="font-size:13px; color:rgba(86, 86,86,0.9); margin:8px 0 0; line-height:24px;text-align:left;padding-bottom:25px;">
                                     Use the verification code
-                                    provided to start using your paystubx account. If You did not make this
+                                    provided to start using your paystubx account. If you did not make this
                                     request, please ignore this
                                     email.
                                 </p>
