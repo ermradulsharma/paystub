@@ -170,14 +170,14 @@ class UserController extends Controller
             $response['message'] = "Incorrect password.";
             return response()->json($response, 301);
         }
-        Auth::login($user);
         $user->save();
+        Auth::login($user);
         $response['token'] = $user->createToken($user->id . ' token ')->accessToken;
         $response['success'] = TRUE;
         $response['is_completed'] = $user->is_completed;
         $response['message'] = "Login successfully";
         $response['status'] = STATUS_OK;
-
+        DB::commit();
         return response()->json($response, 200);
     }
 
