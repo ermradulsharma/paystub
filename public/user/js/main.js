@@ -168,7 +168,7 @@ $("#adminLogin").on("submit", function () {
             }else if(response.user.role_id == 2){
                 $(".registerBtn").removeClass("d-block").addClass("d-none");
                 $(".logoutDiv").removeClass("d-none");
-                $("#authUserName").text("Hi "+response.user.name);
+                $(".authUserName").text("Hi "+response.user.name);
             }
 
         },

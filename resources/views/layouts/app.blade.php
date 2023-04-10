@@ -61,9 +61,7 @@
                     <div class="user-icon"><img src="{{asset('images/profile1.png')}}"></div>
                     <div class="logout btn-logout"><a><img src="{{asset('images/logout01.png')}}"></a></div>
                     <div class="dropbtn">
-                        <button class="btn btn-default dropdown-toggle navright-btn" type="button" id="menu1"
-                            data-toggle="dropdown"><p id="authUserName">Hi {{Auth::user()->name ?? ''}}</p>
-                            <span class="caret"></span></button>
+                        <button class="btn btn-default dropdown-toggle navright-btn authUserName" type="button" id="menu1" data-toggle="dropdown">Hi {{Auth::user()->name ?? ''}}<span class="caret"></span></button>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
                             <li role="presentation"><a role="menuitem" tabindex="-1" href="{{route('invoiceList')}}">Order History</a></li>
                             <li role="presentation"><a role="menuitem" tabindex="-1" href="{{route('profile')}}">My Account</a></li>
@@ -77,8 +75,8 @@
                     <div class="user-icon"><img src="{{asset('images/profile1.png')}}"></div>
                     <div class="logout btn-logout"><a><img src="{{asset('images/logout01.png')}}"></a></div>
                     <div class="dropbtn">
-                        <button class="btn btn-default dropdown-toggle navright-btn" type="button" id="menu1"
-                            data-toggle="dropdown"><p id="authUserName">Hi {{Auth::user()->name ?? ''}}</p>
+                        <button class="btn btn-default dropdown-toggle navright-btn authUserName" type="button" id="menu1"
+                            data-toggle="dropdown"> Hi {{Auth::user()->name ?? ''}}
                             <span class="caret"></span></button>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
                             <li role="presentation"><a role="menuitem" tabindex="-1" href="{{route('invoiceList')}}">Order History</a></li>
@@ -456,7 +454,7 @@
                     }else if(data.user.role_id == 2){
                         $(".registerBtn").removeClass("d-block").addClass("d-none");
                         $(".logoutDiv").removeClass("d-none");
-                        $("#authUserName").text("Hi "+data.user.name);
+                        $(".authUserName").text("Hi "+data.user.name);
                         $("#setName").modal("hide");
                     }
                 } else {
