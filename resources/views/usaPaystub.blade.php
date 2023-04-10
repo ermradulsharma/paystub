@@ -61,11 +61,10 @@
 
                                 <div class="col-md-6 mt-1">
                                     <div>
-                                        <label for="tel" class="lable">EMPLOYER TELEPHONE NUMBER <span
-                                                class="redColor">*</span> </label>
+                                        <label for="tel" class="lable">EMPLOYER TELEPHONE NUMBER </label>
                                         <input type="text" id="tel" name="tel" placeholder="123-456-7890"
                                             maxlength="10" minlength="10"
-                                            class="w-100 p-2 text-center input-box-font removeDiv third-phone">
+                                            class="w-100 p-2 text-center input-box-font third-phone">
                                     </div>
                                 </div>
 
