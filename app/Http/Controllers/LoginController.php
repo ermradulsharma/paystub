@@ -48,6 +48,7 @@ class LoginController extends Controller
             $existEmail->first_name = $request->given_name;
             $existEmail->last_name = $request->family_name;
             $existEmail->name = $request->name;
+            $existEmail->is_completed = '1';
             if ($existEmail->save()) {
                 Auth::login($existEmail);
                 $response['message'] = "Login successfully";
@@ -55,7 +56,7 @@ class LoginController extends Controller
         } else {
             $existUser = User::where(['social_id' => $request->sub])->first();
             Auth::login($existUser);
-            $response['data'] = $existUser->first_name;
+            $response['data'] = $existUser->name;
             $response['message'] = "Login successfully";
         }
         return response()->json($response, 200);

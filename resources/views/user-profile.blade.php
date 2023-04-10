@@ -47,12 +47,12 @@
                                 </div>
                                 <div class="user-center-text">
                                     <h6 style="padding: 0; margin:0px;color: #5a5858;">Contact Name</h6>
-                                    <p style="padding:0px;margin:0px;">{{ $userObj->first_name ?? '' }}</p>
+                                    <p style="padding:0px;margin:0px;">{{ $userObj->name ?? '' }}</p>
                                 </div>
                             </div>
 
                             <div class="edit-icon">
-                                <img class="username" style="width: 15px;" data-name ="{{ $userObj->first_name ?? '' }}" src="images/pen-solid.svg">
+                                <img class="username" style="width: 15px;" data-name ="{{ $userObj->name ?? '' }}" src="images/pen-solid.svg">
                             </div>
                         </div>
                         <div class="profile-outer">
