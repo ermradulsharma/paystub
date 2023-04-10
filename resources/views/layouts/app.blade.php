@@ -54,10 +54,10 @@
             <li class="nav-item ml-3"> <a
                     class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('w2form*') ? 'active' : '' }}"
                     href="{{ route('w2form') }}" style="width: 143px !important;">W-2 FORM</a> </li>
-            <li class="nav-item d-flex justify-content-center  " style="">
+            <li class="nav-item d-flex justify-content-center " style="">
                 @guest
-                <a class="btn btn-lg py-2 w-100 btn-danger login registerBtn" href="javascript:void(0);">LOGIN</a>
-                 <div class="container d-none logoutDiv">
+                <a class="btn btn-lg py-2 w-100 btn-danger mt-5 login registerBtn" href="javascript:void(0);">LOGIN</a>
+                <div class="container d-none logoutDiv" style="margin-top:10px;">
                     <div class="user-icon"><img src="{{asset('images/profile1.png')}}"></div>
                     <div class="logout"><a><img src="{{asset('images/logout01.png')}}"></a></div>
                     <div class="dropbtn">
@@ -73,7 +73,7 @@
                 @endguest
 
                 @auth
-                <div class="container">
+                <div class="container" style="margin-top:10px;">
                     <div class="user-icon"><img src="{{asset('images/profile1.png')}}"></div>
                     <div class="logout"><a><img src="{{asset('images/logout01.png')}}"></a></div>
                     <div class="dropbtn">
@@ -107,6 +107,16 @@
             href="{{ route('global') }}">GLOBEL</a>
         <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('w2form*') ? 'active' : '' }}"
             href="{{ route('w2form') }}">W-2 FORM</a>
+        @guest
+        <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn " style="background-color:#d3230c; border-radius:15px;"
+            href="#">Login</a>
+        @endguest
+        @auth
+        <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn " style="background-color:#d3230c; border-radius:15px;"
+            href="#">Log Out</a>
+        @endauth
+
+
     </div>
     <div class="openbtn">
         <div class=" pt-4 d-flex justify-content-between" style="display:flex !important">

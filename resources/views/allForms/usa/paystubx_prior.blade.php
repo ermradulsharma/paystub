@@ -143,7 +143,7 @@
         @endauth
         <table style="width:100%;">
             <tr style="width:100%;">
-                <td style=" padding-left:50px; padding-top:0px; padding-bottom:0px; padding-right:0px; font-weight:bold; font-size:25px; font-family: 'Roboto', sans-serif;"> {{ $requestData['cname'] }}</td>
+                <td style=" padding-left:50px; padding-top:0px; padding-bottom:0px; padding-right:0px; font-weight:bold; font-size:25px; font-family: 'Roboto', sans-serif; text-transform:capitalize;"> {{ $requestData['cname'] }}</td>
                 <td></td>
                 <td style="font-size:14px;text-align:right; font-family: 'Times', sans-serif;"><b>No: 17658</b></td>
             </tr>
