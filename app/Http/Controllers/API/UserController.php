@@ -55,7 +55,7 @@ class UserController extends Controller
             }
         }
         $response['is_completed'] = $userObj->is_completed;
-        $response['data'] = User::select('email',)->find($userObj->id);
+        $response['data'] = User::select('email')->find($userObj->id);
         $response['success'] = TRUE;
         $response['message'] = "Verification code sent successfully";
         $response['status'] = STATUS_OK;
@@ -68,7 +68,6 @@ class UserController extends Controller
         $response = [];
         $response['success'] = FALSE;
         $response['status'] = STATUS_BAD_REQUEST;
-        Log::info($request);
         DB::beginTransaction();
         $rules = [
             'email' => 'required|email:rfc,dns',
@@ -106,6 +105,15 @@ class UserController extends Controller
         return response()->json($response, 200);
     }
 
+    public function getUserProfile(Request $request)
+    {
+        $response['success'] = TRUE;
+        $response['data'] =  User::select('name','email')->find($request->user()->id);;
+        $response['message'] = "Profile update successfully";
+        $response['status'] = STATUS_OK;
+
+        return response()->json($response, $response['status']);
+    }
     public function updateProfile(Request $request)
     {
         $response = [];
@@ -129,13 +137,13 @@ class UserController extends Controller
             return response()->json($response, 301);
         }
 
-        $user  = User::find(Auth::user()->id);
+        $user  = User::find($request->user()->id);
         if (!$user) {
-            $response['message'] = "User not exist.";
+            $response['message'] = "User doesn't exist.";
             return response()->json($response, 301);
         }
 
-        $user->first_name = $request->uname ?? '';
+        $user->name = $request->uname ?? '';
         $user->is_completed = "1";
         $user->password = bcrypt($request->password);
         if ($user->save()) {
@@ -144,7 +152,7 @@ class UserController extends Controller
             $response['message'] = "Profile update successfully";
             $response['status'] = STATUS_OK;
         }
-        return response()->json($response, 200);
+        return response()->json($response, $response['status']);
     }
 
     public function loginWithPassword(Request $request)
@@ -245,6 +253,7 @@ class UserController extends Controller
         }
         return response()->json($response, 200);
     }
+
     public function forgotPassword(Request $request)
     {
         $response = [];
@@ -306,6 +315,7 @@ class UserController extends Controller
         }
         return response()->json($response, $response['status']);
     }
+
     public function logout(Request $request)
     {
         $response = [];

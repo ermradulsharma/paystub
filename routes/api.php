@@ -34,6 +34,7 @@ Route::group(['namespace' => 'Api', 'middleware' => ['\App\Http\Middleware\LogAf
     Route::post('generate-pdf', [TemplatesController::class, 'generatePdf']);
     Route::group(['middleware' => ['auth:api']], function () {
         Route::post('logout', [UserController::class, 'logout']);
+        Route::get('get-profile', [UserController::class, 'getUserProfile']);
         Route::post('update-profile', [UserController::class, 'updateProfile']);
         Route::post('save-form-data', [TemplatesController::class, 'templatesDataSave']);
         Route::get('get-pdf-list', [TemplatesController::class, 'getPdfList']);
