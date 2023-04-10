@@ -158,12 +158,19 @@ $("#adminLogin").on("submit", function () {
         type: "POST",
         data: $(this).serialize(),
         success: function (response) {
-            console.log('response--',response); return false;
+            console.log('response--',response);
             $("#loginPasswordModal").modal("hide");
-            toastr.success(response.message);
-            setTimeout(() => {
-                window.location.href = baseUrl + "admin/dashboard";
-            }, 300);
+            if(response.user.role_id == 1){
+                toastr.success(response.message);
+                setTimeout(() => {
+                    window.location.href = baseUrl + "admin/dashboard";
+                }, 300);
+            }else if(response.user.role_id == 2){
+                $(".registerBtn").removeClass("d-block").addClass("d-none");
+                $(".logoutDiv").removeClass("d-none");
+                $("#authUserName").text("Hi "+response.user.name);
+            }
+
         },
         error: function (err) {
             error = err.responseJSON;
