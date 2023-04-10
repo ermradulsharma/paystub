@@ -5,7 +5,7 @@ use App\Http\Controllers\API\DeductionController;
 use App\Http\Controllers\API\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use Symfony\Component\Routing\Router;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -29,14 +29,12 @@ Route::group(['namespace' => 'Api', 'middleware' => ['\App\Http\Middleware\LogAf
     Route::post('send-otp', [UserController::class, 'sendOtp']);
     Route::post('login', [UserController::class, 'loginWithOtp']);
     Route::post('email-login', [UserController::class, 'loginWithPassword']);
-
+    Route::post('forgot-password', [UserController::class, 'forgotPassword']);
     Route::post('social-login', [UserController::class, 'socialLogin']);
     Route::post('generate-pdf', [TemplatesController::class, 'generatePdf']);
     Route::group(['middleware' => ['auth:api']], function () {
         Route::post('logout', [UserController::class, 'logout']);
-
         Route::post('update-profile', [UserController::class, 'updateProfile']);
-
         Route::post('save-form-data', [TemplatesController::class, 'templatesDataSave']);
         Route::get('get-pdf-list', [TemplatesController::class, 'getPdfList']);
         Route::post('delete-template', [TemplatesController::class, 'deleteTemplate']);

@@ -113,7 +113,7 @@ $("#loginOtp").on("submit", function () {
                         usaStoreData();
                     }
                 }
-                location.reload(true);
+
             }
         },
         error: function (err) {
@@ -158,6 +158,7 @@ $("#adminLogin").on("submit", function () {
         type: "POST",
         data: $(this).serialize(),
         success: function (response) {
+            console.log('response--',response); return false;
             $("#loginPasswordModal").modal("hide");
             toastr.success(response.message);
             setTimeout(() => {

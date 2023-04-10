@@ -3,14 +3,18 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Mail\ForgotPassword;
+use App\Models\ForgotPasswordMail;
 use App\Models\User;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Mail;
+use Carbon\Carbon;
+use App\Mail\VerifyEmailSend;
 
 class UserController extends Controller
 {
@@ -32,21 +36,31 @@ class UserController extends Controller
             $response['message'] = $validator->errors()->first();
             return response()->json($response, 301);
         }
-        $code = 1234; // ?? rand(1000, 9999);
-        $user  = User::where('email', request('email'))->first();
-        if (!$user) {
-            $user = new User;
-            $user->email = $request->email;
+        $code = rand(100000, 999999);
+        $userObj = User::where('email', request('email'))->first();
+        if (!$userObj) {
+            $userObj = new User;
+            $userObj->email = $request->email;
+            $userObj->is_completed = '0';
         }
+        $userObj->code = $code;
+        if ($userObj->save()) {
+            if ($userObj->is_completed == '0') {
+                $mailData = [];
+                $mailData['name'] = $request->email;
+                $mailData['otp'] = $code;
+                $mailData['type'] = 'E-mail Verification';
+                $mailData['subject'] = 'Verify E-mail';
+                Mail::to($userObj->email)->send(new VerifyEmailSend($mailData));
+            }
+        }
+        $response['is_completed'] = $userObj->is_completed;
+        $response['data'] = User::select('email',)->find($userObj->id);
+        $response['success'] = TRUE;
+        $response['message'] = "Verification code sent successfully";
+        $response['status'] = STATUS_OK;
 
-        $user->code = $code;
-        if ($user->save()) {
-            $response['data'] = User::select('email',)->find($user->id);
-            $response['success'] = TRUE;
-            $response['message'] = "Verification code sent successfully";
-            $response['status'] = STATUS_OK;
-        }
-        return response()->json($response, 200);
+        return response()->json($response, $response['status']);
     }
 
     public function loginWithOtp(Request $request)
@@ -115,14 +129,14 @@ class UserController extends Controller
             return response()->json($response, 301);
         }
 
-       $user  = User::find(Auth::user()->id);
+        $user  = User::find(Auth::user()->id);
         if (!$user) {
             $response['message'] = "User not exist.";
             return response()->json($response, 301);
         }
 
         $user->first_name = $request->uname ?? '';
-        $user->is_completed = 1;
+        $user->is_completed = "1";
         $user->password = bcrypt($request->password);
         if ($user->save()) {
             $response['success'] = TRUE;
@@ -161,18 +175,18 @@ class UserController extends Controller
             $response['message'] = "Email doesn't exist.";
             return response()->json($response, 301);
         }
-        if(!Hash::check($request->password, $user->password)){
+        if (!Hash::check($request->password, $user->password)) {
             $response['message'] = "Incorrect password.";
             return response()->json($response, 301);
         }
-        Auth::login($user);
         $user->save();
+        Auth::login($user);
         $response['token'] = $user->createToken($user->id . ' token ')->accessToken;
         $response['success'] = TRUE;
         $response['is_completed'] = $user->is_completed;
         $response['message'] = "Login successfully";
         $response['status'] = STATUS_OK;
-
+        DB::commit();
         return response()->json($response, 200);
     }
 
@@ -230,6 +244,67 @@ class UserController extends Controller
             $response['status'] = STATUS_GENERAL_ERROR;
         }
         return response()->json($response, 200);
+    }
+    public function forgotPassword(Request $request)
+    {
+        $response = [];
+        $response['success'] = FALSE;
+        $response['status'] = STATUS_BAD_REQUEST;
+        try {
+            DB::beginTransaction();
+
+            $rules = [
+                'email' => 'required|email:rfc,dns',
+            ];
+            $messages = [
+                'required' => 'The :attribute field is required.',
+                'email.email' => 'Please enter valid email address.'
+            ];
+
+            $validator = Validator::make($request->all(), $rules, $messages);
+            if ($validator->fails()) {
+                $response['message'] = $validator->errors()->first();
+                return response()->json($response, 301);
+            }
+
+            $userObj = User::where('email', strtolower($request->get('email')))->first();
+            if (!$userObj) {
+                return response()->json([
+                    'error' => ["Email id does not exist."],
+                ]);
+            }
+
+            $token = generateRandomToken(50, $request->get('email'));
+            $tokenMailObj = ForgotPasswordMail::where('email', $request->get('email'))->first();
+            if (!$tokenMailObj) {
+                $tokenMailObj = new ForgotPasswordMail;
+            }
+            $tokenMailObj->email = $request->get('email');
+            $tokenMailObj->token = $token;
+            $currentTime = date("Y-m-d H:i:s");
+            $mailExpireTime = date('Y-m-d H:i:s', strtotime('+10 minutes', strtotime($currentTime)));
+
+            $tokenMailObj->expired_at = $mailExpireTime;
+            $tokenMailObj->save();
+
+            $mailData = [];
+            $mailData['name'] = $userObj->first_name . ' ' . $userObj->last_name ?? '';
+
+            $mailData['link'] = route('password.reset', [$token, 'email' => $request->get('email')]);
+
+            Mail::to($request->email)->send(new ForgotPassword($mailData));
+
+            DB::commit();
+
+            $response['message'] = 'Please check your email to reset password.';
+            $response['success'] = TRUE;
+            $response['status'] = STATUS_OK;
+        } catch (\Exception $e) {
+            $response['message'] = $e->getMessage() . ' Line No ' . $e->getLine() . ' in File' . $e->getFile();
+            Log::error($e->getTraceAsString());
+            $response['status'] = STATUS_GENERAL_ERROR;
+        }
+        return response()->json($response, $response['status']);
     }
     public function logout(Request $request)
     {

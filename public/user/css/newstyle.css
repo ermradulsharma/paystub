@@ -122,10 +122,10 @@ i.eye-icon.fa.fa-eye{
     width: 100%;
 }
 
-.logout  {
+.logout {
     max-width: 30px;
     position: relative;
-    top: 44px;
+    top: 45px;
     z-index: 1;
     left: 28px;
 }
