@@ -118,7 +118,7 @@ class HomeController extends Controller
 
             $validator = Validator::make($request->all(), [
                 'currentPassword' => 'required|min:6',
-                'password' => 'required|min:6|confirmed',
+                'password' => 'required|min:6|confirmed|different:currentPassword',
             ]);
 
             if ($validator->fails()) {

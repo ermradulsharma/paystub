@@ -87,19 +87,22 @@
                     <div class="logout"> <a class="btn-logout" href="javascript:void(0);"><img style="width: 22px;"
                                 src="{{ asset('images/logout01.png') }}"></a></div> --}}
                                 <div class="container">
-                                    <div class="user-icon" style="">{{ asset('images/profile1.png') }}</div>
-                                    <div class="logout"><a>{{ asset('images/logout01.png') }}</a></div>
+                                    <div class="user-icon" style="">  <img style="width: 44px;"
+                                        src="{{ asset('images/profile1.png') }}"></div>
+
+                                    {{-- <div class="logout"><a>{{ Auth::user()->first_name ?? '' }}</a></div> --}}
                                     <div class="dropbtn">
-                                      <button class="btn btn-default dropdown-toggle navright-btn" type="button" id="menu1" data-toggle="dropdown">Hi Mike Bitch
+                                      <button class="btn btn-default dropdown-toggle navright-btn" type="button" id="menu1" data-toggle="dropdown">Hi {{ Auth::user()->first_name ?? '' }}
                                       <span class="caret"></span></button>
                                       <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Order History</a></li>
-                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">My Account</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('invoiceList') }}">Order History</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('profile') }}">My Account</a></li>
                                       </ul>
                                     </div>
 
                                   </div>
-
+                                  <div class="logout"> <a class="btn-logout" href="javascript:void(0);"><img style="width: 40px;"
+                                    src="{{ asset('images/logout01.png') }}"></a></div>
 
                 @endauth
                 {{-- <div class="d-none logoutDiv">
