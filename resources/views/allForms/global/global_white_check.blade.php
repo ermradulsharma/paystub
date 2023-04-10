@@ -121,7 +121,7 @@
         }
 
         .bg-img::before {
-            background-image: url("images/global-white.png");
+            background-image: url("images/non.png");
             background-size: contain;
             background-repeat: no-repeat;
             content: "";

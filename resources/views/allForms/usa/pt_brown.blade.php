@@ -188,7 +188,7 @@
                             $requestData['emp_name'] }} </b></td>
                         <td style="text-transform:capitalize; font-size:13px;">Account Number</td>
                         <td style="text-transform:capitalize; font-size:13px;padding-left:15px;">Transit ABA</td>
-                        <td style="text-transform:capitalize; font-size:13px; padding-left:28px;font-weight:bold;">Amount</td>
+                        <td style="text-transform:capitalize; font-size:13px; padding-left:8px;font-weight:bold;">Amount</td>
                     </tr>
                     <tr style="border-right:none; border-left:none; border-bottom:none;">
                         <td></td>
