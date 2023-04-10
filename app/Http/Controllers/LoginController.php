@@ -156,6 +156,7 @@ class LoginController extends Controller
             $user->email = $request->email;
             $user->is_completed = '0';
         }
+
         if($user->is_completed == '0'){
             if ($user->email != "") {
                 $mailData = [];
