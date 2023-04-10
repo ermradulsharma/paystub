@@ -183,7 +183,7 @@
             <table style="width:100%; border-left:2px solid#464646; border-right:2px solid#464646;">
                 <thead style="border-top:none; border-left:2px solid#464646;height:35px;">
                     <td class="padding" colspan="2"
-                        style="text-align: left; padding-left:20px; color:black;font-size:15px;"><b>{{
+                        style="text-align: left; padding-left:20px; color:black;font-size:15px;text-transform:capitalize;"><b>{{
                             $requestData['emp_name'] }} </b></td>
                     <td class="padding" colspan="6"
                         style="text-align: left; border-right:2px solid #464646;font-size:18px; color:#464646;font-family: 'Roboto', sans-serif;">

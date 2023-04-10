@@ -169,7 +169,7 @@
             <table class="table1 " style="width:100%;">
                 <tr class="border-line" style="width:100%;">
                     <td style=" width:100%;font-size:15px; font-weight:500;">Pay To The<br> Order Of </td>
-                    <td style=" font-size:16px;text-align:left; width:100%; margin:0 auto; font-family: 'Poppins', sans-serif; font-weight:bold; "><b>{{ $requestData['emp_name'] ?? '' }}</b></td>
+                    <td style=" font-size:16px;text-align:left; width:100%; margin:0 auto; font-family: 'Poppins', sans-serif; font-weight:bold;text-transform:capitalize;  "><b>{{ $requestData['emp_name'] ?? '' }}</b></td>
                     <td style="width:100%; text-align:right; margin-top:20px;font-size:14px; text-align:right;"><b><span style="font-family: 'DejaVu Sans', sans-serif; padding-right:1px;">{{ $requestData['currency'] }}</span>**{{ number_format($requestData['total_net_pay'], 2) }}</b></td>
                 </tr>
             </table>
@@ -201,7 +201,7 @@
                 <table style="width:100%;">
                     <tr>
                         <td style="font-weight: bold; font-family: 'Poppins', sans-serif;"> {{ $requestData['cname'] ?? '' }}</td>
-                        <td style=" text-transform: capitalize;font-family: 'Times New Roman', Times, serif;"><strong>{{ $requestData['emp_name'] }}</strong></td>
+                        <td style=" text-transform:capitalize; font-family: 'Times New Roman', Times, serif;"><strong>{{ $requestData['emp_name'] }}</strong></td>
                     </tr>
                     <tr>
                         <td style="text-transform: capitalize; font-size:13px;font-family: 'Times New Roman', Times, serif;">{{ $requestData['address_1'] }}<br>{{ $requestData['city'] }}, {{ $requestData['state'] }} {{ $requestData['zip_code'] }} </td>
