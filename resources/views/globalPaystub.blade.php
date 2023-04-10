@@ -173,9 +173,9 @@
                                                 class="form-control text-center dropdown1 at_id small-font advanceTemplate removeDiv"
                                                 style="margin-right:10px; font-size:18px;">
                                                 <option value=""> --- Select Advance Template --- </option>
-                                                @foreach ($advanceType as $data)
+                                                @foreach ($advanceType ?? [] as $data)
                                                     <option value="{{ $data->title ?? '' }}"
-                                                        data-src="{{ $data->images->file ?? '' }}"
+                                                        data-src="{{ $data->images->file ?? "" }}"
                                                         data-status="{{ $data->template_element }}"
                                                         data-stub="{{ $data->stub_no }}"
                                                         data-clock="{{ $data->co_no }}">

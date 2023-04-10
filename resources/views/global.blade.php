@@ -178,7 +178,7 @@
                                     <select class="form-control dropdown1 dropdown12 bt_id" style="">
                                         <option selected=""> --- Select Basic Templates --- </option>
                                         @foreach ($basicType ?? [] as $data)
-                                        <option value="{{ $data->title }}" data-src="{{ $data->images->file }}">
+                                        <option value="{{ $data->title }}" data-src="{{ $data->images->file ?? '' }}">
                                             {{ $data->title }}
                                         </option>
                                         @endforeach
@@ -202,7 +202,7 @@
                                     <select class="form-control dropdown1  dropdown12 at_id" style="">
                                         <option selected=""> --- Select Advance Template --- </option>
                                         @foreach ($advanceType ?? [] as $data)
-                                        <option value="{{ $data->title }}" data-src="{{ $data->images->file }}">
+                                        <option value="{{ $data->title }}" data-src="{{ $data->images->file ?? '' }}">
                                             {{ $data->title }}
                                         </option>
                                         @endforeach
