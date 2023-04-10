@@ -154,6 +154,46 @@ class UserController extends Controller
         }
         return response()->json($response, $response['status']);
     }
+    
+    public function updateUserProfile(Request $request)
+    {
+        $response = [];
+        $response['success'] = FALSE;
+        $response['status'] = STATUS_BAD_REQUEST;
+
+        $rules = [
+            'uname' => 'required|min:3',
+            'email' => 'required|email:rfc,dns',
+        ];
+
+        $messages = [
+            'uname.required' => 'The username cannot be empty.',
+            'uname.min' => 'Username has at least 3 characters.',
+            'email.required' => 'The email cannot be empty.',
+            'email.email' => 'Please enter valid email.',
+        ];
+        $validator = Validator::make($request->all(), $rules, $messages);
+        if ($validator->fails()) {
+            $response['message'] = $validator->errors()->first();
+            return response()->json($response, 301);
+        }
+
+        $user  = User::find($request->user()->id);
+        if (!$user) {
+            $response['message'] = "User doesn't exist.";
+            return response()->json($response, 301);
+        }
+
+        $user->name = $request->uname ?? '';
+
+        $user->email = $request->email;
+        if ($user->save()) {
+            $response['success'] = TRUE;
+            $response['message'] = "Profile update successfully";
+            $response['status'] = STATUS_OK;
+        }
+        return response()->json($response, $response['status']);
+    }
 
     public function loginWithPassword(Request $request)
     {
