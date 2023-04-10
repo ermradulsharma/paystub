@@ -91,11 +91,11 @@
                         </div>
                         <div class="profile-outer">
                             <div class="d-flex trash-account">
-                                <div class="profile-icon-outer" style="background-color:#ff5015;">
+                                <div class="profile-icon-outer" style="background-color:red;">
                                     <i class="fa fa-trash-o trash"></i>
                                 </div>
                                 <div class="user-center-text">
-                                    <h6 style="padding: 0; margin:0px;color: #5a5858;">Delete Account</h6>
+                                    <button style="padding: 7px 15px; margin:0px;color: #fff;background-color:red; border-radius:5px;border:none; ">Delete Account</button>
                                 </div>
                             </div>
                         </div>
@@ -156,11 +156,11 @@
                     <form id="userEmailForm" method="post" action="{{ route('store.details') }}">
                         @csrf
                         <input type="hidden" value="user-email" name="type">
-                        {{-- <div class="contact-box-outer">
+                        <div class="contact-box-outer">
                             <label class="label-text" for="css">Password<span style="color:red;">*</span></label>
-                            <input class="contact-box" type="text" placeholder="Password" name="password">
-                            <i id="eye-icon_00" class="fa fa-eye-slash eye-icon" data-id="00"></i>
-                        </div> --}}
+                            <input class="contact-box" type="password" placeholder="Password" name="password">
+                            <i id="eye-icon_00" class="fa fa-eye-slash eye-icon show-password" data-id="00"></i>
+                        </div>
                         <label class="label-text" for="css">Email Address<span style="color:red;">*</span></label>
                         <input class="contact-box" type="text" id="user-email" placeholder="Email Address"
                             name="email">
@@ -242,12 +242,9 @@
 
                         <div class="contact-box-outer">
                             <div class="contact-box-outer">
-                                <label class="label-text" for="css">Password<span
-                                        style="color:red;">*</span></label>
-                                <input class="contact-box" type="password" placeholder="Password"
-                                    name="currentPassword">
-                                <i id="eye-icon_00" toggle="#password-field"
-                                    class="fa fa-eye-slash eye-icon show-password" data-id="02"></i>
+                                <label class="label-text" for="css">Password<span style="color:red;">*</span></label>
+                                <input class="contact-box" type="password" placeholder="Current Password" name="currentPassword">
+                                <i id="eye-icon_00" toggle="#password-field" class="fa fa-eye-slash eye-icon show-password" data-id="02"></i>
                             </div>
                         </div>
 
@@ -290,15 +287,15 @@
                     <h4 class="modal-title"><img src="{{ asset('/') }}images/Paystub X.webp" class="icon"></h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body" style="padding-bottom:30px;">
                     <h5 class="text-center" style="text-transform:capitalize;">Do you want to delete your account?</h5>
                     <div class=" text-center mt-4">
                         {{-- <h5 style="color: #457bbe;" class="mt-4 text-center">Almost There!</h5> --}}
                         <form id="loginOtp" action="{{ route('delete.account') }}" method="POST" class="text-center">
                             @csrf
 
-                            <button class="previewbtn mt-5" type="submit">Yes</button>
-                            <button class="previewbtn mt-5 bottom-close" type="button">NO</button>
+                            <button class="previewbtn" type="submit">Yes</button>
+                            <button class="previewbtn bottom-close" type="button">NO</button>
                         </form>
                     </div>
                 </div>
@@ -319,8 +316,6 @@
         });
 
         $(".username2").click(function() {
-            var email = $(this).data('email');
-            $('#user-email').val(email);
             $("#userName2").modal("show");
         });
 

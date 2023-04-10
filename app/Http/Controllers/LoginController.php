@@ -38,26 +38,27 @@ class LoginController extends Controller
     {
         $existUser = User::where(['social_id' => $request->sub])->exists();
         if (!$existUser) {
-            $existEmail = User::where(['email' => $request->email])->first();
-            if (!$existEmail) {
-                $existEmail = new User;
-                $existEmail->email = $request->email;
-                $existEmail->password = Hash::make('123456dummy');
+            $existUser = User::where(['email' => $request->email])->first();
+            if (!$existUser) {
+                $existUser = new User;
+                $existUser->email = $request->email;
+                $existUser->password = Hash::make('123456dummy');
             }
-            $existEmail->social_id = $request->sub;
-            $existEmail->first_name = $request->given_name;
-            $existEmail->last_name = $request->family_name;
-            $existEmail->name = $request->name;
-            if ($existEmail->save()) {
-                Auth::login($existEmail);
+            $existUser->social_id = $request->sub;
+            $existUser->first_name = $request->given_name;
+            $existUser->last_name = $request->family_name;
+            $existUser->name = $request->name;
+            $existUser->is_completed = '1';
+            if ($existUser->save()) {
+                Auth::login($existUser);
                 $response['message'] = "Login successfully";
             }
         } else {
             $existUser = User::where(['social_id' => $request->sub])->first();
             Auth::login($existUser);
-            $response['data'] = $existUser->first_name;
-            $response['message'] = "Login successfully";
         }
+        $response['data'] = $existUser->name;
+        $response['message'] = "Login successfully";
         return response()->json($response, 200);
     }
 
@@ -124,7 +125,7 @@ class LoginController extends Controller
         $user->email_verified_at = Carbon::now();
         $user->save();
 
-        Auth::login($user);//
+        Auth::login($user); //
 
         $response['message'] = "Login successfully";
         $response['user_type'] = $user->role_id == 1 ? 'Admin' : 'User';
@@ -152,12 +153,12 @@ class LoginController extends Controller
         $code = rand(100000, 999999);
         $user  = User::where('email', request('email'))->first();
         if (!$user) {
-            //User::where('email', request('email'))->where('is_completed', '0')->delete();
             $user = new User;
             $user->email = $request->email;
             $user->is_completed = '0';
         }
-        if($user->is_completed == '0'){
+
+        if ($user->is_completed == '0') {
             if ($user->email != "") {
                 $mailData = [];
                 $mailData['name'] = $request->email;

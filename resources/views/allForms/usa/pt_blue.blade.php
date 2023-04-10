@@ -184,7 +184,7 @@
                             $requestData['emp_name'] }} </b></td>
                         <td style="text-transform:capitalize; font-size:13px;">Account Number</td>
                         <td style="text-transform:capitalize; font-size:13px;padding-left:15px;">Transit ABA</td>
-                        <td style="text-transform:capitalize; font-size:13px; padding-left:28px;font-weight:bold;">Amount</td>
+                        <td style="text-transform:capitalize; font-size:13px; padding-left:8px;font-weight:bold;">Amount</td>
                     </tr>
                     <tr style="border-right:none; border-left:none; border-bottom:none;">
                         <td></td>
@@ -239,11 +239,11 @@
             </tr>
 
             <tr>
-                <td style="font-size:13px;text-align:center; font-weight:bold"> {{ $requestData['emp_name'] }}</td>
+                <td style="font-size:13px;text-align:center; font-weight:bold;text-transform:capitalize;"> {{ $requestData['emp_name'] }}</td>
                 <td
-                    style="border-right: 1px solid #43407a; border-left: 1px solid #43407a;font-size:13px;text-align:center; font-weight:bold">
+                    style="border-right: 1px solid #43407a; border-left: 1px solid #43407a;font-size:13px;text-align:center; font-weight:bold;text-transform:capitalize;">
                     {{ $requestData['cname'] }} </td>
-                <td style="font-size:13px;text-align:center; font-weight:bold">XXX-XX-{{ $requestData['emp_ssn'] }} </td>
+                <td style="font-size:13px;text-align:center; font-weight:bold">1234 </td>
                 <td
                     style="border-right: 1px solid #43407a; border-left: 1px solid #43407a;font-size:13px;text-align:center; font-weight:bold">
                     {{ $requestData['emp_id'] }} </td>

@@ -114,11 +114,13 @@
         }
 
         .container {
-            background-image: url("images/texture-brown.png");
+            background-image: url("images/texture-brown1.png");
             background-size: cover;
             background-repeat: no-repeat;
             width: 100%;
             background-position: top;
+
+
 
         }
 
@@ -186,7 +188,7 @@
                             $requestData['emp_name'] }} </b></td>
                         <td style="text-transform:capitalize; font-size:13px;">Account Number</td>
                         <td style="text-transform:capitalize; font-size:13px;padding-left:15px;">Transit ABA</td>
-                        <td style="text-transform:capitalize; font-size:13px; padding-left:28px;font-weight:bold;">Amount</td>
+                        <td style="text-transform:capitalize; font-size:13px; padding-left:8px;font-weight:bold;">Amount</td>
                     </tr>
                     <tr style="border-right:none; border-left:none; border-bottom:none;">
                         <td></td>
@@ -241,11 +243,11 @@
             </tr>
 
             <tr>
-                <td style="font-size:13px;text-align:center; font-weight:bold"> {{ $requestData['emp_name'] }}</td>
+                <td style="font-size:13px;text-align:center; font-weight:bold;text-transform:capitalize;"> {{ $requestData['emp_name'] }}</td>
                 <td
-                    style="border-right: 1px solid #793b5b; border-left: 1px solid #793b5b;font-size:13px; font-weight:bold;text-align:center;">
+                    style="border-right: 1px solid #793b5b; border-left: 1px solid #793b5b;font-size:13px; font-weight:bold;text-align:center;text-transform:capitalize;">
                     {{ $requestData['cname'] }} </td>
-                <td style="font-size:13px;text-align:center; font-weight:bold">XXX-XX-{{ $requestData['emp_ssn'] }} </td>
+                <td style="font-size:13px;text-align:center; font-weight:bold">1234</td>
                 <td
                     style="border-right: 1px solid #793b5b; border-left: 1px solid #793b5b;font-size:13px; font-weight:bold;text-align:center;">
                     {{ $requestData['emp_id'] }} </td>
@@ -327,7 +329,7 @@
         </table>
         <table>
             <tr>
-                <td style="font-size:12px; font-weight:bold;padding-left:15px;">{{ $requestData['emp_name'] }} {{ $requestData['emp_street_1'] }} {{ $requestData['emp_city'] }}, {{ $requestData['emp_state'] }}
+                <td style="font-size:12px; font-weight:bold;padding-left:15px;text-transform:capitalize;">{{ $requestData['emp_name'] }} {{ $requestData['emp_street_1'] }} {{ $requestData['emp_city'] }}, {{ $requestData['emp_state'] }}
                     {{ $requestData['emp_zip_code'] }} </td>
                 <td style="font-size:12px; font-weight:bold"><b>Pay Period: {{ date('m/d/y',
                         strtotime($requestData['pay_start'])) }}</b></td>

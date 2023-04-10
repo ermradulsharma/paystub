@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Mail;
 use Carbon\Carbon;
+use App\Mail\VerifyEmailSend;
 
 class UserController extends Controller
 {
@@ -35,23 +36,31 @@ class UserController extends Controller
             $response['message'] = $validator->errors()->first();
             return response()->json($response, 301);
         }
-        // $code =  rand(100000, 999999);
-        $code = 1234; // ?? rand(1000, 9999);
-        $user  = User::where('email', request('email'))->first();
-        if (!$user) {
-            $user = new User;
-            $user->email = $request->email;
+        $code = rand(100000, 999999);
+        $userObj = User::where('email', request('email'))->first();
+        if (!$userObj) {
+            $userObj = new User;
+            $userObj->email = $request->email;
+            $userObj->is_completed = '0';
         }
+        $userObj->code = $code;
+        if ($userObj->save()) {
+            if ($userObj->is_completed == '0') {
+                $mailData = [];
+                $mailData['name'] = $request->email;
+                $mailData['otp'] = $code;
+                $mailData['type'] = 'E-mail Verification';
+                $mailData['subject'] = 'Verify E-mail';
+                Mail::to($userObj->email)->send(new VerifyEmailSend($mailData));
+            }
+        }
+        $response['is_completed'] = $userObj->is_completed;
+        $response['data'] = User::select('email')->find($userObj->id);
+        $response['success'] = TRUE;
+        $response['message'] = "Verification code sent successfully";
+        $response['status'] = STATUS_OK;
 
-        $user->code = $code;
-        if ($user->save()) {
-            $response['is_completed'] = $user->is_completed;
-            $response['data'] = User::select('email',)->find($user->id);
-            $response['success'] = TRUE;
-            $response['message'] = "Verification code sent successfully";
-            $response['status'] = STATUS_OK;
-        }
-        return response()->json($response, 200);
+        return response()->json($response, $response['status']);
     }
 
     public function loginWithOtp(Request $request)
@@ -59,7 +68,6 @@ class UserController extends Controller
         $response = [];
         $response['success'] = FALSE;
         $response['status'] = STATUS_BAD_REQUEST;
-        Log::info($request);
         DB::beginTransaction();
         $rules = [
             'email' => 'required|email:rfc,dns',
@@ -97,6 +105,15 @@ class UserController extends Controller
         return response()->json($response, 200);
     }
 
+    public function getUserProfile(Request $request)
+    {
+        $response['success'] = TRUE;
+        $response['data'] =  User::select('name','email')->find($request->user()->id);;
+        $response['message'] = "Profile update successfully";
+        $response['status'] = STATUS_OK;
+
+        return response()->json($response, $response['status']);
+    }
     public function updateProfile(Request $request)
     {
         $response = [];
@@ -120,13 +137,13 @@ class UserController extends Controller
             return response()->json($response, 301);
         }
 
-       $user  = User::find(Auth::user()->id);
+        $user  = User::find($request->user()->id);
         if (!$user) {
-            $response['message'] = "User not exist.";
+            $response['message'] = "User doesn't exist.";
             return response()->json($response, 301);
         }
 
-        $user->first_name = $request->uname ?? '';
+        $user->name = $request->uname ?? '';
         $user->is_completed = "1";
         $user->password = bcrypt($request->password);
         if ($user->save()) {
@@ -135,7 +152,47 @@ class UserController extends Controller
             $response['message'] = "Profile update successfully";
             $response['status'] = STATUS_OK;
         }
-        return response()->json($response, 200);
+        return response()->json($response, $response['status']);
+    }
+    
+    public function updateUserProfile(Request $request)
+    {
+        $response = [];
+        $response['success'] = FALSE;
+        $response['status'] = STATUS_BAD_REQUEST;
+
+        $rules = [
+            'uname' => 'required|min:3',
+            'email' => 'required|email:rfc,dns',
+        ];
+
+        $messages = [
+            'uname.required' => 'The username cannot be empty.',
+            'uname.min' => 'Username has at least 3 characters.',
+            'email.required' => 'The email cannot be empty.',
+            'email.email' => 'Please enter valid email.',
+        ];
+        $validator = Validator::make($request->all(), $rules, $messages);
+        if ($validator->fails()) {
+            $response['message'] = $validator->errors()->first();
+            return response()->json($response, 301);
+        }
+
+        $user  = User::find($request->user()->id);
+        if (!$user) {
+            $response['message'] = "User doesn't exist.";
+            return response()->json($response, 301);
+        }
+
+        $user->name = $request->uname ?? '';
+
+        $user->email = $request->email;
+        if ($user->save()) {
+            $response['success'] = TRUE;
+            $response['message'] = "Profile update successfully";
+            $response['status'] = STATUS_OK;
+        }
+        return response()->json($response, $response['status']);
     }
 
     public function loginWithPassword(Request $request)
@@ -166,18 +223,18 @@ class UserController extends Controller
             $response['message'] = "Email doesn't exist.";
             return response()->json($response, 301);
         }
-        if(!Hash::check($request->password, $user->password)){
+        if (!Hash::check($request->password, $user->password)) {
             $response['message'] = "Incorrect password.";
             return response()->json($response, 301);
         }
-        Auth::login($user);
         $user->save();
+        Auth::login($user);
         $response['token'] = $user->createToken($user->id . ' token ')->accessToken;
         $response['success'] = TRUE;
         $response['is_completed'] = $user->is_completed;
         $response['message'] = "Login successfully";
         $response['status'] = STATUS_OK;
-
+        DB::commit();
         return response()->json($response, 200);
     }
 
@@ -236,6 +293,7 @@ class UserController extends Controller
         }
         return response()->json($response, 200);
     }
+
     public function forgotPassword(Request $request)
     {
         $response = [];
@@ -243,7 +301,7 @@ class UserController extends Controller
         $response['status'] = STATUS_BAD_REQUEST;
         try {
             DB::beginTransaction();
-            
+
             $rules = [
                 'email' => 'required|email:rfc,dns',
             ];
@@ -284,13 +342,12 @@ class UserController extends Controller
             $mailData['link'] = route('password.reset', [$token, 'email' => $request->get('email')]);
 
             Mail::to($request->email)->send(new ForgotPassword($mailData));
-            
+
             DB::commit();
 
             $response['message'] = 'Please check your email to reset password.';
             $response['success'] = TRUE;
             $response['status'] = STATUS_OK;
-
         } catch (\Exception $e) {
             $response['message'] = $e->getMessage() . ' Line No ' . $e->getLine() . ' in File' . $e->getFile();
             Log::error($e->getTraceAsString());
@@ -298,6 +355,7 @@ class UserController extends Controller
         }
         return response()->json($response, $response['status']);
     }
+
     public function logout(Request $request)
     {
         $response = [];
@@ -305,7 +363,7 @@ class UserController extends Controller
 
         try {
             $userObj = User::find(Auth::user()->id);
-            $userObj->device_token = ""; 
+            $userObj->device_token = "";
             $userObj->device_type = "";
             if ($userObj->save()) {
                 $user = Auth::user()->token();

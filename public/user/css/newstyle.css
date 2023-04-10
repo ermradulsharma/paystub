@@ -94,11 +94,18 @@ i.eye-icon.fa.fa-eye{
     position: relative;
     right: 30px;
 }
+p.resend-otp {
+    display: flex;
+    justify-content: end;
+    margin-top: -10px;
+    margin-right: 45px;
+    margin-bottom: 0px;
+}
 /* user profile css end */
 .dropbtn {
     background-color: #FFF;
     color: #000;
-    padding: 4px 7px 4px 40px;
+    padding: 0px 7px 0px 40px;
     font-size: 11px;
     border: 1px solid #e8e8e8;
     border-radius: 50px;
@@ -113,21 +120,22 @@ i.eye-icon.fa.fa-eye{
 
 }
 .user-icon {
-    max-width: 48px;
+    max-width: 38px;
     position: relative;
-    top: 45px;
+    top: 38px;
     z-index: 1;
+    left: 0;
 }
 .logout img{
     width: 100%;
 }
 
-.logout  {
-    max-width: 30px;
+.logout {
+    max-width: 32px;
     position: relative;
-    top: 44px;
+    top: 38px;
     z-index: 1;
-    left: 28px;
+    left: 40px;
 }
 
 .dropdown-menu:before {
@@ -702,6 +710,7 @@ img.earnbtn2.lock {
     appearance: none;
     transition: all 0.5s ease-in-out;
     border: 1px solid transparent;
+    margin-left: 5px;
 }
 
 .previewbtn:hover {
@@ -811,8 +820,9 @@ select:after {
 }
 
 .sidenav a:hover {
-    color: #0b2f5b !important;
+    color: #fff !important;
     background: #fff;
+    font-size: 20px;
 }
 
 .sidebar .active a {
@@ -997,11 +1007,12 @@ color: #027bff !important;
 }
 
 .continue {
-    padding: 10px 29px;
+    padding: 5px 23px;
     border: none;
-    border-radius: 26px;
+    border-radius: 5px;
     background: red;
     color: white;
+    margin-top: 10px;
 }
 
 .icon {
@@ -3189,9 +3200,20 @@ img.earnbtn2.lockuk {
 
     .previewbtn {
         padding: 0px 23px;
-        max-width: 305px;
-        width: 100%;
-        margin: 0px 0px 0 20px;
+
+        margin: 0px 0px 0 0px !important;
+    }
+    .continue{
+
+        padding: 0px 23px;
+        border-radius: 5px;
+    }
+    p.resend-otp{
+        margin-right: 0;
+    }
+    .form-control{
+        margin:0 auto 20px 0px;
+
     }
 
     .checkbox-outer {
