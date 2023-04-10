@@ -298,6 +298,12 @@
                                             onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                     </div>
                                 </div>
+                                <div class="col-md-4 check checkv d-none">
+                                    <div>
+                                        <label for="check_no" class="lable">Check No <span class="redColor">*</span></label>
+                                        <input type="text" id="check_no" name="check_no" class="w-100  input-box-font removeDiv" placeholder="1234" maxlength="6"  minlength="4" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -673,6 +679,13 @@
                                                 class="earnbtn removeDiv text-center" maxlength="4" minlength="4"
                                                 placeholder="MP5"
                                                 onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+                                        </div>
+
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-6 mb-2 advicex advicexv d-none">
+                                        <div>
+                                            <p class="p-0 m-0 " style="font-family: serif;">Dept<span class="redColor">*</span></p>
+                                            <input type="text" name="dept_number" id="dept_number" class="earnbtn removeDiv text-center" maxlength="4" minlength="4" placeholder="123456" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                         </div>
 
                                     </div>
