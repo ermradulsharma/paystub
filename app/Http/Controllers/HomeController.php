@@ -39,82 +39,83 @@ class HomeController extends Controller
         return view('user-profile', compact('userObj'));
     }
 
-    public function storeDetails(Request $request){
+    public function storeDetails(Request $request)
+    {
         $userId = Auth::user()->id;
-        if($request->type == 'user-name'){
+        if ($request->type == 'user-name') {
             $validator = Validator::make($request->all(), [
                 'uname' => 'required|min:3',
             ]);
 
             if ($validator->fails()) {
                 return response()->json([
-                            'error' => $validator->errors()->all()
-                        ]);
+                    'error' => $validator->errors()->all()
+                ]);
             }
-            $userObj = User::where('id',$userId)->first();
-            if(!$userObj){
+            $userObj = User::where('id', $userId)->first();
+            if (!$userObj) {
                 return response()->json(['error' => ['User not found']]);
             }
             $userObj->first_name = $request->uname ?? '';
-            if(!$userObj->save()){
+            if (!$userObj->save()) {
                 return response()->json(['error' => ['Something went wrong.']]);
             }
             $request->session()->flash('message', 'Profile updated successfully.');
             return response()->json(['message' => 'Profile updated successfully.']);
         }
 
-        if($request->type == 'user-email'){
+        if ($request->type == 'user-email') {
             $validator = Validator::make($request->all(), [
-                'email' => 'email:rfc,dns|unique:users,email,'.$userId,
+                'email' => 'email:rfc,dns|unique:users,email,' . $userId,
             ]);
 
             if ($validator->fails()) {
                 return response()->json([
-                            'error' => $validator->errors()->all()
-                        ]);
+                    'error' => $validator->errors()->all()
+                ]);
             }
 
-                $code = rand(100000, 999999);
-                $mailData = [];
-                $mailData['name'] = $request->email;
-                $mailData['otp'] = $code;
-                $mailData['type'] = 'E-mail Verification';
-                $mailData['subject'] = 'Verify E-mail';
-                \Mail::to($request->email)->send(new VerifyEmailSend($mailData));
+            $code = rand(100000, 999999);
+            $mailData = [];
+            $mailData['name'] = $request->email;
+            $mailData['otp'] = $code;
+            $mailData['type'] = 'E-mail Verification';
+            $mailData['subject'] = 'Verify E-mail';
+            \Mail::to($request->email)->send(new VerifyEmailSend($mailData));
 
-                $userObj = User::where('id',$userId)->first();
-                if(!$userObj){
-                    return response()->json(['error' => ['User not found']]);
-                }
-                $userObj->code = $code;
-                if(!$userObj->save()){
-                    return response()->json(['error' => ['Something went wrong.']]);
-                }
+            $userObj = User::where('id', $userId)->first();
+            if (!$userObj) {
+                return response()->json(['error' => ['User not found']]);
+            }
+            $userObj->code = $code;
+            if (!$userObj->save()) {
+                return response()->json(['error' => ['Something went wrong.']]);
+            }
 
-                $response['message'] = "Verification code sent successfully";
-                $response['email'] = $request->email;
-                return response()->json($response, 200);
+            $response['message'] = "Verification code sent successfully";
+            $response['email'] = $request->email;
+            return response()->json($response, 200);
         }
 
         if ($request->type == 'verify-email') {
 
-            $userObj = User::where('id',$userId)->first();
-            if(!$userObj){
+            $userObj = User::where('id', $userId)->first();
+            if (!$userObj) {
                 return response()->json(['error' => ['User not found']]);
             }
 
-            if($userObj->code != $request->code){
+            if ($userObj->code != $request->code) {
                 return response()->json(['error' => ['You entered wrong otp.']]);
             }
             $userObj->email = $request->email;
 
-            if(!$userObj->save()){
+            if (!$userObj->save()) {
                 return response()->json(['error' => ['Something went wrong.']]);
             }
             return response()->json(['message' => 'Email updated successfully.']);
         }
 
-        if($request->type == 'user-password'){
+        if ($request->type == 'user-password') {
 
             $validator = Validator::make($request->all(), [
                 'currentPassword' => 'required|min:6',
@@ -123,26 +124,25 @@ class HomeController extends Controller
 
             if ($validator->fails()) {
                 return response()->json([
-                            'error' => $validator->errors()->all()
-                        ]);
+                    'error' => $validator->errors()->all()
+                ]);
             }
-            $userObj = User::where('id',$userId)->first();
-            if(!$userObj){
+            $userObj = User::where('id', $userId)->first();
+            if (!$userObj) {
                 return response()->json(['error' => ['User not found']]);
             }
-            if(!Hash::check($request->currentPassword, $userObj->password)){
+            if (!Hash::check($request->currentPassword, $userObj->password)) {
                 return response()->json(['error' => ['Current password not match.']]);
             }
             $userObj->password = bcrypt($request->password);
-            if(!$userObj->save()){
+            if (!$userObj->save()) {
                 return response()->json(['error' => ['Something went wrong.']]);
             }
             $request->session()->flash('message', 'Password changed successfully.');
             return response()->json(['message' => 'Password changed successfully.']);
-
         }
 
-        if($request->type == 'setup-account'){
+        if ($request->type == 'setup-account') {
             // dd($request->all());
             $validator = Validator::make($request->all(), [
                 'uname' => 'required|min:3',
@@ -151,22 +151,21 @@ class HomeController extends Controller
 
             if ($validator->fails()) {
                 return response()->json([
-                            'error' => $validator->errors()->all()
-                        ]);
+                    'error' => $validator->errors()->all()
+                ]);
             }
-            $userObj = User::where('id',$userId)->first();
-            if(!$userObj){
+            $userObj = User::where('id', $userId)->first();
+            if (!$userObj) {
                 return response()->json(['error' => ['User not found']]);
             }
-            $userObj->first_name = $request->uname ?? '';
+            $userObj->name = $request->uname ?? '';
             $userObj->password = bcrypt($request->password);
             $userObj->is_completed = '1';
-            if(!$userObj->save()){
+            if (!$userObj->save()) {
                 return response()->json(['error' => ['Something went wrong.']]);
             }
             $request->session()->flash('message', 'Account setup successfully.');
             return response()->json(['message' => 'Account setup successfully.']);
-
         }
     }
 
@@ -196,18 +195,17 @@ class HomeController extends Controller
         $response['success'] = TRUE;
         $response['status'] = STATUS_OK;
         return redirect()->back()->with('message', 'Password changed successfully');
-
     }
 
-    public function accountDelete(Request $request){
+    public function accountDelete(Request $request)
+    {
 
-        try{
+        try {
             $user = User::find(Auth::user()->id);
             Auth::logout();
             if ($user->delete()) {
                 return redirect()->route('welcome')->with('message', 'Your account has been deleted!');
             }
-
         } catch (\Exception $e) {
             Log::info('User Delete Function', array('Exception' => $e->getMessage()));
             return redirect()->route('profile')->with('error', 'Something went wrong.');
