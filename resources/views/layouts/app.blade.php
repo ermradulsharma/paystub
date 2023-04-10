@@ -37,57 +37,81 @@
 <body>
     <div class="container" style="max-width:1500px">
         <ul class="nav nav-justified navbar" style="max-width: 1445px;">
-            <li class="nav-item"> <a href="{{ route('welcome') }}"><img class="mr-3 mt-5" src="{{ asset('images/Paystub X.webp') }}" style="width: 222px;"></a> </li>
-            <li class="nav-item ml-3 "> <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('usa*') ? 'active' : '' }} " href="{{ route('usa.payStub') }}">USA</a> </li>
-            <li class="nav-item ml-3"> <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('canada*') ? 'active' : '' }}" href="{{ route('canada') }}">CANADA</a> </li>
-            <li class="nav-item ml-3"> <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('uk*') ? 'active' : '' }}" href="{{ route('uk') }}">UK</a> </li>
-            <li class="nav-item ml-3"> <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('global*') ? 'active' : '' }}" href="{{ route('global') }}">GLOBAL</a> </li>
-            <li class="nav-item ml-3"> <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('w2form*') ? 'active' : '' }}" href="{{ route('w2form') }}" style="width: 143px !important;">W-2 FORM</a> </li>
+            <li class="nav-item"> <a href="{{ route('welcome') }}"><img class="mr-3 mt-5"
+                        src="{{ asset('images/Paystub X.webp') }}" style="width: 222px;"></a> </li>
+            <li class="nav-item ml-3 "> <a
+                    class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('usa*') ? 'active' : '' }} "
+                    href="{{ route('usa.payStub') }}">USA</a> </li>
+            <li class="nav-item ml-3"> <a
+                    class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('canada*') ? 'active' : '' }}"
+                    href="{{ route('canada') }}">CANADA</a> </li>
+            <li class="nav-item ml-3"> <a
+                    class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('uk*') ? 'active' : '' }}"
+                    href="{{ route('uk') }}">UK</a> </li>
+            <li class="nav-item ml-3"> <a
+                    class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('global*') ? 'active' : '' }}"
+                    href="{{ route('global') }}">GLOBAL</a> </li>
+            <li class="nav-item ml-3"> <a
+                    class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('w2form*') ? 'active' : '' }}"
+                    href="{{ route('w2form') }}" style="width: 143px !important;">W-2 FORM</a> </li>
             <li class="nav-item d-flex justify-content-center  " style="">
                 @guest
-                    <a class="btn btn-lg py-2 w-100 btn-danger login registerBtn" style="margin-top: 42px;" href="javascript:void(0);">LOGIN</a>
-                    <div class="dropdown d-none logoutDiv">
-                        <button onclick="myFunction()" class="dropbtn"> Hi
-                            {{ Auth::user()->first_name ?? '' }} <a style="padding-left:5px; "><i class='fa fa-angle-down'></i></a></button>
-                        <div id="myDropdown" class="dropdown-content">
-                            <a href="{{ route('invoiceList') }}">Order History</a>
-                            <a href="{{ route('profile') }}">My Account</a>
-                        </div>
+                <a class="btn btn-lg py-2 w-100 btn-danger login registerBtn" href="javascript:void(0);">LOGIN</a>
+                 <div class="container d-none logoutDiv">
+                    <div class="user-icon"><img src="{{asset('images/profile1.png')}}"></div>
+                    <div class="logout"><a><img src="{{asset('images/logout01.png')}}"></a></div>
+                    <div class="dropbtn">
+                        <button class="btn btn-default dropdown-toggle navright-btn" type="button" id="menu1"
+                            data-toggle="dropdown">Hi {{Auth::user()->name ?? ''}}
+                            <span class="caret"></span></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Order History</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">My Account</a></li>
+                        </ul>
                     </div>
-                    <div class="logout d-none logoutDiv"> <a class="btn-logout" href="javascript:void(0);"><img style="width: 22px;" src="{{ asset('images/logout01.png') }}"></a></div>
+                </div>
                 @endguest
 
                 @auth
-                    <div class="container">
-                        <div class="user-icon" style=""> <img style="width: 44px;" src="{{ asset('images/profile1.png') }}"></div>
-                        <div class="dropbtn">
-                            <button class="btn btn-default dropdown-toggle navright-btn" type="button" id="menu1" data-toggle="dropdown">Hi {{ Auth::user()->first_name ?? '' }}
-                                <span class="caret"></span></button>
-                            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('invoiceList') }}">Order History</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('profile') }}">My Account</a></li>
-                            </ul>
-                        </div>
-
+                <div class="container">
+                    <div class="user-icon"><img src="{{asset('images/profile1.png')}}"></div>
+                    <div class="logout"><a><img src="{{asset('images/logout01.png')}}"></a></div>
+                    <div class="dropbtn">
+                        <button class="btn btn-default dropdown-toggle navright-btn" type="button" id="menu1"
+                            data-toggle="dropdown">Hi {{Auth::user()->name ?? ''}}
+                            <span class="caret"></span></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Order History</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">My Account</a></li>
+                        </ul>
                     </div>
-                    <div class="logout"> <a class="btn-logout" href="javascript:void(0);"><img style="width: 40px;" src="{{ asset('images/logout01.png') }}"></a></div>
+                </div>
+
+
                 @endauth
             </li>
         </ul>
     </div>
 
     <div id="mySidenav" class="sidenav">
-        <a href="{{ url('/') }}"><img class="mr-3 mt-5 toggle-logo" src="{{ asset('images/Paystub X.webp') }}" style="width: 222px;"></a>
+        <a href="{{ url('/') }}"><img class="mr-3 mt-5 toggle-logo" src="{{ asset('images/Paystub X.webp') }}"
+                style="width: 222px;"></a>
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('usa*') ? 'active' : '' }} " href="{{ route('usa.payStub') }}">USA</a>
-        <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('canada*') ? 'active' : '' }}" href="{{ route('canada') }}">CANADA</a>
-        <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('uk*') ? 'active' : '' }}" href="{{ route('uk') }}">UK</a>
-        <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('globle*') ? 'active' : '' }}" href="{{ route('global') }}">GLOBEL</a>
-        <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('w2form*') ? 'active' : '' }}" href="{{ route('w2form') }}">W-2 FORM</a>
+        <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('usa*') ? 'active' : '' }} "
+            href="{{ route('usa.payStub') }}">USA</a>
+        <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('canada*') ? 'active' : '' }}"
+            href="{{ route('canada') }}">CANADA</a>
+        <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('uk*') ? 'active' : '' }}"
+            href="{{ route('uk') }}">UK</a>
+        <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('globle*') ? 'active' : '' }}"
+            href="{{ route('global') }}">GLOBEL</a>
+        <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('w2form*') ? 'active' : '' }}"
+            href="{{ route('w2form') }}">W-2 FORM</a>
     </div>
     <div class="openbtn">
         <div class=" pt-4 d-flex justify-content-between" style="display:flex !important">
-            <a href="{{ url('/') }}"><img class="mr-3 mt-5 toggle-logo" src="{{ asset('images/Paystub X.webp') }}" style="width: 222px;"></a>
+            <a href="{{ url('/') }}"><img class="mr-3 mt-5 toggle-logo" src="{{ asset('images/Paystub X.webp') }}"
+                    style="width: 222px;"></a>
             <span style="font-size:30px;cursor:pointer; padding-right:10px;" class="" onclick="openNav()">&#9776;</span>
         </div>
     </div>
@@ -108,21 +132,29 @@
                 <!-- Modal body -->
                 <div class="modal-body">
                     <div class="google-btn mt-4" style="text-align: -webkit-center; text-align: -moz-center;">
-                        <div id="g_id_onload" data-client_id="802702825376-57405b5o70d0l41mkh9q8ta86ig71rkb.apps.googleusercontent.com" data-callback="handleCredentialResponse" data-dismiss="modal" data-ux_mode="popup" data-auto_prompt="false">
+                        <div id="g_id_onload"
+                            data-client_id="802702825376-57405b5o70d0l41mkh9q8ta86ig71rkb.apps.googleusercontent.com"
+                            data-callback="handleCredentialResponse" data-dismiss="modal" data-ux_mode="popup"
+                            data-auto_prompt="false">
                         </div>
-                        <div class="g_id_signin" data-dismiss="modal" data-type="standard" data-shape="rectangular" data-theme="filled_blue" data-text="signin_with" data-size="large" data-logo_alignment="left"></div>
+                        <div class="g_id_signin" data-dismiss="modal" data-type="standard" data-shape="rectangular"
+                            data-theme="filled_blue" data-text="signin_with" data-size="large"
+                            data-logo_alignment="left"></div>
                     </div>
                     <div class="text-center mt-4 mb-4">
                         <img src="{{ asset('images/Group 3.png') }}" style="width:130px;">
                     </div>
-                    <h6 class="text-center" style="color: #457bbe;" style="text-transform:capitalize;">Sign Up Using Email</h6>
+                    <h6 class="text-center" style="color: #457bbe;" style="text-transform:capitalize;">Sign Up Using
+                        Email</h6>
                     <p class="text-center"></p>
                     <form id="sendOTPForm" action="{{ url('sendOtp') }}" method="POST" class="text-center">
                         @csrf
                         <div class="px-lg-5">
-                            <input type="email" id="email" name="email" class="form-control formm  py-4" placeholder="Email *">
+                            <input type="email" id="email" name="email" class="form-control formm  py-4"
+                                placeholder="Email *">
                         </div>
-                        <p class="resend-otp"><a id="forgotPasswordButton" href="JavaScript:void(0);">Forgot Password?</a></p>
+                        <p class="resend-otp"><a id="forgotPasswordButton" href="JavaScript:void(0);">Forgot
+                                Password?</a></p>
                         <button class="previewbtn mt-5" type="submit">Login</button>
                     </form>
                 </div>
@@ -137,12 +169,15 @@
                 <!-- Modal Header -->
                 <div class="modal-header" style="background: #115caecf;">
                     <h4 class="modal-title" style="text-transform: capitalize;color:#fff;">Forgot Your Password</h4>
-                    <button type="button" style="border: none; background-color:transparent; color:#fff;font-size:20px;padding:0;" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
+                    <button type="button"
+                        style="border: none; background-color:transparent; color:#fff;font-size:20px;padding:0;"
+                        class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
                 </div>
 
                 <!-- Modal body -->
                 <div class="modal-body pb-4" style="box-shadow: 0 0 8px rgba(0,0,0,.14);padding-top:0;">
-                    <p class="mail-text">Please enter your registered email address, and we'll send you a link to reset your password.</p>
+                    <p class="mail-text">Please enter your registered email address, and we'll send you a link to reset
+                        your password.</p>
                     <form id="forgotPassword" method="post" action="{{ route('forgot.password') }}">
                         @csrf
                         <label class="label-text" for="css">Email Address<span style="color:red;">*</span></label>
@@ -152,7 +187,9 @@
                 <div class="modal-footer" style="display: inline-block;">
                     <div class="d-flex justify-content-between pt-2">
                         <a style="color: red;" id="backToSignin" href="JavaScript:void(0);">Back to Sign in</a>
-                        <button class="btn-danger" onclick="$('#forgotPassword').submit();" style="border-radius:20px; border:none;font-size:12px; padding:5px 15px;">Send Password Reset Link</button>
+                        <button class="btn-danger" onclick="$('#forgotPassword').submit();"
+                            style="border-radius:20px; border:none;font-size:12px; padding:5px 15px;">Send Password
+                            Reset Link</button>
                     </div>
                 </div>
             </div>
@@ -178,11 +215,13 @@
                         <div class="px-lg-5">
                             <div class="form-group">
                                 <label class="text-left">Email</label>
-                                <input type="email" id="login_email" name="email" class="form-control formm  py-4" placeholder="Email *" readonly>
+                                <input type="email" id="login_email" name="email" class="form-control formm  py-4"
+                                    placeholder="Email *" readonly>
                             </div>
                             <div class="form-group">
                                 <label class="text-left">Password</label>
-                                <input type="password" id="password" name="password" class="form-control formm  py-4" placeholder="Password *">
+                                <input type="password" id="password" name="password" class="form-control formm  py-4"
+                                    placeholder="Password *">
                             </div>
                         </div>
 
@@ -209,19 +248,25 @@
                     <h5 class="text-center" style="text-transform:capitalize;">Verify your Email Address</h5>
                     <div class=" text-center mt-4">
                         <div class="mail">
-                            <img src="https://cdn4.iconfinder.com/data/icons/social-media-logos-6/512/112-gmail_email_mail-512.png" class="mailpic">
+                            <img src="https://cdn4.iconfinder.com/data/icons/social-media-logos-6/512/112-gmail_email_mail-512.png"
+                                class="mailpic">
                         </div>
 
                         <h5 style="color: #457bbe;" class="mt-4 text-center">Almost There!</h5>
-                        <p style="color: #000;font-size: 14px;font-family: serif; text-transform:capitalize; margin-bottom:0px;" class="text-center">Enter the verification code sent to you</p>
-                        <span style="color: #02030359;font-size: 10px;font-family: serif; text-transform:capitalize;" class="text-center">Check spam if not found in inbox</span>
-                        <p class="resend-otp"><a id="resendOtpButton" class="pointer-disable" style="" href="JavaScript:void(0);" disabled>Resend OTP </a><i class="fa fa-clock-o clock"></i><span id="resendTimeOut">30</span></p>
+                        <p style="color: #000;font-size: 14px;font-family: serif; text-transform:capitalize; margin-bottom:0px;"
+                            class="text-center">Enter the verification code sent to you</p>
+                        <span style="color: #02030359;font-size: 10px;font-family: serif; text-transform:capitalize;"
+                            class="text-center">Check spam if not found in inbox</span>
+                        <p class="resend-otp"><a id="resendOtpButton" class="pointer-disable" style=""
+                                href="JavaScript:void(0);" disabled>Resend OTP </a><i
+                                class="fa fa-clock-o clock"></i><span id="resendTimeOut">30</span></p>
 
                         <form id="loginOtp" action="{{ url('loginWithOtp') }}" method="POST" class="text-center">
                             @csrf
                             <div class="px-lg-5">
                                 <input type="hidden" id="hidden_email" name="email" class="d-none">
-                                <input type="text" id="Verificationcode" name="code" class="form-control formm py-4" placeholder="Verification Code *">
+                                <input type="text" id="Verificationcode" name="code" class="form-control formm py-4"
+                                    placeholder="Verification Code *">
                             </div>
                             <button class="previewbtn mt-5" type="submit">Verify</button>
                         </form>
@@ -246,6 +291,7 @@
 
                         <form id="loginOtp" action="{{ route('logout') }}" method="POST" class="text-center">
                             @csrf
+
                             <button class="previewbtn mt-5" type="submit">Yes</button>
                             <button class="previewbtn mt-5 bottom-close" type="button">NO</button>
                         </form>
@@ -261,7 +307,9 @@
                 <!-- Modal Header -->
                 <div class="modal-header" style="background: #115caecf;">
                     <h4 class="modal-title" style="text-transform: capitalize;color:#fff;">Set My Account</h4>
-                    <button type="button" style="border: none; background-color:transparent; color:#fff;font-size:20px;padding:0;" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
+                    <button type="button"
+                        style="border: none; background-color:transparent; color:#fff;font-size:20px;padding:0;"
+                        class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
                 </div>
 
                 <!-- Modal body -->
@@ -273,20 +321,28 @@
                         <input class="contact-box" type="text" name="uname" id="user-name" placeholder="First Name">
                         <div class="contact-box-outer">
                             <label class="label-text" for="css">New Password<span style="color:red;">*</span></label>
-                            <input class="contact-box" type="password" placeholder="New Password" name="password" class="form-control show-password-sd" id="new_password"required>
-                            <i id="eye-icon_03" toggle="#password-field" class="fa fa-eye-slash eye-icon new-toggle-password" data-id="02"></i>
+                            <input class="contact-box" type="password" placeholder="New Password" name="password"
+                                class="form-control show-password-sd" id="new_password" required>
+                            <i id="eye-icon_03" toggle="#password-field"
+                                class="fa fa-eye-slash eye-icon new-toggle-password" data-id="02"></i>
                         </div>
                         <div class="contact-box-outer">
-                            <label class="label-text" for="css">Confirm Password<span style="color:red;">*</span></label>
-                            <input class="contact-box" type="password" placeholder="Confirm Password" name="password_confirmation" class="form-control show-password-sd" id="confirm_password"required>
-                            <i id="eye-icon_03" toggle="#password-field" class="fa fa-eye-slash eye-icon confirm-toggle-password" data-id="02"></i>
+                            <label class="label-text" for="css">Confirm Password<span
+                                    style="color:red;">*</span></label>
+                            <input class="contact-box" type="password" placeholder="Confirm Password"
+                                name="password_confirmation" class="form-control show-password-sd" id="confirm_password"
+                                required>
+                            <i id="eye-icon_03" toggle="#password-field"
+                                class="fa fa-eye-slash eye-icon confirm-toggle-password" data-id="02"></i>
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer" style="display: inline-block;">
                     <div class="d-flex justify-content-between pt-2">
-                        <button class="btn-secondary" data-bs-dismiss="modal" style="border-radius:20px; border:none;font-size:12px; padding:5px 10px;">Cancel</button>
-                        <button class="btn-danger" id="set-name" style="border-radius:20px; border:none;font-size:12px; padding:5px 15px;">Save</button>
+                        <button class="btn-secondary" data-bs-dismiss="modal"
+                            style="border-radius:20px; border:none;font-size:12px; padding:5px 10px;">Cancel</button>
+                        <button class="btn-danger" id="set-name"
+                            style="border-radius:20px; border:none;font-size:12px; padding:5px 15px;">Save</button>
                     </div>
                 </div>
             </div>
@@ -301,18 +357,23 @@
                         <div class="flex-row">
                             <div style="padding:12px; border:1px solid #fff; border-radius:5px;max-width:220px; text-align:center; margin-bottom:15px;"
                                 class="foot">
-                                <a class="w-100 footbtn font" href="{{ url('terms') }}" style="text-transform:capitalize;">Terms & Conditions</a>
-                            </div>
-                            <div class="mt-3 foot " style="padding:12px; border:1px solid #fff; border-radius:5px;max-width:220px; text-align:center; margin-bottom:15px;">
-                                <a class="w-100 footbtn font" href="{{ url('privacy') }}" style="text-transform:capitalize;">Privacy Policy</a>
+                                <a class="w-100 footbtn font" href="{{ url('terms') }}"
+                                    style="text-transform:capitalize;">Terms & Conditions</a>
                             </div>
                             <div class="mt-3 foot "
                                 style="padding:12px; border:1px solid #fff; border-radius:5px;max-width:220px; text-align:center; margin-bottom:15px;">
-                                <a class="w-100 footbtn font" href="{{ url('refund') }}" style="text-transform:capitalize;">Refund Policy</a>
+                                <a class="w-100 footbtn font" href="{{ url('privacy') }}"
+                                    style="text-transform:capitalize;">Privacy Policy</a>
+                            </div>
+                            <div class="mt-3 foot "
+                                style="padding:12px; border:1px solid #fff; border-radius:5px;max-width:220px; text-align:center; margin-bottom:15px;">
+                                <a class="w-100 footbtn font" href="{{ url('refund') }}"
+                                    style="text-transform:capitalize;">Refund Policy</a>
                             </div>
                             <div class="mt-3 foot"
                                 style="padding:12px; border:1px solid #fff; border-radius:5px;max-width:220px; text-align:center;">
-                                <a class="w-100 footbtn font" href="{{ url('contact') }}" style="text-transform:capitalize;">Contact Us</a>
+                                <a class="w-100 footbtn font" href="{{ url('contact') }}"
+                                    style="text-transform:capitalize;">Contact Us</a>
                             </div>
                         </div>
 
@@ -321,11 +382,16 @@
                 <div class="col-lg-5 col-sm-12 text-center" style="margin-top:15px;">
                     <div class="container  justify-content-center">
                         <div class="container footer-icons">
-                            <a href="https://www.google.com/" target="_blank"><i class="fa fa-facebook   fbicon" aria-hidden="true"></i></a>
-                            <a href="https://www.google.com/" target="_blank"><i class="fa fa-instagram ml-2 socialicon" aria-hidden="true"></i></a>
-                            <a href="https://www.google.com/" target="_blank"><i class="fa fa-twitter ml-2 socialicon" aria-hidden="true"></i></a>
-                            <a href="https://www.google.com/" target="_blank"><i class="fa fa-linkedin ml-2 socialicon" aria-hidden="true"></i></a>
-                            <a href="https://www.google.com/" target="_blank"><i class="fa fa-youtube ml-2 socialicon" aria-hidden="true"></i></a>
+                            <a href="https://www.google.com/" target="_blank"><i class="fa fa-facebook   fbicon "
+                                    aria-hidden="true"></i></a>
+                            <a href="https://www.google.com/" target="_blank"><i class="fa fa-instagram ml-2 socialicon"
+                                    aria-hidden="true"></i></a>
+                            <a href="https://www.google.com/" target="_blank"><i class="fa fa-twitter ml-2 socialicon"
+                                    aria-hidden="true"></i></a>
+                            <a href="https://www.google.com/" target="_blank"><i class="fa fa-linkedin ml-2 socialicon"
+                                    aria-hidden="true"></i></a>
+                            <a href="https://www.google.com/" target="_blank"><i class="fa fa-youtube ml-2 socialicon"
+                                    aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </div>
@@ -352,67 +418,67 @@
     </script>
     <script>
         $('#forgotPasswordButton').click(function() {
-            $("#loginModal").modal("hide");
-            $("#forgotPasswordModal").modal("show");
-        });
+        $("#loginModal").modal("hide");
+        $("#forgotPasswordModal").modal("show");
+    });
 
-        $('#backToSignin').click(function() {
-            $("#forgotPasswordModal").modal("hide");
-            $("#loginModal").modal("show");
-        });
+    $('#backToSignin').click(function() {
+        $("#forgotPasswordModal").modal("hide");
+        $("#loginModal").modal("show");
+    });
 
-        $("#set-name").click(function(e) {
-            var form = $('#userNameForm')[0];
-            $.ajax({
-                type: 'POST',
-                url: form.action,
-                data: $(form).serialize(),
-                success: function(data) {
-                    console.log('data', data);
-                    if ($.isEmptyObject(data.error)) {
-                        // alert(data.message);
-                        toastr.success(data.message);
-                        location.reload(true);
-                    } else {
-                        printErrorMsg(data.error);
-                    }
+    $("#set-name").click(function(e) {
+        var form = $('#userNameForm')[0];
+        $.ajax({
+            type: 'POST',
+            url: form.action,
+            data: $(form).serialize(),
+            success: function(data) {
+                console.log('data', data);
+                if ($.isEmptyObject(data.error)) {
+                    // alert(data.message);
+                    toastr.success(data.message);
+                    location.reload(true);
+                } else {
+                    printErrorMsg(data.error);
                 }
-            });
+            }
         });
-        $('.inputdatepicker').datepicker({
-            autoclose: true,
-            todayHighlight: true,
-            format: "mm/dd/yyyy",
-        }).datepicker('setDate', 'today');
+    });
+    $('.inputdatepicker').datepicker({
+        autoclose: true,
+        todayHighlight: true,
+        format: "mm/dd/yyyy",
+    }).datepicker('setDate', 'today');
 
-        $("#resendOtpButton").click(function() {
-            var email = $('#hidden_email').val();
-            startTimer();
-            $.ajax({
-                url: "{{ route('sendOtp') }}?email=" + email,
-                success: function(data) {
-                    console.log('data', data);
-                    if ($.isEmptyObject(data.error)) {
-                        toastr.success(data.message);
+    $("#resendOtpButton").click(function() {
+        var email = $('#hidden_email').val();
+        startTimer();
+        $.ajax({
+            url: "{{ route('sendOtp') }}?email=" + email,
+            success: function(data) {
+                console.log('data', data);
+                if ($.isEmptyObject(data.error)) {
+                    toastr.success(data.message);
 
-                    } else {
-                        printErrorMsg(data.error);
-                    }
+                } else {
+                    printErrorMsg(data.error);
                 }
-            });
+            }
         });
+    });
 
-        $(document).on('click', '.confirm-toggle-password', function() {
-            $(this).toggleClass("fa-eye fa-eye-slash");
-            var input = $("#confirm_password");
-            input.attr('type') === 'password' ? input.attr('type', 'text') : input.attr('type', 'password')
-        });
+    $(document).on('click', '.confirm-toggle-password', function() {
+        $(this).toggleClass("fa-eye fa-eye-slash");
+        var input = $("#confirm_password");
+        input.attr('type') === 'password' ? input.attr('type','text') : input.attr('type','password')
+    });
 
-        $(document).on('click', '.new-toggle-password', function() {
-            $(this).toggleClass("fa-eye fa-eye-slash");
-            var input = $("#new_password");
-            input.attr('type') === 'password' ? input.attr('type', 'text') : input.attr('type', 'password')
-        });
+    $(document).on('click', '.new-toggle-password', function() {
+        $(this).toggleClass("fa-eye fa-eye-slash");
+        var input = $("#new_password");
+        input.attr('type') === 'password' ? input.attr('type','text') : input.attr('type','password')
+    });
     </script>
     <script src="{{ asset('user') }}/js/main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
@@ -506,93 +572,81 @@
 
 
     @if ($errors->first())
-        <script>
-            toastr.error('{{ $errors->first() }}');
-        </script>
+    <script>
+        toastr.error('{{ $errors->first() }}');
+    </script>
     @endif
 
     @if (Session::has('message'))
-        <script>
-            toastr.success("{{ Session::get('message') }}");
-        </script>
+    <script>
+        toastr.success("{{ Session::get('message') }}");
+    </script>
     @endif
     @if (Session::has('error'))
-        <script>
-            toastr.error("{{ Session::get('error') }}");
-        </script>
+    <script>
+        toastr.error("{{ Session::get('error') }}");
+    </script>
     @endif
     <script>
         function myFunction() {
-            document.getElementById("myDropdown").classList.toggle("show");
-        }
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
 
-        // Close the dropdown menu if the user clicks outside of it
-        window.onclick = function(event) {
-            if (!event.target.matches('.dropbtn')) {
+    // Close the dropdown menu if the user clicks outside of it
+    window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
 
-                var dropdowns = document.getElementsByClassName("dropdown-content");
-                var i;
-                for (i = 0; i < dropdowns.length; i++) {
-                    var openDropdown = dropdowns[i];
-                    if (openDropdown.classList.contains('show')) {
-                        openDropdown.classList.remove('show');
-                    }
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
                 }
             }
         }
+    }
     </script>
 
 
     <script>
-        $(document).ready(function() {
-            (function($) {
-                var toggle = '[data-toggle="droppanel"]';
-
-                function clearMenus(e) {
-                    var panel = $(e.data).not(e.exclude);
-                    var $ddMenu = panel.find(".dropdown-menu");
-                    $ddMenu.slideUp();
+        $(document).ready(function () {
+    (function ($) {
+        var toggle = '[data-toggle="droppanel"]';
+        function clearMenus(e) {
+            var panel = $(e.data).not(e.exclude);
+            var $ddMenu = panel.find(".dropdown-menu");
+            $ddMenu.slideUp();
+        }
+        function toggleMenu(e) {
+            var $this = $(this), $parent, selector;
+            if ($this.is('.disabled, :disabled')) return;
+            selector = $this.attr('data-target');
+            if (!selector) {
+                selector = $this.attr('href');
+                selector = selector && selector.replace(/.*(?=#[^\s]*$)/, ''); //strip for ie7
+            }
+            $parent = $(selector);
+            $parent.length || ($parent = $this.parent());
+            var $ddMenu = $parent.find(".dropdown-menu");
+            $ddMenu.slideToggle(function (evt) {
+                if ($(this).css("display") == "block") {
+                    $('html').trigger({ type: 'click', exclude: $parent });
+                    $parent.addClass('open');
+                    $(this).css("display", "");
+                    $parent.trigger({ type: 'droppanel.show', panel: $parent });
                 }
+                else { $parent.removeClass('open'); }
+            });
 
-                function toggleMenu(e) {
-                    var $this = $(this),
-                        $parent, selector;
-                    if ($this.is('.disabled, :disabled')) return;
-                    selector = $this.attr('data-target');
-                    if (!selector) {
-                        selector = $this.attr('href');
-                        selector = selector && selector.replace(/.*(?=#[^\s]*$)/, ''); //strip for ie7
-                    }
-                    $parent = $(selector);
-                    $parent.length || ($parent = $this.parent());
-                    var $ddMenu = $parent.find(".dropdown-menu");
-                    $ddMenu.slideToggle(function(evt) {
-                        if ($(this).css("display") == "block") {
-                            $('html').trigger({
-                                type: 'click',
-                                exclude: $parent
-                            });
-                            $parent.addClass('open');
-                            $(this).css("display", "");
-                            $parent.trigger({
-                                type: 'droppanel.show',
-                                panel: $parent
-                            });
-                        } else {
-                            $parent.removeClass('open');
-                        }
-                    });
-
-                    return false;
-                }
-                $('html').on('click.dropdown.data-api', null, '.droppanel', clearMenus);
-                $('body').on('click.dropdown', '.droppanel', function(e) {
-                        e.stopPropagation();
-                    })
+            return false;
+        }
+        $('html').on('click.dropdown.data-api', null, '.droppanel', clearMenus);
+        $('body').on('click.dropdown', '.droppanel', function (e) { e.stopPropagation(); })
                     .on('click.dropdown.data-api', toggle, toggleMenu);
-            }(jQuery));
+    } (jQuery));
 
-        });
+});
     </script>
 
 </body>
