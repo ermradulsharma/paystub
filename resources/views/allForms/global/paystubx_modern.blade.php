@@ -292,7 +292,7 @@
                         <table class="emploayer_info_2">
                             <tr><td></td></tr>
                             <tr>
-                                <td style="font-size:13px; color:#555;">{{ $requestData['emp_name'] }}</td>
+                                <td style="font-size:13px; color:#555;text-transform:capitalize;">{{ $requestData['emp_name'] }}</td>
                             </tr>
                             <tr>
                                 <td style="font-size:13px; color:#555; width:30%; text-align:left">{{ $requestData['emp_street_1'] }}</td>
@@ -473,7 +473,7 @@
                 <tr style="border-bottom: 1px solid;">
                     <td></td>
                     <td style="padding: 0;">Pay to the<br>order off:</td>
-                    <td style="padding: 0;"> {{ $requestData['emp_name'] }}</td>
+                    <td style="padding: 0;text-transform:capitalize;"> {{ $requestData['emp_name'] }}</td>
                     <td></td>
                 </tr>
 
