@@ -39,7 +39,7 @@
         </div>
     </div>
     <!-- Modal End -->
-    <div class="container mt-2 px-0" style="max-width:1450px;">
+    <div class="container mt-2 px-0" style="max-width:1510px;">
         <form id="submit_form_paystubx_id" action="javascript:void()" method="get">
             @csrf
             <input type="hidden" name="form_type" value="global" hidden>
@@ -61,11 +61,10 @@
 
                                 <div class="col-md-6 mt-1">
                                     <div>
-                                        <label for="tel" class="lable">EMPLOYER TELEPHONE NUMBER <span
-                                                class="redColor">*</span> </label>
+                                        <label for="tel" class="lable">EMPLOYER TELEPHONE NUMBER </label>
                                         <input type="text" id="tel" name="tel" placeholder="123-456-7890"
                                             maxlength="10" minlength="10"
-                                            class="w-100 p-2 text-center input-box-font removeDiv third-phone">
+                                            class="w-100 p-2 text-center input-box-font third-phone">
                                     </div>
                                 </div>
 
@@ -173,9 +172,9 @@
                                                 class="form-control text-center dropdown1 at_id small-font advanceTemplate removeDiv"
                                                 style="margin-right:10px; font-size:18px;">
                                                 <option value=""> --- Select Advance Template --- </option>
-                                                @foreach ($advanceType ?? [] as $data)
+                                                @foreach ($advanceType as $data)
                                                     <option value="{{ $data->title ?? '' }}"
-                                                        data-src="{{ $data->images->file ?? "" }}"
+                                                        data-src="{{ $data->images->file ?? '' }}"
                                                         data-status="{{ $data->template_element }}"
                                                         data-stub="{{ $data->stub_no }}"
                                                         data-clock="{{ $data->co_no }}">
@@ -296,6 +295,12 @@
                                             class="w-100  input-box-font removeDiv" placeholder="1234" maxlength="6"
                                             minlength="4"
                                             onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+                                    </div>
+                                </div>
+                                <div class="col-md-4 check checkv d-none">
+                                    <div>
+                                        <label for="check_no" class="lable">Check No <span class="redColor">*</span></label>
+                                        <input type="text" id="check_no" name="check_no" class="w-100  input-box-font removeDiv" placeholder="1234" maxlength="6"  minlength="4" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                     </div>
                                 </div>
                             </div>
@@ -671,8 +676,14 @@
                                                     class="redColor">*</span></p>
                                             <input type="text" name="co_number" id="co_number"
                                                 class="earnbtn removeDiv text-center" maxlength="4" minlength="4"
-                                                placeholder="1234"
-                                                onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+                                                placeholder="MP5">
+                                        </div>
+
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-6 mb-2 advicex advicexv d-none">
+                                        <div>
+                                            <p class="p-0 m-0 " style="font-family: serif;">DEPT.<span class="redColor">*</span></p>
+                                            <input type="text" name="dept_number" id="dept_number" class="earnbtn removeDiv text-center" maxlength="4" minlength="4" placeholder="123456" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                         </div>
 
                                     </div>

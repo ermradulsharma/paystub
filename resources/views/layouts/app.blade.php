@@ -214,6 +214,8 @@
         </div>
     </div>
 
+
+
     <div class="modal fade" id="loginPasswordModal">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -242,7 +244,7 @@
                                     class="form-control formm  py-4" placeholder="Password *">
                             </div>
                         </div>
-                        <p class="resend-otp">
+                        <p class="resend-otp" >
                             <a id="forgotPasswordButton" href="JavaScript:void(0);">Forgot Password?</a>
                         </p>
                         <div class="text-center">
@@ -253,6 +255,7 @@
             </div>
         </div>
     </div>
+
 
     <div class="modal fade otpModal" id="otpModal">
         <div class="modal-dialog modal-dialog-centered">
@@ -442,13 +445,13 @@
     <script>
         $(document).ready(function() {
             $('#forgotPasswordButton').click(function() {
-                $("#loginModal").modal("hide");
+                $("#loginPasswordModal").modal("hide");
                 $("#forgotPasswordModal").modal("show");
             });
 
             $('#backToSignin').click(function() {
                 $("#forgotPasswordModal").modal("hide");
-                $("#loginModal").modal("show");
+                $("#loginPasswordModal").modal("show");
             });
 
             $("#set-name").click(function(e) {
