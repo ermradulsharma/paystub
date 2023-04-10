@@ -676,8 +676,7 @@
                                                     class="redColor">*</span></p>
                                             <input type="text" name="co_number" id="co_number"
                                                 class="earnbtn removeDiv text-center" maxlength="4" minlength="4"
-                                                placeholder="MP5"
-                                                ">
+                                                placeholder="MP5">
                                         </div>
 
                                     </div>
