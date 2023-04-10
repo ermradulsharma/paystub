@@ -56,7 +56,7 @@
                     href="{{ route('w2form') }}" style="width: 143px !important;">W-2 FORM</a> </li>
             <li class="nav-item d-flex justify-content-center  " style="">
                 @guest
-                <a class="btn btn-lg py-2 w-100 btn-danger login registerBtn" href="javascript:void(0);">LOGIN</a>
+                <a class="btn btn-lg py-2 w-100 btn-danger login registerBtn mt-5" href="javascript:void(0);">LOGIN</a>
                  <div class="container d-none logoutDiv">
                     <div class="user-icon"><img src="{{asset('images/profile1.png')}}"></div>
                     <div class="logout"><a><img src="{{asset('images/logout01.png')}}"></a></div>
