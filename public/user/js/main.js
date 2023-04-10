@@ -158,12 +158,19 @@ $("#adminLogin").on("submit", function () {
         type: "POST",
         data: $(this).serialize(),
         success: function (response) {
-            console.log('response--',response); return false;
+            console.log('response--',response);
             $("#loginPasswordModal").modal("hide");
-            toastr.success(response.message);
-            setTimeout(() => {
-                window.location.href = baseUrl + "admin/dashboard";
-            }, 300);
+            if(response.user.role_id == 1){
+                toastr.success(response.message);
+                setTimeout(() => {
+                    window.location.href = baseUrl + "admin/dashboard";
+                }, 300);
+            }else if(response.user.role_id == 2){
+                $(".registerBtn").removeClass("d-block").addClass("d-none");
+                $(".logoutDiv").removeClass("d-none");
+                $(".authUserName").text("Hi "+response.user.name);
+            }
+
         },
         error: function (err) {
             error = err.responseJSON;
@@ -214,7 +221,7 @@ function checkValidationForm() {
 
     $.each(formData, function (i, element) {
         var name = element.name.replace("[]", "");
-        var blockedTile = new Array("address_2", "emp_street_2", "hourly", "earning", "rate", "hours", "total", "period", "ytd_total", "period_gross_total", "ytd_gross_total", "deduction_period_tax", "deduction_period_tax_other", "advance_temp", "basic_temp", "taxes", "taxes_rate", "taxes_ytd", 'net_pay', 'note');
+        var blockedTile = new Array("address_2","tel","emp_street_2", "hourly", "earning", "rate", "hours", "total", "period", "ytd_total", "period_gross_total", "ytd_gross_total", "deduction_period_tax", "deduction_period_tax_other", "advance_temp", "basic_temp", "taxes", "taxes_rate", "taxes_ytd", 'net_pay', 'note');
         if (!$('#' + name).is(':visible')) {
             blockedTile.push(name);
         }
