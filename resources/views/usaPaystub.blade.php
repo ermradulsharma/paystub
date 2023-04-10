@@ -39,7 +39,7 @@
         </div>
     </div>
     <!-- Modal End -->
-    <div class="container mt-2 px-0" style="max-width:1450px;">
+    <div class="container mt-2 px-0" style="max-width:1510px;">
         <form id="submit_form_paystubx_id" action="javascript:void()" method="get">
             @csrf
             <input type="hidden" name="form_type" value="usa" hidden>

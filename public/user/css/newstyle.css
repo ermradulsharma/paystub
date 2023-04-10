@@ -94,6 +94,13 @@ i.eye-icon.fa.fa-eye{
     position: relative;
     right: 30px;
 }
+p.resend-otp {
+    display: flex;
+    justify-content: end;
+    margin-top: -10px;
+    margin-right: 45px;
+    margin-bottom: 0px;
+}
 /* user profile css end */
 .dropbtn {
     background-color: #FFF;
@@ -703,6 +710,7 @@ img.earnbtn2.lock {
     appearance: none;
     transition: all 0.5s ease-in-out;
     border: 1px solid transparent;
+    margin-left: 5px;
 }
 
 .previewbtn:hover {
@@ -999,11 +1007,12 @@ color: #027bff !important;
 }
 
 .continue {
-    padding: 10px 29px;
+    padding: 5px 23px;
     border: none;
-    border-radius: 26px;
+    border-radius: 5px;
     background: red;
     color: white;
+    margin-top: 10px;
 }
 
 .icon {
@@ -3191,13 +3200,19 @@ img.earnbtn2.lockuk {
 
     .previewbtn {
         padding: 0px 23px;
-        max-width: 100px;
-        width: 100%;
+
         margin: 0px 0px 0 0px !important;
     }
+    .continue{
+
+        padding: 0px 23px;
+        border-radius: 5px;
+    }
+    p.resend-otp{
+        margin-right: 0;
+    }
     .form-control{
-        max-width: 350px;
-        margin:0 auto 20px;
+        margin:0 auto 20px 0px;
 
     }
 

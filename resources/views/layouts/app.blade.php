@@ -36,7 +36,7 @@
 
 <body>
     <div class="container" style="max-width:1500px">
-        <ul class="nav nav-justified navbar" style="max-width: 1445px;">
+        <ul class="nav nav-justified navbar">
             <li class="nav-item"> <a href="{{ route('welcome') }}"><img class="mr-3 mt-5"
                         src="{{ asset('images/Paystub X.webp') }}" style="width: 222px;"></a> </li>
             <li class="nav-item ml-3 "> <a
@@ -54,9 +54,9 @@
             <li class="nav-item ml-3"> <a
                     class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('w2form*') ? 'active' : '' }}"
                     href="{{ route('w2form') }}" style="width: 143px !important;">W-2 FORM</a> </li>
-            <li class="nav-item d-flex justify-content-center " style="">
+            <li class="nav-item d-flex justify-content-center ml-3 " style="margin-top:5px;">
                 @guest
-                <a class="btn btn-lg py-2 w-100 btn-danger login registerBtn mt-5" href="javascript:void(0);">LOGIN</a>
+                <a class="btn btn-lg py-2 w-100 btn-danger login registerBtn "style="margin-top:42px;" href="javascript:void(0);">LOGIN</a>
                 <div class="container d-none logoutDiv">
                     <div class="user-icon"><img src="{{asset('images/profile1.png')}}"></div>
                     <div class="logout btn-logout"><a><img src="{{asset('images/logout01.png')}}"></a></div>
@@ -138,7 +138,7 @@
                 </div>
 
                 <!-- Modal body -->
-                <div class="modal-body">
+                <div class="modal-body" style="padding-bottom:30px;">
                     <div class="google-btn mt-4" style="text-align: -webkit-center; text-align: -moz-center;">
                         <div id="g_id_onload"
                             data-client_id="802702825376-57405b5o70d0l41mkh9q8ta86ig71rkb.apps.googleusercontent.com"
@@ -162,7 +162,7 @@
                                 placeholder="Email *">
                         </div>
 
-                        <button class="previewbtn mt-5" type="submit">Login</button>
+                        <button class="previewbtn mt-4" type="submit">Login</button>
                     </form>
                 </div>
             </div>
@@ -213,7 +213,7 @@
                 </div>
 
                 <!-- Modal body -->
-                <div class="modal-body">
+                <div class="modal-body" style="padding-bottom:30px;">
                     <h2 class="text-center" style="color: #457bbe;">Login</h2>
                     <p class="text-center"></p>
 
@@ -234,7 +234,7 @@
                         <p class="resend-otp">
                             <a id="forgotPasswordButton" href="JavaScript:void(0);">Forgot Password?</a></p>
                         <div class="text-center">
-                            <button class="previewbtn mt-4 mb-3" type="submit">Continue</button>
+                            <button class="previewbtn continue " type="submit">Continue</button>
                         </div>
                     </form>
                 </div>
@@ -265,7 +265,7 @@
                             class="text-center">Enter the verification code sent to you</p>
                         <span style="color: #02030359;font-size: 10px;font-family: serif; text-transform:capitalize;"
                             class="text-center">Check spam if not found in inbox</span>
-                        <p class="resend-otp"><a id="resendOtpButton" class="pointer-disable" style=""
+                        <p class="resend-otp" style="padding-top:10px;"><a id="resendOtpButton" class="pointer-disable" style=""
                                 href="JavaScript:void(0);" disabled>Resend OTP </a><i
                                 class="fa fa-clock-o clock"></i><span id="resendTimeOut">30</span></p>
 
@@ -292,7 +292,7 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <!-- Modal body -->
-                <div class="modal-body">
+                <div class="modal-body" style="padding-bottom: 30px;">
                     <h5 class="text-center" style="text-transform:capitalize;">Do you want to logout?</h5>
                     <div class=" text-center mt-4">
                         {{-- <h5 style="color: #457bbe;" class="mt-4 text-center">Almost There!</h5> --}}
@@ -300,8 +300,8 @@
                         <form id="loginOtp" action="{{ route('logout') }}" method="POST" class="text-center">
                             @csrf
 
-                            <button class="previewbtn mt-5" type="submit">Yes</button>
-                            <button class="previewbtn mt-5 bottom-close" type="button">NO</button>
+                            <button class="previewbtn " type="submit">Yes</button>
+                            <button class="previewbtn  bottom-close" type="button">NO</button>
                         </form>
                     </div>
                 </div>
