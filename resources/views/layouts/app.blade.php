@@ -56,34 +56,41 @@
                     href="{{ route('w2form') }}" style="width: 143px !important;">W-2 FORM</a> </li>
             <li class="nav-item d-flex justify-content-center ml-3 " style="margin-top:5px;">
                 @guest
-                <a class="btn btn-lg py-2 w-100 btn-danger login registerBtn "style="margin-top:42px;" href="javascript:void(0);">LOGIN</a>
-                <div class="container d-none logoutDiv">
-                    <div class="user-icon"><img src="{{asset('images/profile1.png')}}"></div>
-                    <div class="logout btn-logout"><a><img src="{{asset('images/logout01.png')}}"></a></div>
-                    <div class="dropbtn">
-                        <button class="btn btn-default dropdown-toggle navright-btn authUserName" type="button" id="menu1" data-toggle="dropdown">Hi {{Auth::user()->name ?? ''}}<span class="caret"></span></button>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="{{route('invoiceList')}}">Order History</a></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="{{route('profile')}}">My Account</a></li>
-                        </ul>
+                    <a class="btn btn-lg py-2 w-100 btn-danger login registerBtn "style="margin-top:42px;"
+                        href="javascript:void(0);">LOGIN</a>
+                    <div class="container d-none logoutDiv">
+                        <div class="user-icon"><img src="{{ asset('images/profile1.png') }}"></div>
+                        <div class="logout btn-logout"><a><img src="{{ asset('images/logout01.png') }}"></a></div>
+                        <div class="dropbtn">
+                            <button class="btn btn-default dropdown-toggle navright-btn authUserName" type="button"
+                                id="menu1" data-toggle="dropdown">Hi {{ Auth::user()->name ?? '' }}<span
+                                    class="caret"></span></button>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                                <li role="presentation"><a role="menuitem" tabindex="-1"
+                                        href="{{ route('invoiceList') }}">Order History</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('profile') }}">My
+                                        Account</a></li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
                 @endguest
 
                 @auth
-                <div class="container" style="margin-top:10px;">
-                    <div class="user-icon"><img src="{{asset('images/profile1.png')}}"></div>
-                    <div class="logout btn-logout"><a><img src="{{asset('images/logout01.png')}}"></a></div>
-                    <div class="dropbtn">
-                        <button class="btn btn-default dropdown-toggle navright-btn authUserName" type="button" id="menu1"
-                            data-toggle="dropdown"> Hi {{Auth::user()->name ?? ''}}
-                            <span class="caret"></span></button>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="{{route('invoiceList')}}">Order History</a></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="{{route('profile')}}">My Account</a></li>
-                        </ul>
+                    <div class="container" style="margin-top:10px;">
+                        <div class="user-icon"><img src="{{ asset('images/profile1.png') }}"></div>
+                        <div class="logout btn-logout"><a><img src="{{ asset('images/logout01.png') }}"></a></div>
+                        <div class="dropbtn">
+                            <button class="btn btn-default dropdown-toggle navright-btn authUserName" type="button"
+                                id="menu1" data-toggle="dropdown"> Hi {{ Auth::user()->name ?? '' }}
+                                <span class="caret"></span></button>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                                <li role="presentation"><a role="menuitem" tabindex="-1"
+                                        href="{{ route('invoiceList') }}">Order History</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1"
+                                        href="{{ route('profile') }}">My Account</a></li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
 
 
                 @endauth
@@ -106,21 +113,23 @@
         <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('w2form*') ? 'active' : '' }}"
             href="{{ route('w2form') }}">W-2 FORM</a>
         @guest
-        <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn login registerBtn"
-            style="background-color:#d3230c; border-radius:15px; font-size:20px;" href="#">Login</a>
+            <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn login registerBtn"
+                style="background-color:#d3230c; border-radius:15px; font-size:20px;" href="#">Login</a>
         @endguest
         @auth
-        <a class="btn btn-lg  w-100  navbtn nav-btn btn-logout logout"
-            style="background-color:#d3230c; border-radius:15px;font-size:20px;max-width:150px; margin-left:10px !important;position: relative; top:0; " href="#">Log Out</a>
+            <a class="btn btn-lg  w-100  navbtn nav-btn btn-logout logout"
+                style="background-color:#d3230c; border-radius:15px;font-size:20px;max-width:150px; margin-left:10px !important;position: relative; top:0; "
+                href="#">Log Out</a>
         @endauth
 
 
     </div>
     <div class="openbtn">
         <div class=" pt-4 d-flex justify-content-between" style="display:flex !important">
-            <a href="{{ url('/') }}"><img class="mr-3 mt-5 toggle-logo" src="{{ asset('images/Paystub X.webp') }}"
-                    style="width: 222px;"></a>
-            <span style="font-size:30px;cursor:pointer; padding-right:10px;" class="" onclick="openNav()">&#9776;</span>
+            <a href="{{ url('/') }}"><img class="mr-3 mt-5 toggle-logo"
+                    src="{{ asset('images/Paystub X.webp') }}" style="width: 222px;"></a>
+            <span style="font-size:30px;cursor:pointer; padding-right:10px;" class=""
+                onclick="openNav()">&#9776;</span>
         </div>
     </div>
 
@@ -187,8 +196,10 @@
                         your password.</p>
                     <form id="forgotPassword" method="post" action="{{ route('forgot.password') }}">
                         @csrf
-                        <label class="label-text" for="css">Email Address<span style="color:red;">*</span></label>
-                        <input class="contact-box" type="text" id="user-email" placeholder="Email Address" name="email">
+                        <label class="label-text" for="css">Email Address<span
+                                style="color:red;">*</span></label>
+                        <input class="contact-box" type="text" id="user-email" placeholder="Email Address"
+                            name="email">
                     </form>
                 </div>
                 <div class="modal-footer" style="display: inline-block;">
@@ -222,17 +233,18 @@
                         <div class="px-lg-5">
                             <div class="form-group">
                                 <label class="text-left">Email</label>
-                                <input type="email" id="login_email" name="email" class="form-control formm  py-4"
-                                    placeholder="Email *" readonly>
+                                <input type="email" id="login_email" name="email"
+                                    class="form-control formm  py-4" placeholder="Email *" readonly>
                             </div>
                             <div class="form-group">
                                 <label class="text-left">Password</label>
-                                <input type="password" id="password" name="password" class="form-control formm  py-4"
-                                    placeholder="Password *">
+                                <input type="password" id="password" name="password"
+                                    class="form-control formm  py-4" placeholder="Password *">
                             </div>
                         </div>
                         <p class="resend-otp">
-                            <a id="forgotPasswordButton" href="JavaScript:void(0);">Forgot Password?</a></p>
+                            <a id="forgotPasswordButton" href="JavaScript:void(0);">Forgot Password?</a>
+                        </p>
                         <div class="text-center">
                             <button class="previewbtn continue " type="submit">Continue</button>
                         </div>
@@ -265,16 +277,16 @@
                             class="text-center">Enter the verification code sent to you</p>
                         <span style="color: #02030359;font-size: 10px;font-family: serif; text-transform:capitalize;"
                             class="text-center">Check spam if not found in inbox</span>
-                        <p class="resend-otp" style="padding-top:10px;"><a id="resendOtpButton" class="pointer-disable" style=""
-                                href="JavaScript:void(0);" disabled>Resend OTP </a><i
-                                class="fa fa-clock-o clock"></i><span id="resendTimeOut">30</span></p>
+                        <p class="resend-otp" style="padding-top:10px;"><a id="resendOtpButton"
+                                class="pointer-disable" style="" href="JavaScript:void(0);" disabled>Resend OTP
+                            </a><i class="fa fa-clock-o clock"></i><span id="resendTimeOut">30</span></p>
 
                         <form id="loginOtp" action="{{ url('loginWithOtp') }}" method="POST" class="text-center">
                             @csrf
                             <div class="px-lg-5">
                                 <input type="hidden" id="hidden_email" name="email" class="d-none">
-                                <input type="text" id="Verificationcode" name="code" class="form-control formm py-4"
-                                    placeholder="Verification Code *">
+                                <input type="text" id="Verificationcode" name="code"
+                                    class="form-control formm py-4" placeholder="Verification Code *">
                             </div>
                             <button class="previewbtn mt-5" type="submit">Verify</button>
                         </form>
@@ -326,9 +338,11 @@
                         @csrf
                         <input type="hidden" value="setup-account" name="type">
                         <label class="label-text" for="css">First Name<span style="color:red;">*</span></label>
-                        <input class="contact-box" type="text" name="uname" id="user-name" placeholder="First Name">
+                        <input class="contact-box" type="text" name="uname" id="user-name"
+                            placeholder="First Name">
                         <div class="contact-box-outer">
-                            <label class="label-text" for="css">New Password<span style="color:red;">*</span></label>
+                            <label class="label-text" for="css">New Password<span
+                                    style="color:red;">*</span></label>
                             <input class="contact-box" type="password" placeholder="New Password" name="password"
                                 class="form-control show-password-sd" id="new_password" required>
                             <i id="eye-icon_03" toggle="#password-field"
@@ -338,8 +352,8 @@
                             <label class="label-text" for="css">Confirm Password<span
                                     style="color:red;">*</span></label>
                             <input class="contact-box" type="password" placeholder="Confirm Password"
-                                name="password_confirmation" class="form-control show-password-sd" id="confirm_password"
-                                required>
+                                name="password_confirmation" class="form-control show-password-sd"
+                                id="confirm_password" required>
                             <i id="eye-icon_03" toggle="#password-field"
                                 class="fa fa-eye-slash eye-icon confirm-toggle-password" data-id="02"></i>
                         </div>
@@ -392,21 +406,22 @@
                         <div class="container footer-icons">
                             <a href="https://www.google.com/" target="_blank"><i class="fa fa-facebook   fbicon "
                                     aria-hidden="true"></i></a>
-                            <a href="https://www.google.com/" target="_blank"><i class="fa fa-instagram ml-2 socialicon"
-                                    aria-hidden="true"></i></a>
-                            <a href="https://www.google.com/" target="_blank"><i class="fa fa-twitter ml-2 socialicon"
-                                    aria-hidden="true"></i></a>
-                            <a href="https://www.google.com/" target="_blank"><i class="fa fa-linkedin ml-2 socialicon"
-                                    aria-hidden="true"></i></a>
-                            <a href="https://www.google.com/" target="_blank"><i class="fa fa-youtube ml-2 socialicon"
-                                    aria-hidden="true"></i></a>
+                            <a href="https://www.google.com/" target="_blank"><i
+                                    class="fa fa-instagram ml-2 socialicon" aria-hidden="true"></i></a>
+                            <a href="https://www.google.com/" target="_blank"><i
+                                    class="fa fa-twitter ml-2 socialicon" aria-hidden="true"></i></a>
+                            <a href="https://www.google.com/" target="_blank"><i
+                                    class="fa fa-linkedin ml-2 socialicon" aria-hidden="true"></i></a>
+                            <a href="https://www.google.com/" target="_blank"><i
+                                    class="fa fa-youtube ml-2 socialicon" aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 mt-3 ">
                     <p class="text-white footer-text">COPYRIGHT © 2022 PaystubX, ALL RIGHTS RESERVED.</p>
                     <div class="container justify-content-center m-auto text-center">
-                        <a href="{{ url('/') }}"><img class="footimg" src="{{ asset('images/satisfaction.webp') }}"></a>
+                        <a href="{{ url('/') }}"><img class="footimg"
+                                src="{{ asset('images/satisfaction.webp') }}"></a>
                     </div>
                 </div>
             </div>
@@ -425,78 +440,82 @@
         //
     </script>
     <script>
-        $('#forgotPasswordButton').click(function() {
-        $("#loginModal").modal("hide");
-        $("#forgotPasswordModal").modal("show");
-    });
+        $(document).ready(function() {
+            $('#forgotPasswordButton').click(function() {
+                $("#loginModal").modal("hide");
+                $("#forgotPasswordModal").modal("show");
+            });
 
-    $('#backToSignin').click(function() {
-        $("#forgotPasswordModal").modal("hide");
-        $("#loginModal").modal("show");
-    });
+            $('#backToSignin').click(function() {
+                $("#forgotPasswordModal").modal("hide");
+                $("#loginModal").modal("show");
+            });
 
-    $("#set-name").click(function(e) {
-        var form = $('#userNameForm')[0];
-        $.ajax({
-            type: 'POST',
-            url: form.action,
-            data: $(form).serialize(),
-            success: function(data) {
+            $("#set-name").click(function(e) {
+                var form = $('#userNameForm')[0];
+                $.ajax({
+                    type: 'POST',
+                    url: form.action,
+                    data: $(form).serialize(),
+                    success: function(data) {
 
-                if ($.isEmptyObject(data.error)) {
-                    toastr.success(data.message);
-                    // location.reload(true);
-                    if(data.user.role_id == 1){
-                        toastr.success(data.message);
-                        setTimeout(() => {
-                            window.location.href = baseUrl + "admin/dashboard";
-                        }, 300);
-                    }else if(data.user.role_id == 2){
-                        $(".registerBtn").removeClass("d-block").addClass("d-none");
-                        $(".logoutDiv").removeClass("d-none");
-                        $(".authUserName").text("Hi "+data.user.name);
-                        $("#setName").modal("hide");
+                        if ($.isEmptyObject(data.error)) {
+                            toastr.success(data.message);
+                            // location.reload(true);
+                            if (data.user.role_id == 1) {
+                                toastr.success(data.message);
+                                setTimeout(() => {
+                                    window.location.href = baseUrl + "admin/dashboard";
+                                }, 300);
+                            } else if (data.user.role_id == 2) {
+                                $(".registerBtn").removeClass("d-block").addClass("d-none");
+                                $(".logoutDiv").removeClass("d-none");
+                                $(".authUserName").text("Hi " + data.user.name);
+                                $("#setName").modal("hide");
+                            }
+                        } else {
+                            printErrorMsg(data.error);
+                        }
                     }
-                } else {
-                    printErrorMsg(data.error);
-                }
-            }
+                });
+            });
+            $('.inputdatepicker').datepicker({
+                autoclose: true,
+                todayHighlight: true,
+                format: "mm/dd/yyyy",
+            }).datepicker('setDate', 'today');
+
+            $("#resendOtpButton").click(function() {
+                var email = $('#hidden_email').val();
+                startTimer();
+                $.ajax({
+                    url: "{{ route('sendOtp') }}?email=" + email,
+                    success: function(data) {
+
+                        if ($.isEmptyObject(data.error)) {
+                            toastr.success(data.message);
+
+                        } else {
+                            printErrorMsg(data.error);
+                        }
+                    }
+                });
+            });
+
+            $(document).on('click', '.confirm-toggle-password', function() {
+                $(this).toggleClass("fa-eye fa-eye-slash");
+                var input = $("#confirm_password");
+                input.attr('type') === 'password' ? input.attr('type', 'text') : input.attr('type',
+                    'password')
+            });
+
+            $(document).on('click', '.new-toggle-password', function() {
+                $(this).toggleClass("fa-eye fa-eye-slash");
+                var input = $("#new_password");
+                input.attr('type') === 'password' ? input.attr('type', 'text') : input.attr('type',
+                    'password')
+            });
         });
-    });
-    $('.inputdatepicker').datepicker({
-        autoclose: true,
-        todayHighlight: true,
-        format: "mm/dd/yyyy",
-    }).datepicker('setDate', 'today');
-
-    $("#resendOtpButton").click(function() {
-        var email = $('#hidden_email').val();
-        startTimer();
-        $.ajax({
-            url: "{{ route('sendOtp') }}?email=" + email,
-            success: function(data) {
-
-                if ($.isEmptyObject(data.error)) {
-                    toastr.success(data.message);
-
-                } else {
-                    printErrorMsg(data.error);
-                }
-            }
-        });
-    });
-
-    $(document).on('click', '.confirm-toggle-password', function() {
-        $(this).toggleClass("fa-eye fa-eye-slash");
-        var input = $("#confirm_password");
-        input.attr('type') === 'password' ? input.attr('type','text') : input.attr('type','password')
-    });
-
-    $(document).on('click', '.new-toggle-password', function() {
-        $(this).toggleClass("fa-eye fa-eye-slash");
-        var input = $("#new_password");
-        input.attr('type') === 'password' ? input.attr('type','text') : input.attr('type','password')
-    });
     </script>
     <script src="{{ asset('user') }}/js/main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
@@ -590,81 +609,93 @@
 
 
     @if ($errors->first())
-    <script>
-        toastr.error('{{ $errors->first() }}');
-    </script>
+        <script>
+            toastr.error('{{ $errors->first() }}');
+        </script>
     @endif
 
     @if (Session::has('message'))
-    <script>
-        toastr.success("{{ Session::get('message') }}");
-    </script>
+        <script>
+            toastr.success("{{ Session::get('message') }}");
+        </script>
     @endif
     @if (Session::has('error'))
-    <script>
-        toastr.error("{{ Session::get('error') }}");
-    </script>
+        <script>
+            toastr.error("{{ Session::get('error') }}");
+        </script>
     @endif
     <script>
         function myFunction() {
-        document.getElementById("myDropdown").classList.toggle("show");
-    }
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
 
-    // Close the dropdown menu if the user clicks outside of it
-    window.onclick = function(event) {
-        if (!event.target.matches('.dropbtn')) {
+        // Close the dropdown menu if the user clicks outside of it
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
 
-            var dropdowns = document.getElementsByClassName("dropdown-content");
-            var i;
-            for (i = 0; i < dropdowns.length; i++) {
-                var openDropdown = dropdowns[i];
-                if (openDropdown.classList.contains('show')) {
-                    openDropdown.classList.remove('show');
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
                 }
             }
         }
-    }
     </script>
 
 
     <script>
-        $(document).ready(function () {
-    (function ($) {
-        var toggle = '[data-toggle="droppanel"]';
-        function clearMenus(e) {
-            var panel = $(e.data).not(e.exclude);
-            var $ddMenu = panel.find(".dropdown-menu");
-            $ddMenu.slideUp();
-        }
-        function toggleMenu(e) {
-            var $this = $(this), $parent, selector;
-            if ($this.is('.disabled, :disabled')) return;
-            selector = $this.attr('data-target');
-            if (!selector) {
-                selector = $this.attr('href');
-                selector = selector && selector.replace(/.*(?=#[^\s]*$)/, ''); //strip for ie7
-            }
-            $parent = $(selector);
-            $parent.length || ($parent = $this.parent());
-            var $ddMenu = $parent.find(".dropdown-menu");
-            $ddMenu.slideToggle(function (evt) {
-                if ($(this).css("display") == "block") {
-                    $('html').trigger({ type: 'click', exclude: $parent });
-                    $parent.addClass('open');
-                    $(this).css("display", "");
-                    $parent.trigger({ type: 'droppanel.show', panel: $parent });
+        $(document).ready(function() {
+            (function($) {
+                var toggle = '[data-toggle="droppanel"]';
+
+                function clearMenus(e) {
+                    var panel = $(e.data).not(e.exclude);
+                    var $ddMenu = panel.find(".dropdown-menu");
+                    $ddMenu.slideUp();
                 }
-                else { $parent.removeClass('open'); }
-            });
 
-            return false;
-        }
-        $('html').on('click.dropdown.data-api', null, '.droppanel', clearMenus);
-        $('body').on('click.dropdown', '.droppanel', function (e) { e.stopPropagation(); })
+                function toggleMenu(e) {
+                    var $this = $(this),
+                        $parent, selector;
+                    if ($this.is('.disabled, :disabled')) return;
+                    selector = $this.attr('data-target');
+                    if (!selector) {
+                        selector = $this.attr('href');
+                        selector = selector && selector.replace(/.*(?=#[^\s]*$)/, ''); //strip for ie7
+                    }
+                    $parent = $(selector);
+                    $parent.length || ($parent = $this.parent());
+                    var $ddMenu = $parent.find(".dropdown-menu");
+                    $ddMenu.slideToggle(function(evt) {
+                        if ($(this).css("display") == "block") {
+                            $('html').trigger({
+                                type: 'click',
+                                exclude: $parent
+                            });
+                            $parent.addClass('open');
+                            $(this).css("display", "");
+                            $parent.trigger({
+                                type: 'droppanel.show',
+                                panel: $parent
+                            });
+                        } else {
+                            $parent.removeClass('open');
+                        }
+                    });
+
+                    return false;
+                }
+                $('html').on('click.dropdown.data-api', null, '.droppanel', clearMenus);
+                $('body').on('click.dropdown', '.droppanel', function(e) {
+                        e.stopPropagation();
+                    })
                     .on('click.dropdown.data-api', toggle, toggleMenu);
-    } (jQuery));
+            }(jQuery));
 
-});
+        });
     </script>
 
 </body>
