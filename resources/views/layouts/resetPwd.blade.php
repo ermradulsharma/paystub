@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title> PAYSTUB X </title>
+    <title>PAYSTUB X</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -64,35 +64,32 @@
 
 </body>
 @if ($errors->first())
-        <script>
-            toastr.error('{{ $errors->first() }}');
-        </script>
-    @endif
+    <script>
+        toastr.error('{{ $errors->first() }}');
+    </script>
+@endif
 
-    @if (Session::has('message'))
-        <script>
-            toastr.success("{{ Session::get('message') }}");
-        </script>
-    @endif
-    @if (Session::has('error'))
-        <script>
-            toastr.error("{{ Session::get('error') }}");
-        </script>
-    @endif
+@if (Session::has('message'))
+    <script>
+        toastr.success("{{ Session::get('message') }}");
+    </script>
+@endif
+@if (Session::has('error'))
+    <script>
+        toastr.error("{{ Session::get('error') }}");
+    </script>
+@endif
 <script>
-
     $(document).on('click', '.new-toggle-password', function() {
-      $(this).toggleClass("fa-eye fa-eye-slash");
-       var input = $("#new_password");
-       input.attr('type') === 'password' ? input.attr('type','text') : input.attr('type','password')
+        $(this).toggleClass("fa-eye fa-eye-slash");
+        var input = $("#new_password");
+        input.attr('type') === 'password' ? input.attr('type', 'text') : input.attr('type', 'password')
     });
     $(document).on('click', '.confirm-toggle-password', function() {
-      $(this).toggleClass("fa-eye fa-eye-slash");
-       var input = $("#confirm_password");
-       input.attr('type') === 'password' ? input.attr('type','text') : input.attr('type','password')
+        $(this).toggleClass("fa-eye fa-eye-slash");
+        var input = $("#confirm_password");
+        input.attr('type') === 'password' ? input.attr('type', 'text') : input.attr('type', 'password')
     });
-
-
 </script>
 
 </html>

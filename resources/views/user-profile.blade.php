@@ -28,7 +28,7 @@
                                 </div>
                                 <div class="col-lg-10">
                                     <div class="user-text">
-                                        <h4 style="color:#0f4386">My Account</h4>
+                                        <h4 style="color:#0f4386">{{ __('My Account') }}</h4>
                                     </div>
                                 </div>
                             </div>
@@ -37,22 +37,25 @@
                 </div>
                 <div class="col-lg-9 col-md-9" style="padding: 0;">
                     <div class="right-side-bar">
-                        <h4 style="color:#012c63; line-height:26px;">User Profile</h4>
-                        <P style="color:#333!important;font-weight:500;">Manage your profile, security, and language
-                            preferences.</P>
+                        <h4 style="color:#012c63; line-height:26px;">{{ __('User Profile') }}</h4>
+                        <P style="color:#333!important;font-weight:500;">
+                            {{ __('Manage your profile, security, and language
+                                                        preferences.') }}
+                        </P>
                         <div class="profile-outer">
                             <div class="d-flex">
                                 <div class="profile-icon-outer">
                                     <i class="fa fa-user user"></i>
                                 </div>
                                 <div class="user-center-text">
-                                    <h6 style="padding: 0; margin:0px;color: #5a5858;">Contact Name</h6>
-                                    <p style="padding:0px;margin:0px;">{{ $userObj->first_name ?? '' }}</p>
+                                    <h6 style="padding: 0; margin:0px;color: #5a5858;">{{ __('Contact Name') }}</h6>
+                                    <p style="padding:0px;margin:0px;">{{ $userObj->name ?? '' }}</p>
                                 </div>
                             </div>
 
                             <div class="edit-icon">
-                                <img class="username" style="width: 15px;" data-name ="{{ $userObj->first_name ?? '' }}" src="images/pen-solid.svg">
+                                <img class="username" style="width: 15px;" data-name="{{ $userObj->name ?? '' }}"
+                                    src={{ asset('images/pen-solid.svg') }}>
                             </div>
                         </div>
                         <div class="profile-outer">
@@ -61,13 +64,14 @@
                                     <i class="fa fa-envelope profile-icon"></i>
                                 </div>
                                 <div class="user-center-text">
-                                    <h6 style="padding: 0; margin:0px;color: #5a5858;">Email Address</h6>
+                                    <h6 style="padding: 0; margin:0px;color: #5a5858;">{{ __('Email Address') }}</h6>
                                     <p style="padding:0px;margin:0px;">{{ $userObj->email ?? '' }}</p>
                                 </div>
                             </div>
 
                             <div class="edit-icon">
-                                <img class="username2" data-email ="{{ $userObj->email ?? '' }}" style="width: 15px;" src="images/pen-solid.svg">
+                                <img class="username2" data-email="{{ $userObj->email ?? '' }}" style="width: 15px;"
+                                    src={{ asset('images/pen-solid.svg') }}>
                             </div>
                         </div>
                         <div class="profile-outer">
@@ -76,13 +80,13 @@
                                     <i class="fa fa-lock lock"></i>
                                 </div>
                                 <div class="user-center-text">
-                                    <h6 style="padding: 0; margin:0px;color: #5a5858;">Password</h6>
+                                    <h6 style="padding: 0; margin:0px;color: #5a5858;">{{ __('Password') }}</h6>
                                     <p style="padding:0px;margin:0px;">{{ '*********' }}</p>
                                 </div>
                             </div>
 
                             <div class="edit-icon">
-                                <img class="username3" style="width: 15px;" src="images/pen-solid.svg">
+                                <img class="username3" style="width: 15px;" src="{{ asset('images/pen-solid.svg') }}">
                             </div>
                         </div>
                         <div class="profile-outer">
@@ -115,7 +119,7 @@
 
                 <!-- Modal body -->
                 <div class="modal-body pb-4" style="box-shadow: 0 0 8px rgba(0,0,0,.14);padding-top:0;">
-                    <form id="userNameForm" method="post" action="{{route('store.details')}}">
+                    <form id="userNameForm" method="post" action="{{ route('store.details') }}">
                         @csrf
                         <input type="hidden" value="user-name" name="type">
                         <label class="label-text" for="css">Contact Name<span style="color:red;">*</span></label>
@@ -127,7 +131,7 @@
                         <button class="btn-secondary" data-bs-dismiss="modal"
                             style="border-radius:20px; border:none;font-size:12px; padding:5px 10px;">Cancel</button>
                         <button class="btn-danger" id="store-name"
-                            style="border-radius:20px; border:none;font-size:12px; padding:5px 15px;" >Save</button>
+                            style="border-radius:20px; border:none;font-size:12px; padding:5px 15px;">Save</button>
                     </div>
                 </div>
             </div>
@@ -149,7 +153,7 @@
                 <!-- Modal body -->
                 <div class="modal-body pb-4" style="box-shadow: 0 0 8px rgba(0,0,0,.14);padding-top:0;">
                     <p class="mail-text">Enter the Password set for the account and proceed to set a new email address.</p>
-                    <form id="userEmailForm" method="post" action="{{route('store.details')}}">
+                    <form id="userEmailForm" method="post" action="{{ route('store.details') }}">
                         @csrf
                         <input type="hidden" value="user-email" name="type">
                         {{-- <div class="contact-box-outer">
@@ -158,7 +162,8 @@
                             <i id="eye-icon_00" class="fa fa-eye-slash eye-icon" data-id="00"></i>
                         </div> --}}
                         <label class="label-text" for="css">Email Address<span style="color:red;">*</span></label>
-                        <input class="contact-box" type="text" id="user-email" placeholder="Email Address" name="email">
+                        <input class="contact-box" type="text" id="user-email" placeholder="Email Address"
+                            name="email">
                     </form>
                 </div>
                 <div class="modal-footer" style="display: inline-block;">
@@ -184,7 +189,7 @@
 
                 <!-- Modal body -->
                 <div class="modal-body">
-                    <h5 class="text-center" style="text-transform:capitalize;">Verify your Email Address</h5>
+                    <h5 class="text-center" style="text-transform:capitalize;">{{ __('Verify your Email Address') }}</h5>
                     <div class=" text-center mt-4">
                         <div class="mail">
                             <img src="https://cdn4.iconfinder.com/data/icons/social-media-logos-6/512/112-gmail_email_mail-512.png"
@@ -194,11 +199,13 @@
                         <h5 style="color: #457bbe;" class="mt-4 text-center">Almost There!</h5>
                         <p style="color: #000;font-size: 14px;font-family: serif; text-transform:capitalize; margin-bottom:0px;"
                             class="text-center">Enter the verification code sent to you</p>
-                            <span style="color: #02030359;font-size: 10px;font-family: serif; text-transform:capitalize;"
+                        <span style="color: #02030359;font-size: 10px;font-family: serif; text-transform:capitalize;"
                             class="text-center">Check spam if not found in inbox</span>
-                            <p class="resend-otp"><a id="resendOtpButton"class="pointer-disable" style="" href="JavaScript:void(0);" disabled>Resend  OTP </a><i class="fa fa-clock-o clock"></i><span id="resendTimeOut">30</span></p>
+                        <p class="resend-otp"><a id="resendOtpButton"class="pointer-disable" style=""
+                                href="JavaScript:void(0);" disabled>Resend OTP </a><i
+                                class="fa fa-clock-o clock"></i><span id="resendTimeOut">30</span></p>
 
-                        <form id="loginOtp" action="{{route('store.details')}}" method="POST" class="text-center">
+                        <form id="loginOtp" action="{{ route('store.details') }}" method="POST" class="text-center">
                             @csrf
                             <input type="hidden" value="verify-email" name="type">
                             <div class="px-lg-5">
@@ -229,39 +236,45 @@
                 <!-- Modal body -->
                 <div class="modal-body pb-4" style="box-shadow: 0 0 8px rgba(0,0,0,.14);padding-top:0;">
                     <p class="mail-text">Set a new password for your account.</p>
-                    <form id="passwordUpdate" method="post" action="{{route('store.details')}}">
+                    <form id="passwordUpdate" method="post" action="{{ route('store.details') }}">
                         @csrf
                         <input type="hidden" value="user-password" name="type">
 
                         <div class="contact-box-outer">
                             <div class="contact-box-outer">
-                                <label class="label-text" for="css">Password<span style="color:red;">*</span></label>
-                                <input class="contact-box" type="password" placeholder="Password" name="currentPassword">
-                                <i id="eye-icon_00" toggle="#password-field" class="fa fa-eye-slash eye-icon show-password" data-id="02"></i>
+                                <label class="label-text" for="css">Password<span
+                                        style="color:red;">*</span></label>
+                                <input class="contact-box" type="password" placeholder="Password"
+                                    name="currentPassword">
+                                <i id="eye-icon_00" toggle="#password-field"
+                                    class="fa fa-eye-slash eye-icon show-password" data-id="02"></i>
                             </div>
                         </div>
 
                         <div class="contact-box-outer">
                             <label class="label-text" for="css">New Password<span
                                     style="color:red;">*</span></label>
-                                    <input class="contact-box" type="password" placeholder="New Password"
-                                    name="password" class="form-control show-password-sd" id="new_password"required>
-                                <i id="eye-icon_03" toggle="#password-field" class="fa fa-eye-slash eye-icon show-password" data-id="02"></i>
+                            <input class="contact-box" type="password" placeholder="New Password" name="password"
+                                class="form-control show-password-sd" id="new_password"required>
+                            <i id="eye-icon_03" toggle="#password-field" class="fa fa-eye-slash eye-icon show-password"
+                                data-id="02"></i>
                         </div>
                         <div class="contact-box-outer">
                             <label class="label-text" for="css">Confirm Password<span
                                     style="color:red;">*</span></label>
-                                    <input class="contact-box" type="password" placeholder="Confirm Password"
-                                    name="password_confirmation" class="form-control show-password-sd" id="confirm_password"required>
-                                <i id="eye-icon_03" toggle="#password-field" class="fa fa-eye-slash eye-icon show-password" data-id="02"></i>
+                            <input class="contact-box" type="password" placeholder="Confirm Password"
+                                name="password_confirmation" class="form-control show-password-sd"
+                                id="confirm_password"required>
+                            <i id="eye-icon_03" toggle="#password-field" class="fa fa-eye-slash eye-icon show-password"
+                                data-id="02"></i>
                         </div>
                     </form>
-                        <div class="d-flex justify-content-between pt-2">
-                            <button class="btn-secondary" data-bs-dismiss="modal"
-                                style="border-radius:20px; border:none;font-size:12px; padding:5px 10px;">Cancel</button>
-                            <button class="btn-danger" id="store-password"
-                                style="border-radius:20px; border:none;font-size:12px; padding:5px 15px;">Save</button>
-                        </div>
+                    <div class="d-flex justify-content-between pt-2">
+                        <button class="btn-secondary" data-bs-dismiss="modal"
+                            style="border-radius:20px; border:none;font-size:12px; padding:5px 10px;">Cancel</button>
+                        <button class="btn-danger" id="store-password"
+                            style="border-radius:20px; border:none;font-size:12px; padding:5px 15px;">Save</button>
+                    </div>
                 </div>
 
 
@@ -292,7 +305,6 @@
             </div>
         </div>
     </div>
-
 @endsection
 @section('script')
     <script>
@@ -302,7 +314,7 @@
             $("#userName").modal("show");
         });
 
-        $("#store-name").click(function(e){
+        $("#store-name").click(function(e) {
             submitUserData($('#userNameForm')[0]);
         });
 
@@ -312,29 +324,29 @@
             $("#userName2").modal("show");
         });
 
-        $("#store-email").click(function(e){
+        $("#store-email").click(function(e) {
             //submitUserData($('#userEmailForm')[0],".username2","#userName2");
-            var form = $('#userEmailForm')[0] ;
+            var form = $('#userEmailForm')[0];
             $.ajax({
-            type:'POST',
-            url: form.action,
-            data: $(form).serialize(),
-            success:function(data){
-                console.log('data',data);
-                    if($.isEmptyObject(data.error)){
+                type: 'POST',
+                url: form.action,
+                data: $(form).serialize(),
+                success: function(data) {
+                    console.log('data', data);
+                    if ($.isEmptyObject(data.error)) {
                         toastr.success(data.message);
                         $("#userName2").modal("hide");
                         $('#hidden_email').val(data.email);
                         $("#otpModal").modal("show");
                         startTimer();
-                    }else{
+                    } else {
                         printErrorMsg(data.error);
                     }
-            }
+                }
             });
         });
 
-        $("#verify-email").click(function(e){
+        $("#verify-email").click(function(e) {
             submitUserData($('#loginOtp')[0]);
         });
 
@@ -346,7 +358,7 @@
             $("#deleteAcModal").modal("show");
         });
 
-        $("#store-password").click(function(e){
+        $("#store-password").click(function(e) {
             submitUserData($('#passwordUpdate')[0]);
         });
 
@@ -354,16 +366,16 @@
             var email = $('#hidden_email').val();
             startTimer();
             $.ajax({
-            url: "{{route('sendOtp')}}?email="+email,
-            success:function(data){
-                console.log('data',data);
-                    if($.isEmptyObject(data.error)){
+                url: "{{ route('sendOtp') }}?email=" + email,
+                success: function(data) {
+                    console.log('data', data);
+                    if ($.isEmptyObject(data.error)) {
                         toastr.success(data.message);
 
-                    }else{
+                    } else {
                         printErrorMsg(data.error);
                     }
-            }
+                }
             });
         });
 
@@ -374,9 +386,9 @@
         // });
 
         $(document).on('click', '.show-password', function() {
-          $(this).toggleClass("fa-eye fa-eye-slash");
-           var input = $(this).prev('input');
-           input.attr('type') === 'password' ? input.attr('type','text') : input.attr('type','password')
+            $(this).toggleClass("fa-eye fa-eye-slash");
+            var input = $(this).prev('input');
+            input.attr('type') === 'password' ? input.attr('type', 'text') : input.attr('type', 'password')
         });
 
         // $(document).on('click', '.new-toggle-password', function() {
@@ -387,29 +399,29 @@
 
 
 
-        function submitUserData(form){
+        function submitUserData(form) {
 
             $.ajax({
-            type:'POST',
-            url: form.action,
-            data: $(form).serialize(),
-            success:function(data){
-                console.log('data',data);
-                    if($.isEmptyObject(data.error)){
+                type: 'POST',
+                url: form.action,
+                data: $(form).serialize(),
+                success: function(data) {
+                    console.log('data', data);
+                    if ($.isEmptyObject(data.error)) {
                         // alert(data.message);
                         toastr.success(data.message);
                         location.reload(true);
-                    }else{
+                    } else {
                         printErrorMsg(data.error);
                     }
-            }
+                }
             });
 
         }
 
 
-        function printErrorMsg (msg) {
-            $.each( msg, function( key, value ) {
+        function printErrorMsg(msg) {
+            $.each(msg, function(key, value) {
                 toastr.error(value);
             });
         }
@@ -426,6 +438,5 @@
             }
 
         });
-
     </script>
 @endsection
