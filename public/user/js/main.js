@@ -37,8 +37,11 @@ function handleCredentialResponse(response) {
         success: function (response) {
             console.log('response', response.data);
             $("#loginModal").modal("hide");
-            $(".authUserName").text("Hi "+response.data);
             toastr.success(response.message);
+            setTimeout(() => {
+                $(".authUserName").text("Hi "+response.data);
+            }, 300);
+
             $(".registerBtn").removeClass("d-block");
             $(".registerBtn").addClass("d-none");
             $(".sendMailButton").removeClass("d-none");
@@ -48,7 +51,9 @@ function handleCredentialResponse(response) {
                 window.location.href = baseUrl + "admin/dashboard";
             }
             if (userAuth == 1) {
-
+                setTimeout(() => {
+                    $(".authUserName").text("Hi "+response.data);
+                }, 300);
                 if (okk == 1) {
                     usaStoreData();
                 }
