@@ -152,11 +152,11 @@
                     <form id="userEmailForm" method="post" action="{{route('store.details')}}">
                         @csrf
                         <input type="hidden" value="user-email" name="type">
-                        {{-- <div class="contact-box-outer">
+                        <div class="contact-box-outer">
                             <label class="label-text" for="css">Password<span style="color:red;">*</span></label>
-                            <input class="contact-box" type="text" placeholder="Password" name="password">
-                            <i id="eye-icon_00" class="fa fa-eye-slash eye-icon" data-id="00"></i>
-                        </div> --}}
+                            <input class="contact-box" type="password" placeholder="Password" name="password">
+                            <i id="eye-icon_00" class="fa fa-eye-slash eye-icon show-password" data-id="00"></i>
+                        </div>
                         <label class="label-text" for="css">Email Address<span style="color:red;">*</span></label>
                         <input class="contact-box" type="text" id="user-email" placeholder="Email Address" name="email">
                     </form>

@@ -67,6 +67,7 @@ class HomeController extends Controller
 
         if ($request->type == 'user-email') {
             $validator = Validator::make($request->all(), [
+                'password' => 'required|min:6',
                 'email' => 'email:rfc,dns|unique:users,email,' . $userId,
             ]);
 
@@ -74,6 +75,19 @@ class HomeController extends Controller
                 return response()->json([
                     'error' => $validator->errors()->all()
                 ]);
+            }
+
+            $userObj = User::where('id', $userId)->first();
+            if (!$userObj) {
+                return response()->json(['error' => ['User not found']]);
+            }
+
+            if (!Hash::check($request->password, $userObj->password)) {
+                return response()->json(['error' => ['Password is incorrect.']]);
+            }
+
+            if ($request->email === $userObj->email) {
+                return response()->json(['error' => ['Please enter different email.']]);
             }
 
             $code = rand(100000, 999999);
@@ -84,10 +98,6 @@ class HomeController extends Controller
             $mailData['subject'] = 'Verify E-mail';
             \Mail::to($request->email)->send(new VerifyEmailSend($mailData));
 
-            $userObj = User::where('id', $userId)->first();
-            if (!$userObj) {
-                return response()->json(['error' => ['User not found']]);
-            }
             $userObj->code = $code;
             if (!$userObj->save()) {
                 return response()->json(['error' => ['Something went wrong.']]);
