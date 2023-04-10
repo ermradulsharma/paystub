@@ -59,14 +59,14 @@
                 <a class="btn btn-lg py-2 w-100 btn-danger login registerBtn" href="javascript:void(0);">LOGIN</a>
                  <div class="container d-none logoutDiv">
                     <div class="user-icon"><img src="{{asset('images/profile1.png')}}"></div>
-                    <div class="logout"><a><img src="{{asset('images/logout01.png')}}"></a></div>
+                    <div class="logout btn-logout"><a><img src="{{asset('images/logout01.png')}}"></a></div>
                     <div class="dropbtn">
                         <button class="btn btn-default dropdown-toggle navright-btn" type="button" id="menu1"
-                            data-toggle="dropdown">Hi {{Auth::user()->name ?? ''}}
+                            data-toggle="dropdown"><p id="authUserName">Hi {{Auth::user()->name ?? ''}}</p>
                             <span class="caret"></span></button>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Order History</a></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">My Account</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="{{route('invoiceList')}}">Order History</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="{{route('profile')}}">My Account</a></li>
                         </ul>
                     </div>
                 </div>
@@ -78,11 +78,11 @@
                     <div class="logout btn-logout"><a><img src="{{asset('images/logout01.png')}}"></a></div>
                     <div class="dropbtn">
                         <button class="btn btn-default dropdown-toggle navright-btn" type="button" id="menu1"
-                            data-toggle="dropdown">Hi {{Auth::user()->name ?? ''}}
+                            data-toggle="dropdown"><p id="authUserName">Hi {{Auth::user()->name ?? ''}}</p>
                             <span class="caret"></span></button>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Order History</a></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">My Account</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="{{route('invoiceList')}}">Order History</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="{{route('profile')}}">My Account</a></li>
                         </ul>
                     </div>
                 </div>
@@ -434,11 +434,21 @@
             url: form.action,
             data: $(form).serialize(),
             success: function(data) {
-                console.log('data', data);
+
                 if ($.isEmptyObject(data.error)) {
-                    // alert(data.message);
                     toastr.success(data.message);
-                    location.reload(true);
+                    // location.reload(true);
+                    if(data.user.role_id == 1){
+                        toastr.success(data.message);
+                        setTimeout(() => {
+                            window.location.href = baseUrl + "admin/dashboard";
+                        }, 300);
+                    }else if(data.user.role_id == 2){
+                        $(".registerBtn").removeClass("d-block").addClass("d-none");
+                        $(".logoutDiv").removeClass("d-none");
+                        $("#authUserName").text("Hi "+data.user.name);
+                        $("#setName").modal("hide");
+                    }
                 } else {
                     printErrorMsg(data.error);
                 }
@@ -457,7 +467,7 @@
         $.ajax({
             url: "{{ route('sendOtp') }}?email=" + email,
             success: function(data) {
-                console.log('data', data);
+
                 if ($.isEmptyObject(data.error)) {
                     toastr.success(data.message);
 

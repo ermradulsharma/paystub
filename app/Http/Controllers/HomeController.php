@@ -55,12 +55,13 @@ class HomeController extends Controller
             if(!$userObj){
                 return response()->json(['error' => ['User not found']]);
             }
-            $userObj->first_name = $request->uname ?? '';
+            $userObj->name = $request->uname ?? '';
             if(!$userObj->save()){
                 return response()->json(['error' => ['Something went wrong.']]);
             }
+            $userObj = User::where('id',$userId)->first();
             $request->session()->flash('message', 'Profile updated successfully.');
-            return response()->json(['message' => 'Profile updated successfully.']);
+            return response()->json(['user'=>$userObj, 'message' => 'Profile updated successfully.']);
         }
 
         if($request->type == 'user-email'){
@@ -158,14 +159,15 @@ class HomeController extends Controller
             if(!$userObj){
                 return response()->json(['error' => ['User not found']]);
             }
-            $userObj->first_name = $request->uname ?? '';
+            $userObj->name = $request->uname ?? '';
             $userObj->password = bcrypt($request->password);
             $userObj->is_completed = '1';
             if(!$userObj->save()){
                 return response()->json(['error' => ['Something went wrong.']]);
             }
+            $userObj = User::where('id',$userId)->first();
             $request->session()->flash('message', 'Account setup successfully.');
-            return response()->json(['message' => 'Account setup successfully.']);
+            return response()->json(['user'=>$userObj,'message' => 'Account setup successfully.']);
 
         }
     }
