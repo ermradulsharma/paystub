@@ -195,7 +195,7 @@
                                 Stub No: {{ $requestData['stub_no'] }}</p>
                         </td>
                         <td class="earning"
-                            style="width: 60%; font-weight:400 !important;padding-bottom:0px !important; padding-top:0px !important; margin:0px; font-size:16px; font-family: Arial, Helvetica, sans-serif; color:#f7f0f9;">
+                            style="width: 60%; font-weight:400 !important;padding-bottom:0px !important; padding-top:0px !important; margin:0px; font-size:16px; font-family: Arial, Helvetica, sans-serif; color:#f7f0f9;text-transform:capitalize; ">
                             {{ $requestData['emp_name'] }}
                             <br>Emp.ID. {{ $requestData['emp_id'] }}
                             <br> {{ $requestData['emp_street_1'] }}, {{ $requestData['emp_city'] }}, {{

@@ -266,7 +266,7 @@
                                     style="font-size: 15px;"> {{ $requestData['emp_id'] }}</span></td>
                         </tr>
                         <tr>
-                            <td style="padding-top:8px;font-size: 15px;"> {{ $requestData['emp_name'] }} <br> {{
+                            <td style="padding-top:8px;font-size: 15px;text-transform:capitalize;"> {{ $requestData['emp_name'] }} <br> {{
                                 $requestData['emp_street_1'] }} <br> {{ $requestData['emp_city'] }}, {{
                                 $requestData['emp_state'] }}. {{ $requestData['emp_zip_code'] }}, USA </td>
                         </tr>
