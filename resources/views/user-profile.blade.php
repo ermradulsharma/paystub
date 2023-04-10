@@ -47,12 +47,12 @@
                                 </div>
                                 <div class="user-center-text">
                                     <h6 style="padding: 0; margin:0px;color: #5a5858;">Contact Name</h6>
-                                    <p style="padding:0px;margin:0px;">{{ $userObj->first_name ?? '' }}</p>
+                                    <p style="padding:0px;margin:0px;">{{ $userObj->name ?? '' }}</p>
                                 </div>
                             </div>
 
                             <div class="edit-icon">
-                                <img class="username" style="width: 15px;" data-name ="{{ $userObj->first_name ?? '' }}" src="images/pen-solid.svg">
+                                <img class="username" style="width: 15px;" data-name ="{{ $userObj->name ?? '' }}" src="images/pen-solid.svg">
                             </div>
                         </div>
                         <div class="profile-outer">
@@ -67,7 +67,7 @@
                             </div>
 
                             <div class="edit-icon">
-                                <img class="username2" data-email ="{{ $userObj->email ?? '' }}" style="width: 15px;" src="images/pen-solid.svg">
+                                <img class="username2"  style="width: 15px;" src="images/pen-solid.svg">
                             </div>
                         </div>
                         <div class="profile-outer">
@@ -152,11 +152,11 @@
                     <form id="userEmailForm" method="post" action="{{route('store.details')}}">
                         @csrf
                         <input type="hidden" value="user-email" name="type">
-                        {{-- <div class="contact-box-outer">
+                        <div class="contact-box-outer">
                             <label class="label-text" for="css">Password<span style="color:red;">*</span></label>
-                            <input class="contact-box" type="text" placeholder="Password" name="password">
-                            <i id="eye-icon_00" class="fa fa-eye-slash eye-icon" data-id="00"></i>
-                        </div> --}}
+                            <input class="contact-box" type="password" placeholder="Password" name="password">
+                            <i id="eye-icon_00" class="fa fa-eye-slash eye-icon show-password" data-id="00"></i>
+                        </div>
                         <label class="label-text" for="css">Email Address<span style="color:red;">*</span></label>
                         <input class="contact-box" type="text" id="user-email" placeholder="Email Address" name="email">
                     </form>
@@ -307,8 +307,6 @@
         });
 
         $(".username2").click(function() {
-            var email = $(this).data('email');
-            $('#user-email').val(email);
             $("#userName2").modal("show");
         });
 
