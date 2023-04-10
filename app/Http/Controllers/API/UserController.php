@@ -36,37 +36,30 @@ class UserController extends Controller
             $response['message'] = $validator->errors()->first();
             return response()->json($response, 301);
         }
-        $checkMail = User::where('email', request('email'))->exists();
-        if ($checkMail) {
-            $response['message'] = "This mail already Exists. Please Try another E-mail";
-            $response['success'] = FALSE;
-            $response['status'] = STATUS_BAD_REQUEST;
-            return response()->json($response, $response['status']);
-        }
-
         $code = rand(100000, 999999);
-        $user  = User::where('email', request('email'))->first();
-        if (!$user) {
-            $user = new User;
-            $user->email = $request->email;
-            $user->is_completed = '0';
+        $userObj = User::where('email', request('email'))->first();
+        if (!$userObj) {
+            $userObj = new User;
+            $userObj->email = $request->email;
+            $userObj->is_completed = '0';
         }
-        if ($user->email != "") {
-            $mailData = [];
-            $mailData['name'] = $request->email;
-            $mailData['otp'] = $code;
-            $mailData['type'] = 'E-mail Verification';
-            $mailData['subject'] = 'Verify E-mail';
-            Mail::to($user->email)->send(new VerifyEmailSend($mailData));
+        $userObj->code = $code;
+        if ($userObj->save()) {
+            if ($userObj->is_completed == '0') {
+                $mailData = [];
+                $mailData['name'] = $request->email;
+                $mailData['otp'] = $code;
+                $mailData['type'] = 'E-mail Verification';
+                $mailData['subject'] = 'Verify E-mail';
+                Mail::to($userObj->email)->send(new VerifyEmailSend($mailData));
+            }
         }
-        $user->code = $code;
-        if ($user->save()) {
-            $response['is_completed'] = $user->is_completed;
-            $response['data'] = User::select('email',)->find($user->id);
-            $response['success'] = TRUE;
-            $response['message'] = "Verification code sent successfully";
-            $response['status'] = STATUS_OK;
-        }
+        $response['is_completed'] = $userObj->is_completed;
+        $response['data'] = User::select('email',)->find($userObj->id);
+        $response['success'] = TRUE;
+        $response['message'] = "Verification code sent successfully";
+        $response['status'] = STATUS_OK;
+
         return response()->json($response, $response['status']);
     }
 
