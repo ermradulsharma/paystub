@@ -35,7 +35,7 @@ function handleCredentialResponse(response) {
         },
         data: responsePayload,
         success: function (response) {
-            console.log('response', response);
+            // console.log('response', response);
             $("#loginModal").modal("hide");
             toastr.success(response.message);
             $(".registerBtn").removeClass("d-block");
@@ -47,7 +47,7 @@ function handleCredentialResponse(response) {
                 window.location.href = baseUrl + "admin/dashboard";
             }
             if (userAuth == 1) {
-                $(".authUserName").text("Hi "+response.user.name);
+                $(".authUserName").text("Hi "+response.data);
                 if (okk == 1) {
                     usaStoreData();
                 }
