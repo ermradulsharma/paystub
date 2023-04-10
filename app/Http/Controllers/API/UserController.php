@@ -154,7 +154,7 @@ class UserController extends Controller
         }
         return response()->json($response, $response['status']);
     }
-    }
+    
     public function updateUserProfile(Request $request)
     {
         $response = [];
