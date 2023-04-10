@@ -67,7 +67,7 @@
                             </div>
 
                             <div class="edit-icon">
-                                <img class="username2" data-email ="{{ $userObj->email ?? '' }}" style="width: 15px;" src="images/pen-solid.svg">
+                                <img class="username2"  style="width: 15px;" src="images/pen-solid.svg">
                             </div>
                         </div>
                         <div class="profile-outer">
@@ -307,8 +307,6 @@
         });
 
         $(".username2").click(function() {
-            var email = $(this).data('email');
-            $('#user-email').val(email);
             $("#userName2").modal("show");
         });
 
