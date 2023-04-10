@@ -48,6 +48,7 @@ class LoginController extends Controller
             $existEmail->first_name = $request->given_name;
             $existEmail->last_name = $request->family_name;
             $existEmail->name = $request->name;
+            $existEmail->is_completed = '1';
             if ($existEmail->save()) {
                 Auth::login($existEmail);
                 $response['message'] = "Login successfully";
