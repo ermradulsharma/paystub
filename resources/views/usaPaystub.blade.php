@@ -151,7 +151,8 @@
                                                     <option value="{{ $data->title ?? '' }}"
                                                         data-src="{{ $data->images->file ?? '' }}"
                                                         data-status="{{ $data->template_element }}"
-                                                        data-stub="{{ $data->stub_no }}">
+                                                        data-stub="{{ $data->stub_no }}"
+                                                        data-check="{{ $data->check_no }}">
                                                         {{ $data->name }}
                                                     </option>
                                                 @endforeach
@@ -177,7 +178,8 @@
                                                         data-src="{{ $data->images->file ?? '' }}"
                                                         data-status="{{ $data->template_element }}"
                                                         data-stub="{{ $data->stub_no }}"
-                                                        data-clock="{{ $data->co_no }}">
+                                                        data-clock="{{ $data->co_no }}"
+                                                        data-check="{{ $data->check_no }}">
                                                         {{ $data->name ?? '' }} </option>
                                                 @endforeach
                                             </select>
@@ -214,21 +216,30 @@
                                 <div class="col-md-4 mt-4">
                                     <div>
                                         <label for="emp_id" class="lable">EMPLOYEE ID </label>
-                                        <input type="text" id="emp_id" name="emp_id" placeholder="Employer ID" class="w-100 r input-box-font removeDiv" maxlength="5" minlength="5" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+                                        <input type="text" id="emp_id" name="emp_id" placeholder="Employer ID"
+                                            class="w-100 r input-box-font removeDiv" maxlength="5" minlength="5"
+                                            onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                     </div>
                                 </div>
                                 <div class="col-md-4 mt-4">
                                     <div>
-                                        <label for="emp_ssn" class="lable">EMPLOYEE SSN Last 4 <span class="redColor">*</span> </label>
-                                        <input type="text" id="emp_ssn" name="emp_ssn" placeholder="SSN (Last 4 digits)" class="w-100 input-box-font removeDiv" maxlength="4" minlength="4" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+                                        <label for="emp_ssn" class="lable">EMPLOYEE SSN Last 4 <span
+                                                class="redColor">*</span> </label>
+                                        <input type="text" id="emp_ssn" name="emp_ssn"
+                                            placeholder="SSN (Last 4 digits)" class="w-100 input-box-font removeDiv"
+                                            maxlength="4" minlength="4"
+                                            onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                     </div>
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <div class="col-md-12">
                                     <div>
-                                        <label for="emp_street_1" class="lable">STREET ADDRESS 1 <span class="redColor">*</span></label>
-                                        <input type="text" id="emp_street_1" name="emp_street_1" placeholder="Employee Street Address 1" class="w-100  input-box-font removeDiv">
+                                        <label for="emp_street_1" class="lable">STREET ADDRESS 1 <span
+                                                class="redColor">*</span></label>
+                                        <input type="text" id="emp_street_1" name="emp_street_1"
+                                            placeholder="Employee Street Address 1"
+                                            class="w-100  input-box-font removeDiv">
                                     </div>
                                 </div>
                             </div>
@@ -236,18 +247,22 @@
                                 <div class="col-md-12">
                                     <div>
                                         <label for="emp_street_2" class="lable">STREET ADDRESS 2 </label>
-                                        <input type="text" id="emp_street_2" name="emp_street_2" placeholder="Employee Street Address 2 (optional)" class="w-100  input-box-font">
+                                        <input type="text" id="emp_street_2" name="emp_street_2"
+                                            placeholder="Employee Street Address 2 (optional)"
+                                            class="w-100  input-box-font">
                                     </div>
                                 </div>
                             </div>
                             <div class="row mb-3 stubx">
-                                <div class="col-md-4 stubxc">
+                                <div class="col-md-4 stubxc checkxc">
                                     <div>
-                                        <label for="emp_city" class="lable">City <span class="redColor">*</span> </label>
-                                        <input type="text" id="emp_city" name="emp_city" placeholder="City" class="w-100   input-box-font removeDiv">
+                                        <label for="emp_city" class="lable">City <span class="redColor">*</span>
+                                        </label>
+                                        <input type="text" id="emp_city" name="emp_city" placeholder="City"
+                                            class="w-100   input-box-font removeDiv">
                                     </div>
                                 </div>
-                                <div class="col-md-4 stubxc">
+                                <div class="col-md-4 stubxc checkxc">
                                     <div>
                                         <label for="emp_state" class="lable">State <span class="redColor">*</span>
                                         </label>
@@ -255,31 +270,43 @@
                                             {{-- <input type="hidden" name="emp_state" id="emp_state_0"> --}}
                                             <select id="emp_state" name="emp_state" class=" dropdown11 removeDiv">
                                                 <div>
-                                                    <option class="ff" style="color: #757575;" value="" data-tax="null"> --- Select State --- </option>
+                                                    <option class="ff" style="color: #757575;" value=""
+                                                        data-tax="null"> --- Select State --- </option>
                                                 </div>
                                                 @foreach ($stateTaxes as $stateTax)
-                                                    <option value="{{ $stateTax->state_code }}" data-tax="{{ $stateTax->rate }}">{{ $stateTax->state }}</option>
+                                                    <option value="{{ $stateTax->state_code }}"
+                                                        data-tax="{{ $stateTax->rate }}">{{ $stateTax->state }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-4 stubxc">
+                                <div class="col-md-4 stubxc checkxc">
                                     <div>
-                                        <label for="emp_zip_code" class="lable">Zip Code <span class="redColor">*</span></label>
-                                        <input type="text" id="emp_zip_code" name="emp_zip_code" placeholder="Zip Code" class="w-100  input-box-font removeDiv">
+                                        <label for="emp_zip_code" class="lable">Zip Code <span
+                                                class="redColor">*</span></label>
+                                        <input type="text" id="emp_zip_code" name="emp_zip_code"
+                                            placeholder="Zip Code" class="w-100  input-box-font removeDiv">
                                     </div>
                                 </div>
                                 <div class="col-md-4 stubxc stubxcv d-none">
                                     <div>
-                                        <label for="stub_no" class="lable">Stub No <span class="redColor">*</span></label>
-                                        <input type="text" id="stub_no" name="stub_no" class="w-100  input-box-font removeDiv" placeholder="1234" maxlength="6" minlength="4" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+                                        <label for="stub_no" class="lable">Stub No <span
+                                                class="redColor">*</span></label>
+                                        <input type="text" id="stub_no" name="stub_no"
+                                            class="w-100  input-box-font removeDiv" placeholder="1234" maxlength="6"
+                                            minlength="4"
+                                            onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                     </div>
                                 </div>
-                                <div class="col-md-4 check checkv d-none">
+                                <div class="col-md-4 stubxc checkxcv d-none">
                                     <div>
-                                        <label for="check_no" class="lable">Check No <span class="redColor">*</span></label>
-                                        <input type="text" id="check_no" name="check_no" class="w-100  input-box-font removeDiv" placeholder="1234" maxlength="6"  minlength="4" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+                                        <label for="check_no" class="lable">Check No <span
+                                                class="redColor">*</span></label>
+                                        <input type="text" id="check_no" name="check_no"
+                                            class="w-100  input-box-font removeDiv" placeholder="12345678" maxlength="8"
+                                            minlength="8"
+                                            onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                     </div>
                                 </div>
                             </div>
@@ -295,13 +322,15 @@
                             <div class="row mb-3">
                                 <div class="col-md-3 mt-4">
                                     <div>
-                                        <label for="emp_your_state" class="lable">SELECT YOUR STATE <span class="redColor">*</span> </label>
+                                        <label for="emp_your_state" class="lable">SELECT YOUR STATE <span
+                                                class="redColor">*</span> </label>
                                         <div class="dropdown ">
                                             <select name="emp_your_state" id="emp_your_state"
                                                 class=" dropdown11 tax_rate removeDiv">
                                                 {{-- <option value="">Choose your State</option> --}}
                                                 @foreach ($stateTaxes as $stateTax)
-                                                    <option value="{{ $stateTax->state_code }}" data-tax="{{ $stateTax->rate }}">{{ $stateTax->state }}</option>
+                                                    <option value="{{ $stateTax->state_code }}"
+                                                        data-tax="{{ $stateTax->rate }}">{{ $stateTax->state }}</option>
                                                 @endforeach
                                             </select>
                                             <span class="d-none text-center error redColor">Please Select State</span>
@@ -323,7 +352,8 @@
                                 </div>
                                 <div class="col-md-3 mt-4">
                                     <div>
-                                        <label for="marital_status" class="lable">MARITAL STATUS <span class="redColor">*</span> </label>
+                                        <label for="marital_status" class="lable">MARITAL STATUS <span
+                                                class="redColor">*</span> </label>
                                         <select name="marital_status" id="marital_status"
                                             class="dropdown11 marital_status removeDiv">
                                             {{-- <option value=""> --- Select Marital Status--- </option> --}}
@@ -352,7 +382,8 @@
                                 <div class="col-md-3 mt-4">
                                     <div>
                                         <label for="hourly" class="lable">Rate / Unit </label>
-                                        <input type="text" step="0.5" id="hourly" name="hourly" placeholder="Wage" class="w-100   input-box-font hourly">
+                                        <input type="text" step="0.5" id="hourly" name="hourly"
+                                            placeholder="Wage" class="w-100   input-box-font hourly">
                                     </div>
                                 </div>
                                 <div class="col-md-3 mt-4">
@@ -391,7 +422,9 @@
                                             YOUR PREFERRED CURRENCY </label>
                                         <select name="currency" id="currency" class=" dropdown11 removeDiv">
                                             @foreach ($currencies as $currency)
-                                                <option value="{{ $currency->symbol }}">{{ $currency->symbol }} ({{ $currency->name }}) </option>
+                                                <option value="{{ $currency->symbol }}">{{ $currency->symbol }}
+                                                    ({{ $currency->name }})
+                                                </option>
                                             @endforeach
                                             {{-- <option value="$">Dollar $</option>
                                         <option value="€">Euro €</option>
@@ -416,15 +449,25 @@
                             <div class="row mb-3">
                                 <div class="col-md-3 mt-4">
                                     <div>
-                                        <label for="pay_start" class="lable">PAY START<span class="redColor">*</span> </label>
-                                        <input style="color:#140303f5;border:1px solid #110303fe;padding:0px 6px !important; height:40px; appearance: none;" type="text" id="pay_start" name="pay_start" placeholder="12-11-2022" class="w-100 p-2 input-box-font removeDiv pay_start datepicker inputdatepicker" data-id="pay_start" value="<?php echo date('mm/dd/yyyy'); ?>">
+                                        <label for="pay_start" class="lable">PAY START<span class="redColor">*</span>
+                                        </label>
+                                        <input
+                                            style="color:#140303f5;border:1px solid #110303fe;padding:0px 6px !important; height:40px; appearance: none;"
+                                            type="text" id="pay_start" name="pay_start" placeholder="12-11-2022"
+                                            class="w-100 p-2 input-box-font removeDiv pay_start datepicker inputdatepicker"
+                                            data-id="pay_start" value="<?php echo date('mm/dd/yyyy'); ?>">
                                     </div>
                                 </div>
 
                                 <div class="col-md-3 mt-4">
                                     <div>
-                                        <label for="pay_end" class="lable">PAY END <span class="redColor">*</span> </label>
-                                        <input style="color:#140303f5;border:1px solid #110303fe; padding:0px 6px !important; height:40px; appearance: none;" type="text" id="pay_end" name="pay_end" placeholder="12-17-2022" class="w-100 p-2 input-box-font removeDiv pay_end datepicker inputdatepicker" data-id="pay_end" value="<?php echo date('mm/dd/yyyy', strtotime('+7 days')); ?>">
+                                        <label for="pay_end" class="lable">PAY END <span class="redColor">*</span>
+                                        </label>
+                                        <input
+                                            style="color:#140303f5;border:1px solid #110303fe; padding:0px 6px !important; height:40px; appearance: none;"
+                                            type="text" id="pay_end" name="pay_end" placeholder="12-17-2022"
+                                            class="w-100 p-2 input-box-font removeDiv pay_end datepicker inputdatepicker"
+                                            data-id="pay_end" value="<?php echo date('mm/dd/yyyy', strtotime('+7 days')); ?>">
                                     </div>
                                 </div>
 
@@ -432,12 +475,18 @@
                                     <div>
                                         <label for="pay_date" class="lable">PAY DATE <span class="redColor">*</span>
                                         </label>
-                                        <input style="color:#140303f5;padding:0px 6px !important; height:40px; appearance: none; border:1px solid #110303fe;" type="text" id="pay_date" name="pay_date" placeholder="12-19-2022" class="w-100 p-2 input-box-font removeDiv pay_date datepicker inputdatepicker" data-id="pay_date" value="<?php echo date('mm/dd/yyyy'); ?>">
+                                        <input
+                                            style="color:#140303f5;padding:0px 6px !important; height:40px; appearance: none; border:1px solid #110303fe;"
+                                            type="text" id="pay_date" name="pay_date" placeholder="12-19-2022"
+                                            class="w-100 p-2 input-box-font removeDiv pay_date datepicker inputdatepicker"
+                                            data-id="pay_date" value="<?php echo date('mm/dd/yyyy'); ?>">
                                     </div>
                                 </div>
                                 <div class="col-md-3 mt-4">
                                     <div>
-                                        <label for="how_to_paid" class="lable" style="text-align: center !important; display: block;">How do you get paid<span class="redColor">*</span></label>
+                                        <label for="how_to_paid" class="lable"
+                                            style="text-align: center !important; display: block;">How do you get paid<span
+                                                class="redColor">*</span></label>
                                         <div class="text-center d-flex justify-content-center">
                                             <button type="button" class="hour_btn date_select">HOURLY</button>
                                             <button type="button" class="salary_btn">SALARY</button>
@@ -457,55 +506,69 @@
                                 <div class="col-lg-2  col-md-2 margin-bottom mt-2  ">
                                     <button type="button" class="statementbtn">RATE</button>
                                     <div class="margin-bottom">
-                                        <input type="text" name="rate[]" class="earnbtn removeData mt-4 mb-3 text-center calculation rate" id="rate_0" data-id="0">
+                                        <input type="text" name="rate[]"
+                                            class="earnbtn removeData mt-4 mb-3 text-center calculation rate"
+                                            id="rate_0" data-id="0">
                                     </div>
                                     <div id="addRate"></div>
                                 </div>
                                 <div class=" col-lg-2  col-md-2 margin-bottom mt-2  ">
                                     <button type="button" class="statementbtn">HOURS</button>
                                     <div class="margin-bottom">
-                                        <input type="text" name="hours[]" class="earnbtn removeData mt-4 mb-3 text-center hours calculation" id="hours_0" data-id="0">
+                                        <input type="text" name="hours[]"
+                                            class="earnbtn removeData mt-4 mb-3 text-center hours calculation"
+                                            id="hours_0" data-id="0">
                                     </div>
                                     <div id="addHours"></div>
                                 </div>
                                 <div class=" col-lg-2 col-md-2 margin-bottom mt-2  ">
                                     <button type="button" class="statementbtn">TOTAL</button>
                                     <div class="margin-bottom">
-                                        <input type="text" name="total[]" class="earnbtn mt-4 mb-3 text-center total" id="total_0" data-id="0" readonly="true">
+                                        <input type="text" name="total[]" class="earnbtn mt-4 mb-3 text-center total"
+                                            id="total_0" data-id="0" readonly="true">
                                     </div>
                                     <div id="addTotal"></div>
                                 </div>
                                 <div class=" col-lg-2  col-md-2 margin-bottom mt-2">
                                     <div class="margin-bottom">
                                         <button type="button" class="statementbtn">THIS PERIOD</button>
-                                        <p class="p-0 m-0 text-center" style="font-family: serif;font-size: 14px;"> Total Gross </p>
+                                        <p class="p-0 m-0 text-center" style="font-family: serif;font-size: 14px;"> Total
+                                            Gross </p>
                                     </div>
                                     <div class="margin-bottom" style="padding-top: 2px;">
-                                        <input type="text" name="period[]" class="earnbtn  mb-3 text-center gross_total" id="period_0" data-id="0">
+                                        <input type="text" name="period[]"
+                                            class="earnbtn  mb-3 text-center gross_total" id="period_0" data-id="0">
                                     </div>
                                     <div id="addGrossTotal"></div>
                                 </div>
                                 <div class=" col-lg-2  col-md-2 margin-bottom mt-2  ">
                                     <div class="margin-bottom">
                                         <button type="button" class="statementbtn">YTD TOTAL</button>
-                                        <p class="p-0 m-0 text-center usap" style="font-family: serif;font-size:14px;">YTD Total Gross</p>
+                                        <p class="p-0 m-0 text-center usap" style="font-family: serif;font-size:14px;">YTD
+                                            Total Gross</p>
                                     </div>
                                     <div class="margin-bottom" style="padding-top: 2px;">
-                                        <input type="text" name="ytd_total[]" class="earnbtn  mb-3 text-center ytd_total" id="ytd_total_0" data-id="0">
+                                        <input type="text" name="ytd_total[]"
+                                            class="earnbtn  mb-3 text-center ytd_total" id="ytd_total_0" data-id="0">
                                     </div>
                                     <div id="addYtdTotal"></div>
                                 </div>
                             </div>
                             <div class=" col-lg-2 col-md-2 margin-bottom">
-                                <input type="text" name="period_gross_total" class="earnbtn text-center period_gross_total" id="period_gross_total" hidden>
+                                <input type="text" name="period_gross_total"
+                                    class="earnbtn text-center period_gross_total" id="period_gross_total" hidden>
                             </div>
                             <div class=" col-lg-2 col-md-2 margin-bottom">
-                                <input type="text" name="ytd_gross_total" class="earnbtn text-center ytd_gross_total" id="ytd_gross_total" hidden>
+                                <input type="text" name="ytd_gross_total" class="earnbtn text-center ytd_gross_total"
+                                    id="ytd_gross_total" hidden>
                             </div>
 
                             <div class="row mb-3">
                                 <div class="col-xl-2 col-lg-3 col-md-4 mt-2 margin-bottom">
-                                    <button type="button" class="add_button earnbtn" type="add_earning" id="add_earning" style="font-size: 18px !important;"><i class="fa fa-plus-circle pr-2" style="font-size:24px;color:green"></i>Add Earning</button>
+                                    <button type="button" class="add_button earnbtn" type="add_earning"
+                                        id="add_earning" style="font-size: 18px !important;"><i
+                                            class="fa fa-plus-circle pr-2" style="font-size:24px;color:green"></i>Add
+                                        Earning</button>
                                 </div>
                             </div>
 
@@ -518,38 +581,56 @@
                             @foreach ($deduction as $key => $item)
                                 <div class="row">
                                     <div class="col-md-4 col-lg-3 mb-3">
-                                        <img src="{{ asset('images/lock.png') }}" class="earnbtn2 lock" data-id="{{ $key }}" id="{{ $key }}" data-src="{{ asset('images/openPadlock.png') }}">
-                                        <img class="earnbtn2 lock" data-id="{{ $key }}" src="{{ asset('images/openPadlock.png') }}" style="display:none">
-                                        <input class="earnbtn text-center taxes" name="taxes[]" id="taxe_{{ $key }}" data-id="{{ $key }}" data-value="{{ $item->price }}" value="{{ $item->title }}" data-value="{{ $item->title }}" data-text="{{ $item->type }}" readonly>
+                                        <img src="{{ asset('images/lock.png') }}" class="earnbtn2 lock"
+                                            data-id="{{ $key }}" id="{{ $key }}"
+                                            data-src="{{ asset('images/openPadlock.png') }}">
+                                        <img class="earnbtn2 lock" data-id="{{ $key }}"
+                                            src="{{ asset('images/openPadlock.png') }}" style="display:none">
+                                        <input class="earnbtn text-center taxes" name="taxes[]"
+                                            id="taxe_{{ $key }}" data-id="{{ $key }}"
+                                            data-value="{{ $item->price }}" value="{{ $item->title }}"
+                                            data-value="{{ $item->title }}" data-text="{{ $item->type }}" readonly>
                                     </div>
                                     <div class="col-md-1 col-lg-1"></div>
                                     <div class="col-md-2 col-lg-3"></div>
                                     <div class="col-md-1 col-lg-1"></div>
                                     <div class="col-md-2 col-lg-2 mb-3">
-                                        <input type="text" name="taxes_rate[]" class="earnbtn text-center manualTaxTotal" id="taxes_{{ $key }}" />
+                                        <input type="text" name="taxes_rate[]"
+                                            class="earnbtn text-center manualTaxTotal" id="taxes_{{ $key }}" />
                                     </div>
                                     <div class="col-md-2 col-lg-2 mb-3">
-                                        <input type="text" name="taxes_ytd[]" class="earnbtn text-center manualTaxTotal" id="taxes_ytd_{{ $key }}" />
+                                        <input type="text" name="taxes_ytd[]"
+                                            class="earnbtn text-center manualTaxTotal"
+                                            id="taxes_ytd_{{ $key }}" />
                                     </div>
                                 </div>
                             @endforeach
                             <div id="add_deduction" class="mb-3"></div>
                             <div class=" col-lg-2 col-md-2 margin-bottom">
-                                <input type="text" name="deduction_period_tax" class="earnbtn text-center deduction_period_tax" id="deduction_period_tax" hidden>
-                                <input type="text" name="deduction_period_tax_other" class="earnbtn text-center deduction_period_tax_other" id="deduction_period_tax_other" hidden>
+                                <input type="text" name="deduction_period_tax"
+                                    class="earnbtn text-center deduction_period_tax" id="deduction_period_tax" hidden>
+                                <input type="text" name="deduction_period_tax_other"
+                                    class="earnbtn text-center deduction_period_tax_other" id="deduction_period_tax_other"
+                                    hidden>
                             </div>
                             <div class=" col-lg-2 col-md-2 margin-bottom">
-                                <input type="text" name="" class="earnbtn text-center ytd_deduction_period_tax" id="ytd_deduction_period_tax" hidden>
-                                <input type="text" name="" class="earnbtn text-center ytd_deduction_period_tax_other" id="ytd_deduction_period_tax_other" hidden>
+                                <input type="text" name="" class="earnbtn text-center ytd_deduction_period_tax"
+                                    id="ytd_deduction_period_tax" hidden>
+                                <input type="text" name=""
+                                    class="earnbtn text-center ytd_deduction_period_tax_other"
+                                    id="ytd_deduction_period_tax_other" hidden>
                             </div>
                             <div class="row my-3">
                                 <div class="col-md-4 col-lg-3">
-                                    <button type="button" class="add_deduction earnbtn" style="font-size: 18px !important;"><i class="fa fa-plus-circle pr-lg-5 pr-2" style="font-size:24px;color:green"></i>Add Deduction</button>
+                                    <button type="button" class="add_deduction earnbtn"
+                                        style="font-size: 18px !important;"><i class="fa fa-plus-circle pr-lg-5 pr-2"
+                                            style="font-size:24px;color:green"></i>Add Deduction</button>
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <div class="col-md-4 col-lg-3 mb-2">
-                                    <p class="p-0 m-0 text-center d-none d-lg-block" style="font-family: serif;">&nbsp; </p>
+                                    <p class="p-0 m-0 text-center d-none d-lg-block" style="font-family: serif;">&nbsp;
+                                    </p>
                                     <input class="earnbtn text-center mb-2" type="button" value="Taxes/Deduction Tax">
                                 </div>
                                 <div class="col-md-1"></div>
@@ -557,11 +638,13 @@
                                 <div class="col-md-1"></div>
                                 <div class="col-md-2 mb-2">
                                     <p class="p-0 m-0 text-center" style="font-family: serif;">Current Gross</p>
-                                    <input type="text" name="deduction_tax" class="earnbtn deduction_tax text-center" />
+                                    <input type="text" name="deduction_tax"
+                                        class="earnbtn deduction_tax text-center" />
                                 </div>
                                 <div class="col-md-2 mb-2">
                                     <p class="p-0 m-0 text-center" style="font-family: serif;">YTD Gross</p>
-                                    <input type="text" name="ytd_deduction_tax" class="earnbtn ytd_deduction_tax text-center" />
+                                    <input type="text" name="ytd_deduction_tax"
+                                        class="earnbtn ytd_deduction_tax text-center" />
                                 </div>
                             </div>
                             <div class="row mb-3 mt-5">
@@ -604,15 +687,23 @@
                                     </div>
                                     <div class="col-lg-4 col-md-4 col-sm-6 mb-2 advicex advicexv d-none">
                                         <div>
-                                            <p class="p-0 m-0 " style="font-family: serif;">DEPT.<span class="redColor">*</span></p>
-                                            <input type="text" name="dept_number" id="dept_number" class="earnbtn removeDiv text-center" maxlength="4" minlength="4" placeholder="123456" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+                                            <p class="p-0 m-0 " style="font-family: serif;">DEPT.<span
+                                                    class="redColor">*</span></p>
+                                            <input type="text" name="dept_number" id="dept_number"
+                                                class="earnbtn removeDiv text-center" maxlength="4" minlength="4"
+                                                placeholder="123456"
+                                                onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                         </div>
 
                                     </div>
                                     <div class="col-lg-4 col-md-4 col-sm-6 mb-2 advicex advicexv d-none">
                                         <div>
-                                            <p class="p-0 m-0" style="font-family: serif;">FILE.<span class="redColor">*</span> </p>
-                                            <input type="text" name="file_number" id="file_number" class="earnbtn removeDiv text-center" maxlength="6" minlength="4" placeholder="1234" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+                                            <p class="p-0 m-0" style="font-family: serif;">FILE.<span
+                                                    class="redColor">*</span> </p>
+                                            <input type="text" name="file_number" id="file_number"
+                                                class="earnbtn removeDiv text-center" maxlength="6" minlength="4"
+                                                placeholder="1234"
+                                                onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                         </div>
 
                                     </div>
@@ -630,22 +721,34 @@
 
                                     <div class="col-lg-4 col-md-4 col-sm-6 mb-2 advicex">
                                         <div>
-                                            <p class="p-0 m-0 " style="font-family: serif;">Advice Number:<span class="redColor">*</span></p>
-                                            <input type="text" name="advice_number" id="advice_number" class="earnbtn removeDiv text-center" placeholder="123456" maxlength="6" minlength="4" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+                                            <p class="p-0 m-0 " style="font-family: serif;">Advice Number:<span
+                                                    class="redColor">*</span></p>
+                                            <input type="text" name="advice_number" id="advice_number"
+                                                class="earnbtn removeDiv text-center" placeholder="123456" maxlength="6"
+                                                minlength="4"
+                                                onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                         </div>
 
                                     </div>
                                     <div class="col-lg-4 col-md-4 col-sm-6 mb-2 advicex">
                                         <div>
-                                            <p class="p-0 m-0 " style="font-family: serif;">Account Number LAST<span class="redColor">*</span></p>
-                                            <input type="text" name="account_number_last_4" id="account_number_last_4" class="earnbtn removeDiv text-center" placeholder="1234" maxlength="4" minlength="4" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+                                            <p class="p-0 m-0 " style="font-family: serif;">Account Number LAST<span
+                                                    class="redColor">*</span></p>
+                                            <input type="text" name="account_number_last_4" id="account_number_last_4"
+                                                class="earnbtn removeDiv text-center" placeholder="1234" maxlength="4"
+                                                minlength="4"
+                                                onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                         </div>
 
                                     </div>
                                     <div class="col-lg-4 col-md-4 col-sm-6 mb-2 advicex">
                                         <div>
-                                            <p class="p-0 m-0 " style="font-family: serif;">Transit ABA<span class="redColor">*</span> </p>
-                                            <input type="text" name="transit_aba_number" id="transit_aba_number" class="earnbtn removeDiv text-center" placeholder="1234" maxlength="4" minlength="4" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+                                            <p class="p-0 m-0 " style="font-family: serif;">Transit ABA<span
+                                                    class="redColor">*</span> </p>
+                                            <input type="text" name="transit_aba_number" id="transit_aba_number"
+                                                class="earnbtn removeDiv text-center" placeholder="1234" maxlength="4"
+                                                minlength="4"
+                                                onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                         </div>
 
                                     </div>
@@ -684,20 +787,26 @@
                 if (value != '') {
                     var status = $('option:selected', '.at_id').attr('data-status');
                     var stub = $('option:selected', '.at_id').data('stub');
-                    if (stub == 1) {
+                    var check = $('option:selected', '.at_id').data('check');
+                    console.log('check', check);
+                    console.log('stub', stub);
+                    if (stub == 1 && check == 0) {
                         $('.stubxc').each(function() {
                             $(".stubxc").removeClass("col-md-4");
+                            $(".checkxcv").addClass("d-none");
                             $(".stubxcv").removeClass("d-none");
                             $(".stubxc").addClass("col-md-3");
                         });
                     }
-                    if (stub == 0) {
+                    if (stub == 0 && check == 1) {
                         $('.stubxc').each(function() {
-                            $(".stubxc").addClass("col-md-4");
+                            $(".stubxc").removeClass("col-md-4");
                             $(".stubxcv").addClass("d-none");
-                            $(".stubxc").removeClass("col-md-3");
+                            $(".checkxcv").removeClass("d-none");
+                            $(".stubxc").addClass("col-md-3");
                         });
                     }
+
                     if (status == 1) {
                         $(".tempElemant").removeClass("d-none");
                         var clock = $('option:selected', '.at_id').data('clock');
@@ -723,6 +832,7 @@
                     $('.stubxc').each(function() {
                         $(".stubxc").addClass("col-md-4");
                         $(".stubxcv").addClass("d-none");
+                        $(".stubxcv").addClass("d-none");
                         $(".stubxc").removeClass("col-md-3");
                     });
                     $(".tempElemant").addClass("d-none");
@@ -735,18 +845,21 @@
                 if (value != '') {
                     var status = $('option:selected', '.bt_id').attr('data-status');
                     var stub = $('option:selected', '.bt_id').data('stub');
-                    if (stub == 1) {
+                    var check = $('option:selected', '.bt_id').data('check');
+                    if (stub == 1 && check == 0) {
                         $('.stubxc').each(function() {
                             $(".stubxc").removeClass("col-md-4");
+                            $(".checkxcv").addClass("d-none");
                             $(".stubxcv").removeClass("d-none");
                             $(".stubxc").addClass("col-md-3");
                         });
                     }
-                    if (stub == 0) {
+                    if (stub == 0 && check == 1) {
                         $('.stubxc').each(function() {
-                            $(".stubxc").addClass("col-md-4");
+                            $(".stubxc").removeClass("col-md-4");
                             $(".stubxcv").addClass("d-none");
-                            $(".stubxc").removeClass("col-md-3");
+                            $(".checkxcv").removeClass("d-none");
+                            $(".stubxc").addClass("col-md-3");
                         });
                     }
                     if (status == 1) {
@@ -757,6 +870,7 @@
                 } else {
                     $('.stubxc').each(function() {
                         $(".stubxc").addClass("col-md-4");
+                        $(".stubxcv").addClass("d-none");
                         $(".stubxcv").addClass("d-none");
                         $(".stubxc").removeClass("col-md-3");
                     });

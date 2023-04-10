@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Paystub X</title>
+    <title> PAYSTUB X </title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -14,13 +14,15 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;800&family=Public+Sans:wght@300&display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;800&family=Public+Sans:wght@300&display=swap">
 
 
     <!-- Responsive CSS Style -->
     <link rel="stylesheet" type="text/css" href="{{ asset('user') }}/css/style.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('user') }}/css/newstyle.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('user') }}/css/user-dashboard.css">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <style>
         select,
         select option {
@@ -242,7 +244,7 @@
                                     class="form-control formm  py-4" placeholder="Password *">
                             </div>
                         </div>
-                        <p class="resend-otp" >
+                        <p class="resend-otp">
                             <a id="forgotPasswordButton" href="JavaScript:void(0);">Forgot Password?</a>
                         </p>
                         <div class="text-center">
@@ -253,6 +255,7 @@
             </div>
         </div>
     </div>
+
 
     <div class="modal fade otpModal" id="otpModal">
         <div class="modal-dialog modal-dialog-centered">
@@ -435,14 +438,6 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script>
 
-    <div class="modal fade" id="setName">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <!-- Modal Header -->
-                <div class="modal-header" style="background: #115caecf;">
-                    <h4 class="modal-title" style="text-transform: capitalize;color:#fff;">Set My Account</h4>
-                    <button type="button" style="border: none; background-color:transparent; color:#fff;font-size:20px;padding:0;" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
-                </div>
 
     <script>
         //
@@ -453,8 +448,6 @@
                 $("#loginPasswordModal").modal("hide");
                 $("#forgotPasswordModal").modal("show");
             });
-        });
-        $('.inputdatepicker').datepicker({autoclose: true, todayHighlight: true, format: "mm/dd/yyyy",}).datepicker('setDate', 'today');
 
             $('#backToSignin').click(function() {
                 $("#forgotPasswordModal").modal("hide");
@@ -708,156 +701,6 @@
         });
     </script>
 
-            100% {
-                -webkit-transform: rotate(360deg);
-            }
-        }
-
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        /* Add animation to "page content" */
-        .animate-bottom {
-            position: relative;
-            -webkit-animation-name: animatebottom;
-            -webkit-animation-duration: 1s;
-            animation-name: animatebottom;
-            animation-duration: 5s
-        }
-
-        @-webkit-keyframes animatebottom {
-            from {
-                bottom: -100px;
-                opacity: 0
-            }
-
-            to {
-                bottom: 0px;
-                opacity: 1
-            }
-        }
-
-        @keyframes animatebottom {
-            from {
-                bottom: -100px;
-                opacity: 0
-            }
-
-            to {
-                bottom: 0;
-                opacity: 1
-            }
-        }
-
-        #loaderDiv {
-            position: fixed;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            right: 0;
-            background: #00000054;
-            z-index: 999;
-        }
-    </style>
-
-    <div id="loaderDiv" style="display: none;">
-        <div id="loader"></div>
-    </div>
-
-
-    @if ($errors->first())
-        <script>
-            toastr.error('{{ $errors->first() }}');
-        </script>
-    @endif
-
-    @if (Session::has('message'))
-        <script>
-            toastr.success("{{ Session::get('message') }}");
-        </script>
-    @endif
-
-    @if (Session::has('error'))
-        <script>
-            toastr.error("{{ Session::get('error') }}");
-        </script>
-    @endif
-
-    <script>
-        function myFunction() {
-            document.getElementById("myDropdown").classList.toggle("show");
-        }
-
-        // Close the dropdown menu if the user clicks outside of it
-        window.onclick = function(event) {
-            if (!event.target.matches('.dropbtn')) {
-
-                var dropdowns = document.getElementsByClassName("dropdown-content");
-                var i;
-                for (i = 0; i < dropdowns.length; i++) {
-                    var openDropdown = dropdowns[i];
-                    if (openDropdown.classList.contains('show')) {
-                        openDropdown.classList.remove('show');
-                    }
-                }
-            }
-        }
-    </script>
-
-    <script>
-        $(document).ready(function() {
-            (function($) {
-                var toggle = '[data-toggle="droppanel"]';
-
-                function clearMenus(e) {
-                    var panel = $(e.data).not(e.exclude);
-                    var $ddMenu = panel.find(".dropdown-menu");
-                    $ddMenu.slideUp();
-                }
-
-                function toggleMenu(e) {
-                    var $this = $(this),
-                        $parent, selector;
-                    if ($this.is('.disabled, :disabled')) return;
-                    selector = $this.attr('data-target');
-                    if (!selector) {
-                        selector = $this.attr('href');
-                        selector = selector && selector.replace(/.*(?=#[^\s]*$)/, ''); //strip for ie7
-                    }
-                    $parent = $(selector);
-                    $parent.length || ($parent = $this.parent());
-                    var $ddMenu = $parent.find(".dropdown-menu");
-                    $ddMenu.slideToggle(function(evt) {
-                        if ($(this).css("display") == "block") {
-                            $('html').trigger({
-                                type: 'click',
-                                exclude: $parent
-                            });
-                            $parent.addClass('open');
-                            $(this).css("display", "");
-                            $parent.trigger({
-                                type: 'droppanel.show',
-                                panel: $parent
-                            });
-                        } else {
-                            $parent.removeClass('open');
-                        }
-                    });
-
-                    return false;
-                }
-                $('html').on('click.dropdown.data-api', null, '.droppanel', clearMenus);
-                $('body').on('click.dropdown', '.droppanel', function(e) {e.stopPropagation();}).on('click.dropdown.data-api', toggle, toggleMenu);
-            }(jQuery));
-        });
-    </script>
 </body>
 
 </html>
