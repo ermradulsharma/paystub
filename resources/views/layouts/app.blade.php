@@ -109,11 +109,11 @@
             href="{{ route('w2form') }}">W-2 FORM</a>
         @guest
         <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn login registerBtn"
-            style="background-color:#d3230c; border-radius:15px;" href="#">Login</a>
+            style="background-color:#d3230c; border-radius:15px; font-size:20px;" href="#">Login</a>
         @endguest
         @auth
-        <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn btn-logout logout"
-            style="background-color:#d3230c; border-radius:15px;" href="#">Log Out</a>
+        <a class="btn btn-lg  w-100  navbtn nav-btn btn-logout logout"
+            style="background-color:#d3230c; border-radius:15px;font-size:20px;max-width:150px; margin-left:10px !important;position: relative; top:0; " href="#">Log Out</a>
         @endauth
 
 

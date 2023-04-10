@@ -121,7 +121,7 @@
         }
 
         .bg-img::before {
-            background-image: url("images/global-white.png");
+            background-image: url("images/non.png");
             background-size: contain;
             background-repeat: no-repeat;
             content: "";
@@ -207,13 +207,13 @@
                     <table style="width: 100%;">
                         <tr>
                             <td
-                                style="font-weight:bold;font-size:14px; text-transform:uppercase;font-family: 'Arial', sans-serif;">
+                                style="font-weight:bold;font-size:20px; text-transform:uppercase;font-family: 'Arial', sans-serif;">
                                 {{ $requestData['cname'] }}
                             </td>
                         </tr>
                         <tr>
                             <td
-                                style="font-size:14px; text-transform:uppercase;line-height:1.5;font-family: 'Arial', sans-serif;">
+                                style="font-size:18px; text-transform:uppercase;line-height:1;font-family: 'Arial', sans-serif;">
                                 {{ $requestData['address_1'] }}<br>{{ $requestData['city'] }},
                                 {{ $requestData['state'] }}
                                 {{ $requestData['zip_code'] }}
@@ -438,14 +438,14 @@
                 <div class="row" style="display: flex;justify-content: space-between;padding: 0px 14px;">
                     <div style="width: 50%; float:left; position: relative; top:45px; right:0px; left:70px;">
                         <p
-                            style="font-size: 14px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:400;">
+                            style="font-size:19px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:400;">
                             {{ $requestData['cname'] }}</p>
                         <p
-                            style="font-size: 14px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:400;">
+                            style="font-size:19px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:400;">
                             {{ $requestData['address_1'] }} </p>
-                        {{-- <P style="font-size: 14px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:400;">{{ $requestData['address_2'] }} </P> --}}
+                        {{-- <P style="font-size:19px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:400;">{{ $requestData['address_2'] }} </P> --}}
                         <P
-                            style="font-size: 14px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:400;">
+                            style="font-size:19px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:400;">
                             {{ $requestData['city'] }}, {{ $requestData['state'] }} {{ $requestData['zip_code'] }}
                         </P>
                     </div>
@@ -465,7 +465,7 @@
                     <tr>
                         <td style="width:10%;"></td>
                         <td
-                            style="font-size:15px; padding-top:40px; width:50%;padding-left:10px; font-weight:bold;font-family: Arial, Helvetica, sans-serif;">
+                            style="font-size:15px; padding-top:40px; width:50%;padding-left:10px; font-weight:bold;font-family: Arial, Helvetica, sans-serif;text-transform:capitalize;">
                             {{ $requestData['emp_name'] }}</td>
                         <td
                             style="font-size:15px; width:23%;padding-top:40px !important; text-align:left;font-family: Arial, Helvetica, sans-serif;padding-left:18px;">

@@ -812,8 +812,9 @@ select:after {
 }
 
 .sidenav a:hover {
-    color: #0b2f5b !important;
+    color: #fff !important;
     background: #fff;
+    font-size: 20px;
 }
 
 .sidebar .active a {
@@ -3190,9 +3191,14 @@ img.earnbtn2.lockuk {
 
     .previewbtn {
         padding: 0px 23px;
-        max-width: 305px;
+        max-width: 100px;
         width: 100%;
-        margin: 0px 0px 0 20px;
+        margin: 0px 0px 0 0px !important;
+    }
+    .form-control{
+        max-width: 350px;
+        margin:0 auto 20px;
+
     }
 
     .checkbox-outer {

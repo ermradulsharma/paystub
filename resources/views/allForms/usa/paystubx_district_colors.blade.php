@@ -324,7 +324,7 @@
                 </div>
             </section>
             <section class="tablesection">
-                <table>
+                <table style="padding:0; ">
                     <tr>
                         <th class="heading1 padding:0;">Employee Information</th>
                         <th class="heading1"> Social Sec.ID</th>
@@ -336,11 +336,11 @@
                     </tr>
                     <tr>
                         <td style="text-transform:capitalize;padding:10px 0px;">  {{ $requestData['emp_name'] }}<br>{{ $requestData['emp_street_1'] }}<br>{{ $requestData['emp_city'] }}, {{ $requestData['emp_zip_code'] }} </td>
-                        <td> XXX-XX-3838</td>
-                        <td> {{ $requestData['emp_id'] }}</td>
-                        <td> {{ date('m/d/Y', strtotime($requestData['pay_start'])) }} </td>
-                        <td> {{ date('m/d/Y', strtotime($requestData['pay_end'])) }}</td>
-                        <td> {{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</td>
+                        <td style="vertical-align:top; padding:10px 0px;"> XXX-XX-3838</td>
+                        <td style="vertical-align:top; padding:10px 0px;"> {{ $requestData['emp_id'] }}</td>
+                        <td style="vertical-align:top; padding:10px 0px;"> {{ date('m/d/Y', strtotime($requestData['pay_start'])) }} </td>
+                        <td style="vertical-align:top; padding:10px 0px;"> {{ date('m/d/Y', strtotime($requestData['pay_end'])) }}</td>
+                        <td style="vertical-align:top; padding:10px 0px;"> {{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</td>
                     </tr>
                 </table>
             </section>
