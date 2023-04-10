@@ -75,7 +75,7 @@
                 @auth
                 <div class="container">
                     <div class="user-icon"><img src="{{asset('images/profile1.png')}}"></div>
-                    <div class="logout"><a><img src="{{asset('images/logout01.png')}}"></a></div>
+                    <div class="logout btn-logout"><a><img src="{{asset('images/logout01.png')}}"></a></div>
                     <div class="dropbtn">
                         <button class="btn btn-default dropdown-toggle navright-btn" type="button" id="menu1"
                             data-toggle="dropdown">Hi {{Auth::user()->name ?? ''}}
