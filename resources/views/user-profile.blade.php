@@ -306,7 +306,6 @@
             submitUserData($('#userNameForm')[0]);
         });
 
-
         $(".username2").click(function() {
             $("#userName2").modal("show");
         });
