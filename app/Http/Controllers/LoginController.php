@@ -152,7 +152,6 @@ class LoginController extends Controller
         $code = rand(100000, 999999);
         $user  = User::where('email', request('email'))->first();
         if (!$user) {
-            //User::where('email', request('email'))->where('is_completed', '0')->delete();
             $user = new User;
             $user->email = $request->email;
             $user->is_completed = '0';
