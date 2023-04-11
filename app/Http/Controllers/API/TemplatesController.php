@@ -51,6 +51,7 @@ class TemplatesController extends Controller
         try {
             if ($requestData['form_type'] == "w2form") {
                 $pageName = "w2form";
+                $requestData['watermark'] = 'yes';
             } else {
                 if ($requestData['advance_temp']) {
                     $pageName = $requestData['advance_temp'];

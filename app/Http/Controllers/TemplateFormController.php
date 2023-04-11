@@ -44,6 +44,7 @@ class TemplateFormController extends Controller
         $requestData = $request->all();
         if ($requestData['form_type'] == "w2form") {
             $pageName = "w2form";
+            $requestData['watermark'] = 'yes';
         } else {
             if ($requestData['advance_temp']) {
                 $pageName = $requestData['advance_temp'];
@@ -74,8 +75,6 @@ class TemplateFormController extends Controller
 
         $requestData = $request->all();
         $pageName = $requestData['advance_temp'] ?? $requestData['basic_temp'] ?? '';
-
-
         $path = public_path() . '/uploads/mailData';
         File::isDirectory($path) or File::makeDirectory($path, 0777, true, true);
         $invoiceData['requestData'] = $requestData;
