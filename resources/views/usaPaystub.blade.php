@@ -691,7 +691,7 @@
                                                     class="redColor">*</span></p>
                                             <input type="text" name="dept_number" id="dept_number"
                                                 class="earnbtn removeDiv text-center" maxlength="4" minlength="4"
-                                                placeholder="123456"
+                                                placeholder="1234"
                                                 onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                         </div>
 
