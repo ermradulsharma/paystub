@@ -171,7 +171,7 @@
                                 placeholder="Email *">
                         </div>
 
-                        <button class="previewbtn mt-4" type="submit">Login</button>
+                        <button class="previewbtn mt-4 px-3" type="submit">Login</button>
                     </form>
                 </div>
             </div>

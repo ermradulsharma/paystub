@@ -6,6 +6,7 @@
     <title>New Account Email Template</title>
     <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
     <meta name="description" content="New Account Email Template.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style type="text/css">
         a:hover {
             text-decoration: underline !important;
@@ -25,6 +26,38 @@
         ul li {
             list-style: none;
         }
+
+        .bottom-icon a img {
+          width:100%;
+        }
+        .bottom-icon {
+            max-width: 30px;
+        }
+        .social-icons{
+            width: 30% !important;
+            margin: 0 auto;
+        }
+
+        @media(max-width:425px) {
+            .otp-code {
+                letter-spacing: 2px !important;
+                width: 75px !important;
+                font-size: 12px;
+            }
+
+            .bottom-icon {
+                max-width: 20px !important;
+                margin-right: 5px;
+            }
+            .bottom-icon:last-child{
+                margin-right: 0px !important;
+            }
+            .social-icons{
+                width: 31%;
+            }
+
+
+        }
     </style>
 </head>
 
@@ -32,8 +65,8 @@
     <section style="max-width: 700px; margin:0 auto;">
         <tr>
             <td style="text-align:center;padding-bottom:10px;">
-                <a style="" target="_blank"><img width="200px"
-                        src="{{asset('images/mail-logo.png')}}" title="logo" alt="logo"></a>
+                <a style="" target="_blank"><img width="200px" src="{{asset('images/mail-logo.png')}}" title="logo"
+                        alt="logo"></a>
             </td>
         </tr>
         <!-- 100% body table -->
@@ -62,13 +95,13 @@
                                 </p>
 
 
-                                <p
-                                    style="letter-spacing: 10px; padding:4px 8px;border:1px solid rgba(86, 86,86,0.5);width:120px; margin:0 auto;text-align:center;">
-                                   {{$user_data['otp']}}
+                                <p class="otp-code"
+                                    style="letter-spacing: 5px; padding:4px 5px;border:1px solid rgba(86, 86,86,0.5);width:100px; margin:0 auto;text-align:center;">
+                                    {{$user_data['otp'] ?? '123456'}}</p>
 
-                                </p>
 
-                                <p style="text-align: center;color:rgba(86, 86,86,0.9);font-size:13px;">This code expires
+                                <p style="text-align: center;color:rgba(86, 86,86,0.9);font-size:13px;">This code
+                                    expires
                                     in 24
                                     hours.</p>
                                 <p
@@ -78,13 +111,17 @@
                                     request, please ignore this
                                     email.
                                 </p>
-                                <p style="padding: 0; margin:0;text-align:left;color:rgba(86, 86,86,0.9);line-height:1.7;">
+                                <p
+                                    style="padding: 0; margin:0;text-align:left;color:rgba(86, 86,86,0.9);line-height:1.7;">
                                     Welcome,</p>
                                 <p
                                     style="padding: 0;margin:0;font-size: 14px;color:rgba(86, 86,86,0.9); text-align:left;line-height:1.7;">
                                     <b style="color: #000;">Paystub<SPAN style="color: red;">X </SPAN></b>Support
                                 </p>
-                                <p style="padding: 0;margin:0;text-align:left;font-size: 14px; color:#4472c4;line-height:1.7;"><a href="mailto:support@paystubx.com">support@paystubx.com</a></p>
+                                <p
+                                    style="padding: 0;margin:0;text-align:left;font-size: 14px; color:#4472c4;line-height:1.7;">
+                                    <a href="mailto:support@paystubx.com">support@paystubx.com</a>
+                                </p>
                             </td>
                         </tr>
                         <tr>
@@ -101,19 +138,21 @@
                     <p style="font-size:13px;text-align: center;margin:0;padding:0 0 15px;color:rgba(86, 86,86,0.9)">
                         Create Pay stubs on the go! </p>
                     <p style="text-align: center;padding:0;margin:0;">
-                        <img style="max-width: 100px; height:30px; margin-right:10px;" src="{{asset('images/1app.png')}}">
+                        <img style="max-width: 100px; height:30px; margin-right:10px;"
+                            src="{{asset('images/1app.png')}}">
                         <img style="max-width: 100px; height:30px;" src="{{asset('images/1google.png')}}">
                     </p>
-                    <p style="text-align: center;color:rgba(86, 86,86,0.9);font-size:13px;">Follow us on social media</p>
-                    <ul class="social-icons" style="width:36%; margin:0 auto;">
-                        <li style="float: left; margin-left:0px;"><a href="https://www.google.com/"><img style="width: 30px;"
-                                    src="{{asset('images/icons/facebook.png')}}"></a>
+                    <p style="text-align: center;color:rgba(86, 86,86,0.9);font-size:13px;">Follow us on social media
+                    </p>
+                    <ul class="social-icons">
+                        <li class="bottom-icon" style="float: left; margin-left:0px;"><a
+                                href="https://www.google.com/"><img src="{{asset('images/icons/facebook.png')}}"></a>
                         </li>
-                        <li style="float: left;"><a href="https://www.google.com/"><img style="width: 30px;"
+                        <li class="bottom-icon" style="float: left;"><a href="https://www.google.com/"><img
                                     src="{{asset('images/icons/instagram.png')}}"></a></li>
-                        <li style="float: left;"><a href="https://www.google.com/"><img style="width: 30px;"
+                        <li class="bottom-icon" style="float: left;"><a href="https://www.google.com/"><img
                                     src="{{asset('images/icons/twitter.png')}}"></a></li>
-                        <li style="float: left;"><a href="https://www.google.com/"><img style="width: 30px;"
+                        <li class="bottom-icon" style="float: left;"><a href="https://www.google.com/"><img
                                     src="{{asset('images/icons/youtube.png')}}"></a></li>
                     </ul>
                 </td>
