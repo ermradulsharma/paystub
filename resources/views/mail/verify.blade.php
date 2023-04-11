@@ -104,7 +104,7 @@
                                     {{$user_data['otp'] ?? '123456'}}</p>
 
 
-                                <p style="text-align: center;color:rgba(86, 86,86,0.9);font-size:13px;">This code
+                                <p style="text-align: center;color:rgba(86, 86,86,0.9);font-size:13px; margin-top:10px;">This code
                                     expires
                                     in 24
                                     hours.</p>
