@@ -365,7 +365,7 @@
                                     @endif PER HOUR</td>
                             </tr>
                             <tr>
-                                <td style="text-transform: uppercase;">Company Telephone Number:&nbsp;{{ $requestData['tel'] }} </td>
+                                <td style="text-transform: uppercase;">Company Telephone Number:&nbsp;{{ $requestData['tel'] ?? ''}} </td>
                             </tr>
                         </table>
                     </td>

@@ -19,7 +19,6 @@ class ValidationService
 
             $rules = [
                 'cname' => 'required',
-                'tel' => 'required',
                 'address_1' => 'required',
                 'city' => 'required',
                 'state' => 'required',
@@ -59,7 +58,6 @@ class ValidationService
 
             $messages = [
                 'cname' => 'Employer(Company) Name cannot be empty',
-                'tel' => 'Employer(Company) Mobile number cannot be empty',
                 'address_1' => 'Employer(Company) Street Address 1 cannot be empty',
                 'city' => 'Employer(Company) City cannot be empty',
                 'state' => 'Employer(Company) State cannot be empty',

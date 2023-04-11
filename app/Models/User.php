@@ -6,6 +6,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Laravel\Passport\HasApiTokens;
 
 class User extends Authenticatable
@@ -42,4 +44,51 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    static function deactivateAccount($request)
+    {
+        $response['status'] = STATUS_BAD_REQUEST;
+        $response['message'] = ENTER_VALID_CREDENTIAL;
+        $userObj = User::find(Auth::user()->id);
+        if ($userObj->delete()) {
+            $response['message'] = ACCOUNT_DEACTIVATED_SUCCESSFULLY;
+            $response['success'] = TRUE;
+            $response['status'] = STATUS_OK;
+        }
+
+        return $response;
+    }
+
+    static function restoreAccount($request)
+    {
+        $requestData = $request->all();
+
+        $userObj  = User::withTrashed()->where('username', $requestData['username'])->orWhere('mobile', $requestData['username'])->orWhere('email', $requestData['username'])->first();
+        if ($userObj) {
+            if (Hash::check($request->get('password'), $userObj['password'])) {
+                $userObj->restore();
+
+                $response['status'] = STATUS_OK;
+                $response['message'] = ACCOUNT_RESTORE_SUCCESSFULLY;
+            } else {
+                $response['status'] = STATUS_BAD_REQUEST;
+                $response['message'] = ENTER_VALID_CREDENTIAL;
+            }
+        }
+
+        return $response;
+    }
+
+    static function deleteAccount($request)
+    {
+        $userObj = User::find(Auth::user()->id);
+        $userObj->forceDelete();
+        $request->user()->token()->revoke();
+
+        $response['message'] = ACCOUNT_DELETED_SUCCESSFULLY;
+        $response['success'] = TRUE;
+        $response['status'] = STATUS_OK;
+
+        return $response;
+    }
 }

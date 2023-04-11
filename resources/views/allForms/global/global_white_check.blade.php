@@ -352,7 +352,7 @@
 
                             <td colspan="4"
                                 style="font-size: 12px; text-align:left;font-family: Arial, Helvetica, sans-serif;">
-                                Company Telephone Number:&nbsp;{{ $requestData['tel'] }} </td>
+                                Company Telephone Number:&nbsp;{{ $requestData['tel'] ?? '' }} </td>
 
                         </tr>
                     </table>

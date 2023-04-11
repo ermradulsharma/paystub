@@ -167,7 +167,7 @@
                 </td>
                 <td class="padding" colspan="2"
                     style="border:2px solid  #464646; text-align:center;border-top:none; border-bottom:none;">
-                    {{ $requestData['check_number'] }}
+                    {{ $requestData['check_no'] ?? '' }}
                 </td>
             </tr>
         </table>
