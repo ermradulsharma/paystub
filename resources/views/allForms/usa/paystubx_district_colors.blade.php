@@ -320,7 +320,7 @@
             <section>
                 <div class="row1">
                     <div class="col1">
-                        <table style="width:100%;">
+                        <table style="width:100%; position: relative; top:30px; padding-bottom:10px;">
                             <tr>
                                 <th colspan="4"
                                     style="padding-top: 41px;font-family: Arial, Helvetica, sans-serif;font-size:13px;">

@@ -69,22 +69,23 @@
             </section>
 
             <section style="width:100%;">
-                <table style="width: 27%; float:left; border:3px solid #00ff43;   border-radius:7px; margin-top:150px; height:120px;margin-left:20px;padding-left:20px; padding-top:10px; margin-bottom:300px;background: white;">
+                <table style="width: 29.3%; float:left; border:3px solid #6c6c6c; border-radius:7px; margin-top:150px; height:120px;margin-left:20px;position: relative; right:14px; padding-top:10px; margin-bottom:300px;background: white;">
                     <thead>
                         <tr>
-                            <th style="text-align: left; font-size:20px;font-weight:bold; text-transform:capitalize;font-family: 'Myriad Pro', sans-serif;"><B>{{ $requestData['emp_name'] }}</B></th>
+                            <th style="text-align: left; font-size:20px;font-weight:bold; text-transform:capitalize;font-family: 'Myriad Pro', sans-serif; padding-left:10px;"><B>{{ $requestData['emp_name'] }}</B></th>
                         </tr>
                         <tr>
-                            <td style="font-size:14px; text-transform:uppercase;font-family: 'Myriad Pro', sans-serif;">{{ $requestData['emp_street_1'] }}</td>
+                            <td style="font-size:14px; text-transform:uppercase;font-family: 'Myriad Pro', sans-serif;padding-left:10px;">{{ $requestData['emp_street_1'] }}</td>
                         </tr>
                         <tr>
-                            <td style="font-size:14px; text-transform:uppercase;font-family: 'Myriad Pro', sans-serif;">{{ $requestData['emp_street_2'] ?? '' }}</td>
+                            <td style="font-size:14px; text-transform:uppercase;font-family: 'Myriad Pro', sans-serif;padding-left:10px;">{{ $requestData['emp_street_2'] ?? '' }}</td>
                         </tr>
                         <tr>
-                            <td style="font-size:14px; text-transform:uppercase;font-family: 'Myriad Pro', sans-serif;">{{ $requestData['emp_zip_code'] }}</td>
+                            <td style="font-size:14px; text-transform:uppercase;font-family: 'Myriad Pro', sans-serif;padding-left:10px;">{{ $requestData['emp_zip_code'] }}</td>
                         </tr>
                     </thead>
                 </table>
+
 
 
                 <table style="width: 34%; float:right;  border:3px solid #00ff43;   border-radius:7px; margin-top:10px; margin-left:6px;margin-right:6px;height:359px; background: white;padding-left:10px;">

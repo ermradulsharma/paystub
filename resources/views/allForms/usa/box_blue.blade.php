@@ -196,7 +196,7 @@
                     </tr>
                     <tr>
                         <td></td>
-                        <td style="font-weight: bold;font-size:18px;"> {{ $requestData['cname'] }}</td>
+                        <td style="font-weight: bold;font-size:18px;text-transform:capitalize;"> {{ $requestData['cname'] }}</td>
                         <td style="color: #555;font-size:15px;">PAY DATE: <b style="color: #000;font-size:15px;"> {{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</b></td>
                     </tr>
                     <tr>
