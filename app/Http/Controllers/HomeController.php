@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Subcription;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -35,8 +36,9 @@ class HomeController extends Controller
     public function userDetails(Request $request)
     {
         $userObj = User::find(Auth::user()->id);
-        // dd($userObj);
-        return view('user-profile', compact('userObj'));
+        $subcriptionData = Subcription::where('user_id',$userObj->id)->latest()->first();
+        // dd($userObj, $subcriptionData);
+        return view('user-profile', compact('userObj', 'subcriptionData'));
     }
 
     public function storeDetails(Request $request)
