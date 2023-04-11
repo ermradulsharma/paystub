@@ -42,7 +42,7 @@
     <div class="container mt-2 px-0" style="max-width:1510px;">
         <form id="submit_form_paystubx_id" action="javascript:void()" method="get">
             @csrf
-            <input type="hidden" name="form_type" value="usa" hidden>
+            <input type="hidden" name="form_type" value="global" hidden>
             <div>
                 <div class="row mb-3">
                     <div class="col-md-12">
