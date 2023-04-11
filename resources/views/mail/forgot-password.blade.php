@@ -36,9 +36,37 @@
             display: inline-block;
 
         }
+        .social-icons {
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            max-width: 190px;
+        }
+
+
+        .social-icons li {
+            margin-left: 0px !important;
+            margin-right: 8px;
+        }
 
         .reset-button:hover {
             text-decoration: none !important;
+        }
+        @media(max-width:425px) {
+
+            .bottom-icon {
+                margin-right: 5px;
+            }
+
+            .bottom-icon:last-child {
+                margin-right: 0px !important;
+            }
+
+
+
+
         }
     </style>
 </head>
@@ -51,7 +79,7 @@
             <tr>
                 <td style="text-align:center;padding-bottom:10px;">
                     <a style="max-width:200px;" target="_blank">
-                        <img style="display: flex; margin: 0 auto;" width="200px;" src="{{ asset('images/transparent-logo.png') }}" title="logo" alt="logo">
+                        <img style="display: flex; margin: 0 auto;" width="200px;" src="{{asset('images/mail-logo.png')}}" title="logo" alt="logo">
                     </a>
                 </td>
             </tr>
@@ -109,27 +137,16 @@
                     </p>
                     <p style="text-align: center;color:rgba(86, 86,86,0.9);font-size:13px;">Follow us on social media
                     </p>
-                    <ul class="social-icons" style="width:36%; margin:0 auto;">
-                        <li style="float: left;">
-                            <a href="https://www.google.com/">
-                                <img style="width: 30px;" src="{{ asset('images/icons/facebook.png') }}">
-                            </a>
+                    <ul class="social-icons">
+                        <li class="bottom-icon"><a target="_blank" href="https://www.google.com/" ><img
+                                    src="{{asset('images/icons/facebook.png')}}" height="35px" width="35px"></a>
                         </li>
-                        <li style="float: left;">
-                            <a href="https://www.google.com/">
-                                <img style="width: 30px;" src="{{ asset('images/icons/instagram.png') }}">
-                            </a>
-                        </li>
-                        <li style="float: left;">
-                            <a href="https://www.google.com/">
-                                <img style="width: 30px;" src="{{ asset('images/icons/twitter.png') }}">
-                            </a>
-                        </li>
-                        <li style="float: left;">
-                            <a href="https://www.google.com/">
-                                <img style="width: 30px;" src="{{ asset('images/icons/youtube.png') }}">
-                            </a>
-                        </li>
+                        <li class="bottom-icon"><a target="_blank"  href="https://www.google.com/"><img
+                                    src="{{asset('images/icons/instagram.png')}}" height="35px" width="35px"></a></li>
+                        <li class="bottom-icon"><a  target="_blank" href="https://www.google.com/"><img
+                                    src="{{asset('images/icons/twitter.png')}}" height="35px" width="35px"></a></li>
+                        <li class="bottom-icon"><a target="_blank"  href="https://www.google.com/"><img
+                                    src="{{asset('images/icons/youtube.png')}}" height="35px" width="35px"></a></li>
                     </ul>
                 </td>
             </tr>

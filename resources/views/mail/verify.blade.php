@@ -50,7 +50,6 @@
             }
 
             .bottom-icon {
-
                 margin-right: 5px;
             }
 

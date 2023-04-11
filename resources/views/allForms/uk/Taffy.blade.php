@@ -69,28 +69,27 @@
             </section>
 
             <section style="width:100%;">
-                <table style="width: 27%; float:left; border:3px solid #fe00fc;   border-radius:7px; margin-top:150px; height:120px;margin-left:20px;padding-left:20px; padding-top:10px; margin-bottom:300px;background: white;">
+                <table style="width: 29.3%; float:left; border:3px solid #f200fc; border-radius:7px; margin-top:150px; height:120px;margin-left:20px;position: relative; right:14px; padding-top:10px; margin-bottom:300px;background: white;">
                     <thead>
                         <tr>
-                            <th style="text-align: left; font-size:20px;font-weight:bold; text-transform:capitalize;font-family: 'Myriad Pro', sans-serif;"><B>{{ $requestData['emp_name'] }}</B></th>
+                            <th style="text-align: left; font-size:20px;font-weight:bold; text-transform:capitalize;font-family: 'Myriad Pro', sans-serif; padding-left:10px;"><B>{{ $requestData['emp_name'] }}</B></th>
                         </tr>
                         <tr>
-                            <td style="font-size:14px; text-transform:uppercase;font-family: 'Myriad Pro', sans-serif;">{{ $requestData['emp_street_1'] }}</td>
+                            <td style="font-size:14px; text-transform:uppercase;font-family: 'Myriad Pro', sans-serif;padding-left:10px;">{{ $requestData['emp_street_1'] }}</td>
                         </tr>
                         <tr>
-                            <td style="font-size:14px; text-transform:uppercase;font-family: 'Myriad Pro', sans-serif;">{{ $requestData['emp_street_2'] ?? '' }}</td>
+                            <td style="font-size:14px; text-transform:uppercase;font-family: 'Myriad Pro', sans-serif;padding-left:10px;">{{ $requestData['emp_street_2'] ?? '' }}</td>
                         </tr>
                         <tr>
-                            <td style="font-size:14px; text-transform:uppercase;font-family: 'Myriad Pro', sans-serif;">{{ $requestData['emp_zip_code'] }}</td>
+                            <td style="font-size:14px; text-transform:uppercase;font-family: 'Myriad Pro', sans-serif;padding-left:10px;">{{ $requestData['emp_zip_code'] }}</td>
                         </tr>
                     </thead>
                 </table>
 
-
                 <table style="width: 34%; float:right;  border:3px solid #fe00fc;   border-radius:7px; margin-top:10px; margin-left:6px;margin-right:6px;height:359px; background: white;padding-left:10px;">
                     <thead>
                         <tr>
-                            <th style="font-size: 18px; text-align:center;font-family: 'Myriad Pro', sans-serif;"><b>Payments</b></th>
+                            <th style="font-size: 18px; text-align:right;font-family: 'Myriad Pro', sans-serif;padding-right:20px;"><b>Payments</b></th>
                         </tr>
                         @foreach ($requestData['earning'] as $key => $earn)
                         <tr>
@@ -104,7 +103,7 @@
                         </tr>
                         <br>
                         <tr>
-                            <th style="font-size: 18px; text-align:center;font-family: 'Myriad Pro', sans-serif;"><b>Deductions</b></th>
+                            <th style="font-size: 18px; text-align:right;font-family: 'Myriad Pro', sans-serif; padding-right:20px;"><b>Deductions</b></th>
                         </tr>
                         @foreach ($requestData['taxes'] ?? [] as $key => $taxes)
                         <tr>
@@ -168,7 +167,7 @@
                 <table style="width: 34%;  float:right; border:3px solid #fe00fc;   border-radius:7px; margin-top: -138px; height:150px;background: white;padding-left:10px;">
                     <thead>
                         <tr>
-                            <th style="font-size:18px;text-transform: capitalize; text-align:center; padding-left:20px;font-family: 'Myriad Pro', sans-serif;"><b>Year To Date</b></th>
+                            <th style="font-size:18px;text-transform: capitalize; text-align:right; font-family: 'Myriad Pro', sans-serif;"><b>Year To Date</b></th>
                         </tr>
                         <tr>
                             <td style="font-size:16px;font-family: 'Myriad Pro', sans-serif;">Taxable Gross Pay</td>
@@ -190,13 +189,13 @@
                 </table>
             </section>
             <section style="width: 100%;">
-                <table style="width:60%; border:3px solid #fe00fc;   border-radius:7px;margin-top:25px; margin-left:35px;background: white;">
+                <table style="width:64%; border:3px solid #fe00fc;  border-radius:7px;margin-top:25px;position:relative; left:6px;background: white;">
                     <thead style="text-align:left; border-radius:7px;">
                         <td style="padding: 15px;font-size:22px;text-transform: capitalize;padding: 12px 10px;font-family: 'Myriad Pro', sans-serif;">Additional Information Here (Note)</td>
                     </thead>
                 </table>
 
-                <table style="width:34%; float:right; border:3px solid #fe00fc;   border-radius:7px; text-align: left;margin-top: -60px; margin-right: 5px;background: white;">
+                <table style="width:34%; float:right; border:3px solid #fe00fc; border-radius:7px; text-align: left;margin-top: -62px; margin-right: 5px;background: white;">
                     <thead style="">
                         <th style="text-align:left;padding: 12px 10px; font-size:22px;font-weight:bold;font-family: 'Myriad Pro', sans-serif;"><b>Net Pay</b></th>
                         <th style="font-size:22px;font-weight:bold;font-family: 'Myriad Pro', sans-serif;"><b>{{ number_format($requestData['net_pay'],2) }}</b></th>
