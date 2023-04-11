@@ -199,7 +199,7 @@
                         {{ date('m/d/Y', strtotime($requestData['pay_date'])) }}
                     </td>
                     <td class="padding" colspan="2"
-                        style="border:3px solid #8a898a; text-align:center;border-top:none; border-bottom:none;font-size:14px;">254236
+                        style="border:3px solid #8a898a; text-align:center;border-top:none; border-bottom:none;font-size:14px;">{{ $requestData['check_no'] ?? '' }}
                     </td>
                 </tr>
             </table>

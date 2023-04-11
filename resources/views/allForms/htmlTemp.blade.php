@@ -224,7 +224,7 @@
                     <br>
                     <br>
                     <P style="font-size: 19px;margin: 0;">
-                        <span style="font-weight:800;">Check Nuumber:</span> 1775
+                        <span style="font-weight:800;">Check Nuumber:</span> {{ $requestData['check_no'] ?? '' }}
                     </P>
                     <P style="font-size: 19px;margin: 0;">
                         <span style="font-weight:800;">Date:</span> 1775
