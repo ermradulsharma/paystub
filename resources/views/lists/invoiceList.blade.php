@@ -93,9 +93,10 @@
 
                 <div class="w-100" style="text-align: right;">
                     <a href="@if (isset($membership)) {{ $membership == 0 ? route('prizing') : route('invoiceMail') }} @else {{ route('prizing') }} @endif"
-                        class="user-checkbtn"><b>Continue to Checkout</b></a>
+                        class="user-checkbtn" data-count="{{count($invoiceList)}}"><b>Continue to Checkout</b></a>
                     <h6 class="mt-3 font-weight-bold">Click on Continue, to complete your order</h6>
                 </div>
+
 
             </div>
         </div>
@@ -126,5 +127,13 @@
             // $('#tempView').html(response.data);
             $('#tempViewModal').modal('show');
         })
+        $(document).on('click','.user-checkbtn',function(e){
+            var dataCount = $(this).data('count');
+            if(dataCount <= 0){
+                e.preventDefault();
+                toastr.error("Please First Generate Paystub.");
+            }
+
+        });
     </script>
 @endsection
