@@ -36,3 +36,8 @@ defined('STATUS_ALREADY_EXIST') or define("STATUS_ALREADY_EXIST", 409);
 defined('UNPROCESSABLE_ENTITY') or define("UNPROCESSABLE_ENTITY", 422);
 defined('STATUS_GENERAL_ERROR') or define("STATUS_GENERAL_ERROR", 500);
 defined('DEFAULT_ERROR_MESSAGE') or define("DEFAULT_ERROR_MESSAGE", "Oops! some error occured, please try again");
+
+defined('ACCOUNT_DEACTIVATED_SUCCESSFULLY') or define("ACCOUNT_DEACTIVATED_SUCCESSFULLY", 'Account deactivated successfully');
+defined('ACCOUNT_RESTORE_SUCCESSFULLY') or define("ACCOUNT_RESTORE_SUCCESSFULLY", 'Your Account restore successfully');
+defined('ACCOUNT_DELETED_SUCCESSFULLY') or define("ACCOUNT_DELETED_SUCCESSFULLY", 'Your Account delete successfully');
+defined('ENTER_VALID_CREDENTIAL') or define("ENTER_VALID_CREDENTIAL", 'Please enter valid credentials.');

@@ -32,11 +32,16 @@ Route::group(['namespace' => 'Api', 'middleware' => ['\App\Http\Middleware\LogAf
     Route::post('forgot-password', [UserController::class, 'forgotPassword']);
     Route::post('social-login', [UserController::class, 'socialLogin']);
     Route::post('generate-pdf', [TemplatesController::class, 'generatePdf']);
+    
+    // User account restore
+    Route::post('restore-account', [UserController::class, 'restoreAccount']);
     Route::group(['middleware' => ['auth:api']], function () {
         Route::post('logout', [UserController::class, 'logout']);
+        Route::post('deactivate-account', [UserController::class, 'deactivateAccount']);
+        Route::post('delete-account', [UserController::class, 'deleteAccount']);
         Route::get('get-profile', [UserController::class, 'getUserProfile']);
         Route::post('update-profile', [UserController::class, 'updateProfile']);
-         Route::post('update-user-profile', [UserController::class, 'updateUserProfile']);
+        Route::post('update-user-profile', [UserController::class, 'updateUserProfile']);
         Route::post('save-form-data', [TemplatesController::class, 'templatesDataSave']);
         Route::get('get-pdf-list', [TemplatesController::class, 'getPdfList']);
         Route::post('delete-template', [TemplatesController::class, 'deleteTemplate']);
