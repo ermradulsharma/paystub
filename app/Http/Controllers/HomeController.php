@@ -146,7 +146,7 @@ class HomeController extends Controller
                 return response()->json(['error' => ['User not found']]);
             }
             if (!Hash::check($request->currentPassword, $userObj->password)) {
-                return response()->json(['error' => ['Current password not match.']]);
+                return response()->json(['error' => ['Please enterd correct password.']]);
             }
             $userObj->password = bcrypt($request->password);
             if (!$userObj->save()) {

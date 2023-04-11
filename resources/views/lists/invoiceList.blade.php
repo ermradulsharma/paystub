@@ -131,7 +131,7 @@
             var dataCount = $(this).data('count');
             if(dataCount <= 0){
                 e.preventDefault();
-                toastr.error("Please genrate first paystub. ");
+                toastr.error("Please First Generate Paystub.");
             }
 
         });
