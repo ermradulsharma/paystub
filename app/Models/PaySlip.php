@@ -35,7 +35,7 @@ class PaySlip extends Model
         $requestData = $request->all();
         if ($requestData['form_type'] == "w2form") {
             $pageName = "w2form";
-            $requestData['watermark'] = 'yes';
+            $requestData['watermark'] == 'yes';
         }
         $path = public_path() . '/uploads/mailData';
         File::isDirectory($path) or File::makeDirectory($path, 0777, true, true);
