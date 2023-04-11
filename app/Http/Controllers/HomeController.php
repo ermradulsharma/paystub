@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use App\Mail\VerifyEmailSend;
 use Illuminate\Support\Facades\Log;
+use Carbon\Carbon;
 
 class HomeController extends Controller
 {
@@ -36,8 +37,8 @@ class HomeController extends Controller
     public function userDetails(Request $request)
     {
         $userObj = User::find(Auth::user()->id);
-        $subcriptionData = Subcription::where('user_id',$userObj->id)->latest()->first();
-        // dd($userObj, $subcriptionData);
+        $subcriptionData = Subcription::with('plan')->where('user_id',$userObj->id)->latest()->first();
+        // dd($subcriptionData);
         return view('user-profile', compact('userObj', 'subcriptionData'));
     }
 
