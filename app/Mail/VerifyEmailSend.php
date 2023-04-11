@@ -32,7 +32,7 @@ class VerifyEmailSend extends Mailable
      */
     public function build()
     {
-        return $this->from('developerspbs@gmail.com', config('mail.from.name'))
+        return $this->from(MAIL_FROM_EMAIL, config('mail.from.name'))
             ->subject($this->user_data['subject'] . ' - ' . config('mail.from.name'))
             ->markdown('mail.verify')
             ->with(['user_data' => $this->user_data]);
