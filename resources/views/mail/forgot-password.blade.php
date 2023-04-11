@@ -47,13 +47,11 @@
     <section style="max-width: 700px; margin:0 auto;">
 
         <!-- 100% body table -->
-        <table style="background-color: #f2f3f8; max-width:670px; margin:30px auto;padding-top:30px;" width="100%"
-            align="center" cellpadding="0" cellspacing="0">
+        <table style="background-color: #f2f3f8; max-width:670px; margin:30px auto;padding-top:30px;" width="100%" align="center" cellpadding="0" cellspacing="0">
             <tr>
                 <td style="text-align:center;padding-bottom:10px;">
                     <a style="max-width:200px;" target="_blank">
-                        <img style="display: flex; margin: 0 auto;" width="200px;"
-                            src="{{ asset('images/transparent-logo.png') }}" title="logo" alt="logo">
+                        <img style="display: flex; margin: 0 auto;" width="200px;" src="{{asset('images/mail-logo.png')}}" title="logo" alt="logo">
                     </a>
                 </td>
             </tr>
