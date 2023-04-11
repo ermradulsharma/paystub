@@ -28,20 +28,27 @@
         }
 
         .bottom-icon a img {
-          width:100%;
+            width: 100%;
         }
+
         .bottom-icon {
             max-width: 30px;
         }
-        .social-icons{
-            width: 30% !important;
+
+        .social-icons {
+            width: 27% !important;
             margin: 0 auto;
+        }
+
+        .social-icons li {
+            margin-left: 0px !important;
+            margin-right: 8px;
         }
 
         @media(max-width:425px) {
             .otp-code {
                 letter-spacing: 2px !important;
-                width: 75px !important;
+                width: 55px !important;
                 font-size: 12px;
             }
 
@@ -49,11 +56,13 @@
                 max-width: 20px !important;
                 margin-right: 5px;
             }
-            .bottom-icon:last-child{
+
+            .bottom-icon:last-child {
                 margin-right: 0px !important;
             }
-            .social-icons{
-                width: 31%;
+
+            .social-icons {
+                width: 40% !important;
             }
 
 
@@ -145,8 +154,8 @@
                     <p style="text-align: center;color:rgba(86, 86,86,0.9);font-size:13px;">Follow us on social media
                     </p>
                     <ul class="social-icons">
-                        <li class="bottom-icon" style="float: left; margin-left:0px;"><a
-                                href="https://www.google.com/"><img src="{{asset('images/icons/facebook.png')}}"></a>
+                        <li class="bottom-icon" style="float: left;"><a href="https://www.google.com/"><img
+                                    src="{{asset('images/icons/facebook.png')}}"></a>
                         </li>
                         <li class="bottom-icon" style="float: left;"><a href="https://www.google.com/"><img
                                     src="{{asset('images/icons/instagram.png')}}"></a></li>

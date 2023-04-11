@@ -133,11 +133,7 @@
             border: 3px solid #464646;
         }
 
-        .column {
-            width: 15%;
-            padding: 5px;
-            float: left;
-        }
+
     </style>
     <style>
         .watermark {
@@ -288,15 +284,16 @@
                 <div class="row" style=" border:3px solid#8a898a;  ">
                     <div class="column1" style="height: 80px;">
                         <table id="bottomtable" style="width:100%; background-color:white;">
-                            <tr>
+                            <tr class="">
                                 <td id="cols" class="head1">YTD GROSS</td>
                                 <td id="cols" class="head1">YTD DEDUCTIONS</td>
-                                <td id="cols" class="head1">YTD NET PAY</th>
+                                <td id="cols" class="head1">YTD NET PAY
+                                </td>
                             </tr>
                             <tr class=" ytd">
-                                <td id="cols" class="head2">{{ number_format($requestData['ytd_gross_total'], 2) }} </td>
+                                <td id="cols" class="head2">{{ number_format($requestData['ytd_gross_total'], 2) }}</td>
                                 <td id="cols" class="head2">{{ number_format($requestData['ytd_deduction_tax'], 2) }} </td>
-                                <td id="cols" class="head2">{{ number_format($requestData['total_ytd_net_pay'], 2) }} </td>
+                                <td id="cols" class="head2" style="font-family: DejaVu Sans, sans-serif;">{{ number_format($requestData['total_ytd_net_pay'], 2) }}</td>
                             </tr>
                         </table>
                     </div>
