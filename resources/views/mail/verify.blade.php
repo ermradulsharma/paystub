@@ -27,13 +27,7 @@
             list-style: none;
         }
 
-        .bottom-icon a img {
-            width: 100%;
-        }
 
-        .bottom-icon {
-            max-width: 30px;
-        }
 
         .social-icons {
             width: 100%;
@@ -41,7 +35,7 @@
             display: flex;
             justify-content: center;
             text-align: center;
-            max-width: 160px;
+            max-width: 170px;
         }
 
 
@@ -52,13 +46,11 @@
 
         @media(max-width:425px) {
             .otp-code {
-                letter-spacing: 2px !important;
                 width: 100%;
-                font-size: 12px;
             }
 
             .bottom-icon {
-                max-width: 20px !important;
+
                 margin-right: 5px;
             }
 
@@ -157,15 +149,15 @@
                     <p style="text-align: center;color:rgba(86, 86,86,0.9);font-size:13px;">Follow us on social media
                     </p>
                     <ul class="social-icons">
-                        <li class="bottom-icon"><a href="https://www.google.com/"><img
-                                    src="{{asset('images/icons/facebook.png')}}"></a>
+                        <li class="bottom-icon"><a href="https://www.google.com/" ><img
+                                    src="{{asset('images/icons/facebook.png')}}"height:30px; width:30px;></a>
                         </li>
                         <li class="bottom-icon"><a href="https://www.google.com/"><img
-                                    src="{{asset('images/icons/instagram.png')}}"></a></li>
+                                    src="{{asset('images/icons/instagram.png')}}"height:30px; width:30px;></a></li>
                         <li class="bottom-icon"><a href="https://www.google.com/"><img
-                                    src="{{asset('images/icons/twitter.png')}}"></a></li>
+                                    src="{{asset('images/icons/twitter.png')}}"height:30px; width:30px;></a></li>
                         <li class="bottom-icon"><a href="https://www.google.com/"><img
-                                    src="{{asset('images/icons/youtube.png')}}"></a></li>
+                                    src="{{asset('images/icons/youtube.png')}}"height:30px; width:30px;></a></li>
                     </ul>
                 </td>
             </tr>
