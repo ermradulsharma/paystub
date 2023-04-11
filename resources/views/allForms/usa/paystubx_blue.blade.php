@@ -207,7 +207,7 @@
                         {{ date('m/d/Y', strtotime($requestData['pay_date'])) }} </td>
                     <td class="padding" colspan="2"
                         style="border:2px solid  #464646; text-align:center;border-top:none; border-bottom:none;font-size:14px;">
-                        000000 </td>
+                        {{ $requestData['check_no'] ?? '' }} </td>
                 </tr>
             </table>
             <section>
