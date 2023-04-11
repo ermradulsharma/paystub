@@ -49,8 +49,12 @@ class TemplatesController extends Controller
         $response['success'] = FALSE;
         $requestData = Template::template($request);
         try {
+
             if ($requestData['form_type'] == "w2form") {
                 $pageName = "w2form";
+                if (!array_key_exists('watermark', $requestData)) {
+                    $requestData += array('watermark' => 'yes');
+                }
             } else {
                 if ($requestData['advance_temp']) {
                     $pageName = $requestData['advance_temp'];
@@ -209,6 +213,7 @@ class TemplatesController extends Controller
         $response['status'] = STATUS_BAD_REQUEST;
         $response['success'] = FALSE;
         try {
+            //   return  $userObj = User::find(Auth::user()->id);
             $requestData = PaySlip::generatePDF($request);
             if ($requestData['status'] == 200) {
                 $response['pdf'] = $requestData['pdf'];
@@ -294,7 +299,6 @@ class TemplatesController extends Controller
             if ($requestData['type'] == 1) {
                 if ($requestData['subcription_type'] == 1) {
                     $userObj->expiryDate = Carbon::now()->addMonth();
-
                 } else  if ($requestData['subcription_type'] == 3) {
                     $userObj->expiryDate = Carbon::now()->addMonths(3);
                 } else  if ($requestData['subcription_type'] == 6) {
@@ -328,10 +332,10 @@ class TemplatesController extends Controller
         try {
             // return Auth::user();
             $userObj = User::select('expiryDate', 'subscription_type')->find(Auth::user()->id);
-            if($userObj->expiryDate != ''){
+            if ($userObj->expiryDate != '') {
                 $expiry = date('m-d-Y', strtotime($userObj->expiryDate));
             }
-             //Carbon::parse($userObj->expiryDate)->format('m-d-Y');
+            //Carbon::parse($userObj->expiryDate)->format('m-d-Y');
             $userObj->expiryDate = $expiry ?? '';
             $response['data'] = $userObj;
             $response['success'] = true;
