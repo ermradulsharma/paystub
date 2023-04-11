@@ -56,10 +56,7 @@
             .bottom-icon:last-child {
                 margin-right: 0px !important;
             }
-
-
-
-
+            
         }
     </style>
 </head>
