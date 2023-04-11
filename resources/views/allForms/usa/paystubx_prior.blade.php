@@ -200,7 +200,7 @@
             <div class="col1">
                 <table style="width:100%;">
                     <tr>
-                        <td style="font-weight: bold; font-family: 'Poppins', sans-serif;"> {{ $requestData['cname'] ?? '' }}</td>
+                        <td style="font-weight: bold; font-family: 'Poppins', sans-serif;text-transform:capitalize;"> {{ $requestData['cname'] ?? '' }}</td>
                         <td style=" text-transform:capitalize; font-family: 'Times New Roman', Times, serif;"><strong>{{ $requestData['emp_name'] }}</strong></td>
                     </tr>
                     <tr>

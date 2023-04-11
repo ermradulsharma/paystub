@@ -34,7 +34,7 @@
             max-width: 30px;
         }
         .social-icons{
-            width: 27%;
+            width: 30% !important;
             margin: 0 auto;
         }
 
@@ -42,6 +42,7 @@
             .otp-code {
                 letter-spacing: 2px !important;
                 width: 75px !important;
+                font-size: 12px;
             }
 
             .bottom-icon {
@@ -52,7 +53,7 @@
                 margin-right: 0px !important;
             }
             .social-icons{
-                width: 35%;
+                width: 31%;
             }
 
 
@@ -95,7 +96,7 @@
 
 
                                 <p class="otp-code"
-                                    style="letter-spacing: 10px; padding:4px 5px;border:1px solid rgba(86, 86,86,0.5);width:120px; margin:0 auto;text-align:center;">
+                                    style="letter-spacing: 5px; padding:4px 5px;border:1px solid rgba(86, 86,86,0.5);width:100px; margin:0 auto;text-align:center;">
                                     {{$user_data['otp'] ?? '123456'}}</p>
 
 

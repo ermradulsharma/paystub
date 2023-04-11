@@ -228,7 +228,7 @@
                 <div class="col1">
                     <table style="padding-top:7px;">
                         <tr>
-                            <td style="font-size: 19px; font-family: 'Arial', sans-serif;font-weight:bold;" ><b>{{
+                            <td style="font-size: 19px; font-family: 'Arial', sans-serif;font-weight:bold;text-transform:capitalize;" ><b>{{
                                     $requestData['cname'] }}</b></td>
                         </tr>
                         <tr>
@@ -311,7 +311,7 @@
                             <thead>
                                 <th class="hadding" style="text-align: left;">DEDUCTIONS</th>
                                 <th class="hadding" style="text-align: center;">TOTAL</th>
-                                <th class=" hadding">YTD TOTAL</th>
+                                <th class=" hadding"style="padding-right:5px;">YTD TOTAL</th>
                             </thead>
                             <tbody>
                                 @foreach ($requestData['taxes'] ?? [] as $key => $taxes)

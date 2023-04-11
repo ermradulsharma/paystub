@@ -76,12 +76,13 @@
             border-right: 2px solid #464646;
             font-family: 'Arial', sans-serif;
             font-weight: bold;
+            padding-bottom: 0px;
 
         }
 
         .head2 {
             border-right: 2px solid #464646;
-            padding: 5px 0 2.2em 0;
+            padding: 5px 0 2.2em 0px;
             font-size: 14px;
 
         }
@@ -173,7 +174,7 @@
                 style="width:100%; border-left:2px solid#464646; border-right:2px solid#464646;background-color:darkgray;color:white;">
                 <tr>
                     <td style="font-size: 18px;text-align: left;padding:10px 0px 10px 25px;"><span
-                            style="font-size: 18px;">{{ $requestData['cname'] }}</span><br>{{ $requestData['address_1']
+                            style="font-size: 18px;text-transform:capitalize;">{{ $requestData['cname'] }}</span><br>{{ $requestData['address_1']
                         }} {{ $requestData['city'] }}, {{ $requestData['state'] }} {{ $requestData['zip_code'] }}</td>
                     <td
                         style="font-size: 21px;text-align:right;padding:10px 12px 8px 10px;text-transform:uppercase;  font-family: 'Arial', sans-serif;font-weight:bold;">
@@ -284,38 +285,33 @@
                         </table>
                     </div>
                 </div>
-                <div class="row" style=" border:3px solid#8a898a; ">
-                    <div class="column1">
+                <div class="row" style=" border:3px solid#8a898a;  ">
+                    <div class="column1" style="height: 80px;">
                         <table id="bottomtable" style="width:100%; background-color:white;">
-                            <tr class="">
-                                <th id="cols" class="head1">YTD GROSS</th>
-                                <th id="cols" class="head1">YTD DEDUCTIONS</th>
-                                <th id="cols" class="head1">YTD NET PAY</th>
+                            <tr>
+                                <td id="cols" class="head1">YTD GROSS</td>
+                                <td id="cols" class="head1">YTD DEDUCTIONS</td>
+                                <td id="cols" class="head1">YTD NET PAY</th>
                             </tr>
                             <tr class=" ytd">
-                                <td id="cols" class="head2"><span
-                                    style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['ytd_gross_total'], 2) }} </td>
-                                <td id="cols" class="head2"><span
-                                    style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['ytd_deduction_tax'], 2) }} </td>
-                                <td id="cols" class="head2"><span
-                                    style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['total_ytd_net_pay'], 2) }} </td>
+                                <td id="cols" class="head2">{{ number_format($requestData['ytd_gross_total'], 2) }} </td>
+                                <td id="cols" class="head2">{{ number_format($requestData['ytd_deduction_tax'], 2) }} </td>
+                                <td id="cols" class="head2">{{ number_format($requestData['total_ytd_net_pay'], 2) }} </td>
                             </tr>
                         </table>
                     </div>
-                    <div class="column2">
+                    <div class="column2" style="height: 80px;border-bottom:2px solid #8a898a;">
                         <table id="bottomtable" style="width:100%; background-color:white;">
                             <tr class="">
-                                <th id="cols" class="head1">CURRENT TOTAL</th>
-                                <th id="cols" class="head1">DEDUCTIONS</th>
-                                <th id="cols" class="head1" style="border-right: none !important; ">NET PAY
-                                </th>
+                                <td id="cols" class="head1">CURRENT TOTAL</td>
+                                <td id="cols" class="head1">DEDUCTIONS</td>
+                                <td id="cols" class="head1" style="border-right: none !important; ">NET PAY
+                                </td>
                             </tr>
                             <tr class=" ytd">
-                                <td id="cols" class="head2"><span
-                                    style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['period_gross_total'], 2) }} </td>
-                                <td id="cols" class="head2"><span
-                                    style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['deduction_tax'], 2) }} </td>
-                                <td id="cols" class="head2" style="border-right: none !important; font-family: DejaVu Sans, sans-serif;"><span style="font-family: 'DejaVu Sans', sans-serif; padding-right:1px;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['total_net_pay'], 2) }} </td>
+                                <td id="cols" class="head2">{{ number_format($requestData['period_gross_total'], 2) }} </td>
+                                <td id="cols" class="head2">{{ number_format($requestData['deduction_tax'], 2) }} </td>
+                                <td id="cols" class="head2" style="border-right: none !important; font-family: DejaVu Sans, sans-serif;"><span style="font-family: 'DejaVu Sans', sans-serif; padding-right:1px;font-weight:bold;">{{ $requestData['currency'] }}</span><b>{{ number_format($requestData['total_net_pay'], 2) }}</b> </td>
                             </tr>
                         </table>
                     </div>
