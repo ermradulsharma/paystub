@@ -3,21 +3,8 @@
     <section class="user-profile">
         <div class="container" style="padding: 0;">
             <div class="row">
-                <div class="col-lg-3 col-md-3" style="padding: 0;border-right:1px solid #ddd;height:95vh;">
+                <div class="col-lg-2 col-md-2" style="padding: 0;border-right:1px solid #ddd;height:95vh;">
                     <div class="col-lg-12 col-md-12" style="padding: 0;">
-                        {{-- <div class="left-sidebar">
-                            <div class="row hover" style="padding: 10px 0px;border-bottom:1px solid #ddd;">
-                                <div class="col-lg-2">
-                                    <img src="images/my-account.png">
-                                </div>
-                                <div class="col-lg-10">
-                                    <div class="user-text">
-                                        <h4>My Account</h4>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div> --}}
 
                     </div>
                     <div class="col-lg-12 col-md-12" style="padding: 0; ">
@@ -35,7 +22,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-9 col-md-9" style="padding: 0;">
+                <div class="col-lg-6 col-md-6" style="padding: 0;">
                     <div class="right-side-bar">
                         <h4 style="color:#012c63; line-height:26px;">{{ __('User Profile') }}</h4>
                         <P style="color:#333!important;font-weight:500;">
@@ -101,6 +88,12 @@
                         </div>
 
                     </div>
+                </div>
+                <div class="col-lg-4 col-md-4 member-plan">
+                    <h4>Premium Member Plan</h4>
+                    <p>3 Month until 4/16/23</p>
+                    <p>Plan expired</p>
+                    <button class="renew-btn">RENEW</button>
                 </div>
             </div>
         </div>
