@@ -452,7 +452,7 @@
                     <div style="width: 50%;float:right;text-align:right;">
                         <h6
                             style="font-size: 14px; margin-bottom: 2px; text-align:center; left:40px; position: relative;  top:31px;font-weight:400;">
-                            <span>00000{{ $requestData['advice_number'] }}</span>
+                            <span>00000{{ $requestData['check_no'] }}</span>
                         </h6>
                         <h6
                             style="font-size: 14px; text-align:center; left:40px; position: relative; font-weight:400;">
