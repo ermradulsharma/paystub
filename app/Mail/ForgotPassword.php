@@ -29,7 +29,7 @@ class ForgotPassword extends Mailable
     public function build()
     {
 
-        return $this->from('developerspbs@gmail.com', config('mail.from.name'))
+        return $this->from(MAIL_FROM_EMAIL, config('mail.from.name'))
             ->subject('Forgot Password - ' . config('mail.from.name'))
             ->view('mail.forgot-password')
             ->with(['user_data' => $this->user_data]);
