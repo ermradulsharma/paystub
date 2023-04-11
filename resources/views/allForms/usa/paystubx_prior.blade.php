@@ -156,8 +156,9 @@
                 <td></td>
             </tr>
             @php
-                $digit = Terbilang::make((int) $requestData['total_net_pay']);
-                $word = $digit;
+                // $digit = Terbilang::make((int) $requestData['total_net_pay']);
+                // $word = $digit;
+                $word = getCurrency($requestData['total_net_pay']);
             @endphp
             @php
                 $n = $requestData['total_net_pay'];
