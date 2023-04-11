@@ -806,6 +806,16 @@
                             $(".stubxc").addClass("col-md-3");
                         });
                     }
+
+                    if (stub == 0 && check == 0) {
+                        $('.stubxc').each(function() {
+                            $(".stubxc").addClass("col-md-4");
+                            $(".stubxcv").addClass("d-none");
+                            $(".checkxcv").addClass("d-none");
+                            $(".stubxc").removeClass("col-md-3");
+                        });
+                    }
+
                     if (status == 1) {
                         $(".tempElemant").removeClass("d-none");
                         var clock = $('option:selected', '.at_id').data('clock');
@@ -859,6 +869,14 @@
                             $(".stubxcv").addClass("d-none");
                             $(".checkxcv").removeClass("d-none");
                             $(".stubxc").addClass("col-md-3");
+                        });
+                    }
+                    if (stub == 0 && check == 0) {
+                        $('.stubxc').each(function() {
+                            $(".stubxc").addClass("col-md-4");
+                            $(".stubxcv").addClass("d-none");
+                            $(".checkxcv").addClass("d-none");
+                            $(".stubxc").removeClass("col-md-3");
                         });
                     }
                     if (status == 1) {
