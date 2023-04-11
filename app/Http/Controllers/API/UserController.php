@@ -108,12 +108,13 @@ class UserController extends Controller
     public function getUserProfile(Request $request)
     {
         $response['success'] = TRUE;
-        $response['data'] =  User::select('name','email')->find($request->user()->id);;
+        $response['data'] =  User::select('name', 'email')->find($request->user()->id);;
         $response['message'] = "Profile update successfully";
         $response['status'] = STATUS_OK;
 
         return response()->json($response, $response['status']);
     }
+
     public function updateProfile(Request $request)
     {
         $response = [];
@@ -154,7 +155,7 @@ class UserController extends Controller
         }
         return response()->json($response, $response['status']);
     }
-    
+
     public function updateUserProfile(Request $request)
     {
         $response = [];
@@ -378,6 +379,94 @@ class UserController extends Controller
             Log::error($e->getTraceAsString());
             $response['status'] = STATUS_GENERAL_ERROR;
         }
+        return response()->json($response, $response['status']);
+    }
+
+    public function deactivateAccount(Request $request)
+    {
+        $response = [];
+        $response['success'] = FALSE;
+        $response['status'] = STATUS_BAD_REQUEST;
+        try {
+            DB::beginTransaction();
+
+            $dataObj = User::deactivateAccount($request);
+            $response['message'] = $dataObj['message'];
+            if ($dataObj['status'] == 200) {
+                $response['success'] = TRUE;
+                $response['status'] = STATUS_OK;
+            }
+        } catch (\Exception $e) {
+            DB::rollback();
+            $response['message'] = $e->getMessage() . ' Line No ' . $e->getLine() . ' in File' . $e->getFile();
+            Log::error($e->getTraceAsString());
+            $response['status'] = STATUS_GENERAL_ERROR;
+        }
+        DB::commit();
+        return response()->json($response, $response['status']);
+    }
+
+    public function restoreAccount(Request $request)
+    {
+        $response = [];
+        $response['success'] = FALSE;
+        $response['status'] = STATUS_BAD_REQUEST;
+        try {
+            DB::beginTransaction();
+            $rules = [
+                'username' => 'required|max:255',
+                'password' => 'required|min:6'
+            ];
+
+            $messages = [
+                'required' => 'The :attribute field is required.',
+            ];
+
+            $validator = Validator::make($request->all(), $rules, $messages);
+
+            if ($validator->fails()) {
+                $response['message'] = $validator->errors()->first();
+                $response['status'] = UNPROCESSABLE_ENTITY;
+                return $response;
+            }
+            $dataObj = User::restoreAccount($request);
+            $response['message'] = $dataObj['message'];
+            if ($dataObj['status'] == 200) {
+                $response['success'] = TRUE;
+                $response['status'] = $dataObj['status'];
+            }
+        } catch (\Exception $e) {
+            DB::rollback();
+            unset($response['data']);
+            $response['message'] = $e->getMessage() . ' Line No ' . $e->getLine() . ' in File' . $e->getFile();
+            Log::error($e->getTraceAsString());
+            $response['status'] = STATUS_GENERAL_ERROR;
+        }
+        DB::commit();
+        return response()->json($response, $response['status']);
+    }
+
+    public function deleteAccount(Request $request)
+    {
+        $response = [];
+        $response['success'] = FALSE;
+        $response['status'] = STATUS_BAD_REQUEST;
+
+        try {
+            DB::beginTransaction();
+            $dataObj = User::deleteAccount($request);
+            $response['message'] = $dataObj['message'];
+            if ($dataObj['status'] == 200) {
+                $response['success'] = $dataObj['success'];
+                $response['status'] = $dataObj['status'];
+            }
+        } catch (\Exception $e) {
+            DB::rollBack();
+            $response['message'] = $e->getMessage() . ' Line No ' . $e->getLine() . ' in File' . $e->getFile();
+            Log::error($e->getTraceAsString());
+            $response['status'] = STATUS_GENERAL_ERROR;
+        }
+        DB::commit();
         return response()->json($response, $response['status']);
     }
 }
