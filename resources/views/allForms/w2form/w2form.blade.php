@@ -87,7 +87,7 @@
             <div class="watermark"></div>
         @endguest
         @auth
-            @if (isset($requestData['watermark']) == 'no')
+            @if (isset($requestData['watermark']) == 'yes')
                 <div class="watermark"></div>
             @endif
         @endauth
