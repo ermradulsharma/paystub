@@ -42,7 +42,7 @@
     <div class="container mt-2 px-0" style="max-width:1510px;">
         <form id="submit_form_paystubx_id" action="javascript:void()" method="get">
             @csrf
-            <input type="hidden" name="form_type" value="global" hidden>
+            <input type="hidden" name="form_type" value="usa" hidden>
             <div>
                 <div class="row mb-3">
                     <div class="col-md-12">
@@ -151,7 +151,8 @@
                                                     <option value="{{ $data->title ?? '' }}"
                                                         data-src="{{ $data->images->file ?? '' }}"
                                                         data-status="{{ $data->template_element }}"
-                                                        data-stub="{{ $data->stub_no }}">
+                                                        data-stub="{{ $data->stub_no }}"
+                                                        data-check="{{ $data->check_no }}">
                                                         {{ $data->name }}
                                                     </option>
                                                 @endforeach
@@ -177,7 +178,8 @@
                                                         data-src="{{ $data->images->file ?? '' }}"
                                                         data-status="{{ $data->template_element }}"
                                                         data-stub="{{ $data->stub_no }}"
-                                                        data-clock="{{ $data->co_no }}">
+                                                        data-clock="{{ $data->co_no }}"
+                                                        data-check="{{ $data->check_no }}">
                                                         {{ $data->name ?? '' }} </option>
                                                 @endforeach
                                             </select>
@@ -215,7 +217,8 @@
                                     <div>
                                         <label for="emp_id" class="lable">EMPLOYEE ID </label>
                                         <input type="text" id="emp_id" name="emp_id" placeholder="Employer ID"
-                                            class="w-100 r input-box-font removeDiv">
+                                            class="w-100 r input-box-font removeDiv" maxlength="5" minlength="5"
+                                            onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                     </div>
                                 </div>
                                 <div class="col-md-4 mt-4">
@@ -243,8 +246,7 @@
                             <div class="row mb-3">
                                 <div class="col-md-12">
                                     <div>
-                                        <label for="emp_street_2" class="lable">STREET ADDRESS 2
-                                        </label>
+                                        <label for="emp_street_2" class="lable">STREET ADDRESS 2 </label>
                                         <input type="text" id="emp_street_2" name="emp_street_2"
                                             placeholder="Employee Street Address 2 (optional)"
                                             class="w-100  input-box-font">
@@ -252,7 +254,7 @@
                                 </div>
                             </div>
                             <div class="row mb-3 stubx">
-                                <div class="col-md-4 stubxc">
+                                <div class="col-md-4 stubxc checkxc">
                                     <div>
                                         <label for="emp_city" class="lable">City <span class="redColor">*</span>
                                         </label>
@@ -260,7 +262,7 @@
                                             class="w-100   input-box-font removeDiv">
                                     </div>
                                 </div>
-                                <div class="col-md-4 stubxc">
+                                <div class="col-md-4 stubxc checkxc">
                                     <div>
                                         <label for="emp_state" class="lable">State <span class="redColor">*</span>
                                         </label>
@@ -279,7 +281,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-4 stubxc">
+                                <div class="col-md-4 stubxc checkxc">
                                     <div>
                                         <label for="emp_zip_code" class="lable">Zip Code <span
                                                 class="redColor">*</span></label>
@@ -297,10 +299,14 @@
                                             onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                     </div>
                                 </div>
-                                <div class="col-md-4 check checkv d-none">
+                                <div class="col-md-4 stubxc checkxcv d-none">
                                     <div>
-                                        <label for="check_no" class="lable">Check No <span class="redColor">*</span></label>
-                                        <input type="text" id="check_no" name="check_no" class="w-100  input-box-font removeDiv" placeholder="1234" maxlength="6"  minlength="4" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+                                        <label for="check_no" class="lable">Check No <span
+                                                class="redColor">*</span></label>
+                                        <input type="text" id="check_no" name="check_no"
+                                            class="w-100  input-box-font removeDiv" placeholder="12345678" maxlength="8"
+                                            minlength="8"
+                                            onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                     </div>
                                 </div>
                             </div>
@@ -375,8 +381,7 @@
                             <div class="row mb-3">
                                 <div class="col-md-3 mt-4">
                                     <div>
-                                        <label for="hourly" class="lable">Rate / Unit
-                                        </label>
+                                        <label for="hourly" class="lable">Rate / Unit </label>
                                         <input type="text" step="0.5" id="hourly" name="hourly"
                                             placeholder="Wage" class="w-100   input-box-font hourly">
                                     </div>
@@ -682,16 +687,19 @@
                                     </div>
                                     <div class="col-lg-4 col-md-4 col-sm-6 mb-2 advicex advicexv d-none">
                                         <div>
-                                            <p class="p-0 m-0 " style="font-family: serif;">DEPT.<span class="redColor">*</span></p>
-                                            <input type="text" name="dept_number" id="dept_number" class="earnbtn removeDiv text-center" maxlength="4" minlength="4" placeholder="123456" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+                                            <p class="p-0 m-0 " style="font-family: serif;">DEPT.<span
+                                                    class="redColor">*</span></p>
+                                            <input type="text" name="dept_number" id="dept_number"
+                                                class="earnbtn removeDiv text-center" maxlength="4" minlength="4"
+                                                placeholder="123456"
+                                                onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                         </div>
 
                                     </div>
                                     <div class="col-lg-4 col-md-4 col-sm-6 mb-2 advicex advicexv d-none">
                                         <div>
                                             <p class="p-0 m-0" style="font-family: serif;">FILE.<span
-                                                    class="redColor">*</span>
-                                            </p>
+                                                    class="redColor">*</span> </p>
                                             <input type="text" name="file_number" id="file_number"
                                                 class="earnbtn removeDiv text-center" maxlength="6" minlength="4"
                                                 placeholder="1234"
@@ -779,18 +787,23 @@
                 if (value != '') {
                     var status = $('option:selected', '.at_id').attr('data-status');
                     var stub = $('option:selected', '.at_id').data('stub');
-                    if (stub == 1) {
+                    var check = $('option:selected', '.at_id').data('check');
+                    console.log('check', check);
+                    console.log('stub', stub);
+                    if (stub == 1 && check == 0) {
                         $('.stubxc').each(function() {
                             $(".stubxc").removeClass("col-md-4");
+                            $(".checkxcv").addClass("d-none");
                             $(".stubxcv").removeClass("d-none");
                             $(".stubxc").addClass("col-md-3");
                         });
                     }
-                    if (stub == 0) {
+                    if (stub == 0 && check == 1) {
                         $('.stubxc').each(function() {
-                            $(".stubxc").addClass("col-md-4");
+                            $(".stubxc").removeClass("col-md-4");
                             $(".stubxcv").addClass("d-none");
-                            $(".stubxc").removeClass("col-md-3");
+                            $(".checkxcv").removeClass("d-none");
+                            $(".stubxc").addClass("col-md-3");
                         });
                     }
                     if (status == 1) {
@@ -818,6 +831,7 @@
                     $('.stubxc').each(function() {
                         $(".stubxc").addClass("col-md-4");
                         $(".stubxcv").addClass("d-none");
+                        $(".checkxcv").addClass("d-none");
                         $(".stubxc").removeClass("col-md-3");
                     });
                     $(".tempElemant").addClass("d-none");
@@ -830,18 +844,21 @@
                 if (value != '') {
                     var status = $('option:selected', '.bt_id').attr('data-status');
                     var stub = $('option:selected', '.bt_id').data('stub');
-                    if (stub == 1) {
+                    var check = $('option:selected', '.bt_id').data('check');
+                    if (stub == 1 && check == 0) {
                         $('.stubxc').each(function() {
                             $(".stubxc").removeClass("col-md-4");
+                            $(".checkxcv").addClass("d-none");
                             $(".stubxcv").removeClass("d-none");
                             $(".stubxc").addClass("col-md-3");
                         });
                     }
-                    if (stub == 0) {
+                    if (stub == 0 && check == 1) {
                         $('.stubxc').each(function() {
-                            $(".stubxc").addClass("col-md-4");
+                            $(".stubxc").removeClass("col-md-4");
                             $(".stubxcv").addClass("d-none");
-                            $(".stubxc").removeClass("col-md-3");
+                            $(".checkxcv").removeClass("d-none");
+                            $(".stubxc").addClass("col-md-3");
                         });
                     }
                     if (status == 1) {
@@ -853,6 +870,7 @@
                     $('.stubxc').each(function() {
                         $(".stubxc").addClass("col-md-4");
                         $(".stubxcv").addClass("d-none");
+                        $(".checkxcv").addClass("d-none");
                         $(".stubxc").removeClass("col-md-3");
                     });
                     $(".tempElemant").addClass("d-none");
