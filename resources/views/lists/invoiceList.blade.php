@@ -64,18 +64,20 @@
                                                         width="45px" />
                                                 </a>
                                             </th>
-                                            <th class="text-center" style="padding: 1em .5em; border:none;">
+                                            <th class="text-center"  style="padding: 1em .5em; border:none;">
                                                 <a class="delbtn" href="javascript:void(0);"
-                                                    onclick="event.preventDefault();
+                                                data-trash ="{{ route('invoiceDelete', $invoice->id) }}"
+                                                    >Delete
+                                                </a>
+                                                {{-- onclick="event.preventDefault();
                                                     if(confirm('Are you sure! you want to delete this?')){
                                                         document.getElementById('delete-form-{{ $invoice->id }}').submit();
-                                                        }">Delete
-                                                </a>
-                                                <form id="delete-form-{{ $invoice->id }}"
+                                                        }" --}}
+                                                {{-- <form id="delete-form-{{ $invoice->id }}"
                                                     action="{{ route('invoiceDelete', $invoice->id) }}" method="POST"
                                                     style="display: none;">
                                                     {{ csrf_field() }}
-                                                </form>
+                                                </form> --}}
                                             </th>
                                             <th class="text-center" style="padding: 1em .5em;border:none;">
                                                 <a href="javascript:void(0);" class="previewbtnInvoice text-capitalize"
@@ -101,6 +103,30 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade trashModal" id="deleteTemplate">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header" style="background: #115caecf;">
+                    <h4 class="modal-title"><img src="{{ asset('/') }}images/Paystub X.webp" class="icon"></h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body" style="padding-bottom:30px;">
+                    <h5 class="text-center" style="text-transform:capitalize;">Do you want to delete?</h5>
+                    <div class=" text-center mt-4">
+                        {{-- <h5 style="color: #457bbe;" class="mt-4 text-center">Almost There!</h5> --}}
+                        <form id="trash-temp" action="" method="POST" class="text-center">
+                            @csrf
+
+                            <button class="previewbtn" type="submit">Yes</button>
+                            <button class="previewbtn bottom-close" type="button">NO</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 @endsection
 @section('script')
     <div class="modal fade" id="tempViewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -133,6 +159,14 @@
                 e.preventDefault();
                 toastr.error("Please First Generate Paystub.");
             }
+
+        });
+        
+        $(document).on('click','.delbtn',function(e){
+           var trashPath = $(this).data('trash');
+           console.log('trashPath--',trashPath);
+            $('#trash-temp').attr('action',trashPath);
+            $('#deleteTemplate').modal('show');
 
         });
     </script>
