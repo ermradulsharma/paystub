@@ -51,7 +51,7 @@
             <tr>
                 <td style="text-align:center;padding-bottom:10px;">
                     <a style="max-width:200px;" target="_blank">
-                        <img style="display: flex; margin: 0 auto;" width="200px;" src="{{asset('images/mail-logo.png')}}" title="logo" alt="logo">
+                        <img style="display: flex; margin: 0 auto;" width="200px;" src="{{ asset('images/transparent-logo.png') }}" title="logo" alt="logo">
                     </a>
                 </td>
             </tr>
