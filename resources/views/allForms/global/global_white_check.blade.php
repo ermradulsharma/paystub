@@ -213,7 +213,7 @@
                         </tr>
                         <tr>
                             <td
-                                style="font-size:18px; text-transform:uppercase;line-height:1.5;font-family: 'Arial', sans-serif;">
+                                style="font-size:18px; text-transform:uppercase;line-height:1;font-family: 'Arial', sans-serif;">
                                 {{ $requestData['address_1'] }}<br>{{ $requestData['city'] }}
                                 {{ $requestData['state'] }}.
                                 {{ $requestData['zip_code'] }}
@@ -465,7 +465,7 @@
                     <tr>
                         <td style="width:10%;"></td>
                         <td
-                            style="font-size:15px; padding-top:40px; width:50%;padding-left:10px; font-weight:bold;font-family: Arial, Helvetica, sans-serif;">
+                            style="font-size:15px; padding-top:40px; width:50%;padding-left:10px; font-weight:bold;font-family: Arial, Helvetica, sans-serif;text-transform:capitalize;">
                             {{ $requestData['emp_name'] }}</td>
                         <td
                             style="font-size:15px; width:23%;padding-top:40px !important; text-align:left;font-family: Arial, Helvetica, sans-serif;padding-left:18px;">
