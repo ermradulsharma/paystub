@@ -35,7 +35,7 @@
             display: flex;
             justify-content: center;
             text-align: center;
-            max-width: 170px;
+            max-width: 242px;
         }
 
 
@@ -142,22 +142,22 @@
                     <p style="font-size:13px;text-align: center;margin:0;padding:0 0 15px;color:rgba(86, 86,86,0.9)">
                         Create Pay stubs on the go! </p>
                     <p style="text-align: center;padding:0;margin:0;">
-                        <img style="max-width: 100px; height:30px; margin-right:10px;"
-                            src="{{asset('images/1app.png')}}">
-                        <img style="max-width: 100px; height:30px;" src="{{asset('images/1google.png')}}">
+                        <a href="https://www.google.com/" target="_blank"><img style="max-width: 100px; height:30px; margin-right:10px;"
+                            src="{{asset('images/1app.png')}}"></a>
+                        <a href="https://www.google.com/" target="_blank"><img style="max-width: 100px; height:30px;" src="{{asset('images/1google.png')}}"></a>
                     </p>
                     <p style="text-align: center;color:rgba(86, 86,86,0.9);font-size:13px;">Follow us on social media
                     </p>
                     <ul class="social-icons">
-                        <li class="bottom-icon"><a href="https://www.google.com/" ><img
-                                    src="{{asset('images/icons/facebook.png')}}"height:30px; width:30px;></a>
+                        <li class="bottom-icon"><a target="_blank" href="https://www.google.com/" ><img
+                                    src="{{asset('images/icons/facebook.png')}}" height="35px" width="35px"></a>
                         </li>
-                        <li class="bottom-icon"><a href="https://www.google.com/"><img
-                                    src="{{asset('images/icons/instagram.png')}}"height:30px; width:30px;></a></li>
-                        <li class="bottom-icon"><a href="https://www.google.com/"><img
-                                    src="{{asset('images/icons/twitter.png')}}"height:30px; width:30px;></a></li>
-                        <li class="bottom-icon"><a href="https://www.google.com/"><img
-                                    src="{{asset('images/icons/youtube.png')}}"height:30px; width:30px;></a></li>
+                        <li class="bottom-icon"><a target="_blank"  href="https://www.google.com/"><img
+                                    src="{{asset('images/icons/instagram.png')}}" height="35px" width="35px"></a></li>
+                        <li class="bottom-icon"><a  target="_blank" href="https://www.google.com/"><img
+                                    src="{{asset('images/icons/twitter.png')}}" height="35px" width="35px"></a></li>
+                        <li class="bottom-icon"><a target="_blank"  href="https://www.google.com/"><img
+                                    src="{{asset('images/icons/youtube.png')}}" height="35px" width="35px"></a></li>
                     </ul>
                 </td>
             </tr>
