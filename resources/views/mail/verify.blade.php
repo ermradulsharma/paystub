@@ -36,9 +36,14 @@
         }
 
         .social-icons {
-            width: 27% !important;
+            width: 100%;
             margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            max-width: 160px;
         }
+
 
         .social-icons li {
             margin-left: 0px !important;
@@ -48,7 +53,7 @@
         @media(max-width:425px) {
             .otp-code {
                 letter-spacing: 2px !important;
-                width: 55px !important;
+                width: 100%;
                 font-size: 12px;
             }
 
@@ -61,9 +66,7 @@
                 margin-right: 0px !important;
             }
 
-            .social-icons {
-                width: 40% !important;
-            }
+
 
 
         }
@@ -154,14 +157,14 @@
                     <p style="text-align: center;color:rgba(86, 86,86,0.9);font-size:13px;">Follow us on social media
                     </p>
                     <ul class="social-icons">
-                        <li class="bottom-icon" style="float: left;"><a href="https://www.google.com/"><img
+                        <li class="bottom-icon"><a href="https://www.google.com/"><img
                                     src="{{asset('images/icons/facebook.png')}}"></a>
                         </li>
-                        <li class="bottom-icon" style="float: left;"><a href="https://www.google.com/"><img
+                        <li class="bottom-icon"><a href="https://www.google.com/"><img
                                     src="{{asset('images/icons/instagram.png')}}"></a></li>
-                        <li class="bottom-icon" style="float: left;"><a href="https://www.google.com/"><img
+                        <li class="bottom-icon"><a href="https://www.google.com/"><img
                                     src="{{asset('images/icons/twitter.png')}}"></a></li>
-                        <li class="bottom-icon" style="float: left;"><a href="https://www.google.com/"><img
+                        <li class="bottom-icon"><a href="https://www.google.com/"><img
                                     src="{{asset('images/icons/youtube.png')}}"></a></li>
                     </ul>
                 </td>
