@@ -309,7 +309,7 @@
                                 <th colspan="4" style="padding-top: 41px;font-family: Arial, Helvetica, sans-serif;font-size:13px;">Company Information</th>
                             </tr>
                             <tr>
-                                <td colspan="4" class="address" style="padding-left: 11px; text-transform:capitalize;font-family: Arial, Helvetica, sans-serif;">{{ $requestData['cname'] }} <br> {{ $requestData['address_1'] }} {{ $requestData['city'] }}, {{ $requestData['state'] }} {{ $requestData['zip_code'] }} <br> {{ $requestData['tel'] }} </td>
+                                <td colspan="4" class="address" style="padding-left: 11px; text-transform:capitalize;font-family: Arial, Helvetica, sans-serif;">{{ $requestData['cname'] }} <br> {{ $requestData['address_1'] }} {{ $requestData['city'] }}, {{ $requestData['state'] }} {{ $requestData['zip_code'] }} <br> {{ $requestData['tel'] ?? '' }} </td>
                             </tr>
                         </table>
                     </div>
@@ -405,7 +405,7 @@
             <table class="tabl3" style="width:30%;float: right;">
                 <tr style="">
                     <td class="hadding" style=" background: #264FAB; color:white;text-align:center; "> Check No.</td>
-                    <td class="hadding section" style=" text-align: right;">000000</td>
+                    <td class="hadding section" style=" text-align: right;">{{ $requestData['check_no'] ?? '' }}</td>
                 <tr>
 
                 <tr style="border-top: 2px solid white;">

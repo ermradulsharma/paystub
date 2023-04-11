@@ -175,7 +175,7 @@
                     <br>
                     <br>
                     <P style="font-size: 14px;margin: 0; text-align:right; padding-right:25%;font-weight:bold;font-family: Arial, Helvetica, sans-serif;"><span
-                            style="font-weight:bold;padding-right:20px;">Check No:</span> 1775 </P>
+                            style="font-weight:bold;padding-right:20px;">Check No:</span> {{ $requestData['check_no'] ?? '' }} </P>
                     <P style="font-size: 14px;margin: 0;  text-align:right;  padding-right:25%;margin-top:10px;font-family: Arial, Helvetica, sans-serif;font-weight:bold;"> <span
                             style=" padding-right:20px;">Date:</span><b>{{ date('m/d/y',
                             strtotime($requestData['pay_date'])) }}</b> </P>
@@ -255,7 +255,7 @@
                 <td
                     style="border-right: 1px solid #793b5b; border-left: 1px solid #793b5b;font-size:13px; font-weight:bold;text-align:center; ">
                     {{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</td>
-                <td style="font-size:13px;text-align:center; font-weight:bold">1877</td>
+                <td style="font-size:13px;text-align:center; font-weight:bold">{{ $requestData['check_no'] ?? '' }}</td>
 
             </tr>
         </table>

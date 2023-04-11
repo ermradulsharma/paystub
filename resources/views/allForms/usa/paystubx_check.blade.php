@@ -317,7 +317,7 @@
                         </tr>
                         <tr>
                             <td style="font-family: Arial, Helvetica, sans-serif; font-size:12px;">Company Telephone
-                                Number: {{ $requestData['tel'] }}</td>
+                                Number: {{ $requestData['tel'] ?? ''}}</td>
                         </tr>
                     </table>
                 </div>
