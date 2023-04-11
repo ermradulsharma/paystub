@@ -52,7 +52,7 @@
                 margin-right: 0px !important;
             }
             .social-icons{
-                width: 30%;
+                width: 35%;
             }
 
 
