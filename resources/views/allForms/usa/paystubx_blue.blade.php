@@ -251,7 +251,7 @@
                             <tbody id="borderleft">
                                 @foreach ($requestData['taxes'] ?? [] as $key => $taxes)
                                 <tr>
-                                    <td id="fica" style="padding:left 8px;font-size:11px;width:40%;">{{ $taxes }}</td>
+                                    <td id="fica" style="padding:left 8px;font-size:13px;width:40%;">{{ $taxes }}</td>
                                     <td
                                         style="text-align: center;font-size:13px; font-family: DejaVu Sans, sans-serif;width:30%;">
                                         <span style="font-family: 'DejaVu Sans', sans-serif; padding-right:1px;">{{
