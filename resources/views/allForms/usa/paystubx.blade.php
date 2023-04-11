@@ -283,7 +283,7 @@
                             <td class="borderbottam">total to date</td>
                         </tr>
                         <tr>
-                            <td colspan="3" style="font-size: 12px; text-align:left;">Company Telephone Number: {{ $requestData['tel'] }} </td>
+                            <td colspan="3" style="font-size: 12px; text-align:left;">Company Telephone Number: {{ $requestData['tel'] ?? '' }} </td>
                         </tr>
                     </table>
                 </div>

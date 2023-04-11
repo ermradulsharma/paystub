@@ -208,7 +208,7 @@
                         <td style="text-transform: capitalize; font-size:13px;font-family: 'Times New Roman', Times, serif;"> {{ $requestData['emp_street_1'] }}<br>{{ $requestData['emp_city'] }}, {{ $requestData['emp_state'] }} {{ $requestData['emp_zip_code'] }} </td>
                     </tr>
                     <tr>
-                        <td colspan="2" style="text-transform: capitalize; font-size:13px;font-family: 'Times New Roman', Times, serif;">{{ $requestData['tel'] }}</td>
+                        <td colspan="2" style="text-transform: capitalize; font-size:13px;font-family: 'Times New Roman', Times, serif;">{{ $requestData['tel'] ?? ''}}</td>
                     </tr>
                 </table>
             </div>
@@ -237,7 +237,7 @@
                         <td style="font-size:13px;font-family: 'Times New Roman', Times, serif;">Filling Status</td>
                         <td style="font-size:13px; font-family: 'Times New Roman', Times, serif;"><span style="font-family: 'DejaVu Sans', sans-serif; padding-right:1px;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['deduction_tax'], 2) }}</td>
                         <td style="font-size:13px;font-family: 'Times New Roman', Times, serif;">Check No</td>
-                        <td style="font-size:13px;font-family: 'Times New Roman', Times, serif;">{{ $requestData['account_number_last_4'] }}</td>
+                        <td style="font-size:13px;font-family: 'Times New Roman', Times, serif;">{{ $requestData['check_no'] ?? '' }}</td>
                     </tr>
                 </table>
             </div>
