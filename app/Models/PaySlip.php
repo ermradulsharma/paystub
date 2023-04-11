@@ -33,15 +33,18 @@ class PaySlip extends Model
     static function generatePDF($request)
     {
         $requestData = $request->all();
-        if (!array_key_exists('watermark', $requestData)) {
-            $requestData += array('watermark' => 'no');
-        }
+        // if (!array_key_exists('watermark', $requestData)) {
+        //     $requestData += array('watermark' => 'no');
+        // }
         if ($requestData['form_type'] == "w2form") {
             $pageName = "w2form";
+            // $requestData['watermark'] == 'no';
         }
         $path = public_path() . '/uploads/mailData';
         File::isDirectory($path) or File::makeDirectory($path, 0777, true, true);
         $invoiceData['requestData'] = $requestData;
+
+        // dd($requestData);
         $pdf = PDF::loadView('allForms/' . $request->form_type . '/' . $pageName, $invoiceData)->setPaper('a4', 'portrait');
         $fileName =  date('_d_m_Y_h_i_s') . '.pdf';
         $pdf->save($path . '/' . $fileName);

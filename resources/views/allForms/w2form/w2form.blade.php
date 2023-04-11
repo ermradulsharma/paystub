@@ -84,7 +84,9 @@
 <body>
     <main class="bg-img2">
         @guest
-            <div class="watermark"></div>
+            @if (isset($requestData['watermark']) == 'yes')
+                <div class="watermark"></div>
+            @endif
         @endguest
         @auth
             @if (isset($requestData['watermark']) == 'yes')
