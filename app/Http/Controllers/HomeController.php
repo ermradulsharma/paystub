@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use App\Mail\VerifyEmailSend;
+use App\Models\PaySlip;
 use Illuminate\Support\Facades\Log;
 use Carbon\Carbon;
 
@@ -37,7 +38,7 @@ class HomeController extends Controller
     public function userDetails(Request $request)
     {
         $userObj = User::find(Auth::user()->id);
-        $subcriptionData = Subcription::with('plan')->where('user_id',$userObj->id)->latest()->first();
+        $subcriptionData = Subcription::with('plan')->where('user_id', $userObj->id)->latest()->first();
         // dd($subcriptionData);
         return view('user-profile', compact('userObj', 'subcriptionData'));
     }
@@ -60,12 +61,12 @@ class HomeController extends Controller
                 return response()->json(['error' => ['User not found']]);
             }
             $userObj->name = $request->uname ?? '';
-            if(!$userObj->save()){
+            if (!$userObj->save()) {
                 return response()->json(['error' => ['Something went wrong.']]);
             }
-            $userObj = User::where('id',$userId)->first();
+            $userObj = User::where('id', $userId)->first();
             $request->session()->flash('message', 'Profile updated successfully.');
-            return response()->json(['user'=>$userObj, 'message' => 'Profile updated successfully.']);
+            return response()->json(['user' => $userObj, 'message' => 'Profile updated successfully.']);
         }
 
         if ($request->type == 'user-email') {
@@ -178,10 +179,9 @@ class HomeController extends Controller
             if (!$userObj->save()) {
                 return response()->json(['error' => ['Something went wrong.']]);
             }
-            $userObj = User::where('id',$userId)->first();
+            $userObj = User::where('id', $userId)->first();
             $request->session()->flash('message', 'Account setup successfully.');
-            return response()->json(['user'=>$userObj,'message' => 'Account setup successfully.']);
-
+            return response()->json(['user' => $userObj, 'message' => 'Account setup successfully.']);
         }
     }
 
@@ -218,6 +218,7 @@ class HomeController extends Controller
 
         try {
             $user = User::find(Auth::user()->id);
+            PaySlip::where(['user_id' => Auth::user()->id])->forceDelete();
             Auth::logout();
             if ($user->delete()) {
                 return redirect()->route('welcome')->with('message', 'Your account has been deleted!');

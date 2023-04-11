@@ -82,6 +82,7 @@ class User extends Authenticatable
     static function deleteAccount($request)
     {
         $userObj = User::find(Auth::user()->id);
+        PaySlip::where(['user_id' => Auth::user()->id])->forceDelete();
         $userObj->forceDelete();
         $request->user()->token()->revoke();
 
