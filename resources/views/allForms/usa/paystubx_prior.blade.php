@@ -208,7 +208,7 @@
                         <td style="text-transform: capitalize; font-size:13px;font-family: 'Times New Roman', Times, serif;"> {{ $requestData['emp_street_1'] }}<br>{{ $requestData['emp_city'] }}, {{ $requestData['emp_state'] }} {{ $requestData['emp_zip_code'] }} </td>
                     </tr>
                     <tr>
-                        <td colspan="2" style="text-transform: capitalize; font-size:13px;font-family: 'Times New Roman', Times, serif;">{{ $requestData['tel'] ?? ''}}</td>
+                        <td colspan="2" style="text-transform: capitalize; font-size:13px;font-family: 'Times New Roman', Times, serif;">@if($requestData['tel'] != ''){{ $requestData['tel'] ?? '' }}@endif</td>
                     </tr>
                 </table>
             </div>
