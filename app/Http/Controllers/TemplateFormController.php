@@ -130,6 +130,7 @@ class TemplateFormController extends Controller
         $this->invoiceMail();
         return redirect(route('welcome'))->with('message', 'Mail has been sent successfully.');
     }
+
     public function invoiceMail($id = null)
     {
 
@@ -172,8 +173,9 @@ class TemplateFormController extends Controller
                 return redirect(route('invoiceList'))->with('message', 'Mail has been sent successfully.');
             }
         } else {
-            $response['message'] = "Please choose Paystub pay slip";
-            return back()->with($response, 200);
+            // $response['message'] = "Please choose Paystub pay slip";
+            // return back()->with($response, 200);
+            return redirect(route('invoiceList'))->with('message', 'Please create template first.');
         }
         return back()->with('message', 'Mail has been sent successfully.');
     }
