@@ -33,6 +33,9 @@ class PaySlip extends Model
     static function generatePDF($request)
     {
         $requestData = $request->all();
+        if (!array_key_exists('watermark', $requestData)) {
+            $requestData += array('watermark' => 'no');
+        }
         if ($requestData['form_type'] == "w2form") {
             $pageName = "w2form";
         }
