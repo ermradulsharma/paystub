@@ -309,7 +309,7 @@
                                 <th colspan="4" style="padding-top: 41px;font-family: Arial, Helvetica, sans-serif;font-size:13px;">Company Information</th>
                             </tr>
                             <tr>
-                                <td colspan="4" class="address" style="padding-left: 11px; text-transform:capitalize;font-family: Arial, Helvetica, sans-serif;">{{ $requestData['cname'] }} <br> {{ $requestData['address_1'] }} {{ $requestData['city'] }}, {{ $requestData['state'] }} {{ $requestData['zip_code'] }} <br> {{ $requestData['tel'] ?? '' }} </td>
+                                <td colspan="4" class="address" style="padding-left: 11px; text-transform:capitalize;font-family: Arial, Helvetica, sans-serif;">{{ $requestData['cname'] }} <br> {{ $requestData['address_1'] }} {{ $requestData['city'] }}, {{ $requestData['state'] }} {{ $requestData['zip_code'] }} @if($requestData['tel'] != '')<br> {{ $requestData['tel'] ?? '' }} @endif</td>
                             </tr>
                         </table>
                     </div>
