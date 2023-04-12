@@ -70,6 +70,7 @@
                                     href="{{ route('invoiceList') }}">Order History</a></li>
                             <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('profile') }}">My
                                     Account</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Address Book</a></li>
                         </ul>
                     </div>
                 </div>
@@ -88,6 +89,7 @@
                                     href="{{ route('invoiceList') }}">Order History</a></li>
                             <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('profile') }}">My
                                     Account</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Address Book</a></li>
                         </ul>
                     </div>
                 </div>
@@ -402,15 +404,15 @@
                 <div class="col-lg-5 col-sm-12 text-center" style="margin-top:15px;">
                     <div class="container  justify-content-center">
                         <div class="container footer-icons">
-                            <a href="https://www.google.com/" target="_blank"><i class="fa fa-facebook   fbicon "
+                            <a href="https://www.facebook.com/paystubx" target="_blank"><i class="fa fa-facebook   fbicon "
                                     aria-hidden="true"></i></a>
-                            <a href="https://www.google.com/" target="_blank"><i class="fa fa-instagram ml-2 socialicon"
+                            <a href="https://instagram.com/paystubx?igshid=YmMyMTA2M2Y=" target="_blank"><i class="fa fa-instagram ml-2 socialicon"
                                     aria-hidden="true"></i></a>
-                            <a href="https://www.google.com/" target="_blank"><i class="fa fa-twitter ml-2 socialicon"
+                            <a href="https://twitter.com/paystubx" target="_blank"><i class="fa fa-twitter ml-2 socialicon"
                                     aria-hidden="true"></i></a>
                             <a href="https://www.google.com/" target="_blank"><i class="fa fa-linkedin ml-2 socialicon"
                                     aria-hidden="true"></i></a>
-                            <a href="https://www.google.com/" target="_blank"><i class="fa fa-youtube ml-2 socialicon"
+                            <a href=" https://www.youtube.com/channel/UCL3EF3eYo2OqcsPHfszXMzw" target="_blank"><i class="fa fa-youtube ml-2 socialicon"
                                     aria-hidden="true"></i></a>
                         </div>
                     </div>

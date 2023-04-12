@@ -152,7 +152,7 @@
     <main class="bg-img2">
         <img src="{{ public_path('images/border/agean/agean.svg') }}"
             style="position: absolute; top: 0px; right:0px;left: 0px; width:106.50%; height:105%;  z-index: -1;">
-        <img src="{{ public_path('images/check2.svg') }}"
+        <img src="{{ public_path('images/form-new.svg') }}"
             style="position: absolute; top:75.8%; width:100.79%; height:25%;  z-index: -1; right:0px; left:0px;">
         @guest
         <div class="watermark"></div>

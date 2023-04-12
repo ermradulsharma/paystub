@@ -145,14 +145,14 @@
                     <p style="text-align: center;color:rgba(86, 86,86,0.9);font-size:13px;">Follow us on social media
                     </p>
                     <ul class="social-icons">
-                        <li class="bottom-icon"><a target="_blank" href="https://www.google.com/" ><img
+                        <li class="bottom-icon"><a target="_blank" href="https://instagram.com/paystubx?igshid=YmMyMTA2M2Y=" ><img
                                     src="{{asset('images/icons/facebook.png')}}" height="35px" width="35px"></a>
                         </li>
-                        <li class="bottom-icon"><a target="_blank"  href="https://www.google.com/"><img
+                        <li class="bottom-icon"><a target="_blank"  href="https://www.facebook.com/paystubx"><img
                                     src="{{asset('images/icons/instagram.png')}}" height="35px" width="35px"></a></li>
-                        <li class="bottom-icon"><a  target="_blank" href="https://www.google.com/"><img
+                        <li class="bottom-icon"><a  target="_blank" href="https://twitter.com/paystubx"><img
                                     src="{{asset('images/icons/twitter.png')}}" height="35px" width="35px"></a></li>
-                        <li class="bottom-icon"><a target="_blank"  href="https://www.google.com/"><img
+                        <li class="bottom-icon"><a target="_blank"  href=" https://www.youtube.com/channel/UCL3EF3eYo2OqcsPHfszXMzw"><img
                                     src="{{asset('images/icons/youtube.png')}}" height="35px" width="35px"></a></li>
                     </ul>
                 </td>
