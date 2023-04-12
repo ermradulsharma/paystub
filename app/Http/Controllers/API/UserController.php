@@ -571,4 +571,101 @@ class UserController extends Controller
         $response['status'] = STATUS_OK;
         return response()->json($response, $response['status']);
     }
+
+    public function addressBook(Request $request){
+
+        try{
+            $response = [];
+            $response['success'] = FALSE;
+            $response['status'] = STATUS_BAD_REQUEST;
+
+            $rules = [
+                'type'      => 'required',
+                'name'      => 'required|min:3',
+                'address_1' => 'required|min:3',
+                'city'      => 'required|min:3',
+                'state'     => 'required|min:3',
+                'zip_code'       => 'required|min:3',
+            ];
+
+            $messages = [
+                'required' => 'The :attribute cannot be empty.',
+                'min'      => 'The :attribute atleast in single word.',
+                'type.in'  => 'The type is invalid.',
+            ];
+            $validator = Validator::make($request->all(), $rules, $messages);
+            if ($validator->fails()) {
+                $response['message'] = $validator->errors()->first();
+                return response()->json($response, 301);
+            }
+            $requestData = $request->all();
+            $userObj = User::find(Auth::user()->id);
+            if (!$userObj) {
+                $response['message'] = "User doesn't exist.";
+                return response()->json($response, 301);
+            }
+
+            $addressObj             = new Address;
+            $addressObj->user_id    = Auth::user()->id;
+            $addressObj->type       = $requestData['type'];
+            $addressObj->name       = $requestData['name'];
+            $addressObj->tel        = $requestData['tel'] ?? '';
+            $addressObj->address_1  = $requestData['address_1'];
+            $addressObj->address_2  = $requestData['address_2'] ?? '';
+            $addressObj->city       = $requestData['city'];
+            $addressObj->state      = $requestData['state'];
+            $addressObj->zip_code   = $requestData['zip_code'];
+            if($addressObj->save()){
+                $response['success'] = TRUE;
+                $response['message'] = "Address saved successfully";
+                $response['status'] = STATUS_OK;
+            }
+        }catch (\Exception $e) {
+            $response['message'] = $e->getMessage() . ' Line No ' . $e->getLine() . ' in File' . $e->getFile();
+            Log::error($e->getTraceAsString());
+            $response['status'] = STATUS_GENERAL_ERROR;
+        }
+        return response()->json($response, $response['status']);
+    }
+
+    public function addressDelete(Request $request){
+
+        try{
+            $response = [];
+            $response['success'] = FALSE;
+            $response['status'] = STATUS_BAD_REQUEST;
+
+            $rules = [
+                'address_ids'      => 'required',
+            ];
+
+            $messages = [
+                'required' => 'The :attribute cannot be empty.',
+            ];
+            $validator = Validator::make($request->all(), $rules, $messages);
+            if ($validator->fails()) {
+                $response['message'] = $validator->errors()->first();
+                return response()->json($response, 301);
+            }
+            $requestData = $request->all();
+            $userObj = User::find(Auth::user()->id);
+            if (!$userObj) {
+                $response['message'] = "User doesn't exist.";
+                return response()->json($response, 301);
+            }
+            $address_ids = explode(',', $requestData['address_ids']);
+            $isDeleted = Address::whereIn('id', $address_ids)->delete();
+
+            if($isDeleted){
+                $response['success'] = TRUE;
+                $response['message'] = "Address deleted successfully";
+                $response['status'] = STATUS_OK;
+            }
+        }catch (\Exception $e) {
+            $response['message'] = $e->getMessage() . ' Line No ' . $e->getLine() . ' in File' . $e->getFile();
+            Log::error($e->getTraceAsString());
+            $response['status'] = STATUS_GENERAL_ERROR;
+        }
+        return response()->json($response, $response['status']);
+    }
 }
