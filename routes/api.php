@@ -32,7 +32,7 @@ Route::group(['namespace' => 'Api', 'middleware' => ['\App\Http\Middleware\LogAf
     Route::post('forgot-password', [UserController::class, 'forgotPassword']);
     Route::post('social-login', [UserController::class, 'socialLogin']);
     Route::post('generate-pdf', [TemplatesController::class, 'generatePdf']);
-    
+
     // User account restore
     Route::post('restore-account', [UserController::class, 'restoreAccount']);
     Route::group(['middleware' => ['auth:api']], function () {
@@ -41,6 +41,9 @@ Route::group(['namespace' => 'Api', 'middleware' => ['\App\Http\Middleware\LogAf
         Route::post('delete-account', [UserController::class, 'deleteAccount']);
         Route::get('get-profile', [UserController::class, 'getUserProfile']);
         Route::post('update-profile', [UserController::class, 'updateProfile']);
+
+        Route::post('account-update', [UserController::class, 'accountUpdate']);
+
         Route::post('update-user-profile', [UserController::class, 'updateUserProfile']);
         Route::post('save-form-data', [TemplatesController::class, 'templatesDataSave']);
         Route::get('get-pdf-list', [TemplatesController::class, 'getPdfList']);

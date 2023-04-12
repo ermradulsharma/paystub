@@ -690,8 +690,8 @@
                                             <p class="p-0 m-0 " style="font-family: serif;">DEPT.<span
                                                     class="redColor">*</span></p>
                                             <input type="text" name="dept_number" id="dept_number"
-                                                class="earnbtn removeDiv text-center" maxlength="4" minlength="4"
-                                                placeholder="1234"
+                                                class="earnbtn removeDiv text-center" maxlength="6" minlength="4"
+                                                placeholder="123456"
                                                 onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                         </div>
 
@@ -702,7 +702,7 @@
                                                     class="redColor">*</span> </p>
                                             <input type="text" name="file_number" id="file_number"
                                                 class="earnbtn removeDiv text-center" maxlength="6" minlength="4"
-                                                placeholder="1234"
+                                                placeholder="123456"
                                                 onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                         </div>
 
@@ -712,8 +712,8 @@
                                             <p class="p-0 m-0 " style="font-family: serif;">Clock Vchr Number<span
                                                     class="redColor">*</span> </p>
                                             <input type="text" name="clock_vchr_number" id="clock_vchr_number"
-                                                class="earnbtn removeDiv text-center" maxlength="6" minlength="4"
-                                                placeholder="1234"
+                                                class="earnbtn removeDiv text-center"
+                                                placeholder="123456" maxlength="11"
                                                 onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                         </div>
 
@@ -946,6 +946,7 @@
                         }
                     }
                     setLocation(obj);
+                    console.log(obj);
                 }
             });
         });
@@ -959,20 +960,20 @@
                 $('.0_address_1').remove();
             } else if (obj.route == undefined) {
                 $("#address_1").val(obj.street_number);
-                $('#emp_street_1').css('border-color', 'gray');
+                $('#address_1').css('border-color', 'gray');
                 $('.0_address_1').remove();
             } else {
                 $("#address_1").val(obj.street_number + ' ' + obj.route);
-                $('#emp_street_1').css('border-color', 'gray');
+                $('#address_1').css('border-color', 'gray');
                 $('.0_address_1').remove();
             }
-            if (obj.neighborhood != undefined) {
+            /* if (obj.neighborhood != undefined) {
                 $("#address_2").val(obj.neighborhood);
                 $('#address_2').css('border-color', 'gray');
                 $('.0_address_2').remove();
             } else {
                 $("#address_2").val('');
-            }
+            } */
             if (obj.locality != undefined) {
                 $("#city").val(obj.locality);
                 $('#city').css('border-color', 'gray');
@@ -1043,13 +1044,13 @@
                 $('.0_emp_street_1').remove();
             }
 
-            if (obj.neighborhood != undefined) {
+            /* if (obj.neighborhood != undefined) {
                 $("#emp_street_2").val(obj.neighborhood);
                 $('#emp_street_2').css('border-color', 'gray');
                 $(".0_emp_street_2").remove();
             } else {
                 $("#emp_street_2").val('');
-            }
+            } */
             if (obj.locality != undefined) {
                 $("#emp_city").val(obj.locality);
                 $('#emp_city').css('border-color', 'gray');
