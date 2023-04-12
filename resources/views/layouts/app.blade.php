@@ -56,41 +56,41 @@
                     href="{{ route('w2form') }}" style="width: 143px !important;">W-2 FORM</a> </li>
             <li class="nav-item d-flex justify-content-center ml-3 " style="margin-top:5px;">
                 @guest
-                    <a class="btn btn-lg py-2 w-100 btn-danger login registerBtn "style="margin-top:42px;"
-                        href="javascript:void(0);">LOGIN</a>
-                    <div class="container d-none logoutDiv">
-                        <div class="user-icon"><img src="{{ asset('images/profile1.png') }}"></div>
-                        <div class="logout btn-logout"><a><img src="{{ asset('images/logout01.png') }}"></a></div>
-                        <div class="dropbtn">
-                            <button class="btn btn-default dropdown-toggle navright-btn authUserName" type="button"
-                                id="menu1" data-toggle="dropdown">Hi {{ Auth::user()->name ?? '' }}<span
-                                    class="caret"></span></button>
-                            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                                <li role="presentation"><a role="menuitem" tabindex="-1"
-                                        href="{{ route('invoiceList') }}">Order History</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('profile') }}">My
-                                        Account</a></li>
-                            </ul>
-                        </div>
+                <a class="btn btn-lg py-2 w-100 btn-danger login registerBtn " style="margin-top:42px;"
+                    href="javascript:void(0);">LOGIN</a>
+                <div class="container d-none logoutDiv">
+                    <div class="user-icon"><img src="{{ asset('images/profile1.png') }}"></div>
+                    <div class="logout btn-logout"><a><img src="{{ asset('images/logout01.png') }}"></a></div>
+                    <div class="dropbtn">
+                        <button class="btn btn-default dropdown-toggle navright-btn authUserName" type="button"
+                            id="menu1" data-toggle="dropdown">Hi {{ Auth::user()->name ?? '' }}<span
+                                class="caret"></span></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                            <li role="presentation"><a role="menuitem" tabindex="-1"
+                                    href="{{ route('invoiceList') }}">Order History</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('profile') }}">My
+                                    Account</a></li>
+                        </ul>
                     </div>
+                </div>
                 @endguest
 
                 @auth
-                    <div class="container" style="margin-top:10px;">
-                        <div class="user-icon"><img src="{{ asset('images/profile1.png') }}"></div>
-                        <div class="logout btn-logout"><a><img src="{{ asset('images/logout01.png') }}"></a></div>
-                        <div class="dropbtn">
-                            <button class="btn btn-default dropdown-toggle navright-btn authUserName" type="button"
-                                id="menu1" data-toggle="dropdown"> Hi {{ Auth::user()->name ?? '' }}
-                                <span class="caret"></span></button>
-                            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                                <li role="presentation"><a role="menuitem" tabindex="-1"
-                                        href="{{ route('invoiceList') }}">Order History</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1"
-                                        href="{{ route('profile') }}">My Account</a></li>
-                            </ul>
-                        </div>
+                <div class="container" style="margin-top:10px;">
+                    <div class="user-icon"><img src="{{ asset('images/profile1.png') }}"></div>
+                    <div class="logout btn-logout"><a><img src="{{ asset('images/logout01.png') }}"></a></div>
+                    <div class="dropbtn">
+                        <button class="btn btn-default dropdown-toggle navright-btn authUserName" type="button"
+                            id="menu1" data-toggle="dropdown"> Hi {{ Auth::user()->name ?? '' }}
+                            <span class="caret"></span></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                            <li role="presentation"><a role="menuitem" tabindex="-1"
+                                    href="{{ route('invoiceList') }}">Order History</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('profile') }}">My
+                                    Account</a></li>
+                        </ul>
                     </div>
+                </div>
 
 
                 @endauth
@@ -113,23 +113,22 @@
         <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('w2form*') ? 'active' : '' }}"
             href="{{ route('w2form') }}">W-2 FORM</a>
         @guest
-            <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn login registerBtn"
-                style="background-color:#d3230c; border-radius:15px; font-size:20px;" href="#">Login</a>
+        <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn login registerBtn"
+            style="background-color:#d3230c; border-radius:15px; font-size:20px;" href="#">Login</a>
         @endguest
         @auth
-            <a class="btn btn-lg  w-100  navbtn nav-btn btn-logout logout"
-                style="background-color:#d3230c; border-radius:15px;font-size:20px;max-width:150px; margin-left:10px !important;position: relative; top:0; "
-                href="#">Log Out</a>
+        <a class="btn btn-lg  w-100  navbtn nav-btn btn-logout logout"
+            style="background-color:#d3230c; border-radius:15px;font-size:20px;max-width:150px; margin-left:10px !important;position: relative; top:0; "
+            href="#">Log Out</a>
         @endauth
 
 
     </div>
     <div class="openbtn">
         <div class=" pt-4 d-flex justify-content-between" style="display:flex !important">
-            <a href="{{ url('/') }}"><img class="mr-3 mt-5 toggle-logo"
-                    src="{{ asset('images/Paystub X.webp') }}" style="width: 222px;"></a>
-            <span style="font-size:30px;cursor:pointer; padding-right:10px;" class=""
-                onclick="openNav()">&#9776;</span>
+            <a href="{{ url('/') }}"><img class="mr-3 mt-5 toggle-logo" src="{{ asset('images/Paystub X.webp') }}"
+                    style="width: 222px;"></a>
+            <span style="font-size:30px;cursor:pointer; padding-right:10px;" class="" onclick="openNav()">&#9776;</span>
         </div>
     </div>
 
@@ -196,10 +195,8 @@
                         your password.</p>
                     <form id="forgotPassword" method="post" action="{{ route('forgot.password') }}">
                         @csrf
-                        <label class="label-text" for="css">Email Address<span
-                                style="color:red;">*</span></label>
-                        <input class="contact-box" type="text" id="user-email" placeholder="Email Address"
-                            name="email">
+                        <label class="label-text" for="css">Email Address<span style="color:red;">*</span></label>
+                        <input class="contact-box" type="text" id="user-email" placeholder="Email Address" name="email">
                     </form>
                 </div>
                 <div class="modal-footer" style="display: inline-block;">
@@ -235,13 +232,13 @@
                         <div class="px-lg-5">
                             <div class="form-group">
                                 <label class="text-left">Email</label>
-                                <input type="email" id="login_email" name="email"
-                                    class="form-control formm  py-4" placeholder="Email *" readonly>
+                                <input type="email" id="login_email" name="email" class="form-control formm  py-4"
+                                    placeholder="Email *" readonly>
                             </div>
                             <div class="form-group">
                                 <label class="text-left">Password</label>
-                                <input type="password" id="password" name="password"
-                                    class="form-control formm  py-4" placeholder="Password *">
+                                <input type="password" id="password" name="password" class="form-control formm  py-4"
+                                    placeholder="Password *">
                             </div>
                         </div>
                         <p class="resend-otp">
@@ -280,16 +277,16 @@
                             class="text-center">Enter the verification code sent to you</p>
                         <span style="color: #02030359;font-size: 10px;font-family: serif; text-transform:capitalize;"
                             class="text-center">Check spam if not found in inbox</span>
-                        <p class="resend-otp" style="padding-top:10px;"><a id="resendOtpButton"
-                                class="pointer-disable" style="" href="JavaScript:void(0);" disabled>Resend OTP
+                        <p class="resend-otp" style="padding-top:10px;"><a id="resendOtpButton" class="pointer-disable"
+                                style="" href="JavaScript:void(0);" disabled>Resend OTP
                             </a><i class="fa fa-clock-o clock"></i><span id="resendTimeOut">30</span></p>
 
                         <form id="loginOtp" action="{{ url('loginWithOtp') }}" method="POST" class="text-center">
                             @csrf
                             <div class="px-lg-5">
                                 <input type="hidden" id="hidden_email" name="email" class="d-none">
-                                <input type="text" id="Verificationcode" name="code"
-                                    class="form-control formm py-4" placeholder="Verification Code *">
+                                <input type="text" id="Verificationcode" name="code" class="form-control formm py-4"
+                                    placeholder="Verification Code *">
                             </div>
                             <button class="previewbtn mt-5" type="submit">Verify</button>
                         </form>
@@ -341,11 +338,9 @@
                         @csrf
                         <input type="hidden" value="setup-account" name="type">
                         <label class="label-text" for="css">First Name<span style="color:red;">*</span></label>
-                        <input class="contact-box" type="text" name="uname" id="user-name"
-                            placeholder="First Name">
+                        <input class="contact-box" type="text" name="uname" id="user-name" placeholder="First Name">
                         <div class="contact-box-outer">
-                            <label class="label-text" for="css">New Password<span
-                                    style="color:red;">*</span></label>
+                            <label class="label-text" for="css">New Password<span style="color:red;">*</span></label>
                             <input class="contact-box" type="password" placeholder="New Password" name="password"
                                 class="form-control show-password-sd" id="new_password" required>
                             <i id="eye-icon_03" toggle="#password-field"
@@ -355,8 +350,8 @@
                             <label class="label-text" for="css">Confirm Password<span
                                     style="color:red;">*</span></label>
                             <input class="contact-box" type="password" placeholder="Confirm Password"
-                                name="password_confirmation" class="form-control show-password-sd"
-                                id="confirm_password" required>
+                                name="password_confirmation" class="form-control show-password-sd" id="confirm_password"
+                                required>
                             <i id="eye-icon_03" toggle="#password-field"
                                 class="fa fa-eye-slash eye-icon confirm-toggle-password" data-id="02"></i>
                         </div>
@@ -409,22 +404,21 @@
                         <div class="container footer-icons">
                             <a href="https://www.google.com/" target="_blank"><i class="fa fa-facebook   fbicon "
                                     aria-hidden="true"></i></a>
-                            <a href="https://www.google.com/" target="_blank"><i
-                                    class="fa fa-instagram ml-2 socialicon" aria-hidden="true"></i></a>
-                            <a href="https://www.google.com/" target="_blank"><i
-                                    class="fa fa-twitter ml-2 socialicon" aria-hidden="true"></i></a>
-                            <a href="https://www.google.com/" target="_blank"><i
-                                    class="fa fa-linkedin ml-2 socialicon" aria-hidden="true"></i></a>
-                            <a href="https://www.google.com/" target="_blank"><i
-                                    class="fa fa-youtube ml-2 socialicon" aria-hidden="true"></i></a>
+                            <a href="https://www.google.com/" target="_blank"><i class="fa fa-instagram ml-2 socialicon"
+                                    aria-hidden="true"></i></a>
+                            <a href="https://www.google.com/" target="_blank"><i class="fa fa-twitter ml-2 socialicon"
+                                    aria-hidden="true"></i></a>
+                            <a href="https://www.google.com/" target="_blank"><i class="fa fa-linkedin ml-2 socialicon"
+                                    aria-hidden="true"></i></a>
+                            <a href="https://www.google.com/" target="_blank"><i class="fa fa-youtube ml-2 socialicon"
+                                    aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 mt-3 ">
                     <p class="text-white footer-text">COPYRIGHT © 2022 PaystubX, ALL RIGHTS RESERVED.</p>
                     <div class="container justify-content-center m-auto text-center">
-                        <a href="{{ url('/') }}"><img class="footimg"
-                                src="{{ asset('images/satisfaction.webp') }}"></a>
+                        <a href="{{ url('/') }}"><img class="footimg" src="{{ asset('images/satisfaction.webp') }}"></a>
                     </div>
                 </div>
             </div>
@@ -612,20 +606,20 @@
 
 
     @if ($errors->first())
-        <script>
-            toastr.error('{{ $errors->first() }}');
-        </script>
+    <script>
+        toastr.error('{{ $errors->first() }}');
+    </script>
     @endif
 
     @if (Session::has('message'))
-        <script>
-            toastr.success("{{ Session::get('message') }}");
-        </script>
+    <script>
+        toastr.success("{{ Session::get('message') }}");
+    </script>
     @endif
     @if (Session::has('error'))
-        <script>
-            toastr.error("{{ Session::get('error') }}");
-        </script>
+    <script>
+        toastr.error("{{ Session::get('error') }}");
+    </script>
     @endif
     <script>
         function myFunction() {

@@ -304,8 +304,8 @@
                                         <label for="check_no" class="lable">Check No <span
                                                 class="redColor">*</span></label>
                                         <input type="text" id="check_no" name="check_no"
-                                            class="w-100  input-box-font removeDiv" placeholder="123456" maxlength="6"
-                                            minlength="4"
+                                            class="w-100  input-box-font removeDiv" placeholder="123456789" maxlength="9"
+                                            minlength="6"
                                             onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                     </div>
                                 </div>
