@@ -19,7 +19,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row hover" style="padding: 10px 0px;border-bottom:1px solid #ddd;">
+                            {{-- <div class="row hover" style="padding: 10px 0px;border-bottom:1px solid #ddd;">
                                 <div class="col-lg-2">
                                     <img style="width: 25px;" src="images/icons/address-book.png">
                                 </div>
@@ -28,7 +28,7 @@
                                         <h4 style="color:#0f4386">Address Book</h4>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
