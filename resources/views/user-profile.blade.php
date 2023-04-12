@@ -1,50 +1,5 @@
 @extends('layouts.app')
 @section('content')
-<style>
-    /* Style the tab */
-.tab {
-  float: left;
-  border: 1px solid #ccc;
-  background-color: #f1f1f1;
-  width: 30%;
-  height: 300px;
-}
-
-/* Style the buttons inside the tab */
-.tab button {
-  display: block;
-  background-color: inherit;
-  color: black;
-  padding: 22px 16px;
-  width: 100%;
-  border: none;
-  outline: none;
-  text-align: left;
-  cursor: pointer;
-  transition: 0.3s;
-  font-size: 17px;
-}
-
-/* Change background color of buttons on hover */
-.tab button:hover {
-  background-color: #ddd;
-}
-
-/* Create an active/current "tab button" class */
-.tab button.active {
-  background-color: #ccc;
-}
-
-/* Style the tab content */
-.tabcontent {
-  float: left;
-  padding: 0px 12px;
-  border: 1px solid #ccc;
-  width: 70%;
-  border-left: none;
-  height: 300px;
-}
-</style>
     <section class="user-profile">
         <div class="container" style="padding: 0;">
             <div class="row">
@@ -81,9 +36,7 @@
                     <div class="right-side-bar">
                         <h4 style="color:#012c63; line-height:26px;">{{ __('User Profile') }}</h4>
                         <P style="color:#333!important;font-weight:500;">
-                            {{ __('Manage your profile, security, and language
-                                                        preferences.') }}
-                        </P>
+                            {{ __('Manage your profile, security, and language preferences.') }} </P>
                         <div class="profile-outer">
                             <div class="d-flex">
                                 <div class="profile-icon-outer">
@@ -137,23 +90,27 @@
                                     <i class="fa fa-trash-o trash"></i>
                                 </div>
                                 <div class="user-center-text">
-                                    <button style="padding: 7px 15px; margin:0px;color: #fff;background-color:red; border-radius:5px;border:none; ">Delete Account</button>
+                                    <button
+                                        style="padding: 7px 15px; margin:0px;color: #fff;background-color:red; border-radius:5px;border:none; ">Delete
+                                        Account</button>
                                 </div>
                             </div>
                         </div>
 
                     </div>
                 </div>
-                @if(!empty($subcriptionData))
-                <div class="col-lg-4 col-md-4 member-plan">
-                    <h4>Premium Member Plan</h4>
-                    @if($subcriptionData->expiry_date > \Carbon\Carbon::now())
-                        <p>{{ $subcriptionData->plan->name ?? '' }} until {{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $subcriptionData->expiry_date)->format('m/d/Y');}}</p>
-                    @else
-                        <p>Plan expired</p>
-                        <button class="renew-btn">RENEW</button>
-                    @endif
-                </div>
+                @if (!empty($subcriptionData))
+                    <div class="col-lg-4 col-md-4 member-plan">
+                        <h4>Premium Member Plan</h4>
+                        @if ($subcriptionData->expiry_date > \Carbon\Carbon::now())
+                            <p>{{ $subcriptionData->plan->name ?? '' }} until
+                                {{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $subcriptionData->expiry_date)->format('m/d/Y') }}
+                            </p>
+                        @else
+                            <p>Plan expired</p>
+                            <button class="renew-btn">RENEW</button>
+                        @endif
+                    </div>
                 @endif
             </div>
         </div>
@@ -176,7 +133,8 @@
                         @csrf
                         <input type="hidden" value="user-name" name="type">
                         <label class="label-text" for="css">Contact Name<span style="color:red;">*</span></label>
-                        <input class="contact-box" type="text" name="uname" id="user-name" placeholder="Contact Name">
+                        <input class="contact-box" type="text" name="uname" id="user-name"
+                            placeholder="Contact Name">
                     </form>
                 </div>
                 <div class="modal-footer" style="display: inline-block;">
@@ -295,9 +253,12 @@
 
                         <div class="contact-box-outer">
                             <div class="contact-box-outer">
-                                <label class="label-text" for="css">Password<span style="color:red;">*</span></label>
-                                <input class="contact-box" type="password" placeholder="Current Password" name="currentPassword">
-                                <i id="eye-icon_00" toggle="#password-field" class="fa fa-eye-slash eye-icon show-password" data-id="02"></i>
+                                <label class="label-text" for="css">Password<span
+                                        style="color:red;">*</span></label>
+                                <input class="contact-box" type="password" placeholder="Current Password"
+                                    name="currentPassword">
+                                <i id="eye-icon_00" toggle="#password-field"
+                                    class="fa fa-eye-slash eye-icon show-password" data-id="02"></i>
                             </div>
                         </div>
 
@@ -356,26 +317,6 @@
         </div>
     </div>
 @endsection
-<div class="tab">
-    <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">London</button>
-    <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
-    <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
-  </div>
-
-  <div id="London" class="tabcontent">
-    <h3>London</h3>
-    <p>London is the capital city of England.</p>
-  </div>
-
-  <div id="Paris" class="tabcontent">
-    <h3>Paris</h3>
-    <p>Paris is the capital of France.</p>
-  </div>
-
-  <div id="Tokyo" class="tabcontent">
-    <h3>Tokyo</h3>
-    <p>Tokyo is the capital of Japan.</p>
-  </div>
 @section('script')
     <script>
         $(".username").click(function() {
@@ -507,23 +448,4 @@
 
         });
     </script>
-
 @endsection
-<script>
-    function openCity(evt, cityName) {
-      var i, tabcontent, tablinks;
-      tabcontent = document.getElementsByClassName("tabcontent");
-      for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-      }
-      tablinks = document.getElementsByClassName("tablinks");
-      for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-      }
-      document.getElementById(cityName).style.display = "block";
-      evt.currentTarget.className += " active";
-    }
-
-    // Get the element with id="defaultOpen" and click on it
-    document.getElementById("defaultOpen").click();
-    </script>
