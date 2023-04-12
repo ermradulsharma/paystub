@@ -208,7 +208,7 @@
                     </b>
                     <P
                         style="margin: 0px 0 0 0; font-size:  14px;text-transform:uppercase;font-family: Arial, Helvetica, sans-serif;">
-                        {{ $requestData['emp_street_1'] }} {!! empAddressTwo($requestData,false,true) !!}</P>
+                        {{ $requestData['emp_street_1'] }}</P>
                     <p
                         style="margin: 0px 0 0 0;font-size: 14px;text-transform:uppercase;font-family: Arial, Helvetica, sans-serif;">
                          {{ $requestData['emp_city'] }}, {{ $requestData['emp_state'] }} {{ $requestData['emp_zip_code'] }} </p>
@@ -324,7 +324,7 @@
         </table>
         <table>
             <tr>
-                <td style="font-size:12px; font-weight:bold;padding-left:15px;">{{ $requestData['emp_name'] }} {{ $requestData['emp_street_1'] }} {!! empAddressTwo($requestData,false,true) !!} {{ $requestData['emp_city'] }}, {{ $requestData['emp_state'] }} {{ $requestData['emp_zip_code'] }} </td>
+                <td style="font-size:12px; font-weight:bold;padding-left:15px;">{{ $requestData['emp_name'] }} {{ $requestData['emp_street_1'] }} {{ $requestData['emp_city'] }}, {{ $requestData['emp_state'] }} {{ $requestData['emp_zip_code'] }} </td>
                 <td style="font-size:12px; font-weight:bold"><b>Pay Period: {{ date('m/d/y', strtotime($requestData['pay_start'])) }}</b></td>
                 <td style="font-size:12px; font-weight:bold"><b>{{ date('l m/d/y', strtotime($requestData['pay_end'])) }}</b></td>
             </tr>

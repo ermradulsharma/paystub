@@ -264,7 +264,7 @@
                             <td style="font-weight: bold; font-size:14px;text-transform: uppercase;font-family: Arial, Helvetica, sans-serif;">{{ $requestData['emp_name'] }}</td>
                         </tr>
                         <tr>
-                            <td style="font-weight: bold;  text-transform: uppercase;font-family: Arial, Helvetica, sans-serif;font-size:14px;">{{ $requestData['emp_street_1'] }} {!! empAddressTwo($requestData,true) !!}</td>
+                            <td style="font-weight: bold;  text-transform: uppercase;font-family: Arial, Helvetica, sans-serif;font-size:14px;">{{ $requestData['emp_street_1'] }}</td>
                         </tr>
                         <tr>
                             <td style="font-weight: bold;  text-transform: uppercase;font-family: Arial, Helvetica, sans-serif;font-size:14px;">{{ $requestData['emp_city'] }}, {{ $requestData['emp_state'] }} {{ $requestData['emp_zip_code'] }} </td>
