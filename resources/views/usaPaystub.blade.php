@@ -780,7 +780,7 @@
 @section('script')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" crossorigin="anonymous"></script>
 
-    <script>
+    <script> 
         $(document).ready(function() {
             $('.advanceTemplate').change(function() {
                 var value = $('option:selected', '.at_id').attr('value');
