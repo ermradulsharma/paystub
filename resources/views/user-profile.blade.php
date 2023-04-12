@@ -93,7 +93,7 @@
                 <div class="col-lg-4 col-md-4 member-plan">
                     <h4>Premium Member Plan</h4>
                     @if($subcriptionData->expiry_date > \Carbon\Carbon::now())
-                        <p>{{ $subcriptionData->plan->name ?? '' }} until {{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $subcriptionData->expiry_date)->format('d/m/Y');}}</p>
+                        <p>{{ $subcriptionData->plan->name ?? '' }} until {{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $subcriptionData->expiry_date)->format('m/d/Y');}}</p>
                     @else
                         <p>Plan expired</p>
                         <button class="renew-btn">RENEW</button>
