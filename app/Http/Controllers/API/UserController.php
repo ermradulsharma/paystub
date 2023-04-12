@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Mail;
 use Carbon\Carbon;
 use App\Mail\VerifyEmailSend;
+use App\Models\Address;
+use App\Models\PaySlip;
 
 class UserController extends Controller
 {
@@ -551,13 +553,22 @@ class UserController extends Controller
             $userObj->password = Hash::make($requestData['password']);
             $msg = "Password has updated successfully";
         }
-
         if ($userObj->save()) {
-            $response['success'] = TRUE;
-            $response['message'] = $msg;
-            $response['status'] = STATUS_OK;
+            $user = User::select('name', 'email')->where('id', Auth::user()->id)->first();
         }
 
+        if ($requestData['type'] == 'delete') {
+            PaySlip::where(['user_id' => Auth::user()->id])->forceDelete();
+            Address::where(['user_id' => Auth::user()->id])->forceDelete();
+            $userObj->forceDelete();
+            $request->user()->token()->revoke();
+            $msg = ACCOUNT_DELETED_SUCCESSFULLY;
+            $user = '';
+        }
+        $response['data'] = $user;
+        $response['success'] = TRUE;
+        $response['message'] = $msg;
+        $response['status'] = STATUS_OK;
         return response()->json($response, $response['status']);
     }
 }

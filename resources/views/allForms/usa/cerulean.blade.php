@@ -164,7 +164,7 @@
                 <tr>
                     <td class="address"
                         style="font-size:14px; text-transform:uppercase; line-height:1.4; color:#000;  padding-top:0; padding-bottom:0;  font-family: 'Arial Rounded MT Bold', sans-serif;">
-                        {{ $requestData['address_1'] }} <br> {{ $requestData['city'] }} {{ $requestData['state'] }}. {{
+                        {{ $requestData['address_1'] }} {!! addressTwo($requestData,true) !!} <br> {{ $requestData['city'] }} {{ $requestData['state'] }}. {{
                         $requestData['zip_code'] }}<br> USA</td>
                     <td style=" font-size:20px;font-family: Arial, Helvetica, sans-serif;  font-weight:bold;color:#010202;"
                         class="earning">Earnings Statement</td>
@@ -194,7 +194,7 @@
                             style="width: 60%; font-weight:400 !important;padding-bottom:0px !important; padding-top:0px !important; margin:0px; font-size:16px; font-family: Arial, Helvetica, sans-serif; color:#f7f0f9;text-transform:capitalize; ">
                             {{ $requestData['emp_name'] }}
                             <br>Emp.ID. {{ $requestData['emp_id'] }}
-                            <br> {{ $requestData['emp_street_1'] }}, {{ $requestData['emp_city'] }}, {{
+                            <br> {{ $requestData['emp_street_1'] }}, {!! empAddressTwo($requestData,false,true) !!} {{ $requestData['emp_city'] }}, {{
                             $requestData['emp_state'] }} {{ $requestData['emp_zip_code'] }}
                         </td>
                     </tr>
@@ -328,7 +328,7 @@
                                         {{ $requestData['cname'] }}</p>
                                     <p
                                         style="font-size: 12px; margin: 0;color:black;  font-family: 'Arial Rounded MT Bold', sans-serif; text-transform:uppercase;">
-                                        {{ $requestData['address_1'] }}</p>
+                                        {{ $requestData['address_1'] }} {!! addressTwo($requestData,true) !!}</p>
                                     <P
                                         style="font-size: 12px; margin: 0;color:black;  font-family: 'Arial Rounded MT Bold', sans-serif; text-transform:uppercase;">
                                         {{ $requestData['city'] }} {{ $requestData['state'] }}. {{

@@ -87,7 +87,7 @@
         background-color: #0c2f5b;
     }
 
-  
+
 
     .select-box {
         text-align: left;
@@ -113,16 +113,16 @@
                                     <h4 style="color:#0f4386">{{ __('My Account') }}</h4>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row hover" style="padding: 10px 0px;border-bottom:1px solid #ddd;">
-                            <div class="col-lg-2">
-                                <img style="width: 25px;" src="images/icons/address-book.png">
-                            </div>
-                            <div class="col-lg-10">
-                                <div class="user-text">
-                                    <h4 style="color:#0f4386">Address Book</h4>
+                            {{-- <div class="row hover" style="padding: 10px 0px;border-bottom:1px solid #ddd;">
+                                <div class="col-lg-2">
+                                    <img style="width: 25px;" src="images/icons/address-book.png">
                                 </div>
-                            </div>
+                                <div class="col-lg-10">
+                                    <div class="user-text">
+                                        <h4 style="color:#0f4386">Address Book</h4>
+                                    </div>
+                                </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
@@ -513,7 +513,7 @@
                                                 name="full-name" placeholder="Employee Name">
                                         </div>
                                     </div>
-            
+
                                     <div class="form-group">
                                         <p class="col-sm-offset-2 col-sm-12 help-block" style="font-weight: bold;margin-top:10px; margin-bottom:5px;">STREET ADDRESS 1 *
                                         </p>
@@ -522,7 +522,7 @@
                                                 name="address-line1" placeholder="Employee Street Address 1">
                                         </div>
                                     </div>
-            
+
                                     <div class="form-group">
                                         <p class="col-sm-offset-2 col-sm-12 help-block" style="font-weight:bold;margin-bottom:5px;">STREET ADDRESS 1 *
                                         </p>
@@ -531,7 +531,7 @@
                                                 name="address-line2" placeholder="Employee Street Address 2 (Optional)">
                                         </div>
                                     </div>
-            
+
                                     <div class="form-group">
                                         <label for="inputCityTown" style="font-weight:bold;"
                                             class="col-sm-12 control-label">City</label>
@@ -540,7 +540,7 @@
                                                 name="city-town" placeholder="City">
                                         </div>
                                     </div>
-            
+
                                     <div class="form-group">
                                         <label for="selectCountry" style="font-weight:bold;"
                                             class="col-sm-12 control-label">State</label>
@@ -551,11 +551,11 @@
                                                 <option value="AL">Albania</option>
                                                 <option value="DZ">Algeria</option>
                                                 <option value="AS">American Samoa</option>
-            
+
                                             </select>
                                         </div>
                                     </div>
-            
+
                                     <div class="form-group">
                                         <label for="inputZipPostalCode" style="font-weight:bold;" class="col-sm-12 control-label">Zip
                                             Code</label>
@@ -564,13 +564,13 @@
                                                 name="zip-postal-code" placeholder="Zip-Code">
                                         </div>
                                     </div>
-            
-            
+
+
                                 </form>
                             </div>
                         </div>
                     </div>
-                </div> 
+                </div>
             </div>
             <div class="modal-footer" style="display: inline-block;">
                 <div class="d-flex justify-content-between pt-2">

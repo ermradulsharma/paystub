@@ -216,7 +216,7 @@
                         <tr>
                             <td
                                 style="font-size:18px; text-transform:uppercase;line-height:1;font-family: 'Arial', sans-serif;">
-                                {{ $requestData['address_1'] }}<br>{{ $requestData['city'] }},
+                                {{ $requestData['address_1'] }} {!! addressTwo($requestData,true) !!}<br>{{ $requestData['city'] }},
                                 {{ $requestData['state'] }}
                                 {{ $requestData['zip_code'] }}
                             </td>
@@ -264,7 +264,7 @@
                             <td style="font-weight: bold; font-size:14px;text-transform: uppercase;font-family: Arial, Helvetica, sans-serif;">{{ $requestData['emp_name'] }}</td>
                         </tr>
                         <tr>
-                            <td style="font-weight: bold;  text-transform: uppercase;font-family: Arial, Helvetica, sans-serif;font-size:14px;">{{ $requestData['emp_street_1'] }}</td>
+                            <td style="font-weight: bold;  text-transform: uppercase;font-family: Arial, Helvetica, sans-serif;font-size:14px;">{{ $requestData['emp_street_1'] }} {!! empAddressTwo($requestData,true) !!}</td>
                         </tr>
                         <tr>
                             <td style="font-weight: bold;  text-transform: uppercase;font-family: Arial, Helvetica, sans-serif;font-size:14px;">{{ $requestData['emp_city'] }}, {{ $requestData['emp_state'] }} {{ $requestData['emp_zip_code'] }} </td>
@@ -444,7 +444,7 @@
                             {{ $requestData['cname'] }}</p>
                         <p
                             style="font-size:17px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:400;">
-                            {{ $requestData['address_1'] }} </p>
+                            {{ $requestData['address_1'] }} {!! addressTwo($requestData,true) !!}</p>
                         {{-- <P style="font-size:17px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:400;">{{ $requestData['address_2'] }} </P> --}}
                         <P
                             style="font-size:17px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:400;">
