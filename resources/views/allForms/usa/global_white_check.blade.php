@@ -438,7 +438,7 @@
         <section class="bg-img">
             <div class="container" style=" margin-top:100px; width:100%; padding:0px 20px;">
                 <div class="row" style="display: flex;justify-content: space-between;padding: 0px 14px;">
-                    <div style="width: 50%; float:left; position: relative; top:45px; right:0px; left:70px;">
+                    <div style="width: 50%; float:left; position: relative; top:15px; right:0px; left:70px;">
                         <p
                             style="font-size:17px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:400;">
                             {{ $requestData['cname'] }}</p>
@@ -453,7 +453,7 @@
                     </div>
                     <div style="width: 50%;float:right;">
                         <h6
-                            style="font-size: 14px;  text-align:left; left:80px; position: relative;  top:27px;font-weight:400;">
+                            style="font-size: 14px;  text-align:left; left:80px; position: relative;  top:24px;font-weight:400;">
                             <span>{{ $requestData['check_no'] }}</span>
                         </h6>
                         <h6
