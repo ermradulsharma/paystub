@@ -102,15 +102,15 @@ class PayPalController extends Controller
                 $countryObj = PaySlip::where('user_id', Auth::user()->id)->orderBy('id', 'desc')->first();
                 $subcriptionObj = Subcription::where(['plan_id' => $planDetail->id, 'country' => $countryObj->type])->first();
                 if (!$subcriptionObj) {
-                    $subcriptionObj                         = new Subcription();
+                    $subcriptionObj = new Subcription;
                 }
-                $subcriptionObj->user_id                = Auth::user()->id;
-                $subcriptionObj->plan_id                = $planDetail->id;
-                $subcriptionObj->country                = $countryObj->type;
-                $subcriptionObj->transaction_id         = $response['id'];
-                $subcriptionObj->start_date             = Carbon::now();
-                $subcriptionObj->expiry_date            = Carbon::now()->addMonths($planDetail->plan_duration);
-                $subcriptionObj->transaction_status     = $response['status'] ?? '';
+                $subcriptionObj->user_id = Auth::user()->id;
+                $subcriptionObj->plan_id = $planDetail->id;
+                $subcriptionObj->country = $countryObj->type;
+                $subcriptionObj->transaction_id = $response['id'];
+                $subcriptionObj->start_date = Carbon::now();
+                $subcriptionObj->expiry_date = Carbon::now()->addMonths($planDetail->plan_duration);
+                $subcriptionObj->transaction_status = $response['status'] ?? '';
                 if ($subcriptionObj->save()) {
                     $userObj = User::find(Auth::user()->id);
                     $userObj->expiryDate = $subcriptionObj->expiry_date;
