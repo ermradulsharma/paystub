@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+<<<<<<< HEAD
 <style>
 .address-book:before {
     position: absolute;
@@ -50,6 +51,13 @@ div#v-pills-tab a{
         <div class="row">
             <div class="col-lg-2 col-md-2" style="padding: 0;border-right:1px solid #ddd;height:95vh;">
                 <div class="col-lg-12 col-md-12" style="padding: 0;">
+=======
+    <section class="user-profile">
+        <div class="container" style="padding: 0;">
+            <div class="row">
+                <div class="col-lg-2 col-md-2" style="padding: 0;border-right:1px solid #ddd;height:95vh;">
+                    <div class="col-lg-12 col-md-12" style="padding: 0;">
+>>>>>>> aecde6da48c5be2622ad190e432029d7d325821a
 
                 </div>
                 <div class="col-lg-12 col-md-12" style="padding: 0; ">
@@ -76,6 +84,7 @@ div#v-pills-tab a{
                         </div>
                     </div>
                 </div>
+<<<<<<< HEAD
             </div>
             <div class="col-lg-6 col-md-6" style="padding: 0;">
                 <div class="right-side-bar">
@@ -88,6 +97,22 @@ div#v-pills-tab a{
                         <div class="d-flex">
                             <div class="profile-icon-outer">
                                 <i class="fa fa-user user"></i>
+=======
+                <div class="col-lg-6 col-md-6" style="padding: 0;">
+                    <div class="right-side-bar">
+                        <h4 style="color:#012c63; line-height:26px;">{{ __('User Profile') }}</h4>
+                        <P style="color:#333!important;font-weight:500;">
+                            {{ __('Manage your profile, security, and language preferences.') }} </P>
+                        <div class="profile-outer">
+                            <div class="d-flex">
+                                <div class="profile-icon-outer">
+                                    <i class="fa fa-user user"></i>
+                                </div>
+                                <div class="user-center-text">
+                                    <h6 style="padding: 0; margin:0px;color: #5a5858;">{{ __('Contact Name') }}</h6>
+                                    <p style="padding:0px;margin:0px;">{{ $userObj->name ?? '' }}</p>
+                                </div>
+>>>>>>> aecde6da48c5be2622ad190e432029d7d325821a
                             </div>
                             <div class="user-center-text">
                                 <h6 style="padding: 0; margin:0px;color: #5a5858;">{{ __('Contact Name') }}</h6>
@@ -110,6 +135,7 @@ div#v-pills-tab a{
                                 <p style="padding:0px;margin:0px;">{{ $userObj->email ?? '' }}</p>
                             </div>
                         </div>
+<<<<<<< HEAD
 
                         <div class="edit-icon">
                             <img class="username2" data-email="{{ $userObj->email ?? '' }}" style="width: 15px;" src={{
@@ -124,6 +150,18 @@ div#v-pills-tab a{
                             <div class="user-center-text">
                                 <h6 style="padding: 0; margin:0px;color: #5a5858;">{{ __('Password') }}</h6>
                                 <p style="padding:0px;margin:0px;">{{ '*********' }}</p>
+=======
+                        <div class="profile-outer">
+                            <div class="d-flex trash-account">
+                                <div class="profile-icon-outer" style="background-color:red;">
+                                    <i class="fa fa-trash-o trash"></i>
+                                </div>
+                                <div class="user-center-text">
+                                    <button
+                                        style="padding: 7px 15px; margin:0px;color: #fff;background-color:red; border-radius:5px;border:none; ">Delete
+                                        Account</button>
+                                </div>
+>>>>>>> aecde6da48c5be2622ad190e432029d7d325821a
                             </div>
                         </div>
 
@@ -145,16 +183,18 @@ div#v-pills-tab a{
                     </div>
 
                 </div>
-            </div>
-            @if(!empty($subcriptionData))
-            <div class="col-lg-4 col-md-4 member-plan">
-                <h4>Premium Member Plan</h4>
-                @if($subcriptionData->expiry_date > \Carbon\Carbon::now())
-                <p>{{ $subcriptionData->plan->name ?? '' }} until {{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s',
-                    $subcriptionData->expiry_date)->format('d/m/Y');}}</p>
-                @else
-                <p>Plan expired</p>
-                <button class="renew-btn">RENEW</button>
+                @if (!empty($subcriptionData))
+                    <div class="col-lg-4 col-md-4 member-plan">
+                        <h4>Premium Member Plan</h4>
+                        @if ($subcriptionData->expiry_date > \Carbon\Carbon::now())
+                            <p>{{ $subcriptionData->plan->name ?? '' }} until
+                                {{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $subcriptionData->expiry_date)->format('m/d/Y') }}
+                            </p>
+                        @else
+                            <p>Plan expired</p>
+                            <button class="renew-btn">RENEW</button>
+                        @endif
+                    </div>
                 @endif
             </div>
             @endif
@@ -169,6 +209,26 @@ div#v-pills-tab a{
                     <a class="nav-link address-book" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile"
                         role="tab" aria-controls="v-pills-profile" aria-selected="false">Address Book</a>
 
+<<<<<<< HEAD
+=======
+                <!-- Modal body -->
+                <div class="modal-body pb-4" style="box-shadow: 0 0 8px rgba(0,0,0,.14);padding-top:0;">
+                    <form id="userNameForm" method="post" action="{{ route('store.details') }}">
+                        @csrf
+                        <input type="hidden" value="user-name" name="type">
+                        <label class="label-text" for="css">Contact Name<span style="color:red;">*</span></label>
+                        <input class="contact-box" type="text" name="uname" id="user-name"
+                            placeholder="Contact Name">
+                    </form>
+                </div>
+                <div class="modal-footer" style="display: inline-block;">
+                    <div class="d-flex justify-content-between pt-2">
+                        <button class="btn-secondary" data-bs-dismiss="modal"
+                            style="border-radius:20px; border:none;font-size:12px; padding:5px 10px;">Cancel</button>
+                        <button class="btn-danger" id="store-name"
+                            style="border-radius:20px; border:none;font-size:12px; padding:5px 15px;">Save</button>
+                    </div>
+>>>>>>> aecde6da48c5be2622ad190e432029d7d325821a
                 </div>
             </div>
             <div class="col-6">
@@ -374,11 +434,25 @@ div#v-pills-tab a{
 
                     <form id="loginOtp" action="{{ route('store.details') }}" method="POST" class="text-center">
                         @csrf
+<<<<<<< HEAD
                         <input type="hidden" value="verify-email" name="type">
                         <div class="px-lg-5">
                             <input type="hidden" id="hidden_email" name="email" class="d-none">
                             <input type="text" id="Verificationcode" name="code" class="form-control formm py-4"
                                 placeholder="Verification Code *">
+=======
+                        <input type="hidden" value="user-password" name="type">
+
+                        <div class="contact-box-outer">
+                            <div class="contact-box-outer">
+                                <label class="label-text" for="css">Password<span
+                                        style="color:red;">*</span></label>
+                                <input class="contact-box" type="password" placeholder="Current Password"
+                                    name="currentPassword">
+                                <i id="eye-icon_00" toggle="#password-field"
+                                    class="fa fa-eye-slash eye-icon show-password" data-id="02"></i>
+                            </div>
+>>>>>>> aecde6da48c5be2622ad190e432029d7d325821a
                         </div>
                     </form>
                     <button class="previewbtn mt-5" id="verify-email">Verify</button>
@@ -470,10 +544,13 @@ div#v-pills-tab a{
     </div>
 </div>
 @endsection
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> aecde6da48c5be2622ad190e432029d7d325821a
 @section('script')
 <script>
     $(".username").click(function() {
@@ -604,6 +681,10 @@ div#v-pills-tab a{
             }
 
         });
+<<<<<<< HEAD
 </script>
 
+=======
+    </script>
+>>>>>>> aecde6da48c5be2622ad190e432029d7d325821a
 @endsection

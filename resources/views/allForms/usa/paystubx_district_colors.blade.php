@@ -281,13 +281,14 @@
                 </tr>
             </table>
             @php
-                $digit = Terbilang::make($requestData['total_net_pay']);
-                $word = $digit;
+                // $digit = Terbilang::make($requestData['total_net_pay']);
+                // $word = $digit;
+                $word = getCurrency($requestData['total_net_pay']);
             @endphp
             @php
                 $n = $requestData['total_net_pay'];
                 [$whole, $decimal] = sscanf($n, '%d.%d');
-                $digit_1 = Terbilang::make($decimal);
+                $digit_1 = getCurrency($decimal); // Terbilang::make($decimal);
             @endphp
             <section class="section_2">
                 <table style="width:100%">
