@@ -495,7 +495,7 @@
                 <h4 class="modal-title" style="text-transform: capitalize;color:#fff;">Address Book</h4>
                 <button type="button"
                     style="border: none; background-color:transparent; color:#fff;font-size:20px;padding:0;"
-                    class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
+                    class="btn-close" data-bs-dismiss="modal" aria-label="Close">x</button>
             </div>
 
             <!-- Modal body -->
@@ -592,7 +592,7 @@
                 <h4 class="modal-title" style="text-transform: capitalize;color:#fff;">Change Contact Name</h4>
                 <button type="button"
                     style="border: none; background-color:transparent; color:#fff;font-size:20px;padding:0;"
-                    class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
+                    class="btn-close" data-bs-dismiss="modal" aria-label="Close">x</button>
             </div>
 
             <!-- Modal body -->
