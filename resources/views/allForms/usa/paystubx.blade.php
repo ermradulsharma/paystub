@@ -192,7 +192,7 @@
             </tr>
             <tr>
                 <td></td>
-                <td> {{ $requestData['address_2'] }}</td>
+                <td> {!! addressTwo($requestData) !!}</td>
                 <td style="font-size: 14px;">Period Ending: <b>{{ date('m/d/y', strtotime($requestData['pay_end'])) }}</b> </td>
             </tr>
             <tr>
@@ -219,7 +219,7 @@
             <tr>
                 <td></td>
                 <td>Exemptions/Alowances:{{ $requestData['exemptions'] }}</td>
-                <td><b> {{ $requestData['emp_street_1'] }} <br> {{ $requestData['emp_street_2'] }}</b> </td>
+                <td><b> {{ $requestData['emp_street_1'] }} {!! empAddressTwo($requestData,true) !!}</b> </td>
             </tr>
             <tr>
                 <td></td>
@@ -355,7 +355,7 @@
                                 <td style="padding-top:20px;">
                                     <p style="font-size: 14px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:capitalize;font-weight:bold;"> {{ $requestData['cname'] }}</p>
                                     <p style="font-size: 12px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:bold;"> {{ $requestData['address_1'] }}</p>
-                                    <P style="font-size: 12px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:bold;"> {{ $requestData['address_2'] }}</P>
+                                    <P style="font-size: 12px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:bold;"> {!! addressTwo($requestData) !!}</P>
                                     <P style="font-size: 12px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:bold;"> {{ $requestData['city'] }} {{ $requestData['state'] }}. {{ $requestData['zip_code'] }}  </P>
                                 </td>
                                 <td style="padding-top:30px; text-align:right; position: relative; left:22px;">
