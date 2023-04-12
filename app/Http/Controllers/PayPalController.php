@@ -98,8 +98,8 @@ class PayPalController extends Controller
             $response = $provider->capturePaymentOrder($request['token']);
 
             if (isset($response['status']) && $response['status'] == 'COMPLETED') {
-                $planDetail = Plan::where('id', $planId)->first();
-                $expiry_date = $this->getExpiryDate($planDetail);
+                $planDetail = Plan::find($planId);
+                $expiry_date = $this->getExpiryDate($planDetail->id);
                 $countryObj = PaySlip::where('user_id', Auth::user()->id)->orderBy('id', 'desc')->first();
                 $userId = Auth::user()->id;
                 $subcriptionObj = Subcription::where(['plan_id' => $planId, 'country' => $countryObj->type])->first();
@@ -136,7 +136,7 @@ class PayPalController extends Controller
     private function getExpiryDate($planDetail)
     {
         try {
-
+            $planDetail = Plan::find($planDetail);
             $expiryDate = Carbon::now();
             switch ($planDetail->plan_type) {
                 case "hourly":
