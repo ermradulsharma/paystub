@@ -469,4 +469,95 @@ class UserController extends Controller
         DB::commit();
         return response()->json($response, $response['status']);
     }
+
+    public function accountUpdate(Request $request)
+    {
+        $response = [];
+        $response['success'] = FALSE;
+        $response['status'] = STATUS_BAD_REQUEST;
+
+        $requestData = $request->all();
+        $userObj = User::find(Auth::user()->id);
+        if (!$userObj) {
+            $response['message'] = "User doesn't exist.";
+            return response()->json($response, 301);
+        }
+        if ($requestData['type'] == 'name') {
+            $rules = [
+                'name' => 'required|min:3',
+            ];
+
+            $messages = [
+                'name.required' => 'The name cannot be empty.',
+                'uname.min' => 'Name has at least 3 characters.',
+            ];
+            $validator = Validator::make($request->all(), $rules, $messages);
+            if ($validator->fails()) {
+                $response['message'] = $validator->errors()->first();
+                return response()->json($response, 301);
+            }
+            $userObj->name = $request->name;
+            $msg = "Name has updated successfully";
+        }
+
+        if ($requestData['type'] == 'email') {
+            $rules = [
+                'password' => 'required',
+                'email' => 'required|email:rfc,dns|unique:users,email'
+            ];
+
+            $messages = [
+                'email.required' => 'The email cannot be empty.',
+                'email.unique' => 'Please enter another email.',
+                'email.email' => 'Please enter valid email.',
+                'password.required' => 'The password cannot be empty'
+            ];
+            $validator = Validator::make($request->all(), $rules, $messages);
+            if ($validator->fails()) {
+                $response['message'] = $validator->errors()->first();
+                return response()->json($response, 301);
+            }
+            if (!Hash::check($request->get('password'), $userObj->password)) {
+                $response['message'] = WRONG_PASSWORD;
+                $response['status'] = STATUS_BAD_REQUEST;
+                return $response;
+            }
+            $userObj->email = $request->email;
+            $msg = "Please check your mail.";
+        }
+
+        if ($requestData['type'] == 'password') {
+            $rules = [
+                'current_password' => 'required',
+                'password' => 'required|confirmed|min:8'
+            ];
+
+            $messages = [
+                'current_password.required' => "Password can't be empty.",
+                'password.required' => "Password can't be empty.",
+                'password.confirmed' => "Confirm password doesn't match",
+            ];
+            $validator = Validator::make($request->all(), $rules, $messages);
+            if ($validator->fails()) {
+                $response['message'] = $validator->errors()->first();
+                return response()->json($response, 301);
+            }
+
+            if (!Hash::check($request->get('current_password'), $userObj->password)) {
+                $response['message'] = WRONG_PASSWORD;
+                $response['status'] = STATUS_BAD_REQUEST;
+                return $response;
+            }
+            $userObj->password = Hash::make($requestData['password']);
+            $msg = "Password has updated successfully";
+        }
+
+        if ($userObj->save()) {
+            $response['success'] = TRUE;
+            $response['message'] = $msg;
+            $response['status'] = STATUS_OK;
+        }
+
+        return response()->json($response, $response['status']);
+    }
 }

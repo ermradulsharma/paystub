@@ -262,8 +262,7 @@
                                 </span></td>
                         </tr>
                         <tr>
-                            <td><span style="font-weight: 500;font-size: 15px; ">Employee #: </span> <span
-                                    style="font-size: 15px;"> {{ $requestData['emp_id'] }}</span></td>
+                            <td><span style="font-weight: 500;font-size: 15px; ">Employee #:</span><span style="font-size: 15px;"> {{ $requestData['emp_id'] }}</span></td>
                         </tr>
                         <tr>
                             <td style="padding-top:8px;font-size: 15px;text-transform:capitalize;"> {{ $requestData['emp_name'] }} <br> {{

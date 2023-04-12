@@ -172,7 +172,7 @@
                 <tr>
                     <td class="address"
                         style="font-size:14px; text-transform:uppercase; line-height:1.4; color:#000;  padding-top:0; padding-bottom:0;  font-family: 'Arial Rounded MT Bold', sans-serif;">
-                        {{ $requestData['address_1'] }}<br>{{ $requestData['city'] }} {{ $requestData['state'] }}.
+                        {{ $requestData['address_1'] }}@if($requestData['address_2'] != "")<br>{{ $requestData['address_2'] }}@endif<br>{{ $requestData['city'] }} {{ $requestData['state'] }}.
                         {{$requestData['zip_code'] }}<br> USA</td>
                     <td style=" font-size:20px;font-family: Arial, Helvetica, sans-serif;  font-weight:bold;color:#010202;"
                         class="earning">Earnings Statement</td>
