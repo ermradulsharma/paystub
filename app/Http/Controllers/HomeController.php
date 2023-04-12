@@ -38,7 +38,7 @@ class HomeController extends Controller
     public function userDetails(Request $request)
     {
         $userObj = User::find(Auth::user()->id);
-        $subcriptionData = Subcription::with('plan')->where('user_id', $userObj->id)->oderBy('id', 'DESC')->first();
+        $subcriptionData = Subcription::with('plan')->where('user_id', $userObj->id)->orderBy('id', 'desc')->first();
         // dd($subcriptionData);
         return view('user-profile', compact('userObj', 'subcriptionData'));
     }
