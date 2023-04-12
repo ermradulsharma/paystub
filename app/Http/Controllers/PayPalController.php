@@ -44,7 +44,7 @@ class PayPalController extends Controller
                 redirect()->route('prizing')->with('error', 'Please choose plan.');
             }
             $planId = $request->plan;
-            $planDetail = Plan::where('id', $planId)->first();
+            $planDetail = Plan::find($request->plan);
             if (!$planDetail) {
                 redirect()->route('prizing')->with('error', 'Please choose plan.');
             }
@@ -56,14 +56,14 @@ class PayPalController extends Controller
             $response = $provider->createOrder([
                 "intent" => "CAPTURE",
                 "application_context" => [
-                    "return_url" => route('successTransaction', $planId),
+                    "return_url" => route('successTransaction', $request->plan),
                     "cancel_url" => route('cancelTransaction'),
                 ],
                 "purchase_units" => [
                     0 => [
                         "amount" => [
                             "currency_code" => "USD",
-                            "value" => $price
+                            "value" => $planDetail->price
                         ]
                     ]
                 ]
@@ -99,25 +99,23 @@ class PayPalController extends Controller
 
             if (isset($response['status']) && $response['status'] == 'COMPLETED') {
                 $planDetail = Plan::find($planId);
-                $expiry_date = $this->getExpiryDate($planDetail->id);
                 $countryObj = PaySlip::where('user_id', Auth::user()->id)->orderBy('id', 'desc')->first();
-                $userId = Auth::user()->id;
-                $subcriptionObj = Subcription::where(['plan_id' => $planId, 'country' => $countryObj->type])->first();
+                $subcriptionObj = Subcription::where(['plan_id' => $planDetail->id, 'country' => $countryObj->type])->first();
                 if (!$subcriptionObj) {
                     $subcriptionObj                         = new Subcription();
                 }
-                $subcriptionObj->user_id                = $userId;
-                $subcriptionObj->plan_id                = $planId;
+                $subcriptionObj->user_id                = Auth::user()->id;
+                $subcriptionObj->plan_id                = $planDetail->id;
                 $subcriptionObj->country                = $countryObj->type;
                 $subcriptionObj->transaction_id         = $response['id'];
                 $subcriptionObj->start_date             = Carbon::now();
-                $subcriptionObj->expiry_date            = $expiry_date;
+                $subcriptionObj->expiry_date            = Carbon::now()->addMonths($planDetail->plan_duration);
                 $subcriptionObj->transaction_status     = $response['status'] ?? '';
                 if ($subcriptionObj->save()) {
-                    $userObj = User::find($userId);
+                    $userObj = User::find(Auth::user()->id);
                     $userObj->expiryDate = $subcriptionObj->expiry_date;
                     if ($userObj->save()) {
-                        $invoice = invoiceMail($userId);
+                        $invoice = invoiceMail(Auth::user()->id);
                     }
                 }
                 if ($invoice == 'success') {
