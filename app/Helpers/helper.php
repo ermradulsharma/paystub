@@ -140,7 +140,36 @@ function getCurrency(float $number)
         } else $str[] = null;
     }
     $Rupees = implode('', array_reverse($str));
-    $cents = ($decimal > 0) ? "." . ($words[$decimal / 10] . " " . $words[$decimal % 10]) . ' Cents' : '';
-    return ($Rupees ? $Rupees . 'Dollars ' : '') . $cents;
+    // $cents = ($decimal > 0) ? "." . ($words[$decimal / 10] . " " . $words[$decimal % 10]) . ' Cents' : '';
+    $cents = ($decimal > 0) ? ($words[$decimal / 10] . " " . $words[$decimal % 10]) . ' Cents' : '';
+    return ($Rupees ? $Rupees . 'Dollars ' : '') .'And '.$cents;
 
+}
+
+function addressTwo($obj,$lineBreak = false,$comma = false){
+    $addressStr = '';
+
+    if(isset($obj['address_2']) && $obj['address_2'] != ''){
+        if($lineBreak)
+            $addressStr .= '<br>';
+        if($comma)
+            $addressStr .=  ', ';
+
+        $addressStr .=  $obj['address_2']??'';
+    }
+    return $addressStr;
+}
+
+function empAddressTwo($obj,$lineBreak = false,$comma = false){
+    $addressStr = '';
+
+    if(isset($obj['emp_street_2']) && $obj['emp_street_2'] != ''){
+        if($lineBreak)
+            $addressStr .= '<br>';
+        if($comma)
+            $addressStr .=  ', ';
+
+        $addressStr .=  $obj['emp_street_2'] ?? '';
+    }
+    return $addressStr;
 }

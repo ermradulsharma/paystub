@@ -171,7 +171,7 @@
                 <tr>
                     <td style="font-size: 18px;text-align: left;padding:10px 0px 10px 25px;"><span
                             style="font-size: 18px;text-transform:capitalize;">{{ $requestData['cname'] }}</span><br>{{ $requestData['address_1']
-                        }} {{ $requestData['city'] }}, {{ $requestData['state'] }} {{ $requestData['zip_code'] }}</td>
+                        }} {!! addressTwo($requestData,false,true) !!}{{ $requestData['city'] }}, {{ $requestData['state'] }} {{ $requestData['zip_code'] }}</td>
                     <td
                         style="font-size: 21px;text-align:right;padding:10px 12px 8px 10px;text-transform:uppercase;  font-family: 'Arial', sans-serif;font-weight:bold;">
                         Earnings Statement</td>
@@ -184,7 +184,7 @@
                             $requestData['emp_name'] }} </b></td>
                     <td class="padding" colspan="6"
                         style="text-align: left; border-right:2px solid #464646;font-size:18px; color:#464646;font-family: 'Roboto', sans-serif;">
-                        {{ $requestData['emp_street_1'] }}, {{ $requestData['emp_city'] }}, {{ $requestData['emp_state']
+                        {{ $requestData['emp_street_1'] }}{!! empAddressTwo($requestData,false,true) !!}, {{ $requestData['emp_city'] }}, {{ $requestData['emp_state']
                         }} {{ $requestData['emp_zip_code'] }} </td>
                 </thead>
                 <thead id="colourborder">
