@@ -444,7 +444,7 @@
                             {{ $requestData['cname'] }}</p>
                         <p
                             style="font-size:17px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:400;">
-                            {{ $requestData['address_1'] }} {!! addressTwo($requestData,true) !!}</p>
+                            {{ $requestData['address_1'] }}</p>
                         {{-- <P style="font-size:17px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:400;">{{ $requestData['address_2'] }} </P> --}}
                         <P
                             style="font-size:17px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:400;">
