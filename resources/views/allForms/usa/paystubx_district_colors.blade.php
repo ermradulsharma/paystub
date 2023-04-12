@@ -365,7 +365,7 @@
                     <tr>
                         <td style="text-transform:capitalize;padding:10px 0px;">{{ $requestData['emp_name'] }}<br>{{ $requestData['emp_street_1'] }}<br>{{ $requestData['emp_city'] }}, {{ $requestData['emp_zip_code'] }} </td>
                         <td style="vertical-align:top; padding:10px 0px;"> XXX-XX-{{$requestData['emp_ssn']}}</td>
-                        <td style="vertical-align:top; padding:10px 0px;"> {{ $requestData['emp_id'] }}</td>
+                        <td style="vertical-align:top; padding:10px 0px;text-align:center;"> {{ $requestData['emp_id'] }}</td>
                         <td style="vertical-align:top; padding:10px 0px;">
                             {{ date('m/d/Y', strtotime($requestData['pay_start'])) }} </td>
                         <td style="vertical-align:top; padding:10px 0px;">
