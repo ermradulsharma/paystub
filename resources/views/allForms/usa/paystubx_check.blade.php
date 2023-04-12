@@ -238,7 +238,7 @@
                     <tr>
                         <td style="text-transform: uppercase;font-family: Arial, Helvetica, sans-serif;font-size:14px;">
                             {{ $requestData['emp_city'] }}, {{ $requestData['emp_state'] }}.
-                            {{ $requestData['emp_zip_code'] }}, USA</td>
+                            {{ $requestData['emp_zip_code'] }} USA</td>
                     </tr>
 
                 </table>
@@ -416,7 +416,7 @@
                                         style="font-size: 14px; margin-bottom: 5px; font-family: Arial, Helvetica, sans-serif; font-weight: 400">
                                         <span>00000{{ $requestData['advice_number'] }}</span></p>
                                     <p
-                                        style="font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: 400;margin-top:-1px;padding-right:5px;">
+                                        style="font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: 400;margin-top:-1px;">
                                         {{ date('m/d/Y', strtotime($requestData['pay_date'])) }} </p>
                                 </td>
                             </tr>

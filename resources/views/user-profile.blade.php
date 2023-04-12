@@ -11,11 +11,21 @@
                         <div class="left-sidebar">
                             <div class="row hover" style="padding: 10px 0px;border-bottom:1px solid #ddd;">
                                 <div class="col-lg-2">
-                                    <img src="images/user-profile-active.png">
+                                    <img style="width:25px;" src="images/user-profile-active.png">
                                 </div>
                                 <div class="col-lg-10">
                                     <div class="user-text">
                                         <h4 style="color:#0f4386">{{ __('My Account') }}</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row hover" style="padding: 10px 0px;border-bottom:1px solid #ddd;">
+                                <div class="col-lg-2">
+                                    <img style="width: 25px;" src="images/icons/address-book.png">
+                                </div>
+                                <div class="col-lg-10">
+                                    <div class="user-text">
+                                        <h4 style="color:#0f4386">Address Book</h4>
                                     </div>
                                 </div>
                             </div>
@@ -26,9 +36,7 @@
                     <div class="right-side-bar">
                         <h4 style="color:#012c63; line-height:26px;">{{ __('User Profile') }}</h4>
                         <P style="color:#333!important;font-weight:500;">
-                            {{ __('Manage your profile, security, and language
-                                                        preferences.') }}
-                        </P>
+                            {{ __('Manage your profile, security, and language preferences.') }} </P>
                         <div class="profile-outer">
                             <div class="d-flex">
                                 <div class="profile-icon-outer">
@@ -82,23 +90,27 @@
                                     <i class="fa fa-trash-o trash"></i>
                                 </div>
                                 <div class="user-center-text">
-                                    <button style="padding: 7px 15px; margin:0px;color: #fff;background-color:red; border-radius:5px;border:none; ">Delete Account</button>
+                                    <button
+                                        style="padding: 7px 15px; margin:0px;color: #fff;background-color:red; border-radius:5px;border:none; ">Delete
+                                        Account</button>
                                 </div>
                             </div>
                         </div>
 
                     </div>
                 </div>
-                @if(!empty($subcriptionData))
-                <div class="col-lg-4 col-md-4 member-plan">
-                    <h4>Premium Member Plan</h4>
-                    @if($subcriptionData->expiry_date > \Carbon\Carbon::now())
-                        <p>{{ $subcriptionData->plan->name ?? '' }} until {{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $subcriptionData->expiry_date)->format('m/d/Y');}}</p>
-                    @else
-                        <p>Plan expired</p>
-                        <button class="renew-btn">RENEW</button>
-                    @endif
-                </div>
+                @if (!empty($subcriptionData))
+                    <div class="col-lg-4 col-md-4 member-plan">
+                        <h4>Premium Member Plan</h4>
+                        @if ($subcriptionData->expiry_date > \Carbon\Carbon::now())
+                            <p>{{ $subcriptionData->plan->name ?? '' }} until
+                                {{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $subcriptionData->expiry_date)->format('m/d/Y') }}
+                            </p>
+                        @else
+                            <p>Plan expired</p>
+                            <button class="renew-btn">RENEW</button>
+                        @endif
+                    </div>
                 @endif
             </div>
         </div>
@@ -121,7 +133,8 @@
                         @csrf
                         <input type="hidden" value="user-name" name="type">
                         <label class="label-text" for="css">Contact Name<span style="color:red;">*</span></label>
-                        <input class="contact-box" type="text" name="uname" id="user-name" placeholder="Contact Name">
+                        <input class="contact-box" type="text" name="uname" id="user-name"
+                            placeholder="Contact Name">
                     </form>
                 </div>
                 <div class="modal-footer" style="display: inline-block;">
@@ -240,9 +253,12 @@
 
                         <div class="contact-box-outer">
                             <div class="contact-box-outer">
-                                <label class="label-text" for="css">Password<span style="color:red;">*</span></label>
-                                <input class="contact-box" type="password" placeholder="Current Password" name="currentPassword">
-                                <i id="eye-icon_00" toggle="#password-field" class="fa fa-eye-slash eye-icon show-password" data-id="02"></i>
+                                <label class="label-text" for="css">Password<span
+                                        style="color:red;">*</span></label>
+                                <input class="contact-box" type="password" placeholder="Current Password"
+                                    name="currentPassword">
+                                <i id="eye-icon_00" toggle="#password-field"
+                                    class="fa fa-eye-slash eye-icon show-password" data-id="02"></i>
                             </div>
                         </div>
 

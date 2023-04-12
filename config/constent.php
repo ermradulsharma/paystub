@@ -41,3 +41,4 @@ defined('ACCOUNT_DEACTIVATED_SUCCESSFULLY') or define("ACCOUNT_DEACTIVATED_SUCCE
 defined('ACCOUNT_RESTORE_SUCCESSFULLY') or define("ACCOUNT_RESTORE_SUCCESSFULLY", 'Your Account restore successfully');
 defined('ACCOUNT_DELETED_SUCCESSFULLY') or define("ACCOUNT_DELETED_SUCCESSFULLY", 'Your Account delete successfully');
 defined('ENTER_VALID_CREDENTIAL') or define("ENTER_VALID_CREDENTIAL", 'Please enter valid credentials.');
+defined('WRONG_PASSWORD') or define("WRONG_PASSWORD", 'Oops! you have entered wrong current password. Please try again.');

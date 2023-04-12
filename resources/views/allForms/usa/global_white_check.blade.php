@@ -120,8 +120,8 @@
             position: relative;
         }
 
-        .bg-img::before {
-            background-image: url("images/non.png");
+        /* .bg-img::before {
+            background-image: url("images/form.svg");
             background-size: contain;
             background-repeat: no-repeat;
             content: "";
@@ -134,7 +134,7 @@
             height: 100%;
             margin: 0 auto;
             width: 100%;
-        }
+        } */
 
         .container {
             position: absolute;
@@ -188,6 +188,8 @@
 
 <body>
     <main class="bg-img2">
+        <img src="{{ public_path('images/form.svg') }}"
+            style="position: absolute; top: 75%; right:0px;left: 0px; width:106.50%;   z-index: -1;">
         @guest
             <div class="watermark"></div>
         @endguest
@@ -434,7 +436,7 @@
         </section>
 
         <section class="bg-img">
-            <div class="container" style=" margin-top:10px; width:100%; padding:0px 20px;">
+            <div class="container" style=" margin-top:100px; width:100%; padding:0px 20px;">
                 <div class="row" style="display: flex;justify-content: space-between;padding: 0px 14px;">
                     <div style="width: 50%; float:left; position: relative; top:45px; right:0px; left:70px;">
                         <p
@@ -449,29 +451,29 @@
                             {{ $requestData['city'] }}, {{ $requestData['state'] }} {{ $requestData['zip_code'] }}
                         </P>
                     </div>
-                    <div style="width: 50%;float:right;text-align:right;">
+                    <div style="width: 50%;float:right;">
                         <h6
-                            style="font-size: 14px; margin-bottom: 2px; text-align:center; left:50px; position: relative;  top:31px;font-weight:400;">
-                            <span>00000{{ $requestData['check_no'] }}</span>
+                            style="font-size: 14px;  text-align:left; left:80px; position: relative;  top:27px;font-weight:400;">
+                            <span>{{ $requestData['check_no'] }}</span>
                         </h6>
                         <h6
-                            style="font-size: 14px; text-align:center; left:45px; position: relative; font-weight:400;">
+                            style="font-size: 14px; text-align:left; left:80px; position: relative; font-weight:400; margin-top:-5px;">
                             <span>{{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</span>
                         </h6>
                         {{-- <p style="text-align:center; position: relative; left:40px; top:17px;font-size: 14px;"> <span style="font-weight:800; "></span><span style="">{{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</span> </p> --}}
                     </div>
                 </div>
-                <table>
+                <table style="position: relative; bottom:18px;">
                     <tr>
                         <td style="width:10%;"></td>
                         <td
-                            style="font-size:15px; padding-top:40px; width:50%;padding-left:10px; font-weight:bold;font-family: Arial, Helvetica, sans-serif;text-transform:capitalize;">
+                            style="font-size:15px; padding-top:40px; width:30%;padding-left:5px; font-weight:bold;font-family: Arial, Helvetica, sans-serif;text-transform:capitalize;">
                             {{ $requestData['emp_name'] }}</td>
                         <td
-                            style="font-size:15px; width:23%;padding-top:40px !important; text-align:left;font-family: Arial, Helvetica, sans-serif;padding-left:18px;">
+                            style="font-size:15px; width:40%;padding-top:40px !important; text-align:left;padding-left:60px;font-family: Arial, Helvetica, sans-serif;">
                             XXXXX<b>{{ $requestData['account_number_last_4'] }}</b></td>
                         <td
-                            style="font-size:15px; width:17%;padding-top:40px; text-align:right; padding-right:25px;font-family: Arial, Helvetica, sans-serif;">
+                            style="font-size:15px; width:20%;padding-top:40px; text-align:left;padding-left:37px;font-family: Arial, Helvetica, sans-serif;">
                             <b><span
                                     style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['total_net_pay'], 2) }}</b>
                         </td>
