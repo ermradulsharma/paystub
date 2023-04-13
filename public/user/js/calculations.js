@@ -49,7 +49,6 @@ $(document).ready(function () {
             $("#add_deduction").append(add_deduction);
         }
         // i++;
-        console.log('1', i);
         $(".calculation").keyup(function () {
             var id = $(this).data("id");
             calculation(id);
