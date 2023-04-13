@@ -177,7 +177,7 @@ class HomeController extends Controller
             $userObj->password = bcrypt($request->password);
             $userObj->is_completed = '1';
             if($userObj->save()){
-                Auth::login($userObj);
+                // Auth::login($userObj);
                 $response['data'] = $userObj->name ?? '';
                 $response['message'] = "Your account setup successfully.";
                 $response['status'] = STATUS_OK;

@@ -95,15 +95,15 @@ $("#userNameForm").on("submit", function () {
                 $(".authUserName").text("Hi " + response.data);
             }, 300);
 
-            // $(".registerBtn").removeClass("d-block");
-            // $(".registerBtn").addClass("d-none");
-            // $(".sendMailButton").removeClass("d-none");
-            // $(".sendMailButton").addClass("d-block");
-            // $(".logoutDiv").removeClass("d-none");
+            $(".registerBtn").removeClass("d-block");
+            $(".registerBtn").addClass("d-none");
+            $(".sendMailButton").removeClass("d-none");
+            $(".sendMailButton").addClass("d-block");
+            $(".logoutDiv").removeClass("d-none");
             if (userAuth == 1) {
-                // setTimeout(() => {
-                //     $(".authUserName").text("Hi " + response.data);
-                // }, 300);
+                setTimeout(() => {
+                    $(".authUserName").text("Hi " + response.data);
+                }, 300);
                 if (okk == 1) {
                     usaStoreData();
                 }
