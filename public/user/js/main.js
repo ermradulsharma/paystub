@@ -50,9 +50,13 @@ $("#adminLogin").on("submit", function () {
                     window.location.href = baseUrl + "admin/dashboard";
                 }, 200);
             } else if (response.user.role_id == 2) {
-                $(".registerBtn").removeClass("d-block").addClass("d-none");
-                $(".logoutDiv").removeClass("d-none");
-                $(".authUserName").text("Hi " + response.user.name);
+                if (response.user.name == '') {
+                    $("#setName").modal("show");
+                } else {
+                    $(".registerBtn").removeClass("d-block").addClass("d-none");
+                    $(".logoutDiv").removeClass("d-none");
+                    $(".authUserName").text("Hi " + response.user.name);
+                }
             }
 
         },
