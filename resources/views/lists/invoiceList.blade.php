@@ -1,14 +1,15 @@
 @extends('layouts.app')
 @section('content')
     <div class="my-5">
-        <div class="container py-5" style="max-width: 1500px;">
+        <div class="container" style="max-width: 1500px;">
             <div class="row" style="margin:0 auto;">
                 <div class="w-100" style="text-align: right;">
                     <div class="d-flex justify-content-end">
                         {{-- <a href="{{ route('profile') }}"><img src="{{ asset('images/user1.png') }}" alt=""
                                 width="35px;" height="35px"></a> --}}
 
-                        <h5 class="mt-2 ml-2 font-weight-bold" style=" color:red; ">Watermark is removed after subscription</h5>
+                        <h5 class="mt-2 ml-2 font-weight-bold" style=" color:red; ">Watermark is removed after subscription
+                        </h5>
                     </div>
                 </div>
                 <div class="table-responsive">
@@ -64,10 +65,9 @@
                                                         width="45px" />
                                                 </a>
                                             </th>
-                                            <th class="text-center"  style="padding: 1em .5em; border:none;">
+                                            <th class="text-center" style="padding: 1em .5em; border:none;">
                                                 <a class="delbtn" href="javascript:void(0);"
-                                                data-trash ="{{ route('invoiceDelete', $invoice->id) }}"
-                                                    >Delete
+                                                    data-trash="{{ route('invoiceDelete', $invoice->id) }}">Delete
                                                 </a>
                                                 {{-- onclick="event.preventDefault();
                                                     if(confirm('Are you sure! you want to delete this?')){
@@ -95,7 +95,7 @@
 
                 <div class="w-100" style="text-align: right;">
                     <a href="@if (isset($membership)) {{ $membership == 0 ? route('prizing') : route('invoiceMail') }} @else {{ route('prizing') }} @endif"
-                        class="user-checkbtn" data-count="{{count($invoiceList)}}"><b>Continue to Checkout</b></a>
+                        class="user-checkbtn" data-count="{{ count($invoiceList) }}"><b>Continue to Checkout</b></a>
                     <h6 class="mt-3 font-weight-bold">Click on Continue, to complete your order</h6>
                 </div>
 
@@ -153,18 +153,18 @@
             // $('#tempView').html(response.data);
             $('#tempViewModal').modal('show');
         })
-        $(document).on('click','.user-checkbtn',function(e){
+        $(document).on('click', '.user-checkbtn', function(e) {
             var dataCount = $(this).data('count');
-            if(dataCount <= 0){
+            if (dataCount <= 0) {
                 e.preventDefault();
                 toastr.error("Please First Generate Paystub.");
             }
 
         });
 
-        $(document).on('click','.delbtn',function(e){
-           var trashPath = $(this).data('trash');
-            $('#trash-temp').attr('action',trashPath);
+        $(document).on('click', '.delbtn', function(e) {
+            var trashPath = $(this).data('trash');
+            $('#trash-temp').attr('action', trashPath);
             $('#deleteTemplate').modal('show');
 
         });
