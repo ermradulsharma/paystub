@@ -87,7 +87,7 @@ $("#loginOtp").on("submit", function () {
 $("#userNameForm").on("submit", function () {
     $.ajax({
         type: 'POST',
-        url: $(this).attr("action"),
+        url: baseUrl + "profile/details/save",
         data: $(this).serialize(),
         success: function (response) {
             $("#setName").modal("hide");
