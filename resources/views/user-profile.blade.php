@@ -100,10 +100,8 @@
             <div class="row">
                 <div class="col-lg-2" style="padding: 0; height:95vh; border-right:1px solid #ddd;">
                     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                        <a class="nav-link my-account active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home"
-                            role="tab" aria-controls="v-pills-home" aria-selected="true">{{__('My Account')}}</a>
-                        <a class="nav-link address-book" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile"
-                            role="tab" aria-controls="v-pills-profile" aria-selected="false">{{__('Address Book')}}</a>
+                        <a class="nav-link my-account active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">{{__('My Account')}}</a>
+                        <a class="nav-link address-book" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">{{__('Address Book')}}</a>
                     </div>
                 </div>
                 <div class="col-lg-10">
@@ -184,9 +182,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
-                            aria-labelledby="v-pills-profile-tab">
-
+                        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
                             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                                 <li class="nav-item" style="">
                                     <a class="nav-link address-b active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">EMPLOYER</a>
@@ -198,8 +194,7 @@
                             </ul>
 
                             <div class="tab-content" id="pills-tabContent">
-                                <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
-                                    aria-labelledby="pills-home-tab">
+                                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
                                     <table class="table" style="border:1px solid #ddd;">
                                         <thead>
                                             <tr>
@@ -221,10 +216,8 @@
                                                 <td>otto</td>
                                                 <td>@mdo</td>
                                                 <td>1234</td>
-                                                <td style="padding-right:0; padding-left:0;"><img style="width:22px;"
-                                                        src="images/icons/edit-icon.png"></td>
-                                                <td style="padding-right:0; padding-left:0;"><img style="width:20px;"
-                                                        src="images/icons/del-icon.png"></td>
+                                                <td style="padding-right:0; padding-left:0;"><img style="width:22px;" src="images/icons/edit-icon.png"></td>
+                                                <td style="padding-right:0; padding-left:0;"><img style="width:20px;" src="images/icons/del-icon.png"></td>
                                             </tr>
 
                                             <tr style="border:1px solid #ddd;">
@@ -235,10 +228,8 @@
                                                 <td>otto</td>
                                                 <td>@mdo</td>
                                                 <td>1234</td>
-                                                <td style="padding-right:0; padding-left:0;"><img style="width:22px;"
-                                                        src="images/icons/edit-icon.png"></td>
-                                                <td style="padding-right:0; padding-left:0;"><img style="width:20px;"
-                                                        src="images/icons/del-icon.png"></td>
+                                                <td style="padding-right:0; padding-left:0;"><img style="width:22px;" src="images/icons/edit-icon.png"></td>
+                                                <td style="padding-right:0; padding-left:0;"><img style="width:20px;" src="images/icons/del-icon.png"></td>
                                             </tr>
                                             <tr style="border:1px solid #ddd;">
                                                 <th scope="row">3</th>
@@ -248,10 +239,8 @@
                                                 <td>otto</td>
                                                 <td>@mdo</td>
                                                 <td>1234</td>
-                                                <td style="padding-right:0; padding-left:0;"><img style="width:22px;"
-                                                        src="images/icons/edit-icon.png"></td>
-                                                <td style="padding-right:0; padding-left:0;"><img style="width:20px;"
-                                                        src="images/icons/del-icon.png"></td>
+                                                <td style="padding-right:0; padding-left:0;"><img style="width:22px;" src="images/icons/edit-icon.png"></td>
+                                                <td style="padding-right:0; padding-left:0;"><img style="width:20px;" src="images/icons/del-icon.png"></td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -280,10 +269,8 @@
                                                 <td>Otto</td>
                                                 <td>@mdo</td>
                                                 <td>1234</td>
-                                                <td style="padding-right:0; padding-left:0;"><img style="width:22px;"
-                                                        src="images/icons/edit-icon.png"></td>
-                                                <td style="padding-right:0; padding-left:0;"><img style="width:20px;"
-                                                        src="images/icons/del-icon.png"></td>
+                                                <td style="padding-right:0; padding-left:0;"><img style="width:22px;" src="images/icons/edit-icon.png"></td>
+                                                <td style="padding-right:0; padding-left:0;"><img style="width:20px;" src="images/icons/del-icon.png"></td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">1</th>
@@ -293,10 +280,8 @@
                                                 <td>Otto</td>
                                                 <td>@mdo</td>
                                                 <td>1234</td>
-                                                <td style="padding-right:0; padding-left:0;"><img style="width:22px;"
-                                                        src="images/icons/edit-icon.png"></td>
-                                                <td style="padding-right:0; padding-left:0;"><img style="width:20px;"
-                                                        src="images/icons/del-icon.png"></td>
+                                                <td style="padding-right:0; padding-left:0;"><img style="width:22px;" src="images/icons/edit-icon.png"></td>
+                                                <td style="padding-right:0; padding-left:0;"><img style="width:20px;" src="images/icons/del-icon.png"></td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">1</th>
@@ -306,10 +291,8 @@
                                                 <td>Otto</td>
                                                 <td>@mdo</td>
                                                 <td>1234</td>
-                                                <td style="padding-right:0; padding-left:0;"><img style="width:22px;"
-                                                        src="images/icons/edit-icon.png"></td>
-                                                <td style="padding-right:0; padding-left:0;"><img style="width:20px;"
-                                                        src="images/icons/del-icon.png"></td>
+                                                <td style="padding-right:0; padding-left:0;"><img style="width:22px;" src="images/icons/edit-icon.png"></td>
+                                                <td style="padding-right:0; padding-left:0;"><img style="width:20px;" src="images/icons/del-icon.png"></td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">1</th>
@@ -319,10 +302,8 @@
                                                 <td>Otto</td>
                                                 <td>@mdo</td>
                                                 <td>1234</td>
-                                                <td style="padding-right:0; padding-left:0;"><img style="width:22px;"
-                                                        src="images/icons/edit-icon.png"></td>
-                                                <td style="padding-right:0; padding-left:0;"><img style="width:20px;"
-                                                        src="images/icons/del-icon.png"></td>
+                                                <td style="padding-right:0; padding-left:0;"><img style="width:22px;" src="images/icons/edit-icon.png"></td>
+                                                <td style="padding-right:0; padding-left:0;"><img style="width:20px;" src="images/icons/del-icon.png"></td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">1</th>
@@ -332,10 +313,8 @@
                                                 <td>Otto</td>
                                                 <td>@mdo</td>
                                                 <td>1234</td>
-                                                <td style="padding-right:0; padding-left:0;"><img style="width:22px;"
-                                                        src="images/icons/edit-icon.png"></td>
-                                                <td style="padding-right:0; padding-left:0;"><img style="width:20px;"
-                                                        src="images/icons/del-icon.png"></td>
+                                                <td style="padding-right:0; padding-left:0;"><img style="width:22px;" src="images/icons/edit-icon.png"></td>
+                                                <td style="padding-right:0; padding-left:0;"><img style="width:20px;" src="images/icons/del-icon.png"></td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -349,14 +328,12 @@
     </section>
 
     <div class="modal fade" id="addressBook">
-        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-dialog modal-md modal-dialog-centered">
             <div class="modal-content">
                 <!-- Modal Header -->
                 <div class="modal-header" style="background: #115caecf;">
                     <h4 class="modal-title" style="text-transform: capitalize;color:#fff;">Address Book</h4>
-                    <button type="button"
-                        style="border: none; background-color:transparent; color:#fff;font-size:20px;padding:0;"
-                        class="btn-close" data-bs-dismiss="modal" aria-label="Close">x</button>
+                    <button type="button" style="border: none; background-color:transparent; color:#fff;font-size:20px;padding:0;" class="btn-close" data-bs-dismiss="modal" aria-label="Close">x</button>
                 </div>
 
                 <!-- Modal body -->
@@ -367,75 +344,53 @@
                                 <div class="col-lg-12"style="padding: 0;">
                                     <form style="padding-top:20px;" class="form-horizontal" role="form">
                                         <div class="row">
-                                            <label for="inputFullName" style="font-weight:bold;"
-                                                class="col-sm-12 control-label">EMPLOYEE
-                                                NAME</label>
+                                            <label for="inputFullName" style="font-weight:bold;" class="col-sm-12 control-label">EMPLOYEE NAME</label>
                                             <div class="col-sm-12">
-                                                <input style="font-size:16px;" type="text" class="form-control"
-                                                    id="inputFullName" name="full-name" placeholder="Employee Name">
+                                                <input style="font-size:16px;" type="text" class="form-control" id="inputFullName" name="full-name" placeholder="Employee Name">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                            <p class="col-sm-offset-2 col-sm-12 help-block"
-                                                style="font-weight: bold;margin-top:10px; margin-bottom:5px;">STREET
-                                                ADDRESS 1 *
+                                            <p class="col-sm-offset-2 col-sm-12 help-block" style="font-weight: bold;margin-top:10px; margin-bottom:5px;">STREET ADDRESS 1 *
                                             </p>
                                             <div class="col-sm-12">
-                                                <input style="font-size:16px;" type="text" class="form-control"
-                                                    id="inputAddressLine1" name="address-line1"
-                                                    placeholder="Employee Street Address 1">
+                                                <input style="font-size:16px;" type="text" class="form-control" id="inputAddressLine1" name="address-line1" placeholder="Employee Street Address 1">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                            <p class="col-sm-offset-2 col-sm-12 help-block"
-                                                style="font-weight:bold;margin-bottom:5px;">STREET ADDRESS 1 *
-                                            </p>
+                                            <p class="col-sm-offset-2 col-sm-12 help-block" style="font-weight:bold;margin-bottom:5px;">STREET ADDRESS 1 * </p>
                                             <div class="col-sm-12">
-                                                <input style="font-size:16px;" type="text" class="form-control"
-                                                    id="inputAddressLine2" name="address-line2"
-                                                    placeholder="Employee Street Address 2 (Optional)">
+                                                <input style="font-size:16px;" type="text" class="form-control" id="inputAddressLine2" name="address-line2" placeholder="Employee Street Address 2 (Optional)">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="inputCityTown" style="font-weight:bold;"
-                                                class="col-sm-12 control-label">City</label>
+                                            <label for="inputCityTown" style="font-weight:bold;" class="col-sm-12 control-label">City</label>
                                             <div class="col-sm-12">
-                                                <input style="font-size:16px;" type="text" class="form-control"
-                                                    id="inputCityTown" name="city-town" placeholder="City">
+                                                <input style="font-size:16px;" type="text" class="form-control" id="inputCityTown" name="city-town" placeholder="City">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="selectCountry" style="font-weight:bold;"
-                                                class="col-sm-12 control-label">State</label>
+                                            <label for="selectCountry" style="font-weight:bold;" class="col-sm-12 control-label">State</label>
                                             <div class="col-sm-12">
-                                                <select class="form-control select-box" id="selectCountry"
-                                                    name="country">
+                                                <select class="form-control select-box" id="selectCountry" name="country">
                                                     <option value="" selected="selected">Select</option>
                                                     <option value="AF">Afghanistan</option>
                                                     <option value="AL">Albania</option>
                                                     <option value="DZ">Algeria</option>
                                                     <option value="AS">American Samoa</option>
-
                                                 </select>
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="inputZipPostalCode" style="font-weight:bold;"
-                                                class="col-sm-12 control-label">Zip
-                                                Code</label>
+                                            <label for="inputZipPostalCode" style="font-weight:bold;" class="col-sm-12 control-label">Zip Code</label>
                                             <div class="col-sm-12">
-                                                <input style="font-size:16px;" type="text" class="form-control"
-                                                    id="inputZipPostalCode" name="zip-postal-code"
-                                                    placeholder="Zip-Code">
+                                                <input style="font-size:16px;" type="text" class="form-control" id="inputZipPostalCode" name="zip-postal-code" placeholder="Zip-Code">
                                             </div>
                                         </div>
-
-
                                     </form>
                                 </div>
                             </div>
@@ -444,10 +399,8 @@
                 </div>
                 <div class="modal-footer" style="display: inline-block;">
                     <div class="d-flex justify-content-between pt-2">
-                        <button class="btn-secondary" data-bs-dismiss="modal"
-                            style="border-radius:20px; border:none;font-size:12px; padding:5px 10px;">Cancel</button>
-                        <button class="btn-danger" id="store-name"
-                            style="border-radius:20px; border:none;font-size:12px; padding:5px 15px;">Save</button>
+                        <button class="btn-secondary" data-bs-dismiss="modal" style="border-radius:20px; border:none; font-size:12px; padding:5px 10px;">Cancel</button>
+                        <button class="btn-danger" id="store-name" style="border-radius:20px; border:none; font-size:12px; padding:5px 15px;">Save</button>
                     </div>
                 </div>
             </div>
