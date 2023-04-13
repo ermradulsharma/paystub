@@ -129,7 +129,7 @@ class LoginController extends Controller
 
         $response['message'] = "Login successfully";
         $response['user_type'] = $user->role_id == 1 ? 'Admin' : 'User';
-        $response['firstName'] = $user->first_name ?? '';
+        $response['firstName'] = $user->name ?? '';
         return response()->json($response, 200);
     }
 
@@ -172,21 +172,8 @@ class LoginController extends Controller
             $user->save();
             $response['message'] = "Verification code sent successfully";
         }
-
-        /* $moreData = [
-            "otp" => $code
-        ];
-        $mailData = [
-            "email" => $request->email,
-            "title" => "Verification code"
-        ];
-        Mail::send('mail.verify', $moreData, function ($message) use ($mailData) {
-            $message->to($mailData['email']);
-            $message->subject($mailData['title']);
-        }); */
-
-
         $response['email'] = $user->email;
+        $response['role'] = $user->role_id;
         $response['type'] = $user->is_completed;
         return response()->json($response, 200);
     }
