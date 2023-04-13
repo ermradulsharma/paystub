@@ -119,7 +119,7 @@ Route::group(['middleware' => ['auth'],'namespace'=>'App\Http\Controllers'], fun
 
     Route::get('profile', [HomeController::class, 'userDetails'])->name('profile');
     Route::post('profile/details/save', [HomeController::class, 'storeDetails'])->name('store.details');
-
+    Route::post('profile-setup', [HomeController::class, 'storeDetails']);
     Route::get('address/fetch', [AddressBookController::class, 'fetchAddress'])->name('fetch.address');
     Route::get('address/fetch/data', [AddressBookController::class, 'fetchAddressById'])->name('get.address');
     Route::post('address/save', [AddressBookController::class, 'storeAddress'])->name('store.address');
