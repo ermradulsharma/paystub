@@ -404,7 +404,7 @@
         </div>
     </div>
 
-    <div class="modal fade" id="userName">
+    {{-- <div class="modal fade" id="userName">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <!-- Modal Header -->
@@ -435,7 +435,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <div class="modal fade" id="userName2">
         <div class="modal-dialog modal-dialog-centered">
@@ -621,9 +621,9 @@
             $("#userName").modal("show");
         });
 
-        $("#store-name").click(function(e) {
-            submitUserData($('#userNameForm')[0]);
-        });
+        // $("#store-name").click(function(e) {
+        //     submitUserData($('#userNameForm')[0]);
+        // });
 
         $(".username2").click(function() {
             $("#userName2").modal("show");
