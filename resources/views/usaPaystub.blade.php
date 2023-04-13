@@ -1,6 +1,19 @@
 @extends('layouts.app')
 
 @section('content')
+    <style>
+        .address_book {
+            width: 14%;
+            position: relative;
+            right: 17px;
+        }
+
+        .address_book_1 {
+            width: 14%;
+            position: relative;
+            right: 17px;
+        }
+    </style>
     <link rel="stylesheet" href="{{ asset('user') }}/css/bootstrap-datepicker.min.css">
     <!-- Modal Start -->
     <div class="modal fade" id="openEye" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -241,10 +254,12 @@
                                     <option data-name="" value="ewrwe">Select Address</option>
                                     @if ($employeeList->count() > 0)
                                         @foreach ($employeeList as $key => $employee)
-                                            <option data-name="{{ $employee->name }}" data-address1="{{ $employee->address_1 }}"
-                                                data-address2="{{ $employee->address_2 }}" data-city="{{ $employee->city }}"
-                                                data-state="{{ $employee->state }}" data-zip="{{ $employee->zip_code }}"
-                                                value="{{ $employee->name }}">{{ $employee->name }}</option>
+                                            <option data-name="{{ $employee->name }}"
+                                                data-address1="{{ $employee->address_1 }}"
+                                                data-address2="{{ $employee->address_2 }}"
+                                                data-city="{{ $employee->city }}" data-state="{{ $employee->state }}"
+                                                data-zip="{{ $employee->zip_code }}" value="{{ $employee->name }}">
+                                                {{ $employee->name }}</option>
                                         @endforeach
                                     @endif
                                 </select>
