@@ -401,17 +401,14 @@
 <script>
     $('.statutory_emp').click(function() {
             var statutory_emp = $('.statutory_emp').is(':checked');
-            console.log('statutory_emp', statutory_emp);
             $('.statutory_emp').val(statutory_emp);
         });
         $('.retirement_plan').click(function() {
             var checked_2 = $('.retirement_plan').is(':checked');
-            console.log('checked_2', checked_2);
             $('.retirement_plan').val(checked_2);
         });
         $('.third_party_sick').click(function() {
             var checked_3 = $('.third_party_sick').is(':checked');
-            console.log('checked_3', checked_3);
             $('.third_party_sick').val(checked_3);
         });
 </script>

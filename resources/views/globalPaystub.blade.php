@@ -788,8 +788,7 @@
                     var status = $('option:selected', '.at_id').attr('data-status');
                     var stub = $('option:selected', '.at_id').data('stub');
                     var check = $('option:selected', '.at_id').data('check');
-                    console.log('check', check);
-                    console.log('stub', stub);
+
                     if (stub == 1 && check == 0) {
                         $('.stubxc').each(function() {
                             $(".stubxc").removeClass("col-md-4");
@@ -899,7 +898,6 @@
 
             $('.basicTem').click(function() {
                 var imageattr = $('option:selected', '.bt_id').attr('data-src');
-                console.log('imageattr', imageattr);
                 $('.setImage').attr('src', imageattr);
                 if (imageattr != null && imageattr != undefined) {
                     $('#openEye').modal('show');
@@ -946,7 +944,6 @@
                         }
                     }
                     setLocation(obj);
-                    console.log(obj);
                 }
             });
         });

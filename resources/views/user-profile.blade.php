@@ -312,9 +312,7 @@
                 <!-- Modal Header -->
                 <div class="modal-header" style="background: #115caecf;">
                     <h4 class="modal-title" style="text-transform: capitalize;color:#fff;">Address Book</h4>
-                    <button type="button"
-                        style="border: none; background-color:transparent; color:#fff;font-size:20px;padding:0;"
-                        class="btn-close" data-bs-dismiss="modal" aria-label="Close">x</button>
+                    <button type="button" style="border: none; background-color:transparent; color:#fff;font-size:20px;padding:0;" class="btn-close" data-bs-dismiss="modal" aria-label="Close">x</button>
                 </div>
 
                 <!-- Modal body -->
@@ -417,9 +415,7 @@
                 <!-- Modal Header -->
                 <div class="modal-header" style="background: #115caecf;">
                     <h4 class="modal-title" style="text-transform: capitalize;color:#fff;">Change Contact Name</h4>
-                    <button type="button"
-                        style="border: none; background-color:transparent; color:#fff;font-size:20px;padding:0;"
-                        class="btn-close" data-bs-dismiss="modal" aria-label="Close">x</button>
+                    <button type="button" style="border: none; background-color:transparent; color:#fff;font-size:20px;padding:0;" class="btn-close" data-bs-dismiss="modal" aria-label="Close">x</button>
                 </div>
 
                 <!-- Modal body -->
@@ -428,16 +424,13 @@
                         @csrf
                         <input type="hidden" value="user-name" name="type">
                         <label class="label-text" for="css">Contact Name<span style="color:red;">*</span></label>
-                        <input class="contact-box" type="text" name="uname" id="user-name"
-                            placeholder="Contact Name">
+                        <input class="contact-box" type="text" name="uname" id="user-name" placeholder="Contact Name">
                     </form>
                 </div>
                 <div class="modal-footer" style="display: inline-block;">
                     <div class="d-flex justify-content-between pt-2">
-                        <button class="btn-secondary" data-bs-dismiss="modal"
-                            style="border-radius:20px; border:none;font-size:12px; padding:5px 10px;">Cancel</button>
-                        <button class="btn-danger" id="store-name"
-                            style="border-radius:20px; border:none;font-size:12px; padding:5px 15px;">Save</button>
+                        <button class="btn-secondary" data-bs-dismiss="modal" style="border-radius:20px; border:none;font-size:12px; padding:5px 10px;">Cancel</button>
+                        <button class="btn-danger" id="store-name" style="border-radius:20px; border:none;font-size:12px; padding:5px 15px;">Save</button>
                     </div>
                 </div>
             </div>
@@ -638,13 +631,13 @@
 
         $("#store-email").click(function(e) {
             //submitUserData($('#userEmailForm')[0],".username2","#userName2");
-            var form = $('#userEmailForm')[0];
+            var form = $('#userNameForm1')[0];
             $.ajax({
                 type: 'POST',
                 url: form.action,
                 data: $(form).serialize(),
                 success: function(data) {
-                    console.log('data', data);
+
                     if ($.isEmptyObject(data.error)) {
                         toastr.success(data.message);
                         $("#userName2").modal("hide");
@@ -680,7 +673,7 @@
             $.ajax({
                 url: "{{ route('sendOtp') }}?email=" + email,
                 success: function(data) {
-                    console.log('data', data);
+
                     if ($.isEmptyObject(data.error)) {
                         toastr.success(data.message);
 
@@ -717,13 +710,13 @@
 
         $(document).on('click', '.btn-edit', function(e) {
             var recordId = $(this).data('record');
-            console.log('btn-edit-', recordId);
+
             $.ajax({
                 url: "{{ route('get.address') }}?record=" + recordId,
                 datatype: "json",
                 success: function(data) {
                     if ($.isEmptyObject(data.error)) {
-                        console.log('record-number-', data);
+
                         $('#addressForm input[name=addressId]').val(data.addressObj.id);
                         $('#addressForm input[name=fullName]').val(data.addressObj.name);
                         $('#addressForm input[name=type]').val(data.addressObj.type);
@@ -747,7 +740,7 @@
                 url: form.action,
                 data: $(form).serialize(),
                 success: function(data) {
-                    console.log('data', data);
+                  
                     if ($.isEmptyObject(data.error)) {
                         toastr.success(data.message);
                         if (data.pageReload == 'no') {
