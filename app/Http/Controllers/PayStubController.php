@@ -22,10 +22,16 @@ class PayStubController extends Controller
         $basicType = Template::where(['state' => 'usa', 'type' => 'basic', 'status' => 1])->orderBy('title')->with('images')->get();
         $advanceType = Template::where(['state' => 'usa', 'type' => 'advance', 'status' => 1])->orderBy('title')->with('images')->get();
         $stateTaxes = StateTax::orderBy('state')->get();
-        $employerList = Address::where(['type'=>'employer','user_id'=>Auth::user()->id])->orderBy('id', 'DESC')->get();
-        $employeeList = Address::where(['type'=>'employee','user_id'=>Auth::user()->id])->orderBy('id', 'DESC')->get();
+        if (Auth::check()) {
+            $employerList = Address::where(['type' => 'employer', 'user_id' => Auth::user()->id])->orderBy('id', 'DESC')->get();
+            $employeeList = Address::where(['type' => 'employee', 'user_id' => Auth::user()->id])->orderBy('id', 'DESC')->get();
+        } else {
+            $employerList = Address::where(['type' => 'employer'])->orderBy('id', 'DESC')->get();
+            $employeeList = Address::where(['type' => 'employee'])->orderBy('id', 'DESC')->get();
+        }
+
         $currencies = Currency::get();
-        return view('usaPaystub', compact('basicType', 'advanceType', 'deduction', 'stateTaxes', 'currencies', 'employerList','employeeList'));
+        return view('usaPaystub', compact('basicType', 'advanceType', 'deduction', 'stateTaxes', 'currencies', 'employerList', 'employeeList'));
     }
 
     public function ukPayStub()

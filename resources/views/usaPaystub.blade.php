@@ -62,18 +62,25 @@
                         <div class=" box-usa">
                             <div class="row justify-content-between py-3">
                                 <h5 class="box-h5">Company Info</h5>
-                                <select name="employerAddress" id="employerAddress" class="address_book">
-                                    <option data-name="" value="ewrwe">Select Address</option>
-                                    @if ($employerList->count() > 0)
-                                        @foreach ($employerList as $key => $employer)
-                                            <option data-name="{{ $employer->name }}"
-                                                data-address1="{{ $employer->address_1 }}"
-                                                data-address2="{{ $employer->address_2 }}" data-city="{{ $employer->city }}"
-                                                data-state="{{ $employer->state }}" data-zip="{{ $employer->zip_code }}"
-                                                value="{{ $employer->name }}">{{ $employer->name }}</option>
-                                        @endforeach
-                                    @endif
-                                </select>
+                                @guest
+                                    <select name="employerAddress" id="employerAddress" class="address_book">
+                                        <option data-name="" value="ewrwe">Select Address</option>
+                                    </select>
+                                @endguest
+                                @auth
+                                    <select name="employerAddress" id="employerAddress" class="address_book">
+                                        <option data-name="" value="ewrwe">Select Address</option>
+                                        @if ($employerList->count() > 0)
+                                            @foreach ($employerList as $key => $employer)
+                                                <option data-name="{{ $employer->name }}"
+                                                    data-address1="{{ $employer->address_1 }}"
+                                                    data-address2="{{ $employer->address_2 }}" data-city="{{ $employer->city }}"
+                                                    data-state="{{ $employer->state }}" data-zip="{{ $employer->zip_code }}"
+                                                    value="{{ $employer->name }}">{{ $employer->name }}</option>
+                                            @endforeach
+                                        @endif
+                                    </select>
+                                @endauth
                             </div>
 
 
@@ -250,19 +257,27 @@
                         <div class=" box-usa">
                             <div class="row justify-content-between py-3">
                                 <h5 class="box-h5">Employee Info</h5>
-                                <select name="employeeAddress" id="employeeAddress" class="address_book_1">
-                                    <option data-name="" value="ewrwe">Select Address</option>
-                                    @if ($employeeList->count() > 0)
-                                        @foreach ($employeeList as $key => $employee)
-                                            <option data-name="{{ $employee->name }}"
-                                                data-address1="{{ $employee->address_1 }}"
-                                                data-address2="{{ $employee->address_2 }}"
-                                                data-city="{{ $employee->city }}" data-state="{{ $employee->state }}"
-                                                data-zip="{{ $employee->zip_code }}" value="{{ $employee->name }}">
-                                                {{ $employee->name }}</option>
-                                        @endforeach
-                                    @endif
-                                </select>
+                                @guest
+                                    <select name="employeeAddress" id="employeeAddress" class="address_book_1">
+                                        <option data-name="" value="ewrwe">Select Address</option>
+                                    </select>
+                                @endguest
+                                @auth
+                                    <select name="employeeAddress" id="employeeAddress" class="address_book_1">
+                                        <option data-name="" value="ewrwe">Select Address</option>
+                                        @if ($employeeList->count() > 0)
+                                            @foreach ($employeeList ?? [] as $key => $employee)
+                                                <option data-name="{{ $employee->name }}"
+                                                    data-address1="{{ $employee->address_1 }}"
+                                                    data-address2="{{ $employee->address_2 }}"
+                                                    data-city="{{ $employee->city }}" data-state="{{ $employee->state }}"
+                                                    data-zip="{{ $employee->zip_code }}" value="{{ $employee->name }}">
+                                                    {{ $employee->name }}</option>
+                                            @endforeach
+                                        @endif
+                                    </select>
+                                @endauth
+
                             </div>
                             <div class="row mb-3">
                                 <div class="col-md-4 mt-4">
