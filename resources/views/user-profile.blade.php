@@ -774,7 +774,7 @@
                 $("#eye-icon_" + id).removeClass("fa fa-eye eye-icon");
             }
         });
-    });
+
 
     $("#verify-email").click(function(e) {
         submitUserData($('#loginOtp')[0]);

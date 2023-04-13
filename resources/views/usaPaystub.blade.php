@@ -50,10 +50,18 @@
                             <h5 class="box-h5">Company Info</h5>
                             
                             <select name="employerAddress" id="employerAddress">
-                                <option data-name="Arvind" value="ewrwe">asda</option>
-                                <option data-name="anij" value="ewrwe">asda</option>
-                                <option data-name="sahil" value="ewrwe">asda</option>
-                                <option data-name="dev" value="ewrwe">asda</option>
+                                <option data-name="" value="ewrwe">Select Address</option>
+                                @if ($employerList->count() > 0)
+                                    @foreach ($employerList as $key =>$employer )
+                                        <option data-name="{{$employer->name}}"
+                                            data-address1="{{$employer->address_1}}"
+                                            data-address2="{{$employer->address_2}}"
+                                            data-city="{{$employer->city}}"
+                                            data-state="{{$employer->state}}"
+                                            data-zip="{{$employer->zip_code}}"
+                                             value="{{$employer->name}}">{{$employer->name}}</option>
+                                    @endforeach
+                                @endif
                             </select>
 
                             <div class="row mb-3 ">
@@ -210,10 +218,18 @@
             <div>
                 <h5 class="box-h5">Employee Info</h5>
                 <select name="employeeAddress" id="employeeAddress">
-                    <option value="ewrwe">asda</option>
-                    <option value="ewrwe">asda</option>
-                    <option value="ewrwe">asda</option>
-                    <option value="ewrwe">asda</option>
+                    <option data-name="" value="ewrwe">Select Address</option>
+                    @if ($employeeList->count() > 0)
+                        @foreach ($employeeList as $key =>$employee )
+                            <option data-name="{{$employee->name}}"
+                                data-address1="{{$employee->address_1}}"
+                                data-address2="{{$employee->address_2}}"
+                                data-city="{{$employee->city}}"
+                                data-state="{{$employee->state}}"
+                                data-zip="{{$employee->zip_code}}"
+                                value="{{$employee->name}}">{{$employee->name}}</option>
+                        @endforeach
+                    @endif
                 </select>
                 <div class="row mb-3">
                     <div class="col-md-12">
@@ -1102,7 +1118,22 @@
     $( document ).ready(function() {
         $("#employerAddress").change(function() {
             $('#cname').val($('option:selected', this).data('name'))
+            $('#address_1').val($('option:selected', this).data('address1'))
+            $('#address_2').val($('option:selected', this).data('address2'))
+            $('#city').val($('option:selected', this).data('city'))
+            $('#state').val($('option:selected', this).data('state'))
+            $('#zip_code').val($('option:selected', this).data('zip'))
         });
+
+        $("#employeeAddress").change(function() {
+            $('#emp_name').val($('option:selected', this).data('name'))
+            $('#emp_street_1').val($('option:selected', this).data('address1'))
+            $('#emp_street_2').val($('option:selected', this).data('address2'))
+            $('#emp_city').val($('option:selected', this).data('city'))
+            $('#emp_state').val($('option:selected', this).data('state'))
+            $('#emp_zip_code').val($('option:selected', this).data('zip'))
+        });
+
     });
     </script>
     <script src="{{ asset('user') }}/js/calculations.js"></script>
