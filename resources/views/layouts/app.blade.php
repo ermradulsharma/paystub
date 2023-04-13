@@ -403,10 +403,8 @@
                 $.ajax({
                     url: "{{ route('sendOtp') }}?email=" + email,
                     success: function(data) {
-
                         if ($.isEmptyObject(data.error)) {
                             toastr.success(data.message);
-
                         } else {
                             printErrorMsg(data.error);
                         }

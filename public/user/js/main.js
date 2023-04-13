@@ -176,10 +176,6 @@ function handleCredentialResponse(response) {
     return false;
 }
 
-
-
-
-
 $("#forgotPassword").on("submit", function () {
     $.ajax({
         url: $(this).attr("action"),
