@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
     <link rel="stylesheet" href="{{ asset('user') }}/css/bootstrap-datepicker.min.css">
     <!-- Modal Start -->
     <div class="modal fade" id="openEye" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -189,7 +190,8 @@
                                                         data-src="{{ $advance_temp->images->file ?? '' }}"
                                                         data-status="{{ $advance_temp->template_element ? true : false }}"
                                                         data-stub="{{ $advance_temp->stub_no }}"
-                                                        data-clock="{{ $advance_temp->co_no }}">
+                                                        data-clock="{{ $advance_temp->co_no }}"
+                                                        data-check="{{ $advance_temp->check_no }}">
                                                         {{ $advance_temp->name ?? '' }} </option>
                                                 @endforeach
                                             </select>
@@ -316,6 +318,18 @@
                                             value="{{ $invoice->stub_no ?? '' }}">
                                     </div>
                                 </div>
+                                <div class="col-md-4 stubxc checkxcv d-none">
+                                    <div>
+                                        <label for="check_no" class="lable">Check No <span
+                                                class="redColor">*</span></label>
+                                        <input type="text" id="check_no" name="check_no"
+                                            class="w-100  input-box-font removeDiv" placeholder="123456789" maxlength="9"
+                                            minlength="6"
+                                            onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')"
+                                            value="{{ $invoice->check_no ?? '' }}">
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -415,10 +429,10 @@
                             <div class="row mb-3">
                                 <div class="col-md-3 mt-4">
                                     <div>
-                                        <label for="hourly" class="lable">HOURLY <span class="redColor">*</span>
+                                        <label for="hourly" class="lable">Rate / Unit <span class="redColor">*</span>
                                         </label>
                                         <input type="text" step="0.5" id="hourly" name="hourly"
-                                            value="{{ $invoice->hourly ?? '' }}" placeholder="Hourly"
+                                            value="{{ $invoice->hourly ?? '' }}" placeholder="Wage"
                                             class="w-100 p-2  textInputFontSize hourly">
                                     </div>
 
@@ -821,6 +835,18 @@
                                         <input class="earnbtn text-center " value="{{ $invoice->co_number ?? '' }}"
                                             name="co_number">
                                     </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-6 mb-2 advicex advicexv d-none">
+                                        <div>
+                                            <p class="p-0 m-0 " style="font-family: serif;">DEPT.<span
+                                                    class="redColor">*</span></p>
+                                            <input type="text" name="dept_number" id="dept_number"
+                                                class="earnbtn removeDiv text-center" maxlength="6" minlength="4"
+                                                placeholder="123456"
+                                                onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')"
+                                                value="{{ $invoice->dept_number ?? '' }}">
+                                        </div>
+
+                                    </div>
                                     <div class="col-lg-2 col-md-4 col-sm-6 mb-2 advicex advicexv d-none">
                                         <p class="p-0 m-0" style="font-family: serif;">FILE.<span
                                                 class="redColor">*</span>
@@ -895,20 +921,33 @@
             if (value != '') {
                 var status = $('select#basic_temp option:selected').attr('data-status');
                 var stub = $('select#basic_temp option:selected').data('stub');
-                if (stub == 1) {
-                    $('.stubxc').each(function() {
-                        $(".stubxc").removeClass("col-md-4");
-                        $(".stubxcv").removeClass("d-none");
-                        $(".stubxc").addClass("col-md-3");
-                    });
-                }
-                if (stub == 0) {
-                    $('.stubxc').each(function() {
-                        $(".stubxc").addClass("col-md-4");
-                        $(".stubxcv").addClass("d-none");
-                        $(".stubxc").removeClass("col-md-3");
-                    });
-                }
+                var check = $('select#advance_temp option:selected').data('check');
+
+                if (stub == 1 && check == 0) {
+                        $('.stubxc').each(function() {
+
+                            $(".checkxcv").addClass("d-none");
+                            $(".stubxc").removeClass("col-md-4");
+                            $(".stubxcv").removeClass("d-none");
+                            $(".stubxc").addClass("col-md-3");
+                        });
+                    }
+                    if (stub == 0  && check == 1) {
+                        $('.stubxc').each(function() {
+                            $(".stubxc").addClass("col-md-3");
+                            $(".stubxcv").addClass("d-none");
+                            $(".stubxc").removeClass("col-md-4");
+                            $(".checkxcv").removeClass("d-none");
+                        });
+                    }
+                    if (stub == 0 && check == 0) {
+                        $('.stubxc').each(function() {
+                            $(".stubxc").addClass("col-md-4");
+                            $(".stubxcv").addClass("d-none");
+                            $(".checkxcv").addClass("d-none");
+                            $(".stubxc").removeClass("col-md-3");
+                        });
+                    }
                 if (status == 1) {
                     $(".tempElemant").removeClass("d-none");
                 } else {
@@ -926,20 +965,33 @@
             if (value_2 != '') {
                 var status = $('select#advance_temp option:selected').attr('data-status');
                 var stub = $('select#advance_temp option:selected').data('stub');
-                if (stub == 1) {
-                    $('.stubxc').each(function() {
-                        $(".stubxc").removeClass("col-md-4");
-                        $(".stubxcv").removeClass("d-none");
-                        $(".stubxc").addClass("col-md-3");
-                    });
-                }
-                if (stub == 0) {
-                    $('.stubxc').each(function() {
-                        $(".stubxc").addClass("col-md-4");
-                        $(".stubxcv").addClass("d-none");
-                        $(".stubxc").removeClass("col-md-3");
-                    });
-                }
+                var check = $('select#advance_temp option:selected').data('check');
+
+                if (stub == 1 && check == 0) {
+                        $('.stubxc').each(function() {
+
+                            $(".checkxcv").addClass("d-none");
+                            $(".stubxc").removeClass("col-md-4");
+                            $(".stubxcv").removeClass("d-none");
+                            $(".stubxc").addClass("col-md-3");
+                        });
+                    }
+                    if (stub == 0  && check == 1) {
+                        $('.stubxc').each(function() {
+                            $(".stubxc").addClass("col-md-3");
+                            $(".stubxcv").addClass("d-none");
+                            $(".stubxc").removeClass("col-md-4");
+                            $(".checkxcv").removeClass("d-none");
+                        });
+                    }
+                    if (stub == 0 && check == 0) {
+                        $('.stubxc').each(function() {
+                            $(".stubxc").addClass("col-md-4");
+                            $(".stubxcv").addClass("d-none");
+                            $(".checkxcv").addClass("d-none");
+                            $(".stubxc").removeClass("col-md-3");
+                        });
+                    }
                 if (status == 1) {
                     $(".tempElemant").removeClass("d-none");
                     var clock = $('select#advance_temp option:selected').data('clock');
@@ -980,17 +1032,32 @@
                 if (value != '') {
                     var status = $('option:selected', '.at_id').attr('data-status');
                     var stub = $('option:selected', '.at_id').data('stub');
-                    if (stub == 1) {
+                    var check = $('option:selected', '.at_id').data('check');
+                    console.log('check', check);
+                    console.log('stub', stub);
+
+                    if (stub == 1 && check == 0) {
                         $('.stubxc').each(function() {
+
+                            $(".checkxcv").addClass("d-none");
                             $(".stubxc").removeClass("col-md-4");
                             $(".stubxcv").removeClass("d-none");
                             $(".stubxc").addClass("col-md-3");
                         });
                     }
-                    if (stub == 0) {
+                    if (stub == 0  && check == 1) {
+                        $('.stubxc').each(function() {
+                            $(".stubxc").addClass("col-md-3");
+                            $(".stubxcv").addClass("d-none");
+                            $(".stubxc").removeClass("col-md-4");
+                            $(".checkxcv").removeClass("d-none");
+                        });
+                    }
+                    if (stub == 0 && check == 0) {
                         $('.stubxc').each(function() {
                             $(".stubxc").addClass("col-md-4");
                             $(".stubxcv").addClass("d-none");
+                            $(".checkxcv").addClass("d-none");
                             $(".stubxc").removeClass("col-md-3");
                         });
                     }
@@ -1131,13 +1198,13 @@
                 $('#emp_street_1').css('border-color', 'gray');
                 $('.0_address_1').remove();
             }
-            if (obj.neighborhood != undefined) {
-                $("#address_2").val(obj.neighborhood);
-                $('#address_2').css('border-color', 'gray');
-                $('.0_address_2').remove();
-            } else {
-                $("#address_2").val('');
-            }
+            // if (obj.neighborhood != undefined) {
+            //     $("#address_2").val(obj.neighborhood);
+            //     $('#address_2').css('border-color', 'gray');
+            //     $('.0_address_2').remove();
+            // } else {
+            //     $("#address_2").val('');
+            // }
             if (obj.locality != undefined) {
                 $("#city").val(obj.locality);
                 $('#city').css('border-color', 'gray');
@@ -1208,13 +1275,13 @@
                 $('.0_emp_street_1').remove();
             }
 
-            if (obj.neighborhood != undefined) {
-                $("#emp_street_2").val(obj.neighborhood);
-                $('#emp_street_2').css('border-color', 'gray');
-                $(".0_emp_street_2").remove();
-            } else {
-                $("#emp_street_2").val('');
-            }
+            // if (obj.neighborhood != undefined) {
+            //     $("#emp_street_2").val(obj.neighborhood);
+            //     $('#emp_street_2').css('border-color', 'gray');
+            //     $(".0_emp_street_2").remove();
+            // } else {
+            //     $("#emp_street_2").val('');
+            // }
             if (obj.locality != undefined) {
                 $("#emp_city").val(obj.locality);
                 $('#emp_city').css('border-color', 'gray');
