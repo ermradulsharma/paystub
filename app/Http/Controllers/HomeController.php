@@ -160,7 +160,6 @@ class HomeController extends Controller
         }
 
         if ($request->type == 'setup-account') {
-            // dd($request->all());
             $validator = Validator::make($request->all(), [
                 'uname' => 'required|min:3',
                 'password' => 'required|min:6|confirmed',
@@ -178,12 +177,19 @@ class HomeController extends Controller
             $userObj->name = $request->uname ?? '';
             $userObj->password = bcrypt($request->password);
             $userObj->is_completed = '1';
-            if (!$userObj->save()) {
+            if($userObj->save()){
+                // Auth::login($userObj);
+                $response['data'] = $userObj->name ?? '';
+                $response['message'] = "Your account setup successfully.";
+                $response['status'] = STATUS_OK;
+                return response()->json($response, $response['status']);
+            }
+            /* if (!$userObj->save()) {
                 return response()->json(['error' => ['Something went wrong.']]);
             }
             $userObj = User::where('id', $userId)->first();
             $request->session()->flash('message', 'Account setup successfully.');
-            return response()->json(['user' => $userObj, 'message' => 'Account setup successfully.']);
+            return response()->json(['data' => $userObj, 'message' => 'Your account setup successfully.']); */
         }
     }
 

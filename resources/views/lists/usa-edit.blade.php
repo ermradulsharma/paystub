@@ -1198,13 +1198,13 @@
                 $('#emp_street_1').css('border-color', 'gray');
                 $('.0_address_1').remove();
             }
-            if (obj.neighborhood != undefined) {
-                $("#address_2").val(obj.neighborhood);
-                $('#address_2').css('border-color', 'gray');
-                $('.0_address_2').remove();
-            } else {
-                $("#address_2").val('');
-            }
+            // if (obj.neighborhood != undefined) {
+            //     $("#address_2").val(obj.neighborhood);
+            //     $('#address_2').css('border-color', 'gray');
+            //     $('.0_address_2').remove();
+            // } else {
+            //     $("#address_2").val('');
+            // }
             if (obj.locality != undefined) {
                 $("#city").val(obj.locality);
                 $('#city').css('border-color', 'gray');
@@ -1275,13 +1275,13 @@
                 $('.0_emp_street_1').remove();
             }
 
-            if (obj.neighborhood != undefined) {
-                $("#emp_street_2").val(obj.neighborhood);
-                $('#emp_street_2').css('border-color', 'gray');
-                $(".0_emp_street_2").remove();
-            } else {
-                $("#emp_street_2").val('');
-            }
+            // if (obj.neighborhood != undefined) {
+            //     $("#emp_street_2").val(obj.neighborhood);
+            //     $('#emp_street_2').css('border-color', 'gray');
+            //     $(".0_emp_street_2").remove();
+            // } else {
+            //     $("#emp_street_2").val('');
+            // }
             if (obj.locality != undefined) {
                 $("#emp_city").val(obj.locality);
                 $('#emp_city').css('border-color', 'gray');

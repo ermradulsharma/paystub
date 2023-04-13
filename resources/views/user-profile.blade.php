@@ -100,33 +100,40 @@
             <div class="row">
                 <div class="col-lg-2" style="padding: 0; height:95vh; border-right:1px solid #ddd;">
                     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                        <a class="nav-link  my-account {{ Request::get('tab') !=2 ? 'active':''}}" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home"
-                            role="tab" aria-controls="v-pills-home" aria-selected="true">My Account</a>
-                        <a class="nav-link  address-book {{ Request::get('tab')==2 ? 'active':''}}" id="v-pills-profile-tab" data-toggle="pill"
-                            href="#v-pills-profile" role="tab" aria-controls="v-pills-profile"
-                            aria-selected="false">Address
-                            Book</a>
+                        <a class="nav-link  my-account {{ Request::get('tab') != 2 ? 'active' : '' }}" id="v-pills-home-tab"
+                            data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home"
+                            aria-selected="true">My Account</a>
+                        <a class="nav-link  address-book {{ Request::get('tab') == 2 ? 'active' : '' }}"
+                            id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab"
+                            aria-controls="v-pills-profile" aria-selected="false">Address Book</a>
                     </div>
                 </div>
                 <div class="col-lg-10">
                     <div class="tab-content" style="padding-top: 20px;" id="v-pills-tabContent">
-                        <div class="tab-pane fade {{ Request::get('tab') !=2 ? 'show active':''}}" id="v-pills-home" role="tabpanel"
-                            aria-labelledby="v-pills-home-tab" style="display:flex;">
-                            <div class="col-lg-6 col-md-6" style="padding: 0;">
-                                <div class="right-side-bar">
-                                    <h4 style="color:#012c63; line-height:26px;">{{ __('User Profile') }}</h4>
-                                    <P style="color:#333!important;font-weight:500;">
-                                        {{ __('Manage your profile, security, and language
-                                                                            preferences.') }}
-                                    </P>
-                                    <div class="profile-outer">
-                                        <div class="d-flex">
-                                            <div class="profile-icon-outer">
-                                                <i class="fa fa-user user"></i>
+                        <div class="tab-pane fade {{ Request::get('tab') != 2 ? 'show active' : '' }}" id="v-pills-home"
+                            role="tabpanel" aria-labelledby="v-pills-home-tab">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6" style="padding: 0;">
+                                    <div class="right-side-bar">
+                                        <h4 style="color:#012c63; line-height:26px;">{{ __('User Profile') }}</h4>
+                                        <P style="color:#333!important;font-weight:500;">
+                                            {{ __('Manage your profile, security, and language preferences.') }}</P>
+                                        <div class="profile-outer">
+                                            <div class="d-flex">
+                                                <div class="profile-icon-outer">
+                                                    <i class="fa fa-user user"></i>
+                                                </div>
+                                                <div class="user-center-text">
+                                                    <h6 style="padding: 0; margin:0px;color: #5a5858;">
+                                                        {{ __('Contact Name') }}</h6>
+                                                    <p style="padding:0px;margin:0px;">{{ $userObj->name ?? '' }}</p>
+                                                </div>
                                             </div>
 
                                             <div class="edit-icon">
-                                                <img class="username" style="width: 15px;" data-name="{{ $userObj->name ?? '' }}" src={{ asset('images/pen-solid.svg') }}>
+                                                <img class="username" style="width: 15px;"
+                                                    data-name="{{ $userObj->name ?? '' }}"
+                                                    src={{ asset('images/pen-solid.svg') }}>
                                             </div>
                                         </div>
                                         <div class="profile-outer">
@@ -135,13 +142,15 @@
                                                     <i class="fa fa-envelope profile-icon"></i>
                                                 </div>
                                                 <div class="user-center-text">
-                                                    <h6 style="padding: 0; margin:0px;color: #5a5858;">{{ __('Email Address') }}</h6>
+                                                    <h6 style="padding: 0; margin:0px;color: #5a5858;">
+                                                        {{ __('Email Address') }}</h6>
                                                     <p style="padding:0px;margin:0px;">{{ $userObj->email ?? '' }}</p>
                                                 </div>
                                             </div>
 
                                             <div class="edit-icon">
-                                                <img class="username2" data-email="{{ $userObj->email ?? '' }}" style="width: 15px;" src={{ asset('images/pen-solid.svg') }}>
+                                                <img class="username2" data-email="{{ $userObj->email ?? '' }}"
+                                                    style="width: 15px;" src={{ asset('images/pen-solid.svg') }}>
                                             </div>
                                         </div>
                                         <div class="profile-outer">
@@ -150,13 +159,15 @@
                                                     <i class="fa fa-lock lock"></i>
                                                 </div>
                                                 <div class="user-center-text">
-                                                    <h6 style="padding: 0; margin:0px;color: #5a5858;">{{ __('Password') }}</h6>
+                                                    <h6 style="padding: 0; margin:0px;color: #5a5858;">
+                                                        {{ __('Password') }}</h6>
                                                     <p style="padding:0px;margin:0px;">{{ '*********' }}</p>
                                                 </div>
                                             </div>
 
                                             <div class="edit-icon">
-                                                <img class="username3" style="width: 15px;" src="{{ asset('images/pen-solid.svg') }}">
+                                                <img class="username3" style="width: 15px;"
+                                                    src="{{ asset('images/pen-solid.svg') }}">
                                             </div>
                                         </div>
                                         <div class="profile-outer">
@@ -165,67 +176,79 @@
                                                     <i class="fa fa-trash-o trash"></i>
                                                 </div>
                                                 <div class="user-center-text">
-                                                    <button style="padding: 7px 15px; margin:0px;color: #fff;background-color:red; border-radius:5px;border:none; ">Delete Account</button>
+                                                    <button
+                                                        style="padding: 7px 15px; margin:0px;color: #fff;background-color:red; border-radius:5px;border:none; ">Delete
+                                                        Account</button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4 member-plan">
-                                    @if (!empty($subcriptionData))
-                                        <h4>{{__('Premium Member Plan')}}</h4>
-                                        @if ($subcriptionData->expiry_date > \Carbon\Carbon::now())
-                                            <p>{{ $subcriptionData->plan->name ?? '' }} {{__('until')}} {{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $subcriptionData->expiry_date)->format('d/m/Y') }}</p>
-                                        @else
-                                            <p>{{__('Plan expired')}}</p>
-                                            <button class="renew-btn">{{__('RENEW')}}</button>
-                                        @endif
+                            </div>
+                            <div class="col-lg-4 col-md-4 member-plan">
+                                @if (!empty($subcriptionData))
+                                    <h4>{{ __('Premium Member Plan') }}</h4>
+                                    @if ($subcriptionData->expiry_date > \Carbon\Carbon::now())
+                                        <p>{{ $subcriptionData->plan->name ?? '' }} {{ __('until') }}
+                                            {{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $subcriptionData->expiry_date)->format('d/m/Y') }}
+                                        </p>
+                                    @else
+                                        <p>{{ __('Plan expired') }}</p>
+                                        <button class="renew-btn">{{ __('RENEW') }}</button>
                                     @endif
-                                </div>
+                                @endif
                             </div>
                         </div>
-                        <div class="tab-pane fade {{ Request::get('tab') ==2 ? 'show active':''}}" id="v-pills-profile" role="tabpanel"
-                            aria-labelledby="v-pills-profile-tab">
 
-                            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                                <li class="nav-item" style="">
-                                    <a class="nav-link address-b active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">EMPLOYER</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link address-b" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">EMPLOYEE</a>
-                                </li>
-                                <button class="add-btn addressBook">Add New Address</button>
-                            </ul>
+                    </div>
+                    <div class="tab-pane fade {{ Request::get('tab') == 2 ? 'show active' : '' }}" id="v-pills-profile"
+                        role="tabpanel" aria-labelledby="v-pills-profile-tab">
 
-                            <div class="tab-content" id="pills-tabContent">
-                                <div class="tab-pane fade show active" id="pills-home" role="tabpanel"  
-                                    aria-labelledby="pills-home-tab">
-                                    <table class="table" style="border:1px solid #ddd;">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">#</th>
-                                                <th scope="col">Company Name</th>
-                                                <th scope="col">Address1</th>
-                                                <th scope="col">Address2</th>
-                                                <th scope="col">City</th>
-                                                <th scope="col">State</th>
-                                                <th scope="col">Zip Code</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody id="employerTab">
-                                            <tr style="border:1px solid #ddd;">
-                                                <th scope="row">1</th>
-                                                <td>Mark22</td>
-                                                <td>Otto</td>
-                                                <td>@mdo</td>
-                                                <td>otto</td>
-                                                <td>@mdo</td>
-                                                <td>1234</td>
-                                                <td style="padding-right:0; padding-left:0;"><img style="width:22px;" src="images/icons/edit-icon.png"></td>
-                                                <td style="padding-right:0; padding-left:0;"><img style="width:20px;" src="images/icons/del-icon.png"></td>
-                                            </tr>
+                        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                            <li class="nav-item" style="">
+                                <a class="nav-link address-b active" id="pills-home-tab" data-toggle="pill"
+                                    href="#pills-home" role="tab" aria-controls="pills-home"
+                                    aria-selected="true">EMPLOYER</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link address-b" id="pills-profile-tab" data-toggle="pill"
+                                    href="#pills-profile" role="tab" aria-controls="pills-profile"
+                                    aria-selected="false">EMPLOYEE</a>
+                            </li>
+                            <button class="add-btn addressBook">Add New Address</button>
+                        </ul>
 
-                                            {{-- <tr style="border:1px solid #ddd;">
+                        <div class="tab-content" id="pills-tabContent">
+                            <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                                aria-labelledby="pills-home-tab">
+                                <table class="table" style="border:1px solid #ddd;">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Company Name</th>
+                                            <th scope="col">Address1</th>
+                                            <th scope="col">Address2</th>
+                                            <th scope="col">City</th>
+                                            <th scope="col">State</th>
+                                            <th scope="col">Zip Code</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="employerTab">
+                                        <tr style="border:1px solid #ddd;">
+                                            <th scope="row">1</th>
+                                            <td>Mark22</td>
+                                            <td>Otto</td>
+                                            <td>@mdo</td>
+                                            <td>otto</td>
+                                            <td>@mdo</td>
+                                            <td>1234</td>
+                                            <td style="padding-right:0; padding-left:0;"><img style="width:22px;"
+                                                    src="images/icons/edit-icon.png"></td>
+                                            <td style="padding-right:0; padding-left:0;"><img style="width:20px;"
+                                                    src="images/icons/del-icon.png"></td>
+                                        </tr>
+
+                                        {{-- <tr style="border:1px solid #ddd;">
                                                 <th scope="row">2</th>
                                                 <td>Jacob</td>
                                                 <td>Thornton</td>
@@ -238,27 +261,27 @@
                                                 <td style="padding-right:0; padding-left:0;"><img style="width:20px;"
                                                         src="images/icons/del-icon.png"></td>
                                             </tr> --}}
-                                            
-                                        </tbody>
-                                    </table>
 
-                                </div>
-                                <div class="tab-pane fade" id="pills-profile" role="tabpanel"
-                                    aria-labelledby="pills-profile-tab">
-                                    <table class="table" style="border:1px solid #ddd;">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">#</th>
-                                                <th scope="col">Employee Name</th>
-                                                <th scope="col">Address1</th>
-                                                <th scope="col">Address2</th>
-                                                <th scope="col">City</th>
-                                                <th scope="col">State</th>
-                                                <th scope="col">Zip Code</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody id="employeeTab">
-                                            {{-- <tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
+                            <div class="tab-pane fade" id="pills-profile" role="tabpanel"
+                                aria-labelledby="pills-profile-tab">
+                                <table class="table" style="border:1px solid #ddd;">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Employee Name</th>
+                                            <th scope="col">Address1</th>
+                                            <th scope="col">Address2</th>
+                                            <th scope="col">City</th>
+                                            <th scope="col">State</th>
+                                            <th scope="col">Zip Code</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="employeeTab">
+                                        {{-- <tr>
                                                 <th scope="row">1</th>
                                                 <td>Mark</td>
                                                 <td>Otto</td>
@@ -271,15 +294,15 @@
                                                 <td style="padding-right:0; padding-left:0;"><img style="width:20px;"
                                                         src="images/icons/del-icon.png"></td>
                                             </tr> --}}
-                                            
-                                        </tbody>
-                                    </table>
-                                </div>
+
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </section>
 
@@ -289,7 +312,9 @@
                 <!-- Modal Header -->
                 <div class="modal-header" style="background: #115caecf;">
                     <h4 class="modal-title" style="text-transform: capitalize;color:#fff;">Address Book</h4>
-                    <button type="button" style="border: none; background-color:transparent; color:#fff;font-size:20px;padding:0;" class="btn-close" data-bs-dismiss="modal" aria-label="Close">x</button>
+                    <button type="button"
+                        style="border: none; background-color:transparent; color:#fff;font-size:20px;padding:0;"
+                        class="btn-close" data-bs-dismiss="modal" aria-label="Close">x</button>
                 </div>
 
                 <!-- Modal body -->
@@ -298,20 +323,24 @@
                         <div class="container" style="padding: 0">
                             <div class="row" style="padding: 0;">
                                 <div class="col-lg-12"style="padding: 0;">
-                                    <form id="addressForm" action="{{route('store.address')}}" method="post" style="padding-top:20px;" class="form-horizontal" role="form">
+                                    <form id="addressForm" action="{{ route('store.address') }}" method="post"
+                                        style="padding-top:20px;" class="form-horizontal" role="form">
                                         @csrf
                                         <div class="row">
                                             <label for="inputFullName" id="nameLabel" style="font-weight:bold;"
                                                 class="col-sm-12 control-label">EMPLOYER (COMPANY) NAME *</label>
                                             <div class="col-sm-12">
                                                 <input style="font-size:16px;" type="text" class="form-control"
-                                                    id="inputFullName" name="fullName" placeholder="Full Employer (Company) Name">
+                                                    id="inputFullName" name="fullName"
+                                                    placeholder="Full Employer (Company) Name">
                                             </div>
                                         </div>
                                         <input type="hidden" id="adress-type" name="type" value="employer">
-                                        <input type="hidden" id="adress-type" name="addressId" >
+                                        <input type="hidden" id="adress-type" name="addressId">
                                         <div class="form-group">
-                                            <p class="col-sm-offset-2 col-sm-12 help-block" style="font-weight: bold;margin-top:10px; margin-bottom:5px;">STREET ADDRESS 1 *
+                                            <p class="col-sm-offset-2 col-sm-12 help-block"
+                                                style="font-weight: bold;margin-top:10px; margin-bottom:5px;">STREET
+                                                ADDRESS 1 *
                                             </p>
                                             <div class="col-sm-12">
                                                 <input style="font-size:16px;" type="text" class="form-control"
@@ -322,7 +351,7 @@
 
                                         <div class="form-group">
                                             <p class="col-sm-offset-2 col-sm-12 help-block"
-                                                style="font-weight:bold;margin-bottom:5px;">STREET ADDRESS 2 
+                                                style="font-weight:bold;margin-bottom:5px;">STREET ADDRESS 2
                                             </p>
                                             <div class="col-sm-12">
                                                 <input style="font-size:16px;" type="text" class="form-control"
@@ -332,7 +361,8 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="inputCityTown" style="font-weight:bold;" class="col-sm-12 control-label">City</label>
+                                            <label for="inputCityTown" style="font-weight:bold;"
+                                                class="col-sm-12 control-label">City</label>
                                             <div class="col-sm-12">
                                                 <input style="font-size:16px;" type="text" class="form-control"
                                                     id="inputCityTown" name="cityName" placeholder="City">
@@ -340,14 +370,15 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="selectState" style="font-weight:bold;" class="col-sm-12 control-label">State</label>
+                                            <label for="selectCountry" style="font-weight:bold;"
+                                                class="col-sm-12 control-label">State</label>
                                             <div class="col-sm-12">
                                                 <select class="form-control select-box" id="selectState"
                                                     name="stateName">
                                                     <option value="" selected="selected">Select</option>
                                                     @if (count($stateList) > 0)
                                                         @foreach ($stateList as $state)
-                                                        <option value="{{$state->state}}">{{$state->state}}</option> 
+                                                        <option value="{{$state->state}}">{{$state->state}}</option>
                                                         @endforeach
                                                     @endif
                                                 </select>
@@ -355,11 +386,11 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="inputZipPostalCode" style="font-weight:bold;" class="col-sm-12 control-label">Zip Code</label>
+                                            <label for="inputZipPostalCode" style="font-weight:bold;"
+                                                class="col-sm-12 control-label">Zip Code</label>
                                             <div class="col-sm-12">
                                                 <input style="font-size:16px;" type="text" class="form-control"
-                                                    id="inputZipPostalCode" name="zipCode"
-                                                    placeholder="Zip-Code">
+                                                    id="inputZipPostalCode" name="zipCode" placeholder="Zip-Code">
                                             </div>
                                         </div>
                                     </form>
@@ -393,7 +424,7 @@
 
                 <!-- Modal body -->
                 <div class="modal-body pb-4" style="box-shadow: 0 0 8px rgba(0,0,0,.14);padding-top:0;">
-                    <form id="userNameForm" method="post" action="{{ route('store.details') }}">
+                    <form id="userNameForm1" method="post" action="{{ route('store.details') }}">
                         @csrf
                         <input type="hidden" value="user-name" name="type">
                         <label class="label-text" for="css">Contact Name<span style="color:red;">*</span></label>
@@ -587,7 +618,7 @@
 
 @section('script')
     <script>
-        $(document).ready(function(){
+        $(document).ready(function() {
             getAddressBook();
         });
 
@@ -598,7 +629,7 @@
         });
 
         $("#store-name").click(function(e) {
-            submitUserData($('#userNameForm')[0]);
+            submitUserData($('#userNameForm1')[0]);
         });
 
         $(".username2").click(function() {
@@ -669,14 +700,14 @@
         $(document).on('click', '#pills-profile-tab', function() {
             $("#adress-type").val('employee');
             $('#nameLabel').text('').text('EMPLOYEE NAME *');
-            $('#inputFullName').attr('placeholder','Full Employee Name');
+            $('#inputFullName').attr('placeholder', 'Full Employee Name');
             getAddressBook();
         });
 
         $(document).on('click', '#pills-home-tab', function() {
             $("#adress-type").val('employer');
             $('#nameLabel').text('').text('EMPLOYER (COMPANY) NAME *');
-            $('#inputFullName').attr('placeholder','Full Employer (Company) Name');
+            $('#inputFullName').attr('placeholder', 'Full Employer (Company) Name');
             getAddressBook();
         });
 
@@ -684,15 +715,15 @@
             submitUserData($('#addressForm')[0]);
         });
 
-        $(document).on('click', '.btn-edit',function(e) {
+        $(document).on('click', '.btn-edit', function(e) {
             var recordId = $(this).data('record');
-            console.log('btn-edit-',recordId);
+            console.log('btn-edit-', recordId);
             $.ajax({
-                url: "{{route('get.address')}}?record="+recordId,
+                url: "{{ route('get.address') }}?record=" + recordId,
                 datatype: "json",
                 success: function(data) {
                     if ($.isEmptyObject(data.error)) {
-                        console.log('record-number-',data);
+                        console.log('record-number-', data);
                         $('#addressForm input[name=addressId]').val(data.addressObj.id);
                         $('#addressForm input[name=fullName]').val(data.addressObj.name);
                         $('#addressForm input[name=type]').val(data.addressObj.type);
@@ -719,7 +750,7 @@
                     console.log('data', data);
                     if ($.isEmptyObject(data.error)) {
                         toastr.success(data.message);
-                        if(data.pageReload == 'no'){
+                        if (data.pageReload == 'no') {
                             form.reset();
                             getAddressBook();
                             $('#addressBook').modal('hide');
@@ -757,10 +788,10 @@
             $("#addressBook").modal("show");
         });
 
-        function getAddressBook(){
+        function getAddressBook() {
             var type = $("#adress-type").val();
             $.ajax({
-                url: "{{route('fetch.address')}}?type="+type,
+                url: "{{ route('fetch.address') }}?type=" + type,
                 datatype: "html",
                 success: function(data) {
                     if ($.isEmptyObject(data.error)) {
