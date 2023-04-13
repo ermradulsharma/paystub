@@ -55,7 +55,14 @@ $("#adminLogin").on("submit", function () {
                 } else {
                     $(".registerBtn").removeClass("d-block").addClass("d-none");
                     $(".logoutDiv").removeClass("d-none");
-                    $(".authUserName").text("Hi " + response.user.name);
+                    if (userAuth == 1) {
+                        setTimeout(() => {
+                            $(".authUserName").text("Hi " + response.user.name);
+                        }, 300);
+                        if (okk == 1) {
+                            usaStoreData();
+                        }
+                    }
                 }
             }
 

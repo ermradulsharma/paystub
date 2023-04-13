@@ -832,8 +832,7 @@
                                     <div class="col-lg-2 col-md-4 col-sm-6 mb-2 advicex advicexv d-none">
                                         <p class="p-0 m-0 " style="font-family: serif;">CO<span class="redColor">*</span>
                                         </p>
-                                        <input class="earnbtn text-center " value="{{ $invoice->co_number ?? '' }}"
-                                            name="co_number">
+                                        <input class="earnbtn text-center " value="{{ $invoice->co_number ?? '' }}" name="co_number" placeholder="MP5">
                                     </div>
                                     <div class="col-lg-4 col-md-4 col-sm-6 mb-2 advicex advicexv d-none">
                                         <div>
@@ -851,8 +850,7 @@
                                         <p class="p-0 m-0" style="font-family: serif;">FILE.<span
                                                 class="redColor">*</span>
                                         </p>
-                                        <input class="earnbtn text-center " value="{{ $invoice->file_number ?? '' }}"
-                                            name="file_number">
+                                        <input class="earnbtn text-center " value="{{ $invoice->file_number ?? '' }}" name="file_number" placeholder="123456">
                                     </div>
                                     <div class="col-lg-2 col-md-4 col-sm-6 mb-2 advicex advicexv d-none">
                                         <p class="p-0 m-0 " style="font-family: serif;">CLOCK VCHR.<span
