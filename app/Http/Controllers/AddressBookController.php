@@ -52,7 +52,7 @@ class AddressBookController extends Controller
             $addressData = Address::where(['id'=>$request->record])->first();
             return response()->json(['addressObj' => $addressData]);
         }catch (\Exception $e) {
-            Log::info('Fetch Address Function', array('Exception' => $e->getMessage()));
+            Log::info('Fetch AddressById Function', array('Exception' => $e->getMessage()));
             return response()->json([ 'error' => 'Something went wrong.']);
         }
 
@@ -107,7 +107,7 @@ class AddressBookController extends Controller
 
             return response()->json(['error' => 'Address saved unsuccessfull.']);
         }catch (\Exception $e) {
-            Log::info('Fetch Address Function', array('Exception' => $e->getMessage()));
+            Log::info('Store Address Function', array('Exception' => $e->getMessage()));
             return response()->json(['error' => 'Something went wrong.']);
         }
 
@@ -120,7 +120,7 @@ class AddressBookController extends Controller
             }
             return edirect()->back()->with('error' , 'Address deleted unsuccessfull.');
         }catch (\Exception $e) {
-            Log::info('Fetch Address Function', array('Exception' => $e->getMessage()));
+            Log::info('Delete Address Function', array('Exception' => $e->getMessage()));
             return response()->json(['error' => 'Something went wrong.']);
         }
     }
