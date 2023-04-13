@@ -146,7 +146,7 @@ function handleCredentialResponse(response) {
         }).join(''));
         return JSON.parse(jsonPayload);
     }
-    log
+
     const responsePayload = decodeJwtResponse(response.credential);
     $.ajax({
         url: baseUrl + "google/callback",
