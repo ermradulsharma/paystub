@@ -423,7 +423,7 @@
 
                 <!-- Modal body -->
                 <div class="modal-body pb-4" style="box-shadow: 0 0 8px rgba(0,0,0,.14);padding-top:0;">
-                    <form id="userNameForm" method="post" action="{{ route('store.details') }}">
+                    <form id="userNameForm1" method="post" action="{{ route('store.details') }}">
                         @csrf
                         <input type="hidden" value="user-name" name="type">
                         <label class="label-text" for="css">Contact Name<span style="color:red;">*</span></label>
@@ -627,9 +627,9 @@
             $("#userName").modal("show");
         });
 
-        // $("#store-name").click(function(e) {
-        //     submitUserData($('#userNameForm')[0]);
-        // });
+        $("#store-name").click(function(e) {
+            submitUserData($('#userNameForm1')[0]);
+        });
 
         $(".username2").click(function() {
             $("#userName2").modal("show");
