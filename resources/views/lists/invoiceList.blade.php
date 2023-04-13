@@ -161,10 +161,9 @@
             }
 
         });
-        
+
         $(document).on('click','.delbtn',function(e){
            var trashPath = $(this).data('trash');
-           console.log('trashPath--',trashPath);
             $('#trash-temp').attr('action',trashPath);
             $('#deleteTemplate').modal('show');
 

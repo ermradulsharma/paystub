@@ -312,9 +312,7 @@
                 <!-- Modal Header -->
                 <div class="modal-header" style="background: #115caecf;">
                     <h4 class="modal-title" style="text-transform: capitalize;color:#fff;">Address Book</h4>
-                    <button type="button"
-                        style="border: none; background-color:transparent; color:#fff;font-size:20px;padding:0;"
-                        class="btn-close" data-bs-dismiss="modal" aria-label="Close">x</button>
+                    <button type="button" style="border: none; background-color:transparent; color:#fff;font-size:20px;padding:0;" class="btn-close" data-bs-dismiss="modal" aria-label="Close">x</button>
                 </div>
 
                 <!-- Modal body -->
@@ -417,9 +415,7 @@
                 <!-- Modal Header -->
                 <div class="modal-header" style="background: #115caecf;">
                     <h4 class="modal-title" style="text-transform: capitalize;color:#fff;">Change Contact Name</h4>
-                    <button type="button"
-                        style="border: none; background-color:transparent; color:#fff;font-size:20px;padding:0;"
-                        class="btn-close" data-bs-dismiss="modal" aria-label="Close">x</button>
+                    <button type="button" style="border: none; background-color:transparent; color:#fff;font-size:20px;padding:0;" class="btn-close" data-bs-dismiss="modal" aria-label="Close">x</button>
                 </div>
 
                 <!-- Modal body -->
@@ -428,16 +424,13 @@
                         @csrf
                         <input type="hidden" value="user-name" name="type">
                         <label class="label-text" for="css">Contact Name<span style="color:red;">*</span></label>
-                        <input class="contact-box" type="text" name="uname" id="user-name"
-                            placeholder="Contact Name">
+                        <input class="contact-box" type="text" name="uname" id="user-name" placeholder="Contact Name">
                     </form>
                 </div>
                 <div class="modal-footer" style="display: inline-block;">
                     <div class="d-flex justify-content-between pt-2">
-                        <button class="btn-secondary" data-bs-dismiss="modal"
-                            style="border-radius:20px; border:none;font-size:12px; padding:5px 10px;">Cancel</button>
-                        <button class="btn-danger" id="store-name"
-                            style="border-radius:20px; border:none;font-size:12px; padding:5px 15px;">Save</button>
+                        <button class="btn-secondary" data-bs-dismiss="modal" style="border-radius:20px; border:none;font-size:12px; padding:5px 10px;">Cancel</button>
+                        <button class="btn-danger" id="store-name" style="border-radius:20px; border:none;font-size:12px; padding:5px 15px;">Save</button>
                     </div>
                 </div>
             </div>
@@ -635,24 +628,150 @@
         $("#userName2").modal("show");
     });
 
-    $("#store-email").click(function(e) {
-        //submitUserData($('#userEmailForm')[0],".username2","#userName2");
-        var form = $('#userEmailForm')[0];
-        $.ajax({
-            type: 'POST',
-            url: form.action,
-            data: $(form).serialize(),
-            success: function(data) {
-                console.log('data', data);
-                if ($.isEmptyObject(data.error)) {
-                    toastr.success(data.message);
-                    $("#userName2").modal("hide");
-                    $('#hidden_email').val(data.email);
-                    $("#otpModal").modal("show");
-                    startTimer();
-                } else {
-                    printErrorMsg(data.error);
+        $("#store-email").click(function(e) {
+            //submitUserData($('#userEmailForm')[0],".username2","#userName2");
+            var form = $('#userNameForm1')[0];
+            $.ajax({
+                type: 'POST',
+                url: form.action,
+                data: $(form).serialize(),
+                success: function(data) {
+
+                    if ($.isEmptyObject(data.error)) {
+                        toastr.success(data.message);
+                        $("#userName2").modal("hide");
+                        $('#hidden_email').val(data.email);
+                        $("#otpModal").modal("show");
+                        startTimer();
+                    } else {
+                        printErrorMsg(data.error);
+                    }
                 }
+            });
+        });
+
+        $("#verify-email").click(function(e) {
+            submitUserData($('#loginOtp')[0]);
+        });
+
+        $(".username3").click(function() {
+            $("#userName3").modal("show");
+        });
+
+        $(".trash-account").click(function() {
+            $("#deleteAcModal").modal("show");
+        });
+
+        $("#store-password").click(function(e) {
+            submitUserData($('#passwordUpdate')[0]);
+        });
+
+        $("#resendOtpButton").click(function() {
+            var email = $('#hidden_email').val();
+            startTimer();
+            $.ajax({
+                url: "{{ route('sendOtp') }}?email=" + email,
+                success: function(data) {
+
+                    if ($.isEmptyObject(data.error)) {
+                        toastr.success(data.message);
+
+                    } else {
+                        printErrorMsg(data.error);
+                    }
+                }
+            });
+        });
+
+        $(document).on('click', '.show-password', function() {
+            $(this).toggleClass("fa-eye fa-eye-slash");
+            var input = $(this).prev('input');
+            input.attr('type') === 'password' ? input.attr('type', 'text') : input.attr('type', 'password')
+        });
+
+        $(document).on('click', '#pills-profile-tab', function() {
+            $("#adress-type").val('employee');
+            $('#nameLabel').text('').text('EMPLOYEE NAME *');
+            $('#inputFullName').attr('placeholder', 'Full Employee Name');
+            getAddressBook();
+        });
+
+        $(document).on('click', '#pills-home-tab', function() {
+            $("#adress-type").val('employer');
+            $('#nameLabel').text('').text('EMPLOYER (COMPANY) NAME *');
+            $('#inputFullName').attr('placeholder', 'Full Employer (Company) Name');
+            getAddressBook();
+        });
+
+        $("#store-address").click(function(e) {
+            submitUserData($('#addressForm')[0]);
+        });
+
+        $(document).on('click', '.btn-edit', function(e) {
+            var recordId = $(this).data('record');
+
+            $.ajax({
+                url: "{{ route('get.address') }}?record=" + recordId,
+                datatype: "json",
+                success: function(data) {
+                    if ($.isEmptyObject(data.error)) {
+
+                        $('#addressForm input[name=addressId]').val(data.addressObj.id);
+                        $('#addressForm input[name=fullName]').val(data.addressObj.name);
+                        $('#addressForm input[name=type]').val(data.addressObj.type);
+                        $('#addressForm input[name=addressLine1]').val(data.addressObj.address_1);
+                        $('#addressForm input[name=addressLine2]').val(data.addressObj.address_2);
+                        $('#addressForm input[name=cityName]').val(data.addressObj.city);
+                        $('#addressForm select[name="stateName"]').val(data.addressObj.city);
+                        // $('#selectState').val(data.addressObj.state);
+                        $('#addressForm input[name=zipCode]').val(data.addressObj.zip_code);
+                        $('#addressBook').modal('show');
+                    } else {
+                        printErrorMsg(data.error);
+                    }
+                }
+            });
+        });
+
+        function submitUserData(form) {
+            $.ajax({
+                type: 'POST',
+                url: form.action,
+                data: $(form).serialize(),
+                success: function(data) {
+
+                    if ($.isEmptyObject(data.error)) {
+                        toastr.success(data.message);
+                        if (data.pageReload == 'no') {
+                            form.reset();
+                            getAddressBook();
+                            $('#addressBook').modal('hide');
+                            return false;
+                        }
+                        location.reload(true);
+                    } else {
+                        printErrorMsg(data.error);
+                    }
+                }
+            });
+
+        }
+
+        function printErrorMsg(msg) {
+            $.each(msg, function(key, value) {
+                toastr.error(value);
+            });
+        }
+
+        $('.eye-icon').click(function() {
+            var id = $(this).data('id');
+            var clr = $(this).attr('src');
+            if (clr = 'eye-icon') {
+                $("#eye-icon_" + id).removeClass("fa fa-eye-slash eye-icon");
+                $("#eye-icon_" + id).addClass("fa fa-eye eye-icon");
+            } else {
+                $("#eye-icon_" + id).addClass("fa fa-eye-slash eye-icon");
+                $("#eye-icon_" + id).removeClass("fa fa-eye eye-icon");
             }
         });
     });
@@ -724,7 +843,7 @@
 
     $(document).on('click', '.btn-edit', function(e) {
         var recordId = $(this).data('record');
-        
+
         $.ajax({
             url: "{{ route('get.address') }}?record=" + recordId,
             datatype: "json",

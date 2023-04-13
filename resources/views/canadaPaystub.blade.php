@@ -418,7 +418,6 @@
 
             $('.basicTem').click(function() {
                 var imageattr = $('option:selected', '.bt_id').attr('data-src');
-                console.log('imageattr', imageattr);
                 $('.setImage').attr('src', imageattr);
                 if (imageattr != null && imageattr != undefined) {
                     $('#openEye').modal('show');
@@ -467,7 +466,7 @@
         });
 
         function setLocation(obj) {
-            console.log('obj', obj);
+
             if (obj.street_number == undefined && obj.route == undefined) {
                 $("#address_1").val('');
             } else if (obj.street_number == undefined) {
@@ -540,7 +539,7 @@
         });
 
         function setEmpLocation(obj) {
-            console.log('obj', obj);
+            
         }
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
