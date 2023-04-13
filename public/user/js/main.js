@@ -70,7 +70,6 @@ $("#loginOtp").on("submit", function () {
         type: "POST",
         data: $(this).serialize(),
         success: function (response) {
-            console.log('response', response);
             if (response.firstName == "") {
                 $("#otpModal").modal("hide");
                 $("#setName").modal("show");
@@ -96,15 +95,15 @@ $("#userNameForm").on("submit", function () {
                 $(".authUserName").text("Hi " + response.data);
             }, 300);
 
-            $(".registerBtn").removeClass("d-block");
-            $(".registerBtn").addClass("d-none");
-            $(".sendMailButton").removeClass("d-none");
-            $(".sendMailButton").addClass("d-block");
-            $(".logoutDiv").removeClass("d-none");
+            // $(".registerBtn").removeClass("d-block");
+            // $(".registerBtn").addClass("d-none");
+            // $(".sendMailButton").removeClass("d-none");
+            // $(".sendMailButton").addClass("d-block");
+            // $(".logoutDiv").removeClass("d-none");
             if (userAuth == 1) {
-                setTimeout(() => {
-                    $(".authUserName").text("Hi " + response.data);
-                }, 300);
+                // setTimeout(() => {
+                //     $(".authUserName").text("Hi " + response.data);
+                // }, 300);
                 if (okk == 1) {
                     usaStoreData();
                 }
