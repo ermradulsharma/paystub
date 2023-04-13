@@ -100,9 +100,9 @@
             <div class="row">
                 <div class="col-lg-2" style="padding: 0; height:95vh; border-right:1px solid #ddd;">
                     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                        <a class="nav-link active my-account" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home"
+                        <a class="nav-link  my-account {{ Request::get('tab') !=2 ? 'active':''}}" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home"
                             role="tab" aria-controls="v-pills-home" aria-selected="true">My Account</a>
-                        <a class="nav-link  address-book " id="v-pills-profile-tab" data-toggle="pill"
+                        <a class="nav-link  address-book {{ Request::get('tab')==2 ? 'active':''}}" id="v-pills-profile-tab" data-toggle="pill"
                             href="#v-pills-profile" role="tab" aria-controls="v-pills-profile"
                             aria-selected="false">Address
                             Book</a>
@@ -110,7 +110,7 @@
                 </div>
                 <div class="col-lg-10">
                     <div class="tab-content" style="padding-top: 20px;" id="v-pills-tabContent">
-                        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
+                        <div class="tab-pane fade {{ Request::get('tab') !=2 ? 'show active':''}}" id="v-pills-home" role="tabpanel"
                             aria-labelledby="v-pills-home-tab" style="display:flex;">
                             <div class="col-lg-6 col-md-6" style="padding: 0;">
                                 <div class="right-side-bar">
@@ -202,7 +202,7 @@
                                 </div>
                             @endif
                         </div>
-                        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
+                        <div class="tab-pane fade {{ Request::get('tab') ==2 ? 'show active':''}}" id="v-pills-profile" role="tabpanel"
                             aria-labelledby="v-pills-profile-tab">
 
                             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
@@ -220,7 +220,7 @@
                             </ul>
 
                             <div class="tab-content" id="pills-tabContent">
-                                <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                                <div class="tab-pane fade show active" id="pills-home" role="tabpanel"  
                                     aria-labelledby="pills-home-tab">
                                     <table class="table" style="border:1px solid #ddd;">
                                         <thead>
@@ -234,10 +234,10 @@
                                                 <th scope="col">Zip Code</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody id="employerTab">
                                             <tr style="border:1px solid #ddd;">
                                                 <th scope="row">1</th>
-                                                <td>Mark</td>
+                                                <td>Mark22</td>
                                                 <td>Otto</td>
                                                 <td>@mdo</td>
                                                 <td>otto</td>
@@ -249,7 +249,7 @@
                                                         src="images/icons/del-icon.png"></td>
                                             </tr>
 
-                                            <tr style="border:1px solid #ddd;">
+                                            {{-- <tr style="border:1px solid #ddd;">
                                                 <th scope="row">2</th>
                                                 <td>Jacob</td>
                                                 <td>Thornton</td>
@@ -261,20 +261,8 @@
                                                         src="images/icons/edit-icon.png"></td>
                                                 <td style="padding-right:0; padding-left:0;"><img style="width:20px;"
                                                         src="images/icons/del-icon.png"></td>
-                                            </tr>
-                                            <tr style="border:1px solid #ddd;">
-                                                <th scope="row">3</th>
-                                                <td>Larry</td>
-                                                <td>the Bird</td>
-                                                <td>@twitter</td>
-                                                <td>otto</td>
-                                                <td>@mdo</td>
-                                                <td>1234</td>
-                                                <td style="padding-right:0; padding-left:0;"><img style="width:22px;"
-                                                        src="images/icons/edit-icon.png"></td>
-                                                <td style="padding-right:0; padding-left:0;"><img style="width:20px;"
-                                                        src="images/icons/del-icon.png"></td>
-                                            </tr>
+                                            </tr> --}}
+                                            
                                         </tbody>
                                     </table>
 
@@ -293,8 +281,8 @@
                                                 <th scope="col">Zip Code</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
-                                            <tr>
+                                        <tbody id="employeeTab">
+                                            {{-- <tr>
                                                 <th scope="row">1</th>
                                                 <td>Mark</td>
                                                 <td>Otto</td>
@@ -306,59 +294,8 @@
                                                         src="images/icons/edit-icon.png"></td>
                                                 <td style="padding-right:0; padding-left:0;"><img style="width:20px;"
                                                         src="images/icons/del-icon.png"></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">1</th>
-                                                <td>Mark</td>
-                                                <td>Otto</td>
-                                                <td>@mdo</td>
-                                                <td>Otto</td>
-                                                <td>@mdo</td>
-                                                <td>1234</td>
-                                                <td style="padding-right:0; padding-left:0;"><img style="width:22px;"
-                                                        src="images/icons/edit-icon.png"></td>
-                                                <td style="padding-right:0; padding-left:0;"><img style="width:20px;"
-                                                        src="images/icons/del-icon.png"></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">1</th>
-                                                <td>Mark</td>
-                                                <td>Otto</td>
-                                                <td>@mdo</td>
-                                                <td>Otto</td>
-                                                <td>@mdo</td>
-                                                <td>1234</td>
-                                                <td style="padding-right:0; padding-left:0;"><img style="width:22px;"
-                                                        src="images/icons/edit-icon.png"></td>
-                                                <td style="padding-right:0; padding-left:0;"><img style="width:20px;"
-                                                        src="images/icons/del-icon.png"></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">1</th>
-                                                <td>Mark</td>
-                                                <td>Otto</td>
-                                                <td>@mdo</td>
-                                                <td>Otto</td>
-                                                <td>@mdo</td>
-                                                <td>1234</td>
-                                                <td style="padding-right:0; padding-left:0;"><img style="width:22px;"
-                                                        src="images/icons/edit-icon.png"></td>
-                                                <td style="padding-right:0; padding-left:0;"><img style="width:20px;"
-                                                        src="images/icons/del-icon.png"></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">1</th>
-                                                <td>Mark</td>
-                                                <td>Otto</td>
-                                                <td>@mdo</td>
-                                                <td>Otto</td>
-                                                <td>@mdo</td>
-                                                <td>1234</td>
-                                                <td style="padding-right:0; padding-left:0;"><img style="width:22px;"
-                                                        src="images/icons/edit-icon.png"></td>
-                                                <td style="padding-right:0; padding-left:0;"><img style="width:20px;"
-                                                        src="images/icons/del-icon.png"></td>
-                                            </tr>
+                                            </tr> --}}
+                                            
                                         </tbody>
                                     </table>
                                 </div>
@@ -387,17 +324,18 @@
                         <div class="container" style="padding: 0">
                             <div class="row" style="padding: 0;">
                                 <div class="col-lg-12"style="padding: 0;">
-                                    <form style="padding-top:20px;" class="form-horizontal" role="form">
+                                    <form id="addressForm" action="{{route('store.address')}}" method="post" style="padding-top:20px;" class="form-horizontal" role="form">
+                                        @csrf
                                         <div class="row">
-                                            <label for="inputFullName" style="font-weight:bold;"
-                                                class="col-sm-12 control-label">EMPLOYEE
-                                                NAME</label>
+                                            <label for="inputFullName" id="nameLabel" style="font-weight:bold;"
+                                                class="col-sm-12 control-label">EMPLOYER (COMPANY) NAME *</label>
                                             <div class="col-sm-12">
                                                 <input style="font-size:16px;" type="text" class="form-control"
-                                                    id="inputFullName" name="full-name" placeholder="Employee Name">
+                                                    id="inputFullName" name="fullName" placeholder="Full Employer (Company) Name">
                                             </div>
                                         </div>
-
+                                        <input type="hidden" id="adress-type" name="type" value="employer">
+                                        <input type="hidden" id="adress-type" name="addressId" >
                                         <div class="form-group">
                                             <p class="col-sm-offset-2 col-sm-12 help-block"
                                                 style="font-weight: bold;margin-top:10px; margin-bottom:5px;">STREET
@@ -405,19 +343,19 @@
                                             </p>
                                             <div class="col-sm-12">
                                                 <input style="font-size:16px;" type="text" class="form-control"
-                                                    id="inputAddressLine1" name="address-line1"
-                                                    placeholder="Employee Street Address 1">
+                                                    id="inputAddressLine1" name="addressLine1"
+                                                    placeholder="Street Address 1">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <p class="col-sm-offset-2 col-sm-12 help-block"
-                                                style="font-weight:bold;margin-bottom:5px;">STREET ADDRESS 1 *
+                                                style="font-weight:bold;margin-bottom:5px;">STREET ADDRESS 2 
                                             </p>
                                             <div class="col-sm-12">
                                                 <input style="font-size:16px;" type="text" class="form-control"
-                                                    id="inputAddressLine2" name="address-line2"
-                                                    placeholder="Employee Street Address 2 (Optional)">
+                                                    id="inputAddressLine2" name="addressLine2"
+                                                    placeholder="Street Address 2 (Optional)">
                                             </div>
                                         </div>
 
@@ -426,7 +364,7 @@
                                                 class="col-sm-12 control-label">City</label>
                                             <div class="col-sm-12">
                                                 <input style="font-size:16px;" type="text" class="form-control"
-                                                    id="inputCityTown" name="city-town" placeholder="City">
+                                                    id="inputCityTown" name="cityName" placeholder="City">
                                             </div>
                                         </div>
 
@@ -435,7 +373,7 @@
                                                 class="col-sm-12 control-label">State</label>
                                             <div class="col-sm-12">
                                                 <select class="form-control select-box" id="selectCountry"
-                                                    name="country">
+                                                    name="stateName">
                                                     <option value="" selected="selected">Select</option>
                                                     <option value="AF">Afghanistan</option>
                                                     <option value="AL">Albania</option>
@@ -452,12 +390,10 @@
                                                 Code</label>
                                             <div class="col-sm-12">
                                                 <input style="font-size:16px;" type="text" class="form-control"
-                                                    id="inputZipPostalCode" name="zip-postal-code"
+                                                    id="inputZipPostalCode" name="zipCode"
                                                     placeholder="Zip-Code">
                                             </div>
                                         </div>
-
-
                                     </form>
                                 </div>
                             </div>
@@ -468,7 +404,7 @@
                     <div class="d-flex justify-content-between pt-2">
                         <button class="btn-secondary" data-bs-dismiss="modal"
                             style="border-radius:20px; border:none;font-size:12px; padding:5px 10px;">Cancel</button>
-                        <button class="btn-danger" id="store-name"
+                        <button class="btn-danger" id="store-address"
                             style="border-radius:20px; border:none;font-size:12px; padding:5px 15px;">Save</button>
                     </div>
                 </div>
@@ -683,6 +619,10 @@
 
 @section('script')
     <script>
+        $(document).ready(function(){
+            getAddressBook();
+        });
+
         $(".username").click(function() {
             var name = $(this).data('name');
             $('#user-name').val(name);
@@ -758,8 +698,50 @@
             input.attr('type') === 'password' ? input.attr('type', 'text') : input.attr('type', 'password')
         });
 
-        function submitUserData(form) {
+        $(document).on('click', '#pills-profile-tab', function() {
+            $("#adress-type").val('employee');
+            $('#nameLabel').text('').text('EMPLOYEE NAME *');
+            $('#inputFullName').attr('placeholder','Full Employee Name');
+            getAddressBook();
+        });
 
+        $(document).on('click', '#pills-home-tab', function() {
+            $("#adress-type").val('employer');
+            $('#nameLabel').text('').text('EMPLOYER (COMPANY) NAME *');
+            $('#inputFullName').attr('placeholder','Full Employer (Company) Name');
+            getAddressBook();
+        });
+
+        $("#store-address").click(function(e) {
+            submitUserData($('#addressForm')[0]);
+        });
+
+        $(document).on('click', '.btn-edit',function(e) {
+            var recordId = $(this).data('record');
+            console.log('btn-edit-',recordId);
+            $.ajax({
+                url: "{{route('get.address')}}?record="+recordId,
+                datatype: "json",
+                success: function(data) {
+                    if ($.isEmptyObject(data.error)) {
+                        console.log('record-number-',data);
+                        $('#addressForm input[name=addressId]').val(data.addressObj.id);
+                        $('#addressForm input[name=fullName]').val(data.addressObj.name);
+                        $('#addressForm input[name=type]').val(data.addressObj.type);
+                        $('#addressForm input[name=addressLine1]').val(data.addressObj.address_1);
+                        $('#addressForm input[name=addressLine2]').val(data.addressObj.address_2);
+                        $('#addressForm input[name=cityName]').val(data.addressObj.city);
+                        $('#addressForm input[name=stateName]').val(data.addressObj.state);
+                        $('#addressForm input[name=zipCode]').val(data.addressObj.zip_code);
+                        $('#addressBook').modal('show');
+                    } else {
+                        printErrorMsg(data.error);
+                    }
+                }
+            });
+        });
+
+        function submitUserData(form) {
             $.ajax({
                 type: 'POST',
                 url: form.action,
@@ -767,8 +749,13 @@
                 success: function(data) {
                     console.log('data', data);
                     if ($.isEmptyObject(data.error)) {
-                        // alert(data.message);
                         toastr.success(data.message);
+                        if(data.pageReload == 'no'){
+                            form.reset();
+                            getAddressBook();
+                            $('#addressBook').modal('hide');
+                            return false;
+                        }
                         location.reload(true);
                     } else {
                         printErrorMsg(data.error);
@@ -800,5 +787,21 @@
         $(".addressBook").click(function() {
             $("#addressBook").modal("show");
         });
+
+        function getAddressBook(){
+            var type = $("#adress-type").val();
+            $.ajax({
+                url: "{{route('fetch.address')}}?type="+type,
+                datatype: "html",
+                success: function(data) {
+                    if ($.isEmptyObject(data.error)) {
+                        $('.tab-pane.fade.show.active').find('tbody').html('').html(data);
+                        // $('#employerTab').html('').html(data);
+                    } else {
+                        printErrorMsg(data.error);
+                    }
+                }
+            });
+        }
     </script>
 @endsection
