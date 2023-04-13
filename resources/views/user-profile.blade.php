@@ -100,13 +100,18 @@
             <div class="row">
                 <div class="col-lg-2" style="padding: 0; height:95vh; border-right:1px solid #ddd;">
                     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                        <a class="nav-link  my-account {{ Request::get('tab') != 2 ? 'active' : '' }}" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">My Account</a>
-                        <a class="nav-link  address-book {{ Request::get('tab') == 2 ? 'active' : '' }}" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Address Book</a>
+                        <a class="nav-link  my-account {{ Request::get('tab') != 2 ? 'active' : '' }}" id="v-pills-home-tab"
+                            data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home"
+                            aria-selected="true">My Account</a>
+                        <a class="nav-link  address-book {{ Request::get('tab') == 2 ? 'active' : '' }}"
+                            id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab"
+                            aria-controls="v-pills-profile" aria-selected="false">Address Book</a>
                     </div>
                 </div>
                 <div class="col-lg-10">
                     <div class="tab-content" style="padding-top: 20px;" id="v-pills-tabContent">
-                        <div class="tab-pane fade {{ Request::get('tab') != 2 ? 'show active' : '' }}" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                        <div class="tab-pane fade {{ Request::get('tab') != 2 ? 'show active' : '' }}" id="v-pills-home"
+                            role="tabpanel" aria-labelledby="v-pills-home-tab">
                             <div class="row">
                                 <div class="col-lg-6 col-md-6" style="padding: 0;">
                                     <div class="right-side-bar">
@@ -184,7 +189,7 @@
                                         <h4>{{ __('Premium Member Plan') }}</h4>
                                         @if ($subcriptionData->expiry_date > \Carbon\Carbon::now())
                                             <p>{{ $subcriptionData->plan->name ?? '' }} {{ __('until') }}
-                                                {{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $subcriptionData->expiry_date)->format('d/m/Y') }}
+                                                {{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $subcriptionData->expiry_date)->format('m/d/Y') }}
                                             </p>
                                         @else
                                             <p>{{ __('Plan expired') }}</p>
@@ -194,13 +199,18 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane fade {{ Request::get('tab') == 2 ? 'show active' : '' }}" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                        <div class="tab-pane fade {{ Request::get('tab') == 2 ? 'show active' : '' }}" id="v-pills-profile"
+                            role="tabpanel" aria-labelledby="v-pills-profile-tab">
                             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                                 <li class="nav-item" style="">
-                                    <a class="nav-link address-b active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">EMPLOYER</a>
+                                    <a class="nav-link address-b active" id="pills-home-tab" data-toggle="pill"
+                                        href="#pills-home" role="tab" aria-controls="pills-home"
+                                        aria-selected="true">EMPLOYER</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link address-b" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">EMPLOYEE</a>
+                                    <a class="nav-link address-b" id="pills-profile-tab" data-toggle="pill"
+                                        href="#pills-profile" role="tab" aria-controls="pills-profile"
+                                        aria-selected="false">EMPLOYEE</a>
                                 </li>
                                 <button class="add-btn addressBook">Add New Address</button>
                             </ul>
@@ -286,7 +296,9 @@
                 <!-- Modal Header -->
                 <div class="modal-header" style="background: #115caecf;">
                     <h4 class="modal-title" style="text-transform: capitalize;color:#fff;">Address Book</h4>
-                    <button type="button" style="border: none; background-color:transparent; color:#fff;font-size:20px;padding:0;" class="btn-close" data-bs-dismiss="modal" aria-label="Close">x</button>
+                    <button type="button"
+                        style="border: none; background-color:transparent; color:#fff;font-size:20px;padding:0;"
+                        class="btn-close" data-bs-dismiss="modal" aria-label="Close">x</button>
                 </div>
 
                 <!-- Modal body -->
@@ -299,42 +311,57 @@
                                         style="padding-top:20px;" class="form-horizontal" role="form">
                                         @csrf
                                         <div class="row">
-                                            <label for="inputFullName" id="nameLabel" style="font-weight:bold;" class="col-sm-12 control-label">EMPLOYER (COMPANY) NAME *</label>
+                                            <label for="inputFullName" id="nameLabel" style="font-weight:bold;"
+                                                class="col-sm-12 control-label">EMPLOYER (COMPANY) NAME *</label>
                                             <div class="col-sm-12">
-                                                <input style="font-size:16px;" type="text" class="form-control" id="inputFullName" name="fullName" placeholder="Full Employer (Company) Name">
+                                                <input style="font-size:16px;" type="text" class="form-control"
+                                                    id="inputFullName" name="fullName"
+                                                    placeholder="Full Employer (Company) Name">
                                             </div>
                                         </div>
                                         <input type="hidden" id="adress-type" name="type" value="employer">
                                         <input type="hidden" id="adress-type" name="addressId">
                                         <div class="form-group">
-                                            <p class="col-sm-offset-2 col-sm-12 help-block" style="font-weight: bold;margin-top:10px; margin-bottom:5px;">STREET ADDRESS 1 * </p>
+                                            <p class="col-sm-offset-2 col-sm-12 help-block"
+                                                style="font-weight: bold;margin-top:10px; margin-bottom:5px;">STREET
+                                                ADDRESS 1 * </p>
                                             <div class="col-sm-12">
-                                                <input style="font-size:16px;" type="text" class="form-control" id="inputAddressLine1" name="addressLine1" placeholder="Street Address 1">
+                                                <input style="font-size:16px;" type="text" class="form-control"
+                                                    id="inputAddressLine1" name="addressLine1"
+                                                    placeholder="Street Address 1">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                            <p class="col-sm-offset-2 col-sm-12 help-block" style="font-weight:bold;margin-bottom:5px;">STREET ADDRESS 2 </p>
+                                            <p class="col-sm-offset-2 col-sm-12 help-block"
+                                                style="font-weight:bold;margin-bottom:5px;">STREET ADDRESS 2 </p>
                                             <div class="col-sm-12">
-                                                <input style="font-size:16px;" type="text" class="form-control" id="inputAddressLine2" name="addressLine2" placeholder="Street Address 2 (Optional)">
+                                                <input style="font-size:16px;" type="text" class="form-control"
+                                                    id="inputAddressLine2" name="addressLine2"
+                                                    placeholder="Street Address 2 (Optional)">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="inputCityTown" style="font-weight:bold;" class="col-sm-12 control-label">City</label>
+                                            <label for="inputCityTown" style="font-weight:bold;"
+                                                class="col-sm-12 control-label">City</label>
                                             <div class="col-sm-12">
-                                                <input style="font-size:16px;" type="text" class="form-control" id="inputCityTown" name="cityName" placeholder="City">
+                                                <input style="font-size:16px;" type="text" class="form-control"
+                                                    id="inputCityTown" name="cityName" placeholder="City">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="selectCountry" style="font-weight:bold;" class="col-sm-12 control-label">State</label>
+                                            <label for="selectCountry" style="font-weight:bold;"
+                                                class="col-sm-12 control-label">State</label>
                                             <div class="col-sm-12">
-                                                <select class="form-control select-box" id="selectState" name="stateName">
+                                                <select class="form-control select-box" id="selectState"
+                                                    name="stateName">
                                                     <option value="" selected="selected">Select</option>
                                                     @if (count($stateList) > 0)
                                                         @foreach ($stateList as $state)
-                                                            <option value="{{ $state->state_code }}">{{ $state->state }} </option>
+                                                            <option value="{{ $state->state_code }}">{{ $state->state }}
+                                                            </option>
                                                         @endforeach
                                                     @endif
                                                 </select>
@@ -342,9 +369,11 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="inputZipPostalCode" style="font-weight:bold;"  class="col-sm-12 control-label">Zip Code</label>
+                                            <label for="inputZipPostalCode" style="font-weight:bold;"
+                                                class="col-sm-12 control-label">Zip Code</label>
                                             <div class="col-sm-12">
-                                                <input style="font-size:16px;" type="text" class="form-control" id="inputZipPostalCode" name="zipCode" placeholder="Zip-Code">
+                                                <input style="font-size:16px;" type="text" class="form-control"
+                                                    id="inputZipPostalCode" name="zipCode" placeholder="Zip-Code">
                                             </div>
                                         </div>
                                     </form>
@@ -355,8 +384,10 @@
                 </div>
                 <div class="modal-footer" style="display: inline-block;">
                     <div class="d-flex justify-content-between pt-2">
-                        <button class="btn-secondary" data-bs-dismiss="modal" style="border-radius:20px; border:none;font-size:12px; padding:5px 10px;">Cancel</button>
-                        <button class="btn-danger" id="store-address" style="border-radius:20px; border:none;font-size:12px; padding:5px 15px;">Save</button>
+                        <button class="btn-secondary" data-bs-dismiss="modal"
+                            style="border-radius:20px; border:none;font-size:12px; padding:5px 10px;">Cancel</button>
+                        <button class="btn-danger" id="store-address"
+                            style="border-radius:20px; border:none;font-size:12px; padding:5px 15px;">Save</button>
                     </div>
                 </div>
             </div>
@@ -725,15 +756,15 @@
         }
 
         $('.eye-icon').click(function() {
-        var id = $(this).data('id');
-        var clr = $(this).attr('src');
-        if (clr = 'eye-icon') {
-            $("#eye-icon_" + id).removeClass("fa fa-eye-slash eye-icon");
-            $("#eye-icon_" + id).addClass("fa fa-eye eye-icon");
-        } else {
-            $("#eye-icon_" + id).addClass("fa fa-eye-slash eye-icon");
-            $("#eye-icon_" + id).removeClass("fa fa-eye eye-icon");
-        }
+            var id = $(this).data('id');
+            var clr = $(this).attr('src');
+            if (clr = 'eye-icon') {
+                $("#eye-icon_" + id).removeClass("fa fa-eye-slash eye-icon");
+                $("#eye-icon_" + id).addClass("fa fa-eye eye-icon");
+            } else {
+                $("#eye-icon_" + id).addClass("fa fa-eye-slash eye-icon");
+                $("#eye-icon_" + id).removeClass("fa fa-eye eye-icon");
+            }
         });
 
         $("#verify-email").click(function(e) {
