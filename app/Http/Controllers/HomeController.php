@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Subcription;
+use App\Models\Address;
+use App\Models\PaySlip;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use App\Mail\VerifyEmailSend;
-use App\Models\PaySlip;
 use Illuminate\Support\Facades\Log;
 use Carbon\Carbon;
 
@@ -39,7 +40,7 @@ class HomeController extends Controller
     {
         $userObj = User::find(Auth::user()->id);
         $subcriptionData = Subcription::with('plan')->where('user_id', $userObj->id)->orderBy('id', 'desc')->first();
-        // dd($subcriptionData);
+
         return view('user-profile', compact('userObj', 'subcriptionData'));
     }
 
