@@ -100,121 +100,99 @@
             <div class="row">
                 <div class="col-lg-2" style="padding: 0; height:95vh; border-right:1px solid #ddd;">
                     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                        <a class="nav-link active my-account" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home"
-                            role="tab" aria-controls="v-pills-home" aria-selected="true">My Account</a>
-                        <a class="nav-link  address-book " id="v-pills-profile-tab" data-toggle="pill"
-                            href="#v-pills-profile" role="tab" aria-controls="v-pills-profile"
-                            aria-selected="false">Address
-                            Book</a>
+                        <a class="nav-link my-account active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home"
+                            role="tab" aria-controls="v-pills-home" aria-selected="true">{{__('My Account')}}</a>
+                        <a class="nav-link address-book" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile"
+                            role="tab" aria-controls="v-pills-profile" aria-selected="false">{{__('Address Book')}}</a>
                     </div>
                 </div>
                 <div class="col-lg-10">
                     <div class="tab-content" style="padding-top: 20px;" id="v-pills-tabContent">
-                        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
-                            aria-labelledby="v-pills-home-tab" style="display:flex;">
-                            <div class="col-lg-6 col-md-6" style="padding: 0;">
-                                <div class="right-side-bar">
-                                    <h4 style="color:#012c63; line-height:26px;">{{ __('User Profile') }}</h4>
-                                    <P style="color:#333!important;font-weight:500;">
-                                        {{ __('Manage your profile, security, and language
-                                                                            preferences.') }}
-                                    </P>
-                                    <div class="profile-outer">
-                                        <div class="d-flex">
-                                            <div class="profile-icon-outer">
-                                                <i class="fa fa-user user"></i>
+                        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6" style="padding: 0;">
+                                    <div class="right-side-bar">
+                                        <h4 style="color:#012c63; line-height:26px;">{{ __('User Profile') }}</h4>
+                                        <P style="color:#333!important;font-weight:500;"> {{ __('Manage your profile, security, and language preferences.') }} </P>
+                                        <div class="profile-outer">
+                                            <div class="d-flex">
+                                                <div class="profile-icon-outer">
+                                                    <i class="fa fa-user user"></i>
+                                                </div>
+                                                <div class="user-center-text">
+                                                    <h6 style="padding: 0; margin:0px;color: #5a5858;">{{ __('Contact Name') }} </h6>
+                                                    <p style="padding:0px;margin:0px;">{{ $userObj->name ?? '' }}</p>
+                                                </div>
                                             </div>
-                                            <div class="user-center-text">
-                                                <h6 style="padding: 0; margin:0px;color: #5a5858;">{{ __('Contact Name') }}
-                                                </h6>
-                                                <p style="padding:0px;margin:0px;">{{ $userObj->name ?? '' }}</p>
-                                            </div>
-                                        </div>
 
-                                        <div class="edit-icon">
-                                            <img class="username" style="width: 15px;"
-                                                data-name="{{ $userObj->name ?? '' }}"
-                                                src={{ asset('images/pen-solid.svg') }}>
-                                        </div>
-                                    </div>
-                                    <div class="profile-outer">
-                                        <div class="d-flex">
-                                            <div class="profile-icon-outer">
-                                                <i class="fa fa-envelope profile-icon"></i>
-                                            </div>
-                                            <div class="user-center-text">
-                                                <h6 style="padding: 0; margin:0px;color: #5a5858;">{{ __('Email Address') }}
-                                                </h6>
-                                                <p style="padding:0px;margin:0px;">{{ $userObj->email ?? '' }}</p>
+                                            <div class="edit-icon">
+                                                <img class="username" style="width: 15px;" data-name="{{ $userObj->name ?? '' }}" src={{ asset('images/pen-solid.svg') }}>
                                             </div>
                                         </div>
+                                        <div class="profile-outer">
+                                            <div class="d-flex">
+                                                <div class="profile-icon-outer">
+                                                    <i class="fa fa-envelope profile-icon"></i>
+                                                </div>
+                                                <div class="user-center-text">
+                                                    <h6 style="padding: 0; margin:0px;color: #5a5858;">{{ __('Email Address') }}</h6>
+                                                    <p style="padding:0px;margin:0px;">{{ $userObj->email ?? '' }}</p>
+                                                </div>
+                                            </div>
 
-                                        <div class="edit-icon">
-                                            <img class="username2" data-email="{{ $userObj->email ?? '' }}"
-                                                style="width: 15px;" src={{ asset('images/pen-solid.svg') }}>
-                                        </div>
-                                    </div>
-                                    <div class="profile-outer">
-                                        <div class="d-flex">
-                                            <div class="profile-icon-outer">
-                                                <i class="fa fa-lock lock"></i>
-                                            </div>
-                                            <div class="user-center-text">
-                                                <h6 style="padding: 0; margin:0px;color: #5a5858;">{{ __('Password') }}
-                                                </h6>
-                                                <p style="padding:0px;margin:0px;">{{ '*********' }}</p>
+                                            <div class="edit-icon">
+                                                <img class="username2" data-email="{{ $userObj->email ?? '' }}" style="width: 15px;" src={{ asset('images/pen-solid.svg') }}>
                                             </div>
                                         </div>
+                                        <div class="profile-outer">
+                                            <div class="d-flex">
+                                                <div class="profile-icon-outer">
+                                                    <i class="fa fa-lock lock"></i>
+                                                </div>
+                                                <div class="user-center-text">
+                                                    <h6 style="padding: 0; margin:0px;color: #5a5858;">{{ __('Password') }}</h6>
+                                                    <p style="padding:0px;margin:0px;">{{ '*********' }}</p>
+                                                </div>
+                                            </div>
 
-                                        <div class="edit-icon">
-                                            <img class="username3" style="width: 15px;"
-                                                src="{{ asset('images/pen-solid.svg') }}">
-                                        </div>
-                                    </div>
-                                    <div class="profile-outer">
-                                        <div class="d-flex trash-account">
-                                            <div class="profile-icon-outer" style="background-color:red;">
-                                                <i class="fa fa-trash-o trash"></i>
+                                            <div class="edit-icon">
+                                                <img class="username3" style="width: 15px;" src="{{ asset('images/pen-solid.svg') }}">
                                             </div>
-                                            <div class="user-center-text">
-                                                <button
-                                                    style="padding: 7px 15px; margin:0px;color: #fff;background-color:red; border-radius:5px;border:none; ">Delete
-                                                    Account</button>
+                                        </div>
+                                        <div class="profile-outer">
+                                            <div class="d-flex trash-account">
+                                                <div class="profile-icon-outer" style="background-color:red;">
+                                                    <i class="fa fa-trash-o trash"></i>
+                                                </div>
+                                                <div class="user-center-text">
+                                                    <button style="padding: 7px 15px; margin:0px;color: #fff;background-color:red; border-radius:5px;border:none; ">Delete Account</button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
-
-
-                            </div>
-                            @if (!empty($subcriptionData))
                                 <div class="col-lg-4 col-md-4 member-plan">
-                                    <h4>Premium Member Plan</h4>
-                                    @if ($subcriptionData->expiry_date > \Carbon\Carbon::now())
-                                        <p>{{ $subcriptionData->plan->name ?? '' }} until
-                                            {{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $subcriptionData->expiry_date)->format('d/m/Y') }}
-                                        </p>
-                                    @else
-                                        <p>Plan expired</p>
-                                        <button class="renew-btn">RENEW</button>
+                                    @if (!empty($subcriptionData))
+                                        <h4>{{__('Premium Member Plan')}}</h4>
+                                        @if ($subcriptionData->expiry_date > \Carbon\Carbon::now())
+                                            <p>{{ $subcriptionData->plan->name ?? '' }} {{__('until')}} {{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $subcriptionData->expiry_date)->format('d/m/Y') }}</p>
+                                        @else
+                                            <p>{{__('Plan expired')}}</p>
+                                            <button class="renew-btn">{{__('RENEW')}}</button>
+                                        @endif
                                     @endif
                                 </div>
-                            @endif
+                            </div>
                         </div>
                         <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
                             aria-labelledby="v-pills-profile-tab">
 
                             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                                 <li class="nav-item" style="">
-                                    <a class="nav-link address-b active" id="pills-home-tab" data-toggle="pill"
-                                        href="#pills-home" role="tab" aria-controls="pills-home"
-                                        aria-selected="true">EMPLOYER</a>
+                                    <a class="nav-link address-b active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">EMPLOYER</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link address-b" id="pills-profile-tab" data-toggle="pill"
-                                        href="#pills-profile" role="tab" aria-controls="pills-profile"
-                                        aria-selected="false">EMPLOYEE</a>
+                                    <a class="nav-link address-b" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">EMPLOYEE</a>
                                 </li>
                                 <button class="add-btn addressBook">Add New Address</button>
                             </ul>

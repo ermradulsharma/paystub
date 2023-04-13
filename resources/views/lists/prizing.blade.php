@@ -1,183 +1,136 @@
 @extends('layouts.app')
-{{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" /> --}}
 @section('content')
-
-
-<div class="my-5">
-
-    <div class="container pl-0 pr-0 " style="max-width:1420px; border: 1px solid red; background: #E8E6E6;">
-
-        <div class="">
-            <div class="w-100 text-center p-1 prizeHeader" style="">
-                <h2 class="text-light">Complete Your Order</h2>
+    <div class="my-5">
+        <div class="container pl-0 pr-0 " style="max-width:1420px; border: 1px solid red; background: #E8E6E6;">
+            <div class="">
+                <div class="w-100 text-center p-1 prizeHeader" style="">
+                    <h2 class="text-light">Complete Your Order</h2>
+                </div>
+                <div class="w-100 text-center pb-5">
+                    <h3 class="mt-2 font-weight-normal">Congratulations. Select your plan to gain unlimited access. Paystubs
+                        & Tax Forms</h3 class="mt-2">
+                </div>
             </div>
-            <div class="w-100 text-center pb-5">
-                <h3 class="mt-2 font-weight-normal">Congratulations. Select your plan to gain unlimited access. Paystubs
-                    & Tax Forms</h3 class="mt-2">
-            </div>
-        </div>
-        <div class="mx-lg-5 px-lg-5">
-            <div class="m-lg-5 px-lg-5">
-                <div class="row">
-                    @if(isset($plans) && $plans->count() > 0)
-                        @foreach ( $plans as $key => $plan)
-                            <div class="col-lg-4 d-flex justify-content-center">
-                                <div class="prizebox2 suscription" role="button" data-plan="{{$plan->id}}">
-                                    <h3 class="my-5 pb-5 prizeh3">{{$plan->name}}</h3>
-                                    <div class="right-img asdf">
-                                        <img src="images/green1.png">
-                                       <div class="value-text"><p>${{$plan->price}}</p></div>
-                                    </div>
-                                    <div class="mx-4">
-                                        <div class="d-flex listItem">
-                                            <i class="fa fa-check priceicon"></i>
-                                            <p class="prize-p">{{$plan->description}}</p>
-                                        </div>
-                                        {{-- <div class="d-flex listItem">
-                                            <i class="fa-sharp fa-solid fa-dollar-sign priceicon"></i>
-                                            <p class="prize-p">{{$plan->prize}}</p>
-                                        </div> --}}
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            {{-- @if($plan->name == '6 Month')
+            <div class="mx-lg-5 px-lg-5">
+                <div class="m-lg-5 px-lg-5">
+                    <div class="row">
+                        @if (isset($plans) && $plans->count() > 0)
+                            @foreach ($plans as $key => $plan)
                                 <div class="col-lg-4 d-flex justify-content-center">
-                                    <div class="prizebox2 suscription" role="button" data-plan="{{$plan->id}}">
-                                        <h3 class="my-5 pb-5 prizeh3">{{$plan->name}}</h3>
+                                    <div class="prizebox2 suscription" role="button" data-plan="{{ $plan->id }}">
+                                        <h3 class="my-5 pb-5 prizeh3">{{ $plan->name }}</h3>
+                                        <div class="right-img asdf">
+                                            <img src="images/green1.png">
+                                            <div class="value-text">
+                                                <p>${{ $plan->price }}</p>
+                                            </div>
+                                        </div>
                                         <div class="mx-4">
                                             <div class="d-flex listItem">
                                                 <i class="fa fa-check priceicon"></i>
-                                                <p class="prize-p">{{$plan->paystub_access}} Paystubs</p>
-                                            </div>
-
-                                            <div class="d-flex listItem">
-                                                <i class="fa {{$plan->template_access == '1' ? 'fa-check priceicon' : 'fa-xmark priceiconx'}} "></i>
-                                                <p class="prize-p">Get access to Templates</p>
-                                            </div>
-
-                                            <div class="d-flex listItem">
-                                                <i class="fa {{$plan->paystub_customize == '1' ? 'fa-check priceicon' : 'fa-xmark priceiconx'}}"></i>
-                                                <p class="prize-p">Customize your Paystubs</p>
-                                            </div>
-
-                                            <div class="d-flex listItem">
-                                                <i class="fa {{$plan->email_download == '1' ? 'fa-check priceicon' : 'fa-xmark priceiconx'}}"></i>
-                                                <p class="prize-p">Email / Download</p>
+                                                <p class="prize-p">{{ $plan->description }}</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            @endif --}}
-                        @endforeach
-                    @endif
+                            @endforeach
+                        @endif
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<style>
-    /* Center the loader */
-    #loader {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        z-index: 9999;
-        width: 120px;
-        height: 120px;
-        margin: -76px 0 0 -76px;
-        border: 16px solid #f3f3f3;
-        border-radius: 50%;
-        border-top: 16px solid #3498db;
-        -webkit-animation: spin 2s linear infinite;
-        animation: spin 2s linear infinite;
-    }
-
-    @-webkit-keyframes spin {
-        0% {
-            -webkit-transform: rotate(0deg);
+    <style>
+        /* Center the loader */
+        #loader {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            z-index: 9999;
+            width: 120px;
+            height: 120px;
+            margin: -76px 0 0 -76px;
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid #3498db;
+            -webkit-animation: spin 2s linear infinite;
+            animation: spin 2s linear infinite;
         }
 
-        100% {
-            -webkit-transform: rotate(360deg);
-        }
-    }
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
 
-    @keyframes spin {
-        0% {
-            transform: rotate(0deg);
-        }
-
-        100% {
-            transform: rotate(360deg);
-        }
-    }
-
-    /* Add animation to "page content" */
-    .animate-bottom {
-        position: relative;
-        -webkit-animation-name: animatebottom;
-        -webkit-animation-duration: 1s;
-        animation-name: animatebottom;
-        animation-duration: 5s
-    }
-
-    @-webkit-keyframes animatebottom {
-        from {
-            bottom: -100px;
-            opacity: 0
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
         }
 
-        to {
-            bottom: 0px;
-            opacity: 1
-        }
-    }
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
 
-    @keyframes animatebottom {
-        from {
-            bottom: -100px;
-            opacity: 0
+            100% {
+                transform: rotate(360deg);
+            }
         }
 
-        to {
+        /* Add animation to "page content" */
+        .animate-bottom {
+            position: relative;
+            -webkit-animation-name: animatebottom;
+            -webkit-animation-duration: 1s;
+            animation-name: animatebottom;
+            animation-duration: 5s
+        }
+
+        @-webkit-keyframes animatebottom {
+            from {
+                bottom: -100px;
+                opacity: 0
+            }
+
+            to {
+                bottom: 0px;
+                opacity: 1
+            }
+        }
+
+        @keyframes animatebottom {
+            from {
+                bottom: -100px;
+                opacity: 0
+            }
+
+            to {
+                bottom: 0;
+                opacity: 1
+            }
+        }
+
+        #loaderDiv {
+            position: fixed;
+            left: 0;
+            top: 0;
             bottom: 0;
-            opacity: 1
+            right: 0;
+            background: #00000054;
+            z-index: 999;
         }
-    }
-
-    #loaderDiv {
-        position: fixed;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        background: #00000054;
-        z-index: 999;
-    }
-</style>
-<div id="loaderDiv" style="display: none;">
-    <div id="loader"></div>
-</div>
+    </style>
+    <div id="loaderDiv" style="display: none;">
+        <div id="loader"></div>
+    </div>
 @endsection
 
 @section('script')
-<script>
-
-    $('.suscription').click(function() {
-        var planId = $(this).data('plan');
-
-        window.location.href = "{{route('processTransaction')}}?plan="+planId;
-        return false;
-        // document.getElementById("loaderDiv").style.display = "block";
-        // setTimeout(function() {
-        //     toastr.success("Subscription has been purchased successfully.");
-        // }, 1000);
-        // setTimeout(function() {
-        //     document.getElementById("loaderDiv").style.display = "none";
-        //     window.location.href = "{{route('subscription')}}";
-        // }, 2000);
-    });
-</script>
+    <script>
+        $('.suscription').click(function() {
+            var planId = $(this).data('plan');
+            window.location.href = "{{ route('processTransaction') }}?plan=" + planId;
+            return false;
+        });
+    </script>
 @endsection
