@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Currency;
 use App\Models\Deduction;
+use App\Models\Address;
 use App\Models\PaySlip;
 use App\Models\Plan;
 use App\Models\StateTax;
@@ -21,8 +22,9 @@ class PayStubController extends Controller
         $basicType = Template::where(['state' => 'usa', 'type' => 'basic', 'status' => 1])->orderBy('title')->with('images')->get();
         $advanceType = Template::where(['state' => 'usa', 'type' => 'advance', 'status' => 1])->orderBy('title')->with('images')->get();
         $stateTaxes = StateTax::orderBy('state')->get();
+        $employerList = Address::orderBy('id', 'DESC')->get();
         $currencies = Currency::get();
-        return view('usaPaystub', compact('basicType', 'advanceType', 'deduction', 'stateTaxes', 'currencies'));
+        return view('usaPaystub', compact('basicType', 'advanceType', 'deduction', 'stateTaxes', 'currencies', 'employerList'));
     }
 
     public function ukPayStub()

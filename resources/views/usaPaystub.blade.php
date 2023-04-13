@@ -48,7 +48,14 @@
                     <div class="col-md-12">
                         <div class=" box-usa">
                             <h5 class="box-h5">Company Info</h5>
-                            <select name="" id=""></select>
+                            
+                            <select name="employerAddress" id="employerAddress">
+                                <option data-name="Arvind" value="ewrwe">asda</option>
+                                <option data-name="anij" value="ewrwe">asda</option>
+                                <option data-name="sahil" value="ewrwe">asda</option>
+                                <option data-name="dev" value="ewrwe">asda</option>
+                            </select>
+
                             <div class="row mb-3 ">
                                 <div class="col-md-6 mt-1">
                                     <div>
@@ -202,7 +209,12 @@
             </div>
             <div>
                 <h5 class="box-h5">Employee Info</h5>
-                <select name="" id=""></select>
+                <select name="employeeAddress" id="employeeAddress">
+                    <option value="ewrwe">asda</option>
+                    <option value="ewrwe">asda</option>
+                    <option value="ewrwe">asda</option>
+                    <option value="ewrwe">asda</option>
+                </select>
                 <div class="row mb-3">
                     <div class="col-md-12">
                         <div class=" box-usa">
@@ -1089,6 +1101,13 @@
                 format: 'xxx-xxx-xxxx',
             });
         });
+    </script>
+    <script>
+    $( document ).ready(function() {
+        $("#employerAddress").change(function() {
+            $('#cname').val($('option:selected', this).data('name'))
+        });
+    });
     </script>
     <script src="{{ asset('user') }}/js/calculations.js"></script>
     <script src="{{ asset('user') }}/js/javaformula.js"></script>
