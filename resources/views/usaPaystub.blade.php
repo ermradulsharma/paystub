@@ -47,22 +47,22 @@
                 <div class="row mb-3">
                     <div class="col-md-12">
                         <div class=" box-usa">
-                            <h5 class="box-h5">Company Info</h5>
-                            
-                            <select name="employerAddress" id="employerAddress">
-                                <option data-name="" value="ewrwe">Select Address</option>
-                                @if ($employerList->count() > 0)
-                                    @foreach ($employerList as $key =>$employer )
-                                        <option data-name="{{$employer->name}}"
-                                            data-address1="{{$employer->address_1}}"
-                                            data-address2="{{$employer->address_2}}"
-                                            data-city="{{$employer->city}}"
-                                            data-state="{{$employer->state}}"
-                                            data-zip="{{$employer->zip_code}}"
-                                             value="{{$employer->name}}">{{$employer->name}}</option>
-                                    @endforeach
-                                @endif
-                            </select>
+                            <div class="row justify-content-between py-3">
+                                <h5 class="box-h5">Company Info</h5>
+                                <select name="employerAddress" id="employerAddress" class="address_book">
+                                    <option data-name="" value="ewrwe">Select Address</option>
+                                    @if ($employerList->count() > 0)
+                                        @foreach ($employerList as $key => $employer)
+                                            <option data-name="{{ $employer->name }}"
+                                                data-address1="{{ $employer->address_1 }}"
+                                                data-address2="{{ $employer->address_2 }}" data-city="{{ $employer->city }}"
+                                                data-state="{{ $employer->state }}" data-zip="{{ $employer->zip_code }}"
+                                                value="{{ $employer->name }}">{{ $employer->name }}</option>
+                                        @endforeach
+                                    @endif
+                                </select>
+                            </div>
+
 
                             <div class="row mb-3 ">
                                 <div class="col-md-6 mt-1">
@@ -105,7 +105,8 @@
                                     <div>
                                         <label for="address_2" class="lable">STREET ADDRESS 2 </label>
                                         <input type="text" id="address_2" name="address_2"
-                                            placeholder="Company Street Address 2 (optional)" class="w-100  input-box-font">
+                                            placeholder="Company Street Address 2 (optional)"
+                                            class="w-100  input-box-font">
                                     </div>
 
                                 </div>
@@ -216,24 +217,38 @@
                 </div>
             </div>
             <div>
-                <h5 class="box-h5">Employee Info</h5>
-                <select name="employeeAddress" id="employeeAddress">
-                    <option data-name="" value="ewrwe">Select Address</option>
-                    @if ($employeeList->count() > 0)
-                        @foreach ($employeeList as $key =>$employee )
-                            <option data-name="{{$employee->name}}"
-                                data-address1="{{$employee->address_1}}"
-                                data-address2="{{$employee->address_2}}"
-                                data-city="{{$employee->city}}"
-                                data-state="{{$employee->state}}"
-                                data-zip="{{$employee->zip_code}}"
-                                value="{{$employee->name}}">{{$employee->name}}</option>
-                        @endforeach
-                    @endif
-                </select>
+                {{-- <div class="row justify-content-between pb-2">
+                    <h5 class="box-h5">Employee Info</h5>
+                    <select name="employeeAddress" id="employeeAddress" class="address_book_1">
+                        <option data-name="" value="ewrwe">Select Address</option>
+                        @if ($employeeList->count() > 0)
+                            @foreach ($employeeList as $key => $employee)
+                                <option data-name="{{ $employee->name }}" data-address1="{{ $employee->address_1 }}"
+                                    data-address2="{{ $employee->address_2 }}" data-city="{{ $employee->city }}"
+                                    data-state="{{ $employee->state }}" data-zip="{{ $employee->zip_code }}"
+                                    value="{{ $employee->name }}">{{ $employee->name }}</option>
+                            @endforeach
+                        @endif
+                    </select>
+                </div> --}}
+
                 <div class="row mb-3">
                     <div class="col-md-12">
                         <div class=" box-usa">
+                            <div class="row justify-content-between py-3">
+                                <h5 class="box-h5">Employee Info</h5>
+                                <select name="employeeAddress" id="employeeAddress" class="address_book_1">
+                                    <option data-name="" value="ewrwe">Select Address</option>
+                                    @if ($employeeList->count() > 0)
+                                        @foreach ($employeeList as $key => $employee)
+                                            <option data-name="{{ $employee->name }}" data-address1="{{ $employee->address_1 }}"
+                                                data-address2="{{ $employee->address_2 }}" data-city="{{ $employee->city }}"
+                                                data-state="{{ $employee->state }}" data-zip="{{ $employee->zip_code }}"
+                                                value="{{ $employee->name }}">{{ $employee->name }}</option>
+                                        @endforeach
+                                    @endif
+                                </select>
+                            </div>
                             <div class="row mb-3">
                                 <div class="col-md-4 mt-4">
                                     <div>
@@ -335,8 +350,8 @@
                                         <label for="check_no" class="lable">Check No <span
                                                 class="redColor">*</span></label>
                                         <input type="text" id="check_no" name="check_no"
-                                            class="w-100  input-box-font removeDiv" placeholder="123456789" maxlength="9"
-                                            minlength="6"
+                                            class="w-100  input-box-font removeDiv" placeholder="123456789"
+                                            maxlength="9" minlength="6"
                                             onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                     </div>
                                 </div>
@@ -743,8 +758,7 @@
                                             <p class="p-0 m-0 " style="font-family: serif;">Clock Vchr Number<span
                                                     class="redColor">*</span> </p>
                                             <input type="text" name="clock_vchr_number" id="clock_vchr_number"
-                                                class="earnbtn removeDiv text-center"
-                                                placeholder="123456" maxlength="11"
+                                                class="earnbtn removeDiv text-center" placeholder="123456" maxlength="11"
                                                 onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                         </div>
 
@@ -1115,26 +1129,26 @@
         });
     </script>
     <script>
-    $( document ).ready(function() {
-        $("#employerAddress").change(function() {
-            $('#cname').val($('option:selected', this).data('name'))
-            $('#address_1').val($('option:selected', this).data('address1'))
-            $('#address_2').val($('option:selected', this).data('address2'))
-            $('#city').val($('option:selected', this).data('city'))
-            $('#state').val($('option:selected', this).data('state'))
-            $('#zip_code').val($('option:selected', this).data('zip'))
-        });
+        $(document).ready(function() {
+            $("#employerAddress").change(function() {
+                $('#cname').val($('option:selected', this).data('name'))
+                $('#address_1').val($('option:selected', this).data('address1'))
+                $('#address_2').val($('option:selected', this).data('address2'))
+                $('#city').val($('option:selected', this).data('city'))
+                $('#state').val($('option:selected', this).data('state'))
+                $('#zip_code').val($('option:selected', this).data('zip'))
+            });
 
-        $("#employeeAddress").change(function() {
-            $('#emp_name').val($('option:selected', this).data('name'))
-            $('#emp_street_1').val($('option:selected', this).data('address1'))
-            $('#emp_street_2').val($('option:selected', this).data('address2'))
-            $('#emp_city').val($('option:selected', this).data('city'))
-            $('#emp_state').val($('option:selected', this).data('state'))
-            $('#emp_zip_code').val($('option:selected', this).data('zip'))
-        });
+            $("#employeeAddress").change(function() {
+                $('#emp_name').val($('option:selected', this).data('name'))
+                $('#emp_street_1').val($('option:selected', this).data('address1'))
+                $('#emp_street_2').val($('option:selected', this).data('address2'))
+                $('#emp_city').val($('option:selected', this).data('city'))
+                $('#emp_state').val($('option:selected', this).data('state'))
+                $('#emp_zip_code').val($('option:selected', this).data('zip'))
+            });
 
-    });
+        });
     </script>
     <script src="{{ asset('user') }}/js/calculations.js"></script>
     <script src="{{ asset('user') }}/js/javaformula.js"></script>
