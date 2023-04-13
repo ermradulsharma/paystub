@@ -340,7 +340,7 @@
 
                 <!-- Modal body -->
                 <div class="modal-body pb-4" style="box-shadow: 0 0 8px rgba(0,0,0,.14);padding-top:0;">
-                    <form id="userNameForm" method="post" action="{{ url('profile/details/save') }}">
+                    <form id="userNameForm" method="post" action="{{ url('profile/details/save') }}" class="text-center">
                         @csrf
                         <input type="hidden" value="setup-account" name="type">
                         <label class="label-text" for="css">First Name<span style="color:red;">*</span></label>
