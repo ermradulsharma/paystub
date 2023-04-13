@@ -123,126 +123,132 @@
                                                 <div class="profile-icon-outer">
                                                     <i class="fa fa-user user"></i>
                                                 </div>
-
-                                                <div class="edit-icon">
-                                                    <img class="username" style="width: 15px;"
-                                                        data-name="{{ $userObj->name ?? '' }}"
-                                                        src={{ asset('images/pen-solid.svg') }}>
+                                                <div class="user-center-text">
+                                                    <h6 style="padding: 0; margin:0px;color: #5a5858;">
+                                                        {{ __('Contact Name') }}</h6>
+                                                    <p style="padding:0px;margin:0px;">{{ $userObj->name ?? '' }}</p>
                                                 </div>
                                             </div>
-                                            <div class="profile-outer">
-                                                <div class="d-flex">
-                                                    <div class="profile-icon-outer">
-                                                        <i class="fa fa-envelope profile-icon"></i>
-                                                    </div>
-                                                    <div class="user-center-text">
-                                                        <h6 style="padding: 0; margin:0px;color: #5a5858;">
-                                                            {{ __('Email Address') }}</h6>
-                                                        <p style="padding:0px;margin:0px;">{{ $userObj->email ?? '' }}</p>
-                                                    </div>
-                                                </div>
 
-                                                <div class="edit-icon">
-                                                    <img class="username2" data-email="{{ $userObj->email ?? '' }}"
-                                                        style="width: 15px;" src={{ asset('images/pen-solid.svg') }}>
+                                            <div class="edit-icon">
+                                                <img class="username" style="width: 15px;"
+                                                    data-name="{{ $userObj->name ?? '' }}"
+                                                    src={{ asset('images/pen-solid.svg') }}>
+                                            </div>
+                                        </div>
+                                        <div class="profile-outer">
+                                            <div class="d-flex">
+                                                <div class="profile-icon-outer">
+                                                    <i class="fa fa-envelope profile-icon"></i>
+                                                </div>
+                                                <div class="user-center-text">
+                                                    <h6 style="padding: 0; margin:0px;color: #5a5858;">
+                                                        {{ __('Email Address') }}</h6>
+                                                    <p style="padding:0px;margin:0px;">{{ $userObj->email ?? '' }}</p>
                                                 </div>
                                             </div>
-                                            <div class="profile-outer">
-                                                <div class="d-flex">
-                                                    <div class="profile-icon-outer">
-                                                        <i class="fa fa-lock lock"></i>
-                                                    </div>
-                                                    <div class="user-center-text">
-                                                        <h6 style="padding: 0; margin:0px;color: #5a5858;">
-                                                            {{ __('Password') }}</h6>
-                                                        <p style="padding:0px;margin:0px;">{{ '*********' }}</p>
-                                                    </div>
-                                                </div>
 
-                                                <div class="edit-icon">
-                                                    <img class="username3" style="width: 15px;"
-                                                        src="{{ asset('images/pen-solid.svg') }}">
+                                            <div class="edit-icon">
+                                                <img class="username2" data-email="{{ $userObj->email ?? '' }}"
+                                                    style="width: 15px;" src={{ asset('images/pen-solid.svg') }}>
+                                            </div>
+                                        </div>
+                                        <div class="profile-outer">
+                                            <div class="d-flex">
+                                                <div class="profile-icon-outer">
+                                                    <i class="fa fa-lock lock"></i>
+                                                </div>
+                                                <div class="user-center-text">
+                                                    <h6 style="padding: 0; margin:0px;color: #5a5858;">
+                                                        {{ __('Password') }}</h6>
+                                                    <p style="padding:0px;margin:0px;">{{ '*********' }}</p>
                                                 </div>
                                             </div>
-                                            <div class="profile-outer">
-                                                <div class="d-flex trash-account">
-                                                    <div class="profile-icon-outer" style="background-color:red;">
-                                                        <i class="fa fa-trash-o trash"></i>
-                                                    </div>
-                                                    <div class="user-center-text">
-                                                        <button
-                                                            style="padding: 7px 15px; margin:0px;color: #fff;background-color:red; border-radius:5px;border:none; ">Delete
-                                                            Account</button>
-                                                    </div>
+
+                                            <div class="edit-icon">
+                                                <img class="username3" style="width: 15px;"
+                                                    src="{{ asset('images/pen-solid.svg') }}">
+                                            </div>
+                                        </div>
+                                        <div class="profile-outer">
+                                            <div class="d-flex trash-account">
+                                                <div class="profile-icon-outer" style="background-color:red;">
+                                                    <i class="fa fa-trash-o trash"></i>
+                                                </div>
+                                                <div class="user-center-text">
+                                                    <button
+                                                        style="padding: 7px 15px; margin:0px;color: #fff;background-color:red; border-radius:5px;border:none; ">Delete
+                                                        Account</button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4 member-plan">
-                                    @if (!empty($subcriptionData))
-                                        <h4>{{ __('Premium Member Plan') }}</h4>
-                                        @if ($subcriptionData->expiry_date > \Carbon\Carbon::now())
-                                            <p>{{ $subcriptionData->plan->name ?? '' }} {{ __('until') }}
-                                                {{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $subcriptionData->expiry_date)->format('d/m/Y') }}
-                                            </p>
-                                        @else
-                                            <p>{{ __('Plan expired') }}</p>
-                                            <button class="renew-btn">{{ __('RENEW') }}</button>
-                                        @endif
-                                    @endif
-                                </div>
                             </div>
-
+                            <div class="col-lg-4 col-md-4 member-plan">
+                                @if (!empty($subcriptionData))
+                                    <h4>{{ __('Premium Member Plan') }}</h4>
+                                    @if ($subcriptionData->expiry_date > \Carbon\Carbon::now())
+                                        <p>{{ $subcriptionData->plan->name ?? '' }} {{ __('until') }}
+                                            {{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $subcriptionData->expiry_date)->format('d/m/Y') }}
+                                        </p>
+                                    @else
+                                        <p>{{ __('Plan expired') }}</p>
+                                        <button class="renew-btn">{{ __('RENEW') }}</button>
+                                    @endif
+                                @endif
+                            </div>
                         </div>
-                        <div class="tab-pane fade {{ Request::get('tab') == 2 ? 'show active' : '' }}" id="v-pills-profile"
-                            role="tabpanel" aria-labelledby="v-pills-profile-tab">
 
-                            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                                <li class="nav-item" style="">
-                                    <a class="nav-link address-b active" id="pills-home-tab" data-toggle="pill"
-                                        href="#pills-home" role="tab" aria-controls="pills-home"
-                                        aria-selected="true">EMPLOYER</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link address-b" id="pills-profile-tab" data-toggle="pill"
-                                        href="#pills-profile" role="tab" aria-controls="pills-profile"
-                                        aria-selected="false">EMPLOYEE</a>
-                                </li>
-                                <button class="add-btn addressBook">Add New Address</button>
-                            </ul>
+                    </div>
+                    <div class="tab-pane fade {{ Request::get('tab') == 2 ? 'show active' : '' }}" id="v-pills-profile"
+                        role="tabpanel" aria-labelledby="v-pills-profile-tab">
 
-                            <div class="tab-content" id="pills-tabContent">
-                                <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
-                                    aria-labelledby="pills-home-tab">
-                                    <table class="table" style="border:1px solid #ddd;">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">#</th>
-                                                <th scope="col">Company Name</th>
-                                                <th scope="col">Address1</th>
-                                                <th scope="col">Address2</th>
-                                                <th scope="col">City</th>
-                                                <th scope="col">State</th>
-                                                <th scope="col">Zip Code</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody id="employerTab">
-                                            <tr style="border:1px solid #ddd;">
-                                                <th scope="row">1</th>
-                                                <td>Mark22</td>
-                                                <td>Otto</td>
-                                                <td>@mdo</td>
-                                                <td>otto</td>
-                                                <td>@mdo</td>
-                                                <td>1234</td>
-                                                <td style="padding-right:0; padding-left:0;"><img style="width:22px;"
-                                                        src="images/icons/edit-icon.png"></td>
-                                                <td style="padding-right:0; padding-left:0;"><img style="width:20px;"
-                                                        src="images/icons/del-icon.png"></td>
-                                            </tr>
+                        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                            <li class="nav-item" style="">
+                                <a class="nav-link address-b active" id="pills-home-tab" data-toggle="pill"
+                                    href="#pills-home" role="tab" aria-controls="pills-home"
+                                    aria-selected="true">EMPLOYER</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link address-b" id="pills-profile-tab" data-toggle="pill"
+                                    href="#pills-profile" role="tab" aria-controls="pills-profile"
+                                    aria-selected="false">EMPLOYEE</a>
+                            </li>
+                            <button class="add-btn addressBook">Add New Address</button>
+                        </ul>
 
-                                            {{-- <tr style="border:1px solid #ddd;">
+                        <div class="tab-content" id="pills-tabContent">
+                            <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                                aria-labelledby="pills-home-tab">
+                                <table class="table" style="border:1px solid #ddd;">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Company Name</th>
+                                            <th scope="col">Address1</th>
+                                            <th scope="col">Address2</th>
+                                            <th scope="col">City</th>
+                                            <th scope="col">State</th>
+                                            <th scope="col">Zip Code</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="employerTab">
+                                        <tr style="border:1px solid #ddd;">
+                                            <th scope="row">1</th>
+                                            <td>Mark22</td>
+                                            <td>Otto</td>
+                                            <td>@mdo</td>
+                                            <td>otto</td>
+                                            <td>@mdo</td>
+                                            <td>1234</td>
+                                            <td style="padding-right:0; padding-left:0;"><img style="width:22px;"
+                                                    src="images/icons/edit-icon.png"></td>
+                                            <td style="padding-right:0; padding-left:0;"><img style="width:20px;"
+                                                    src="images/icons/del-icon.png"></td>
+                                        </tr>
+
+                                        {{-- <tr style="border:1px solid #ddd;">
                                                 <th scope="row">2</th>
                                                 <td>Jacob</td>
                                                 <td>Thornton</td>
@@ -256,26 +262,26 @@
                                                         src="images/icons/del-icon.png"></td>
                                             </tr> --}}
 
-                                        </tbody>
-                                    </table>
+                                    </tbody>
+                                </table>
 
-                                </div>
-                                <div class="tab-pane fade" id="pills-profile" role="tabpanel"
-                                    aria-labelledby="pills-profile-tab">
-                                    <table class="table" style="border:1px solid #ddd;">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">#</th>
-                                                <th scope="col">Employee Name</th>
-                                                <th scope="col">Address1</th>
-                                                <th scope="col">Address2</th>
-                                                <th scope="col">City</th>
-                                                <th scope="col">State</th>
-                                                <th scope="col">Zip Code</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody id="employeeTab">
-                                            {{-- <tr>
+                            </div>
+                            <div class="tab-pane fade" id="pills-profile" role="tabpanel"
+                                aria-labelledby="pills-profile-tab">
+                                <table class="table" style="border:1px solid #ddd;">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Employee Name</th>
+                                            <th scope="col">Address1</th>
+                                            <th scope="col">Address2</th>
+                                            <th scope="col">City</th>
+                                            <th scope="col">State</th>
+                                            <th scope="col">Zip Code</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="employeeTab">
+                                        {{-- <tr>
                                                 <th scope="row">1</th>
                                                 <td>Mark</td>
                                                 <td>Otto</td>
@@ -289,14 +295,14 @@
                                                         src="images/icons/del-icon.png"></td>
                                             </tr> --}}
 
-                                        </tbody>
-                                    </table>
-                                </div>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </section>
 
@@ -404,7 +410,7 @@
         </div>
     </div>
 
-    {{-- <div class="modal fade" id="userName">
+    <div class="modal fade" id="userName">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <!-- Modal Header -->
@@ -435,7 +441,7 @@
                 </div>
             </div>
         </div>
-    </div> --}}
+    </div>
 
     <div class="modal fade" id="userName2">
         <div class="modal-dialog modal-dialog-centered">
