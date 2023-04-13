@@ -628,6 +628,45 @@ class UserController extends Controller
         return response()->json($response, $response['status']);
     }
 
+    public function getAddress(Request $request){
+
+        try{
+            $response = [];
+            $response['success'] = FALSE;
+            $response['status'] = STATUS_BAD_REQUEST;
+            $rules = [
+                'type'      => 'required',
+            ];
+
+            $messages = [
+                'required' => 'The :attribute cannot be empty.',
+            ];
+            $validator = Validator::make($request->all(), $rules, $messages);
+            if ($validator->fails()) {
+                $response['message'] = $validator->errors()->first();
+                return response()->json($response, 301);
+            }
+
+            $addressList = Address::where(['type'=>$request->type,'user_id'=>Auth::user()->id])->orderBy('id','desc')->paginate(10);
+            if($addressList){
+                $response['success'] = TRUE;
+                $response['data'] = $addressList;
+                $response['message'] = "Address list fetch successfully";
+                $response['status'] = STATUS_OK;
+            }else{
+                $response['success'] = TRUE;
+                $response['data'] = $addressList;
+                $response['message'] = "Address list fetch successfully";
+                $response['status'] = STATUS_OK;
+            }
+        }catch (\Exception $e) {
+            $response['message'] = $e->getMessage() . ' Line No ' . $e->getLine() . ' in File' . $e->getFile();
+            Log::error($e->getTraceAsString());
+            $response['status'] = STATUS_GENERAL_ERROR;
+        }
+        return response()->json($response, $response['status']);
+    }
+
     public function addressDelete(Request $request){
 
         try{

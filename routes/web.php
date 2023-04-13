@@ -5,6 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\PayStubController;
 use App\Http\Controllers\TemplateFormController;
+use App\Http\Controllers\AddressBookController;
 use App\Http\Controllers\PayPalController;
 use App\Http\Controllers\SettingController;
 use Illuminate\Support\Facades\Route;
@@ -115,8 +116,14 @@ Route::group(['middleware' => ['auth'],'namespace'=>'App\Http\Controllers'], fun
     Route::get('prizing', [PayStubController::class, 'prizing'])->name('prizing');
     Route::get('subscription', [TemplateFormController::class, 'subscription'])->name('subscription');
     // Route::match(['GET', 'POST'], 'settings', [SettingController::class, 'settings'])->name('settings');
+
     Route::get('profile', [HomeController::class, 'userDetails'])->name('profile');
     Route::post('profile/details/save', [HomeController::class, 'storeDetails'])->name('store.details');
+
+    Route::get('address/fetch', [AddressBookController::class, 'fetchAddress'])->name('fetch.address');
+    Route::get('address/fetch/data', [AddressBookController::class, 'fetchAddressById'])->name('get.address');
+    Route::post('address/save', [AddressBookController::class, 'storeAddress'])->name('store.address');
+
     Route::post('account/delete', [HomeController::class, 'accountDelete'])->name('delete.account');
     Route::post('update-password', [HomeController::class, 'userDetails'])->name('update-password');
     Route::post('change-password', [HomeController::class, 'changePassword'])->name('changePassword');
@@ -129,4 +136,3 @@ Route::group(['middleware' => ['auth'],'namespace'=>'App\Http\Controllers'], fun
     Route::get('success-transaction/{planId}', [PayPalController::class, 'successTransaction'])->name('successTransaction');
     Route::get('cancel-transaction', [PayPalController::class, 'cancelTransaction'])->name('cancelTransaction');
     Route::get('check/test', [PayPalController::class, 'checkExpiry'])->name('check.test');
- 

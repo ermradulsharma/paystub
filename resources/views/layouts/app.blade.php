@@ -89,7 +89,7 @@
                                     href="{{ route('invoiceList') }}">Order History</a></li>
                             <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('profile') }}">My
                                     Account</a></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Address Book</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('profile') }}?tab=2">Address Book</a></li>
                         </ul>
                     </div>
                 </div>
