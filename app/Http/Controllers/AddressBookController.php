@@ -112,4 +112,16 @@ class AddressBookController extends Controller
         }
 
     }
+
+    public function deleteAddress($id){
+        try{
+            if(Address::find($id)->delete()){
+                return redirect()->back()->with('message', 'Address deleted successfully');
+            }
+            return edirect()->back()->with('error' , 'Address deleted unsuccessfull.');
+        }catch (\Exception $e) {
+            Log::info('Fetch Address Function', array('Exception' => $e->getMessage()));
+            return response()->json(['error' => 'Something went wrong.']);
+        }
+    }
 }

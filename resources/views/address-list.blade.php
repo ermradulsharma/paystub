@@ -12,6 +12,7 @@
             <td style="padding-right:0; padding-left:0;" ><img style="width:22px;"
                     src="images/icons/edit-icon.png" class="btn-edit" data-record="{{ $address->id }}"></td>
             <td style="padding-right:0; padding-left:0;"><img style="width:20px;"
+                    class="btn-delete-add" data-route="{{route('delete.address',$address->id)}}"
                     src="images/icons/del-icon.png"></td>
         </tr>
         

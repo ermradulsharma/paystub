@@ -48,6 +48,7 @@
                     <div class="col-md-12">
                         <div class=" box-usa">
                             <h5 class="box-h5">Company Info</h5>
+                            <select name="" id=""></select>
                             <div class="row mb-3 ">
                                 <div class="col-md-6 mt-1">
                                     <div>
@@ -57,6 +58,7 @@
                                             placeholder="Employer(Company) Name"
                                             class="w-100 p-2 text-center input-box-font removeDiv">
                                     </div>
+
                                 </div>
 
                                 <div class="col-md-6 mt-1">
@@ -200,6 +202,7 @@
             </div>
             <div>
                 <h5 class="box-h5">Employee Info</h5>
+                <select name="" id=""></select>
                 <div class="row mb-3">
                     <div class="col-md-12">
                         <div class=" box-usa">

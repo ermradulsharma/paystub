@@ -378,7 +378,7 @@
                                                     <option value="" selected="selected">Select</option>
                                                     @if (count($stateList) > 0)
                                                         @foreach ($stateList as $state)
-                                                        <option value="{{$state->state}}">{{$state->state}}</option>
+                                                        <option value="{{$state->state_code}}">{{$state->state}}</option>
                                                         @endforeach
                                                     @endif
                                                 </select>
@@ -597,12 +597,11 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body" style="padding-bottom:30px;">
-                    <h5 class="text-center" style="text-transform:capitalize;">Do you want to delete your account?</h5>
+                    <h5 class="text-center delete-msg" style="text-transform:capitalize;">Do you want to delete your account?</h5>
                     <div class=" text-center mt-4">
                         {{-- <h5 style="color: #457bbe;" class="mt-4 text-center">Almost There!</h5> --}}
-                        <form id="loginOtp" action="{{ route('delete.account') }}" method="POST" class="text-center">
+                        <form id="deleteItem" action="{{ route('delete.account') }}" method="POST" class="text-center">
                             @csrf
-
                             <button class="previewbtn" type="submit">Yes</button>
                             <button class="previewbtn bottom-close" type="button">NO</button>
                         </form>
@@ -617,191 +616,199 @@
 
 
 @section('script')
-    <script>
-        $(document).ready(function() {
-            getAddressBook();
-        });
+<script>
+    $(document).ready(function() {
+        getAddressBook();
+    });
 
-        $(".username").click(function() {
-            var name = $(this).data('name');
-            $('#user-name').val(name);
-            $("#userName").modal("show");
-        });
+    $(".username").click(function() {
+        var name = $(this).data('name');
+        $('#user-name').val(name);
+        $("#userName").modal("show");
+    });
 
-        $("#store-name").click(function(e) {
-            submitUserData($('#userNameForm1')[0]);
-        });
+    $("#store-name").click(function(e) {
+        submitUserData($('#userNameForm1')[0]);
+    });
 
-        $(".username2").click(function() {
-            $("#userName2").modal("show");
-        });
+    $(".username2").click(function() {
+        $("#userName2").modal("show");
+    });
 
-        $("#store-email").click(function(e) {
-            //submitUserData($('#userEmailForm')[0],".username2","#userName2");
-            var form = $('#userEmailForm')[0];
-            $.ajax({
-                type: 'POST',
-                url: form.action,
-                data: $(form).serialize(),
-                success: function(data) {
-                    console.log('data', data);
-                    if ($.isEmptyObject(data.error)) {
-                        toastr.success(data.message);
-                        $("#userName2").modal("hide");
-                        $('#hidden_email').val(data.email);
-                        $("#otpModal").modal("show");
-                        startTimer();
-                    } else {
-                        printErrorMsg(data.error);
-                    }
+    $("#store-email").click(function(e) {
+        //submitUserData($('#userEmailForm')[0],".username2","#userName2");
+        var form = $('#userEmailForm')[0];
+        $.ajax({
+            type: 'POST',
+            url: form.action,
+            data: $(form).serialize(),
+            success: function(data) {
+                console.log('data', data);
+                if ($.isEmptyObject(data.error)) {
+                    toastr.success(data.message);
+                    $("#userName2").modal("hide");
+                    $('#hidden_email').val(data.email);
+                    $("#otpModal").modal("show");
+                    startTimer();
+                } else {
+                    printErrorMsg(data.error);
                 }
-            });
-        });
-
-        $("#verify-email").click(function(e) {
-            submitUserData($('#loginOtp')[0]);
-        });
-
-        $(".username3").click(function() {
-            $("#userName3").modal("show");
-        });
-
-        $(".trash-account").click(function() {
-            $("#deleteAcModal").modal("show");
-        });
-
-        $("#store-password").click(function(e) {
-            submitUserData($('#passwordUpdate')[0]);
-        });
-
-        $("#resendOtpButton").click(function() {
-            var email = $('#hidden_email').val();
-            startTimer();
-            $.ajax({
-                url: "{{ route('sendOtp') }}?email=" + email,
-                success: function(data) {
-                    console.log('data', data);
-                    if ($.isEmptyObject(data.error)) {
-                        toastr.success(data.message);
-
-                    } else {
-                        printErrorMsg(data.error);
-                    }
-                }
-            });
-        });
-
-        $(document).on('click', '.show-password', function() {
-            $(this).toggleClass("fa-eye fa-eye-slash");
-            var input = $(this).prev('input');
-            input.attr('type') === 'password' ? input.attr('type', 'text') : input.attr('type', 'password')
-        });
-
-        $(document).on('click', '#pills-profile-tab', function() {
-            $("#adress-type").val('employee');
-            $('#nameLabel').text('').text('EMPLOYEE NAME *');
-            $('#inputFullName').attr('placeholder', 'Full Employee Name');
-            getAddressBook();
-        });
-
-        $(document).on('click', '#pills-home-tab', function() {
-            $("#adress-type").val('employer');
-            $('#nameLabel').text('').text('EMPLOYER (COMPANY) NAME *');
-            $('#inputFullName').attr('placeholder', 'Full Employer (Company) Name');
-            getAddressBook();
-        });
-
-        $("#store-address").click(function(e) {
-            submitUserData($('#addressForm')[0]);
-        });
-
-        $(document).on('click', '.btn-edit', function(e) {
-            var recordId = $(this).data('record');
-            console.log('btn-edit-', recordId);
-            $.ajax({
-                url: "{{ route('get.address') }}?record=" + recordId,
-                datatype: "json",
-                success: function(data) {
-                    if ($.isEmptyObject(data.error)) {
-                        console.log('record-number-', data);
-                        $('#addressForm input[name=addressId]').val(data.addressObj.id);
-                        $('#addressForm input[name=fullName]').val(data.addressObj.name);
-                        $('#addressForm input[name=type]').val(data.addressObj.type);
-                        $('#addressForm input[name=addressLine1]').val(data.addressObj.address_1);
-                        $('#addressForm input[name=addressLine2]').val(data.addressObj.address_2);
-                        $('#addressForm input[name=cityName]').val(data.addressObj.city);
-                        $('#addressForm select[name="stateName"]').val(data.addressObj.city);
-                        // $('#selectState').val(data.addressObj.state);
-                        $('#addressForm input[name=zipCode]').val(data.addressObj.zip_code);
-                        $('#addressBook').modal('show');
-                    } else {
-                        printErrorMsg(data.error);
-                    }
-                }
-            });
-        });
-
-        function submitUserData(form) {
-            $.ajax({
-                type: 'POST',
-                url: form.action,
-                data: $(form).serialize(),
-                success: function(data) {
-                    console.log('data', data);
-                    if ($.isEmptyObject(data.error)) {
-                        toastr.success(data.message);
-                        if (data.pageReload == 'no') {
-                            form.reset();
-                            getAddressBook();
-                            $('#addressBook').modal('hide');
-                            return false;
-                        }
-                        location.reload(true);
-                    } else {
-                        printErrorMsg(data.error);
-                    }
-                }
-            });
-
-        }
-
-        function printErrorMsg(msg) {
-            $.each(msg, function(key, value) {
-                toastr.error(value);
-            });
-        }
-
-        $('.eye-icon').click(function() {
-            var id = $(this).data('id');
-            var clr = $(this).attr('src');
-            if (clr = 'eye-icon') {
-                $("#eye-icon_" + id).removeClass("fa fa-eye-slash eye-icon");
-                $("#eye-icon_" + id).addClass("fa fa-eye eye-icon");
-            } else {
-                $("#eye-icon_" + id).addClass("fa fa-eye-slash eye-icon");
-                $("#eye-icon_" + id).removeClass("fa fa-eye eye-icon");
             }
-
         });
+    });
 
-        $(".addressBook").click(function() {
-            $("#addressBook").modal("show");
-        });
+    $("#verify-email").click(function(e) {
+        submitUserData($('#loginOtp')[0]);
+    });
 
-        function getAddressBook() {
-            var type = $("#adress-type").val();
-            $.ajax({
-                url: "{{ route('fetch.address') }}?type=" + type,
-                datatype: "html",
-                success: function(data) {
-                    if ($.isEmptyObject(data.error)) {
-                        $('.tab-pane.fade.show.active').find('tbody').html('').html(data);
-                        // $('#employerTab').html('').html(data);
-                    } else {
-                        printErrorMsg(data.error);
-                    }
+    $(".username3").click(function() {
+        $("#userName3").modal("show");
+    });
+
+    $(".trash-account").click(function() {
+        $('.delete-msg').text('Do you want to delete your account?');
+        $("#deleteAcModal").modal("show");
+    });
+
+    $("#store-password").click(function(e) {
+        submitUserData($('#passwordUpdate')[0]);
+    });
+
+    $("#resendOtpButton").click(function() {
+        var email = $('#hidden_email').val();
+        startTimer();
+        $.ajax({
+            url: "{{ route('sendOtp') }}?email=" + email,
+            success: function(data) {
+                console.log('data', data);
+                if ($.isEmptyObject(data.error)) {
+                    toastr.success(data.message);
+
+                } else {
+                    printErrorMsg(data.error);
                 }
-            });
+            }
+        });
+    });
+
+    $(document).on('click', '.show-password', function() {
+        $(this).toggleClass("fa-eye fa-eye-slash");
+        var input = $(this).prev('input');
+        input.attr('type') === 'password' ? input.attr('type', 'text') : input.attr('type', 'password')
+    });
+
+    $(document).on('click', '#pills-profile-tab', function() {
+        $("#adress-type").val('employee');
+        $('#nameLabel').text('').text('EMPLOYEE NAME *');
+        $('#inputFullName').attr('placeholder', 'Full Employee Name');
+        getAddressBook();
+    });
+
+    $(document).on('click', '#pills-home-tab', function() {
+        $("#adress-type").val('employer');
+        $('#nameLabel').text('').text('EMPLOYER (COMPANY) NAME *');
+        $('#inputFullName').attr('placeholder', 'Full Employer (Company) Name');
+        getAddressBook();
+    });
+
+    $("#store-address").click(function(e) {
+        submitUserData($('#addressForm')[0]);
+    });
+
+    $(document).on('click', '.btn-delete-add', function(e) {
+        $('.delete-msg').text('Do you want to delete address?');
+        var url = $(this).data('route');
+        $('#deleteItem').attr('action',url);
+        $('#deleteAcModal').modal('show');
+    });
+
+    $(document).on('click', '.btn-edit', function(e) {
+        var recordId = $(this).data('record');
+        
+        $.ajax({
+            url: "{{ route('get.address') }}?record=" + recordId,
+            datatype: "json",
+            success: function(data) {
+                if ($.isEmptyObject(data.error)) {
+                    console.log('record-number-', data);
+                    $('#addressForm input[name=addressId]').val(data.addressObj.id);
+                    $('#addressForm input[name=fullName]').val(data.addressObj.name);
+                    $('#addressForm input[name=type]').val(data.addressObj.type);
+                    $('#addressForm input[name=addressLine1]').val(data.addressObj.address_1);
+                    $('#addressForm input[name=addressLine2]').val(data.addressObj.address_2);
+                    $('#addressForm input[name=cityName]').val(data.addressObj.city);
+                    $('#addressForm select[name="stateName"]').val(data.addressObj.state);
+                    // $('#selectState').val(data.addressObj.state);
+                    $('#addressForm input[name=zipCode]').val(data.addressObj.zip_code);
+                    $('#addressBook').modal('show');
+                } else {
+                    printErrorMsg(data.error);
+                }
+            }
+        });
+    });
+
+    function submitUserData(form) {
+        $.ajax({
+            type: 'POST',
+            url: form.action,
+            data: $(form).serialize(),
+            success: function(data) {
+                console.log('data', data);
+                if ($.isEmptyObject(data.error)) {
+                    toastr.success(data.message);
+                    if (data.pageReload == 'no') {
+                        form.reset();
+                        getAddressBook();
+                        $('#addressBook').modal('hide');
+                        return false;
+                    }
+                    location.reload(true);
+                } else {
+                    printErrorMsg(data.error);
+                }
+            }
+        });
+
+    }
+
+    function printErrorMsg(msg) {
+        $.each(msg, function(key, value) {
+            toastr.error(value);
+        });
+    }
+
+    $('.eye-icon').click(function() {
+        var id = $(this).data('id');
+        var clr = $(this).attr('src');
+        if (clr = 'eye-icon') {
+            $("#eye-icon_" + id).removeClass("fa fa-eye-slash eye-icon");
+            $("#eye-icon_" + id).addClass("fa fa-eye eye-icon");
+        } else {
+            $("#eye-icon_" + id).addClass("fa fa-eye-slash eye-icon");
+            $("#eye-icon_" + id).removeClass("fa fa-eye eye-icon");
         }
-    </script>
+
+    });
+
+    $(".addressBook").click(function() {
+        $("#addressBook").modal("show");
+    });
+
+    function getAddressBook() {
+        var type = $("#adress-type").val();
+        $.ajax({
+            url: "{{ route('fetch.address') }}?type=" + type,
+            datatype: "html",
+            success: function(data) {
+                if ($.isEmptyObject(data.error)) {
+                    $('.tab-pane.fade.show.active').find('tbody').html('').html(data);
+                    // $('#employerTab').html('').html(data);
+                } else {
+                    printErrorMsg(data.error);
+                }
+            }
+        });
+    }
+</script>
 @endsection

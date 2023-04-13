@@ -41,7 +41,7 @@ class HomeController extends Controller
     {
         $userObj = User::find(Auth::user()->id);
         $subcriptionData = Subcription::with('plan')->where('user_id', $userObj->id)->orderBy('id', 'desc')->first();
-        $stateList = StateTax::select('state')->get();
+        $stateList = StateTax::select('state','state_code')->get();
         return view('user-profile', compact('userObj', 'subcriptionData','stateList'));
     }
 
