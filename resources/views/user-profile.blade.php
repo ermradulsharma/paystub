@@ -364,16 +364,16 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="selectCountry" style="font-weight:bold;"
-                                                class="col-sm-12 control-label">State</label>
+                                            <label for="selectState" style="font-weight:bold;" class="col-sm-12 control-label">State</label>
                                             <div class="col-sm-12">
-                                                <select class="form-control select-box" id="selectCountry"
+                                                <select class="form-control select-box" id="selectState"
                                                     name="stateName">
                                                     <option value="" selected="selected">Select</option>
-                                                    <option value="AF">Afghanistan</option>
-                                                    <option value="AL">Albania</option>
-                                                    <option value="DZ">Algeria</option>
-                                                    <option value="AS">American Samoa</option>
+                                                    @if (count($stateList) > 0)
+                                                        @foreach ($stateList as $state)
+                                                        <option value="{{$state->state}}">{{$state->state}}</option> 
+                                                        @endforeach
+                                                    @endif
                                                 </select>
                                             </div>
                                         </div>
@@ -723,7 +723,8 @@
                         $('#addressForm input[name=addressLine1]').val(data.addressObj.address_1);
                         $('#addressForm input[name=addressLine2]').val(data.addressObj.address_2);
                         $('#addressForm input[name=cityName]').val(data.addressObj.city);
-                        $('#addressForm input[name=stateName]').val(data.addressObj.state);
+                        $('#addressForm select[name="stateName"]').val(data.addressObj.city);
+                        // $('#selectState').val(data.addressObj.state);
                         $('#addressForm input[name=zipCode]').val(data.addressObj.zip_code);
                         $('#addressBook').modal('show');
                     } else {

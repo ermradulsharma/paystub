@@ -44,7 +44,8 @@ Route::group(['namespace' => 'Api', 'middleware' => ['\App\Http\Middleware\LogAf
 
         Route::post('address-book', [UserController::class, 'addressBook']);
         Route::post('address-delete', [UserController::class, 'addressDelete']);
-        Route::post('get-address', [UserController::class, 'getAddress']);
+        Route::get('get-address', [UserController::class, 'getAddress']);
+        Route::post('edit-address', [UserController::class, 'editAddress']);
 
         Route::post('account-update', [UserController::class, 'accountUpdate']);
 
