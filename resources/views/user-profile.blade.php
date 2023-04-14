@@ -376,7 +376,7 @@
                                             <label for="inputZipPostalCode" style="font-weight:bold;"
                                                 class="col-sm-12 control-label">Zip Code</label>
                                             <div class="col-sm-12">
-                                                <input style="font-size:16px;" type="text" class="form-control"
+                                                <input style="font-size:16px;" type="text" minlength="4" maxlength="6" class="form-control"
                                                     id="inputZipPostalCode" name="zipCode" placeholder="Zip-Code">
                                             </div>
                                         </div>

@@ -880,7 +880,7 @@
 
                 } else if (value == 'add_address_1') {
                     if (userId == true) {
-                        window.location.href = "{{ route('profile') }}?tab=2&emp=1";
+                        window.location.href = "{{ route('profile') }}?tab=2&emp=2";
                     } else {
                         if (userAuth) {
                             window.location.href = "{{ route('profile') }}?tab=2&emp=2";
