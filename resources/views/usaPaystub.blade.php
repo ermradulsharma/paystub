@@ -870,28 +870,26 @@
                     if (userId == true) {
                         window.location.href = "{{ route('profile') }}?tab=2&emp=1";
                     } else {
-                        $(this).val('');
-                        $("#loginModal").modal("show");
+                        if (userAuth) {
+                            window.location.href = "{{ route('profile') }}?tab=2&emp=1";
+                        } else {
+                            $(this).val('');
+                            $("#loginModal").modal("show");
+                        }
                     }
-                    if (userAuth) {
-                        window.location.href = "{{ route('profile') }}?tab=2&emp=1";
-                    } else {
-                        $(this).val('');
-                        $("#loginModal").modal("show");
-                    }
+
                 } else if (value == 'add_address_1') {
                     if (userId == true) {
                         window.location.href = "{{ route('profile') }}?tab=2&emp=1";
                     } else {
-                        $(this).val('');
-                        $("#loginModal").modal("show");
+                        if (userAuth) {
+                            window.location.href = "{{ route('profile') }}?tab=2&emp=2";
+                        } else {
+                            $(this).val('');
+                            $("#loginModal").modal("show");
+                        }
                     }
-                    if (userAuth) {
-                        window.location.href = "{{ route('profile') }}?tab=2&emp=2";
-                    } else {
-                        $(this).val('');
-                        $("#loginModal").modal("show");
-                    }
+
                 }
                 return false;
             });
