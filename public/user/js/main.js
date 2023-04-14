@@ -52,7 +52,7 @@ $("#adminLogin").on("submit", function () {
                 }, 200);
             } else {
                 console.log('userAuth', userAuth);
-                if (IsNull(response.user.name) || response.user.name == '' || response.user.name == null) {
+                if (response.user.name == '' || response.user.name == null || response.user.name == "") {
                     $("#setName").modal("show");
                 } else {
                     $(".authUserName").text("Hi " + response.user.name);
