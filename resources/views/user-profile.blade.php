@@ -634,7 +634,6 @@
             $("#userName3").modal("show");
         });
 
-
         $("#store-password").click(function(e) {
             submitUserData($('#passwordUpdate')[0]);
         });
@@ -687,36 +686,6 @@
             });
         });
 
-        function submitUserData(form) {
-            $.ajax({
-                type: 'POST',
-                url: form.action,
-                data: $(form).serialize(),
-                success: function(data) {
-
-                    if ($.isEmptyObject(data.error)) {
-                        toastr.success(data.message);
-                        if (data.pageReload == 'no') {
-                            form.reset();
-                            getAddressBook();
-                            $('#addressBook').modal('hide');
-                            return false;
-                        }
-                        location.reload(true);
-                    } else {
-                        printErrorMsg(data.error);
-                    }
-                }
-            });
-
-        }
-
-        function printErrorMsg(msg) {
-            $.each(msg, function(key, value) {
-                toastr.error(value);
-            });
-        }
-
         $('.eye-icon').click(function() {
             var id = $(this).data('id');
             var clr = $(this).attr('src');
@@ -727,37 +696,6 @@
                 $("#eye-icon_" + id).addClass("fa fa-eye-slash eye-icon");
                 $("#eye-icon_" + id).removeClass("fa fa-eye eye-icon");
             }
-        });
-
-        $("#verify-email").click(function(e) {
-            submitUserData($('#loginOtp')[0]);
-        });
-
-        $(".username3").click(function() {
-            $("#userName3").modal("show");
-        });
-
-
-
-        $("#store-password").click(function(e) {
-            submitUserData($('#passwordUpdate')[0]);
-        });
-
-        $("#resendOtpButton").click(function() {
-            var email = $('#hidden_email').val();
-            startTimer();
-            $.ajax({
-                url: "{{ route('sendOtp') }}?email=" + email,
-                success: function(data) {
-                    console.log('data', data);
-                    if ($.isEmptyObject(data.error)) {
-                        toastr.success(data.message);
-
-                    } else {
-                        printErrorMsg(data.error);
-                    }
-                }
-            });
         });
 
         $(document).on('click', '.show-password', function() {
@@ -797,20 +735,6 @@
             var url = $(this).data('route');
             $('#deleteItem').attr('action', url);
             $("#deleteAcModal").modal("show");
-        });
-
-
-        $('.eye-icon').click(function() {
-            var id = $(this).data('id');
-            var clr = $(this).attr('src');
-            if (clr = 'eye-icon') {
-                $("#eye-icon_" + id).removeClass("fa fa-eye-slash eye-icon");
-                $("#eye-icon_" + id).addClass("fa fa-eye eye-icon");
-            } else {
-                $("#eye-icon_" + id).addClass("fa fa-eye-slash eye-icon");
-                $("#eye-icon_" + id).removeClass("fa fa-eye eye-icon");
-            }
-
         });
 
         function openAddressModal(clear = 'yes'){
