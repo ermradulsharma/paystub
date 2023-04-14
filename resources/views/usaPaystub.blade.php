@@ -74,15 +74,14 @@
                                 <select id="employerAddress" class="address_book add_address address" data-type="employer">
                                     <option data-name="" value="">Select Address</option>
                                     {{-- @auth --}}
-                                        {{-- @if ($employerList->count() > 0) --}}
-                                            @foreach ($employerList ?? [] as $key => $employer)
-                                                <option data-name="{{ $employer->name }}"
-                                                    data-address1="{{ $employer->address_1 }}"
-                                                    data-address2="{{ $employer->address_2 }}" data-city="{{ $employer->city }}"
-                                                    data-state="{{ $employer->state }}" data-zip="{{ $employer->zip_code }}"
-                                                    value="{{ $employer->name }}">{{ $employer->name }}</option>
-                                            @endforeach
-                                        {{-- @endif --}}
+                                    {{-- @if ($employerList->count() > 0) --}}
+                                    @foreach ($employerList ?? [] as $key => $employer)
+                                        <option data-name="{{ $employer->name }}" data-address1="{{ $employer->address_1 }}"
+                                            data-address2="{{ $employer->address_2 }}" data-city="{{ $employer->city }}"
+                                            data-state="{{ $employer->state }}" data-zip="{{ $employer->zip_code }}"
+                                            value="{{ $employer->name }}">{{ $employer->name }}</option>
+                                    @endforeach
+                                    {{-- @endif --}}
                                     {{-- @endauth --}}
                                     <option data-name="" value="add_address">Add New Address</option>
                                 </select>
@@ -264,8 +263,8 @@
                                 <h5 class="box-h5">Employee Info</h5>
                                 <img class="address-book" src="{{ asset('images/address-book.png') }}" alt=""
                                     height="30px;">
-                                <select id="employeeAddress"
-                                    class="address_book_1 add_address address" data-type="employee">
+                                <select id="employeeAddress" class="address_book_1 add_address address"
+                                    data-type="employee">
                                     <option data-name="" value="">Select Address</option>
                                     @auth
                                         @if ($employeeList->count() > 0)
@@ -868,13 +867,25 @@
                 var userId = {{ Auth::check() == true ? 'true' : 'false' }};
                 console.log('userAuth-', userAuth);
                 if (value == 'add_address') {
+                    if (userId == true) {
+                        window.location.href = "{{ route('profile') }}?tab=2&emp=1";
+                    } else {
+                        $(this).val('');
+                        $("#loginModal").modal("show");
+                    }
                     if (userAuth) {
                         window.location.href = "{{ route('profile') }}?tab=2&emp=1";
                     } else {
                         $(this).val('');
                         $("#loginModal").modal("show");
                     }
-                }else if (value == 'add_address_1') {
+                } else if (value == 'add_address_1') {
+                    if (userId == true) {
+                        window.location.href = "{{ route('profile') }}?tab=2&emp=1";
+                    } else {
+                        $(this).val('');
+                        $("#loginModal").modal("show");
+                    }
                     if (userAuth) {
                         window.location.href = "{{ route('profile') }}?tab=2&emp=2";
                     } else {
@@ -1018,7 +1029,9 @@
             });
         });
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyDpavHXELJMJvIHifFPN6tBBiFSXKGpy2g&callback=Function.prototype"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyDpavHXELJMJvIHifFPN6tBBiFSXKGpy2g&callback=Function.prototype">
+    </script>
     <script>
         var searchInput = 'address_1';
 
