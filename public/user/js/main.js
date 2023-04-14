@@ -59,6 +59,7 @@ $("#adminLogin").on("submit", function () {
                     $(".registerBtn").removeClass("d-block").addClass("d-none");
                     $(".logoutDiv").removeClass("d-none");
                     if (userAuth == 1) {
+                        addAddressDropdown();
                         if (okk == 1) {
                             usaStoreData();
                         }
@@ -113,9 +114,11 @@ $("#userNameForm").on("submit", function () {
             $(".sendMailButton").addClass("d-block");
             $(".logoutDiv").removeClass("d-none");
             if (userAuth == 1) {
+
                 setTimeout(() => {
                     $(".authUserName").text("Hi " + response.data);
                 }, 300);
+                addAddressDropdown();
                 if (okk == 1) {
                     usaStoreData();
                 }
@@ -129,7 +132,21 @@ $("#userNameForm").on("submit", function () {
     return false;
 });
 
-
+// function addres dropdown data fill
+function addAddressDropdown(){
+    // console.log('check-',baseUrl+'address/get/options');
+    $.ajax({
+        url: baseUrl+'address/get/options',
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        success: function(data) {
+            console.log('data', data);
+            $('#employerAddress').html('').html(data.employerData);
+            $('#employeeAddress').html('').html(data.employeeData);
+            }
+    });
+}
 
 $(".btn-logout").click(function () {
     $("#logoutModal").modal("show");

@@ -20,7 +20,7 @@ use Symfony\Component\Routing\Router;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/ 
+*/
 
 Route::get('/', function () {
     return view('welcome');
@@ -124,6 +124,7 @@ Route::group(['middleware' => ['auth'],'namespace'=>'App\Http\Controllers'], fun
     Route::get('address/fetch/data', [AddressBookController::class, 'fetchAddressById'])->name('get.address');
     Route::post('address/save', [AddressBookController::class, 'storeAddress'])->name('store.address');
     Route::post('address/{id}/delete', [AddressBookController::class, 'deleteAddress'])->name('delete.address');
+    Route::get('address/get/options', [AddressBookController::class, 'addressOptions'])->name('address.option');
 
     Route::post('account/delete', [HomeController::class, 'accountDelete'])->name('delete.account');
     Route::post('update-password', [HomeController::class, 'userDetails'])->name('update-password');

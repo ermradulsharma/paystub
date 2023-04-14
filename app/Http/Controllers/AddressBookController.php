@@ -126,4 +126,29 @@ class AddressBookController extends Controller
             return response()->json(['error' => 'Something went wrong.']);
         }
     }
+
+    public function addressOptions(Request $request){
+        try{
+
+            $employerData = $employeeData = '';
+            if ($request->ajax()) {
+
+                $addressList = Address::where(['type'=>'employer', 'user_id'=>$request->user()->id])->get();
+                $type = 'employer';
+                $employerData = view('address-options', compact('addressList','type'))->render();
+
+                $addressList = Address::where(['type'=>'employee', 'user_id'=>$request->user()->id])->get();
+                $type = 'employee';
+                $employeeData = view('address-options', compact('addressList','type'))->render();;
+
+                return response()->json(['employerData'=>$employerData,'employeeData' => $employeeData]);
+
+            }
+            // return response()->json(['user' => $addressData,'message' => 'Address fetch successfully.']);
+        }catch (\Exception $e) {
+            Log::info('Fetch Address Function', array('Exception' => $e->getMessage()));
+            return response()->json([ 'error' => 'Something went wrong.']);
+        }
+
+    }
 }
