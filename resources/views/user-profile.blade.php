@@ -729,7 +729,8 @@
                         $('#addressForm select[name="stateName"]').val(data.addressObj.city);
                         // $('#selectState').val(data.addressObj.state);
                         $('#addressForm input[name=zipCode]').val(data.addressObj.zip_code);
-                        $('#addressBook').modal('show');
+                        // $('#addressBook').modal('show');
+                        openAddressModal('no');
                     } else {
                         printErrorMsg(data.error);
                     }
@@ -827,7 +828,7 @@
         });
 
         $("#addNewAddress").click(function() {
-           openAddresModal();
+            openAddressModal();
         });
 
         $(document).on('click', '.delete-item', function(e) {
@@ -849,31 +850,6 @@
             $("#deleteAcModal").modal("show");
         });
 
-        $(document).on('click', '.btn-edit', function(e) {
-            var recordId = $(this).data('record');
-
-            $.ajax({
-                url: "{{ route('get.address') }}?record=" + recordId,
-                datatype: "json",
-                success: function(data) {
-                    if ($.isEmptyObject(data.error)) {
-                        console.log('record-number-', data);
-                        $('#addressForm input[name=addressId]').val(data.addressObj.id);
-                        $('#addressForm input[name=fullName]').val(data.addressObj.name);
-                        $('#addressForm input[name=type]').val(data.addressObj.type);
-                        $('#addressForm input[name=addressLine1]').val(data.addressObj.address_1);
-                        $('#addressForm input[name=addressLine2]').val(data.addressObj.address_2);
-                        $('#addressForm input[name=cityName]').val(data.addressObj.city);
-                        $('#addressForm select[name="stateName"]').val(data.addressObj.state);
-                        // $('#selectState').val(data.addressObj.state);
-                        $('#addressForm input[name=zipCode]').val(data.addressObj.zip_code);
-                        openAddressModal();
-                    } else {
-                        printErrorMsg(data.error);
-                    }
-                }
-            });
-        });
 
         function submitUserData(form) {
             $.ajax({
@@ -918,9 +894,12 @@
 
         });
 
-        function openAddressModal(){
+        function openAddressModal(clear = 'yes'){
+            if(clear == 'yes'){
+                $('#addressForm').find("input[type=text], select").val("");
+            }
             var popType = $("#addNewAddress").attr('data-emptype');
-            console.log('popType--',popType);
+
             if(popType == 'employee'){
                 $("#adress-type").val('employee');
                 $('#nameLabel').text('').text('EMPLOYEE NAME *');
