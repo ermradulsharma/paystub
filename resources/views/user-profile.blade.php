@@ -94,6 +94,12 @@
             font-size: 16px;
             border: 1px solid#000;
         }
+
+
+        .modal { z-index: 1001 !important;}
+        .modal-backdrop {z-index: 1000 !important;}
+        .pac-container {z-index: 1055 !important;}
+
     </style>
     <section class="user-profile">
         <div class="container" style="padding: 0;">
@@ -171,7 +177,8 @@
                                             </div>
                                         </div>
                                         <div class="profile-outer">
-                                            <div class="d-flex trash-account">
+
+                                            <div class="d-flex trash-account" data-route="{{ route('delete.account') }}">
                                                 <div class="profile-icon-outer" style="background-color:red;">
                                                     <i class="fa fa-trash-o trash"></i>
                                                 </div>
@@ -203,35 +210,35 @@
                             role="tabpanel" aria-labelledby="v-pills-profile-tab">
                             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                                 <li class="nav-item" style="">
-                                    <a class="nav-link address-b active" id="pills-home-tab" data-toggle="pill"
+                                    <a class="nav-link address-b {{ Request::get('emp') != 2 ? 'active' : '' }}" id="pills-home-tab" data-toggle="pill"
                                         href="#pills-home" role="tab" aria-controls="pills-home"
                                         aria-selected="true">EMPLOYER</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link address-b" id="pills-profile-tab" data-toggle="pill"
+                                    <a class="nav-link address-b {{ Request::get('emp') == 2 ? 'active' : '' }}" id="pills-profile-tab" data-toggle="pill"
                                         href="#pills-profile" role="tab" aria-controls="pills-profile"
                                         aria-selected="false">EMPLOYEE</a>
                                 </li>
-                                <button class="add-btn addressBook">Add New Address</button>
+                                <button class="add-btn addressBook" id="addNewAddress" data-emptype="{{ Request::get('emp') == 2 ? 'employee' : 'employer' }}">Add New Address</button>
                             </ul>
 
                             <div class="tab-content" id="pills-tabContent">
-                                <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                                <div class="tab-pane fade {{ Request::get('emp') != 2 ? 'show active' : '' }}" id="pills-home" role="tabpanel"
                                     aria-labelledby="pills-home-tab">
                                     <table class="table" style="border:1px solid #ddd;">
                                         <thead>
                                             <tr>
                                                 <th scope="col">#</th>
-                                                <th scope="col">Company Name</th>
-                                                <th scope="col">Address1</th>
-                                                <th scope="col">Address2</th>
+                                                <th scope="col">Employer (Company) Name</th>
+                                                <th scope="col">Street Address 1</th>
+                                                <th scope="col">Street Address 2</th>
                                                 <th scope="col">City</th>
                                                 <th scope="col">State</th>
                                                 <th scope="col">Zip Code</th>
                                             </tr>
                                         </thead>
                                         <tbody id="employerTab">
-                                            <tr style="border:1px solid #ddd;">
+                                            {{-- <tr style="border:1px solid #ddd;">
                                                 <th scope="row">1</th>
                                                 <td>Mark22</td>
                                                 <td>Otto</td>
@@ -243,27 +250,27 @@
                                                         src="images/icons/edit-icon.png"></td>
                                                 <td style="padding-right:0; padding-left:0;"><img style="width:20px;"
                                                         src="images/icons/del-icon.png"></td>
-                                            </tr>
+                                            </tr> --}}
                                         </tbody>
                                     </table>
 
                                 </div>
-                                <div class="tab-pane fade" id="pills-profile" role="tabpanel"
+                                <div class="tab-pane fade {{ Request::get('emp') == 2 ? ' show active' : '' }}" id="pills-profile" role="tabpanel"
                                     aria-labelledby="pills-profile-tab">
                                     <table class="table" style="border:1px solid #ddd;">
                                         <thead>
                                             <tr>
                                                 <th scope="col">#</th>
                                                 <th scope="col">Employee Name</th>
-                                                <th scope="col">Address1</th>
-                                                <th scope="col">Address2</th>
+                                                <th scope="col">Street Address 1</th>
+                                                <th scope="col">Street Address 2</th>
                                                 <th scope="col">City</th>
                                                 <th scope="col">State</th>
                                                 <th scope="col">Zip Code</th>
                                             </tr>
                                         </thead>
                                         <tbody id="employeeTab">
-                                            <tr>
+                                            {{-- <tr>
                                                 <th scope="row">1</th>
                                                 <td>Mark</td>
                                                 <td>Otto</td>
@@ -275,7 +282,7 @@
                                                         src="images/icons/edit-icon.png"></td>
                                                 <td style="padding-right:0; padding-left:0;"><img style="width:20px;"
                                                         src="images/icons/del-icon.png"></td>
-                                            </tr>
+                                            </tr> --}}
                                         </tbody>
                                     </table>
                                 </div>
@@ -352,6 +359,7 @@
                                             <label for="selectCountry" style="font-weight:bold;"
                                                 class="col-sm-12 control-label">State</label>
                                             <div class="col-sm-12">
+
                                                 <select class="form-control select-box" id="selectState"
                                                     name="stateName">
                                                     <option value="" selected="selected">Select</option>
@@ -540,9 +548,9 @@
                         <form id="deleteItem" action="{{ route('delete.account') }}" method="POST"
                             class="text-center">
                             @csrf
-                            <button class="previewbtn" type="submit">Yes</button>
-                            <button class="previewbtn bottom-close" type="button">NO</button>
                         </form>
+                        <button class="previewbtn delete-item">Yes</button>
+                        <button class="previewbtn bottom-close" type="button">NO</button>
                     </div>
                 </div>
             </div>
@@ -671,9 +679,6 @@
             $("#userName3").modal("show");
         });
 
-        $(".trash-account").click(function() {
-            $("#deleteAcModal").modal("show");
-        });
 
         $("#store-password").click(function(e) {
             submitUserData($('#passwordUpdate')[0]);
@@ -700,20 +705,6 @@
             $(this).toggleClass("fa-eye fa-eye-slash");
             var input = $(this).prev('input');
             input.attr('type') === 'password' ? input.attr('type', 'text') : input.attr('type', 'password')
-        });
-
-        $(document).on('click', '#pills-profile-tab', function() {
-            $("#adress-type").val('employee');
-            $('#nameLabel').text('').text('EMPLOYEE NAME *');
-            $('#inputFullName').attr('placeholder', 'Full Employee Name');
-            getAddressBook();
-        });
-
-        $(document).on('click', '#pills-home-tab', function() {
-            $("#adress-type").val('employer');
-            $('#nameLabel').text('').text('EMPLOYER (COMPANY) NAME *');
-            $('#inputFullName').attr('placeholder', 'Full Employer (Company) Name');
-            getAddressBook();
         });
 
         $("#store-address").click(function(e) {
@@ -796,10 +787,7 @@
             $("#userName3").modal("show");
         });
 
-        $(".trash-account").click(function() {
-            $('.delete-msg').text('Do you want to delete your account?');
-            $("#deleteAcModal").modal("show");
-        });
+
 
         $("#store-password").click(function(e) {
             submitUserData($('#passwordUpdate')[0]);
@@ -829,17 +817,22 @@
         });
 
         $(document).on('click', '#pills-profile-tab', function() {
-            $("#adress-type").val('employee');
-            $('#nameLabel').text('').text('EMPLOYEE NAME *');
-            $('#inputFullName').attr('placeholder', 'Full Employee Name');
+            $("#addNewAddress").attr('data-emptype','employee');
             getAddressBook();
         });
 
         $(document).on('click', '#pills-home-tab', function() {
-            $("#adress-type").val('employer');
-            $('#nameLabel').text('').text('EMPLOYER (COMPANY) NAME *');
-            $('#inputFullName').attr('placeholder', 'Full Employer (Company) Name');
+            $("#addNewAddress").attr('data-emptype','employer');
             getAddressBook();
+        });
+
+        $("#addNewAddress").click(function() {
+           openAddresModal();
+        });
+
+        $(document).on('click', '.delete-item', function(e) {
+            submitUserData($('#deleteItem')[0]);
+            $('#deleteAcModal').modal('hide');
         });
 
         $(document).on('click', '.btn-delete-add', function(e) {
@@ -847,6 +840,13 @@
             var url = $(this).data('route');
             $('#deleteItem').attr('action', url);
             $('#deleteAcModal').modal('show');
+        });
+
+        $(".trash-account").click(function() {
+            $('.delete-msg').text('Do you want to delete your account?');
+            var url = $(this).data('route');
+            $('#deleteItem').attr('action', url);
+            $("#deleteAcModal").modal("show");
         });
 
         $(document).on('click', '.btn-edit', function(e) {
@@ -867,7 +867,7 @@
                         $('#addressForm select[name="stateName"]').val(data.addressObj.state);
                         // $('#selectState').val(data.addressObj.state);
                         $('#addressForm input[name=zipCode]').val(data.addressObj.zip_code);
-                        $('#addressBook').modal('show');
+                        openAddressModal();
                     } else {
                         printErrorMsg(data.error);
                     }
@@ -918,12 +918,23 @@
 
         });
 
-        $(".addressBook").click(function() {
+        function openAddressModal(){
+            var popType = $("#addNewAddress").attr('data-emptype');
+            console.log('popType--',popType);
+            if(popType == 'employee'){
+                $("#adress-type").val('employee');
+                $('#nameLabel').text('').text('EMPLOYEE NAME *');
+                $('#inputFullName').attr('placeholder', 'Full Employee Name');
+            }else if(popType == 'employer'){
+                $("#adress-type").val('employer');
+                $('#nameLabel').text('').text('EMPLOYER (COMPANY) NAME *');
+                $('#inputFullName').attr('placeholder', 'Full Employer (Company) Name');
+            }
             $("#addressBook").modal("show");
-        });
+        }
 
         function getAddressBook() {
-            var type = $("#adress-type").val();
+            var type = $("#addNewAddress").attr('data-emptype');
             $.ajax({
                 url: "{{ route('fetch.address') }}?type=" + type,
                 datatype: "html",
@@ -938,4 +949,87 @@
             });
         }
     </script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyDpavHXELJMJvIHifFPN6tBBiFSXKGpy2g&callback=Function.prototype"></script>
+<script>
+
+    var searchInput = 'inputAddressLine1';
+
+    $(document).ready(function() {
+        var autocomplete;
+        autocomplete = new google.maps.places.Autocomplete((document.getElementById(searchInput)), {
+            types: ['geocode'],
+            componentRestrictions: {
+                country: "USA"
+            }
+        });
+
+
+        google.maps.event.addListener(autocomplete, 'place_changed', function() {
+            var near_place = autocomplete.getPlace();
+            if (near_place && near_place.address_components.length > 0) {
+                var obj = [];
+                for (var i = 0; i < near_place.address_components.length; i++) {
+                    for (var j = 0; j < near_place.address_components[i].types.length; j++) {
+                        obj[near_place.address_components[i].types[j]] = near_place.address_components[
+                            i].short_name;
+                        // if(near_place.address_components[i].types['0'] == 'administrative_area_level_1'){
+                        //     $('#state').val(near_place.address_components[i].long_name);
+                        // }
+
+                    }
+                }
+
+                setLocation(obj);
+
+            }
+        });
+    });
+
+    function setLocation(obj) {
+        if (obj.street_number == undefined && obj.route == undefined) {
+            $("#inputAddressLine1").val('');
+        } else if (obj.street_number == undefined) {
+            $("#inputAddressLine1").val(obj.route);
+            $('#inputAddressLine1').css('border-color', 'gray');
+            $('.0_address_1').remove();
+        } else if (obj.route == undefined) {
+            $("#inputAddressLine1").val(obj.street_number);
+            $('#inputAddressLine1').css('border-color', 'gray');
+            $('.0_address_1').remove();
+        } else {
+            $("#inputAddressLine1").val(obj.street_number + ' ' + obj.route);
+            $('#inputAddressLine1').css('border-color', 'gray');
+            $('.0_address_1').remove();
+        }
+        /* if (obj.neighborhood != undefined) {
+            $("#address_2").val(obj.neighborhood);
+            $('#address_2').css('border-color', 'gray');
+            $('.0_address_2').remove();
+        } else {
+            $("#address_2").val('');
+        } */
+        if (obj.locality != undefined) {
+            $("#inputCityTown").val(obj.locality);
+            $('#inputCityTown').css('border-color', 'gray');
+            $('.0_city').remove();
+        } else {
+            $("#city").val('');
+        }
+        if (obj.administrative_area_level_1 != undefined) {
+            $("#selectState").val(obj.administrative_area_level_1);
+            $('#selectState').css('border-color', 'gray');
+            $('.0_state').remove();
+        } else {
+            $("#state").val('');
+        }
+        if (obj.postal_code != undefined) {
+            $("#inputZipPostalCode").val(obj.postal_code);
+            $('#inputZipPostalCode').css('border-color', 'gray');
+            $('.0_zip_code').remove();
+        } else {
+            $("#zip_code").val('');
+        }
+        // inputAddressLine1  inputAddressLine2  inputCityTown  selectState  inputZipPostalCode
+    }
+</script>
 @endsection

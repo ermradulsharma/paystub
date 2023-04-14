@@ -26,8 +26,8 @@ class PayStubController extends Controller
             $employerList = Address::where(['type' => 'employer', 'user_id' => Auth::user()->id])->orderBy('id', 'DESC')->get();
             $employeeList = Address::where(['type' => 'employee', 'user_id' => Auth::user()->id])->orderBy('id', 'DESC')->get();
         } else {
-            $employerList = Address::where(['type' => 'employer'])->orderBy('id', 'DESC')->get();
-            $employeeList = Address::where(['type' => 'employee'])->orderBy('id', 'DESC')->get();
+            $employerList = [];
+            $employeeList = [];
         }
 
         $currencies = Currency::get();

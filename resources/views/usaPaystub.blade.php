@@ -74,8 +74,8 @@
                                 <select name="employerAddress" id="employerAddress" class="address_book add_address address"
                                     data-type="employer">
                                     <option data-name="" value="">Select Address</option>
-                                    @auth
-                                        @if ($employerList->count() > 0)
+                                    {{-- @auth --}}
+                                        {{-- @if ($employerList->count() > 0) --}}
                                             @foreach ($employerList ?? [] as $key => $employer)
                                                 <option data-name="{{ $employer->name }}"
                                                     data-address1="{{ $employer->address_1 }}"
@@ -83,8 +83,8 @@
                                                     data-state="{{ $employer->state }}" data-zip="{{ $employer->zip_code }}"
                                                     value="{{ $employer->name }}">{{ $employer->name }}</option>
                                             @endforeach
-                                        @endif
-                                    @endauth
+                                        {{-- @endif --}}
+                                    {{-- @endauth --}}
                                     <option data-name="" value="add_address">Add New Address</option>
                                 </select>
                             </div>
@@ -863,11 +863,19 @@
         $(document).ready(function() {
             $('.add_address').change(function() {
                 var type = $('.add_address').data('type');
-                var value = $('option:selected', '.address').attr('value');
+                // var value = $('option:selected', '.address').attr('value');
+                var value = $(this).val();
                 var userId = {{ Auth::check() == true ? 'true' : 'false' }};
+
                 if (value == 'add_address') {
                     if (userId == true) {
-                        window.location.href = "{{ route('profile') }}?tab=2";
+                        window.location.href = "{{ route('profile') }}?tab=2&emp=1";
+                    } else {
+                        $("#loginModal").modal("show");
+                    }
+                }else if (value == 'add_address_1') {
+                    if (userId == true) {
+                        window.location.href = "{{ route('profile') }}?tab=2&emp=2";
                     } else {
                         $("#loginModal").modal("show");
                     }

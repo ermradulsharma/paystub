@@ -24,7 +24,7 @@ class AddressBookController extends Controller
                     'error' => $validator->errors()->all()
                 ]);
             }
-            
+
             $addressData = Address::where(['type'=>$request->type, 'user_id'=>Auth::user()->id])->paginate(5);
             if ($request->ajax()) {
                 return view('address-list', compact('addressData'));
@@ -48,7 +48,7 @@ class AddressBookController extends Controller
                     'error' => $validator->errors()->all()
                 ]);
             }
-            
+
             $addressData = Address::where(['id'=>$request->record])->first();
             return response()->json(['addressObj' => $addressData]);
         }catch (\Exception $e) {
@@ -57,14 +57,14 @@ class AddressBookController extends Controller
         }
 
     }
-   
+
     public function storeAddress(Request $request){
         try{
             $validator = Validator::make($request->all(), [
                 'type' => 'required',
                 'fullName' => 'required',
                 'addressLine1' => 'required',
-                'addressLine2' => 'required',
+                // 'addressLine2' => 'required',
                 'cityName' => 'required',
                 'stateName' => 'required',
                 'zipCode' => 'required',
@@ -116,9 +116,11 @@ class AddressBookController extends Controller
     public function deleteAddress($id){
         try{
             if(Address::find($id)->delete()){
-                return redirect()->back()->with('message', 'Address deleted successfully');
+                // return redirect()->back()->with('message', 'Address deleted successfully');
+                return response()->json(['pageReload'=>'no','message' => 'Address deleted successfully.']);
             }
-            return edirect()->back()->with('error' , 'Address deleted unsuccessfull.');
+            return response()->json(['pageReload'=>'no','message' => 'Address deleted unsuccessfull.']);
+            // return edirect()->back()->with('error' , 'Address deleted unsuccessfull.');
         }catch (\Exception $e) {
             Log::info('Delete Address Function', array('Exception' => $e->getMessage()));
             return response()->json(['error' => 'Something went wrong.']);
