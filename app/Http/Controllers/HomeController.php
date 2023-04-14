@@ -171,15 +171,22 @@ class HomeController extends Controller
         }
 
         if ($request->type == 'setup-account') {
-            $validator = Validator::make($request->all(), [
+            $rules = [
                 'uname' => 'required|min:3',
                 'password' => 'required|min:8|confirmed',
-            ]);
+            ];
 
+            $messages = [
+                'uname.required' => 'The name cannot be empty.',
+                'uname.min' => 'Please enter atleast 3 charcters.',
+                'password.min' => 'The password must be 8 charcters',
+                'password.required' => "Password can't be empty.",
+                'password.confirmed' => "Confirm password doesn't match",
+            ];
+            $validator = Validator::make($request->all(), $rules, $messages);
             if ($validator->fails()) {
-                return response()->json([
-                    'error' => $validator->errors()->all()
-                ]);
+                $response['message'] = $validator->errors()->first();
+                return response()->json($response, $response['status']);
             }
             $userObj = User::where('id', $userId)->first();
             if (!$userObj) {
@@ -196,6 +203,7 @@ class HomeController extends Controller
                 return response()->json($response, $response['status']);
             }
         }
+        return response()->json($response, $response['status']);
     }
 
     public function updatePassword(Request $request)
