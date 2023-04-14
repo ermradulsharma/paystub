@@ -131,22 +131,16 @@
                     <p style="font-size:13px;text-align: center;margin:0;padding:0 0 15px;color:rgba(86, 86,86,0.9)">
                         Create Pay stubs on the go! </p>
                         <p style="text-align: center;padding:0;margin:0;">
-                            <a href="https://www.google.com/" target="_blank"><img style="max-width: 100px; height:30px; margin-right:10px;"
-                                src="{{asset('images/1app.png')}}"></a>
-                            <a href="https://www.google.com/" target="_blank"><img style="max-width: 100px; height:30px;" src="{{asset('images/1google.png')}}"></a>
+                            <a href="https://apps.apple.com/us/app/paystubx-paystub-maker/id1658931100" target="_blank"><img style="max-width: 100px; height:30px; margin-right:10px;" src="{{asset('images/1app.png')}}"></a>
+                            <a href="https://play.google.com/store/apps/details?id=com.paystubx" target="_blank"><img style="max-width: 100px; height:30px;" src="{{asset('images/1google.png')}}"></a>
                         </p>
                     <p style="text-align: center;color:rgba(86, 86,86,0.9);font-size:13px;">Follow us on social media
                     </p>
                     <ul class="social-icons">
-                        <li class="bottom-icon"><a target="_blank" href="https://www.google.com/" ><img
-                                    src="{{asset('images/icons/facebook.png')}}" height="35px" width="35px"></a>
-                        </li>
-                        <li class="bottom-icon"><a target="_blank"  href="https://www.google.com/"><img
-                                    src="{{asset('images/icons/instagram.png')}}" height="35px" width="35px"></a></li>
-                        <li class="bottom-icon"><a  target="_blank" href="https://www.google.com/"><img
-                                    src="{{asset('images/icons/twitter.png')}}" height="35px" width="35px"></a></li>
-                        <li class="bottom-icon"><a target="_blank"  href="https://www.google.com/"><img
-                                    src="{{asset('images/icons/youtube.png')}}" height="35px" width="35px"></a></li>
+                        <li class="bottom-icon"><a target="_blank" href="https://www.facebook.com/paystubx"><img src="{{asset('images/icons/facebook.png')}}" height="35px" width="35px"></a></li>
+                        <li class="bottom-icon"><a target="_blank" href="https://instagram.com/paystubx?igshid=YmMyMTA2M2Y="><img src="{{asset('images/icons/instagram.png')}}" height="35px" width="35px"></a></li>
+                        <li class="bottom-icon"><a target="_blank" href="https://twitter.com/paystubx"><img src="{{asset('images/icons/twitter.png')}}" height="35px" width="35px"></a></li>
+                        <li class="bottom-icon"><a target="_blank" href=" https://www.youtube.com/channel/UCL3EF3eYo2OqcsPHfszXMzw"><img src="{{asset('images/icons/youtube.png')}}" height="35px" width="35px"></a></li>
                     </ul>
                 </td>
             </tr>

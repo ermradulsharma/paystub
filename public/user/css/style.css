@@ -8,13 +8,11 @@
 
 .footerSection {
     background-color: #252e58;
-    background-image: linear-gradient(
-        92deg,
-        #252e58 7%,
-        #625b9e 38%,
-        #252e58 69%,
-        #766fe5 98%
-    );
+    background-image: linear-gradient(92deg,
+            #252e58 7%,
+            #625b9e 38%,
+            #252e58 69%,
+            #766fe5 98%);
 }
 
 .footbtn {
@@ -95,12 +93,10 @@
 
 .paystub {
     background-color: #252e58;
-    background-image: linear-gradient(
-        96deg,
-        #252e58e8 5%,
-        #6361d3 46%,
-        #07a96cd9 100%
-    );
+    background-image: linear-gradient(96deg,
+            #252e58e8 5%,
+            #6361d3 46%,
+            #07a96cd9 100%);
     width: 100%;
 }
 
@@ -120,6 +116,7 @@
     font-family: "Futura LT";
     margin-bottom: 80px;
 }
+
 .Generate {
     width: 312px;
     border-radius: 63px;
@@ -154,6 +151,7 @@
     margin: 0;
     font-family: "Futura LT";
 }
+
 .ukh1 {
     font-size: 46px;
     font-family: "Futura LT";
@@ -179,12 +177,10 @@
 
 .createSample {
     background-color: #6d8507;
-    background-image: linear-gradient(
-        135deg,
-        #6d8507 0%,
-        #eeab49 50%,
-        #c1bef6 100%
-    );
+    background-image: linear-gradient(135deg,
+            #6d8507 0%,
+            #eeab49 50%,
+            #c1bef6 100%);
 }
 
 .WithPaystubX {
@@ -279,12 +275,10 @@
 
 .saveTime {
     background-color: #6d8507;
-    background-image: linear-gradient(
-        135deg,
-        #6d8507 0%,
-        #faaa63 50%,
-        #c9c6ff 100%
-    );
+    background-image: linear-gradient(135deg,
+            #6d8507 0%,
+            #faaa63 50%,
+            #c9c6ff 100%);
 }
 
 .needw2 {
@@ -310,6 +304,7 @@
     .globe-p {
         font-size: 29px !important;
     }
+
     .formimg1 {
         width: 500px;
     }
@@ -322,6 +317,7 @@
         font-size: 30px;
         margin-bottom: 30px;
     }
+
     .list-outer {
         padding: 0px 16px;
     }
@@ -343,9 +339,11 @@
     h1.uk-big-heading {
         font-size: 20px;
     }
+
     h2.uk-big-heading {
         font-size: 20px;
     }
+
     .ukh1 {
         font-size: 20px !important;
         font-weight: 800;
@@ -403,3 +401,4 @@
         font-weight: 800;
     }
 }
+

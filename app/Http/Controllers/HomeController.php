@@ -41,12 +41,15 @@ class HomeController extends Controller
     {
         $userObj = User::find(Auth::user()->id);
         $subcriptionData = Subcription::with('plan')->where('user_id', $userObj->id)->orderBy('id', 'desc')->first();
-        $stateList = StateTax::select('state')->get();
-        return view('user-profile', compact('userObj', 'subcriptionData','stateList'));
+        $stateList = StateTax::select('state', 'state_code')->get();
+        return view('user-profile', compact('userObj', 'subcriptionData', 'stateList'));
     }
 
     public function storeDetails(Request $request)
     {
+        $response = [];
+        $response['success'] = FALSE;
+        $response['status'] = STATUS_BAD_REQUEST;
         $userId = Auth::user()->id;
         if ($request->type == 'user-name') {
             $validator = Validator::make($request->all(), [
@@ -72,28 +75,36 @@ class HomeController extends Controller
         }
 
         if ($request->type == 'user-email') {
-            $validator = Validator::make($request->all(), [
-                'password' => 'required|min:6',
-                'email' => 'email:rfc,dns|unique:users,email,' . $userId,
-            ]);
+            $rules = [
+                'password' => 'required',
+                'email' => 'required|email:rfc,dns|unique:users,email'
+            ];
 
+            $messages = [
+                'email.required' => 'The email cannot be empty.',
+                'email.unique' => 'Please enter another email.',
+                'email.email' => 'Please enter valid email.',
+                'password.required' => 'The password cannot be empty'
+            ];
+            $validator = Validator::make($request->all(), $rules, $messages);
             if ($validator->fails()) {
-                return response()->json([
-                    'error' => $validator->errors()->all()
-                ]);
+                $response['message'] = $validator->errors()->first();
+                return response()->json($response, 301);
             }
 
             $userObj = User::where('id', $userId)->first();
             if (!$userObj) {
-                return response()->json(['error' => ['User not found']]);
+                $response['message'] = 'User not found';
+                return response()->json($response, 301);
             }
 
-            if (!Hash::check($request->password, $userObj->password)) {
-                return response()->json(['error' => ['Password is incorrect.']]);
+            if (!Hash::check($request->get('password'), $userObj->password)) {
+                $response['message'] = WRONG_PASSWORD;
+                return response()->json($response, $response['status']);
             }
-
             if ($request->email === $userObj->email) {
-                return response()->json(['error' => ['Please enter different email.']]);
+                $response['message'] = 'Please enter different email.';
+                return response()->json($response, $response['status']);
             }
 
             $code = rand(100000, 999999);
@@ -105,13 +116,13 @@ class HomeController extends Controller
             \Mail::to($request->email)->send(new VerifyEmailSend($mailData));
 
             $userObj->code = $code;
-            if (!$userObj->save()) {
-                return response()->json(['error' => ['Something went wrong.']]);
+            if ($userObj->save()) {
+                $response['message'] = "Verification code sent successfully";
+                $response['email'] = $request->email;
+                $response['status'] = STATUS_OK;
+                return response()->json($response, $response['status']);
             }
-
-            $response['message'] = "Verification code sent successfully";
-            $response['email'] = $request->email;
-            return response()->json($response, 200);
+            return response()->json($response, $response['status']);
         }
 
         if ($request->type == 'verify-email') {
@@ -135,8 +146,8 @@ class HomeController extends Controller
         if ($request->type == 'user-password') {
 
             $validator = Validator::make($request->all(), [
-                'currentPassword' => 'required|min:6',
-                'password' => 'required|min:6|confirmed|different:currentPassword',
+                'currentPassword' => 'required',
+                'password' => 'required|min:8|confirmed|different:currentPassword',
             ]);
 
             if ($validator->fails()) {
@@ -160,15 +171,22 @@ class HomeController extends Controller
         }
 
         if ($request->type == 'setup-account') {
-            $validator = Validator::make($request->all(), [
+            $rules = [
                 'uname' => 'required|min:3',
-                'password' => 'required|min:6|confirmed',
-            ]);
+                'password' => 'required|min:8|confirmed',
+            ];
 
+            $messages = [
+                'uname.required' => 'The name cannot be empty.',
+                'uname.min' => 'Please enter atleast 3 charcters.',
+                'password.min' => 'The password must be 8 charcters',
+                'password.required' => "Password can't be empty.",
+                'password.confirmed' => "Confirm password doesn't match",
+            ];
+            $validator = Validator::make($request->all(), $rules, $messages);
             if ($validator->fails()) {
-                return response()->json([
-                    'error' => $validator->errors()->all()
-                ]);
+                $response['message'] = $validator->errors()->first();
+                return response()->json($response, $response['status']);
             }
             $userObj = User::where('id', $userId)->first();
             if (!$userObj) {
@@ -177,20 +195,15 @@ class HomeController extends Controller
             $userObj->name = $request->uname ?? '';
             $userObj->password = bcrypt($request->password);
             $userObj->is_completed = '1';
-            if($userObj->save()){
+            if ($userObj->save()) {
                 // Auth::login($userObj);
                 $response['data'] = $userObj->name ?? '';
                 $response['message'] = "Your account setup successfully.";
                 $response['status'] = STATUS_OK;
                 return response()->json($response, $response['status']);
             }
-            /* if (!$userObj->save()) {
-                return response()->json(['error' => ['Something went wrong.']]);
-            }
-            $userObj = User::where('id', $userId)->first();
-            $request->session()->flash('message', 'Account setup successfully.');
-            return response()->json(['data' => $userObj, 'message' => 'Your account setup successfully.']); */
         }
+        return response()->json($response, $response['status']);
     }
 
     public function updatePassword(Request $request)
@@ -205,8 +218,8 @@ class HomeController extends Controller
         $response['success'] = FALSE;
         $requestData = $request->all();
 
-        $rules['new_password'] = 'required|min:6';
-        $rules['confirm_password'] = 'required|min:6';
+        $rules['new_password'] = 'required|min:8';
+        $rules['confirm_password'] = 'required|min:8';
         $validator = Validator::make($request->all(), $rules);
         if ($validator->fails()) {
             return redirect()->route('profile')->withErrors($validator)->withInput();
@@ -223,7 +236,6 @@ class HomeController extends Controller
 
     public function accountDelete(Request $request)
     {
-
         try {
             $user = User::find(Auth::user()->id);
             PaySlip::where(['user_id' => Auth::user()->id])->forceDelete();

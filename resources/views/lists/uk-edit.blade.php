@@ -476,7 +476,6 @@
     $(document).ready(function() {
         $('.basicTem').click(function() {
             var imageattr = $('option:selected', '.bt_id').attr('data-src');
-            console.log('imageattr', imageattr);
             $('.setImage').attr('src', imageattr);
             if (imageattr != null && imageattr != undefined) {
                 $('#openEye').modal('show');
@@ -497,7 +496,6 @@
     $(document).ready(function() {
         $('.basicTem').click(function() {
             var imageattr = $('option:selected', '.bt_id').attr('data-src');
-            console.log('imageattr', imageattr);
             $('.setImage').attr('src', imageattr);
             if (imageattr != null && imageattr != undefined) {
                 $('#openEye').modal('show');

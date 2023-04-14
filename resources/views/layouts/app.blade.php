@@ -58,36 +58,36 @@
             </li>
             <li class="nav-item d-flex justify-content-center ml-3 " style="margin-top:5px;">
                 @guest
-                <a class="btn btn-lg py-2 w-100 btn-danger login registerBtn " style="margin-top:42px;" href="javascript:void(0);">LOGIN</a>
-                <div class="container d-none logoutDiv">
-                    <div class="user-icon"><img src="{{ asset('images/profile1.png') }}"></div>
-                    <div class="logout btn-logout">
-                        <a><img src="{{ asset('images/logout01.png') }}"></a>
+                    <a class="btn btn-lg py-2 w-100 btn-danger login registerBtn " style="margin-top:42px;" href="javascript:void(0);">LOGIN</a>
+                    <div class="container d-none logoutDiv">
+                        <div class="user-icon"><img src="{{ asset('images/profile1.png') }}"></div>
+                        <div class="logout btn-logout">
+                            <a><img src="{{ asset('images/logout01.png') }}"></a>
+                        </div>
+                        <div class="dropbtn">
+                            <button class="btn btn-default dropdown-toggle navright-btn authUserName" type="button" id="menu1" data-toggle="dropdown">Hi {{ Auth::user()->name ?? '' }}<span class="caret"></span></button>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('invoiceList') }}">Order History</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('profile') }}">My Account</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Address Book</a></li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="dropbtn">
-                        <button class="btn btn-default dropdown-toggle navright-btn authUserName" type="button" id="menu1" data-toggle="dropdown">Hi {{ Auth::user()->name ?? '' }}<span class="caret"></span></button>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('invoiceList') }}">Order History</a></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('profile') }}">My Account</a></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Address Book</a></li>
-                        </ul>
-                    </div>
-                </div>
                 @endguest
 
                 @auth
-                <div class="container" style="margin-top:10px;">
-                    <div class="user-icon"><img src="{{ asset('images/profile1.png') }}"></div>
-                    <div class="logout btn-logout"><a><img src="{{ asset('images/logout01.png') }}"></a></div>
-                    <div class="dropbtn">
-                        <button class="btn btn-default dropdown-toggle navright-btn authUserName" type="button" id="menu1" data-toggle="dropdown"> Hi {{ Auth::user()->name ?? '' }} <span class="caret"></span></button>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('invoiceList') }}">Order History</a></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('profile') }}">My Account</a></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('profile') }}?tab=2">Address Book</a></li>
-                        </ul>
+                    <div class="container" style="margin-top:10px;">
+                        <div class="user-icon"><img src="{{ asset('images/profile1.png') }}"></div>
+                        <div class="logout btn-logout"><a><img src="{{ asset('images/logout01.png') }}"></a></div>
+                        <div class="dropbtn">
+                            <button class="btn btn-default dropdown-toggle navright-btn authUserName" type="button" id="menu1" data-toggle="dropdown">Hi {{ Auth::user()->name ?? '' }}<span class="caret"></span></button>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('invoiceList') }}">Order History</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('profile') }}">My Account</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('profile') }}?tab=2">Address Book</a></li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
                 @endauth
             </li>
         </ul>
@@ -102,10 +102,10 @@
         <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('globle*') ? 'active' : '' }}" href="{{ route('global') }}">GLOBEL</a>
         <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('w2form*') ? 'active' : '' }}" href="{{ route('w2form') }}">W-2 FORM</a>
         @guest
-        <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn login registerBtn" style="background-color:#d3230c; border-radius:15px; font-size:20px;" href="#">Login</a>
+            <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn login registerBtn" style="background-color:#d3230c; border-radius:15px; font-size:20px;" href="#">Login</a>
         @endguest
         @auth
-        <a class="btn btn-lg  w-100  navbtn nav-btn btn-logout logout" style="background-color:#d3230c; border-radius:15px;font-size:20px;max-width:150px; margin-left:10px !important;position: relative; top:0; " href="#">Log Out</a>
+            <a class="btn btn-lg  w-100  navbtn nav-btn btn-logout logout" style="background-color:#d3230c; border-radius:15px;font-size:20px;max-width:150px; margin-left:10px !important;position: relative; top:0; " href="#">Log Out</a>
         @endauth
     </div>
 
@@ -146,7 +146,7 @@
                             <a href="https://www.facebook.com/paystubx" target="_blank"><i class="fa fa-facebook   fbicon " aria-hidden="true"></i></a>
                             <a href="https://instagram.com/paystubx?igshid=YmMyMTA2M2Y=" target="_blank"><i class="fa fa-instagram ml-2 socialicon" aria-hidden="true"></i></a>
                             <a href="https://twitter.com/paystubx" target="_blank"><i class="fa fa-twitter ml-2 socialicon" aria-hidden="true"></i></a>
-                            <a href="https://www.google.com/" target="_blank"><i class="fa fa-linkedin ml-2 socialicon" aria-hidden="true"></i></a>
+                            {{-- <a href="https://www.google.com/" target="_blank"><i class="fa fa-linkedin ml-2 socialicon" aria-hidden="true"></i></a> --}}
                             <a href="https://www.youtube.com/channel/UCL3EF3eYo2OqcsPHfszXMzw" target="_blank"><i class="fa fa-youtube ml-2 socialicon" aria-hidden="true"></i></a>
                         </div>
                     </div>
@@ -175,19 +175,26 @@
                 <!-- Modal body -->
                 <div class="modal-body" style="padding-bottom:30px;">
                     <div class="google-btn mt-4" style="text-align: -webkit-center; text-align: -moz-center;">
-                        <div id="g_id_onload" data-client_id="802702825376-57405b5o70d0l41mkh9q8ta86ig71rkb.apps.googleusercontent.com" data-callback="handleCredentialResponse" data-dismiss="modal" data-ux_mode="popup" data-auto_prompt="false">
+                        <div id="g_id_onload"
+                            data-client_id="802702825376-57405b5o70d0l41mkh9q8ta86ig71rkb.apps.googleusercontent.com"
+                            data-callback="handleCredentialResponse" data-dismiss="modal" data-ux_mode="popup"
+                            data-auto_prompt="false">
                         </div>
-                        <div class="g_id_signin" data-dismiss="modal" data-type="standard" data-shape="rectangular" data-theme="filled_blue" data-text="signin_with" data-size="large" data-logo_alignment="left"></div>
+                        <div class="g_id_signin" data-dismiss="modal" data-type="standard" data-shape="rectangular"
+                            data-theme="filled_blue" data-text="signin_with" data-size="large"
+                            data-logo_alignment="left"></div>
                     </div>
                     <div class="text-center mt-4 mb-4">
                         <img src="{{ asset('images/Group 3.png') }}" style="width:130px;">
                     </div>
-                    <h6 class="text-center" style="color: #457bbe;" style="text-transform:capitalize;">{{__('Sign Up Using Email')}}</h6>
+                    <h6 class="text-center" style="color: #457bbe;" style="text-transform:capitalize;">
+                        {{ __('Sign Up Using Email') }}</h6>
                     <p class="text-center"></p>
                     <form id="sendOTPForm" action="{{ url('sendOtp') }}" method="POST" class="text-center">
                         @csrf
                         <div class="px-lg-5">
-                            <input type="email" id="email" name="email" class="form-control formm  py-4" placeholder="Email *">
+                            <input type="email" id="email" name="email" class="form-control formm  py-4"
+                                placeholder="Email *">
                         </div>
                         <button class="previewbtn mt-4 px-3" type="submit">Login</button>
                     </form>
@@ -202,23 +209,32 @@
 
                 <!-- Modal Header -->
                 <div class="modal-header" style="background: #115caecf;">
-                    <h4 class="modal-title" style="text-transform: capitalize;color:#fff;">{{__('Forgot Your Password')}}</h4>
-                    <button type="button" style="border: none; background-color:transparent; color:#fff;font-size:20px;padding:0;" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
+                    <h4 class="modal-title" style="text-transform: capitalize;color:#fff;">
+                        {{ __('Forgot Your Password') }}</h4>
+                    <button type="button"
+                        style="border: none; background-color:transparent; color:#fff;font-size:20px;padding:0;"
+                        class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
                 </div>
 
                 <!-- Modal body -->
                 <div class="modal-body pb-4" style="box-shadow: 0 0 8px rgba(0,0,0,.14);padding-top:0;">
-                    <p class="mail-text">{{__("Please enter your registered email address, and we'll send you a link to reset your password.")}}</p>
+                    <p class="mail-text">
+                        {{ __("Please enter your registered email address, and we'll send you a link to reset your password.") }}
+                    </p>
                     <form id="forgotPassword" method="post" action="{{ route('forgot.password') }}">
                         @csrf
-                        <label class="label-text" for="css">{{__('Email Address')}}<span style="color:red;">*</span></label>
-                        <input class="contact-box" type="text" id="user-email" placeholder="Email Address" name="email">
+                        <label class="label-text" for="css">{{ __('Email Address') }}<span
+                                style="color:red;">*</span></label>
+                        <input class="contact-box" type="text" id="user-email" placeholder="Email Address"
+                            name="email">
                     </form>
                 </div>
                 <div class="modal-footer" style="display: inline-block;">
                     <div class="d-flex justify-content-between pt-2">
-                        <a style="color: red;" id="backToSignin" href="JavaScript:void(0);">{{__('Back to Sign in')}}</a>
-                        <button class="btn-danger" onclick="$('#forgotPassword').submit();" style="border-radius:20px; border:none;font-size:12px; padding:5px 15px;">{{__('Send Password Reset Link')}}</button>
+                        <a style="color: red;" id="backToSignin"
+                            href="JavaScript:void(0);">{{ __('Back to Sign in') }}</a>
+                        <button class="btn-danger" onclick="$('#forgotPassword').submit();"
+                            style="border-radius:20px; border:none;font-size:12px; padding:5px 15px;">{{ __('Send Password Reset Link') }}</button>
                     </div>
                 </div>
             </div>
@@ -244,11 +260,13 @@
                         <div class="px-lg-5">
                             <div class="form-group">
                                 <label class="text-left">Email</label>
-                                <input type="email" id="login_email" name="email" class="form-control formm  py-4" placeholder="Email *" readonly>
+                                <input type="email" id="login_email" name="email"
+                                    class="form-control formm  py-4" placeholder="Email *" readonly>
                             </div>
                             <div class="form-group">
                                 <label class="text-left">Password</label>
-                                <input type="password" id="password" name="password" class="form-control formm  py-4" placeholder="Password *">
+                                <input type="password" id="password" name="password"
+                                    class="form-control formm  py-4" placeholder="Password *">
                             </div>
                         </div>
                         <p class="resend-otp">
@@ -277,14 +295,18 @@
                     <h5 class="text-center" style="text-transform:capitalize;">Verify your Email Address</h5>
                     <div class=" text-center mt-4">
                         <div class="mail">
-                            <img src="https://cdn4.iconfinder.com/data/icons/social-media-logos-6/512/112-gmail_email_mail-512.png" class="mailpic">
+                            <img src="https://cdn4.iconfinder.com/data/icons/social-media-logos-6/512/112-gmail_email_mail-512.png"
+                                class="mailpic">
                         </div>
 
                         <h5 style="color: #457bbe;" class="mt-4 text-center">Almost There!</h5>
-                        <p style="color: #000;font-size: 14px;font-family: serif; text-transform:capitalize; margin-bottom:0px;" class="text-center">Enter the verification code sent to you</p>
-                        <span style="color: #02030359;font-size: 10px;font-family: serif; text-transform:capitalize;" class="text-center">Check spam if not found in inbox</span>
+                        <p style="color: #000;font-size: 14px;font-family: serif; text-transform:capitalize; margin-bottom:0px;"
+                            class="text-center">Enter the verification code sent to you</p>
+                        <span style="color: #02030359;font-size: 10px;font-family: serif; text-transform:capitalize;"
+                            class="text-center">Check spam if not found in inbox</span>
                         <p class="resend-otp" style="padding-top:10px;">
-                            <a id="resendOtpButton" class="pointer-disable" style="" href="JavaScript:void(0);" disabled>Resend OTP </a>
+                            <a id="resendOtpButton" class="pointer-disable" style=""
+                                href="JavaScript:void(0);" disabled>Resend OTP </a>
                             <i class="fa fa-clock-o clock"></i>
                             <span id="resendTimeOut">30</span>
                         </p>
@@ -293,8 +315,8 @@
                             @csrf
                             <div class="px-lg-5">
                                 <input type="hidden" id="hidden_email" name="email" class="d-none">
-                                <input type="text" id="Verificationcode" name="code" class="form-control formm py-4"
-                                    placeholder="Verification Code *">
+                                <input type="text" id="Verificationcode" name="code"
+                                    class="form-control formm py-4" placeholder="Verification Code *">
                             </div>
                             <button class="previewbtn mt-5" type="submit">Verify</button>
                         </form>
@@ -340,7 +362,7 @@
 
                 <!-- Modal body -->
                 <div class="modal-body pb-4" style="box-shadow: 0 0 8px rgba(0,0,0,.14);padding-top:0;">
-                    <form id="userNameForm" method="post" action="{{ url('profile-setup') }}" >
+                    <form id="userNameForm" method="post" action="{{ route('profile-setup') }}">
                         @csrf
                         <input type="hidden" value="setup-account" name="type">
                         <label class="label-text" for="css">First Name<span style="color:red;">*</span></label>
@@ -356,18 +378,16 @@
                             <i id="eye-icon_03" toggle="#password-field" class="fa fa-eye-slash eye-icon confirm-toggle-password" data-id="02"></i>
                         </div>
                         {{-- <div class="modal-footer" style="display: inline-block;"> --}}
-                            <div class="d-flex justify-content-between pt-3">
-                                <button class="btn-secondary" data-bs-dismiss="modal" style="border-radius:20px; border:none;font-size:12px; padding:5px 10px;">Cancel</button>
-                                <button class="btn-danger" id="set-name" style="border-radius:20px; border:none; font-size:12px; padding:5px 15px; position:relative; right:26px;" type="submit">Save</button>
-                            </div>
+                        <div class="d-flex justify-content-between pt-3">
+                            <button class="btn-secondary" data-bs-dismiss="modal" style="border-radius:20px; border:none;font-size:12px; padding:5px 10px;">Cancel</button>
+                            <button class="btn-danger" id="set-name" style="border-radius:20px; border:none; font-size:12px; padding:5px 15px; position:relative; right:26px;" type="submit">Save</button>
+                        </div>
                         {{-- </div> --}}
                     </form>
                 </div>
-
             </div>
         </div>
     </div>
-
 
     <!-- End Footer Section -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.js"></script>
@@ -518,21 +538,21 @@
     </div>
 
     @if ($errors->first())
-    <script>
-        toastr.error('{{ $errors->first() }}');
-    </script>
+        <script>
+            toastr.error('{{ $errors->first() }}');
+        </script>
     @endif
 
     @if (Session::has('message'))
-    <script>
-        toastr.success("{{ Session::get('message') }}");
-    </script>
+        <script>
+            toastr.success("{{ Session::get('message') }}");
+        </script>
     @endif
 
     @if (Session::has('error'))
-    <script>
-        toastr.error("{{ Session::get('error') }}");
-    </script>
+        <script>
+            toastr.error("{{ Session::get('error') }}");
+        </script>
     @endif
 
     <script>

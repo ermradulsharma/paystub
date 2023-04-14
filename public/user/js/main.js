@@ -50,9 +50,18 @@ $("#adminLogin").on("submit", function () {
                     window.location.href = baseUrl + "admin/dashboard";
                 }, 200);
             } else if (response.user.role_id == 2) {
-                $(".registerBtn").removeClass("d-block").addClass("d-none");
-                $(".logoutDiv").removeClass("d-none");
-                $(".authUserName").text("Hi " + response.user.name);
+                if (response.user.name == '') {
+                    $("#setName").modal("show");
+                } else {
+                    $(".authUserName").text("Hi " + response.user.name);
+                    $(".registerBtn").removeClass("d-block").addClass("d-none");
+                    $(".logoutDiv").removeClass("d-none");
+                    if (userAuth == 1) {
+                        if (okk == 1) {
+                            usaStoreData();
+                        }
+                    }
+                }
             }
 
         },
@@ -117,6 +126,8 @@ $("#userNameForm").on("submit", function () {
     return false;
 });
 
+
+
 $(".btn-logout").click(function () {
     $("#logoutModal").modal("show");
     userAuth = 0;
@@ -135,6 +146,7 @@ function handleCredentialResponse(response) {
         }).join(''));
         return JSON.parse(jsonPayload);
     }
+
     const responsePayload = decodeJwtResponse(response.credential);
     $.ajax({
         url: baseUrl + "google/callback",

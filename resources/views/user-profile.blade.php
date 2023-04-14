@@ -94,6 +94,12 @@
             font-size: 16px;
             border: 1px solid#000;
         }
+
+
+        .modal { z-index: 1001 !important;}
+        .modal-backdrop {z-index: 1000 !important;}
+        .pac-container {z-index: 1055 !important;}
+
     </style>
     <section class="user-profile">
         <div class="container" style="padding: 0;">
@@ -149,7 +155,7 @@
                                             </div>
 
                                             <div class="edit-icon">
-                                                <img class="username2" data-email="{{ $userObj->email ?? '' }}"
+                                                <img class="changeUserEmail" data-email="{{ $userObj->email ?? '' }}"
                                                     style="width: 15px;" src={{ asset('images/pen-solid.svg') }}>
                                             </div>
                                         </div>
@@ -171,7 +177,8 @@
                                             </div>
                                         </div>
                                         <div class="profile-outer">
-                                            <div class="d-flex trash-account">
+
+                                            <div class="d-flex trash-account" data-route="{{ route('delete.account') }}">
                                                 <div class="profile-icon-outer" style="background-color:red;">
                                                     <i class="fa fa-trash-o trash"></i>
                                                 </div>
@@ -184,75 +191,58 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4 member-plan">
-                                @if (!empty($subcriptionData))
-                                    <h4>{{ __('Premium Member Plan') }}</h4>
-                                    @if ($subcriptionData->expiry_date > \Carbon\Carbon::now())
-                                        <p>{{ $subcriptionData->plan->name ?? '' }} {{ __('until') }}
-                                            {{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $subcriptionData->expiry_date)->format('d/m/Y') }}
-                                        </p>
-                                    @else
-                                        <p>{{ __('Plan expired') }}</p>
-                                        <button class="renew-btn">{{ __('RENEW') }}</button>
+                                <div class="col-lg-4 col-md-4 member-plan">
+                                    @if (!empty($subcriptionData))
+                                        <h4>{{ __('Premium Member Plan') }}</h4>
+                                        @if ($subcriptionData->expiry_date > \Carbon\Carbon::now())
+                                            <p>{{ $subcriptionData->plan->name ?? '' }} {{ __('until') }}
+                                                {{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $subcriptionData->expiry_date)->format('m/d/Y') }}
+                                            </p>
+                                        @else
+                                            <p>{{ __('Plan expired') }}</p>
+                                            <button class="renew-btn">{{ __('RENEW') }}</button>
+                                        @endif
                                     @endif
-                                @endif
+                                </div>
                             </div>
                         </div>
+                        <div class="tab-pane fade {{ Request::get('tab') == 2 ? 'show active' : '' }}" id="v-pills-profile"
+                            role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                <li class="nav-item" style="">
+                                    <a class="nav-link address-b {{ Request::get('emp') != 2 ? 'active' : '' }}" id="pills-home-tab" data-toggle="pill"
+                                        href="#pills-home" role="tab" aria-controls="pills-home"
+                                        aria-selected="true">EMPLOYER</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link address-b {{ Request::get('emp') == 2 ? 'active' : '' }}" id="pills-profile-tab" data-toggle="pill"
+                                        href="#pills-profile" role="tab" aria-controls="pills-profile"
+                                        aria-selected="false">EMPLOYEE</a>
+                                </li>
+                                <button class="add-btn addressBook" id="addNewAddress" data-emptype="{{ Request::get('emp') == 2 ? 'employee' : 'employer' }}">Add New Address</button>
+                            </ul>
 
-                    </div>
-                    <div class="tab-pane fade {{ Request::get('tab') == 2 ? 'show active' : '' }}" id="v-pills-profile"
-                        role="tabpanel" aria-labelledby="v-pills-profile-tab">
-
-                        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                            <li class="nav-item" style="">
-                                <a class="nav-link address-b active" id="pills-home-tab" data-toggle="pill"
-                                    href="#pills-home" role="tab" aria-controls="pills-home"
-                                    aria-selected="true">EMPLOYER</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link address-b" id="pills-profile-tab" data-toggle="pill"
-                                    href="#pills-profile" role="tab" aria-controls="pills-profile"
-                                    aria-selected="false">EMPLOYEE</a>
-                            </li>
-                            <button class="add-btn addressBook">Add New Address</button>
-                        </ul>
-
-                        <div class="tab-content" id="pills-tabContent">
-                            <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
-                                aria-labelledby="pills-home-tab">
-                                <table class="table" style="border:1px solid #ddd;">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">#</th>
-                                            <th scope="col">Company Name</th>
-                                            <th scope="col">Address1</th>
-                                            <th scope="col">Address2</th>
-                                            <th scope="col">City</th>
-                                            <th scope="col">State</th>
-                                            <th scope="col">Zip Code</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="employerTab">
-                                        <tr style="border:1px solid #ddd;">
-                                            <th scope="row">1</th>
-                                            <td>Mark22</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
-                                            <td>otto</td>
-                                            <td>@mdo</td>
-                                            <td>1234</td>
-                                            <td style="padding-right:0; padding-left:0;"><img style="width:22px;"
-                                                    src="images/icons/edit-icon.png"></td>
-                                            <td style="padding-right:0; padding-left:0;"><img style="width:20px;"
-                                                    src="images/icons/del-icon.png"></td>
-                                        </tr>
-
-                                        {{-- <tr style="border:1px solid #ddd;">
-                                                <th scope="row">2</th>
-                                                <td>Jacob</td>
-                                                <td>Thornton</td>
-                                                <td>@fat</td>
+                            <div class="tab-content" id="pills-tabContent">
+                                <div class="tab-pane fade {{ Request::get('emp') != 2 ? 'show active' : '' }}" id="pills-home" role="tabpanel"
+                                    aria-labelledby="pills-home-tab">
+                                    <table class="table" style="border:1px solid #ddd;">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col">Employer (Company) Name</th>
+                                                <th scope="col">Street Address 1</th>
+                                                <th scope="col">Street Address 2</th>
+                                                <th scope="col">City</th>
+                                                <th scope="col">State</th>
+                                                <th scope="col">Zip Code</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="employerTab">
+                                            {{-- <tr style="border:1px solid #ddd;">
+                                                <th scope="row">1</th>
+                                                <td>Mark22</td>
+                                                <td>Otto</td>
+                                                <td>@mdo</td>
                                                 <td>otto</td>
                                                 <td>@mdo</td>
                                                 <td>1234</td>
@@ -261,27 +251,26 @@
                                                 <td style="padding-right:0; padding-left:0;"><img style="width:20px;"
                                                         src="images/icons/del-icon.png"></td>
                                             </tr> --}}
+                                        </tbody>
+                                    </table>
 
-                                    </tbody>
-                                </table>
-
-                            </div>
-                            <div class="tab-pane fade" id="pills-profile" role="tabpanel"
-                                aria-labelledby="pills-profile-tab">
-                                <table class="table" style="border:1px solid #ddd;">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">#</th>
-                                            <th scope="col">Employee Name</th>
-                                            <th scope="col">Address1</th>
-                                            <th scope="col">Address2</th>
-                                            <th scope="col">City</th>
-                                            <th scope="col">State</th>
-                                            <th scope="col">Zip Code</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="employeeTab">
-                                        {{-- <tr>
+                                </div>
+                                <div class="tab-pane fade {{ Request::get('emp') == 2 ? ' show active' : '' }}" id="pills-profile" role="tabpanel"
+                                    aria-labelledby="pills-profile-tab">
+                                    <table class="table" style="border:1px solid #ddd;">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col">Employee Name</th>
+                                                <th scope="col">Street Address 1</th>
+                                                <th scope="col">Street Address 2</th>
+                                                <th scope="col">City</th>
+                                                <th scope="col">State</th>
+                                                <th scope="col">Zip Code</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="employeeTab">
+                                            {{-- <tr>
                                                 <th scope="row">1</th>
                                                 <td>Mark</td>
                                                 <td>Otto</td>
@@ -294,15 +283,14 @@
                                                 <td style="padding-right:0; padding-left:0;"><img style="width:20px;"
                                                         src="images/icons/del-icon.png"></td>
                                             </tr> --}}
-
-                                    </tbody>
-                                </table>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
         </div>
     </section>
 
@@ -340,8 +328,7 @@
                                         <div class="form-group">
                                             <p class="col-sm-offset-2 col-sm-12 help-block"
                                                 style="font-weight: bold;margin-top:10px; margin-bottom:5px;">STREET
-                                                ADDRESS 1 *
-                                            </p>
+                                                ADDRESS 1 * </p>
                                             <div class="col-sm-12">
                                                 <input style="font-size:16px;" type="text" class="form-control"
                                                     id="inputAddressLine1" name="addressLine1"
@@ -351,8 +338,7 @@
 
                                         <div class="form-group">
                                             <p class="col-sm-offset-2 col-sm-12 help-block"
-                                                style="font-weight:bold;margin-bottom:5px;">STREET ADDRESS 2
-                                            </p>
+                                                style="font-weight:bold;margin-bottom:5px;">STREET ADDRESS 2</p>
                                             <div class="col-sm-12">
                                                 <input style="font-size:16px;" type="text" class="form-control"
                                                     id="inputAddressLine2" name="addressLine2"
@@ -372,12 +358,14 @@
                                         <div class="form-group">
                                             <label for="selectState" style="font-weight:bold;" class="col-sm-12 control-label">State</label>
                                             <div class="col-sm-12">
+
                                                 <select class="form-control select-box" id="selectState"
                                                     name="stateName">
                                                     <option value="" selected="selected">Select</option>
                                                     @if (count($stateList) > 0)
                                                         @foreach ($stateList as $state)
-                                                        <option value="{{$state->state}}">{{$state->state}}</option> 
+                                                            <option value="{{ $state->state_code }}">{{ $state->state }}
+                                                            </option>
                                                         @endforeach
                                                     @endif
                                                 </select>
@@ -423,7 +411,7 @@
 
                 <!-- Modal body -->
                 <div class="modal-body pb-4" style="box-shadow: 0 0 8px rgba(0,0,0,.14);padding-top:0;">
-                    <form id="userNameForm" method="post" action="{{ route('store.details') }}">
+                    <form id="userNameForm1" method="post" action="{{ route('store.details') }}">
                         @csrf
                         <input type="hidden" value="user-name" name="type">
                         <label class="label-text" for="css">Contact Name<span style="color:red;">*</span></label>
@@ -443,22 +431,20 @@
         </div>
     </div>
 
-    <div class="modal fade" id="userName2">
+    <div class="modal fade" id="changeUserEmail">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
 
                 <!-- Modal Header -->
                 <div class="modal-header" style="background: #115caecf;">
                     <h4 class="modal-title" style="text-transform: capitalize;color:#fff;">Change Email Address</h4>
-                    <button type="button"
-                        style="border: none; background-color:transparent; color:#fff;font-size:20px;padding:0;"
-                        class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
+                    <button type="button" style="border: none; background-color:transparent; color:#fff;font-size:20px;padding:0;" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
                 </div>
 
                 <!-- Modal body -->
                 <div class="modal-body pb-4" style="box-shadow: 0 0 8px rgba(0,0,0,.14);padding-top:0;">
                     <p class="mail-text">Enter the Password set for the account and proceed to set a new email address.</p>
-                    <form id="userEmailForm" method="post" action="{{ route('store.details') }}">
+                    <form id="changeUserEmail_1" method="post" action="">
                         @csrf
                         <input type="hidden" value="user-email" name="type">
                         <div class="contact-box-outer">
@@ -466,19 +452,22 @@
                             <input class="contact-box" type="password" placeholder="Password" name="password">
                             <i id="eye-icon_00" class="fa fa-eye-slash eye-icon show-password" data-id="00"></i>
                         </div>
-                        <label class="label-text" for="css">Email Address<span style="color:red;">*</span></label>
-                        <input class="contact-box" type="text" id="user-email" placeholder="Email Address"
-                            name="email">
+                        <div class="contact-box-outer">
+                            <label class="label-text" for="css">Email Address<span style="color:red;">*</span></label>
+                            <input class="contact-box" type="text" id="user-email" placeholder="Email Address" name="email">
+                        </div>
+                        <div class="d-flex justify-content-between pt-3">
+                            <button class="btn-secondary" data-bs-dismiss="modal" style="border-radius:20px; border:none;font-size:12px; padding:5px 10px;">Cancel</button>
+                            <button class="btn-danger" style="border-radius:20px; border:none;font-size:12px; padding:5px 15px; position:relative; right:26px;"  type="submit">Save</button>
+                        </div>
                     </form>
                 </div>
-                <div class="modal-footer" style="display: inline-block;">
+                {{-- <div class="modal-footer" style="display: inline-block;">
                     <div class="d-flex justify-content-between pt-2">
-                        <button class="btn-secondary" data-bs-dismiss="modal"
-                            style="border-radius:20px; border:none;font-size:12px; padding:5px 10px;">Cancel</button>
-                        <button class="btn-danger" id="store-email"
-                            style="border-radius:20px; border:none;font-size:12px; padding:5px 15px;">Save</button>
+                        <button class="btn-secondary" data-bs-dismiss="modal" style="border-radius:20px; border:none;font-size:12px; padding:5px 10px;">Cancel</button>
+                        <button class="btn-danger" id="changeUserEmail" style="border-radius:20px; border:none;font-size:12px; padding:5px 15px;">Save</button>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
@@ -502,21 +491,15 @@
                         </div>
 
                         <h5 style="color: #457bbe;" class="mt-4 text-center">Almost There!</h5>
-                        <p style="color: #000;font-size: 14px;font-family: serif; text-transform:capitalize; margin-bottom:0px;"
-                            class="text-center">Enter the verification code sent to you</p>
-                        <span style="color: #02030359;font-size: 10px;font-family: serif; text-transform:capitalize;"
-                            class="text-center">Check spam if not found in inbox</span>
-                        <p class="resend-otp"><a id="resendOtpButton" class="pointer-disable" style=""
-                                href="JavaScript:void(0);" disabled>Resend OTP </a><i
-                                class="fa fa-clock-o clock"></i><span id="resendTimeOut">30</span></p>
-
+                        <p style="color: #000;font-size: 14px;font-family: serif; text-transform:capitalize; margin-bottom:0px;" lass="text-center">Enter the verification code sent to you</p>
+                        <span style="color: #02030359;font-size: 10px;font-family: serif; text-transform:capitalize;" class="text-center">Check spam if not found in inbox</span>
+                        <p class="resend-otp"><a id="resendOtpButton" class="pointer-disable" style="" href="JavaScript:void(0);" disabled>Resend OTP </a><i class="fa fa-clock-o clock"></i><span id="resendTimeOut">30</span></p>
                         <form id="loginOtp" action="{{ route('store.details') }}" method="POST" class="text-center">
                             @csrf
                             <input type="hidden" value="verify-email" name="type">
                             <div class="px-lg-5">
                                 <input type="hidden" id="hidden_email" name="email" class="d-none">
-                                <input type="text" id="Verificationcode" name="code"
-                                    class="form-control formm py-4" placeholder="Verification Code *">
+                                <input type="text" id="Verificationcode" name="code" class="form-control formm py-4" placeholder="Verification Code *">
                             </div>
                         </form>
                         <button class="previewbtn mt-5" id="verify-email">Verify</button>
@@ -533,9 +516,7 @@
                 <!-- Modal Header -->
                 <div class="modal-header" style="background: #115caecf;">
                     <h4 class="modal-title" style="text-transform: capitalize;color:#fff;">Change Password</h4>
-                    <button type="button"
-                        style="border: none; background-color:transparent; color:#fff;font-size:20px;padding:0;"
-                        class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
+                    <button type="button" style="border: none; background-color:transparent; color:#fff;font-size:20px;padding:0;" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
                 </div>
 
                 <!-- Modal body -->
@@ -547,43 +528,28 @@
 
                         <div class="contact-box-outer">
                             <div class="contact-box-outer">
-                                <label class="label-text" for="css">Password<span
-                                        style="color:red;">*</span></label>
-                                <input class="contact-box" type="password" placeholder="Current Password"
-                                    name="currentPassword">
-                                <i id="eye-icon_00" toggle="#password-field"
-                                    class="fa fa-eye-slash eye-icon show-password" data-id="02"></i>
+                                <label class="label-text" for="css">Password<span style="color:red;">*</span></label>
+                                <input class="contact-box" type="password" placeholder="Current Password" name="currentPassword">
+                                <i id="eye-icon_00" toggle="#password-field" class="fa fa-eye-slash eye-icon show-password" data-id="02"></i>
                             </div>
                         </div>
 
                         <div class="contact-box-outer">
-                            <label class="label-text" for="css">New Password<span
-                                    style="color:red;">*</span></label>
-                            <input class="contact-box" type="password" placeholder="New Password" name="password"
-                                class="form-control show-password-sd" id="new_password" required>
-                            <i id="eye-icon_03" toggle="#password-field" class="fa fa-eye-slash eye-icon show-password"
-                                data-id="02"></i>
+                            <label class="label-text" for="css">New Password<span style="color:red;">*</span></label>
+                            <input class="contact-box" type="password" placeholder="New Password" name="password" class="form-control show-password-sd" id="new_password" required>
+                            <i id="eye-icon_03" toggle="#password-field" class="fa fa-eye-slash eye-icon show-password" data-id="02"></i>
                         </div>
                         <div class="contact-box-outer">
-                            <label class="label-text" for="css">Confirm Password<span
-                                    style="color:red;">*</span></label>
-                            <input class="contact-box" type="password" placeholder="Confirm Password"
-                                name="password_confirmation" class="form-control show-password-sd" id="confirm_password"
-                                required>
-                            <i id="eye-icon_03" toggle="#password-field" class="fa fa-eye-slash eye-icon show-password"
-                                data-id="02"></i>
+                            <label class="label-text" for="css">Confirm Password<span style="color:red;">*</span></label>
+                            <input class="contact-box" type="password" placeholder="Confirm Password" name="password_confirmation" class="form-control show-password-sd" id="confirm_password" required>
+                            <i id="eye-icon_03" toggle="#password-field" class="fa fa-eye-slash eye-icon show-password" data-id="02"></i>
                         </div>
                     </form>
                     <div class="d-flex justify-content-between pt-2">
-                        <button class="btn-secondary" data-bs-dismiss="modal"
-                            style="border-radius:20px; border:none;font-size:12px; padding:5px 10px;">Cancel</button>
-                        <button class="btn-danger" id="store-password"
-                            style="border-radius:20px; border:none;font-size:12px; padding:5px 15px;">Save</button>
+                        <button class="btn-secondary" data-bs-dismiss="modal" style="border-radius:20px; border:none;font-size:12px; padding:5px 10px;">Cancel</button>
+                        <button class="btn-danger" id="store-password" style="border-radius:20px; border:none;font-size:12px; padding:5px 15px;">Save</button>
                     </div>
                 </div>
-
-
-
             </div>
         </div>
     </div>
@@ -596,15 +562,16 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body" style="padding-bottom:30px;">
-                    <h5 class="text-center" style="text-transform:capitalize;">Do you want to delete your account?</h5>
+                    <h5 class="text-center delete-msg" style="text-transform:capitalize;">Do you want to delete your
+                        account?</h5>
                     <div class=" text-center mt-4">
                         {{-- <h5 style="color: #457bbe;" class="mt-4 text-center">Almost There!</h5> --}}
-                        <form id="loginOtp" action="{{ route('delete.account') }}" method="POST" class="text-center">
+                        <form id="deleteItem" action="{{ route('delete.account') }}" method="POST"
+                            class="text-center">
                             @csrf
-
-                            <button class="previewbtn" type="submit">Yes</button>
-                            <button class="previewbtn bottom-close" type="button">NO</button>
                         </form>
+                        <button class="previewbtn delete-item">Yes</button>
+                        <button class="previewbtn bottom-close" type="button">NO</button>
                     </div>
                 </div>
             </div>
@@ -614,11 +581,39 @@
 
 
 
-
 @section('script')
     <script>
         $(document).ready(function() {
             getAddressBook();
+        });
+
+        $(".changeUserEmail").click(function() {
+            $("#changeUserEmail").modal("show");
+
+        });
+
+        $("#changeUserEmail").on("submit", function() {
+            $.ajax({
+                type: 'POST',
+                url: '{{ route("profile-setup") }}',
+                data: $("#changeUserEmail_1").serialize(),
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                success: function(response) {
+                    $("#changeUserEmail").modal("hide");
+                    toastr.success(response.message);
+                    $("#userName2").modal("hide");
+                    $('#hidden_email').val(response.email);
+                    $("#otpModal").modal("show");
+                    startTimer();
+                },
+                error: function(err) {
+                    error = err.responseJSON;
+                    toastr.error(error.message);
+                },
+            });
+            return false;
         });
 
         $(".username").click(function() {
@@ -627,34 +622,8 @@
             $("#userName").modal("show");
         });
 
-        // $("#store-name").click(function(e) {
-        //     submitUserData($('#userNameForm')[0]);
-        // });
-
-        $(".username2").click(function() {
-            $("#userName2").modal("show");
-        });
-
-        $("#store-email").click(function(e) {
-            //submitUserData($('#userEmailForm')[0],".username2","#userName2");
-            var form = $('#userEmailForm')[0];
-            $.ajax({
-                type: 'POST',
-                url: form.action,
-                data: $(form).serialize(),
-                success: function(data) {
-                    console.log('data', data);
-                    if ($.isEmptyObject(data.error)) {
-                        toastr.success(data.message);
-                        $("#userName2").modal("hide");
-                        $('#hidden_email').val(data.email);
-                        $("#otpModal").modal("show");
-                        startTimer();
-                    } else {
-                        printErrorMsg(data.error);
-                    }
-                }
-            });
+        $("#store-name").click(function(e) {
+            submitUserData($('#userNameForm1')[0]);
         });
 
         $("#verify-email").click(function(e) {
@@ -665,9 +634,6 @@
             $("#userName3").modal("show");
         });
 
-        $(".trash-account").click(function() {
-            $("#deleteAcModal").modal("show");
-        });
 
         $("#store-password").click(function(e) {
             submitUserData($('#passwordUpdate')[0]);
@@ -679,7 +645,7 @@
             $.ajax({
                 url: "{{ route('sendOtp') }}?email=" + email,
                 success: function(data) {
-                    console.log('data', data);
+
                     if ($.isEmptyObject(data.error)) {
                         toastr.success(data.message);
 
@@ -690,6 +656,10 @@
             });
         });
 
+        $("#store-address").click(function(e) {
+            submitUserData($('#addressForm')[0]);
+        });
+
         $(document).on('click', '.show-password', function() {
             $(this).toggleClass("fa-eye fa-eye-slash");
             var input = $(this).prev('input');
@@ -697,26 +667,41 @@
         });
 
         $(document).on('click', '#pills-profile-tab', function() {
-            $("#adress-type").val('employee');
-            $('#nameLabel').text('').text('EMPLOYEE NAME *');
-            $('#inputFullName').attr('placeholder', 'Full Employee Name');
+            $("#addNewAddress").attr('data-emptype','employee');
             getAddressBook();
         });
 
         $(document).on('click', '#pills-home-tab', function() {
-            $("#adress-type").val('employer');
-            $('#nameLabel').text('').text('EMPLOYER (COMPANY) NAME *');
-            $('#inputFullName').attr('placeholder', 'Full Employer (Company) Name');
+            $("#addNewAddress").attr('data-emptype','employer');
             getAddressBook();
         });
 
-        $("#store-address").click(function(e) {
-            submitUserData($('#addressForm')[0]);
+        $("#addNewAddress").click(function() {
+           openAddresModal();
+        });
+
+        $(document).on('click', '.delete-item', function(e) {
+            submitUserData($('#deleteItem')[0]);
+            $('#deleteAcModal').modal('hide');
+        });
+
+        $(document).on('click', '.btn-delete-add', function(e) {
+            $('.delete-msg').text('Do you want to delete address?');
+            var url = $(this).data('route');
+            $('#deleteItem').attr('action', url);
+            $('#deleteAcModal').modal('show');
+        });
+
+        $(".trash-account").click(function() {
+            $('.delete-msg').text('Do you want to delete your account?');
+            var url = $(this).data('route');
+            $('#deleteItem').attr('action', url);
+            $("#deleteAcModal").modal("show");
         });
 
         $(document).on('click', '.btn-edit', function(e) {
             var recordId = $(this).data('record');
-            console.log('btn-edit-', recordId);
+
             $.ajax({
                 url: "{{ route('get.address') }}?record=" + recordId,
                 datatype: "json",
@@ -729,16 +714,60 @@
                         $('#addressForm input[name=addressLine1]').val(data.addressObj.address_1);
                         $('#addressForm input[name=addressLine2]').val(data.addressObj.address_2);
                         $('#addressForm input[name=cityName]').val(data.addressObj.city);
-                        $('#addressForm select[name="stateName"]').val(data.addressObj.city);
+                        $('#addressForm select[name="stateName"]').val(data.addressObj.state);
                         // $('#selectState').val(data.addressObj.state);
                         $('#addressForm input[name=zipCode]').val(data.addressObj.zip_code);
-                        $('#addressBook').modal('show');
+                        openAddressModal();
                     } else {
                         printErrorMsg(data.error);
                     }
                 }
             });
         });
+
+        $('.eye-icon').click(function() {
+            var id = $(this).data('id');
+            var clr = $(this).attr('src');
+            if (clr = 'eye-icon') {
+                $("#eye-icon_" + id).removeClass("fa fa-eye-slash eye-icon");
+                $("#eye-icon_" + id).addClass("fa fa-eye eye-icon");
+            } else {
+                $("#eye-icon_" + id).addClass("fa fa-eye-slash eye-icon");
+                $("#eye-icon_" + id).removeClass("fa fa-eye eye-icon");
+            }
+
+        });
+
+        function openAddressModal(){
+            var popType = $("#addNewAddress").attr('data-emptype');
+            console.log('popType--',popType);
+            if(popType == 'employee'){
+                $("#adress-type").val('employee');
+                $('#nameLabel').text('').text('EMPLOYEE NAME *');
+                $('#inputFullName').attr('placeholder', 'Full Employee Name');
+            }else if(popType == 'employer'){
+                $("#adress-type").val('employer');
+                $('#nameLabel').text('').text('EMPLOYER (COMPANY) NAME *');
+                $('#inputFullName').attr('placeholder', 'Full Employer (Company) Name');
+            }
+            $("#addressBook").modal("show");
+        }
+
+        function getAddressBook() {
+            var type = $("#addNewAddress").attr('data-emptype');
+            $.ajax({
+                url: "{{ route('fetch.address') }}?type=" + type,
+                datatype: "html",
+                success: function(data) {
+                    if ($.isEmptyObject(data.error)) {
+                        $('.tab-pane.fade.show.active').find('tbody').html('').html(data);
+                        // $('#employerTab').html('').html(data);
+                    } else {
+                        printErrorMsg(data.error);
+                    }
+                }
+            });
+        }
 
         function submitUserData(form) {
             $.ajax({
@@ -769,38 +798,88 @@
                 toastr.error(value);
             });
         }
+    </script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyDpavHXELJMJvIHifFPN6tBBiFSXKGpy2g&callback=Function.prototype"></script>
+<script>
 
-        $('.eye-icon').click(function() {
-            var id = $(this).data('id');
-            var clr = $(this).attr('src');
-            if (clr = 'eye-icon') {
-                $("#eye-icon_" + id).removeClass("fa fa-eye-slash eye-icon");
-                $("#eye-icon_" + id).addClass("fa fa-eye eye-icon");
-            } else {
-                $("#eye-icon_" + id).addClass("fa fa-eye-slash eye-icon");
-                $("#eye-icon_" + id).removeClass("fa fa-eye eye-icon");
+    var searchInput = 'inputAddressLine1';
+
+    $(document).ready(function() {
+        var autocomplete;
+        autocomplete = new google.maps.places.Autocomplete((document.getElementById(searchInput)), {
+            types: ['geocode'],
+            componentRestrictions: {
+                country: "USA"
             }
-
         });
 
-        $(".addressBook").click(function() {
-            $("#addressBook").modal("show");
-        });
 
-        function getAddressBook() {
-            var type = $("#adress-type").val();
-            $.ajax({
-                url: "{{ route('fetch.address') }}?type=" + type,
-                datatype: "html",
-                success: function(data) {
-                    if ($.isEmptyObject(data.error)) {
-                        $('.tab-pane.fade.show.active').find('tbody').html('').html(data);
-                        // $('#employerTab').html('').html(data);
-                    } else {
-                        printErrorMsg(data.error);
+        google.maps.event.addListener(autocomplete, 'place_changed', function() {
+            var near_place = autocomplete.getPlace();
+            if (near_place && near_place.address_components.length > 0) {
+                var obj = [];
+                for (var i = 0; i < near_place.address_components.length; i++) {
+                    for (var j = 0; j < near_place.address_components[i].types.length; j++) {
+                        obj[near_place.address_components[i].types[j]] = near_place.address_components[
+                            i].short_name;
+                        // if(near_place.address_components[i].types['0'] == 'administrative_area_level_1'){
+                        //     $('#state').val(near_place.address_components[i].long_name);
+                        // }
+
                     }
                 }
-            });
+
+                setLocation(obj);
+
+            }
+        });
+    });
+
+    function setLocation(obj) {
+        if (obj.street_number == undefined && obj.route == undefined) {
+            $("#inputAddressLine1").val('');
+        } else if (obj.street_number == undefined) {
+            $("#inputAddressLine1").val(obj.route);
+            $('#inputAddressLine1').css('border-color', 'gray');
+            $('.0_address_1').remove();
+        } else if (obj.route == undefined) {
+            $("#inputAddressLine1").val(obj.street_number);
+            $('#inputAddressLine1').css('border-color', 'gray');
+            $('.0_address_1').remove();
+        } else {
+            $("#inputAddressLine1").val(obj.street_number + ' ' + obj.route);
+            $('#inputAddressLine1').css('border-color', 'gray');
+            $('.0_address_1').remove();
         }
-    </script>
+        /* if (obj.neighborhood != undefined) {
+            $("#address_2").val(obj.neighborhood);
+            $('#address_2').css('border-color', 'gray');
+            $('.0_address_2').remove();
+        } else {
+            $("#address_2").val('');
+        } */
+        if (obj.locality != undefined) {
+            $("#inputCityTown").val(obj.locality);
+            $('#inputCityTown').css('border-color', 'gray');
+            $('.0_city').remove();
+        } else {
+            $("#city").val('');
+        }
+        if (obj.administrative_area_level_1 != undefined) {
+            $("#selectState").val(obj.administrative_area_level_1);
+            $('#selectState').css('border-color', 'gray');
+            $('.0_state').remove();
+        } else {
+            $("#state").val('');
+        }
+        if (obj.postal_code != undefined) {
+            $("#inputZipPostalCode").val(obj.postal_code);
+            $('#inputZipPostalCode').css('border-color', 'gray');
+            $('.0_zip_code').remove();
+        } else {
+            $("#zip_code").val('');
+        }
+        // inputAddressLine1  inputAddressLine2  inputCityTown  selectState  inputZipPostalCode
+    }
+</script>
 @endsection

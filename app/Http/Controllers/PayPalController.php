@@ -109,7 +109,14 @@ class PayPalController extends Controller
                 $subcriptionObj->country = $countryObj->type;
                 $subcriptionObj->transaction_id = $response['id'];
                 $subcriptionObj->start_date = Carbon::now();
-                $subcriptionObj->expiry_date = Carbon::now()->addMonths($planDetail->plan_duration);
+                if ($planDetail->plan_duration == '24') {
+                    $subcriptionObj->expiry_date = Carbon::now()->addDay();
+                } else if ($planDetail->plan_duration == '1') {
+                    $subcriptionObj->expiry_date = Carbon::now()->addMonth();
+                } else {
+                    $subcriptionObj->expiry_date = Carbon::now()->addMonths($planDetail->plan_duration);
+                }
+
                 $subcriptionObj->transaction_status = $response['status'] ?? '';
                 if ($subcriptionObj->save()) {
                     $userObj = User::find(Auth::user()->id);
