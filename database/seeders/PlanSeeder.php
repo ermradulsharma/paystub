@@ -19,8 +19,8 @@ class PlanSeeder extends Seeder
         if (Plan::count() == 0) {
             $plans = array(
                 [
-                    'name'              => '24 Hours',
-                    'price'             => '3.99',
+                    'name'              => '1 Day',
+                    'price'             => '9.99',
                     "plan_duration"     => '24',
                     "plan_type"         => 'hourly',
                     "description"       => 'Unlimited Paystub Access',
@@ -31,7 +31,7 @@ class PlanSeeder extends Seeder
                 ],
                 [
                     'name'              => '1 Month',
-                    'price'             => '9.99',
+                    'price'             => '19.99',
                     "plan_duration"     => '1',
                     "plan_type"         => 'monthly',
                     "description"       => 'Unlimited Paystub Access',
@@ -40,8 +40,8 @@ class PlanSeeder extends Seeder
                     "updated_at"        => Carbon::now()->format('Y-m-d H:i:s')
                 ],
                 [
-                    'name'              => '3 Month',
-                    'price'             => '19.99',
+                    'name'              => '3 Months',
+                    'price'             => '29.99',
                     "plan_duration"     => '3',
                     "plan_type"         => 'monthly',
                     "description"       => 'Unlimited Paystub Access, save 33%',
@@ -50,8 +50,8 @@ class PlanSeeder extends Seeder
                     "updated_at"        => Carbon::now()->format('Y-m-d H:i:s')
                 ],
                 [
-                    'name'              => '6 Month',
-                    'price'             => '29.99',
+                    'name'              => '6 Months',
+                    'price'             => '89.99',
                     "plan_duration"     => '6',
                     "plan_type"         => 'monthly',
                     "description"       => 'Unlimited Paystub Access, save 53%',
@@ -60,9 +60,9 @@ class PlanSeeder extends Seeder
                     "updated_at"        => Carbon::now()->format('Y-m-d H:i:s')
                 ],
                 [
-                    'name'              => 'Life Time',
-                    'price'             => '99.99',
-                    "plan_duration"     => '99',
+                    'name'              => '12 Months',
+                    'price'             => '199.99',
+                    "plan_duration"     => '12',
                     "plan_type"         => 'yearly',
                     "description"       => 'Unlimited Paystub Access',
                     "created_by"        => 1,

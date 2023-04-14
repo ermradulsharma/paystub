@@ -1,37 +1,42 @@
-.user-profile .container{
-    box-shadow: 0 0 8px rgba(0,0,0,.14);
+.user-profile .container {
+    box-shadow: 0 0 8px rgba(0, 0, 0, .14);
     max-width: 1400px;
-    margin:0 auto;
+    margin: 0 auto;
     height: 95vh;
 }
-section.user-profile {
 
-}
+section.user-profile {}
+
 /* .left-sidebar{
     border-right:1px solid #ddd;
 } */
 .right-side-bar {
     padding: 10px;
 }
+
 .hover:hover {
     background-color: #e6eef9;
 }
-.hover{
+
+.hover {
     transition: all 0.3s ease-in-out;
     align-items: center;
 }
+
 i.fa.fa-envelope.profile-icon {
     font-size: 20px;
     color: #5a5858;
 }
+
 .user-text h4 {
     font-size: 17px;
     margin: 0;
 }
+
 .profile-icon-outer {
     width: 40px;
     height: 40px;
-    background-color: rgb(128, 128, 128,0.3);
+    background-color: rgb(128, 128, 128, 0.3);
     display: flex;
     justify-content: center;
     border-radius: 50%;
@@ -39,9 +44,11 @@ i.fa.fa-envelope.profile-icon {
     margin-right: 25px;
 
 }
-.profile-outer:last-child{
+
+.profile-outer:last-child {
     margin-bottom: 0;
 }
+
 .edit-icon {
     width: 30px;
     height: 30px;
@@ -50,6 +57,7 @@ i.fa.fa-envelope.profile-icon {
     display: flex;
     justify-content: center;
 }
+
 .profile-outer {
     display: flex;
     flex-wrap: wrap;
@@ -58,22 +66,26 @@ i.fa.fa-envelope.profile-icon {
     align-items: center;
     margin-bottom: 25px;
 }
+
 .member-plan {
     padding-top: 30px;
     max-width: 260px;
     text-align: center;
 }
+
 .member-plan h4 {
     color: #1a0cff;
     font-weight: 600;
     font-size: 20px;
 }
+
 .member-plan p {
     text-align: center;
     color: red;
-    margin:0;
-    font-weight:600;
+    margin: 0;
+    font-weight: 600;
 }
+
 button.renew-btn {
     background-color: #fcc700;
     color: #000;
@@ -84,15 +96,18 @@ button.renew-btn {
     padding: 0px 15px;
     margin-top: 5px;
 }
+
 i.fa.fa-lock.lock {
     font-size: 25px;
     color: #5a5858;
 }
+
 input.contact-box {
     width: 94%;
     padding: 8px 12px;
     border-radius: 5px;
 }
+
 label.label-text {
     font-size: 10px;
     background-color: #fff;
@@ -101,25 +116,30 @@ label.label-text {
     top: 20px;
     left: 5px;
 }
+
 input.contact-box:hover {
     background: #fff !important;
-    color:black !important;
+    color: black !important;
 
 }
+
 p.mail-text {
     margin: 15px 0px 0px;
     padding: 0;
 }
+
 i.fa.fa-eye-slash.eye-icon {
     font-size: 20px;
     position: relative;
     right: 30px;
 }
-i.eye-icon.fa.fa-eye{
+
+i.eye-icon.fa.fa-eye {
     font-size: 20px;
     position: relative;
     right: 30px;
 }
+
 p.resend-otp {
     display: flex;
     justify-content: end;
@@ -127,6 +147,7 @@ p.resend-otp {
     margin-right: 45px;
     margin-bottom: 0px;
 }
+
 /* user profile css end */
 .dropbtn {
     background-color: #FFF;
@@ -135,16 +156,19 @@ p.resend-otp {
     font-size: 11px;
     border: 1px solid #e8e8e8;
     border-radius: 50px;
-    box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.2);
     position: relative;
     right: 0;
     width: 100%;
-    margin-right: 6px;;
+    margin-right: 6px;
+    ;
 }
-.user-icon img{
+
+.user-icon img {
     width: 100%;
 
 }
+
 .user-icon {
     max-width: 38px;
     position: relative;
@@ -152,7 +176,8 @@ p.resend-otp {
     z-index: 1;
     left: 0;
 }
-.logout img{
+
+.logout img {
     width: 100%;
 }
 
@@ -175,12 +200,13 @@ p.resend-otp {
     border-bottom-color: rgba(0, 0, 0, 0.2);
     content: '';
 }
+
 .dropdown-menu.pull-right:before {
-  right: 9px;
-  left: auto;
+    right: 9px;
+    left: auto;
 }
 
-  .dropdown-menu:after {
+.dropdown-menu:after {
     position: absolute;
     top: -6px;
     left: 10px;
@@ -190,37 +216,45 @@ p.resend-otp {
     border-left: 6px solid transparent;
     content: '';
 }
+
 .dropdown-menu.pull-right:after {
-  right: 10px;
-  left: auto;
+    right: 10px;
+    left: auto;
 }
+
 .navright-btn:focus {
     box-shadow: none;
 }
+
 ul.dropdown-menu.show {
     padding: 15px 12px;
     margin-top: 6px;
 }
+
 ul.dropdown-menu.show li {
     padding-bottom: 10px;
 }
+
 ul.dropdown-menu.show li a {
-    color:#444;
+    color: #444;
     transition: all 0.2s ease-in-out;
 
 }
-ul.dropdown-menu.show li a:hover{
+
+ul.dropdown-menu.show li a:hover {
     color: #000;
     text-decoration: none;
 }
+
 .input-box-font {
     padding: 6px !important;
     text-align: left !important;
 }
 
-.dropdown12{
+.dropdown12 {
     border-radius: 6px !important;
 }
+
 .watermark-bg:before {
     position: absolute;
     content: "";
@@ -235,12 +269,13 @@ ul.dropdown-menu.show li a:hover{
     margin: 0 auto;
     background-image: url("http://paystubx.com/user/watermark-bg2.png");
 }
-.watermark-bg{
+
+.watermark-bg {
     position: relative;
 }
 
 @media only screen and (min-width:1025px) and (max-width:1439px) {
-    .col-set1{
+    .col-set1 {
         margin: 0 !important;
     }
 }
@@ -722,7 +757,8 @@ img.earnbtn2.lock {
     transition: all 0.5s ease-in-out;
     border: 1px solid transparent;
 }
-.bottom-close{
+
+.bottom-close {
     font-size: 23px;
     color: #ffffff;
     background: #ef2e21 !important;
@@ -746,6 +782,7 @@ img.earnbtn2.lock {
     box-shadow: 6px 5px 4px 0px #00000066;
     text-decoration: none;
 }
+
 .bottom-close:hover {
     background: white !important;
     color: #ef2e21;
@@ -771,41 +808,50 @@ img.earnbtn2.lock {
     text-align: center;
     font-size: 17px;
 }
-a#resendOtpButton,#forgotPasswordButton {
+
+a#resendOtpButton,
+#forgotPasswordButton {
     color: #e57a68;
     text-decoration: underline;
 
 
 }
-.pointer-active{
+
+.pointer-active {
     pointer-events: visible;
 }
-.pointer-disable{
+
+.pointer-disable {
     pointer-events: none;
 }
+
 i.fa.fa-trash-o.trash {
     font-size: 22px;
     color: #fff;
-    font-weight:bold;
+    font-weight: bold;
 }
+
 i.fa.fa-clock-o.clock {
     font-size: 18px;
     color: #e57b68;
     position: relative;
     top: 2px;
-    left:3px;
+    left: 3px;
 }
+
 .d-flex.trash-account {
     display: flex;
     align-items: center;
 }
+
 i.fa.fa-user.user {
     font-size: 22px;
     color: #5a5858;
 }
+
 span#resendTimeOut {
     color: #e57b68;
-    padding-left:5px;
+    padding-left: 5px;
 }
 
 /*style the arrow inside the select element:*/
@@ -922,7 +968,8 @@ select:after {
 .sidebtn:hover {
     border: 1px solid black;
 }
-input{
+
+input {
     transition: all 0.3s ease-in-out;
     border: 1px solid #444 !important;
 }
@@ -941,7 +988,7 @@ input:hover {
 }
 
 .viewbtn a:hover {
-color: #027bff !important;
+    color: #027bff !important;
 }
 
 .earnbtn:hover {
@@ -3012,13 +3059,14 @@ img.earnbtn2.lockuk {
         z-index: 1223;
     }
 
-    .viewbtn  {
+    .viewbtn {
         background: yellow;
         padding: 5px 7px;
 
         border-radius: 4px;
         font-weight: 700;
     }
+
     button.viewbtn a {
         color: #010101 !important;
     }
@@ -3229,16 +3277,19 @@ img.earnbtn2.lockuk {
 
         margin: 0px 0px 0 0px !important;
     }
-    .continue{
+
+    .continue {
 
         padding: 0px 23px;
         border-radius: 5px;
     }
-    p.resend-otp{
+
+    p.resend-otp {
         margin-right: 0;
     }
-    .form-control{
-        margin:0 auto 20px 0px;
+
+    .form-control {
+        margin: 0 auto 20px 0px;
 
     }
 
@@ -3945,9 +3996,11 @@ img.earnbtn2.lockuk {
         padding: 23px;
         margin: 0;
     }
-    input.input-uk.text-center.taxes{
+
+    input.input-uk.text-center.taxes {
         width: 100%;
     }
+
     .mmenu {
         width: 100%;
     }
@@ -4150,8 +4203,25 @@ img.earnbtn2.lockuk {
 
     .box-h5 {
         padding-left: 14px;
+        width: 100%;
     }
 
+
+    .address_book {
+        width: 87% !important;
+        padding: 3px;
+        position: relative;
+        left: 10px;
+        top: 0px !important;
+    }
+
+    .address_book_1{
+        width: 87% !important;
+        padding: 3px;
+        position: relative;
+        left: 10px;
+        top: 0px !important;
+    }
     .ukbtn1 {
         display: flex;
         justify-content: center;

@@ -111,10 +111,8 @@
 
     <div class="openbtn">
         <div class=" pt-4 d-flex justify-content-between" style="display:flex !important">
-            <a href="{{ url('/') }}"><img class="mr-3 mt-5 toggle-logo"
-                    src="{{ asset('images/Paystub X.webp') }}" style="width: 222px;"></a>
-            <span style="font-size:30px;cursor:pointer; padding-right:10px;" class=""
-                onclick="openNav()">&#9776;</span>
+            <a href="{{ url('/') }}"><img class="mr-3 mt-5 toggle-logo" src="{{ asset('images/Paystub X.webp') }}" style="width: 222px;"></a>
+            <span style="font-size:30px;cursor:pointer; padding-right:10px;" class="" onclick="openNav()">&#9776;</span>
         </div>
     </div>
 
@@ -127,25 +125,17 @@
                 <div class="col-lg-3 text-center m-auto">
                     <div class="container justify-content-center text-left">
                         <div class="flex-row">
-                            <div style="padding:12px; border:1px solid #fff; border-radius:5px;max-width:220px; text-align:center; margin-bottom:15px;"
-                                class="foot">
-                                <a class="w-100 footbtn font" href="{{ url('terms') }}"
-                                    style="text-transform:capitalize;">Terms & Conditions</a>
+                            <div style="padding:12px; border:1px solid #fff; border-radius:5px;max-width:220px; text-align:center; margin-bottom:15px;" class="foot">
+                                <a class="w-100 footbtn font" href="{{ url('terms') }}" style="text-transform:capitalize;">Terms & Conditions</a>
                             </div>
-                            <div class="mt-3 foot"
-                                style="padding:12px; border:1px solid #fff; border-radius:5px;max-width:220px; text-align:center; margin-bottom:15px;">
-                                <a class="w-100 footbtn font" href="{{ url('privacy') }}"
-                                    style="text-transform:capitalize;">Privacy Policy</a>
+                            <div class="mt-3 foot" style="padding:12px; border:1px solid #fff; border-radius:5px;max-width:220px; text-align:center; margin-bottom:15px;">
+                                <a class="w-100 footbtn font" href="{{ url('privacy') }}" style="text-transform:capitalize;">Privacy Policy</a>
                             </div>
-                            <div class="mt-3 foot "
-                                style="padding:12px; border:1px solid #fff; border-radius:5px;max-width:220px; text-align:center; margin-bottom:15px;">
-                                <a class="w-100 footbtn font" href="{{ url('refund') }}"
-                                    style="text-transform:capitalize;">Refund Policy</a>
+                            <div class="mt-3 foot " style="padding:12px; border:1px solid #fff; border-radius:5px;max-width:220px; text-align:center; margin-bottom:15px;">
+                                <a class="w-100 footbtn font" href="{{ url('refund') }}" style="text-transform:capitalize;">Refund Policy</a>
                             </div>
-                            <div class="mt-3 foot"
-                                style="padding:12px; border:1px solid #fff; border-radius:5px;max-width:220px; text-align:center;">
-                                <a class="w-100 footbtn font" href="{{ url('contact') }}"
-                                    style="text-transform:capitalize;">Contact Us</a>
+                            <div class="mt-3 foot" style="padding:12px; border:1px solid #fff; border-radius:5px;max-width:220px; text-align:center;">
+                                <a class="w-100 footbtn font" href="{{ url('contact') }}" style="text-transform:capitalize;">Contact Us</a>
                             </div>
                         </div>
                     </div>
@@ -153,24 +143,18 @@
                 <div class="col-lg-5 col-sm-12 text-center" style="margin-top:15px;">
                     <div class="container  justify-content-center">
                         <div class="container footer-icons">
-                            <a href="https://www.facebook.com/paystubx" target="_blank"><i
-                                    class="fa fa-facebook   fbicon " aria-hidden="true"></i></a>
-                            <a href="https://instagram.com/paystubx?igshid=YmMyMTA2M2Y=" target="_blank"><i
-                                    class="fa fa-instagram ml-2 socialicon" aria-hidden="true"></i></a>
-                            <a href="https://twitter.com/paystubx" target="_blank"><i
-                                    class="fa fa-twitter ml-2 socialicon" aria-hidden="true"></i></a>
-                            <a href="https://www.google.com/" target="_blank"><i
-                                    class="fa fa-linkedin ml-2 socialicon" aria-hidden="true"></i></a>
-                            <a href="https://www.youtube.com/channel/UCL3EF3eYo2OqcsPHfszXMzw" target="_blank"><i
-                                    class="fa fa-youtube ml-2 socialicon" aria-hidden="true"></i></a>
+                            <a href="https://www.facebook.com/paystubx" target="_blank"><i class="fa fa-facebook   fbicon " aria-hidden="true"></i></a>
+                            <a href="https://instagram.com/paystubx?igshid=YmMyMTA2M2Y=" target="_blank"><i class="fa fa-instagram ml-2 socialicon" aria-hidden="true"></i></a>
+                            <a href="https://twitter.com/paystubx" target="_blank"><i class="fa fa-twitter ml-2 socialicon" aria-hidden="true"></i></a>
+                            {{-- <a href="https://www.google.com/" target="_blank"><i class="fa fa-linkedin ml-2 socialicon" aria-hidden="true"></i></a> --}}
+                            <a href="https://www.youtube.com/channel/UCL3EF3eYo2OqcsPHfszXMzw" target="_blank"><i class="fa fa-youtube ml-2 socialicon" aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 mt-3 ">
                     <p class="text-white footer-text">COPYRIGHT © 2022 PaystubX, ALL RIGHTS RESERVED.</p>
                     <div class="container justify-content-center m-auto text-center">
-                        <a href="{{ url('/') }}"><img class="footimg"
-                                src="{{ asset('images/satisfaction.webp') }}"></a>
+                        <a href="{{ url('/') }}"><img class="footimg" src="{{ asset('images/satisfaction.webp') }}"></a>
                     </div>
                 </div>
             </div>
@@ -404,8 +388,6 @@
             </div>
         </div>
     </div>
-
-
 
     <!-- End Footer Section -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.js"></script>

@@ -572,9 +572,10 @@ class UserController extends Controller
         return response()->json($response, $response['status']);
     }
 
-    public function addressBook(Request $request){
+    public function addressBook(Request $request)
+    {
 
-        try{
+        try {
             $response = [];
             $response['success'] = FALSE;
             $response['status'] = STATUS_BAD_REQUEST;
@@ -615,12 +616,12 @@ class UserController extends Controller
             $addressObj->city       = $requestData['city'];
             $addressObj->state      = $requestData['state'];
             $addressObj->zip_code   = $requestData['zip_code'];
-            if($addressObj->save()){
+            if ($addressObj->save()) {
                 $response['success'] = TRUE;
                 $response['message'] = "Address saved successfully";
                 $response['status'] = STATUS_OK;
             }
-        }catch (\Exception $e) {
+        } catch (\Exception $e) {
             $response['message'] = $e->getMessage() . ' Line No ' . $e->getLine() . ' in File' . $e->getFile();
             Log::error($e->getTraceAsString());
             $response['status'] = STATUS_GENERAL_ERROR;
@@ -628,9 +629,10 @@ class UserController extends Controller
         return response()->json($response, $response['status']);
     }
 
-    public function editAddress(Request $request){
+    public function editAddress(Request $request)
+    {
 
-        try{
+        try {
             $response = [];
             $response['success'] = FALSE;
             $response['status'] = STATUS_BAD_REQUEST;
@@ -662,8 +664,8 @@ class UserController extends Controller
                 return response()->json($response, 301);
             }
 
-            $addressObj = Address::where(['id'=>$requestData['address_id'],'user_id'=>Auth::user()->id])->first();
-            if(!$addressObj){
+            $addressObj = Address::where(['id' => $requestData['address_id'], 'user_id' => Auth::user()->id])->first();
+            if (!$addressObj) {
                 $response['message'] = "Address doesn't exist.";
                 return response()->json($response, 301);
             }
@@ -676,12 +678,12 @@ class UserController extends Controller
             $addressObj->city       = $requestData['city'];
             $addressObj->state      = $requestData['state'];
             $addressObj->zip_code   = $requestData['zip_code'];
-            if($addressObj->save()){
+            if ($addressObj->save()) {
                 $response['success'] = TRUE;
                 $response['message'] = "Address updated successfully";
                 $response['status'] = STATUS_OK;
             }
-        }catch (\Exception $e) {
+        } catch (\Exception $e) {
             $response['message'] = $e->getMessage() . ' Line No ' . $e->getLine() . ' in File' . $e->getFile();
             Log::error($e->getTraceAsString());
             $response['status'] = STATUS_GENERAL_ERROR;
@@ -689,23 +691,22 @@ class UserController extends Controller
         return response()->json($response, $response['status']);
     }
 
-    public function getAddress(Request $request){
-
-        try{
+    public function getAddress(Request $request)
+    {
+        try {
             $response = [];
             $response['success'] = FALSE;
             $response['status'] = STATUS_BAD_REQUEST;
 
-            $employerList = Address::where(['type'=>'employer','user_id'=>Auth::user()->id])->orderBy('id','desc')->get();
-            $employeeList = Address::where(['type'=>'employee','user_id'=>Auth::user()->id])->orderBy('id','desc')->get();
-            
-                $response['success'] = TRUE;
-                $response['employerList'] = $employerList;
-                $response['employeeList'] = $employeeList;
-                $response['message'] = "Address fetch successfully";
-                $response['status'] = STATUS_OK;
-            
-        }catch (\Exception $e) {
+            $employerList = Address::where(['type' => 'employer', 'user_id' => Auth::user()->id])->orderBy('id', 'desc')->get();
+            $employeeList = Address::where(['type' => 'employee', 'user_id' => Auth::user()->id])->orderBy('id', 'desc')->get();
+
+            $response['success'] = TRUE;
+            $response['employerList'] = $employerList;
+            $response['employeeList'] = $employeeList;
+            $response['message'] = "Address fetch successfully";
+            $response['status'] = STATUS_OK;
+        } catch (\Exception $e) {
             $response['message'] = $e->getMessage() . ' Line No ' . $e->getLine() . ' in File' . $e->getFile();
             Log::error($e->getTraceAsString());
             $response['status'] = STATUS_GENERAL_ERROR;
@@ -713,9 +714,10 @@ class UserController extends Controller
         return response()->json($response, $response['status']);
     }
 
-    public function addressDelete(Request $request){
+    public function addressDelete(Request $request)
+    {
 
-        try{
+        try {
             $response = [];
             $response['success'] = FALSE;
             $response['status'] = STATUS_BAD_REQUEST;
@@ -741,12 +743,37 @@ class UserController extends Controller
             $address_ids = explode(',', $requestData['address_ids']);
             $isDeleted = Address::whereIn('id', $address_ids)->delete();
 
-            if($isDeleted){
+            if ($isDeleted) {
                 $response['success'] = TRUE;
                 $response['message'] = "Address deleted successfully";
                 $response['status'] = STATUS_OK;
             }
-        }catch (\Exception $e) {
+        } catch (\Exception $e) {
+            $response['message'] = $e->getMessage() . ' Line No ' . $e->getLine() . ' in File' . $e->getFile();
+            Log::error($e->getTraceAsString());
+            $response['status'] = STATUS_GENERAL_ERROR;
+        }
+        return response()->json($response, $response['status']);
+    }
+
+    public function getAddressBook(Request $request)
+    {
+        try {
+            $response = [];
+            $response['success'] = FALSE;
+            $response['status'] = STATUS_BAD_REQUEST;
+            $requestData = $request->all();
+            $addressObj = Address::where(['user_id' => Auth::user()->id]);
+            if ($requestData['type'] == 'employee') {
+                $addressObj = Address::where(['type' => 'employee']);
+            } else {
+                $addressObj = Address::where(['type' => 'employer']);
+            }
+            $response['success'] = TRUE;
+            $response['data'] = $addressObj->orderBy('id', 'desc')->get();
+            $response['message'] = "Address fetch successfully";
+            $response['status'] = STATUS_OK;
+        } catch (\Exception $e) {
             $response['message'] = $e->getMessage() . ' Line No ' . $e->getLine() . ' in File' . $e->getFile();
             Log::error($e->getTraceAsString());
             $response['status'] = STATUS_GENERAL_ERROR;

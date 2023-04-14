@@ -43,10 +43,8 @@
                         Now</a>
                 </div>
                 <div class="mt-5 pt-4    pr-3 mr-5 ml-3 d-flex storehead global">
-                    <a href="https://www.google.com/" target="_blank"><img class="storbtn mt-5"
-                            src="images/Google_Play_Store_badge_EN.webp"></a>
-                    <a href="https://www.google.com/" target="_blank"><img class="storbtn mt-5 ml-5"
-                            src="images/Download_on_the_App_Store_Badge.webp"></a>
+                    <a href="https://play.google.com/store/apps/details?id=com.paystubx" target="_blank"><img class="storbtn mt-5" src="{{ asset('images/Google_Play_Store_badge_EN.webp') }}"></a>
+                    <a href="https://apps.apple.com/us/app/paystubx-paystub-maker/id1658931100" target="_blank"><img class="storbtn mt-5 ml-5" src="{{ asset('images/Download_on_the_App_Store_Badge.webp') }}"></a>
                 </div>
             </div>
 

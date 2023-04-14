@@ -53,12 +53,10 @@ $("#adminLogin").on("submit", function () {
                 if (response.user.name == '') {
                     $("#setName").modal("show");
                 } else {
+                    $(".authUserName").text("Hi " + response.user.name);
                     $(".registerBtn").removeClass("d-block").addClass("d-none");
                     $(".logoutDiv").removeClass("d-none");
                     if (userAuth == 1) {
-                        setTimeout(() => {
-                            $(".authUserName").text("Hi " + response.user.name);
-                        }, 300);
                         if (okk == 1) {
                             usaStoreData();
                         }

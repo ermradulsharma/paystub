@@ -432,6 +432,47 @@
         </div>
     </div>
 
+    <div class="modal fade" id="changeUserEmail">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header" style="background: #115caecf;">
+                    <h4 class="modal-title" style="text-transform: capitalize;color:#fff;">Change Email Address</h4>
+                    <button type="button" style="border: none; background-color:transparent; color:#fff;font-size:20px;padding:0;" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body pb-4" style="box-shadow: 0 0 8px rgba(0,0,0,.14);padding-top:0;">
+                    <p class="mail-text">Enter the Password set for the account and proceed to set a new email address.</p>
+                    <form id="changeUserEmail_1" method="post" action="">
+                        @csrf
+                        <input type="hidden" value="user-email" name="type">
+                        <div class="contact-box-outer">
+                            <label class="label-text" for="css">Password<span style="color:red;">*</span></label>
+                            <input class="contact-box" type="password" placeholder="Password" name="password">
+                            <i id="eye-icon_00" class="fa fa-eye-slash eye-icon show-password" data-id="00"></i>
+                        </div>
+                        <div class="contact-box-outer">
+                            <label class="label-text" for="css">Email Address<span style="color:red;">*</span></label>
+                            <input class="contact-box" type="text" id="user-email" placeholder="Email Address" name="email">
+                        </div>
+                        <div class="d-flex justify-content-between pt-3">
+                            <button class="btn-secondary" data-bs-dismiss="modal" style="border-radius:20px; border:none;font-size:12px; padding:5px 10px;">Cancel</button>
+                            <button class="btn-danger" style="border-radius:20px; border:none;font-size:12px; padding:5px 15px; position:relative; right:26px;"  type="submit">Save</button>
+                        </div>
+                    </form>
+                </div>
+                {{-- <div class="modal-footer" style="display: inline-block;">
+                    <div class="d-flex justify-content-between pt-2">
+                        <button class="btn-secondary" data-bs-dismiss="modal" style="border-radius:20px; border:none;font-size:12px; padding:5px 10px;">Cancel</button>
+                        <button class="btn-danger" id="changeUserEmail" style="border-radius:20px; border:none;font-size:12px; padding:5px 15px;">Save</button>
+                    </div>
+                </div> --}}
+            </div>
+        </div>
+    </div>
+
     <div class="modal fade otpModal" id="otpModal">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -451,20 +492,15 @@
                         </div>
 
                         <h5 style="color: #457bbe;" class="mt-4 text-center">Almost There!</h5>
-                        <p style="color: #000;font-size: 14px;font-family: serif; text-transform:capitalize; margin-bottom:0px;"
-                            class="text-center">Enter the verification code sent to you</p>
-                        <span style="color: #02030359;font-size: 10px;font-family: serif; text-transform:capitalize;"
-                            class="text-center">Check spam if not found in inbox</span>
-                        <p class="resend-otp"><a id="resendOtpButton" class="pointer-disable" style=""
-                                href="JavaScript:void(0);" disabled>Resend OTP </a><i
-                                class="fa fa-clock-o clock"></i><span id="resendTimeOut">30</span></p>
+                        <p style="color: #000;font-size: 14px;font-family: serif; text-transform:capitalize; margin-bottom:0px;" lass="text-center">Enter the verification code sent to you</p>
+                        <span style="color: #02030359;font-size: 10px;font-family: serif; text-transform:capitalize;" class="text-center">Check spam if not found in inbox</span>
+                        <p class="resend-otp"><a id="resendOtpButton" class="pointer-disable" style="" href="JavaScript:void(0);" disabled>Resend OTP </a><i class="fa fa-clock-o clock"></i><span id="resendTimeOut">30</span></p>
                         <form id="loginOtp" action="{{ route('store.details') }}" method="POST" class="text-center">
                             @csrf
                             <input type="hidden" value="verify-email" name="type">
                             <div class="px-lg-5">
                                 <input type="hidden" id="hidden_email" name="email" class="d-none">
-                                <input type="text" id="Verificationcode" name="code"
-                                    class="form-control formm py-4" placeholder="Verification Code *">
+                                <input type="text" id="Verificationcode" name="code" class="form-control formm py-4" placeholder="Verification Code *">
                             </div>
                         </form>
                         <button class="previewbtn mt-5" id="verify-email">Verify</button>
@@ -481,9 +517,7 @@
                 <!-- Modal Header -->
                 <div class="modal-header" style="background: #115caecf;">
                     <h4 class="modal-title" style="text-transform: capitalize;color:#fff;">Change Password</h4>
-                    <button type="button"
-                        style="border: none; background-color:transparent; color:#fff;font-size:20px;padding:0;"
-                        class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
+                    <button type="button" style="border: none; background-color:transparent; color:#fff;font-size:20px;padding:0;" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
                 </div>
 
                 <!-- Modal body -->
@@ -495,38 +529,26 @@
 
                         <div class="contact-box-outer">
                             <div class="contact-box-outer">
-                                <label class="label-text" for="css">Password<span
-                                        style="color:red;">*</span></label>
-                                <input class="contact-box" type="password" placeholder="Current Password"
-                                    name="currentPassword">
-                                <i id="eye-icon_00" toggle="#password-field"
-                                    class="fa fa-eye-slash eye-icon show-password" data-id="02"></i>
+                                <label class="label-text" for="css">Password<span style="color:red;">*</span></label>
+                                <input class="contact-box" type="password" placeholder="Current Password" name="currentPassword">
+                                <i id="eye-icon_00" toggle="#password-field" class="fa fa-eye-slash eye-icon show-password" data-id="02"></i>
                             </div>
                         </div>
 
                         <div class="contact-box-outer">
-                            <label class="label-text" for="css">New Password<span
-                                    style="color:red;">*</span></label>
-                            <input class="contact-box" type="password" placeholder="New Password" name="password"
-                                class="form-control show-password-sd" id="new_password" required>
-                            <i id="eye-icon_03" toggle="#password-field" class="fa fa-eye-slash eye-icon show-password"
-                                data-id="02"></i>
+                            <label class="label-text" for="css">New Password<span style="color:red;">*</span></label>
+                            <input class="contact-box" type="password" placeholder="New Password" name="password" class="form-control show-password-sd" id="new_password" required>
+                            <i id="eye-icon_03" toggle="#password-field" class="fa fa-eye-slash eye-icon show-password" data-id="02"></i>
                         </div>
                         <div class="contact-box-outer">
-                            <label class="label-text" for="css">Confirm Password<span
-                                    style="color:red;">*</span></label>
-                            <input class="contact-box" type="password" placeholder="Confirm Password"
-                                name="password_confirmation" class="form-control show-password-sd" id="confirm_password"
-                                required>
-                            <i id="eye-icon_03" toggle="#password-field" class="fa fa-eye-slash eye-icon show-password"
-                                data-id="02"></i>
+                            <label class="label-text" for="css">Confirm Password<span style="color:red;">*</span></label>
+                            <input class="contact-box" type="password" placeholder="Confirm Password" name="password_confirmation" class="form-control show-password-sd" id="confirm_password" required>
+                            <i id="eye-icon_03" toggle="#password-field" class="fa fa-eye-slash eye-icon show-password" data-id="02"></i>
                         </div>
                     </form>
                     <div class="d-flex justify-content-between pt-2">
-                        <button class="btn-secondary" data-bs-dismiss="modal"
-                            style="border-radius:20px; border:none;font-size:12px; padding:5px 10px;">Cancel</button>
-                        <button class="btn-danger" id="store-password"
-                            style="border-radius:20px; border:none;font-size:12px; padding:5px 15px;">Save</button>
+                        <button class="btn-secondary" data-bs-dismiss="modal" style="border-radius:20px; border:none;font-size:12px; padding:5px 10px;">Cancel</button>
+                        <button class="btn-danger" id="store-password" style="border-radius:20px; border:none;font-size:12px; padding:5px 15px;">Save</button>
                     </div>
                 </div>
             </div>
@@ -556,49 +578,7 @@
             </div>
         </div>
     </div>
-
-    <div class="modal fade" id="changeUserEmail">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-
-                <!-- Modal Header -->
-                <div class="modal-header" style="background: #115caecf;">
-                    <h4 class="modal-title" style="text-transform: capitalize;color:#fff;">Change Email Address</h4>
-                    <button type="button"
-                        style="border: none; background-color:transparent; color:#fff;font-size:20px;padding:0;"
-                        class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
-                </div>
-
-                <!-- Modal body -->
-                <div class="modal-body pb-4" style="box-shadow: 0 0 8px rgba(0,0,0,.14);padding-top:0;">
-                    <p class="mail-text">Enter the Password set for the account and proceed to set a new email address.</p>
-                    <form id="changeUserEmail_1" method="post" action="">
-                        @csrf
-                        <input type="hidden" value="user-email" name="type">
-                        <div class="contact-box-outer">
-                            <label class="label-text" for="css">Password<span style="color:red;">*</span></label>
-                            <input class="contact-box" type="password" placeholder="Password" name="password">
-                            <i id="eye-icon_00" class="fa fa-eye-slash eye-icon show-password" data-id="00"></i>
-                        </div>
-                        <label class="label-text" for="css">Email Address<span style="color:red;">*</span></label>
-                        <input class="contact-box" type="text" id="user-email" placeholder="Email Address" name="email">
-                        <div class="d-flex justify-content-between pt-2">
-                            <button class="btn-secondary" data-bs-dismiss="modal" style="border-radius:20px; border:none;font-size:12px; padding:5px 10px;">Cancel</button>
-                            <button class="btn-danger" style="border-radius:20px; border:none;font-size:12px; padding:5px 15px; position:relative; right:26px;"  type="submit">Save</button>
-                        </div>
-                    </form>
-                </div>
-                {{-- <div class="modal-footer" style="display: inline-block;">
-                    <div class="d-flex justify-content-between pt-2">
-                        <button class="btn-secondary" data-bs-dismiss="modal" style="border-radius:20px; border:none;font-size:12px; padding:5px 10px;">Cancel</button>
-                        <button class="btn-danger" id="changeUserEmail" style="border-radius:20px; border:none;font-size:12px; padding:5px 15px;">Save</button>
-                    </div>
-                </div> --}}
-            </div>
-        </div>
-    </div>
 @endsection
-
 
 
 
@@ -614,8 +594,6 @@
         });
 
         $("#changeUserEmail").on("submit", function() {
-            var formData = $("#changeUserEmail_1").serialize();
-            console.log(formData);
             $.ajax({
                 type: 'POST',
                 url: '{{ route("profile-setup") }}',
@@ -624,7 +602,7 @@
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
                 success: function(response) {
-                    console.log('response', response);
+                    $("#changeUserEmail").modal("hide");
                     toastr.success(response.message);
                     $("#userName2").modal("hide");
                     $('#hidden_email').val(response.email);
@@ -647,28 +625,6 @@
 
         $("#store-name").click(function(e) {
             submitUserData($('#userNameForm1')[0]);
-        });
-
-        $("#store-email").click(function(e) {
-            //submitUserData($('#userEmailForm')[0],".username2","#userName2");
-            var form = $('#userNameForm1')[0];
-            $.ajax({
-                type: 'POST',
-                url: form.action,
-                data: $(form).serialize(),
-                success: function(data) {
-
-                    if ($.isEmptyObject(data.error)) {
-                        toastr.success(data.message);
-                        $("#userName2").modal("hide");
-                        $('#hidden_email').val(data.email);
-                        $("#otpModal").modal("show");
-                        startTimer();
-                    } else {
-                        printErrorMsg(data.error);
-                    }
-                }
-            });
         });
 
         $("#verify-email").click(function(e) {
@@ -699,12 +655,6 @@
                     }
                 }
             });
-        });
-
-        $(document).on('click', '.show-password', function() {
-            $(this).toggleClass("fa-eye fa-eye-slash");
-            var input = $(this).prev('input');
-            input.attr('type') === 'password' ? input.attr('type', 'text') : input.attr('type', 'password')
         });
 
         $("#store-address").click(function(e) {
@@ -851,36 +801,6 @@
         });
 
 
-        function submitUserData(form) {
-            $.ajax({
-                type: 'POST',
-                url: form.action,
-                data: $(form).serialize(),
-                success: function(data) {
-                    console.log('data', data);
-                    if ($.isEmptyObject(data.error)) {
-                        toastr.success(data.message);
-                        if (data.pageReload == 'no') {
-                            form.reset();
-                            getAddressBook();
-                            $('#addressBook').modal('hide');
-                            return false;
-                        }
-                        location.reload(true);
-                    } else {
-                        printErrorMsg(data.error);
-                    }
-                }
-            });
-
-        }
-
-        function printErrorMsg(msg) {
-            $.each(msg, function(key, value) {
-                toastr.error(value);
-            });
-        }
-
         $('.eye-icon').click(function() {
             var id = $(this).data('id');
             var clr = $(this).attr('src');
@@ -925,6 +845,36 @@
                         printErrorMsg(data.error);
                     }
                 }
+            });
+        }
+
+        function submitUserData(form) {
+            $.ajax({
+                type: 'POST',
+                url: form.action,
+                data: $(form).serialize(),
+                success: function(data) {
+                    console.log('data', data);
+                    if ($.isEmptyObject(data.error)) {
+                        toastr.success(data.message);
+                        if (data.pageReload == 'no') {
+                            form.reset();
+                            getAddressBook();
+                            $('#addressBook').modal('hide');
+                            return false;
+                        }
+                        location.reload(true);
+                    } else {
+                        printErrorMsg(data.error);
+                    }
+                }
+            });
+
+        }
+
+        function printErrorMsg(msg) {
+            $.each(msg, function(key, value) {
+                toastr.error(value);
             });
         }
     </script>
