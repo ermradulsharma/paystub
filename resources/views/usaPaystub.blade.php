@@ -860,22 +860,25 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" crossorigin="anonymous"></script>
     <script>
         $(document).ready(function() {
+
             $('.add_address').change(function() {
                 var type = $('.add_address').data('type');
                 // var value = $('option:selected', '.address').attr('value');
                 var value = $(this).val();
                 var userId = {{ Auth::check() == true ? 'true' : 'false' }};
-
+                console.log('userAuth-', userAuth);
                 if (value == 'add_address') {
-                    if (userId == true) {
+                    if (userAuth) {
                         window.location.href = "{{ route('profile') }}?tab=2&emp=1";
                     } else {
+                        $(this).val('');
                         $("#loginModal").modal("show");
                     }
                 }else if (value == 'add_address_1') {
-                    if (userId == true) {
+                    if (userAuth) {
                         window.location.href = "{{ route('profile') }}?tab=2&emp=2";
                     } else {
+                        $(this).val('');
                         $("#loginModal").modal("show");
                     }
                 }

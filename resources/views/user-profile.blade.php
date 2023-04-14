@@ -660,6 +660,106 @@
             submitUserData($('#addressForm')[0]);
         });
 
+        $(document).on('click', '.btn-edit', function(e) {
+            var recordId = $(this).data('record');
+
+            $.ajax({
+                url: "{{ route('get.address') }}?record=" + recordId,
+                datatype: "json",
+                success: function(data) {
+                    if ($.isEmptyObject(data.error)) {
+
+                        $('#addressForm input[name=addressId]').val(data.addressObj.id);
+                        $('#addressForm input[name=fullName]').val(data.addressObj.name);
+                        $('#addressForm input[name=type]').val(data.addressObj.type);
+                        $('#addressForm input[name=addressLine1]').val(data.addressObj.address_1);
+                        $('#addressForm input[name=addressLine2]').val(data.addressObj.address_2);
+                        $('#addressForm input[name=cityName]').val(data.addressObj.city);
+                        $('#addressForm select[name="stateName"]').val(data.addressObj.city);
+                        // $('#selectState').val(data.addressObj.state);
+                        $('#addressForm input[name=zipCode]').val(data.addressObj.zip_code);
+                        // $('#addressBook').modal('show');
+                        openAddressModal('no');
+                    } else {
+                        printErrorMsg(data.error);
+                    }
+                }
+            });
+        });
+
+        function submitUserData(form) {
+            $.ajax({
+                type: 'POST',
+                url: form.action,
+                data: $(form).serialize(),
+                success: function(data) {
+
+                    if ($.isEmptyObject(data.error)) {
+                        toastr.success(data.message);
+                        if (data.pageReload == 'no') {
+                            form.reset();
+                            getAddressBook();
+                            $('#addressBook').modal('hide');
+                            return false;
+                        }
+                        location.reload(true);
+                    } else {
+                        printErrorMsg(data.error);
+                    }
+                }
+            });
+
+        }
+
+        function printErrorMsg(msg) {
+            $.each(msg, function(key, value) {
+                toastr.error(value);
+            });
+        }
+
+        $('.eye-icon').click(function() {
+            var id = $(this).data('id');
+            var clr = $(this).attr('src');
+            if (clr = 'eye-icon') {
+                $("#eye-icon_" + id).removeClass("fa fa-eye-slash eye-icon");
+                $("#eye-icon_" + id).addClass("fa fa-eye eye-icon");
+            } else {
+                $("#eye-icon_" + id).addClass("fa fa-eye-slash eye-icon");
+                $("#eye-icon_" + id).removeClass("fa fa-eye eye-icon");
+            }
+        });
+
+        $("#verify-email").click(function(e) {
+            submitUserData($('#loginOtp')[0]);
+        });
+
+        $(".username3").click(function() {
+            $("#userName3").modal("show");
+        });
+
+
+
+        $("#store-password").click(function(e) {
+            submitUserData($('#passwordUpdate')[0]);
+        });
+
+        $("#resendOtpButton").click(function() {
+            var email = $('#hidden_email').val();
+            startTimer();
+            $.ajax({
+                url: "{{ route('sendOtp') }}?email=" + email,
+                success: function(data) {
+                    console.log('data', data);
+                    if ($.isEmptyObject(data.error)) {
+                        toastr.success(data.message);
+
+                    } else {
+                        printErrorMsg(data.error);
+                    }
+                }
+            });
+        });
+
         $(document).on('click', '.show-password', function() {
             $(this).toggleClass("fa-eye fa-eye-slash");
             var input = $(this).prev('input');
@@ -677,7 +777,7 @@
         });
 
         $("#addNewAddress").click(function() {
-           openAddresModal();
+            openAddressModal();
         });
 
         $(document).on('click', '.delete-item', function(e) {
@@ -699,31 +799,6 @@
             $("#deleteAcModal").modal("show");
         });
 
-        $(document).on('click', '.btn-edit', function(e) {
-            var recordId = $(this).data('record');
-
-            $.ajax({
-                url: "{{ route('get.address') }}?record=" + recordId,
-                datatype: "json",
-                success: function(data) {
-                    if ($.isEmptyObject(data.error)) {
-                        console.log('record-number-', data);
-                        $('#addressForm input[name=addressId]').val(data.addressObj.id);
-                        $('#addressForm input[name=fullName]').val(data.addressObj.name);
-                        $('#addressForm input[name=type]').val(data.addressObj.type);
-                        $('#addressForm input[name=addressLine1]').val(data.addressObj.address_1);
-                        $('#addressForm input[name=addressLine2]').val(data.addressObj.address_2);
-                        $('#addressForm input[name=cityName]').val(data.addressObj.city);
-                        $('#addressForm select[name="stateName"]').val(data.addressObj.state);
-                        // $('#selectState').val(data.addressObj.state);
-                        $('#addressForm input[name=zipCode]').val(data.addressObj.zip_code);
-                        openAddressModal();
-                    } else {
-                        printErrorMsg(data.error);
-                    }
-                }
-            });
-        });
 
         $('.eye-icon').click(function() {
             var id = $(this).data('id');
@@ -738,9 +813,12 @@
 
         });
 
-        function openAddressModal(){
+        function openAddressModal(clear = 'yes'){
+            if(clear == 'yes'){
+                $('#addressForm').find("input[type=text], select").val("");
+            }
             var popType = $("#addNewAddress").attr('data-emptype');
-            console.log('popType--',popType);
+
             if(popType == 'employee'){
                 $("#adress-type").val('employee');
                 $('#nameLabel').text('').text('EMPLOYEE NAME *');
