@@ -176,6 +176,7 @@ function handleCredentialResponse(response) {
         },
         data: responsePayload,
         success: function (response) {
+            userAuth = 1;
             $("#loginModal").modal("hide");
             toastr.success(response.message);
             setTimeout(() => {
@@ -194,6 +195,7 @@ function handleCredentialResponse(response) {
                 setTimeout(() => {
                     $(".authUserName").text("Hi " + response.data);
                 }, 300);
+                addAddressDropdown();
                 if (okk == 1) {
                     usaStoreData();
                 }
