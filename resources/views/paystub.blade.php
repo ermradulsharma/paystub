@@ -7,21 +7,15 @@
     <div class="container-XL" style="">
         <div class="row pb-5">
             <div class="col-lg-6 col-md-4 banner-left-content payhead col-set">
-                <h1 class="instant display-5 pt-5">
-                    Instant Online <br>Professional PayStub <br>Generator
-                </h1>
-                <p class="QUICK">
-                    QUICK AND EASY. Download now.
-                </p>
+                <h1 class="instant display-5 pt-5"> Instant Online <br>Professional PayStub <br>Generator </h1>
+                <p class="QUICK"> QUICK AND EASY. Download now. </p>
                 <div class="mt-5 pt-5 justify-content-center ">
                     <a class="btn btn-lg  mt-5 p-2 btn-danger Generate " href="{{ url('usa') }}">Generate Paystub
                         Now</a>
                 </div>
                 <div class="mt-5 d-flex pt-5 top-gogle">
-                    <a href="https://www.google.com/" target="_blank"><img class="storbtn ml-1"
-                            src="images/Google_Play_Store_badge_EN.webp"></a>
-                    <a href="https://www.google.com/" target="_blank"><img class="storbtn ml-5"
-                            src="images/Download_on_the_App_Store_Badge.webp"></a>
+                    <a href="https://apps.apple.com/us/app/paystubx-paystub-maker/id1658931100" target="_blank"><img class="storbtn ml-1" src="{{asset('images/Google_Play_Store_badge_EN.webp')}}"></a>
+                    <a href="https://play.google.com/store/apps/details?id=com.paystubx" target="_blank"><img class="storbtn ml-5" src="images/Download_on_the_App_Store_Badge.webp"></a>
                 </div>
             </div>
             <!-- <div class="col-lg-1"></div> -->

@@ -47,6 +47,9 @@ class HomeController extends Controller
 
     public function storeDetails(Request $request)
     {
+        $response = [];
+        $response['success'] = FALSE;
+        $response['status'] = STATUS_BAD_REQUEST;
         $userId = Auth::user()->id;
         if ($request->type == 'user-name') {
             $validator = Validator::make($request->all(), [
@@ -73,12 +76,13 @@ class HomeController extends Controller
 
         if ($request->type == 'user-email') {
             $rules = [
-                'email' => 'required|email:rfc,dns',
-                'password' => 'required'
+                'password' => 'required',
+                'email' => 'required|email:rfc,dns|unique:users,email'
             ];
 
             $messages = [
                 'email.required' => 'The email cannot be empty.',
+                'email.unique' => 'Please enter another email.',
                 'email.email' => 'Please enter valid email.',
                 'password.required' => 'The password cannot be empty'
             ];
@@ -94,12 +98,13 @@ class HomeController extends Controller
                 return response()->json($response, 301);
             }
 
-            if (!Hash::check($request->password, $userObj->password)) {
-                return response()->json(['error' => ['Password is incorrect.']]);
+            if (!Hash::check($request->get('password'), $userObj->password)) {
+                $response['message'] = WRONG_PASSWORD;
+                return response()->json($response, $response['status']);
             }
-
             if ($request->email === $userObj->email) {
-                return response()->json(['error' => ['Please enter different email.']]);
+                $response['message'] = 'Please enter different email.';
+                return response()->json($response, $response['status']);
             }
 
             $code = rand(100000, 999999);
@@ -111,12 +116,12 @@ class HomeController extends Controller
             \Mail::to($request->email)->send(new VerifyEmailSend($mailData));
 
             $userObj->code = $code;
-            if (!$userObj->save()) {
-                return response()->json(['error' => ['Something went wrong.']]);
+            if ($userObj->save()) {
+                $response['message'] = "Verification code sent successfully";
+                $response['email'] = $request->email;
+                $response['status'] = STATUS_OK;
+                return response()->json($response, $response['status']);
             }
-
-            $response['message'] = "Verification code sent successfully";
-            $response['email'] = $request->email;
             return response()->json($response, $response['status']);
         }
 
@@ -141,8 +146,8 @@ class HomeController extends Controller
         if ($request->type == 'user-password') {
 
             $validator = Validator::make($request->all(), [
-                'currentPassword' => 'required|min:6',
-                'password' => 'required|min:6|confirmed|different:currentPassword',
+                'currentPassword' => 'required',
+                'password' => 'required|min:8|confirmed|different:currentPassword',
             ]);
 
             if ($validator->fails()) {
@@ -168,7 +173,7 @@ class HomeController extends Controller
         if ($request->type == 'setup-account') {
             $validator = Validator::make($request->all(), [
                 'uname' => 'required|min:3',
-                'password' => 'required|min:6|confirmed',
+                'password' => 'required|min:8|confirmed',
             ]);
 
             if ($validator->fails()) {
@@ -223,7 +228,6 @@ class HomeController extends Controller
 
     public function accountDelete(Request $request)
     {
-
         try {
             $user = User::find(Auth::user()->id);
             PaySlip::where(['user_id' => Auth::user()->id])->forceDelete();
