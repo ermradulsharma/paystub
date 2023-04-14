@@ -218,8 +218,8 @@ class HomeController extends Controller
         $response['success'] = FALSE;
         $requestData = $request->all();
 
-        $rules['new_password'] = 'required|min:6';
-        $rules['confirm_password'] = 'required|min:6';
+        $rules['new_password'] = 'required|min:8';
+        $rules['confirm_password'] = 'required|min:8';
         $validator = Validator::make($request->all(), $rules);
         if ($validator->fails()) {
             return redirect()->route('profile')->withErrors($validator)->withInput();
