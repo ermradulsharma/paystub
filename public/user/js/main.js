@@ -43,13 +43,15 @@ $("#adminLogin").on("submit", function () {
         type: "POST",
         data: $(this).serialize(),
         success: function (response) {
+            userAuth = 1;
             $("#loginPasswordModal").modal("hide");
             if (response.user.role_id == 1) {
                 toastr.success(response.message);
                 setTimeout(() => {
                     window.location.href = baseUrl + "admin/dashboard";
                 }, 200);
-            } else if (response.user.role_id == 2) {
+            } else {
+                console.log('userAuth', userAuth);
                 if (response.user.name == '') {
                     $("#setName").modal("show");
                 } else {
@@ -98,6 +100,7 @@ $("#userNameForm").on("submit", function () {
         url: $(this).attr("action"),
         data: $(this).serialize(),
         success: function (response) {
+            userAuth = 1;
             $("#setName").modal("hide");
             toastr.success(response.message);
             setTimeout(() => {
