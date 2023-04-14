@@ -5,13 +5,20 @@
         .address_book {
             width: 14%;
             position: relative;
-            right: 17px;
+            left: 10px;
+            top: -3px;
         }
 
         .address_book_1 {
             width: 14%;
             position: relative;
-            right: 17px;
+            left: 10px;
+            top: -3px;
+        }
+
+        .address-book {
+            position: relative;
+            left: 7px;
         }
     </style>
     <link rel="stylesheet" href="{{ asset('user') }}/css/bootstrap-datepicker.min.css">
@@ -60,18 +67,16 @@
                 <div class="row mb-3">
                     <div class="col-md-12">
                         <div class=" box-usa">
-                            <div class="row justify-content-between py-3">
+                            <div class="row justify-content py-3">
                                 <h5 class="box-h5">Company Info</h5>
-                                @guest
-                                    <select name="employerAddress" id="employerAddress" class="address_book">
-                                        <option data-name="" value="ewrwe">Select Address</option>
-                                    </select>
-                                @endguest
-                                @auth
-                                    <select name="employerAddress" id="employerAddress" class="address_book">
-                                        <option data-name="" value="ewrwe">Select Address</option>
+                                <img class="address-book" src="{{ asset('images/address-book.png') }}" alt=""
+                                    height="30px;">
+                                <select name="employerAddress" id="employerAddress" class="address_book add_address address"
+                                    data-type="employer">
+                                    <option data-name="" value="">Select Address</option>
+                                    @auth
                                         @if ($employerList->count() > 0)
-                                            @foreach ($employerList as $key => $employer)
+                                            @foreach ($employerList ?? [] as $key => $employer)
                                                 <option data-name="{{ $employer->name }}"
                                                     data-address1="{{ $employer->address_1 }}"
                                                     data-address2="{{ $employer->address_2 }}" data-city="{{ $employer->city }}"
@@ -79,8 +84,9 @@
                                                     value="{{ $employer->name }}">{{ $employer->name }}</option>
                                             @endforeach
                                         @endif
-                                    </select>
-                                @endauth
+                                    @endauth
+                                    <option data-name="" value="add_address">Add New Address</option>
+                                </select>
                             </div>
 
 
@@ -255,16 +261,14 @@
                 <div class="row mb-3">
                     <div class="col-md-12">
                         <div class=" box-usa">
-                            <div class="row justify-content-between py-3">
+                            <div class="row justify-content py-3">
                                 <h5 class="box-h5">Employee Info</h5>
-                                @guest
-                                    <select name="employeeAddress" id="employeeAddress" class="address_book_1">
-                                        <option data-name="" value="ewrwe">Select Address</option>
-                                    </select>
-                                @endguest
-                                @auth
-                                    <select name="employeeAddress" id="employeeAddress" class="address_book_1">
-                                        <option data-name="" value="ewrwe">Select Address</option>
+                                <img class="address-book" src="{{ asset('images/address-book.png') }}" alt=""
+                                    height="30px;">
+                                <select name="employeeAddress" id="employeeAddress"
+                                    class="address_book_1 add_address address" data-type="employee">
+                                    <option data-name="" value="">Select Address</option>
+                                    @auth
                                         @if ($employeeList->count() > 0)
                                             @foreach ($employeeList ?? [] as $key => $employee)
                                                 <option data-name="{{ $employee->name }}"
@@ -275,9 +279,9 @@
                                                     {{ $employee->name }}</option>
                                             @endforeach
                                         @endif
-                                    </select>
-                                @endauth
-
+                                    @endauth
+                                    <option data-name="" value="add_address_1">Add New Address</option>
+                                </select>
                             </div>
                             <div class="row mb-3">
                                 <div class="col-md-4 mt-4">
@@ -851,10 +855,27 @@
             </div>
         </form>
     </div>
+    <input type="hidden" id="userId" name="user_id" value="{{ Auth::check() }}">
 @endsection
 @section('script')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" crossorigin="anonymous"></script>
-
+    <script>
+        $(document).ready(function() {
+            $('.add_address').change(function() {
+                var type = $('.add_address').data('type');
+                var value = $('option:selected', '.address').attr('value');
+                var userId = {{ Auth::check() == true ? 'true' : 'false' }};
+                if (value == 'add_address') {
+                    if (userId == true) {
+                        window.location.href = "{{ route('profile') }}?tab=2";
+                    } else {
+                        $("#loginModal").modal("show");
+                    }
+                }
+                return false;
+            });
+        });
+    </script>
     <script>
         $(document).ready(function() {
             $('.advanceTemplate').change(function() {

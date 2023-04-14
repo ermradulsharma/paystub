@@ -42,45 +42,34 @@
                 </a>
             </li>
             <li class="nav-item ml-3 ">
-                <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('usa*') ? 'active' : '' }} "
-                    href="{{ route('usa.payStub') }}">USA</a>
+                <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('usa*') ? 'active' : '' }} " href="{{ route('usa.payStub') }}">USA</a>
             </li>
             <li class="nav-item ml-3">
-                <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('canada*') ? 'active' : '' }}"
-                    href="{{ route('canada') }}">CANADA</a>
+                <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('canada*') ? 'active' : '' }}" href="{{ route('canada') }}">CANADA</a>
             </li>
             <li class="nav-item ml-3">
-                <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('uk*') ? 'active' : '' }}"
-                    href="{{ route('uk') }}">UK</a>
+                <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('uk*') ? 'active' : '' }}" href="{{ route('uk') }}">UK</a>
             </li>
             <li class="nav-item ml-3">
-                <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('global*') ? 'active' : '' }}"
-                    href="{{ route('global') }}">GLOBAL</a>
+                <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('global*') ? 'active' : '' }}" href="{{ route('global') }}">GLOBAL</a>
             </li>
             <li class="nav-item ml-3">
-                <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('w2form*') ? 'active' : '' }}"
-                    href="{{ route('w2form') }}" style="width: 143px !important;">W-2 FORM</a>
+                <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('w2form*') ? 'active' : '' }}" href="{{ route('w2form') }}" style="width: 143px !important;">W-2 FORM</a>
             </li>
             <li class="nav-item d-flex justify-content-center ml-3 " style="margin-top:5px;">
                 @guest
-                    <a class="btn btn-lg py-2 w-100 btn-danger login registerBtn " style="margin-top:42px;"
-                        href="javascript:void(0);">LOGIN</a>
+                    <a class="btn btn-lg py-2 w-100 btn-danger login registerBtn " style="margin-top:42px;" href="javascript:void(0);">LOGIN</a>
                     <div class="container d-none logoutDiv">
                         <div class="user-icon"><img src="{{ asset('images/profile1.png') }}"></div>
                         <div class="logout btn-logout">
                             <a><img src="{{ asset('images/logout01.png') }}"></a>
                         </div>
                         <div class="dropbtn">
-                            <button class="btn btn-default dropdown-toggle navright-btn authUserName" type="button"
-                                id="menu1" data-toggle="dropdown">Hi {{ Auth::user()->name ?? '' }}<span
-                                    class="caret"></span></button>
+                            <button class="btn btn-default dropdown-toggle navright-btn authUserName" type="button" id="menu1" data-toggle="dropdown">Hi {{ Auth::user()->name ?? '' }}<span class="caret"></span></button>
                             <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                                <li role="presentation"><a role="menuitem" tabindex="-1"
-                                        href="{{ route('invoiceList') }}">Order History</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('profile') }}">My
-                                        Account</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Address Book</a>
-                                </li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('invoiceList') }}">Order History</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('profile') }}">My Account</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Address Book</a></li>
                             </ul>
                         </div>
                     </div>
@@ -91,16 +80,11 @@
                         <div class="user-icon"><img src="{{ asset('images/profile1.png') }}"></div>
                         <div class="logout btn-logout"><a><img src="{{ asset('images/logout01.png') }}"></a></div>
                         <div class="dropbtn">
-                            <button class="btn btn-default dropdown-toggle navright-btn authUserName" type="button"
-                                id="menu1" data-toggle="dropdown"> Hi {{ Auth::user()->name ?? '' }} <span
-                                    class="caret"></span></button>
+                            <button class="btn btn-default dropdown-toggle navright-btn authUserName" type="button" id="menu1" data-toggle="dropdown">Hi {{ Auth::user()->name ?? '' }}<span class="caret"></span></button>
                             <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                                <li role="presentation"><a role="menuitem" tabindex="-1"
-                                        href="{{ route('invoiceList') }}">Order History</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1"
-                                        href="{{ route('profile') }}">My Account</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1"
-                                        href="{{ route('profile') }}?tab=2">Address Book</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('invoiceList') }}">Order History</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('profile') }}">My Account</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('profile') }}?tab=2">Address Book</a></li>
                             </ul>
                         </div>
                     </div>
@@ -110,27 +94,18 @@
     </div>
 
     <div id="mySidenav" class="sidenav">
-        <a href="{{ url('/') }}"><img class="mr-3 mt-5 toggle-logo" src="{{ asset('images/Paystub X.webp') }}"
-                style="width: 222px;"></a>
+        <a href="{{ url('/') }}"><img class="mr-3 mt-5 toggle-logo" src="{{ asset('images/Paystub X.webp') }}" style="width: 222px;"></a>
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('usa*') ? 'active' : '' }} "
-            href="{{ route('usa.payStub') }}">USA</a>
-        <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('canada*') ? 'active' : '' }}"
-            href="{{ route('canada') }}">CANADA</a>
-        <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('uk*') ? 'active' : '' }}"
-            href="{{ route('uk') }}">UK</a>
-        <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('globle*') ? 'active' : '' }}"
-            href="{{ route('global') }}">GLOBEL</a>
-        <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('w2form*') ? 'active' : '' }}"
-            href="{{ route('w2form') }}">W-2 FORM</a>
+        <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('usa*') ? 'active' : '' }} " href="{{ route('usa.payStub') }}">USA</a>
+        <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('canada*') ? 'active' : '' }}" href="{{ route('canada') }}">CANADA</a>
+        <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('uk*') ? 'active' : '' }}" href="{{ route('uk') }}">UK</a>
+        <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('globle*') ? 'active' : '' }}" href="{{ route('global') }}">GLOBEL</a>
+        <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('w2form*') ? 'active' : '' }}" href="{{ route('w2form') }}">W-2 FORM</a>
         @guest
-            <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn login registerBtn"
-                style="background-color:#d3230c; border-radius:15px; font-size:20px;" href="#">Login</a>
+            <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn login registerBtn" style="background-color:#d3230c; border-radius:15px; font-size:20px;" href="#">Login</a>
         @endguest
         @auth
-            <a class="btn btn-lg  w-100  navbtn nav-btn btn-logout logout"
-                style="background-color:#d3230c; border-radius:15px;font-size:20px;max-width:150px; margin-left:10px !important;position: relative; top:0; "
-                href="#">Log Out</a>
+            <a class="btn btn-lg  w-100  navbtn nav-btn btn-logout logout" style="background-color:#d3230c; border-radius:15px;font-size:20px;max-width:150px; margin-left:10px !important;position: relative; top:0; " href="#">Log Out</a>
         @endauth
     </div>
 
@@ -398,9 +373,7 @@
                 <!-- Modal Header -->
                 <div class="modal-header" style="background: #115caecf;">
                     <h4 class="modal-title" style="text-transform: capitalize;color:#fff;">Set My Account</h4>
-                    <button type="button"
-                        style="border: none; background-color:transparent; color:#fff;font-size:20px;padding:0;"
-                        class="btn-close" data-bs-dismiss="modal" aria-label="Close">x</button>
+                    <button type="button" style="border: none; background-color:transparent; color:#fff;font-size:20px;padding:0;" class="btn-close" data-bs-dismiss="modal" aria-label="Close">x</button>
                 </div>
 
                 <!-- Modal body -->
@@ -409,40 +382,29 @@
                         @csrf
                         <input type="hidden" value="setup-account" name="type">
                         <label class="label-text" for="css">First Name<span style="color:red;">*</span></label>
-                        <input class="contact-box" type="text" name="uname" id="user-name"
-                            placeholder="First Name">
+                        <input class="contact-box" type="text" name="uname" id="user-name" placeholder="First Name">
                         <div class="contact-box-outer">
-                            <label class="label-text" for="css">New Password<span
-                                    style="color:red;">*</span></label>
-                            <input class="contact-box" type="password" placeholder="New Password" name="password"
-                                class="form-control show-password-sd" id="new_password" required>
-                            <i id="eye-icon_03" toggle="#password-field"
-                                class="fa fa-eye-slash eye-icon new-toggle-password" data-id="02"></i>
+                            <label class="label-text" for="css">New Password<span style="color:red;">*</span></label>
+                            <input class="contact-box" type="password" placeholder="New Password" name="password" class="form-control show-password-sd" id="new_password" required>
+                            <i id="eye-icon_03" toggle="#password-field" class="fa fa-eye-slash eye-icon new-toggle-password" data-id="02"></i>
                         </div>
                         <div class="contact-box-outer">
-                            <label class="label-text" for="css">Confirm Password<span
-                                    style="color:red;">*</span></label>
-                            <input class="contact-box" type="password" placeholder="Confirm Password"
-                                name="password_confirmation" class="form-control show-password-sd"
-                                id="confirm_password" required>
-                            <i id="eye-icon_03" toggle="#password-field"
-                                class="fa fa-eye-slash eye-icon confirm-toggle-password" data-id="02"></i>
+                            <label class="label-text" for="css">Confirm Password<span style="color:red;">*</span></label>
+                            <input class="contact-box" type="password" placeholder="Confirm Password" name="password_confirmation" class="form-control show-password-sd" id="confirm_password" required>
+                            <i id="eye-icon_03" toggle="#password-field" class="fa fa-eye-slash eye-icon confirm-toggle-password" data-id="02"></i>
                         </div>
                         {{-- <div class="modal-footer" style="display: inline-block;"> --}}
                         <div class="d-flex justify-content-between pt-3">
-                            <button class="btn-secondary" data-bs-dismiss="modal"
-                                style="border-radius:20px; border:none;font-size:12px; padding:5px 10px;">Cancel</button>
-                            <button class="btn-danger" id="set-name"
-                                style="border-radius:20px; border:none; font-size:12px; padding:5px 15px; position:relative; right:26px;"
-                                type="submit">Save</button>
+                            <button class="btn-secondary" data-bs-dismiss="modal" style="border-radius:20px; border:none;font-size:12px; padding:5px 10px;">Cancel</button>
+                            <button class="btn-danger" id="set-name" style="border-radius:20px; border:none; font-size:12px; padding:5px 15px; position:relative; right:26px;" type="submit">Save</button>
                         </div>
                         {{-- </div> --}}
                     </form>
                 </div>
-
             </div>
         </div>
     </div>
+
 
 
     <!-- End Footer Section -->

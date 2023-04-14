@@ -149,7 +149,7 @@
                                             </div>
 
                                             <div class="edit-icon">
-                                                <img class="username2" data-email="{{ $userObj->email ?? '' }}"
+                                                <img class="changeUserEmail" data-email="{{ $userObj->email ?? '' }}"
                                                     style="width: 15px;" src={{ asset('images/pen-solid.svg') }}>
                                             </div>
                                         </div>
@@ -276,17 +276,14 @@
                                                 <td style="padding-right:0; padding-left:0;"><img style="width:20px;"
                                                         src="images/icons/del-icon.png"></td>
                                             </tr>
-
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
-        </div>
         </div>
     </section>
 
@@ -334,7 +331,7 @@
 
                                         <div class="form-group">
                                             <p class="col-sm-offset-2 col-sm-12 help-block"
-                                                style="font-weight:bold;margin-bottom:5px;">STREET ADDRESS 2 </p>
+                                                style="font-weight:bold;margin-bottom:5px;">STREET ADDRESS 2</p>
                                             <div class="col-sm-12">
                                                 <input style="font-size:16px;" type="text" class="form-control"
                                                     id="inputAddressLine2" name="addressLine2"
@@ -427,46 +424,6 @@
         </div>
     </div>
 
-    <div class="modal fade" id="userName2">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-
-                <!-- Modal Header -->
-                <div class="modal-header" style="background: #115caecf;">
-                    <h4 class="modal-title" style="text-transform: capitalize;color:#fff;">Change Email Address</h4>
-                    <button type="button"
-                        style="border: none; background-color:transparent; color:#fff;font-size:20px;padding:0;"
-                        class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
-                </div>
-
-                <!-- Modal body -->
-                <div class="modal-body pb-4" style="box-shadow: 0 0 8px rgba(0,0,0,.14);padding-top:0;">
-                    <p class="mail-text">Enter the Password set for the account and proceed to set a new email address.</p>
-                    <form id="userEmailForm" method="post" action="{{ route('store.details') }}">
-                        @csrf
-                        <input type="hidden" value="user-email" name="type">
-                        <div class="contact-box-outer">
-                            <label class="label-text" for="css">Password<span style="color:red;">*</span></label>
-                            <input class="contact-box" type="password" placeholder="Password" name="password">
-                            <i id="eye-icon_00" class="fa fa-eye-slash eye-icon show-password" data-id="00"></i>
-                        </div>
-                        <label class="label-text" for="css">Email Address<span style="color:red;">*</span></label>
-                        <input class="contact-box" type="text" id="user-email" placeholder="Email Address"
-                            name="email">
-                    </form>
-                </div>
-                <div class="modal-footer" style="display: inline-block;">
-                    <div class="d-flex justify-content-between pt-2">
-                        <button class="btn-secondary" data-bs-dismiss="modal"
-                            style="border-radius:20px; border:none;font-size:12px; padding:5px 10px;">Cancel</button>
-                        <button class="btn-danger" id="store-email"
-                            style="border-radius:20px; border:none;font-size:12px; padding:5px 15px;">Save</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <div class="modal fade otpModal" id="otpModal">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -493,7 +450,6 @@
                         <p class="resend-otp"><a id="resendOtpButton" class="pointer-disable" style=""
                                 href="JavaScript:void(0);" disabled>Resend OTP </a><i
                                 class="fa fa-clock-o clock"></i><span id="resendTimeOut">30</span></p>
-
                         <form id="loginOtp" action="{{ route('store.details') }}" method="POST" class="text-center">
                             @csrf
                             <input type="hidden" value="verify-email" name="type">
@@ -565,9 +521,6 @@
                             style="border-radius:20px; border:none;font-size:12px; padding:5px 15px;">Save</button>
                     </div>
                 </div>
-
-
-
             </div>
         </div>
     </div>
@@ -595,6 +548,47 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="changeUserEmail">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header" style="background: #115caecf;">
+                    <h4 class="modal-title" style="text-transform: capitalize;color:#fff;">Change Email Address</h4>
+                    <button type="button"
+                        style="border: none; background-color:transparent; color:#fff;font-size:20px;padding:0;"
+                        class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body pb-4" style="box-shadow: 0 0 8px rgba(0,0,0,.14);padding-top:0;">
+                    <p class="mail-text">Enter the Password set for the account and proceed to set a new email address.</p>
+                    <form id="changeUserEmail_1" method="post" action="">
+                        @csrf
+                        <input type="hidden" value="user-email" name="type">
+                        <div class="contact-box-outer">
+                            <label class="label-text" for="css">Password<span style="color:red;">*</span></label>
+                            <input class="contact-box" type="password" placeholder="Password" name="password">
+                            <i id="eye-icon_00" class="fa fa-eye-slash eye-icon show-password" data-id="00"></i>
+                        </div>
+                        <label class="label-text" for="css">Email Address<span style="color:red;">*</span></label>
+                        <input class="contact-box" type="text" id="user-email" placeholder="Email Address" name="email">
+                        <div class="d-flex justify-content-between pt-2">
+                            <button class="btn-secondary" data-bs-dismiss="modal" style="border-radius:20px; border:none;font-size:12px; padding:5px 10px;">Cancel</button>
+                            <button class="btn-danger" style="border-radius:20px; border:none;font-size:12px; padding:5px 15px; position:relative; right:26px;"  type="submit">Save</button>
+                        </div>
+                    </form>
+                </div>
+                {{-- <div class="modal-footer" style="display: inline-block;">
+                    <div class="d-flex justify-content-between pt-2">
+                        <button class="btn-secondary" data-bs-dismiss="modal" style="border-radius:20px; border:none;font-size:12px; padding:5px 10px;">Cancel</button>
+                        <button class="btn-danger" id="changeUserEmail" style="border-radius:20px; border:none;font-size:12px; padding:5px 15px;">Save</button>
+                    </div>
+                </div> --}}
+            </div>
+        </div>
+    </div>
 @endsection
 
 
@@ -606,6 +600,37 @@
             getAddressBook();
         });
 
+        $(".changeUserEmail").click(function() {
+            $("#changeUserEmail").modal("show");
+
+        });
+
+        $("#changeUserEmail").on("submit", function() {
+            var formData = $("#changeUserEmail_1").serialize();
+            console.log(formData);
+            $.ajax({
+                type: 'POST',
+                url: '{{ route("profile-setup") }}',
+                data: $("#changeUserEmail_1").serialize(),
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                success: function(response) {
+                    console.log('response', response);
+                    toastr.success(response.message);
+                    $("#userName2").modal("hide");
+                    $('#hidden_email').val(response.email);
+                    $("#otpModal").modal("show");
+                    startTimer();
+                },
+                error: function(err) {
+                    error = err.responseJSON;
+                    toastr.error(error.message);
+                },
+            });
+            return false;
+        });
+
         $(".username").click(function() {
             var name = $(this).data('name');
             $('#user-name').val(name);
@@ -614,10 +639,6 @@
 
         $("#store-name").click(function(e) {
             submitUserData($('#userNameForm1')[0]);
-        });
-
-        $(".username2").click(function() {
-            $("#userName2").modal("show");
         });
 
         $("#store-email").click(function(e) {

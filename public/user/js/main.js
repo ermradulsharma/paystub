@@ -128,6 +128,8 @@ $("#userNameForm").on("submit", function () {
     return false;
 });
 
+
+
 $(".btn-logout").click(function () {
     $("#logoutModal").modal("show");
     userAuth = 0;

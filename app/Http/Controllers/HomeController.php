@@ -41,8 +41,8 @@ class HomeController extends Controller
     {
         $userObj = User::find(Auth::user()->id);
         $subcriptionData = Subcription::with('plan')->where('user_id', $userObj->id)->orderBy('id', 'desc')->first();
-        $stateList = StateTax::select('state','state_code')->get();
-        return view('user-profile', compact('userObj', 'subcriptionData','stateList'));
+        $stateList = StateTax::select('state', 'state_code')->get();
+        return view('user-profile', compact('userObj', 'subcriptionData', 'stateList'));
     }
 
     public function storeDetails(Request $request)
@@ -72,20 +72,26 @@ class HomeController extends Controller
         }
 
         if ($request->type == 'user-email') {
-            $validator = Validator::make($request->all(), [
-                'password' => 'required|min:6',
-                'email' => 'email:rfc,dns|unique:users,email,' . $userId,
-            ]);
+            $rules = [
+                'email' => 'required|email:rfc,dns',
+                'password' => 'required'
+            ];
 
+            $messages = [
+                'email.required' => 'The email cannot be empty.',
+                'email.email' => 'Please enter valid email.',
+                'password.required' => 'The password cannot be empty'
+            ];
+            $validator = Validator::make($request->all(), $rules, $messages);
             if ($validator->fails()) {
-                return response()->json([
-                    'error' => $validator->errors()->all()
-                ]);
+                $response['message'] = $validator->errors()->first();
+                return response()->json($response, 301);
             }
 
             $userObj = User::where('id', $userId)->first();
             if (!$userObj) {
-                return response()->json(['error' => ['User not found']]);
+                $response['message'] = 'User not found';
+                return response()->json($response, 301);
             }
 
             if (!Hash::check($request->password, $userObj->password)) {
@@ -111,7 +117,7 @@ class HomeController extends Controller
 
             $response['message'] = "Verification code sent successfully";
             $response['email'] = $request->email;
-            return response()->json($response, 200);
+            return response()->json($response, $response['status']);
         }
 
         if ($request->type == 'verify-email') {
@@ -177,19 +183,13 @@ class HomeController extends Controller
             $userObj->name = $request->uname ?? '';
             $userObj->password = bcrypt($request->password);
             $userObj->is_completed = '1';
-            if($userObj->save()){
+            if ($userObj->save()) {
                 // Auth::login($userObj);
                 $response['data'] = $userObj->name ?? '';
                 $response['message'] = "Your account setup successfully.";
                 $response['status'] = STATUS_OK;
                 return response()->json($response, $response['status']);
             }
-            /* if (!$userObj->save()) {
-                return response()->json(['error' => ['Something went wrong.']]);
-            }
-            $userObj = User::where('id', $userId)->first();
-            $request->session()->flash('message', 'Account setup successfully.');
-            return response()->json(['data' => $userObj, 'message' => 'Your account setup successfully.']); */
         }
     }
 
