@@ -450,7 +450,7 @@
                         <div class="contact-box-outer">
                             <label class="label-text" for="css">Password<span style="color:red;">*</span></label>
                             <input class="contact-box" type="password" placeholder="Password" name="password">
-                            <i id="eye-icon_00" class="fa fa-eye-slash eye-icon show-password" data-id="00"></i>
+                            <i id="eye-icon_00" toggle="#password-field" class="fa fa-eye-slash eye-icon show-password" data-id="02"></i>
                         </div>
                         <div class="contact-box-outer">
                             <label class="label-text" for="css">Email Address<span style="color:red;">*</span></label>
