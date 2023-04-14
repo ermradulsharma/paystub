@@ -674,7 +674,7 @@
                         $('#addressForm input[name=addressLine1]').val(data.addressObj.address_1);
                         $('#addressForm input[name=addressLine2]').val(data.addressObj.address_2);
                         $('#addressForm input[name=cityName]').val(data.addressObj.city);
-                        $('#addressForm select[name="stateName"]').val(data.addressObj.city);
+                        $('#addressForm select[name="stateName"]').val(data.addressObj.state);
                         // $('#selectState').val(data.addressObj.state);
                         $('#addressForm input[name=zipCode]').val(data.addressObj.zip_code);
                         // $('#addressBook').modal('show');
