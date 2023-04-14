@@ -71,8 +71,7 @@
                                 <h5 class="box-h5">Company Info</h5>
                                 <img class="address-book" src="{{ asset('images/address-book.png') }}" alt=""
                                     height="30px;">
-                                <select name="employerAddress" id="employerAddress" class="address_book add_address address"
-                                    data-type="employer">
+                                <select id="employerAddress" class="address_book add_address address" data-type="employer">
                                     <option data-name="" value="">Select Address</option>
                                     {{-- @auth --}}
                                         {{-- @if ($employerList->count() > 0) --}}
@@ -265,7 +264,7 @@
                                 <h5 class="box-h5">Employee Info</h5>
                                 <img class="address-book" src="{{ asset('images/address-book.png') }}" alt=""
                                     height="30px;">
-                                <select name="employeeAddress" id="employeeAddress"
+                                <select id="employeeAddress"
                                     class="address_book_1 add_address address" data-type="employee">
                                     <option data-name="" value="">Select Address</option>
                                     @auth
@@ -1016,9 +1015,7 @@
             });
         });
     </script>
-    <script
-        src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyDpavHXELJMJvIHifFPN6tBBiFSXKGpy2g&callback=Function.prototype">
-    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyDpavHXELJMJvIHifFPN6tBBiFSXKGpy2g&callback=Function.prototype"></script>
     <script>
         var searchInput = 'address_1';
 

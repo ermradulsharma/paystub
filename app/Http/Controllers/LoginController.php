@@ -133,8 +133,6 @@ class LoginController extends Controller
         return response()->json($response, 200);
     }
 
-
-
     public function sendOtp(Request $request)
     {
         $rules = [
@@ -177,10 +175,5 @@ class LoginController extends Controller
         $response['type'] = $user->is_completed;
         return response()->json($response, 200);
     }
-
-    // public function loginWithGoogle(Type $var = null)
-    // {
-    //     # code...
-    // }
 
 }
