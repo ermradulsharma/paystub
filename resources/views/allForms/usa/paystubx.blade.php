@@ -186,7 +186,7 @@
             </tr>
             <tr>
                 <td></td>
-                <td>{{ $requestData['address_1'] }}</td>
+                <td>{{ $requestData['address_1'] }}  {{ $requestData['address_2'] }}{!! addressTwo($requestData,true) !!}</td>
                 <td style="font-size: 14px;">Period Beginning: <b>{{ date('m/d/y', strtotime($requestData['pay_start'])) }}</b>
                 </td>
             </tr>

@@ -232,7 +232,7 @@
                                     $requestData['cname'] }}</b></td>
                         </tr>
                         <tr>
-                            <td style="font-size: 19px; line-height:1.2; padding-bottom:16px; font-family: 'Times', sans-serif; text-transform:capitalize;">{{ $requestData['address_1'] }}<br>{{ $requestData['city'] }}, {{ $requestData['state'] }}. {{ $requestData['zip_code'] }}, USA</td>
+                            <td style="font-size: 19px; line-height:1.2; padding-bottom:16px; font-family: 'Times', sans-serif; text-transform:capitalize;">{{ $requestData['address_1'] }}{!! addressTwo($requestData,true) !!}<br>{{ $requestData['city'] }}, {{ $requestData['state'] }}. {{ $requestData['zip_code'] }}, USA</td>
                         </tr>
                         <tr>
                             <td
@@ -266,7 +266,7 @@
                         </tr>
                         <tr>
                             <td style="padding-top:8px;font-size: 15px;text-transform:capitalize;"> {{ $requestData['emp_name'] }} <br> {{
-                                $requestData['emp_street_1'] }}<br> {{ $requestData['emp_city'] }}, {{
+                                $requestData['emp_street_1'] }}{!! empAddressTwo($requestData,true) !!}<br> {{ $requestData['emp_city'] }}, {{
                                 $requestData['emp_state'] }}. {{ $requestData['emp_zip_code'] }}, USA </td>
                         </tr>
 

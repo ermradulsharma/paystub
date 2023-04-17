@@ -148,7 +148,7 @@
                 <td style="font-size:14px;text-align:right; font-family: 'Times', sans-serif;"><b>No: 17658</b></td>
             </tr>
             <tr>
-                <td style="padding-left:50px; padding-top:0px; padding-bottom:30px; padding-right:0px; font-size:14px; font-family: 'Poppins', sans-serif;"> {{ $requestData['address_1'] }}<br>{{ $requestData['city'] }}, {{ $requestData['state'] }} {{ $requestData['zip_code'] }}</td>
+                <td style="padding-left:50px; padding-top:0px; padding-bottom:30px; padding-right:0px; font-size:14px; font-family: 'Poppins', sans-serif;"> {{ $requestData['address_1'] }}{!! addressTwo($requestData,true) !!}<br>{{ $requestData['city'] }}, {{ $requestData['state'] }} {{ $requestData['zip_code'] }}</td>
                 <td></td>
                 <td style="font-size:14px; text-align:right; width:250px; font-family: 'Poppins', sans-serif;">Date <span style="padding-left:5px;">{{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</span> </td>
             </tr>
@@ -204,8 +204,8 @@
                         <td style=" text-transform:capitalize; font-family: 'Times New Roman', Times, serif;"><strong>{{ $requestData['emp_name'] }}</strong></td>
                     </tr>
                     <tr>
-                        <td style="text-transform: capitalize; font-size:13px;font-family: 'Times New Roman', Times, serif;">{{ $requestData['address_1'] }}<br>{{ $requestData['city'] }}, {{ $requestData['state'] }} {{ $requestData['zip_code'] }} </td>
-                        <td style="text-transform: capitalize; font-size:13px;font-family: 'Times New Roman', Times, serif;"> {{ $requestData['emp_street_1'] }}<br>{{ $requestData['emp_city'] }}, {{ $requestData['emp_state'] }} {{ $requestData['emp_zip_code'] }} </td>
+                        <td style="text-transform: capitalize; font-size:13px;font-family: 'Times New Roman', Times, serif;">{{ $requestData['address_1'] }}{!! addressTwo($requestData,true) !!}<br>{{ $requestData['city'] }}, {{ $requestData['state'] }} {{ $requestData['zip_code'] }} </td>
+                        <td style="text-transform: capitalize; font-size:13px;font-family: 'Times New Roman', Times, serif;"> {{ $requestData['emp_street_1'] }}{!! empAddressTwo($requestData,true) !!}<br>{{ $requestData['emp_city'] }}, {{ $requestData['emp_state'] }} {{ $requestData['emp_zip_code'] }} </td>
                     </tr>
                     <tr>
                         <td colspan="2" style="text-transform: capitalize; font-size:13px;font-family: 'Times New Roman', Times, serif;">@if($requestData['tel'] != ''){{ $requestData['tel'] ?? '' }}@endif</td>

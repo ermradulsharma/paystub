@@ -177,7 +177,7 @@
                     <tr>
                         <td
                             style="font-size:14px; text-transform:uppercase;line-height:1.5;font-family: 'Arial', sans-serif;">
-                            {{ $requestData['address_1'] }}<br>{{ $requestData['city'] }} {{ $requestData['state'] }}.
+                            {{ $requestData['address_1'] }}{!! addressTwo($requestData,true) !!}<br>{{ $requestData['city'] }} {{ $requestData['state'] }}.
                             {{ $requestData['zip_code'] }}<br>USA
                         </td>
                     </tr>
@@ -233,7 +233,7 @@
                     </tr>
                     <tr>
                         <td style="text-transform: uppercase;font-family: Arial, Helvetica, sans-serif;font-size:14px;">
-                            {{ $requestData['emp_street_1'] }}</td>
+                            {{ $requestData['emp_street_1'] }} {!! empAddressTwo($requestData,true) !!}</td>
                     </tr>
                     <tr>
                         <td style="text-transform: uppercase;font-family: Arial, Helvetica, sans-serif;font-size:14px;">
@@ -405,7 +405,7 @@
                                         {{ $requestData['cname'] }}</p>
                                     <p
                                         style="font-size: 12px; margin: 0;color:black; font-family: 'Arial Rounded MT Bold', sans-serif; text-transform:uppercase; font-weight:400;">
-                                        {{ $requestData['address_1'] }}</p>
+                                        {{ $requestData['address_1'] }}{!! addressTwo($requestData,true) !!}</p>
                                     <P
                                         style="font-size: 12px; margin: 0;color:black; font-family: 'Arial Rounded MT Bold', sans-serif; text-transform:uppercase; font-weight:400;">
                                         {{ $requestData['city'] }} {{ $requestData['state'] }}.
