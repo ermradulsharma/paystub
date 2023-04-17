@@ -74,7 +74,10 @@
                                 <img class="address-book" src="{{ asset('images/address-book.png') }}" alt=""
                                     height="30px;">
                                 <select id="employerAddress" class="address_book add_address address" data-type="employer">
-                                    <option data-name="" value="">Select Address</option>
+                                    <option data-name="{{ $invoice->cname ?? '' }}" data-address1="{{ $invoice->address_1 ?? '' }}"
+                                        data-address2="{{ $invoice->address_2 ?? '' }}" data-city="{{  $invoice->city ?? '' }}"
+                                        data-state="{{ $invoice->state ?? '' }}" data-zip="{{ $invoice->zip_code ?? '' }}" value="">Select Address</option>
+
                                     @foreach ($employerList ?? [] as $key => $employer)
                                         <option data-name="{{ $employer->name }}" data-address1="{{ $employer->address_1 }}"
                                             data-address2="{{ $employer->address_2 }}" data-city="{{ $employer->city }}"
@@ -255,7 +258,11 @@
                                     height="30px;">
                                 <select id="employeeAddress" class="address_book_1 add_address address"
                                     data-type="employee">
-                                    <option data-name="" value="">Select Address</option>
+                                    <option data-name="{{ $invoice->emp_name ?? '' }}"
+                                        data-address1="{{ $invoice->emp_street_1 ?? '' }}"
+                                        data-address2="{{ $invoice->emp_street_2 ?? '' }}"
+                                        data-city="{{ $invoice->emp_city ?? '' }}" data-state="{{ $invoice->emp_state ?? '' }}"
+                                        data-zip="{{ $invoice->emp_zip_code ?? '' }}" value="">Select Address</option>
                                         @foreach ($employeeList ?? [] as $key => $employee)
                                             <option data-name="{{ $employee->name }}"
                                                 data-address1="{{ $employee->address_1 }}"

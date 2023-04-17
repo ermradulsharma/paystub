@@ -68,7 +68,15 @@ class PayStubController extends Controller
         $advanceType = Template::where(['state' => 'global', 'type' => 'advance', 'status' => 1])->orderBy('title')->with('images')->get();
         $stateTaxes = StateTax::orderBy('state')->get();
         $currencies = Currency::get();
-        return view('globalPaystub', compact('basicType', 'advanceType', 'deduction', 'stateTaxes', 'currencies'));
+        if (Auth::check()) {
+            $employerList = Address::where(['type' => 'employer', 'user_id' => Auth::user()->id])->orderBy('id', 'DESC')->get();
+            $employeeList = Address::where(['type' => 'employee', 'user_id' => Auth::user()->id])->orderBy('id', 'DESC')->get();
+        } else {
+            $employerList = [];
+            $employeeList = [];
+        }
+
+        return view('globalPaystub', compact('basicType', 'advanceType', 'deduction', 'stateTaxes', 'currencies','employerList', 'employeeList'));
     }
 
     public function w2formPayStub()
