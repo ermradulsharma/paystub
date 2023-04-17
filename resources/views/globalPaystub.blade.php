@@ -1,6 +1,26 @@
 @extends('layouts.app')
 
 @section('content')
+    <style>
+        .address_book {
+            width: 14%;
+            position: relative;
+            left: 10px;
+            top: -3px;
+        }
+
+        .address_book_1 {
+            width: 14%;
+            position: relative;
+            left: 10px;
+            top: -3px;
+        }
+
+        .address-book {
+            position: relative;
+            left: 7px;
+        }
+    </style>
     <link rel="stylesheet" href="{{ asset('user') }}/css/bootstrap-datepicker.min.css">
     <!-- Modal Start -->
     <div class="modal fade" id="openEye" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -47,7 +67,27 @@
                 <div class="row mb-3">
                     <div class="col-md-12">
                         <div class=" box-usa">
-                            <h5 class="box-h5">Company Info</h5>
+                            <div class="row justify-content py-3">
+                                <h5 class="box-h5">Company Info</h5>
+                                <img class="address-book" src="{{ asset('images/address-book.png') }}" alt=""
+                                    height="30px;">
+                                <select id="employerAddress" class="address_book add_address address" data-type="employer">
+                                    <option data-name="" value="">Select Address</option>
+                                    {{-- @auth --}}
+                                    {{-- @if ($employerList->count() > 0) --}}
+                                    @foreach ($employerList ?? [] as $key => $employer)
+                                        <option data-name="{{ $employer->name }}" data-address1="{{ $employer->address_1 }}"
+                                            data-address2="{{ $employer->address_2 }}" data-city="{{ $employer->city }}"
+                                            data-state="{{ $employer->state }}" data-zip="{{ $employer->zip_code }}"
+                                            value="{{ $employer->name }}">{{ $employer->name }}</option>
+                                    @endforeach
+                                    {{-- @endif --}}
+                                    {{-- @endauth --}}
+                                    <option data-name="" value="add_address">Add New Address</option>
+                                </select>
+                            </div>
+
+
                             <div class="row mb-3 ">
                                 <div class="col-md-6 mt-1">
                                     <div>
@@ -57,6 +97,7 @@
                                             placeholder="Employer(Company) Name"
                                             class="w-100 p-2 text-center input-box-font removeDiv">
                                     </div>
+
                                 </div>
 
                                 <div class="col-md-6 mt-1">
@@ -88,7 +129,8 @@
                                     <div>
                                         <label for="address_2" class="lable">STREET ADDRESS 2 </label>
                                         <input type="text" id="address_2" name="address_2"
-                                            placeholder="Company Street Address 2 (optional)" class="w-100  input-box-font">
+                                            placeholder="Company Street Address 2 (optional)"
+                                            class="w-100  input-box-font">
                                     </div>
 
                                 </div>
@@ -199,10 +241,46 @@
                 </div>
             </div>
             <div>
-                <h5 class="box-h5">Employee Info</h5>
+                {{-- <div class="row justify-content-between pb-2">
+                    <h5 class="box-h5">Employee Info</h5>
+                    <select name="employeeAddress" id="employeeAddress" class="address_book_1">
+                        <option data-name="" value="ewrwe">Select Address</option>
+                        @if ($employeeList->count() > 0)
+                            @foreach ($employeeList as $key => $employee)
+                                <option data-name="{{ $employee->name }}" data-address1="{{ $employee->address_1 }}"
+                                    data-address2="{{ $employee->address_2 }}" data-city="{{ $employee->city }}"
+                                    data-state="{{ $employee->state }}" data-zip="{{ $employee->zip_code }}"
+                                    value="{{ $employee->name }}">{{ $employee->name }}</option>
+                            @endforeach
+                        @endif
+                    </select>
+                </div> --}}
+
                 <div class="row mb-3">
                     <div class="col-md-12">
                         <div class=" box-usa">
+                            <div class="row justify-content py-3">
+                                <h5 class="box-h5">Employee Info</h5>
+                                <img class="address-book" src="{{ asset('images/address-book.png') }}" alt=""
+                                    height="30px;">
+                                <select id="employeeAddress" class="address_book_1 add_address address"
+                                    data-type="employee">
+                                    <option data-name="" value="">Select Address</option>
+                                    @auth
+                                        @if ($employeeList->count() > 0)
+                                            @foreach ($employeeList ?? [] as $key => $employee)
+                                                <option data-name="{{ $employee->name }}"
+                                                    data-address1="{{ $employee->address_1 }}"
+                                                    data-address2="{{ $employee->address_2 }}"
+                                                    data-city="{{ $employee->city }}" data-state="{{ $employee->state }}"
+                                                    data-zip="{{ $employee->zip_code }}" value="{{ $employee->name }}">
+                                                    {{ $employee->name }}</option>
+                                            @endforeach
+                                        @endif
+                                    @endauth
+                                    <option data-name="" value="add_address_1">Add New Address</option>
+                                </select>
+                            </div>
                             <div class="row mb-3">
                                 <div class="col-md-4 mt-4">
                                     <div>
@@ -304,8 +382,8 @@
                                         <label for="check_no" class="lable">Check No <span
                                                 class="redColor">*</span></label>
                                         <input type="text" id="check_no" name="check_no"
-                                            class="w-100  input-box-font removeDiv" placeholder="123456789" maxlength="9"
-                                            minlength="6"
+                                            class="w-100  input-box-font removeDiv" placeholder="123456789"
+                                            maxlength="9" minlength="6"
                                             onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                     </div>
                                 </div>
@@ -382,7 +460,7 @@
                                 <div class="col-md-3 mt-4">
                                     <div>
                                         <label for="hourly" class="lable">Rate / Unit </label>
-                                        <input type="text" step="0.5" id="hourly" name="hourly"
+                                        <input type="number" step="0.5" id="hourly" name="hourly"
                                             placeholder="Wage" class="w-100   input-box-font hourly">
                                     </div>
                                 </div>
@@ -498,8 +576,7 @@
                                 <div class=" col-lg-2 col-md-2 margin-bottom  mt-2">
                                     <button type="button" class="statementbtn">EARNING</button>
                                     <div class="margin-bottom">
-                                        <input class="earnbtn mt-4 mb-3 text-center earning" type="text"
-                                            name="earning[]" value="Regular" id="earning_0" data-id="0">
+                                        <input class="earnbtn mt-4 mb-3 text-center earning" type="text" name="earning[]" value="Regular" id="earning_0" data-id="0">
                                     </div>
                                     <div id="addEarning"></div>
                                 </div>
@@ -712,8 +789,7 @@
                                             <p class="p-0 m-0 " style="font-family: serif;">Clock Vchr Number<span
                                                     class="redColor">*</span> </p>
                                             <input type="text" name="clock_vchr_number" id="clock_vchr_number"
-                                                class="earnbtn removeDiv text-center"
-                                                placeholder="123456" maxlength="11"
+                                                class="earnbtn removeDiv text-center" placeholder="123456" maxlength="11"
                                                 onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                         </div>
 
@@ -776,10 +852,48 @@
             </div>
         </form>
     </div>
+    <input type="hidden" id="userId" name="user_id" value="{{ Auth::check() }}">
 @endsection
 @section('script')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
 
+            $('.add_address').change(function() {
+                var type = $('.add_address').data('type');
+                // var value = $('option:selected', '.address').attr('value');
+                var value = $(this).val();
+                var userId = {{ Auth::check() == true ? 'true' : 'false' }};
+                console.log('userAuth-', userAuth);
+                if (value == 'add_address') {
+                    if (userId == true) {
+                        window.location.href = "{{ route('profile') }}?tab=2&emp=1";
+                    } else {
+                        if (userAuth) {
+                            window.location.href = "{{ route('profile') }}?tab=2&emp=1";
+                        } else {
+                            $(this).val('');
+                            $("#loginModal").modal("show");
+                        }
+                    }
+
+                } else if (value == 'add_address_1') {
+                    if (userId == true) {
+                        window.location.href = "{{ route('profile') }}?tab=2&emp=2";
+                    } else {
+                        if (userAuth) {
+                            window.location.href = "{{ route('profile') }}?tab=2&emp=2";
+                        } else {
+                            $(this).val('');
+                            $("#loginModal").modal("show");
+                        }
+                    }
+
+                }
+                return false;
+            });
+        });
+    </script>
     <script>
         $(document).ready(function() {
             $('.advanceTemplate').change(function() {
@@ -788,7 +902,6 @@
                     var status = $('option:selected', '.at_id').attr('data-status');
                     var stub = $('option:selected', '.at_id').data('stub');
                     var check = $('option:selected', '.at_id').data('check');
-
                     if (stub == 1 && check == 0) {
                         $('.stubxc').each(function() {
                             $(".stubxc").removeClass("col-md-4");
@@ -1082,6 +1195,28 @@
             $('#tel').usPhoneFormat({
                 format: 'xxx-xxx-xxxx',
             });
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#employerAddress").change(function() {
+                $('#cname').val($('option:selected', this).data('name'))
+                $('#address_1').val($('option:selected', this).data('address1'))
+                $('#address_2').val($('option:selected', this).data('address2'))
+                $('#city').val($('option:selected', this).data('city'))
+                $('#state').val($('option:selected', this).data('state'))
+                $('#zip_code').val($('option:selected', this).data('zip'))
+            });
+
+            $("#employeeAddress").change(function() {
+                $('#emp_name').val($('option:selected', this).data('name'))
+                $('#emp_street_1').val($('option:selected', this).data('address1'))
+                $('#emp_street_2').val($('option:selected', this).data('address2'))
+                $('#emp_city').val($('option:selected', this).data('city'))
+                $('#emp_state').val($('option:selected', this).data('state'))
+                $('#emp_zip_code').val($('option:selected', this).data('zip'))
+            });
+
         });
     </script>
     <script src="{{ asset('user') }}/js/calculations.js"></script>

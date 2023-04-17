@@ -175,5 +175,4 @@ class LoginController extends Controller
         $response['type'] = $user->is_completed;
         return response()->json($response, 200);
     }
-
 }
