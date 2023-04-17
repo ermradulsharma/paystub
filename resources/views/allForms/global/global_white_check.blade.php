@@ -444,7 +444,7 @@
                         <h6 @if($requestData['address_2'] != '')style="font-size: 14px; text-align:left; bottom:17px; left:80px; position: relative; font-weight:400;"@else style="font-size: 13px; text-align:left; bottom:3px; left:80px; position: relative; font-weight:400;"@endif>{{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</h6>
                     </div>
                 </div>
-                <table @if($requestData['address_2'] != '')style="position:relative; bottom:30px;" @else style="position:relative; bottom:15px;" @endif>
+                <table @if($requestData['address_2'] != '')style="position:relative; bottom:40px;" @else style="position:relative; bottom:15px;" @endif>
                     <tr>
                         <td style="width:10%;"></td>
                         <td
