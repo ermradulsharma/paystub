@@ -25,7 +25,7 @@ class AddressBookController extends Controller
                 ]);
             }
 
-            $addressData = Address::where(['type'=>$request->type, 'user_id'=>Auth::user()->id])->paginate(5);
+            $addressData = Address::where(['type'=>$request->type, 'user_id'=>Auth::user()->id])->orderBy('id','DESC')->paginate(5);
             if ($request->ajax()) {
                 return view('address-list', compact('addressData'));
             }

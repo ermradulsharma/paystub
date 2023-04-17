@@ -3,7 +3,7 @@
 
         <tr style="border:1px solid #ddd;">
             <th scope="row">{{ $addressData->firstItem() + $key }}</th>
-            <td>{{$address->name ?? ''}}</td>
+            <td>{{ucwords($address->name ?? '')}}</td>
             <td>{{$address->address_1 ?? ''}}</td>
             <td>{{$address->address_2 ?? ''}}</td>
             <td>{{$address->city ?? ''}}</td>
