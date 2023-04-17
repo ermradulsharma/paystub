@@ -45,7 +45,8 @@
         border-radius: 0;
         transition: all 0.3s ease-in-out;
     }
-    .address-book:hover{
+
+    .address-book:hover {
         background-color: #dddddd96 !important;
 
     }
@@ -54,7 +55,8 @@
         color: black !important;
         transition: all 0.3s ease-in-out;
     }
-    .my-account:hover{
+
+    .my-account:hover {
         background-color: #dddddd96 !important;
     }
 
@@ -132,6 +134,21 @@
         height: 95vh;
     }
 
+    .editicon {
+        width: 22px;
+        margin-right:10px;
+    }
+
+    .dlticon {
+        width: 20px;
+    }
+    .table thead th {
+        text-transform: capitalize;
+    }
+    .table  td {
+        text-transform: capitalize;
+    }
+
     @media(max-width:768px) {
         .table thead th {
             font-size: 12px;
@@ -147,6 +164,17 @@
             display: none;
         }
 
+        .editicon {
+            width: 12px;
+            margin-right:7px;
+
+        }
+
+        .dlticon {
+            width: 10px;
+            margin-right:5px;
+        }
+
         .add-new-btn {
             display: block;
         }
@@ -160,6 +188,12 @@
         }
 
         .table thead th {
+            font-size: 8px;
+            padding: 10px 3px;
+            vertical-align: baseline;
+        }
+
+        .table td {
             font-size: 8px;
             padding: 10px 3px;
             vertical-align: baseline;
@@ -288,7 +322,9 @@
                             <button class="add-btn addressBook" id="addNewAddress"
                                 data-emptype="{{ Request::get('emp') == 2 ? 'employee' : 'employer' }}">Add New
                                 Address</button>
-                            <div class="add-new-btn"><img src="images/icons/add-new.png"></div>
+                            <div class="add-new-btn addressBook" id="addNewAddress2"
+                                data-emptype="{{ Request::get('emp') == 2 ? 'employee' : 'employer' }}"><img
+                                    src="images/icons/add-new.png"></div>
                         </ul>
 
                         <div class="tab-content" id="pills-tabContent">
@@ -308,7 +344,7 @@
                                     </thead>
                                     <tbody id="employerTab">
                                         {{-- <tr style="border:1px solid #ddd;">
-                                            <th scope="row">1</th>
+                                            <td scope="row">1</td>
                                             <td>Mark22</td>
                                             <td>Otto</td>
                                             <td>@mdo</td>
@@ -807,6 +843,19 @@
         });
 
         $("#addNewAddress").click(function() {
+            openAddressModal();
+        });
+        $(document).on('click', '#pills-profile-tab', function() {
+            $("#addNewAddress2").attr('data-emptype','employee');
+            getAddressBook();
+        });
+
+        $(document).on('click', '#pills-home-tab', function() {
+            $("#addNewAddress2").attr('data-emptype','employer');
+            getAddressBook();
+        });
+
+        $("#addNewAddress2").click(function() {
             openAddressModal();
         });
 
