@@ -304,7 +304,7 @@ $(document).ready(function () {
         $('.salary_btn').css({ "background-color": "#827f7f" });
         $(".rate").attr("hidden", false);
         $(".hours").attr("hidden", false);
-        $(".hourly").attr("readonly", false);
+        $(".hourly").attr("readonly", false).removeClass('d-none').val('');
         $(".rate").attr("readonly", false);
         $(".hours").attr("readonly", false);
         $(".total").attr("readonly", true);
@@ -324,7 +324,7 @@ $(document).ready(function () {
         $('.hour_btn').css({ "background-color": "#827f7f" });
         $('.rate').attr('readonly', true);
         $('.hours').attr('readonly', true);
-        $('.hourly').attr('readonly', true);
+        $('.hourly').attr('readonly', true).addClass('d-none').val('');
         $('.total').attr('readonly', false);
         $('.time_period').val('monthly');
         $('.auto_calculate').val('on');
