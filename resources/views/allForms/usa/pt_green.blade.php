@@ -170,10 +170,10 @@
                             $requestData['advice_number'] }}</span> </h6>
                     <br>
                     <br>
-                    <P style="font-size: 14px;margin: 0; text-align:right; padding-right:25%;font-weight:bold;font-family: Arial, Helvetica, sans-serif;"><span
-                            style="font-weight:bold;padding-right:20px;">Check No:</span> {{ $requestData['check_no'] ?? '' }} </P>
-                    <P style="font-size: 14px;margin: 0;  text-align:right;  padding-right:25%;margin-top:10px;font-family: Arial, Helvetica, sans-serif;font-weight:bold;"> <span
-                            style=" padding-right:20px;">Date:</span><b>{{ date('m/d/y',
+                    <P style="font-size: 14px;margin: 0; text-align:right; padding-right:12%;font-weight:bold;font-family: Arial, Helvetica, sans-serif;"><span
+                            style="font-weight:bold;padding-right:17px;">Check No:</span> {{ $requestData['check_no'] ?? '' }} </P>
+                    <P style="font-size: 14px;margin: 0;  text-align:left; padding-left:109px;  margin-top:10px;font-family: Arial, Helvetica, sans-serif;font-weight:bold;"> <span
+                            style=" padding-left:10px;">Date:</span><b style="padding-left:30px;">{{ date('m/d/y',
                             strtotime($requestData['pay_date'])) }}</b> </P>
                 </div>
             </div>
@@ -209,9 +209,15 @@
                     <P
                         style="margin: 0px 0 0 0; font-size:  14px;text-transform:uppercase;font-family: Arial, Helvetica, sans-serif;">
                         {{ $requestData['emp_street_1'] }}</P>
+                        @if($requestData['emp_street_2']!='')
+                        <P
+                        style="margin: 0px 0 0 0; font-size:  14px;text-transform:uppercase;font-family: Arial, Helvetica, sans-serif;">
+                        {{ $requestData['emp_street_2'] }}</P>
+                        @endif
                     <p
                         style="margin: 0px 0 0 0;font-size: 14px;text-transform:uppercase;font-family: Arial, Helvetica, sans-serif;">
-                         {{ $requestData['emp_city'] }}, {{ $requestData['emp_state'] }} {{ $requestData['emp_zip_code'] }} </p>
+                         {{ $requestData['emp_city'] }}, {{ $requestData['emp_state'] }} {{
+                        $requestData['emp_zip_code'] }} </p>
                 </div>
             </div>
             <div
@@ -324,7 +330,7 @@
         </table>
         <table>
             <tr>
-                <td style="font-size:12px; font-weight:bold;padding-left:15px;">{{ $requestData['emp_name'] }} {{ $requestData['emp_street_1'] }} {{ $requestData['emp_city'] }}, {{ $requestData['emp_state'] }} {{ $requestData['emp_zip_code'] }} </td>
+                <td style="font-size:12px; font-weight:bold;padding-left:15px;text-transform:capitalize;">{{ $requestData['emp_name'] }} {{ $requestData['emp_street_1'] }}@if($requestData['emp_street_2']!='') {{ $requestData['emp_street_2'] }}@endif {{ $requestData['emp_city'] }}, {{ $requestData['emp_state'] }} {{ $requestData['emp_zip_code'] }} </td>
                 <td style="font-size:12px; font-weight:bold"><b>Pay Period: {{ date('m/d/y', strtotime($requestData['pay_start'])) }}</b></td>
                 <td style="font-size:12px; font-weight:bold"><b>{{ date('l m/d/y', strtotime($requestData['pay_end'])) }}</b></td>
             </tr>
