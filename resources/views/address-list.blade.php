@@ -2,16 +2,16 @@
     @foreach ($addressData as $key => $address)
 
         <tr style="border:1px solid #ddd;">
-            <th scope="row">{{ $addressData->firstItem() + $key }}</th>
-            <td>{{ucwords($address->name ?? '')}}</td>
+            <td scope="row">{{ $addressData->firstItem() + $key }}</td>
+            <td>{{$address->name ?? ''}}</td>
             <td>{{$address->address_1 ?? ''}}</td>
             <td>{{$address->address_2 ?? ''}}</td>
             <td>{{$address->city ?? ''}}</td>
             <td>{{$address->full_state_name ?? ''}}</td>
             <td>{{$address->zip_code ?? ''}}</td>
-            <td style="padding-right:0; padding-left:0;" ><img style="width:22px;"
+            <td style="padding-right:0; padding-left:0;" ><img class="editicon"
                     src="images/icons/edit-icon.png" class="btn-edit" data-record="{{ $address->id }}"></td>
-            <td style="padding-right:0; padding-left:0;"><img style="width:20px;"
+            <td style="padding-right:0; padding-left:0;"><img class="dlticon"
                     class="btn-delete-add" data-route="{{route('delete.address',$address->id)}}"
                     src="images/icons/del-icon.png"></td>
         </tr>
