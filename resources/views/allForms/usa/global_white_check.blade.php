@@ -440,11 +440,11 @@
                         </P>
                     </div>
                     <div style="width: 50%;float:right;">
-                        <h6 @if($requestData['address_2'] != '')style="text-align:left; left:80px; position: relative;  top:23px;font-weight:400;font-size: 12px; "@else style="text-align:left; left:80px; position: relative;  top:40px;font-weight:400;font-size: 12px;"@endif>{{ $requestData['check_no'] }} </h6>
-                        <h6 @if($requestData['address_2'] != '')style="font-size: 12px; text-align:left; bottom:4px; left:80px; position: relative; font-weight:400;"@else style="font-size: 12px; text-align:left; top:10px; left:80px; position: relative; font-weight:400;"@endif>{{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</h6>
+                        <h6 @if($requestData['address_2'] != '')style="text-align:left; left:80px; position: relative;  top:18px;font-weight:400;font-size: 14px; "@else style="text-align:left; left:80px; position: relative;  top:28px;font-weight:400;font-size: 13px;"@endif>{{ $requestData['check_no'] }} </h6>
+                        <h6 @if($requestData['address_2'] != '')style="font-size: 14px; text-align:left; bottom:17px; left:80px; position: relative; font-weight:400;"@else style="font-size: 13px; text-align:left; bottom:3px; left:80px; position: relative; font-weight:400;"@endif>{{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</h6>
                     </div>
                 </div>
-                <table @if($requestData['address_2'] != '')style="margin-top:-12px;" @else style="" @endif>
+                <table @if($requestData['address_2'] != '')style="position:relative; bottom:30px;" @else style="position:relative; bottom:15px;" @endif>
                     <tr>
                         <td style="width:10%;"></td>
                         <td

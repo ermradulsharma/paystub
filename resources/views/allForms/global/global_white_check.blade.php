@@ -119,23 +119,6 @@
         .bg-img {
             position: relative;
         }
-
-        .bg-img::before {
-            background-image: url("images/non.png");
-            background-size: contain;
-            background-repeat: no-repeat;
-            content: "";
-            top: 40px;
-            left: 100px;
-            right: 0px;
-            position: absolute;
-            z-index: -1;
-            max-width: 600px;
-            height: 100%;
-            margin: 0 auto;
-            width: 100%;
-        }
-
         .container {
             position: absolute;
             top: 0px;
@@ -188,6 +171,8 @@
 
 <body>
     <main class="bg-img2">
+        <img src="{{ public_path('images/form.svg') }}"
+            style="position: absolute; top: 75%; right:0px;left: 0px; width:106.50%;   z-index: -1;">
         @guest
             <div class="watermark"></div>
         @endguest
@@ -214,8 +199,8 @@
                         <tr>
                             <td
                                 style="font-size:18px; text-transform:uppercase;line-height:1;font-family: 'Arial', sans-serif;">
-                                {{ $requestData['address_1'] }}<br>{{ $requestData['city'] }}
-                                {{ $requestData['state'] }}.
+                                {{ $requestData['address_1'] }} {!! addressTwo($requestData,true) !!}<br>{{ $requestData['city'] }},
+                                {{ $requestData['state'] }}
                                 {{ $requestData['zip_code'] }}
                             </td>
                         </tr>
@@ -259,13 +244,18 @@
                         <br>
                     <table>
                         <tr>
-                            <td style="font-weight: bold; font-size:14px;text-transform: uppercase;font-family: Arial, Helvetica, sans-serif;">{{ $requestData['emp_name'] }}</td>
+                            <td style="font-weight: bold; font-size:14px;text-transform: capitalize;font-family: Arial, Helvetica, sans-serif;">{{ $requestData['emp_name'] }}</td>
                         </tr>
                         <tr>
-                            <td style="font-weight: bold;  text-transform: uppercase;font-family: Arial, Helvetica, sans-serif;font-size:14px;">{{ $requestData['emp_street_1'] }}</td>
+                            <td style="font-weight: bold;  text-transform: capitalize;font-family: Arial, Helvetica, sans-serif;font-size:14px;">{{ $requestData['emp_street_1'] }}</td>
                         </tr>
+                        @if($requestData['emp_street_2'] != '')
                         <tr>
-                            <td style="font-weight: bold;  text-transform: uppercase;font-family: Arial, Helvetica, sans-serif;font-size:14px;">{{ $requestData['emp_city'] }}, {{ $requestData['emp_state'] }} {{ $requestData['emp_zip_code'] }} </td>
+                            <td style="font-weight: bold;  text-transform: capitalize;font-family: Arial, Helvetica, sans-serif;font-size:14px;">{{ $requestData['emp_street_2'] }}</td>
+                        </tr>
+                        @endif
+                        <tr>
+                            <td style="font-weight: bold;  text-transform: capitalize;font-family: Arial, Helvetica, sans-serif;font-size:14px;">{{ $requestData['emp_city'] }}, {{ $requestData['emp_state'] }} {{ $requestData['emp_zip_code'] }} </td>
                         </tr>
                     </table>
                 </div>
@@ -433,45 +423,38 @@
             </div>
         </section>
 
+
         <section class="bg-img">
-            <div class="container" style=" margin-top:10px; width:100%; padding:0px 20px;">
+            <div class="container" style=" margin-top:100px; width:100%; padding:0px 20px;">
                 <div class="row" style="display: flex;justify-content: space-between;padding: 0px 14px;">
-                    <div style="width: 50%; float:left; position: relative; top:45px; right:0px; left:70px;">
+                    <div class="global-address" @if($requestData['address_2'] != '')style="width: 50%; float:left; position: relative; top:15px; right:0px; left:60px;" @else style="width: 50%; float:left; position: relative; top:30px; right:0px; left:60px;"@endif>
                         <p
-                            style="font-size:18px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:400;">
+                            style="font-size:15px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:400;">
                             {{ $requestData['cname'] }}</p>
                         <p
-                            style="font-size:18px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:400;">
-                            {{ $requestData['address_1'] }} </p>
-                        {{-- <P style="font-size:18px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:400;">{{ $requestData['address_2'] }} </P> --}}
+                            style="font-size:15px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:400;">{{ $requestData['address_1'] }}</p>
+                            @if($requestData['address_2'] != '')<P style="font-size:15px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:400;">{{ $requestData['address_2'] }} </P>@endif
                         <P
-                            style="font-size:18px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:400;">
+                            style="font-size:15px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:400;">
                             {{ $requestData['city'] }}, {{ $requestData['state'] }} {{ $requestData['zip_code'] }}
                         </P>
                     </div>
-                    <div style="width: 50%;float:right;text-align:right;">
-                        <h6
-                            style="font-size: 14px; margin-bottom: 2px; text-align:center; left:40px; position: relative;  top:31px;font-weight:400;">
-                            <span>0000000000</span>
-                        </h6>
-                        <h6
-                            style="font-size: 14px; text-align:center; left:40px; position: relative; font-weight:400;">
-                            <span>{{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</span>
-                        </h6>
-                        {{-- <p style="text-align:center; position: relative; left:40px; top:17px;font-size: 14px;"> <span style="font-weight:800; "></span><span style="">{{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</span> </p> --}}
+                    <div style="width: 50%;float:right;">
+                        <h6 @if($requestData['address_2'] != '')style="text-align:left; left:80px; position: relative;  top:18px;font-weight:400;font-size: 14px; "@else style="text-align:left; left:80px; position: relative;  top:28px;font-weight:400;font-size: 13px;"@endif>{{ $requestData['check_no'] }} </h6>
+                        <h6 @if($requestData['address_2'] != '')style="font-size: 14px; text-align:left; bottom:17px; left:80px; position: relative; font-weight:400;"@else style="font-size: 13px; text-align:left; bottom:3px; left:80px; position: relative; font-weight:400;"@endif>{{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</h6>
                     </div>
                 </div>
-                <table>
+                <table @if($requestData['address_2'] != '')style="position:relative; bottom:30px;" @else style="position:relative; bottom:15px;" @endif>
                     <tr>
                         <td style="width:10%;"></td>
                         <td
-                            style="font-size:15px; padding-top:40px; width:50%;padding-left:10px; font-weight:bold;font-family: Arial, Helvetica, sans-serif;text-transform:capitalize;">
+                            style="font-size:15px; padding-top:40px; width:30%;padding-left:5px; font-weight:bold;font-family: Arial, Helvetica, sans-serif;text-transform:capitalize;">
                             {{ $requestData['emp_name'] }}</td>
                         <td
-                            style="font-size:15px; width:23%;padding-top:40px !important; text-align:left;font-family: Arial, Helvetica, sans-serif;padding-left:18px;">
+                            style="font-size:15px; width:40%;padding-top:40px !important; text-align:left;padding-left:60px;font-family: Arial, Helvetica, sans-serif;">
                             XXXXX<b>{{ $requestData['account_number_last_4'] }}</b></td>
                         <td
-                            style="font-size:15px; width:17%;padding-top:40px; text-align:right; padding-right:25px;font-family: Arial, Helvetica, sans-serif;">
+                            style="font-size:15px; width:20%;padding-top:40px; text-align:left;padding-left:37px;font-family: Arial, Helvetica, sans-serif;">
                             <b><span
                                     style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['total_net_pay'], 2) }}</b>
                         </td>
@@ -480,6 +463,10 @@
             </div>
         </section>
     </main>
+    <script>
+
+
+    </script>
 </body>
 
 </html>
