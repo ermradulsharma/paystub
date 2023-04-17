@@ -132,9 +132,29 @@ $("#userNameForm").on("submit", function () {
     return false;
 });
 
+// Address autofill affter select from dropdown on add and edit page
+$(document).ready(function() {
+    $("#employerAddress").change(function() {
+        $('#cname').val($('option:selected', this).data('name'))
+        $('#address_1').val($('option:selected', this).data('address1'))
+        $('#address_2').val($('option:selected', this).data('address2'))
+        $('#city').val($('option:selected', this).data('city'))
+        $('#state').val($('option:selected', this).data('state'))
+        $('#zip_code').val($('option:selected', this).data('zip'))
+    });
+
+    $("#employeeAddress").change(function() {
+        $('#emp_name').val($('option:selected', this).data('name'))
+        $('#emp_street_1').val($('option:selected', this).data('address1'))
+        $('#emp_street_2').val($('option:selected', this).data('address2'))
+        $('#emp_city').val($('option:selected', this).data('city'))
+        $('#emp_state').val($('option:selected', this).data('state'))
+        $('#emp_zip_code').val($('option:selected', this).data('zip'))
+    });
+});
+
 // function addres dropdown data fill
 function addAddressDropdown(){
-    // console.log('check-',baseUrl+'address/get/options');
     $.ajax({
         url: baseUrl+'address/get/options',
         headers: {

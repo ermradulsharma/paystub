@@ -142,9 +142,10 @@ function getCurrency(float $number)
         } else $str[] = null;
     }
     $Rupees = implode('', array_reverse($str));
-    // $cents = ($decimal > 0) ? "." . ($words[$decimal / 10] . " " . $words[$decimal % 10]) . ' Cents' : '';
-    $cents = ($decimal > 0) ? ($words[floor($decimal / 10) * 10] . " " . $words[$decimal % 10]) . ' Cents' : '';
-    return ($Rupees ? $Rupees . 'Dollars ' : '') . 'And ' . $cents;
+
+    // $cents = ($decimal > 0) ? ($words[floor($decimal / 10) * 10] . " " . $words[$decimal % 10]) . ' Cents' : '';
+    $cents = ($decimal > 0 && $decimal < 21 ) ? ($words[$decimal]) . ' Cents' : ($words[floor($decimal / 10) * 10] . " " . $words[$decimal % 10]) . ' Cents';
+    return ($Rupees ? $Rupees . 'Dollars ' : '') . '<span style="text-transform: lowercase !important;">and </span>' . $cents;
 }
 
 function addressTwo($obj, $lineBreak = false, $comma = false)

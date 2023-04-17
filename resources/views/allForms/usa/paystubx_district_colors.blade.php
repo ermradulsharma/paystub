@@ -293,7 +293,7 @@
                 <table style="width:100%">
                     <tr>
                         <td style="text-align:left; padding-left:5px; font-size:17px; font-weight:400; text-transform: capitalize; width:77%;"
-                            rowspan="2">Pay {{ $word }}</td>
+                            rowspan="2">Pay {!! $word !!}</td>
                         <th style="font-weight:400;" class="earning">{{ $requestData['currency'] }}
                             {{ number_format($requestData['total_net_pay'], 2) }}</th>
                     </tr>
