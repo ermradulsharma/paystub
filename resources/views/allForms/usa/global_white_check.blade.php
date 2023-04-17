@@ -443,7 +443,7 @@
                             style="font-size:17px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:400;">
                             {{ $requestData['cname'] }}</p>
                         <p
-                            style="font-size:17px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:400;">{{ $requestData['address_1'] }} {!! addressTwo($requestData,true) !!}</p>
+                            style="font-size:17px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:400;">{{ $requestData['address_1'] }}</p>
                             @if($requestData['address_2'] != '')<P style="font-size:17px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:400;">{{ $requestData['address_2'] }} </P>@endif
                         <P
                             style="font-size:17px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:400;">
