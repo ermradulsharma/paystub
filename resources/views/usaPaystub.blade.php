@@ -73,16 +73,12 @@
                                     height="30px;">
                                 <select id="employerAddress" class="address_book add_address address" data-type="employer">
                                     <option data-name="" value="">Select Address</option>
-                                    {{-- @auth --}}
-                                    {{-- @if ($employerList->count() > 0) --}}
                                     @foreach ($employerList ?? [] as $key => $employer)
                                         <option data-name="{{ $employer->name }}" data-address1="{{ $employer->address_1 }}"
                                             data-address2="{{ $employer->address_2 }}" data-city="{{ $employer->city }}"
                                             data-state="{{ $employer->state }}" data-zip="{{ $employer->zip_code }}"
                                             value="{{ $employer->name }}">{{ $employer->name }}</option>
                                     @endforeach
-                                    {{-- @endif --}}
-                                    {{-- @endauth --}}
                                     <option data-name="" value="add_address">Add New Address</option>
                                 </select>
                             </div>
@@ -1197,28 +1193,7 @@
             });
         });
     </script>
-    <script>
-        $(document).ready(function() {
-            $("#employerAddress").change(function() {
-                $('#cname').val($('option:selected', this).data('name'))
-                $('#address_1').val($('option:selected', this).data('address1'))
-                $('#address_2').val($('option:selected', this).data('address2'))
-                $('#city').val($('option:selected', this).data('city'))
-                $('#state').val($('option:selected', this).data('state'))
-                $('#zip_code').val($('option:selected', this).data('zip'))
-            });
 
-            $("#employeeAddress").change(function() {
-                $('#emp_name').val($('option:selected', this).data('name'))
-                $('#emp_street_1').val($('option:selected', this).data('address1'))
-                $('#emp_street_2').val($('option:selected', this).data('address2'))
-                $('#emp_city').val($('option:selected', this).data('city'))
-                $('#emp_state').val($('option:selected', this).data('state'))
-                $('#emp_zip_code').val($('option:selected', this).data('zip'))
-            });
-
-        });
-    </script>
     <script src="{{ asset('user') }}/js/calculations.js"></script>
     <script src="{{ asset('user') }}/js/javaformula.js"></script>
     <script src="{{ asset('user') }}/js/federal.js"></script>
