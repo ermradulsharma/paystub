@@ -124,7 +124,7 @@
                                     {{ $earn }}</td>
                                 <td class="bold"style="font-size:15px;">{{ $requestData['hours'][$key] }}</td>
                                 <td class="bold" style="font-size:15px;">
-                                    {{ number_format($requestData['rate'][$key], 2) }}</td>
+                                    @if($requestData['rate'][$key] != 0.00) {{ number_format($requestData['rate'][$key], 2) ?? '' }}@endif</td>
                                 <td style="" style="font-size:15px;" class="bold">
                                     {{ number_format($requestData['total'][$key], 2) }}</td>
                             </tr>

@@ -311,7 +311,7 @@ $(document).ready(function () {
         $(".removeData").parent().removeClass("margintop-5");
         $('.time_period').val('weekly');
         $('.auto_calculate').val('on');
-        $("#earning_000").val("Regular");
+        $(".earnbtn_0").val("Regular");
         var date = new Date();
         var date_1 = moment(date).format("MM/DD/YYYY");
         $(".pay_start").val(date_1);
@@ -334,7 +334,7 @@ $(document).ready(function () {
         dayCalculate();
         $(".rate").val("");
         $(".hours").val("");
-        $("#earning_000").val("Salary");
+        $(".earnbtn_0").val("Salary");
         $(".removeData").attr("hidden", true);
         $(".removeData").parent().addClass("margintop-5");
         is_empty();

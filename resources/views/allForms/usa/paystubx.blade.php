@@ -256,7 +256,7 @@
                             @foreach ($requestData['earning'] as $key => $earn)
                             <tr>
                                 <td style="text-align: left;">{{ $earn }}</td>
-                                <td>{{ number_format($requestData['rate'][$key],2) }}</td>
+                                <td>{{ number_format($requestData['rate'][$key],2) ?? ''}}</td>
                                 <td style="text-align: center;">{{ number_format($requestData['hours'][$key],2) }}</td>
                                 <td> {{ number_format($requestData['total'][$key],2) }} </td>
                                 <td> {{ number_format($requestData['ytd_total'][$key],2) }} </td>

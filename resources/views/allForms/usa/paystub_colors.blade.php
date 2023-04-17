@@ -257,7 +257,7 @@ $petani = DB::table('templates')->pluck('color_code');
                             }}</td>
                         <td class="heading2" style="color: #000; font-family: DejaVu Sans, sans-serif;"><span
                                 style="font-family: 'DejaVu Sans', sans-serif; padding-right:1px;">{{
-                                $requestData['currency'] }}</span>{{ number_format($requestData['rate'][$key], 2) }}
+                                $requestData['currency'] }}</span>@if($requestData['rate'][$key] != 0.00) {{ number_format($requestData['rate'][$key], 2) ?? '' }}@endif
                         </td>
                         <td class="heading2" style="color: #000;text-align:center; padding-left:5px;"> {{
                             number_format($requestData['hours'][$key], 2) }}</td>

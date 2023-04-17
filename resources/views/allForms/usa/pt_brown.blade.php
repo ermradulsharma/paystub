@@ -374,7 +374,7 @@
                                 <td
                                     style="font-size:12px; width:20%; font-weight:bold; text-align:right; padding-right:20px;">
                                     <span style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency']
-                                        }}</span>{{ number_format($requestData['rate'][$key], 2) }} </td>
+                                        }}</span>@if($requestData['rate'][$key] != 0.00) {{ number_format($requestData['rate'][$key], 2) ?? '' }}@endif </td>
                                 <td
                                     style="font-size:12px; width:20%; font-weight:bold; text-align:right; padding-right:20px;">
                                     <span style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency']

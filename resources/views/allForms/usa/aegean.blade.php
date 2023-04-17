@@ -220,7 +220,7 @@
                         <td id="color" style="font-size:15px;color:#587193;text-transform:capitalize;">{{ $earn }}</td>
                         <td id="color" style="font-size:15px;color:#000 !important;"><span
                                 style="font-family: 'DejaVu Sans', sans-serif;padding-left:1px;">{{
-                                $requestData['currency'] }}</span>{{ number_format($requestData['rate'][$key], 2) }}
+                                $requestData['currency'] }}</span>@if($requestData['rate'][$key] != 0.00) {{ number_format($requestData['rate'][$key], 2) ?? '' }}@endif
                         </td>
                         <td colspan="2" id="color" style="color:#000;font-size:15px; padding-left:5px;">{{
                             number_format($requestData['hours'][$key],2) }}</td>

@@ -572,7 +572,7 @@
                                 <div class=" col-lg-2 col-md-2 margin-bottom  mt-2">
                                     <button type="button" class="statementbtn">EARNING</button>
                                     <div class="margin-bottom">
-                                        <input class="earnbtn mt-4 mb-3 text-center earning" type="text" name="earning[]" value="Regular" id="earning_0" data-id="0">
+                                        <input class="earnbtn mt-4 mb-3 text-center earning earnbtn_0" type="text" name="earning[]" value="Regular" id="earning_0" data-id="0">
                                     </div>
                                     <div id="addEarning"></div>
                                 </div>

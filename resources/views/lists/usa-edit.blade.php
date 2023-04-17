@@ -643,7 +643,7 @@
                                     <button type="button" class="statementbtn">EARNING</button>
                                     @foreach ($invoice->earning ?? [] as $key => $earning)
                                         <div class="margin-bottom mb-3">
-                                            <input class="earnbtn {{ $key == 0 ? 'mt-4' : '' }} text-center"
+                                            <input class="earnbtn {{ $key == 0 ? 'mt-4' : '' }} text-center earnbtn_0"
                                                 type="text" name="earning[]" value="{{ $earning ?? null }}"
                                                 id="earning_00{{ $key }}" data-id="00{{ $key }}">
                                         </div>

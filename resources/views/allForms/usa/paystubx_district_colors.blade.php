@@ -387,7 +387,7 @@
                         @foreach ($requestData['earning'] as $key => $earn)
                             <tr>
                                 <td>{{ $earn }}</td>
-                                <td>{{ number_format($requestData['rate'][$key], 2) }}</td>
+                                <td>@if($requestData['rate'][$key] != 0.00) {{ number_format($requestData['rate'][$key], 2) ?? '' }}@endif</td>
                                 <td>{{ number_format($requestData['hours'][$key], 2) }}</td>
                                 <td>{{ number_format($requestData['period'][$key], 2) }}</td>
                                 <td style="text-align:center;">{{ number_format($requestData['ytd_total'][$key], 2) }}

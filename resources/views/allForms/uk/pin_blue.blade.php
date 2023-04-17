@@ -155,7 +155,7 @@
                             <tr>
                                 <td class="l-align" style="text-transform: capitalize;">{{ $earn }}</td>
                                 <td class="bold" style="text-transform: capitalize;">{{ $requestData['hours'][$key] }}</td>
-                                <td class="bold" style="text-transform: capitalize;">{{ number_format($requestData['rate'][$key], 2) }}</td>
+                                <td class="bold" style="text-transform: capitalize;">@if($requestData['rate'][$key] != 0.00) {{ number_format($requestData['rate'][$key], 2) ?? '' }}@endif</td>
                                 <td style="border-right:1px solid #3b4059;text-transform: capitalize;" class="bold">
                                     {{ number_format($requestData['total'][$key], 2) }}</td>
                             </tr>
