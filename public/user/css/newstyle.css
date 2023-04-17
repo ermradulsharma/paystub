@@ -1,7 +1,7 @@
 .user-profile .container {
     box-shadow: 0 0 8px rgba(0, 0, 0, .14);
     max-width: 1400px;
-    margin: 0 auto;
+    margin: 0 auto 20px;
     height: 95vh;
 }
 
@@ -56,6 +56,13 @@ i.fa.fa-envelope.profile-icon {
     border-radius: 50%;
     display: flex;
     justify-content: center;
+}
+.d-flex.input-left {
+    width: calc(100% - 30px);
+    justify-content: start;
+}
+.d-flex.trash-account {
+    justify-content: start;
 }
 
 .profile-outer {
