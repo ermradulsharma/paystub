@@ -141,7 +141,7 @@ function getCurrency(float $number)
     }
     $Rupees = implode('', array_reverse($str));
     // $cents = ($decimal > 0) ? "." . ($words[$decimal / 10] . " " . $words[$decimal % 10]) . ' Cents' : '';
-    $cents = ($decimal > 0) ? ($words[$decimal / 10] . " " . $words[$decimal % 10]) . ' Cents' : '';
+    $cents = ($decimal > 0) ? ($words[floor($decimal / 10)*10] . " " . $words[$decimal % 10]) . ' Cents' : '';
     return ($Rupees ? $Rupees . 'Dollars ' : '') .'And '.$cents;
 
 }

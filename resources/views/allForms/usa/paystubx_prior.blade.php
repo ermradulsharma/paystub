@@ -159,8 +159,7 @@
                 // $digit = Terbilang::make((int) $requestData['total_net_pay']);
                 // $word = $digit;
                 $word = getCurrency((int)$requestData['total_net_pay']);
-            @endphp
-            @php
+
                 $n = $requestData['total_net_pay'];
                 [$whole, $decimal] = sscanf($n, '%d.%d');
             @endphp
@@ -176,7 +175,7 @@
             </table>
             <table style="border-bottom:1.5px solid black; width:88%; margin-top:0px;">
                 <tr>
-                    <td style="width:100%;font-size:18px; text-align:center; margin-top:0px; text-transform: capitalize;  font-family: 'Times New Roman', Times, serif;"> {{ $word }} and {{ (int) $decimal }}/100</td>
+                    <td style="width:100%;font-size:18px; text-align:center; margin-top:0px; text-transform: capitalize;  font-family: 'Times New Roman', Times, serif;"> {{ $word }} {{ (int) $decimal }}/100</td>
                 </tr>
             </table>
         </table>
