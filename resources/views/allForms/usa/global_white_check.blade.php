@@ -443,23 +443,16 @@
                             style="font-size:17px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:400;">
                             {{ $requestData['cname'] }}</p>
                         <p
-                            style="font-size:17px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:400;">
-                            {{ $requestData['address_1'] }}</p>
-                        {{-- <P style="font-size:17px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:400;">{{ $requestData['address_2'] }} </P> --}}
+                            style="font-size:17px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:400;">{{ $requestData['address_1'] }}</p>
+                            @if($requestData['address_2'] != '')<P style="font-size:17px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:400;">{{ $requestData['address_2'] }} </P>@endif
                         <P
                             style="font-size:17px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:400;">
                             {{ $requestData['city'] }}, {{ $requestData['state'] }} {{ $requestData['zip_code'] }}
                         </P>
                     </div>
                     <div style="width: 50%;float:right;">
-                        <h6
-                            style="font-size: 14px;  text-align:left; left:80px; position: relative;  top:27px;font-weight:400;">
-                            <span>{{ $requestData['check_no'] }}</span>
-                        </h6>
-                        <h6
-                            style="font-size: 14px; text-align:left; left:80px; position: relative; font-weight:400; margin-top:-5px;">
-                            <span>{{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</span>
-                        </h6>
+                        <h6 tyle="font-size: 14px;  text-align:left; left:80px; position: relative;  top:27px;font-weight:400;"><span>{{ $requestData['check_no'] }}</span> </h6>
+                        <h6 style="font-size: 14px; text-align:left; left:80px; position: relative; font-weight:400; margin-top:-5px;"><span>{{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</span> </h6>
                         {{-- <p style="text-align:center; position: relative; left:40px; top:17px;font-size: 14px;"> <span style="font-weight:800; "></span><span style="">{{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</span> </p> --}}
                     </div>
                 </div>
