@@ -260,7 +260,7 @@
 
                         <p
                             style="padding: 0; margin:0;font-size:22px; font-weight:400;font-family: Arial, Helvetica, sans-serif;line-height:1;">
-                            {{ $requestData['address_1'] }}{!! addressTwo($requestData,true) !!}<br>
+                            {{ $requestData['address_1'] }}<br>@if($requestData['address_2']!='') {{ $requestData['address_2'] }}<br>@endif
                             {{ $requestData['city'] }}, {{ $requestData['state'] }} {{ $requestData['zip_code'] }}</p>
                     </td>
 
@@ -293,7 +293,7 @@
                 <table style="width:100%">
                     <tr>
                         <td style="text-align:left; padding-left:5px; font-size:17px; font-weight:400; text-transform: capitalize; width:77%;"
-                            rowspan="2">Pay {{ $word }}</td>
+                            rowspan="2">Pay {!! $word !!}</td>
                         <th style="font-weight:400;" class="earning">{{ $requestData['currency'] }}
                             {{ number_format($requestData['total_net_pay'], 2) }}</th>
                     </tr>
@@ -311,7 +311,7 @@
                         </td>
                         <td style="text-transform: capitalize;font-size:20px; color:#1a1a1a;">
                             <p style="font-family: Arial, Helvetica, sans-serif;">{{ $requestData['emp_name'] }} <br>
-                                {{ $requestData['emp_street_1'] }}{!! empAddressTwo($requestData,true) !!}<br>{{ $requestData['emp_city'] }},
+                                {{ $requestData['emp_street_1'] }}<br>@if($requestData['emp_street_2']!='') {{ $requestData['emp_street_2'] }}<br>@endif{{ $requestData['emp_city'] }},
                                 {{ $requestData['emp_state'] }} {{ $requestData['emp_zip_code'] }} </p>
                         </td>
                     </tr>
@@ -329,7 +329,7 @@
                             <tr>
                                 <td colspan="4" class="address"
                                     style="padding-left: 11px; text-transform:capitalize;font-family: Arial, Helvetica, sans-serif;">
-                                    {{ $requestData['cname'] }} <br> {{ $requestData['address_1'] }}{!! addressTwo($requestData,false,true) !!}
+                                    {{ $requestData['cname'] }} <br> {{ $requestData['address_1'] }}<br>@if($requestData['address_2']!='') {{ $requestData['address_2'] }}<br>@endif
                                     {{ $requestData['city'] }}, {{ $requestData['state'] }}
                                     {{ $requestData['zip_code'] }} @if ($requestData['tel'] != "")
                                         <br> {{ $requestData['tel'] }}
@@ -362,7 +362,7 @@
 
                     </tr>
                     <tr>
-                        <td style="text-transform:capitalize;padding:10px 0px;">{{ $requestData['emp_name'] }}<br>{{ $requestData['emp_street_1'] }}{!! empAddressTwo($requestData,true) !!}<br>{{ $requestData['emp_city'] }}, {{ $requestData['emp_zip_code'] }} </td>
+                        <td style="text-transform:capitalize;padding:10px 0px;">{{ $requestData['emp_name'] }}<br>{{ $requestData['emp_street_1'] }}<br>@if($requestData['emp_street_2']!='') {{ $requestData['emp_street_2'] }}<br>@endif{{ $requestData['emp_city'] }}, {{ $requestData['emp_zip_code'] }} </td>
                         <td style="vertical-align:top; padding:10px 0px;"> XXX-XX-{{$requestData['emp_ssn']}}</td>
                         <td style="vertical-align:top; padding:10px 0px;text-align:center;"> {{ $requestData['emp_id'] }}</td>
                         <td style="vertical-align:top; padding:10px 0px;">

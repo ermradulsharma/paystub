@@ -154,7 +154,7 @@
             <div class="column1">
                 <table style="width: 100%; margin:0px auto 0px 0px;">
                     <tr>
-                        <td><img style="max-width: 70px;" src="http://44.202.105.74/images/barode.jpeg"></td>
+                        <td><img style="max-width: 70px;" src="images/barode.jpeg"></td>
                     </tr>
                 </table>
             </div>
@@ -185,7 +185,7 @@
 
                         </td>
                         <td style="font-size: 15px; text-transform: uppercase;padding:0px; font-weight:bold; font-family: 'Arial, Helvetica', sans-serif;padding-bottom:30px;">
-                            {{ $requestData['emp_name'] }}<br>{{ $requestData['emp_street_1'] }}  {!! empAddressTwo($requestData,true) !!}<br>
+                            {{ $requestData['emp_name'] }}<br>{{ $requestData['emp_street_1'] }} @if($requestData['emp_street_2'] != ''){{ $requestData['emp_street_2'] }} @endif<br>
                             {{ $requestData['emp_city'] }} {{ $requestData['emp_state'] }}.
                             {{ $requestData['emp_zip_code'] }}
 
@@ -201,13 +201,13 @@
                     </tr>
                     <tr>
                         <td></td>
-                        <td style="text-transform: uppercase;font-size:16px;"><B>{{ $requestData['address_1'] }} {!! addressTwo($requestData,true) !!}</B> </td>
+                        <td style="text-transform: uppercase;font-size:16px;"><B>{{ $requestData['address_1'] }}</B> </td>
                         <td style="color: #555; font-size:15px;">PEPORTING PERIOD: </td>
                     </tr>
                     <tr>
                         <td></td>
-                        <td style="text-transform: uppercase;font-size:16px; "> <b>{{ $requestData['city'] }}, {{ $requestData['state'] }} {{ $requestData['zip_code'] }}</b></td>
-                        <td style="border-bottom: 2px solid #000; "> <b style="font-size:15px;">{{ date('m/d/Y', strtotime($requestData['pay_start'])) }}&nbsp; &nbsp; &nbsp; - &nbsp; &nbsp; &nbsp; {{ date('m/d/Y', strtotime($requestData['pay_end'])) }}</b></td>
+                        <td style="text-transform: uppercase;font-size:16px; ">@if($requestData['address_2']!='')<B>{{ $requestData['address_2'] }}</B><br>@endif<b>{{ $requestData['city'] }}, {{ $requestData['state'] }} {{ $requestData['zip_code'] }}</b></td>
+                        <td style=""> <b  @if($requestData['address_2']!='') style="font-size:15px;position: relative; bottom:10px;border-bottom: 2px solid #000;"@else style="font-size:15px;border-bottom: 2px solid #000;"@endif>{{ date('m/d/Y', strtotime($requestData['pay_start'])) }}&nbsp; &nbsp; &nbsp; - &nbsp; &nbsp; &nbsp; {{ date('m/d/Y', strtotime($requestData['pay_end'])) }}</b></td>
                     </tr>
                     <tr>
                         <td colspan="7"></td>
@@ -354,11 +354,14 @@
             <table style="width:100%; padding-bottom:0px;">
                 <tr>
                     <td>
-                        <table style="width:100%; padding-bottom:52px;">
+                        <table style="width:100%; @if($requestData['address_2']!='') padding-bottom:50px; @else padding-bottom:52px; @endif">
                             <tr>
                                 <td style="padding-top:20px;">
                                     <p style="font-size: 14px; margin: 0;color:black; font-family: 'Arial Rounded MT Bold', sans-serif; text-transform:capitalize; font-weight:bold;"> {{ $requestData['cname'] }}</p>
-                                    <p style="font-size: 12px; margin: 0;color:black; font-family: 'Arial Rounded MT Bold', sans-serif; text-transform:uppercase; "> {{ $requestData['address_1'] }} {!! addressTwo($requestData,true) !!}</p>
+                                    <p style="font-size: 12px; margin: 0;color:black; font-family: 'Arial Rounded MT Bold', sans-serif; text-transform:uppercase; "> {{ $requestData['address_1'] }}</p>
+                                    @if($requestData['address_2']!='')
+                                    <p style="font-size: 12px; margin: 0;color:black; font-family: 'Arial Rounded MT Bold', sans-serif; text-transform:uppercase; "> {{ $requestData['address_2'] }}</p>
+                                    @endif
                                     <P style="font-size: 12px; margin: 0;color:black; font-family: 'Arial Rounded MT Bold', sans-serif; text-transform:uppercase; "> {{ $requestData['city'] }} {{ $requestData['state'] }}. {{ $requestData['zip_code'] }}  </P>
                                 </td>
                                 <td style="padding-top:10px; text-align:right; padding-right:15px; ">

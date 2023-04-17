@@ -177,12 +177,12 @@
                     <tr>
                         <td
                             style="font-size:14px; text-transform:uppercase;line-height:1.5;font-family: 'Arial', sans-serif;">
-                            {{ $requestData['address_1'] }}{!! addressTwo($requestData,true) !!}<br>{{ $requestData['city'] }} {{ $requestData['state'] }}.
+                            {{ $requestData['address_1'] }}<br>@if($requestData['address_2']!='') {{ $requestData['address_2'] }}<br>@endif{{ $requestData['city'] }} {{ $requestData['state'] }}.
                             {{ $requestData['zip_code'] }}<br>USA
                         </td>
                     </tr>
                 </table>
-                <table style="position: relative; top:30px;">
+                <table style="position: relative; @if($requestData['address_2']!='') top:15px; @else top:30px; @endif ">
                     <tr>
                         <td
                             style="font-size: 15px; line-height:1.2; text-transform: capitalize;font-family: 'Arial', sans-serif;">
@@ -233,7 +233,7 @@
                     </tr>
                     <tr>
                         <td style="text-transform: uppercase;font-family: Arial, Helvetica, sans-serif;font-size:14px;">
-                            {{ $requestData['emp_street_1'] }} {!! empAddressTwo($requestData,true) !!}</td>
+                            {{ $requestData['emp_street_1'] }}</td>
                     </tr>
                     <tr>
                         <td style="text-transform: uppercase;font-family: Arial, Helvetica, sans-serif;font-size:14px;">
@@ -252,7 +252,7 @@
                 <div class="column1">
                     <table style="width: 100%;">
                         <img src="{{ public_path('images/lines.svg') }}"
-                            style="position: absolute; top: 29%; right:0px;left: 13%;  z-index: -1; width:51%; height:44%;">
+                            style="position: absolute; @if($requestData['address_2']!='') top: 30%; @else top: 29%; @endif  right:0px;left: 13%;  z-index: -1; width:51%; height:44%;">
                         <tr>
                             <th
                                 style="width:20%;font-size:14px;font-family: Arial, Helvetica, sans-serif; font-weight:bold;">
@@ -311,7 +311,7 @@
                 <div class="column2">
                     <table style="width: 100%;">
                         <img src="{{ public_path('images/lines.svg') }}"
-                            style="position: absolute; top: 29%; right:0px;left: 0;  z-index: -1; width:35%; height:44%;">
+                            style="position: absolute; @if($requestData['address_2']!='') top: 30%; @else top: 29%; @endif right:0px;left: 0;  z-index: -1; width:35%; height:44%;">
                         <tr style="border-bottom: 2px solid black; ">
                             <th style="font-family: Arial, Helvetica, sans-serif;">Important Notes</th>
                         </tr>
@@ -397,7 +397,7 @@
             <table style="width:100%; ">
                 <tr>
                     <td>
-                        <table style="width:100%; padding-bottom:58px;">
+                        <table style="width:100%; @if($requestData['address_2']!='') padding-bottom:50px; @else padding-bottom:58px; @endif">
                             <tr>
                                 <td style="">
                                     <p
@@ -405,7 +405,12 @@
                                         {{ $requestData['cname'] }}</p>
                                     <p
                                         style="font-size: 12px; margin: 0;color:black; font-family: 'Arial Rounded MT Bold', sans-serif; text-transform:uppercase; font-weight:400;">
-                                        {{ $requestData['address_1'] }}{!! addressTwo($requestData,true) !!}</p>
+                                        {{ $requestData['address_1'] }}</p>
+                                        @if($requestData['address_2']!='')
+                                        <p
+                                        style="font-size: 12px; margin: 0;color:black;  font-family: 'Arial Rounded MT Bold', sans-serif; text-transform:uppercase;">
+                                        {{ $requestData['address_2'] }}</p>
+                                        @endif
                                     <P
                                         style="font-size: 12px; margin: 0;color:black; font-family: 'Arial Rounded MT Bold', sans-serif; text-transform:uppercase; font-weight:400;">
                                         {{ $requestData['city'] }} {{ $requestData['state'] }}.
@@ -416,7 +421,7 @@
                                         style="font-size: 14px; margin-bottom: 5px; font-family: Arial, Helvetica, sans-serif; font-weight: 400">
                                         <span>00000{{ $requestData['advice_number'] }}</span></p>
                                     <p
-                                        style="font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: 400;margin-top:-1px;">
+                                        style="font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: 400; position:relative; bottom:5px;">
                                         {{ date('m/d/Y', strtotime($requestData['pay_date'])) }} </p>
                                 </td>
                             </tr>

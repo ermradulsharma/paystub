@@ -201,29 +201,30 @@ $petani = DB::table('templates')->pluck('color_code');
             <table>
                 <tr>
                     <td
-                        style="padding-top:0px; padding-bottom:0; font-size:30px; text-transform:capitalize; font-family: 'Arial', sans-serif; font-weight:bold;">
-                        {{ $requestData['cname'] }} </td>
+                        style="padding-top:0px; padding-bottom:0; font-size:25px; text-transform:capitalize;font-family: Arial, Helvetica, sans-serif; font-weight:bold ">
+                        {{ $requestData['cname'] }}
+                    </td>
                 </tr>
                 <tr>
                     <td class="address"
-                        style="font-size:20px; text-transform:uppercase; font-weight:400; line-height:1.2; color:#000;letter-spacing:-0.5px; padding-top:0; padding-bottom:0; font-family: 'Arial', sans-serif;">
-                        {{ $requestData['address_1'] }}{!! addressTwo($requestData,true) !!}<br> {{ $requestData['city'] }} {{ $requestData['state'] }}. {{
+                        style="font-size:18px; text-transform:uppercase; line-height:1.4; color:#000;  padding-top:0; padding-bottom:0;  font-family: 'Arial Rounded MT Bold', sans-serif;">
+                        {{ $requestData['address_1'] }}<br>@if($requestData['address_2']!='') {{ $requestData['address_2'] }}<br>@endif  {{ $requestData['city'] }} {{ $requestData['state'] }}. {{
                         $requestData['zip_code'] }}<br> USA</td>
-                    <td style=" font-size:20px; line-height:1.9; vertical-align: center; font-family: 'Arial', sans-serif; font-weight:bold;"
+                    <td style=" font-size:20px;font-family: Arial, Helvetica, sans-serif;  font-weight:bold;color:#010202;"
                         class="earning">Earnings Statement</td>
                 </tr>
                 <tr>
                     <td></td>
-                    <td style="">
+                    <td>
                         <p class="earning"
-                            style="font-size:13px; margin-top:-40px;  font-family: 'Arial', sans-serif; padding-top:5px; line-height:1.5;  ">
-                            Pay Period: {{ date('M d, Y', strtotime($requestData['pay_start'])) }} to {{ date('M d, Y',
-                            strtotime($requestData['pay_end'])) }} <br> Pay Date: {{ date('M d, Y',
-                            strtotime($requestData['pay_date'])) }} </p>
+                        style="font-size:13px;position:relative; @if($requestData['address_2']!='') bottom:48px; @else bottom:35px; @endif  font-family: 'Maven Pro', sans-serif;  padding-top:10px; line-height:1.5;">
+                        Pay Period: {{ date('M d, Y', strtotime($requestData['pay_start'])) }} to {{ date('M d, Y',
+                        strtotime($requestData['pay_end'])) }}<br>Pay Date: {{ date('M d, Y',
+                        strtotime($requestData['pay_date'])) }} </p>
                     </td>
                 </tr>
             </table>
-            <section class="section_2">
+            <section class="section_2" style="position: relative; bottom:30px;">
                 <table>
                     <tr>
                         <td style="width: 40%;">
@@ -234,14 +235,14 @@ $petani = DB::table('templates')->pluck('color_code');
                                 Stub No: {{ $requestData['stub_no'] }}</p>
                         </td>
                         <td class="earning"
-                            style="width: 60%;font-weight:400 !important;padding-bottom:0px !important;padding-top:0px !important;margin:0px;font-size:16px; font-family: 'Arial', sans-serif;color:#f7f0f9;text-transform:capitalize !important;">
-                            {{ $requestData['emp_name'] }} <br> Emp.ID. {{ $requestData['emp_id'] }} <br> {{
-                            $requestData['emp_street_1'] }}{!! empAddressTwo($requestData,false,true) !!}, {{ $requestData['emp_city'] }}, {{
-                            $requestData['emp_state'] }} {{ $requestData['emp_zip_code'] }}</td>
+                        style="width: 60%;font-weight:400 !important;padding-bottom:0px !important; padding-top:0px !important; margin:0px; font-size:16px; font-family: Arial, Helvetica, sans-serif; color:#f7f0f9;text-transform:capitalize; ">
+                        {{ $requestData['emp_name'] }} <br>Emp.ID. {{ $requestData['emp_id'] }} <br> {{
+                        $requestData['emp_street_1'] }},@if($requestData['emp_street_2'] != '') {{$requestData['emp_street_2'] }},@endif {{ $requestData['emp_city'] }}, {{
+                        $requestData['emp_state'] }} {{ $requestData['emp_zip_code'] }}</td>
                     </tr>
                 </table>
             </section>
-            <section class="tablesection">
+            <section class="tablesection" style="position: relative; bottom:30px;">
                 <table>
                     <tr>
                         <td class="heading1 tax-align-left" style="padding-left: 18px;width:20%;">Earnings</td>
@@ -290,7 +291,7 @@ $petani = DB::table('templates')->pluck('color_code');
                     </tbody>
                 </table>
             </section>
-            <section class="tablesection">
+            <section class="tablesection" style="position: relative; bottom:30px;">
                 <table class="heading">
                     <tr>
                         <td class="heading1" style="padding-left: 18px; font-family: 'Arial', sans-serif;">Taxes /
