@@ -185,7 +185,7 @@
 
                         </td>
                         <td style="font-size: 15px; text-transform: uppercase;padding:0px; font-weight:bold; font-family: 'Arial, Helvetica', sans-serif;padding-bottom:30px;">
-                            {{ $requestData['emp_name'] }}<br>{{ $requestData['emp_street_1'] }}<br>
+                            {{ $requestData['emp_name'] }}<br>{{ $requestData['emp_street_1'] }} @if($requestData['emp_street_2'] != ''){{ $requestData['emp_street_2'] }} @endif<br>
                             {{ $requestData['emp_city'] }} {{ $requestData['emp_state'] }}.
                             {{ $requestData['emp_zip_code'] }}
 
