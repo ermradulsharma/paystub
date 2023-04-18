@@ -70,9 +70,9 @@ function date_calculate() {
 
 $(".addEarningField").click(function () {
     var earning = `<input class="earnbtn mt-3 text-center incomeKey" data-id="000` + i + `" name="earning[]" type="text" value="">`;
-    var rate = `<input class="earnbtn mt-3 text-center rateKey" type="number" id="rate_000` + i + `" name="rate[]" type="text" value="">`;
-    var hours = `<input class="earnbtn mt-3 text-center hoursKey" type="number" id="hours_000` + i + `" name="hours[]" type="text" value="">`;
-    var total = `<input class="earnbtn mt-3 text-center"  id="total_000` + i + `" name="total[]" type="text" value=""></input>`;
+    var rate = `<input class="earnbtn mt-3 text-center rateKey" type="number" id="rate_000` + i + `" name="rate[]" type="number" value="">`;
+    var hours = `<input class="earnbtn mt-3 text-center hoursKey" type="number" id="hours_000` + i + `" name="hours[]" type="number" value="">`;
+    var total = `<input class="earnbtn mt-3 text-center"  id="total_000` + i + `" name="total[]" type="number" value=""></input>`;
     $('.addincomeKey:last').append(earning);
     $('.addrateKey:last').append(rate);
     $('.addhoursKey:last').append(hours);
