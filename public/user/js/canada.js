@@ -9,16 +9,16 @@ var days_number = parseFloat($('#days_number').val() || 0.00)
 
 $('.pay_start').change(function () {
     dayCalculate();
-    setTimeout(() => {
-        calculation();
-    }, 100);
+    // setTimeout(() => {
+    //     calculation();
+    // }, 100);
 });
 
 $(".pay_date").change(function () {
     date_calculate();
-    setTimeout(() => {
-        calculation();
-    }, 100);
+    // setTimeout(() => {
+    //     calculation();
+    // }, 100);
 });
 
 function dayCalculate() {
@@ -72,21 +72,21 @@ $(".addEarningField").click(function () {
     var earning = `<input class="earnbtn mt-3 text-center incomeKey" data-id="000` + i + `" name="earning[]" type="text" value="">`;
     var rate = `<input class="earnbtn mt-3 text-center rateKey" type="number" id="rate_000` + i + `" name="rate[]" type="text" value="">`;
     var hours = `<input class="earnbtn mt-3 text-center hoursKey" type="number" id="hours_000` + i + `" name="hours[]" type="text" value="">`;
-    var total = `<input class="earnbtn mt-3 text-center" readonly id="total_000` + i + `" name="total[]" type="text" value=""></input>`;
+    var total = `<input class="earnbtn mt-3 text-center"  id="total_000` + i + `" name="total[]" type="text" value=""></input>`;
     $('.addincomeKey:last').append(earning);
     $('.addrateKey:last').append(rate);
     $('.addhoursKey:last').append(hours);
     $('.addcurrentTotal:last').append(total);
     i++;
-    $(".rateKey, .hoursKey").keyup(function () {
-        calculation();
-    });
+    // $(".rateKey, .hoursKey").keyup(function () {
+    //     calculation();
+    // });
 });
 
 var j = 0;
 $(".addTaxField").click(function () {
     var addtaxes = `<div class="d-flex mt-3">
-                        <img src="../images/lock.png" class="earnbtn3">
+                        <img src="../images/unlock.png" style="visibility: hidden;" class="earnbtn3 lock">
                         <input class="earnbtn text-center other_taxes" name="tax_deduction[]" data-id="` + j + `">
                     </div>`;
     var addtaxes_rate = `<input class="earnbtn text-center deduction_other mt-3" type="number" name="period_tax_deduction[]" id="tax_` + j + `">`;
@@ -94,21 +94,28 @@ $(".addTaxField").click(function () {
     $(".addtaxes:last").append(addtaxes);
     $(".addtaxes_rate:last").append(addtaxes_rate);
     $(".addtaxes_ytd:last").append(addtaxes_ytd);
-
     j++;
+    // $(".deduction_other, .deduction_other_ytd").keyup(function () {
+    //     taxOtherCalculate();
+    // });
+});
 
-    $(".deduction_other, .deduction_other_ytd").keyup(function () {
-        taxOtherCalculate();
+// $(".deduction_other, .deduction_other_ytd").keyup(function () {
+//     taxOtherCalculate();
+// });
+
+// $(".rateKey, .hoursKey").keyup(function () {
+//     calculation();
+// });
+
+$(document).ready(function() {
+    $(document).on('keyup',".rateKey, .hoursKey", function () {
+        calculation();
     });
 });
 
-$(".deduction_other, .deduction_other_ytd").keyup(function () {
-    taxOtherCalculate();
-});
 
-$(".rateKey, .hoursKey").keyup(function () {
-    calculation();
-});
+
 function calculation() {
     var timeout = 0;
     var earningTotal = 0;
@@ -126,9 +133,9 @@ function calculation() {
     });
     alltotal = earningTotal;
     alltotalYtd = earningYtdTotal;
-    setTimeout(() => {
-        taxCalculate();
-    }, timeout);
+    // setTimeout(() => {
+    //     taxCalculate();
+    // }, timeout);
 }
 
 function taxCalculate() {

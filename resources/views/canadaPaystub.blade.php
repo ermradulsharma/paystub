@@ -302,7 +302,7 @@
                                         </div>
                                         <div class="col-lg-3 col-md-3 mb-3 pr-lg-0 addcurrentTotal">
                                             <button type="button" class="statementbtn"> CURRENT TOTAL</button>
-                                            <input class="earnbtn mt-3 text-center currentTotal" readonly id="total_000"
+                                            <input class="earnbtn mt-3 text-center currentTotal"  id="total_000"
                                                 name="total[]" type="text" value="">
                                         </div>
                                     </div>
@@ -326,21 +326,21 @@
                                                     <input class="earnbtn text-center taxes"
                                                         id="taxe_{{ $key }}" name="taxes[]"
                                                         data-id="00{{ $key }}" data-value="{{ $item->price }}"
-                                                        value="{{ $item->title }}" readonly>
+                                                        value="{{ $item->title }}" readonly="readonly">
                                                 </div>
                                             @endforeach
                                         </div>
                                         <div class="col-lg-4 mb-4 col-md-4 pr-0 addtaxes_rate">
                                             <button type="button" class="statementbtn">CURRENT TOTAL</button>
                                             @foreach ($deduction as $key => $item)
-                                                <input class="earnbtn text-center mt-3" readonly name="taxes_rate[]"
+                                                <input class="earnbtn text-center mt-3"  name="taxes_rate[]"
                                                     id="tax_total_00{{ $key }}">
                                             @endforeach
                                         </div>
                                         <div class="col-lg-4 mb-4 col-md-4 pr-0 addtaxes_ytd">
                                             <button type="button" class="statementbtn">YTD TOTAL</button>
                                             @foreach ($deduction as $key => $item)
-                                                <input class="earnbtn text-center mt-3" readonly name="taxes_ytd[]"
+                                                <input class="earnbtn text-center mt-3"  name="taxes_ytd[]"
                                                     id="tax_ytd_00{{ $key }}">
                                             @endforeach
                                         </div>
@@ -349,7 +349,7 @@
                                         <div class="col-lg-12 center-btn">
                                             <button type="button" class="btnCommon addTaxField"> <i
                                                     class="fa fa-plus-circle pr-2"
-                                                    style="font-size: 22px;color: #0ec23b;padding-top: 0px;"></i>Add
+                                                    style="font-size: 22px;color: #0ec23b;padding-top: 0px;" ></i>Add
                                                 Deductions</button>
                                         </div>
                                     </div>
@@ -432,11 +432,11 @@
                 }
             });
         });
+
+       
     </script>
 
-    <script
-        src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyDpavHXELJMJvIHifFPN6tBBiFSXKGpy2g">
-    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyDpavHXELJMJvIHifFPN6tBBiFSXKGpy2g"></script>
     <script>
         var searchInput = 'address_1';
 
@@ -539,7 +539,7 @@
         });
 
         function setEmpLocation(obj) {
-            
+
         }
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
