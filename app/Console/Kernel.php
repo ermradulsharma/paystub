@@ -25,7 +25,7 @@ class Kernel extends ConsoleKernel
 
         // $schedule->job(new CheckSubcriptions)->everyMinute();
         $schedule->job(new CheckSubcriptions)->dailyAt('23:59');
-        $schedule->job(new DeleteExtraPdf)->everyMinute('23:59');
+        $schedule->job(new DeleteExtraPdf)->dailyAt('23:59');
     }
 
     /**
