@@ -144,6 +144,8 @@ function getCurrency(float $number)
     $Rupees = implode('', array_reverse($str));
     if ($decimal == 0) {
         $cents = '';
+    }elseif($decimal > 0 && $decimal < 21){
+       $cents = ($words[$decimal]) . ' Cents';
     } else {
         $cents =  ($words[floor($decimal / 10) * 10] . " " . $words[$decimal % 10]) . ' Cents';
     }
