@@ -246,18 +246,30 @@ $petani = DB::table('templates')->pluck('color_code');
                 <table>
                     <tr>
                         <td class="heading1 tax-align-left" style="padding-left: 18px;width:20%;">Earnings</td>
-                        <td class="heading1" style="color: #000;width:15%;padding-left:13px;color:black;"> Rate</td>
+                        <td class="heading1" style="width:15%;padding-left:13px;"> Rate</td>
                         <td class="heading1" style="text-align:right;width:15%;padding-right:30px;">Hours</td>
                         <td class="heading1" style="padding-right:18px; text-align:right;width:30%;">This Period</td>
                         <td class="heading1 tax-align-r" style="width:20%;">YTD</td>
                     </tr>
                     @foreach ($requestData['earning'] as $key => $earn)
                     <tr>
-                        <td class="heading2 tax-align-l" style="padding-left: 18px;text-transform:capitalize;"> {{ $earn }}</td>
-                        <td class="heading2" style="color: #000; font-family: DejaVu Sans, sans-serif;">@if($requestData['rate'][$key] != 0.00)<span style="font-family: 'DejaVu Sans', sans-serif; padding-right:1px;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['rate'][$key], 2) ?? '' }}@endif</td>
-                        <td class="heading2" style="color: #000;text-align:center; padding-left:5px;">@if($requestData['hours'][$key] != 0.00){{ number_format($requestData['hours'][$key], 2) }}@endif</td>
-                        <td class="heading2" style="padding-right:20px;text-align:right;color: #000; font-family: DejaVu Sans, sans-serif;"> <span style="font-family: 'DejaVu Sans', sans-serif; padding-right:1px;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['period'][$key], 2) }}</td>
-                        <td class="heading2 tax-align-r" style="color: #000; font-family: DejaVu Sans, sans-serif;"><span style="font-family: 'DejaVu Sans', sans-serif; padding-right:1px;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['ytd_total'][$key], 2) }} </td>
+                        <td class="heading2 tax-align-l" style="padding-left: 18px;text-transform:capitalize;"> {{ $earn
+                            }}</td>
+                        <td class="heading2" style="color: #000; font-family: DejaVu Sans, sans-serif;"><span
+                                style="font-family: 'DejaVu Sans', sans-serif;">{{
+                                $requestData['currency'] }}</span>{{ number_format($requestData['rate'][$key], 2) }}
+                        </td>
+                        <td class="heading2" style="color: #000;text-align:center; padding-left:5px;"> {{
+                            number_format($requestData['hours'][$key], 2) }}</td>
+                        <td class="heading2"
+                            style="padding-right:20px;text-align:right;color: #000; font-family: DejaVu Sans, sans-serif;">
+                            <span style="font-family: 'DejaVu Sans', sans-serif;">{{
+                                $requestData['currency'] }}</span>{{ number_format($requestData['period'][$key], 2) }}
+                        </td>
+                        <td class="heading2 tax-align-r" style="color: #000; font-family: DejaVu Sans, sans-serif;">
+                            <span style="font-family: 'DejaVu Sans', sans-serif;">{{
+                                $requestData['currency'] }}</span>{{ number_format($requestData['ytd_total'][$key], 2)
+                            }} </td>
                     </tr>
                     @endforeach
                     <br>
@@ -267,12 +279,12 @@ $petani = DB::table('templates')->pluck('color_code');
                             <th colspan="3"></th>
                             <th class="tax-align-c"
                                 style="font-weight: 400; height: 45px; text-align:right; padding-right: 0px;font-size:14px; font-family: 'Arial', sans-serif; font-family: DejaVu Sans, sans-serif;">
-                                <span style="font-family: 'DejaVu Sans', sans-serif; padding-right:1px;">{{
+                                <span style="font-family: 'DejaVu Sans', sans-serif;">{{
                                     $requestData['currency'] }}</span>{{
                                 number_format($requestData['period_gross_total'], 2) }} </th>
                             <th class="tax-align-r"
                                 style="font-weight: 400; height: 47px;font-size:14px; font-family: 'Arial', sans-serif; font-family: DejaVu Sans, sans-serif;">
-                                <span style="font-family: 'DejaVu Sans', sans-serif; padding-right:1px;">{{
+                                <span style="font-family: 'DejaVu Sans', sans-serif;">{{
                                     $requestData['currency'] }}</span>{{ number_format($requestData['ytd_gross_total'],
                                 2) }} </th>
                         </tr>
@@ -294,12 +306,12 @@ $petani = DB::table('templates')->pluck('color_code');
                         <td class="data" id="color" style="line-height:1.6">{{ $taxes }}</td>
                         <td class="tax-align-r heading2"
                             style=" font-family: DejaVu Sans, sans-serif;font-family: 'Poppins', sans-serif;"
-                            id="color"> <span style="font-family: 'DejaVu Sans', sans-serif; padding-right:1px;">{{
+                            id="color"> <span style="font-family: 'DejaVu Sans', sans-serif;">{{
                                 $requestData['currency'] }}</span>{{ number_format($requestData['taxes_rate'][$key], 2)
                             }} </td>
                         <td class="tax-align-r heading2" id="color"
                             style="line-height:1.6;font-family: 'Poppins', sans-serif;font-family: DejaVu Sans, sans-serif;">
-                            <span style="font-family: 'DejaVu Sans', sans-serif; padding-right:1px;">{{
+                            <span style="font-family: 'DejaVu Sans', sans-serif;">{{
                                 $requestData['currency'] }}</span>{{ number_format($requestData['taxes_ytd'][$key], 2)
                             }} </td>
                     </tr>
@@ -320,12 +332,12 @@ $petani = DB::table('templates')->pluck('color_code');
                             $tax_deduction }} </td>
                         <td class="tax-align-r heading2" id="color"
                             style="font-family: DejaVu Sans, sans-serif;font-family: 'Poppins', sans-serif;"><span
-                                style="font-family: 'DejaVu Sans', sans-serif; padding-right:1px;">{{
+                                style="font-family: 'DejaVu Sans', sans-serif;">{{
                                 $requestData['currency'] }}</span>{{
                             number_format($requestData['period_tax_deduction'][$key], 2) }} </td>
                         <td class="tax-align-r heading2" id="color"
                             style="line-height:1.6; font-family: 'Poppins', sans-serif;font-family: DejaVu Sans, sans-serif;">
-                            <span style="font-family: 'DejaVu Sans', sans-serif; padding-right:1px;">{{
+                            <span style="font-family: 'DejaVu Sans', sans-serif;">{{
                                 $requestData['currency'] }}</span>{{
                             number_format($requestData['ytd_tax_deduction'][$key], 2) }} </td>
                     </tr>
@@ -338,12 +350,12 @@ $petani = DB::table('templates')->pluck('color_code');
                                 Net Pay</th>
                             <th class="tax-align-r"
                                 style="height: 47px; font-weight: bold;font-size:13px; font-family: 'Arial', sans-serif; font-family: DejaVu Sans, sans-serif;">
-                                <span style="font-family: 'DejaVu Sans', sans-serif; padding-right:1px;">{{
+                                <span style="font-family: 'DejaVu Sans', sans-serif;">{{
                                     $requestData['currency'] }}</span>{{ number_format($requestData['total_net_pay'], 2)
                                 }}</th>
                             <th class="tax-align-r"
                                 style="height: 47px; font-weight: bold;font-size:13px; font-family: 'Arial', sans-serif; font-family: DejaVu Sans, sans-serif;">
-                                <span style="font-family: 'DejaVu Sans', sans-serif; padding-right:1px;">{{
+                                <span style="font-family: 'DejaVu Sans', sans-serif;">{{
                                     $requestData['currency'] }}</span>{{
                                 number_format($requestData['total_ytd_net_pay'], 2) }} </th>
                         </tr>
@@ -351,7 +363,7 @@ $petani = DB::table('templates')->pluck('color_code');
                 </table>
                 <p style="margin-top:25px; color:#555; font-size:14px;font-family: Arial, Helvetica, sans-serif; ">
                     Your taxes and deductions for this period are<span style="color: #555555"> <span
-                            style="font-family: 'DejaVu Sans', sans-serif; padding-right:1px;">{{
+                            style="font-family: 'DejaVu Sans', sans-serif;">{{
                             $requestData['currency'] }}</span>{{
                         number_format($requestData['deduction_tax'], 2) }}</span></p>
             </section>

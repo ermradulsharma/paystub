@@ -233,7 +233,7 @@
                     </tr>
                     <tr>
                         <td style="text-transform: uppercase;font-family: Arial, Helvetica, sans-serif;font-size:14px;">
-                            {{ $requestData['emp_street_1'] }}</td>
+                            {{ $requestData['emp_street_1'] }}<br>@if($requestData['emp_street_2']!='') {{ $requestData['emp_street_2'] }}@endif</td>
                     </tr>
                     <tr>
                         <td style="text-transform: uppercase;font-family: Arial, Helvetica, sans-serif;font-size:14px;">

@@ -207,23 +207,23 @@
                 <table>
                     <tr>
                         <td class="heading1">Earnings</td>
-                        <td class="heading1" id="color" style="padding-left:10px;color:black !important;">Rate</td>
+                        <td class="heading1" id="color" style="padding-left:10px;color:#555;">Rate</td>
                         <td colspan="2" class="heading1">Hours</td>
                         <td class="heading1" id="alignR">This Period</td>
                         <td class="heading1" id="alignR">YTD</td>
                     </tr> @foreach ($requestData['earning'] as $key => $earn) <tr>
                         <td id="color" style="font-size:15px;text-transform:capitalize;">{{ $earn }}</td>
                         <td id="color" style="font-size:13px color:#000;"><span
-                                style="font-family: 'DejaVu Sans', sans-serif; padding-right:1px;">{{
-                                $requestData['currency'] }}</span>@if($requestData['rate'][$key] != 0.00) {{ number_format($requestData['rate'][$key], 2)}}@endif
+                                style="font-family: 'DejaVu Sans', sans-serif;">{{
+                                $requestData['currency'] }}</span>{{ number_format($requestData['rate'][$key], 2) }}
                         </td>
                         <td colspan="2" id="color" style="color:#000;padding-left:5px;">@if($requestData['hours'][$key] != 0.00){{ number_format($requestData['hours'][$key], 2) }}@endif</td>
                         <td id="color" style="font-size:13px color:#000;" class="alignR"><span
-                                style="font-family: 'DejaVu Sans', sans-serif; padding-right:1px;">{{
+                                style="font-family: 'DejaVu Sans', sans-serif;">{{
                                 $requestData['currency'] }}</span>{{ number_format($requestData['period'][$key], 2) }}
                         </td>
                         <td id="color" class="alignR" style="font-size:13px color:#000;"><span
-                                style="font-family: 'DejaVu Sans', sans-serif; padding-right:1px;">{{
+                                style="font-family: 'DejaVu Sans', sans-serif;">{{
                                 $requestData['currency'] }}</span>{{ number_format($requestData['ytd_total'][$key], 2)
                             }}
                         </td>
@@ -239,12 +239,12 @@
                         <tr>
                             <td colspan="4"></td>
                             <td style="font-size:16px;padding:7px 0px;text-align:right;" id="">
-                                <span style="font-family: 'DejaVu Sans', sans-serif; padding-right:1px;">{{
+                                <span style="font-family: 'DejaVu Sans', sans-serif;">{{
                                     $requestData['currency'] }}</span>{{
                                 number_format($requestData['period_gross_total'], 2) }}
                             </td>
                             <td style="" id="alignR">
-                                <span style="font-family: 'DejaVu Sans', sans-serif; padding-right:1px;">{{
+                                <span style="font-family: 'DejaVu Sans', sans-serif;">{{
                                     $requestData['currency'] }}</span>{{ number_format($requestData['ytd_gross_total'],
                                 2) }}
                             </td>
@@ -266,12 +266,12 @@
                         </td>
                         <td id="color" class="alignR"
                             style="font-size:16px; font-family: Arial, Helvetica, sans-serif; color:#000;"><span
-                                style="font-family: 'DejaVu Sans', sans-serif; padding-right:1px;">{{
+                                style="font-family: 'DejaVu Sans', sans-serif;">{{
                                 $requestData['currency'] }}</span>{{ number_format($requestData['taxes_rate'][$key], 2)
                             }}</td>
                         <td id="color" class="alignR"
                             style="font-size:16px; font-family: Arial, Helvetica, sans-serif; color:#000;"><span
-                                style="font-family: 'DejaVu Sans', sans-serif; padding-right:1px;">{{
+                                style="font-family: 'DejaVu Sans', sans-serif;">{{
                                 $requestData['currency'] }}</span>{{ number_format($requestData['taxes_ytd'][$key], 2)
                             }}</td>
                     </tr> @endforeach @if (count($requestData['tax_deduction'] ?? []) > 0) <tr>
@@ -294,12 +294,12 @@
                             <td colspan="2" style="font-weight: 400 !important;font-size:15px; padding:10px;">Net Pay
                             </td>
                             <td style="font-weight: 400 !important;font-size:15px;" id="alignR">
-                                <span style="font-family: 'DejaVu Sans', sans-serif; padding-right:1px;">{{
+                                <span style="font-family: 'DejaVu Sans', sans-serif;">{{
                                     $requestData['currency'] }}</span>{{ number_format($requestData['total_net_pay'], 2)
                                 }}
                             </td>
                             <td style=" font-weight: 400 !important;font-size:15px;" id="alignR">
-                                <span style="font-family: 'DejaVu Sans', sans-serif; padding-right:1px;">{{
+                                <span style="font-family: 'DejaVu Sans', sans-serif;">{{
                                     $requestData['currency'] }}</span>{{
                                 number_format($requestData['total_ytd_net_pay'], 2) }}
                                 </th>
@@ -308,7 +308,7 @@
                 </table>
                 <p style="margin-top:25px; color:#000; font-size:14px;font-family: Arial, Helvetica, sans-serif; ">
                     Your taxes and deductions for this period are<span style="color: #000"> <span
-                            style="font-family: 'DejaVu Sans', sans-serif; padding-right:1px;">{{
+                            style="font-family: 'DejaVu Sans', sans-serif;">{{
                             $requestData['currency'] }}</span>{{
                         number_format($requestData['deduction_tax'], 2) }}</span></p>
             </section>
