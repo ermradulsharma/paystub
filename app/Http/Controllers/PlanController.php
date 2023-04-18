@@ -13,7 +13,7 @@ class PlanController extends Controller
      */
     public function index()
     {
-       dd('plans index');
+        dd('plans index');
     }
 
     /**

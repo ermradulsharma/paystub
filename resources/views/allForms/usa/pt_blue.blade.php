@@ -244,19 +244,12 @@
 
             <tr>
                 <td style="font-size:13px;text-align:center; font-weight:bold;text-transform:capitalize;"> {{ $requestData['emp_name'] }}</td>
-                <td
-                    style="border-right: 1px solid #43407a; border-left: 1px solid #43407a;font-size:13px;text-align:center; font-weight:bold;text-transform:capitalize;">
-                    {{ $requestData['cname'] }} </td>
+                <td style="border-right: 1px solid #43407a; border-left: 1px solid #43407a;font-size:13px;text-align:center; font-weight:bold;text-transform:capitalize;">{{ $requestData['cname'] }} </td>
                 <td style="font-size:13px;text-align:center; font-weight:bold">1234 </td>
-                <td
-                    style="border-right: 1px solid #43407a; border-left: 1px solid #43407a;font-size:13px;text-align:center; font-weight:bold">
-                    {{ $requestData['emp_id'] }} </td>
+                <td style="border-right: 1px solid #43407a; border-left: 1px solid #43407a;font-size:13px;text-align:center; font-weight:bold">{{ $requestData['emp_id'] }} </td>
                 <td style="font-size:13px;text-align:center; font-weight:bold">XXX-XX-{{ $requestData['emp_ssn'] }}</td>
-                <td
-                    style="border-right: 1px solid #43407a; border-left: 1px solid #43407a;font-size:13px;text-align:center; font-weight:bold ">
-                    {{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</td>
+                <td style="border-right: 1px solid #43407a; border-left: 1px solid #43407a;font-size:13px;text-align:center; font-weight:bold ">{{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</td>
                 <td style="font-size:13px;text-align:center; font-weight:bold">{{ $requestData['check_no'] ?? '' }}</td>
-
             </tr>
         </table>
 
@@ -346,18 +339,10 @@
                     <table style="width: 100%;">
                         <thead style="border-top:none;border-left:none; border-right:none; color:#43407a;"
                             id="backcolor">
-                            <td
-                                style="border-right:1px solid  #43407a;font-size:10px; font-weight:bold; text-align:center; ">
-                                WAGES</td>
-                            <td
-                                style="border-right:1px solid  #43407a;font-size:10px; font-weight:bold; text-align:center;">
-                                HOURS</td>
-                            <td
-                                style="border-right:1px solid  #43407a;font-size:10px; font-weight:bold; text-align:center;">
-                                RATE</td>
-                            <td
-                                style="border-right:1px solid  #43407a;font-size:10px; font-weight:bold; text-align:center;">
-                                AMOUNT<br>THIS CHECK</td>
+                            <td style="border-right:1px solid  #43407a;font-size:10px; font-weight:bold; text-align:center; "> WAGES</td>
+                            <td style="border-right:1px solid  #43407a;font-size:10px; font-weight:bold; text-align:center;"> HOURS</td>
+                            <td style="border-right:1px solid  #43407a;font-size:10px; font-weight:bold; text-align:center;">RATE</td>
+                            <td style="border-right:1px solid  #43407a;font-size:10px; font-weight:bold; text-align:center;"> AMOUNT<br>THIS CHECK</td>
                             <td style="font-weight:bold; font-size:10px; text-align:center;">AMOUNT<br>YEAR-TO-DATE</td>
                         </thead>
                         <tbody>

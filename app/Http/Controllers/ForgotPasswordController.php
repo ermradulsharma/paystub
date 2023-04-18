@@ -101,7 +101,7 @@ class ForgotPasswordController extends Controller
         $validated = $request->validate([
             'password' => 'required|min:6|confirmed',
         ]);
-            $expiry  = Carbon::now()->subMinutes( 3 );
+        $expiry  = Carbon::now()->subMinutes(3);
 
 
         $userObj = ForgotPasswordMail::firstWhere('token', $token);

@@ -179,7 +179,7 @@ top:200px;
             </table>
             <table style="border-bottom:1.5px solid black; width:88%; margin-top:0px;">
                 <tr>
-                    <td style="width:100%;font-size:18px; text-align:center; margin-top:0px; text-transform: capitalize;  font-family: 'Times New Roman', Times, serif;"> {{ $word }} {{ (int) $decimal }}/100</td>
+                    <td style="width:100%; font-size:18px; text-align:center; margin-top:0px; text-transform: capitalize;  font-family: 'Times New Roman', Times, serif;"> {!! $word !!} {{ (int) $decimal }}/100</td>
                 </tr>
             </table>
         </table>

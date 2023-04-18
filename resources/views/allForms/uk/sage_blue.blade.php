@@ -181,7 +181,7 @@
                     <tr style="padding-top:20px;">
                         <td class="l-align" style="font-size:17px;color:#6f6f6f;text-transform:capitalize;">{{ $earn }}</td>
                         <td class="bold" style="font-size:17px;color:#6f6f6f;text-transform:capitalize;">{{ $requestData['hours'][$key] }}</td>
-                        <td class="bold" style="font-size:17px;color:#6f6f6f;text-transform:capitalize;">{{ number_format($requestData['rate'][$key], 2) }}</td>
+                        <td class="bold" style="font-size:17px;color:#6f6f6f;text-transform:capitalize;">@if($requestData['rate'][$key] != 0.00) {{ number_format($requestData['rate'][$key], 2) ?? '' }}@endif</td>
                         <td style="border-right:1px solid #0a2e7b;font-size:17px;color:#6f6f6f;text-transform:capitalize;" class="bold">
                             {{ number_format($requestData['total'][$key], 2) }}</td>
                     </tr>

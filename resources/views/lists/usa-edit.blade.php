@@ -1,6 +1,26 @@
 @extends('layouts.app')
 
 @section('content')
+<style>
+    .address_book {
+        width: 14%;
+        position: relative;
+        left: 10px;
+        top: -3px;
+    }
+
+    .address_book_1 {
+        width: 14%;
+        position: relative;
+        left: 10px;
+        top: -3px;
+    }
+
+    .address-book {
+        position: relative;
+        left: 7px;
+    }
+</style>
 
     <link rel="stylesheet" href="{{ asset('user') }}/css/bootstrap-datepicker.min.css">
     <!-- Modal Start -->
@@ -49,7 +69,25 @@
                 <div class="row mb-3">
                     <div class="col-md-12 px-0">
                         <div class="box-usa">
-                            <h5 class="px-3">Company Info</h5>
+                            <div class="row justify-content py-3">
+                                <h5 class="box-h5">Company Info</h5>
+                                <img class="address-book" src="{{ asset('images/address-book.png') }}" alt=""
+                                    height="30px;">
+                                <select id="employerAddress" class="address_book add_address address" data-type="employer">
+                                    <option data-name="{{ $invoice->cname ?? '' }}" data-address1="{{ $invoice->address_1 ?? '' }}"
+                                        data-address2="{{ $invoice->address_2 ?? '' }}" data-city="{{  $invoice->city ?? '' }}"
+                                        data-state="{{ $invoice->state ?? '' }}" data-zip="{{ $invoice->zip_code ?? '' }}" value="">Select Address</option>
+
+                                    @foreach ($employerList ?? [] as $key => $employer)
+                                        <option data-name="{{ $employer->name }}" data-address1="{{ $employer->address_1 }}"
+                                            data-address2="{{ $employer->address_2 }}" data-city="{{ $employer->city }}"
+                                            data-state="{{ $employer->state }}" data-zip="{{ $employer->zip_code }}"
+                                            value="{{ $employer->name }}">{{ $employer->name }}</option>
+                                    @endforeach
+                                    <option data-name="" value="add_address">Add New Address</option>
+                                </select>
+                            </div>
+
                             <div class="row mb-3 ">
                                 <div class="col-md-6 mt-1">
                                     <div>
@@ -210,10 +248,32 @@
                 </div>
             </div>
             <div>
-                <h5>Employee Info</h5>
+
                 <div class="row mb-3">
                     <div class="col-md-12 px-0">
                         <div class=" box-usa">
+                            <div class="row justify-content py-3">
+                                <h5 class="box-h5">Employee Info</h5>
+                                <img class="address-book" src="{{ asset('images/address-book.png') }}" alt=""
+                                    height="30px;">
+                                <select id="employeeAddress" class="address_book_1 add_address address"
+                                    data-type="employee">
+                                    <option data-name="{{ $invoice->emp_name ?? '' }}"
+                                        data-address1="{{ $invoice->emp_street_1 ?? '' }}"
+                                        data-address2="{{ $invoice->emp_street_2 ?? '' }}"
+                                        data-city="{{ $invoice->emp_city ?? '' }}" data-state="{{ $invoice->emp_state ?? '' }}"
+                                        data-zip="{{ $invoice->emp_zip_code ?? '' }}" value="">Select Address</option>
+                                        @foreach ($employeeList ?? [] as $key => $employee)
+                                            <option data-name="{{ $employee->name }}"
+                                                data-address1="{{ $employee->address_1 }}"
+                                                data-address2="{{ $employee->address_2 }}"
+                                                data-city="{{ $employee->city }}" data-state="{{ $employee->state }}"
+                                                data-zip="{{ $employee->zip_code }}" value="{{ $employee->name }}">
+                                                {{ $employee->name }}</option>
+                                        @endforeach
+                                    <option data-name="" value="add_address_1">Add New Address</option>
+                                </select>
+                            </div>
                             <div class="row mb-3">
                                 <div class="col-md-4 mt-4">
                                     <div>
@@ -583,7 +643,7 @@
                                     <button type="button" class="statementbtn">EARNING</button>
                                     @foreach ($invoice->earning ?? [] as $key => $earning)
                                         <div class="margin-bottom mb-3">
-                                            <input class="earnbtn {{ $key == 0 ? 'mt-4' : '' }} text-center"
+                                            <input class="earnbtn {{ $key == 0 ? 'mt-4' : '' }} text-center earnbtn_0"
                                                 type="text" name="earning[]" value="{{ $earning ?? null }}"
                                                 id="earning_00{{ $key }}" data-id="00{{ $key }}">
                                         </div>
@@ -911,6 +971,19 @@
     </div>
 @endsection
 @section('script')
+<script>
+    $(document).ready(function() {
+        $('.add_address').change(function() {
+            var value = $(this).val();
+            if (value == 'add_address') {
+                window.location.href = "{{ route('profile') }}?tab=2&emp=1";
+            } else if (value == 'add_address_1') {
+                window.location.href = "{{ route('profile') }}?tab=2&emp=2";
+            }
+            return false;
+        });
+    });
+</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" crossorigin="anonymous"></script>
     <script>
         $(function() {

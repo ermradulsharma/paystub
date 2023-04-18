@@ -167,8 +167,7 @@
             <table
                 style="width:100%; border-left:2px solid#464646; border-right:2px solid#464646;background-color:darkgray;color:white;">
                 <tr>
-                    <td style="font-size: 18px;text-align: left;padding:10px 0px 10px 25px;text-transform:capitalize;"><span
-                            style="font-size: 18px;text-transform:capitalize;">{{ $requestData['cname'] }}</span><br>{{
+                    <td style="font-size: 18px;text-align: left;padding:10px 0px 10px 25px;text-transform:capitalize;"><span style="font-size: 18px;text-transform:capitalize;">{{ $requestData['cname'] }}</span><br>{{
                         $requestData['address_1']
                         }},<br>@if($requestData['address_2']!='') {{ $requestData['address_2'] }}<br>@endif {{ $requestData['city'] }}, {{ $requestData['state'] }} {{ $requestData['zip_code'] }}</td>
                     <td
