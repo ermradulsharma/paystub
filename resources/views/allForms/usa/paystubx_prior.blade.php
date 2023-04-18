@@ -263,7 +263,7 @@ top:200px;
                         @foreach ($requestData['earning'] as $key => $earn)
                             <tr>
                                 <td style="text-transform: capitalize; font-size:13px;font-family: 'Times New Roman', Times, serif;"> {{ $earn }}</td>
-                                <td style="font-size:13px; text-align:right;font-family: 'Times New Roman', Times, serif;">{{ $requestData['hours'][$key] }}</td>
+                                <td style="font-size:13px; text-align:right;font-family: 'Times New Roman', Times, serif;">@if($requestData['hours'][$key] != 0.00){{ $requestData['hours'][$key] }}@endif</td>
                                 <td style="font-size:13px; font-family: DejaVu Sans, sans-serif; text-align:right;font-family: 'Times New Roman', Times, serif;"><span style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['period'][$key] ?? 0, 2) }}</td>
                                 <td style="font-size:13px; font-family: DejaVu Sans, sans-serif; text-align:right;font-family: 'Times New Roman', Times, serif;"><span style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['ytd_total'][$key] ?? 0, 2) }} </td>
                             </tr>

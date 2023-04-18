@@ -253,23 +253,11 @@ $petani = DB::table('templates')->pluck('color_code');
                     </tr>
                     @foreach ($requestData['earning'] as $key => $earn)
                     <tr>
-                        <td class="heading2 tax-align-l" style="padding-left: 18px;text-transform:capitalize;"> {{ $earn
-                            }}</td>
-                        <td class="heading2" style="color: #000; font-family: DejaVu Sans, sans-serif;"><span
-                                style="font-family: 'DejaVu Sans', sans-serif;">{{
-                                $requestData['currency'] }}</span>{{ number_format($requestData['rate'][$key], 2) }}
-                        </td>
-                        <td class="heading2" style="color: #000;text-align:center; padding-left:5px;"> {{
-                            number_format($requestData['hours'][$key], 2) }}</td>
-                        <td class="heading2"
-                            style="padding-right:20px;text-align:right;color: #000; font-family: DejaVu Sans, sans-serif;">
-                            <span style="font-family: 'DejaVu Sans', sans-serif;">{{
-                                $requestData['currency'] }}</span>{{ number_format($requestData['period'][$key], 2) }}
-                        </td>
-                        <td class="heading2 tax-align-r" style="color: #000; font-family: DejaVu Sans, sans-serif;">
-                            <span style="font-family: 'DejaVu Sans', sans-serif;">{{
-                                $requestData['currency'] }}</span>{{ number_format($requestData['ytd_total'][$key], 2)
-                            }} </td>
+                        <td class="heading2 tax-align-l" style="padding-left: 18px;text-transform:capitalize;"> {{ $earn }}</td>
+                        <td class="heading2" style="color: #000; font-family: DejaVu Sans, sans-serif;">@if($requestData['rate'][$key] != 0.00)<span style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['rate'][$key], 2) }}@endif</td>
+                        <td class="heading2" style="color: #000;text-align:center; padding-left:5px;">@if($requestData['hours'][$key] != 0.00) {{number_format($requestData['hours'][$key], 2) }}@endif</td>
+                        <td class="heading2" style="padding-right:20px;text-align:right;color: #000; font-family: DejaVu Sans, sans-serif;"><span style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['period'][$key], 2) }} </td>
+                        <td class="heading2 tax-align-r" style="color: #000; font-family: DejaVu Sans, sans-serif;"> <span style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['ytd_total'][$key], 2) }} </td>
                     </tr>
                     @endforeach
                     <br>
