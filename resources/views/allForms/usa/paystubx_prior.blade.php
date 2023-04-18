@@ -191,9 +191,10 @@ top:200px;
                     ">FOR RECORDS PURPOSES ONLY</td>
                     <td style="width:30%;">---------------------------------------------------------</td>
                 </tr>
-                <tr class="micrcode">
+                {{-- <tr class="micrcode">
                     <td class="micrcode" colspan="3" style="padding-top:30px; font-size:20px; text-align:center; letter-spacing:3px;">"98745687T58T43098584598"</td>
-                </tr>
+                </tr> --}}
+                <tr><td style="padding-top:25px;"><img style="width: 450px; position: relative; left:110px;" src="images/icons/micr-digits.png"></td></tr>
             </table>
 
         <br>
