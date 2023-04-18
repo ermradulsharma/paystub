@@ -189,10 +189,13 @@ top:200px;
                     <td style="font-size:16px; width:10%; padding-top:13px;">Memo: </td>
                     <td colspan="2" style="font-size: 24px; text-align:left;transform: scale(.5, 1.3); display: inline-block; position: absolute; left:-20px;  width:60%;letter-spacing: px;
                     ">FOR RECORDS PURPOSES ONLY</td>
-                    <td style="width:30%;">---------------------------------------------------------</td>
+                    <td style="width:28%;">---------------------------------------------------------</td>
                 </tr>
-                <tr class="micrcode">
+                {{-- <tr class="micrcode">
                     <td class="micrcode" colspan="3" style="padding-top:30px; font-size:20px; text-align:center; letter-spacing:3px;">"98745687T58T43098584598"</td>
+                </tr> --}}
+                <tr>
+                    <td style="padding-top:25px;"><img style="width:450px;position: relative; left:120px;" src="images/icons/micr-digits.png"></td>
                 </tr>
             </table>
 
