@@ -122,7 +122,6 @@ function calculation() {
     var earningYtdTotal = 0;
     $('.incomeKey').each(function () {
         var id = $(this).data('id');
-        console.log('id--',id);
         var rate = parseFloat($('#rate_' + id).val());
         var hours = parseFloat($('#hours_' + id).val());
         var total = rate * hours || 0.00;

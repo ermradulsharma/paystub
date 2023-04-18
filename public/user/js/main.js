@@ -442,7 +442,6 @@ $(document).ready(function(){
     $(document).on('click','.lock',function () {
         var id = $(this).data('id');
         var img = $(this).attr('src');
-
         if (img == baseUrl+'images/lock.png') {
             $("#" + id).attr('src', 'https://paystubx.com/images/unlock.png');
             $("#taxe_" + id).attr("readonly", false);
