@@ -333,14 +333,14 @@
                                         <div class="col-lg-4 mb-4 col-md-4 pr-0 addtaxes_rate">
                                             <button type="button" class="statementbtn">CURRENT TOTAL</button>
                                             @foreach ($deduction as $key => $item)
-                                                <input class="earnbtn text-center mt-3"  name="taxes_rate[]"
+                                                <input type="number" class="earnbtn text-center mt-3"  name="taxes_rate[]"
                                                     id="tax_total_00{{ $key }}">
                                             @endforeach
                                         </div>
                                         <div class="col-lg-4 mb-4 col-md-4 pr-0 addtaxes_ytd">
                                             <button type="button" class="statementbtn">YTD TOTAL</button>
                                             @foreach ($deduction as $key => $item)
-                                                <input class="earnbtn text-center mt-3"  name="taxes_ytd[]"
+                                                <input type="number" class="earnbtn text-center mt-3"  name="taxes_ytd[]"
                                                     id="tax_ytd_00{{ $key }}">
                                             @endforeach
                                         </div>
@@ -358,28 +358,28 @@
                             <div class="row mb-3 mt-4 mt-lg-5">
                                 <div class="col-lg-2 col-md-2 pr-md-0 mb-2">
                                     <button type="button" class="statementbtn">YTD GROSS</button>
-                                    <input class="earnbtn text-center mt-3" id="ytd_gross" name="ytd_gross_total">
+                                    <input type="number" class="earnbtn text-center mt-3" id="ytd_gross" name="ytd_gross_total">
                                 </div>
                                 <div class="col-lg-2 col-md-2 pr-md-0 mb-2">
                                     <button type="button" class="statementbtn">YTD DEDUCATIONS</button>
-                                    <input class="earnbtn text-center mt-3" id="ytd_deducations"
+                                    <input type="number" class="earnbtn text-center mt-3" id="ytd_deducations"
                                         name="ytd_deduction_tax">
                                 </div>
                                 <div class="col-lg-2 col-md-2 pr-md-0 mb-2">
                                     <button type="button" class="statementbtn">YTD NET PAY</button>
-                                    <input class="earnbtn text-center mt-3" id="ytd_net_pay" name="total_ytd_net_pay">
+                                    <input type="number" class="earnbtn text-center mt-3" id="ytd_net_pay" name="total_ytd_net_pay">
                                 </div>
                                 <div class="col-lg-2 col-md-2 pr-md-0 mb-2">
                                     <button type="button" class="statementbtn">CURRENT TOTAL</button>
-                                    <input class="earnbtn text-center mt-3" id="current_total" name="period_gross_total">
+                                    <input type="number" class="earnbtn text-center mt-3" id="current_total" name="period_gross_total">
                                 </div>
                                 <div class="col-lg-2 col-md-2 pr-md-0 mb-2">
                                     <button type="button" class="statementbtn">DEDUCTIONS</button>
-                                    <input class="earnbtn text-center mt-3" id="deductions" name="deduction_tax">
+                                    <input type="number" class="earnbtn text-center mt-3" id="deductions" name="deduction_tax">
                                 </div>
                                 <div class="col-lg-2 col-md-2 mb-2">
                                     <button type="button" class="statementbtn">NET PAY</button>
-                                    <input class="earnbtn text-center mt-3" id="net_pay" name="total_net_pay">
+                                    <input type="number" class="earnbtn text-center mt-3" id="net_pay" name="total_net_pay">
                                 </div>
                             </div>
                         </div>
@@ -433,7 +433,7 @@
             });
         });
 
-       
+
     </script>
 
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyDpavHXELJMJvIHifFPN6tBBiFSXKGpy2g"></script>
