@@ -357,7 +357,7 @@ $petani = DB::table('templates')->pluck('color_code');
                                 style="height: 47px; font-weight: bold;font-size:13px; font-family: 'Arial', sans-serif; font-family: DejaVu Sans, sans-serif;">
                                 <span style="font-family: 'DejaVu Sans', sans-serif;">{{
                                     $requestData['currency'] }}</span>{{
-                                number_format($requestData['total_ytd_net_pay'], 2) }} </th>
+                                number_format($requestData['total_ytd_net_pay'], 2) }}</th>
                         </tr>
                     </tfoot>
                 </table>
