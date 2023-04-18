@@ -294,8 +294,8 @@
                                 <tr>
                                     <td style="text-align: left;text-transform:capitalize;font-size:14px;">{{ $earn }}
                                     </td>
-                                    <td style="font-size:14px;">{{ $requestData['rate'][$key] }}</td>
-                                    <td style="text-align:center;font-size:14px;">{{ $requestData['hours'][$key] }}</td>
+                                    <td style="font-size:14px;">@if($requestData['rate'][$key] != 0.00){{ $requestData['rate'][$key] }}@endif</td>
+                                    <td style="text-align:center;font-size:14px;">@if($requestData['hours'][$key] != 0.00){{ $requestData['hours'][$key] }}@endif</td>
                                     <td style="font-size:14px;">{{ number_format($requestData['period'][$key], 2) }}
                                     </td>
                                     <td style="font-size:14px;">{{ number_format($requestData['ytd_total'][$key], 2) }}

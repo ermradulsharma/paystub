@@ -365,24 +365,11 @@
                         <tbody>
                             @foreach ($requestData['earning'] as $key => $earn)
                             <tr style="border: none;">
-                                <td
-                                    style="font-size:12px; width:20%; font-weight:bold; text-align:left;padding-left:20px; text-transform:capitalize;">
-                                    {{ $earn }}</td>
-                                <td
-                                    style="font-size:12px; width:20%; font-weight:bold; text-align:right; padding-right:20px;">
-                                    {{ number_format($requestData['hours'][$key], 2) }}</td>
-                                <td
-                                    style="font-size:12px; width:20%; font-weight:bold; text-align:right; padding-right:20px;">
-                                    <span style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency']
-                                        }}</span>@if($requestData['rate'][$key] != 0.00) {{ number_format($requestData['rate'][$key], 2) ?? '' }}@endif </td>
-                                <td
-                                    style="font-size:12px; width:20%; font-weight:bold; text-align:right; padding-right:20px;">
-                                    <span style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency']
-                                        }}</span>{{ number_format($requestData['period'][$key], 2) }}</td>
-                                <td
-                                    style="font-size:12px; width:20%; font-weight:bold; text-align:right; padding-right:20px;">
-                                    <span style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency']
-                                        }}</span>{{ number_format($requestData['ytd_total'][$key], 2) }}</td>
+                                <td style="font-size:12px; width:20%; font-weight:bold; text-align:left; padding-left:20px; text-transform:capitalize;"> {{ $earn }}</td>
+                                <td style="font-size:12px; width:20%; font-weight:bold; text-align:right; padding-right:20px;">@if($requestData['hours'][$key] != 0.00){{ number_format($requestData['hours'][$key],2) }}@endif</td>
+                                <td style="font-size:12px; width:20%; font-weight:bold; text-align:right; padding-right:20px;">@if($requestData['rate'][$key] != 0.00)<span style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency']  }}</span>{{ number_format($requestData['rate'][$key], 2) ?? '' }}@endif </td>
+                                <td style="font-size:12px; width:20%; font-weight:bold; text-align:right; padding-right:20px;"><span style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['period'][$key], 2) }}</td>
+                                <td style="font-size:12px; width:20%; font-weight:bold; text-align:right; padding-right:20px;"><span style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['ytd_total'][$key], 2) }}</td>
                             </tr>
                             @endforeach
                             <tr style="border: none;">

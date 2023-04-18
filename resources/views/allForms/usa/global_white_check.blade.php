@@ -288,21 +288,12 @@
                         <tbody style="font-size:13px;">
                             @foreach ($requestData['earning'] as $key => $earn)
                                 <tr>
-                                    <td
-                                        style="text-align: left;font-size:15px;font-family: Arial, Helvetica, sans-serif;">
-                                        {{ $earn }}</td>
-                                    <td
-                                        style="text-align: rightfont-size:15px;font-family: Arial, Helvetica, sans-serif;">
-                                        @if($requestData['rate'][$key] != 0.00) {{ number_format($requestData['rate'][$key], 2) ?? '' }}@endif</td>
-                                    <td
-                                        style="text-align: center;font-size:15px;font-family: Arial, Helvetica, sans-serif;">
-                                        {{ number_format($requestData['hours'][$key], 2) }}</td>
-                                    <td
-                                        style="text-align: center;font-size:15px;font-family: Arial, Helvetica, sans-serif;">
-                                        {{ number_format($requestData['total'][$key], 2) }} </td>
+                                    <td style="text-align: left;font-size:15px;font-family: Arial, Helvetica, sans-serif;">{{ $earn }}</td>
+                                    <td style="text-align: rightfont-size:15px;font-family: Arial, Helvetica, sans-serif;">@if($requestData['rate'][$key] != 0.00){{ number_format($requestData['rate'][$key], 2)}}@endif</td>
+                                    <td style="text-align: center;font-size:15px;font-family: Arial, Helvetica, sans-serif;">@if($requestData['hours'][$key] != 0.00){{ number_format($requestData['hours'][$key], 2) }}@endif</td>
+                                    <td style="text-align: center;font-size:15px;font-family: Arial, Helvetica, sans-serif;"> {{ number_format($requestData['total'][$key], 2) }} </td>
                                     <td></td>
-                                    <td style="font-size:15px;font-family: Arial, Helvetica, sans-serif;">
-                                        {{ number_format($requestData['ytd_total'][$key], 2) }} </td>
+                                    <td style="font-size:15px;font-family: Arial, Helvetica, sans-serif;"> {{ number_format($requestData['ytd_total'][$key], 2) }} </td>
                                 </tr>
                             @endforeach
 
