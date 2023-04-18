@@ -49,7 +49,7 @@ class PayStubController extends Controller
         $deduction = Deduction::where('state', 'canada')->orderBy('id', 'asc')->get();
         $basicType = Template::where(['state' => 'canada', 'type' => 'basic', 'status' => 1])->orderBy('title')->get();
         $advanceType = Template::where(['state' => 'canada', 'type' => 'advance', 'status' => 1])->orderBy('title')->get();
-        $stateTaxes = StateTax::orderBy('state')->get();
+        $stateTaxes = StateTax::where('country_code','CA')->orderBy('state')->get();
         $currencies = Currency::get();
         return view('canadaPaystub', compact('basicType', 'advanceType', 'deduction', 'stateTaxes', 'currencies'));
     }

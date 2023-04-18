@@ -21,6 +21,7 @@ use App\Models\Deduction;
 use App\Models\StateTax;
 use App\Models\w2formPdf;
 
+
 class TemplateFormController extends Controller
 {
 
@@ -197,5 +198,18 @@ class TemplateFormController extends Controller
             $response['status'] = STATUS_OK;
         }
         return response()->json($response, $response['status']);
+    }
+
+    public function deleteExtraPdf(){
+
+        $path = public_path('uploads/mailData');
+        $files = File::allFiles($path);
+        foreach($files as $key => $file){
+            if(!PaySlip::where('pdf',$file->getFilename())->first()){
+                if(File::delete($path.'/'.$file->getFilename())){
+                    echo ("DELETED \n");
+                }
+            }
+        }
     }
 }
