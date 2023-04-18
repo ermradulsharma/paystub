@@ -31,7 +31,13 @@ class TemplateFormController extends Controller
         $deduction = Deduction::where('state', $invoiceData->type)->orderBy('id', 'asc')->get();
         $basicType = Template::where(['state' => $invoiceData->type, 'type' => 'basic', 'status' => 1])->orderBy('title')->with('images')->get();
         $advanceType = Template::where(['state' => $invoiceData->type, 'type' => 'advance', 'status' => 1])->orderBy('title')->with('images')->get();
-        $stateTaxes = StateTax::get();
+
+        if($invoiceData->type == 'canada'){
+            $countryCode = "CA";
+        }else{
+            $countryCode = $invoiceData->type;
+        }
+        $stateTaxes = StateTax::where('country_code',$countryCode)->orderBy('state')->get();
         $currencies = Currency::get();
         $employerList = Address::where(['type' => 'employer', 'user_id' => Auth::user()->id])->orderBy('id', 'DESC')->get();
         $employeeList = Address::where(['type' => 'employee', 'user_id' => Auth::user()->id])->orderBy('id', 'DESC')->get();
