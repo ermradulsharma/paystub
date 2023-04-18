@@ -292,28 +292,19 @@
             <section class="section_2">
                 <table style="width:100%">
                     <tr>
-                        <td style="text-align:left; padding-left:5px; font-size:17px; font-weight:400; text-transform: capitalize; width:77%;"
-                            rowspan="2">Pay {!! $word !!}</td>
-                        <th style="font-weight:400;" class="earning">{{ $requestData['currency'] }}
-                            {{ number_format($requestData['total_net_pay'], 2) }}</th>
+                        <td style="text-align:left; padding-left:5px; font-size:17px; font-weight:400; text-transform: capitalize; width:77%;" rowspan="2">Pay {!! $word !!} </td>
+                        <th style="font-weight:400;" class="earning">{{ $requestData['currency'] }} {{ number_format($requestData['total_net_pay'], 2) }}</th>
                     </tr>
                     <tr>
-                        <td style="font-size:15px; color:#515c6b;text-align:right;" class="earning"> This is not a check
-                        </td>
+                        <td style="font-size:15px; color:#515c6b;text-align:right;" class="earning"> This is not a check </td>
                     </tr>
                 </table>
             </section>
             <section style="padding-top: 16px; width:400px;">
                 <table>
                     <tr>
-                        <td style="color: #515c6b;  vertical-align:top;">
-                            <p style="font-size:18px;font-family: Arial, Helvetica, sans-serif;">Pay to the order of</p>
-                        </td>
-                        <td style="text-transform: capitalize;font-size:20px; color:#1a1a1a;">
-                            <p style="font-family: Arial, Helvetica, sans-serif;">{{ $requestData['emp_name'] }} <br>
-                                {{ $requestData['emp_street_1'] }}<br>@if($requestData['emp_street_2']!='') {{ $requestData['emp_street_2'] }}<br>@endif{{ $requestData['emp_city'] }},
-                                {{ $requestData['emp_state'] }} {{ $requestData['emp_zip_code'] }} </p>
-                        </td>
+                        <td style="color: #515c6b;  vertical-align:top;"><p style="font-size:18px;font-family: Arial, Helvetica, sans-serif;">Pay to the order of</p></td>
+                        <td style="text-transform: capitalize;font-size:20px; color:#1a1a1a;"><p style="font-family: Arial, Helvetica, sans-serif;">{{ $requestData['emp_name'] }}<br>{{ $requestData['emp_street_1'] }}<br>@if($requestData['emp_street_2']!='') {{ $requestData['emp_street_2'] }}<br>@endif{{ $requestData['emp_city'] }}, {{ $requestData['emp_state'] }} {{ $requestData['emp_zip_code'] }}</p></td>
                     </tr>
                 </table>
             </section>
@@ -388,7 +379,7 @@
                             <tr>
                                 <td>{{ $earn }}</td>
                                 <td>@if($requestData['rate'][$key] != 0.00) {{ number_format($requestData['rate'][$key], 2) ?? '' }}@endif</td>
-                                <td>{{ number_format($requestData['hours'][$key], 2) }}</td>
+                                <td>@if($requestData['hours'][$key] != 0.00){{ $requestData['hours'][$key] }}@endif</td>
                                 <td>{{ number_format($requestData['period'][$key], 2) }}</td>
                                 <td style="text-align:center;">{{ number_format($requestData['ytd_total'][$key], 2) }}
                                 </td>

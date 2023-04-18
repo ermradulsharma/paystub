@@ -889,6 +889,7 @@ select:after {
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
+    z-index: 99;
 }
 
 .sidenav a {
@@ -2703,16 +2704,13 @@ img.earnbtn2.lockuk {
         width: 100%;
     }
 
-    .previewbtn {
-        margin-right: 40px !important;
-    }
 
     .uk-texs {
         width: 95%;
     }
 
     .d-flex.flex-wrap.justify-content-between.canada-btn-inner {
-        justify-content: center !important;
+        justify-content: space-between !important;
     }
 
     .mt-5.pt-4.pr-3.mr-5.ml-3.d-flex.storehead.global {
@@ -3281,8 +3279,9 @@ img.earnbtn2.lockuk {
 
     .previewbtn {
         padding: 0px 23px;
+        margin-left: 15px;
 
-        margin: 0px 0px 0 0px !important;
+
     }
 
     .continue {
@@ -3386,6 +3385,8 @@ img.earnbtn2.lockuk {
 
     .previewbtn {
         margin-right: 0px !important;
+        margin-bottom: 15px !important;
+        width:92% !important;
     }
 
     input.pie-box.input {
@@ -3423,7 +3424,9 @@ img.earnbtn2.lockuk {
         font-size: 15px !important;
         margin-top: 0;
     }
-
+    .d-flex.flex-wrap.justify-content-between.canada-btn-inner{
+        justify-content: center !important;
+    }
     .text-center.my-5.w2-form-text {
         margin-bottom: 15px !important;
     }
