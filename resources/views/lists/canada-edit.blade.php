@@ -205,7 +205,7 @@
                                                     class="redColor">*</span></label>
                                             <input type="date" id="pay_start" name="pay_start"
                                                 value="{{$invoice->pay_start ?? null}}" placeholder="12-11-2022"
-                                                class="w-100 py-2 textInputFontSize pay_start datepicker"
+                                                class="w-100 py-2 textInputFontSize pay_start datepicker inputdatepicker"
                                                 data-id="pay_start"
                                                 style="border: 1px solid #878080;border-right: none;">
                                         </div>
@@ -215,7 +215,7 @@
                                             <label for="emp_id" class="lable"> <span class="redColor"></span></label>
                                             <input type="date" id="pay_end" name="pay_end"
                                                 value="{{$invoice->pay_end ?? null}}" placeholder=" "
-                                                class="w-100 py-2 textInputFontSize pay_end" data-id="pay_end"
+                                                class="w-100 py-2 textInputFontSize pay_end datepicker inputdatepicker" data-id="pay_end"
                                                 style="border: 1px solid #878080;border-left: none;" readonly>
                                         </div>
                                     </div>
@@ -226,7 +226,7 @@
                                     <label for="pay_date" class="lable">PAY DATE <span class="redColor">*</span></label>
                                     <input type="date" id="pay_date" name="pay_date"
                                         value="{{$invoice->pay_date ?? null}}" placeholder="12-19-2022"
-                                        class="w-100 p-2 textInputFontSize pay_date" data-id="pay_date">
+                                        class="w-100 p-2 textInputFontSize pay_date datepicker inputdatepicker" data-id="pay_date">
                                 </div>
                             </div>
                         </div>
@@ -342,17 +342,19 @@
                                         <button type="button" class="statementbtn">DEDUCTION</button>
                                         @foreach($deduction as $key => $item)
                                         <div class="d-flex mt-3">
-                                            <img src="{{ asset('images/lock.png') }}" class="earnbtn3 lock">
+                                            <img src="{{ asset('images/lock.png') }}" class="earnbtn3 lock" data-id="{{ $key }}" id="{{ $key }}"
+                                            data-src="{{ asset('images/openPadlock.png') }}">
                                             <input type="text" class="earnbtn text-center taxes" name="taxes[]"
                                                 value="{{$invoice->taxes[$key] ?? null}}" data-id="00{{ $key }}"
-                                                data-value="{{ $item->price }}">
+                                                data-value="{{ $item->price }}" id="taxe_{{ $key }}" readonly="readonly">
                                         </div>
                                         @endforeach
                                         @foreach($invoice->tax_deduction ?? [] as $key => $tax_deduction)
                                         <div class="d-flex mt-3">
-                                            <img src="../images/lock.png" class="earnbtn3 lock">
+                                            <img src="../images/lock.png" class="earnbtn3 lock" data-id="{{ $key }}" id="{{ $key }}"
+                                            data-src="{{ asset('images/openPadlock.png') }}">
                                             <input type="text" class="earnbtn text-center other_taxes"
-                                                name="tax_deduction[]" value="{{$tax_deduction}}" data-id="000{{$key}}">
+                                                name="tax_deduction[]" value="{{$tax_deduction}}" id="taxe_{{ $key }}" data-id="000{{$key}}" readonly="readonly">
                                         </div>
                                         @endforeach
                                     </div>
@@ -458,10 +460,8 @@
 </div>
 @endsection
 @section('script')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
-    integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 <script src="{{ asset('user') }}/js/canada.js"></script>
 <script>
     $(document).ready(function() {
