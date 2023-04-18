@@ -198,6 +198,9 @@
             padding: 10px 3px;
             vertical-align: baseline;
         }
+        input.contact-box{
+            width:90%;
+        }
     }
 </style>
 <section class="user-profile">
