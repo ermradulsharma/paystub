@@ -219,19 +219,10 @@
                     @foreach ($requestData['earning'] as $key => $earn)
                     <tr>
                         <td id="color" style="font-size:15px;color:#587193;text-transform:capitalize;">{{ $earn }}</td>
-                        <td id="color" style="font-size:15px;color:#000 !important;">@if($requestData['rate'][$key] !=
-                            0.00)<span style="font-family: 'DejaVu Sans', sans-serif;padding-left:1px;">{{
-                                $requestData['currency'] }}</span>{{ number_format($requestData['rate'][$key], 2) ?? ''
-                            }}@endif</td>
-                        <td colspan="2" id="color" style="color:#000;font-size:15px; padding-left:5px;">
-                            @if($requestData['hours'][$key] != 0.00){{ number_format($requestData['hours'][$key],2)
-                            }}@endif</td>
-                        <td id="color" style="font-size:15px; color:#000;" class="alignR"><span
-                                style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span>{{
-                            number_format($requestData['period'][$key], 2) }}</td>
-                        <td id="color" class="alignR" style="font-size:15px; color:#000;"><span
-                                style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency']
-                                }}</span>{{number_format($requestData['ytd_total'][$key], 2) }}</td>
+                        <td id="color" style="font-size:15px;color:#000 !important;">@if($requestData['rate'][$key] != 0.00)<span style="font-family: 'DejaVu Sans', sans-serif;padding-left:1px;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['rate'][$key], 2) }}@endif</td>
+                        <td colspan="2" id="" style="color:#000; font-size:15px; padding-right:20px" class="alignl">@if($requestData['hours'][$key] != 0.00){{ number_format($requestData['hours'][$key],2) }}@endif</td>
+                        <td id="color" style="font-size:15px; color:#000;" class="alignR"><span style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['period'][$key], 2) }}</td>
+                        <td id="color" class="alignR" style="font-size:15px; color:#000;"><span style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span>{{number_format($requestData['ytd_total'][$key], 2) }}</td>
                     </tr>
                     @endforeach
 
@@ -288,7 +279,7 @@
                         <td id="color" class="alignR" style="font-size:16px; color:#000; font-family: Arial, Helvetica, sans-serif;"><span style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span>{{number_format($requestData['period_tax_deduction'][$key], 2) }}</td>
                         <td id="color" class="alignR" style="font-size:16px; color:#000; font-family: Arial, Helvetica, sans-serif;"><span style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span>{{number_format($requestData['ytd_tax_deduction'][$key], 2) }} </td>
                     </tr>
-                    @endforeach 
+                    @endforeach
                     @endif
                     <tfoot class="tfooter " style="background:#587193; color:white">
                         <tr>
