@@ -189,23 +189,34 @@
                 </tr>
             </table>
             <section class="section_2">
+                @if($requestData['emp_street_2'] != '')
                 <table>
                     <tr>
                         <td style="width: 40%;">
-                            <p style="font-size:16px;font-weight:400; font-family: Arial, Helvetica, sans-serif; ">SSN:
-                                XXX-XX-{{$requestData['emp_ssn'] }}</p>
+                            <p style="font-size:14px;font-weight:400; font-family: 'Arial', sans-serif;position: relative; bottom:20px;">SSN: XXX-XX-{{ $requestData['emp_ssn'] }}</p>
+                            <p style="padding: 0; margin:0;font-weight:400; font-size:14px; font-family: 'Arial', sans-serif;position: relative; top:25px;"> Stub No: {{ $requestData['stub_no'] }}</p>
+                        </td>
+                        <td class="earning" style="width: 60%;font-weight:400 !important;padding-bottom:0px !important; padding-top:0px !important; margin:0px; font-size:16px; font-family: Arial, Helvetica, sans-serif; color:#f7f0f9;text-transform:capitalize; ">{{ $requestData['emp_name'] }} <br>Emp.ID. {{ $requestData['emp_id'] }} <br> {{ $requestData['emp_street_1'] }},<br>{{$requestData['emp_street_2'] }},<br>{{ $requestData['emp_city'] }}, {{ $requestData['emp_state'] }} {{ $requestData['emp_zip_code'] }}</td>
+                    </tr>
+                </table>
+                @else
+                <table>
+                    <tr>
+                        <td style="width: 40%;">
+                            <p style="font-size:14px;font-weight:400; font-family: 'Arial', sans-serif;">SSN: XXX-XX-{{
+                                $requestData['emp_ssn'] }}</p>
                             <p
-                                style="padding: 0; margin:0;font-weight:400; font-size:16px; font-family: Arial, Helvetica, sans-serif; ">
+                                style="padding: 0; margin:0;font-weight:400; font-size:14px; font-family: 'Arial', sans-serif;">
                                 Stub No: {{ $requestData['stub_no'] }}</p>
                         </td>
                         <td class="earning"
-                            style="width: 60%;font-weight:400 !important;padding-bottom:0px !important; padding-top:0px !important; margin:0px; font-size:16px; font-family: Arial, Helvetica, sans-serif; color:#f7f0f9;text-transform:capitalize; ">
-                            {{ $requestData['emp_name'] }}<br>Emp.ID. {{ $requestData['emp_id'] }}<br>{{
-                            $requestData['emp_street_1'] }}, @if($requestData['emp_street_2'] != '')
-                            {{$requestData['emp_street_2'] }},@endif {{ $requestData['emp_city'] }}, {{
-                            $requestData['emp_state'] }} {{ $requestData['emp_zip_code'] }}</td>
+                        style="width: 60%;font-weight:400 !important;padding-bottom:0px !important; padding-top:0px !important; margin:0px; font-size:16px; font-family: Arial, Helvetica, sans-serif; color:#f7f0f9;text-transform:capitalize; ">
+                        {{ $requestData['emp_name'] }} <br>Emp.ID. {{ $requestData['emp_id'] }} <br> {{
+                        $requestData['emp_street_1'] }}, {{ $requestData['emp_city'] }}, {{
+                        $requestData['emp_state'] }} {{ $requestData['emp_zip_code'] }}</td>
                     </tr>
                 </table>
+                @endif
             </section>
             <section class="tablesection">
                 <table style="width: 100%;">
