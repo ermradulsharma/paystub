@@ -240,15 +240,15 @@
                         <td></td>
                     </tr> @foreach ($requestData['tax_deduction'] ?? [] as $key => $tax_deduction) <tr>
                         <td></td>
-                        <td class="data" id="color">{{ $tax_deduction }}</td>
+                        <td style="font-size:16px; color:#000;text-transform:capitalize;" class="data" id="color">{{ $tax_deduction }}</td>
                         <td id="color" class="alignR"
-                            style="font-size:16px; font-family: Arial, Helvetica, sans-serif;"><span
+                            style="font-size:16px; color:#000;font-family: Arial, Helvetica, sans-serif;"><span
                                 style="font-family: 'DejaVu Sans', sans-serif;">{{
                                 $requestData['currency'] }}</span>{{
                             number_format($requestData['period_tax_deduction'][$key], 2)
                             }}</td>
                         <td id="color" class="alignR"
-                            style="font-size:16px; font-family: Arial, Helvetica, sans-serif;"><span
+                            style="font-size:16px; color:#000;font-family: Arial, Helvetica, sans-serif;"><span
                                 style="font-family: 'DejaVu Sans', sans-serif;">{{
                                 $requestData['currency'] }}</span>{{
                             number_format($requestData['ytd_tax_deduction'][$key], 2) }}
@@ -292,8 +292,11 @@
                                     <P style="font-size: 12px; margin: 0;color:black;  font-family: 'Arial Rounded MT Bold', sans-serif; text-transform:uppercase;">{{ $requestData['city'] }} {{ $requestData['state'] }}. {{ $requestData['zip_code'] }}<br>USA</P>
                                 </td>
                                 <td style="text-align:right;padding-right:20px;">
-                                    <p style="font-size: 14px; margin-bottom: 5px; font-family: Arial, Helvetica, sans-serif; font-weight: 400"><span>00000{{ $requestData['advice_number'] }}</span></p>
-                                    <p style="font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: 400;">{{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</p>
+                                    <p
+                                        style="font-size: 14px; margin-bottom: 5px; font-family: Arial, Helvetica, sans-serif; font-weight: 400">
+                                        <span>00000{{ $requestData['advice_number'] }}</span></p>
+                                    <p style="font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: 400; position: relative;   @if($requestData['address_2'] !='' ) bottom:3px; @else bottom:1px;  @endif">
+                                        {{ date('m/d/Y', strtotime($requestData['pay_date'])) }} </p>
                                 </td>
                             </tr>
                         </table>
