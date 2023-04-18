@@ -584,8 +584,8 @@ class UserController extends Controller
                 'type'      => 'required',
                 'name'      => 'required|min:3',
                 'address_1' => 'required|min:3',
-                'city'      => 'required|min:3',
-                'state'     => 'required|min:3',
+                'city'      => 'required',
+                'state'     => 'required',
                 'zip_code'       => 'required|min:3',
             ];
 
@@ -642,8 +642,8 @@ class UserController extends Controller
                 'type'      => 'required',
                 'name'      => 'required|min:3',
                 'address_1' => 'required|min:3',
-                'city'      => 'required|min:3',
-                'state'     => 'required|min:3',
+                'city'      => 'required',
+                'state'     => 'required',
                 'zip_code'       => 'required|min:3',
             ];
 

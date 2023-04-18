@@ -288,12 +288,12 @@
                         <tbody style="font-size:13px;">
                             @foreach ($requestData['earning'] as $key => $earn)
                                 <tr>
-                                    <td style="text-align: left;font-size:15px;font-family: Arial, Helvetica, sans-serif;">{{ $earn }}</td>
-                                    <td style="text-align: rightfont-size:15px;font-family: Arial, Helvetica, sans-serif;">@if($requestData['rate'][$key] != 0.00){{ number_format($requestData['rate'][$key], 2)}}@endif</td>
-                                    <td style="text-align: center;font-size:15px;font-family: Arial, Helvetica, sans-serif;">@if($requestData['hours'][$key] != 0.00){{ number_format($requestData['hours'][$key], 2) }}@endif</td>
-                                    <td style="text-align: center;font-size:15px;font-family: Arial, Helvetica, sans-serif;"> {{ number_format($requestData['total'][$key], 2) }} </td>
+                                    <td style="text-align: left; font-size:15px;font-family: Arial, Helvetica, sans-serif;">{{ $earn }}</td>
+                                    <td style="text-align: right; font-size:15px;font-family: Arial, Helvetica, sans-serif;">@if($requestData['rate'][$key] != 0.00){{ number_format($requestData['rate'][$key], 2)}}@endif</td>
+                                    <td style="text-align: center; font-size:15px;font-family: Arial, Helvetica, sans-serif;">@if($requestData['hours'][$key] != 0.00){{ number_format($requestData['hours'][$key], 2) }}@endif</td>
+                                    <td style="text-align: center; font-size:15px;font-family: Arial, Helvetica, sans-serif;padding-left:3px;"> {{ number_format($requestData['total'][$key], 2) }} </td>
                                     <td></td>
-                                    <td style="font-size:15px;font-family: Arial, Helvetica, sans-serif;"> {{ number_format($requestData['ytd_total'][$key], 2) }} </td>
+                                    <td style="font-size:15px; font-family: Arial, Helvetica, sans-serif; text-align:right;"> {{ number_format($requestData['ytd_total'][$key], 2) }} </td>
                                 </tr>
                             @endforeach
 
@@ -387,13 +387,8 @@
                 <br>
                 <tr>
                     <td></td>
-                    <td style="text-align: left; font-size:15px; border-bottom:3px solid black; border-top:3px solid black;font-family: Arial, Helvetica, sans-serif;"
-                        colspan="2"><b>Net Pay</b></td>
-                    <td
-                        style="font-size:15px; border-bottom:3px solid black; border-top:3px solid black;font-family: Arial, Helvetica, sans-serif;">
-                        <span
-                            style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['total_net_pay'], 2) }}
-                    </td>
+                    <td style="text-align: left; font-size:15px; border-bottom:3px solid black; border-top:3px solid black;font-family: Arial, Helvetica, sans-serif;" colspan="2"><b>Net Pay</b></td>
+                    <td style="text-align: right; font-size:15px; border-bottom:3px solid black; border-top:3px solid black;font-family: Arial, Helvetica, sans-serif;"> <span style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['total_net_pay'], 2) }}</td>
                 </tr>
             </table>
         </section>
@@ -418,7 +413,7 @@
         <section class="bg-img">
             <div class="container" style=" margin-top:100px; width:100%; padding:0px 20px;">
                 <div class="row" style="display: flex;justify-content: space-between;padding: 0px 14px;">
-                    <div class="global-address" @if($requestData['address_2'] != '')style="width: 50%; float:left; position: relative; top:15px; right:0px; left:60px;" @else style="width: 50%; float:left; position: relative; top:30px; right:0px; left:60px;"@endif>
+                    <div class="global-address" @if($requestData['address_2'] != '')style="width: 50%; float:left; position: relative; bottom:5px; right:0px; left:60px;" @else style="width: 50%; float:left; position: relative; top:10px; right:0px; left:60px;"@endif>
                         <p
                             style="font-size:15px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:400;">
                             {{ $requestData['cname'] }}</p>
@@ -431,11 +426,11 @@
                         </P>
                     </div>
                     <div style="width: 50%;float:right;">
-                        <h6 @if($requestData['address_2'] != '')style="text-align:left; left:80px; position: relative;  top:18px;font-weight:400;font-size: 14px; "@else style="text-align:left; left:80px; position: relative;  top:28px;font-weight:400;font-size: 13px;"@endif>{{ $requestData['check_no'] }} </h6>
-                        <h6 @if($requestData['address_2'] != '')style="font-size: 14px; text-align:left; bottom:17px; left:80px; position: relative; font-weight:400;"@else style="font-size: 13px; text-align:left; bottom:3px; left:80px; position: relative; font-weight:400;"@endif>{{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</h6>
+                        <h6 @if($requestData['address_2'] != '')style="text-align:left; left:80px; position: relative;  bottom:23px;font-weight:400;font-size: 14px; "@else style="text-align:left; left:80px; position: relative;  bottom:13px;font-weight:400;font-size: 13px;"@endif>{{ $requestData['check_no'] }} </h6>
+                        <h6 @if($requestData['address_2'] != '')style="font-size: 14px; text-align:left; bottom:58px; left:80px; position: relative; font-weight:400;"@else style="font-size: 13px; text-align:left; bottom:45px; left:80px; position: relative; font-weight:400;"@endif>{{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</h6>
                     </div>
                 </div>
-                <table @if($requestData['address_2'] != '')style="position:relative; bottom:30px;" @else style="position:relative; bottom:15px;" @endif>
+                <table @if($requestData['address_2'] != '')style="position:relative; bottom:70px;" @else style="position:relative; bottom:55px;" @endif>
                     <tr>
                         <td style="width:10%;"></td>
                         <td
@@ -444,10 +439,8 @@
                         <td
                             style="font-size:15px; width:40%;padding-top:40px !important; text-align:left;padding-left:60px;font-family: Arial, Helvetica, sans-serif;">
                             XXXXX<b>{{ $requestData['account_number_last_4'] }}</b></td>
-                        <td
-                            style="font-size:15px; width:20%;padding-top:40px; text-align:left;padding-left:37px;font-family: Arial, Helvetica, sans-serif;">
-                            <b><span
-                                    style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['total_net_pay'], 2) }}</b>
+                        <td style="font-size:15px; width:20%;padding-top:40px; text-align:right; padding-right:38%;font-family: Arial, Helvetica, sans-serif;">
+                            <b><span style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['total_net_pay'], 2) }}</b>
                         </td>
                     </tr>
                 </table>
