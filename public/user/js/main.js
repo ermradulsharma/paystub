@@ -437,14 +437,18 @@ function generatePDF() {
     });
 }
 
-$('.lock').click(function () {
-    var id = $(this).data('id');
-    var img = $(this).attr('src');
-    if (img == 'https://paystubx.com/images/lock.png') {
-        $("#" + id).attr('src', 'https://paystubx.com/images/unlock.png');
-        $("#taxe_" + id).attr("readonly", false);
-    } else {
-        $("#" + id).attr('src', 'https://paystubx.com/images/lock.png');
-        $("#taxe_" + id).attr("readonly", true);
-    }
+$(document).ready(function(){
+    // $('.lock').click(function () {
+    $(document).on('click','.lock',function () {
+        var id = $(this).data('id');
+        var img = $(this).attr('src');
+
+        if (img == baseUrl+'images/lock.png') {
+            $("#" + id).attr('src', 'https://paystubx.com/images/unlock.png');
+            $("#taxe_" + id).attr("readonly", false);
+        } else {
+            $("#" + id).attr('src', 'https://paystubx.com/images/lock.png');
+            $("#taxe_" + id).attr("readonly", true);
+        }
+    });
 });

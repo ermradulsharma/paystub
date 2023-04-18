@@ -200,7 +200,7 @@
                         {{ date('m/d/Y', strtotime($requestData['pay_date'])) }}
                     </td>
                     <td class="padding" colspan="2"
-                        style="border:3px solid #8a898a; text-align:center;border-top:none; border-bottom:none;font-size:14px;">{{ $requestData['check_no'] ?? '' }}
+                        style="border:3px solid #8a898a; text-align:center;border-top:none; border-bottom:none;font-size:14px;">{{ $requestData['check_number'] ?? '' }}
                     </td>
                 </tr>
             </table>
@@ -220,10 +220,8 @@
                                     <tr style="">
                                         <td id="fica" style="padding:left 20px;font-size:14px;"> {{ $earn }}</td>
                                          <td style="font-size:14px;"> @if($requestData['rate'][$key] != 0.00) {{ number_format($requestData['rate'][$key], 2) ?? '' }}@endif</td>
-                                        <td style="text-align: center;font-size:14px;">{{ $requestData['hours'][$key] }}.00</td>
-                                        <td style="text-align: center;font-size:14px; ">{{ $requestData['currency'] }}
-                                            {{ number_format($requestData['total'][$key], 2) }}
-                                        </td>
+                                        <td style="text-align: center;font-size:14px;">{{ $requestData['hours'][$key] }}.00 </td>
+                                        <td style="text-align: center;font-size:14px; ">{{ $requestData['currency'] }}{{ number_format($requestData['total'][$key], 2) }}</td>
                                     </tr>
                                 @endforeach
                             </tbody>
@@ -240,23 +238,15 @@
                                 @foreach ($requestData['taxes'] ?? [] as $key => $taxes)
                                     <tr>
                                         <td style="font-size:14px; padding-left:14px;" id="fica">{{ $taxes }}</td>
-                                        <td style="text-align: center;font-size:14px;">{{ $requestData['currency'] }}
-                                            {{ number_format($requestData['taxes_rate'][$key], 2) }}
-                                        </td>
-                                        <td style="text-align: center;font-size:14px;">{{ $requestData['currency'] }}
-                                            {{ number_format($requestData['taxes_ytd'][$key], 2) }}
-                                        </td>
+                                        <td style="text-align: center;font-size:14px;">{{ $requestData['currency'] }}{{ number_format($requestData['taxes_rate'][$key], 2) }}</td>
+                                        <td style="text-align: center;font-size:14px;">{{ $requestData['currency'] }}{{ number_format($requestData['taxes_ytd'][$key], 2) }}</td>
                                     </tr>
                                 @endforeach
                                 @foreach ($requestData['tax_deduction'] ?? [] as $key => $tax_deduction)
                                     <tr>
                                         <td id="fica" style="padding:left 10px;font-size:15px;">{{ $tax_deduction }}</td>
-                                        <td style="text-align: center;font-size:15px;">{{ $requestData['currency'] }}
-                                            {{ number_format($requestData['period_tax_deduction'][$key], 2) }}
-                                        </td>
-                                        <td style="text-align: center;font-size:15px;">{{ $requestData['currency'] }}
-                                            {{ number_format($requestData['ytd_tax_deduction'][$key], 2) }}
-                                        </td>
+                                        <td style="text-align: center;font-size:15px;">{{ $requestData['currency'] }}{{ number_format($requestData['period_tax_deduction'][$key], 2) }}</td>
+                                        <td style="text-align: center;font-size:15px;">{{ $requestData['currency'] }}{{ number_format($requestData['ytd_tax_deduction'][$key], 2) }}</td>
                                     </tr>
                                 @endforeach
                             </tbody>
@@ -272,29 +262,24 @@
                                 <th id="cols" class="head1">YTD NET PAY</th>
                             </tr>
                             <tr class=" ytd">
-                                <td id="cols" class="head2"><span
-                                    style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['ytd_gross_total'], 2) }} </td>
-                                <td id="cols" class="head2"><span
-                                    style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['ytd_deduction_tax'], 2) }} </td>
-                                <td id="cols" class="head2"><span
-                                    style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['total_ytd_net_pay'], 2) }} </td>
+                                <td id="cols" class="head2"><span style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['ytd_gross_total'], 2) }} </td>
+                                <td id="cols" class="head2"><span style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['ytd_deduction_tax'], 2) }} </td>
+                                <td id="cols" class="head2"><span style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['total_ytd_net_pay'], 2) }} </td>
                             </tr>
                         </table>
                     </div>
                     <div class="column2">
                         <table id="bottomtable" style="width:100%; background-color:white;">
-                            <tr class="">
+                            <tr class="">`
                                 <th id="cols" class="head1">CURRENT TOTAL</th>
                                 <th id="cols" class="head1">DEDUCTIONS</th>
                                 <th id="cols" class="head1" style="border-right: none !important; ">NET PAY
                                 </th>
                             </tr>
                             <tr class=" ytd">
-                                <td id="cols" class="head2"><span
-                                    style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['period_gross_total'], 2) }} </td>
-                                <td id="cols" class="head2"><span
-                                    style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['deduction_tax'], 2) }} </td>
-                                <td id="cols" class="head2" style="border-right: none !important; font-family: DejaVu Sans, sans-serif;"><span style="font-family: 'DejaVu Sans', sans-serif; padding-right:1px;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['total_net_pay'], 2) }} </td>
+                                <td id="cols" class="head2"><span style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['period_gross_total'], 2) }} </td>
+                                <td id="cols" class="head2"><span style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['deduction_tax'], 2) }} </td>
+                                <td id="cols" class="head2" style="border-right: none !important; font-family: DejaVu Sans, sans-serif;"><span style="font-family: 'DejaVu Sans', sans-serif; padding-right:0px;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['total_net_pay'], 2) }} </td>
                             </tr>
                         </table>
                     </div>
