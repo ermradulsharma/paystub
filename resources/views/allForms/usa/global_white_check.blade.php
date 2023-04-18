@@ -220,7 +220,7 @@
                             <td style="font-size: 15px; line-height:1.2; text-transform: capitalize;font-family: 'Arial', sans-serif;">1 </td>
                         </tr>
                         <tr>
-                            <td style="font-size: 15px; line-height:1.2; text-transform: capitalize;font-family: 'Arial', sans-serif; text-align:center;">NY:</td>
+                            <td style="font-size: 15px; line-height:1.2; text-transform: capitalize;font-family: 'Arial', sans-serif; text-align:center;">{{ $requestData['state'] }}:</td>
                             <td style="font-size: 15px; line-height:1.2; text-transform: capitalize;font-family: 'Arial', sans-serif;">1</td>
                         </tr>
                     </table>
