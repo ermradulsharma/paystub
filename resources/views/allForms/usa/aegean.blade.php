@@ -288,7 +288,7 @@
                         <td id="color" class="alignR" style="font-size:16px; color:#000; font-family: Arial, Helvetica, sans-serif;"><span style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span>{{number_format($requestData['period_tax_deduction'][$key], 2) }}</td>
                         <td id="color" class="alignR" style="font-size:16px; color:#000; font-family: Arial, Helvetica, sans-serif;"><span style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span>{{number_format($requestData['ytd_tax_deduction'][$key], 2) }} </td>
                     </tr>
-                    @endforeach 
+                    @endforeach
                     @endif
                     <tfoot class="tfooter " style="background:#587193; color:white">
                         <tr>
