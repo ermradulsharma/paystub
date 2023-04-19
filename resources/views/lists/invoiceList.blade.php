@@ -1,5 +1,31 @@
+
 @extends('layouts.app')
 @section('content')
+<style>
+   @media(max-width:768px){
+    table th{
+        font-size: 9px;
+        vertical-align: top;
+
+    }
+    .downloiadBtn{
+        font-size:10px;
+    }
+    .mail-logo{
+        width: 30px;
+    }
+    .delbtn{
+        font-size: 10px;
+    }
+    .previewbtnInvoice{
+        font-size: 10px !important;
+    }
+    .user-checkbtn{
+        font-size:12px;
+        padding: 10px 25px 10px 25px;
+    }
+   }
+</style>
     <div class="my-5">
         <div class="container" style="max-width: 1500px;">
             <div class="row" style="margin:0 auto;">
@@ -8,7 +34,7 @@
                         {{-- <a href="{{ route('profile') }}"><img src="{{ asset('images/user1.png') }}" alt=""
                                 width="35px;" height="35px"></a> --}}
 
-                        <h5 class="mt-2 ml-2 font-weight-bold" style=" color:red; ">Watermark is removed after subscription
+                        <h5 class="mt-2 ml-2 font-weight-bold subscription-text" style=" color:red; ">Watermark is removed after subscription
                         </h5>
                     </div>
                 </div>
@@ -34,6 +60,7 @@
                                 <th class="text-center" style="padding: 1.5em .5em;border:none;"></th>
                             </tr>
                         </thead>
+
                         <tbody>
                             @if (count($invoiceList) > 0)
                                 @foreach ($invoiceList ?? [] as $key => $invoice)
@@ -55,13 +82,13 @@
                                             </th>
                                             <th class="text-center" style="padding: 1em .5em;border:none;">
                                                 <a href="{{ route('invoiceMailId', $invoice->id) }}">
-                                                    <img src="{{ asset('images/emaillogo.png') }}" alt=""
+                                                    <img class="mail-logo" src="{{ asset('images/emaillogo.png') }}" alt=""
                                                         width="45px" />
                                                 </a>
                                             </th>
                                             <th class="text-center" style="padding: 1em .5em;border:none;">
                                                 <a href="{{ route('invoiceEdit', $invoice->id) }}">
-                                                    <img src="{{ asset('images/edit-icon.png') }}" alt=""
+                                                    <img class="mail-logo" src="{{ asset('images/edit-icon.png') }}" alt=""
                                                         width="45px" />
                                                 </a>
                                             </th>
@@ -102,6 +129,13 @@
 
             </div>
         </div>
+
+
+
+
+
+
+
     </div>
 
     <div class="modal fade trashModal" id="deleteTemplate">

@@ -345,22 +345,22 @@
                 <table style="padding:0; ">
                     <tr>
                         <th class="heading1 padding:0;">Employee Information</th>
-                        <th class="heading1"> Social Sec.ID</th>
-                        <th class="heading1">EmployeeID</th>
-                        <th class="heading1">Start Date</th>
-                        <th class="heading1">End Date</th>
-                        <th class="heading1">Check Date</th>
+                        <th class="heading1"style="text-align: right;padding-right:20px;"> Social Sec.ID</th>
+                        <th class="heading1"style="text-align: right;padding-right:20px;">EmployeeID</th>
+                        <th class="heading1"style="text-align: right;padding-right:20px;">Start Date</th>
+                        <th class="heading1"style="text-align: right;padding-right:20px;">End Date</th>
+                        <th class="heading1" style="text-align: right;padding-right:20px;">Check Date</th>
 
                     </tr>
                     <tr>
-                        <td style="text-transform:capitalize;padding:10px 0px;">{{ $requestData['emp_name'] }}<br>{{ $requestData['emp_street_1'] }}<br>@if($requestData['emp_street_2']!='') {{ $requestData['emp_street_2'] }}<br>@endif{{ $requestData['emp_city'] }}, {{ $requestData['emp_zip_code'] }} </td>
-                        <td style="vertical-align:top; padding:10px 0px;"> XXX-XX-{{$requestData['emp_ssn']}}</td>
-                        <td style="vertical-align:top; padding:10px 0px;text-align:center;"> {{ $requestData['emp_id'] }}</td>
-                        <td style="vertical-align:top; padding:10px 0px;">
+                        <td style="text-transform:capitalize;padding:10px 0px;padding-left:10px;">{{ $requestData['emp_name'] }}<br>{{ $requestData['emp_street_1'] }}<br>@if($requestData['emp_street_2']!='') {{ $requestData['emp_street_2'] }}<br>@endif{{ $requestData['emp_city'] }}, {{ $requestData['emp_zip_code'] }} </td>
+                        <td style="vertical-align:top; padding:10px 0px;text-align: right;padding-right:20px;"> XXX-XX-{{$requestData['emp_ssn']}}</td>
+                        <td style="vertical-align:top; padding:10px 0px;text-align: right;padding-right:20px;"> {{ $requestData['emp_id'] }}</td>
+                        <td style="vertical-align:top; padding:10px 0px;text-align: right;padding-right:20px;">
                             {{ date('m/d/Y', strtotime($requestData['pay_start'])) }} </td>
-                        <td style="vertical-align:top; padding:10px 0px;">
+                        <td style="vertical-align:top; padding:10px 0px;text-align: right;padding-right:20px;">
                             {{ date('m/d/Y', strtotime($requestData['pay_end'])) }}</td>
-                        <td style="vertical-align:top; padding:10px 0px;">
+                        <td style="vertical-align:top; padding:10px 0px; text-align:right; padding-right:20px;">
                             {{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</td>
                     </tr>
                 </table>
