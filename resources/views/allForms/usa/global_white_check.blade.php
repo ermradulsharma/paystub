@@ -384,6 +384,8 @@
                 $earn = count($requestData['earning']);
                 $tax = count($requestData['tax_deduction']);
             @endphp
+
+            {{$tax}}
             <div class="container" style=" margin-top:100px; width:100%; padding:0px 20px; @if($earn != 1) position: fixed;  top:76%; @elseif($tax != 0)position: fixed;  top:76%; @else position: relative;  top:64px; @endif">
                 <div class="row" style="display: flex;justify-content: space-between;padding: 0px 14px;">
                     <div class="global-address" style="width: 50%; float:left; position: relative; @if($requestData['address_2'] != '') bottom:40px; @else bottom:10px; @endif right:0px; left:60px;">
