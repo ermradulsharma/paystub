@@ -25,10 +25,10 @@ class AddressBookController extends Controller
                     'error' => $validator->errors()->all()
                 ]);
             }
-
-            $addressData = Address::where(['type' => $request->type, 'user_id' => Auth::user()->id])->orderBy('id', 'DESC')->paginate(5);
+            $empType = $request->type;
+            $addressData = Address::where(['type' => $empType, 'user_id' => Auth::user()->id])->orderBy('id', 'DESC')->paginate(10);
             if ($request->ajax()) {
-                return view('address-list', compact('addressData'));
+                return view('address-list', compact('addressData','empType'));
             }
             // return response()->json(['user' => $addressData,'message' => 'Address fetch successfully.']);
         } catch (\Exception $e) {
@@ -82,7 +82,7 @@ class AddressBookController extends Controller
                 $addressObj->user_id    = Auth::user()->id;
                 $addressObj->type       = $request->type ?? '';
                 $addressObj->name       = $request->fullName ?? '';
-                $addressObj->tel        = '';
+                $addressObj->tel        = $request->tel ?? '';
                 $addressObj->address_1  = $request->addressLine1 ?? '';
                 $addressObj->address_2  = $request->addressLine2 ?? '';
                 $addressObj->city       = $request->cityName ?? '';
@@ -95,7 +95,7 @@ class AddressBookController extends Controller
                 $addressObj             = Address::where('id', $request->addressId)->first();
                 $addressObj->type       = $request->type ?? '';
                 $addressObj->name       = $request->fullName ?? '';
-                $addressObj->tel        = '';
+                $addressObj->tel        = $request->tel ?? '';
                 $addressObj->address_1  = $request->addressLine1 ?? '';
                 $addressObj->address_2  = $request->addressLine2 ?? '';
                 $addressObj->city       = $request->cityName ?? '';

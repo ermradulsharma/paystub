@@ -291,27 +291,22 @@
                             <thead>
                                 <th class="hadding" style="text-align: left;">DEDUCTIONS</th>
                                 <th class="hadding" style="text-align: center;">TOTAL</th>
-                                <th class=" hadding"style="padding-right:5px;">YTD TOTAL</th>
+                                <th class="hadding"style="padding-right:3px;">YTD TOTAL</th>
                             </thead>
                             <tbody>
                                 @foreach ($requestData['taxes'] ?? [] as $key => $taxes)
                                 <tr>
                                     <td style="text-align: left;font-size:14px;">{{ $taxes }}</td>
-                                    <td style="font-size:14px;text-align:right;padding-right:10px;">{{ number_format($requestData['taxes_rate'][$key], 2) }}
-                                    </td>
-                                    <td style="font-size:14px;text-align:right;padding-right:10px;">{{ number_format($requestData['taxes_ytd'][$key], 2) }}
-                                    </td>
+                                    <td style="font-size:14px;text-align:right;padding-right:10px;">{{ number_format($requestData['taxes_rate'][$key], 2) }}</td>
+                                    <td style="font-size:14px;text-align:right;padding-right:10px;">{{ number_format($requestData['taxes_ytd'][$key], 2) }}</td>
                                 </tr>
                                 @endforeach
 
                                 @foreach ($requestData['tax_deduction'] ?? [] as $key => $tax_deduction)
                                 <tr>
-                                    <td style="text-align: left;font-size:14px;text-transform:capitalize;">{{
-                                        $tax_deduction }}</td>
-                                    <td style="font-size:14px;text-transform:capitalize;">{{
-                                        number_format($requestData['period_tax_deduction'][$key], 2) }}</td>
-                                    <td style="font-size:14px;text-transform:capitalize;text-align:right;padding-right:10px;">{{
-                                        number_format($requestData['ytd_tax_deduction'][$key], 2) }}</td>
+                                    <td style="text-align: left;font-size:14px;text-transform:capitalize;">{{ $tax_deduction }}</td>
+                                    <td style="font-size:14px;text-transform:capitalize;">{{ number_format($requestData['period_tax_deduction'][$key], 2) }}</td>
+                                    <td style="font-size:14px;text-transform:capitalize;text-align:right;padding-right:10px;">{{ number_format($requestData['ytd_tax_deduction'][$key], 2) }}</td>
                                 </tr>
                                 @endforeach
                                 <br>

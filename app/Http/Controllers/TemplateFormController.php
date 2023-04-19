@@ -21,6 +21,7 @@ use App\Models\Deduction;
 use App\Models\StateTax;
 use App\Models\w2formPdf;
 
+
 class TemplateFormController extends Controller
 {
 
@@ -30,7 +31,17 @@ class TemplateFormController extends Controller
         $deduction = Deduction::where('state', $invoiceData->type)->orderBy('id', 'asc')->get();
         $basicType = Template::where(['state' => $invoiceData->type, 'type' => 'basic', 'status' => 1])->orderBy('title')->with('images')->get();
         $advanceType = Template::where(['state' => $invoiceData->type, 'type' => 'advance', 'status' => 1])->orderBy('title')->with('images')->get();
-        $stateTaxes = StateTax::get();
+
+        if($invoiceData->type == 'canada'){
+            $countryCode = "CA";
+        }else if($invoiceData->type == 'global'){
+            $countryCode = 'USA';
+        }else if($invoiceData->type == 'usa'){
+            $countryCode = 'USA';
+        }else if($invoiceData->type == 'uk'){
+            $countryCode = 'UK';
+        }
+        $stateTaxes = StateTax::where('country_code',$countryCode)->orderBy('state')->get();
         $currencies = Currency::get();
         $employerList = Address::where(['type' => 'employer', 'user_id' => Auth::user()->id])->orderBy('id', 'DESC')->get();
         $employeeList = Address::where(['type' => 'employee', 'user_id' => Auth::user()->id])->orderBy('id', 'DESC')->get();
@@ -197,5 +208,18 @@ class TemplateFormController extends Controller
             $response['status'] = STATUS_OK;
         }
         return response()->json($response, $response['status']);
+    }
+
+    public function deleteExtraPdf(){
+
+        $path = public_path('uploads/mailData');
+        $files = File::allFiles($path);
+        foreach($files as $key => $file){
+            if(!PaySlip::where('pdf',$file->getFilename())->first()){
+                if(File::delete($path.'/'.$file->getFilename())){
+                    echo ("DELETED \n");
+                }
+            }
+        }
     }
 }

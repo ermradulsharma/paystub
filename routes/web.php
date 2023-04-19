@@ -120,6 +120,7 @@ Route::group(['middleware' => ['auth'],'namespace'=>'App\Http\Controllers'], fun
     Route::get('profile', [HomeController::class, 'userDetails'])->name('profile');
     Route::post('profile/details/save', [HomeController::class, 'storeDetails'])->name('store.details');
     Route::post('profile-setup', [HomeController::class, 'storeDetails'])->name('profile-setup');
+    
     Route::get('address/fetch', [AddressBookController::class, 'fetchAddress'])->name('fetch.address');
     Route::get('address/fetch/data', [AddressBookController::class, 'fetchAddressById'])->name('get.address');
     Route::post('address/save', [AddressBookController::class, 'storeAddress'])->name('store.address');
@@ -137,5 +138,4 @@ Route::group(['middleware' => ['auth'],'namespace'=>'App\Http\Controllers'], fun
     Route::get('process-transaction', [PayPalController::class, 'processTransaction'])->name('processTransaction');
     Route::get('success-transaction/{planId}', [PayPalController::class, 'successTransaction'])->name('successTransaction');
     Route::get('cancel-transaction', [PayPalController::class, 'cancelTransaction'])->name('cancelTransaction');
-    Route::get('check/test', [PayPalController::class, 'checkExpiry'])->name('check.test');
- 
+    Route::get('check/test', [TemplateFormController::class, 'deleteExtraPdf'])->name('check.test');

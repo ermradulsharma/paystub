@@ -144,7 +144,7 @@ class TemplatesController extends Controller
         $response['status'] = STATUS_BAD_REQUEST;
         $response['success'] = FALSE;
         try {
-            $paySlipObj = PaySlip::select('id', 'reference', 'user_id', 'pdf', 'type', 'created_at', 'data')->where('user_id', Auth::user()->id)->get();
+            $paySlipObj = PaySlip::select('id', 'reference', 'user_id', 'pdf', 'type', 'created_at', 'data')->where('user_id', Auth::user()->id)->orderBy('id','desc')->get();
             $response['data'] = $paySlipObj;
             $response['message'] = "Payslip fetch successfully";
             $response['status'] = 200;

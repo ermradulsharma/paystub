@@ -580,6 +580,7 @@
                             <div class="row mb-3">
                                 <div class="col-md-3 mt-4">
                                     <div>
+
                                         <label for="pay_start" class="lable">PAY START<span class="redColor">*</span>
                                         </label>
                                         <input
@@ -587,8 +588,7 @@
                                             type="text" id="pay_start" name="pay_start" placeholder="12-11-2022"
                                             class="w-100 p-2 input-box-font removeDiv pay_start datepicker inputdatepicker"
                                             data-id="pay_start"
-                                            @if ($invoice->pay_start != '') value="{{ $invoice->pay_start }}" @else value="
-                                    <?php echo date('m/d/Y'); ?>" @endif>
+                                            value="{{ $invoice->pay_start ?? ''}}" >
                                     </div>
 
                                 </div>
@@ -602,7 +602,7 @@
                                             type="text" id="pay_end" name="pay_end" placeholder="12-17-2022"
                                             class="w-100 p-2 input-box-font removeDiv pay_end datepicker inputdatepicker"
                                             data-id="pay_end"
-                                            @if ($invoice->pay_end != '') value="{{ $invoice->pay_end }}"
+                                            @if ($invoice->pay_end != '') value="{{ $invoice->pay_end ?? ''}}"
                                     @else value="
                                     <?php echo date('m/d/Y'); ?>" @endif>
                                     </div>
@@ -973,6 +973,10 @@
 @section('script')
 <script>
     $(document).ready(function() {
+        $( "#pay_start" ).datepicker("setDate","{{$invoice->pay_start ?? 'today'}}");
+        $( "#pay_end" ).datepicker("setDate","{{$invoice->pay_end ?? 'today'}}");
+        $( "#pay_date" ).datepicker("setDate","{{$invoice->pay_date ?? 'today'}}");
+
         $('.add_address').change(function() {
             var value = $(this).val();
             if (value == 'add_address') {

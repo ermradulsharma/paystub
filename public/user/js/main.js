@@ -135,21 +135,22 @@ $("#userNameForm").on("submit", function () {
 // Address autofill affter select from dropdown on add and edit page
 $(document).ready(function() {
     $("#employerAddress").change(function() {
-        $('#cname').val($('option:selected', this).data('name'))
-        $('#address_1').val($('option:selected', this).data('address1'))
-        $('#address_2').val($('option:selected', this).data('address2'))
-        $('#city').val($('option:selected', this).data('city'))
-        $('#state').val($('option:selected', this).data('state'))
-        $('#zip_code').val($('option:selected', this).data('zip'))
+        $('#cname').val($('option:selected', this).data('name'));
+        $('#address_1').val($('option:selected', this).data('address1'));
+        $('#address_2').val($('option:selected', this).data('address2'));
+        $('#city').val($('option:selected', this).data('city'));
+        $('#state').val($('option:selected', this).data('state'));
+        $('#zip_code').val($('option:selected', this).data('zip'));
+        $('#tel').val($('option:selected', this).data('tel'));
     });
 
     $("#employeeAddress").change(function() {
-        $('#emp_name').val($('option:selected', this).data('name'))
-        $('#emp_street_1').val($('option:selected', this).data('address1'))
-        $('#emp_street_2').val($('option:selected', this).data('address2'))
-        $('#emp_city').val($('option:selected', this).data('city'))
-        $('#emp_state').val($('option:selected', this).data('state'))
-        $('#emp_zip_code').val($('option:selected', this).data('zip'))
+        $('#emp_name').val($('option:selected', this).data('name'));
+        $('#emp_street_1').val($('option:selected', this).data('address1'));
+        $('#emp_street_2').val($('option:selected', this).data('address2'));
+        $('#emp_city').val($('option:selected', this).data('city'));
+        $('#emp_state').val($('option:selected', this).data('state'));
+        $('#emp_zip_code').val($('option:selected', this).data('zip'));
     });
 });
 
@@ -298,7 +299,7 @@ function checkValidationForm() {
 
     $.each(formData, function (i, element) {
         var name = element.name.replace("[]", "");
-        var blockedTile = new Array("address_2", "tel", "emp_street_2", "hourly", "earning", "rate", "hours", "total", "period", "ytd_total", "period_gross_total", "ytd_gross_total", "deduction_period_tax", "deduction_period_tax_other", "advance_temp", "basic_temp", "taxes", "taxes_rate", "taxes_ytd", 'net_pay', 'note');
+        var blockedTile = new Array("address_2", "tel", "emp_street_2",  "earning", "rate", "hours", "total", "period", "ytd_total", "period_gross_total", "ytd_gross_total", "deduction_period_tax", "deduction_period_tax_other", "advance_temp", "basic_temp", "taxes", "taxes_rate", "taxes_ytd", 'net_pay', 'note');
         if (!$('#' + name).is(':visible')) {
             blockedTile.push(name);
         }

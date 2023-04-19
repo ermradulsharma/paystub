@@ -5,6 +5,7 @@ use App\Console\Commands\UserSubscriptionCommand;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 use App\Jobs\CheckSubcriptions;
+use App\Jobs\DeleteExtraPdf;
 
 class Kernel extends ConsoleKernel
 {
@@ -21,9 +22,10 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         // $schedule->command('user:subscription')->everyMinute();
-        
+
         // $schedule->job(new CheckSubcriptions)->everyMinute();
         $schedule->job(new CheckSubcriptions)->dailyAt('23:59');
+        $schedule->job(new DeleteExtraPdf)->dailyAt('23:59');
     }
 
     /**

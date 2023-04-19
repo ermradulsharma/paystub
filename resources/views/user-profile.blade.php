@@ -331,68 +331,73 @@
                         </ul>
 
                         <div class="tab-content" id="pills-tabContent">
-                            <div class="tab-pane fade {{ Request::get('emp') != 2 ? 'show active' : '' }}"
+                            <div class="address-tab tab-pane fade {{ Request::get('emp') != 2 ? 'show active' : '' }}"
                                 id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                                <table class="table" style="border:1px solid #ddd;">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">#</th>
-                                            <th scope="col">Employer (Company) Name</th>
-                                            <th scope="col">Street Address 1</th>
-                                            <th scope="col">Street Address 2</th>
-                                            <th scope="col">City</th>
-                                            <th scope="col">State</th>
-                                            <th scope="col">Zip Code</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="employerTab">
-                                        {{-- <tr style="border:1px solid #ddd;">
-                                            <td scope="row">1</td>
-                                            <td>Mark22</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
-                                            <td>otto</td>
-                                            <td>@mdo</td>
-                                            <td>1234</td>
-                                            <td style="padding-right:0; padding-left:0;"><img style="width:22px;"
-                                                    src="images/icons/edit-icon.png"></td>
-                                            <td style="padding-right:0; padding-left:0;"><img style="width:20px;"
-                                                    src="images/icons/del-icon.png"></td>
-                                        </tr> --}}
-                                    </tbody>
-                                </table>
-
+                                <div id="employerTab">
+                                    <table class="table" style="border:1px solid #ddd;">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col">Employer (Company) Name</th>
+                                                <th scope="col">Street Address 1</th>
+                                                <th scope="col">Street Address 2</th>
+                                                <th scope="col">City</th>
+                                                <th scope="col">State</th>
+                                                <th scope="col">Zip Code</th>
+                                                <th scope="col">Telephone</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {{-- <tr style="border:1px solid #ddd;">
+                                                <td scope="row">1</td>
+                                                <td>Mark22</td>
+                                                <td>Otto</td>
+                                                <td>@mdo</td>
+                                                <td>otto</td>
+                                                <td>@mdo</td>
+                                                <td>1234</td>
+                                                <td style="padding-right:0; padding-left:0;"><img style="width:22px;"
+                                                        src="images/icons/edit-icon.png"></td>
+                                                <td style="padding-right:0; padding-left:0;"><img style="width:20px;"
+                                                        src="images/icons/del-icon.png"></td>
+                                            </tr> --}}
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
-                            <div class="tab-pane fade {{ Request::get('emp') == 2 ? ' show active' : '' }}"
+                            <div class="address-tab tab-pane fade {{ Request::get('emp') == 2 ? ' show active' : '' }}"
                                 id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                                <table class="table" style="border:1px solid #ddd;">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">#</th>
-                                            <th scope="col">Employee Name</th>
-                                            <th scope="col">Street Address 1</th>
-                                            <th scope="col">Street Address 2</th>
-                                            <th scope="col">City</th>
-                                            <th scope="col">State</th>
-                                            <th scope="col">Zip Code</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="employeeTab">
-                                        {{-- <tr>
-                                            <th scope="row">1</th>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
-                                            <td>1234</td>
-                                            <td style="padding-right:0; padding-left:0;"><img style="width:22px;"
-                                                    src="images/icons/edit-icon.png"></td>
-                                            <td style="padding-right:0; padding-left:0;"><img style="width:20px;"
-                                                    src="images/icons/del-icon.png"></td>
-                                        </tr> --}}
-                                    </tbody>
-                                </table>
+                                <div id="employeeTab">
+                                    <table class="table" style="border:1px solid #ddd;">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col">Employee Name</th>
+                                                <th scope="col">Street Address 1</th>
+                                                <th scope="col">Street Address 2</th>
+                                                <th scope="col">City</th>
+                                                <th scope="col">State</th>
+                                                <th scope="col">Zip Code</th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {{-- <tr>
+                                                <th scope="row">1</th>
+                                                <td>Mark</td>
+                                                <td>Otto</td>
+                                                <td>@mdo</td>
+                                                <td>Otto</td>
+                                                <td>@mdo</td>
+                                                <td>1234</td>
+                                                <td style="padding-right:0; padding-left:0;"><img style="width:22px;"
+                                                        src="images/icons/edit-icon.png"></td>
+                                                <td style="padding-right:0; padding-left:0;"><img style="width:20px;"
+                                                        src="images/icons/del-icon.png"></td>
+                                            </tr> --}}
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -489,6 +494,16 @@
                                                 placeholder="Zip-Code">
                                         </div>
                                     </div>
+                                    <div class="form-group ">
+                                        <label for="tel" style="font-weight:bold;" id="tel-phone-title"
+                                            class="col-sm-12 control-label">Employer Telephone</label>
+                                        <div class="col-sm-12">
+                                            <input type="text" id="tel" name="tel" placeholder="123-456-7890 (optional)"
+                                            maxlength="10" minlength="10"
+                                            class="w-100 p-2 text-center input-box-font third-phone">
+                                        </div>
+                                    </div>
+
                                 </form>
                             </div>
                         </div>
@@ -716,7 +731,13 @@
 <script>
     $(document).ready(function() {
             getAddressBook();
-        });
+
+            $(document).on('click', '.pagination a', function(event){
+                event.preventDefault();
+                var page = $(this).attr('href').split('page=')[1];
+                getAddressBook(page);
+            });
+    });
 
         $(".changeUserEmail").click(function() {
             $("#changeUserEmail").modal("show");
@@ -798,7 +819,6 @@
                 datatype: "json",
                 success: function(data) {
                     if ($.isEmptyObject(data.error)) {
-
                         $('#addressForm input[name=addressId]').val(data.addressObj.id);
                         $('#addressForm input[name=fullName]').val(data.addressObj.name);
                         $('#addressForm input[name=type]').val(data.addressObj.type);
@@ -806,9 +826,10 @@
                         $('#addressForm input[name=addressLine2]').val(data.addressObj.address_2);
                         $('#addressForm input[name=cityName]').val(data.addressObj.city);
                         $('#addressForm select[name="stateName"]').val(data.addressObj.state);
-                        // $('#selectState').val(data.addressObj.state);
                         $('#addressForm input[name=zipCode]').val(data.addressObj.zip_code);
-                        // $('#addressBook').modal('show');
+                        if(data.addressObj.type == 'employer'){
+                            $('#addressForm input[name=tel]').val(data.addressObj.tel);
+                        }
                         openAddressModal('no');
                     } else {
                         printErrorMsg(data.error);
@@ -846,21 +867,23 @@
         });
 
         $("#addNewAddress").click(function() {
+
             openAddressModal();
         });
-        $(document).on('click', '#pills-profile-tab', function() {
-            $("#addNewAddress2").attr('data-emptype','employee');
-            getAddressBook();
-        });
 
-        $(document).on('click', '#pills-home-tab', function() {
-            $("#addNewAddress2").attr('data-emptype','employer');
-            getAddressBook();
-        });
+        // $(document).on('click', '#pills-profile-tab', function() {
+        //     $("#addNewAddress2").attr('data-emptype','employee');
+        //     getAddressBook();
+        // });
 
-        $("#addNewAddress2").click(function() {
-            openAddressModal();
-        });
+        // $(document).on('click', '#pills-home-tab', function() {
+        //     $("#addNewAddress2").attr('data-emptype','employer');
+        //     getAddressBook();
+        // });
+
+        // $("#addNewAddress2").click(function() {
+        //     openAddressModal();
+        // });
 
         $(document).on('click', '.delete-item', function(e) {
             submitUserData($('#deleteItem')[0]);
@@ -884,30 +907,36 @@
         function openAddressModal(clear = 'yes'){
             if(clear == 'yes'){
                 $('#addressForm').find("input[type=text], select").val("");
+                $('#addressForm').find("input[name=addressId]").val("");
             }
             var popType = $("#addNewAddress").attr('data-emptype');
-
             if(popType == 'employee'){
                 $("#adress-type").val('employee');
                 $('#nameLabel').text('').text('EMPLOYEE NAME *');
                 $('#inputFullName').attr('placeholder', 'Full Employee Name');
+                $('#tel-phone-title').text('').text('Employee Telephone');
+                $('#tel-phone-title').closest( "div" ).addClass('d-none')
             }else if(popType == 'employer'){
                 $("#adress-type").val('employer');
                 $('#nameLabel').text('').text('EMPLOYER (COMPANY) NAME *');
                 $('#inputFullName').attr('placeholder', 'Full Employer (Company) Name');
+                $('#tel-phone-title').text('').text('Employer Telephone');
+                $('#tel-phone-title').closest( "div" ).removeClass('d-none')
             }
             $("#addressBook").modal("show");
         }
 
-        function getAddressBook() {
+        function getAddressBook(page = 1) {
             var type = $("#addNewAddress").attr('data-emptype');
+            url = "{{ route('fetch.address') }}?page="+page+"&type=" + type;
             $.ajax({
-                url: "{{ route('fetch.address') }}?type=" + type,
+                url: url,
                 datatype: "html",
                 success: function(data) {
                     if ($.isEmptyObject(data.error)) {
-                        $('.tab-pane.fade.show.active').find('tbody').html('').html(data);
-                        // $('#employerTab').html('').html(data);
+                        // $('.tab-pane.fade.show.active').find('tbody').html('').html(data);
+                        // $('.address-tab.tab-pane.fade.show.active').find('div').html('').html(data);
+                        $('#'+type+'Tab').html('').html(data);
                     } else {
                         printErrorMsg(data.error);
                     }
@@ -1028,5 +1057,23 @@
         }
         // inputAddressLine1  inputAddressLine2  inputCityTown  selectState  inputZipPostalCode
     }
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+<script src="{{ asset('user') }}/js/dist/jquery-input-mask-phone-number.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#inputZipPostalCode').mask('00000-9999');
+        $('#tel').mask('000-000-9999');
+        // $('#tel').usPhoneFormat({
+        //     format: '123-456-7890',
+        // });
+    });
+    $(document).ajaxStart(function(){
+         $("#loaderDiv").css("display", "block");
+    });
+
+    $(document).ajaxComplete(function(){
+        $("#loaderDiv").css("display", "none");
+    });
 </script>
 @endsection

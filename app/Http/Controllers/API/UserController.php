@@ -664,7 +664,7 @@ class UserController extends Controller
                 return response()->json($response, 301);
             }
 
-            $addressObj = Address::where(['id' => $requestData['address_id'], 'user_id' => Auth::user()->id])->first();
+            $addressObj = Address::where(['id' => $requestData['address_id']])->first();
             if (!$addressObj) {
                 $response['message'] = "Address doesn't exist.";
                 return response()->json($response, 301);
@@ -697,9 +697,9 @@ class UserController extends Controller
             $response = [];
             $response['success'] = FALSE;
             $response['status'] = STATUS_BAD_REQUEST;
-
-            $employerList = Address::where(['type' => 'employer', 'user_id' => Auth::user()->id])->orderBy('id', 'desc')->get();
-            $employeeList = Address::where(['type' => 'employee', 'user_id' => Auth::user()->id])->orderBy('id', 'desc')->get();
+            $userObj = $request->user()->id;
+            $employerList = Address::where(['type' => 'employer', 'user_id' => $userObj])->orderBy('id', 'desc')->get();
+            $employeeList = Address::where(['type' => 'employee', 'user_id' => $userObj])->orderBy('id', 'desc')->get();
 
             $response['success'] = TRUE;
             $response['employerList'] = $employerList;
@@ -762,8 +762,10 @@ class UserController extends Controller
             $response = [];
             $response['success'] = FALSE;
             $response['status'] = STATUS_BAD_REQUEST;
+
             $requestData = $request->all();
-            $addressObj = Address::where(['user_id' => Auth::user()->id]);
+            $userObj = $request->user()->id;
+            $addressObj = Address::where(['user_id' => $userObj]);
             if ($requestData['type'] == 'employee') {
                 $addressObj = Address::where(['type' => 'employee']);
             } else {

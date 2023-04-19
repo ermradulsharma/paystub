@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Box Blue</title>
 
 
 
@@ -216,7 +216,7 @@
                     <th class="">RATE</th>
                     <th class="">HOURS</th>
                     <th class="">CURRENT</th>
-                    <th style="padding-left:35px;" class="">YTD</th>
+                    <th class="" style="padding-left:80%;">YTD</th>
                 </thead>
                 @foreach ($requestData['earning'] as $key => $earn)
                     <tr>
@@ -224,13 +224,13 @@
                         <td>@if($requestData['rate'][$key] != 0.00)<b>{{ $requestData['rate'][$key] }}</b>@endif</td>
                         <td style="text-align:center;">@if($requestData['hours'][$key] != 0.00)<b>{{ $requestData['hours'][$key] }}</b>@endif</td>
                         <td><b>{{ number_format($requestData['period'][$key], 2) }}</b></td>
-                        <td><b>{{ number_format($requestData['ytd_total'][$key], 2) }}</b></td>
+                        <td style="text-align:right;"><b>{{ number_format($requestData['ytd_total'][$key], 2) }}</b></td>
                     </tr>
                 @endforeach
                 <br> <br>
                 <tr>
                     <td></td>
-                    <td colspan="3" style="text-align: left; font-weight:bold; border:1px solid black;  background-color:#88848445;border-radius:2px; height:25px;"> &nbsp;Gross Pay&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ number_format($requestData['total_net_pay'], 2) }}</td>
+                    <td colspan="3" style="text-align: left; font-weight:bold; border:1px solid black;  background-color:#88848445;border-radius:2px; height:25px;"> &nbsp;Gross Pay&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ number_format($requestData['total_net_pay'], 2) }}</td>
                     <td style="padding-left:5px;"><b>{{ number_format($requestData['total_ytd_net_pay'], 2) }}</b></td>
                 </tr>
                 <br> <br> <br> <br>
@@ -243,15 +243,15 @@
                         <th style="" class="">DEDUCTIONS</th>
                         <th style="" class="statutory">STATUTORY</th>
                         <th></th>
-                        <th style="" class="">CURRENT</th>
-                        <th style="padding-left:35px;" class="">YTD</th>
+                        <th style="text-align:right;" class="">CURRENT</th>
+                        <th style="text-align:right;" class="">YTD</th>
                     </thead>
 
                     @foreach ($requestData['taxes'] ?? [] as $key => $taxes)
                         <tr>
                             <td></td>
                             <td style="text-align: left;" colspan="2">{{ $taxes }}</td>
-                            <td><b>{{ number_format($requestData['taxes_rate'][$key], 2) }}</b></td>
+                            <td style="text-align:right; padding-right:19px;"><b>{{ number_format($requestData['taxes_rate'][$key], 2) }}</b></td>
                             <td style="text-align: right;padding-right:18px;"><b>{{ number_format($requestData['taxes_ytd'][$key], 2) }}</b></td>
                         </tr>
                     @endforeach
@@ -260,23 +260,27 @@
                     @if (count($requestData['tax_deduction'] ?? []) > 0)
                         <thead>
                             <th></th>
-                            <th  style="border-bottom: 2px solid #000;" class="td" colspan="4">OTHER</th>
+                            <th style="border-bottom: 2px solid #000;" class="td" colspan="4">OTHER</th>
                         </thead>
                         @foreach ($requestData['tax_deduction'] ?? [] as $key => $tax_deduction)
                             <tr>
                                 <td></td>
                                 <td style="text-align: left;text-transform:capitalize;" colspan="2">{{ $tax_deduction }}</td>
-                                <td><b>{{ number_format($requestData['period_tax_deduction'][$key], 2) }}</b> </td>
-                                <td style="padding-left:15px;"><b>{{ number_format($requestData['ytd_tax_deduction'][$key], 2) }}</b> </td>
+                                <td style="text-align:right; padding-right:19px;"><b>{{ number_format($requestData['period_tax_deduction'][$key], 2) }}</b> </td>
+                                <td style="text-align: right;padding-right:18px;"><b>{{ number_format($requestData['ytd_tax_deduction'][$key], 2) }}</b> </td>
                             </tr>
                         @endforeach
                     @endif
-                    <br> <br> <br>
-
                     <tr>
                         <td></td>
-                        <td colspan="3" style="text-align: left;font-weight:bold; border:1px solid black;  background-color:#88848445; border-radius:2px; height:25px;">&nbsp;Net Pay&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ number_format($requestData['total_net_pay'], 2) }} </td>
-                        <td style=""><b>{{ number_format($requestData['total_ytd_net_pay'], 2) }}</b></td>
+                        <td style="text-align: left;text-transform:capitalize;" colspan="2">Total Deductions</td>
+                        <td style="text-align:right; padding-right:19px;"> {{ $requestData['deduction_tax']}}</td>
+                        <td style="text-align: right;padding-right:18px;">{{ $requestData['ytd_deduction_tax']}}</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td colspan="3" style="text-align: left;font-weight:bold; border:1px solid black;  background-color:#88848445; border-radius:2px; height:25px;">&nbsp;Net Pay&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ number_format($requestData['total_net_pay'], 2) }} </td>
+                        <td style="text-align: right;padding-right:18px;"><b>{{ number_format($requestData['total_ytd_net_pay'], 2) }}</b></td>
                     </tr>
                 </table>
             </section>
