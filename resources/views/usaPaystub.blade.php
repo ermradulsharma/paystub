@@ -456,7 +456,8 @@
                             <div class="row mb-3">
                                 <div class="col-md-3 mt-4">
                                     <div>
-                                        <label for="hourly" class="lable">Rate / Unit </label>
+                                        <label for="hourly" class="lable">Rate / Unit <span
+                                            class="redColor">*</span></label>
                                         <input type="number" step="0.5" id="hourly" name="hourly"
                                             placeholder="Wage" class="w-100   input-box-font hourly">
                                     </div>
