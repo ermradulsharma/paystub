@@ -166,7 +166,7 @@
                                             @endforeach
                                         </select>
                                     </div>
-                                    <span class="d-none text-center error redColor">Please Select State</span>
+                                    {{-- <span class="d-none text-center error redColor">Please Select State</span> --}}
                                 </div>
                             </div>
                             <div class="col-md-3">
@@ -471,6 +471,10 @@
 <script src="{{ asset('user') }}/js/canada.js"></script>
 <script>
     $(document).ready(function() {
+        $( "#pay_start" ).datepicker("setDate","{{$invoice->pay_start ?? 'today'}}");
+        $( "#pay_end" ).datepicker("setDate","{{$invoice->pay_end ?? 'today'}}");
+        $( "#pay_date" ).datepicker("setDate","{{$invoice->pay_date ?? 'today'}}");
+
         $('.advanceTemplate').change(function() {
             $('option:selected', '.basicTemplate').prop("selected", false);
         });
