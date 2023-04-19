@@ -42,7 +42,6 @@
         }
 
         td {
-            padding: 3px;
             font-size: 12px;
         }
 
@@ -99,9 +98,9 @@
             position: absolute;
             content: "";
             @if($requestData['address_2']!='')
-top:200px;
+top:190px;
             @else
-            top: 180px;
+            top: 175px;
             @endif
             left: 80px;
             right: 0;
@@ -173,11 +172,11 @@ top:200px;
             <table class="table1 " style="width:100%;">
                 <tr class="border-line" style="width:100%;">
                     <td style=" width:100%;font-size:15px; font-weight:500;">Pay To The<br> Order Of </td>
-                    <td style=" font-size:16px;text-align:left; width:100%; margin:0 auto; font-family: 'Poppins', sans-serif; font-weight:bold;text-transform:capitalize;  "><b>{{ $requestData['emp_name'] ?? '' }}</b></td>
-                    <td style="width:100%; text-align:right; margin-top:20px;font-size:14px; text-align:right;"><b><span style="font-family: 'DejaVu Sans', sans-serif; padding-right:1px;">{{ $requestData['currency'] }}</span>**{{ number_format($requestData['total_net_pay'], 2) }}</b></td>
+                    <td style=" font-size:16px;text-align:left; width:100%; margin:0 auto; font-family: 'Poppins', sans-serif; font-weight:bold;text-transform:capitalize; "><b>{{ $requestData['emp_name'] ?? '' }}</b></td>
+                    <td style="width:100%; text-align:right; margin-top:20px;font-size:14px; text-align:right;"><b><span style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span>**{{ number_format($requestData['total_net_pay'], 2) }}</b></td>
                 </tr>
             </table>
-            <table style="border-bottom:1.5px solid black; width:88%; margin-top:0px;">
+            <table style="border-bottom:1.5px solid black; width:88%; margin-top:0px; padding-top:10px;">
                 <tr>
                     <td style="width:100%; font-size:18px; text-align:center; margin-top:0px; text-transform: capitalize;  font-family: 'Times New Roman', Times, serif;"> {!! $word !!} {{ (int) $decimal }}/100</td>
                 </tr>

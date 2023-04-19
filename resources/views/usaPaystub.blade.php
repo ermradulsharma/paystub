@@ -20,6 +20,9 @@
             position: relative;
             left: 7px;
         }
+        #basic_temp {
+    text-align: -webkit-center !important;
+}
     </style>
     <link rel="stylesheet" href="{{ asset('user') }}/css/bootstrap-datepicker.min.css">
     <!-- Modal Start -->

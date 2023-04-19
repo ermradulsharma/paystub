@@ -418,7 +418,7 @@
         <section class="bg-img">
             <div class="container" style=" margin-top:100px; width:100%; padding:0px 20px;">
                 <div class="row" style="display: flex;justify-content: space-between;padding: 0px 14px;">
-                    <div class="global-address" @if($requestData['address_2'] != '')style="width: 50%; float:left; position: relative; bottom:5px; right:0px; left:60px;" @else style="width: 50%; float:left; position: relative; top:10px; right:0px; left:60px;"@endif>
+                    <div class="global-address" @if($requestData['address_2'] != '')style="width: 50%; float:left; position: relative; top:0px; right:0px; left:60px;" @else style="width: 50%; float:left; position: relative; top:30px; right:0px; left:60px;"@endif>
                         <p
                             style="font-size:15px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:400;">
                             {{ $requestData['cname'] }}</p>
@@ -427,15 +427,15 @@
                             @if($requestData['address_2'] != '')<P style="font-size:15px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:400;">{{ $requestData['address_2'] }} </P>@endif
                         <P
                             style="font-size:15px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:400;">
-                            {{ $requestData['city'] }}, {{ $requestData['state'] }} {{ $requestData['zip_code'] }}
+                            {{ $requestData['city'] }}, {{ $requestData['state'] }}<br>{{ $requestData['zip_code'] }}
                         </P>
                     </div>
                     <div style="width: 50%;float:right;">
-                        <h6 @if($requestData['address_2'] != '')style="text-align:left; left:80px; position: relative;  bottom:23px;font-weight:400;font-size: 14px; "@else style="text-align:left; left:80px; position: relative;  bottom:13px;font-weight:400;font-size: 13px;"@endif>{{ $requestData['check_no'] }} </h6>
-                        <h6 @if($requestData['address_2'] != '')style="font-size: 14px; text-align:left; bottom:58px; left:80px; position: relative; font-weight:400;"@else style="font-size: 13px; text-align:left; bottom:45px; left:80px; position: relative; font-weight:400;"@endif>{{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</h6>
+                        <h6 @if($requestData['address_2'] != '')style="text-align:left; left:80px; position: relative; top:17px;font-weight:400;font-size: 14px;"@else style="text-align:left; left:80px; position: relative;  top:36px;font-weight:400;font-size: 13px;"@endif>{{ $requestData['check_no'] }} </h6>
+                        <h6 @if($requestData['address_2'] != '')style="font-size: 14px; text-align:left; bottom:16px; left:80px; position: relative; font-weight:400;"@else style="font-size: 13px; text-align:left;top:5px; left:80px; position: relative; font-weight:400;"@endif>{{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</h6>
                     </div>
                 </div>
-                <table @if($requestData['address_2'] != '')style="position:relative; bottom:70px;" @else style="position:relative; bottom:55px;" @endif>
+                <table @if($requestData['address_2'] != '')style="position:relative; bottom:35px;" @else style="position:relative; bottom:10px;" @endif>
                     <tr>
                         <td style="width:10%;"></td>
                         <td

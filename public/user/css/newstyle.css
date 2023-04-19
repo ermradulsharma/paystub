@@ -2687,7 +2687,14 @@ img.earnbtn2.lockuk {
         line-height: 1.8;
     }
 }
-
+@media only screen and (min-width:769px) and (max-width:991px) {
+    input.input-uk{
+        width: 95%;
+    }
+    .netpaybtn{
+        width: 95%;
+    }
+}
 @media screen and (max-width: 768px) {
     .view-temp2 {
         color: #ffffff;

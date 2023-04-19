@@ -83,7 +83,7 @@
         }
 
         thead {
-            border: 1px solid #43407a;
+            border: 1px solid #793b5b;
         }
 
         #backcolor {

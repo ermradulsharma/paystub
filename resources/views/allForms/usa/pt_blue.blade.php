@@ -336,7 +336,7 @@
             <div></div>
             <div class="row roww">
                 <div class="col1">
-                    <table style="width: 100%;">
+                    <table style="width: 100%; ">
                         <thead style="border-top:none;border-left:none; border-right:none; color:#43407a;"
                             id="backcolor">
                             <td style="border-right:1px solid  #43407a;font-size:10px; font-weight:bold; text-align:center; "> WAGES</td>
@@ -369,7 +369,7 @@
                     </table>
                 </div>
                 <div class="col2">
-                    <table style="width: 100%;">
+                    <table style="width: 100%;padding-bottom:70px;">
                         <thead style="border-top:none;color:#43407a;border-left:none;" id="backcolor">
                             <td
                                 style="font-size:10px; font-weight:bold; text-align:center; border-right:1px solid  #43407a;">

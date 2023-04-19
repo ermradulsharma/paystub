@@ -371,7 +371,7 @@
                     </table>
                 </div>
                 <div class="col2">
-                    <table style="width: 100%;">
+                    <table style="width: 100%; padding-bottom:70px;">
                         <thead style="border-top:none;color:#3e787a;border-left:none;" id="backcolor">
                             <td
                                 style="font-size:10px; font-weight:bold;text-align:center; border-right:1px solid  #3e787a;">
