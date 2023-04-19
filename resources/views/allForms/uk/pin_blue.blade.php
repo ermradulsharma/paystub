@@ -137,7 +137,7 @@
                         {{ $requestData['emp_name'] }}</td>
                     <td style=" padding-top:8px; padding-bottom:8px;border-right:1px solid #3b4059;border-radius:0;">
                         {{ date('d-F-Y', strtotime($requestData['pay_date'])) }}</td>
-                    <td style=" padding-top:8px; padding-bottom:8px;border-right:1px solid #3b4059;border-radius:0;">
+                    <td style=" padding-top:8px; padding-bottom:8px;border-right:1px solid #3b4059;border-radius:0; text-transform:">
                         {{ $requestData['ni_number'] }}</td>
                 </tr>
             </table>
@@ -205,18 +205,23 @@
                 </thead>
                 <tr>
                     <td style="border-right:1px solid #3b4059;background-color: #9494a5; border-top-left-radius:0px; ">
-                        <h6
-                            style="padding-left:10px !important;text-align:left;font-size:15px; font-weight:bold;padding:0px; margin:0px;text-transform:capitalize;font-size:15px;">
-                            {{ $requestData['emp_name'] }}</h6>
-                        <p
-                            style="padding-left:10px !important;text-align:left;padding: 0px; margin:0px;text-transform:capitalize;font-size:15px;">
-                            {{ $requestData['emp_street_1'] }}</p>
-                        <p
-                            style="padding-left:10px !important;text-align:left;padding:0px; margin:0px;text-transform:capitalize;font-size:15px;">
-                            {{ $requestData['emp_street_2'] }}</p>
-                        <p
-                            style="padding-left:10px !important;text-align:left;padding:0px; margin:0px;text-transform:capitalize;font-size:15px;">
-                            {{ $requestData['emp_zip_code'] }}</p>
+                        <table style="position: relative; bottom:18px;">
+                            <tr>
+                                <td> <h6
+                                    style="padding-left:10px !important;text-align:left;font-size:15px; font-weight:bold;padding:0px; margin:0px;text-transform:capitalize;font-size:15px;">
+                                    {{ $requestData['emp_name'] }}</h6>
+                                <p
+                                    style="padding-left:10px !important;text-align:left;padding: 0px; margin:0px;text-transform:capitalize;font-size:15px;">
+                                    {{ $requestData['emp_street_1'] }}</p>
+                                <p
+                                    style="padding-left:10px !important;text-align:left;padding:0px; margin:0px;text-transform:capitalize;font-size:15px;">
+                                    {{ $requestData['emp_street_2'] }}</p>
+                                <p
+                                    style="padding-left:10px !important;text-align:left;padding:0px; margin:0px;text-transform:capitalize;font-size:15px;">
+                                    {{ $requestData['emp_zip_code'] }}</p></td>
+                            </tr>
+                        </table>
+
                     </td>
 
                         <table>

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+    @extends('layouts.app')
 @section('content')
     <!-- Modal Start -->
     <div class="modal fade" id="openEye" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

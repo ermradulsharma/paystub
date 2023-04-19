@@ -20,6 +20,9 @@
             position: relative;
             left: 7px;
         }
+        #basic_temp {
+    text-align: -webkit-center !important;
+}
     </style>
     <link rel="stylesheet" href="{{ asset('user') }}/css/bootstrap-datepicker.min.css">
     <!-- Modal Start -->
@@ -183,7 +186,7 @@
                                     <div class="mt-4">
                                         <div class="input-group mmenu mb-3 text-center">
                                             <select name="basic_temp" id="basic_temp"
-                                                class="form-control dropdown1 text-center bt_id small-font basicTemplate removeDiv"
+                                                class="form-control dropdown1 text-center bt_id small-font basicTemplate removeDiv justify-content-center"
                                                 style="margin-right:10px; font-size:18px;">
                                                 <option value=""> --- Select Basic Templates --- </option>
                                                 @foreach ($basicType as $data)

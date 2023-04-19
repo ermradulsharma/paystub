@@ -100,9 +100,9 @@
             <img class="payimg2" src="images/paystubx_images.png" class="">
             <div class="payyy">
                 <p class="img2-p">
-                    On Paystub X Join thousands of satisfied independent </br> contractors and small business owners and
+                    On Paystub X Join thousands of satisfied independent <br> contractors and small business owners and
                     get the
-                    </br> highest quality pay stubs, W2s and 1099s — right to </br> your inbox! We make it easy.
+                    <br> highest quality pay stubs, W2s and 1099s — right to <br> your inbox! We make it easy.
                     Guaranteed.</p>
             </div>
         </div>
@@ -121,8 +121,8 @@
                         </h2>
                         <p style="font-size:17px;font-weight: 200;font-family: 'Futura LT';line-height:1.8;"
                             class="text-white pay-p head-font">Our paystub generator
-                            accurately</br>
-                            calculates your Federal and State</br> taxes, including Social security </br>and Medicare
+                            accurately<br>
+                            calculates your Federal and State<br> taxes, including Social security <br>and Medicare
                             taxes so you don't
                         </p>
 
@@ -136,8 +136,8 @@
                         </h2>
                         <p style="font-size:17px;font-weight: 200;font-family: 'Futura LT'; line-height:1.8;"
                             class="text-white pay-p head-font">Generate pay stubs with
-                            accurate</br>
-                            state income taxes, based on </br>state W-4, and other applicable</br> local taxes. </p>
+                            accurate<br>
+                            state income taxes, based on <br>state W-4, and other applicable<br> local taxes. </p>
                         <img src="images/2.webp"
                             style=" width: 94px; height: 94px; object-fit: cover; object-position: 50% 50%;">
                     </div>
@@ -145,8 +145,8 @@
                         <h2 class="text-white pay-h2 calcheading head-font">Download & Email your Paystub</h2>
                         <p style="font-size:17px;font-weight: 200;font-family: 'Futura LT'; line-height:1.8;"
                             class="text-white pay-p head-font">You will get to generate
-                            unlimited</br>
-                            payslip, paycheck or paystub </br>according to the plan you select.
+                            unlimited<br>
+                            payslip, paycheck or paystub <br>according to the plan you select.
                         </p>
                         <img src="images/3.webp" class="num"
                             style=" width: 94px; height: 94px; object-fit: cover; object-position: 50% 50%;">
@@ -282,7 +282,7 @@
                         paystubs
                         instantly by using our
                         paystub
-                        generator app.</br>
+                        generator app.<br>
                         It's simple, easy, and accurate.</p>
                 </div>
                 <div class="mt-5  d-flex pt-5 goggle">
