@@ -76,7 +76,7 @@
                                     @foreach ($employerList ?? [] as $key => $employer)
                                         <option data-name="{{ $employer->name }}" data-address1="{{ $employer->address_1 }}"
                                             data-address2="{{ $employer->address_2 }}" data-city="{{ $employer->city }}"
-                                            data-state="{{ $employer->state }}" data-zip="{{ $employer->zip_code }}"
+                                            data-zip="{{ $employer->zip_code }}" data-tel="{{ $employer->tel }}"
                                             value="{{ $employer->name }}">{{ $employer->name }}</option>
                                     @endforeach
                                     <option data-name="" value="add_address">Add New Address</option>
@@ -860,7 +860,7 @@
                 // var value = $('option:selected', '.address').attr('value');
                 var value = $(this).val();
                 var userId = {{ Auth::check() == true ? 'true' : 'false' }};
-                console.log('userAuth-', userAuth);
+                
                 if (value == 'add_address') {
                     if (userId == true) {
                         window.location.href = "{{ route('profile') }}?tab=2&emp=1";
@@ -1022,9 +1022,7 @@
             });
         });
     </script>
-    <script
-        src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyDpavHXELJMJvIHifFPN6tBBiFSXKGpy2g&callback=Function.prototype">
-    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyDpavHXELJMJvIHifFPN6tBBiFSXKGpy2g&callback=Function.prototype"></script>
     <script>
         var searchInput = 'address_1';
 
