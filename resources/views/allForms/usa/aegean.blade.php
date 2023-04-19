@@ -239,10 +239,10 @@
             <section class="tablesection">
                 <table class="heading">
                     <tr>
-                        <td class="heading1">Taxes / Deductions</td>
-                        <td class="heading1"> Type</td>
-                        <td class="heading1" id="alignR">This Period</td>
-                        <td class="heading1" id="alignR">YTD</td>
+                        <td class="heading1 bold">Taxes / Deductions</td>
+                        <td class="heading1 bold"> Type</td>
+                        <td class="heading1 bold" id="alignR">This Period</td>
+                        <td class="heading1 bold" id="alignR">YTD</td>
                     </tr>
                     @foreach ($requestData['taxes'] ?? [] as $key => $taxes)
                     <tr>
@@ -252,6 +252,7 @@
                         <td id="color" class="alignR" style="font-size:15px;  color:#000;"><span style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['taxes_ytd'][$key], 2) }}</td>
                     </tr>
                     @endforeach
+
                     @if (count($requestData['tax_deduction'] ?? []) > 0)
                     <tr>
                         <td></td>
@@ -276,8 +277,7 @@
                         </tr>
                     </tfoot>
                 </table>
-                <p style="margin-top:25px; color:#587193; font-size:14px;font-family: Arial, Helvetica, sans-serif; ">
-                    Your taxes and deductions for this period are <span style="color: #555555"> <span style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['deduction_tax'], 2) }}</span></p>
+                <p style="margin-top:5px; color:#587193; font-size:14px; font-family: Arial, Helvetica, sans-serif; ">Your taxes and deductions for this period are <span style="color: #555555"> <span style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['deduction_tax'], 2) }}</span></p>
             </section>
         </section>
         <section style="position: fixed; bottom:55px; width:95%; left:40px;">
