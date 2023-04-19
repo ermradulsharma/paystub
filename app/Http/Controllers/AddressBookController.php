@@ -82,7 +82,7 @@ class AddressBookController extends Controller
                 $addressObj->user_id    = Auth::user()->id;
                 $addressObj->type       = $request->type ?? '';
                 $addressObj->name       = $request->fullName ?? '';
-                $addressObj->tel        = '';
+                $addressObj->tel        = $request->tel ?? '';
                 $addressObj->address_1  = $request->addressLine1 ?? '';
                 $addressObj->address_2  = $request->addressLine2 ?? '';
                 $addressObj->city       = $request->cityName ?? '';
@@ -95,7 +95,7 @@ class AddressBookController extends Controller
                 $addressObj             = Address::where('id', $request->addressId)->first();
                 $addressObj->type       = $request->type ?? '';
                 $addressObj->name       = $request->fullName ?? '';
-                $addressObj->tel        = '';
+                $addressObj->tel        = $request->tel ?? '';
                 $addressObj->address_1  = $request->addressLine1 ?? '';
                 $addressObj->address_2  = $request->addressLine2 ?? '';
                 $addressObj->city       = $request->cityName ?? '';

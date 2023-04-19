@@ -141,6 +141,7 @@ $(document).ready(function() {
         $('#city').val($('option:selected', this).data('city'))
         $('#state').val($('option:selected', this).data('state'))
         $('#zip_code').val($('option:selected', this).data('zip'))
+        $('#tel').val($('option:selected', this).data('tel'))
     });
 
     $("#employeeAddress").change(function() {
