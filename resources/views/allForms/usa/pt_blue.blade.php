@@ -246,7 +246,7 @@
                 <td style="font-size:13px;text-align:right;padding-right:6px;  font-weight:bold">{{-- <span style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span> --}}{{ number_format($requestData['total_net_pay'], 2) }}</td>
                 <td style=" border-right: 1px solid #43407a; border-left: 1px solid #43407a;font-size:13px;text-align:center; font-weight:bold ">0.00</td>
                 <td style="font-size:13px;text-align:right;padding-right:6px;  font-weight:bold">{{-- <span style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span> --}}{{ number_format($requestData['total_net_pay'], 2) }}</td>
-                <td style="border-left: 1px solid #43407a;font-size:13px;text-align:center; font-weight:bold "><span style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span>2,500.00</td>
+                <td style="border-left: 1px solid #43407a;font-size:13px;text-align:center; font-weight:bold "><{{-- span style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span> --}}2,500.00</td>
             </tr>
             <tr>
                 <td style="color: #43407a;border-right: 1px solid #43407a;text-align:center;font-size:12px; font-weight:bold;">YEAR-TO-DATE</td>
