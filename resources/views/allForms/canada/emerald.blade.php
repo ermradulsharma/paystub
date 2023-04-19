@@ -241,7 +241,7 @@
                     <div class="column2">
                         <table class="colortable" style="width:100%;">
                             <thead id="colourborder">
-                                <th class="padding" style="text-align: left;padding-left:15px;font-size:14px;border-left:3px solid #60bf57; ">DEDUCTION</th>
+                                <th class="padding" style="text-align: left;padding-left:15px;font-size:14px;border-left:3px solid #60bf57; ">DEDUCTIONS</th>
                                 <th class="padding" style="font-size:14px;">CURRENT TOTAL</th>
                                 <th class="padding" style="font-size:14px;">YEAR TO DATE</th>
                             </thead>

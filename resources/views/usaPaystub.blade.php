@@ -183,7 +183,7 @@
                                         <div class="input-group mmenu mb-3 text-center">
                                             <select name="basic_temp" id="basic_temp"
                                                 class="form-control dropdown1 text-center bt_id small-font basicTemplate removeDiv"
-                                                style="margin-right:10px; font-size:18px;">
+                                                style="margin-right:10px; font-size:18px;text-align:center!important;">
                                                 <option value=""> --- Select Basic Templates --- </option>
                                                 @foreach ($basicType as $data)
                                                     <option value="{{ $data->title ?? '' }}"
@@ -209,7 +209,7 @@
                                         <div class="input-group mmenu mb-3">
                                             <select name="advance_temp" id="advance_temp"
                                                 class="form-control text-center dropdown1 at_id small-font advanceTemplate removeDiv"
-                                                style="margin-right:10px; font-size:18px;">
+                                                style="margin-right:10px; font-size:18px;text-align:center !important;">
                                                 <option value=""> --- Select Advance Template --- </option>
                                                 @foreach ($advanceType as $data)
                                                     <option value="{{ $data->title ?? '' }}"
