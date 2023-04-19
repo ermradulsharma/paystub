@@ -34,8 +34,12 @@ class TemplateFormController extends Controller
 
         if($invoiceData->type == 'canada'){
             $countryCode = "CA";
-        }else{
-            $countryCode = $invoiceData->type;
+        }else if($invoiceData->type == 'global'){
+            $countryCode = 'USA';
+        }else if($invoiceData->type == 'usa'){
+            $countryCode = 'USA';
+        }else if($invoiceData->type == 'uk'){
+            $countryCode = 'UK';
         }
         $stateTaxes = StateTax::where('country_code',$countryCode)->orderBy('state')->get();
         $currencies = Currency::get();
