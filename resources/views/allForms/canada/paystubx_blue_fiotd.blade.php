@@ -168,7 +168,7 @@
         <div style="max-width: 100%; margin: auto; padding: 10px 10px;">
             <table style="width:100%; border-left:3px solid#8a898a; border-right:3px solid#8a898a;background-color:darkgray;color:white;">
                 <tr>
-                    <td style="font-size: 18px;text-align: left;padding:10px 0px 10px 25px;"><span style="font-size: 20px; text-transform:capitalize; font-weight:400;">{{ $requestData['cname'] }}</span><br>{{ $requestData['address_1'] }},@if($requestData['address_2']!='') {{ $requestData['address_2'] }}@endif  {{ $requestData['city'] }}, {{ $requestData['state'] }} {{ $requestData['zip_code'] }}</td>
+                    <td style="font-size: 18px;text-align: left;padding:10px 0px 10px 25px;"><span style="font-size: 20px; text-transform:capitalize; font-weight:400;">{{ $requestData['cname'] }}</span><br>{{ $requestData['address_1'] }},<br>@if($requestData['address_2']!='') {{ $requestData['address_2'] }}<br>@endif  {{ $requestData['city'] }}, {{ $requestData['state'] }} {{ $requestData['zip_code'] }}</td>
                     <td style="font-size: 21px;text-align:right;padding:8px 12px 8px 10px;text-transform:uppercase;  font-family: 'Arial', sans-serif;font-weight:bold;">Earnings Statement</td>
                 </tr>
             </table>
