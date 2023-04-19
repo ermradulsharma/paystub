@@ -331,9 +331,9 @@
                         </ul>
 
                         <div class="tab-content" id="pills-tabContent">
-                            <div class="tab-pane fade {{ Request::get('emp') != 2 ? 'show active' : '' }}"
+                            <div class="address-tab tab-pane fade {{ Request::get('emp') != 2 ? 'show active' : '' }}"
                                 id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                                <div>
+                                <div id="employerTab">
                                     <table class="table" style="border:1px solid #ddd;">
                                         <thead>
                                             <tr>
@@ -347,7 +347,7 @@
                                                 <th scope="col">Telephone</th>
                                             </tr>
                                         </thead>
-                                        <tbody id="employerTab">
+                                        <tbody>
                                             {{-- <tr style="border:1px solid #ddd;">
                                                 <td scope="row">1</td>
                                                 <td>Mark22</td>
@@ -365,9 +365,9 @@
                                     </table>
                                 </div>
                             </div>
-                            <div class="tab-pane fade {{ Request::get('emp') == 2 ? ' show active' : '' }}"
+                            <div class="address-tab tab-pane fade {{ Request::get('emp') == 2 ? ' show active' : '' }}"
                                 id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                                <div>
+                                <div id="employeeTab">
                                     <table class="table" style="border:1px solid #ddd;">
                                         <thead>
                                             <tr>
@@ -381,7 +381,7 @@
 
                                             </tr>
                                         </thead>
-                                        <tbody id="employeeTab">
+                                        <tbody>
                                             {{-- <tr>
                                                 <th scope="row">1</th>
                                                 <td>Mark</td>
@@ -935,7 +935,9 @@
                 success: function(data) {
                     if ($.isEmptyObject(data.error)) {
                         // $('.tab-pane.fade.show.active').find('tbody').html('').html(data);
-                        $('.tab-pane.fade.show.active').find('div').html('').html(data);
+                        // $('.address-tab.tab-pane.fade.show.active').find('div').html('').html(data);
+                        $('#'+type+'Tab').html('').html(data);
+                        console.log('data-->',type);
 
                     } else {
                         printErrorMsg(data.error);

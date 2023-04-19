@@ -2,7 +2,7 @@
     <thead>
         <tr>
             <th scope="col">#</th>
-            <th scope="col">Employee Name</th>
+            @if($empType == 'employer')<th scope="col">Employer Name</th>@else<th scope="col">Employee Name</th>@endif
             <th scope="col">Street Address 1</th>
             <th scope="col">Street Address 2</th>
             <th scope="col">City</th>
@@ -11,7 +11,7 @@
             @if($empType == 'employer')<th scope="col">Telephone</th>@endif
         </tr>
     </thead>
-    <tbody id="employeeTab">
+    <tbody>
         @if($addressData->count() > 0)
             @foreach ($addressData as $key => $address)
 
