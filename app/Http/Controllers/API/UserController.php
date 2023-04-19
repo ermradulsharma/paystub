@@ -664,7 +664,7 @@ class UserController extends Controller
                 return response()->json($response, 301);
             }
 
-            $addressObj = Address::where(['id' => $requestData['address_id'], 'user_id' => Auth::user()->id])->first();
+            $addressObj = Address::where(['id' => $requestData['address_id']])->first();
             if (!$addressObj) {
                 $response['message'] = "Address doesn't exist.";
                 return response()->json($response, 301);

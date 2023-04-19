@@ -171,8 +171,7 @@
 
 <body>
     <main class="bg-img2">
-        <img src="{{ public_path('images/form.svg') }}"
-            style="position: absolute; top: 75%; right:0px;left: 0px; width:106.50%;   z-index: -1;">
+        <img src="{{ public_path('images/form.svg') }}" style="position: absolute; top: 75%; right:0px;left: 0px; width:106.50%;   z-index: -1;">
         @guest
             <div class="watermark"></div>
         @endguest
@@ -183,26 +182,15 @@
         @endauth
         <section>
             <div class="row2" style="width:100%">
-                <h3
-                    style="text-align:right; text-transform:capitalize; font-size:27.5px; font-weight:bold;font-family: 'Arial', sans-serif;">
-                    Earnings Statement</h3>
-                <div class="col0">
-                </div>
+                <h3 style="text-align:right; text-transform:capitalize; font-size:27.5px; font-weight:bold;font-family: 'Arial', sans-serif;">Earnings Statement</h3>
+                <div class="col0"></div>
                 <div class="col1">
                     <table style="width: 100%;">
                         <tr>
-                            <td
-                                style="font-weight:bold;font-size:18px; text-transform:uppercase;font-family: 'Arial', sans-serif;">
-                                {{ $requestData['cname'] }}
-                            </td>
+                            <td style="font-weight:bold;font-size:18px; text-transform:uppercase;font-family: 'Arial', sans-serif;">{{ $requestData['cname'] }}</td>
                         </tr>
                         <tr>
-                            <td
-                                style="font-size:16px; text-transform:uppercase;line-height:1;font-family: 'Arial', sans-serif;">
-                                {{ $requestData['address_1'] }} {!! addressTwo($requestData,true) !!}<br>{{ $requestData['city'] }},
-                                {{ $requestData['state'] }}
-                                {{ $requestData['zip_code'] }}
-                            </td>
+                            <td style="font-size:16px; text-transform:uppercase;line-height:1;font-family: 'Arial', sans-serif;">{{ $requestData['address_1'] }} {!! addressTwo($requestData,true) !!}<br>{{ $requestData['city'] }}, {{ $requestData['state'] }} {{ $requestData['zip_code'] }}</td>
                         </tr>
                     </table>
 <br>
@@ -220,7 +208,7 @@
                             <td style="font-size: 15px; line-height:1.2; text-transform: capitalize;font-family: 'Arial', sans-serif;">1 </td>
                         </tr>
                         <tr>
-                            <td style="font-size: 15px; line-height:1.2; text-transform: capitalize;font-family: 'Arial', sans-serif; text-align:center;">{{ $requestData['state'] }}:</td>
+                            <td style="font-size: 15px; line-height:1.2; text-transform: capitalize;font-family: 'Arial', sans-serif; text-align:center;">{{ $requestData['emp_state'] }}:</td>
                             <td style="font-size: 15px; line-height:1.2; text-transform: capitalize;font-family: 'Arial', sans-serif;">1</td>
                         </tr>
                     </table>
@@ -268,22 +256,12 @@
                 <div class="column1">
                     <table class="tablealign">
                         <thead style="font-size:15px; ">
-                            <th
-                                style="text-align: left;width:21%;font-size:18px;font-family: Arial, Helvetica, sans-serif; font-weight:bold; ">
-                                Earnings</th>
-                            <th
-                                style="text-align: center;margin-left:2px;width:18%;font-family: Arial, Helvetica, sans-serif; font-weight:bold;font-size:14px;">
-                                rate</th>
-                            <th
-                                style="text-align: center;margin-left:2px;width:22%;font-family: Arial, Helvetica, sans-serif; font-weight:bold;font-size:14px;">
-                                hours</th>
-                            <th
-                                style="width:18%;text-align:center;font-family: Arial, Helvetica, sans-serif; font-weight:bold;font-size:14px;">
-                                this period</th>
+                            <th style="text-align: left;width:21%;font-size:18px;font-family: Arial, Helvetica, sans-serif; font-weight:bold; ">Earnings</th>
+                            <th style="text-align: center;margin-left:2px;width:18%;font-family: Arial, Helvetica, sans-serif; font-weight:bold;font-size:14px;">rate</th>
+                            <th style="text-align: center;margin-left:2px;width:22%;font-family: Arial, Helvetica, sans-serif; font-weight:bold;font-size:14px;">hours</th>
+                            <th style="width:18%;text-align:center;font-family: Arial, Helvetica, sans-serif; font-weight:bold;font-size:14px;">this period</th>
                             <th style="width:5px; height:1px; margin-top:5px; border:none;"></th>
-                            <th
-                                style=" margin-left:2px;width:21%;font-family: Arial, Helvetica, sans-serif; font-weight:bold;font-size:14px;">
-                                year to date</th>
+                            <th style=" margin-left:2px;width:21%;font-family: Arial, Helvetica, sans-serif; font-weight:bold;font-size:14px;">year to date</th>
                         </thead>
                         <tbody style="font-size:13px;">
                             @foreach ($requestData['earning'] as $key => $earn)
@@ -302,28 +280,19 @@
 
                         <tr>
                             <td></td>
-                            <td style="text-align: left; font-size:15px; border-bottom:3px solid black; border-top:3px solid black;font-family: Arial, Helvetica, sans-serif;"
-                                colspan="2"><b>Gross Pay</b></td>
-                            <td
-                                style="font-size:15px; border-bottom:3px solid black; border-top:3px solid black;text-align:right;font-family: Arial, Helvetica, sans-serif;">
-                                <b>{{ $requestData['currency'] }}{{ number_format($requestData['total_net_pay'], 2) }}</b>
-                            </td>
+                            <td style="text-align: left; font-size:15px; border-bottom:3px solid black; border-top:3px solid black;font-family: Arial, Helvetica, sans-serif;" colspan="2"><b>Gross Pay</b></td>
+                            <td style="font-size:15px; border-bottom:3px solid black; border-top:3px solid black;text-align:right;font-family: Arial, Helvetica, sans-serif;"><b>{{ $requestData['currency'] }}{{ number_format($requestData['total_net_pay'], 2) }}</b></td>
                         </tr>
                     </table>
                 </div>
                 <div class="column2" style="padding: 2px;">
                     <table class="tablealign">
                         <tr>
-                            <td colspan="3" style="text-align: left;font-family: Arial, Helvetica, sans-serif;">Other
-                                Benefits and</td>
+                            <td colspan="3" style="text-align: left;font-family: Arial, Helvetica, sans-serif;">Other Benefits and</td>
                         </tr>
                         <tr>
-                            <td class="borderbottam"
-                                style="font-weight: bold;text-align:left;font-family: Arial, Helvetica, sans-serif;">
-                                Information</td>
-                            <td
-                                class="borderbottam"style="font-weight: bold;font-family: Arial, Helvetica, sans-serif;">
-                                this period</td>
+                            <td class="borderbottam" style="font-weight: bold;text-align:left;font-family: Arial, Helvetica, sans-serif;">Information</td>
+                            <td class="borderbottam"style="font-weight: bold;font-family: Arial, Helvetica, sans-serif;">this period</td>
                             <th style="width:5px; height:1px; margin-top:5px; border:none;"></th>
                             <td
                                 class="borderbottam"style="font-weight: bold;font-family: Arial, Helvetica, sans-serif;">
