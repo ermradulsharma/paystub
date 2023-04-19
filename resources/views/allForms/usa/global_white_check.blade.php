@@ -382,7 +382,7 @@
         <section class="bg-img">
             @php
                 $earn = count($requestData['earning']);
-                $tax = count($requestData['tax_deduction']);
+                $tax = count($requestData['tax_deduction'] ?? []);
             @endphp
 
             <div class="container" style=" margin-top:100px; width:100%; padding:0px 20px; @if($earn != 1) position: fixed;  top:74%; @elseif($tax != 0)position: fixed;  top:74%; @else position: relative;  top:64px; @endif">
