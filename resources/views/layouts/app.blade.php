@@ -38,7 +38,7 @@
         <ul class="nav nav-justified navbar">
             <li class="nav-item">
                 <a href="{{ route('welcome') }}">
-                    <img class="mr-3 mt-5" src="{{ asset('images/Paystub X.webp') }}" style="width: 222px;">
+                    <img class="mr-3 mt-5 header-logo" src="{{ asset('images/Paystub X.webp') }}" style="width: 222px;">
                 </a>
             </li>
             <li class="nav-item ml-3 ">
@@ -76,7 +76,7 @@
                 @endguest
 
                 @auth
-                    <div class="container" style="margin-top:10px;">
+                    <div class="container" style="margin-top:5px;">
                         <div class="user-icon"><img src="{{ asset('images/profile1.png') }}"></div>
                         <div class="logout btn-logout"><a><img src="{{ asset('images/logout01.png') }}"></a></div>
                         <div class="dropbtn">
