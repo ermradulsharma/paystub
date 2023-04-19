@@ -25,10 +25,10 @@ class AddressBookController extends Controller
                     'error' => $validator->errors()->all()
                 ]);
             }
-
-            $addressData = Address::where(['type' => $request->type, 'user_id' => Auth::user()->id])->orderBy('id', 'DESC')->paginate(5);
+            $empType = $request->type;
+            $addressData = Address::where(['type' => $empType, 'user_id' => Auth::user()->id])->orderBy('id', 'DESC')->paginate(10);
             if ($request->ajax()) {
-                return view('address-list', compact('addressData'));
+                return view('address-list', compact('addressData','empType'));
             }
             // return response()->json(['user' => $addressData,'message' => 'Address fetch successfully.']);
         } catch (\Exception $e) {

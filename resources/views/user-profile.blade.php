@@ -333,68 +333,71 @@
                         <div class="tab-content" id="pills-tabContent">
                             <div class="tab-pane fade {{ Request::get('emp') != 2 ? 'show active' : '' }}"
                                 id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                                <table class="table" style="border:1px solid #ddd;">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">#</th>
-                                            <th scope="col">Employer (Company) Name</th>
-                                            <th scope="col">Street Address 1</th>
-                                            <th scope="col">Street Address 2</th>
-                                            <th scope="col">City</th>
-                                            <th scope="col">State</th>
-                                            <th scope="col">Zip Code</th>
-                                            <th scope="col">Telephone</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="employerTab">
-                                        {{-- <tr style="border:1px solid #ddd;">
-                                            <td scope="row">1</td>
-                                            <td>Mark22</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
-                                            <td>otto</td>
-                                            <td>@mdo</td>
-                                            <td>1234</td>
-                                            <td style="padding-right:0; padding-left:0;"><img style="width:22px;"
-                                                    src="images/icons/edit-icon.png"></td>
-                                            <td style="padding-right:0; padding-left:0;"><img style="width:20px;"
-                                                    src="images/icons/del-icon.png"></td>
-                                        </tr> --}}
-                                    </tbody>
-                                </table>
-
+                                <div>
+                                    <table class="table" style="border:1px solid #ddd;">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col">Employer (Company) Name</th>
+                                                <th scope="col">Street Address 1</th>
+                                                <th scope="col">Street Address 2</th>
+                                                <th scope="col">City</th>
+                                                <th scope="col">State</th>
+                                                <th scope="col">Zip Code</th>
+                                                <th scope="col">Telephone</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="employerTab">
+                                            {{-- <tr style="border:1px solid #ddd;">
+                                                <td scope="row">1</td>
+                                                <td>Mark22</td>
+                                                <td>Otto</td>
+                                                <td>@mdo</td>
+                                                <td>otto</td>
+                                                <td>@mdo</td>
+                                                <td>1234</td>
+                                                <td style="padding-right:0; padding-left:0;"><img style="width:22px;"
+                                                        src="images/icons/edit-icon.png"></td>
+                                                <td style="padding-right:0; padding-left:0;"><img style="width:20px;"
+                                                        src="images/icons/del-icon.png"></td>
+                                            </tr> --}}
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                             <div class="tab-pane fade {{ Request::get('emp') == 2 ? ' show active' : '' }}"
                                 id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                                <table class="table" style="border:1px solid #ddd;">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">#</th>
-                                            <th scope="col">Employee Name</th>
-                                            <th scope="col">Street Address 1</th>
-                                            <th scope="col">Street Address 2</th>
-                                            <th scope="col">City</th>
-                                            <th scope="col">State</th>
-                                            <th scope="col">Zip Code</th>
+                                <div>
+                                    <table class="table" style="border:1px solid #ddd;">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col">Employee Name</th>
+                                                <th scope="col">Street Address 1</th>
+                                                <th scope="col">Street Address 2</th>
+                                                <th scope="col">City</th>
+                                                <th scope="col">State</th>
+                                                <th scope="col">Zip Code</th>
 
-                                        </tr>
-                                    </thead>
-                                    <tbody id="employeeTab">
-                                        {{-- <tr>
-                                            <th scope="row">1</th>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
-                                            <td>1234</td>
-                                            <td style="padding-right:0; padding-left:0;"><img style="width:22px;"
-                                                    src="images/icons/edit-icon.png"></td>
-                                            <td style="padding-right:0; padding-left:0;"><img style="width:20px;"
-                                                    src="images/icons/del-icon.png"></td>
-                                        </tr> --}}
-                                    </tbody>
-                                </table>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="employeeTab">
+                                            {{-- <tr>
+                                                <th scope="row">1</th>
+                                                <td>Mark</td>
+                                                <td>Otto</td>
+                                                <td>@mdo</td>
+                                                <td>Otto</td>
+                                                <td>@mdo</td>
+                                                <td>1234</td>
+                                                <td style="padding-right:0; padding-left:0;"><img style="width:22px;"
+                                                        src="images/icons/edit-icon.png"></td>
+                                                <td style="padding-right:0; padding-left:0;"><img style="width:20px;"
+                                                        src="images/icons/del-icon.png"></td>
+                                            </tr> --}}
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -728,7 +731,13 @@
 <script>
     $(document).ready(function() {
             getAddressBook();
-        });
+
+            $(document).on('click', '.pagination a', function(event){
+                event.preventDefault();
+                var page = $(this).attr('href').split('page=')[1];
+                getAddressBook(page);
+            });
+    });
 
         $(".changeUserEmail").click(function() {
             $("#changeUserEmail").modal("show");
@@ -917,15 +926,17 @@
             $("#addressBook").modal("show");
         }
 
-        function getAddressBook() {
+        function getAddressBook(page = 1) {
             var type = $("#addNewAddress").attr('data-emptype');
+            url = "{{ route('fetch.address') }}?page="+page+"&type=" + type;
             $.ajax({
-                url: "{{ route('fetch.address') }}?type=" + type,
+                url: url,
                 datatype: "html",
                 success: function(data) {
                     if ($.isEmptyObject(data.error)) {
-                        $('.tab-pane.fade.show.active').find('tbody').html('').html(data);
-                        // $('#employerTab').html('').html(data);
+                        // $('.tab-pane.fade.show.active').find('tbody').html('').html(data);
+                        $('.tab-pane.fade.show.active').find('div').html('').html(data);
+
                     } else {
                         printErrorMsg(data.error);
                     }
