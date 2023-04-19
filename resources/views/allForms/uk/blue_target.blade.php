@@ -149,7 +149,7 @@
                         </tr>
                         @foreach ($requestData['taxes'] ?? [] as $key => $taxes)
                             <tr>
-                                <td class="l-align"style="font-size:15px">{{ $taxes }}</td>
+                                <td class="l-align"style="font-size:15px;">{{ $taxes }}</td>
                                 <td style="border-right:1px solid #0a2e7b;font-size:15px" class="bold">
                                     {{ number_format($requestData['taxes_rate'][$key], 2) }}</td>
                             </tr>
@@ -164,7 +164,7 @@
             </div>
             <table style="border-bottom:1px solid #0a2e7b ;">
                 <thead style="border:1px solid #0a2e7b ; border-left:none; border-right:none; border-bottom:none;">
-                    <th style="background-color: white !important; border-bottom:none !important;"></th>
+                    <th style="background-color:#fff; border-bottom:none !important;"></th>
                     <th
                         style="color: #0a2e7b; font-size:10px;border-top:1px solid #0a2e7b ;border-left:1px solid #0a2e7b;">
                         THIS PERIOD</th>
@@ -173,22 +173,27 @@
                         YEAR TO DATE</th>
                 </thead>
                 <tr>
-                    <td style="border-right:1px solid #0a2e7b;">
-                        <h6
-                            style="padding-left:10px !important;text-align:left;font-size:15px; font-weight:bold;padding:0px; margin:0px;text-transform:capitalize;font-size:15px;">
-                            {{ $requestData['emp_name'] }}</h6>
-                        <p
-                            style="padding-left:10px !important;text-align:left;padding: 0px; margin:0px;text-transform:capitalize;font-size:15px;">
-                            {{ $requestData['emp_street_1'] }}</p>
-                        <p
-                            style="padding-left:10px !important;text-align:left;padding:0px; margin:0px;text-transform:capitalize;font-size:15px;">
-                            {{ $requestData['emp_street_2'] }}</p>
-                        <p
-                            style="padding-left:10px !important;text-align:left;padding:0px; margin:0px;text-transform:capitalize;font-size:15px;">
-                            {{ $requestData['emp_zip_code'] }}</p>
+                    <td style="border-right:1px solid #3b4059;border-top-left-radius:0px; ">
+                        <table style="position: relative; bottom:30px;">
+                            <tr>
+                                <td> <h6
+                                    style="padding-left:10px !important;text-align:left;font-size:15px; font-weight:bold;padding:0px; margin:0px;text-transform:capitalize;font-size:15px;">
+                                    {{ $requestData['emp_name'] }}</h6>
+                                <p
+                                    style="padding-left:10px !important;text-align:left;padding: 0px; margin:0px;text-transform:capitalize;font-size:15px;">
+                                    {{ $requestData['emp_street_1'] }}</p>
+                                <p
+                                    style="padding-left:10px !important;text-align:left;padding:0px; margin:0px;text-transform:capitalize;font-size:15px;">
+                                    {{ $requestData['emp_street_2'] }}</p>
+                                <p
+                                    style="padding-left:10px !important;text-align:left;padding:0px; margin:0px;text-transform:capitalize;font-size:15px;">
+                                    {{ $requestData['emp_zip_code'] }}</p></td>
+                            </tr>
+                        </table>
+
                     </td>
 
-                        <table>
+                        <table style="padding-top:10px;">
                             <tr>
                                 <td class="l-align"
                                     style="padding-left: 10px; margin:0px;text-transform:capitalize;font-size:15px;">
@@ -206,7 +211,7 @@
                         </table>
 
                     <td style="border: 1px solid #0a2e7b; border-right:none;">
-                        <table>
+                        <table style="padding-top:10px;padding-bottom:20px;">
                             <tr>
                                 <td class="l-align"
                                     style="padding-left: 10px; margin:0px;text-transform:capitalize;font-size:15px;">
