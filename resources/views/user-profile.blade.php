@@ -937,8 +937,6 @@
                         // $('.tab-pane.fade.show.active').find('tbody').html('').html(data);
                         // $('.address-tab.tab-pane.fade.show.active').find('div').html('').html(data);
                         $('#'+type+'Tab').html('').html(data);
-                        console.log('data-->',type);
-
                     } else {
                         printErrorMsg(data.error);
                     }
@@ -1069,6 +1067,13 @@
         // $('#tel').usPhoneFormat({
         //     format: '123-456-7890',
         // });
+    });
+    $(document).ajaxStart(function(){
+         $("#loaderDiv").css("display", "block");
+    });
+
+    $(document).ajaxComplete(function(){
+        $("#loaderDiv").css("display", "none");
     });
 </script>
 @endsection

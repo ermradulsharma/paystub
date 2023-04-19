@@ -76,6 +76,7 @@
                                     @foreach ($employerList ?? [] as $key => $employer)
                                         <option data-name="{{ $employer->name }}" data-address1="{{ $employer->address_1 }}"
                                             data-address2="{{ $employer->address_2 }}" data-city="{{ $employer->city }}"
+                                            data-state="{{ $employer->state }}"
                                             data-zip="{{ $employer->zip_code }}" data-tel="{{ $employer->tel }}"
                                             value="{{ $employer->name }}">{{ $employer->name }}</option>
                                     @endforeach
@@ -579,7 +580,7 @@
                                 <div class="col-lg-2  col-md-2 margin-bottom mt-2  ">
                                     <button type="button" class="statementbtn">RATE</button>
                                     <div class="margin-bottom">
-                                        <input type="text" name="rate[]"
+                                        <input type="number" name="rate[]"
                                             class="earnbtn removeData mt-4 mb-3 text-center calculation rate"
                                             id="rate_0" data-id="0">
                                     </div>
@@ -588,7 +589,7 @@
                                 <div class=" col-lg-2  col-md-2 margin-bottom mt-2  ">
                                     <button type="button" class="statementbtn">HOURS</button>
                                     <div class="margin-bottom">
-                                        <input type="text" name="hours[]"
+                                        <input type="number" name="hours[]"
                                             class="earnbtn removeData mt-4 mb-3 text-center hours calculation"
                                             id="hours_0" data-id="0">
                                     </div>
@@ -860,7 +861,7 @@
                 // var value = $('option:selected', '.address').attr('value');
                 var value = $(this).val();
                 var userId = {{ Auth::check() == true ? 'true' : 'false' }};
-                
+
                 if (value == 'add_address') {
                     if (userId == true) {
                         window.location.href = "{{ route('profile') }}?tab=2&emp=1";

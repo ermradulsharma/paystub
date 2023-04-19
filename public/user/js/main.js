@@ -135,22 +135,22 @@ $("#userNameForm").on("submit", function () {
 // Address autofill affter select from dropdown on add and edit page
 $(document).ready(function() {
     $("#employerAddress").change(function() {
-        $('#cname').val($('option:selected', this).data('name'))
-        $('#address_1').val($('option:selected', this).data('address1'))
-        $('#address_2').val($('option:selected', this).data('address2'))
-        $('#city').val($('option:selected', this).data('city'))
-        $('#state').val($('option:selected', this).data('state'))
-        $('#zip_code').val($('option:selected', this).data('zip'))
-        $('#tel').val($('option:selected', this).data('tel'))
+        $('#cname').val($('option:selected', this).data('name'));
+        $('#address_1').val($('option:selected', this).data('address1'));
+        $('#address_2').val($('option:selected', this).data('address2'));
+        $('#city').val($('option:selected', this).data('city'));
+        $('#state').val($('option:selected', this).data('state'));
+        $('#zip_code').val($('option:selected', this).data('zip'));
+        $('#tel').val($('option:selected', this).data('tel'));
     });
 
     $("#employeeAddress").change(function() {
-        $('#emp_name').val($('option:selected', this).data('name'))
-        $('#emp_street_1').val($('option:selected', this).data('address1'))
-        $('#emp_street_2').val($('option:selected', this).data('address2'))
-        $('#emp_city').val($('option:selected', this).data('city'))
-        $('#emp_state').val($('option:selected', this).data('state'))
-        $('#emp_zip_code').val($('option:selected', this).data('zip'))
+        $('#emp_name').val($('option:selected', this).data('name'));
+        $('#emp_street_1').val($('option:selected', this).data('address1'));
+        $('#emp_street_2').val($('option:selected', this).data('address2'));
+        $('#emp_city').val($('option:selected', this).data('city'));
+        $('#emp_state').val($('option:selected', this).data('state'));
+        $('#emp_zip_code').val($('option:selected', this).data('zip'));
     });
 });
 
