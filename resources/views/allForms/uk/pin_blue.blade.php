@@ -228,14 +228,14 @@
                             <tr>
                                 <td class="l-align"
                                     style="padding-left: 10px; margin:0px;text-transform:capitalize;font-size:15px;">
-                                    Total Payment</td>
+                                    Total Payments</td>
                                 <td style="padding: 0px; margin:0px;text-transform:capitalize;font-size:15px;"
                                     class="bold">{{ number_format($requestData['taxable_gross_pay'], 2) }}</td>
                             </tr>
                             <tr>
                                 <td class="l-align"
                                     style="padding-left: 10px;margin:0px;text-transform:capitalize;font-size:15px;">
-                                    Total Deduction</td>
+                                    Total Deductions</td>
                                 <td style="padding: 0px; margin:0px;text-transform:capitalize;font-size:15px;"
                                     class="bold">{{ number_format($requestData['deduction_tax'], 2) }}</td>
                             </tr>

@@ -3416,7 +3416,8 @@ img.earnbtn2.lockuk {
     .previewbtn {
         margin-right: 0px !important;
         margin-bottom: 15px !important;
-        width:92% !important;
+        width:100% !important;
+        max-width: 300px;
     }
 
     input.pie-box.input {
@@ -3426,6 +3427,18 @@ img.earnbtn2.lockuk {
 
     img.earnbtn2.lockuk {
         top: 18px !important;
+    }
+    .profile-icon-outer{
+        margin-right:12px;
+    }
+    .edit-icon {
+        width: 25px;
+        height: 25px;
+        position: relative;
+        right: 10px;
+    }
+    .d-flex.input-left{
+        width:calc(100% - 25px);
     }
 
     .d-flex.flex-wrap.justify-content-between.usa-btn-inner {

@@ -183,7 +183,7 @@
                             <td style="text-align: right; font-size:16px; padding-right:10px;font-family: 'Myriad Pro', sans-serif;"><b>{{ number_format($requestData['employee_nic'],2) }}</b></td>
                         </tr>
                         <tr>
-                            <td style="font-size:16px;font-family: 'Myriad Pro', sans-serif;">Employee NIC</td>
+                            <td style="font-size:16px;font-family: 'Myriad Pro', sans-serif;">Employer NIC</td>
                             <td style="text-align: right; font-size:16px; padding-right:10px;font-family: 'Myriad Pro', sans-serif;"><b>{{ number_format($requestData['employer_nic'],2) }}</b></td>
                         </tr>
                     </thead>
