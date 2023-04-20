@@ -99,7 +99,7 @@
                         </tr>
                         @endforeach
                         <tr>
-                            <td style="font-size:16px;font-family: 'Myriad Pro', sans-serif;"><b>Total Payment</b></td>
+                            <td style="font-size:16px;font-family: 'Myriad Pro', sans-serif;"><b>Total Payments</b></td>
                             <td style="font-size:16px;font-family: 'Myriad Pro', sans-serif;"><b>{{ number_format($requestData['taxable_gross_pay'],2) }}</b></td>
                         </tr>
                         <br>

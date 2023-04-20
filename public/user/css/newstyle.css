@@ -924,6 +924,28 @@ select:after {
     margin-left: 50px;
     color: #0c2f62;
 }
+.dropbtn.mobile{
+    padding: 0px 7px 0px 25px;
+    width:85%;
+}
+.sidenav button#menu1 {
+    font-size: 15px;
+}
+.logout.btn-logout.mobile {
+    max-width: 25px;
+    top: 30px;
+    left: 86%;
+}
+.user-icon.mobile {
+    max-width: 32px;
+    top: 64px;
+
+    left: 0;
+}
+.container.mobile {
+    margin-top: -60px !important;
+    margin-left: 10px;
+}
 
 .nav-btn {
     box-shadow: 4px 4px 2px 1px #e9d1d3;
@@ -3435,7 +3457,7 @@ img.earnbtn2.lockuk {
         width: 25px;
         height: 25px;
         position: relative;
-        right: 10px;
+        right: 20px;
     }
     .d-flex.input-left{
         width:calc(100% - 25px);

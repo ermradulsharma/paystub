@@ -133,7 +133,7 @@
                     <td style=" padding-top:8px; padding-bottom:8px;border-right:1px solid #3b4059;border-radius:0;">007
                     </td>
                     <td
-                        style=" padding-top:8px; padding-bottom:8px;border-right:1px solid #3b4059;border-radius:0px 0px 0px0px;">
+                        style=" padding-top:8px; padding-bottom:8px;border-right:1px solid #3b4059;border-radius:0px 0px 0px0px;text-transform:capitalize;">
                         {{ $requestData['emp_name'] }}</td>
                     <td style=" padding-top:8px; padding-bottom:8px;border-right:1px solid #3b4059;border-radius:0;">
                         {{ date('d-F-Y', strtotime($requestData['pay_date'])) }}</td>
@@ -282,10 +282,10 @@
                             <tr>
                                 <td colspan="5"
                                     style="width:80%; text-align:left; font-size:16px; padding-left:5px;text-transform:capitalize;">
-                                    <b>{{ $requestData['cname'] }}, UK</b></td>
+                                    <b>{{ $requestData['cname'] }}, {{ $requestData['company_address'] ?? '' }}</b></td>
                             </tr>
                             <tr>
-                                <td style="padding-bottom:8px;font-size:11px;padding-left:5px;text-align:left;"><b>Tax Code:</b><span style="text-transform:capitalize;"></span>{{ $requestData['tax_code'] }}</td>
+                                <td style="padding-bottom:8px;font-size:11px;padding-left:5px;text-align:left;"><b>Tax Code: </b><span style="text-transform:capitalize;"></span>{{ $requestData['tax_code'] }}</td>
 
                                 <td style=" padding-bottom:8px;font-size:11px;padding-left:5px;text-align:left;text"><b>NI Table:</b>
                                     <span style="text-transform:uppercase;">{{ $requestData['ni_table_letter'] }} </span></td>
