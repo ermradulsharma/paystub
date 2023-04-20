@@ -934,6 +934,10 @@ select:after {
 
     left: 0;
 }
+.container.mobile2 {
+    margin-top: -60px !important;
+    margin-left: 10px;
+}
 .container.mobile {
     margin-top: -60px !important;
     margin-left: 10px;
@@ -3764,7 +3768,21 @@ img.earnbtn2.lockuk {
         font-size: 17px;
         padding: 10px;
     }
-
+    button.previewbtn.mobile-logout-btn {
+        max-width: 100px;
+    }
+    button.previewbtn.mt-4.px-3.mobile-login-btn {
+        max-width: 100px;
+    }
+    button.previewbtn.continue {
+        max-width: 110px;
+    }
+    .mobile-verify-btn{
+        max-width: 100px;
+    }
+    input.contact-box{
+        width: 92%;
+    }
     h1.display-4 {
         font-size: 23px !important;
         text-align: center;
