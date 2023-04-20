@@ -285,14 +285,14 @@
                                     <b>{{ $requestData['cname'] }}, {{ $requestData['company_address'] ?? '' }}</b></td>
                             </tr>
                             <tr>
-                                <td style="padding-bottom:8px;font-size:11px;padding-left:5px;text-align:left;"><b>Tax Code: </b><span style="text-transform:capitalize;"></span>{{ $requestData['tax_code'] }}</td>
+                                <td style="padding-bottom:8px;font-size:10px;padding-left:2px;text-align:left;"><b>Tax Code: </b><span style="text-transform:capitalize;"></span>{{ $requestData['tax_code'] }}</td>
 
-                                <td style=" padding-bottom:8px;font-size:11px;padding-left:5px;text-align:left;text"><b>NI Table:</b>
+                                <td style=" padding-bottom:8px;font-size:10px;padding-left:2px;text-align:left;text"><b>NI Table:</b>
                                     <span style="text-transform:uppercase;">{{ $requestData['ni_table_letter'] }} </span></td>
-                                <td style=" padding-bottom:8px;font-size:11px;padding-left:5px;text-align:left;"><b>Dept:</b> Defualt</td>
-                                <td style=" padding-bottom:8px;font-size:11px;padding-left:5px;text-align:left;"><b>Tax Period:</b>
+                                <td style=" padding-bottom:8px;font-size:10px;padding-left:2px;text-align:left;"><b>Dept:</b> Defualt</td>
+                                <td style=" padding-bottom:8px;font-size:10px;padding-left:2px;text-align:left;"><b>Tax Period:</b>
                                     <Span style="text-transform:capitalize;"></Span>{{ date('F-Y', strtotime($requestData['pay_date'])) }}</td>
-                                <td style=" padding-bottom:8px;font-size:11px;padding-left:5px;text-align:left;"><b>Payment Method:</b>
+                                <td style=" padding-bottom:8px;font-size:10px;padding-left:2px;text-align:left;"><b>Payment Method:</b>
                                     <span style="text-transform:uppercase;">{{ $requestData['payment_method'] }}</span></td>
                             </tr>
                         </table>
