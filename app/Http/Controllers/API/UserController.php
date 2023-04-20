@@ -559,7 +559,37 @@ class UserController extends Controller
                 $userObj->email = $request->email;
                 $userObj->code = '';
             }
-            $msg = "Password has updated successfully";
+            $msg = "OTP Verify Successfully";
+        }
+
+        if ($requestData['type'] == 'resend') {
+            $rules = [
+                'email' => 'required|email:rfc,dns'
+            ];
+
+            $messages = [
+                'email.required' => 'The email cannot be empty.',
+                'email.email' => 'Please enter valid email.',
+            ];
+            $validator = Validator::make($request->all(), $rules, $messages);
+            if ($validator->fails()) {
+                $response['message'] = $validator->errors()->first();
+                return response()->json($response, 301);
+            }
+            $userObj = User::where(['temp_mail' => $request->email])->first();
+            if ($userObj) {
+                $code = rand(100000, 999999);
+                if ($userObj->email != "") {
+                    $mailData = [];
+                    $mailData['name'] = $request->email;
+                    $mailData['otp'] = $code;
+                    $mailData['type'] = 'E-mail Verification';
+                    $mailData['subject'] = 'Verify E-mail';
+                    Mail::to($userObj->email)->send(new VerifyEmailSend($mailData));
+                }
+                $userObj->code = $code;
+            }
+            $msg = "OTP Send Successfully. Please check your e-mail";
         }
 
         if ($requestData['type'] == 'password') {
