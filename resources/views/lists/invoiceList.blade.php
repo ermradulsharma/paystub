@@ -5,7 +5,8 @@
    @media(max-width:768px){
     table th{
         font-size: 9px;
-        vertical-align: top;
+        vertical-align: top !important;
+
 
     }
     .downloiadBtn{

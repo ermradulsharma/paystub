@@ -166,17 +166,18 @@
 
         .editicon {
             width: 12px;
-            margin-right:7px;
+            margin-right:10px;
 
         }
 
         .dlticon {
             width: 10px;
-            margin-right:5px;
+            margin-right:8px;
         }
 
         .add-new-btn {
             display: block;
+            right:12px;
         }
 
         a#pills-home-tab {

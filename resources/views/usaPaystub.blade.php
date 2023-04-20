@@ -186,7 +186,7 @@
                                     <div class="mt-4">
                                         <div class="input-group mmenu mb-3 text-center">
                                             <select name="basic_temp" id="basic_temp"
-                                                class="form-control dropdown1 text-center bt_id small-font basicTemplate removeDiv justify-content-center"
+                                                class="form-control dropdown1 text-center bt_id small-font basicTemplate removeDiv justify-content-center direction-left"
                                                 style="margin-right:10px; font-size:18px;">
                                                 <option value=""> --- Select Basic Templates --- </option>
                                                 @foreach ($basicType as $data)
@@ -212,7 +212,7 @@
                                     <div class="mt-4">
                                         <div class="input-group mmenu mb-3">
                                             <select name="advance_temp" id="advance_temp"
-                                                class="form-control text-center dropdown1 at_id small-font advanceTemplate removeDiv"
+                                                class="form-control text-center dropdown1 at_id small-font advanceTemplate removeDiv direction-left"
                                                 style="margin-right:10px; font-size:18px;">
                                                 <option value=""> --- Select Advance Template --- </option>
                                                 @foreach ($advanceType as $data)
