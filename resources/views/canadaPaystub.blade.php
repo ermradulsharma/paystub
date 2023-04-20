@@ -167,8 +167,8 @@
                                         <div>
                                             <label for="zip_code" class="lable">Postal Code <span
                                                     class="redColor">*</span></label>
-                                            <input type="text" id="zip_code" name="zip_code" placeholder="Zip Code"
-                                                class="w-100  input-box-font removeDiv zip">
+                                            <input type="text" id="zip_code" name="zip_code"onkeyup="phoneMask()" placeholder="Zip Code"
+                                                class="w-100  input-box-font removeDiv">
                                         </div>
                                     </div>
                                 </div>
@@ -187,7 +187,8 @@
                                             <label for="emp_id" class="lable">EMPLOYEE ID <span
                                                     class="redColor">*</span></label>
                                             <input type="text" id="emp_id" name="emp_id"
-                                                placeholder="Employee Id" class="w-100  input-box-font removeDiv" maxlength="5" minlength="5"
+                                                placeholder="Employee Id" class="w-100  input-box-font removeDiv"
+                                                maxlength="5" minlength="5"
                                                 onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                         </div>
                                     </div>
@@ -239,7 +240,8 @@
                                                     class="redColor">*</span>
                                             </label>
                                             <input type="text" id="check_number" name="check_number"
-                                                placeholder="Check Number" class="w-100 removeDiv input-box-font" maxlength="6" minlength="6"
+                                                placeholder="Check Number" class="w-100 removeDiv input-box-font"
+                                                maxlength="6" minlength="6"
                                                 onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                         </div>
                                     </div>
@@ -421,6 +423,7 @@
 
         <script>
             $(document).ready(function() {
+
                 $('.advanceTemplate').change(function() {
                     $('option:selected', '.basicTemplate').prop("selected", false);
                 });
@@ -557,7 +560,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
         <script>
             // $('#zip_code').mask("");
-            $('#emp_zip_code').mask('00000-9999');
+            // $('#emp_zip_code').mask('00000-9999');
         </script>
         <script src="{{ asset('user') }}/js/dist/jquery-input-mask-phone-number.min.js"></script>
         <script>

@@ -638,6 +638,18 @@
 
         });
     </script>
+    <script>
+        $(document).ready(function(){
+            function phoneMask() {
+                var num = $(this).val();
+                if (/^[a-zA-Z0-9]{6,}$/.test(num)) {
+                    let result = num.replace(/.{3}/g, '$& ');
+                    $(this).val(result.toUpperCase().trim());
+                }
+                return false;
+            }
+        });
+    </script>
 </body>
 
 </html>
