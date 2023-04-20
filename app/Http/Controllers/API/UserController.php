@@ -526,13 +526,13 @@ class UserController extends Controller
             }
             $userObj->temp_mail = $request->email;
             $code = rand(100000, 999999);
-            if ($userObj->email != "") {
+            if ($userObj->temp_mail != "") {
                 $mailData = [];
                 $mailData['name'] = $request->email;
                 $mailData['otp'] = $code;
                 $mailData['type'] = 'E-mail Verification';
                 $mailData['subject'] = 'Verify E-mail';
-                Mail::to($userObj->email)->send(new VerifyEmailSend($mailData));
+                Mail::to($request->email)->send(new VerifyEmailSend($mailData));
             }
             $userObj->code = $code;
             $msg = "Please check your mail.";
@@ -579,13 +579,13 @@ class UserController extends Controller
             $userObj = User::where(['temp_mail' => $request->email])->first();
             if ($userObj) {
                 $code = rand(100000, 999999);
-                if ($userObj->email != "") {
+                if ($userObj->temp_mail != "") {
                     $mailData = [];
                     $mailData['name'] = $request->email;
                     $mailData['otp'] = $code;
                     $mailData['type'] = 'E-mail Verification';
                     $mailData['subject'] = 'Verify E-mail';
-                    Mail::to($userObj->email)->send(new VerifyEmailSend($mailData));
+                    Mail::to($request->email)->send(new VerifyEmailSend($mailData));
                 }
                 $userObj->code = $code;
             }
@@ -618,6 +618,9 @@ class UserController extends Controller
             $msg = "Password has updated successfully";
         }
         if ($userObj->save()) {
+            if ($userObj->temp_mail != '') {
+                $userObj->temp_mail = '';
+            }
             $user = User::select('name', 'email')->where('id', Auth::user()->id)->first();
         }
 
