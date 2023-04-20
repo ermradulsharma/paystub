@@ -524,8 +524,42 @@ class UserController extends Controller
                 $response['status'] = STATUS_BAD_REQUEST;
                 return $response;
             }
-            $userObj->email = $request->email;
+            $userObj->temp_mail = $request->email;
+            $code = rand(100000, 999999);
+            if ($userObj->email != "") {
+                $mailData = [];
+                $mailData['name'] = $request->email;
+                $mailData['otp'] = $code;
+                $mailData['type'] = 'E-mail Verification';
+                $mailData['subject'] = 'Verify E-mail';
+                Mail::to($userObj->email)->send(new VerifyEmailSend($mailData));
+            }
+            $userObj->code = $code;
             $msg = "Please check your mail.";
+        }
+
+        if ($requestData['type'] == 'verify') {
+            $rules = [
+                'otp' => 'required',
+                'email' => 'required|email:rfc,dns'
+            ];
+
+            $messages = [
+                'email.required' => 'The email cannot be empty.',
+                'email.email' => 'Please enter valid email.',
+                'otp.required' => 'The OTP cannot be empty'
+            ];
+            $validator = Validator::make($request->all(), $rules, $messages);
+            if ($validator->fails()) {
+                $response['message'] = $validator->errors()->first();
+                return response()->json($response, 301);
+            }
+            $userObj = User::where(['temp_mail' => $request->email, 'code' => $request->otp])->first();
+            if ($userObj) {
+                $userObj->email = $request->email;
+                $userObj->code = '';
+            }
+            $msg = "Password has updated successfully";
         }
 
         if ($requestData['type'] == 'password') {
