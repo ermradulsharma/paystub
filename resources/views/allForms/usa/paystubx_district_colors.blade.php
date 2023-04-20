@@ -320,7 +320,7 @@
                             <tr>
                                 <td colspan="4" class="address"
                                     style="padding-left: 11px; text-transform:capitalize;font-family: Arial, Helvetica, sans-serif;">
-                                    {{ $requestData['cname'] }} <br> {{ $requestData['address_1'] }}<br>@if($requestData['address_2']!='') {{ $requestData['address_2'] }}<br>@endif
+                                    {{ $requestData['cname'] }} <br> {{ $requestData['address_1'] }}@if($requestData['address_2']!='')<br>{{ $requestData['address_2'] }}<br>@endif
                                     {{ $requestData['city'] }}, {{ $requestData['state'] }}
                                     {{ $requestData['zip_code'] }} @if ($requestData['tel'] != "")
                                         <br> {{ $requestData['tel'] }}
@@ -353,7 +353,7 @@
 
                     </tr>
                     <tr>
-                        <td style="text-transform:capitalize;padding:10px 0px;padding-left:10px;">{{ $requestData['emp_name'] }}<br>{{ $requestData['emp_street_1'] }}<br>@if($requestData['emp_street_2']!='') {{ $requestData['emp_street_2'] }}<br>@endif{{ $requestData['emp_city'] }}, {{ $requestData['emp_zip_code'] }} </td>
+                        <td style="text-transform:capitalize;padding:10px 0px;padding-left:10px;">{{ $requestData['emp_name'] }}<br>{{ $requestData['emp_street_1'] }}<br>@if($requestData['emp_street_2']!='') {{ $requestData['emp_street_2'] }}<br>@endif{{ $requestData['emp_city'] }}, {{ $requestData['emp_state'] }} {{ $requestData['emp_zip_code'] }} </td>
                         <td style="vertical-align:top; padding:10px 0px;text-align: right;padding-right:20px;"> XXX-XX-{{$requestData['emp_ssn']}}</td>
                         <td style="vertical-align:top; padding:10px 0px;text-align: right;padding-right:20px;"> {{ $requestData['emp_id'] }}</td>
                         <td style="vertical-align:top; padding:10px 0px;text-align: right;padding-right:20px;">
