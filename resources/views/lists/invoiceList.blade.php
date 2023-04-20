@@ -126,17 +126,8 @@
                         class="user-checkbtn" data-count="{{ count($invoiceList) }}"><b>Continue to Checkout</b></a>
                     <h6 class="mt-3 font-weight-bold">Click on Continue, to complete your order</h6>
                 </div>
-
-
             </div>
         </div>
-
-
-
-
-
-
-
     </div>
 
     <div class="modal fade trashModal" id="deleteTemplate">

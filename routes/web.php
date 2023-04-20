@@ -74,7 +74,9 @@ Route::get('verify', function () {
 Route::post('auth/login', [LoginController::class, 'loginWithGoogle'])->name('login.google');
 Route::match(['get', 'post'], 'google/callback', [LoginController::class, 'callbackFromGoogle'])->name('google.callback');
 Route::post('loginWithOtp', [LoginController::class, 'loginWithOtp'])->name('loginWithOtp');
-Route::get('loginWithOtp', function () { return view('auth/OtpLogin');})->name('loginWithOtp');
+Route::get('loginWithOtp', function () {
+    return view('auth/OtpLogin');
+})->name('loginWithOtp');
 Route::any('sendOtp', [LoginController::class, 'sendOtp'])->name('sendOtp');
 Route::post('login', [LoginController::class, 'login']);
 
@@ -86,7 +88,7 @@ Route::post('templates', [TemplateFormController::class, 'templates'])->name('te
 Route::post('canada/templates', [TemplateFormController::class, 'canadaTemplates'])->name('canada.templates');
 Route::post('uk/templates', [TemplateFormController::class, 'unitedKingdomTemplates'])->name('uk.templates');
 
-Route::group(['middleware' => ['auth'],'namespace'=>'App\Http\Controllers'], function () {
+Route::group(['middleware' => ['auth'], 'namespace' => 'App\Http\Controllers'], function () {
     Route::post('logout', [LoginController::class, 'logout'])->name('logout');
     Route::group(['name' => 'admin', 'prefix' => 'admin', 'middleware' => ['userCheck']], function () {
         Route::get('welcome', function () {
@@ -120,7 +122,7 @@ Route::group(['middleware' => ['auth'],'namespace'=>'App\Http\Controllers'], fun
     Route::get('profile', [HomeController::class, 'userDetails'])->name('profile');
     Route::post('profile/details/save', [HomeController::class, 'storeDetails'])->name('store.details');
     Route::post('profile-setup', [HomeController::class, 'storeDetails'])->name('profile-setup');
-    
+
     Route::get('address/fetch', [AddressBookController::class, 'fetchAddress'])->name('fetch.address');
     Route::get('address/fetch/data', [AddressBookController::class, 'fetchAddressById'])->name('get.address');
     Route::post('address/save', [AddressBookController::class, 'storeAddress'])->name('store.address');
@@ -131,11 +133,10 @@ Route::group(['middleware' => ['auth'],'namespace'=>'App\Http\Controllers'], fun
     Route::post('update-password', [HomeController::class, 'userDetails'])->name('update-password');
     Route::post('change-password', [HomeController::class, 'changePassword'])->name('changePassword');
     Route::get('forgotpassword', [HomeController::class, 'forgotpassword'])->name('forgotpassword');
-
 });
 
-    Route::get('create-transaction', [PayPalController::class, 'createTransaction'])->name('createTransaction');
-    Route::get('process-transaction', [PayPalController::class, 'processTransaction'])->name('processTransaction');
-    Route::get('success-transaction/{planId}', [PayPalController::class, 'successTransaction'])->name('successTransaction');
-    Route::get('cancel-transaction', [PayPalController::class, 'cancelTransaction'])->name('cancelTransaction');
-    Route::get('check/test', [TemplateFormController::class, 'deleteExtraPdf'])->name('check.test');
+Route::get('create-transaction', [PayPalController::class, 'createTransaction'])->name('createTransaction');
+Route::get('process-transaction', [PayPalController::class, 'processTransaction'])->name('processTransaction');
+Route::get('success-transaction/{planId}', [PayPalController::class, 'successTransaction'])->name('successTransaction');
+Route::get('cancel-transaction', [PayPalController::class, 'cancelTransaction'])->name('cancelTransaction');
+Route::get('check/test', [TemplateFormController::class, 'deleteExtraPdf'])->name('check.test');
