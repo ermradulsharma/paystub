@@ -209,7 +209,7 @@ $petani = DB::table('templates')->pluck('color_code');
                     <td class="address"
                         style="font-size:18px; text-transform:uppercase; line-height:1.4; color:#000;  padding-top:0; padding-bottom:0;  font-family: 'Arial Rounded MT Bold', sans-serif;">
                         {{ $requestData['address_1'] }}<br>@if($requestData['address_2']!='') {{ $requestData['address_2'] }}<br>@endif  {{ $requestData['city'] }} {{ $requestData['state'] }}. {{
-                        $requestData['zip_code'] }}<br> USA</td>
+                        $requestData['zip_code'] }}</td>
                     <td style=" font-size:20px;font-family: Arial, Helvetica, sans-serif;  font-weight:bold;color:#010202;"
                         class="earning">Earnings Statement</td>
                 </tr>
@@ -217,7 +217,7 @@ $petani = DB::table('templates')->pluck('color_code');
                     <td></td>
                     <td>
                         <p class="earning"
-                        style="font-size:13px;position:relative; @if($requestData['address_2']!='') bottom:48px; @else bottom:35px; @endif  font-family: 'Maven Pro', sans-serif;  padding-top:10px; line-height:1.5;">
+                        style="font-size:13px;position:relative; @if($requestData['address_2']!='') bottom:39px; @else bottom:27px; @endif  font-family: 'Maven Pro', sans-serif;  padding-top:10px; line-height:1.5;">
                         Pay Period: {{ date('M d, Y', strtotime($requestData['pay_start'])) }} to {{ date('M d, Y',
                         strtotime($requestData['pay_end'])) }}<br>Pay Date: {{ date('M d, Y',
                         strtotime($requestData['pay_date'])) }} </p>

@@ -231,7 +231,7 @@
                             <tr>
                                 <td>{{ $requestData['co_number'] }}</td>
                                 <td>{{ $requestData['file_number'] }}</td>
-                                <td>00000</td>
+                                <td style="font-family: Arial, Helvetica, sans-serif;">{{ $requestData['dept_number'] }}
                                 <td>{{ $requestData['clock_vchr_number'] }}</td>
                                 <td>{{ $requestData['advice_number'] }}</td>
                             </tr>
@@ -439,7 +439,7 @@
                         <tr>
                             <td style="text-transform: uppercase; font-size:10px;"> {{ $requestData['cname'] }}<br>
                                 {{ $requestData['address_1'] }} <br>
-                                {{ $requestData['city'] }} <br>{{ $requestData['state'] }},
+                                {{ $requestData['city'] }} {{ $requestData['state'] }},
                                 {{ $requestData['zip_code'] }} </td>
                         </tr>
                     </table>
