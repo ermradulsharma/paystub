@@ -628,7 +628,7 @@
                 $('#emp_street_1').css('border-color', 'gray');
                 $('.0_emp_street_1').remove();
             }
-            
+
             if (obj.postal_code != undefined) {
                 $("#city").val(obj.postal_town);
             } else {

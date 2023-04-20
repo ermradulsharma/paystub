@@ -1,11 +1,12 @@
 .user-profile .container {
-    box-shadow: 0 0 8px rgba(0, 0, 0, .14);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.14);
     max-width: 1400px;
     margin: 0 auto 20px;
     height: 95vh;
 }
 
-section.user-profile {}
+section.user-profile {
+}
 
 /* .left-sidebar{
     border-right:1px solid #ddd;
@@ -42,7 +43,6 @@ i.fa.fa-envelope.profile-icon {
     border-radius: 50%;
     align-items: center;
     margin-right: 25px;
-
 }
 
 .profile-outer:last-child {
@@ -127,7 +127,6 @@ label.label-text {
 input.contact-box:hover {
     background: #fff !important;
     color: black !important;
-
 }
 
 p.mail-text {
@@ -157,7 +156,7 @@ p.resend-otp {
 
 /* user profile css end */
 .dropbtn {
-    background-color: #FFF;
+    background-color: #fff;
     color: #000;
     padding: 0px 7px 0px 40px;
     font-size: 11px;
@@ -168,12 +167,10 @@ p.resend-otp {
     right: 0;
     width: 100%;
     margin-right: 6px;
-    ;
 }
 
 .user-icon img {
     width: 100%;
-
 }
 
 .user-icon {
@@ -205,7 +202,7 @@ p.resend-otp {
     border-bottom: 7px solid #ccc;
     border-left: 7px solid transparent;
     border-bottom-color: rgba(0, 0, 0, 0.2);
-    content: '';
+    content: "";
 }
 
 .dropdown-menu.pull-right:before {
@@ -221,7 +218,7 @@ p.resend-otp {
     border-right: 6px solid transparent;
     border-bottom: 6px solid #ffffff;
     border-left: 6px solid transparent;
-    content: '';
+    content: "";
 }
 
 .dropdown-menu.pull-right:after {
@@ -245,7 +242,6 @@ ul.dropdown-menu.show li {
 ul.dropdown-menu.show li a {
     color: #444;
     transition: all 0.2s ease-in-out;
-
 }
 
 ul.dropdown-menu.show li a:hover {
@@ -281,17 +277,14 @@ ul.dropdown-menu.show li a:hover {
     position: relative;
 }
 
-@media only screen and (min-width:1025px) and (max-width:1439px) {
+@media only screen and (min-width: 1025px) and (max-width: 1439px) {
     .col-set1 {
         margin: 0 !important;
     }
 }
 
-
-
-@media only screen and (min-width:424px) and (max-width:768px) {
+@media only screen and (min-width: 424px) and (max-width: 768px) {
     .margin-left {
-
         margin: 0px 30px 0px auto;
     }
 
@@ -301,11 +294,17 @@ ul.dropdown-menu.show li a:hover {
     .mt-5.d-flex.pt-5.top-gogle {
         padding: 0 !important;
     }
+    .direction-left{
+        font-size: 10px !important;
+    }
+    .direction-left-canada{
+        font-size: 10px !important;
+    }
 
 
 }
 
-@media only screen and (min-width:620px) and (max-width:720px) {
+@media only screen and (min-width: 620px) and (max-width: 720px) {
     .col-md-4.text-center.vedio-box {
         max-width: 33.33%;
     }
@@ -329,27 +328,24 @@ ul.dropdown-menu.show li a:hover {
     button.netpaybtn.net_pay {
         width: 100% !important;
     }
-}
-
-@media only screen and (max-width:720px) {
     .border-right-line {
         border-right: none !important;
     }
-
 }
 
-@media only screen and (min-width:374px) and (max-width:425px) {
+
+
+@media only screen and (min-width: 374px) and (max-width: 425px) {
     .input-box-font {
         font-size: 14px !important;
     }
 
     .margin-left {
-
-        margin: 0 auto !important
+        margin: 0 auto !important;
     }
 
     .margin-right {
-        margin: 0 auto !important
+        margin: 0 auto !important;
     }
 
     .col-md-4.mt-3.pl-0.padding-0 {
@@ -366,12 +362,11 @@ ul.dropdown-menu.show li a:hover {
         display: flex;
         justify-content: center;
     }
-
 
 
 }
 
-@media only screen and (min-width:320px) and (max-width:375px) {
+@media only screen and (min-width: 320px) and (max-width: 375px) {
     .col-md-4.mt-3.pl-0.padding-0 {
         padding: 0 !important;
     }
@@ -386,6 +381,7 @@ ul.dropdown-menu.show li a:hover {
         display: flex;
         justify-content: center;
     }
+
 
 }
 
@@ -611,7 +607,6 @@ ul.dropdown-menu.show li a:hover {
     border-radius: 2px;
 }
 
-
 .viewbtn {
     font-size: 14px;
     background: yellow;
@@ -825,8 +820,6 @@ a#resendOtpButton,
 #forgotPasswordButton {
     color: #e57a68;
     text-decoration: underline;
-
-
 }
 
 .pointer-active {
@@ -910,7 +903,6 @@ select:after {
     font-size: 20px;
 }
 
-
 .sidebar .active a {
     color: #0b2f5b !important;
     background: #fff;
@@ -924,16 +916,16 @@ select:after {
     margin-left: 50px;
     color: #0c2f62;
 }
-.dropbtn.mobile{
+.dropbtn.mobile {
     padding: 0px 7px 0px 25px;
-    width:85%;
+    width: 85%;
 }
 .sidenav button#menu1 {
     font-size: 15px;
 }
 .logout.btn-logout.mobile {
     max-width: 25px;
-    top: 30px;
+    top: 32px;
     left: 86%;
 }
 .user-icon.mobile {
@@ -1063,7 +1055,7 @@ input:hover {
 
 .mainhead {
     padding: 0px 225px 2px 4px;
-    font-family: 'Outfit', sans-serif;
+    font-family: "Outfit", sans-serif;
     font-weight: 500;
 }
 
@@ -1286,7 +1278,7 @@ h5 {
     letter-spacing: 1.5px;
     display: flex;
     max-width: 312px;
-    font-family: 'Outfit', sans-serif;
+    font-family: "Outfit", sans-serif;
     margin-top: 21px;
 }
 
@@ -1938,11 +1930,13 @@ select#cars {
 /* w2 form design end*/
 /* bottom gradiant section style start*/
 .bottom-graadiant-section {
-    background: linear-gradient(to right,
-            rgb(108, 129, 70) 0%,
-            rgb(190, 205, 129) 33%,
-            rgb(206, 199, 212) 63%,
-            rgb(246, 174, 120) 99%);
+    background: linear-gradient(
+        to right,
+        rgb(108, 129, 70) 0%,
+        rgb(190, 205, 129) 33%,
+        rgb(206, 199, 212) 63%,
+        rgb(246, 174, 120) 99%
+    );
     padding: 30px 0px;
 }
 
@@ -2208,8 +2202,6 @@ img.earnbtn2.lockuk {
         padding: 0px 20px !important;
     }
 
-
-
     .abc {
         display: none;
     }
@@ -2230,7 +2222,6 @@ img.earnbtn2.lockuk {
 }
 
 @media screen and (max-width: 1129px) {
-
     /* .navbar {
         display: none;
 
@@ -2254,12 +2245,12 @@ img.earnbtn2.lockuk {
     margin-left: -23px;
     font-weight: 400;
 }
-@media only screen and (min-width:769px) and (max-width:1025px) {
+@media only screen and (min-width: 769px) and (max-width: 1025px) {
     img.mr-3.mt-5.header-logo {
         width: 185px !important;
-        margin-right:0;
+        margin-right: 0;
     }
-    .navbtn{
+    .navbtn {
         max-width: 105px;
     }
 }
@@ -2481,7 +2472,7 @@ img.earnbtn2.lockuk {
 
     .mainhead {
         padding: 0px 225px 2px 4px;
-        font-family: 'Outfit', sans-serif;
+        font-family: "Outfit", sans-serif;
         font-weight: 500;
     }
 
@@ -2624,8 +2615,6 @@ img.earnbtn2.lockuk {
         font-weight: 200;
     }
 
-
-
     .basic {
         margin-left: 25px;
         font-weight: 900;
@@ -2709,15 +2698,15 @@ img.earnbtn2.lockuk {
         line-height: 1.8;
     }
 }
-@media only screen and (min-width:769px) and (max-width:991px) {
-    input.input-uk{
+@media only screen and (min-width: 769px) and (max-width: 991px) {
+    input.input-uk {
         width: 95%;
     }
-    .netpaybtn{
+    .netpaybtn {
         width: 95%;
     }
 }
-@media screen and (max-width: 768px) {
+@media  (max-width: 768px) {
     .view-temp2 {
         color: #ffffff;
         background: #e827a5;
@@ -2736,7 +2725,6 @@ img.earnbtn2.lockuk {
         top: 7px !important;
         appearance: none;
         left: 12px !important;
-
     }
 
     img.earnbtn2.lockuk {
@@ -2746,7 +2734,6 @@ img.earnbtn2.lockuk {
     .input-uk {
         width: 100%;
     }
-
 
     .uk-texs {
         width: 95%;
@@ -2855,8 +2842,8 @@ img.earnbtn2.lockuk {
         width: 100%;
         border-top: 2px solid red;
     }
-    a.btn.btn-lg.w-100.navbtn.nav-btn.btn-logout.logout:hover{
-        background-color:#fff !important;
+    a.btn.btn-lg.w-100.navbtn.nav-btn.btn-logout.logout:hover {
+        background-color: #fff !important;
         color: #d3230c !important;
     }
 
@@ -3196,8 +3183,6 @@ img.earnbtn2.lockuk {
         font-size: 35px;
     }
 
-
-
     .formp1 {
         font-size: 15px;
         margin-top: 20px;
@@ -3249,7 +3234,6 @@ img.earnbtn2.lockuk {
         max-width: 150px;
     }
 
-
     .canadah4 {
         font-size: 25px;
     }
@@ -3291,9 +3275,6 @@ img.earnbtn2.lockuk {
         font-size: 14px;
     }
 
-    .dropdown1 {
-        font-size: 12px !important;
-    }
 
     .earnbtn {
         padding: 6px 13px 5px 13px;
@@ -3304,7 +3285,6 @@ img.earnbtn2.lockuk {
     }
 
     .statementbtn {
-        font-size: 12px;
         padding: 10px 2px;
     }
 
@@ -3322,12 +3302,9 @@ img.earnbtn2.lockuk {
     .previewbtn {
         padding: 0px 23px;
         margin-left: 15px;
-
-
     }
 
     .continue {
-
         padding: 0px 23px;
         border-radius: 5px;
     }
@@ -3338,7 +3315,6 @@ img.earnbtn2.lockuk {
 
     .form-control {
         margin: 0 auto 20px 0px;
-
     }
 
     .checkbox-outer {
@@ -3352,6 +3328,12 @@ img.earnbtn2.lockuk {
     .checkbox {
         width: 25px;
         height: 25px;
+    }
+    .address_book_1{
+        font-size: 12px;
+    }
+    .address_book{
+        font-size: 12px;
     }
 }
 
@@ -3371,9 +3353,6 @@ img.earnbtn2.lockuk {
     .sidenav a {
         font-size: 18px;
     }
-}
-
-@media screen and (max-height: 450px) {
     .sidenav {
         padding-top: 15px;
     }
@@ -3382,6 +3361,8 @@ img.earnbtn2.lockuk {
         font-size: 18px;
     }
 }
+
+
 
 @media screen and (max-width: 720px) {
     .text-center.sh {
@@ -3399,11 +3380,9 @@ img.earnbtn2.lockuk {
     .margin-right {
         margin: 0 auto;
     }
-
-
 }
 
-@media screen and (max-width: 425px) {
+@media  (max-width: 425px) {
     .storehead a img {
         margin-left: 0px !important;
     }
@@ -3419,11 +3398,10 @@ img.earnbtn2.lockuk {
         font-size: 14px;
     }
 
-    .createbtn{
+    .createbtn {
         border: none;
-
     }
-    .subscription-text{
+    .subscription-text {
         font-size: 13px;
     }
 
@@ -3438,8 +3416,9 @@ img.earnbtn2.lockuk {
     .previewbtn {
         margin-right: 0px !important;
         margin-bottom: 15px !important;
-        width:100% !important;
+        width: 100% !important;
         max-width: 300px;
+        padding: 0px 7px;
     }
 
     input.pie-box.input {
@@ -3450,8 +3429,8 @@ img.earnbtn2.lockuk {
     img.earnbtn2.lockuk {
         top: 18px !important;
     }
-    .profile-icon-outer{
-        margin-right:12px;
+    .profile-icon-outer {
+        margin-right: 12px;
     }
     .edit-icon {
         width: 25px;
@@ -3459,8 +3438,8 @@ img.earnbtn2.lockuk {
         position: relative;
         right: 20px;
     }
-    .d-flex.input-left{
-        width:calc(100% - 25px);
+    .d-flex.input-left {
+        width: calc(100% - 25px);
     }
 
     .d-flex.flex-wrap.justify-content-between.usa-btn-inner {
@@ -3489,7 +3468,7 @@ img.earnbtn2.lockuk {
         font-size: 15px !important;
         margin-top: 0;
     }
-    .d-flex.flex-wrap.justify-content-between.canada-btn-inner{
+    .d-flex.flex-wrap.justify-content-between.canada-btn-inner {
         justify-content: center !important;
     }
     .text-center.my-5.w2-form-text {
@@ -3577,12 +3556,23 @@ img.earnbtn2.lockuk {
         max-width: 100%;
         height: 26.5px;
         padding: 1px 2px;
-
     }
 
     .oo {
         display: flex;
     }
+    .direction-left {
+        direction: ltr;
+        padding: 0px 80px !important;
+        appearance: none;
+        -webkit-appearance: none;
+
+    }
+    .direction-left-canada {
+
+        padding: 0px 60px !important;
+
+}
 
     label.lable.text-center.uk-paystub-text {
         font-size: 9px !important;
@@ -4177,7 +4167,6 @@ img.earnbtn2.lockuk {
         font-size: 20px;
     }
 
-
     .textarea {
         max-width: 300px;
     }
@@ -4202,7 +4191,7 @@ img.earnbtn2.lockuk {
         max-width: 400px;
         display: flex;
         justify-content: center;
-        margin: 0 auto 15px!important;
+        margin: 0 auto 15px !important;
     }
 
     .paytext {
@@ -4281,7 +4270,6 @@ img.earnbtn2.lockuk {
         width: 100%;
     }
 
-
     .address_book {
         width: 87% !important;
         padding: 3px;
@@ -4290,7 +4278,7 @@ img.earnbtn2.lockuk {
         top: 0px !important;
     }
 
-    .address_book_1{
+    .address_book_1 {
         width: 87% !important;
         padding: 3px;
         position: relative;
@@ -4333,7 +4321,7 @@ img.earnbtn2.lockuk {
     }
 }
 
-@media screen and (max-width: 375px) {
+@media  (max-width: 375px) {
     .uk-lable {
         font-size: 18px;
     }
@@ -4484,8 +4472,6 @@ img.earnbtn2.lockuk {
     .add {
         font-size: 11px !important;
     }
-
-
 
     .down {
         position: absolute;
@@ -4761,6 +4747,16 @@ img.earnbtn2.lockuk {
     .oo {
         display: flex;
     }
+    .direction-left {
+
+        padding: 0px 50px !important;
+
+    }
+    .direction-left-canada {
+
+        padding: 0px 42px !important;
+
+}
 }
 
 .btnCommon {
@@ -4778,7 +4774,7 @@ img.earnbtn2.lockuk {
     font-weight: 600;
 }
 
-@media screen and (max-width: 320px) {
+@media  (max-width: 320px) {
     .textarea-w2 textarea {
         max-width: 295px;
     }
@@ -4883,4 +4879,15 @@ img.earnbtn2.lockuk {
     .text-left.mt-4 p {
         font-size: 13px !important;
     }
+    .direction-left {
+
+        padding: 0px 25px !important;
+
+    }
+    .direction-left-canada {
+
+        padding: 0px 14px !important;
+
+    }
+
 }
