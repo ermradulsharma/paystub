@@ -280,7 +280,7 @@
                                     <td style="font-size:14px;">@if($requestData['rate'][$key] != 0.00){{ number_format($requestData['rate'][$key], 2) }}@endif</td>
                                     <td style="text-align:center;font-size:14px;">@if($requestData['hours'][$key] != 0.00){{ $requestData['hours'][$key] }}@endif</td>
                                     <td style="font-size:14px;">{{ number_format($requestData['period'][$key], 2) }} </td>
-                                    <td style="font-size:14px;">{{ number_format($requestData['ytd_total'][$key], 2) }} </td>
+                                    <td style="font-size:14px;text-align:right; padding-right:20px;">{{ number_format($requestData['ytd_total'][$key], 2) }} </td>
                                 </tr>
                                 @endforeach
                             </tbody>
@@ -297,8 +297,8 @@
                                 @foreach ($requestData['taxes'] ?? [] as $key => $taxes)
                                 <tr>
                                     <td style="text-align: left;font-size:14px;">{{ $taxes }}</td>
-                                    <td style="font-size:14px;text-align:right;padding-right:10px;">{{ number_format($requestData['taxes_rate'][$key], 2) }}</td>
-                                    <td style="font-size:14px;text-align:right;padding-right:10px;">{{ number_format($requestData['taxes_ytd'][$key], 2) }}</td>
+                                    <td style="font-size:14px;text-align:right;padding-right:5px;">{{ number_format($requestData['taxes_rate'][$key], 2) }}</td>
+                                    <td style="font-size:14px;text-align:right;padding-right:8px;">{{ number_format($requestData['taxes_ytd'][$key], 2) }}</td>
                                 </tr>
                                 @endforeach
 
@@ -312,9 +312,9 @@
                                 <br>
                                 <tr>
                                     <td class="hadding" style="text-align: left; font-weight:800;">DEDUCTION TOTAL</td>
-                                    <td style="font-size:14px;text-align:right;padding-right:10px;">{{ number_format($requestData['period_gross_total'], 2)
+                                    <td style="font-size:14px;text-align:right;padding-right:5px;">{{ number_format($requestData['period_gross_total'], 2)
                                         }}</td>
-                                    <td style="font-size:14px;text-align:right;padding-right:10px;">{{ number_format($requestData['ytd_gross_total'], 2) }}
+                                    <td style="font-size:14px;text-align:right;padding-right:8px;">{{ number_format($requestData['ytd_gross_total'], 2) }}
                                     </td>
                                 </tr>
                             </tbody>
@@ -327,9 +327,9 @@
                         <table class="tablewidth">
                             <tbody>
                                 <tr>
-                                    <td style="width:100px"></td>
-                                    <th colspan="2" style="text-align: center;">GROSS PAY </th>
-                                    <td style="text-align: center;font-size:14px;">{{
+                                    <td style="width:80px;"></td>
+                                    <th colspan="" style="text-align: center;width:170px; ">GROSS PAY </th>
+                                    <td style="text-align: left;font-size:14px;">{{
                                         number_format($requestData['deduction_tax'], 2) }}
                                     </td>
                                     <td style="text-align: center;font-size:14px;">
@@ -345,9 +345,9 @@
                             <tr>
                                 <td class="hadding" style="text-align:right;padding-left:25px; font-weight:800;">NET PAY
                                 </td>
-                                <td style="text-align:right;padding-right:24px;font-size:14px;">{{
+                                <td style="text-align:right;padding-right:17px;font-size:14px;">{{
                                     number_format($requestData['period_gross_total'], 2) }}</td>
-                                <td style="text-align:right;padding-right:10px;font-size:14px; ">{{
+                                <td style="text-align:right;padding-right:8px;font-size:14px; ">{{
                                     number_format($requestData['ytd_gross_total'], 2) }}</td>
                             </tr>
                         </table>
