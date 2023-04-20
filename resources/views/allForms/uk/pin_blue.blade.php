@@ -137,7 +137,7 @@
                         {{ $requestData['emp_name'] }}</td>
                     <td style=" padding-top:8px; padding-bottom:8px;border-right:1px solid #3b4059;border-radius:0;">
                         {{ date('d-F-Y', strtotime($requestData['pay_date'])) }}</td>
-                    <td style=" padding-top:8px; padding-bottom:8px;border-right:1px solid #3b4059;border-radius:0; text-transform:">
+                    <td style=" padding-top:8px; padding-bottom:8px;border-right:1px solid #3b4059;border-radius:0; text-transform:uppercase;">
                         {{ $requestData['ni_number'] }}</td>
                 </tr>
             </table>
