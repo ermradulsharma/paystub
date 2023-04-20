@@ -297,6 +297,10 @@ ul.dropdown-menu.show li a:hover {
     .direction-left{
         font-size: 10px !important;
     }
+    .direction-left-canada{
+        font-size: 10px !important;
+    }
+
 
 }
 
@@ -921,7 +925,7 @@ select:after {
 }
 .logout.btn-logout.mobile {
     max-width: 25px;
-    top: 30px;
+    top: 32px;
     left: 86%;
 }
 .user-icon.mobile {
@@ -3281,7 +3285,6 @@ img.earnbtn2.lockuk {
     }
 
     .statementbtn {
-        font-size: 12px;
         padding: 10px 2px;
     }
 
@@ -3326,6 +3329,12 @@ img.earnbtn2.lockuk {
         width: 25px;
         height: 25px;
     }
+    .address_book_1{
+        font-size: 12px;
+    }
+    .address_book{
+        font-size: 12px;
+    }
 }
 
 @media screen and (max-height: 450px) {
@@ -3344,9 +3353,6 @@ img.earnbtn2.lockuk {
     .sidenav a {
         font-size: 18px;
     }
-}
-
-@media screen and (max-height: 450px) {
     .sidenav {
         padding-top: 15px;
     }
@@ -3355,6 +3361,8 @@ img.earnbtn2.lockuk {
         font-size: 18px;
     }
 }
+
+
 
 @media screen and (max-width: 720px) {
     .text-center.sh {
@@ -3555,11 +3563,16 @@ img.earnbtn2.lockuk {
     }
     .direction-left {
         direction: ltr;
-        padding-left: 75px !important;
+        padding: 0px 80px !important;
         appearance: none;
         -webkit-appearance: none;
 
     }
+    .direction-left-canada {
+
+        padding: 0px 60px !important;
+
+}
 
     label.lable.text-center.uk-paystub-text {
         font-size: 9px !important;
@@ -4736,9 +4749,14 @@ img.earnbtn2.lockuk {
     }
     .direction-left {
 
-        padding-left: 57px !important;
+        padding: 0px 50px !important;
 
     }
+    .direction-left-canada {
+
+        padding: 0px 42px !important;
+
+}
 }
 
 .btnCommon {
@@ -4863,7 +4881,13 @@ img.earnbtn2.lockuk {
     }
     .direction-left {
 
-        padding-left: 35px !important;
+        padding: 0px 25px !important;
 
     }
+    .direction-left-canada {
+
+        padding: 0px 14px !important;
+
+    }
+
 }
