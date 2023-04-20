@@ -164,17 +164,21 @@
         @endif
         @endauth
         <div style="max-width: 100%; margin: auto; padding: 10px 10px;">
-            <table
-                style="width:100%; border-left:2px solid#464646; border-right:2px solid#464646;background-color:darkgray;color:white;">
+            @if($requestData['address_2'] != '')
+            <table style="width:100%; border-left:3px solid #555; border-right:3px solid #555;background-color:darkgray;color:white;">
                 <tr>
-                    <td style="font-size: 18px;text-align: left;padding:10px 0px 10px 25px;text-transform:capitalize;"><span style="font-size: 18px;text-transform:capitalize;">{{ $requestData['cname'] }}</span><br>{{
-                        $requestData['address_1']
-                        }},<br>@if($requestData['address_2']!='') {{ $requestData['address_2'] }}<br>@endif {{ $requestData['city'] }}, {{ $requestData['state'] }} {{ $requestData['zip_code'] }}</td>
-                    <td
-                        style="font-size: 21px;text-align:right;padding:10px 12px 8px 10px;text-transform:uppercase;  font-family: 'Arial', sans-serif;font-weight:bold;">
-                        Earnings Statement</td>
+                    <td style="font-size: 18px;text-align: left;padding:10px 0px 10px 25px;"><span style="font-size: 20px;text-transform:capitalize; font-weight:400;">{{ $requestData['cname'] }}</span><br>{{ $requestData['address_1'] }},<br>@if($requestData['address_2']!='') {{ $requestData['address_2'] }}<br>@endif  {{ $requestData['city'] }} {{ $requestData['state'] }} {{ $requestData['zip_code'] }}</td>
+                    <td style="font-size: 21px;text-align:right;padding:8px 12px 8px 10px;text-transform:uppercase;  font-family: 'Arial', sans-serif;font-weight:bold;">Earnings Statement</td>
                 </tr>
             </table>
+            @else
+            <table style="width:100%; border-left:3px solid #555; border-right:3px solid #555;background-color:darkgray;color:white;">
+                <tr>
+                    <td style="font-size: 18px;text-align: left;padding:10px 0px 10px 25px;"><span style="font-size: 23px; text-transform:uppercase; font-weight:bold;">{{ $requestData['cname'] }}</span><br>{{ $requestData['address_1'] }},@if($requestData['address_2']!='') {{ $requestData['address_2'] }}@endif  {{ $requestData['city'] }} {{ $requestData['state'] }} {{ $requestData['zip_code'] }}</td>
+                    <td style="font-size: 21px;text-align:right;padding:8px 12px 8px 10px;text-transform:uppercase;  font-family: 'Arial', sans-serif;font-weight:bold;">Earnings Statement</td>
+                </tr>
+            </table>
+            @endif
             <table style="width:100%; border-left:2px solid#464646; border-right:2px solid#464646;">
                 <thead style="border-top:none; border-left:2px solid#464646;height:35px;">
                     <td class="padding" colspan="2"
@@ -217,7 +221,7 @@
                                 <th class="padding"
                                     style="text-align: left; padding-left:20px;font-size:12px; width:20%;">INCOME</th>
                                 <th class="padding" style="text-align:left;font-size:12px;width:20%;">RATE</th>
-                                <th class="padding" style="text-align:left;font-size:12px;width:20%;padding-left:8px;">
+                                <th class="padding" style="text-align:left;font-size:12px;width:20%;padding-left:10px;">
                                     HOURS</th>
                                 <th class="padding" style="text-align:center;font-size:12px;width:40%;">CURRENT TOTAL
                                 </th>
@@ -237,7 +241,7 @@
                     <div class="column2">
                         <table class="colortable" style="width:100%; border-right:2px solid#464646;">
                             <thead id="colourborder" style="border-left:2px solid #264fab">
-                                <th class="padding" style="text-align: center;font-size:12px;width:40%; ">DEDUCTIONS
+                                <th class="padding" style="text-align: left;padding-left:10px;font-size:12px;width:40%; ">DEDUCTIONS
                                 </th>
                                 <th class="padding" style="font-size:12px;width:30%;">CURRENT TOTAL</th>
                                 <th class="padding" style="font-size:12px; width:30%;">YEAR TO DATE</th>

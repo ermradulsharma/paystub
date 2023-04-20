@@ -221,7 +221,7 @@ top:190px;
                 <table style="width:100%;">
                     <tr>
                         <td style="font-size:13px;font-family: 'Times New Roman', Times, serif;">SSN</td>
-                        <td style="font-size:13px;font-family: 'Times New Roman', Times, serif;">{{ $requestData['emp_ssn'] }}</td>
+                        <td style="font-size:13px;font-family: 'Times New Roman', Times, serif;">XXX-XX-2947</td>
                         <td style="font-size:13px;font-family: 'Times New Roman', Times, serif;">Period Beginning</td>
                         <td style="font-size:13px;font-family: 'Times New Roman', Times, serif;">{{ date('m/d/Y', strtotime($requestData['pay_start'])) }}</td>
                     </tr>
