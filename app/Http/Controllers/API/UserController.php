@@ -765,14 +765,16 @@ class UserController extends Controller
 
             $requestData = $request->all();
             $userObj = $request->user()->id;
-            $addressObj = Address::where(['user_id' => $userObj]);
+            $addressObj = Address::latest();
             if ($requestData['type'] == 'employee') {
-                $addressObj = Address::where(['type' => 'employee']);
-            } else {
-                $addressObj = Address::where(['type' => 'employer']);
+                $addressObj = Address::where('type', 'employee');
             }
+            if ($requestData['type'] == 'employer') {
+                $addressObj = Address::where('type', 'employer');
+            }
+
             $response['success'] = TRUE;
-            $response['data'] = $addressObj->orderBy('id', 'desc')->get();
+            $response['data'] = $addressObj->where('user_id', Auth::user()->id)->orderBy('id', 'desc')->get();
             $response['message'] = "Address fetch successfully";
             $response['status'] = STATUS_OK;
         } catch (\Exception $e) {

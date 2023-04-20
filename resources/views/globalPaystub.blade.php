@@ -20,6 +20,9 @@
             position: relative;
             left: 7px;
         }
+        #basic_temp {
+    text-align: -webkit-center !important;
+}
     </style>
     <link rel="stylesheet" href="{{ asset('user') }}/css/bootstrap-datepicker.min.css">
     <!-- Modal Start -->
@@ -73,16 +76,13 @@
                                     height="30px;">
                                 <select id="employerAddress" class="address_book add_address address" data-type="employer">
                                     <option data-name="" value="">Select Address</option>
-                                    {{-- @auth --}}
-                                    {{-- @if ($employerList->count() > 0) --}}
                                     @foreach ($employerList ?? [] as $key => $employer)
                                         <option data-name="{{ $employer->name }}" data-address1="{{ $employer->address_1 }}"
                                             data-address2="{{ $employer->address_2 }}" data-city="{{ $employer->city }}"
-                                            data-state="{{ $employer->state }}" data-zip="{{ $employer->zip_code }}"
+                                            data-state="{{ $employer->state }}"
+                                            data-zip="{{ $employer->zip_code }}" data-tel="{{ $employer->tel }}"
                                             value="{{ $employer->name }}">{{ $employer->name }}</option>
                                     @endforeach
-                                    {{-- @endif --}}
-                                    {{-- @endauth --}}
                                     <option data-name="" value="add_address">Add New Address</option>
                                 </select>
                             </div>
@@ -186,7 +186,7 @@
                                     <div class="mt-4">
                                         <div class="input-group mmenu mb-3 text-center">
                                             <select name="basic_temp" id="basic_temp"
-                                                class="form-control dropdown1 text-center bt_id small-font basicTemplate removeDiv"
+                                                class="form-control dropdown1 text-center bt_id small-font basicTemplate removeDiv justify-content-center"
                                                 style="margin-right:10px; font-size:18px;">
                                                 <option value=""> --- Select Basic Templates --- </option>
                                                 @foreach ($basicType as $data)
@@ -459,7 +459,8 @@
                             <div class="row mb-3">
                                 <div class="col-md-3 mt-4">
                                     <div>
-                                        <label for="hourly" class="lable">Rate / Unit </label>
+                                        <label for="hourly" class="lable">Rate / Unit <span
+                                            class="redColor">*</span></label>
                                         <input type="number" step="0.5" id="hourly" name="hourly"
                                             placeholder="Wage" class="w-100   input-box-font hourly">
                                     </div>
@@ -576,14 +577,14 @@
                                 <div class=" col-lg-2 col-md-2 margin-bottom  mt-2">
                                     <button type="button" class="statementbtn">EARNING</button>
                                     <div class="margin-bottom">
-                                        <input class="earnbtn mt-4 mb-3 text-center earning" type="text" name="earning[]" value="Regular" id="earning_0" data-id="0">
+                                        <input class="earnbtn mt-4 mb-3 text-center earning earnbtn_0" type="text" name="earning[]" value="Regular" id="earning_0" data-id="0">
                                     </div>
                                     <div id="addEarning"></div>
                                 </div>
                                 <div class="col-lg-2  col-md-2 margin-bottom mt-2  ">
                                     <button type="button" class="statementbtn">RATE</button>
                                     <div class="margin-bottom">
-                                        <input type="text" name="rate[]"
+                                        <input type="number" name="rate[]"
                                             class="earnbtn removeData mt-4 mb-3 text-center calculation rate"
                                             id="rate_0" data-id="0">
                                     </div>
@@ -592,7 +593,7 @@
                                 <div class=" col-lg-2  col-md-2 margin-bottom mt-2  ">
                                     <button type="button" class="statementbtn">HOURS</button>
                                     <div class="margin-bottom">
-                                        <input type="text" name="hours[]"
+                                        <input type="number" name="hours[]"
                                             class="earnbtn removeData mt-4 mb-3 text-center hours calculation"
                                             id="hours_0" data-id="0">
                                     </div>
@@ -864,7 +865,7 @@
                 // var value = $('option:selected', '.address').attr('value');
                 var value = $(this).val();
                 var userId = {{ Auth::check() == true ? 'true' : 'false' }};
-                console.log('userAuth-', userAuth);
+
                 if (value == 'add_address') {
                     if (userId == true) {
                         window.location.href = "{{ route('profile') }}?tab=2&emp=1";
@@ -1026,9 +1027,7 @@
             });
         });
     </script>
-    <script
-        src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyDpavHXELJMJvIHifFPN6tBBiFSXKGpy2g&callback=Function.prototype">
-    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyDpavHXELJMJvIHifFPN6tBBiFSXKGpy2g&callback=Function.prototype"></script>
     <script>
         var searchInput = 'address_1';
 
@@ -1197,28 +1196,7 @@
             });
         });
     </script>
-    <script>
-        $(document).ready(function() {
-            $("#employerAddress").change(function() {
-                $('#cname').val($('option:selected', this).data('name'))
-                $('#address_1').val($('option:selected', this).data('address1'))
-                $('#address_2').val($('option:selected', this).data('address2'))
-                $('#city').val($('option:selected', this).data('city'))
-                $('#state').val($('option:selected', this).data('state'))
-                $('#zip_code').val($('option:selected', this).data('zip'))
-            });
 
-            $("#employeeAddress").change(function() {
-                $('#emp_name').val($('option:selected', this).data('name'))
-                $('#emp_street_1').val($('option:selected', this).data('address1'))
-                $('#emp_street_2').val($('option:selected', this).data('address2'))
-                $('#emp_city').val($('option:selected', this).data('city'))
-                $('#emp_state').val($('option:selected', this).data('state'))
-                $('#emp_zip_code').val($('option:selected', this).data('zip'))
-            });
-
-        });
-    </script>
     <script src="{{ asset('user') }}/js/calculations.js"></script>
     <script src="{{ asset('user') }}/js/javaformula.js"></script>
     <script src="{{ asset('user') }}/js/federal.js"></script>
