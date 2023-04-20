@@ -62,7 +62,7 @@
                             <th style="font-size:22px;font-weight:bold;text-transform: capitalize;font-family: 'Myriad Pro', sans-serif;"><b>{{ $requestData['cname'] ?? '' }}</b> </th>
                         </tr>
                         <tr>
-                            <th style="text-transform: capitalize;font-size:16px; font-weight:bold;font-family: 'Myriad Pro', sans-serif;"> {{ $requestData['company_address'] ?? '' }}, United Kingdom </th>
+                            <th style="text-transform: capitalize;font-size:16px; font-weight:bold;font-family: 'Myriad Pro', sans-serif;"> {{ $requestData['company_address'] ?? '' }} United Kingdom </th>
                         </tr>
                     </thead>
                 </table>
@@ -79,6 +79,10 @@
                         </tr>
                         <tr>
                             <td style="font-size:14px; text-transform:uppercase;font-family: 'Myriad Pro', sans-serif;padding-left:10px;">{{ $requestData['emp_street_2'] ?? '' }}</td>
+
+                        </tr>
+                        <tr>
+                            <td style="font-size:14px; text-transform:uppercase;font-family: 'Myriad Pro', sans-serif;padding-left:10px;">{{ $requestData['city'] }}</td>
                         </tr>
                         <tr>
                             <td style="font-size:14px; text-transform:uppercase;font-family: 'Myriad Pro', sans-serif;padding-left:10px;">{{ $requestData['emp_zip_code'] }}</td>

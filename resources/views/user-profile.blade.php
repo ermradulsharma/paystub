@@ -872,19 +872,19 @@
             openAddressModal();
         });
 
-        // $(document).on('click', '#pills-profile-tab', function() {
-        //     $("#addNewAddress2").attr('data-emptype','employee');
-        //     getAddressBook();
-        // });
+        $(document).on('click', '#pills-profile-tab', function() {
+            $("#addNewAddress2").attr('data-emptype','employee');
+            getAddressBook();
+        });
 
-        // $(document).on('click', '#pills-home-tab', function() {
-        //     $("#addNewAddress2").attr('data-emptype','employer');
-        //     getAddressBook();
-        // });
+        $(document).on('click', '#pills-home-tab', function() {
+            $("#addNewAddress2").attr('data-emptype','employer');
+            getAddressBook();
+        });
 
-        // $("#addNewAddress2").click(function() {
-        //     openAddressModal();
-        // });
+        $("#addNewAddress2").click(function() {
+            openAddressModal();
+        });
 
         $(document).on('click', '.delete-item', function(e) {
             submitUserData($('#deleteItem')[0]);

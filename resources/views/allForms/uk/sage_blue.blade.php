@@ -282,7 +282,7 @@
             <table style="width:69.7%; border:1px solid #4a50b2; border-radius:10px;">
                 <tr>
                     <td style=" padding:5px 10px;line-height:1.5;font-size:14px;color:#464646;text-transform:capitalize;">{{ $requestData['cname'] }},
-                        {{ $requestData['company_address' ?? ''] }}, UK<br> Pay Method -
+                        {{ $requestData['company_address' ?? ''] }}<br> Pay Method -
                         {{ $requestData['payment_method'] }} Tax Code - {{ $requestData['tax_code'] }} Pay Period -
                         {{ $requestData['pay_type'] }} P - 10</td>
                 </tr>

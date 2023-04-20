@@ -52,7 +52,7 @@
                                     <div class="mt-3">
                                         <div class="input-group mmenu mb-3 text-center">
                                             <select name="basic_temp" id="basic_temp"
-                                                class="form-control dropdown1 text-center bt_id small-font basicTemplate"
+                                                class="form-control dropdown1 text-center bt_id small-font basicTemplate direction-left-canada"
                                                 style="margin-right:10px; font-size:18px;">
                                                 <option value=""> --- Select Basic Templates --- </option>
                                                 @foreach ($basicType as $data)
@@ -627,12 +627,14 @@
                 $("#emp_street_1").val(obj.premise + ', ' + obj.street_number + ' ' + obj.route);
                 $('#emp_street_1').css('border-color', 'gray');
                 $('.0_emp_street_1').remove();
+            }else {
+                $("#emp_street_1").val('');
             }
 
             if (obj.postal_code != undefined) {
                 $("#city").val(obj.postal_town);
             } else {
-                $("#emp_zip_code").val('');
+                $("#city").val('');
             }
             if (obj.postal_code != undefined) {
                 $("#emp_zip_code").val(obj.postal_code);

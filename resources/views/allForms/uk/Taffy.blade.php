@@ -81,6 +81,9 @@
                             <td style="font-size:14px; text-transform:uppercase;font-family: 'Myriad Pro', sans-serif;padding-left:10px;">{{ $requestData['emp_street_2'] ?? '' }}</td>
                         </tr>
                         <tr>
+                            <td style="font-size:14px; text-transform:uppercase;font-family: 'Myriad Pro', sans-serif;padding-left:10px;">{{ $requestData['city'] }}</td>
+                        </tr>
+                        <tr>
                             <td style="font-size:14px; text-transform:uppercase;font-family: 'Myriad Pro', sans-serif;padding-left:10px;">{{ $requestData['emp_zip_code'] }}</td>
                         </tr>
                     </thead>
