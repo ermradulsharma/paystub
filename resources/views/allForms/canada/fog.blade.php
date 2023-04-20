@@ -186,7 +186,7 @@
                         {{ $requestData['emp_name'] }}
                     </th>
                     <td class="padding" colspan="6" style="text-align: left; border-right:3px solid #8a898a;font-size:16px;">
-                        {{ $requestData['emp_address'] }} {{ $requestData['zip_code'] }}
+                        {{ $requestData['emp_address'] }}
                     </td>
                 </thead>
                 <thead id="colourborder">
