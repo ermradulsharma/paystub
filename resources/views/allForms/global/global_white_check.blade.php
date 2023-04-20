@@ -220,7 +220,7 @@
                             <td style="font-size: 15px; line-height:1.2; text-transform: capitalize;font-family: 'Arial', sans-serif;">1 </td>
                         </tr>
                         <tr>
-                            <td style="font-size: 15px; line-height:1.2; text-transform: capitalize;font-family: 'Arial', sans-serif; text-align:center;">NY:</td>
+                            <td style="font-size: 15px; line-height:1.2; text-transform: capitalize;font-family: 'Arial', sans-serif; text-align:center;">{{ $requestData['emp_state'] }}:</td>
                             <td style="font-size: 15px; line-height:1.2; text-transform: capitalize;font-family: 'Arial', sans-serif;">1</td>
                         </tr>
                     </table>
@@ -298,7 +298,7 @@
                                         style="text-align: center;font-size:15px;font-family: Arial, Helvetica, sans-serif;">
                                         {{ number_format($requestData['hours'][$key], 2) }}</td>
                                     <td
-                                        style="text-align: center;font-size:15px;font-family: Arial, Helvetica, sans-serif;">
+                                        style="text-align: right;font-size:15px;font-family: Arial, Helvetica, sans-serif;">
                                         {{ number_format($requestData['total'][$key], 2) }} </td>
                                     <td></td>
                                     <td style="font-size:15px;font-family: Arial, Helvetica, sans-serif;">
@@ -436,7 +436,7 @@
                             @if($requestData['address_2'] != '')<P style="font-size:15px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:400;">{{ $requestData['address_2'] }} </P>@endif
                         <P
                             style="font-size:15px; margin: 0;color:black;font-family: Arial, Helvetica, sans-serif; text-transform:uppercase;font-weight:400;">
-                            {{ $requestData['city'] }}, {{ $requestData['state'] }}<br>{{ $requestData['zip_code'] }}
+                            {{ $requestData['city'] }}, {{ $requestData['state'] }} {{ $requestData['zip_code'] }}
                         </P>
                     </div>
                     <div style="width: 50%;float:right;">
