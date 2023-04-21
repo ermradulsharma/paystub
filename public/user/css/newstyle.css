@@ -931,22 +931,33 @@ select:after {
     margin-left: 50px;
     color: #0c2f62;
 }
+.sidenav button#menu1{
+    font-size: 11px;
+    color: #fff;
+    text-transform: uppercase;
+}
 .dropbtn.mobile {
-    padding: 0px;
     width: 100%;
     text-align: center;
-    max-width: 155px;
+    max-width: 150px;
     margin: 0 auto;
+    border-radius: 0;
+    padding: 6px 0px;
+    background-color: #0b2f5b;
+    box-shadow: 4px 4px 2px 1px #e9d1d3;
+    border: 5px double #fff;
 }
 
 button.btn-danger.logout-btn {
-    padding: 7px 38px;
+    padding: 7.5px 38px;
     border-radius: 5px;
     font-size: 20px;
     position: relative;
     border: 4px double;
     bottom: 22px;
     box-shadow: 4px 4px 2px 1px #e9d1d3;
+    min-width: 152px;
+    right: 6px;
 }
 .user-icon.mobile {
     max-width: 32px;
