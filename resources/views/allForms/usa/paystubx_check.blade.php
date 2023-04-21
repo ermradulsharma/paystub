@@ -106,6 +106,18 @@
             background-repeat: no-repeat;
             background-position: center;
         }
+        .watermark2 {
+            position: absolute;
+            width: 100%;
+            height: 700px;
+            top: 250px;
+            left: 0px;
+            right: 0;
+            background-image: url("images/final-water.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
 
         .bg-img2 {
             position: relative;
@@ -126,10 +138,12 @@
             style="position: absolute; top:75.4%; width:100.2%; height:25%;  z-index: -1; right:0px; left:0px;">
         @guest
             <div class="watermark"></div>
+            <div class="watermark2"></div>
         @endguest
         @auth
             @if (Auth::user()->expiryDate == '')
                 <div class="watermark"></div>
+                <div class="watermark2"></div>
             @endif
         @endauth
         <section class="templete_elements">

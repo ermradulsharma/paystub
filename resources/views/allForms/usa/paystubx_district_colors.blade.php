@@ -225,6 +225,19 @@
             background-repeat: no-repeat;
             background-position: center;
         }
+        .watermark2 {
+            position: absolute;
+            width: 100%;
+            height: 700px;
+            top: 250px;
+            left: 0px;
+            right: 0;
+            background-image: url("images/final-water.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
 
         .bg-img2 {
             position: relative;
@@ -236,10 +249,14 @@
     <main class="bg-img2">
         @guest
             <div class="watermark"></div>
+            <div class="watermark2"></div>
+            @endguest
         @endguest
         @auth
             @if (Auth::user()->expiryDate == '' || !isset($requestData['watermark']))
                 <div class="watermark"></div>
+                <div class="watermark2"></div>
+                @endguest
             @endif
         @endauth
         <section class="invoiceborder">
@@ -345,8 +362,8 @@
                 <table style="padding:0; ">
                     <tr>
                         <th class="heading1 padding:0;">Employee Information</th>
-                        <th class="heading1"style="text-align: right;padding-right:20px;"> Social Sec.ID</th>
-                        <th class="heading1"style="text-align: right;padding-right:20px;">EmployeeID</th>
+                        <th class="heading1"style="text-align: right;padding-right:20px;"> Social Sec. ID</th>
+                        <th class="heading1"style="text-align: right;padding-right:20px;">Employee ID</th>
                         <th class="heading1"style="text-align: right;padding-right:20px;">Start Date</th>
                         <th class="heading1"style="text-align: right;padding-right:20px;">End Date</th>
                         <th class="heading1" style="text-align: right;padding-right:20px;">Check Date</th>
