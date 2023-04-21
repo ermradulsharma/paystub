@@ -949,7 +949,7 @@
 
                         } else {
                             if (client == 1) {
-                                alert('here');
+                                // alert('here');
                                 $('.advicex').each(function() {
                                     $(".advicex").addClass("col-lg-3 col-md-3 col-sm-6");
                                     $(".advicexv").addClass("d-none");

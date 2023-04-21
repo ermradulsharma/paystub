@@ -261,7 +261,7 @@
                 <td
                     style="border-right: 1px solid #793b5b; border-left: 1px solid #793b5b;font-size:13px; font-weight:bold;text-align:center;text-transform:capitalize;">
                     {{ $requestData['cname'] }} </td>
-                <td style="font-size:13px;text-align:center; font-weight:bold">1234 </td>
+                <td style="font-size:13px;text-align:center; font-weight:bold">{{ $requestData['client_no'] }}</td>
                 <td
                     style="border-right: 1px solid #793b5b; border-left: 1px solid #793b5b;font-size:13px; font-weight:bold;text-align:center;">
                     {{ $requestData['emp_id'] }} </td>
