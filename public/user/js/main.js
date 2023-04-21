@@ -151,6 +151,8 @@ $(document).ready(function () {
         $('#emp_city').val($('option:selected', this).data('city'));
         $('#emp_state').val($('option:selected', this).data('state'));
         $('#emp_zip_code').val($('option:selected', this).data('zip'));
+        $('#emp_id').val($('option:selected', this).data('emp_id'));
+        $('#emp_ssn').val($('option:selected', this).data('emp_ssn'));
     });
 });
 
