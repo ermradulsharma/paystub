@@ -125,10 +125,8 @@
         <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn login registerBtn"
             style="background-color:#d3230c; border-radius:15px; font-size:20px;" href="#">Login</a>
         <div class="container d-none logoutDiv mobile2">
-            <div class="user-icon mobile"><img src="{{ asset('images/profile1.png') }}"></div>
-            <div class="logout btn-logout mobile">
-                <a><img src="{{ asset('images/logout01.png') }}"></a>
-            </div>
+            {{-- <div class="user-icon mobile"><img src="{{ asset('images/profile1.png') }}"></div> --}}
+
             <div class="dropbtn mobile">
                 <button class="btn btn-default dropdown-toggle navright-btn authUserName" type="button" id="menu1"
                     data-toggle="dropdown">Hi {{ Auth::user()->name ?? '' }}<span class="caret"></span></button>
@@ -140,13 +138,17 @@
                     <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('profile') }}?tab=2">Address
                             Book</a></li>
                 </ul>
+            </div>
+            <div class="logout btn-logout mobile">
+                {{-- <a><img src="{{ asset('images/logout01.png') }}"></a> --}}
+                <button  class="btn-danger logout-btn ">Logout</button>
             </div>
         </div>
         @endguest
         @auth
         <div class="container mobile" style="margin-top:5px;">
-            <div class="user-icon mobile"><img src="{{ asset('images/profile1.png') }}"></div>
-            <div class="logout btn-logout mobile"><a><img src="{{ asset('images/logout01.png') }}"></a></div>
+            {{-- <div class="user-icon mobile"><img src="{{ asset('images/profile1.png') }}"></div> --}}
+
             <div class="dropbtn mobile">
                 <button class="btn btn-default dropdown-toggle navright-btn authUserName" type="button" id="menu1"
                     data-toggle="dropdown">Hi {{ Auth::user()->name ?? '' }}<span class="caret"></span></button>
@@ -158,6 +160,10 @@
                     <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('profile') }}?tab=2">Address
                             Book</a></li>
                 </ul>
+            </div>
+            <div class="logout btn-logout mobile">
+                {{-- <a><img src="{{ asset('images/logout01.png') }}"></a> --}}
+                <button  class=" btn-danger logout-btn">Logout</button>
             </div>
         </div>
         @endauth

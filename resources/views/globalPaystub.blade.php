@@ -644,7 +644,7 @@
                             <div class="row mb-3">
                                 <div class="col-xl-2 col-lg-3 col-md-4 mt-2 margin-bottom">
                                     <button type="button" class="add_button earnbtn" type="add_earning"
-                                        id="add_earning" style="font-size: 18px !important;"><i
+                                        id="add_earning" style="font-size: 18px;"><i
                                             class="fa fa-plus-circle pr-2" style="font-size:24px;color:green"></i>Add
                                         Earning</button>
                                 </div>
@@ -727,7 +727,6 @@
                             </div>
                             <div class="row mb-3 mt-5">
                                 <div class="col-md-4 col-lg-3 mb-2">
-                                    <p class="p-0 m-0 text-center" style="font-family: serif;">&nbsp;</p>
                                     <button type="button" class="netpaybtn net_pay">Net Pay</button>
                                 </div>
                                 <div class="col-md-1"></div>

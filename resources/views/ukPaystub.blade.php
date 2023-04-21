@@ -44,7 +44,7 @@
             <div>
                 <h5 class="box-h5">Choose Template</h5>
                 <div class="row mb-3">
-                    <div class="col-md-12">
+                    <div class="col-md-12 canada-padding">
                         <div class="box-usa">
                             <div class="d-flex justify-content-center flex w-100 ">
                                 <div class="col-md-5 col-lg-6 col-sm-12 my-lg-5 my-auto text-center">
@@ -101,7 +101,7 @@
             <div>
                 <h5 class="box-h5">Company Info</h5>
                 <div class="row mb-3">
-                    <div class="col-md-12">
+                    <div class="col-md-12 canada-padding">
                         <div class=" box-usa">
                             <div class="row mb-3" style="align-items: end;">
                                 <div class="col-md-6 mt-1">
@@ -132,7 +132,7 @@
             </div>
             <div>
                 <h5 class="box-h5">Employee Info</h5>
-                <div class="col-md-12">
+                <div class="col-md-12 canada-padding">
                     <div class=" box-usa">
                         <div class="row mb-3" style="align-items: end;">
                             <div class="col-md-6 mt-1">
@@ -337,7 +337,7 @@
                                         <div class="row mb-3">
                                             <div
                                                 class="col-xl-4 col-lg-7 col-md-4 mt-2 margin-bottom  px-lg-2 px-0 center-btn">
-                                                <button type="button" class="btnCommon addEarningField"> <i
+                                                <button type="button" class="btnCommon addEarningField uk-add-btn"> <i
                                                         class="fa fa-plus-circle pr-2"
                                                         style="font-size: 22px;color: #0ec23b;padding-top: 0px;"></i>Add
                                                     Earning</button>

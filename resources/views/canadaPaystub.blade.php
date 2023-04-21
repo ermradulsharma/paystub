@@ -44,7 +44,7 @@
                 <div>
                     <h5 class="box-h5">Choose Your Template</h5>
                     <div class="row mb-3">
-                        <div class="col-md-12">
+                        <div class="col-md-12 canada-padding">
                             <div class="box-usa">
                                 <div class="d-flex justify-content-center flex w-100 ">
                                     <div class="col-md-5 col-lg-6 col-sm-12 my-lg-5 my-auto text-center">
@@ -99,7 +99,7 @@
                 </div>
                 <div>
                     <div class="row mb-3">
-                        <div class="col-md-12">
+                        <div class="col-md-12 canada-padding">
                             <h5 class="box-h5">Company Info</h5>
                             <div class="box-usa">
                                 <div class="row mb-3 mt-3">
@@ -151,7 +151,7 @@
                                             </label>
                                             <div class="dropdown ">
                                                 <select name="state" id="state"
-                                                    class="state dropdown11 tax_rate removeDiv">
+                                                    class="state dropdown11 tax_rate removeDiv select-dropdown">
                                                     <option value=""> --- Select State --- </option>
                                                     @foreach ($stateTaxes as $stateTax)
                                                         <option value="{{ $stateTax->state }}"
@@ -179,7 +179,7 @@
                 <div>
                     <h5 class="box-h5">Employee Basic Info</h5>
                     <div class="row mb-3">
-                        <div class="col-md-12">
+                        <div class="col-md-12 canada-padding">
                             <div class=" box-usa">
                                 <div class="row">
                                     <div class="col-md-4 mt-4">
@@ -199,7 +199,7 @@
                                                     <label for="pay_start" class="lable">PAY START <span
                                                             class="redColor">*</span></label>
                                                     <input
-                                                        style="color:#140303f5;border:1px solid #110303fe;padding:0px 6px !important; height:40px; appearance: none;"
+                                                        style="color:#140303f5;border:1px solid #110303fe;appearance: none;"
                                                         type="text" id="pay_start" name="pay_start"
                                                         placeholder="MM/DD/YYYY"
                                                         class="w-100 p-2 input-box-font removeDiv pay_start datepicker inputdatepicker"
@@ -211,7 +211,7 @@
                                                     <label for="pay_end" class="lable"> <span
                                                             class="redColor"></span></label>
                                                     <input
-                                                        style="color:#140303f5;border:1px solid #110303fe; padding:0px 6px !important; height:40px; appearance: none;"
+                                                        style="color:#140303f5;border:1px solid #110303fe;  appearance: none;"
                                                         type="text" id="pay_end" name="pay_end"
                                                         placeholder="MM/DD/YYYY"
                                                         class="w-100 p-2 input-box-font removeDiv pay_end datepicker inputdatepicker"
@@ -225,7 +225,7 @@
                                             <label for="pay_date" class="lable">PAY DATE <span
                                                     class="redColor">*</span></label>
                                             <input
-                                                style="color:#140303f5;padding:0px 6px !important; height:40px; appearance: none; border:1px solid #110303fe;"
+                                                style="color:#140303f5;input-box-font appearance: none; border:1px solid #110303fe;"
                                                 type="text" id="pay_date" name="pay_date" placeholder="MM/DD/YYYY"
                                                 class="w-100 p-2 input-box-font removeDiv pay_date datepicker inputdatepicker"
                                                 data-id="pay_date" value="<?php echo date('m/d/Y'); ?>">
@@ -288,7 +288,7 @@
                         <h5 class="box-h5">Earning statement</h5>
                     </div>
                     <div class="row mb-3">
-                        <div class="col-md-12">
+                        <div class="col-md-12 canada-padding">
                             <div class=" box-usa">
                                 <div class="row mb-3 pt-4 justify-content-center">
                                     <div class="col-lg-7 pr-lg-0 px-0 mb-3">

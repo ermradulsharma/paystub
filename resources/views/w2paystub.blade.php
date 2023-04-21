@@ -372,7 +372,7 @@
         </div>
         <div class="container btn-container" style="max-width:1450px; padding:0;">
             <div style="" class="row mt-3">
-                <div style="margin: 0; padding:0;" class="col-12 text-center">
+                <div style="margin: 0; padding:0;" class="col-12 text-center w2-form-btn">
                     <div class="d-flex flex-wrap justify-content-between w2-form-row">
                         <a class="previewbtn text-capitalize viewTempTemplate mb-3 w-sm-100" type="button"
                             id="button1">Preview Below Check <i class="fa fa-eye"
