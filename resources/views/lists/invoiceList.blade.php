@@ -20,9 +20,6 @@
         border: 4px double;
         border-top: 2px solid #FF6161;
 
-
-
-
     }
 
 

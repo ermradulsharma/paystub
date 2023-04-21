@@ -345,8 +345,8 @@
                 <table style="padding:0; ">
                     <tr>
                         <th class="heading1 padding:0;">Employee Information</th>
-                        <th class="heading1"style="text-align: right;padding-right:20px;"> Social Sec.ID</th>
-                        <th class="heading1"style="text-align: right;padding-right:20px;">EmployeeID</th>
+                        <th class="heading1"style="text-align: right;padding-right:20px;"> Social Sec. ID</th>
+                        <th class="heading1"style="text-align: right;padding-right:20px;">Employee ID</th>
                         <th class="heading1"style="text-align: right;padding-right:20px;">Start Date</th>
                         <th class="heading1"style="text-align: right;padding-right:20px;">End Date</th>
                         <th class="heading1" style="text-align: right;padding-right:20px;">Check Date</th>
