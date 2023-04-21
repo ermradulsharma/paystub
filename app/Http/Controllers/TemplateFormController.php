@@ -135,7 +135,7 @@ class TemplateFormController extends Controller
             }
             $invoice->delete();
         }
-
+ 
         return redirect()->back()->with('message', 'Invoice has been deleted successfully.');
     }
 
