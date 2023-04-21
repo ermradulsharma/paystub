@@ -7,6 +7,8 @@
             position: relative;
             left: 10px;
             top: -3px;
+            background-color:white;
+            border: 1px solid #000;
         }
 
         .address_book_1 {
@@ -15,6 +17,8 @@
             text-align: center !important;
             left: 10px;
             top: -3px;
+            background-color:white;
+            border: 1px solid #000;
         }
 
         .address-book {
