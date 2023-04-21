@@ -313,21 +313,18 @@
                             <div class="col-lg-6 col-md-6 member-plan">
                                 {{-- {{ $subcriptionData }} --}}
                                 @if (!empty($subcriptionData))
-                                <h4>{{ __('Premium Member Plan') }}</h4>
-                                @foreach ($subcriptionData as $subcription)
-                                @if ($subcription->expiry_date > \Carbon\Carbon::now())
-                                <p>{{ $subcription->plan->name ?? '' }} {{ __('until') }} {{
-                                    \Carbon\Carbon::createFromFormat('Y-m-d H:i:s',
-                                    $subcription->expiry_date)->format('m/d/Y') }} <span
-                                        style="text-transform: uppercase;">({{$subcription->country}})</span></p>
-                                @else
-                                <p>{{ __('Plan expired') }}</p>
-                                <a class="renew-btn renewBtn"
-                                    href="@if ($subcriptionData->expiry_date < \Carbon\Carbon::now()) {{ route('prizing') }} @endif"
-                                    type="btn">{{ __('RENEW') }}</a>
-                                {{-- <button class="renew-btn">{{ __('RENEW') }}</button> --}}
-                                @endif
-                                @endforeach
+                                    @if(count($subcriptionData)>0)
+                                        <h4>{{ __('Premium Member Plan') }}</h4>
+                                        @foreach ($subcriptionData as $subcription)
+                                            @if ($subcription->expiry_date > \Carbon\Carbon::now())
+                                                <p>{{ $subcription->plan->name ?? '' }} {{ __('until') }} {{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $subcription->expiry_date)->format('m/d/Y') }} <span style="text-transform: uppercase;">({{$subcription->country}})</span></p>
+                                            @else
+                                                <p>{{ __('Plan expired') }}</p>
+                                                <a class="renew-btn renewBtn" href="@if ($subcriptionData->expiry_date < \Carbon\Carbon::now()) {{ route('prizing') }} @endif" type="btn">{{ __('RENEW') }}</a>
+                                                {{-- <button class="renew-btn">{{ __('RENEW') }}</button> --}}
+                                            @endif
+                                        @endforeach
+                                    @endif
                                 @endif
                             </div>
                         </div>
