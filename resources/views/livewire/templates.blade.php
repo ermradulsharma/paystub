@@ -32,7 +32,7 @@
                                     <th>Type</th>
                                     <th>Title</th>
                                     <th>Image</th>
-                                    {{-- <th>With Watermark</th> --}}
+                                    <th>With Watermark</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
@@ -58,19 +58,17 @@
                                                 @endif
                                             </a>
                                         </td>
-                                        {{-- <td>
+                                        <td>
                                             <a href="{{ asset($template->images->thumbnail ?? '') }}" target="blank">
                                                 @if (!empty($template->images->file_type))
                                                     @if ($template->images->file_type != 'pdf')
-                                                        <img width="200px" height="150px"
-                                                            src="{{ $template->images->thumbnail ?? '' }}" />
+                                                        <img width="200px" height="150px" src="{{ $template->images->thumbnail ?? '' }}" />
                                                     @else
-                                                        <i class="fa fa-file-pdf-o"
-                                                            style="font-size:48px;color:red"></i>
+                                                        <i class="fa fa-file-pdf-o" style="font-size:48px;color:red"></i>
                                                     @endif
                                                 @endif
                                             </a>
-                                        </td> --}}
+                                        </td>
                                         <td>
                                             <div class="form-check form-switch">
                                                 <input class="form-check-input"
