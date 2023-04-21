@@ -50,6 +50,10 @@
         top: -1px;
     }
 
+    .flex-row-invoice {
+        flex-direction: row-reverse
+    }
+
     @media(max-width:768px) {
         table th {
             font-size: 9px;
@@ -78,14 +82,83 @@
             font-size: 12px;
             padding: 10px 25px 10px 25px;
         }
+
+        .flex-row-invoice {
+            flex-direction: column;
+        }
+
+        h5.mt-2.ml-2.font-weight-bold.subscription-text {
+            font-size: 15px;
+            position: relative;
+            top: 35px;
+        }
+    }
+
+    @media(max-width:425px) {
+        h5.mt-2.ml-2.font-weight-bold.subscription-text {
+            font-size: 15px;
+            position: unset;
+            top: 0;
+        }
+
+        .flex-row-invoice {
+            flex-direction: row-reverse;
+            justify-content: start !important;
+        }
+
+        .btn-group a {
+            border-bottom: 2px solid #FF6161 !important;
+            font-size: 13px;
+
+
+        }
+
+        a.btn.active {
+            font-size: 13px;
+        }
+
+        table.table.text-center:before {
+
+            width: 338px;
+
+        }
+
+        table.table.text-center:after {
+            width: 338px;
+        }
+
+
+    }
+
+    @media(max-width:375px) {
+        .btn-group a {
+            padding: 5px 25px;
+        }
+
+        table.table.text-center:before {
+
+            width: 248px;
+
+        }
+
+        table.table.text-center:after {
+            width: 248px;
+        }
+
     }
 </style>
 <div class="my-5">
     <div class="container" style="max-width: 1500px;">
         <div class="row" style="margin:0 auto;">
 
-            <div class="row  justify-content-between">
-                <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+            <div class="row  justify-content-between flex-row-invoice">
+                <div class=" justify-content-end" style="text-align: right;">
+                    <h5 class="mt-2 ml-2 font-weight-bold subscription-text" style=" color:#FF6161; ">Watermark is
+                        removed
+                        after subscription</h5>
+                </div>
+                <div class="btn-toolbar justify-content-start" role="toolbar" aria-label="Toolbar with button groups"
+                    style="text-align: left;">
                     <div class="btn-group" role="group" aria-label="Basic example">
                         <a href="{{ route('invoiceList')}}?type=usa"
                             class="btn {{ request()->query('type') == 'usa' ? 'active' : (request()->query('type') == null ? 'active' : '') }} "
@@ -98,14 +171,10 @@
                             style="border-left:none; border-right:2px solid #FF6161;border-bottom:none;">UK</a>
                     </div>
                 </div>
-                <div class="d-flex">
-                    <h5 class="mt-2 ml-2 font-weight-bold subscription-text" style=" color:#FF6161; ">Watermark is removed
-                        after subscription</h5>
-                </div>
+
             </div>
             <div class="table-responsive">
-                <table class="table text-center"
-                    style="border:2px solid #FF6161; background:#E8E6E6;">
+                <table class="table text-center" style="border:2px solid #FF6161 !important; background:#E8E6E6;">
                     <thead>
                         <tr>
                             <th class="text-center" style="padding: 1.5em .5em;border:none; text-transform:capitalize;">
