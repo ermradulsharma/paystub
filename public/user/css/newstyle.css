@@ -258,7 +258,8 @@ ul.dropdown-menu.show li a:hover {
     text-align: left !important;
     border-radius: 0 !important;
     font-size: 17px;
-    color:#757575;
+    color: #000 !important;
+
 }
 
 .dropdown12 {
@@ -3092,6 +3093,7 @@ img.earnbtn2.lockuk {
     .Generate {
         padding: 11px 20px !important;
         max-width: 300px !important;
+        margin: 0 auto 15px !important;
     }
 
     .my-3.d-flex {
@@ -3324,12 +3326,13 @@ img.earnbtn2.lockuk {
         padding: 3px 23px;
         max-width: 305px;
         width: 100%;
-        margin: 0px 20px 0 0;
+        margin: 0 auto;
     }
 
     .previewbtn {
         padding: 0px 23px;
-        margin-left: 15px;
+        margin: 0 auto;
+        max-width: 305px;
     }
 
     .continue {
@@ -3362,6 +3365,12 @@ img.earnbtn2.lockuk {
     }
     .address_book{
         font-size: 12px;
+    }
+    .address_book{
+        width: 20% !important;
+    }
+    .address_book_1{
+        width: 20% !important;
     }
 }
 
@@ -3427,7 +3436,7 @@ img.earnbtn2.lockuk {
         padding: 6px 110px !important;
     }
     select {
-    color: #757575;
+
     text-align: center !important;
 
     }
@@ -3815,13 +3824,13 @@ img.earnbtn2.lockuk {
         max-width: 100px;
     }
     button.previewbtn.mt-4.px-3.mobile-login-btn {
-        max-width: 100px;
+        max-width: 100px !important;
     }
     button.previewbtn.continue {
-        max-width: 110px;
+        max-width: 110px !important;
     }
     .mobile-verify-btn{
-        max-width: 100px;
+        max-width: 100px !important;
     }
     input.contact-box{
         width: 92%;
@@ -4279,11 +4288,11 @@ img.earnbtn2.lockuk {
         padding: 11px 60px;
         margin-bottom: 10px;
         width: 100%;
-        margin: 0px !important;
+
         max-width: 400px;
         display: flex;
         justify-content: center;
-        margin: 0 auto 15px !important;
+
     }
 
     .paytext {
@@ -4314,7 +4323,7 @@ img.earnbtn2.lockuk {
 
     .earnbtn {
         border-radius: 0px  !important;
-        font-size: 14px !important;
+        font-size: 13px !important;
     }
     .statementbtn{
         padding: 6px !important;
