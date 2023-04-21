@@ -21,6 +21,7 @@ use App\Models\Deduction;
 use App\Models\StateTax;
 use App\Models\w2formPdf;
 
+use function PHPSTORM_META\type;
 
 class TemplateFormController extends Controller
 {
@@ -32,20 +33,20 @@ class TemplateFormController extends Controller
         $basicType = Template::where(['state' => $invoiceData->type, 'type' => 'basic', 'status' => 1])->orderBy('title')->with('images')->get();
         $advanceType = Template::where(['state' => $invoiceData->type, 'type' => 'advance', 'status' => 1])->orderBy('title')->with('images')->get();
 
-        if($invoiceData->type == 'canada'){
+        if ($invoiceData->type == 'canada') {
             $countryCode = "CA";
-        }else if($invoiceData->type == 'global'){
+        } else if ($invoiceData->type == 'global') {
             $countryCode = 'USA';
-        }else if($invoiceData->type == 'usa'){
+        } else if ($invoiceData->type == 'usa') {
             $countryCode = 'USA';
-        }else if($invoiceData->type == 'uk'){
+        } else if ($invoiceData->type == 'uk') {
             $countryCode = 'UK';
         }
-        $stateTaxes = StateTax::where('country_code',$countryCode)->orderBy('state')->get();
+        $stateTaxes = StateTax::where('country_code', $countryCode)->orderBy('state')->get();
         $currencies = Currency::get();
         $employerList = Address::where(['type' => 'employer', 'user_id' => Auth::user()->id])->orderBy('id', 'DESC')->get();
         $employeeList = Address::where(['type' => 'employee', 'user_id' => Auth::user()->id])->orderBy('id', 'DESC')->get();
-        return view('lists/' . $invoiceData->type . '-edit', compact('basicType', 'advanceType', 'deduction', 'stateTaxes', 'currencies', 'invoiceData','employerList', 'employeeList'));
+        return view('lists/' . $invoiceData->type . '-edit', compact('basicType', 'advanceType', 'deduction', 'stateTaxes', 'currencies', 'invoiceData', 'employerList', 'employeeList'));
     }
 
     // ======= USA Preview Data =========
@@ -112,6 +113,7 @@ class TemplateFormController extends Controller
         $slip->title = $requestData['cname'];
         $slip->pdf = $fileName;
         $slip->save();
+        $response['type'] = $slip->type;
         $response['message'] = "Data saved successfully successfully.";
         return response()->json($response, $response['status']);
     }
@@ -119,7 +121,7 @@ class TemplateFormController extends Controller
     //======invoice list ==========
     public function invoiceList(Request $request)
     {
-        $invoiceList = PaySlip::where('user_id', Auth::user()->id)->orderBy('id', 'desc')->get();
+        $invoiceList = PaySlip::where(['user_id' => Auth::user()->id, 'type' => $request->type ?? 'usa'])->orderBy('id', 'desc')->get();
         return view('lists.invoiceList', compact('invoiceList'));
     }
 
@@ -210,13 +212,14 @@ class TemplateFormController extends Controller
         return response()->json($response, $response['status']);
     }
 
-    public function deleteExtraPdf(){
+    public function deleteExtraPdf()
+    {
 
         $path = public_path('uploads/mailData');
         $files = File::allFiles($path);
-        foreach($files as $key => $file){
-            if(!PaySlip::where('pdf',$file->getFilename())->first()){
-                if(File::delete($path.'/'.$file->getFilename())){
+        foreach ($files as $key => $file) {
+            if (!PaySlip::where('pdf', $file->getFilename())->first()) {
+                if (File::delete($path . '/' . $file->getFilename())) {
                     echo ("DELETED \n");
                 }
             }

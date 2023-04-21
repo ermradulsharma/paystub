@@ -1,42 +1,50 @@
-
 @extends('layouts.app')
 @section('content')
-<style>
-   @media(max-width:768px){
-    table th{
-        font-size: 9px;
-        vertical-align: top !important;
+    <style>
+        @media(max-width:768px) {
+            table th {
+                font-size: 9px;
+                vertical-align: top !important;
 
 
-    }
-    .downloiadBtn{
-        font-size:10px;
-    }
-    .mail-logo{
-        width: 30px;
-    }
-    .delbtn{
-        font-size: 10px;
-    }
-    .previewbtnInvoice{
-        font-size: 10px !important;
-    }
-    .user-checkbtn{
-        font-size:12px;
-        padding: 10px 25px 10px 25px;
-    }
-   }
-</style>
+            }
+
+            .downloiadBtn {
+                font-size: 10px;
+            }
+
+            .mail-logo {
+                width: 30px;
+            }
+
+            .delbtn {
+                font-size: 10px;
+            }
+
+            .previewbtnInvoice {
+                font-size: 10px !important;
+            }
+
+            .user-checkbtn {
+                font-size: 12px;
+                padding: 10px 25px 10px 25px;
+            }
+        }
+    </style>
     <div class="my-5">
         <div class="container" style="max-width: 1500px;">
             <div class="row" style="margin:0 auto;">
-                <div class="w-100" style="text-align: right;">
-                    <div class="d-flex justify-content-end">
-                        {{-- <a href="{{ route('profile') }}"><img src="{{ asset('images/user1.png') }}" alt=""
-                                width="35px;" height="35px"></a> --}}
 
-                        <h5 class="mt-2 ml-2 font-weight-bold subscription-text" style=" color:red; ">Watermark is removed after subscription
-                        </h5>
+                <div class="row w-100 justify-content-between">
+                    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <a href="{{ route('invoiceList')}}?type=usa" class="btn btn-lg {{ request()->query('type') == 'usa' ? 'active' : (request()->query('type') == null ? 'active' : '') }} ">USA</a>
+                            <a href="{{ route('invoiceList')}}?type=canada" class="btn btn-lg {{ request()->query('type') == 'canada' ? 'active' : '' }} ">CANADA</a>
+                            <a href="{{ route('invoiceList')}}?type=uk" class="btn btn-lg {{ request()->query('type') == 'uk' ? 'active' : '' }} ">UK</a>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <h5 class="mt-2 ml-2 font-weight-bold subscription-text" style=" color:red; ">Watermark is removed after subscription</h5>
                     </div>
                 </div>
                 <div class="table-responsive">
@@ -44,20 +52,13 @@
                         style="border:3px solid #FF6161; border-style: inset;background:#E8E6E6;">
                         <thead>
                             <tr>
-                                <th class="text-center" style="padding: 1.5em .5em;border:none; text-transform:capitalize;">
-                                    Date Created</th>
-                                <th class="text-center" style="padding: 1.5em .5em;border:none; text-transform:capitalize;">
-                                    User Name</th>
-                                <th class="text-center" style="padding: 1.5em .5em;border:none; text-transform:capitalize;">
-                                    Reference No.</th>
-                                <th class="text-center" style="padding: 1.5em .5em;border:none; text-transform:capitalize;">
-                                    Download Paystub</th>
-                                <th class="text-center" style="padding: 1.5em .5em;border:none; text-transform:capitalize;">
-                                    Email</th>
-                                <th class="text-center" style="padding: 1.5em .5em;border:none; text-transform:capitalize;">
-                                    Edit PaystubX</th>
-                                <th class="text-center" style="padding: 1.5em .5em;border:none; text-transform:capitalize;">
-                                    Delete PDF</th>
+                                <th class="text-center" style="padding: 1.5em .5em;border:none; text-transform:capitalize;">Date Created</th>
+                                <th class="text-center" style="padding: 1.5em .5em;border:none; text-transform:capitalize;">User Name</th>
+                                <th class="text-center" style="padding: 1.5em .5em;border:none; text-transform:capitalize;">Reference No.</th>
+                                <th class="text-center" style="padding: 1.5em .5em;border:none; text-transform:capitalize;">Download Paystub</th>
+                                <th class="text-center" style="padding: 1.5em .5em;border:none; text-transform:capitalize;">Email</th>
+                                <th class="text-center" style="padding: 1.5em .5em;border:none; text-transform:capitalize;">Edit PaystubX</th>
+                                <th class="text-center" style="padding: 1.5em .5em;border:none; text-transform:capitalize;">Delete PDF</th>
                                 <th class="text-center" style="padding: 1.5em .5em;border:none;"></th>
                             </tr>
                         </thead>
@@ -77,20 +78,20 @@
                                             <th class="text-center" style="padding: 1.5em .5em;border:none;">
                                                 {{ $invoice->reference }}</th>
                                             <th class="text-center" style="padding: .9em .5em;border:none;">
-                                                <a class="btn btn-outline-dark py-2 downloiadBtn" href="{{ $invoice->pdf }}"
-                                                    download> Download <i class="fa fa-arrow-circle-down 2x"
-                                                        aria-hidden="true"></i></a>
+                                                <a class="btn btn-outline-dark py-2 downloiadBtn"
+                                                    href="{{ $invoice->pdf }}" download> Download <i
+                                                        class="fa fa-arrow-circle-down 2x" aria-hidden="true"></i></a>
                                             </th>
                                             <th class="text-center" style="padding: 1em .5em;border:none;">
                                                 <a href="{{ route('invoiceMailId', $invoice->id) }}">
-                                                    <img class="mail-logo" src="{{ asset('images/emaillogo.png') }}" alt=""
-                                                        width="45px" />
+                                                    <img class="mail-logo" src="{{ asset('images/emaillogo.png') }}"
+                                                        alt="" width="45px" />
                                                 </a>
                                             </th>
                                             <th class="text-center" style="padding: 1em .5em;border:none;">
                                                 <a href="{{ route('invoiceEdit', $invoice->id) }}">
-                                                    <img class="mail-logo" src="{{ asset('images/edit-icon.png') }}" alt=""
-                                                        width="45px" />
+                                                    <img class="mail-logo" src="{{ asset('images/edit-icon.png') }}"
+                                                        alt="" width="45px" />
                                                 </a>
                                             </th>
                                             <th class="text-center" style="padding: 1em .5em; border:none;">
@@ -119,12 +120,10 @@
                             @endif
                         </tbody>
                     </table>
-                </div>
-
-                <div class="w-100" style="text-align: right;">
-                    <a href="@if (isset($membership)) {{ $membership == 0 ? route('prizing') : route('invoiceMail') }} @else {{ route('prizing') }} @endif"
-                        class="user-checkbtn" data-count="{{ count($invoiceList) }}"><b>Continue to Checkout</b></a>
-                    <h6 class="mt-3 font-weight-bold">Click on Continue, to complete your order</h6>
+                    <div class="w-100" style="text-align: right;">
+                        <a href="@if (isset($membership)) {{ $membership == 0 ? route('prizing') : route('invoiceMail') }} @else {{ route('prizing') }} @endif" class="user-checkbtn" data-count="{{ count($invoiceList) }}"><b>Continue to Checkout</b></a>
+                        <h6 class="mt-3 font-weight-bold">Click on Continue, to complete your order</h6>
+                    </div>
                 </div>
             </div>
         </div>

@@ -133,8 +133,8 @@ $("#userNameForm").on("submit", function () {
 });
 
 // Address autofill affter select from dropdown on add and edit page
-$(document).ready(function() {
-    $("#employerAddress").change(function() {
+$(document).ready(function () {
+    $("#employerAddress").change(function () {
         $('#cname').val($('option:selected', this).data('name'));
         $('#address_1').val($('option:selected', this).data('address1'));
         $('#address_2').val($('option:selected', this).data('address2'));
@@ -144,7 +144,7 @@ $(document).ready(function() {
         $('#tel').val($('option:selected', this).data('tel'));
     });
 
-    $("#employeeAddress").change(function() {
+    $("#employeeAddress").change(function () {
         $('#emp_name').val($('option:selected', this).data('name'));
         $('#emp_street_1').val($('option:selected', this).data('address1'));
         $('#emp_street_2').val($('option:selected', this).data('address2'));
@@ -155,17 +155,17 @@ $(document).ready(function() {
 });
 
 // function addres dropdown data fill
-function addAddressDropdown(){
+function addAddressDropdown() {
     $.ajax({
-        url: baseUrl+'address/get/options',
+        url: baseUrl + 'address/get/options',
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         },
-        success: function(data) {
+        success: function (data) {
             console.log('data', data);
             $('#employerAddress').html('').html(data.employerData);
             $('#employeeAddress').html('').html(data.employeeData);
-            }
+        }
     });
 }
 
@@ -299,7 +299,7 @@ function checkValidationForm() {
 
     $.each(formData, function (i, element) {
         var name = element.name.replace("[]", "");
-        var blockedTile = new Array("address_2", "tel", "emp_street_2",  "earning", "rate", "hours", "total", "period", "ytd_total", "period_gross_total", "ytd_gross_total", "deduction_period_tax", "deduction_period_tax_other", "advance_temp", "basic_temp", "taxes", "taxes_rate", "taxes_ytd", 'net_pay', 'note');
+        var blockedTile = new Array("address_2", "tel", "emp_street_2", "earning", "rate", "hours", "total", "period", "ytd_total", "period_gross_total", "ytd_gross_total", "deduction_period_tax", "deduction_period_tax_other", "advance_temp", "basic_temp", "taxes", "taxes_rate", "taxes_ytd", 'net_pay', 'note');
         if (!$('#' + name).is(':visible')) {
             blockedTile.push(name);
         }
@@ -391,8 +391,9 @@ function usaStoreData() {
         type: "post",
         data: $("#submit_form_paystubx_id").serialize(),
         success: function (response) {
+            console.log('response', response);
             setTimeout(function () {
-                window.location.href = baseUrl + "invoiceList";
+                window.location.href = baseUrl + "invoiceList?type=" + response.type;
             }, 1000);
             document.getElementById("loaderDiv").style.display = "none";
         },
@@ -438,12 +439,12 @@ function generatePDF() {
     });
 }
 
-$(document).ready(function(){
+$(document).ready(function () {
     // $('.lock').click(function () {
-    $(document).on('click','.lock',function () {
+    $(document).on('click', '.lock', function () {
         var id = $(this).data('id');
         var img = $(this).attr('src');
-        if (img == baseUrl+'images/lock.png') {
+        if (img == baseUrl + 'images/lock.png') {
             $("#" + id).attr('src', 'https://paystubx.com/images/unlock.png');
             $("#taxe_" + id).attr("readonly", false);
         } else {
