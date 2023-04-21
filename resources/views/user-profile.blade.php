@@ -525,6 +525,20 @@
                                                     class="w-100 p-2 text-center input-box-font third-phone">
                                             </div>
                                         </div>
+                                        <div class="form-group ">
+                                            <label for="tel" style="font-weight:bold;" id="emp_id_title"
+                                                class="col-sm-12 control-label">EMPLOYEE ID</label>
+                                            <div class="col-sm-12">
+                                                <input type="text" id="emp_id" name="emp_id" placeholder="12345" maxlength="5" minlength="5" class="w-100 p-2 text-center input-box-font third-phone">
+                                            </div>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label for="tel" style="font-weight:bold;" id="emp_ssn_title"
+                                                class="col-sm-12 control-label">EMPLOYEE SSN Last 4</label>
+                                            <div class="col-sm-12">
+                                                <input type="text" id="emp_ssn" name="emp_ssn" placeholder="1234" maxlength="4" minlength="4" class="w-100 p-2 text-center input-box-font third-phone">
+                                            </div>
+                                        </div>
 
                                     </form>
                                 </div>
@@ -944,13 +958,16 @@
                 $('#nameLabel').text('').text('EMPLOYEE NAME *');
                 $('#inputFullName').attr('placeholder', 'Full Employee Name');
                 $('#tel-phone-title').text('').text('Employee Telephone');
-                $('#tel-phone-title').closest("div").addClass('d-none')
+                $('#tel-phone-title').closest("div").addClass('d-none');
             } else if (popType == 'employer') {
                 $("#adress-type").val('employer');
                 $('#nameLabel').text('').text('EMPLOYER (COMPANY) NAME *');
                 $('#inputFullName').attr('placeholder', 'Full Employer (Company) Name');
                 $('#tel-phone-title').text('').text('Employer Telephone');
-                $('#tel-phone-title').closest("div").removeClass('d-none')
+                $('#tel-phone-title').closest("div").removeClass('d-none');
+                $('#emp_ssn_title').closest("div").addClass('d-none')
+                $('#emp_id_title').closest("div").addClass('d-none')
+
             }
             $("#addressBook").modal("show");
         }

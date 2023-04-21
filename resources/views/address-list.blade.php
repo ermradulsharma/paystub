@@ -8,7 +8,9 @@
             <th scope="col">City</th>
             <th scope="col">State</th>
             <th scope="col">Zip Code</th>
-            @if($empType == 'employer')<th scope="col">Telephone</th>@endif
+            @if($empType == 'employer')
+                <th scope="col">Telephone</th>
+            @endif
         </tr>
     </thead>
     <tbody>
@@ -23,12 +25,11 @@
                     <td>{{$address->city ?? ''}}</td>
                     <td>{{$address->full_state_name ?? ''}}</td>
                     <td>{{$address->zip_code ?? ''}}</td>
-                    @if($empType == 'employer')<td>{{$address->tel ?? ''}}</td>@endif
-                    <td style="padding-right:0; padding-left:0;" ><img class="editicon btn-edit"
-                            src="images/icons/edit-icon.png" data-record="{{ $address->id }}"></td>
-                    <td style="padding-right:0; padding-left:0;"><img class="dlticon btn-delete-add"
-                            data-route="{{route('delete.address',$address->id)}}"
-                            src="images/icons/del-icon.png"></td>
+                    @if($empType == 'employer')
+                        <td>{{$address->tel ?? ''}}</td>
+                    @endif
+                    <td style="padding-right:0; padding-left:0;" ><img class="editicon btn-edit" src="images/icons/edit-icon.png" data-record="{{ $address->id }}"></td>
+                    <td style="padding-right:0; padding-left:0;"><img class="dlticon btn-delete-add" data-route="{{route('delete.address',$address->id)}}" src="images/icons/del-icon.png"></td>
                 </tr>
 
             @endforeach
