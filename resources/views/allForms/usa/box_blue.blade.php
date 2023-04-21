@@ -127,6 +127,18 @@
             background-repeat: no-repeat;
             background-position: center;
         }
+        .watermark2 {
+            position: absolute;
+            width: 100%;
+            height: 700px;
+            top: 250px;
+            left: 0px;
+            right: 0;
+            background-image: url("images/final-water.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
 
 
         .bg-img2 {
@@ -143,10 +155,12 @@
         <img src="{{ public_path('images/check2.svg') }}" style="position: absolute; top:75.6%; width:100.20%; height:25%;  z-index: -1; right:0px; left:0px;">
         @guest
             <div class="watermark"></div>
+            <div class="watermark2"></div>
         @endguest
         @auth
             @if (Auth::user()->expiryDate == '' || !isset($requestData['watermark']))
                 <div class="watermark"></div>
+                <div class="watermark2"></div>
             @endif
         @endauth
         <section class="invoiceborder">

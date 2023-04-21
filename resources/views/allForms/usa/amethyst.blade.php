@@ -134,6 +134,18 @@
             background-repeat: no-repeat;
             background-position: center;
         }
+        .watermark2 {
+            position: absolute;
+            width: 100%;
+            height: 700px;
+            top: 250px;
+            left: 0px;
+            right: 0;
+            background-image: url("images/final-water.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
 
         .bg-img2 {
             position: relative;
@@ -152,7 +164,7 @@
     <main class="bg-img2">
         <img src="{{ public_path('images/border/amethyst/amethyst2.svg') }}" style="position: absolute; top: 0px; right:0;left: 0px; width:106.5%; height:105%;  z-index: -1;">
         <img src="{{ public_path('images/check2.svg') }}" style="position: absolute; top:75.8%; width:100.79%; height:25%;  z-index: -1; right:0px; left:0px;"> @guest
-        <div class="watermark"></div> @endguest @auth @if(Auth::user()->expiryDate == '' || !isset($requestData['watermark'])) <div class="watermark"></div> @endif @endauth <section class="invoiceborder">
+        <div class="watermark"></div> <div class="watermark2"></div> @endguest @auth @if(Auth::user()->expiryDate == '' || !isset($requestData['watermark'])) <div class="watermark"></div> <div class="watermark2"></div> @endif @endauth <section class="invoiceborder">
             <table>
                 <tr>
                     <td style="padding-top:0px; padding-bottom:0; font-size:21px; text-transform:capitalize;font-family: Arial, Helvetica, sans-serif; font-weight:bold ">{{ $requestData['cname'] }} </td>
