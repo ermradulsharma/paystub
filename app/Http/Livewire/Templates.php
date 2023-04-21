@@ -52,8 +52,8 @@ class Templates extends Component
                 'title' => 'required',
                 'type' => 'required',
                 'state' => 'required',
-                'image' => 'required', // 1MB Max
-                'watermark' => 'required',
+                'image' => 'required|max:5120', // 1MB Max
+                'watermark' => 'required|max:5120',
             ]);
         }
 
