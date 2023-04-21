@@ -278,7 +278,7 @@
                                                     data-address1="{{ $employee->address_1 }}"
                                                     data-address2="{{ $employee->address_2 }}"
                                                     data-city="{{ $employee->city }}" data-state="{{ $employee->state }}"
-                                                    data-zip="{{ $employee->zip_code }}" value="{{ $employee->name }}">
+                                                    data-zip="{{ $employee->zip_code }}" data-zip="{{ $employee->emp_id }}" data-zip="{{ $employee->emp_ssn }}" value="{{ $employee->name }}">
                                                     {{ $employee->name }}</option>
                                             @endforeach
                                         @endif

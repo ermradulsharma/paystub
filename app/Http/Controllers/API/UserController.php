@@ -683,6 +683,8 @@ class UserController extends Controller
             $addressObj->city       = $requestData['city'];
             $addressObj->state      = $requestData['state'];
             $addressObj->zip_code   = $requestData['zip_code'];
+            $addressObj->emp_id   = $requestData['emp_id'];
+            $addressObj->emp_ssn   = $requestData['emp_ssn'];
             if ($addressObj->save()) {
                 $response['success'] = TRUE;
                 $response['message'] = "Address saved successfully";
@@ -745,6 +747,8 @@ class UserController extends Controller
             $addressObj->city       = $requestData['city'];
             $addressObj->state      = $requestData['state'];
             $addressObj->zip_code   = $requestData['zip_code'];
+            $addressObj->emp_id   = $requestData['emp_id'];
+            $addressObj->emp_ssn   = $requestData['emp_ssn'];
             if ($addressObj->save()) {
                 $response['success'] = TRUE;
                 $response['message'] = "Address updated successfully";

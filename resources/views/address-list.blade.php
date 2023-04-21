@@ -2,7 +2,17 @@
     <thead>
         <tr>
             <th scope="col">#</th>
-            @if($empType == 'employer')<th scope="col">Employer Name</th>@else<th scope="col">Employee Name</th>@endif
+            @if($empType == 'employee')
+                <th scope="col">Employee Id</th>
+            @endif
+            @if($empType == 'employer')
+                <th scope="col">Employer Name</th>
+            @else
+                <th scope="col">Employee Name</th>
+            @endif
+            @if($empType == 'employee')
+                <th scope="col">Employee SSN</th>
+            @endif
             <th scope="col">Street Address 1</th>
             <th scope="col">Street Address 2</th>
             <th scope="col">City</th>
@@ -11,6 +21,10 @@
             @if($empType == 'employer')
                 <th scope="col">Telephone</th>
             @endif
+            {{-- @if($empType == 'employee')
+                <th scope="col">Telephone</th>
+                <th scope="col">Telephone</th>
+            @endif --}}
         </tr>
     </thead>
     <tbody>
@@ -19,7 +33,13 @@
 
                 <tr style="border:1px solid #ddd;">
                     <td scope="row">{{ $addressData->firstItem() + $key }}</td>
+                    @if($empType == 'employee')
+                        <td>{{$address->emp_id ?? ''}}</td>
+                    @endif
                     <td>{{$address->name ?? ''}}</td>
+                    @if($empType == 'employee')
+                        <td>{{$address->emp_ssn ?? ''}}</td>
+                    @endif
                     <td>{{$address->address_1 ?? ''}}</td>
                     <td>{{$address->address_2 ?? ''}}</td>
                     <td>{{$address->city ?? ''}}</td>

@@ -873,6 +873,10 @@
                         if (data.addressObj.type == 'employer') {
                             $('#addressForm input[name=tel]').val(data.addressObj.tel);
                         }
+                        if (data.addressObj.type == 'employee') {
+                            $('#addressForm input[name=emp_id]').val(data.addressObj.emp_id);
+                            $('#addressForm input[name=emp_ssn]').val(data.addressObj.emp_ssn);
+                        }
                         openAddressModal('no');
                     } else {
                         printErrorMsg(data.error);

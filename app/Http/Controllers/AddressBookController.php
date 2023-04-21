@@ -88,6 +88,8 @@ class AddressBookController extends Controller
                 $addressObj->city       = $request->cityName ?? '';
                 $addressObj->state      = $request->stateName ?? '';
                 $addressObj->zip_code   = $request->zipCode ?? '';
+                $addressObj->emp_id   = $request->emp_id ?? '';
+                $addressObj->emp_ssn   = $request->emp_ssn ?? '';
                 if ($addressObj->save()) {
                     return response()->json(['pageReload' => 'no', 'message' => 'Address saved successfully.']);
                 }
@@ -101,6 +103,8 @@ class AddressBookController extends Controller
                 $addressObj->city       = $request->cityName ?? '';
                 $addressObj->state      = $request->stateName ?? '';
                 $addressObj->zip_code   = $request->zipCode ?? '';
+                $addressObj->emp_id   = $request->emp_id ?? '';
+                $addressObj->emp_ssn   = $request->emp_ssn ?? '';
                 if ($addressObj->save()) {
                     return response()->json(['pageReload' => 'no', 'message' => 'Address update successfully.']);
                 }
