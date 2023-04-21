@@ -12,6 +12,7 @@
         .address_book_1 {
             width: 14%;
             position: relative;
+            text-align: center !important;
             left: 10px;
             top: -3px;
         }
@@ -74,7 +75,7 @@
                                 <h5 class="box-h5">Company Info</h5>
                                 <img class="address-book" src="{{ asset('images/address-book.png') }}" alt=""
                                     height="30px;">
-                                <select id="employerAddress" class="address_book add_address address" data-type="employer">
+                                <select id="employerAddress" class="address_book add_address address input-box-font" data-type="employer">
                                     <option data-name="" value="">Select Address</option>
                                     @foreach ($employerList ?? [] as $key => $employer)
                                         <option data-name="{{ $employer->name }}" data-address1="{{ $employer->address_1 }}"
@@ -152,7 +153,7 @@
                                         </label>
                                         {{-- <input type="hidden" name="state" id="state_0"> --}}
                                         <div class="dropdown ">
-                                            <select id="state" name="state" class="state dropdown11 removeDiv">
+                                            <select id="state" name="state" class="state dropdown11 removeDiv select-dropdown">
                                                 <option value=""> --- Select State --- </option>
                                                 @foreach ($stateTaxes as $stateTax)
                                                     <option value="{{ $stateTax->state_code }}">{{ $stateTax->state }}
@@ -263,7 +264,7 @@
                                 <h5 class="box-h5">Employee Info</h5>
                                 <img class="address-book" src="{{ asset('images/address-book.png') }}" alt=""
                                     height="30px;">
-                                <select id="employeeAddress" class="address_book_1 add_address address"
+                                <select id="employeeAddress" class="address_book_1 add_address address input-box-font"
                                     data-type="employee">
                                     <option data-name="" value="">Select Address</option>
                                     @auth
@@ -346,7 +347,7 @@
                                         </label>
                                         <div class="dropdown ">
                                             {{-- <input type="hidden" name="emp_state" id="emp_state_0"> --}}
-                                            <select id="emp_state" name="emp_state" class=" dropdown11 removeDiv">
+                                            <select id="emp_state" name="emp_state" class=" dropdown11 removeDiv select-dropdown">
                                                 <div>
                                                     <option class="ff" style="color: #757575;" value=""
                                                         data-tax="null"> --- Select State --- </option>
@@ -531,9 +532,9 @@
                                         <label for="pay_start" class="lable">PAY START<span class="redColor">*</span>
                                         </label>
                                         <input
-                                            style="color:#140303f5;border:1px solid #110303fe;padding:0px 6px !important; height:40px; appearance: none;"
+                                            style="color:#140303f5;border:1px solid #110303fe; !important;  appearance: none;"
                                             type="text" id="pay_start" name="pay_start" placeholder="12-11-2022"
-                                            class="w-100 p-2 input-box-font removeDiv pay_start datepicker inputdatepicker"
+                                            class="w-100 p-2 input-box-font removeDiv pay_start datepicker inputdatepicker input-box-font"
                                             data-id="pay_start" value="<?php echo date('mm/dd/yyyy'); ?>">
                                     </div>
                                 </div>
@@ -543,9 +544,9 @@
                                         <label for="pay_end" class="lable">PAY END <span class="redColor">*</span>
                                         </label>
                                         <input
-                                            style="color:#140303f5;border:1px solid #110303fe; padding:0px 6px !important; height:40px; appearance: none;"
+                                            style="color:#140303f5;border:1px solid #110303fe;  appearance: none;"
                                             type="text" id="pay_end" name="pay_end" placeholder="12-17-2022"
-                                            class="w-100 p-2 input-box-font removeDiv pay_end datepicker inputdatepicker"
+                                            class="w-100 p-2 input-box-font removeDiv pay_end datepicker inputdatepicker input-box-font"
                                             data-id="pay_end" value="<?php echo date('mm/dd/yyyy', strtotime('+7 days')); ?>">
                                     </div>
                                 </div>
@@ -555,9 +556,9 @@
                                         <label for="pay_date" class="lable">PAY DATE <span class="redColor">*</span>
                                         </label>
                                         <input
-                                            style="color:#140303f5;padding:0px 6px !important; height:40px; appearance: none; border:1px solid #110303fe;"
+                                            style="color:#140303f5; appearance: none; border:1px solid #110303fe;"
                                             type="text" id="pay_date" name="pay_date" placeholder="12-19-2022"
-                                            class="w-100 p-2 input-box-font removeDiv pay_date datepicker inputdatepicker"
+                                            class="w-100 p-2 input-box-font removeDiv pay_date datepicker inputdatepicker input-box-font"
                                             data-id="pay_date" value="<?php echo date('mm/dd/yyyy'); ?>">
                                     </div>
                                 </div>
@@ -644,7 +645,7 @@
                             <div class="row mb-3">
                                 <div class="col-xl-2 col-lg-3 col-md-4 mt-2 margin-bottom">
                                     <button type="button" class="add_button earnbtn" type="add_earning"
-                                        id="add_earning" style="font-size: 18px !important;"><i
+                                        id="add_earning" style="font-size: 18px"><i
                                             class="fa fa-plus-circle pr-2" style="font-size:24px;color:green"></i>Add
                                         Earning</button>
                                 </div>
@@ -701,7 +702,7 @@
                             <div class="row my-3">
                                 <div class="col-md-4 col-lg-3">
                                     <button type="button" class="add_deduction earnbtn"
-                                        style="font-size: 18px !important;"><i class="fa fa-plus-circle pr-lg-5 pr-2"
+                                        style="font-size: 18px;"><i class="fa fa-plus-circle pr-lg-5 pr-2"
                                             style="font-size:24px;color:green"></i>Add Deduction</button>
                                 </div>
                             </div>
@@ -727,7 +728,6 @@
                             </div>
                             <div class="row mb-3 mt-5">
                                 <div class="col-md-4 col-lg-3 mb-2">
-                                    <p class="p-0 m-0 text-center" style="font-family: serif;">&nbsp;</p>
                                     <button type="button" class="netpaybtn net_pay">Net Pay</button>
                                 </div>
                                 <div class="col-md-1"></div>
