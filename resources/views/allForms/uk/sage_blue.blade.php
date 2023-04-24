@@ -292,7 +292,7 @@
                 style="width:29.5%; float:right; border:1px solid #4a50b2; border-radius:10px; margin-top:-55px; padding:13px 10px 13px 10px; background-color:#f4f4fc;">
                 <tr>
                     <td style="color:#4a50b2; font-size:18px; font-weight:bold;">Net Pay</td>
-                    <td><b style="text-align: right; font-size:18px;">{{ number_format($requestData['net_pay'], 2) }}</b></td>
+                    <td><b style="text-align: right; font-size:18px;position: relative; left:20px;">{{ number_format($requestData['net_pay'], 2) }}</b></td>
                 </tr>
             </table>
         </section>

@@ -221,7 +221,7 @@
                                             </th>
                                             <th class="text-center" style="padding: 1em .5em;border:none;">
                                                 <a href="{{ route('invoiceEdit', $invoice->id) }}">
-                                                    <img class="mail-logo" src="{{ asset('images/edit-icon.png') }}"
+                                                    <img class="mail-logo" src="{{ asset('images/editicon.png') }}"
                                                         alt="" width="45px" />
                                                 </a>
                                             </th>

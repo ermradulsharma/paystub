@@ -3827,6 +3827,12 @@ img.earnbtn2.lockuk {
     button.previewbtn.mobile-logout-btn {
         max-width: 100px !important;
     }
+    button.previewbtn.delete-item {
+        max-width: 100px !important;
+    }
+    button.previewbtn.bottom-close {
+        max-width: 100px !important;
+    }
     button.previewbtn.mt-4.px-3.mobile-login-btn {
         max-width: 100px !important;
     }
