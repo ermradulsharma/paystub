@@ -943,7 +943,7 @@ select:after {
     max-width: 150px;
     margin: 0 auto;
     border-radius: 0;
-    padding: 6px 0px;
+    padding: 7px 0px;
     background-color: #0b2f5b;
     box-shadow: 4px 4px 2px 1px #e9d1d3;
     border: 5px double #fff;
@@ -2469,6 +2469,8 @@ img.earnbtn2.lockuk {
     .w-100 {
         width: 100% !important;
         padding: 6px;
+        text-transform: capitalize;
+        font-size: 12px;
     }
 
     .ukpaystubtext {
@@ -3456,6 +3458,7 @@ img.earnbtn2.lockuk {
     .input-box-font{
         font-size: 12px !important;
         height: 32px !important;
+        text-transform: capitalize;
     }
 
     .createbtn {
@@ -4406,6 +4409,7 @@ img.earnbtn2.lockuk {
         font-size: 12px !important;
         border-radius: 0;
         text-align: left !important;
+        padding-left: 5px;
 
     }
 
@@ -4414,6 +4418,7 @@ img.earnbtn2.lockuk {
         top: 0px !important;
         font-size: 12px !important;
         text-align: left !important;
+        padding-left: 5px;
     }
     .ukbtn1 {
         display: flex;
