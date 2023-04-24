@@ -632,6 +632,7 @@ class UserController extends Controller
             $msg = ACCOUNT_DELETED_SUCCESSFULLY;
             $user = '';
         }
+        
         $response['data'] = $user;
         $response['success'] = TRUE;
         $response['message'] = $msg;
