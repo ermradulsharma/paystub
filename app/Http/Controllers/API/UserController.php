@@ -558,6 +558,7 @@ class UserController extends Controller
             if ($userObj) {
                 $userObj->email = $request->email;
                 $userObj->code = '';
+                $userObj->temp_mail = '';
             }
             $msg = "OTP Verify Successfully";
         }
@@ -618,9 +619,6 @@ class UserController extends Controller
             $msg = "Password has updated successfully";
         }
         if ($userObj->save()) {
-            if ($userObj->temp_mail != '') {
-                $userObj->temp_mail = '';
-            }
             $user = User::select('name', 'email')->where('id', Auth::user()->id)->first();
         }
 
@@ -632,7 +630,7 @@ class UserController extends Controller
             $msg = ACCOUNT_DELETED_SUCCESSFULLY;
             $user = '';
         }
-        
+
         $response['data'] = $user;
         $response['success'] = TRUE;
         $response['message'] = $msg;
