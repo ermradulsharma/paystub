@@ -3421,7 +3421,7 @@ img.earnbtn2.lockuk {
 
 @media  (max-width: 425px) {
     .select-dropdown {
-        color: #000;
+        color: #000 !important;
         text-align: left !important;
     }
     .storehead a img {

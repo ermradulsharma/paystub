@@ -82,7 +82,7 @@
                             <h5 class="box-h5">Company Info</h5>
                             <img class="address-book" src="{{ asset('images/address-book.png') }}" alt=""
                                 height="30px;">
-                            <select id="employerAddress" class="address_book add_address address input-box-font"
+                            <select id="employerAddress" class="address_book add_address address input-box-font select-dropdown"
                                 data-type="employer">
                                 <option data-name="" value="">Select Address</option>
                                 @foreach ($employerList ?? [] as $key => $employer)
@@ -249,7 +249,7 @@
                             <h5 class="box-h5">Employee Info</h5>
                             <img class="address-book" src="{{ asset('images/address-book.png') }}" alt=""
                                 height="30px;">
-                            <select id="employeeAddress" class="address_book_1 add_address address input-box-font"
+                            <select id="employeeAddress" class="address_book_1 add_address address input-box-font select-dropdown"
                                 data-type="employee">
                                 <option data-name="" value="">Select Address</option>
                                 @auth
@@ -478,7 +478,7 @@
                                 <div>
                                     <label for="currency" class="lable" class="redColor" style="color: red;">SELECT
                                         YOUR PREFERRED CURRENCY </label>
-                                    <select name="currency" id="currency" class=" dropdown11 removeDiv">
+                                    <select name="currency" id="currency" class=" dropdown11 removeDiv select-dropdown">
                                         @foreach ($currencies as $currency)
                                         <option value="{{ $currency->symbol }}">{{ $currency->symbol }}
                                             ({{ $currency->name }})
