@@ -6,18 +6,18 @@
         width: 14%;
         position: relative;
         left: 10px;
-        top: -3px;
         background-color: white;
         border: 1px solid #000;
+        padding: 0px 5px;
     }
 
     .address_book_1 {
         width: 14%;
         position: relative;
         left: 10px;
-        top: -3px;
         background-color: white;
         border: 1px solid #000;
+        padding: 0px 5px;
     }
 
     .address-book {
@@ -154,7 +154,7 @@
                                     {{-- <input type="hidden" name="state" id="state_0"> --}}
                                     <div class="dropdown ">
                                         <select id="state" name="state" class="state dropdown11 removeDiv">
-                                            <option value=""> --- Select State --- </option>
+                                            <option value="">Select State</option>
                                             @foreach ($stateTaxes as $stateTax)
                                             <option value="{{ $stateTax->state_code }}">{{ $stateTax->state }}
                                             </option>
@@ -343,8 +343,8 @@
                                         {{-- <input type="hidden" name="emp_state" id="emp_state_0"> --}}
                                         <select id="emp_state" name="emp_state" class=" dropdown11 removeDiv">
                                             <div>
-                                                <option class="ff" style="color: #757575;" value="" data-tax="null"> ---
-                                                    Select State --- </option>
+                                                <option class="ff" style="color: #757575;" value="" data-tax="null">
+                                                    Select State</option>
                                             </div>
                                             @foreach ($stateTaxes as $stateTax)
                                             <option value="{{ $stateTax->state_code }}"
