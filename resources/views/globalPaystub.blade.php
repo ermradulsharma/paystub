@@ -59,8 +59,6 @@
             <div class="modal-body card-body">
                 <embed src="" type="" id="tempView" allowtransparency="false" style="background-color : white;"
                     frameborder="0" width="100%" height="800" style="border: none;">
-                {{-- <iframe src="" id="tempView" allowtransparency="false" style="background-color : transparent;"
-                    frameborder="0" width="100%" height="800"></iframe> --}}
             </div>
         </div>
     </div>
@@ -78,14 +76,15 @@
                             <h5 class="box-h5">Company Info</h5>
                             <img class="address-book" src="{{ asset('images/address-book.png') }}" alt=""
                                 height="30px;">
-                            <select id="employerAddress" class="address_book add_address address select-dropdown" data-type="employer">
+                            <select id="employerAddress" class="address_book add_address address input-box-font select-dropdown"
+                                data-type="employer">
                                 <option data-name="" value="">Select Address</option>
                                 @foreach ($employerList ?? [] as $key => $employer)
                                 <option data-name="{{ $employer->name }}" data-address1="{{ $employer->address_1 }}"
                                     data-address2="{{ $employer->address_2 }}" data-city="{{ $employer->city }}"
                                     data-state="{{ $employer->state }}" data-zip="{{ $employer->zip_code }}"
-                                    data-tel="{{ $employer->tel }}" value="{{ $employer->name }}">{{ $employer->name }}
-                                </option>
+                                    data-tel="{{ $employer->tel }}" value="{{ $employer->name }}">
+                                    {{ $employer->name }}</option>
                                 @endforeach
                                 <option data-name="" value="add_address">Add New Address</option>
                             </select>
@@ -153,8 +152,9 @@
                                     </label>
                                     {{-- <input type="hidden" name="state" id="state_0"> --}}
                                     <div class="dropdown ">
-                                        <select id="state" name="state" class="state dropdown11 removeDiv select-dropdown">
-                                            <option value="">Select State</option>
+                                        <select id="state" name="state"
+                                            class="state dropdown11 removeDiv select-dropdown">
+                                            <option value="" selected> Select State </option>
                                             @foreach ($stateTaxes as $stateTax)
                                             <option value="{{ $stateTax->state_code }}">{{ $stateTax->state }}
                                             </option>
@@ -194,7 +194,8 @@
                                             <option value="{{ $data->title ?? '' }}"
                                                 data-src="{{ $data->images->file ?? '' }}"
                                                 data-status="{{ $data->template_element }}"
-                                                data-stub="{{ $data->stub_no }}" data-check="{{ $data->check_no }}">
+                                                data-stub="{{ $data->stub_no }}" data-check="{{ $data->check_no }}"
+                                                data-client="{{ $data->client_no }}">
                                                 {{ $data->name }}
                                             </option>
                                             @endforeach
@@ -220,7 +221,7 @@
                                                 data-src="{{ $data->images->file ?? '' }}"
                                                 data-status="{{ $data->template_element }}"
                                                 data-stub="{{ $data->stub_no }}" data-clock="{{ $data->co_no }}"
-                                                data-check="{{ $data->check_no }}">
+                                                data-check="{{ $data->check_no }}" data-client="{{ $data->client_no }}">
                                                 {{ $data->name ?? '' }} </option>
                                             @endforeach
                                         </select>
@@ -228,11 +229,6 @@
                                             style="font-size: 39px;"></i>
                                     </div>
                                 </div>
-                                {{-- <div class=" mt-3 ">
-                                    <button class="viewbtn"> <a style="color: black;"
-                                            href="{{ url('template-view') }}">Click to see
-                                            Template Landscape view.This is not part of design</a></button>
-                                </div> --}}
                             </div>
                         </div>
                     </div>
@@ -240,21 +236,6 @@
             </div>
         </div>
         <div>
-            {{-- <div class="row justify-content-between pb-2">
-                <h5 class="box-h5">Employee Info</h5>
-                <select name="employeeAddress" id="employeeAddress" class="address_book_1">
-                    <option data-name="" value="ewrwe">Select Address</option>
-                    @if ($employeeList->count() > 0)
-                    @foreach ($employeeList as $key => $employee)
-                    <option data-name="{{ $employee->name }}" data-address1="{{ $employee->address_1 }}"
-                        data-address2="{{ $employee->address_2 }}" data-city="{{ $employee->city }}"
-                        data-state="{{ $employee->state }}" data-zip="{{ $employee->zip_code }}"
-                        value="{{ $employee->name }}">{{ $employee->name }}</option>
-                    @endforeach
-                    @endif
-                </select>
-            </div> --}}
-
             <div class="row mb-3">
                 <div class="col-md-12">
                     <div class=" box-usa">
@@ -262,7 +243,7 @@
                             <h5 class="box-h5">Employee Info</h5>
                             <img class="address-book" src="{{ asset('images/address-book.png') }}" alt=""
                                 height="30px;">
-                            <select id="employeeAddress" class="address_book_1 add_address address select-dropdown"
+                            <select id="employeeAddress" class="address_book_1 add_address address input-box-font select-dropdown"
                                 data-type="employee">
                                 <option data-name="" value="">Select Address</option>
                                 @auth
@@ -271,6 +252,7 @@
                                 <option data-name="{{ $employee->name }}" data-address1="{{ $employee->address_1 }}"
                                     data-address2="{{ $employee->address_2 }}" data-city="{{ $employee->city }}"
                                     data-state="{{ $employee->state }}" data-zip="{{ $employee->zip_code }}"
+                                    data-emp_id="{{ $employee->emp_id }}" data-emp_ssn="{{ $employee->emp_ssn }}"
                                     value="{{ $employee->name }}">
                                     {{ $employee->name }}</option>
                                 @endforeach
@@ -341,7 +323,8 @@
                                     </label>
                                     <div class="dropdown ">
                                         {{-- <input type="hidden" name="emp_state" id="emp_state_0"> --}}
-                                        <select id="emp_state" name="emp_state" class=" dropdown11 removeDiv select-dropdown">
+                                        <select id="emp_state" name="emp_state"
+                                            class=" dropdown11 removeDiv select-dropdown">
                                             <div>
                                                 <option class="ff" style="color: #757575;" value="" data-tax="null">
                                                     Select State</option>
@@ -521,9 +504,9 @@
                                     <label for="pay_start" class="lable">PAY START<span class="redColor">*</span>
                                     </label>
                                     <input
-                                        style="color:#140303f5;border:1px solid #110303fe;padding:0px 6px !important; height:40px; appearance: none;"
+                                        style="color:#140303f5;border:1px solid #110303fe; !important;  appearance: none;"
                                         type="text" id="pay_start" name="pay_start" placeholder="12-11-2022"
-                                        class="w-100 p-2 input-box-font removeDiv pay_start datepicker inputdatepicker"
+                                        class="w-100 p-2 input-box-font removeDiv pay_start datepicker inputdatepicker input-box-font"
                                         data-id="pay_start" value="<?php echo date('mm/dd/yyyy'); ?>">
                                 </div>
                             </div>
@@ -532,10 +515,9 @@
                                 <div>
                                     <label for="pay_end" class="lable">PAY END <span class="redColor">*</span>
                                     </label>
-                                    <input
-                                        style="color:#140303f5;border:1px solid #110303fe; padding:0px 6px !important; height:40px; appearance: none;"
+                                    <input style="color:#140303f5;border:1px solid #110303fe;  appearance: none;"
                                         type="text" id="pay_end" name="pay_end" placeholder="12-17-2022"
-                                        class="w-100 p-2 input-box-font removeDiv pay_end datepicker inputdatepicker"
+                                        class="w-100 p-2 input-box-font removeDiv pay_end datepicker inputdatepicker input-box-font"
                                         data-id="pay_end"
                                         value="<?php echo date('mm/dd/yyyy', strtotime('+7 days')); ?>">
                                 </div>
@@ -545,10 +527,9 @@
                                 <div>
                                     <label for="pay_date" class="lable">PAY DATE <span class="redColor">*</span>
                                     </label>
-                                    <input
-                                        style="color:#140303f5;padding:0px 6px !important; height:40px; appearance: none; border:1px solid #110303fe;"
+                                    <input style="color:#140303f5; appearance: none; border:1px solid #110303fe;"
                                         type="text" id="pay_date" name="pay_date" placeholder="12-19-2022"
-                                        class="w-100 p-2 input-box-font removeDiv pay_date datepicker inputdatepicker"
+                                        class="w-100 p-2 input-box-font removeDiv pay_date datepicker inputdatepicker input-box-font"
                                         data-id="pay_date" value="<?php echo date('mm/dd/yyyy'); ?>">
                                 </div>
                             </div>
@@ -636,7 +617,7 @@
                         <div class="row mb-3">
                             <div class="col-xl-2 col-lg-3 col-md-4 mt-2 margin-bottom">
                                 <button type="button" class="add_button earnbtn" type="add_earning" id="add_earning"
-                                    style="font-size: 18px;"><i class="fa fa-plus-circle pr-2"
+                                    style="font-size: 18px"><i class="fa fa-plus-circle pr-2"
                                         style="font-size:24px;color:green"></i>Add
                                     Earning</button>
                             </div>
@@ -688,8 +669,8 @@
                         </div>
                         <div class="row my-3">
                             <div class="col-md-4 col-lg-3">
-                                <button type="button" class="add_deduction earnbtn"
-                                    style="font-size: 18px !important;"><i class="fa fa-plus-circle pr-lg-5 pr-2"
+                                <button type="button" class="add_deduction earnbtn" style="font-size: 18px;"><i
+                                        class="fa fa-plus-circle pr-lg-5 pr-2"
                                         style="font-size:24px;color:green"></i>Add Deduction</button>
                             </div>
                         </div>
@@ -745,7 +726,7 @@
                                                 class="redColor">*</span></p>
                                         <input type="text" name="co_number" id="co_number"
                                             class="earnbtn removeDiv text-center" maxlength="4" minlength="4"
-                                            placeholder="MP5">
+                                            style="text-transform:uppercase" placeholder="MP5">
                                     </div>
 
                                 </div>
@@ -781,7 +762,15 @@
                                     </div>
 
                                 </div>
-
+                                <div class="col-lg-2 col-md-4 col-sm-6 mb-2 advicex advicexv advicexvc d-none">
+                                    <div>
+                                        <p class="p-0 m-0 " style="font-family: serif;">Client Id<span
+                                                class="redColor">*</span> </p>
+                                        <input type="text" name="client_no" id="client_no"
+                                            class="earnbtn removeDiv text-center" placeholder="12345" maxlength="5"
+                                            onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+                                    </div>
+                                </div>
                                 <div class="col-lg-4 col-md-4 col-sm-6 mb-2 advicex">
                                     <div>
                                         <p class="p-0 m-0 " style="font-family: serif;">Advice Number:<span
@@ -813,7 +802,6 @@
                                             minlength="4"
                                             onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                     </div>
-
                                 </div>
                             </div>
                         </div>
@@ -889,6 +877,7 @@
                     var status = $('option:selected', '.at_id').attr('data-status');
                     var stub = $('option:selected', '.at_id').data('stub');
                     var check = $('option:selected', '.at_id').data('check');
+                    var client = $('option:selected', '.at_id').data('client');
                     if (stub == 1 && check == 0) {
                         $('.stubxc').each(function() {
                             $(".stubxc").removeClass("col-md-4");
@@ -918,19 +907,43 @@
                     if (status == 1) {
                         $(".tempElemant").removeClass("d-none");
                         var clock = $('option:selected', '.at_id').data('clock');
+                        var client = $('option:selected', '.at_id').data('client');
                         if (clock == 1) {
-                            $('.advicex').each(function() {
-                                $(".advicex").removeClass("col-lg-4 col-md-4 col-sm-6");
-                                $(".advicexv").removeClass("d-none");
-                                $(".advicex").addClass("col-lg-2 col-md-4 col-sm-6");
-                            });
-                        }
-                        if (clock == 0) {
-                            $('.advicex').each(function() {
-                                $(".advicex").addClass("col-lg-4 col-md-4 col-sm-6");
-                                $(".advicexv").addClass("d-none");
-                                $(".advicex").removeClass("col-lg-2 col-md-4 col-sm-6");
-                            });
+                            if (client == 1) {
+                                $('.advicex').each(function() {
+                                    $(".advicex").removeClass("col-lg-4 col-md-4 col-sm-6");
+                                    $(".advicexv").removeClass("d-none");
+                                    $(".advicexvc").removeClass("d-none");
+                                    $(".advicex").addClass("col-lg-2 col-md-4 col-sm-6");
+                                });
+                            } else {
+                                $('.advicex').each(function() {
+                                    $(".advicex").removeClass("col-lg-4 col-md-4 col-sm-6");
+                                    $(".advicexv").removeClass("d-none");
+                                    $(".advicexvc").addClass("d-none");
+                                    $(".advicex").addClass("col-lg-2 col-md-4 col-sm-6");
+                                });
+                            }
+
+                        } else {
+                            if (client == 1) {
+                                // alert('here');
+                                $('.advicex').each(function() {
+                                    $(".advicex").addClass("col-lg-3 col-md-3 col-sm-6");
+                                    $(".advicexv").addClass("d-none");
+                                    $(".advicexvc").removeClass("d-none");
+                                    $(".advicex").removeClass("col-lg-2 col-md-4 col-sm-6");
+                                    $(".advicex").removeClass("col-lg-4 col-md-4 col-sm-6");
+                                });
+                            } else {
+                                $('.advicex').each(function() {
+                                    $(".advicex").addClass("col-lg-4 col-md-4 col-sm-6");
+                                    $(".advicexv").addClass("d-none");
+                                    $(".advicexvc").addClass("d-none");
+                                    $(".advicex").removeClass("col-lg-2 col-md-4 col-sm-6");
+                                });
+                            }
+
                         }
 
                     } else {
