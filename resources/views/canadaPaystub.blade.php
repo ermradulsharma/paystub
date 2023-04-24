@@ -249,7 +249,7 @@
                                         <div>
                                             <label for="currency" class="lable" class="redColor">CURRENCY <span
                                                     class="redColor">*</span> </label>
-                                            <select name="currency" id="currency" class="dropdown11 removeDiv">
+                                            <select name="currency" id="currency" class="dropdown11 removeDiv select-dropdown">
                                                 @foreach ($currencies as $currency)
                                                     <option value="{{ $currency->symbol }}">{{ $currency->symbol }}
                                                         ({{ $currency->name }})
