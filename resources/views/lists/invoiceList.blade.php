@@ -171,7 +171,7 @@
 
                 </div>
                 <div class="table-responsive">
-                    <table class="table text-center" style="border:2px solid #FF6161 !important; background:#E8E6E6;">
+                    <table class="table text-center" style="border:2px solid #FF6161 !important;border-bottom:none !important; background:#E8E6E6;">
                         <thead>
                             <tr>
                                 <th class="text-center" style="padding: 1.5em .5em;border:none; text-transform:capitalize;">
@@ -192,7 +192,7 @@
                             </tr>
                         </thead>
 
-                        <tbody>
+                        <tbody style="border-bottom:2px solid #FF6161 !important;">
                             {{-- {{$invoiceList}} --}}
                             @if (count($invoiceList) > 0)
                                 @foreach ($invoiceList ?? [] as $key => $invoice)
@@ -208,11 +208,15 @@
                                             <th class="text-center" style="padding: 1.5em .5em;border:none;">
                                                 {{ $invoice->reference }}</th>
                                             <th class="text-center" style="padding: .9em .5em;border:none;">
-                                                <a class="btn btn-outline-dark py-2 downloiadBtn" href="{{ $invoice->pdf }}" download> Download <i class="fa fa-arrow-circle-down 2x" aria-hidden="true"></i></a>
+                                                <a class="btn btn-outline-dark py-2 downloiadBtn" href="{{ $invoice->pdf }}"
+                                                    download>
+                                                    Download <i class="fa fa-arrow-circle-down 2x"
+                                                        aria-hidden="true"></i></a>
                                             </th>
                                             <th class="text-center" style="padding: 1em .5em;border:none;">
                                                 <a href="{{ route('invoiceMailId', $invoice->id) }}">
-                                                    <img class="mail-logo" src="{{ asset('images/emaillogo.png') }}" alt="" width="45px" />
+                                                    <img class="mail-logo" src="{{ asset('images/emaillogo.png') }}"
+                                                        alt="" width="45px" />
                                                 </a>
                                             </th>
                                             <th class="text-center" style="padding: 1em .5em;border:none;">
