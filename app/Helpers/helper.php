@@ -55,11 +55,11 @@ function deleteImage($module, $id, $path = null)
     return "success";
 }
 
-function invoiceMail($user_id)
+function invoiceMail($user_id, $type)
 {
     $paySlipObj = PaySlip::where(['user_id' => $user_id])->exists();
     if ($paySlipObj) {
-        $invoice = PaySlip::where(['user_id' => $user_id])->orderBy('id', 'desc')->first();
+        $invoice = PaySlip::where(['user_id' => $user_id, 'type'=>$type])->orderBy('id', 'desc')->first();
         if ($invoice->id != null) {
             $invoice = $invoice->where('id', $invoice->id);
         }

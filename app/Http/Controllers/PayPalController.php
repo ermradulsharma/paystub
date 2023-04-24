@@ -125,7 +125,7 @@ class PayPalController extends Controller
                     $userObj = User::find(Auth::user()->id);
                     $userObj->expiryDate = $subcriptionObj->expiry_date;
                     if ($userObj->save()) {
-                        $invoice = invoiceMail(Auth::user()->id);
+                        $invoice = invoiceMail(Auth::user()->id, $xolode[1]);
                     }
                 }
                 if ($invoice == 'success') {

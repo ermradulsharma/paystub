@@ -135,7 +135,7 @@ class TemplateFormController extends Controller
             }
             $invoice->delete();
         }
- 
+
         return redirect()->back()->with('message', 'Invoice has been deleted successfully.');
     }
 
@@ -146,12 +146,12 @@ class TemplateFormController extends Controller
         return redirect(route('welcome'))->with('message', 'Mail has been sent successfully.');
     }
 
-    public function invoiceMail($id = null)
+    public function invoiceMail(Request $request, $id = null)
     {
 
         $paySlipObj = PaySlip::where(['user_id' => Auth::user()->id])->exists();
         if ($paySlipObj) {
-            $invoice = PaySlip::where(['user_id' => Auth::user()->id]);
+            $invoice = PaySlip::where(['user_id' => Auth::user()->id, 'type' => $request->type]);
             if ($id != null) {
                 $invoice = $invoice->where('id', $id);
             }
