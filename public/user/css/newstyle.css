@@ -3445,6 +3445,9 @@ img.earnbtn2.lockuk {
         width: 100%;
         max-width: 180px;
     }
+    ul.dropdown-menu.show li a {
+        font-size: 15px;
+    }
     .salary_btn{
         width: 100%;
         max-width: 180px;
@@ -4884,10 +4887,10 @@ img.earnbtn2.lockuk {
 
 }
 .address_book {
-    width: 85% !important;
+    width: 84.3% !important;
 }
 .address_book_1 {
-    width: 85% !important;
+    width: 84.3% !important;
 }
 
 
