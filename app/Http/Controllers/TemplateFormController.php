@@ -148,10 +148,13 @@ class TemplateFormController extends Controller
 
     public function invoiceMail(Request $request, $id = null)
     {
-
         $paySlipObj = PaySlip::where(['user_id' => Auth::user()->id])->exists();
         if ($paySlipObj) {
-            $invoice = PaySlip::where(['user_id' => Auth::user()->id, 'type' => $request->type]);
+
+            $invoice = PaySlip::where(['user_id' => Auth::user()->id]);
+            if ($request->type != '') {
+                $invoice = $invoice->where('type', $request->type);
+            }
             if ($id != null) {
                 $invoice = $invoice->where('id', $id);
             }
