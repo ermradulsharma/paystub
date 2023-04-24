@@ -3420,6 +3420,10 @@ img.earnbtn2.lockuk {
 }
 
 @media  (max-width: 425px) {
+    .select-dropdown {
+        color: #000;
+        text-align: left !important;
+    }
     .storehead a img {
         margin-left: 0px !important;
     }
@@ -3432,9 +3436,6 @@ img.earnbtn2.lockuk {
         padding: 6px !important;
         text-align: left !important;
 
-    }
-     .select-dropdown{
-        text-align: left !important;
     }
     select {
 
