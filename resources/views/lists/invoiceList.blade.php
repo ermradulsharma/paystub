@@ -193,7 +193,7 @@
                         </thead>
 
                         <tbody>
-                            {{-- {{$invoiceList}} --}}
+                            {{-- {{ $invoiceList }} --}}
                             @if (count($invoiceList) > 0)
                                 @foreach ($invoiceList ?? [] as $key => $invoice)
                                     @if ($invoice->type != 'w2form')
@@ -208,8 +208,8 @@
                                             <th class="text-center" style="padding: 1.5em .5em;border:none;">
                                                 {{ $invoice->reference }}</th>
                                             <th class="text-center" style="padding: .9em .5em;border:none;">
-                                                <a class="btn btn-outline-dark py-2 downloiadBtn" href="{{ $invoice->pdf }}"
-                                                    download>
+                                                <a class="btn btn-outline-dark py-2 downloiadBtn"
+                                                    href="{{ $invoice->pdf }}" download>
                                                     Download <i class="fa fa-arrow-circle-down 2x"
                                                         aria-hidden="true"></i></a>
                                             </th>
