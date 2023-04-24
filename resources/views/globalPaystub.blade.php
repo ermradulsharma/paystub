@@ -153,7 +153,7 @@
                                     </label>
                                     {{-- <input type="hidden" name="state" id="state_0"> --}}
                                     <div class="dropdown ">
-                                        <select id="state" name="state" class="state dropdown11 removeDiv">
+                                        <select id="state" name="state" class="state dropdown11 removeDiv select-dropdown">
                                             <option value="">Select State</option>
                                             @foreach ($stateTaxes as $stateTax)
                                             <option value="{{ $stateTax->state_code }}">{{ $stateTax->state }}

@@ -386,7 +386,7 @@
                                             class="redColor">*</span> </label>
                                     <div class="dropdown ">
                                         <select name="emp_your_state" id="emp_your_state"
-                                            class=" dropdown11 tax_rate removeDiv">
+                                            class=" dropdown11 tax_rate removeDiv select-dropdown">
                                             {{-- <option value="">Choose your State</option> --}}
                                             @foreach ($stateTaxes as $stateTax)
                                             <option value="{{ $stateTax->state_code }}"
@@ -401,7 +401,7 @@
                                 <div>
                                     <label for="auto_cal" class="lable">AUTO CALCULATOR <span class="redColor">*</span>
                                     </label>
-                                    <select name="auto_cal" id="auto_cal" class="dropdown11 auto_calculate removeDiv">
+                                    <select name="auto_cal" id="auto_cal" class="dropdown11 auto_calculate removeDiv select-dropdown">
                                         {{-- <option value=""> --- Select Calculator --- </option> --}}
                                         <option value="on">ON</option>
                                         <option value="off">OFF</option>
@@ -413,7 +413,7 @@
                                     <label for="marital_status" class="lable">MARITAL STATUS <span
                                             class="redColor">*</span> </label>
                                     <select name="marital_status" id="marital_status"
-                                        class="dropdown11 marital_status removeDiv">
+                                        class="dropdown11 marital_status removeDiv select-dropdown">
                                         {{-- <option value=""> --- Select Marital Status--- </option> --}}
                                         <option value="single">Single</option>
                                         <option value="married">Married</option>
@@ -426,7 +426,7 @@
                                     <label for="time_period" class="lable">HOW DO YOU GET PAID <span
                                             class="redColor">*</span> </label>
                                     <select name="time_period" id="time_period"
-                                        class="dropdown11 time_period removeDiv">
+                                        class="dropdown11 time_period removeDiv select-dropdown">
                                         {{-- <option value=""> --- Select --- </option> --}}
                                         <option value="weekly">Weekly</option>
                                         <option value="bi-weekly">Bi-Weekly</option>
@@ -448,7 +448,7 @@
                             <div class="col-md-3 mt-4">
                                 <div>
                                     <label for="emp_type" class="lable">EMPLOYMENT TYPE </label>
-                                    <select name="emp_type" id="emp_type" class="dropdown11 removeDiv">
+                                    <select name="emp_type" id="emp_type" class="dropdown11 removeDiv select-dropdown">
                                         {{-- <option value=""> --- Select Employment Type --- </option> --}}
                                         <option value="Temporary">Temporary</option>
                                         <option value="Permanent">Permanent</option>
@@ -459,7 +459,7 @@
                                 <div>
                                     <label for="exemptions" class="lable">EXEMPTIONS
                                     </label>
-                                    <select name="exemptions" id="exemptions" class="dropdown11 exemptions removeDiv">
+                                    <select name="exemptions" id="exemptions" class="dropdown11 exemptions removeDiv select-dropdown">
                                         {{-- <option value=""> --- Select Exemptions --- </option> --}}
                                         <option value="0">0</option>
                                         <option value="1">1</option>
