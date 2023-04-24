@@ -171,7 +171,7 @@
 
                 </div>
                 <div class="table-responsive">
-                    <table class="table text-center" style="border:2px solid #FF6161 !important;border-bottom:none !important; background:#E8E6E6;">
+                    <table class="table text-center" style="border:2px solid #FF6161 !important; background:#E8E6E6;">
                         <thead>
                             <tr>
                                 <th class="text-center" style="padding: 1.5em .5em;border:none; text-transform:capitalize;">
@@ -192,7 +192,7 @@
                             </tr>
                         </thead>
 
-                        <tbody style="border-bottom:2px solid #FF6161 !important;">
+                        <tbody>
                             {{-- {{$invoiceList}} --}}
                             @if (count($invoiceList) > 0)
                                 @foreach ($invoiceList ?? [] as $key => $invoice)
@@ -208,8 +208,8 @@
                                             <th class="text-center" style="padding: 1.5em .5em;border:none;">
                                                 {{ $invoice->reference }}</th>
                                             <th class="text-center" style="padding: .9em .5em;border:none;">
-                                                <a class="btn btn-outline-dark py-2 downloiadBtn"
-                                                    href="{{ $invoice->pdf }}" download>
+                                                <a class="btn btn-outline-dark py-2 downloiadBtn" href="{{ $invoice->pdf }}"
+                                                    download>
                                                     Download <i class="fa fa-arrow-circle-down 2x"
                                                         aria-hidden="true"></i></a>
                                             </th>
@@ -252,7 +252,7 @@
                         </tbody>
                     </table>
                     <div class="w-100" style="text-align: right;">
-                        <a href="@if (isset($membership)) {{ $membership == 0 ? route('prizing') : route('invoiceMail') }} @else {{ route('prizing') }} @endif"
+                        <a href="@if (isset($membership)) {{ $membership == 0 ? route('prizing', request()->query()) : route('invoiceMail') }} @else {{ route('prizing') }} @endif"
                             class="user-checkbtn" data-count="{{ count($invoiceList) }}"><b>Continue to Checkout</b></a>
                         <h6 class="mt-3 font-weight-bold">Click on Continue, to complete your order</h6>
                     </div>

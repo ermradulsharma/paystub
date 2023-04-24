@@ -128,8 +128,10 @@
 @section('script')
     <script>
         $('.suscription').click(function() {
+            var type = "{{ request()->get('type') }}";
+            console.log('type', type);
             var planId = $(this).data('plan');
-            window.location.href = "{{ route('processTransaction') }}?plan=" + planId;
+            window.location.href = "{{ route('processTransaction') }}?plan=" + planId +"&type=" + type;
             return false;
         });
     </script>

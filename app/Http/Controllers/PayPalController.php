@@ -47,13 +47,14 @@ class PayPalController extends Controller
             if (!$planDetail) {
                 redirect()->route('prizing')->with('error', 'Please choose plan.');
             }
+            $req = $request->plan.'&'.$request->type;
             $provider = new PayPalClient;
             $provider->setApiCredentials(config('paypal'));
             $paypalToken = $provider->getAccessToken();
             $response = $provider->createOrder([
                 "intent" => "CAPTURE",
                 "application_context" => [
-                    "return_url" => route('successTransaction', $request->plan, $request->type),
+                    "return_url" => route('successTransaction', $req),
                     "cancel_url" => route('cancelTransaction'),
                 ],
                 "purchase_units" => [
@@ -86,24 +87,29 @@ class PayPalController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function successTransaction(Request $request, $planId, $type)
+    public function successTransaction(Request $request, $details)
     {
+
+
+
+        // return $xolode;
         try {
             $provider = new PayPalClient;
             $provider->setApiCredentials(config('paypal'));
             $provider->getAccessToken();
             $response = $provider->capturePaymentOrder($request['token']);
-
+            // return $response;
             if (isset($response['status']) && $response['status'] == 'COMPLETED') {
-                $planDetail = Plan::find($planId);
-                $countryObj = PaySlip::where('user_id', Auth::user()->id)->orderBy('id', 'desc')->first();
-                $subcriptionObj = Subcription::where(['plan_id' => $planId, 'country' => $type  ])->where('expiry_date', '>', Carbon::now())->first();
+                $xolode= explode('&',$details);
+                $planDetail = Plan::find($xolode[0]);
+                // $countryObj = PaySlip::where('user_id', Auth::user()->id)->orderBy('id', 'desc')->first();
+                $subcriptionObj = Subcription::where(['plan_id' => $xolode[0], 'country' => $xolode[1]])->where('expiry_date', '<', Carbon::now())->first();
                 if (!$subcriptionObj) {
                     $subcriptionObj = new Subcription;
+                    $subcriptionObj->user_id = Auth::user()->id;
                 }
-                $subcriptionObj->user_id = Auth::user()->id;
                 $subcriptionObj->plan_id = $planDetail->id;
-                $subcriptionObj->country = $countryObj->type;
+                $subcriptionObj->country = $xolode[1];
                 $subcriptionObj->transaction_id = $response['id'];
                 $subcriptionObj->start_date = Carbon::now();
                 if ($planDetail->plan_duration == '24') {
