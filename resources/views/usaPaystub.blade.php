@@ -28,6 +28,12 @@
     #basic_temp {
         text-align: -webkit-center !important;
     }
+
+
+
+    select option[value=""]{
+        color: red;
+    }
 </style>
 <link rel="stylesheet" href="{{ asset('user') }}/css/bootstrap-datepicker.min.css">
 <!-- Modal Start -->
@@ -154,7 +160,7 @@
                                     <div class="dropdown ">
                                         <select id="state" name="state"
                                             class="state dropdown11 removeDiv select-dropdown">
-                                            <option value=""> Select State </option>
+                                            <option value="" selected> Select State </option>
                                             @foreach ($stateTaxes as $stateTax)
                                             <option value="{{ $stateTax->state_code }}">{{ $stateTax->state }}
                                             </option>
@@ -832,6 +838,13 @@
 @section('script')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" crossorigin="anonymous"></script>
 <script>
+    $(document).ready(function() {
+        $('select').on 'change', ->
+	if $(this).val()
+    $(this).css('color', 'black')
+  else
+     $(this).css('color', 'red')
+});
     $(document).ready(function() {
 
             $('.add_address').change(function() {

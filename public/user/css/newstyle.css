@@ -3825,7 +3825,7 @@ img.earnbtn2.lockuk {
         padding: 10px;
     }
     button.previewbtn.mobile-logout-btn {
-        max-width: 100px;
+        max-width: 100px !important;
     }
     button.previewbtn.mt-4.px-3.mobile-login-btn {
         max-width: 100px !important;
@@ -4878,7 +4878,7 @@ img.earnbtn2.lockuk {
     }
     .direction-left {
 
-        padding: 0px 50px !important;
+        padding: 0px 43px !important;
 
     }
     .direction-left-canada {
@@ -5031,6 +5031,9 @@ img.earnbtn2.lockuk {
     }
     .address_book_1 {
         width: 83% !important;
+    }
+    input.contact-box{
+        width: 89%;
     }
     /* .select-dropdown{
         padding: 6px 70px !important;

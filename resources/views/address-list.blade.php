@@ -21,10 +21,8 @@
             @if($empType == 'employer')
                 <th scope="col">Telephone</th>
             @endif
-            {{-- @if($empType == 'employee')
-                <th scope="col">Telephone</th>
-                <th scope="col">Telephone</th>
-            @endif --}}
+            <th></th>
+            <th></th>
         </tr>
     </thead>
     <tbody>

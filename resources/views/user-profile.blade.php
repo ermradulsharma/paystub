@@ -234,7 +234,7 @@
                             aria-controls="v-pills-profile" aria-selected="false">Address Book</a>
                     </div>
                 </div>
-                <div class="col-lg-10" style="padding: 0px 5px;">
+                <div class="col-lg-10" style="padding: 0px 3px;">
                     <div class="tab-content" style="padding-top: 20px;" id="v-pills-tabContent">
                         <div class="tab-pane fade {{ Request::get('tab') != 2 ? 'show active' : '' }}" id="v-pills-home"
                             role="tabpanel" aria-labelledby="v-pills-home-tab">
@@ -356,7 +356,7 @@
                                 <div class="address-tab tab-pane fade {{ Request::get('emp') != 2 ? 'show active' : '' }}"
                                     id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
                                     <div id="employerTab">
-                                        <table class="table" style="border:1px solid #ddd; background-color:red;">
+                                        <table class="table" style="border:1px solid #ddd;">
                                             <thead>
                                                 <tr>
                                                     <th scope="col">#</th>
