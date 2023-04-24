@@ -171,7 +171,8 @@
 
                 </div>
                 <div class="table-responsive">
-                    <table class="table text-center" style="border:2px solid #FF6161 !important;border-bottom:none !important; background:#E8E6E6;">
+                    <table class="table text-center"
+                        style="border:2px solid #FF6161 !important;border-bottom:none !important; background:#E8E6E6;">
                         <thead>
                             <tr>
                                 <th class="text-center" style="padding: 1.5em .5em;border:none; text-transform:capitalize;">
@@ -201,20 +202,27 @@
                                             @php($membership = $invoice->membership ?? 0)
                                         @endif
                                         <tr>
-                                            <th class="text-center" style="padding: 1.5em .5em;border:none;"> {{ date('m-d-Y', strtotime($invoice->created_at)) }} </th>
-                                            <th class="text-center" style="padding: 1.5em .5em;border:none;"> {{ $invoice->title }}</th>
-                                            <th class="text-center" style="padding: 1.5em .5em;border:none;"> {{ $invoice->reference }}</th>
+                                            <th class="text-center" style="padding: 1.5em .5em;border:none;">
+                                                {{ date('m-d-Y', strtotime($invoice->created_at)) }} </th>
+                                            <th class="text-center" style="padding: 1.5em .5em;border:none;">
+                                                {{ $invoice->title }}</th>
+                                            <th class="text-center" style="padding: 1.5em .5em;border:none;">
+                                                {{ $invoice->reference }}</th>
                                             <th class="text-center" style="padding: .9em .5em;border:none;">
-                                                <a class="btn btn-outline-dark py-2 downloiadBtn" href="{{ $invoice->pdf }}" download>  Download <i class="fa fa-arrow-circle-down 2x" aria-hidden="true"></i></a>
+                                                <a class="btn btn-outline-dark py-2 downloiadBtn" href="{{ $invoice->pdf }}"
+                                                    download> Download <i class="fa fa-arrow-circle-down 2x"
+                                                        aria-hidden="true"></i></a>
                                             </th>
                                             <th class="text-center" style="padding: 1em .5em;border:none;">
                                                 <a href="{{ route('invoiceMailId', $invoice->id) }}">
-                                                    <img class="mail-logo" src="{{ asset('images/emaillogo.png') }}" alt="" width="45px" />
+                                                    <img class="mail-logo" src="{{ asset('images/emaillogo.png') }}"
+                                                        alt="" width="45px" />
                                                 </a>
                                             </th>
                                             <th class="text-center" style="padding: 1em .5em;border:none;">
                                                 <a href="{{ route('invoiceEdit', $invoice->id) }}">
-                                                    <img class="mail-logo" src="{{ asset('images/edit-icon.png') }}" alt="" width="45px" />
+                                                    <img class="mail-logo" src="{{ asset('images/edit-icon.png') }}"
+                                                        alt="" width="45px" />
                                                 </a>
                                             </th>
                                             <th class="text-center" style="padding: 1em .5em; border:none;">
@@ -224,7 +232,8 @@
                                             </th>
                                             <th class="text-center" style="padding: 1em .5em;border:none;">
                                                 <a href="javascript:void(0);" class="previewbtnInvoice text-capitalize"
-                                                    data-pdf="{{ $invoice->pdf }}">Preview Your Paystub &nbsp;<i class="fa fa-eye"></i>
+                                                    data-pdf="{{ $invoice->pdf }}">Preview Your Paystub &nbsp;<i
+                                                        class="fa fa-eye"></i>
                                                 </a>
                                             </th>
                                         </tr>
@@ -234,7 +243,7 @@
                         </tbody>
                     </table>
                     <div class="w-100" style="text-align: right;">
-                        <a href="@if (isset($membership)) {{ $membership == 0 ? route('prizing', request()->query()) : route('invoiceMail', request()->query()) }} @else {{ route('prizing', request()->query()) }} @endif"
+                        <a href="@if (isset($membership)) {{ $membership == 0 ? route('prizing', request()->query()) : route('invoiceMail', request()->query()) }} @else {{ route('prizing') }} @endif"
                             class="user-checkbtn" data-count="{{ count($invoiceList) }}"><b>Continue to Checkout</b></a>
                         <h6 class="mt-3 font-weight-bold">Click on Continue, to complete your order</h6>
                     </div>
