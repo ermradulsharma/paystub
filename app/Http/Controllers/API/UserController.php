@@ -677,14 +677,19 @@ class UserController extends Controller
             $addressObj->user_id    = Auth::user()->id;
             $addressObj->type       = $requestData['type'];
             $addressObj->name       = $requestData['name'];
-            $addressObj->tel        = $requestData['tel'] ?? '';
+            if($requestData['type'] == 'employer'){
+                $addressObj->tel        = $requestData['tel'] ?? '';
+            }
             $addressObj->address_1  = $requestData['address_1'];
             $addressObj->address_2  = $requestData['address_2'] ?? '';
             $addressObj->city       = $requestData['city'];
             $addressObj->state      = $requestData['state'];
             $addressObj->zip_code   = $requestData['zip_code'];
-            $addressObj->emp_id   = $requestData['emp_id'];
-            $addressObj->emp_ssn   = $requestData['emp_ssn'];
+            if($requestData['type'] == 'employee'){
+                $addressObj->emp_id   = $requestData['emp_id'] ?? '';
+                $addressObj->emp_ssn   = $requestData['emp_ssn'] ?? '';
+            }
+
             if ($addressObj->save()) {
                 $response['success'] = TRUE;
                 $response['message'] = "Address saved successfully";
@@ -741,14 +746,18 @@ class UserController extends Controller
             $addressObj->user_id    = Auth::user()->id;
             $addressObj->type       = $requestData['type'];
             $addressObj->name       = $requestData['name'];
-            $addressObj->tel        = $requestData['tel'] ?? '';
+            if($requestData['type'] == 'employer'){
+                $addressObj->tel        = $requestData['tel'] ?? '';
+            }
             $addressObj->address_1  = $requestData['address_1'];
             $addressObj->address_2  = $requestData['address_2'] ?? '';
             $addressObj->city       = $requestData['city'];
             $addressObj->state      = $requestData['state'];
             $addressObj->zip_code   = $requestData['zip_code'];
-            $addressObj->emp_id   = $requestData['emp_id'];
-            $addressObj->emp_ssn   = $requestData['emp_ssn'];
+            if($requestData['type'] == 'employee'){
+                $addressObj->emp_id   = $requestData['emp_id'] ?? '';
+                $addressObj->emp_ssn   = $requestData['emp_ssn'] ?? '';
+            }
             if ($addressObj->save()) {
                 $response['success'] = TRUE;
                 $response['message'] = "Address updated successfully";
