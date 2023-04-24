@@ -3430,10 +3430,11 @@ img.earnbtn2.lockuk {
 
     .dropdown11 {
         padding: 6px !important;
+        text-align: left !important;
 
     }
      .select-dropdown{
-        padding: 6px 110px !important;
+        text-align: left !important;
     }
     select {
 
@@ -3443,6 +3444,9 @@ img.earnbtn2.lockuk {
     .hour_btn{
         width: 100%;
         max-width: 180px;
+    }
+    ul.dropdown-menu.show li a {
+        font-size: 15px;
     }
     .salary_btn{
         width: 100%;
@@ -4320,6 +4324,9 @@ img.earnbtn2.lockuk {
         top: -8px;
         left: 77px;
     }
+    .col-md-6.border-right-line {
+        border-right: none !important;
+    }
 
     .earnbtn {
         border-radius: 0px  !important;
@@ -4388,22 +4395,18 @@ img.earnbtn2.lockuk {
 
     .address_book {
         width: 87% !important;
-        padding: 6px 110px !important;
         top: 0px !important;
         font-size: 12px !important;
         border-radius: 0;
-        text-align: center !important;
+        text-align: left !important;
 
     }
 
     .address_book_1 {
         width: 87% !important;
-        padding: 6px 110px !important;
-        position: relative;
-        left: 10px;
         top: 0px !important;
         font-size: 12px !important;
-        text-align: center !important;
+        text-align: left !important;
     }
     .ukbtn1 {
         display: flex;
@@ -4884,16 +4887,12 @@ img.earnbtn2.lockuk {
 
 }
 .address_book {
-    width: 85% !important;
-    padding: 6px 90px !important;
+    width: 84.3% !important;
 }
 .address_book_1 {
-    width: 85% !important;
-    padding: 6px 90px !important;
+    width: 84.3% !important;
 }
-.select-dropdown{
-    padding: 6px 90px !important;
-}
+
 
 }
 
@@ -5029,14 +5028,12 @@ img.earnbtn2.lockuk {
     }
     .address_book {
         width: 83% !important;
-        padding: 6px 70px !important;
     }
     .address_book_1 {
         width: 83% !important;
-        padding: 6px 70px !important;
     }
-    .select-dropdown{
+    /* .select-dropdown{
         padding: 6px 70px !important;
-    }
+    } */
 
 }

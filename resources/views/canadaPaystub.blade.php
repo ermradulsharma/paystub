@@ -152,7 +152,7 @@
                                             <div class="dropdown ">
                                                 <select name="state" id="state"
                                                     class="state dropdown11 tax_rate removeDiv select-dropdown">
-                                                    <option value=""> --- Select State --- </option>
+                                                    <option value="">Select State</option>
                                                     @foreach ($stateTaxes as $stateTax)
                                                         <option value="{{ $stateTax->state }}"
                                                             data-tax="{{ $stateTax->rate }}">{{ $stateTax->state }}

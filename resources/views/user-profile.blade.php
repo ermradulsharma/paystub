@@ -156,6 +156,7 @@
 
         .table thead th {
             text-transform: capitalize;
+            border-bottom: none !important;
         }
 
         .table td {
@@ -355,7 +356,7 @@
                                 <div class="address-tab tab-pane fade {{ Request::get('emp') != 2 ? 'show active' : '' }}"
                                     id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
                                     <div id="employerTab">
-                                        <table class="table" style="border:1px solid #ddd;">
+                                        <table class="table" style="border:1px solid #ddd; background-color:red;">
                                             <thead>
                                                 <tr>
                                                     <th scope="col">#</th>
