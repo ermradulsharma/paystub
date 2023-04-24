@@ -50,6 +50,9 @@
         .flex-row-invoice {
             flex-direction: row-reverse
         }
+        table{
+            border-collapse: separate !important;
+        }
 
         @media(max-width:768px) {
             table th {
@@ -172,7 +175,7 @@
                 </div>
                 <div class="table-responsive">
                     <table class="table text-center"
-                        style="border:2px solid #FF6161 !important;border-bottom:none !important; background:#E8E6E6;">
+                        style="border:2px solid #FF6161 !important; background:#E8E6E6;">
                         <thead>
                             <tr>
                                 <th class="text-center" style="padding: 1.5em .5em;border:none; text-transform:capitalize;">
@@ -193,7 +196,7 @@
                             </tr>
                         </thead>
 
-                        <tbody style="border-bottom:2px solid #FF6161 !important;">
+                        <tbody style="">
                             {{-- {{$invoiceList}} --}}
                             @if (count($invoiceList) > 0)
                                 @foreach ($invoiceList ?? [] as $key => $invoice)
