@@ -154,7 +154,7 @@
                                                     class="state dropdown11 tax_rate removeDiv select-dropdown">
                                                     <option value="">Select State</option>
                                                     @foreach ($stateTaxes as $stateTax)
-                                                        <option value="{{ $stateTax->state }}"
+                                                        <option value="{{ $stateTax->state_code }}"
                                                             data-tax="{{ $stateTax->rate }}">{{ $stateTax->state }}
                                                         </option>
                                                     @endforeach
@@ -471,11 +471,11 @@
                         for (var i = 0; i < near_place.address_components.length; i++) {
                             for (var j = 0; j < near_place.address_components[i].types.length; j++) {
                                 obj[near_place.address_components[i].types[j]] = near_place.address_components[
-                                    i].long_name;
-                                if (near_place.address_components[i].types['0'] ==
-                                    'administrative_area_level_1') {
-                                    $('#state').val(near_place.address_components[i].short_name);
-                                }
+                                    i].short_name;
+                                // if (near_place.address_components[i].types['0'] ==
+                                //     'administrative_area_level_1') {
+                                //     $('#state').val(near_place.address_components[i].short_name);
+                                // }
                             }
                         }
                         setLocation(obj);
