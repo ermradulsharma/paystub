@@ -129,9 +129,14 @@
     <script>
         $('.suscription').click(function() {
             var type = "{{ request()->get('type') }}";
-            console.log('type', type);
+            var sub = "{{ request()->get('id') }}";
             var planId = $(this).data('plan');
-            window.location.href = "{{ route('processTransaction') }}?plan=" + planId +"&type=" + type;
+            if (type != '') {
+                window.location.href = "{{ route('processTransaction') }}?plan=" + planId + "&type=" + type;
+            }
+            if (sub != '') {
+                window.location.href = "{{ route('processTransaction') }}?plan=" + planId + "&id=" + sub;
+            }
             return false;
         });
     </script>

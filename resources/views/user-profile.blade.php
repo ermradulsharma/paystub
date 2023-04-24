@@ -312,21 +312,24 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 member-plan">
-                                    {{-- {{ $subcriptionData }} --}}
                                     @if (!empty($subcriptionData))
-                                        @if (count($subcriptionData) > 0)
-                                            <h4>{{ __('Premium Member Plan') }}</h4>
-                                            @foreach ($subcriptionData as $subcription)
-                                                @if ($subcription->expiry_date > \Carbon\Carbon::now())
-                                                    <p>{{ $subcription->plan->name ?? '' }} {{ __('until') }} {{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $subcription->expiry_date)->format('m/d/Y') }}<span style="text-transform: uppercase;">({{ $subcription->country }})</span></p>
+                                        <h4>{{ __('Premium Member Plan') }}</h4>
+                                        @foreach ($subcriptionData as $subcription)
+                                            @if ($subcription->expiry_date > \Carbon\Carbon::now())
+                                                <p>{{ $subcription->plan->name ?? '' }} {{ __('until') }}
+                                                    {{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $subcription->expiry_date)->format('m/d/Y') }}<span style="text-transform: uppercase;">({{ $subcription->country }})</span>
+                                                </p>
+                                            @endif
+                                        @endforeach
+
+                                        @foreach ($subcriptionData as $subcription)
+                                            @if ($subcription->expiry_date < \Carbon\Carbon::now())
+                                                @if ($loop->last)
+                                                    <p>{{ __('Plan expired') }}</p>
+                                                    <a class="renew-btn renewBtn" href="{{ route('prizing', ['id' => $subcription->id]) }}" type="btn">{{ __('RENEW') }}</a>
                                                 @endif
-                                            @endforeach
-                                        @else
-                                            <h4>{{ __('Premium Member Plan') }}</h4>
-                                            <p>{{ __('Plan expired') }}</p>
-                                            <a class="renew-btn renewBtn" href="{{ route('prizing') }}" type="btn">{{ __('RENEW') }}</a>
-                                            {{-- <button class="renew-btn">{{ __('RENEW') }}</button> --}}
-                                        @endif
+                                            @endif
+                                        @endforeach
                                     @endif
                                 </div>
                             </div>
@@ -342,7 +345,7 @@
                                 <li class="nav-item">
                                     <a class="nav-link address-b {{ Request::get('emp') == 2 ? 'active' : '' }}"
                                         id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab"
-                                        aria-controls="pills-profile" aria-selected="false">EMPLOYEE</a>
+                                        aria-controls="pills-profile" aria-selected="false">{{ __('EMPLOYEE') }}</a>
                                 </li>
                                 <button class="add-btn addressBook" id="addNewAddress"
                                     data-emptype="{{ Request::get('emp') == 2 ? 'employee' : 'employer' }}">Add New
@@ -530,14 +533,18 @@
                                             <label for="tel" style="font-weight:bold;" id="emp_id_title"
                                                 class="col-sm-12 control-label">EMPLOYEE ID</label>
                                             <div class="col-sm-12">
-                                                <input type="text" id="emp_id" name="emp_id" placeholder="12345" maxlength="5" minlength="5" class="w-100 p-2 text-center input-box-font third-phone">
+                                                <input type="text" id="emp_id" name="emp_id" placeholder="12345"
+                                                    maxlength="5" minlength="5"
+                                                    class="w-100 p-2 text-center input-box-font third-phone">
                                             </div>
                                         </div>
                                         <div class="form-group ">
                                             <label for="tel" style="font-weight:bold;" id="emp_ssn_title"
                                                 class="col-sm-12 control-label">EMPLOYEE SSN Last 4</label>
                                             <div class="col-sm-12">
-                                                <input type="text" id="emp_ssn" name="emp_ssn" placeholder="1234" maxlength="4" minlength="4" class="w-100 p-2 text-center input-box-font third-phone">
+                                                <input type="text" id="emp_ssn" name="emp_ssn" placeholder="1234"
+                                                    maxlength="4" minlength="4"
+                                                    class="w-100 p-2 text-center input-box-font third-phone">
                                             </div>
                                         </div>
 
