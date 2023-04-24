@@ -137,6 +137,6 @@ Route::group(['middleware' => ['auth'], 'namespace' => 'App\Http\Controllers'], 
 
 Route::get('create-transaction', [PayPalController::class, 'createTransaction'])->name('createTransaction');
 Route::get('process-transaction', [PayPalController::class, 'processTransaction'])->name('processTransaction');
-Route::get('success-transaction/{planId}', [PayPalController::class, 'successTransaction'])->name('successTransaction');
+Route::get('success-transaction/{details}', [PayPalController::class, 'successTransaction'])->name('successTransaction');
 Route::get('cancel-transaction', [PayPalController::class, 'cancelTransaction'])->name('cancelTransaction');
 Route::get('check/test', [TemplateFormController::class, 'deleteExtraPdf'])->name('check.test');
