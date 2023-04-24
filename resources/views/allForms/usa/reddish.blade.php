@@ -206,11 +206,8 @@
                 <table>
                     <tr>
                         <td style="width: 40%;">
-                            <p style="font-size:14px;font-weight:400; font-family: 'Arial', sans-serif;">SSN: XXX-XX-{{
-                                $requestData['emp_ssn'] }}</p>
-                            <p
-                                style="padding: 0; margin:0;font-weight:400; font-size:14px; font-family: 'Arial', sans-serif;">
-                                Stub No: {{ $requestData['stub_no'] }}</p>
+                            <p style="font-size:14px;font-weight:400; font-family: 'Arial', sans-serif;">SSN: XXX-XX-{{ $requestData['emp_ssn'] }}</p>
+                            <p style="padding: 0; margin:0;font-weight:400; font-size:14px; font-family: 'Arial', sans-serif;"> Stub No: {{ $requestData['stub_no'] }}</p>
                         </td>
                         <td class="earning"
                         style="width: 60%;font-weight:400 !important;padding-bottom:0px !important; padding-top:0px !important; margin:0px; font-size:16px; font-family: Arial, Helvetica, sans-serif; color:#f7f0f9;text-transform:capitalize; ">

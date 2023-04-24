@@ -250,13 +250,11 @@
         @guest
             <div class="watermark"></div>
             <div class="watermark2"></div>
-            @endguest
         @endguest
         @auth
             @if (Auth::user()->expiryDate == '' || !isset($requestData['watermark']))
                 <div class="watermark"></div>
                 <div class="watermark2"></div>
-                @endguest
             @endif
         @endauth
         <section class="invoiceborder">
@@ -269,16 +267,9 @@
                     <th></th>
                 </tr>
                 <tr>
-                    <td class="address"
-                        style="text-transform:none;  color:#000;letter-spacing:-0.5px;text-transform:capitalize;">
-                        <p
-                            style="padding: 0; margin:0; font-size:30px;font-family: Arial, Helvetica, sans-serif; font-weight:400;">
-                            {{ $requestData['cname'] }}</p>
-
-                        <p
-                            style="padding: 0; margin:0;font-size:22px; font-weight:400;font-family: Arial, Helvetica, sans-serif;line-height:1;">
-                            {{ $requestData['address_1'] }}<br>@if($requestData['address_2']!='') {{ $requestData['address_2'] }}<br>@endif
-                            {{ $requestData['city'] }}, {{ $requestData['state'] }} {{ $requestData['zip_code'] }}</p>
+                    <td class="address" style="text-transform:none;  color:#000;letter-spacing:-0.5px;text-transform:capitalize;">
+                        <p style="padding: 0; margin:0; font-size:30px;font-family: Arial, Helvetica, sans-serif; font-weight:400;"> {{ $requestData['cname'] }}</p>
+                        <p style="padding: 0; margin:0;font-size:22px; font-weight:400;font-family: Arial, Helvetica, sans-serif;line-height:1;"> {{ $requestData['address_1'] }}<br>@if($requestData['address_2']!='') {{ $requestData['address_2'] }}<br>@endif {{ $requestData['city'] }}, {{ $requestData['state'] }} {{ $requestData['zip_code'] }}</p>
                     </td>
 
                 </tr>
