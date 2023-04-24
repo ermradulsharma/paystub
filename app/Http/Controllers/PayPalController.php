@@ -47,7 +47,12 @@ class PayPalController extends Controller
             if (!$planDetail) {
                 redirect()->route('prizing')->with('error', 'Please choose plan.');
             }
-            $req = $request->plan.'&'.$request->type;
+            if ($request->type != '') {
+                $req = $request->plan . '&' . $request->type;
+            } else {
+                // $req = $request->plan . '&' . $request->id;
+                $req = $request->plan . '&' . $request->id;
+            }
             $provider = new PayPalClient;
             $provider->setApiCredentials(config('paypal'));
             $paypalToken = $provider->getAccessToken();
@@ -68,6 +73,7 @@ class PayPalController extends Controller
             ]);
 
             if (isset($response['id']) && $response['id'] != null) {
+                // return $response;
                 // redirect to approve href
                 foreach ($response['links'] as $links) {
                     if ($links['rel'] == 'approve') {
@@ -89,27 +95,30 @@ class PayPalController extends Controller
      */
     public function successTransaction(Request $request, $details)
     {
-
-
-
-        // return $xolode;
         try {
             $provider = new PayPalClient;
             $provider->setApiCredentials(config('paypal'));
             $provider->getAccessToken();
             $response = $provider->capturePaymentOrder($request['token']);
-            // return $response;
             if (isset($response['status']) && $response['status'] == 'COMPLETED') {
-                $xolode= explode('&',$details);
+                $xolode = explode('&', $details);
                 $planDetail = Plan::find($xolode[0]);
-                // $countryObj = PaySlip::where('user_id', Auth::user()->id)->orderBy('id', 'desc')->first();
-                $subcriptionObj = Subcription::where(['plan_id' => $xolode[0], 'country' => $xolode[1]])->where('expiry_date', '<', Carbon::now())->first();
+                if (intval($xolode[1])) {
+                    $subcriptionObj = Subcription::find($xolode[1]);
+                } else {
+                    $subcriptionObj = Subcription::where(['plan_id' => $xolode[0], 'user_id' => Auth::user()->id])->where('expiry_date', '<', Carbon::now())->first();
+                }
                 if (!$subcriptionObj) {
                     $subcriptionObj = new Subcription;
                     $subcriptionObj->user_id = Auth::user()->id;
                 }
                 $subcriptionObj->plan_id = $planDetail->id;
-                $subcriptionObj->country = $xolode[1];
+                if (intval($xolode[1])) {
+                    $subcriptionObj->country = $subcriptionObj->country;
+                } else {
+                    $subcriptionObj->country = $xolode[1];
+                }
+
                 $subcriptionObj->transaction_id = $response['id'];
                 $subcriptionObj->start_date = Carbon::now();
                 if ($planDetail->plan_duration == '24') {
@@ -119,13 +128,12 @@ class PayPalController extends Controller
                 } else {
                     $subcriptionObj->expiry_date = Carbon::now()->addMonths($planDetail->plan_duration);
                 }
-
                 $subcriptionObj->transaction_status = $response['status'] ?? '';
                 if ($subcriptionObj->save()) {
                     $userObj = User::find(Auth::user()->id);
                     $userObj->expiryDate = $subcriptionObj->expiry_date;
                     if ($userObj->save()) {
-                        $invoice = invoiceMail(Auth::user()->id, $xolode[1]);
+                        $invoice = invoiceMail(Auth::user()->id, $subcriptionObj->country);
                     }
                 }
                 if ($invoice == 'success') {
