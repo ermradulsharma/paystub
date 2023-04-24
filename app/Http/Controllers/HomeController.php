@@ -40,8 +40,7 @@ class HomeController extends Controller
     public function userDetails(Request $request)
     {
         $userObj = User::find(Auth::user()->id);
-        $subcriptionData = Subcription::with('plan')->where(['user_id' => $userObj->id, 'expiry_date' => Carbon::now()])->orderBy('id', 'asc')->get();
-
+        $subcriptionData = Subcription::with('plan')->where('user_id', $userObj->id)->where('expiry_date', '>', Carbon::now())->orderBy('id', 'asc')->get();
         $stateList = StateTax::select('state', 'state_code')->get();
         return view('user-profile', compact('userObj', 'subcriptionData', 'stateList'));
     }

@@ -43,20 +43,17 @@ class PayPalController extends Controller
             if (!$request->has('plan')) {
                 redirect()->route('prizing')->with('error', 'Please choose plan.');
             }
-            $planId = $request->plan;
             $planDetail = Plan::find($request->plan);
             if (!$planDetail) {
                 redirect()->route('prizing')->with('error', 'Please choose plan.');
             }
-            $price = $planDetail->price;
-
             $provider = new PayPalClient;
             $provider->setApiCredentials(config('paypal'));
             $paypalToken = $provider->getAccessToken();
             $response = $provider->createOrder([
                 "intent" => "CAPTURE",
                 "application_context" => [
-                    "return_url" => route('successTransaction', $request->plan),
+                    "return_url" => route('successTransaction', $request->plan, $request->type),
                     "cancel_url" => route('cancelTransaction'),
                 ],
                 "purchase_units" => [
@@ -89,7 +86,7 @@ class PayPalController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function successTransaction(Request $request, $planId)
+    public function successTransaction(Request $request, $planId, $type)
     {
         try {
             $provider = new PayPalClient;
@@ -100,7 +97,7 @@ class PayPalController extends Controller
             if (isset($response['status']) && $response['status'] == 'COMPLETED') {
                 $planDetail = Plan::find($planId);
                 $countryObj = PaySlip::where('user_id', Auth::user()->id)->orderBy('id', 'desc')->first();
-                $subcriptionObj = Subcription::where(['plan_id' => $planDetail->id, 'country' => $countryObj->type])->first();
+                $subcriptionObj = Subcription::where(['plan_id' => $planId, 'country' => $type  ])->where('expiry_date', '>', Carbon::now())->first();
                 if (!$subcriptionObj) {
                     $subcriptionObj = new Subcription;
                 }

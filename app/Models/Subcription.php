@@ -9,7 +9,8 @@ class Subcription extends Model
 {
     use HasFactory;
 
-    public function plan(){
-        return $this->hasOne(Plan::Class,'id','plan_id');
+    public function plan()
+    {
+        return $this->hasOne(Plan::class, 'id', 'plan_id');
     }
 }
