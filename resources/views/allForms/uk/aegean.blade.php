@@ -21,7 +21,9 @@
 
         th {
             font-size: 13px;
+
         }
+
 
         .watermark {
             position: absolute;
@@ -126,7 +128,7 @@
                 <table style="width: 34%; float:right; border:3px solid #0054ff; border-radius:7px; margin-top:10px;margin-bottom:20px; padding-left:10px; height:200px; background: white;">
                     <thead>
                         <tr>
-                            <td style="font-size: 16px;font-family: 'Myriad Pro', sans-serif;">Pay Period</td>
+                            <td style="font-size: 16px;font-family: 'Myriad Pro', sans-serif;padding:0px !important;">Pay Period</td>
                             <td style="font-size: 15px;text-transform: capitalize;font-family: 'Myriad Pro', sans-serif;"><b>wk 39</b></td>
                         </tr>
                         <tr>
