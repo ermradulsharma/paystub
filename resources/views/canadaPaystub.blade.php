@@ -33,7 +33,20 @@
         .address-book {
             height: 32px;
         }
+    }
+    @media(max-width:768px min-width: 426px) {
+        .address_book_1 {
+            width: 28% !important;
+        }
+    }
 
+    @media(max-width:1024px) {
+        .address_book {
+            width: 28% !important;
+        }
+        .address_book_1 {
+            width: 23% !important;
+        }
     }
 </style>
 <!-- Modal Start -->
