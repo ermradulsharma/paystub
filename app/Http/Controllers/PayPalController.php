@@ -138,7 +138,7 @@ class PayPalController extends Controller
                     } else if ($subcriptionObj->country == 'canada') {
                         $userObj->canada_expiry_date = $subcriptionObj->expiry_date ?? '';
                     }
-
+                    $userObj->device_type = "website";
                     if ($userObj->save()) {
                         $invoice = invoiceMail(Auth::user()->id, $subcriptionObj->country);
                     }
