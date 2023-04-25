@@ -254,6 +254,23 @@ class HomeController extends Controller
     public function contactForm(Request $request)
     {
         try {
+
+            $rules = [
+                'name' => 'required|min:3',
+                'email' => 'required|email',
+                'w3review' => 'required'
+            ];
+
+            $messages = [
+                'name.required' => 'First name is required.',
+                'w3review.required' => "Message is required.",
+            ];
+            $validator = Validator::make($request->all(), $rules, $messages);
+            if ($validator->fails()) {
+                $response['message'] = $validator->errors()->first();
+                return back()->with('error', $response['message']);
+            }
+
             $mailData = [];
             $mailData['name'] = $request->name;
             $mailData['email'] = $request->email;
