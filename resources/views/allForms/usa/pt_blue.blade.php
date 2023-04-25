@@ -163,12 +163,28 @@
         @guest
             <div class="watermark"></div>
             <div class="watermark2"></div>
-
         @endguest
         @auth
-            @if(Auth::user()->expiryDate == '' || !isset($requestData['watermark']))
-                <div class="watermark"></div>
-                <div class="watermark2"></div>
+            @php
+                $date = \Carbon\Carbon::now();
+            @endphp
+            @if (Auth::user()->device_type == 'website')
+                @if(Auth::user()->usa_expiry_date <= $date || !isset($requestData['watermark']))
+                    <div class="watermark"></div>
+                    <div class="watermark2"></div>
+                @endif
+            @endif
+            @if (Auth::user()->device_type == 'iOS')
+                @if(Auth::user()->expiryDate <= $date || !isset($requestData['watermark']))
+                    <div class="watermark"></div>
+                    <div class="watermark2"></div>
+                @endif
+            @endif
+            @if (Auth::user()->device_type == 'android')
+                @if(Auth::user()->expiryDate <= $date || !isset($requestData['watermark']))
+                    <div class="watermark"></div>
+                    <div class="watermark2"></div>
+                @endif
             @endif
         @endauth
         <div class="container" style="border-right: 1px solid   #43407a; margin: 0;border-top: 1px solid   #43407a; border-left: 1px solid   #43407a; border-bottom:none;padding: 0 0px 0px 0px;">

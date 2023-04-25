@@ -218,13 +218,30 @@
         @guest
         <div class="watermark"></div>
         <div class="watermark2"></div>
-        @endguest
-        @auth
-        @if(Auth::user()->expiryDate == '' || !isset($requestData['watermark']))
-        <div class="watermark"></div>
-        <div class="watermark2"></div>
+    @endguest
+    @auth
+        @php
+            $date = \Carbon\Carbon::now();
+        @endphp
+        @if (Auth::user()->device_type == 'website')
+            @if(Auth::user()->usa_expiry_date <= $date)
+                <div class="watermark"></div>
+                <div class="watermark2"></div>
+            @endif
         @endif
-        @endauth
+        @if (Auth::user()->device_type == 'iOS')
+            @if(Auth::user()->expiryDate <= $date)
+                <div class="watermark"></div>
+                <div class="watermark2"></div>
+            @endif
+        @endif
+        @if (Auth::user()->device_type == 'android')
+            @if(Auth::user()->expiryDate <= $date)
+                <div class="watermark"></div>
+                <div class="watermark2"></div>
+            @endif
+        @endif
+    @endauth
         <div class="section_2">
             <table style="width: 100%;">
                 <thead style="background-color: #a9a9a9;  ">

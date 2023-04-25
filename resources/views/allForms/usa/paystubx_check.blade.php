@@ -136,14 +136,31 @@
             style="position: absolute; top: 0px; right:0px;left: 0px; width:106%; height:105%;  z-index: -1;">
         <img src="{{ public_path('images/check2.svg') }}"
             style="position: absolute; top:75.4%; width:100.2%; height:25%;  z-index: -1; right:0px; left:0px;">
-        @guest
+            @guest
             <div class="watermark"></div>
             <div class="watermark2"></div>
         @endguest
         @auth
-            @if (Auth::user()->expiryDate == '')
-                <div class="watermark"></div>
-                <div class="watermark2"></div>
+            @php
+                $date = \Carbon\Carbon::now();
+            @endphp
+            @if (Auth::user()->device_type == 'website')
+                @if(Auth::user()->usa_expiry_date <= $date || !isset($requestData['watermark']))
+                    <div class="watermark"></div>
+                    <div class="watermark2"></div>
+                @endif
+            @endif
+            @if (Auth::user()->device_type == 'iOS')
+                @if(Auth::user()->expiryDate <= $date || !isset($requestData['watermark']))
+                    <div class="watermark"></div>
+                    <div class="watermark2"></div>
+                @endif
+            @endif
+            @if (Auth::user()->device_type == 'android')
+                @if(Auth::user()->expiryDate <= $date || !isset($requestData['watermark']))
+                    <div class="watermark"></div>
+                    <div class="watermark2"></div>
+                @endif
             @endif
         @endauth
         <section class="templete_elements">
