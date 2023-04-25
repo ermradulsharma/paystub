@@ -1,5 +1,41 @@
     @extends('layouts.app')
     @section('content')
+    <style>
+        .address_book {
+            width: 14%;
+            position: relative;
+            left: 10px;
+            background-color: white;
+            border: 1px solid #000;
+            padding: 0px 5px;
+        }
+
+        .address_book_1 {
+            width: 14%;
+            position: relative;
+            left: 10px;
+            background-color: white;
+            border: 1px solid #000;
+            padding: 0px 5px;
+        }
+
+        .address-book {
+            position: relative;
+            left: 7px;
+            height: 40px;
+        }
+
+        #basic_temp {
+            text-align: -webkit-center !important;
+        }
+
+        @media(max-width:425px) {
+            .address-book {
+                height: 32px;
+            }
+
+        }
+    </style>
         <!-- Modal Start -->
         <div class="modal fade" id="openEye" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
@@ -92,9 +128,24 @@
                 <div>
                     <div class="row mb-3">
                         <div class="col-md-12 canada-padding">
-                            <h5 class="box-h5">Company Info</h5>
                             <div class="box-usa">
                                 <div class="row mb-3 mt-3">
+                                    <div class="row justify-content py-3">
+                                        <h5 class="box-h5">Company Info</h5>
+                                        <img class="address-book" src="{{ asset('images/address-book.png') }}" alt="" height="30px;">
+                                        <select id="employerAddress" class="address_book add_address address input-box-font select-dropdown"
+                                            data-type="employer">
+                                            <option data-name="" value="">Select Address</option>
+                                            @foreach ($employerList ?? [] as $key => $employer)
+                                            <option data-name="{{ $employer->name }}" data-address1="{{ $employer->address_1 }}"
+                                                data-address2="{{ $employer->address_2 }}" data-city="{{ $employer->city }}"
+                                                data-state="{{ $employer->state }}" data-zip="{{ $employer->zip_code }}"
+                                                data-tel="{{ $employer->tel }}" value="{{ $employer->name }}">
+                                                {{ $employer->name }}</option>
+                                            @endforeach
+                                            <option data-name="" value="add_address">Add New Address</option>
+                                        </select>
+                                    </div>
                                     <div class="col-md-6 mt-1">
                                         <div class="">
                                             <label for="cname" class="lable em-name">{{ __('EMPLOYER (COMPANY) NAME') }}
