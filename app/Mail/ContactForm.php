@@ -36,7 +36,7 @@ class ContactForm extends Mailable
             replyTo: [
                 new Address('tripti@yopmail.com', 'Tripti Sharma'),
             ],
-            subject: 'Contact Form',
+            subject: $this->mailData['subject'],
         );
     }
 

@@ -5,7 +5,7 @@
         <div class="row " style="justify-content: center;">
             <div class="col-md-6">
                 <h4 class="text-center">How can we help?</h4>
-                <form id="contactForm" action="{{route('contact-form')}}" method="post">
+                <form id="contactForm" action="{{ route('contact-form') }}" method="post">
                     @csrf
                     <label for="fname" class="finame">First name:</label><br>
                     <input type="text" id="name" name="name" class="w-100"><br>
