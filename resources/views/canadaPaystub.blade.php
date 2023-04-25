@@ -133,18 +133,19 @@
                                     <div class="row justify-content py-3">
                                         <h5 class="box-h5">Company Info</h5>
                                         <img class="address-book" src="{{ asset('images/address-book.png') }}" alt="" height="30px;">
-                                        <select id="employerAddress" class="address_book add_address address input-box-font select-dropdown"
-                                            data-type="employer">
-                                            <option data-name="" value="">Select Address</option>
-                                            @foreach ($employerList ?? [] as $key => $employer)
-                                            <option data-name="{{ $employer->name }}" data-address1="{{ $employer->address_1 }}"
-                                                data-address2="{{ $employer->address_2 }}" data-city="{{ $employer->city }}"
-                                                data-state="{{ $employer->state }}" data-zip="{{ $employer->zip_code }}"
-                                                data-tel="{{ $employer->tel }}" value="{{ $employer->name }}">
-                                                {{ $employer->name }}</option>
-                                            @endforeach
-                                            <option data-name="" value="add_address">Add New Address</option>
-                                        </select>
+                                        <select id="employerAddress"
+                                class="address_book add_address address input-box-font select-dropdown"
+                                data-type="employer">
+                                <option data-name="" value="">Select Address</option>
+                                @foreach ($employerList ?? [] as $key => $employer)
+                                <option data-name="{{ $employer->name }}" data-address1="{{ $employer->address_1 }}"
+                                    data-address2="{{ $employer->address_2 }}" data-city="{{ $employer->city }}"
+                                    data-state="{{ $employer->state }}" data-zip="{{ $employer->zip_code }}"
+                                    data-tel="{{ $employer->tel }}" value="{{ $employer->name }}">
+                                    {{ $employer->name }}</option>
+                                @endforeach
+                                <option data-name="" value="add_address">Add New Address</option>
+                            </select>
                                     </div>
                                     <div class="col-md-6 mt-1">
                                         <div class="">
@@ -463,7 +464,6 @@
     @endsection
     @section('script')
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-
         <script>
             $(document).ready(function() {
 
