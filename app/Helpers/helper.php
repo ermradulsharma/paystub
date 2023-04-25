@@ -4,7 +4,7 @@ use App\Models\Image;
 use App\Models\PaySlip;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
-use \PDF;
+// use \PDF;
 
 function uploadImage($module, $module_id, $files, $path = "images", $name = null)
 {
@@ -72,7 +72,7 @@ function invoiceMail($user_id, $type)
         $path = public_path('/uploads/mailData');
         File::isDirectory($path) or File::makeDirectory($path, 0777, true, true);
         $invoiceData['requestData'] = $requestData;
-        $pdf = PDF::loadView('allForms/' . $requestData['form_type'] . '/' . $pageName, $invoiceData)->setPaper('a4', 'portrait');
+        $pdf = \PDF::loadView('allForms/' . $requestData['form_type'] . '/' . $pageName, $invoiceData)->setPaper('a4', 'portrait');
         $fileName =  date('_d_m_Y_h_i_s') . '.pdf';
         $pdf->save($path . '/' . $fileName);
         if ($invoice) {
