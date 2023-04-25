@@ -29,11 +29,6 @@
         text-align: -webkit-center !important;
     }
 
-
-
-    select option[value=""]{
-        color: red;
-    }
 </style>
 <link rel="stylesheet" href="{{ asset('user') }}/css/bootstrap-datepicker.min.css">
 <!-- Modal Start -->
@@ -82,7 +77,8 @@
                             <h5 class="box-h5">Company Info</h5>
                             <img class="address-book" src="{{ asset('images/address-book.png') }}" alt=""
                                 height="30px;">
-                            <select id="employerAddress" class="address_book add_address address input-box-font select-dropdown"
+                            <select id="employerAddress"
+                                class="address_book add_address address input-box-font select-dropdown"
                                 data-type="employer">
                                 <option data-name="" value="">Select Address</option>
                                 @foreach ($employerList ?? [] as $key => $employer)
@@ -249,7 +245,8 @@
                             <h5 class="box-h5">Employee Info</h5>
                             <img class="address-book" src="{{ asset('images/address-book.png') }}" alt=""
                                 height="30px;">
-                            <select id="employeeAddress" class="address_book_1 add_address address input-box-font select-dropdown"
+                            <select id="employeeAddress"
+                                class="address_book_1 add_address address input-box-font select-dropdown"
                                 data-type="employee">
                                 <option data-name="" value="">Select Address</option>
                                 @auth
@@ -401,7 +398,8 @@
                                 <div>
                                     <label for="auto_cal" class="lable">AUTO CALCULATOR <span class="redColor">*</span>
                                     </label>
-                                    <select name="auto_cal" id="auto_cal" class="dropdown11 auto_calculate removeDiv select-dropdown">
+                                    <select name="auto_cal" id="auto_cal"
+                                        class="dropdown11 auto_calculate removeDiv select-dropdown">
                                         {{-- <option value=""> --- Select Calculator --- </option> --}}
                                         <option value="on">ON</option>
                                         <option value="off">OFF</option>
@@ -459,7 +457,8 @@
                                 <div>
                                     <label for="exemptions" class="lable">EXEMPTIONS
                                     </label>
-                                    <select name="exemptions" id="exemptions" class="dropdown11 exemptions removeDiv select-dropdown">
+                                    <select name="exemptions" id="exemptions"
+                                        class="dropdown11 exemptions removeDiv select-dropdown">
                                         {{-- <option value=""> --- Select Exemptions --- </option> --}}
                                         <option value="0">0</option>
                                         <option value="1">1</option>
@@ -838,13 +837,7 @@
 @section('script')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" crossorigin="anonymous"></script>
 <script>
-    $(document).ready(function() {
-        $('select').on 'change', ->
-	if $(this).val()
-    $(this).css('color', 'black')
-  else
-     $(this).css('color', 'red')
-});
+
     $(document).ready(function() {
 
             $('.add_address').change(function() {
