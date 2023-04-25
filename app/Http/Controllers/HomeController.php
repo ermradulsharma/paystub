@@ -26,7 +26,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        //$this->middleware('auth');
     }
 
     /**
@@ -253,6 +253,8 @@ class HomeController extends Controller
 
     public function contactForm(Request $request)
     {
+
+
         $response = [];
         $response['success'] = FALSE;
         $response['status'] = STATUS_BAD_REQUEST;
@@ -262,8 +264,8 @@ class HomeController extends Controller
             $mailData['email'] = $request->email;
             $mailData['message'] = $request->w3review;;
             $mailData['subject'] = 'Contact Form';
-            // Mail::to('paystubxlogger@gmail.com')->send(new ContactForm($mailData));
-            Mail::to('tripti@yopmail.com')->send(new ContactForm($mailData));
+            Mail::to('paystubxlogger@gmail.com')->send(new ContactForm($mailData));
+            //Mail::to('rajiv@yopmail.com')->send(new ContactForm($mailData));
 
             $response['success'] = TRUE;
             $response['message'] = "Your account setup successfully.";
