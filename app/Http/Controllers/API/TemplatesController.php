@@ -295,6 +295,9 @@ class TemplatesController extends Controller
             if (!array_key_exists('expiryDate', $requestData)) {
                 $requestData += array('expiryDate' => Carbon::now());
             }
+            if (!array_key_exists('device_type', $requestData)) {
+                $requestData += array('device_type' => '');
+            }
             $userObj = User::find(Auth::user()->id);
             if ($requestData['type'] == 1) {
                 if ($requestData['subcription_type'] == 1) {
@@ -311,6 +314,7 @@ class TemplatesController extends Controller
             } else {
                 $userObj->expiryDate = "";
             }
+            $userObj->device_type = $requestData['device_type'] ?? '';
             $userObj->subscription_type = $requestData['subcription_type'];
             $userObj->save();
             $response['success'] = true;
