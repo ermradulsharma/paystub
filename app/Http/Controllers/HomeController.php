@@ -259,13 +259,30 @@ class HomeController extends Controller
         $response['success'] = FALSE;
         $response['status'] = STATUS_BAD_REQUEST;
         try {
+
+            $rules = [
+                'name' => 'required|min:3',
+                'email' => 'required|email',
+                'w3review' => 'required'
+            ];
+
+            $messages = [
+                'name.required' => 'First name is required.',
+                'w3review.required' => "Message is required.",
+            ];
+            $validator = Validator::make($request->all(), $rules, $messages);
+            if ($validator->fails()) {
+                $response['message'] = $validator->errors()->first();
+                return back()->with('error', $response['message']);
+            }
+
             $mailData = [];
             $mailData['name'] = $request->name;
             $mailData['email'] = $request->email;
             $mailData['message'] = $request->w3review;;
             $mailData['subject'] = 'Contact Form';
-            Mail::to('paystubxlogger@gmail.com')->send(new ContactForm($mailData));
             //Mail::to('rajiv@yopmail.com')->send(new ContactForm($mailData));
+            Mail::to('paystubxlogger@gmail.com')->send(new ContactForm($mailData));
 
             $response['success'] = TRUE;
             $response['message'] = "Your account setup successfully.";
