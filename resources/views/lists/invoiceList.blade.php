@@ -147,7 +147,7 @@
 
         }
     </style>
-    <div class="my-5">
+    <div class="">
         <div class="container" style="max-width: 1500px;">
             <div class="row" style="margin:0 auto;">
 
