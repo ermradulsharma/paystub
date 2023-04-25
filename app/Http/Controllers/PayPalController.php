@@ -129,6 +129,7 @@ class PayPalController extends Controller
                     $subcriptionObj->expiry_date = Carbon::now()->addMonths($planDetail->plan_duration);
                 }
                 $subcriptionObj->transaction_status = $response['status'] ?? '';
+                $subcriptionObj->device_type = "website";
                 if ($subcriptionObj->save()) {
                     $userObj = User::find(Auth::user()->id);
                     if ($subcriptionObj->country == 'usa') {
@@ -138,7 +139,7 @@ class PayPalController extends Controller
                     } else if ($subcriptionObj->country == 'canada') {
                         $userObj->canada_expiry_date = $subcriptionObj->expiry_date ?? '';
                     }
-                    $userObj->device_type = "website";
+                    $userObj->device_type = $subcriptionObj->device_type;
                     if ($userObj->save()) {
                         $invoice = invoiceMail(Auth::user()->id, $subcriptionObj->country);
                     }
