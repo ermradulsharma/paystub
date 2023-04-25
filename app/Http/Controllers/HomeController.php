@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactForm;
 use App\Models\User;
 use App\Models\Subcription;
 use App\Models\Address;
@@ -14,6 +15,7 @@ use Illuminate\Support\Facades\Validator;
 use App\Mail\VerifyEmailSend;
 use Illuminate\Support\Facades\Log;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
@@ -246,6 +248,30 @@ class HomeController extends Controller
         } catch (\Exception $e) {
             Log::info('User Delete Function', array('Exception' => $e->getMessage()));
             return redirect()->route('profile')->with('error', 'Something went wrong.');
+        }
+    }
+
+    public function contactForm(Request $request)
+    {
+
+        $response = [];
+        $response['success'] = FALSE;
+        $response['status'] = STATUS_BAD_REQUEST;
+        try {
+            $mailData = [];
+            $mailData['name'] = $request->name;
+            $mailData['email'] = $request->email;
+            $mailData['message'] = $request->w3review;;
+            $mailData['subject'] = 'Contact Form***';
+            // Mail::to('paystubxlogger@gmail.com')->send(new ContactForm($mailData));
+            Mail::to('tripti@yopmail.com')->send(new ContactForm($mailData));
+            $response['success'] = TRUE;
+            $response['message'] = "Your account setup successfully.";
+            $response['status'] = STATUS_OK;
+            return back()->with('message', 'Your feedback send successfully to the Paystubx Team.');
+        } catch (\Exception $e) {
+            Log::info('User Delete Function', array('Exception' => $e->getMessage()));
+            return back()->with('error', 'Something went wrong.');
         }
     }
 }
