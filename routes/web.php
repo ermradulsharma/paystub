@@ -60,10 +60,12 @@ Route::get('refund', function () {
 Route::get('contact', function () {
     return view('contact');
 });
+
 Route::post('contact-form', [HomeController::class, 'contactForm'])->name('contact-form');
 Route::get('template-view', function () {
     return view('template');
 });
+
 Route::get('userDashboard', function () {
     return view('user-dashboard');
 });
