@@ -30,6 +30,7 @@
         }
     </style>
     @yield('style')
+    @yield('style_edit')
     <script src="https://accounts.google.com/gsi/client" async defer></script>
     <script src="https://apis.google.com/js/api:client.js" async defer></script>
 </head>

@@ -8,14 +8,14 @@ var tax_ytd_other = parseFloat($('#tax_ytd_other').val() || 0.00);
 var days_number = parseFloat($('#days_number').val() || 0.00)
 
 $('.pay_start').change(function () {
-    dayCalculate();
+    // dayCalculate();
     // setTimeout(() => {
     //     calculation();
     // }, 100);
 });
 
 $(".pay_date").change(function () {
-    date_calculate();
+    // date_calculate();
     // setTimeout(() => {
     //     calculation();
     // }, 100);
@@ -25,7 +25,7 @@ function dayCalculate() {
     var tax_rate = $(".tax_rate").find(":selected").data("tax");
     var pay_start = new Date($(".pay_start").val());
     if (tax_rate == null) {
-        $(".error").addClass("d-none");
+        // $(".error").addClass("d-none");
         $('.tax_rate').focus();
     } else {
         $('.error').removeClass("d-none");

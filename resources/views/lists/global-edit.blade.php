@@ -1,6 +1,5 @@
 @extends('layouts.app')
-
-@section('content')
+@section('style_edit')
 <style>
     .address_book {
         width: 14%;
@@ -21,7 +20,8 @@
         left: 7px;
     }
 </style>
-
+@endsection
+@section('content')
     <link rel="stylesheet" href="{{ asset('user') }}/css/bootstrap-datepicker.min.css">
     <!-- Modal Start -->
     <div class="modal fade" id="openEye" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

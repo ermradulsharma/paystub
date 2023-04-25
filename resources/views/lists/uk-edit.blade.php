@@ -1,4 +1,61 @@
 @extends('layouts.app')
+@section('style_edit')
+<style>
+    .address_book {
+        width: 35%;
+        position: relative;
+        left: 10px;
+        background-color: white;
+        border: 1px solid #000;
+        padding: 0px 5px;
+    }
+
+    .address_book_1 {
+        width: 35%;
+        position: relative;
+        left: 10px;
+        background-color: white;
+        border: 1px solid #000;
+        padding: 0px 5px;
+    }
+
+    .address-book {
+        position: relative;
+        left: 7px;
+        height: 40px;
+    }
+
+    #basic_temp {
+        text-align: -webkit-center !important;
+    }
+
+    @media(max-width:425px) {
+        .address-book {
+            height: 32px;
+        }
+
+    }
+
+    @media(max-width:768px min-width: 426px) {
+        .address_book_1 {
+            width: 28% !important;
+        }
+    }
+
+
+
+    @media(max-width:1024px) {
+        .address_book {
+            width: 28%;
+        }
+
+        .address_book_1 {
+            width: 28%;
+        }
+
+    }
+</style>
+@endsection
 @section('content')
     <!-- Modal Start -->
     <div class="modal fade" id="openEye" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -105,17 +162,25 @@
             </div>
 
             <div>
-                <h5 class="box-h5">Company Info</h5>
+                {{-- <h5 class="box-h5">Company Info</h5> --}}
                 <div class="row mb-3">
                     <div class="col-md-12">
                         <div class=" box-usa">
                             <div class="row mb-3" style="align-items: end;">
+                                <div class="row justify-content py-3">
+                                    <h5 class="box-h5">Company Info</h5>
+                                    <img class="address-book" src="{{ asset('images/address-book.png') }}" alt="" height="30px;">
+                                    <select id="employerAddressUnited" class="address_book add_address address input-box-font select-dropdown" data-type="employer">
+                                        <option data-name="" value="">Select Address</option>
+                                            @foreach ($employerList ?? [] as $key => $employer)
+                                                <option data-name="{{ $employer->name }}" data-address1="{{ $employer->address_1 }}" data-address2="{{ $employer->address_2 }}" data-city="{{ $employer->city }}" data-state="{{ $employer->state }}" data-zip="{{ $employer->zip_code }}" data-tel="{{ $employer->tel }}" value="{{ $employer->name }}"> {{ $employer->name }}</option>
+                                            @endforeach
+                                        <option data-name="" value="add_address">Add New Address</option>
+                                    </select>
+                                </div>
                                 <div class="col-md-6 mt-1">
-                                    <label for="cname" class="lable">EMPLOYER (COMPANY) NAME <span
-                                            style="color:red;">*</span> </label>
-                                    <input type="text" id="cname" name="cname"
-                                        placeholder="Your Employer & Company Name" class="w-100 p-2"
-                                        style="font-size:14px;" value="{{ $invoice->cname ?? null }}">
+                                    <label for="cname" class="lable">EMPLOYER (COMPANY) NAME <span style="color:red;">*</span> </label>
+                                    <input type="text" id="cname" name="cname" placeholder="Your Employer & Company Name" class="w-100 p-2" style="font-size:14px;" value="{{ $invoice->cname ?? null }}">
                                 </div>
 
                                 <div class="col-md-6 mt-1">
@@ -131,9 +196,20 @@
                 </div>
             </div>
             <div>
-                <h5 class="box-h5">Employee Info</h5>
+                {{-- <h5 class="box-h5">Employee Info</h5> --}}
                 <div class="col-md-12">
                     <div class=" box-usa">
+                        <div class="row justify-content py-3">
+                            <h5 class="box-h5">Employee Info</h5>
+                            <img class="address-book" src="{{ asset('images/address-book.png') }}" alt="" height="30px;">
+                            <select id="employeeAddressUnited" class="address_book_1 add_address address input-box-font select-dropdown" data-type="employee">
+                                <option data-name="" value="">Select Address</option>
+                                @foreach ($employeeList ?? [] as $key => $employee)
+                                    <option data-name="{{ $employee->name }}" data-address1="{{ $employee->address_1 }}" data-address2="{{ $employee->address_2 }}" data-city="{{ $employee->city }}" data-state="{{ $employee->state }}" data-zip="{{ $employee->zip_code }}" data-emp_id="{{ $employee->emp_id }}" data-emp_ssn="{{ $employee->emp_ssn }}" value="{{ $employee->name }}"> {{ $employee->name }}</option>
+                                @endforeach
+                                <option data-name="" value="add_address_1">Add New Address</option>
+                            </select>
+                        </div>
                         <div class="row mb-3" style="align-items: end;">
                             <div class="col-md-6 mt-1">
                                 <label for="emp_name" class="lable">EMPLOYEE NAME <span style="color:red;">*</span>

@@ -139,7 +139,7 @@
                             <div class="row justify-content py-3">
                                 <h5 class="box-h5">Company Info</h5>
                                 <img class="address-book" src="{{ asset('images/address-book.png') }}" alt="" height="30px;">
-                                <select id="employerAddress" class="address_book add_address address input-box-font select-dropdown" data-type="employer">
+                                <select id="employerAddressCanada" class="address_book add_address address input-box-font select-dropdown" data-type="employer">
                                     <option data-name="" value="">Select Address</option>
                                     @foreach ($employerList ?? [] as $key => $employer)
                                         <option data-name="{{ $employer->name }}" data-address1="{{ $employer->address_1 }}" data-address2="{{ $employer->address_2 }}" data-city="{{ $employer->city }}" data-state="{{ $employer->state }}" data-zip="{{ $employer->zip_code }}" data-tel="{{ $employer->tel }}" value="{{ $employer->name }}"> {{ $employer->name }}</option>
@@ -149,10 +149,8 @@
                             </div>
                             <div class="col-md-6 mt-1">
                                 <div class="">
-                                    <label for="cname" class="lable em-name">{{ __('EMPLOYER (COMPANY) NAME') }}
-                                        <span class="redColor">*</span> </label>
-                                    <input type="text" id="cname" name="cname" placeholder="Employer (Company) Name"
-                                        class="input-c w-100  text-center input-box-font removeDiv">
+                                    <label for="cname" class="lable em-name">{{ __('EMPLOYER (COMPANY) NAME') }} <span class="redColor">*</span> </label>
+                                    <input type="text" id="cname" name="cname" placeholder="Employer (Company) Name" class="input-c w-100  text-center input-box-font removeDiv">
                                 </div>
                             </div>
                         </div>
@@ -160,10 +158,8 @@
                         <div class="row mb-3">
                             <div class="col-md-6">
                                 <div>
-                                    <label for="address_1" class="lable">STREET ADDRESS 1 <span
-                                            class="redColor">*</span> </label>
-                                    <input type="text" id="address_1" name="address_1" placeholder="Street Address 1"
-                                        class="w-100  input-box-font removeDiv">
+                                    <label for="address_1" class="lable">STREET ADDRESS 1 <span class="redColor">*</span> </label>
+                                    <input type="text" id="address_1" name="address_1" placeholder="Street Address 1" class="w-100  input-box-font removeDiv">
                                 </div>
                             </div>
                         </div>
@@ -182,23 +178,18 @@
                             <div class="col-md-6">
                                 <div>
                                     <label for="city" class="lable">City <span class="redColor">*</span></label>
-                                    <input type="text" id="city" name="city" placeholder="City"
-                                        class="w-100  input-box-font removeDiv">
+                                    <input type="text" id="city" name="city" placeholder="City" class="w-100  input-box-font removeDiv">
                                 </div>
 
                             </div>
                             <div class="col-md-3">
                                 <div>
-                                    <label for="state" class="lable">Province <span class="redColor">*</span>
-                                    </label>
+                                    <label for="state" class="lable">Province <span class="redColor">*</span> </label>
                                     <div class="dropdown ">
-                                        <select name="state" id="state"
-                                            class="state dropdown11 tax_rate removeDiv select-dropdown">
+                                        <select name="state" id="state" class="state dropdown11 tax_rate removeDiv select-dropdown">
                                             <option value="">Select State</option>
                                             @foreach ($stateTaxes as $stateTax)
-                                            <option value="{{ $stateTax->state_code }}"
-                                                data-tax="{{ $stateTax->rate }}">{{ $stateTax->state }}
-                                            </option>
+                                                <option value="{{ $stateTax->state_code }}" data-tax="{{ $stateTax->rate }}">{{ $stateTax->state }} </option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -207,10 +198,8 @@
                             </div>
                             <div class="col-md-3">
                                 <div>
-                                    <label for="zip_code" class="lable">Postal Code <span
-                                            class="redColor">*</span></label>
-                                    <input type="text" id="zip_code" name="zip_code" onkeyup="phoneMask()"
-                                        placeholder="Zip Code" class="w-100  input-box-font removeDiv">
+                                    <label for="zip_code" class="lable">Postal Code <span class="redColor">*</span></label>
+                                    <input type="text" id="zip_code" name="zip_code" onkeyup="phoneMask()" placeholder="Zip Code" class="w-100  input-box-font removeDiv">
                                 </div>
                             </div>
                         </div>
@@ -226,7 +215,7 @@
                         <div class="row justify-content py-3">
                             <h5 class="box-h5">Employee Basic Info</h5>
                             <img class="address-book" src="{{ asset('images/address-book.png') }}" alt="" height="30px;">
-                            <select id="employeeAddress" class="address_book_1 add_address address input-box-font select-dropdown" data-type="employee">
+                            <select id="employeeAddressCanada" class="address_book_1 add_address address input-box-font select-dropdown" data-type="employee">
                                 <option data-name="" value="">Select Address</option>
                                 @foreach ($employeeList ?? [] as $key => $employee)
                                     <option data-name="{{ $employee->name }}" data-address1="{{ $employee->address_1 }}" data-address2="{{ $employee->address_2 }}" data-city="{{ $employee->city }}" data-state="{{ $employee->state }}" data-zip="{{ $employee->zip_code }}" data-emp_id="{{ $employee->emp_id }}" data-emp_ssn="{{ $employee->emp_ssn }}" value="{{ $employee->name }}"> {{ $employee->name }}</option>
@@ -245,22 +234,14 @@
                                 <div class="row">
                                     <div class="col-6 px-0">
                                         <div>
-                                            <label for="pay_start" class="lable">PAY START <span
-                                                    class="redColor">*</span></label>
-                                            <input style="color:#140303f5;border:1px solid #110303fe;appearance: none;"
-                                                type="text" id="pay_start" name="pay_start" placeholder="MM/DD/YYYY"
-                                                class="w-100 p-2 input-box-font removeDiv pay_start datepicker inputdatepicker"
-                                                data-id="pay_start" value="<?php echo date('m/d/Y'); ?>">
+                                            <label for="pay_start" class="lable">PAY START <span class="redColor">*</span></label>
+                                            <input style="color:#140303f5;border:1px solid #110303fe;appearance: none;" type="text" id="pay_start" name="pay_start" placeholder="MM/DD/YYYY" class="w-100 p-2 input-box-font removeDiv pay_start datepicker inputdatepicker" data-id="pay_start" value="<?php echo date('m/d/Y'); ?>">
                                         </div>
                                     </div>
                                     <div class="col-6 px-0">
                                         <div>
                                             <label for="pay_end" class="lable"> <span class="redColor"></span></label>
-                                            <input
-                                                style="color:#140303f5;border:1px solid #110303fe;  appearance: none;"
-                                                type="text" id="pay_end" name="pay_end" placeholder="MM/DD/YYYY"
-                                                class="w-100 p-2 input-box-font removeDiv pay_end datepicker inputdatepicker"
-                                                data-id="pay_end" value="<?php echo date('m/d/Y'); ?>">
+                                            <input style="color:#140303f5;border:1px solid #110303fe;  appearance: none;" type="text" id="pay_end" name="pay_end" placeholder="MM/DD/YYYY" class="w-100 p-2 input-box-font removeDiv pay_end datepicker inputdatepicker" data-id="pay_end" value="<?php echo date('m/d/Y'); ?>">
                                         </div>
                                     </div>
                                 </div>
@@ -268,11 +249,7 @@
                             <div class="col-md-4 mt-4">
                                 <div>
                                     <label for="pay_date" class="lable">PAY DATE <span class="redColor">*</span></label>
-                                    <input
-                                        style="color:#140303f5;input-box-font appearance: none; border:1px solid #110303fe;"
-                                        type="text" id="pay_date" name="pay_date" placeholder="MM/DD/YYYY"
-                                        class="w-100 p-2 input-box-font removeDiv pay_date datepicker inputdatepicker"
-                                        data-id="pay_date" value="<?php echo date('m/d/Y'); ?>">
+                                    <input style="color:#140303f5;input-box-font appearance: none; border:1px solid #110303fe;" type="text" id="pay_date" name="pay_date" placeholder="MM/DD/YYYY" class="w-100 p-2 input-box-font removeDiv pay_date datepicker inputdatepicker" data-id="pay_date" value="<?php echo date('m/d/Y'); ?>">
                                 </div>
                             </div>
                         </div>
@@ -280,22 +257,16 @@
                         <div class="row">
                             <div class="col-md-4 mt-4">
                                 <div>
-                                    <label for="check_number" class="lable">CHECK NUMBER <span class="redColor">*</span>
-                                    </label>
-                                    <input type="text" id="check_number" name="check_number" placeholder="Check Number"
-                                        class="w-100 removeDiv input-box-font" maxlength="6" minlength="6"
-                                        onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+                                    <label for="check_number" class="lable">CHECK NUMBER <span class="redColor">*</span> </label>
+                                    <input type="text" id="check_number" name="check_number" placeholder="Check Number" class="w-100 removeDiv input-box-font" maxlength="6" minlength="6" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-3 mt-4">
                                 <div>
-                                    <label for="currency" class="lable" class="redColor">CURRENCY <span
-                                            class="redColor">*</span> </label>
+                                    <label for="currency" class="lable" class="redColor">CURRENCY <span class="redColor">*</span> </label>
                                     <select name="currency" id="currency" class="dropdown11 removeDiv select-dropdown">
                                         @foreach ($currencies as $currency)
-                                        <option value="{{ $currency->symbol }}">{{ $currency->symbol }}
-                                            ({{ $currency->name }})
-                                        </option>
+                                            <option value="{{ $currency->symbol }}">{{ $currency->symbol }} ({{ $currency->name }}) </option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -304,19 +275,15 @@
                         <div class="row mb-4">
                             <div class="col-md-4 mt-4">
                                 <div>
-                                    <label for="emp_name" class="lable">EMPLOYEE NAME <span class="redColor">*</span>
-                                    </label>
-                                    <input type="text" id="emp_name" name="emp_name" placeholder="Employee name"
-                                        class="w-100  input-box-font removeDiv">
+                                    <label for="emp_name" class="lable">EMPLOYEE NAME <span class="redColor">*</span> </label>
+                                    <input type="text" id="emp_name" name="emp_name" placeholder="Employee name" class="w-100  input-box-font removeDiv">
                                 </div>
 
                             </div>
                             <div class="col-md-4 mt-4">
                                 <div>
-                                    <label for="emp_address" class="lable">EMPLOYEE ADDRESS <span
-                                            class="redColor">*</span> </label>
-                                    <input type="text" id="emp_address" name="emp_address"
-                                        placeholder="Employee Address" class="w-100 removeDiv input-box-font">
+                                    <label for="emp_address" class="lable">EMPLOYEE ADDRESS <span class="redColor">*</span> </label>
+                                    <input type="text" id="emp_address" name="emp_address" placeholder="Employee Address" class="w-100 removeDiv input-box-font">
                                 </div>
                             </div>
                         </div>
@@ -508,7 +475,6 @@
                     }
                 }
                 setLocation(obj);
-                console.log(obj);
             }
         });
     });

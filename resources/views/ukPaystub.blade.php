@@ -106,15 +106,10 @@
                                     <h6 class="base">ADVANCED TEMPLATES</h6>
                                     <div class="mt-3">
                                         <div class="input-group mmenu mb-3">
-                                            <select name="advance_temp" id="advance_temp"
-                                                class="form-control text-center at_id dropdown1 advanceTemplate"
-                                                style="margin-right:10px;">
+                                            <select name="advance_temp" id="advance_temp" class="form-control text-center at_id dropdown1 advanceTemplate" style="margin-right:10px;">
                                                 <option value=""> --- Select Advance Template --- </option>
                                                 @foreach ($advanceType as $data)
-                                                <option value="{{ $data->title ?? '' }}"
-                                                    data-src="{{ $data->images->file ?? '' }}"
-                                                    data-status="{{ $data->template_element }}">
-                                                    {{ $data->name ?? '' }} </option>
+                                                    <option value="{{ $data->title ?? '' }}"  data-src="{{ $data->images->file ?? '' }}" data-status="{{ $data->template_element }}"> {{ $data->name ?? '' }} </option>
                                                 @endforeach
                                             </select>
                                             <i class="fa fa-eye-slash advanceTem uk-eye" role="button"></i>
@@ -136,7 +131,7 @@
                             <div class="row justify-content py-3">
                                 <h5 class="box-h5">Company Info</h5>
                                 <img class="address-book" src="{{ asset('images/address-book.png') }}" alt="" height="30px;">
-                                <select id="employerAddress" class="address_book add_address address input-box-font select-dropdown" data-type="employer">
+                                <select id="employerAddressUnited" class="address_book add_address address input-box-font select-dropdown" data-type="employer">
                                     <option data-name="" value="">Select Address</option>
                                         @foreach ($employerList ?? [] as $key => $employer)
                                             <option data-name="{{ $employer->name }}" data-address1="{{ $employer->address_1 }}" data-address2="{{ $employer->address_2 }}" data-city="{{ $employer->city }}" data-state="{{ $employer->state }}" data-zip="{{ $employer->zip_code }}" data-tel="{{ $employer->tel }}" value="{{ $employer->name }}"> {{ $employer->name }}</option>
@@ -171,7 +166,7 @@
                     <div class="row justify-content py-3">
                         <h5 class="box-h5">Employee Info</h5>
                         <img class="address-book" src="{{ asset('images/address-book.png') }}" alt="" height="30px;">
-                        <select id="employeeAddress" class="address_book_1 add_address address input-box-font select-dropdown" data-type="employee">
+                        <select id="employeeAddressUnited" class="address_book_1 add_address address input-box-font select-dropdown" data-type="employee">
                             <option data-name="" value="">Select Address</option>
                             @foreach ($employeeList ?? [] as $key => $employee)
                                 <option data-name="{{ $employee->name }}" data-address1="{{ $employee->address_1 }}" data-address2="{{ $employee->address_2 }}" data-city="{{ $employee->city }}" data-state="{{ $employee->state }}" data-zip="{{ $employee->zip_code }}" data-emp_id="{{ $employee->emp_id }}" data-emp_ssn="{{ $employee->emp_ssn }}" value="{{ $employee->name }}"> {{ $employee->name }}</option>
@@ -192,32 +187,24 @@
 
                         <div class="col-md-6 mt-1">
                             <div>
-                                <label for="emp_street_1" class="lable text-center uk-paystub-text">EMPLOYEE ADDRESS 1
-                                    <span style="color:red;">*</span></label>
-                                <input type="text" id="emp_street_1" name="emp_street_1"
-                                    placeholder="Employee Street Address 1"
-                                    class="w-100 input-box-font text-center removeDiv" style="">
+                                <label for="emp_street_1" class="lable text-center uk-paystub-text">EMPLOYEE ADDRESS 1 <span style="color:red;">*</span></label>
+                                <input type="text" id="emp_street_1" name="emp_street_1" placeholder="Employee Street Address 1" class="w-100 input-box-font text-center removeDiv" style="">
                             </div>
 
                         </div>
                         <div class="col-md-6 mt-1">
                             <div>
                                 <label for="emp_street_2" class="lable">STREET ADDRESS 2</label>
-                                <input type="text" id="emp_street_2" name="emp_street_2"
-                                    placeholder="Employee Street Address 2" class="w-100 input-box-font text-center"
-                                    style="">
+                                <input type="text" id="emp_street_2" name="emp_street_2" placeholder="Employee Street Address 2" class="w-100 input-box-font text-center" style="">
                             </div>
 
                         </div>
-                        <input type="hidden" name="city" id="city">
+                        <input type="hidden" name="city" id="city" value="London">
                         <div class="col-md-6 mt-1">
                             <div>
-                                <label for="emp_zip_code" class="lable text-center uk-paystub-text">Postal Code<span
-                                        style="color:red;">*</span></label>
-                                <input type="text" id="emp_zip_code" name="emp_zip_code" placeholder="Postal Code"
-                                    class="w-100 input-box-font text-center removeDiv" onkeyup="phoneMask()" style="">
+                                <label for="emp_zip_code" class="lable text-center uk-paystub-text">Postal Code<span tyle="color:red;">*</span></label>
+                                <input type="text" id="emp_zip_code" name="emp_zip_code" placeholder="Postal Code" class="w-100 input-box-font text-center removeDiv" onkeyup="phoneMask()" style="">
                             </div>
-
                         </div>
                     </div>
                     <div style="padding:0 !important;" class="row p-3">
@@ -229,13 +216,9 @@
                                     <div class="row">
                                         <div style="margin:0 !important;" class="col-md-4 mt-3 pl-0 padding-0">
                                             <div>
-                                                <label for="pay_start" class="lable uk-lable ">Pay Start <span
-                                                        style="color:red;">*</span> </label>
+                                                <label for="pay_start" class="lable uk-lable ">Pay Start <span style="color:red;">*</span> </label>
                                                 <input
-                                                    style="color:#140303f5;border:1px solid #110303fe;padding:0px 6px !important; height:40px; appearance: none;"
-                                                    type="text" id="pay_start" name="pay_start" placeholder="12-11-2022"
-                                                    class="input-uk removeDiv pay_start datepicker inputdatepicker"
-                                                    data-id="pay_start" value="<?php echo date('m/d/Y'); ?>">
+                                                    style="color:#140303f5;border:1px solid #110303fe;padding:0px 6px !important; height:40px; appearance: none;" type="text" id="pay_start" name="pay_start" placeholder="12-11-2022" class="input-uk removeDiv pay_start datepicker inputdatepicker" data-id="pay_start" value="<?php echo date('m/d/Y'); ?>">
                                             </div>
 
                                         </div>
@@ -258,20 +241,15 @@
                                         <div class="ukpay-inner1">
                                             <div class="col-lg-8 mt-3 p-0">
                                                 <div>
-                                                    <label for="pay_type" class="lable uk-lable">Pay Type<span
-                                                            style="color:red;">*</span> </label>
-                                                    <input type="text" id="pay_type" name="pay_type"
-                                                        class="input-uk removeDiv" placeholder="2 Weekly" style="">
+                                                    <label for="pay_type" class="lable uk-lable">Pay Type<span style="color:red;">*</span> </label>
+                                                    <input type="text" id="pay_type" name="pay_type" class="input-uk removeDiv" placeholder="2 Weekly" style="">
                                                 </div>
 
                                             </div>
                                             <div class="col-lg-8 mt-3 p-0">
                                                 <div>
-                                                    <label for="payment_method" class="lable uk-lable">Payment
-                                                        Mehtod<span style="color:red;">*</span> </label>
-                                                    <input type="text" id="payment_method" name="payment_method"
-                                                        class="input-uk removeDiv" placeholder="BACIS"
-                                                        style=" text-transform:uppercase">
+                                                    <label for="payment_method" class="lable uk-lable">Payment Mehtod<span style="color:red;">*</span> </label>
+                                                    <input type="text" id="payment_method" name="payment_method" class="input-uk removeDiv" placeholder="BACIS" style=" text-transform:uppercase">
                                                 </div>
 
                                             </div>
