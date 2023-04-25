@@ -250,24 +250,12 @@
                     <div class=" box-usa">
                         <div class="row justify-content py-3">
                             <h5 class="box-h5">Employee Info</h5>
-                            <img class="address-book" src="{{ asset('images/address-book.png') }}" alt=""
-                                height="30px;">
-                            <select id="employeeAddress"
-                                class="address_book_1 add_address address input-box-font select-dropdown"
-                                data-type="employee">
+                            <img class="address-book" src="{{ asset('images/address-book.png') }}" alt="" height="30px;">
+                            <select id="employeeAddress" class="address_book_1 add_address address input-box-font select-dropdown" data-type="employee">
                                 <option data-name="" value="">Select Address</option>
-                                @auth
-                                @if ($employeeList->count() > 0)
                                 @foreach ($employeeList ?? [] as $key => $employee)
-                                <option data-name="{{ $employee->name }}" data-address1="{{ $employee->address_1 }}"
-                                    data-address2="{{ $employee->address_2 }}" data-city="{{ $employee->city }}"
-                                    data-state="{{ $employee->state }}" data-zip="{{ $employee->zip_code }}"
-                                    data-emp_id="{{ $employee->emp_id }}" data-emp_ssn="{{ $employee->emp_ssn }}"
-                                    value="{{ $employee->name }}">
-                                    {{ $employee->name }}</option>
+                                    <option data-name="{{ $employee->name }}" data-address1="{{ $employee->address_1 }}" data-address2="{{ $employee->address_2 }}" data-city="{{ $employee->city }}" data-state="{{ $employee->state }}" data-zip="{{ $employee->zip_code }}" data-emp_id="{{ $employee->emp_id }}" data-emp_ssn="{{ $employee->emp_ssn }}" value="{{ $employee->name }}"> {{ $employee->name }}</option>
                                 @endforeach
-                                @endif
-                                @endauth
                                 <option data-name="" value="add_address_1">Add New Address</option>
                             </select>
                         </div>

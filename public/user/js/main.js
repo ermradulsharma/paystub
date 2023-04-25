@@ -154,6 +154,49 @@ $(document).ready(function () {
         $('#emp_id').val($('option:selected', this).data('emp_id'));
         $('#emp_ssn').val($('option:selected', this).data('emp_ssn'));
     });
+
+    $("#employerAddressCanada").change(function () {
+        $('#cname').val($('option:selected', this).data('name'));
+        $('#address_1').val($('option:selected', this).data('address1'));
+        $('#address_2').val($('option:selected', this).data('address2'));
+        $('#city').val($('option:selected', this).data('city'));
+        $('#state').val($('option:selected', this).data('state'));
+        $('#zip_code').val($('option:selected', this).data('zip'));
+        $('#tel').val($('option:selected', this).data('tel'));
+    });
+
+    $("#employeeAddressCanada").change(function () {
+        $('#emp_name').val($('option:selected', this).data('name'));
+        // $('#emp_street_1').val($('option:selected', this).data('address1'));
+        // $('#emp_street_2').val($('option:selected', this).data('address2'));
+        $('#emp_city').val($('option:selected', this).data('city'));
+        // $('#emp_state').val($('option:selected', this).data('state'));
+        // $('#emp_zip_code').val($('option:selected', this).data('zip'));
+        // $('#emp_id').val($('option:selected', this).data('emp_id'));
+        // $('#emp_ssn').val($('option:selected', this).data('emp_ssn'));
+        $('#emp_address').val($('option:selected', this).data('address1')+' '+ $('option:selected', this).data('address2')+' '+$('option:selected', this).data('city')+' '+$('option:selected', this).data('state') +' '+$('option:selected', this).data('zip'));
+    });
+
+    $("#employerAddressUnited").change(function () {
+        $('#cname').val($('option:selected', this).data('name'));
+        $('#company_address').val($('option:selected', this).data('address1')+' '+$('option:selected', this).data('address2')+' '+$('option:selected', this).data('city')+' '+$('option:selected', this).data('zip'));
+        // $('#address_2').val($('option:selected', this).data('address2'));
+        // $('#city').val($('option:selected', this).data('city'));
+        // $('#state').val($('option:selected', this).data('state'));
+        // $('#zip_code').val($('option:selected', this).data('zip'));
+        // $('#tel').val($('option:selected', this).data('tel'));
+    });
+
+    $("#employeeAddressUnited").change(function () {
+        $('#emp_name').val($('option:selected', this).data('name'));
+        $('#emp_street_1').val($('option:selected', this).data('address1'));
+        $('#emp_street_2').val($('option:selected', this).data('address2'));
+        $('#emp_city').val($('option:selected', this).data('city'));
+        $('#emp_state').val($('option:selected', this).data('state'));
+        $('#emp_zip_code').val($('option:selected', this).data('zip'));
+        $('#emp_id').val($('option:selected', this).data('emp_id'));
+        $('#emp_ssn').val($('option:selected', this).data('emp_ssn'));
+    });
 });
 
 // function addres dropdown data fill

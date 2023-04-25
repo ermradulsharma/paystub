@@ -42,7 +42,7 @@ class HomeController extends Controller
     public function userDetails(Request $request)
     {
         $userObj = User::find(Auth::user()->id);
-        $subcriptionData = Subcription::with('plan')->where('user_id', $userObj->id)->orderBy('id', 'asc')->get();
+        $subcriptionData = Subcription::with('plan')->where('user_id', $userObj->id)->where('device_type','website')->orderBy('id', 'asc')->get();
         $stateList = StateTax::select('state', 'state_code')->get();
         return view('user-profile', compact('userObj', 'subcriptionData', 'stateList'));
     }
@@ -253,11 +253,6 @@ class HomeController extends Controller
 
     public function contactForm(Request $request)
     {
-
-
-        $response = [];
-        $response['success'] = FALSE;
-        $response['status'] = STATUS_BAD_REQUEST;
         try {
 
             $rules = [
@@ -281,13 +276,7 @@ class HomeController extends Controller
             $mailData['email'] = $request->email;
             $mailData['message'] = $request->w3review;;
             $mailData['subject'] = 'Contact Form';
-            //Mail::to('rajiv@yopmail.com')->send(new ContactForm($mailData));
             Mail::to('paystubxlogger@gmail.com')->send(new ContactForm($mailData));
-
-            $response['success'] = TRUE;
-            $response['message'] = "Your account setup successfully.";
-            $response['status'] = STATUS_OK;
-
             return back()->with('message', 'Your feedback send successfully to the Paystubx Team.');
         } catch (\Exception $e) {
             Log::info('User Delete Function', array('Exception' => $e->getMessage()));

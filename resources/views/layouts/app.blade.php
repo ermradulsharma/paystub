@@ -30,6 +30,7 @@
         }
     </style>
     @yield('style')
+    @yield('style_edit')
     <script src="https://accounts.google.com/gsi/client" async defer></script>
     <script src="https://apis.google.com/js/api:client.js" async defer></script>
 </head>
@@ -43,13 +44,16 @@
                 </a>
             </li>
             <li class="nav-item ml-3 ">
-                <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('usa*') ? 'active' : '' }} " href="{{ route('usa.payStub') }}">USA</a>
+                <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('usa*') ? 'active' : '' }} "
+                    href="{{ route('usa.payStub') }}">USA</a>
             </li>
             <li class="nav-item ml-3">
-                <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('canada*') ? 'active' : '' }}" href="{{ route('canada') }}">CANADA</a>
+                <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('canada*') ? 'active' : '' }}"
+                    href="{{ route('canada') }}">CANADA</a>
             </li>
             <li class="nav-item ml-3">
-                <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('uk*') ? 'active' : '' }}" href="{{ route('uk') }}">UK</a>
+                <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('uk*') ? 'active' : '' }}"
+                    href="{{ route('uk') }}">UK</a>
             </li>
             <li class="nav-item ml-3">
                 <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('global*') ? 'active' : '' }}"
@@ -61,47 +65,48 @@
             </li>
             <li class="nav-item d-flex justify-content-center ml-3 " style="margin-top:5px;">
                 @guest
-                <a class="btn btn-lg py-2 w-100 btn-danger login registerBtn " style="margin-top:42px;"
-                    href="javascript:void(0);">LOGIN</a>
-                <div class="container d-none logoutDiv">
-                    <div class="user-icon"><img src="{{ asset('images/profile1.png') }}"></div>
-                    <div class="logout btn-logout">
-                        <a><img src="{{ asset('images/logout01.png') }}"></a>
+                    <a class="btn btn-lg py-2 w-100 btn-danger login registerBtn " style="margin-top:42px;"
+                        href="javascript:void(0);">LOGIN</a>
+                    <div class="container d-none logoutDiv">
+                        <div class="user-icon"><img src="{{ asset('images/profile1.png') }}"></div>
+                        <div class="logout btn-logout">
+                            <a><img src="{{ asset('images/logout01.png') }}"></a>
+                        </div>
+                        <div class="dropbtn">
+                            <button class="btn btn-default dropdown-toggle navright-btn authUserName" type="button"
+                                id="menu1" data-toggle="dropdown">Hi {{ Auth::user()->name ?? '' }}<span
+                                    class="caret"></span></button>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                                <li role="presentation"><a role="menuitem" tabindex="-1"
+                                        href="{{ route('invoiceList') }}">Order History</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('profile') }}">My
+                                        Account</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1"
+                                        href="{{ route('profile') }}?tab=2">Address Book</a></li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="dropbtn">
-                        <button class="btn btn-default dropdown-toggle navright-btn authUserName" type="button"
-                            id="menu1" data-toggle="dropdown">Hi {{ Auth::user()->name ?? '' }}<span
-                                class="caret"></span></button>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                            <li role="presentation"><a role="menuitem" tabindex="-1"
-                                    href="{{ route('invoiceList') }}">Order History</a></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('profile') }}">My
-                                    Account</a></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1"
-                                    href="{{ route('profile') }}?tab=2">Address Book</a></li>
-                        </ul>
-                    </div>
-                </div>
                 @endguest
 
                 @auth
-                <div class="container" style="margin-top:5px;">
-                    <div class="user-icon"><img src="{{ asset('images/profile1.png') }}"></div>
-                    <div class="logout btn-logout"><a><img src="{{ asset('images/logout01.png') }}"></a></div>
-                    <div class="dropbtn">
-                        <button class="btn btn-default dropdown-toggle navright-btn authUserName" type="button"
-                            id="menu1" data-toggle="dropdown">Hi {{ Auth::user()->name ?? '' }}<span
-                                class="caret"></span></button>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                            <li role="presentation"><a role="menuitem" tabindex="-1"
-                                    href="{{ route('invoiceList') }}">Order History</a></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('profile') }}">My
-                                    Account</a></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1"
-                                    href="{{ route('profile') }}?tab=2">Address Book</a></li>
-                        </ul>
+                    <div class="container" style="margin-top:5px;">
+                        <div class="user-icon"><img src="{{ asset('images/profile1.png') }}"></div>
+                        <div class="logout btn-logout"><a><img src="{{ asset('images/logout01.png') }}"></a></div>
+                        <div class="dropbtn">
+                            <button class="btn btn-default dropdown-toggle navright-btn authUserName" type="button"
+                                id="menu1" data-toggle="dropdown">Hi {{ Auth::user()->name ?? '' }}<span
+                                    class="caret"></span></button>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                                <li role="presentation"><a role="menuitem" tabindex="-1"
+                                        href="{{ route('invoiceList') }}">Order History</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1"
+                                        href="{{ route('profile') }}">My
+                                        Account</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1"
+                                        href="{{ route('profile') }}?tab=2">Address Book</a></li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
                 @endauth
             </li>
         </ul>
@@ -122,58 +127,65 @@
         <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('w2form*') ? 'active' : '' }}"
             href="{{ route('w2form') }}">W-2 FORM</a>
         @guest
-        <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn login registerBtn"
-            style="background-color:#d3230c; border-radius:15px; font-size:20px;" href="#">Login</a>
-        <div class="container d-none logoutDiv mobile2">
-            {{-- <div class="user-icon mobile"><img src="{{ asset('images/profile1.png') }}"></div> --}}
+            <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn login registerBtn"
+                style="background-color:#d3230c; border-radius:15px; font-size:20px;" href="#">Login</a>
+            <div class="container d-none logoutDiv mobile2">
+                {{-- <div class="user-icon mobile"><img src="{{ asset('images/profile1.png') }}"></div> --}}
 
-            <div class="dropbtn mobile">
-                <button class="btn btn-default dropdown-toggle navright-btn authUserName" type="button" id="menu1"
-                    data-toggle="dropdown">Hi {{ Auth::user()->name ?? '' }}<span class="caret"></span></button>
-                <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('invoiceList') }}">Order
-                            History</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('profile') }}">My
-                            Account</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('profile') }}?tab=2">Address
-                            Book</a></li>
-                </ul>
+                <div class="dropbtn mobile">
+                    <button class="btn btn-default dropdown-toggle navright-btn authUserName" type="button"
+                        id="menu1" data-toggle="dropdown">Hi {{ Auth::user()->name ?? '' }}<span
+                            class="caret"></span></button>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                        <li role="presentation"><a role="menuitem" tabindex="-1"
+                                href="{{ route('invoiceList') }}">Order
+                                History</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('profile') }}">My
+                                Account</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1"
+                                href="{{ route('profile') }}?tab=2">Address
+                                Book</a></li>
+                    </ul>
+                </div>
+                <div class="logout btn-logout mobile">
+                    {{-- <a><img src="{{ asset('images/logout01.png') }}"></a> --}}
+                    <button class="btn-danger logout-btn ">Logout</button>
+                </div>
             </div>
-            <div class="logout btn-logout mobile">
-                {{-- <a><img src="{{ asset('images/logout01.png') }}"></a> --}}
-                <button  class="btn-danger logout-btn ">Logout</button>
-            </div>
-        </div>
         @endguest
         @auth
-        <div class="container mobile" style="margin-top:5px;">
-            {{-- <div class="user-icon mobile"><img src="{{ asset('images/profile1.png') }}"></div> --}}
+            <div class="container mobile" style="margin-top:5px;">
+                {{-- <div class="user-icon mobile"><img src="{{ asset('images/profile1.png') }}"></div> --}}
 
-            <div class="dropbtn mobile">
-                <button class="btn btn-default dropdown-toggle navright-btn authUserName" type="button" id="menu1"
-                    data-toggle="dropdown">Hi {{ Auth::user()->name ?? '' }}<span class="caret"></span></button>
-                <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('invoiceList') }}">Order
-                            History</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('profile') }}">My
-                            Account</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('profile') }}?tab=2">Address
-                            Book</a></li>
-                </ul>
+                <div class="dropbtn mobile">
+                    <button class="btn btn-default dropdown-toggle navright-btn authUserName" type="button"
+                        id="menu1" data-toggle="dropdown">Hi {{ Auth::user()->name ?? '' }}<span
+                            class="caret"></span></button>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                        <li role="presentation"><a role="menuitem" tabindex="-1"
+                                href="{{ route('invoiceList') }}">Order
+                                History</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('profile') }}">My
+                                Account</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1"
+                                href="{{ route('profile') }}?tab=2">Address
+                                Book</a></li>
+                    </ul>
+                </div>
+                <div class="logout btn-logout mobile">
+                    {{-- <a><img src="{{ asset('images/logout01.png') }}"></a> --}}
+                    <button class=" btn-danger logout-btn">Logout</button>
+                </div>
             </div>
-            <div class="logout btn-logout mobile">
-                {{-- <a><img src="{{ asset('images/logout01.png') }}"></a> --}}
-                <button  class=" btn-danger logout-btn">Logout</button>
-            </div>
-        </div>
         @endauth
     </div>
 
     <div class="openbtn">
         <div class=" pt-4 d-flex justify-content-between" style="display:flex !important">
-            <a href="{{ url('/') }}"><img class="mr-3 mt-5 toggle-logo" src="{{ asset('images/Paystub X.webp') }}"
-                    style="width: 222px;"></a>
-            <span style="font-size:30px;cursor:pointer; padding-right:10px;" class="" onclick="openNav()">&#9776;</span>
+            <a href="{{ url('/') }}"><img class="mr-3 mt-5 toggle-logo"
+                    src="{{ asset('images/Paystub X.webp') }}" style="width: 222px;"></a>
+            <span style="font-size:30px;cursor:pointer; padding-right:10px;" class=""
+                onclick="openNav()">&#9776;</span>
         </div>
     </div>
 
@@ -228,7 +240,8 @@
                 <div class="col-lg-4 mt-3 ">
                     <p class="text-white footer-text">COPYRIGHT © 2022 PaystubX, ALL RIGHTS RESERVED.</p>
                     <div class="container justify-content-center m-auto text-center">
-                        <a href="{{ url('/') }}"><img class="footimg" src="{{ asset('images/satisfaction.webp') }}"></a>
+                        <a href="{{ url('/') }}"><img class="footimg"
+                                src="{{ asset('images/satisfaction.webp') }}"></a>
                     </div>
                 </div>
             </div>
@@ -294,22 +307,23 @@
                 <div class="modal-body pb-4" style="box-shadow: 0 0 8px rgba(0,0,0,.14);padding-top:0;">
                     <p class="mail-text">
                         {{ __("Please enter your registered email address, and we'll send you a link to reset your
-                        password.") }}
+                                                password.") }}
                     </p>
                     <form id="forgotPassword" method="post" action="{{ route('forgot.password') }}">
                         @csrf
                         <label class="label-text" for="css">{{ __('Email Address') }}<span
                                 style="color:red;">*</span></label>
-                        <input class="contact-box" type="text" id="user-email" placeholder="Email Address" name="email">
+                        <input class="contact-box" type="text" id="user-email" placeholder="Email Address"
+                            name="email">
                     </form>
                 </div>
                 <div class="modal-footer" style="display: inline-block;">
                     <div class="d-flex justify-content-between pt-2">
-                        <a style="color: red;" id="backToSignin" href="JavaScript:void(0);">{{ __('Back to Sign in')
-                            }}</a>
+                        <a style="color: red;" id="backToSignin"
+                            href="JavaScript:void(0);">{{ __('Back to Sign in') }}</a>
                         <button class="btn-danger" onclick="$('#forgotPassword').submit();"
                             style="border-radius:20px; border:none;font-size:12px; padding:5px 15px;">{{ __('Send
-                            Password Reset Link') }}</button>
+                                                        Password Reset Link') }}</button>
                     </div>
                 </div>
             </div>
@@ -335,13 +349,13 @@
                         <div class="px-lg-5">
                             <div class="form-group">
                                 <label class="text-left">Email</label>
-                                <input type="email" id="login_email" name="email" class="form-control formm  py-4"
-                                    placeholder="Email *" readonly>
+                                <input type="email" id="login_email" name="email"
+                                    class="form-control formm  py-4" placeholder="Email *" readonly>
                             </div>
                             <div class="form-group">
                                 <label class="text-left">Password</label>
-                                <input type="password" id="password" name="password" class="form-control formm  py-4"
-                                    placeholder="Password *">
+                                <input type="password" id="password" name="password"
+                                    class="form-control formm  py-4" placeholder="Password *">
                             </div>
                         </div>
                         <p class="resend-otp">
@@ -380,8 +394,8 @@
                         <span style="color: #02030359;font-size: 10px;font-family: serif; text-transform:capitalize;"
                             class="text-center">Check spam if not found in inbox</span>
                         <p class="resend-otp" style="padding-top:10px;">
-                            <a id="resendOtpButton" class="pointer-disable" style="" href="JavaScript:void(0);"
-                                disabled>Resend OTP </a>
+                            <a id="resendOtpButton" class="pointer-disable" style=""
+                                href="JavaScript:void(0);" disabled>Resend OTP </a>
                             <i class="fa fa-clock-o clock"></i>
                             <span id="resendTimeOut">30</span>
                         </p>
@@ -390,8 +404,8 @@
                             @csrf
                             <div class="px-lg-5">
                                 <input type="hidden" id="hidden_email" name="email" class="d-none">
-                                <input type="text" id="Verificationcode" name="code" class="form-control formm py-4"
-                                    placeholder="Verification Code *">
+                                <input type="text" id="Verificationcode" name="code"
+                                    class="form-control formm py-4" placeholder="Verification Code *">
                             </div>
                             <button class="previewbtn mt-5 mobile-verify-btn" type="submit">Verify</button>
                         </form>
@@ -443,9 +457,11 @@
                         @csrf
                         <input type="hidden" value="setup-account" name="type">
                         <label class="label-text" for="css">First Name<span style="color:red;">*</span></label>
-                        <input class="contact-box" type="text" name="uname" id="user-name" placeholder="First Name">
+                        <input class="contact-box" type="text" name="uname" id="user-name"
+                            placeholder="First Name">
                         <div class="contact-box-outer">
-                            <label class="label-text" for="css">New Password<span style="color:red;">*</span></label>
+                            <label class="label-text" for="css">New Password<span
+                                    style="color:red;">*</span></label>
                             <input class="contact-box" type="password" placeholder="New Password" name="password"
                                 class="form-control show-password-sd" id="new_password" required>
                             <i id="eye-icon_03" toggle="#password-field"
@@ -455,20 +471,20 @@
                             <label class="label-text" for="css">Confirm Password<span
                                     style="color:red;">*</span></label>
                             <input class="contact-box" type="password" placeholder="Confirm Password"
-                                name="password_confirmation" class="form-control show-password-sd" id="confirm_password"
-                                required>
+                                name="password_confirmation" class="form-control show-password-sd"
+                                id="confirm_password" required>
                             <i id="eye-icon_03" toggle="#password-field"
                                 class="fa fa-eye-slash eye-icon confirm-toggle-password" data-id="02"></i>
                         </div>
                         {{-- <div class="modal-footer" style="display: inline-block;"> --}}
-                            <div class="d-flex justify-content-between pt-3">
-                                <button class="btn-secondary" data-bs-dismiss="modal"
-                                    style="border-radius:20px; border:none;font-size:12px; padding:5px 10px;">Cancel</button>
-                                <button class="btn-danger" id="set-name"
-                                    style="border-radius:20px; border:none; font-size:12px; padding:5px 15px; position:relative; right:26px;"
-                                    type="submit">Save</button>
-                            </div>
-                            {{--
+                        <div class="d-flex justify-content-between pt-3">
+                            <button class="btn-secondary" data-bs-dismiss="modal"
+                                style="border-radius:20px; border:none;font-size:12px; padding:5px 10px;">Cancel</button>
+                            <button class="btn-danger" id="set-name"
+                                style="border-radius:20px; border:none; font-size:12px; padding:5px 15px; position:relative; right:26px;"
+                                type="submit">Save</button>
+                        </div>
+                        {{--
                         </div> --}}
                     </form>
                 </div>
@@ -535,44 +551,42 @@
         });
     </script>
     <script>
+        $(document).ready(function() {
+            $('.add_address').change(function() {
+                var type = $('.add_address').data('type');
+                // var value = $('option:selected', '.address').attr('value');
+                var value = $(this).val();
+                var userId = {{ Auth::check() == true ? 'true' : 'false' }};
 
-$(document).ready(function() {
+                if (value == 'add_address') {
+                    if (userId == true) {
+                        window.location.href = "{{ route('profile') }}?tab=2&emp=1";
+                    } else {
+                        if (userAuth) {
+                            window.location.href = "{{ route('profile') }}?tab=2&emp=1";
+                        } else {
+                            $(this).val('');
+                            $("#loginModal").modal("show");
+                        }
+                    }
 
-    $('.add_address').change(function() {
-        var type = $('.add_address').data('type');
-        // var value = $('option:selected', '.address').attr('value');
-        var value = $(this).val();
-        var userId = {{ Auth::check() == true ? 'true' : 'false' }};
+                } else if (value == 'add_address_1') {
+                    if (userId == true) {
+                        window.location.href = "{{ route('profile') }}?tab=2&emp=2";
+                    } else {
+                        if (userAuth) {
+                            window.location.href = "{{ route('profile') }}?tab=2&emp=2";
+                        } else {
+                            $(this).val('');
+                            $("#loginModal").modal("show");
+                        }
+                    }
 
-        if (value == 'add_address') {
-            if (userId == true) {
-                window.location.href = "{{ route('profile') }}?tab=2&emp=1";
-            } else {
-                if (userAuth) {
-                    window.location.href = "{{ route('profile') }}?tab=2&emp=1";
-                } else {
-                    $(this).val('');
-                    $("#loginModal").modal("show");
                 }
-            }
-
-        } else if (value == 'add_address_1') {
-            if (userId == true) {
-                window.location.href = "{{ route('profile') }}?tab=2&emp=2";
-            } else {
-                if (userAuth) {
-                    window.location.href = "{{ route('profile') }}?tab=2&emp=2";
-                } else {
-                    $(this).val('');
-                    $("#loginModal").modal("show");
-                }
-            }
-
-        }
-        return false;
-    });
-});
-</script>
+                return false;
+            });
+        });
+    </script>
     <script src="{{ asset('user') }}/js/main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     @yield('script')
@@ -664,21 +678,21 @@ $(document).ready(function() {
     </div>
 
     @if ($errors->first())
-    <script>
-        toastr.error('{{ $errors->first() }}');
-    </script>
+        <script>
+            toastr.error('{{ $errors->first() }}');
+        </script>
     @endif
 
     @if (Session::has('message'))
-    <script>
-        toastr.success("{{ Session::get('message') }}");
-    </script>
+        <script>
+            toastr.success("{{ Session::get('message') }}");
+        </script>
     @endif
 
     @if (Session::has('error'))
-    <script>
-        toastr.error("{{ Session::get('error') }}");
-    </script>
+        <script>
+            toastr.error("{{ Session::get('error') }}");
+        </script>
     @endif
 
     <script>
@@ -754,7 +768,7 @@ $(document).ready(function() {
         });
     </script>
     <script>
-        $(document).ready(function(){
+        $(document).ready(function() {
             function phoneMask() {
                 var num = $(this).val();
                 if (/^[a-zA-Z0-9]{6,}$/.test(num)) {

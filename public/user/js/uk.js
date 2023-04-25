@@ -3,7 +3,7 @@ var alltotal = parseFloat($('#alltotal').val() || 0.00);
 var allDeductiontotal = parseFloat($('#allDeductiontotal').val() || 0.00);
 var days_number = parseFloat($('#days_number').val() || 0.00)
 
-$('.pay_start').change(function () {
+/* $('.pay_start').change(function () {
     dayCalculate();
     setTimeout(() => {
         calculation();
@@ -15,7 +15,7 @@ $(".pay_date").change(function () {
     setTimeout(() => {
         calculation();
     }, 100);
-});
+}); */
 
 function dayCalculate() {
     var tax_rate = $(".tax_rate").find(":selected").data("tax");
@@ -29,7 +29,6 @@ function dayCalculate() {
     }
 
     var dt1 = new Date(pay_start);
-
     var newDate = moment(dt1).add(1, "weeks").format("MM/DD/YYYY");
     var newDate_1 = moment(newDate).subtract(1, "days").format("MM/DD/YYYY");
     setTimeout(() => {
@@ -93,9 +92,9 @@ $(".addEarningField").click(function () {
     });
 });
 
-$(".rateKey, .hoursKey").keyup(function () {
-    calculation();
-});
+// $(".rateKey, .hoursKey").keyup(function () {
+//     calculation();
+// });
 
 function calculation() {
     var timeout = 0;

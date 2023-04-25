@@ -129,9 +129,17 @@ class PayPalController extends Controller
                     $subcriptionObj->expiry_date = Carbon::now()->addMonths($planDetail->plan_duration);
                 }
                 $subcriptionObj->transaction_status = $response['status'] ?? '';
+                $subcriptionObj->device_type = "website";
                 if ($subcriptionObj->save()) {
                     $userObj = User::find(Auth::user()->id);
-                    $userObj->expiryDate = $subcriptionObj->expiry_date;
+                    if ($subcriptionObj->country == 'usa') {
+                        $userObj->usa_expiry_date = $subcriptionObj->expiry_date ?? '';
+                    } else if ($subcriptionObj->country == 'uk') {
+                        $userObj->uk_expiry_date = $subcriptionObj->expiry_date ?? '';
+                    } else if ($subcriptionObj->country == 'canada') {
+                        $userObj->canada_expiry_date = $subcriptionObj->expiry_date ?? '';
+                    }
+                    $userObj->device_type = $subcriptionObj->device_type;
                     if ($userObj->save()) {
                         $invoice = invoiceMail(Auth::user()->id, $subcriptionObj->country);
                     }
@@ -179,7 +187,7 @@ class PayPalController extends Controller
     public function checkExpiry()
     {
         try {
-            $subcriberData = User::where('expiryDate', '!=', '')->where('expiryDate', '<=', Carbon::now())->get();
+            $subcriberData = User::where('usa_expiry_date', '<=', Carbon::now())->orWhere('uk_expiry_date', '<=', Carbon::now())->orWhere('canada_expiry_date', '<=', Carbon::now())->get();
             foreach ($subcriberData as $key => $user) {
                 User::where('id', $user->id)->update(['expiryDate' => '']);
             }

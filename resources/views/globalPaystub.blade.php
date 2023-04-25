@@ -84,7 +84,8 @@
                             <h5 class="box-h5">Company Info</h5>
                             <img class="address-book" src="{{ asset('images/address-book.png') }}" alt=""
                                 height="30px;">
-                            <select id="employerAddress" class="address_book add_address address input-box-font select-dropdown"
+                            <select id="employerAddress"
+                                class="address_book add_address address input-box-font select-dropdown"
                                 data-type="employer">
                                 <option data-name="" value="">Select Address</option>
                                 @foreach ($employerList ?? [] as $key => $employer)
@@ -251,7 +252,8 @@
                             <h5 class="box-h5">Employee Info</h5>
                             <img class="address-book" src="{{ asset('images/address-book.png') }}" alt=""
                                 height="30px;">
-                            <select id="employeeAddress" class="address_book_1 add_address address input-box-font select-dropdown"
+                            <select id="employeeAddress"
+                                class="address_book_1 add_address address input-box-font select-dropdown"
                                 data-type="employee">
                                 <option data-name="" value="">Select Address</option>
                                 @auth
@@ -403,7 +405,8 @@
                                 <div>
                                     <label for="auto_cal" class="lable">AUTO CALCULATOR <span class="redColor">*</span>
                                     </label>
-                                    <select name="auto_cal" id="auto_cal" class="dropdown11 auto_calculate removeDiv select-dropdown">
+                                    <select name="auto_cal" id="auto_cal"
+                                        class="dropdown11 auto_calculate removeDiv select-dropdown">
                                         {{-- <option value=""> --- Select Calculator --- </option> --}}
                                         <option value="on">ON</option>
                                         <option value="off">OFF</option>
@@ -461,7 +464,8 @@
                                 <div>
                                     <label for="exemptions" class="lable">EXEMPTIONS
                                     </label>
-                                    <select name="exemptions" id="exemptions" class="dropdown11 exemptions removeDiv select-dropdown">
+                                    <select name="exemptions" id="exemptions"
+                                        class="dropdown11 exemptions removeDiv select-dropdown">
                                         {{-- <option value=""> --- Select Exemptions --- </option> --}}
                                         <option value="0">0</option>
                                         <option value="1">1</option>
@@ -841,279 +845,238 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" crossorigin="anonymous"></script>
 <script>
     $(document).ready(function() {
-
-            $('.add_address').change(function() {
-                var type = $('.add_address').data('type');
-                // var value = $('option:selected', '.address').attr('value');
-                var value = $(this).val();
-                var userId = {{ Auth::check() == true ? 'true' : 'false' }};
-
-                if (value == 'add_address') {
-                    if (userId == true) {
-                        window.location.href = "{{ route('profile') }}?tab=2&emp=1";
-                    } else {
-                        if (userAuth) {
-                            window.location.href = "{{ route('profile') }}?tab=2&emp=1";
-                        } else {
-                            $(this).val('');
-                            $("#loginModal").modal("show");
-                        }
-                    }
-
-                } else if (value == 'add_address_1') {
-                    if (userId == true) {
-                        window.location.href = "{{ route('profile') }}?tab=2&emp=2";
-                    } else {
-                        if (userAuth) {
-                            window.location.href = "{{ route('profile') }}?tab=2&emp=2";
-                        } else {
-                            $(this).val('');
-                            $("#loginModal").modal("show");
-                        }
-                    }
-
+        $('.advanceTemplate').change(function() {
+            var value = $('option:selected', '.at_id').attr('value');
+            if (value != '') {
+                var status = $('option:selected', '.at_id').attr('data-status');
+                var stub = $('option:selected', '.at_id').data('stub');
+                var check = $('option:selected', '.at_id').data('check');
+                var client = $('option:selected', '.at_id').data('client');
+                if (stub == 1 && check == 0) {
+                    $('.stubxc').each(function() {
+                        $(".stubxc").removeClass("col-md-4");
+                        $(".checkxcv").addClass("d-none");
+                        $(".stubxcv").removeClass("d-none");
+                        $(".stubxc").addClass("col-md-3");
+                    });
                 }
-                return false;
-            });
-        });
-</script>
-<script>
-    $(document).ready(function() {
-            $('.advanceTemplate').change(function() {
-                var value = $('option:selected', '.at_id').attr('value');
-                if (value != '') {
-                    var status = $('option:selected', '.at_id').attr('data-status');
-                    var stub = $('option:selected', '.at_id').data('stub');
-                    var check = $('option:selected', '.at_id').data('check');
+                if (stub == 0 && check == 1) {
+                    $('.stubxc').each(function() {
+                        $(".stubxc").removeClass("col-md-4");
+                        $(".stubxcv").addClass("d-none");
+                        $(".checkxcv").removeClass("d-none");
+                        $(".stubxc").addClass("col-md-3");
+                    });
+                }
+
+                if (stub == 0 && check == 0) {
+                    $('.stubxc').each(function() {
+                        $(".stubxc").addClass("col-md-4");
+                        $(".stubxcv").addClass("d-none");
+                        $(".checkxcv").addClass("d-none");
+                        $(".stubxc").removeClass("col-md-3");
+                    });
+                }
+
+                if (status == 1) {
+                    $(".tempElemant").removeClass("d-none");
+                    var clock = $('option:selected', '.at_id').data('clock');
                     var client = $('option:selected', '.at_id').data('client');
-                    if (stub == 1 && check == 0) {
-                        $('.stubxc').each(function() {
-                            $(".stubxc").removeClass("col-md-4");
-                            $(".checkxcv").addClass("d-none");
-                            $(".stubxcv").removeClass("d-none");
-                            $(".stubxc").addClass("col-md-3");
-                        });
-                    }
-                    if (stub == 0 && check == 1) {
-                        $('.stubxc').each(function() {
-                            $(".stubxc").removeClass("col-md-4");
-                            $(".stubxcv").addClass("d-none");
-                            $(".checkxcv").removeClass("d-none");
-                            $(".stubxc").addClass("col-md-3");
-                        });
-                    }
-
-                    if (stub == 0 && check == 0) {
-                        $('.stubxc').each(function() {
-                            $(".stubxc").addClass("col-md-4");
-                            $(".stubxcv").addClass("d-none");
-                            $(".checkxcv").addClass("d-none");
-                            $(".stubxc").removeClass("col-md-3");
-                        });
-                    }
-
-                    if (status == 1) {
-                        $(".tempElemant").removeClass("d-none");
-                        var clock = $('option:selected', '.at_id').data('clock');
-                        var client = $('option:selected', '.at_id').data('client');
-                        if (clock == 1) {
-                            if (client == 1) {
-                                $('.advicex').each(function() {
-                                    $(".advicex").removeClass("col-lg-4 col-md-4 col-sm-6");
-                                    $(".advicexv").removeClass("d-none");
-                                    $(".advicexvc").removeClass("d-none");
-                                    $(".advicex").addClass("col-lg-2 col-md-4 col-sm-6");
-                                });
-                            } else {
-                                $('.advicex').each(function() {
-                                    $(".advicex").removeClass("col-lg-4 col-md-4 col-sm-6");
-                                    $(".advicexv").removeClass("d-none");
-                                    $(".advicexvc").addClass("d-none");
-                                    $(".advicex").addClass("col-lg-2 col-md-4 col-sm-6");
-                                });
-                            }
-
+                    if (clock == 1) {
+                        if (client == 1) {
+                            $('.advicex').each(function() {
+                                $(".advicex").removeClass("col-lg-4 col-md-4 col-sm-6");
+                                $(".advicexv").removeClass("d-none");
+                                $(".advicexvc").removeClass("d-none");
+                                $(".advicex").addClass("col-lg-2 col-md-4 col-sm-6");
+                            });
                         } else {
-                            if (client == 1) {
-                                // alert('here');
-                                $('.advicex').each(function() {
-                                    $(".advicex").addClass("col-lg-3 col-md-3 col-sm-6");
-                                    $(".advicexv").addClass("d-none");
-                                    $(".advicexvc").removeClass("d-none");
-                                    $(".advicex").removeClass("col-lg-2 col-md-4 col-sm-6");
-                                    $(".advicex").removeClass("col-lg-4 col-md-4 col-sm-6");
-                                });
-                            } else {
-                                $('.advicex').each(function() {
-                                    $(".advicex").addClass("col-lg-4 col-md-4 col-sm-6");
-                                    $(".advicexv").addClass("d-none");
-                                    $(".advicexvc").addClass("d-none");
-                                    $(".advicex").removeClass("col-lg-2 col-md-4 col-sm-6");
-                                });
-                            }
-
+                            $('.advicex').each(function() {
+                                $(".advicex").removeClass("col-lg-4 col-md-4 col-sm-6");
+                                $(".advicexv").removeClass("d-none");
+                                $(".advicexvc").addClass("d-none");
+                                $(".advicex").addClass("col-lg-2 col-md-4 col-sm-6");
+                            });
                         }
 
                     } else {
-                        $(".tempElemant").addClass("d-none");
+                        if (client == 1) {
+                            // alert('here');
+                            $('.advicex').each(function() {
+                                $(".advicex").addClass("col-lg-3 col-md-3 col-sm-6");
+                                $(".advicexv").addClass("d-none");
+                                $(".advicexvc").removeClass("d-none");
+                                $(".advicex").removeClass("col-lg-2 col-md-4 col-sm-6");
+                                $(".advicex").removeClass("col-lg-4 col-md-4 col-sm-6");
+                            });
+                        } else {
+                            $('.advicex').each(function() {
+                                $(".advicex").addClass("col-lg-4 col-md-4 col-sm-6");
+                                $(".advicexv").addClass("d-none");
+                                $(".advicexvc").addClass("d-none");
+                                $(".advicex").removeClass("col-lg-2 col-md-4 col-sm-6");
+                            });
+                        }
+
                     }
+
                 } else {
-                    $('.stubxc').each(function() {
-                        $(".stubxc").addClass("col-md-4");
-                        $(".stubxcv").addClass("d-none");
-                        $(".checkxcv").addClass("d-none");
-                        $(".stubxc").removeClass("col-md-3");
-                    });
                     $(".tempElemant").addClass("d-none");
                 }
-                $('option:selected', '.basicTemplate').prop("selected", false);
-            });
-
-            $('.basicTemplate').change(function() {
-                var value = $('option:selected', '.bt_id').attr('value');
-                if (value != '') {
-                    var status = $('option:selected', '.bt_id').attr('data-status');
-                    var stub = $('option:selected', '.bt_id').data('stub');
-                    var check = $('option:selected', '.bt_id').data('check');
-                    if (stub == 1 && check == 0) {
-                        $('.stubxc').each(function() {
-                            $(".stubxc").removeClass("col-md-4");
-                            $(".checkxcv").addClass("d-none");
-                            $(".stubxcv").removeClass("d-none");
-                            $(".stubxc").addClass("col-md-3");
-                        });
-                    }
-                    if (stub == 0 && check == 1) {
-                        $('.stubxc').each(function() {
-                            $(".stubxc").removeClass("col-md-4");
-                            $(".stubxcv").addClass("d-none");
-                            $(".checkxcv").removeClass("d-none");
-                            $(".stubxc").addClass("col-md-3");
-                        });
-                    }
-                    if (stub == 0 && check == 0) {
-                        $('.stubxc').each(function() {
-                            $(".stubxc").addClass("col-md-4");
-                            $(".stubxcv").addClass("d-none");
-                            $(".checkxcv").addClass("d-none");
-                            $(".stubxc").removeClass("col-md-3");
-                        });
-                    }
-                    if (status == 1) {
-                        $(".tempElemant").removeClass("d-none");
-                    } else {
-                        $(".tempElemant").addClass("d-none");
-                    }
-                } else {
-                    $('.stubxc').each(function() {
-                        $(".stubxc").addClass("col-md-4");
-                        $(".stubxcv").addClass("d-none");
-                        $(".checkxcv").addClass("d-none");
-                        $(".stubxc").removeClass("col-md-3");
-                    });
-                    $(".tempElemant").addClass("d-none");
-                }
-
-                $('option:selected', '.advanceTemplate').prop("selected", false);
-            });
-
-            $('.basicTem').click(function() {
-                var imageattr = $('option:selected', '.bt_id').attr('data-src');
-                $('.setImage').attr('src', imageattr);
-                if (imageattr != null && imageattr != undefined) {
-                    $('#openEye').modal('show');
-                }
-            });
-
-            $('.advanceTem').click(function() {
-                var imageattr = $('option:selected', '.at_id').attr('data-src');
-                $('.setImage').attr('src', imageattr);
-                if (imageattr != null && imageattr != undefined) {
-                    $('#openEye').modal('show');
-                }
-            });
+            } else {
+                $('.stubxc').each(function() {
+                    $(".stubxc").addClass("col-md-4");
+                    $(".stubxcv").addClass("d-none");
+                    $(".checkxcv").addClass("d-none");
+                    $(".stubxc").removeClass("col-md-3");
+                });
+                $(".tempElemant").addClass("d-none");
+            }
+            $('option:selected', '.basicTemplate').prop("selected", false);
         });
+
+        $('.basicTemplate').change(function() {
+            var value = $('option:selected', '.bt_id').attr('value');
+            if (value != '') {
+                var status = $('option:selected', '.bt_id').attr('data-status');
+                var stub = $('option:selected', '.bt_id').data('stub');
+                var check = $('option:selected', '.bt_id').data('check');
+                if (stub == 1 && check == 0) {
+                    $('.stubxc').each(function() {
+                        $(".stubxc").removeClass("col-md-4");
+                        $(".checkxcv").addClass("d-none");
+                        $(".stubxcv").removeClass("d-none");
+                        $(".stubxc").addClass("col-md-3");
+                    });
+                }
+                if (stub == 0 && check == 1) {
+                    $('.stubxc').each(function() {
+                        $(".stubxc").removeClass("col-md-4");
+                        $(".stubxcv").addClass("d-none");
+                        $(".checkxcv").removeClass("d-none");
+                        $(".stubxc").addClass("col-md-3");
+                    });
+                }
+                if (stub == 0 && check == 0) {
+                    $('.stubxc').each(function() {
+                        $(".stubxc").addClass("col-md-4");
+                        $(".stubxcv").addClass("d-none");
+                        $(".checkxcv").addClass("d-none");
+                        $(".stubxc").removeClass("col-md-3");
+                    });
+                }
+                if (status == 1) {
+                    $(".tempElemant").removeClass("d-none");
+                } else {
+                    $(".tempElemant").addClass("d-none");
+                }
+            } else {
+                $('.stubxc').each(function() {
+                    $(".stubxc").addClass("col-md-4");
+                    $(".stubxcv").addClass("d-none");
+                    $(".checkxcv").addClass("d-none");
+                    $(".stubxc").removeClass("col-md-3");
+                });
+                $(".tempElemant").addClass("d-none");
+            }
+
+            $('option:selected', '.advanceTemplate').prop("selected", false);
+        });
+
+        $('.basicTem').click(function() {
+            var imageattr = $('option:selected', '.bt_id').attr('data-src');
+            $('.setImage').attr('src', imageattr);
+            if (imageattr != null && imageattr != undefined) {
+                $('#openEye').modal('show');
+            }
+        });
+
+        $('.advanceTem').click(function() {
+            var imageattr = $('option:selected', '.at_id').attr('data-src');
+            $('.setImage').attr('src', imageattr);
+            if (imageattr != null && imageattr != undefined) {
+                $('#openEye').modal('show');
+            }
+        });
+    });
 </script>
-<script
-    src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyDpavHXELJMJvIHifFPN6tBBiFSXKGpy2g&callback=Function.prototype">
-</script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyDpavHXELJMJvIHifFPN6tBBiFSXKGpy2g&callback=Function.prototype"></script>
 <script>
     var searchInput = 'address_1';
-
-        $(document).ready(function() {
-            var autocomplete;
-            autocomplete = new google.maps.places.Autocomplete((document.getElementById(searchInput)), {
-                types: ['geocode'],
-                componentRestrictions: {
-                    country: "USA"
-                }
-            });
-
-
-            google.maps.event.addListener(autocomplete, 'place_changed', function() {
-                var near_place = autocomplete.getPlace();
-                if (near_place && near_place.address_components.length > 0) {
-                    var obj = [];
-                    for (var i = 0; i < near_place.address_components.length; i++) {
-                        for (var j = 0; j < near_place.address_components[i].types.length; j++) {
-                            obj[near_place.address_components[i].types[j]] = near_place.address_components[
-                                i].short_name;
-                            // if(near_place.address_components[i].types['0'] == 'administrative_area_level_1'){
-                            //     $('#state').val(near_place.address_components[i].long_name);
-                            // }
-
-                        }
-                    }
-                    setLocation(obj);
-                }
-            });
+    $(document).ready(function() {
+        var autocomplete;
+        autocomplete = new google.maps.places.Autocomplete((document.getElementById(searchInput)), {
+            types: ['geocode'],
+            componentRestrictions: {
+                country: "USA"
+            }
         });
 
-        function setLocation(obj) {
-            if (obj.street_number == undefined && obj.route == undefined) {
-                $("#address_1").val('');
-            } else if (obj.street_number == undefined) {
-                $("#address_1").val(obj.route);
-                $('#address_1').css('border-color', 'gray');
-                $('.0_address_1').remove();
-            } else if (obj.route == undefined) {
-                $("#address_1").val(obj.street_number);
-                $('#address_1').css('border-color', 'gray');
-                $('.0_address_1').remove();
-            } else {
-                $("#address_1").val(obj.street_number + ' ' + obj.route);
-                $('#address_1').css('border-color', 'gray');
-                $('.0_address_1').remove();
+
+        google.maps.event.addListener(autocomplete, 'place_changed', function() {
+            var near_place = autocomplete.getPlace();
+            if (near_place && near_place.address_components.length > 0) {
+                var obj = [];
+                for (var i = 0; i < near_place.address_components.length; i++) {
+                    for (var j = 0; j < near_place.address_components[i].types.length; j++) {
+                        obj[near_place.address_components[i].types[j]] = near_place.address_components[
+                            i].short_name;
+                        // if(near_place.address_components[i].types['0'] == 'administrative_area_level_1'){
+                        //     $('#state').val(near_place.address_components[i].long_name);
+                        // }
+
+                    }
+                }
+                setLocation(obj);
             }
-            /* if (obj.neighborhood != undefined) {
-                $("#address_2").val(obj.neighborhood);
-                $('#address_2').css('border-color', 'gray');
-                $('.0_address_2').remove();
-            } else {
-                $("#address_2").val('');
-            } */
-            if (obj.locality != undefined) {
-                $("#city").val(obj.locality);
-                $('#city').css('border-color', 'gray');
-                $('.0_city').remove();
-            } else {
-                $("#city").val('');
-            }
-            if (obj.administrative_area_level_1 != undefined) {
-                $("#state").val(obj.administrative_area_level_1);
-                $('#state').css('border-color', 'gray');
-                $('.0_state').remove();
-            } else {
-                $("#state").val('');
-            }
-            if (obj.postal_code != undefined) {
-                $("#zip_code").val(obj.postal_code);
-                $('#zip_code').css('border-color', 'gray');
-                $('.0_zip_code').remove();
-            } else {
-                $("#zip_code").val('');
-            }
+        });
+    });
+
+    function setLocation(obj) {
+        if (obj.street_number == undefined && obj.route == undefined) {
+            $("#address_1").val('');
+        } else if (obj.street_number == undefined) {
+            $("#address_1").val(obj.route);
+            $('#address_1').css('border-color', 'gray');
+            $('.0_address_1').remove();
+        } else if (obj.route == undefined) {
+            $("#address_1").val(obj.street_number);
+            $('#address_1').css('border-color', 'gray');
+            $('.0_address_1').remove();
+        } else {
+            $("#address_1").val(obj.street_number + ' ' + obj.route);
+            $('#address_1').css('border-color', 'gray');
+            $('.0_address_1').remove();
         }
+        /* if (obj.neighborhood != undefined) {
+            $("#address_2").val(obj.neighborhood);
+            $('#address_2').css('border-color', 'gray');
+            $('.0_address_2').remove();
+        } else {
+            $("#address_2").val('');
+        } */
+        if (obj.locality != undefined) {
+            $("#city").val(obj.locality);
+            $('#city').css('border-color', 'gray');
+            $('.0_city').remove();
+        } else {
+            $("#city").val('');
+        }
+        if (obj.administrative_area_level_1 != undefined) {
+            $("#state").val(obj.administrative_area_level_1);
+            $('#state').css('border-color', 'gray');
+            $('.0_state').remove();
+        } else {
+            $("#state").val('');
+        }
+        if (obj.postal_code != undefined) {
+            $("#zip_code").val(obj.postal_code);
+            $('#zip_code').css('border-color', 'gray');
+            $('.0_zip_code').remove();
+        } else {
+            $("#zip_code").val('');
+        }
+    }
 </script>
 <script>
     var searchInput_1 = 'emp_street_1';
