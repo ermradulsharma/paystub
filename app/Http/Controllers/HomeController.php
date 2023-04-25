@@ -253,24 +253,13 @@ class HomeController extends Controller
 
     public function contactForm(Request $request)
     {
-
-
-        $response = [];
-        $response['success'] = FALSE;
-        $response['status'] = STATUS_BAD_REQUEST;
         try {
             $mailData = [];
             $mailData['name'] = $request->name;
             $mailData['email'] = $request->email;
             $mailData['message'] = $request->w3review;;
             $mailData['subject'] = 'Contact Form';
-            // Mail::to('paystubxlogger@gmail.com')->send(new ContactForm($mailData));
-            Mail::to('tripti@yopmail.com')->send(new ContactForm($mailData));
-
-            $response['success'] = TRUE;
-            $response['message'] = "Your account setup successfully.";
-            $response['status'] = STATUS_OK;
-
+            Mail::to('paystubxlogger@gmail.com')->send(new ContactForm($mailData));
             return back()->with('message', 'Your feedback send successfully to the Paystubx Team.');
         } catch (\Exception $e) {
             Log::info('User Delete Function', array('Exception' => $e->getMessage()));
