@@ -159,7 +159,7 @@
                 $date = \Carbon\Carbon::now();
             @endphp
             @if (Auth::user()->device_type == 'website')
-                @if(Auth::user()->usa_expiry_date <= $date || !isset($requestData['watermark']))
+                @if(Auth::user()->uk_expiry_date <= $date || !isset($requestData['watermark']))
                     <div class="watermark"></div>
                     <div class="watermark2"></div>
                 @endif
