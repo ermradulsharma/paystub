@@ -185,14 +185,8 @@
                                         <div class="row">
                                             <div style="margin:0 !important;" class="col-md-4 mt-3 pl-0 padding-0">
                                                 <div>
-                                                    <label for="pay_start" class="lable uk-lable ">Pay Start <span
-                                                            style="color:red;">*</span> </label>
-                                                    <input
-                                                        style="color:#140303f5;border:1px solid #110303fe;padding:0px 6px !important; height:40px; appearance: none;"
-                                                        type="text" id="pay_start" name="pay_start"
-                                                        placeholder="12-11-2022"
-                                                        class="input-uk removeDiv pay_start datepicker inputdatepicker"
-                                                        data-id="pay_start" value="<?php echo date('m/d/Y'); ?>">
+                                                    <label for="pay_start" class="lable uk-lable ">Pay Start <span style="color:red;">*</span> </label>
+                                                    <input style="color:#140303f5;border:1px solid #110303fe;padding:0px 6px !important; height:40px; appearance: none;" type="text" id="pay_start" name="pay_start" placeholder="12-11-2022" class="input-uk removeDiv pay_start datepicker inputdatepicker" data-id="pay_start" value="<?php echo date('m/d/Y'); ?>">
                                                 </div>
 
                                             </div>
@@ -302,8 +296,8 @@
                                             <div
                                                 class=" col-lg-4 col-md-12 margin-bottom  mt-2  px-lg-2 px-0 addincomeKey">
                                                 <button type="button" class="statementbtn">EARNING</button>
-                                                <div class="margin-earnbtn  bottom">
-                                                    <input class=" mt-3 text-center incomeKey" data-id="000"
+                                                <div class="margin-bottom">
+                                                    <input class="earnbtn mt-3 text-center incomeKey" data-id="000"
                                                         name="earning[]" type="text" value="Regular">
                                                 </div>
                                                 <div id="addEarning"></div>
