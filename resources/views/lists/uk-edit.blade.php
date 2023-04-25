@@ -172,63 +172,97 @@
                                 <div style="border:3px solid #ff5722;" class=" pay-outer mb-3">
                                     <div class="ukpay-inner ">
                                         <div class="row">
-                                            <div style="margin:0 !important;" class="col-md-4 mt-3 pl-0">
-                                                <label for="pay_start" class="lable uk-lable ">Pay Start <span style="color:red;">*</span> </label>
-                                                <input type="text" id="pay_start" value="{{ $invoice->pay_start ?? null }}" name="pay_start"  class="input-uk" style="font-size:14px;">
+                                            <div style="margin:0 !important;" class="col-md-4 mt-3 pl-0 padding-0">
+                                                <div>
+                                                    <label for="pay_start" class="lable uk-lable ">Pay Start <span
+                                                            style="color:red;">*</span> </label>
+                                                    <input
+                                                        style="color:#140303f5;border:1px solid #110303fe;padding:0px 6px !important; height:40px; appearance: none;"
+                                                        type="text" id="pay_start" name="pay_start"
+                                                        placeholder="12-11-2022"
+                                                        class="input-uk removeDiv pay_start datepicker inputdatepicker"
+                                                        data-id="pay_start" value="<?php echo date('m/d/Y'); ?>">
+                                                </div>
+
                                             </div>
-                                            <div style="margin:0 !important;" class="col-md-4 mt-3 pl-0">
-                                                <label for="pay_end" class="lable uk-lable">Pay End <span
-                                                        style="color:red;">*</span> </label>
-                                                <input type="text" id="pay_end"
-                                                    value="{{ $invoice->pay_end ?? null }}" name="pay_end"
-                                                    class="input-uk"style="font-size:14px;">
+                                            <div style="margin:0 !important;" class="col-md-4 mt-3 pl-0 padding-0">
+                                                <div>
+                                                    <label for="pay_end" class="lable uk-lable">Pay End <span
+                                                            style="color:red;">*</span> </label>
+                                                    <input
+                                                        style="color:#140303f5;border:1px solid #110303fe;padding:0px 6px !important; height:40px; appearance: none;"
+                                                        type="text" id="pay_end" name="pay_end"
+                                                        placeholder="12-11-2022"
+                                                        class="input-uk removeDiv pay_end datepicker inputdatepicker"
+                                                        data-id="pay_end" value="<?php echo date('m/d/Y'); ?>">
+                                                </div>
+
                                             </div>
-                                            <div style="margin:0 !important;" class="col-md-4 mt-3 pl-0">
-                                                <label for="pay_date" class="lable uk-lable">Pay Date <span
-                                                        style="color:red;">*</span> </label>
-                                                <input type="text" id="pay_date"
-                                                    value="{{ $invoice->pay_date ?? null }}" name="pay_date"
-                                                    class="input-uk" style="font-size:14px;">
+                                            <div style="margin:0 !important;" class="col-md-4 mt-3 pl-0 padding-0">
+                                                <div>
+                                                    <label for="pay_date" class="lable uk-lable">Pay Date <span
+                                                            style="color:red;">*</span> </label>
+                                                    <input
+                                                        style="color:#140303f5;border:1px solid #110303fe;padding:0px 6px !important; height:40px; appearance: none;"
+                                                        type="text" id="pay_date" name="pay_date"
+                                                        placeholder="12-11-2022"
+                                                        class="input-uk removeDiv pay_date datepicker inputdatepicker"
+                                                        data-id="pay_date" value="<?php echo date('m/d/Y'); ?>">
+                                                </div>
+
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="ukpay-inner1">
                                                 <div class="col-lg-8 mt-3 p-0">
-                                                    <label for="pay_type" class="lable uk-lable">Pay Type<span
-                                                            style="color:red;">*</span> </label>
-                                                    <input type="text" id="pay_type"
-                                                        value="{{ $invoice->pay_type ?? null }}" name="pay_type"
-                                                        class="input-uk" value="2 Weekly" style="font-size:14px;">
+                                                    <div>
+                                                        <label for="pay_type" class="lable uk-lable">Pay Type<span
+                                                                style="color:red;">*</span> </label>
+                                                        <input type="text" id="pay_type" name="pay_type"
+                                                            class="input-uk removeDiv" placeholder="2 Weekly"
+                                                            style="font-size:14px;">
+                                                    </div>
+
                                                 </div>
                                                 <div class="col-lg-8 mt-3 p-0">
-                                                    <label for="payment_method" class="lable uk-lable">Payment Mehtod<span
-                                                            style="color:red;">*</span> </label>
-                                                    <input type="text" id="payment_method"
-                                                        value="{{ $invoice->payment_method ?? null }}"
-                                                        name="payment_method" class="input-uk" value="BACS"
-                                                        style="font-size:14px;">
+                                                    <div>
+                                                        <label for="payment_method" class="lable uk-lable">Payment
+                                                            Mehtod<span style="color:red;">*</span> </label>
+                                                        <input type="text" id="payment_method" name="payment_method"
+                                                            class="input-uk removeDiv" placeholder="BACIS"
+                                                            style="font-size:14px; text-transform:uppercase">
+                                                    </div>
+
                                                 </div>
                                                 <div class="col-lg-8 mt-3 p-0">
-                                                    <label for="tax_code" class="lable uk-lable">Tax Code<span
-                                                            style="color:red;">*</span> </label>
-                                                    <input type="text" id="tax_code"
-                                                        value="{{ $invoice->tax_code ?? null }}" name="tax_code"
-                                                        class="input-uk" value="1257L" style="font-size:14px;">
+                                                    <div>
+                                                        <label for="tax_code" class="lable uk-lable">Tax Code<span
+                                                                style="color:red;">*</span> </label>
+                                                        <input type="text" id="tax_code" name="tax_code"
+                                                            class="input-uk removeDiv" placeholder="1257L"
+                                                            style="font-size:14px; text-transform:uppercase">
+                                                    </div>
+
                                                 </div>
                                                 <div class="col-lg-8 mt-3 p-0">
-                                                    <label for="ni_number" class="lable uk-lable">NI Number<span
-                                                            style="color:red;">*</span> </label>
-                                                    <input type="text" id="ni_number"
-                                                        value="{{ $invoice->ni_number ?? null }}" name="ni_number"
-                                                        class="input-uk" value="SC 56 52 10 C" style="font-size:14px;">
+                                                    <div>
+                                                        <label for="ni_number" class="lable uk-lable">NI Number<span
+                                                                style="color:red;">*</span> </label>
+                                                        <input type="text" id="ni_number" name="ni_number"
+                                                            class="input-uk removeDiv" placeholder="SC 56 52 10 C"
+                                                            style="font-size:14px; text-transform:uppercase">
+                                                    </div>
+
                                                 </div>
                                                 <div class="col-lg-8 mt-3 p-0 mb-3">
-                                                    <label for="ni_table_letter" class="lable uk-lable">NI Table
-                                                        Letter<span style="color:red;">*</span> </label>
-                                                    <input type="text" id="ni_table_letter"
-                                                        value="{{ $invoice->ni_table_letter ?? null }}"
-                                                        name="ni_table_letter" class="input-uk" value="A"
-                                                        style="font-size:14px;">
+                                                    <div>
+                                                        <label for="ni_table_letter" class="lable uk-lable">NI Table
+                                                            Letter<span style="color:red;">*</span> </label>
+                                                        <input type="text" id="ni_table_letter" name="ni_table_letter"
+                                                            class="input-uk removeDiv" placeholder="A"
+                                                            style="font-size:14px; text-transform:uppercase">
+                                                    </div>
+
                                                 </div>
                                             </div>
                                         </div>
@@ -301,12 +335,13 @@
                                             </div>
                                         </div>
                                         <div class="row mb-3">
-                                            <div class="col-xl-4 col-lg-7 col-md-4 mt-2 margin-bottom  px-lg-2 px-0">
-                                                <button type="button" class="btnCommon addEarningField"> <i
-                                                        class="fa fa-plus-circle pr-2"
-                                                        style="font-size: 22px;color: #0ec23b;padding-top: 0px;"></i>Add
-                                                    Earning</button>
-                                            </div>
+                                            <div
+                                            class="col-xl-4 col-lg-7 col-md-4 mt-2 margin-bottom  px-lg-2 px-0 center-btn">
+                                            <button type="button" class="btnCommon addEarningField uk-add-btn"> <i
+                                                    class="fa fa-plus-circle pr-2"
+                                                    style="font-size: 22px;color: #0ec23b;padding-top: 0px;"></i>Add
+                                                Earning</button>
+                                        </div>
                                         </div>
                                     </div>
                                     <div class="ukpay-inner ">
@@ -322,7 +357,7 @@
                                                 <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
                                                     @foreach ($deduction as $key => $item)
                                                         <img src="{{ asset('images/lock.png') }}" style=""
-                                                            class="earnbtn2">
+                                                            class="earnbtn2 lockuk">
                                                         <input class="input-uk text-center taxes" name="taxes[]"
                                                             data-id="00{{ $key }}"
                                                             data-value="{{ $item->price }}"
@@ -367,7 +402,7 @@
                                     <div class="ukpay-inner ">
                                         <div class="row">
                                             <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
-                                                <img src="{{ asset('images/lock.png') }}" class="earnbtn2">
+                                                <img src="{{ asset('images/lock.png') }}" class="earnbtn2 lockuk">
                                                 <input class="input-uk text-center" value="Taxable Gross Pay ">
                                             </div>
 
@@ -377,7 +412,7 @@
                                                     value="{{ $invoice->taxable_gross_pay ?? null }}">
                                             </div>
                                             <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
-                                                <img src="{{ asset('images/lock.png') }}" class="earnbtn2">
+                                                <img src="{{ asset('images/lock.png') }}" class="earnbtn2 lockuk">
                                                 <input class="input-uk text-center" value="Income Tax">
                                             </div>
 
@@ -387,7 +422,7 @@
                                                     data-value="">
                                             </div>
                                             <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
-                                                <img src="{{ asset('images/lock.png') }}" class="earnbtn2">
+                                                <img src="{{ asset('images/lock.png') }}" class="earnbtn2 lockuk">
                                                 <input class="input-uk  text-center" value="Employee NIC">
                                             </div>
 
@@ -397,7 +432,7 @@
                                                     data-value="">
                                             </div>
                                             <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
-                                                <img src="{{ asset('images/lock.png') }}" class="earnbtn2">
+                                                <img src="{{ asset('images/lock.png') }}" class="earnbtn2 lockuk">
                                                 <input class="input-uk  text-center" value="Employee NIC">
                                             </div>
 

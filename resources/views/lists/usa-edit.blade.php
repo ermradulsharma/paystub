@@ -156,7 +156,7 @@
                                         <div class="dropdown ">
                                             <select name="state" value="{{ $invoice->state ?? '' }}" id="state"
                                                 class="state dropdown11 removeDiv">
-                                                <option value=""> --- Select --- </option>
+                                                <option value="">Select</option>
                                                 @foreach ($stateTaxes as $stateTax)
                                                     <option value="{{ $stateTax->state_code }}"
                                                         {{ $invoice->state == $stateTax->state_code ? 'selected' : '' }}>
@@ -346,8 +346,8 @@
                                             <select name="emp_state" id="emp_state" class=" dropdown11 removeDiv">
                                                 <div>
                                                     <option class="ff" style="color: #757575;" value=""
-                                                        data-tax="null"> ---
-                                                        Select State --- </option>
+                                                        data-tax="null"> Select State ---
+                                                       </option>
                                                 </div>
                                                 @foreach ($stateTaxes as $stateTax)
                                                     <option value="{{ $stateTax->state_code }}"
@@ -720,18 +720,17 @@
 
                             <div class="row mb-3">
                                 <div class="col-xl-2 col-lg-3 col-md-4 mt-2 margin-bottom">
-                                    <button type="button" class="add_button earnbtn" type="add_earning"
-                                        id="add_earning" style="font-size: 18px !important;"><i
-                                            class="fa fa-plus-circle pr-2" style="font-size:24px;color:green"></i>Add
+                                    <button type="button" class="add_button earnbtn" type="add_earning" id="add_earning"
+                                        style="font-size: 18px"><i class="fa fa-plus-circle pr-2"
+                                            style="font-size:24px;color:green"></i>Add
                                         Earning</button>
                                 </div>
                             </div>
 
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <button type="button" class="createbtn ">DEDUCTIONS</button>
-                                    <p class="p-0 m-0 text-left font-weight-bold" style="font-family: serif;">Tap on
-                                        padlock to change text</p>
+                            <div class="row mt-5">
+                                <div class="col-md-4 col-lg-3">
+                                    <button type="button" class="createbtn w-100 py-0">DEDUCTIONS</button>
+                                    <p style="margin: 0;">Tap On padlocak to change text</p>
                                 </div>
                             </div>
                             <div class="mt-1">
@@ -812,16 +811,10 @@
                             <div class="my-3">
                                 <div class="row my-3">
                                     <div class="col-md-4 col-lg-3">
-                                        <button type="button" class="add_deduction earnbtn" type="add_deduction"
-                                            style="font-size: 18px !important;"><i class="fa fa-plus-circle pr-5"
+                                        <button type="button" class="add_deduction earnbtn" style="font-size: 18px;"><i
+                                                class="fa fa-plus-circle pr-lg-5 pr-2"
                                                 style="font-size:24px;color:green"></i>Add Deduction</button>
                                     </div>
-
-                                    <div class="col-md-1"></div>
-                                    <div class="col-md-2 col-lg-3"></div>
-                                    <div class="col-md-1"></div>
-                                    <div class="col-md-3"></div>
-                                    <div class="col-md-3"></div>
                                 </div>
                                 <div class="row mb-3">
                                     <div class="col-md-4 col-lg-3 mb-2">

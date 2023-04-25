@@ -302,8 +302,8 @@
                                             <div
                                                 class=" col-lg-4 col-md-12 margin-bottom  mt-2  px-lg-2 px-0 addincomeKey">
                                                 <button type="button" class="statementbtn">EARNING</button>
-                                                <div class="margin-bottom">
-                                                    <input class="earnbtn mt-3 text-center incomeKey" data-id="000"
+                                                <div class="margin-earnbtn  bottom">
+                                                    <input class=" mt-3 text-center incomeKey" data-id="000"
                                                         name="earning[]" type="text" value="Regular">
                                                 </div>
                                                 <div id="addEarning"></div>

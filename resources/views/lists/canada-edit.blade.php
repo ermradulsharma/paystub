@@ -131,7 +131,7 @@
                                         <label for="state" class="lable">Province <span class="redColor">*</span></label>
                                         <div class="dropdown ">
                                             <select name="state" id="emp_state" class="state dropdown11 tax_rate removeDiv">
-                                                <option value=""> --- Select --- </option>
+                                                <option value="">Select</option>
                                                 @foreach ($stateTaxes as $stateTax)
                                                     <option value="{{ $stateTax->state_code }}" data-tax="{{ $stateTax->rate }}" {{ $invoice->state == $stateTax->state_code ? 'selected' : '' }}>{{ $stateTax->state }}</option>
                                                 @endforeach
