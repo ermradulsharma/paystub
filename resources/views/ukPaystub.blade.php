@@ -87,19 +87,13 @@
                                 <h6 class="base">BASIC TEMPLATES</h6>
                                 <div class="mt-3">
                                     <div class="input-group mmenu mb-3 text-center">
-                                        <select name="basic_temp" id="basic_temp"
-                                            class="form-control dropdown1 text-center bt_id small-font basicTemplate direction-left-canada"
-                                            style="margin-right:10px; font-size:18px;">
+                                        <select name="basic_temp" id="basic_temp" class="form-control dropdown1 text-center bt_id small-font basicTemplate direction-left-canada" style="margin-right:10px; font-size:18px;">
                                             <option value=""> --- Select Basic Templates --- </option>
                                             @foreach ($basicType as $data)
-                                            <option value="{{ $data->title ?? '' }}"
-                                                data-src="{{ $data->images->file ?? '' }}"
-                                                data-status="{{ $data->template_element }}"> {{ $data->name }}
-                                            </option>
+                                                <option value="{{ $data->title ?? '' }}" data-src="{{ $data->images->file ?? '' }}"  data-status="{{ $data->template_element }}"> {{ $data->name }} </option>
                                             @endforeach
                                         </select>
-                                        <i class="fa fa-eye-slash basicTem uk-eye" style="font-size: 39px;"
-                                            role="button"></i>
+                                        <i class="fa fa-eye-slash basicTem uk-eye" style="font-size: 39px;" role="button"></i>
                                     </div>
                                 </div>
                             </div>
@@ -137,42 +131,31 @@
         <div>
             <div class="row mb-3">
                 <div class="col-md-12 canada-padding">
-
                     <div class=" box-usa">
                         <div class="row mb-3" style="align-items: end;">
                             <div class="row justify-content py-3">
                                 <h5 class="box-h5">Company Info</h5>
                                 <img class="address-book" src="{{ asset('images/address-book.png') }}" alt="" height="30px;">
-                                <select id="employerAddress" class="address_book add_address address input-box-font select-dropdown"
-                                    data-type="employer">
+                                <select id="employerAddress" class="address_book add_address address input-box-font select-dropdown" data-type="employer">
                                     <option data-name="" value="">Select Address</option>
-                                    @foreach ($employerList ?? [] as $key => $employer)
-                                    <option data-name="{{ $employer->name }}" data-address1="{{ $employer->address_1 }}"
-                                        data-address2="{{ $employer->address_2 }}" data-city="{{ $employer->city }}"
-                                        data-state="{{ $employer->state }}" data-zip="{{ $employer->zip_code }}"
-                                        data-tel="{{ $employer->tel }}" value="{{ $employer->name }}">
-                                        {{ $employer->name }}</option>
-                                    @endforeach
+                                        @foreach ($employerList ?? [] as $key => $employer)
+                                            <option data-name="{{ $employer->name }}" data-address1="{{ $employer->address_1 }}" data-address2="{{ $employer->address_2 }}" data-city="{{ $employer->city }}" data-state="{{ $employer->state }}" data-zip="{{ $employer->zip_code }}" data-tel="{{ $employer->tel }}" value="{{ $employer->name }}"> {{ $employer->name }}</option>
+                                        @endforeach
                                     <option data-name="" value="add_address">Add New Address</option>
                                 </select>
                             </div>
                             <div class="col-md-6 mt-1">
                                 <div>
-                                    <label for="cname" class="lable">EMPLOYER (COMPANY) NAME <span
-                                            style="color:red;">*</span> </label>
-                                    <input type="text" id="cname" name="cname" placeholder="Employer (Company) Name"
-                                        class="w-100 input-box-font text-center removeDiv" style="">
+                                    <label for="cname" class="lable">EMPLOYER (COMPANY) NAME <span  style="color:red;">*</span> </label>
+                                    <input type="text" id="cname" name="cname" placeholder="Employer (Company) Name" class="w-100 input-box-font text-center removeDiv" style="">
                                 </div>
 
                             </div>
 
                             <div class="col-md-6 mt-1">
                                 <div>
-                                    <label for="company_address" class="lable text-center uk-paystub-text">EMPLOYER
-                                        (COMAPNY) ADDRESS <span style="color:red;">*</span></label>
-                                    <input type="text" id="company_address" name="company_address"
-                                        placeholder="Employer (Company) Address"
-                                        class="w-100 input-box-font text-center removeDiv" style="">
+                                    <label for="company_address" class="lable text-center uk-paystub-text">EMPLOYER (COMAPNY) ADDRESS <span style="color:red;">*</span></label>
+                                    <input type="text" id="company_address" name="company_address" placeholder="Employer (Company) Address" class="w-100 input-box-font text-center removeDiv" style="">
                                 </div>
 
                             </div>
@@ -182,9 +165,20 @@
             </div>
         </div>
         <div>
-            <h5 class="box-h5">Employee Info</h5>
+            {{-- <h5 class="box-h5">Employee Info</h5> --}}
             <div class="col-md-12 canada-padding">
                 <div class=" box-usa">
+                    <div class="row justify-content py-3">
+                        <h5 class="box-h5">Employee Info</h5>
+                        <img class="address-book" src="{{ asset('images/address-book.png') }}" alt="" height="30px;">
+                        <select id="employeeAddress" class="address_book_1 add_address address input-box-font select-dropdown" data-type="employee">
+                            <option data-name="" value="">Select Address</option>
+                            @foreach ($employeeList ?? [] as $key => $employee)
+                                <option data-name="{{ $employee->name }}" data-address1="{{ $employee->address_1 }}" data-address2="{{ $employee->address_2 }}" data-city="{{ $employee->city }}" data-state="{{ $employee->state }}" data-zip="{{ $employee->zip_code }}" data-emp_id="{{ $employee->emp_id }}" data-emp_ssn="{{ $employee->emp_ssn }}" value="{{ $employee->name }}"> {{ $employee->name }}</option>
+                            @endforeach
+                            <option data-name="" value="add_address_1">Add New Address</option>
+                        </select>
+                    </div>
                     <div class="row mb-3" style="align-items: end;">
                         <div class="col-md-6 mt-1">
                             <div>
@@ -221,8 +215,7 @@
                                 <label for="emp_zip_code" class="lable text-center uk-paystub-text">Postal Code<span
                                         style="color:red;">*</span></label>
                                 <input type="text" id="emp_zip_code" name="emp_zip_code" placeholder="Postal Code"
-                                    class="w-100 input-box-font text-center removeDiv" onkeyup="phoneMask()"
-                                    style="">
+                                    class="w-100 input-box-font text-center removeDiv" onkeyup="phoneMask()" style="">
                             </div>
 
                         </div>
@@ -278,8 +271,7 @@
                                                     <label for="pay_type" class="lable uk-lable">Pay Type<span
                                                             style="color:red;">*</span> </label>
                                                     <input type="text" id="pay_type" name="pay_type"
-                                                        class="input-uk removeDiv" placeholder="2 Weekly"
-                                                        style="">
+                                                        class="input-uk removeDiv" placeholder="2 Weekly" style="">
                                                 </div>
 
                                             </div>
