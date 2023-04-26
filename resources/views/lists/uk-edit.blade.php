@@ -110,7 +110,7 @@
                                     <div class="mt-4">
                                         <div class="input-group mmenu mb-3">
                                             <select name="basic_temp"
-                                                class="form-control dropdown1 text-center bt_id small-font basicTemplate"
+                                                class="form-control dropdown1 text-center bt_id small-font basicTemplate direction-left-canada-edit"
                                                 style="margin-right:10px; font-size:18px;">
                                                 <option value=""> --- Select Basic Templates --- </option>
                                                 @foreach ($basicType as $data)

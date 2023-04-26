@@ -42,7 +42,7 @@
 
         @media(max-width:1024px) {
             .address_book {
-                width: 29.5%;
+                width: 29%;
                 font-size: 12px;
                 height: 32px;
             }
@@ -52,7 +52,7 @@
             }
 
             .address_book_1 {
-                width: 12.6%;
+                width: 12%;
                 height: 32px;
                 font-size: 12px;
             }
