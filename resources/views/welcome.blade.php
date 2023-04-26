@@ -39,13 +39,13 @@
     <div class="mt-2 createSample">
         <div class="container see-img">
             <div class="row m-auto">
-                <div>
+                <div style="display: none">
                     <button class="see-sample">SEE SAMPLE</button>
                 </div>
-                <div>
+                <div style="display: none">
                     <button class="see-sample1">SEE SAMPLE</button>
                 </div>
-                <div>
+                <div style="display: none">
                     <button class="see-sample2">SEE SAMPLE</button>
                 </div>
                 <a class="" href="{{ url('/') }}"><img class="w-100 " src="images/Create me.webp"></a>

@@ -29,6 +29,41 @@
             text-align: -webkit-center !important;
         }
 
+        input[type="checkbox"] {
+            position: relative;
+            appearance: none;
+            width: 40px;
+            height: 17px;
+            background: #ccc !important;
+            border-radius: 50px;
+            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: 0.4s;
+        }
+
+        input:checked[type="checkbox"] {
+            background: #244b1f !important ;
+        }
+
+        input[type="checkbox"]::after {
+            position: absolute;
+            content: "";
+            width: 15px;
+            height: 15px;
+            top: 0;
+            left: 0;
+            background: #fff;
+            border-radius: 50%;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            transform: scale(1.1);
+            transition: 0.4s;
+        }
+
+        input:checked[type="checkbox"]::after {
+            left: 60%;
+        }
+
+
         @media(max-width:1440px) {
 
             .address_book {
@@ -443,8 +478,16 @@
                             <div class="row mb-3">
                                 <div class="col-md-3 mt-4">
                                     <div>
-                                        <label for="emp_your_state" class="lable">SELECT YOUR STATE <span class="redColor">*</span> </label>
-                                        <input type="checkbox" data-toggle="toggle" unchecked data-size="sm">
+                                        <div
+                                            class="d-flex justify-content-between align-items-center"style=" position:relative; bottom:5px;">
+                                            <label for="emp_your_state" class="lable">SELECT YOUR STATE <span
+                                                    class="redColor">*</span> </label>
+                                            {{-- <input type="checkbox" data-toggle="toggle" unchecked data-size="sm"> --}}
+                                            <div class="check-box">
+                                                <input type="checkbox">
+                                            </div>
+                                        </div>
+
                                         <div class="dropdown ">
                                             <select name="emp_your_state" id="emp_your_state"
                                                 class=" dropdown11 tax_rate removeDiv select-dropdown">
