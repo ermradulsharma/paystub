@@ -109,17 +109,16 @@
                                 <h6 class="base">BASIC TEMPLATES</h6>
                                 <div class="mt-3">
                                     <div class="input-group mmenu mb-3 text-center">
-                                        <select name="basic_temp"
-                                            class="form-control dropdown1 text-center basicTemplate bt_id removeDiv"
-                                            style="margin-right:10px;">
-                                            <option value=""> --- Select Basic Templates --- </option>
-                                            @foreach ($basicType as $data)
-                                            <option value="{{ $data->title ?? '' }}"
-                                                data-src="{{ $data->images->file ?? '' }}"
-                                                data-status="{{ $data->template_element }}" {{ $invoice->basic_temp ==
-                                                $data->title ? 'selected' : '' }}> {{ $data->name }} </option>
-                                            @endforeach
-                                        </select>
+                                        <select name="basic_temp" id="basic_temp"
+                                        class="form-control dropdown1 text-center bt_id small-font basicTemplate direction-left-canada-edit"
+                                        style="margin-right:10px; font-size:18px;">
+                                        <option value=""> --- Select Basic Templates --- </option>
+                                        @foreach ($basicType as $data)
+                                        <option value="{{ $data->title ?? '' }}"
+                                            data-src="{{ $data->images->file ?? '' }}"
+                                            data-status="{{ $data->template_element }}"> {{ $data->name }} </option>
+                                        @endforeach
+                                    </select>
                                         <i class="fa fa-eye-slash basicTem uk-eye" role="button"></i>
                                     </div>
                                 </div>

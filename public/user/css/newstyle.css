@@ -2293,6 +2293,12 @@ img.earnbtn2.lockuk {
         flex-direction: inherit;
         align-items: flex-start;
     }
+    .direction-left{
+        border-radius: 0px !important;
+    }
+    .direction-left-canada{
+        border-radius: 0px !important;
+    }
 
     .formp {
         font-size: 15px;
@@ -2332,6 +2338,12 @@ img.earnbtn2.lockuk {
 
     .redcon {
         padding: 30px;
+    }
+    .address_book {
+        border-radius: 0px !important;
+    }
+    .address_book_1 {
+        border-radius: 0px !important;
     }
 
     .w2-form-number {
@@ -2471,7 +2483,7 @@ img.earnbtn2.lockuk {
 
     .w-100 {
         width: 100% !important;
-        padding: 6px;
+        padding: 6px !important;
         text-transform: capitalize;
         font-size: 12px;
     }
@@ -3442,6 +3454,9 @@ img.earnbtn2.lockuk {
         text-align: left !important;
 
     }
+    .statementbtn{
+        border-radius: 0;
+    }
     select {
 
     text-align: center !important;
@@ -3630,7 +3645,7 @@ img.earnbtn2.lockuk {
     }
     .direction-left {
         direction: ltr;
-        padding: 0px 80px !important;
+        padding: 0px 65px !important;
         appearance: none;
         -webkit-appearance: none;
 
@@ -3639,6 +3654,9 @@ img.earnbtn2.lockuk {
 
         padding: 0px 75px !important;
 
+}
+.direction-left-canada-edit {
+    padding: 0px 60px !important;
 }
 
     label.lable.text-center.uk-paystub-text {
@@ -4896,6 +4914,9 @@ img.earnbtn2.lockuk {
         padding: 0px 43px !important;
 
     }
+    .direction-left-canada-edit {
+        padding: 0px 40px !important;
+    }
     .direction-left-canada {
 
         padding: 0px 48px !important;
@@ -5041,6 +5062,10 @@ img.earnbtn2.lockuk {
 
         padding: 0px 29px !important;
 
+
+    }
+    .direction-left-canada-edit {
+        padding: 0px 12px !important;
     }
     .address_book {
         width: 82% !important;

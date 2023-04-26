@@ -2,22 +2,78 @@
 @section('style_edit')
 <style>
     .address_book {
-        width: 14%;
+        width: 35%;
         position: relative;
         left: 10px;
-        top: -3px;
+        background-color: white;
+        border: 1px solid #000;
+        padding: 0px 5px;
     }
 
     .address_book_1 {
-        width: 14%;
+        width: 19%;
         position: relative;
         left: 10px;
-        top: -3px;
+        background-color: white;
+        border: 1px solid #000;
+        padding: 0px 5px;
     }
 
     .address-book {
         position: relative;
         left: 7px;
+        height: 40px;
+    }
+
+    #basic_temp {
+        text-align: -webkit-center !important;
+    }
+
+    @media(max-width:1440px) {
+
+        .address_book {
+            width: 35%;
+        }
+
+        .address_book_1 {
+            width: 18.3%;
+        }
+    }
+
+    @media(max-width:1024px) {
+        .address_book {
+            width: 29%;
+            font-size: 12px;
+            height: 32px;
+        }
+
+        .address-book {
+            height: 32px;
+        }
+
+        .address_book_1 {
+            width: 12%;
+            height: 32px;
+            font-size: 12px;
+        }
+    }
+
+    @media(max-width:768px) {
+        .address_book {
+            width: 22%;
+        }
+
+        .address_book_1 {
+            width: 38.5%;
+        }
+    }
+
+    @media(max-width:425px) {
+        .address-book {
+            height: 32px;
+        }
+
+
     }
 </style>
 @endsection
@@ -192,17 +248,18 @@
                                     <div class="mt-4">
                                         <div class="input-group mmenu mb-3 text-center">
                                             <select name="basic_temp" id="basic_temp"
-                                                class="form-control dropdown1 text-center bt_id small-font basicTemplate removeDiv"
+                                                class="form-control dropdown1 text-center bt_id small-font basicTemplate removeDiv justify-content-center direction-left"
                                                 style="margin-right:10px; font-size:18px;">
                                                 <option value=""> --- Select Basic Templates --- </option>
-                                                @foreach ($basicType as $basic_temp)
-                                                    <option value="{{ $basic_temp->title ?? '' }}"
-                                                        {{ $invoice->basic_temp == $basic_temp->title ? 'selected' : '' }}
-                                                        data-src="{{ $basic_temp->images->file ?? '' }}"
-                                                        data-status="{{ $basic_temp->template_element }}"
-                                                        data-stub="{{ $basic_temp->stub_no }}"
-                                                        data-clock="{{ $basic_temp->co_no }}">
-                                                        {{ $basic_temp->name }} </option>
+                                                @foreach ($basicType as $data)
+                                                    <option value="{{ $data->title ?? '' }}"
+                                                        data-src="{{ $data->images->file ?? '' }}"
+                                                        data-status="{{ $data->template_element }}"
+                                                        data-stub="{{ $data->stub_no }}"
+                                                        data-check="{{ $data->check_no }}"
+                                                        data-client="{{ $data->client_no }}">
+                                                        {{ $data->name }}
+                                                    </option>
                                                 @endforeach
                                             </select>
                                             <i class="fa fa-eye-slash basicTem" style="font-size: 39px;"
@@ -219,20 +276,20 @@
                                     <div class="mt-4">
                                         <div class="input-group mmenu mb-3">
                                             <select name="advance_temp" id="advance_temp"
-                                                class="form-control text-center dropdown1 at_id small-font advanceTemplate removeDiv"
-                                                style="margin-right:10px; font-size:18px;">
-                                                <option value=""> --- Select Advance Template --- </option>
-                                                @foreach ($advanceType as $advance_temp)
-                                                    <option value="{{ $advance_temp->title ?? '' }}"
-                                                        {{ $invoice->advance_temp == $advance_temp->title ? 'selected' : '' }}
-                                                        data-src="{{ $advance_temp->images->file ?? '' }}"
-                                                        data-status="{{ $advance_temp->template_element ? true : false }}"
-                                                        data-stub="{{ $advance_temp->stub_no }}"
-                                                        data-clock="{{ $advance_temp->co_no }}"
-                                                        data-check="{{ $advance_temp->check_no }}">
-                                                        {{ $advance_temp->name ?? '' }} </option>
-                                                @endforeach
-                                            </select>
+                                            class="form-control text-center dropdown1 at_id small-font advanceTemplate removeDiv direction-left"
+                                            style="margin-right:10px; font-size:18px;">
+                                            <option value=""> --- Select Advance Template --- </option>
+                                            @foreach ($advanceType as $data)
+                                                <option value="{{ $data->title ?? '' }}"
+                                                    data-src="{{ $data->images->file ?? '' }}"
+                                                    data-status="{{ $data->template_element }}"
+                                                    data-stub="{{ $data->stub_no }}"
+                                                    data-clock="{{ $data->co_no }}"
+                                                    data-check="{{ $data->check_no }}"
+                                                    data-client="{{ $data->client_no }}">
+                                                    {{ $data->name ?? '' }} </option>
+                                            @endforeach
+                                        </select>
                                             <i class="fa fa-eye-slash advanceTem" role="button"
                                                 style="font-size: 39px;"></i>
                                         </div>
