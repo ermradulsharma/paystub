@@ -931,9 +931,15 @@
                         <div class="col-md-12 px-0">
                             <div class=" box-usa">
                                 <div class="row mb-3">
-                                    <div class="col-lg-2 col-md-4 col-sm-6 mb-2 advicex advicexv d-none">
-                                        <p class="p-0 m-0 " style="font-family: serif;">CO<span class="redColor">*</span></p>
-                                        <input class="earnbtn text-center " value="{{ $invoice->co_number ?? '' }}" name="co_number" placeholder="MP5" maxlength="4" minlength="4" style="text-transform:uppercase">
+                                    <div class="col-lg-4 col-md-4 col-sm-6 mb-2 advicex advicexv d-none">
+                                        <div>
+                                            <p class="p-0 m-0 " style="font-family: serif;">CO<span
+                                                    class="redColor">*</span></p>
+                                            <input type="text" name="co_number" id="co_number"
+                                                class="earnbtn removeDiv text-center" maxlength="4" minlength="4"
+                                                style="text-transform:uppercase" placeholder="MP5">
+                                        </div>
+
                                     </div>
                                     <div class="col-lg-4 col-md-4 col-sm-6 mb-2 advicex advicexv d-none">
                                         <div>
@@ -942,9 +948,16 @@
                                         </div>
 
                                     </div>
-                                    <div class="col-lg-2 col-md-4 col-sm-6 mb-2 advicex advicexv d-none">
-                                        <p class="p-0 m-0" style="font-family: serif;">FILE.<span class="redColor">*</span></p>
-                                        <input class="earnbtn text-center " value="{{ $invoice->file_number ?? '' }}" name="file_number" maxlength="6" minlength="4" placeholder="123456" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+                                    <div class="col-lg-4 col-md-4 col-sm-6 mb-2 advicex advicexv d-none">
+                                        <div>
+                                            <p class="p-0 m-0" style="font-family: serif;">FILE.<span
+                                                    class="redColor">*</span> </p>
+                                            <input type="text" name="file_number" id="file_number"
+                                                class="earnbtn removeDiv text-center" maxlength="6" minlength="4"
+                                                placeholder="123456"
+                                                onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+                                        </div>
+
                                     </div>
                                     <div class="col-lg-2 col-md-4 col-sm-6 mb-2 advicex advicexv d-none">
                                         <p class="p-0 m-0 " style="font-family: serif;">CLOCK VCHR.<span class="redColor">*</span></p>
