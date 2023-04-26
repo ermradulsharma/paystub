@@ -225,7 +225,7 @@
                                 <div>
                                     <label for="state" class="lable">Province <span class="redColor">*</span></label>
                                     <div class="dropdown ">
-                                        <select name="state" id="emp_state" class="state dropdown11 tax_rate removeDiv">
+                                        <select name="state" id="emp_state" class="state dropdown11 tax_rate removeDiv  select-dropdown">
                                             <option value="">Select</option>
                                             @foreach ($stateTaxes as $stateTax)
                                             <option value="{{ $stateTax->state_code }}" data-tax="{{ $stateTax->rate }}"
@@ -337,7 +337,7 @@
                                 <div>
                                     <label for="currency" class="lable" class="redColor">CURRENCY <span
                                             class="redColor">*</span> </label>
-                                    <select name="currency" id="currency" class=" dropdown11 removeDiv">
+                                    <select name="currency" id="currency" class=" dropdown11 removeDiv  select-dropdown">
                                         @foreach ($currencies as $currency)
                                         <option value="{{ $currency->symbol }}" {{ $invoice->currency ==
                                             $currency->symbol ? 'selected' : '' }}>{{ $currency->symbol }} ({{

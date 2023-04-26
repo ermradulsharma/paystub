@@ -129,7 +129,7 @@
                                 <h5 class="box-h5">Company Info</h5>
                                 <img class="address-book" src="{{ asset('images/address-book.png') }}" alt=""
                                     height="30px;">
-                                <select id="employerAddress" class="address_book add_address address" data-type="employer">
+                                <select id="employerAddress" class="address_book add_address address  select-dropdown" data-type="employer">
                                     <option data-name="{{ $invoice->cname ?? '' }}" data-address1="{{ $invoice->address_1 ?? '' }}"
                                         data-address2="{{ $invoice->address_2 ?? '' }}" data-city="{{  $invoice->city ?? '' }}"
                                         data-state="{{ $invoice->state ?? '' }}" data-zip="{{ $invoice->zip_code ?? '' }}" value="">Select Address</option>
@@ -313,7 +313,7 @@
                                 <h5 class="box-h5">Employee Info</h5>
                                 <img class="address-book" src="{{ asset('images/address-book.png') }}" alt=""
                                     height="30px;">
-                                <select id="employeeAddress" class="address_book_1 add_address address"
+                                <select id="employeeAddress" class="address_book_1 add_address address  select-dropdown"
                                     data-type="employee">
                                     <option data-name="{{ $invoice->emp_name ?? '' }}"
                                         data-address1="{{ $invoice->emp_street_1 ?? '' }}"
@@ -465,7 +465,7 @@
                                                 class="redColor">*</span> </label>
                                         <div class="dropdown ">
                                             <select name="emp_your_state" id="emp_your_state"
-                                                class=" dropdown11 tax_rate removeDiv">
+                                                class=" dropdown11 tax_rate removeDiv  select-dropdown">
                                                 <option value="">Choose your State</option>
                                                 @foreach ($stateTaxes as $stateTax)
                                                     <option value="{{ $stateTax->state_code }}"
@@ -501,7 +501,7 @@
                                         <label for="marital_status" class="lable">MARITAL STATUS <span
                                                 class="redColor">*</span> </label>
                                         <select name="marital_status" id="marital_status"
-                                            class="dropdown11 marital_status removeDiv">
+                                            class="dropdown11 marital_status removeDiv  select-dropdown">
                                             <option value=""> --- Select Marital Status--- </option>
                                             <option value="single"
                                                 {{ $invoice->marital_status == 'single' ? 'selected' : '' }}>Single
@@ -523,8 +523,8 @@
                                         <label for="time_period" class="lable">HOW DO YOU GET PAID <span
                                                 class="redColor">*</span> </label>
                                         <select name="time_period" id="time_period"
-                                            class="dropdown11 time_period removeDiv">
-                                            <option value=""> --- Select --- </option>
+                                            class="dropdown11 time_period removeDiv  select-dropdown">
+                                            <option value="">Select</option>
                                             <option value="weekly"
                                                 {{ $invoice->time_period == 'weekly' ? 'selected' : '' }}>Weekly</option>
                                             <option value="bi-weekly"
@@ -560,7 +560,7 @@
                                         <label for="emp_type" class="lable">EMPLOYMENT TYPE<span
                                                 class="redColor">*</span>
                                         </label>
-                                        <select name="emp_type" id="emp_type" class=" dropdown11 removeDiv">
+                                        <select name="emp_type" id="emp_type" class=" dropdown11 removeDiv  select-dropdown">
                                             <option value=""> --- Select Employment Type --- </option>
                                             <option value="Temporary"
                                                 {{ $invoice->emp_type == 'Temporary' ? 'selected' : '' }}>Temporary
@@ -578,7 +578,7 @@
                                         <label for="exemptions" class="lable">EXEMPTIONS <span class="redColor">*</span>
                                         </label>
                                         <select name="exemptions" id="exemptions"
-                                            class=" dropdown11 exemptions removeDiv">
+                                            class=" dropdown11 exemptions removeDiv  select-dropdown">
                                             <option value=""> --- Select Exemptions --- </option>
                                             <option value="0" {{ $invoice->exemptions == '0' ? 'selected' : '' }}>0
                                             </option>
@@ -609,7 +609,7 @@
                                     <div>
                                         <label for="currency" class="lable" class="redColor">SELECT YOUR PREFERRED
                                             CURRENCY <span class="redColor">*</span> </label>
-                                        <select name="currency" id="currency" class=" dropdown11">
+                                        <select name="currency" id="currency" class=" dropdown11  select-dropdown">
                                             <option value=""> --- Select currency --- </option>
                                             @foreach ($currencies as $currency)
                                                 <option value="{{ $currency->symbol }}"
