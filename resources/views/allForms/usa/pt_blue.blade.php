@@ -160,7 +160,7 @@
 
 <body>
     <main class="bg-img2">
-        @guest
+    @guest
         <div class="watermark"></div>
         <div class="watermark2"></div>
     @endguest
@@ -192,7 +192,7 @@
                 <div class="watermark2"></div>
             @endif
         @endif
-        @endauth
+    @endauth
         <div class="container" style="border-right: 1px solid   #43407a; margin: 0;border-top: 1px solid   #43407a; border-left: 1px solid   #43407a; border-bottom:none;padding: 0 0px 0px 0px;">
             <div class="row" style="display: flex; display: flex;justify-content: space-between;padding: 0px 14px;">
                 <div style="width: 60%;float:left;">

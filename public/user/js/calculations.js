@@ -432,13 +432,31 @@ $(document).ready(function () {
             }
         }, 300);
     }
+    $('.tgl').click(function () {
+        if ($(this).is(":checked")) {
+            $(".emp_your_state_txt").removeClass("d-none");
+            $(".emp_your_state_slt").addClass("d-none");
+            default_tax();
+        } else {
+            $(".emp_your_state_txt").addClass("d-none");
+            $(".emp_your_state_slt").removeClass("d-none");
+            default_tax();
+        }
+    });
 
     function default_tax() {
         var period_gross_total = $("#period_gross_total").val();
         var ytd_gross_total = $("#ytd_gross_total").val();
         var deduction_period_tax_other = parseFloat($("#deduction_period_tax_other").val() || 0.0);
         var ytd_deduction_period_tax_other = parseFloat($("#ytd_deduction_period_tax_other").val() || 0.0);
-        var tax_state = $("option:selected", ".tax_rate").attr("data-tax");
+        // var tax_name = $(this).val();
+        // console.log('tax_name', tax_name);
+        if ($(".tax_rate").is("select:visible")) {
+            var tax_state = $("option:selected", ".tax_rate").attr("data-tax");
+        } else if ($(".tax_rate").is("input:visible")) {
+            var tax_state = 0.00;
+        }
+
         period_deduction_tax = 0;
         period_ytd_deduction_tax = 0;
         var time = 200;
@@ -448,8 +466,10 @@ $(document).ready(function () {
                 var taxes_values = $(this).data("value");
                 var taxes_text = $(this).data("text");
                 var tax_name = $(this).val();
-
                 if (tax_name == "State Tax") {
+                    if ($(".tax_rate").is("input:visible")) {
+                        $('.taxes_' + tax_name).attr('readonly', false);
+                    }
                     taxes_values = parseFloat(tax_state).toFixed(2);
                 }
                 // if (taxes_text == 'deduction_8' || taxes_text == 'deduction_18') {   // Local
