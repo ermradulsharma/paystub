@@ -443,8 +443,8 @@
                             <div class="row mb-3">
                                 <div class="col-md-3 mt-4">
                                     <div>
-                                        <label for="emp_your_state" class="lable">SELECT YOUR STATE <span
-                                                class="redColor">*</span> </label>
+                                        <label for="emp_your_state" class="lable">SELECT YOUR STATE <span class="redColor">*</span> </label>
+                                        <input type="checkbox" data-toggle="toggle" unchecked data-size="sm">
                                         <div class="dropdown ">
                                             <select name="emp_your_state" id="emp_your_state"
                                                 class=" dropdown11 tax_rate removeDiv select-dropdown">
