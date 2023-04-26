@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('style_edit')
-<style>
+{{-- <style>
     .address_book {
         width: 35%;
         position: relative;
@@ -54,7 +54,7 @@
         }
 
     }
-</style>
+</style> --}}
 @endsection
 @section('content')
     <!-- Modal Start -->
@@ -162,21 +162,21 @@
             </div>
 
             <div>
-                {{-- <h5 class="box-h5">Company Info</h5> --}}
+                <h5 class="box-h5">Company Info</h5>
                 <div class="row mb-3">
                     <div class="col-md-12">
                         <div class=" box-usa">
                             <div class="row mb-3" style="align-items: end;">
                                 <div class="row justify-content py-3">
-                                    <h5 class="box-h5">Company Info</h5>
-                                    <img class="address-book" src="{{ asset('images/address-book.png') }}" alt="" height="30px;">
+
+                                    {{-- <img class="address-book" src="{{ asset('images/address-book.png') }}" alt="" height="30px;">
                                     <select id="employerAddressUnited" class="address_book add_address address input-box-font select-dropdown" data-type="employer">
                                         <option data-name="" value="">Select Address</option>
                                             @foreach ($employerList ?? [] as $key => $employer)
                                                 <option data-name="{{ $employer->name }}" data-address1="{{ $employer->address_1 }}" data-address2="{{ $employer->address_2 }}" data-city="{{ $employer->city }}" data-state="{{ $employer->state }}" data-zip="{{ $employer->zip_code }}" data-tel="{{ $employer->tel }}" value="{{ $employer->name }}"> {{ $employer->name }}</option>
                                             @endforeach
                                         <option data-name="" value="add_address">Add New Address</option>
-                                    </select>
+                                    </select> --}}
                                 </div>
                                 <div class="col-md-6 mt-1">
                                     <label for="cname" class="lable">EMPLOYER (COMPANY) NAME <span style="color:red;">*</span> </label>
@@ -196,19 +196,19 @@
                 </div>
             </div>
             <div>
-                {{-- <h5 class="box-h5">Employee Info</h5> --}}
+                <h5 class="box-h5">Employee Info</h5>
                 <div class="col-md-12">
                     <div class=" box-usa">
                         <div class="row justify-content py-3">
-                            <h5 class="box-h5">Employee Info</h5>
-                            <img class="address-book" src="{{ asset('images/address-book.png') }}" alt="" height="30px;">
+
+                            {{-- <img class="address-book" src="{{ asset('images/address-book.png') }}" alt="" height="30px;">
                             <select id="employeeAddressUnited" class="address_book_1 add_address address input-box-font select-dropdown" data-type="employee">
                                 <option data-name="" value="">Select Address</option>
                                 @foreach ($employeeList ?? [] as $key => $employee)
                                     <option data-name="{{ $employee->name }}" data-address1="{{ $employee->address_1 }}" data-address2="{{ $employee->address_2 }}" data-city="{{ $employee->city }}" data-state="{{ $employee->state }}" data-zip="{{ $employee->zip_code }}" data-emp_id="{{ $employee->emp_id }}" data-emp_ssn="{{ $employee->emp_ssn }}" value="{{ $employee->name }}"> {{ $employee->name }}</option>
                                 @endforeach
                                 <option data-name="" value="add_address_1">Add New Address</option>
-                            </select>
+                            </select> --}}
                         </div>
                         <div class="row mb-3" style="align-items: end;">
                             <div class="col-md-6 mt-1">

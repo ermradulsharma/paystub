@@ -73,7 +73,7 @@
         position: absolute;
         width: 100%;
         height: 700px;
-        top: 50px;
+        top: -100px;
         left: 0px;
         right: 0;
         background-image: url("http://44.202.105.74/user/water.png");
@@ -81,15 +81,14 @@
         background-repeat: no-repeat;
         background-position: center;
     }
-
     .watermark2 {
             position: absolute;
             width: 100%;
-            height: 700px;
-            top: 250px;
+            height: 600px;
+            top: -50px;
             left: 0px;
             right: 0;
-            background-image: url("images/final-water.png");
+            background-image: url("images/final-watermark.png");
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
@@ -124,31 +123,37 @@
     <main class="bg-img2"
         style="background-color: #b5b5bf; padding:30px 15px; border-top:2px dashed #050618; border-bottom:2px dashed #050618; border-left:3px solid #050618; border-right:3px solid #050618;">
         @guest
-            <div class="watermark"></div>
-            <div class="watermark2"></div>
-        @endguest
-        @auth
-            @php
-                $date = \Carbon\Carbon::now();
-            @endphp
-            @if (Auth::user()->device_type == 'website')
-                @if(Auth::user()->uk_expiry_date <= $date || !isset($requestData['watermark']))
-                    <div class="watermark"></div>
-                    <div class="watermark2"></div>
-                @endif
+        <div class="watermark"></div>
+        <div class="watermark2"></div>
+    @endguest
+    @auth
+        @php
+            $date = \Carbon\Carbon::now();
+        @endphp
+        @if(Auth::user()->device_type == '')
+            @if(Auth::user()->usa_expiry_date <= $date || !isset($requestData['watermark']) || Auth::user()->usa_expiry_date == '')
+                <div class="watermark"></div>
+                <div class="watermark2"></div>
             @endif
-            @if (Auth::user()->device_type == 'iOS')
-                @if(Auth::user()->expiryDate <= $date || !isset($requestData['watermark']))
-                    <div class="watermark"></div>
-                    <div class="watermark2"></div>
-                @endif
+        @endif
+        @if (Auth::user()->device_type == 'website')
+            @if(Auth::user()->usa_expiry_date <= $date || !isset($requestData['watermark']))
+                <div class="watermark"></div>
+                <div class="watermark2"></div>
             @endif
-            @if (Auth::user()->device_type == 'android')
-                @if(Auth::user()->expiryDate <= $date || !isset($requestData['watermark']))
-                    <div class="watermark"></div>
-                    <div class="watermark2"></div>
-                @endif
+        @endif
+        @if (Auth::user()->device_type == 'iOS')
+            @if(Auth::user()->expiryDate <= $date || !isset($requestData['watermark']))
+                <div class="watermark"></div>
+                <div class="watermark2"></div>
             @endif
+        @endif
+        @if (Auth::user()->device_type == 'android')
+            @if(Auth::user()->expiryDate <= $date || !isset($requestData['watermark']))
+                <div class="watermark"></div>
+                <div class="watermark2"></div>
+            @endif
+        @endif
         @endauth
 
         <section style="border:1px solid #3b4059; border-radius:10px;">

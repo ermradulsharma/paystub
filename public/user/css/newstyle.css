@@ -3371,12 +3371,12 @@ img.earnbtn2.lockuk {
     .address_book{
         font-size: 12px;
     }
-    .address_book{
+    /* .address_book{
         width: 20% !important;
     }
     .address_book_1{
         width: 20% !important;
-    }
+    } */
 }
 
 @media screen and (max-height: 450px) {

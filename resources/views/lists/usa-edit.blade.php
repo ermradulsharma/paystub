@@ -2,22 +2,78 @@
 @section('style_edit')
 <style>
     .address_book {
-        width: 14%;
+        width: 35%;
         position: relative;
         left: 10px;
-        top: -3px;
+        background-color: white;
+        border: 1px solid #000;
+        padding: 0px 5px;
     }
 
     .address_book_1 {
-        width: 14%;
+        width: 19%;
         position: relative;
         left: 10px;
-        top: -3px;
+        background-color: white;
+        border: 1px solid #000;
+        padding: 0px 5px;
     }
 
     .address-book {
         position: relative;
         left: 7px;
+        height: 40px;
+    }
+
+    #basic_temp {
+        text-align: -webkit-center !important;
+    }
+
+    @media(max-width:1440px) {
+
+        .address_book {
+            width: 35%;
+        }
+
+        .address_book_1 {
+            width: 18.3%;
+        }
+    }
+
+    @media(max-width:1024px) {
+        .address_book {
+            width: 29.5%;
+            font-size: 12px;
+            height: 32px;
+        }
+
+        .address-book {
+            height: 32px;
+        }
+
+        .address_book_1 {
+            width: 12.6%;
+            height: 32px;
+            font-size: 12px;
+        }
+    }
+
+    @media(max-width:768px) {
+        .address_book {
+            width: 22%;
+        }
+
+        .address_book_1 {
+            width: 38.5%;
+        }
+    }
+
+    @media(max-width:425px) {
+        .address-book {
+            height: 32px;
+        }
+
+
     }
 </style>
 @endsection

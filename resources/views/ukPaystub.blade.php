@@ -1,8 +1,8 @@
 @extends('layouts.app')
-@section('content')
-<style>
+@section('style')
+{{-- <style>
     .address_book {
-        width: 14%;
+        width: 34.7%;
         position: relative;
         left: 10px;
         background-color: white;
@@ -11,7 +11,7 @@
     }
 
     .address_book_1 {
-        width: 14%;
+        width: 34.7%;
         position: relative;
         left: 10px;
         background-color: white;
@@ -28,27 +28,43 @@
     #basic_temp {
         text-align: -webkit-center !important;
     }
+    @media(max-width:1024px) {
+        .address_book {
+            width: 28.7%;
+            font-size: 12px;
+            height: 32px;
+        }
+
+        .address-book {
+            height: 32px;
+        }
+
+        .address_book_1 {
+            width: 28.5%;
+            height: 32px;
+            font-size: 12px;
+        }
+    }
+    @media(max-width:768px){
+        .address_book{
+            width: 21%;
+        }
+        .address_book_1{
+            width: 20.8%;
+        }
+    }
 
     @media(max-width:425px) {
         .address-book {
             height: 32px;
         }
     }
-    @media(max-width:768px min-width: 426px) {
-        .address_book_1 {
-            width: 28% !important;
-        }
-    }
-    @media(max-width:1024px) {
-        .address_book {
-            width: 28%;
-        }
 
-        .address_book_1 {
-            width: 28%;
-        }
-    }
-</style>
+
+</style> --}}
+@endsection
+@section('content')
+
 <link rel="stylesheet" href="{{ asset('user') }}/css/bootstrap-datepicker.min.css">
 <!-- Modal Start -->
 <div class="modal fade" id="openEye" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -139,18 +155,19 @@
         <div>
             <div class="row mb-3">
                 <div class="col-md-12 canada-padding">
+                    <h5 class="box-h5">Company Info</h5>
                     <div class=" box-usa">
                         <div class="row mb-3" style="align-items: end;">
                             <div class="row justify-content py-3">
-                                <h5 class="box-h5">Company Info</h5>
-                                <img class="address-book" src="{{ asset('images/address-book.png') }}" alt="" height="30px;">
+
+                                {{-- <img class="address-book" src="{{ asset('images/address-book.png') }}" alt="" height="30px;">
                                 <select id="employerAddressUnited" class="address_book add_address address input-box-font select-dropdown" data-type="employer">
                                     <option data-name="" value="">Select Address</option>
                                         @foreach ($employerList ?? [] as $key => $employer)
                                             <option data-name="{{ $employer->name }}" data-address1="{{ $employer->address_1 }}" data-address2="{{ $employer->address_2 }}" data-city="{{ $employer->city }}" data-state="{{ $employer->state }}" data-zip="{{ $employer->zip_code }}" data-tel="{{ $employer->tel }}" value="{{ $employer->name }}"> {{ $employer->name }}</option>
                                         @endforeach
                                     <option data-name="" value="add_address">Add New Address</option>
-                                </select>
+                                </select> --}}
                             </div>
                             <div class="col-md-6 mt-1">
                                 <div>
@@ -175,17 +192,18 @@
         <div>
             {{-- <h5 class="box-h5">Employee Info</h5> --}}
             <div class="col-md-12 canada-padding">
+                <h5 class="box-h5">Employee Info</h5>
                 <div class=" box-usa">
                     <div class="row justify-content py-3">
-                        <h5 class="box-h5">Employee Info</h5>
-                        <img class="address-book" src="{{ asset('images/address-book.png') }}" alt="" height="30px;">
+
+                        {{-- <img class="address-book" src="{{ asset('images/address-book.png') }}" alt="" height="30px;">
                         <select id="employeeAddressUnited" class="address_book_1 add_address address input-box-font select-dropdown" data-type="employee">
                             <option data-name="" value="">Select Address</option>
                             @foreach ($employeeList ?? [] as $key => $employee)
                                 <option data-name="{{ $employee->name }}" data-address1="{{ $employee->address_1 }}" data-address2="{{ $employee->address_2 }}" data-city="{{ $employee->city }}" data-state="{{ $employee->state }}" data-zip="{{ $employee->zip_code }}" data-emp_id="{{ $employee->emp_id }}" data-emp_ssn="{{ $employee->emp_ssn }}" value="{{ $employee->name }}"> {{ $employee->name }}</option>
                             @endforeach
                             <option data-name="" value="add_address_1">Add New Address</option>
-                        </select>
+                        </select> --}}
                     </div>
                     <div class="row mb-3" style="align-items: end;">
                         <div class="col-md-6 mt-1">

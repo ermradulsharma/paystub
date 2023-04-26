@@ -97,7 +97,7 @@
                                 <p
                                     style="font-size:13px; color:rgba(86, 86,86,0.9); margin:8px 0 0; line-height:24px;text-align:left;padding-bottom:25px;">
                                     We received a request to reset the password for your Paystubx account. Please click
-                                    the button below to reset it. This password is reset is valid only for the next 24
+                                    the button below to reset it. This password reset is valid only for the next 24
                                     hours. </p>
                                 <p style="padding-bottom: 15px;color:#fff;"><a style="color:#fff !important;"
                                         href="{{ $user_data['link'] }}" class="reset-button" style="">Reset

@@ -39,11 +39,11 @@
         .watermark2 {
             position: absolute;
             width: 100%;
-            height: 700px;
-            top: 250px;
+            height: 650px;
+            top: -10px;
             left: 0px;
             right: 0;
-            background-image: url("images/final-water.png");
+            background-image: url("images/final-watermark.png");
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
@@ -65,8 +65,14 @@
         @php
             $date = \Carbon\Carbon::now();
         @endphp
+        @if(Auth::user()->device_type == '')
+            @if(Auth::user()->usa_expiry_date <= $date || !isset($requestData['watermark']) || Auth::user()->usa_expiry_date == '')
+                <div class="watermark"></div>
+                <div class="watermark2"></div>
+            @endif
+        @endif
         @if (Auth::user()->device_type == 'website')
-            @if(Auth::user()->uk_expiry_date <= $date || !isset($requestData['watermark']))
+            @if(Auth::user()->usa_expiry_date <= $date || !isset($requestData['watermark']))
                 <div class="watermark"></div>
                 <div class="watermark2"></div>
             @endif

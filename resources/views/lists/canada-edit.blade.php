@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('style_edit')
-<style>
+{{-- <style>
     .address_book {
         width: 35%;
         position: relative;
@@ -54,7 +54,7 @@
         }
 
     }
-</style>
+</style> --}}
 @endsection
 @section('content')
 <!-- Modal Start -->
@@ -157,11 +157,11 @@
         <div>
             <div class="row mb-3">
                 <div class="col-md-12">
-                    {{-- <h5 class="box-h5">Company Info</h5> --}}
+                    <h5 class="box-h5">Company Info</h5>
                     <div class=" box-usa">
                         <div class="row justify-content py-3">
-                            <h5 class="box-h5">Company Info</h5>
-                            <img class="address-book" src="{{ asset('images/address-book.png') }}" alt=""
+
+                            {{-- <img class="address-book" src="{{ asset('images/address-book.png') }}" alt=""
                                 height="30px;">
                             <select id="employerAddressCanada"
                                 class="address_book add_address address input-box-font select-dropdown"
@@ -175,7 +175,7 @@
                                 </option>
                                 @endforeach
                                 <option data-name="" value="add_address">Add New Address</option>
-                            </select>
+                            </select> --}}
                         </div>
                         <div class="row mb-3 mt-3">
                             <div class="col-md-6 mt-1">
@@ -256,10 +256,11 @@
             {{-- <h5 class="box-h5">Employee Basic Info</h5> --}}
             <div class="row mb-3">
                 <div class="col-md-12">
+                <h5 class="box-h5">Employee Basic Info</h5>
                     <div class=" box-usa">
                         <div class="row justify-content py-3">
-                            <h5 class="box-h5">Employee Basic Info</h5>
-                            <img class="address-book" src="{{ asset('images/address-book.png') }}" alt=""
+
+                            {{-- <img class="address-book" src="{{ asset('images/address-book.png') }}" alt=""
                                 height="30px;">
                             <select id="employeeAddressCanada"
                                 class="address_book_1 add_address address input-box-font select-dropdown"
@@ -273,7 +274,7 @@
                                     value="{{ $employee->name }}"> {{ $employee->name }}</option>
                                 @endforeach
                                 <option data-name="" value="add_address_1">Add New Address</option>
-                            </select>
+                            </select> --}}
                         </div>
                         <div class="row">
                             <div class="col-md-4 mt-4">
