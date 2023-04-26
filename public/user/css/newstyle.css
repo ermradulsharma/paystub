@@ -2134,6 +2134,9 @@ img.earnbtn2.lockuk {
     width: 100%;
     padding: 8px 9px;
 }
+.select-dropdown{
+    color: #000 !important;
+}
 
 /* chnges after testing by interen */
 @media screen and (max-width: 1440px) {
@@ -3438,7 +3441,6 @@ img.earnbtn2.lockuk {
 
 @media  (max-width: 425px) {
     .select-dropdown {
-        color: #000 !important;
         text-align: left !important;
     }
     .storehead a img {
