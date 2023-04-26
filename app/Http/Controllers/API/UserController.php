@@ -500,6 +500,9 @@ class UserController extends Controller
             }
             $userObj->name = $request->name;
             $msg = "Name has updated successfully";
+            if ($userObj->save()) {
+                $user = User::select('name', 'email')->where('id', Auth::user()->id)->first();
+            }
         }
 
         if ($requestData['type'] == 'email') {
@@ -535,6 +538,8 @@ class UserController extends Controller
                 Mail::to($request->email)->send(new VerifyEmailSend($mailData));
             }
             $userObj->code = $code;
+            $userObj->save();
+            $user = User::select('name', 'email')->where('id', Auth::user()->id)->first();
             $msg = "Please check your mail.";
         }
 
@@ -560,6 +565,9 @@ class UserController extends Controller
                 $userObj->code = '';
                 $userObj->temp_mail = '';
             }
+
+            $userObj->save();
+            $user = User::select('name', 'email')->where('id', Auth::user()->id)->first();
             $msg = "OTP Verify Successfully";
         }
 
@@ -590,6 +598,8 @@ class UserController extends Controller
                 }
                 $userObj->code = $code;
             }
+            $userObj->save();
+            $user = User::select('name', 'email')->where('id', Auth::user()->id)->first();
             $msg = "OTP Send Successfully. Please check your e-mail";
         }
 
@@ -616,11 +626,11 @@ class UserController extends Controller
                 return $response;
             }
             $userObj->password = Hash::make($requestData['password']);
+            $userObj->save();
+            $user = User::select('name', 'email')->where('id', Auth::user()->id)->first();
             $msg = "Password has updated successfully";
         }
-        if ($userObj->save()) {
-            $user = User::select('name', 'email')->where('id', Auth::user()->id)->first();
-        }
+
 
         if ($requestData['type'] == 'delete') {
             PaySlip::where(['user_id' => Auth::user()->id])->forceDelete();
@@ -676,7 +686,7 @@ class UserController extends Controller
             $addressObj->user_id    = Auth::user()->id;
             $addressObj->type       = $requestData['type'];
             $addressObj->name       = $requestData['name'];
-            if($requestData['type'] == 'employer'){
+            if ($requestData['type'] == 'employer') {
                 $addressObj->tel        = $requestData['tel'] ?? '';
             }
             $addressObj->address_1  = $requestData['address_1'];
@@ -684,7 +694,7 @@ class UserController extends Controller
             $addressObj->city       = $requestData['city'];
             $addressObj->state      = $requestData['state'];
             $addressObj->zip_code   = $requestData['zip_code'];
-            if($requestData['type'] == 'employee'){
+            if ($requestData['type'] == 'employee') {
                 $addressObj->emp_id   = $requestData['emp_id'] ?? '';
                 $addressObj->emp_ssn   = $requestData['emp_ssn'] ?? '';
             }
@@ -745,7 +755,7 @@ class UserController extends Controller
             $addressObj->user_id    = Auth::user()->id;
             $addressObj->type       = $requestData['type'];
             $addressObj->name       = $requestData['name'];
-            if($requestData['type'] == 'employer'){
+            if ($requestData['type'] == 'employer') {
                 $addressObj->tel        = $requestData['tel'] ?? '';
             }
             $addressObj->address_1  = $requestData['address_1'];
@@ -753,7 +763,7 @@ class UserController extends Controller
             $addressObj->city       = $requestData['city'];
             $addressObj->state      = $requestData['state'];
             $addressObj->zip_code   = $requestData['zip_code'];
-            if($requestData['type'] == 'employee'){
+            if ($requestData['type'] == 'employee') {
                 $addressObj->emp_id   = $requestData['emp_id'] ?? '';
                 $addressObj->emp_ssn   = $requestData['emp_ssn'] ?? '';
             }
