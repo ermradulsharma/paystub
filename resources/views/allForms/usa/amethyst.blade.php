@@ -163,7 +163,7 @@
 <body>
     <main class="bg-img2">
         <img src="{{ public_path('images/border/amethyst/amethyst2.svg') }}" style="position: absolute; top: 0px; right:0;left: 0px; width:106.5%; height:105%;  z-index: -1;">
-        <img src="{{ public_path('images/check2.svg') }}" style="position: absolute; top:75.8%; width:100.79%; height:25%;  z-index: -1; right:0px; left:0px;"> @guest
+        <img src="{{ public_path('images/check2.svg') }}" style="position: absolute; top:75.8%; width:100.79%; height:25%;  z-index: -1; right:0px; left:0px;">
 
         @guest
             <div class="watermark"></div>
@@ -222,16 +222,13 @@
                 <table>
                     <tr>
                         <td style="width: 40%;">
-                            <p style="font-size:14px;font-weight:400; font-family: 'Arial', sans-serif;">SSN: XXX-XX-{{
-                                $requestData['emp_ssn'] }}</p>
-                            <p
-                                style="padding: 0; margin:0;font-weight:400; font-size:14px; font-family: 'Arial', sans-serif;">
-                                Stub No: {{ $requestData['stub_no'] }}</p>
+                            <p style="font-size:14px;font-weight:400; font-family: 'Arial', sans-serif;">SSN: XXX-XX-{{ $requestData['emp_ssn'] }}</p>
+                            <p style="padding: 0; margin:0;font-weight:400; font-size:14px; font-family: 'Arial', sans-serif;"> Stub No: {{ $requestData['stub_no'] }}</p>
                         </td>
-                        <td class="earning"
-                        style="width: 60%;font-weight:400 !important;padding-bottom:0px !important; padding-top:0px !important; margin:0px; font-size:16px; font-family: Arial, Helvetica, sans-serif; color:#f7f0f9;text-transform:capitalize; ">
-                        {{ $requestData['emp_name'] }} <br>Emp.ID. {{ $requestData['emp_id'] }} <br> {{
-                        $requestData['emp_street_1'] }}, {{ $requestData['emp_city'] }}, {{
+                        <td class="earning" style="width: 60%;font-weight:400 !important;padding-bottom:0px !important; padding-top:0px !important; margin:0px; font-size:16px; font-family: Arial, Helvetica, sans-serif; color:#f7f0f9;text-transform:capitalize; ">
+                        {{ $requestData['emp_name'] }} <br>
+                        Emp.ID. {{ $requestData['emp_id'] }}<br>
+                        {{ $requestData['emp_street_1'] }}, {{ $requestData['emp_city'] }}, {{
                         $requestData['emp_state'] }} {{ $requestData['emp_zip_code'] }}</td>
                     </tr>
                 </table>
