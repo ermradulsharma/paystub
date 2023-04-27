@@ -319,7 +319,7 @@
             <table>
                 <tr>
                     <td>
-                        <table style="width:100%; @if($requestData['address_2']!='') padding-bottom:48px; @else padding-bottom:55px; @endif">
+                        <table style="width:100%; @if($requestData['address_2']!='') padding-bottom:50px; @else padding-bottom:57px; @endif">
                             <tr>
                                 <td style="">
                                     <p
@@ -342,7 +342,7 @@
                                     <p
                                         style="font-size: 14px; margin-bottom: 5px; font-family: Arial, Helvetica, sans-serif; font-weight: 400">
                                         <span>00000{{ $requestData['advice_number'] }}</span></p>
-                                    <p style="font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: 400; position: relative;   @if($requestData['address_2'] !='' ) bottom:3px; @else bottom:1px;  @endif">
+                                    <p style="font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: 400; position: relative;   @if($requestData['address_2'] !='' ) bottom:2px; @else bottom:1px;  @endif">
                                         {{ date('m/d/Y', strtotime($requestData['pay_date'])) }} </p>
                                 </td>
                             </tr>

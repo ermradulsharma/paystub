@@ -283,28 +283,28 @@
                                 <td class="l-align"
                                     style="padding-left: 10px; margin:0px;text-transform:capitalize;font-size:15px;">
                                     Taxable Gross Pay</td>
-                                <td style="padding: 0px; margin:0px;text-transform:capitalize;font-size:15px;"
+                                <td style="padding: 0px; margin:0px;text-transform:capitalize;font-size:15px;text-align:right;padding-right:15px;"
                                     class="bold">{{ number_format($requestData['taxable_gross_pay'], 2) }}</td>
                             </tr>
                             <tr>
                                 <td class="l-align"
                                     style="padding-left: 10px; margin:0px;text-transform:capitalize;font-size:15px;">
                                     Income Tax</td>
-                                <td style="padding: 0px; margin:0px;text-transform:capitalize;font-size:15px;"
+                                <td style="padding: 0px; margin:0px;text-transform:capitalize;font-size:15px;text-align:right;padding-right:15px;"
                                     class="bold">{{ number_format($requestData['income_tax'], 2) }}</td>
                             </tr>
                             <tr>
                                 <td class="l-align"
                                     style="padding-left: 10px;margin:0px;text-transform:capitalize;font-size:15px;">
                                     Employee NIC</td>
-                                <td style="padding: 0px; margin:0px;text-transform:capitalize;font-size:15px;"
+                                <td style="padding: 0px; margin:0px;text-transform:capitalize;font-size:15px;text-align:right;padding-right:15px;"
                                     class="bold">{{ number_format($requestData['employee_nic'], 2) }}</td>
                             </tr>
                             <tr>
                                 <td class="l-align"
                                     style="padding-left: 10px; margin:0px;text-transform:capitalize;font-size:15px;">
                                     Employer NIC</td>
-                                <td style="padding: 0px; margin:0px;text-transform:capitalize;font-size:15px;"
+                                <td style="padding: 0px; margin:0px;text-transform:capitalize;font-size:15px;text-align:right;padding-right:15px;"
                                     class="bold">{{ number_format($requestData['employer_nic'], 2) }}</td>
                             </tr>
                         </table>
