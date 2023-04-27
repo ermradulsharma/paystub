@@ -71,6 +71,7 @@ class Template extends Model
             $period_tax_deduction = [];
             $ytd_tax_deduction = [];
             $delete = [];
+            $deleteTax = [];
             $requestData = $request->all();
             foreach ($request->earn ?? [] as $d) {
                 $earning[] = $d['earning'];
@@ -94,30 +95,30 @@ class Template extends Model
                 $taxes[] = $d['taxes'];
                 $taxes_rate[] = $d['taxes_rate'];
                 $taxes_ytd[] = $d['taxes_ytd'];
-                $delete[] = $d['delete'];
+                $deleteTax[] = $d['deleteTax'];
             }
 
             $requestData['taxes'] = $taxes;
             $requestData['taxes_rate'] = $taxes_rate;
             $requestData['taxes_ytd'] = $taxes_ytd;
-            $requestData['delete'] = $delete;
+            $requestData['deleteTax'] = $deleteTax;
 
             // ======== Extra tax ========
             foreach ($request->extra_tax_deduction ?? [] as $d) {
                 $tax_deduction[] = $d['tax_deduction'];
                 $period_tax_deduction[] = $d['period_tax_deduction'];
                 $ytd_tax_deduction[] = $d['ytd_tax_deduction'];
-                $delete[] = $d['delete'];
+                // $deleteExtraTax[]=$d['deleteExtraTax'];
             }
 
             $requestData['tax_deduction'] = $tax_deduction;
             $requestData['period_tax_deduction'] = $period_tax_deduction;
             $requestData['ytd_tax_deduction'] = $ytd_tax_deduction;
-            $requestData['delete'] = $delete;
+            // $requestData['deleteExtraTax'] = $deleteExtraTax;
             unset($requestData['earn']);
             unset($requestData['tax']);
             unset($requestData['extra_tax_deduction']);
-            unset($requestData['delete']);
+            // unset($requestData['delete']);
         }
 
         return $requestData;
@@ -147,7 +148,7 @@ class Template extends Model
                 $arr['taxes'] = $taxes;
                 $arr['taxes_rate'] = $data->taxes_rate[$key];
                 $arr['taxes_ytd'] = $data->taxes_ytd[$key];
-                $arr['delete'] = $data->delete[$key];
+                $arr['deleteTax'] = $data->deleteTax[$key];
                 $data->tax[$key] = $arr;
             }
 
@@ -157,7 +158,7 @@ class Template extends Model
                 $arr['tax_deduction'] = $tax_deduction;
                 $arr['period_tax_deduction'] = $data->period_tax_deduction[$key];
                 $arr['ytd_tax_deduction'] = $data->ytd_tax_deduction[$key];
-                $arr['delete'] = $data->delete[$key];
+                // $arr['delete'] = $data->delete[$key];
                 $data->extra_tax_deduction[$key] = $arr;
             }
 
@@ -174,10 +175,10 @@ class Template extends Model
             unset($data->period_tax_deduction);
             unset($data->ytd_tax_deduction);
             unset($data->delete);
+            unset($data->deleteTax);
         } else {
             $earn = [];
             $tax = [];
-
             foreach ($data->earning ?? [] as $key => $earning) {
                 $arr = [];
                 $arr['earning'] = $earning;
@@ -192,7 +193,7 @@ class Template extends Model
                 $arr = [];
                 $arr['taxes'] = $taxes;
                 $arr['taxes_rate'] = $data->taxes_rate[$key];
-                $arr['delete'] = $data->delete[$key];
+                $arr['deleteTax'] = $data->deleteTax[$key];
                 $data->tax[$key] = $arr;
 
             }
@@ -203,9 +204,8 @@ class Template extends Model
             unset($data->taxes);
             unset($data->taxes_rate);
             unset($data->delete);
+            unset($data->deleteTax);
         }
-
-
         return $data;
     }
 }
