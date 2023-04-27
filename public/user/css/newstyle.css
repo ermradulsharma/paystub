@@ -633,6 +633,9 @@ ul.dropdown-menu.show li a:hover {
     border-radius: 4px;
     font-weight: 700;
 }
+.form-control-address {
+    color: #000 !important;
+}
 
 .form-control {
     display: block;
@@ -642,7 +645,7 @@ ul.dropdown-menu.show li a:hover {
     font-size: 1.5rem;
     font-weight: 500;
     line-height: 1.5;
-    color: #495057 !important;
+    color: #495057;
     background-color: #fff;
     background-clip: padding-box;
     border: 1px solid #ced4da;
