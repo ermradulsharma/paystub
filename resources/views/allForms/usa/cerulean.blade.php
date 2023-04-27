@@ -237,14 +237,14 @@
                 <table>
                     <tr>
                         <td class="heading1 bold">Earnings</td>
-                        <td class="heading1 bold" style="padding-left:10px; color:#5b7393;">Rate</td>
+                        <td class="heading1 bold" style="padding-left:10px;">Rate</td>
                         <td colspan="2" class="heading1 bold">Hours</td>
                         <td class="heading1 bold" id="alignR">This Period</td>
                         <td class="heading1 bold" id="alignR">YTD</td>
                     </tr>
                     @foreach ($requestData['earning'] as $key => $earn)
                     <tr>
-                        <td style="font-size:15px; color:#587193; text-transform:capitalize;">{{ $earn }}</td>
+                        <td style="font-size:15px; color:#000; text-transform:capitalize;">{{ $earn }}</td>
                         <td style="font-size:15px; color:#000 !important;">@if($requestData['rate'][$key] != 0.00)<span style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['rate'][$key], 2) }}@endif</td>
                         <td colspan="2" style="color:#000; font-size:15px; padding-right:20px" class="alignl">@if($requestData['hours'][$key] != 0.00){{ number_format($requestData['hours'][$key],2) }}@endif</td>
                         <td style="font-size:15px; color:#000;" class="alignR"><span style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['period'][$key], 2) }}</td>

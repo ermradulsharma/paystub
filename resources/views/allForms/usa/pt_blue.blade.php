@@ -219,7 +219,7 @@
                         <td></td>
                         <td style="text-transform:capitalize; font-size:15px;padding-left:5px;">XXXXXX{{$requestData['account_number_last_4'] }}</td>
                         <td style="text-transform:capitalize; font-size:15px;">XXXXX{{ $requestData['transit_aba_number']}}</td>
-                        <td style="text-transform:capitalize; font-size:17px; font-weight:bold;"><span style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['total_net_pay'], 2) }}</td>
+                        <td style="text-transform:capitalize; font-size:17px; font-weight:bold;text-align:right;padding-right:40%;"><span style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['total_net_pay'], 2) }}</td>
                     </tr>
                 </table>
             </div>
