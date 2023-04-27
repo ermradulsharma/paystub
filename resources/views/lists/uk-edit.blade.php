@@ -85,8 +85,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <embed src="" type="" id="tempView" allowtransparency="false"
-                        style="background-color : transparent;" frameborder="0" width="100%" height="800">
+                    <embed src="" type="" id="tempView" allowtransparency="false" style="background-color : transparent;" frameborder="0" width="100%" height="800">
                 </div>
             </div>
         </div>

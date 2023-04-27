@@ -434,7 +434,6 @@ $(document).ready(function () {
     }
     $('.tgl').click(function () {
         if ($(this).is(":checked")) {
-
             $(".emp_your_state_txt").removeClass("d-none");
             $(".emp_your_state_slt").addClass("d-none");
             $(".tgl").val(1);
@@ -451,11 +450,16 @@ $(document).ready(function () {
         if ($(".tgl").val() == 1) {
             $(".emp_your_state_txt").removeClass("d-none");
             $(".emp_your_state_slt").addClass("d-none");
-            default_tax();
+            if ($('.tgl').is(':visible')) {
+                default_tax();
+            }
+
         } else {
             $(".emp_your_state_txt").addClass("d-none");
             $(".emp_your_state_slt").removeClass("d-none");
-            default_tax();
+            if ($('.tgl').is(':visible')) {
+                default_tax();
+            }
         }
     });
     function default_tax() {
