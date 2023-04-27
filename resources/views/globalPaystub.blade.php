@@ -142,8 +142,7 @@
                 </button>
             </div>
             <div class="modal-body card-body">
-                <embed src="" type="" id="tempView" allowtransparency="false" style="background-color : white;"
-                    frameborder="0" width="100%" height="800" style="border: none;">
+                <embed src="" type="" id="tempView" allowtransparency="false" style="background-color : white;" frameborder="0" width="100%" height="800" style="border: none;">
             </div>
         </div>
     </div>
@@ -152,25 +151,18 @@
 <div class="container mt-2 px-0" style="max-width:1510px;">
     <form id="submit_form_paystubx_id" action="javascript:void()" method="get">
         @csrf
-        <input type="hidden" name="form_type" value="global" hidden>
+        <input type="hidden" name="form_type" value="global">
         <div>
             <div class="row mb-3">
                 <div class="col-md-12">
                     <div class=" box-usa">
                         <div class="row justify-content py-3">
                             <h5 class="box-h5">Company Info</h5>
-                            <img class="address-book" src="{{ asset('images/address-book.png') }}" alt=""
-                                height="30px;">
-                            <select id="employerAddress"
-                                class="address_book add_address address input-box-font select-dropdown"
-                                data-type="employer">
+                            <img class="address-book" src="{{ asset('images/address-book.png') }}" alt="" height="30px;">
+                            <select id="employerAddress" class="address_book add_address address input-box-font select-dropdown" data-type="employer">
                                 <option data-name="" value="">Select Address</option>
                                 @foreach ($employerList ?? [] as $key => $employer)
-                                <option data-name="{{ $employer->name }}" data-address1="{{ $employer->address_1 }}"
-                                    data-address2="{{ $employer->address_2 }}" data-city="{{ $employer->city }}"
-                                    data-state="{{ $employer->state }}" data-zip="{{ $employer->zip_code }}"
-                                    data-tel="{{ $employer->tel }}" value="{{ $employer->name }}">
-                                    {{ $employer->name }}</option>
+                                    <option data-name="{{ $employer->name }}" data-address1="{{ $employer->address_1 }}" data-address2="{{ $employer->address_2 }}" data-city="{{ $employer->city }}"  data-state="{{ $employer->state }}" data-zip="{{ $employer->zip_code }}"  data-tel="{{ $employer->tel }}" value="{{ $employer->name }}"> {{ $employer->name }}</option>
                                 @endforeach
                                 <option data-name="" value="add_address">Add New Address</option>
                             </select>
@@ -180,10 +172,8 @@
                         <div class="row mb-3 ">
                             <div class="col-md-6 mt-1">
                                 <div>
-                                    <label for="cname" class="lable">EMPLOYER (COMPANY) NAME <span
-                                            class="redColor">*</span> </label>
-                                    <input type="text" id="cname" name="cname" placeholder="Employer(Company) Name"
-                                        class="w-100 p-2 text-center input-box-font removeDiv">
+                                    <label for="cname" class="lable">EMPLOYER (COMPANY) NAME <span class="redColor">*</span> </label>
+                                    <input type="text" id="cname" name="cname" placeholder="Employer(Company) Name" class="w-100 p-2 text-center input-box-font removeDiv">
                                 </div>
 
                             </div>
@@ -191,23 +181,17 @@
                             <div class="col-md-6 mt-1">
                                 <div>
                                     <label for="tel" class="lable">EMPLOYER TELEPHONE NUMBER </label>
-                                    <input type="text" id="tel" name="tel" placeholder="123-456-7890" maxlength="10"
-                                        minlength="10" class="w-100 p-2 text-center input-box-font third-phone">
+                                    <input type="text" id="tel" name="tel" placeholder="123-456-7890" maxlength="10" minlength="10" class="w-100 p-2 text-center input-box-font third-phone">
                                 </div>
                             </div>
-
                         </div>
                         <div id="map" hidden></div>
                         <div class="row mb-3">
                             <div class="col-md-12">
                                 <div>
-                                    <label for="address_1" class="lable">STREET ADDRESS 1 <span
-                                            class="redColor">*</span> </label>
-                                    <input type="text" id="address_1" name="address_1"
-                                        placeholder="Company Street Address 1"
-                                        class="w-100 p-2  input-box-font removeDiv">
+                                    <label for="address_1" class="lable">STREET ADDRESS 1 <span class="redColor">*</span> </label>
+                                    <input type="text" id="address_1" name="address_1" placeholder="Company Street Address 1" class="w-100 p-2  input-box-font removeDiv">
                                 </div>
-
                             </div>
                         </div>
 
@@ -215,8 +199,7 @@
                             <div class="col-md-12">
                                 <div>
                                     <label for="address_2" class="lable">STREET ADDRESS 2 </label>
-                                    <input type="text" id="address_2" name="address_2"
-                                        placeholder="Company Street Address 2 (optional)" class="w-100  input-box-font">
+                                    <input type="text" id="address_2" name="address_2" placeholder="Company Street Address 2 (optional)" class="w-100  input-box-font">
                                 </div>
 
                             </div>
@@ -225,10 +208,8 @@
                         <div class="row mb-3">
                             <div class="col-md-4">
                                 <div>
-                                    <label for="city" class="lable">City <span class="redColor">*</span>
-                                    </label>
-                                    <input type="text" id="city" name="city" placeholder="City"
-                                        class="w-100   input-box-font removeDiv">
+                                    <label for="city" class="lable">City <span class="redColor">*</span></label>
+                                    <input type="text" id="city" name="city" placeholder="City" class="w-100 input-box-font removeDiv">
                                 </div>
 
                             </div>
@@ -238,12 +219,10 @@
                                     </label>
                                     {{-- <input type="hidden" name="state" id="state_0"> --}}
                                     <div class="dropdown ">
-                                        <select id="state" name="state"
-                                            class="state dropdown11 removeDiv select-dropdown">
+                                        <select id="state" name="state" class="state dropdown11 removeDiv select-dropdown">
                                             <option value="" selected> Select State </option>
                                             @foreach ($stateTaxes as $stateTax)
-                                            <option value="{{ $stateTax->state_code }}">{{ $stateTax->state }}
-                                            </option>
+                                                <option value="{{ $stateTax->state_code }}">{{ $stateTax->state }} </option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -251,10 +230,8 @@
                             </div>
                             <div class="col-md-4">
                                 <div>
-                                    <label for="zip_code" class="lable">Zip Code <span class="redColor">*</span>
-                                    </label>
-                                    <input type="text" id="zip_code" name="zip_code" placeholder=" Zip Code"
-                                        class="w-100 input-box-font removeDiv zip_code">
+                                    <label for="zip_code" class="lable">Zip Code <span class="redColor">*</span> </label>
+                                    <input type="text" id="zip_code" name="zip_code" placeholder=" Zip Code" class="w-100 input-box-font removeDiv zip_code">
                                 </div>
                             </div>
                         </div>
@@ -277,17 +254,10 @@
                                             style="margin-right:10px; font-size:18px;">
                                             <option value=""> --- Select Basic Templates --- </option>
                                             @foreach ($basicType as $data)
-                                            <option value="{{ $data->title ?? '' }}"
-                                                data-src="{{ $data->images->file ?? '' }}"
-                                                data-status="{{ $data->template_element }}"
-                                                data-stub="{{ $data->stub_no }}" data-check="{{ $data->check_no }}"
-                                                data-client="{{ $data->client_no }}">
-                                                {{ $data->name }}
-                                            </option>
+                                                <option value="{{ $data->title ?? '' }}" data-src="{{ $data->images->file ?? '' }}" data-status="{{ $data->template_element }}" data-stub="{{ $data->stub_no }}" data-check="{{ $data->check_no }}" data-client="{{ $data->client_no }}">{{ $data->name }}</option>
                                             @endforeach
                                         </select>
-                                        <i class="fa fa-eye-slash basicTem uk-eye" style="font-size: 39px;"
-                                            role="button"></i>
+                                        <i class="fa fa-eye-slash basicTem uk-eye" style="font-size: 39px;" role="button"></i>
                                     </div>
                                 </div>
                             </div>
@@ -298,21 +268,13 @@
                                 <h6 style="margin-left:-23px;font-weight: 900;">ADVANCED TEMPLATES</h6>
                                 <div class="mt-4">
                                     <div class="input-group mmenu mb-3">
-                                        <select name="advance_temp" id="advance_temp"
-                                            class="form-control text-center dropdown1 at_id small-font advanceTemplate removeDiv direction-left"
-                                            style="margin-right:10px; font-size:18px;">
+                                        <select name="advance_temp" id="advance_temp" class="form-control text-center dropdown1 at_id small-font advanceTemplate removeDiv direction-left" style="margin-right:10px; font-size:18px;">
                                             <option value=""> --- Select Advance Template --- </option>
                                             @foreach ($advanceType as $data)
-                                            <option value="{{ $data->title ?? '' }}"
-                                                data-src="{{ $data->images->file ?? '' }}"
-                                                data-status="{{ $data->template_element }}"
-                                                data-stub="{{ $data->stub_no }}" data-clock="{{ $data->co_no }}"
-                                                data-check="{{ $data->check_no }}" data-client="{{ $data->client_no }}">
-                                                {{ $data->name ?? '' }} </option>
+                                                <option value="{{ $data->title ?? '' }}" data-src="{{ $data->images->file ?? '' }}" data-status="{{ $data->template_element }}" data-stub="{{ $data->stub_no }}" data-clock="{{ $data->co_no }}" data-check="{{ $data->check_no }}" data-client="{{ $data->client_no }}">{{ $data->name ?? '' }}</option>
                                             @endforeach
                                         </select>
-                                        <i class="fa fa-eye-slash advanceTem uk-eye" role="button"
-                                            style="font-size: 39px;"></i>
+                                        <i class="fa fa-eye-slash advanceTem uk-eye" role="button" style="font-size: 39px;"></i>
                                     </div>
                                 </div>
                             </div>
@@ -327,61 +289,40 @@
                     <div class=" box-usa">
                         <div class="row justify-content py-3">
                             <h5 class="box-h5">Employee Info</h5>
-                            <img class="address-book" src="{{ asset('images/address-book.png') }}" alt=""
-                                height="30px;">
-                            <select id="employeeAddress"
-                                class="address_book_1 add_address address input-box-font select-dropdown"
-                                data-type="employee">
+                            <img class="address-book" src="{{ asset('images/address-book.png') }}" alt="" height="30px;">
+                            <select id="employeeAddress" class="address_book_1 add_address address input-box-font select-dropdown" data-type="employee">
                                 <option data-name="" value="">Select Address</option>
-                                @auth
-                                @if ($employeeList->count() > 0)
                                 @foreach ($employeeList ?? [] as $key => $employee)
-                                <option data-name="{{ $employee->name }}" data-address1="{{ $employee->address_1 }}"
-                                    data-address2="{{ $employee->address_2 }}" data-city="{{ $employee->city }}"
-                                    data-state="{{ $employee->state }}" data-zip="{{ $employee->zip_code }}"
-                                    data-emp_id="{{ $employee->emp_id }}" data-emp_ssn="{{ $employee->emp_ssn }}"
-                                    value="{{ $employee->name }}">
-                                    {{ $employee->name }}</option>
+                                    <option data-name="{{ $employee->name }}" data-address1="{{ $employee->address_1 }}" data-address2="{{ $employee->address_2 }}" data-city="{{ $employee->city }}" data-state="{{ $employee->state }}" data-zip="{{ $employee->zip_code }}" data-emp_id="{{ $employee->emp_id }}" data-emp_ssn="{{ $employee->emp_ssn }}" value="{{ $employee->name }}">{{ $employee->name }}</option>
                                 @endforeach
-                                @endif
-                                @endauth
                                 <option data-name="" value="add_address_1">Add New Address</option>
                             </select>
                         </div>
                         <div class="row mb-3">
                             <div class="col-md-4 mt-4">
                                 <div>
-                                    <label for="emp_name" class="lable">EMPLOYEE NAME <span class="redColor">*</span>
-                                    </label>
-                                    <input type="text" id="emp_name" name="emp_name" placeholder="Employee Name"
-                                        class="w-100  input-box-font removeDiv">
+                                    <label for="emp_name" class="lable">EMPLOYEE NAME <span class="redColor">*</span> </label>
+                                    <input type="text" id="emp_name" name="emp_name" placeholder="Employee Name" class="w-100  input-box-font removeDiv">
                                 </div>
                             </div>
                             <div class="col-md-4 mt-4">
                                 <div>
                                     <label for="emp_id" class="lable">EMPLOYEE ID </label>
-                                    <input type="text" id="emp_id" name="emp_id" placeholder="Employer ID"
-                                        class="w-100 r input-box-font removeDiv" maxlength="5" minlength="5"
-                                        onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+                                    <input type="text" id="emp_id" name="emp_id" placeholder="Employer ID" class="w-100 r input-box-font removeDiv" maxlength="5" minlength="5" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                 </div>
                             </div>
                             <div class="col-md-4 mt-4">
                                 <div>
-                                    <label for="emp_ssn" class="lable">EMPLOYEE SSN Last 4 <span
-                                            class="redColor">*</span> </label>
-                                    <input type="text" id="emp_ssn" name="emp_ssn" placeholder="SSN (Last 4 digits)"
-                                        class="w-100 input-box-font removeDiv" maxlength="4" minlength="4"
-                                        onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+                                    <label for="emp_ssn" class="lable">EMPLOYEE SSN Last 4 <span class="redColor">*</span> </label>
+                                    <input type="text" id="emp_ssn" name="emp_ssn" placeholder="SSN (Last 4 digits)" class="w-100 input-box-font removeDiv" maxlength="4" minlength="4" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                 </div>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-md-12">
                                 <div>
-                                    <label for="emp_street_1" class="lable">STREET ADDRESS 1 <span
-                                            class="redColor">*</span></label>
-                                    <input type="text" id="emp_street_1" name="emp_street_1"
-                                        placeholder="Employee Street Address 1" class="w-100  input-box-font removeDiv">
+                                    <label for="emp_street_1" class="lable">STREET ADDRESS 1 <span class="redColor">*</span></label>
+                                    <input type="text" id="emp_street_1" name="emp_street_1" placeholder="Employee Street Address 1" class="w-100  input-box-font removeDiv">
                                 </div>
                             </div>
                         </div>
@@ -389,36 +330,27 @@
                             <div class="col-md-12">
                                 <div>
                                     <label for="emp_street_2" class="lable">STREET ADDRESS 2 </label>
-                                    <input type="text" id="emp_street_2" name="emp_street_2"
-                                        placeholder="Employee Street Address 2 (optional)"
-                                        class="w-100  input-box-font">
+                                    <input type="text" id="emp_street_2" name="emp_street_2" placeholder="Employee Street Address 2 (optional)" class="w-100  input-box-font">
                                 </div>
                             </div>
                         </div>
                         <div class="row mb-3 stubx">
                             <div class="col-md-4 stubxc checkxc">
                                 <div>
-                                    <label for="emp_city" class="lable">City <span class="redColor">*</span>
-                                    </label>
-                                    <input type="text" id="emp_city" name="emp_city" placeholder="City"
-                                        class="w-100   input-box-font removeDiv">
+                                    <label for="emp_city" class="lable">City <span class="redColor">*</span></label>
+                                    <input type="text" id="emp_city" name="emp_city" placeholder="City" class="w-100 input-box-font removeDiv">
                                 </div>
                             </div>
                             <div class="col-md-4 stubxc checkxc">
                                 <div>
-                                    <label for="emp_state" class="lable">State <span class="redColor">*</span>
-                                    </label>
+                                    <label for="emp_state" class="lable">State <span class="redColor">*</span></label>
                                     <div class="dropdown ">
-                                        {{-- <input type="hidden" name="emp_state" id="emp_state_0"> --}}
-                                        <select id="emp_state" name="emp_state"
-                                            class=" dropdown11 removeDiv select-dropdown">
+                                        <select id="emp_state" name="emp_state" class=" dropdown11 removeDiv select-dropdown">
                                             <div>
-                                                <option class="ff" style="color: #757575;" value="" data-tax="null">
-                                                    Select State</option>
+                                                <option class="ff" style="color: #757575;" value="" data-tax="null">Select State</option>
                                             </div>
                                             @foreach ($stateTaxes as $stateTax)
-                                            <option value="{{ $stateTax->state_code }}"
-                                                data-tax="{{ $stateTax->rate }}">{{ $stateTax->state }}</option>
+                                                <option value="{{ $stateTax->state_code }}" data-tax="{{ $stateTax->rate }}">{{ $stateTax->state }}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -426,28 +358,20 @@
                             </div>
                             <div class="col-md-4 stubxc checkxc">
                                 <div>
-                                    <label for="emp_zip_code" class="lable">Zip Code <span
-                                            class="redColor">*</span></label>
-                                    <input type="text" id="emp_zip_code" name="emp_zip_code" placeholder="Zip Code"
-                                        class="w-100  input-box-font removeDiv">
+                                    <label for="emp_zip_code" class="lable">Zip Code <span class="redColor">*</span></label>
+                                    <input type="text" id="emp_zip_code" name="emp_zip_code" placeholder="Zip Code" class="w-100  input-box-font removeDiv">
                                 </div>
                             </div>
                             <div class="col-md-4 stubxc stubxcv d-none">
                                 <div>
                                     <label for="stub_no" class="lable">Stub No <span class="redColor">*</span></label>
-                                    <input type="text" id="stub_no" name="stub_no"
-                                        class="w-100  input-box-font removeDiv" placeholder="1234" maxlength="4"
-                                        minlength="4"
-                                        onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+                                    <input type="text" id="stub_no" name="stub_no" class="w-100  input-box-font removeDiv" placeholder="1234" maxlength="4" minlength="4" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                 </div>
                             </div>
                             <div class="col-md-4 stubxc checkxcv d-none">
                                 <div>
                                     <label for="check_no" class="lable">Check No <span class="redColor">*</span></label>
-                                    <input type="text" id="check_no" name="check_no"
-                                        class="w-100  input-box-font removeDiv" placeholder="123456789" maxlength="9"
-                                        minlength="6"
-                                        onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+                                    <input type="text" id="check_no" name="check_no" class="w-100  input-box-font removeDiv" placeholder="123456789" maxlength="9" minlength="6" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                 </div>
                             </div>
                         </div>
@@ -463,16 +387,15 @@
                         <div class="row mb-3">
                             <div class="col-md-3 mt-4">
                                 <div>
-                                    <div class="d-flex justify-content-between align-items-center"
-                                        style=" position:relative; bottom:5px;">
+                                    <div class="d-flex justify-content-between align-items-center" style=" position:relative; bottom:5px;">
                                         <label for="emp_your_state" class="lable">SELECT YOUR STATE <span class="redColor">*</span> </label>
                                         <div class="check-box">
-                                            <input type="checkbox" class="tgl">
+                                            <input type="checkbox" class="tgl" name="toggle">
                                         </div>
                                     </div>
 
                                     <div class="emp_your_state_txt d-none" >
-                                        <input type="text" id="emp_your_state" name="emp_your_state" placeholder="State" class="w-100 input-box-font tax_rate removeDiv">
+                                        <input type="text" id="emp_your_state" name="emp_your_state_tax" placeholder="State" class="w-100 input-box-font tax_rate removeDiv">
                                     </div>
                                     <div class="dropdown emp_your_state_slt">
                                         <select name="emp_your_state" id="emp_your_state" class=" dropdown11 tax_rate removeDiv select-dropdown">
@@ -486,11 +409,8 @@
                             </div>
                             <div class="col-md-3 mt-4">
                                 <div>
-                                    <label for="auto_cal" class="lable">AUTO CALCULATOR <span class="redColor">*</span>
-                                    </label>
-                                    <select name="auto_cal" id="auto_cal"
-                                        class="dropdown11 auto_calculate removeDiv select-dropdown">
-                                        {{-- <option value=""> --- Select Calculator --- </option> --}}
+                                    <label for="auto_cal" class="lable">AUTO CALCULATOR <span class="redColor">*</span> </label>
+                                    <select name="auto_cal" id="auto_cal" class="dropdown11 auto_calculate removeDiv select-dropdown">
                                         <option value="on">ON</option>
                                         <option value="off">OFF</option>
                                     </select>
@@ -891,14 +811,8 @@
         <div class="row mt-3">
             <div class="col-12 text-center usa-btn">
                 <div class="d-flex flex-wrap justify-content-between usa-btn-inner">
-                    <button class="previewbtn text-capitalize viewTempTemplate mb-3 w-sm-100" type="button"
-                        id="button1">Preview Your Paystub
-                        <i class="fa fa-eye" style="font-size: 30px; margin-left: 7px;"></i>
-                    </button>
-                    <button type="button" class="emailbtn text-capitalize sendMailButton mb-3 w-sm-100">
-                        <i class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL PAYSTUB
-                        <i class="fa fa-download ml-4" style="font-size:24px"></i>
-                    </button>
+                    <button class="previewbtn text-capitalize viewTempTemplate mb-3 w-sm-100" type="button" id="button1">Preview Your Paystub <i class="fa fa-eye" style="font-size: 30px; margin-left: 7px;"></i></button>
+                    <button type="button" class="emailbtn text-capitalize sendMailButton mb-3 w-sm-100"><i class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL PAYSTUB<i class="fa fa-download ml-4" style="font-size:24px"></i></button>
                 </div>
             </div>
         </div>
