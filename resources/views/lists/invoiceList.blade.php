@@ -160,15 +160,9 @@
                     <div class="btn-toolbar justify-content-start" role="toolbar" aria-label="Toolbar with button groups"
                         style="text-align: left;">
                         <div class="btn-group" role="group" aria-label="Basic example">
-                            <a href="{{ route('invoiceList') }}?type=usa"
-                                class="btn {{ request()->query('type') == 'usa' ? 'active' : (request()->query('type') == null ? 'active' : '') }} "
-                                style="border-right:none; border-left:2px solid #FF6161;border-bottom:none;">USA</a>
-                            <a href="{{ route('invoiceList') }}?type=canada"
-                                class="btn {{ request()->query('type') == 'canada' ? 'active' : '' }} "
-                                style="border-left:none; border-right:none;border-bottom:none; max-width:143.5px;">CANADA</a>
-                            <a href="{{ route('invoiceList') }}?type=uk"
-                                class="btn {{ request()->query('type') == 'uk' ? 'active' : '' }} "
-                                style="border-left:none; border-right:2px solid #FF6161;border-bottom:none;">UK</a>
+                            <a href="{{ route('invoiceList') }}?type=usa" class="btn {{ request()->query('type') == 'usa' ? 'active' : (request()->query('type') == null ? 'active' : '') }} " style="border-right:none; border-left:2px solid #FF6161;border-bottom:none;">USA</a>
+                            <a href="{{ route('invoiceList') }}?type=canada" class="btn {{ request()->query('type') == 'canada' ? 'active' : '' }} " style="border-left:none; border-right:none;border-bottom:none; max-width:143.5px;">CANADA</a>
+                            <a href="{{ route('invoiceList') }}?type=uk" class="btn {{ request()->query('type') == 'uk' ? 'active' : '' }} " style="border-left:none; border-right:2px solid #FF6161;border-bottom:none;">UK</a>
                         </div>
                     </div>
 
@@ -205,16 +199,11 @@
                                             @php($membership = $invoice->membership ?? 0)
                                         @endif
                                         <tr>
-                                            <th class="text-center" style="padding: 1.5em .5em;border:none;">
-                                                {{ date('m-d-Y', strtotime($invoice->created_at)) }} </th>
-                                            <th class="text-center" style="padding: 1.5em .5em;border:none;">
-                                                {{ $invoice->title }}</th>
-                                            <th class="text-center" style="padding: 1.5em .5em;border:none;">
-                                                {{ $invoice->reference }}</th>
+                                            <th class="text-center" style="padding: 1.5em .5em;border:none;"> {{ date('m-d-Y', strtotime($invoice->created_at)) }} </th>
+                                            <th class="text-center" style="padding: 1.5em .5em;border:none;"> {{ $invoice->title }}</th>
+                                            <th class="text-center" style="padding: 1.5em .5em;border:none;"> {{ $invoice->reference }}</th>
                                             <th class="text-center" style="padding: .9em .5em;border:none;">
-                                                <a class="btn btn-outline-dark py-2 downloiadBtn" href="{{ $invoice->pdf }}"
-                                                    download> Download <i class="fa fa-arrow-circle-down 2x"
-                                                        aria-hidden="true"></i></a>
+                                                <a class="btn btn-outline-dark py-2 downloiadBtn" href="{{ $invoice->pdf }}" download> Download <i class="fa fa-arrow-circle-down 2x" aria-hidden="true"></i></a>
                                             </th>
                                             <th class="text-center" style="padding: 1em .5em;border:none;">
                                                 <a href="{{ route('invoiceMailId', $invoice->id) }}">

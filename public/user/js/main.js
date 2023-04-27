@@ -438,6 +438,9 @@ function usaStoreData() {
         success: function (response) {
             console.log('response', response);
             setTimeout(function () {
+                if(response.type == 'global'){
+                    response.type = 'usa';
+                }
                 window.location.href = baseUrl + "invoiceList?type=" + response.type;
             }, 1000);
             document.getElementById("loaderDiv").style.display = "none";

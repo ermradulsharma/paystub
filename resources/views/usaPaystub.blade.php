@@ -1160,9 +1160,6 @@
                         for (var j = 0; j < near_place.address_components[i].types.length; j++) {
                             obj[near_place.address_components[i].types[j]] = near_place.address_components[
                                 i].short_name;
-                            //     if(near_place.address_components[i].types['0'] == 'administrative_area_level_1'){
-                            //     $('#emp_state').val(near_place.address_components[i].long_name);
-                            // }
                         }
                     }
                     setEmpLocation(obj);
