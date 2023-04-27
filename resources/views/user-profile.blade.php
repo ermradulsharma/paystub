@@ -494,8 +494,8 @@
                                             <label for="inputFullName" id="nameLabel" style="font-weight:bold;"
                                                 class="col-sm-12 control-label">EMPLOYER (COMPANY) NAME *</label>
                                             <div class="col-sm-12">
-                                                <input style="font-size:16px; color:#000 !important;" type="text"
-                                                    class="form-control" id="inputFullName" name="fullName"
+                                                <input style="font-size:16px;" type="text"
+                                                    class="form-control form-control-address" id="inputFullName" name="fullName"
                                                     placeholder="Full Employer (Company) Name">
                                             </div>
                                         </div>
@@ -506,8 +506,8 @@
                                                 style="font-weight: bold;margin-top:10px; margin-bottom:5px;">STREET
                                                 ADDRESS 1 * </p>
                                             <div class="col-sm-12">
-                                                <input style="font-size:16px; color:#000 !important;" type="text"
-                                                    class="form-control" id="inputAddressLine1" name="addressLine1"
+                                                <input style="font-size:16px;" type="text"
+                                                    class="form-control form-control-address" id="inputAddressLine1" name="addressLine1"
                                                     placeholder="Street Address 1">
                                             </div>
                                         </div>
@@ -516,8 +516,8 @@
                                             <p class="col-sm-offset-2 col-sm-12 help-block"
                                                 style="font-weight:bold;margin-bottom:5px;">STREET ADDRESS 2</p>
                                             <div class="col-sm-12">
-                                                <input style="font-size:16px; color:#000 !important;" type="text"
-                                                    class="form-control" id="inputAddressLine2" name="addressLine2"
+                                                <input style="font-size:16px;" type="text"
+                                                    class="form-control form-control-address" id="inputAddressLine2" name="addressLine2"
                                                     placeholder="Street Address 2 (Optional)">
                                             </div>
                                         </div>
@@ -526,8 +526,8 @@
                                             <label for="inputCityTown" style="font-weight:bold;"
                                                 class="col-sm-12 control-label">City</label>
                                             <div class="col-sm-12">
-                                                <input style="font-size:16px; color:#000 !important;" type="text"
-                                                    class="form-control" id="inputCityTown" name="cityName"
+                                                <input style="font-size:16px;" type="text"
+                                                    class="form-control form-control-address" id="inputCityTown" name="cityName"
                                                     placeholder="City">
                                             </div>
                                         </div>
@@ -537,7 +537,7 @@
                                                 class="col-sm-12 control-label">State</label>
                                             <div class="col-sm-12">
 
-                                                <select class="form-control select-box" style="color:#000 !important;"
+                                                <select class="form-control form-control-address select-box" style="
                                                     id="selectState" name="stateName">
                                                     <option value="" selected="selected">Select</option>
                                                     @if (count($stateList) > 0)
@@ -554,8 +554,8 @@
                                             <label for="inputZipPostalCode" style="font-weight:bold;"
                                                 class="col-sm-12 control-label">Zip Code</label>
                                             <div class="col-sm-12">
-                                                <input style="font-size:16px; color:#000 !important;" type="text" minlength="4"
-                                                    maxlength="6"class="form-control"
+                                                <input style="font-size:16px;" type="text" minlength="4"
+                                                    maxlength="6"class="form-control form-control-address"
                                                     id="inputZipPostalCode" name="zipCode" placeholder="Zip-Code">
                                             </div>
                                         </div>
@@ -720,8 +720,8 @@
                             <input type="hidden" value="verify-email" name="type">
                             <div class="px-lg-5">
                                 <input type="hidden" id="hidden_email" name="email" class="d-none">
-                                <input type="text" id="Verificationcode color:#000 !important;" name="code"
-                                    class="form-control formm py-4" placeholder="Verification Code *">
+                                <input type="text" id="Verificationcode" name="code"
+                                    class="form-control form-control-address formm py-4" placeholder="Verification Code *">
                             </div>
                         </form>
                         <button class="previewbtn mt-5" id="verify-email">Verify</button>
@@ -765,7 +765,7 @@
                             <label class="label-text" for="css">New Password<span
                                     style="color:red;">*</span></label>
                             <input class="contact-box" type="password" placeholder="New Password" name="password"
-                            class="form-control show-password-sd" id="new_password" required>
+                            class="form-control form-control-address show-password-sd" id="new_password" required>
                             <i id="eye-icon_03" toggle="#password-field" class="fa fa-eye-slash eye-icon show-password"
                                 data-id="02"></i>
                         </div>
@@ -773,7 +773,7 @@
                             <label class="label-text" for="css">Confirm Password<span
                                     style="color:red;">*</span></label>
                             <input class="contact-box" type="password" placeholder="Confirm Password"
-                                name="password_ color:#000 !important;confirmation" class="form-control show-password-sd"
+                                name="password_confirmation" class="form-control form-control-address show-password-sd"
                                 id="confirm_password" required>
                             <i id="eye-icon_03" toggle="#password-field" class="fa fa-eye-slash eye-icon show-password"
                                 data-id="02"></i>
