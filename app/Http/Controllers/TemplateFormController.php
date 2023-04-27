@@ -29,8 +29,9 @@ class TemplateFormController extends Controller
     public function edit($id)
     {
 
-        $invoiceData = PaySlip::where(['user_id' => Auth::user()->id, 'id' => $id])->first();
-        $deduction = Deduction::where(['state'=>$invoiceData->type])->orderBy('id', 'asc')->get();
+        // $invoiceData = PaySlip::where(['user_id' => Auth::user()->id, 'id' => $id])->first();
+        $invoiceData = PaySlip::find($id);
+        $deduction = Deduction::where(['state' => $invoiceData->type])->orderBy('id', 'asc')->get();
         $basicType = Template::where(['state' => $invoiceData->type, 'type' => 'basic', 'status' => 1])->orderBy('title')->with('images')->get();
         $advanceType = Template::where(['state' => $invoiceData->type, 'type' => 'advance', 'status' => 1])->orderBy('title')->with('images')->get();
 
