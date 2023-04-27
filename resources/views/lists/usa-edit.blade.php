@@ -725,6 +725,12 @@
                                             <input class="earnbtn text-center removeDiv" value="{{ $invoice->clock_vchr_number ?? '' }}" name="clock_vchr_number" placeholder="123456" maxlength="11" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                         </div>
                                     </div>
+                                    <div class="col-lg-2 col-md-4 col-sm-6 mb-2 advicex advicexv advicexvc d-none">
+                                        <div>
+                                            <p class="p-0 m-0 " style="font-family: serif;">Client Id<span class="redColor">*</span> </p>
+                                            <input type="text" name="client_no" id="client_no" value="{{ $invoice->client_no ?? '' }}" class="earnbtn removeDiv text-center" placeholder="12345" maxlength="5" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+                                        </div>
+                                    </div>
                                     <div class="col-lg-2 col-md-4 col-sm-6 mb-2 advicex">
                                         <div>
                                             <p class="p-0 m-0 " style="font-family: serif;">Advice Number:<span class="redColor">*</span></p>
@@ -788,10 +794,8 @@
                 var status = $('select#basic_temp option:selected').attr('data-status');
                 var stub = $('select#basic_temp option:selected').data('stub');
                 var check = $('select#advance_temp option:selected').data('check');
-
                 if (stub == 1 && check == 0) {
                         $('.stubxc').each(function() {
-
                             $(".checkxcv").addClass("d-none");
                             $(".stubxc").removeClass("col-md-4");
                             $(".stubxcv").removeClass("d-none");
@@ -832,7 +836,7 @@
                 var status = $('select#advance_temp option:selected').attr('data-status');
                 var stub = $('select#advance_temp option:selected').data('stub');
                 var check = $('select#advance_temp option:selected').data('check');
-
+                var client = $('select#advance_temp option:selected').data('client');
                 if (stub == 1 && check == 0) {
                         $('.stubxc').each(function() {
 
@@ -861,21 +865,43 @@
                 if (status == 1) {
                     $(".tempElemant").removeClass("d-none");
                     var clock = $('select#advance_temp option:selected').data('clock');
+                    var client = $('option:selected', '.at_id').data('client');
                     if (clock == 1) {
-                        $('.advicex').each(function() {
-                            $(".advicex").removeClass("col-lg-4 col-md-4 col-sm-6");
-                            $(".advicexv").removeClass("d-none");
-                            $(".advicex").addClass("col-lg-2 col-md-4 col-sm-6");
-                        });
-                    }
-                    if (clock == 0) {
-                        $('.advicex').each(function() {
-                            $(".advicex").addClass("col-lg-4 col-md-4 col-sm-6");
-                            $(".advicexv").addClass("d-none");
-                            $(".advicex").removeClass("col-lg-2 col-md-4 col-sm-6");
-                        });
-                    }
+                        if (client == 1) {
+                            $('.advicex').each(function() {
+                                $(".advicex").removeClass("col-lg-4 col-md-4 col-sm-6");
+                                $(".advicexv").removeClass("d-none");
+                                $(".advicexvc").removeClass("d-none");
+                                $(".advicex").addClass("col-lg-2 col-md-4 col-sm-6");
+                            });
+                        } else {
+                            $('.advicex').each(function() {
+                                $(".advicex").removeClass("col-lg-4 col-md-4 col-sm-6");
+                                $(".advicexv").removeClass("d-none");
+                                $(".advicexvc").addClass("d-none");
+                                $(".advicex").addClass("col-lg-2 col-md-4 col-sm-6");
+                            });
+                        }
 
+                    } else {
+                        if (client == 1) {
+                            $('.advicex').each(function() {
+                                $(".advicex").addClass("col-lg-3 col-md-3 col-sm-6");
+                                $(".advicexv").addClass("d-none");
+                                $(".advicexvc").removeClass("d-none");
+                                $(".advicex").removeClass("col-lg-2 col-md-4 col-sm-6");
+                                $(".advicex").removeClass("col-lg-4 col-md-4 col-sm-6");
+                            });
+                        } else {
+                            $('.advicex').each(function() {
+                                $(".advicex").addClass("col-lg-4 col-md-4 col-sm-6");
+                                $(".advicexv").addClass("d-none");
+                                $(".advicexvc").addClass("d-none");
+                                $(".advicex").removeClass("col-lg-2 col-md-4 col-sm-6");
+                            });
+                        }
+
+                    }
                 } else {
                     $(".tempElemant").addClass("d-none");
                 }
@@ -892,31 +918,30 @@
     </script>
     <script>
         $(document).ready(function() {
-
             $('.advanceTemplate').change(function() {
                 var value = $('option:selected', '.at_id').attr('value');
                 if (value != '') {
                     var status = $('option:selected', '.at_id').attr('data-status');
                     var stub = $('option:selected', '.at_id').data('stub');
                     var check = $('option:selected', '.at_id').data('check');
-
+                    var client = $('option:selected', '.at_id').data('client');
                     if (stub == 1 && check == 0) {
                         $('.stubxc').each(function() {
-
-                            $(".checkxcv").addClass("d-none");
                             $(".stubxc").removeClass("col-md-4");
+                            $(".checkxcv").addClass("d-none");
                             $(".stubxcv").removeClass("d-none");
                             $(".stubxc").addClass("col-md-3");
                         });
                     }
-                    if (stub == 0  && check == 1) {
+                    if (stub == 0 && check == 1) {
                         $('.stubxc').each(function() {
-                            $(".stubxc").addClass("col-md-3");
-                            $(".stubxcv").addClass("d-none");
                             $(".stubxc").removeClass("col-md-4");
+                            $(".stubxcv").addClass("d-none");
                             $(".checkxcv").removeClass("d-none");
+                            $(".stubxc").addClass("col-md-3");
                         });
                     }
+
                     if (stub == 0 && check == 0) {
                         $('.stubxc').each(function() {
                             $(".stubxc").addClass("col-md-4");
@@ -925,22 +950,46 @@
                             $(".stubxc").removeClass("col-md-3");
                         });
                     }
+
                     if (status == 1) {
                         $(".tempElemant").removeClass("d-none");
                         var clock = $('option:selected', '.at_id').data('clock');
+                        var client = $('option:selected', '.at_id').data('client');
                         if (clock == 1) {
-                            $('.advicex').each(function() {
-                                $(".advicex").removeClass("col-lg-4 col-md-4 col-sm-6");
-                                $(".advicexv").removeClass("d-none");
-                                $(".advicex").addClass("col-lg-2 col-md-4 col-sm-6");
-                            });
-                        }
-                        if (clock == 0) {
-                            $('.advicex').each(function() {
-                                $(".advicex").addClass("col-lg-4 col-md-4 col-sm-6");
-                                $(".advicexv").addClass("d-none");
-                                $(".advicex").removeClass("col-lg-2 col-md-4 col-sm-6");
-                            });
+                            if (client == 1) {
+                                $('.advicex').each(function() {
+                                    $(".advicex").removeClass("col-lg-4 col-md-4 col-sm-6");
+                                    $(".advicexv").removeClass("d-none");
+                                    $(".advicexvc").removeClass("d-none");
+                                    $(".advicex").addClass("col-lg-2 col-md-4 col-sm-6");
+                                });
+                            } else {
+                                $('.advicex').each(function() {
+                                    $(".advicex").removeClass("col-lg-4 col-md-4 col-sm-6");
+                                    $(".advicexv").removeClass("d-none");
+                                    $(".advicexvc").addClass("d-none");
+                                    $(".advicex").addClass("col-lg-2 col-md-4 col-sm-6");
+                                });
+                            }
+
+                        } else {
+                            if (client == 1) {
+                                $('.advicex').each(function() {
+                                    $(".advicex").addClass("col-lg-3 col-md-3 col-sm-6");
+                                    $(".advicexv").addClass("d-none");
+                                    $(".advicexvc").removeClass("d-none");
+                                    $(".advicex").removeClass("col-lg-2 col-md-4 col-sm-6");
+                                    $(".advicex").removeClass("col-lg-4 col-md-4 col-sm-6");
+                                });
+                            } else {
+                                $('.advicex').each(function() {
+                                    $(".advicex").addClass("col-lg-4 col-md-4 col-sm-6");
+                                    $(".advicexv").addClass("d-none");
+                                    $(".advicexvc").addClass("d-none");
+                                    $(".advicex").removeClass("col-lg-2 col-md-4 col-sm-6");
+                                });
+                            }
+
                         }
 
                     } else {
@@ -950,6 +999,7 @@
                     $('.stubxc').each(function() {
                         $(".stubxc").addClass("col-md-4");
                         $(".stubxcv").addClass("d-none");
+                        $(".checkxcv").addClass("d-none");
                         $(".stubxc").removeClass("col-md-3");
                     });
                     $(".tempElemant").addClass("d-none");
@@ -962,17 +1012,28 @@
                 if (value != '') {
                     var status = $('option:selected', '.bt_id').attr('data-status');
                     var stub = $('option:selected', '.bt_id').data('stub');
-                    if (stub == 1) {
+                    var check = $('option:selected', '.bt_id').data('check');
+                    if (stub == 1 && check == 0) {
                         $('.stubxc').each(function() {
                             $(".stubxc").removeClass("col-md-4");
+                            $(".checkxcv").addClass("d-none");
                             $(".stubxcv").removeClass("d-none");
                             $(".stubxc").addClass("col-md-3");
                         });
                     }
-                    if (stub == 0) {
+                    if (stub == 0 && check == 1) {
+                        $('.stubxc').each(function() {
+                            $(".stubxc").removeClass("col-md-4");
+                            $(".stubxcv").addClass("d-none");
+                            $(".checkxcv").removeClass("d-none");
+                            $(".stubxc").addClass("col-md-3");
+                        });
+                    }
+                    if (stub == 0 && check == 0) {
                         $('.stubxc').each(function() {
                             $(".stubxc").addClass("col-md-4");
                             $(".stubxcv").addClass("d-none");
+                            $(".checkxcv").addClass("d-none");
                             $(".stubxc").removeClass("col-md-3");
                         });
                     }
@@ -985,6 +1046,7 @@
                     $('.stubxc').each(function() {
                         $(".stubxc").addClass("col-md-4");
                         $(".stubxcv").addClass("d-none");
+                        $(".checkxcv").addClass("d-none");
                         $(".stubxc").removeClass("col-md-3");
                     });
                     $(".tempElemant").addClass("d-none");
