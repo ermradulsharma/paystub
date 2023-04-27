@@ -7,7 +7,57 @@
 button.createbtn.w-100.py-0 {
     font-size: 22px;
 }
-
+.relative {
+    position: relative;
+}
+button.cross-btn {
+    position: absolute;
+    top: 13.5px;
+    right: 6px;
+    width: 10px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    background: red;
+    font-size: 11px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+button.cross-btn span {
+    font-size: 13px !important;
+    font-weight: bold;
+    position: relative;
+    bottom: 1px;
+}
+button.cross-btn-deduction {
+    position: absolute;
+    top: 12px;
+    right: 22px;
+    width: 10px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    background: red;
+    font-size: 11px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+button.cross-btn-deduction span {
+    font-size: 13px !important;
+    font-weight: bold;
+    position: relative;
+    bottom: 1px;
+}
+.cross-btn-canada {
+    position: relative;
+    right: 0;
+    bottom: 32px;
+    left: 85%;
+}
 
 
 /* .left-sidebar{

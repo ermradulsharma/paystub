@@ -35,8 +35,8 @@ $(document).ready(function () {
         var addGrossTotal = `<div class="margin-bottom"">
                         <input type="text" name="period[]" class="earnbtn mb-3 text-center gross_total"  id="period_`+ i + `" data-id="` + i + `">
                     </div>`;
-        var addYtdTotal = `<div class="margin-bottom" style="padding-top: 2px;">
-                        <input type="text" name="ytd_total[]" class="earnbtn mb-3 text-center ytd_total"  id="ytd_total_`+ i + `" data-id="` + i + `">
+        var addYtdTotal = `<div class="margin-bottom relative" style="padding-top: 2px;">
+                        <input type="text" name="ytd_total[]" class="earnbtn mb-3 text-center ytd_total"  id="ytd_total_`+ i + `" data-id="` + i + `"><button class="cross-btn"><span>x</span></button>
                     </div>`;
         if (i < maxField) {
             i++;
@@ -72,10 +72,10 @@ $(document).ready(function () {
             '<div class="col-md-2 col-lg-2 mb-3">' +
             '<input type="text" name="period_tax_deduction[]" class="earnbtn text-center tax_deduction tax" id="taxes_0' + x + '"  data-id="' + x + '"/>' +
             "</div>" +
-            '<div class="col-md-2 col-lg-2 mb-3">' +
-            '<input type="text" name="ytd_tax_deduction[]" class="earnbtn text-center ytd_tax tax add_ytd_deduction" id="taxes_ytd_0' + x + '"  data-id="' + x + '"/>' +
+            '<div class="col-md-2 col-lg-2 mb-3 relative">' +
+            '<input type="text" name="ytd_tax_deduction[]" class="earnbtn text-center ytd_tax tax add_ytd_deduction " id="taxes_ytd_0' + x + '"  data-id="' + x + '"/><button class="cross-btn-deduction"><span>x</span></button>' +
             "</div>" +
-            "</div>";
+            "</div> ";
         if (x < maxField) {
             x++;
             $(wrapper_2).append(fieldHTML);
