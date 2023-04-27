@@ -80,7 +80,7 @@ class Template extends Model
                 $total[] = $d['total'];
                 $period[] = $d['period'];
                 $ytd_total[] = $d['ytd_total'];
-                $delete[] = $d['delete'] ?? '';
+                $delete[] = $d['delete'] ?? false;
             }
             $requestData['earning'] = $earning;
             $requestData['rate'] = $rate;
@@ -95,7 +95,7 @@ class Template extends Model
                 $taxes[] = $d['taxes'];
                 $taxes_rate[] = $d['taxes_rate'];
                 $taxes_ytd[] = $d['taxes_ytd'];
-                $deleteTax[] = $d['deleteTax'] ?? '';
+                $deleteTax[] = $d['deleteTax'] ?? false;
             }
 
             $requestData['taxes'] = $taxes;
