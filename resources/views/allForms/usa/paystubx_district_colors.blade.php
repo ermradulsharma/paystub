@@ -458,7 +458,7 @@
                     <td class="section"
                         style="background-color: #264FAB; width:105px;padding-left:15px; padding-right:15px; text-align:center; margin-left:10px;">
                         Gross Deductions</td>
-                    <td class="section" style="color:black;width:67px; text-align:right;padding-right:15px;">
+                    <td class="section" style="color:black;width:67px; text-align:right;padding-right:19px;">
                         {{ number_format($requestData['deduction_tax'], 2) }} </td>
                     <td class="section" style="color:black;width:67px;text-align:right;padding-right:15px; ">
                         {{ number_format($requestData['ytd_deduction_tax'], 2) }} </td>
