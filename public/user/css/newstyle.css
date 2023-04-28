@@ -4,12 +4,81 @@
     margin: 0 auto 20px;
 
 }
+
 button.createbtn.w-100.py-0 {
     font-size: 22px;
 }
+
 .relative {
     position: relative;
 }
+
+button.cross-btn-canadas {
+
+    border-radius: 50%;
+    border: none;
+    background: transparent;
+    font-size: 11px;
+
+    position: absolute;
+    display: block;
+    right: 3px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    color: #fff;
+
+
+    text-align: center;
+    line-height: 1em;
+    cursor: pointer;
+}
+
+button.cross-btn-canadas span {
+    font-size: 13px !important;
+    font-weight: bold;
+    position: relative;
+    bottom: 1px;
+    top: -26px;
+    background: red;
+    padding: 1px 5px;
+    border-radius: 55%;
+    right: 9px;
+}
+
+button.cross-btn-uks {
+
+    border-radius: 50%;
+    border: none;
+    background: transparent;
+    font-size: 11px;
+
+    position: absolute;
+    display: block;
+    right: 3px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    color: #fff;
+
+
+    text-align: center;
+    line-height: 1em;
+    cursor: pointer;
+}
+
+button.cross-btn-uks span {
+    font-size: 13px !important;
+    font-weight: bold;
+    position: relative;
+    bottom: 1px;
+    top: -26px;
+    background: red;
+    padding: 1px 5px;
+    border-radius: 55%;
+    right: 18px;
+}
+
 button.cross-btn {
     position: absolute;
     top: 13.5px;
@@ -25,12 +94,14 @@ button.cross-btn {
     justify-content: center;
     align-items: center;
 }
+
 button.cross-btn span {
     font-size: 13px !important;
     font-weight: bold;
     position: relative;
     bottom: 1px;
 }
+
 button.cross-btn-deduction {
     position: absolute;
     top: 12px;
@@ -46,12 +117,14 @@ button.cross-btn-deduction {
     justify-content: center;
     align-items: center;
 }
+
 button.cross-btn-deduction span {
     font-size: 13px !important;
     font-weight: bold;
     position: relative;
     bottom: 1px;
 }
+
 .cross-btn-canada {
     position: relative;
     right: 0;
@@ -85,6 +158,7 @@ i.fa.fa-envelope.profile-icon {
     font-size: 17px;
     margin: 0;
 }
+
 button#menu1 {
     font-size: 14px;
     text-transform: capitalize;
@@ -114,10 +188,12 @@ button#menu1 {
     display: flex;
     justify-content: center;
 }
+
 .d-flex.input-left {
     width: calc(100% - 30px);
     justify-content: start;
 }
+
 .d-flex.trash-account {
     justify-content: start;
 }
@@ -348,20 +424,24 @@ ul.dropdown-menu.show li a:hover {
     .margin-left {
         margin: 0px 30px 0px auto;
     }
-    .input-box-font{
+
+    .input-box-font {
         font-size: 12px;
     }
 
     .margin-right {
         margin: 0px auto 0px 30px;
     }
+
     .mt-5.d-flex.pt-5.top-gogle {
         padding: 0 !important;
     }
-    .direction-left{
+
+    .direction-left {
         font-size: 10px !important;
     }
-    .direction-left-canada{
+
+    .direction-left-canada {
         font-size: 10px !important;
     }
 
@@ -392,6 +472,7 @@ ul.dropdown-menu.show li a:hover {
     button.netpaybtn.net_pay {
         width: 100% !important;
     }
+
     .border-right-line {
         border-right: none !important;
     }
@@ -445,6 +526,7 @@ ul.dropdown-menu.show li a:hover {
         display: flex;
         justify-content: center;
     }
+
     input.input-pie-box.input {
         max-width: 83%;
     }
@@ -665,6 +747,7 @@ ul.dropdown-menu.show li a:hover {
     font-weight: bold;
     z-index: 1223;
 }
+
 .dropdown11 {
     width: 100%;
     padding: 6px;
@@ -683,6 +766,7 @@ ul.dropdown-menu.show li a:hover {
     border-radius: 4px;
     font-weight: 700;
 }
+
 .form-control-address {
     color: #000 !important;
 }
@@ -988,11 +1072,13 @@ select:after {
     margin-left: 50px;
     color: #0c2f62;
 }
-.sidenav button#menu1{
+
+.sidenav button#menu1 {
     font-size: 11px;
     color: #fff;
     text-transform: uppercase;
 }
+
 .dropbtn.mobile {
     width: 100%;
     text-align: center;
@@ -1016,6 +1102,7 @@ button.btn-danger.logout-btn {
     min-width: 152px;
     right: 6px;
 }
+
 .user-icon.mobile {
     max-width: 32px;
     top: 64px;
@@ -2015,13 +2102,11 @@ select#cars {
 /* w2 form design end*/
 /* bottom gradiant section style start*/
 .bottom-graadiant-section {
-    background: linear-gradient(
-        to right,
-        rgb(108, 129, 70) 0%,
-        rgb(190, 205, 129) 33%,
-        rgb(206, 199, 212) 63%,
-        rgb(246, 174, 120) 99%
-    );
+    background: linear-gradient(to right,
+            rgb(108, 129, 70) 0%,
+            rgb(190, 205, 129) 33%,
+            rgb(206, 199, 212) 63%,
+            rgb(246, 174, 120) 99%);
     padding: 30px 0px;
 }
 
@@ -2187,7 +2272,8 @@ img.earnbtn2.lockuk {
     width: 100%;
     padding: 8px 9px;
 }
-.select-dropdown{
+
+.select-dropdown {
     color: #000 !important;
 }
 
@@ -2310,6 +2396,7 @@ img.earnbtn2.lockuk {
 }
 
 @media screen and (max-width: 1129px) {
+
     /* .navbar {
         display: none;
 
@@ -2333,15 +2420,18 @@ img.earnbtn2.lockuk {
     margin-left: -23px;
     font-weight: 400;
 }
+
 @media only screen and (min-width: 769px) and (max-width: 1025px) {
     img.mr-3.mt-5.header-logo {
         width: 185px !important;
         margin-right: 0;
     }
+
     .navbtn {
         max-width: 105px;
     }
 }
+
 @media screen and (max-width: 1024px) {
     .checkbox-inner {
         width: 100%;
@@ -2349,10 +2439,12 @@ img.earnbtn2.lockuk {
         flex-direction: inherit;
         align-items: flex-start;
     }
-    .direction-left{
+
+    .direction-left {
         border-radius: 0px !important;
     }
-    .direction-left-canada{
+
+    .direction-left-canada {
         border-radius: 0px !important;
     }
 
@@ -2395,9 +2487,11 @@ img.earnbtn2.lockuk {
     .redcon {
         padding: 30px;
     }
+
     .address_book {
         border-radius: 0px !important;
     }
+
     .address_book_1 {
         border-radius: 0px !important;
     }
@@ -2800,15 +2894,18 @@ img.earnbtn2.lockuk {
         line-height: 1.8;
     }
 }
+
 @media only screen and (min-width: 769px) and (max-width: 991px) {
     input.input-uk {
         width: 95%;
     }
+
     .netpaybtn {
         width: 95%;
     }
 }
-@media  (max-width: 768px) {
+
+@media (max-width: 768px) {
     .view-temp2 {
         color: #ffffff;
         background: #e827a5;
@@ -2944,6 +3041,7 @@ img.earnbtn2.lockuk {
         width: 100%;
         border-top: 2px solid red;
     }
+
     a.btn.btn-lg.w-100.navbtn.nav-btn.btn-logout.logout:hover {
         background-color: #fff !important;
         color: #d3230c !important;
@@ -3433,12 +3531,15 @@ img.earnbtn2.lockuk {
         width: 25px;
         height: 25px;
     }
-    .address_book_1{
+
+    .address_book_1 {
         font-size: 12px;
     }
-    .address_book{
+
+    .address_book {
         font-size: 12px;
     }
+
     /* .address_book{
         width: 20% !important;
     }
@@ -3463,6 +3564,7 @@ img.earnbtn2.lockuk {
     .sidenav a {
         font-size: 18px;
     }
+
     .sidenav {
         padding-top: 15px;
     }
@@ -3492,10 +3594,11 @@ img.earnbtn2.lockuk {
     }
 }
 
-@media  (max-width: 425px) {
+@media (max-width: 425px) {
     .select-dropdown {
         text-align: left !important;
     }
+
     .storehead a img {
         margin-left: 0px !important;
     }
@@ -3509,26 +3612,32 @@ img.earnbtn2.lockuk {
         text-align: left !important;
 
     }
-    .statementbtn{
+
+    .statementbtn {
         border-radius: 0;
     }
+
     select {
 
-    text-align: center !important;
+        text-align: center !important;
 
     }
-    .hour_btn{
+
+    .hour_btn {
         width: 100%;
         max-width: 180px;
     }
+
     ul.dropdown-menu.show li a {
         font-size: 15px;
     }
-    .salary_btn{
+
+    .salary_btn {
         width: 100%;
         max-width: 180px;
     }
-    .input-box-font{
+
+    .input-box-font {
         font-size: 12px !important;
         height: 32px !important;
         text-transform: capitalize;
@@ -3537,6 +3646,7 @@ img.earnbtn2.lockuk {
     .createbtn {
         border: none;
     }
+
     .subscription-text {
         font-size: 13px;
     }
@@ -3565,15 +3675,18 @@ img.earnbtn2.lockuk {
     img.earnbtn2.lockuk {
         top: 18px !important;
     }
+
     .profile-icon-outer {
         margin-right: 12px;
     }
+
     .edit-icon {
         width: 25px;
         height: 25px;
         position: relative;
         right: 20px;
     }
+
     .d-flex.input-left {
         width: calc(100% - 25px);
     }
@@ -3604,9 +3717,11 @@ img.earnbtn2.lockuk {
         font-size: 15px !important;
         margin-top: 0;
     }
+
     .d-flex.flex-wrap.justify-content-between.canada-btn-inner {
         justify-content: center !important;
     }
+
     .text-center.my-5.w2-form-text {
         margin-bottom: 15px !important;
     }
@@ -3634,7 +3749,7 @@ img.earnbtn2.lockuk {
 
     .previewbtn {
         margin-left: 0;
-        max-width:100% !important;
+        max-width: 100% !important;
     }
 
     .emailbtn {
@@ -3698,6 +3813,7 @@ img.earnbtn2.lockuk {
     .oo {
         display: flex;
     }
+
     .direction-left {
         direction: ltr;
         padding: 0px 65px !important;
@@ -3705,14 +3821,16 @@ img.earnbtn2.lockuk {
         -webkit-appearance: none;
 
     }
+
     .direction-left-canada {
 
         padding: 0px 75px !important;
 
-}
-.direction-left-canada-edit {
-    padding: 0px 60px !important;
-}
+    }
+
+    .direction-left-canada-edit {
+        padding: 0px 60px !important;
+    }
 
     label.lable.text-center.uk-paystub-text {
         font-size: 9px !important;
@@ -3904,27 +4022,35 @@ img.earnbtn2.lockuk {
         font-size: 17px;
         padding: 10px;
     }
+
     button.previewbtn.mobile-logout-btn {
         max-width: 100px !important;
     }
+
     button.previewbtn.delete-item {
         max-width: 100px !important;
     }
+
     button.previewbtn.bottom-close {
         max-width: 100px !important;
     }
+
     button.previewbtn.mt-4.px-3.mobile-login-btn {
         max-width: 100px !important;
     }
+
     button.previewbtn.continue {
         max-width: 110px !important;
     }
-    .mobile-verify-btn{
+
+    .mobile-verify-btn {
         max-width: 100px !important;
     }
-    input.contact-box{
+
+    input.contact-box {
         width: 92%;
     }
+
     h1.display-4 {
         font-size: 23px !important;
         text-align: center;
@@ -4020,6 +4146,7 @@ img.earnbtn2.lockuk {
         text-align: left;
         padding-bottom: 35px;
     }
+
     .w2-form-row {
         padding: 0px 12px;
     }
@@ -4109,6 +4236,7 @@ img.earnbtn2.lockuk {
         border: 1px solid red;
         border-radius: 2px;
     }
+
     button.btnCommon.addEarningField {
         width: 92%;
         padding: 4px 20px;
@@ -4118,6 +4246,7 @@ img.earnbtn2.lockuk {
         border-radius: 0;
 
     }
+
     button.btnCommon.addTaxField {
         width: 100%;
         padding: 4px 20px;
@@ -4128,6 +4257,7 @@ img.earnbtn2.lockuk {
         border-radius: 0;
         left: 7px;
     }
+
     button.btnCommon.addEarningField.uk-add-btn {
         width: 100%;
         margin: 0;
@@ -4204,6 +4334,7 @@ img.earnbtn2.lockuk {
         border: 1px solid red;
         border-radius: 2px;
     }
+
     input.input-pie-box.input {
         max-width: 86%;
     }
@@ -4410,26 +4541,31 @@ img.earnbtn2.lockuk {
         top: -8px;
         left: 77px;
     }
+
     .col-md-6.border-right-line {
         border-right: none !important;
     }
 
     .earnbtn {
-        border-radius: 0px  !important;
+        border-radius: 0px !important;
         font-size: 13px !important;
     }
-    .statementbtn{
+
+    .statementbtn {
         padding: 6px !important;
         font-size: 13.4px !important;
     }
+
     i.fa.fa-plus-circle.pr-2 {
         font-size: 18px !important;
     }
+
     button.netpaybtn.net_pay {
         padding: 2.5px;
         height: 42px;
     }
-    .canada-padding{
+
+    .canada-padding {
         padding: 0px;
     }
 
@@ -4496,6 +4632,7 @@ img.earnbtn2.lockuk {
         text-align: left !important;
         padding-left: 5px;
     }
+
     .ukbtn1 {
         display: flex;
         justify-content: center;
@@ -4526,7 +4663,8 @@ img.earnbtn2.lockuk {
     .ukpay-inner {
         padding: 5px;
     }
-    .input-uk{
+
+    .input-uk {
         padding: 6px;
         border-radius: 0px !important;
         height: 33px !important;
@@ -4538,7 +4676,7 @@ img.earnbtn2.lockuk {
     }
 }
 
-@media  (max-width: 375px) {
+@media (max-width: 375px) {
     .uk-lable {
         font-size: 18px;
     }
@@ -4964,25 +5102,30 @@ img.earnbtn2.lockuk {
     .oo {
         display: flex;
     }
+
     .direction-left {
 
         padding: 0px 43px !important;
 
     }
+
     .direction-left-canada-edit {
         padding: 0px 40px !important;
     }
+
     .direction-left-canada {
 
         padding: 0px 48px !important;
 
-}
-.address_book{
-    width: 85.5% !important;
-}
-.address_book_1{
-    width: 85.5% !important;
-}
+    }
+
+    .address_book {
+        width: 85.5% !important;
+    }
+
+    .address_book_1 {
+        width: 85.5% !important;
+    }
 
 
 
@@ -5003,7 +5146,7 @@ img.earnbtn2.lockuk {
     font-weight: 600;
 }
 
-@media  (max-width: 320px) {
+@media (max-width: 320px) {
     .textarea-w2 textarea {
         max-width: 295px;
     }
@@ -5108,29 +5251,36 @@ img.earnbtn2.lockuk {
     .text-left.mt-4 p {
         font-size: 13px !important;
     }
+
     .direction-left {
 
         padding: 0px 25px !important;
 
     }
+
     .direction-left-canada {
 
         padding: 0px 29px !important;
 
 
     }
+
     .direction-left-canada-edit {
         padding: 0px 12px !important;
     }
+
     .address_book {
         width: 82% !important;
     }
+
     .address_book_1 {
         width: 82% !important;
     }
-    input.contact-box{
+
+    input.contact-box {
         width: 89%;
     }
+
     /* .select-dropdown{
         padding: 6px 70px !important;
     } */

@@ -68,33 +68,79 @@ function date_calculate() {
     }
 }
 
+
 $(".addEarningField").click(function () {
-    var earning = `<input class="earnbtn mt-3 text-center incomeKey" data-id="000` + i + `" name="earning[]" type="text" value="">`;
+
+    var earning = `<input class="earnbtn mt-3 text-center incomeKey" data-id="000` + i + `" name="earning[]" type="text" value="" id="earning` + i + `">`;
     var rate = `<input class="earnbtn mt-3 text-center rateKey" type="number" id="rate_000` + i + `" name="rate[]" type="number" value="">`;
     var hours = `<input class="earnbtn mt-3 text-center hoursKey" type="number" id="hours_000` + i + `" name="hours[]" type="number" value="">`;
-    var total = `<input class="earnbtn mt-3 text-center"  id="total_000` + i + `" name="total[]" type="number" value="">`;
+    var total = `<input class="earnbtn mt-3 text-center"  id="total_000` + i + `" name="total[]" type="text" value="">
+    <button type="button" class="cross-btn-canadas removebtn-canada"  data-ref="`+i+`" id="removebtn`+i+`">
+    <span>x</span></button>`;
     $('.addincomeKey:last').append(earning);
     $('.addrateKey:last').append(rate);
     $('.addhoursKey:last').append(hours);
     $('.addcurrentTotal:last').append(total);
     i++;
-    // $(".rateKey, .hoursKey").keyup(function () {
-    //     calculation();
-    // });
+    //remove function of add earning field
+    $(".removebtn-canada").click(function(){
+        
+        var inpputidvalue= $(this).attr('data-ref');
+        var input1 = document.getElementById('earning'+inpputidvalue);
+        var input2 = document.getElementById('rate_000'+inpputidvalue);
+        var input3 = document.getElementById('hours_000'+inpputidvalue);
+        var input4 = document.getElementById('total_000'+inpputidvalue);
+        var input4btn = document.getElementById('removebtn'+inpputidvalue);      
+      
+        
+        input1.remove();
+        input2.remove();
+        input3.remove();
+        input4.remove();
+        input4btn.remove();     
+    
+        
+    });
+
 });
 
+// 
 var j = 0;
+
 $(".addTaxField").click(function () {
-    var addtaxes = `<div class="d-flex mt-3">
+
+    
+    var addtaxes = `<div class="d-flex mt-3" id="other_Tax_`+j+`">
                         <img src="../images/unlock.png" style="visibility: hidden;" class="earnbtn3 lock">
-                        <input class="earnbtn text-center other_taxes" name="tax_deduction[]" data-id="` + j + `">
+                        <input class="earnbtn text-center other_taxes" name="tax_deduction[]" data-id="` + j + `" >
                     </div>`;
     var addtaxes_rate = `<input class="earnbtn text-center deduction_other mt-3" type="number" name="period_tax_deduction[]" id="tax_` + j + `">`;
-    var addtaxes_ytd = `<input class="earnbtn text-center deduction_other_ytd mt-3" type="number" name="ytd_tax_deduction[]" id="ytd_` + j + `">`;
+    var addtaxes_ytd = `<input class="earnbtn text-center deduction_other_ytd mt-3" type="text" name="ytd_tax_deduction[]" id="ytd_` + j + `">
+    <button type="button" class="cross-btn-canadas removebtn-canada"  data-ref="`+j+`" id="removebtn_uk`+j+`""><span>x</span></button>`;
     $(".addtaxes:last").append(addtaxes);
     $(".addtaxes_rate:last").append(addtaxes_rate);
     $(".addtaxes_ytd:last").append(addtaxes_ytd);
     j++;
+
+     //remove function of add earning field
+     $(".removebtn-canada").click(function(){
+        
+        var inpputidvalue= $(this).attr('data-ref');
+        var input1 = document.getElementById('tax_'+inpputidvalue);
+        var input2 = document.getElementById('ytd_'+inpputidvalue);
+        var input3 = document.getElementById('other_Tax_'+inpputidvalue);
+        
+        var input4btn = document.getElementById('removebtn_uk'+inpputidvalue);      
+      
+        
+        input1.remove();
+        input2.remove();
+        input3.remove();
+        input4btn.remove();     
+    
+        
+    });
+
     // $(".deduction_other, .deduction_other_ytd").keyup(function () {
     //     taxOtherCalculate();
     // });
