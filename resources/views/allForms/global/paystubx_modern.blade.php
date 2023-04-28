@@ -476,7 +476,7 @@
                     <table style="width:100%;padding-left:40px;">
                         <tr>
                             <td style="text-transform: uppercase; font-size:10px;"> {{ $requestData['cname'] }}<br>
-                                {{ $requestData['address_1'] }} <br>
+                                {{ $requestData['address_1'] }}{!! addressTwo($requestData, true) !!}<br>
                                 {{ $requestData['city'] }} {{ $requestData['state'] }},
                                 {{ $requestData['zip_code'] }} </td>
                         </tr>
