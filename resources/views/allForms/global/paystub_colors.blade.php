@@ -294,7 +294,7 @@ $petani = DB::table('templates')->pluck('color_code');
                     <tr>
                         <td class="heading1 tax-align-left" style="padding-left: 18px;width:20%;">Earnings</td>
                         <td class="heading1" style="width:15%;padding-left:7px;color:#555;"> Rate</td>
-                        <td class="heading1" style="text-align:right;width:15%;padding-right:30px;">Hours</td>
+                        <td class="heading1" style="text-align:right;width:15%;padding-right:25px;">Hours</td>
                         <td class="heading1" style="padding-right:18px; text-align:right;width:30%;">This Period</td>
                         <td class="heading1 tax-align-r" style="width:20%;">YTD</td>
                     </tr>
