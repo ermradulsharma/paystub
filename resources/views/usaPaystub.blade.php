@@ -695,7 +695,7 @@
     <input type="hidden" id="userId" name="user_id" value="{{ Auth::check() }}">
 @endsection
 @section('script')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" crossorigin="anonymous"></script>
+    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" crossorigin="anonymous"></script> --}}
 
     <script>
         $(document).ready(function() {
@@ -851,7 +851,7 @@
             });
         });
     </script>
-    <script  src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyDpavHXELJMJvIHifFPN6tBBiFSXKGpy2g&callback=Function.prototype"></script>
+    {{-- <script  src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyDpavHXELJMJvIHifFPN6tBBiFSXKGpy2g&callback=Function.prototype"></script> --}}
     <script>
         var searchInput = 'address_1';
         $(document).ready(function() {

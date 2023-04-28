@@ -722,7 +722,7 @@
                                     <div class="col-lg-2 col-md-4 col-sm-6 mb-2 advicex advicexv d-none">
                                         <div>
                                             <p class="p-0 m-0 " style="font-family: serif;">CLOCK VCHR.<span class="redColor">*</span></p>
-                                            <input class="earnbtn text-center removeDiv" value="{{ $invoice->clock_vchr_number ?? '' }}" name="clock_vchr_number" placeholder="123456" maxlength="11" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+                                            <input class="earnbtn text-center removeDiv" value="{{ $invoice->clock_vchr_number ?? '' }}" name="clock_vchr_number" id="clock_vchr_number" placeholder="123456" maxlength="11" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                         </div>
                                     </div>
                                     <div class="col-lg-2 col-md-4 col-sm-6 mb-2 advicex advicexv advicexvc d-none">
@@ -734,19 +734,19 @@
                                     <div class="col-lg-2 col-md-4 col-sm-6 mb-2 advicex">
                                         <div>
                                             <p class="p-0 m-0 " style="font-family: serif;">Advice Number:<span class="redColor">*</span></p>
-                                            <input class="earnbtn text-center removeDiv" value="{{ $invoice->advice_number ?? '' }}" name="advice_number" placeholder="123456" maxlength="6" minlength="4" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+                                            <input class="earnbtn text-center removeDiv" value="{{ $invoice->advice_number ?? '' }}" name="advice_number" id="advice_number" placeholder="123456" maxlength="6" minlength="4" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                         </div>
                                     </div>
                                     <div class="col-lg-2 col-md-4 col-sm-6 mb-2 advicex">
                                         <div>
                                             <p class="p-0 m-0 " style="font-family: serif;">Account Number LAST<span class="redColor">*</span></p>
-                                            <input class="earnbtn text-center removeDiv" value="{{ $invoice->account_number_last_4 ?? '' }}" name="account_number_last_4" placeholder="1234" maxlength="4" minlength="4" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+                                            <input class="earnbtn text-center removeDiv" value="{{ $invoice->account_number_last_4 ?? '' }}" name="account_number_last_4" id="account_number_last_4" placeholder="1234" maxlength="4" minlength="4" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                         </div>
                                     </div>
                                     <div class="col-lg-2 col-md-4 col-sm-6 mb-2 advicex">
                                         <div>
                                             <p class="p-0 m-0 " style="font-family: serif;">Transit ABA<span class="redColor">*</span></p>
-                                            <input class="earnbtn text-center removeDiv" value="{{ $invoice->transit_aba_number ?? '' }}" name="transit_aba_number" placeholder="1234" maxlength="4" minlength="4" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+                                            <input class="earnbtn text-center removeDiv" value="{{ $invoice->transit_aba_number ?? '' }}" name="transit_aba_number" id="transit_aba_number" placeholder="1234" maxlength="4" minlength="4" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                         </div>
                                     </div>
                                 </div>
@@ -785,7 +785,7 @@
         });
     });
 </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" crossorigin="anonymous"></script>
+    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" crossorigin="anonymous"></script> --}}
     <script>
         $(function() {
             var value = $('select#basic_temp option:selected').val();
@@ -1072,9 +1072,7 @@
             });
         });
     </script>
-    <script
-        src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyDpavHXELJMJvIHifFPN6tBBiFSXKGpy2g">
-    </script>
+    {{-- <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyDpavHXELJMJvIHifFPN6tBBiFSXKGpy2g"></script> --}}
     <script>
         var searchInput = 'address_1';
 
