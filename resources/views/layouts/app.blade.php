@@ -316,28 +316,22 @@
                     <h5 class="text-center" style="text-transform:capitalize;">Verify your Email Address</h5>
                     <div class=" text-center mt-4">
                         <div class="mail">
-                            <img src="https://cdn4.iconfinder.com/data/icons/social-media-logos-6/512/112-gmail_email_mail-512.png"
-                                class="mailpic">
+                            <img src="https://cdn4.iconfinder.com/data/icons/social-media-logos-6/512/112-gmail_email_mail-512.png" class="mailpic">
                         </div>
 
                         <h5 style="color: #457bbe;" class="mt-4 text-center">Almost There!</h5>
-                        <p style="color: #000;font-size: 14px;font-family: serif; text-transform:capitalize; margin-bottom:0px;"
-                            class="text-center">Enter the verification code sent to you</p>
-                        <span style="color: #02030359;font-size: 10px;font-family: serif; text-transform:capitalize;"
-                            class="text-center">Check spam if not found in inbox</span>
+                        <p style="color: #000;font-size: 14px;font-family: serif; text-transform:capitalize; margin-bottom:0px;" class="text-center">Enter the verification code sent to you</p>
+                        <span style="color: #02030359;font-size: 10px;font-family: serif; text-transform:capitalize;" class="text-center">Check spam if not found in inbox</span>
                         <p class="resend-otp" style="padding-top:10px;">
-                            <a id="resendOtpButton" class="pointer-disable" style=""
-                                href="JavaScript:void(0);" disabled>Resend OTP </a>
-                            <i class="fa fa-clock-o clock"></i>
-                            <span id="resendTimeOut">30</span>
+                            <a id="resendOtpButton" class="pointer-disable" style="" href="JavaScript:void(0);" disabled>Resend OTP </a>
+                            <i class="fa fa-clock-o clock"></i> <span id="resendTimeOut">30</span>
                         </p>
 
                         <form id="loginOtp" action="{{ url('loginWithOtp') }}" method="POST" class="text-center">
                             @csrf
                             <div class="px-lg-5">
                                 <input type="hidden" id="hidden_email" name="email" class="d-none">
-                                <input type="text" id="Verificationcode" name="code"
-                                    class="form-control formm py-4" placeholder="Verification Code *">
+                                <input type="text" id="Verificationcode" name="code" class="form-control formm py-4" placeholder="Verification Code *">
                             </div>
                             <button class="previewbtn mt-5 mobile-verify-btn" type="submit">Verify</button>
                         </form>
@@ -358,11 +352,8 @@
                 <div class="modal-body" style="padding-bottom: 30px;">
                     <h5 class="text-center" style="text-transform:capitalize;">Do you want to logout?</h5>
                     <div class=" text-center mt-4">
-                        {{-- <h5 style="color: #457bbe;" class="mt-4 text-center">Almost There!</h5> --}}
-
                         <form id="loginOtp" action="{{ route('logout') }}" method="POST" class="text-center">
                             @csrf
-
                             <button class="previewbtn mobile-logout-btn" type="submit">Yes</button>
                             <button class="previewbtn  bottom-close  mobile-logout-btn" type="button">NO</button>
                         </form>

@@ -703,25 +703,19 @@
                     <h5 class="text-center" style="text-transform:capitalize;">{{ __('Verify your Email Address') }}</h5>
                     <div class=" text-center mt-4">
                         <div class="mail">
-                            <img src="https://cdn4.iconfinder.com/data/icons/social-media-logos-6/512/112-gmail_email_mail-512.png"
-                                class="mailpic">
+                            <img src="https://cdn4.iconfinder.com/data/icons/social-media-logos-6/512/112-gmail_email_mail-512.png" class="mailpic">
                         </div>
 
                         <h5 style="color: #457bbe;" class="mt-4 text-center">Almost There!</h5>
-                        <p style="color: #000;font-size: 14px;font-family: serif; text-transform:capitalize; margin-bottom:0px;"
-                            lass="text-center">Enter the verification code sent to you</p>
-                        <span style="color: #02030359;font-size: 10px;font-family: serif; text-transform:capitalize;"
-                            class="text-center">Check spam if not found in inbox</span>
-                        <p class="resend-otp"><a id="resendOtpButton" class="pointer-disable" style=""
-                                href="JavaScript:void(0);" disabled>Resend OTP </a><i
-                                class="fa fa-clock-o clock"></i><span id="resendTimeOut">30</span></p>
+                        <p style="color: #000;font-size: 14px;font-family: serif; text-transform:capitalize; margin-bottom:0px;" lass="text-center">Enter the verification code sent to you</p>
+                        <span style="color: #02030359;font-size: 10px;font-family: serif; text-transform:capitalize;" class="text-center">Check spam if not found in inbox</span>
+                        <p class="resend-otp"><a id="resendOtpButton" class="pointer-disable" style="" href="JavaScript:void(0);" disabled>Resend OTP </a><i class="fa fa-clock-o clock"></i><span id="resendTimeOut">30</span></p>
                         <form id="loginOtp" action="{{ route('store.details') }}" method="POST" class="text-center">
                             @csrf
                             <input type="hidden" value="verify-email" name="type">
                             <div class="px-lg-5">
-                                <input type="hidden" id="hidden_email" name="email" class="d-none">
-                                <input type="text" id="Verificationcode" name="code"
-                                    class="form-control form-control-address formm py-4" placeholder="Verification Code *">
+                                <input type="hidden" id="hidden_email" name="email">
+                                <input type="text" id="Verificationcode" name="code" class="form-control form-control-address formm py-4" placeholder="Verification Code *">
                             </div>
                         </form>
                         <button class="previewbtn mt-5" id="verify-email">Verify</button>
@@ -734,13 +728,10 @@
     <div class="modal fade" id="userName3">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-
                 <!-- Modal Header -->
                 <div class="modal-header" style="background: #115caecf;">
                     <h4 class="modal-title" style="text-transform: capitalize;color:#fff;">Change Password</h4>
-                    <button type="button"
-                        style="border: none; background-color:transparent; color:#fff;font-size:20px;padding:0;"
-                        class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
+                    <button type="button" style="border: none; background-color:transparent; color:#fff;font-size:20px;padding:0;" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
                 </div>
 
                 <!-- Modal body -->
@@ -752,38 +743,26 @@
 
                         <div class="contact-box-outer">
                             <div class="contact-box-outer">
-                                <label class="label-text" for="css">Password<span
-                                        style="color:red;">*</span></label>
-                                <input class="contact-box" type="password" placeholder="Current Password"
-                                    name="currentPassword">
-                                <i id="eye-icon_00" toggle="#password-field"
-                                    class="fa fa-eye-slash eye-icon show-password" data-id="02"></i>
+                                <label class="label-text" for="css">Password<span style="color:red;">*</span></label>
+                                <input class="contact-box" type="password" placeholder="Current Password" name="currentPassword">
+                                <i id="eye-icon_00" toggle="#password-field" class="fa fa-eye-slash eye-icon show-password" data-id="02"></i>
                             </div>
                         </div>
 
                         <div class="contact-box-outer">
-                            <label class="label-text" for="css">New Password<span
-                                    style="color:red;">*</span></label>
-                            <input class="contact-box" type="password" placeholder="New Password" name="password"
-                            class="form-control form-control-address show-password-sd" id="new_password" required>
-                            <i id="eye-icon_03" toggle="#password-field" class="fa fa-eye-slash eye-icon show-password"
-                                data-id="02"></i>
+                            <label class="label-text" for="css">New Password<span style="color:red;">*</span></label>
+                            <input class="contact-box" type="password" placeholder="New Password" name="password" class="form-control form-control-address show-password-sd" id="new_password" required>
+                            <i id="eye-icon_03" toggle="#password-field" class="fa fa-eye-slash eye-icon show-password" data-id="02"></i>
                         </div>
                         <div class="contact-box-outer">
-                            <label class="label-text" for="css">Confirm Password<span
-                                    style="color:red;">*</span></label>
-                            <input class="contact-box" type="password" placeholder="Confirm Password"
-                                name="password_confirmation" class="form-control form-control-address show-password-sd"
-                                id="confirm_password" required>
-                            <i id="eye-icon_03" toggle="#password-field" class="fa fa-eye-slash eye-icon show-password"
-                                data-id="02"></i>
+                            <label class="label-text" for="css">Confirm Password<span style="color:red;">*</span></label>
+                            <input class="contact-box" type="password" placeholder="Confirm Password" name="password_confirmation" class="form-control form-control-address show-password-sd" id="confirm_password" required>
+                            <i id="eye-icon_03" toggle="#password-field" class="fa fa-eye-slash eye-icon show-password" data-id="02"></i>
                         </div>
                     </form>
                     <div class="d-flex justify-content-between pt-2">
-                        <button class="btn-secondary" data-bs-dismiss="modal"
-                            style="border-radius:20px; border:none;font-size:12px; padding:5px 10px;">Cancel</button>
-                        <button class="btn-danger" id="store-password"
-                            style="border-radius:20px; border:none;font-size:12px; padding:5px 15px;">Save</button>
+                        <button class="btn-secondary" data-bs-dismiss="modal" style="border-radius:20px; border:none;font-size:12px; padding:5px 10px;">Cancel</button>
+                        <button class="btn-danger" id="store-password" style="border-radius:20px; border:none;font-size:12px; padding:5px 15px;">Save</button>
                     </div>
                 </div>
             </div>
@@ -798,12 +777,9 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body" style="padding-bottom:30px;">
-                    <h5 class="text-center delete-msg" style="text-transform:capitalize;">Do you want to delete your
-                        account?</h5>
+                    <h5 class="text-center delete-msg" style="text-transform:capitalize;">Do you want to delete your account?</h5>
                     <div class=" text-center mt-4">
-                        {{-- <h5 style="color: #457bbe;" class="mt-4 text-center">Almost There!</h5> --}}
-                        <form id="deleteItem" action="{{ route('delete.account') }}" method="POST"
-                            class="text-center">
+                        <form id="deleteItem" action="{{ route('delete.account') }}" method="POST" class="text-center">
                             @csrf
                         </form>
                         <button class="previewbtn delete-item">Yes</button>
@@ -821,7 +797,6 @@
     <script>
         $(document).ready(function() {
             getAddressBook();
-
             $(document).on('click', '.pagination a', function(event) {
                 event.preventDefault();
                 var page = $(this).attr('href').split('page=')[1];
@@ -831,7 +806,6 @@
 
         $(".changeUserEmail").click(function() {
             $("#changeUserEmail").modal("show");
-
         });
 
         $("#changeUserEmail").on("submit", function() {
