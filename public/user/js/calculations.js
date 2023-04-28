@@ -20,23 +20,24 @@ $(document).ready(function () {
     }
 
     $(addButton).click(function () {
-        var addEarning = `<div class="margin-bottom">
+        var addEarning = `<div class="margin-bottom" id="earningusa_`+i+`">
                             <input class="earnbtn mb-3 text-center" type="text" name="earning[]"  id="earning_`+ i + `" data-id="` + i + `">
                         </div>`;
-        var addRate = `<div class="margin-bottom">
+        var addRate = `<div class="margin-bottom" id="rateusa_`+i+`">
                         <input type="text" name="rate[]" class="earnbtn mb-3 text-center calculation rate"  id="rate_`+ i + `" data-id="` + i + `">
                     </div>`;
-        var addHours = `<div class="margin-bottom">
+        var addHours = `<div class="margin-bottom" id="hoursusa_`+i+`">
                         <input type="text" name="hours[]" class="earnbtn mb-3 text-center hours calculation"  id="hours_`+ i + `" data-id="` + i + `">
                     </div>`;
-        var addTotal = `<div class="margin-bottom">
+        var addTotal = `<div class="margin-bottom" id="totalusa_`+i+`">
                         <input type="text" name="total[]" class="earnbtn mb-3 text-center total"  id="total_`+ i + `" data-id="` + i + `" readonly="true">
                     </div>`;
-        var addGrossTotal = `<div class="margin-bottom"">
+        var addGrossTotal = `<div class="margin-bottom"" id="periodusa_`+i+`">
                         <input type="text" name="period[]" class="earnbtn mb-3 text-center gross_total"  id="period_`+ i + `" data-id="` + i + `">
                     </div>`;
-        var addYtdTotal = `<div class="margin-bottom relative" style="padding-top: 2px;">
-                        <input type="text" name="ytd_total[]" class="earnbtn mb-3 text-center ytd_total"  id="ytd_total_`+ i + `" data-id="` + i + `"><button class="cross-btn"><span>x</span></button>
+        var addYtdTotal = `<div class="margin-bottom relative" style="padding-top: 2px;" id="removebtn_usa`+i+`"">
+                        <input type="text" name="ytd_total[]" class="earnbtn mb-3 text-center ytd_total"  id="ytd_total_`+ i + `" data-id="` + i + `">
+                        <button class="cross-btn removebtn-usa"  data-ref="`+i+`"   data-id="` + i + `"><span>x</span></button>
                     </div>`;
         if (i < maxField) {
             i++;
@@ -48,6 +49,33 @@ $(document).ready(function () {
             $("#addYtdTotal").append(addYtdTotal);
             $("#add_deduction").append(add_deduction);
         }
+
+
+        //remove function of add earning field
+        $(".removebtn-usa").click(function(){
+            
+            var inpputidvalue= $(this).attr('data-ref');
+            var inpputdata_id= $(this).attr('data-id');
+            var input1 = document.getElementById('earningusa_'+inpputidvalue);
+            var input2 = document.getElementById('rateusa_'+inpputidvalue);
+            var input3 = document.getElementById('hoursusa_'+inpputidvalue);
+            var input4 = document.getElementById('totalusa_'+inpputidvalue);
+            var input5 = document.getElementById('periodusa_'+inpputidvalue);
+            var input6 = document.getElementById('removebtn_usa'+inpputidvalue);      
+            
+            input1.remove();
+            input2.remove();
+            input3.remove();
+            input4.remove(); 
+            input5.remove();
+            input6.remove();  
+            i--;  
+
+            calculation(inpputdata_id);
+        
+            
+        });
+
         // i++;
         $(".calculation").keyup(function () {
             var id = $(this).data("id");
@@ -73,13 +101,22 @@ $(document).ready(function () {
             '<input type="text" name="period_tax_deduction[]" class="earnbtn text-center tax_deduction tax" id="taxes_0' + x + '"  data-id="' + x + '"/>' +
             "</div>" +
             '<div class="col-md-2 col-lg-2 mb-3 relative">' +
-            '<input type="text" name="ytd_tax_deduction[]" class="earnbtn text-center ytd_tax tax add_ytd_deduction " id="taxes_ytd_0' + x + '"  data-id="' + x + '"/><button class="cross-btn-deduction"><span>x</span></button>' +
+            '<input type="text" name="ytd_tax_deduction[]" class="earnbtn text-center ytd_tax tax add_ytd_deduction " id="taxes_ytd_0' + x + '"  data-id="' + x + '"/><button class="cross-btn-deduction removebtn-usa-deduction"><span>x</span></button>' +
             "</div>" +
             "</div> ";
-        if (x < maxField) {
+        if (x <= maxField) {
             x++;
             $(wrapper_2).append(fieldHTML);
         }
+
+        
+       
+
+        // $(wrapper_2).on('click', '.removebtn-usa-deduction', function(e){
+        //     e.preventDefault();
+        //     $(this).parent().parent().remove(); 
+        //     x--; //Decrement field counter
+        // });
 
         $(".tax_deduction").keyup(function () {
             var id = $(this).data('id');
@@ -120,6 +157,11 @@ $(document).ready(function () {
         return false;
     });
 
+    $(wrapper_2).on('click', '.removebtn-usa-deduction', function(e){
+        e.preventDefault();
+        $(this).parent().parent().remove(); 
+        x--; //Decrement field counter
+    });
     $(".tax_deduction").keyup(function () {
         var deduction_period_tax = $("#deduction_period_tax").val() || 0.0;
         var tax_deduction = 0.0;

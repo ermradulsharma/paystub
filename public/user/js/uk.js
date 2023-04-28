@@ -78,15 +78,39 @@ function date_calculate() {
 }
 
 $(".addEarningField").click(function () {
-    var earning = `<input class="earnbtn mt-3 text-center incomeKey" data-id="000` + i + `" name="earning[]" type="text" value="">`;
+    var earning = `<input class="earnbtn mt-3 text-center incomeKey" data-id="000` + i + `" name="earning[]" type="text" value="" id="incomeKey_`+ i +`">`;
     var rate = `<input class="earnbtn mt-3 text-center rateKey" type="number" id="rate_000` + i + `" name="rate[]" type="text" value="">`;
-    var hours = `<input class="earnbtn mt-3 text-center hoursKey" type="number" id="hours_000` + i + `" name="hours[]" type="text" value="">`;
+    var hours = `<input class="earnbtn mt-3 text-center hoursKey" type="text" id="hours_000` + i + `" name="hours[]" type="text" value="">
+    <button type="button" class="cross-btn-uks removebtn-uk"  data-ref="`+i+`" id="removebtn`+i+`">
+    <span>x</span></button>`;
     var total = `<input class="earnbtn mt-3 text-center addcurrentTotal" readonly id="total_000` + i + `" name="total[]" type="text" value=""></input>`;
     $('.addincomeKey:last').append(earning);
     $('.addrateKey:last').append(rate);
     $('.addhoursKey:last').append(hours);
     $('.addcurrentTotal:last').append(total);
     i++;
+
+    //remove function of add earning field
+    $(".removebtn-uk").click(function(){
+        
+        var inpputidvalue= $(this).attr('data-ref');
+        var input4btn = document.getElementById('removebtn'+inpputidvalue);      
+        var input1 = document.getElementById('incomeKey_'+inpputidvalue);
+        var input2 = document.getElementById('rate_000'+inpputidvalue);
+        var input3 = document.getElementById('hours_000'+inpputidvalue);
+        var input4 = document.getElementById('total_000'+inpputidvalue);
+        
+      
+        input4btn.remove();     
+        input1.remove();
+        input2.remove();
+        input3.remove();
+        input4.remove();
+       
+    
+        
+    });
+
     $(".rateKey, .hoursKey").keyup(function () {
         calculation();
     });

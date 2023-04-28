@@ -85,8 +85,7 @@
 </div>
 <!-- Modal End -->
 <!-- Modal Start -->
-<div class="modal fade" id="tempViewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
+<div class="modal fade" id="tempViewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -95,8 +94,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <embed src="" type="" id="tempView" allowtransparency="false" style="background-color : transparent;"
-                    frameborder="0" width="100%" height="800">
+                <embed src="" type="" id="tempView" allowtransparency="false" style="background-color : transparent;" frameborder="0" width="100%" height="800">
                 {{-- <iframe src="" id="tempView" allowtransparency="false" style="background-color : transparent;"
                     frameborder="0" width="100%" height="800"></iframe> --}}
             </div>
@@ -118,18 +116,13 @@
                                 <h6 class="base">BASIC TEMPLATES</h6>
                                 <div class="mt-3">
                                     <div class="input-group mmenu mb-3 text-center">
-                                        <select name="basic_temp" id="basic_temp"
-                                            class="form-control dropdown1 text-center bt_id small-font basicTemplate direction-left-canada"
-                                            style="margin-right:10px; font-size:18px;">
+                                        <select name="basic_temp" id="basic_temp" class="form-control dropdown1 text-center bt_id small-font basicTemplate direction-left-canada" style="margin-right:10px; font-size:18px;">
                                             <option value=""> --- Select Basic Templates --- </option>
                                             @foreach ($basicType as $data)
-                                            <option value="{{ $data->title ?? '' }}"
-                                                data-src="{{ $data->images->file ?? '' }}"
-                                                data-status="{{ $data->template_element }}"> {{ $data->name }} </option>
+                                            <option value="{{ $data->title ?? '' }}" data-src="{{ $data->images->file ?? '' }}" data-status="{{ $data->template_element }}"> {{ $data->name }} </option>
                                             @endforeach
                                         </select>
-                                        <i class="fa fa-eye-slash basicTem uk-eye" style="font-size: 39px;"
-                                            role="button"></i>
+                                        <i class="fa fa-eye-slash basicTem uk-eye" style="font-size: 39px;" role="button"></i>
                                     </div>
                                 </div>
                             </div>
@@ -142,15 +135,12 @@
                                     <h6 class="base">ADVANCED TEMPLATES</h6>
                                     <div class="mt-3">
                                         <div class="input-group mmenu mb-3">
-                                            <select name="advance_temp" id="advance_temp"
-                                                class="form-control text-center at_id dropdown1 advanceTemplate"
-                                                style="margin-right:10px;">
+                                            <select name="advance_temp" id="advance_temp" class="form-control text-center at_id dropdown1 advanceTemplate" style="margin-right:10px;">
                                                 <option value=""> --- Select Advance Template --- </option>
                                                 @foreach ($advanceType as $data)
-                                                <option value="{{ $data->title ?? '' }}"
-                                                    data-src="{{ $data->images->file ?? '' }}"
-                                                    data-status="{{ $data->template_element }}">
-                                                    {{ $data->name ?? '' }} </option>
+                                                <option value="{{ $data->title ?? '' }}" data-src="{{ $data->images->file ?? '' }}" data-status="{{ $data->template_element }}">
+                                                    {{ $data->name ?? '' }}
+                                                </option>
                                                 @endforeach
                                             </select>
                                             <i class="fa fa-eye-slash advanceTem uk-eye" role="button"></i>
@@ -174,7 +164,7 @@
                                 <select id="employerAddressCanada" class="address_book add_address address input-box-font select-dropdown" data-type="employer">
                                     <option data-name="" value="">Select Address</option>
                                     @foreach ($employerList ?? [] as $key => $employer)
-                                        <option data-name="{{ $employer->name }}" data-address1="{{ $employer->address_1 }}" data-address2="{{ $employer->address_2 }}" data-city="{{ $employer->city }}" data-state="{{ $employer->state }}" data-zip="{{ $employer->zip_code }}" data-tel="{{ $employer->tel }}" value="{{ $employer->name }}"> {{ $employer->name }}</option>
+                                    <option data-name="{{ $employer->name }}" data-address1="{{ $employer->address_1 }}" data-address2="{{ $employer->address_2 }}" data-city="{{ $employer->city }}" data-state="{{ $employer->state }}" data-zip="{{ $employer->zip_code }}" data-tel="{{ $employer->tel }}" value="{{ $employer->name }}"> {{ $employer->name }}</option>
                                     @endforeach
                                     <option data-name="" value="add_address">Add New Address</option>
                                 </select> --}}
@@ -200,8 +190,7 @@
                             <div class="col-md-6">
                                 <div>
                                     <label for="address_2" class="lable">STREET ADDRESS 2</label>
-                                    <input type="text" id="address_2" name="address_2"
-                                        placeholder="Street Address 2 (optional)" class="w-100  input-box-font">
+                                    <input type="text" id="address_2" name="address_2" placeholder="Street Address 2 (optional)" class="w-100  input-box-font">
                                 </div>
                             </div>
                         </div>
@@ -221,7 +210,7 @@
                                         <select name="state" id="state" class="state dropdown11 tax_rate removeDiv select-dropdown">
                                             <option value="">Select State</option>
                                             @foreach ($stateTaxes as $stateTax)
-                                                <option value="{{ $stateTax->state_code }}" data-tax="{{ $stateTax->rate }}">{{ $stateTax->state }} </option>
+                                            <option value="{{ $stateTax->state_code }}" data-tax="{{ $stateTax->rate }}">{{ $stateTax->state }} </option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -251,7 +240,7 @@
                             <select id="employeeAddressCanada" class="address_book_1 add_address address input-box-font select-dropdown" data-type="employee">
                                 <option data-name="" value="">Select Address</option>
                                 @foreach ($employeeList ?? [] as $key => $employee)
-                                    <option data-name="{{ $employee->name }}" data-address1="{{ $employee->address_1 }}" data-address2="{{ $employee->address_2 }}" data-city="{{ $employee->city }}" data-state="{{ $employee->state }}" data-zip="{{ $employee->zip_code }}" data-emp_id="{{ $employee->emp_id }}" data-emp_ssn="{{ $employee->emp_ssn }}" value="{{ $employee->name }}"> {{ $employee->name }}</option>
+                                <option data-name="{{ $employee->name }}" data-address1="{{ $employee->address_1 }}" data-address2="{{ $employee->address_2 }}" data-city="{{ $employee->city }}" data-state="{{ $employee->state }}" data-zip="{{ $employee->zip_code }}" data-emp_id="{{ $employee->emp_id }}" data-emp_ssn="{{ $employee->emp_ssn }}" value="{{ $employee->name }}"> {{ $employee->name }}</option>
                                 @endforeach
                                 <option data-name="" value="add_address_1">Add New Address</option>
                             </select> --}}
@@ -299,7 +288,7 @@
                                     <label for="currency" class="lable" class="redColor">CURRENCY <span class="redColor">*</span> </label>
                                     <select name="currency" id="currency" class="dropdown11 removeDiv select-dropdown">
                                         @foreach ($currencies as $currency)
-                                            <option value="{{ $currency->symbol }}">{{ $currency->symbol }} ({{ $currency->name }}) </option>
+                                        <option value="{{ $currency->symbol }}">{{ $currency->symbol }} ({{ $currency->name }}) </option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -336,30 +325,24 @@
                                 <div class="row">
                                     <div class="col-lg-3 col-md-3 mb-3 pr-lg-0 addincomeKey">
                                         <button type="button" class="statementbtn">INCOME</button>
-                                        <input class="earnbtn mt-3 text-center incomeKey" data-id="000" name="earning[]"
-                                            type="text" value="Regular">
+                                        <input class="earnbtn mt-3 text-center incomeKey" data-id="000" name="earning[]" type="text" value="Regular">
                                     </div>
                                     <div class="col-lg-3 col-md-3 mb-3 pr-lg-0 addrateKey">
                                         <button type="button" class="statementbtn">RATE</button>
-                                        <input class="earnbtn mt-3 text-center rateKey" type="number" id="rate_000"
-                                            name="rate[]" type="text" value="">
+                                        <input class="earnbtn mt-3 text-center rateKey" type="number" id="rate_000" name="rate[]" type="text" value="">
                                     </div>
                                     <div class="col-lg-3 col-md-3 mb-3 pr-lg-0 addhoursKey">
                                         <button type="button" class="statementbtn">HOURS</button>
-                                        <input class="earnbtn mt-3 text-center hoursKey" type="number" id="hours_000"
-                                            name="hours[]" type="text" value="">
+                                        <input class="earnbtn mt-3 text-center hoursKey" type="number" id="hours_000" name="hours[]" type="text" value="">
                                     </div>
                                     <div class="col-lg-3 col-md-3 mb-3 pr-lg-0 addcurrentTotal">
                                         <button type="button" class="statementbtn"> CURRENT TOTAL</button>
-                                        <input class="earnbtn mt-3 text-center currentTotal" id="total_000"
-                                            name="total[]" type="text" value="">
+                                        <input class="earnbtn mt-3 text-center currentTotal" id="total_000" name="total[]" type="text" value="">
                                     </div>
                                 </div>
                                 <div class="row my-2">
                                     <div class="col-lg-12 center-btn">
-                                        <button type="button" class="btnCommon addEarningField"> <i
-                                                class="fa fa-plus-circle pr-2"
-                                                style="font-size: 22px;color: #0ec23b;padding-top: 0px;"></i>Add
+                                        <button type="button" class="btnCommon addEarningField"> <i class="fa fa-plus-circle pr-2" style="font-size: 22px;color: #0ec23b;padding-top: 0px;"></i>Add
                                             Earning</button>
                                     </div>
                                 </div>
@@ -370,34 +353,27 @@
                                         <button type="button" class="statementbtn">DEDUCTION</button>
                                         @foreach ($deduction as $key => $item)
                                         <div class="d-flex mt-3">
-                                            <img src="{{ asset('images/lock.png') }}" class="earnbtn3 lock"
-                                                data-id="{{ $key }}" id="{{ $key }}">
-                                            <input class="earnbtn text-center taxes" id="taxe_{{ $key }}" name="taxes[]"
-                                                data-id="00{{ $key }}" data-value="{{ $item->price }}"
-                                                value="{{ $item->title }}" readonly="readonly">
+                                            <img src="{{ asset('images/lock.png') }}" class="earnbtn3 lock" data-id="{{ $key }}" id="{{ $key }}">
+                                            <input class="earnbtn text-center taxes" id="taxe_{{ $key }}" name="taxes[]" data-id="00{{ $key }}" data-value="{{ $item->price }}" value="{{ $item->title }}" readonly="readonly">
                                         </div>
                                         @endforeach
                                     </div>
                                     <div class="col-lg-4 mb-4 col-md-4 pr-0 addtaxes_rate">
                                         <button type="button" class="statementbtn">CURRENT TOTAL</button>
                                         @foreach ($deduction as $key => $item)
-                                        <input type="number" class="earnbtn text-center mt-3" name="taxes_rate[]"
-                                            id="tax_total_00{{ $key }}">
+                                        <input type="number" class="earnbtn text-center mt-3" name="taxes_rate[]" id="tax_total_00{{ $key }}">
                                         @endforeach
                                     </div>
                                     <div class="col-lg-4 mb-4 col-md-4 pr-0 addtaxes_ytd">
                                         <button type="button" class="statementbtn">YTD TOTAL</button>
                                         @foreach ($deduction as $key => $item)
-                                        <input type="number" class="earnbtn text-center mt-3" name="taxes_ytd[]"
-                                            id="tax_ytd_00{{ $key }}">
+                                        <input type="number" class="earnbtn text-center mt-3" name="taxes_ytd[]" id="tax_ytd_00{{ $key }}">
                                         @endforeach
                                     </div>
                                 </div>
                                 <div class="row my-2">
                                     <div class="col-lg-12 center-btn">
-                                        <button type="button" class="btnCommon addTaxField"> <i
-                                                class="fa fa-plus-circle pr-2"
-                                                style="font-size: 22px;color: #0ec23b;padding-top: 0px;"></i>Add
+                                        <button type="button" class="btnCommon addTaxField"> <i class="fa fa-plus-circle pr-2" style="font-size: 22px;color: #0ec23b;padding-top: 0px;"></i>Add
                                             Deductions</button>
                                     </div>
                                 </div>
@@ -406,28 +382,23 @@
                         <div class="row mb-3 mt-4 mt-lg-5">
                             <div class="col-lg-2 col-md-2 pr-md-0 mb-2">
                                 <button type="button" class="statementbtn">YTD GROSS</button>
-                                <input type="number" class="earnbtn text-center mt-3" id="ytd_gross"
-                                    name="ytd_gross_total">
+                                <input type="number" class="earnbtn text-center mt-3" id="ytd_gross" name="ytd_gross_total">
                             </div>
                             <div class="col-lg-2 col-md-2 pr-md-0 mb-2">
                                 <button type="button" class="statementbtn">YTD DEDUCATIONS</button>
-                                <input type="number" class="earnbtn text-center mt-3" id="ytd_deducations"
-                                    name="ytd_deduction_tax">
+                                <input type="number" class="earnbtn text-center mt-3" id="ytd_deducations" name="ytd_deduction_tax">
                             </div>
                             <div class="col-lg-2 col-md-2 pr-md-0 mb-2">
                                 <button type="button" class="statementbtn">YTD NET PAY</button>
-                                <input type="number" class="earnbtn text-center mt-3" id="ytd_net_pay"
-                                    name="total_ytd_net_pay">
+                                <input type="number" class="earnbtn text-center mt-3" id="ytd_net_pay" name="total_ytd_net_pay">
                             </div>
                             <div class="col-lg-2 col-md-2 pr-md-0 mb-2">
                                 <button type="button" class="statementbtn">CURRENT TOTAL</button>
-                                <input type="number" class="earnbtn text-center mt-3" id="current_total"
-                                    name="period_gross_total">
+                                <input type="number" class="earnbtn text-center mt-3" id="current_total" name="period_gross_total">
                             </div>
                             <div class="col-lg-2 col-md-2 pr-md-0 mb-2">
                                 <button type="button" class="statementbtn">DEDUCTIONS</button>
-                                <input type="number" class="earnbtn text-center mt-3" id="deductions"
-                                    name="deduction_tax">
+                                <input type="number" class="earnbtn text-center mt-3" id="deductions" name="deduction_tax">
                             </div>
                             <div class="col-lg-2 col-md-2 mb-2">
                                 <button type="button" class="statementbtn">NET PAY</button>
@@ -441,12 +412,8 @@
         <div class="row mt-3">
             <div class="col-12 text-center canada-btn-outer">
                 <div class="d-flex flex-wrap justify-content-between canada-btn-inner">
-                    <button class="previewbtn text-capitalize viewTempTemplate mb-3 w-sm-100" type="button"
-                        id="button1">Preview Your Paystub <i class="fa fa-eye"
-                            style="font-size: 30px; margin-left: 7px;"></i></button>
-                    <button type="button" class="emailbtn text-capitalize sendMailButton mb-3 w-sm-100"> <i
-                            class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL PAYSTUB <i
-                            class="fa fa-download ml-4" style="font-size:24px"></i></button>
+                    <button class="previewbtn text-capitalize viewTempTemplate mb-3 w-sm-100" type="button" id="button1">Preview Your Paystub <i class="fa fa-eye" style="font-size: 30px; margin-left: 7px;"></i></button>
+                    <button type="button" class="emailbtn text-capitalize sendMailButton mb-3 w-sm-100"> <i class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL PAYSTUB <i class="fa fa-download ml-4" style="font-size:24px"></i></button>
                 </div>
             </div>
         </div>
