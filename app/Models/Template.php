@@ -38,7 +38,7 @@ class Template extends Model
                 $rate[] = $d['rate'];
                 $hours[] = $d['hours'];
                 $total[] = $d['total'];
-                $delete[] = $d['delete'];
+                $delete[] = $d['delete'] ?? false;
             }
             $requestData['earning'] = $earning;
             $requestData['rate'] = $rate;
@@ -49,12 +49,12 @@ class Template extends Model
             foreach ($request->tax ?? [] as $d) {
                 $taxes[] = $d['taxes'];
                 $taxes_rate[] = $d['taxes_rate'];
-                $delete[] = $d['delete'];
+                $deleteTax[] = $d['deleteTax'] ?? false;
             }
 
             $requestData['taxes'] = $taxes;
             $requestData['taxes_rate'] = $taxes_rate;
-            $requestData['delete'] = $delete;
+            $requestData['deleteTax'] = $deleteTax;
             unset($requestData['earn']);
             unset($requestData['tax']);
         } else {
