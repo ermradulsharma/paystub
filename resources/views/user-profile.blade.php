@@ -837,12 +837,13 @@
         $("#changeUserEmail").on("submit", function() {
             $.ajax({
                 type: 'POST',
-                url: '{{ route('profile-setup') }}',
+                url: '{{ route("profile-setup") }}',
                 data: $("#changeUserEmail_1").serialize(),
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
                 success: function(response) {
+                    console.log('response', response);
                     $("#changeUserEmail").modal("hide");
                     toastr.success(response.message);
                     $("#userName2").modal("hide");

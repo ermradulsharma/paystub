@@ -451,7 +451,7 @@
                                             <option value="weekly" {{ $invoice->time_period == 'weekly' ? 'selected' : '' }}>Weekly</option>
                                             <option value="bi-weekly" {{ $invoice->time_period == 'bi-weekly' ? 'selected' : '' }}>Bi-Weekly</option>
                                             <option value="monthly"{{ $invoice->time_period == 'monthly' ? 'selected' : '' }}>Monthly</option>
-                                            <option value="bi-monthly" {{ $invoice->time_period == 'bi-monthly' ? 'selected' : '' }}>Bi-Monthly</option>
+                                            {{-- <option value="bi-monthly" {{ $invoice->time_period == 'bi-monthly' ? 'selected' : '' }}>Bi-Monthly</option> --}}
                                         </select>
                                     </div>
                                 </div>
@@ -765,7 +765,7 @@
                                     <div class="col-lg-2 col-md-4 col-sm-6 mb-2 advicex advicexv d-none">
                                         <div>
                                             <p class="p-0 m-0 " style="font-family: serif;">CLOCK VCHR.<span class="redColor">*</span></p>
-                                            <input class="earnbtn text-center removeDiv" value="{{ $invoice->clock_vchr_number ?? '' }}" name="clock_vchr_number" placeholder="123456" maxlength="11" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+                                            <input class="earnbtn text-center removeDiv" value="{{ $invoice->clock_vchr_number ?? '' }}" name="clock_vchr_number" id="clock_vchr_number" placeholder="123456" maxlength="11" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                         </div>
                                     </div>
                                     <div class="col-lg-2 col-md-4 col-sm-6 mb-2 advicex advicexv advicexvc d-none">
@@ -777,19 +777,19 @@
                                     <div class="col-lg-2 col-md-4 col-sm-6 mb-2 advicex">
                                         <div>
                                             <p class="p-0 m-0 " style="font-family: serif;">Advice Number:<span class="redColor">*</span></p>
-                                            <input class="earnbtn text-center removeDiv" value="{{ $invoice->advice_number ?? '' }}" name="advice_number" placeholder="123456" maxlength="6" minlength="4" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+                                            <input class="earnbtn text-center removeDiv" value="{{ $invoice->advice_number ?? '' }}" name="advice_number" id="advice_number" placeholder="123456" maxlength="6" minlength="4" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                         </div>
                                     </div>
                                     <div class="col-lg-2 col-md-4 col-sm-6 mb-2 advicex">
                                         <div>
                                             <p class="p-0 m-0 " style="font-family: serif;">Account Number LAST<span class="redColor">*</span></p>
-                                            <input class="earnbtn text-center removeDiv" value="{{ $invoice->account_number_last_4 ?? '' }}" name="account_number_last_4" placeholder="1234" maxlength="4" minlength="4" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+                                            <input class="earnbtn text-center removeDiv" value="{{ $invoice->account_number_last_4 ?? '' }}" name="account_number_last_4" id="account_number_last_4" placeholder="1234" maxlength="4" minlength="4" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                         </div>
                                     </div>
                                     <div class="col-lg-2 col-md-4 col-sm-6 mb-2 advicex">
                                         <div>
                                             <p class="p-0 m-0 " style="font-family: serif;">Transit ABA<span class="redColor">*</span></p>
-                                            <input class="earnbtn text-center removeDiv" value="{{ $invoice->transit_aba_number ?? '' }}" name="transit_aba_number" placeholder="1234" maxlength="4" minlength="4" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+                                            <input class="earnbtn text-center removeDiv" value="{{ $invoice->transit_aba_number ?? '' }}" name="transit_aba_number" id="transit_aba_number" placeholder="1234" maxlength="4" minlength="4" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                         </div>
                                     </div>
                                 </div>
@@ -797,13 +797,13 @@
                         </div>
                     </div>
                 </div>
-                <input type="hidden" name="days_number" id="days_number" value="{{ $invoice->days_number ?? 0 }}" hidden>
-                <div class="row mt-3">
-                    <div class="col-12 text-center px-0">
-                        <div class="d-flex flex-wrap justify-content-between">
-                            <button class="previewbtn text-capitalize viewTempTemplate mb-3 w-sm-100" type="button" id="button1">Preview Your Paystub <i class="fa fa-eye" style="font-size: 30px; margin-left: 7px;"></i></button>
-                            <button type="button" class="emailbtn text-capitalize sendMailButton mb-3 w-sm-100"> <i class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL PAYSTUB <i class="fa fa-download ml-4" style="font-size:24px"></i></button>
-                        </div>
+            </div>
+            <input type="hidden" name="days_number" id="days_number" value="{{ $invoice->days_number ?? 0 }}" hidden>
+            <div class="row mt-3">
+                <div class="col-12 text-center px-0">
+                    <div class="d-flex flex-wrap justify-content-between">
+                        <button class="previewbtn text-capitalize viewTempTemplate mb-3 w-sm-100" type="button" id="button1">Preview Your Paystub <i class="fa fa-eye" style="font-size: 30px; margin-left: 7px;"></i></button>
+                        <button type="button" class="emailbtn text-capitalize sendMailButton mb-3 w-sm-100"> <i class="fa fa-envelope mr-4" style="font-size:24px"></i>EMAIL PAYSTUB <i class="fa fa-download ml-4" style="font-size:24px"></i></button>
                     </div>
                 </div>
             </div>
@@ -828,7 +828,7 @@
         });
     });
 </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" crossorigin="anonymous"></script>
+    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" crossorigin="anonymous"></script> --}}
     <script>
         $(function() {
             var value = $('select#basic_temp option:selected').val();

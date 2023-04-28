@@ -44,45 +44,34 @@
                 </a>
             </li>
             <li class="nav-item ml-3 ">
-                <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('usa*') ? 'active' : '' }} "
-                    href="{{ route('usa.payStub') }}">USA</a>
+                <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('usa*') ? 'active' : '' }} " href="{{ route('usa.payStub') }}">USA</a>
             </li>
             <li class="nav-item ml-3">
-                <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('canada*') ? 'active' : '' }}"
-                    href="{{ route('canada') }}">CANADA</a>
+                <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('canada*') ? 'active' : '' }}" href="{{ route('canada') }}">CANADA</a>
             </li>
             <li class="nav-item ml-3">
-                <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('uk*') ? 'active' : '' }}"
-                    href="{{ route('uk') }}">UK</a>
+                <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('uk*') ? 'active' : '' }}" href="{{ route('uk') }}">UK</a>
             </li>
             <li class="nav-item ml-3">
-                <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('global*') ? 'active' : '' }}"
-                    href="{{ route('global') }}">GLOBAL</a>
+                <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('global*') ? 'active' : '' }}" href="{{ route('global') }}">GLOBAL</a>
             </li>
             <li class="nav-item ml-3">
-                <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('w2form*') ? 'active' : '' }}"
-                    href="{{ route('w2form') }}" style="width: 143px !important;">W-2 FORM</a>
+                <a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('w2form*') ? 'active' : '' }}" href="{{ route('w2form') }}" style="width: 143px !important;">W-2 FORM</a>
             </li>
             <li class="nav-item d-flex justify-content-center ml-3 " style="margin-top:5px;">
                 @guest
-                    <a class="btn btn-lg py-2 w-100 btn-danger login registerBtn " style="margin-top:42px;"
-                        href="javascript:void(0);">LOGIN</a>
+                    <a class="btn btn-lg py-2 w-100 btn-danger login registerBtn " style="margin-top:42px;" href="javascript:void(0);">LOGIN</a>
                     <div class="container d-none logoutDiv">
                         <div class="user-icon"><img src="{{ asset('images/profile1.png') }}"></div>
                         <div class="logout btn-logout">
                             <a><img src="{{ asset('images/logout01.png') }}"></a>
                         </div>
                         <div class="dropbtn">
-                            <button class="btn btn-default dropdown-toggle navright-btn authUserName" type="button"
-                                id="menu1" data-toggle="dropdown">Hi {{ Auth::user()->name ?? '' }}<span
-                                    class="caret"></span></button>
+                            <button class="btn btn-default dropdown-toggle navright-btn authUserName" type="button" id="menu1" data-toggle="dropdown">Hi {{ Auth::user()->name ?? '' }}<span class="caret"></span></button>
                             <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                                <li role="presentation"><a role="menuitem" tabindex="-1"
-                                        href="{{ route('invoiceList') }}">Order History</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('profile') }}">My
-                                        Account</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1"
-                                        href="{{ route('profile') }}?tab=2">Address Book</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('invoiceList') }}">Order History</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('profile') }}">My Account</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('profile') }}?tab=2">Address Book</a></li>
                             </ul>
                         </div>
                     </div>
@@ -93,17 +82,11 @@
                         <div class="user-icon"><img src="{{ asset('images/profile1.png') }}"></div>
                         <div class="logout btn-logout"><a><img src="{{ asset('images/logout01.png') }}"></a></div>
                         <div class="dropbtn">
-                            <button class="btn btn-default dropdown-toggle navright-btn authUserName" type="button"
-                                id="menu1" data-toggle="dropdown">Hi {{ Auth::user()->name ?? '' }}<span
-                                    class="caret"></span></button>
+                            <button class="btn btn-default dropdown-toggle navright-btn authUserName" type="button" id="menu1" data-toggle="dropdown">Hi {{ Auth::user()->name ?? '' }}<span class="caret"></span></button>
                             <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                                <li role="presentation"><a role="menuitem" tabindex="-1"
-                                        href="{{ route('invoiceList') }}">Order History</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1"
-                                        href="{{ route('profile') }}">My
-                                        Account</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1"
-                                        href="{{ route('profile') }}?tab=2">Address Book</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('invoiceList') }}">Order History</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('profile') }}">My Account</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('profile') }}?tab=2">Address Book</a></li>
                             </ul>
                         </div>
                     </div>
@@ -219,26 +202,18 @@
                 <!-- Modal body -->
                 <div class="modal-body" style="padding-bottom:30px;">
                     <div class="google-btn mt-4" style="text-align: -webkit-center; text-align: -moz-center;">
-                        <div id="g_id_onload"
-                            data-client_id="601945306946-q0b39bgi5kd1ub68jp1sm27h1335mgg6.apps.googleusercontent.com"
-                            data-callback="handleCredentialResponse" data-dismiss="modal" data-ux_mode="popup"
-                            data-auto_prompt="false">
-                        </div>
-                        <div class="g_id_signin" data-dismiss="modal" data-type="standard" data-shape="rectangular"
-                            data-theme="filled_blue" data-text="signin_with" data-size="large"
-                            data-logo_alignment="left"></div>
+                        <div id="g_id_onload" data-client_id="601945306946-q0b39bgi5kd1ub68jp1sm27h1335mgg6.apps.googleusercontent.com" data-callback="handleCredentialResponse" data-dismiss="modal" data-ux_mode="popup" data-auto_prompt="false"></div>
+                        <div class="g_id_signin" data-dismiss="modal" data-type="standard" data-shape="rectangular" data-theme="filled_blue" data-text="signin_with" data-size="large" data-logo_alignment="left"></div>
                     </div>
                     <div class="text-center mt-4 mb-4">
                         <img src="{{ asset('images/Group 3.png') }}" style="width:130px;">
                     </div>
-                    <h6 class="text-center" style="color: #457bbe;" style="text-transform:capitalize;">
-                        {{ __('Sign Up Using Email') }}</h6>
+                    <h6 class="text-center" style="color: #457bbe;" style="text-transform:capitalize;">{{ __('Sign Up Using Email') }}</h6>
                     <p class="text-center"></p>
                     <form id="sendOTPForm" action="{{ url('sendOtp') }}" method="POST" class="text-center">
                         @csrf
                         <div class="px-lg-5">
-                            <input type="email" id="email" name="email" class="form-control formm  py-4"
-                                placeholder="Email *">
+                            <input type="email" id="email" name="email" class="form-control formm  py-4" placeholder="Email *">
                         </div>
                         <button class="previewbtn mt-4 px-3 mobile-login-btn" type="submit">Login</button>
                     </form>
@@ -545,6 +520,7 @@
     </script>
     <script src="{{ asset('user') }}/js/main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyDpavHXELJMJvIHifFPN6tBBiFSXKGpy2g&callback=Function.prototype"></script>
     @yield('script')
     @yield('checked')
 
