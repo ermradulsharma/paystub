@@ -154,37 +154,22 @@
         <img src="{{ public_path('images/border/box_blue/box-blue.svg') }}" style="position: absolute; top: 0px; right:0px;left: 0px; width:106%; height:105%;  z-index: -1;">
         <img src="{{ public_path('images/check2.svg') }}" style="position: absolute; top:75.6%; width:100.20%; height:25%;  z-index: -1; right:0px; left:0px;">
         @guest
-        <div class="watermark"></div>
-        <div class="watermark2"></div>
-    @endguest
-    @auth
-        @php
-            $date = \Carbon\Carbon::now();
-        @endphp
-        @if(Auth::user()->device_type == '')
-            @if(Auth::user()->usa_expiry_date <= $date || !isset($requestData['watermark']) || Auth::user()->usa_expiry_date == '')
+            <div class="watermark"></div>
+            <div class="watermark2"></div>
+        @endguest
+        @auth
+            @php
+                $date = \Carbon\Carbon::now();
+            @endphp
+            @if (Auth::user()->device_type == 'website')
+                @if(Auth::user()->usa_expiry_date <= $date || !isset($requestData['watermark']))
+                    <div class="watermark"></div>
+                    <div class="watermark2"></div>
+                @endif
+            @elseif (Auth::user()->expiryDate <= $date || !isset($requestData['watermark']))
                 <div class="watermark"></div>
                 <div class="watermark2"></div>
             @endif
-        @endif
-        @if (Auth::user()->device_type == 'website')
-            @if(Auth::user()->usa_expiry_date <= $date || !isset($requestData['watermark']))
-                <div class="watermark"></div>
-                <div class="watermark2"></div>
-            @endif
-        @endif
-        @if (Auth::user()->device_type == 'iOS')
-            @if(Auth::user()->expiryDate <= $date || !isset($requestData['watermark']))
-                <div class="watermark"></div>
-                <div class="watermark2"></div>
-            @endif
-        @endif
-        @if (Auth::user()->device_type == 'android')
-            @if(Auth::user()->expiryDate <= $date || !isset($requestData['watermark']))
-                <div class="watermark"></div>
-                <div class="watermark2"></div>
-            @endif
-        @endif
         @endauth
         <section class="invoiceborder">
         <div class="row1">
@@ -267,8 +252,8 @@
                 <br> <br>
                 <tr>
                     <td></td>
-                    <td colspan="3" style="text-align: left; font-weight:bold; border:1px solid black;  background-color:#88848445;border-radius:2px; height:25px;"> &nbsp;Gross Pay&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ number_format($requestData['total_net_pay'], 2) }}</td>
-                    <td style="text-align:right;"><b>{{ number_format($requestData['total_ytd_net_pay'], 2) }}</b></td>
+                    <td colspan="3" style="text-align: left; font-weight:bold; border:1px solid black;  background-color:#88848445;border-radius:2px; height:25px;"> &nbsp;Gross Pay&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ number_format($requestData['period_gross_total'], 2) }}</td>
+                    <td style="text-align:right;"><b>{{ number_format($requestData['ytd_gross_total'], 2) }}</b></td>
                 </tr>
                 <br> <br> <br> <br>
             </table>
@@ -311,8 +296,8 @@
                     <tr>
                         <td></td>
                         <td style="text-align: left;text-transform:capitalize;" colspan="2">Total Deductions</td>
-                        <td style="text-align:right; padding-right:19px;"> {{ $requestData['deduction_tax']}}</td>
-                        <td style="text-align: right;padding-right:18px;">{{ $requestData['ytd_deduction_tax']}}</td>
+                        <td style="text-align:right; padding-right:19px;"> {{ number_format($requestData['deduction_tax'], 2)}}</td>
+                        <td style="text-align: right;padding-right:18px;">{{ number_format($requestData['ytd_deduction_tax'], 2)}}</td>
                     </tr>
                     <tr>
                         <td></td>
@@ -325,54 +310,43 @@
                 <table style="border:1px solid #000; padding:px;width:250px;">
                     <tr>
                         <th style="padding-left:8px;text-align: left;  ">YTD GROSS</th>
-                        <td style="padding-right:8px;text-align: right;">
-                            <b>{{ number_format($requestData['ytd_deduction_tax'], 2) }}</b>
-                        </td>
+                        <td style="padding-right:8px;text-align: right;"><b>{{ number_format($requestData['ytd_gross_total'], 2) }}</b></td>
                     </tr>
                     <tr>
                         <td style="border-bottom: 1px solid black;" colspan="2"></td>
                     </tr>
                     <tr>
                         <th style="padding-left:8px;text-align: left;">YTD DEDUCTIONS</th>
-                        <td style="padding-right:8px;text-align: right;">
-                            <b>{{ number_format($requestData['ytd_gross_total'], 2) }}</b>
-                        </td>
+                        <td style="padding-right:8px;text-align: right;"><b>{{ number_format($requestData['ytd_deduction_tax'], 2) }}</b></td>
+
                     </tr>
                     <tr>
                         <td style="border-bottom: 1px solid black;" colspan="2"></td>
                     </tr>
                     <tr>
                         <th style="padding-left:8px;text-align: left;">YTD NET PAY</th>
-                        <td style="padding-right:8px;text-align: right;">
-                            <b>{{ number_format($requestData['ytd_deduction_tax'], 2) }}</b>
-                        </td>
+                        <td style="padding-right:8px;text-align: right;"><b>{{ number_format($requestData['total_ytd_net_pay'], 2) }}</b></td>
                     </tr>
                     <tr>
                         <td style="border-bottom: 1px solid black;" colspan="2"></td>
                     </tr>
                     <tr>
                         <th style="padding-left:8px;text-align: left;">GROSS PAY</th>
-                        <td style="padding-right:8px;text-align: right;">
-                            <b>{{ number_format($requestData['deduction_tax'], 2) }}</b>
-                        </td>
+                        <td style="padding-right:8px;text-align: right;"><b>{{ number_format($requestData['period_gross_total'], 2) }}</b></td>
                     </tr>
                     <tr>
                         <td style="border-bottom: 1px solid black;" colspan="2"></td>
                     </tr>
                     <tr>
                         <th style="padding-left:8px;text-align: left;">DEDUCTIONS</th>
-                        <td style="padding-right:8px;text-align: right;">
-                            <b>{{ number_format($requestData['period_gross_total'], 2) }}</b>
-                        </td>
+                        <td style="padding-right:8px;text-align: right;"><b>{{ number_format($requestData['deduction_tax'], 2) }}</b></td>
                     </tr>
                     <tr>
                         <td style="border-bottom: 1px solid black;" colspan="2"></td>
                     </tr>
                     <tr>
                         <th style="padding-left:8px;text-align: left;">NET PAY</th>
-                        <td style="padding-right:8px;text-align: right;">
-                            <b>{{ number_format($requestData['total_net_pay'], 2) }}</b>
-                        </td>
+                        <td style="padding-right:8px;text-align: right;"><b>{{ number_format($requestData['total_net_pay'], 2) }}</b></td>
                     </tr>
                 </table>
             </section>
@@ -388,7 +362,7 @@
                                     <p style="font-size: 14px; margin: 0;color:black; font-family: 'Arial Rounded MT Bold', sans-serif; text-transform:capitalize; font-weight:bold;"> {{ $requestData['cname'] }}</p>
                                     <p style="font-size: 12px; margin: 0;color:black; font-family: 'Arial Rounded MT Bold', sans-serif; text-transform:uppercase; "> {{ $requestData['address_1'] }}</p>
                                     @if($requestData['address_2']!='')
-                                    <p style="font-size: 12px; margin: 0;color:black; font-family: 'Arial Rounded MT Bold', sans-serif; text-transform:uppercase; "> {{ $requestData['address_2'] }}</p>
+                                        <p style="font-size: 12px; margin: 0;color:black; font-family: 'Arial Rounded MT Bold', sans-serif; text-transform:uppercase; "> {{ $requestData['address_2'] }}</p>
                                     @endif
                                     <P style="font-size: 12px; margin: 0;color:black; font-family: 'Arial Rounded MT Bold', sans-serif; text-transform:uppercase; "> {{ $requestData['city'] }} {{ $requestData['state'] }}. {{ $requestData['zip_code'] }}  </P>
                                 </td>
@@ -407,15 +381,12 @@
                                 <td style="font-size:14px; text-align:left; width:40%; font-weight:bold;text-transform:uppercase;font-family: 'Arial Rounded MT Bold', sans-serif;"> {{ $requestData['emp_name'] }}</td>
                                 <td style="text-align:right; font-size:14px;  width:22.8%;padding-right:5px; "> XXXXX{{ $requestData['account_number_last_4'] }}</td>
                                 <td style="text-align:right; font-size:14px;  width:20%; padding-right:25px; ">  XXXXX{{ $requestData['transit_aba_number'] }}</td>
-                                <td style="text-align:right; font-size:14px;  width:17.2%;padding-right:22px;font-weight:bold;"><span
-                                    style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency']
-                                    }}</span>{{ number_format($requestData['total_net_pay'], 2) }} </td>
+                                <td style="text-align:right; font-size:14px;  width:17.2%;padding-right:22px;font-weight:bold;"><span style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['total_net_pay'], 2) }} </td>
                             </tr>
                         </table>
                     </td>
                 </tr>
             </table>
-
         </section>
     </main>
 </body>
