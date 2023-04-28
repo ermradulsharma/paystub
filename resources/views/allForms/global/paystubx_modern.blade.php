@@ -473,7 +473,7 @@
         <div class="container" style=" margin-top:50px; width:100%;">
             <div class="row">
                 <div class="col1">
-                    <table style="width:100%;padding-left:20px;">
+                    <table style="width:100%;padding-left:50px;">
                         <tr>
                             <td style="text-transform: uppercase; font-size:10px;"> {{ $requestData['cname'] }}<br>
                                 {{ $requestData['address_1'] }}{!! addressTwo($requestData, true) !!}<br>
