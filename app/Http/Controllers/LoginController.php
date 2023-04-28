@@ -149,30 +149,48 @@ class LoginController extends Controller
             return response()->json($response, 301);
         }
         $code = rand(100000, 999999);
-        $user  = User::where('email', request('email'))->first();
-        if (!$user) {
-            $user = new User;
-            $user->email = $request->email;
-            $user->is_completed = '0';
-        }
-
-        if ($user->is_completed == '0') {
-            if ($user->email != "") {
+        if (request('formType') != '') {
+            $user  = User::where('temp_mail', request('email'))->first();
+            if ($user->temp_mail != "") {
                 $mailData = [];
-                $mailData['name'] = $request->email;
+                $mailData['name'] = $request->temp_mail;
                 $mailData['otp'] = $code;
                 $mailData['type'] = 'E-mail Verification';
                 $mailData['subject'] = 'Verify E-mail';
-                Mail::to($user->email)->send(new VerifyEmailSend($mailData));
+                Mail::to($user->temp_mail)->send(new VerifyEmailSend($mailData));
             }
 
             $user->code = $code;
             $user->save();
-            $response['message'] = "Verification code sent successfully";
+            $response['message'] = "Verification code sent successfullyxxxxxx";
+        } else {
+            $user  = User::where('email', request('email'))->first();
+            if (!$user) {
+                $user = new User;
+                $user->email = $request->email;
+                $user->is_completed = '0';
+            }
+
+            if ($user->is_completed == '0') {
+                if ($user->email != "") {
+                    $mailData = [];
+                    $mailData['name'] = $request->email;
+                    $mailData['otp'] = $code;
+                    $mailData['type'] = 'E-mail Verification';
+                    $mailData['subject'] = 'Verify E-mail';
+                    Mail::to($user->email)->send(new VerifyEmailSend($mailData));
+                }
+
+                $user->code = $code;
+                $user->save();
+                $response['message'] = "Verification code sent successfully";
+            }
+            $response['email'] = $user->email;
+            $response['role'] = $user->role_id;
+            $response['type'] = $user->is_completed;
         }
-        $response['email'] = $user->email;
-        $response['role'] = $user->role_id;
-        $response['type'] = $user->is_completed;
+
+
         return response()->json($response, 200);
     }
 }

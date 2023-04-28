@@ -327,10 +327,11 @@
                             <i class="fa fa-clock-o clock"></i> <span id="resendTimeOut">30</span>
                         </p>
 
-                        <form id="loginOtp" action="{{ url('loginWithOtp') }}" method="POST" class="text-center">
+                        <form id="loginOtp" action="{{ url('loginWithOtp') }}" method="POST" class="text-center" data-action="{{ route('store.details') }}">
                             @csrf
                             <div class="px-lg-5">
-                                <input type="hidden" id="hidden_email" name="email" class="d-none">
+                                <input type="hidden" id="formType" name="type">
+                                <input type="hidden" id="hidden_email" name="email">
                                 <input type="text" id="Verificationcode" name="code" class="form-control formm py-4" placeholder="Verification Code *">
                             </div>
                             <button class="previewbtn mt-5 mobile-verify-btn" type="submit">Verify</button>
@@ -369,9 +370,7 @@
                 <!-- Modal Header -->
                 <div class="modal-header" style="background: #115caecf;">
                     <h4 class="modal-title" style="text-transform: capitalize;color:#fff;">Set My Account</h4>
-                    <button type="button"
-                        style="border: none; background-color:transparent; color:#fff;font-size:20px;padding:0;"
-                        class="btn-close" data-bs-dismiss="modal" aria-label="Close">x</button>
+                    <button type="button" style="border: none; background-color:transparent; color:#fff;font-size:20px;padding:0;" class="btn-close" data-bs-dismiss="modal" aria-label="Close">x</button>
                 </div>
 
                 <!-- Modal body -->
@@ -383,37 +382,26 @@
                         <input class="contact-box" type="text" name="uname" id="user-name"
                             placeholder="First Name">
                         <div class="contact-box-outer">
-                            <label class="label-text" for="css">New Password<span
-                                    style="color:red;">*</span></label>
-                            <input class="contact-box" type="password" placeholder="New Password" name="password"
-                                class="form-control show-password-sd" id="new_password" required>
-                            <i id="eye-icon_03" toggle="#password-field"
-                                class="fa fa-eye-slash eye-icon new-toggle-password" data-id="02"></i>
+                            <label class="label-text" for="css">New Password<span style="color:red;">*</span></label>
+                            <input class="contact-box" type="password" placeholder="New Password" name="password" class="form-control show-password-sd" id="new_password" required>
+                            <i id="eye-icon_03" toggle="#password-field" class="fa fa-eye-slash eye-icon new-toggle-password" data-id="02"></i>
                         </div>
                         <div class="contact-box-outer">
-                            <label class="label-text" for="css">Confirm Password<span
-                                    style="color:red;">*</span></label>
-                            <input class="contact-box" type="password" placeholder="Confirm Password"
-                                name="password_confirmation" class="form-control show-password-sd"
-                                id="confirm_password" required>
-                            <i id="eye-icon_03" toggle="#password-field"
-                                class="fa fa-eye-slash eye-icon confirm-toggle-password" data-id="02"></i>
+                            <label class="label-text" for="css">Confirm Password<span style="color:red;">*</span></label>
+                            <input class="contact-box" type="password" placeholder="Confirm Password" name="password_confirmation" class="form-control show-password-sd" id="confirm_password" required>
+                            <i id="eye-icon_03" toggle="#password-field" class="fa fa-eye-slash eye-icon confirm-toggle-password" data-id="02"></i>
                         </div>
-                        {{-- <div class="modal-footer" style="display: inline-block;"> --}}
                         <div class="d-flex justify-content-between pt-3">
-                            <button class="btn-secondary" data-bs-dismiss="modal"
-                                style="border-radius:20px; border:none;font-size:12px; padding:5px 10px;">Cancel</button>
-                            <button class="btn-danger" id="set-name"
-                                style="border-radius:20px; border:none; font-size:12px; padding:5px 15px; position:relative; right:26px;"
-                                type="submit">Save</button>
+                            <button class="btn-secondary" data-bs-dismiss="modal" style="border-radius:20px; border:none;font-size:12px; padding:5px 10px;">Cancel</button>
+                            <button class="btn-danger" id="set-name" style="border-radius:20px; border:none; font-size:12px; padding:5px 15px; position:relative; right:26px;" type="submit">Save</button>
                         </div>
-                        {{--
-                        </div> --}}
                     </form>
                 </div>
             </div>
         </div>
     </div>
+
+
 
     <!-- End Footer Section -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.js"></script>
@@ -444,9 +432,10 @@
 
             $("#resendOtpButton").click(function() {
                 var email = $('#hidden_email').val();
+                var formType = $('#hidden_email').val();
                 startTimer();
                 $.ajax({
-                    url: "{{ route('sendOtp') }}?email=" + email,
+                    url: "{{ route('sendOtp') }}?email=" + email + "&formType="+formType,
                     success: function(data) {
                         if ($.isEmptyObject(data.error)) {
                             toastr.success(data.message);

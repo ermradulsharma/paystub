@@ -112,12 +112,82 @@ class HomeController extends Controller
                 if ($user->save()) {
                     $response['message'] = "Verification code sent successfully";
                     $response['status'] = 200;
+                    $response['data'] = User::find(Auth::user()->id);
+                    $response['type'] = 'verifyOtpChangeMail';
                     return response()->json($response, $response['status']);
                 }
             } else {
                 $response['message'] = 'This e-mail already exists. Please use another mail.';
                 return response()->json($response, 301);
             }
+        }
+
+        if ($request->type == 'verifyOtpChangeMail') {
+            $rules = [
+                'code' => 'required',
+                'email' => 'required|email:rfc,dns'
+            ];
+
+            $messages = [
+                'email.required' => 'The email cannot be empty.',
+                'email.email' => 'Please enter valid email.',
+                'code.required' => 'The OTP cannot be empty'
+            ];
+            $validator = Validator::make($request->all(), $rules, $messages);
+            if ($validator->fails()) {
+                $response['message'] = $validator->errors()->first();
+                return response()->json($response, 301);
+            }
+            $userObj = User::where(['temp_mail' => $request->email, 'code' => $request->code])->first();
+            if ($userObj) {
+                $userObj->email = $request->email;
+                $userObj->code = '';
+                $userObj->temp_mail = '';
+            }
+
+            if ($userObj->save()) {
+                $user = User::select('name', 'email')->where('id', $userObj->id)->first();
+                $response['message'] = "OTP Verify Successfully";
+                $response['status'] = 200;
+                $response['data'] = $user;
+                $response['type'] = 'resend';
+                return response()->json($response, $response['status']);
+            }
+        }
+
+        if ($request->type == 'resendOtp') {
+            $rules = [
+                'email' => 'required|email:rfc,dns'
+            ];
+
+            $messages = [
+                'email.required' => 'The email cannot be empty.',
+                'email.email' => 'Please enter valid email.',
+            ];
+            $validator = Validator::make($request->all(), $rules, $messages);
+            if ($validator->fails()) {
+                $response['message'] = $validator->errors()->first();
+                return response()->json($response, 301);
+            }
+            $userObj = User::where(['temp_mail' => $request->email])->first();
+            if ($userObj) {
+                $code = rand(100000, 999999);
+                if ($userObj->temp_mail != "") {
+                    $mailData = [];
+                    $mailData['name'] = $request->email;
+                    $mailData['otp'] = $code;
+                    $mailData['type'] = 'E-mail Verification';
+                    $mailData['subject'] = 'Verify E-mail';
+                    Mail::to($request->email)->send(new VerifyEmailSend($mailData));
+                }
+                $userObj->code = $code;
+            }
+            $userObj->save();
+            $user = User::select('name', 'email')->where('id', Auth::user()->id)->first();
+            $response['message'] = "OTP Send Successfully. Please check your e-mail";
+            $response['status'] = 200;
+            $response['data'] = $user;
+            return response()->json($response, $response['status']);
         }
 
         if ($request->type == 'verify-email') {

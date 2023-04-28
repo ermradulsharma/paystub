@@ -235,40 +235,31 @@
             <div class="row">
                 <div class="col-lg-2 left-side-border" style="padding: 0px; border-right:1px solid #ddd;">
                     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                        <a class="nav-link  my-account {{ Request::get('tab') != 2 ? 'active' : '' }}" id="v-pills-home-tab"
-                            data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home"
-                            aria-selected="true">My Account</a>
-                        <a class="nav-link  address-book {{ Request::get('tab') == 2 ? 'active' : '' }}"
-                            id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab"
-                            aria-controls="v-pills-profile" aria-selected="false">Address Book</a>
+                        <a class="nav-link  my-account {{ Request::get('tab') != 2 ? 'active' : '' }}" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">My Account</a>
+                        <a class="nav-link  address-book {{ Request::get('tab') == 2 ? 'active' : '' }}" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Address Book</a>
                     </div>
                 </div>
                 <div class="col-lg-10" style="padding: 0px 3px;">
                     <div class="tab-content" style="padding-top: 20px;" id="v-pills-tabContent">
-                        <div class="tab-pane fade {{ Request::get('tab') != 2 ? 'show active' : '' }}" id="v-pills-home"
-                            role="tabpanel" aria-labelledby="v-pills-home-tab">
+                        <div class="tab-pane fade {{ Request::get('tab') != 2 ? 'show active' : '' }}" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                             <div class="row">
                                 <div class="col-lg-6 col-md-6" style="padding: 0;">
                                     <div class="right-side-bar">
                                         <h4 style="color:#012c63; line-height:26px;">{{ __('User Profile') }}</h4>
-                                        <P style="color:#333!important;font-weight:500;">
-                                            {{ __('Manage your profile, security, and language preferences.') }}</P>
+                                        <P style="color:#333!important;font-weight:500;"> {{ __('Manage your profile, security, and language preferences.') }}</P>
                                         <div class="profile-outer">
                                             <div class="d-flex input-left">
                                                 <div class="profile-icon-outer">
                                                     <i class="fa fa-user user"></i>
                                                 </div>
                                                 <div class="user-center-text">
-                                                    <h6 style="padding: 0; margin:0px;color: #5a5858;">
-                                                        {{ __('Contact Name') }}</h6>
+                                                    <h6 style="padding: 0; margin:0px;color: #5a5858;"> {{ __('Contact Name') }}</h6>
                                                     <p style="padding:0px;margin:0px;">{{ $userObj->name ?? '' }}</p>
                                                 </div>
                                             </div>
 
                                             <div class="edit-icon">
-                                                <img class="username" style="width: 15px;"
-                                                    data-name="{{ $userObj->name ?? '' }}"
-                                                    src={{ asset('images/pen-solid.svg') }}>
+                                                <img class="username" style="width: 15px; cursor: pointer;" data-name="{{ $userObj->name ?? '' }}" src={{ asset('images/pen-solid.svg') }}>
                                             </div>
                                         </div>
                                         <div class="profile-outer">
@@ -277,15 +268,13 @@
                                                     <i class="fa fa-envelope profile-icon"></i>
                                                 </div>
                                                 <div class="user-center-text">
-                                                    <h6 style="padding: 0; margin:0px;color: #5a5858;">
-                                                        {{ __('Email Address') }}</h6>
+                                                    <h6 style="padding: 0; margin:0px;color: #5a5858;"> {{ __('Email Address') }}</h6>
                                                     <p style="padding:0px;margin:0px;">{{ $userObj->email ?? '' }}</p>
                                                 </div>
                                             </div>
 
                                             <div class="edit-icon">
-                                                <img class="changeUserEmail" data-email="{{ $userObj->email ?? '' }}"
-                                                    style="width: 15px;" src={{ asset('images/pen-solid.svg') }}>
+                                                <img class="changeUserEmail" data-email="{{ $userObj->email ?? '' }}" style="width: 15px; cursor: pointer;" src={{ asset('images/pen-solid.svg') }}>
                                             </div>
                                         </div>
                                         <div class="profile-outer">
@@ -294,27 +283,22 @@
                                                     <i class="fa fa-lock lock"></i>
                                                 </div>
                                                 <div class="user-center-text">
-                                                    <h6 style="padding: 0; margin:0px;color: #5a5858;">
-                                                        {{ __('Password') }}</h6>
+                                                    <h6 style="padding: 0; margin:0px;color: #5a5858;"> {{ __('Password') }}</h6>
                                                     <p style="padding:0px;margin:0px;">{{ '*********' }}</p>
                                                 </div>
                                             </div>
 
                                             <div class="edit-icon">
-                                                <img class="username3" style="width: 15px;"
-                                                    src="{{ asset('images/pen-solid.svg') }}">
+                                                <img class="username3" style="width: 15px; cursor: pointer;" src="{{ asset('images/pen-solid.svg') }}">
                                             </div>
                                         </div>
                                         <div class="profile-outer">
-
                                             <div class="d-flex trash-account" data-route="{{ route('delete.account') }}">
                                                 <div class="profile-icon-outer" style="background-color:red;">
                                                     <i class="fa fa-trash-o trash"></i>
                                                 </div>
                                                 <div class="user-center-text">
-                                                    <button
-                                                        style="padding: 7px 15px; margin:0px;color: #fff;background-color:red; border-radius:5px;border:none; ">Delete
-                                                        Account</button>
+                                                    <button style="padding: 7px 15px; margin:0px;color: #fff;background-color:red; border-radius:5px;border:none; ">Delete Account</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -329,39 +313,24 @@
                                                     {{-- @if ($subcription->expiry_date > \Carbon\Carbon::now()) --}}
                                                     @if ($subcription->country == 'canada')
                                                         @if ($subcription->expiry_date > \Carbon\Carbon::now())
-                                                            <p>{{ $subcription->plan->name ?? '' }} {{ __('until') }}
-                                                                {{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $subcription->expiry_date)->format('m/d/Y') }}<span
-                                                                    style="text-transform: uppercase;">({{ $subcription->country }})</span>
-                                                            </p>
+                                                            <p>{{ $subcription->plan->name ?? '' }} {{ __('until') }} {{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $subcription->expiry_date)->format('m/d/Y') }}<span style="text-transform: uppercase;">({{ $subcription->country }})</span></p>
                                                         @else
                                                             <p>{{ __('Plan expired') }}</p>
-                                                            <a class="renew-btn renewBtn"
-                                                                href="{{ route('prizing', ['id' => $subcription->id]) }}"
-                                                                type="btn">{{ __('RENEW') }}</a>
+                                                            <a class="renew-btn renewBtn" href="{{ route('prizing', ['id' => $subcription->id]) }}" type="btn">{{ __('RENEW') }}</a>
                                                         @endif
                                                     @elseif ($subcription->country == 'usa')
                                                         @if ($subcription->expiry_date > \Carbon\Carbon::now())
-                                                            <p>{{ $subcription->plan->name ?? '' }} {{ __('until') }}
-                                                                {{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $subcription->expiry_date)->format('m/d/Y') }}<span
-                                                                    style="text-transform: uppercase;">({{ $subcription->country }})</span>
-                                                            </p>
+                                                            <p>{{ $subcription->plan->name ?? '' }} {{ __('until') }} {{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $subcription->expiry_date)->format('m/d/Y') }}<span style="text-transform: uppercase;">({{ $subcription->country }})</span></p>
                                                         @else
                                                             <p>{{ __('Plan expired') }}</p>
-                                                            <a class="renew-btn renewBtn"
-                                                                href="{{ route('prizing', ['id' => $subcription->id]) }}"
-                                                                type="btn">{{ __('RENEW') }}</a>
+                                                            <a class="renew-btn renewBtn" href="{{ route('prizing', ['id' => $subcription->id]) }}" type="btn">{{ __('RENEW') }}</a>
                                                         @endif
                                                     @elseif ($subcription->country == 'uk')
                                                         @if ($subcription->expiry_date > \Carbon\Carbon::now())
-                                                            <p>{{ $subcription->plan->name ?? '' }} {{ __('until') }}
-                                                                {{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $subcription->expiry_date)->format('m/d/Y') }}<span
-                                                                    style="text-transform: uppercase;">({{ $subcription->country }})</span>
-                                                            </p>
+                                                            <p>{{ $subcription->plan->name ?? '' }} {{ __('until') }} {{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $subcription->expiry_date)->format('m/d/Y') }}<span style="text-transform: uppercase;">({{ $subcription->country }})</span> </p>
                                                         @else
                                                             <p>{{ __('Plan expired') }}</p>
-                                                            <a class="renew-btn renewBtn"
-                                                                href="{{ route('prizing', ['id' => $subcription->id]) }}"
-                                                                type="btn">{{ __('RENEW') }}</a>
+                                                            <a class="renew-btn renewBtn" href="{{ route('prizing', ['id' => $subcription->id]) }}" type="btn">{{ __('RENEW') }}</a>
                                                         @endif
                                                     @endif
                                                     {{-- @endif --}}
@@ -372,30 +341,20 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane fade {{ Request::get('tab') == 2 ? 'show active' : '' }}" id="v-pills-profile"
-                            role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                        <div class="tab-pane fade {{ Request::get('tab') == 2 ? 'show active' : '' }}" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
                             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                                 <li class="nav-item" style="">
-                                    <a class="nav-link address-b {{ Request::get('emp') != 2 ? 'active' : '' }}"
-                                        id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab"
-                                        aria-controls="pills-home" aria-selected="true">EMPLOYER</a>
+                                    <a class="nav-link address-b {{ Request::get('emp') != 2 ? 'active' : '' }}" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">EMPLOYER</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link address-b {{ Request::get('emp') == 2 ? 'active' : '' }}"
-                                        id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab"
-                                        aria-controls="pills-profile" aria-selected="false">{{ __('EMPLOYEE') }}</a>
+                                    <a class="nav-link address-b {{ Request::get('emp') == 2 ? 'active' : '' }}" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">{{ __('EMPLOYEE') }}</a>
                                 </li>
-                                <button class="add-btn addressBook" id="addNewAddress"
-                                    data-emptype="{{ Request::get('emp') == 2 ? 'employee' : 'employer' }}">Add New
-                                    Address</button>
-                                <div class="add-new-btn addressBook" id="addNewAddress2"
-                                    data-emptype="{{ Request::get('emp') == 2 ? 'employee' : 'employer' }}"><img
-                                        src="images/icons/add-new.png"></div>
+                                <button class="add-btn addressBook" id="addNewAddress" data-emptype="{{ Request::get('emp') == 2 ? 'employee' : 'employer' }}">Add New Address</button>
+                                <div class="add-new-btn addressBook" id="addNewAddress2" data-emptype="{{ Request::get('emp') == 2 ? 'employee' : 'employer' }}"><img src="images/icons/add-new.png"></div>
                             </ul>
 
                             <div class="tab-content" id="pills-tabContent">
-                                <div class="address-tab tab-pane fade {{ Request::get('emp') != 2 ? 'show active' : '' }}"
-                                    id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                                <div class="address-tab tab-pane fade {{ Request::get('emp') != 2 ? 'show active' : '' }}" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
                                     <div id="employerTab">
                                         <table class="table" style="border:1px solid #ddd;">
                                             <thead>
@@ -410,26 +369,11 @@
                                                     <th scope="col">Telephone</th>
                                                 </tr>
                                             </thead>
-                                            <tbody>
-                                                {{-- <tr style="border:1px solid #ddd;">
-                                                <td scope="row">1</td>
-                                                <td>Mark22</td>
-                                                <td>Otto</td>
-                                                <td>@mdo</td>
-                                                <td>otto</td>
-                                                <td>@mdo</td>
-                                                <td>1234</td>
-                                                <td style="padding-right:0; padding-left:0;"><img style="width:22px;"
-                                                        src="images/icons/edit-icon.png"></td>
-                                                <td style="padding-right:0; padding-left:0;"><img style="width:20px;"
-                                                        src="images/icons/del-icon.png"></td>
-                                            </tr> --}}
-                                            </tbody>
+                                            <tbody></tbody>
                                         </table>
                                     </div>
                                 </div>
-                                <div class="address-tab tab-pane fade {{ Request::get('emp') == 2 ? ' show active' : '' }}"
-                                    id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                                <div class="address-tab tab-pane fade {{ Request::get('emp') == 2 ? ' show active' : '' }}" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
                                     <div id="employeeTab">
                                         <table class="table" style="border:1px solid #ddd;">
                                             <thead>
@@ -441,24 +385,9 @@
                                                     <th scope="col">City</th>
                                                     <th scope="col">State</th>
                                                     <th scope="col">Zip Code</th>
-
                                                 </tr>
                                             </thead>
-                                            <tbody>
-                                                {{-- <tr>
-                                                <th scope="row">1</th>
-                                                <td>Mark</td>
-                                                <td>Otto</td>
-                                                <td>@mdo</td>
-                                                <td>Otto</td>
-                                                <td>@mdo</td>
-                                                <td>1234</td>
-                                                <td style="padding-right:0; padding-left:0;"><img style="width:22px;"
-                                                        src="images/icons/edit-icon.png"></td>
-                                                <td style="padding-right:0; padding-left:0;"><img style="width:20px;"
-                                                        src="images/icons/del-icon.png"></td>
-                                            </tr> --}}
-                                            </tbody>
+                                            <tbody></tbody>
                                         </table>
                                     </div>
                                 </div>
@@ -611,9 +540,7 @@
                 <!-- Modal Header -->
                 <div class="modal-header" style="background: #115caecf;">
                     <h4 class="modal-title" style="text-transform: capitalize;color:#fff;">Change Contact Name</h4>
-                    <button type="button"
-                        style="border: none; background-color:transparent; color:#fff;font-size:20px;padding:0;"
-                        class="btn-close" data-bs-dismiss="modal" aria-label="Close">x</button>
+                    <button type="button" style="border: none; background-color:transparent; color:#fff;font-size:20px;padding:0;" class="btn-close" data-bs-dismiss="modal" aria-label="Close">x</button>
                 </div>
 
                 <!-- Modal body -->
@@ -622,74 +549,55 @@
                         @csrf
                         <input type="hidden" value="user-name" name="type">
                         <label class="label-text" for="css">Contact Name<span style="color:red;">*</span></label>
-                        <input class="contact-box" type="text" name="uname" id="user-name"
-                            placeholder="Contact Name">
+                        <input class="contact-box" type="text" name="uname" id="user-name" placeholder="Contact Name">
                     </form>
                 </div>
                 <div class="modal-footer" style="display: inline-block;">
                     <div class="d-flex justify-content-between pt-2">
-                        <button class="btn-secondary" data-bs-dismiss="modal"
-                            style="border-radius:20px; border:none;font-size:12px; padding:5px 10px;">Cancel</button>
-                        <button class="btn-danger" id="store-name"
-                            style="border-radius:20px; border:none;font-size:12px; padding:5px 15px;">Save</button>
+                        <button class="btn-secondary" data-bs-dismiss="modal" style="border-radius:20px; border:none;font-size:12px; padding:5px 10px;">Cancel</button>
+                        <button class="btn-danger" id="store-name" style="border-radius:20px; border:none;font-size:12px; padding:5px 15px;">Save</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="modal fade" id="changeUserEmail">
+    <div class="modal fade" id="changeUserEmailModal">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
 
                 <!-- Modal Header -->
                 <div class="modal-header" style="background: #115caecf;">
                     <h4 class="modal-title" style="text-transform: capitalize;color:#fff;">Change Email Address</h4>
-                    <button type="button"
-                        style="border: none; background-color:transparent; color:#fff;font-size:20px;padding:0;"
-                        class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
+                    <button type="button" style="border: none; background-color:transparent; color:#fff;font-size:20px;padding:0;" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
                 </div>
 
                 <!-- Modal body -->
                 <div class="modal-body pb-4" style="box-shadow: 0 0 8px rgba(0,0,0,.14);padding-top:0;">
                     <p class="mail-text">Enter the Password set for the account and proceed to set a new email address.</p>
-                    <form id="changeUserEmail_1" method="post" action="">
+                    <form id="changeUserEmail" method="post" action="">
                         @csrf
                         <input type="hidden" value="user-email" name="type">
                         <div class="contact-box-outer">
                             <label class="label-text" for="css">Password<span style="color:red;">*</span></label>
                             <input class="contact-box" type="password" placeholder="Password" name="password">
-                            <i id="eye-icon_00" toggle="#password-field" class="fa fa-eye-slash eye-icon show-password"
-                                data-id="02"></i>
+                            <i id="eye-icon_00" toggle="#password-field" class="fa fa-eye-slash eye-icon show-password" data-id="02"></i>
                         </div>
                         <div class="contact-box-outer">
-                            <label class="label-text" for="css">Email Address<span
-                                    style="color:red;">*</span></label>
-                            <input class="contact-box" type="text" id="user-email" placeholder="Email Address"
-                                name="email">
+                            <label class="label-text" for="css">Email Address<span style="color:red;">*</span></label>
+                            <input class="contact-box" type="text" id="user-email" placeholder="Email Address" name="email">
                         </div>
                         <div class="d-flex justify-content-between pt-3">
-                            <button class="btn-secondary" data-bs-dismiss="modal"
-                                style="border-radius:20px; border:none;font-size:12px; padding:5px 10px;">Cancel</button>
-                            <button class="btn-danger"
-                                style="border-radius:20px; border:none;font-size:12px; padding:5px 15px; position:relative; right:26px;"
-                                type="submit">Save</button>
+                            <button class="btn-secondary" data-bs-dismiss="modal" style="border-radius:20px; border:none;font-size:12px; padding:5px 10px;">Cancel</button>
+                            <button class="btn-danger" style="border-radius:20px; border:none;font-size:12px; padding:5px 15px; position:relative; right:26px;" type="submit">Save</button>
                         </div>
                     </form>
                 </div>
-                {{-- <div class="modal-footer" style="display: inline-block;">
-                <div class="d-flex justify-content-between pt-2">
-                    <button class="btn-secondary" data-bs-dismiss="modal"
-                        style="border-radius:20px; border:none;font-size:12px; padding:5px 10px;">Cancel</button>
-                    <button class="btn-danger" id="changeUserEmail"
-                        style="border-radius:20px; border:none;font-size:12px; padding:5px 15px;">Save</button>
-                </div>
-            </div> --}}
             </div>
         </div>
     </div>
 
-    <div class="modal fade otpModal" id="otpModal">
+    <div class="modal fade" id="verifyChangeEmailModal">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <!-- Modal Header -->
@@ -709,16 +617,18 @@
                         <h5 style="color: #457bbe;" class="mt-4 text-center">Almost There!</h5>
                         <p style="color: #000;font-size: 14px;font-family: serif; text-transform:capitalize; margin-bottom:0px;" lass="text-center">Enter the verification code sent to you</p>
                         <span style="color: #02030359;font-size: 10px;font-family: serif; text-transform:capitalize;" class="text-center">Check spam if not found in inbox</span>
-                        <p class="resend-otp"><a id="resendOtpButton" class="pointer-disable" style="" href="JavaScript:void(0);" disabled>Resend OTP </a><i class="fa fa-clock-o clock"></i><span id="resendTimeOut">30</span></p>
-                        <form id="loginOtp" action="{{ route('store.details') }}" method="POST" class="text-center">
+                        <p class="resend-otp">
+                            <a id="resendOtpButton" class="pointer-disable" style="" href="JavaScript:void(0);" disabled>Resend OTP </a><i class="fa fa-clock-o clock"></i><span id="resendTimeOut">30</span></p>
+                        <form id="verifyChangeEmail" method="POST" class="text-center">
                             @csrf
-                            <input type="hidden" value="verify-email" name="type">
+                            <input type="hidden" id="formType" name="type">
                             <div class="px-lg-5">
                                 <input type="hidden" id="hidden_email" name="email">
                                 <input type="text" id="Verificationcode" name="code" class="form-control form-control-address formm py-4" placeholder="Verification Code *">
                             </div>
+                            <button class="previewbtn mt-5" id="verify-email" type="submit">Verify</button>
                         </form>
-                        <button class="previewbtn mt-5" id="verify-email">Verify</button>
+
                     </div>
                 </div>
             </div>
@@ -804,25 +714,26 @@
             });
         });
 
+        // Change User E-mail
         $(".changeUserEmail").click(function() {
-            $("#changeUserEmail").modal("show");
+            $("#changeUserEmailModal").modal("show");
         });
 
         $("#changeUserEmail").on("submit", function() {
             $.ajax({
                 type: 'POST',
                 url: '{{ route("profile-setup") }}',
-                data: $("#changeUserEmail_1").serialize(),
+                data: $("#changeUserEmail").serialize(),
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
                 success: function(response) {
-                    console.log('response', response);
-                    $("#changeUserEmail").modal("hide");
+                    $("#changeUserEmailModal").modal("hide");
                     toastr.success(response.message);
                     $("#userName2").modal("hide");
-                    $('#hidden_email').val(response.email);
-                    $("#otpModal").modal("show");
+                    $('#hidden_email').val(response.data.temp_mail);
+                    $('#formType').val(response.type);
+                    $("#verifyChangeEmailModal").modal("show");
                     startTimer();
                 },
                 error: function(err) {
@@ -832,6 +743,28 @@
             });
             return false;
         });
+
+        //  Verify Change E-mail
+        $("#verifyChangeEmail").on("submit", function() {
+            $.ajax({
+                type: 'POST',
+                url: '{{ route("profile-setup") }}',
+                data: $("#verifyChangeEmail").serialize(),
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                success: function(response) {
+                    $("#verifyChangeEmailModal").modal("hide");
+                    toastr.success(response.message);
+                },
+                error: function(err) {
+                    error = err.responseJSON;
+                    toastr.error(error.message);
+                },
+            });
+            return false;
+        });
+
 
         $(".username").click(function() {
             var name = $(this).data('name');
@@ -843,9 +776,7 @@
             submitUserData($('#userNameForm1')[0]);
         });
 
-        $("#verify-email").click(function(e) {
-            submitUserData($('#loginOtp')[0]);
-        });
+
 
         $(".username3").click(function() {
             $("#userName3").modal("show");
@@ -855,22 +786,7 @@
             submitUserData($('#passwordUpdate')[0]);
         });
 
-        $("#resendOtpButton").click(function() {
-            var email = $('#hidden_email').val();
-            startTimer();
-            $.ajax({
-                url: "{{ route('sendOtp') }}?email=" + email,
-                success: function(data) {
 
-                    if ($.isEmptyObject(data.error)) {
-                        toastr.success(data.message);
-
-                    } else {
-                        printErrorMsg(data.error);
-                    }
-                }
-            });
-        });
 
         $("#store-address").click(function(e) {
             submitUserData($('#addressForm')[0]);

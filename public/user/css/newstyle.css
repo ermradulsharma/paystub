@@ -977,6 +977,12 @@ a#resendOtpButton,
     text-decoration: underline;
 }
 
+
+a#resendOtpChangeMailButton {
+    color: #e57a68;
+    text-decoration: underline;
+}
+
 .pointer-active {
     pointer-events: visible;
 }
