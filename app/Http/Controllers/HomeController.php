@@ -42,16 +42,14 @@ class HomeController extends Controller
     public function userDetails(Request $request)
     {
         $userObj = User::find(Auth::user()->id);
-        $subcriptionData = Subcription::with('plan')->where('user_id', $userObj->id)->where('device_type','website')->orderBy('id', 'asc')->get();
+        $subcriptionData = Subcription::with('plan')->where('user_id', $userObj->id)->where('device_type', 'website')->orderBy('id', 'asc')->get();
         $stateList = StateTax::select('state', 'state_code')->get();
         return view('user-profile', compact('userObj', 'subcriptionData', 'stateList'));
     }
 
     public function storeDetails(Request $request)
     {
-        $response = [];
-        $response['success'] = FALSE;
-        $response['status'] = STATUS_BAD_REQUEST;
+        $userObj = User::find(Auth::user()->id);
         $userId = Auth::user()->id;
         if ($request->type == 'user-name') {
             $validator = Validator::make($request->all(), [
@@ -63,7 +61,7 @@ class HomeController extends Controller
                     'error' => $validator->errors()->all()
                 ]);
             }
-            $userObj = User::where('id', $userId)->first();
+            $userObj = User::find($userObj->id);
             if (!$userObj) {
                 return response()->json(['error' => ['User not found']]);
             }
@@ -71,7 +69,7 @@ class HomeController extends Controller
             if (!$userObj->save()) {
                 return response()->json(['error' => ['Something went wrong.']]);
             }
-            $userObj = User::where('id', $userId)->first();
+            $userObj = User::find($userObj->id);
             $request->session()->flash('message', 'Profile updated successfully.');
             return response()->json(['user' => $userObj, 'message' => 'Profile updated successfully.']);
         }
@@ -93,38 +91,33 @@ class HomeController extends Controller
                 $response['message'] = $validator->errors()->first();
                 return response()->json($response, 301);
             }
-
-            $userObj = User::where('id', $userId)->first();
-            if (!$userObj) {
-                $response['message'] = 'User not found';
+            $user  = User::find(Auth::user()->id);
+            if ($user) {
+                if (!Hash::check($request->get('password'), $user->password)) {
+                    $response['message'] = "Oops! you have entered wrong password. Please try again.";
+                    $response['status'] = 301;
+                    return response()->json($response, $response['status']);
+                }
+                $code = rand(100000, 999999);
+                $user->temp_mail = $request->email;
+                if ($user->temp_mail != "") {
+                    $mailData = [];
+                    $mailData['name'] = $request->email;
+                    $mailData['otp'] = $code;
+                    $mailData['type'] = 'E-mail Verification';
+                    $mailData['subject'] = 'Verify E-mail';
+                    Mail::to($request->email)->send(new VerifyEmailSend($mailData));
+                }
+                $user->code = $code;
+                if ($user->save()) {
+                    $response['message'] = "Verification code sent successfully";
+                    $response['status'] = 200;
+                    return response()->json($response, $response['status']);
+                }
+            } else {
+                $response['message'] = 'This e-mail already exists. Please use another mail.';
                 return response()->json($response, 301);
             }
-
-            if (!Hash::check($request->get('password'), $userObj->password)) {
-                $response['message'] = WRONG_PASSWORD;
-                return response()->json($response, $response['status']);
-            }
-            if ($request->email === $userObj->email) {
-                $response['message'] = 'Please enter different email.';
-                return response()->json($response, $response['status']);
-            }
-
-            $code = rand(100000, 999999);
-            $mailData = [];
-            $mailData['name'] = $request->email;
-            $mailData['otp'] = $code;
-            $mailData['type'] = 'E-mail Verification';
-            $mailData['subject'] = 'Verify E-mail';
-            \Mail::to($request->email)->send(new VerifyEmailSend($mailData));
-
-            $userObj->code = $code;
-            if ($userObj->save()) {
-                $response['message'] = "Verification code sent successfully";
-                $response['email'] = $request->email;
-                $response['status'] = STATUS_OK;
-                return response()->json($response, $response['status']);
-            }
-            return response()->json($response, $response['status']);
         }
 
         if ($request->type == 'verify-email') {
@@ -205,7 +198,6 @@ class HomeController extends Controller
                 return response()->json($response, $response['status']);
             }
         }
-        return response()->json($response, $response['status']);
     }
 
     public function updatePassword(Request $request)
