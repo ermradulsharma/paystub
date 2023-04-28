@@ -223,40 +223,24 @@
             @php
                 $date = \Carbon\Carbon::now();
             @endphp
-            @if(Auth::user()->device_type == '')
-                @if(Auth::user()->usa_expiry_date <= $date || !isset($requestData['watermark']) || Auth::user()->usa_expiry_date == '')
-                    <div class="watermark"></div>
-                    <div class="watermark2"></div>
-                @endif
-            @endif
             @if (Auth::user()->device_type == 'website')
                 @if(Auth::user()->usa_expiry_date <= $date || !isset($requestData['watermark']))
                     <div class="watermark"></div>
                     <div class="watermark2"></div>
                 @endif
-            @endif
-            @if (Auth::user()->device_type == 'iOS')
-                @if(Auth::user()->expiryDate <= $date || !isset($requestData['watermark']))
-                    <div class="watermark"></div>
-                    <div class="watermark2"></div>
-                @endif
-            @endif
-            @if (Auth::user()->device_type == 'android')
-                @if(Auth::user()->expiryDate <= $date || !isset($requestData['watermark']))
-                    <div class="watermark"></div>
-                    <div class="watermark2"></div>
-                @endif
+            @elseif (Auth::user()->expiryDate <= $date || !isset($requestData['watermark']))
+                <div class="watermark"></div>
+                <div class="watermark2"></div>
             @endif
         @endauth
         <div class="section_2">
             <table style="width: 100%;">
-                <thead style="background-color: #a9a9a9;  ">
+                <thead style="background-color: #a9a9a9;">
                     <th style="text-align:left;font-size:17px; font-family: 'Arial', sans-serif; font-weight:bold;"><span style="padding-right:8px;">#</span>767767</th>
                     <th style="text-align:right; padding-right:20px; font-size:16px; text-transform: uppercase; font-weight:900">Earning Statement</th>
                 </thead>
             </table>
         </div>
-
         <section class="infomation">
             <div class="row">
                 <div class="col1">
@@ -349,10 +333,8 @@
                                 <br>
                                 <tr>
                                     <td class="hadding" style="text-align: left; font-weight:800;">DEDUCTION TOTAL</td>
-                                    <td style="font-size:14px;text-align:right;padding-right:5px;">{{ number_format($requestData['period_gross_total'], 2)
-                                        }}</td>
-                                    <td style="font-size:14px;text-align:right;padding-right:8px;">{{ number_format($requestData['ytd_gross_total'], 2) }}
-                                    </td>
+                                    <td style="font-size:14px;text-align:right;padding-right:5px;">{{ number_format($requestData['deduction_tax'], 2) }}</td>
+                                    <td style="font-size:14px;text-align:right;padding-right:8px;">{{ number_format($requestData['ytd_deduction_tax'], 2) }}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -366,12 +348,8 @@
                                 <tr>
                                     <td style="width:80px;"></td>
                                     <th colspan="" style="text-align: center;width:170px; ">GROSS PAY </th>
-                                    <td style="text-align: left;font-size:14px;">{{
-                                        number_format($requestData['deduction_tax'], 2) }}
-                                    </td>
-                                    <td style="text-align: center;font-size:14px;">
-                                        {{ number_format($requestData['ytd_deduction_tax'], 2) }}
-                                    </td>
+                                    <td style="text-align: left;font-size:14px;">{{ number_format($requestData['period_gross_total'], 2) }}</td>
+                                    <td style="text-align: center;font-size:14px;">{{ number_format($requestData['ytd_gross_total'], 2) }}</td>
                                 </tr>
                                 <br>
                             </tbody>
@@ -380,19 +358,16 @@
                     <div class="column2">
                         <table class="tablewidth">
                             <tr>
-                                <td class="hadding" style="text-align:right;padding-left:25px; font-weight:800;">NET PAY
-                                </td>
-                                <td style="text-align:right;padding-right:17px;font-size:14px;">{{
-                                    number_format($requestData['period_gross_total'], 2) }}</td>
-                                <td style="text-align:right;padding-right:8px;font-size:14px; ">{{
-                                    number_format($requestData['ytd_gross_total'], 2) }}</td>
+                                <td class="hadding" style="text-align:right;padding-left:25px; font-weight:800;">NET PAY </td>
+                                <td style="text-align:right;padding-right:17px;font-size:14px;">{{ number_format($requestData['total_net_pay'], 2) }}</td>
+                                <td style="text-align:right;padding-right:8px;font-size:14px; ">{{ number_format($requestData['total_ytd_net_pay'], 2) }}</td>
                             </tr>
                         </table>
                     </div>
                 </div>
             </section>
+        </section>
     </main>
-
 </body>
 
 </html>

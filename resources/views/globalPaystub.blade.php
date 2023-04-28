@@ -822,12 +822,6 @@
 @endsection
 @section('script')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" crossorigin="anonymous"></script>
-
-<script>
-    $(document).ready(function(){
-
-    });
-</script>
 <script>
     $(document).ready(function() {
             $('.advanceTemplate').change(function() {
@@ -886,7 +880,6 @@
 
                         } else {
                             if (client == 1) {
-                                // alert('here');
                                 $('.advicex').each(function() {
                                     $(".advicex").addClass("col-lg-3 col-md-3 col-sm-6");
                                     $(".advicexv").addClass("d-none");
@@ -994,9 +987,9 @@
             var autocomplete;
             autocomplete = new google.maps.places.Autocomplete((document.getElementById(searchInput)), {
                 types: ['geocode'],
-                componentRestrictions: {
-                    country: "USA"
-                }
+                // componentRestrictions: {
+                //     country: "USA"
+                // }
             });
 
 
@@ -1006,12 +999,7 @@
                     var obj = [];
                     for (var i = 0; i < near_place.address_components.length; i++) {
                         for (var j = 0; j < near_place.address_components[i].types.length; j++) {
-                            obj[near_place.address_components[i].types[j]] = near_place.address_components[
-                                i].short_name;
-                            // if(near_place.address_components[i].types['0'] == 'administrative_area_level_1'){
-                            //     $('#state').val(near_place.address_components[i].long_name);
-                            // }
-
+                            obj[near_place.address_components[i].types[j]] = near_place.address_components[i].short_name;
                         }
                     }
                     setLocation(obj);
@@ -1035,13 +1023,7 @@
                 $('#address_1').css('border-color', 'gray');
                 $('.0_address_1').remove();
             }
-            /* if (obj.neighborhood != undefined) {
-                $("#address_2").val(obj.neighborhood);
-                $('#address_2').css('border-color', 'gray');
-                $('.0_address_2').remove();
-            } else {
-                $("#address_2").val('');
-            } */
+
             if (obj.locality != undefined) {
                 $("#city").val(obj.locality);
                 $('#city').css('border-color', 'gray');
@@ -1083,11 +1065,7 @@
                     var obj = [];
                     for (var i = 0; i < near_place.address_components.length; i++) {
                         for (var j = 0; j < near_place.address_components[i].types.length; j++) {
-                            obj[near_place.address_components[i].types[j]] = near_place.address_components[
-                                i].short_name;
-                            //     if(near_place.address_components[i].types['0'] == 'administrative_area_level_1'){
-                            //     $('#emp_state').val(near_place.address_components[i].long_name);
-                            // }
+                            obj[near_place.address_components[i].types[j]] = near_place.address_components[i].short_name;
                         }
                     }
                     setEmpLocation(obj);
@@ -1112,13 +1090,6 @@
                 $('.0_emp_street_1').remove();
             }
 
-            /* if (obj.neighborhood != undefined) {
-                $("#emp_street_2").val(obj.neighborhood);
-                $('#emp_street_2').css('border-color', 'gray');
-                $(".0_emp_street_2").remove();
-            } else {
-                $("#emp_street_2").val('');
-            } */
             if (obj.locality != undefined) {
                 $("#emp_city").val(obj.locality);
                 $('#emp_city').css('border-color', 'gray');

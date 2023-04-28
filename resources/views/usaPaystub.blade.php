@@ -467,8 +467,7 @@
                                 </div>
                                 <div class="col-md-3 mt-4">
                                     <div>
-                                        <label for="marital_status" class="lable">MARITAL STATUS <span
-                                                class="redColor">*</span> </label>
+                                        <label for="marital_status" class="lable">MARITAL STATUS <span class="redColor">*</span> </label>
                                         <select name="marital_status" id="marital_status"
                                             class="dropdown11 marital_status removeDiv select-dropdown">
                                             {{-- <option value=""> --- Select Marital Status--- </option> --}}
@@ -648,8 +647,7 @@
                                 <div class=" col-lg-2  col-md-2 margin-bottom mt-2">
                                     <div class="margin-bottom">
                                         <button type="button" class="statementbtn">THIS PERIOD</button>
-                                        <p class="p-0 m-0 text-center" style="font-family: serif;font-size: 14px;"> Total
-                                            Gross </p>
+                                        <p class="p-0 m-0 text-center" style="font-family: serif;font-size: 14px;"> Total Gross </p>
                                     </div>
                                     <div class="margin-bottom" style="padding-top: 2px;">
                                         <input type="text" name="period[]"
@@ -660,8 +658,7 @@
                                 <div class=" col-lg-2  col-md-2 margin-bottom mt-2  ">
                                     <div class="margin-bottom">
                                         <button type="button" class="statementbtn">YTD TOTAL</button>
-                                        <p class="p-0 m-0 text-center usap" style="font-family: serif;font-size:14px;">YTD
-                                            Total Gross</p>
+                                        <p class="p-0 m-0 text-center usap" style="font-family: serif;font-size:14px;">YTD Total Gross</p>
                                     </div>
                                     <div class="margin-bottom" style="padding-top: 2px;">
                                         <input type="text" name="ytd_total[]"
@@ -671,12 +668,10 @@
                                 </div>
                             </div>
                             <div class=" col-lg-2 col-md-2 margin-bottom">
-                                <input type="text" name="period_gross_total"
-                                    class="earnbtn text-center period_gross_total" id="period_gross_total" hidden>
+                                <input type="text" name="period_gross_total" class="earnbtn text-center period_gross_total" id="period_gross_total" hidden>
                             </div>
                             <div class=" col-lg-2 col-md-2 margin-bottom">
-                                <input type="text" name="ytd_gross_total" class="earnbtn text-center ytd_gross_total"
-                                    id="ytd_gross_total" hidden>
+                                <input type="text" name="ytd_gross_total" class="earnbtn text-center ytd_gross_total" id="ytd_gross_total" hidden>
                             </div>
 
                             <div class="row mb-3">
@@ -711,23 +706,17 @@
                                     <div class="col-md-2 col-lg-3"></div>
                                     <div class="col-md-1 col-lg-1"></div>
                                     <div class="col-md-2 col-lg-2 mb-3">
-                                        <input type="text" name="taxes_rate[]"
-                                            class="earnbtn text-center manualTaxTotal" id="taxes_{{ $key }}" />
+                                        <input type="text" name="taxes_rate[]" class="earnbtn text-center manualTaxTotal" id="taxes_{{ $key }}" />
                                     </div>
                                     <div class="col-md-2 col-lg-2 mb-3">
-                                        <input type="text" name="taxes_ytd[]"
-                                            class="earnbtn text-center manualTaxTotal"
-                                            id="taxes_ytd_{{ $key }}" />
+                                        <input type="text" name="taxes_ytd[]" class="earnbtn text-center manualTaxTotal" id="taxes_ytd_{{ $key }}" />
                                     </div>
                                 </div>
                             @endforeach
                             <div id="add_deduction" class="mb-3"></div>
                             <div class=" col-lg-2 col-md-2 margin-bottom">
-                                <input type="text" name="deduction_period_tax"
-                                    class="earnbtn text-center deduction_period_tax" id="deduction_period_tax" hidden>
-                                <input type="text" name="deduction_period_tax_other"
-                                    class="earnbtn text-center deduction_period_tax_other" id="deduction_period_tax_other"
-                                    hidden>
+                                <input type="text" name="deduction_period_tax" class="earnbtn text-center deduction_period_tax" id="deduction_period_tax" hidden>
+                                <input type="text" name="deduction_period_tax_other" class="earnbtn text-center deduction_period_tax_other" id="deduction_period_tax_other" hidden>
                             </div>
                             <div class=" col-lg-2 col-md-2 margin-bottom">
                                 <input type="text" name="" class="earnbtn text-center ytd_deduction_period_tax"

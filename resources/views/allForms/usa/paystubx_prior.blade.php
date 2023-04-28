@@ -98,9 +98,9 @@
             position: absolute;
             content: "";
             @if($requestData['address_2']!='')
-top:190px;
+                top:190px;
             @else
-            top: 175px;
+                top: 175px;
             @endif
             left: 80px;
             right: 0;
@@ -139,8 +139,6 @@ top:190px;
             background-position: center;
         }
 
-
-
         .bg-img2 {
             position: relative;
         }
@@ -149,37 +147,22 @@ top:190px;
 <body>
     <main class="bg-img2">
         @guest
-        <div class="watermark"></div>
-        <div class="watermark2"></div>
-    @endguest
-    @auth
-        @php
-            $date = \Carbon\Carbon::now();
-        @endphp
-        @if(Auth::user()->device_type == '')
-            @if(Auth::user()->usa_expiry_date <= $date || !isset($requestData['watermark']) || Auth::user()->usa_expiry_date == '')
+            <div class="watermark"></div>
+            <div class="watermark2"></div>
+        @endguest
+        @auth
+            @php
+                $date = \Carbon\Carbon::now();
+            @endphp
+            @if (Auth::user()->device_type == 'website')
+                @if(Auth::user()->usa_expiry_date <= $date || !isset($requestData['watermark']))
+                    <div class="watermark"></div>
+                    <div class="watermark2"></div>
+                @endif
+            @elseif (Auth::user()->expiryDate <= $date || !isset($requestData['watermark']))
                 <div class="watermark"></div>
                 <div class="watermark2"></div>
             @endif
-        @endif
-        @if (Auth::user()->device_type == 'website')
-            @if(Auth::user()->usa_expiry_date <= $date || !isset($requestData['watermark']))
-                <div class="watermark"></div>
-                <div class="watermark2"></div>
-            @endif
-        @endif
-        @if (Auth::user()->device_type == 'iOS')
-            @if(Auth::user()->expiryDate <= $date || !isset($requestData['watermark']))
-                <div class="watermark"></div>
-                <div class="watermark2"></div>
-            @endif
-        @endif
-        @if (Auth::user()->device_type == 'android')
-            @if(Auth::user()->expiryDate <= $date || !isset($requestData['watermark']))
-                <div class="watermark"></div>
-                <div class="watermark2"></div>
-            @endif
-        @endif
         @endauth
         <table style="width:100%;">
             <tr style="width:100%;">
@@ -196,10 +179,7 @@ top:190px;
                 <td></td>
             </tr>
             @php
-                // $digit = Terbilang::make((int) $requestData['total_net_pay']);
-                // $word = $digit;
                 $word = getCurrency((int)$requestData['total_net_pay']);
-
                 $n = $requestData['total_net_pay'];
                 [$whole, $decimal] = sscanf($n, '%d.%d');
             @endphp
@@ -223,13 +203,9 @@ top:190px;
             <table style="position: relative;padding-top:90px;">
                 <tr style="">
                     <td style="font-size:16px; width:10%; padding-top:13px;">Memo: </td>
-                    <td colspan="2" style="font-size: 24px; text-align:left;transform: scale(.5, 1.3); display: inline-block; position: absolute; left:-20px;  width:60%;letter-spacing: px;
-                    ">FOR RECORDS PURPOSES ONLY</td>
+                    <td colspan="2" style="font-size: 24px; text-align:left;transform: scale(.5, 1.3); display: inline-block; position: absolute; left:-20px;  width:60%;letter-spacing: px;">FOR RECORDS PURPOSES ONLY</td>
                     <td style="width:30%;">---------------------------------------------------------</td>
                 </tr>
-                {{-- <tr class="micrcode">
-                    <td class="micrcode" colspan="3" style="padding-top:30px; font-size:20px; text-align:center; letter-spacing:3px;">"98745687T58T43098584598"</td>
-                </tr> --}}
                 <tr><td style="padding-top:25px;"><img style="width: 450px; position: relative; left:110px;" src="images/icons/micr-digits.png"></td></tr>
             </table>
 
@@ -264,13 +240,13 @@ top:190px;
                     </tr>
                     <tr>
                         <td style="font-size:13px;font-family: 'Times New Roman', Times, serif;">Gross Pay</td>
-                        <td style="font-size:13px; font-family: DejaVu Sans, sans-serif;font-family: 'Times New Roman', Times, serif;"><span style="font-family: 'DejaVu Sans', sans-serif; padding-right:1px;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['deduction_tax'], 2) }}</td>
+                        <td style="font-size:13px; font-family: DejaVu Sans, sans-serif;font-family: 'Times New Roman', Times, serif;"><span style="font-family: 'DejaVu Sans', sans-serif; padding-right:1px;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['period_gross_total'], 2) }}</td>
                         <td style="font-size:13px;font-family: 'Times New Roman', Times, serif;">Period Ending</td>
                         <td style="font-size:13px;font-family: 'Times New Roman', Times, serif;">{{ date('m/d/Y', strtotime($requestData['pay_end'])) }}</td>
                     </tr>
                     <tr>
                         <td style="font-size:13px;font-family: 'Times New Roman', Times, serif;">Net Pay</td>
-                        <td style="font-size:13px; font-family: DejaVu Sans, sans-serif;font-family: 'Times New Roman', Times, serif;"><span style="font-family: 'DejaVu Sans', sans-serif; padding-right:1px;">{{ $requestData['currency'] }}</span>{{ $requestData['total_net_pay'] }}</td>
+                        <td style="font-size:13px; font-family: DejaVu Sans, sans-serif;font-family: 'Times New Roman', Times, serif;"><span style="font-family: 'DejaVu Sans', sans-serif; padding-right:1px;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['total_net_pay'], 2) }}</td>
                         <td style="font-size:13px;font-family: 'Times New Roman', Times, serif;">Check Date</td>
                         <td style="font-size:13px;font-family: 'Times New Roman', Times, serif;">{{ date('m/d/Y', strtotime($requestData['pay_date'])) }}</td>
                     </tr>
@@ -304,8 +280,8 @@ top:190px;
                         @endforeach
                         <tr style="border-top: 1px solid black;">
                             <td style="font-size: 14px;" colspan="2">Gross Pay </td>
-                            <td style="font-size:13px; font-family: DejaVu Sans, sans-serif; text-align:right;font-family: 'Times New Roman', Times, serif;"> <span style="font-family: 'DejaVu Sans', sans-serif; padding-right:1px;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['deduction_tax'], 2) }}</td>
-                            <td style="font-size:13px; font-family: DejaVu Sans, sans-serif; text-align:right;font-family: 'Times New Roman', Times, serif;"> <span style="font-family: 'DejaVu Sans', sans-serif; padding-right:1px;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['ytd_deduction_tax'], 2) }} </td>
+                            <td style="font-size:13px; font-family: DejaVu Sans, sans-serif; text-align:right;font-family: 'Times New Roman', Times, serif;"> <span style="font-family: 'DejaVu Sans', sans-serif; padding-right:1px;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['period_gross_total'], 2) }}</td>
+                            <td style="font-size:13px; font-family: DejaVu Sans, sans-serif; text-align:right;font-family: 'Times New Roman', Times, serif;"> <span style="font-family: 'DejaVu Sans', sans-serif; padding-right:1px;">{{ $requestData['currency'] }}</span>{{ number_format($requestData['ytd_gross_total'], 2) }} </td>
                         </tr>
                     </tbody>
                 </table>
