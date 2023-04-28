@@ -408,7 +408,7 @@
                                             <option value="weekly" {{ $invoice->time_period == 'weekly' ? 'selected' : '' }}>Weekly</option>
                                             <option value="bi-weekly" {{ $invoice->time_period == 'bi-weekly' ? 'selected' : '' }}>Bi-Weekly</option>
                                             <option value="monthly"{{ $invoice->time_period == 'monthly' ? 'selected' : '' }}>Monthly</option>
-                                            <option value="bi-monthly" {{ $invoice->time_period == 'bi-monthly' ? 'selected' : '' }}>Bi-Monthly</option>
+                                            {{-- <option value="bi-monthly" {{ $invoice->time_period == 'bi-monthly' ? 'selected' : '' }}>Bi-Monthly</option> --}}
                                         </select>
                                     </div>
                                 </div>

@@ -439,7 +439,7 @@
                                         <option value="weekly">Weekly</option>
                                         <option value="bi-weekly">Bi-Weekly</option>
                                         <option value="monthly">Monthly</option>
-                                        <option value="bi-monthly">Bi-Monthly</option>
+                                        {{-- <option value="bi-monthly">Bi-Monthly</option> --}}
                                     </select>
                                 </div>
                             </div>
