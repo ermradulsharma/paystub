@@ -28,8 +28,6 @@ class TemplateFormController extends Controller
 
     public function edit($id)
     {
-
-        // $invoiceData = PaySlip::where(['user_id' => Auth::user()->id, 'id' => $id])->first();
         $invoiceData = PaySlip::find($id);
         $deduction = Deduction::where(['state' => $invoiceData->type])->orderBy('id', 'asc')->get();
         $basicType = Template::where(['state' => $invoiceData->type, 'type' => 'basic', 'status' => 1])->orderBy('title')->with('images')->get();
@@ -99,7 +97,7 @@ class TemplateFormController extends Controller
         $fileName =  date('_d_m_Y_h_i_s') . '.pdf';
         $pdf->save($path . '/' . $fileName);
         $invoice_id = $request->invoice_id ?? 0;
-        $slip = PaySlip::where(['user_id' => Auth::user()->id, 'id' => $invoice_id])->first();
+        $slip = PaySlip::find($invoice_id);
         if (!$slip) {
             $slip = new PaySlip;
             $slip->user_id = Auth::user()->id;
@@ -135,7 +133,7 @@ class TemplateFormController extends Controller
 
     public function invoiceDelete(Request $request, $id)
     {
-        $invoice = PaySlip::where(['user_id' => Auth::user()->id, 'id' => $id])->first();
+        $invoice = PaySlip::find($id);
         if ($invoice) {
             try {
                 unlink(public_path('/uploads/mailData/' . basename($invoice->pdf)));
@@ -196,12 +194,12 @@ class TemplateFormController extends Controller
                 }
             }
             if ($id != null) {
-                return redirect(route('invoiceList'))->with('message', 'Mail has been sent successfully.');
+                return redirect()->route('invoiceList')->with('message', 'Mail has been sent successfully.');
             }
         } else {
             // $response['message'] = "Please choose Paystub pay slip";
             // return back()->with($response, 200);
-            return redirect(route('invoiceList'))->with('message', 'Please create template first.');
+            return redirect()->route('invoiceList')->with('message', 'Please create template first.');
         }
         return back()->with('message', 'Mail has been sent successfully.');
     }
