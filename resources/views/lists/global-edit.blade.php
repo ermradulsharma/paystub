@@ -399,7 +399,7 @@
                                         <div class="d-flex justify-content-between align-items-center" style=" position:relative; bottom:5px;">
                                             <label for="emp_your_state" class="lable">SELECT YOUR STATE <span class="redColor">*</span></label>
                                             <div class="check-box">
-                                                <input type="checkbox" class="tgl" name="toggle" value="{{$invoice->toggle}}" {{ $invoice->toggle == '1' ? 'checked' : '' }}>
+                                                <input type="checkbox" class="tgl" name="toggle">
                                             </div>
                                         </div>
 
