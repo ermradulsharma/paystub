@@ -93,10 +93,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <embed src="" type="" id="tempView" allowtransparency="false" style="background-color : transparent;"
-                    frameborder="0" width="100%" height="800">
-                {{-- <iframe src="" id="tempView" allowtransparency="false" style="background-color : transparent;"
-                    frameborder="0" width="100%" height="800"></iframe> --}}
+                <embed src="" type="" id="tempView" allowtransparency="false" style="background-color : transparent;" frameborder="0" width="100%" height="800">
             </div>
         </div>
     </div>
@@ -248,8 +245,7 @@
                                         <div style="margin:0 !important;" class="col-md-4 mt-3 pl-0 padding-0">
                                             <div>
                                                 <label for="pay_start" class="lable uk-lable ">Pay Start <span style="color:red;">*</span> </label>
-                                                <input
-                                                    style="color:#140303f5;border:1px solid #110303fe;padding:0px 6px !important; height:40px; appearance: none;" type="text" id="pay_start" name="pay_start" placeholder="12-11-2022" class="input-uk removeDiv pay_start datepicker inputdatepicker" data-id="pay_start" value="<?php echo date('m/d/Y'); ?>">
+                                                <input style="color:#140303f5;border:1px solid #110303fe;padding:0px 6px !important; height:40px; appearance: none;" type="text" id="pay_start" name="pay_start" placeholder="12-11-2022" class="input-uk removeDiv pay_start datepicker inputdatepicker" data-id="pay_start" value="<?php echo date('m/d/Y'); ?>">
                                             </div>
 
                                         </div>
@@ -286,27 +282,21 @@
                                             </div>
                                             <div class="col-lg-8 mt-3 p-0">
                                                 <div>
-                                                    <label for="tax_code" class="lable uk-lable">Tax Code<span
-                                                            style="color:red;">*</span> </label>
-                                                    <input type="text" id="tax_code" name="tax_code"
-                                                        class="input-uk removeDiv" placeholder="1257L"
-                                                        style=" text-transform:uppercase">
+                                                    <label for="tax_code" class="lable uk-lable">Tax Code<span style="color:red;">*</span> </label>
+                                                    <input type="text" id="tax_code" name="tax_code" class="input-uk removeDiv" placeholder="1257L" style=" text-transform:uppercase">
                                                 </div>
-
                                             </div>
                                             <div class="col-lg-8 mt-3 p-0">
                                                 <div>
                                                     <label for="ni_number" class="lable uk-lable">NI Number<span style="color:red;">*</span> </label>
                                                     <input type="text" id="ni_number" name="ni_number" class="input-uk removeDiv" placeholder="SC 56 52 10 C" style=" text-transform:uppercase">
                                                 </div>
-
                                             </div>
                                             <div class="col-lg-8 mt-3 p-0 mb-3">
                                                 <div>
                                                     <label for="ni_table_letter" class="lable uk-lable">NI Table Letter<span style="color:red;">*</span> </label>
                                                     <input type="text" id="ni_table_letter" name="ni_table_letter" class="input-uk removeDiv" placeholder="A" style=" text-transform:uppercase">
                                                 </div>
-
                                             </div>
                                         </div>
                                     </div>
@@ -321,8 +311,7 @@
                                 <div class="ukpay-inner ">
                                     <div class="row ">
                                         <div style="margin:0 !important;" class="col-md-4 mt-4 p-0">
-                                            <p class="text-left how_p mb-0" style="font-size:18px; font-weight:300;">
-                                                Basic Pay <span class="redColor">*</span> <span> </span></p>
+                                            <p class="text-left how_p mb-0" style="font-size:18px; font-weight:300;">Basic Pay <span class="redColor">*</span><span></span></p>
                                             <div class="text-center mt-2  d-flex">
                                                 <button type="button" class="hour_btn date_select">HOURLY</button>
                                                 <button type="button" class="salary_btn">SALARY</button>
@@ -353,8 +342,7 @@
                                             </div>
                                             <div id="addEarning"></div>
                                         </div>
-                                        <div class=" col-lg-4 col-md-12 margin-bottom  mt-2  px-lg-2 px-0 addcurrentTotal"
-                                            hidden>
+                                        <div class=" col-lg-4 col-md-12 margin-bottom  mt-2  px-lg-2 px-0 addcurrentTotal" hidden>
                                             <button type="button" class="statementbtn">Current Total</button>
                                             <div class="margin-bottom">
                                                 <input class="earnbtn mt-3 text-center currentTotal" type="number" id="total_000" name="total[]" type="text" value="">
@@ -363,8 +351,7 @@
                                         </div>
                                     </div>
                                     <div class="row mb-3">
-                                        <div
-                                            class="col-xl-4 col-lg-7 col-md-4 mt-2 margin-bottom  px-lg-2 px-0 center-btn">
+                                        <div class="col-xl-4 col-lg-7 col-md-4 mt-2 margin-bottom  px-lg-2 px-0 center-btn">
                                             <button type="button" class="btnCommon addEarningField uk-add-btn"> <i class="fa fa-plus-circle pr-2" style="font-size: 22px;color: #0ec23b;padding-top: 0px;"></i>Add Earning</button>
                                         </div>
                                     </div>
@@ -451,10 +438,8 @@
                                         </div>
                                         <div class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
                                             <div>
-                                                <img src="{{ asset('images/lock.png') }}" class="earnbtn2 lockuk lock"
-                                                    data-id="33" id="33">
-                                                <input class="input-uk  text-center uk-texs removeDiv"
-                                                    value="Employee NIC" id="taxe_33" readonly>
+                                                <img src="{{ asset('images/lock.png') }}" class="earnbtn2 lockuk lock" data-id="33" id="33">
+                                                <input class="input-uk  text-center uk-texs removeDiv" value="Employee NIC" id="taxe_33" readonly>
                                             </div>
 
                                         </div>
@@ -481,16 +466,13 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-7"
-                            style="color: black; text-transform:uppercase;font-size:30px; font-weight:600;">
+                        <div class="col-lg-7" style="color: black; text-transform:uppercase;font-size:30px; font-weight:600;">
                             <p class="top-heading">Additional Information Here (Note)</p>
                             <div style="border:3px solid #ff5722;" class=" pay-outer mb-3">
                                 <div class="ukpay-inner ">
                                     <div class="row">
                                         <div style="padding-bottom:255px;" class="col-md-7 col-lg-7 mb-3  px-lg-2 px-0">
-                                            <input style="color: #7c7370; border-color: #7c7370;"
-                                                class="input-uk text-center uk-texs note" name="note"
-                                                placeholder="Note here (optional) ">
+                                            <input style="color: #7c7370; border-color: #7c7370;" class="input-uk text-center uk-texs note" name="note" placeholder="Note here (optional) ">
                                         </div>
                                     </div>
                                 </div>
@@ -538,9 +520,6 @@
             });
         });
 </script>
-<script
-    src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyDpavHXELJMJvIHifFPN6tBBiFSXKGpy2g">
-</script>
 <script>
     var searchInput = 'company_address';
 
@@ -557,11 +536,6 @@
 
                 if (near_place && near_place.address_components.length > 0) {
                     var obj = near_place.formatted_address;
-                    // for (var i = 0; i < near_place.address_components.length; i++) {
-                    //     for (var j = 0; j < near_place.address_components[i].types.length; j++) {
-                    //         obj[near_place.address_components[i].types[j]] = near_place.address_components[i].long_name;
-                    //     }
-                    // }
                     setLocation(obj);
                 }
             });
