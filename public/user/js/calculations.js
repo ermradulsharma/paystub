@@ -127,8 +127,13 @@ $(document).ready(function () {
         extraTaxDeduction();
         extraYTDTaxDeduction();
     });
+
     $(".tax_deduction").keyup(function () {
         extraTaxDeduction();
+    });
+
+    $(".ytd_tax").keyup(function () {
+        extraYTDTaxDeduction();
     });
 
     function extraTaxDeduction(){
@@ -166,9 +171,6 @@ $(document).ready(function () {
             netPay();
         }, 300);
     }
-    $(".ytd_tax").keyup(function () {
-        extraYTDTaxDeduction();
-    });
 
     $(".tax_rate").change(function () {
         tax_rate();
@@ -176,7 +178,13 @@ $(document).ready(function () {
     });
 
     $(".time_period").change(function () {
-        time_period();
+        var time_period_val = $(this).val();
+        if(time_period_val == 'monthly'){
+            salaryBtn();
+        }else{
+            time_period();
+            hourBtn();
+        }
     });
 
     $(".pay_start").change(function () {
@@ -314,6 +322,10 @@ $(document).ready(function () {
     }
 
     $(".hour_btn").click(function () {
+        hourBtn();
+    });
+
+    function hourBtn(){
         $('.hour_btn').css({ "background-color": "#f70303" });
         $('.salary_btn').css({ "background-color": "#827f7f" });
         $(".rate").attr("hidden", false);
@@ -323,7 +335,11 @@ $(document).ready(function () {
         $(".hours").attr("readonly", false);
         $(".total").attr("readonly", true);
         $(".removeData").parent().removeClass("margintop-5");
-        $('.time_period').val('weekly');
+        if($('.time_period').val() == 'monthly'){
+            $('.time_period').val('weekly');
+        }else{
+            $('.time_period').val();
+        }
         $('.auto_calculate').val('on');
         $(".earnbtn_0").val("Regular");
         var date = new Date();
@@ -331,9 +347,13 @@ $(document).ready(function () {
         $(".pay_start").val(date_1);
         dayCalculate();
         is_empty();
-    });
+    }
 
     $('.salary_btn').click(function () {
+        salaryBtn();
+    });
+
+    function salaryBtn(){
         $('.salary_btn').css({ "background-color": "#f70303" });
         $('.hour_btn').css({ "background-color": "#827f7f" });
         $('.rate').attr('readonly', true);
@@ -352,8 +372,7 @@ $(document).ready(function () {
         $(".removeData").attr("hidden", true);
         $(".removeData").parent().addClass("margintop-5");
         is_empty();
-    });
-
+    }
     $('.total').keyup(function () {
         total();
     })
@@ -367,14 +386,18 @@ $(document).ready(function () {
             var ytd_total = total * days_number || 0.0;
             period_gross_total += total;
             ytd_gross_total += ytd_total;
-            $('#period_' + id).val(parseFloat(total).toFixed(2));
-            $('#ytd_total_' + id).val(parseFloat(ytd_total).toFixed(2));
+            if(total != 0.0){
+                $('#period_' + id).val(parseFloat(total).toFixed(2));
+                $('#ytd_total_' + id).val(parseFloat(ytd_total).toFixed(2));
+            }
         });
-        $("#period_gross_total").val(parseFloat(period_gross_total).toFixed(2));
-        $("#ytd_gross_total").val(parseFloat(ytd_gross_total).toFixed(2));
-        setTimeout(() => {
-            gross_total();
-        }, 400);
+        if(period_gross_total != 0.0 || ytd_gross_total != 0.0){
+            $("#period_gross_total").val(parseFloat(period_gross_total).toFixed(2));
+            $("#ytd_gross_total").val(parseFloat(ytd_gross_total).toFixed(2));
+            setTimeout(() => {
+                gross_total();
+            }, 400);
+        }
     }
 
     $(".auto_calculate").change(function () {
