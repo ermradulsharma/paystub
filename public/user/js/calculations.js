@@ -53,7 +53,7 @@ $(document).ready(function () {
 
         //remove function of add earning field
         $(".removebtn-usa").click(function(){
-            
+
             var inpputidvalue= $(this).attr('data-ref');
             var inpputdata_id= $(this).attr('data-id');
             var input1 = document.getElementById('earningusa_'+inpputidvalue);
@@ -61,19 +61,19 @@ $(document).ready(function () {
             var input3 = document.getElementById('hoursusa_'+inpputidvalue);
             var input4 = document.getElementById('totalusa_'+inpputidvalue);
             var input5 = document.getElementById('periodusa_'+inpputidvalue);
-            var input6 = document.getElementById('removebtn_usa'+inpputidvalue);      
-            
+            var input6 = document.getElementById('removebtn_usa'+inpputidvalue);
+
             input1.remove();
             input2.remove();
             input3.remove();
-            input4.remove(); 
+            input4.remove();
             input5.remove();
-            input6.remove();  
-            i--;  
+            input6.remove();
+            i--;
 
             calculation(inpputdata_id);
-        
-            
+
+
         });
 
         // i++;
@@ -109,60 +109,29 @@ $(document).ready(function () {
             $(wrapper_2).append(fieldHTML);
         }
 
-        
-       
-
-        // $(wrapper_2).on('click', '.removebtn-usa-deduction', function(e){
-        //     e.preventDefault();
-        //     $(this).parent().parent().remove(); 
-        //     x--; //Decrement field counter
-        // });
-
         $(".tax_deduction").keyup(function () {
             var id = $(this).data('id');
-            var deduction_period_tax = $("#deduction_period_tax").val() || 0.0;
-            var tax_deduction = 0;
-            $(".tax_deduction").each(function () {
-                tax_deduction += Number($(this).val()) || 0.0;
-            });
-            setTimeout(function () {
-                tax_deduction = tax_deduction;
-                var total = parseFloat(deduction_period_tax) + parseFloat(tax_deduction);
-                if (isNaN(total)) {
-                    total = parseFloat(deduction_period_tax).toFixed(2);
-                }
-                $(".deduction_period_tax_other").val(parseFloat(tax_deduction).toFixed(2));
-                $(".deduction_tax").val(parseFloat(total).toFixed(2));
-                netPay();
-            }, 300);
+            extraTaxDeduction();
         });
 
         $(".ytd_tax").keyup(function () {
-            var ytd_deduction_period_tax = $("#ytd_deduction_period_tax").val() || 0.0;
-            var ytd_tax = 0.0;
-            $(".ytd_tax").each(function () {
-                ytd_tax += Number($(this).val()) || 0.00;
-            });
-            setTimeout(function () {
-                ytd_tax = ytd_tax;
-                var sum = parseFloat(ytd_deduction_period_tax) + parseFloat(ytd_tax);
-                if (isNaN(sum)) {
-                    sum = parseFloat(ytd_deduction_period_tax).toFixed(2);
-                }
-                $(".ytd_deduction_period_tax_other").val(parseFloat(ytd_tax).toFixed(2));
-                $(".ytd_deduction_tax").val(parseFloat(sum).toFixed(2));
-                netPay();
-            }, 300);
+            extraYTDTaxDeduction();
         });
         return false;
     });
 
     $(wrapper_2).on('click', '.removebtn-usa-deduction', function(e){
         e.preventDefault();
-        $(this).parent().parent().remove(); 
+        $(this).parent().parent().remove();
         x--; //Decrement field counter
+        extraTaxDeduction();
+        extraYTDTaxDeduction();
     });
     $(".tax_deduction").keyup(function () {
+        extraTaxDeduction();
+    });
+
+    function extraTaxDeduction(){
         var deduction_period_tax = $("#deduction_period_tax").val() || 0.0;
         var tax_deduction = 0.0;
         $(".tax_deduction").each(function () {
@@ -178,9 +147,9 @@ $(document).ready(function () {
             $(".deduction_tax").val(parseFloat(total).toFixed(2));
             netPay();
         }, 300);
-    });
+    }
 
-    $(".ytd_tax").keyup(function () {
+    function extraYTDTaxDeduction(){
         var ytd_deduction_period_tax = $("#ytd_deduction_period_tax").val() || 0.0;
         var ytd_tax = 0.0;
         $(".ytd_tax").each(function () {
@@ -196,6 +165,9 @@ $(document).ready(function () {
             $(".ytd_deduction_tax").val(parseFloat(sum).toFixed(2));
             netPay();
         }, 300);
+    }
+    $(".ytd_tax").keyup(function () {
+        extraYTDTaxDeduction();
     });
 
     $(".tax_rate").change(function () {
