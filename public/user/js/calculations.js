@@ -475,17 +475,35 @@ $(document).ready(function () {
             }
         }, 300);
     }
+
+
     $('.tgl').click(function () {
         if ($(this).is(":checked")) {
             $(".emp_your_state_txt").removeClass("d-none");
             $(".emp_your_state_slt").addClass("d-none");
             $(".tgl").val(1);
-            default_tax();
+            $('#emp_your_state').keyup(function(){
+                var txtlen = $('#emp_your_state').val();
+                if(txtlen.length > 3){
+                    var rate = $("#rate_0").val();
+                    var hours = $("#hours_0").val();
+                    var total = rate * hours || 0.0;
+                    if(total != 0.0){
+                        default_tax();
+                    }
+                }
+            });
+
         } else {
             $(".emp_your_state_txt").addClass("d-none");
             $(".emp_your_state_slt").removeClass("d-none");
             $(".tgl").val(0);
-            default_tax();
+            var rate = $("#rate_0").val();
+            var hours = $("#hours_0").val();
+            var total = rate * hours || 0.0;
+            if(total != 0.0){
+                default_tax();
+            }
         }
     });
 
@@ -493,15 +511,25 @@ $(document).ready(function () {
         if ($(".tgl").val() == 1) {
             $(".emp_your_state_txt").removeClass("d-none");
             $(".emp_your_state_slt").addClass("d-none");
-            if ($('.tgl').is(':visible')) {
-                default_tax();
+            if ($('.emp_your_state_txt').is(':visible')) {
+                var rate = $("#rate_0").val();
+                var hours = $("#hours_0").val();
+                var total = rate * hours || 0.0;
+                if(total != 0.0){
+                    default_tax();
+                }
             }
 
         } else {
             $(".emp_your_state_txt").addClass("d-none");
             $(".emp_your_state_slt").removeClass("d-none");
-            if ($('.tgl').is(':visible')) {
-                default_tax();
+            if ($('.emp_your_state_slt').is(':visible')) {
+                var rate = $("#rate_0").val();
+                var hours = $("#hours_0").val();
+                var total = rate * hours || 0.0;
+                if(total != 0.0){
+                    default_tax();
+                }
             }
         }
     });
@@ -658,7 +686,4 @@ $(document).ready(function () {
     function removeDuplicates(arr) {
         return arr.filter((item, index) => arr.indexOf(item) === index);
     }
-
-
-
 });
