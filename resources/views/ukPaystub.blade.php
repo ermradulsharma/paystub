@@ -283,19 +283,19 @@
                                             <div class="col-lg-8 mt-3 p-0">
                                                 <div>
                                                     <label for="tax_code" class="lable uk-lable">Tax Code<span style="color:red;">*</span> </label>
-                                                    <input type="text" id="tax_code" name="tax_code" class="input-uk removeDiv" placeholder="1257L" style=" text-transform:uppercase">
+                                                    <input type="text" id="tax_code" name="tax_code" class="input-uk removeDiv" placeholder="1257L" maxlength="5" style=" text-transform:uppercase">
                                                 </div>
                                             </div>
                                             <div class="col-lg-8 mt-3 p-0">
                                                 <div>
                                                     <label for="ni_number" class="lable uk-lable">NI Number<span style="color:red;">*</span> </label>
-                                                    <input type="text" id="ni_number" name="ni_number" class="input-uk removeDiv" placeholder="SC 56 52 10 C" style=" text-transform:uppercase">
+                                                    <input type="text" id="ni_number" name="ni_number" maxlength="13" class="input-uk removeDiv" placeholder="SC 56 52 10 C" style=" text-transform:uppercase">
                                                 </div>
                                             </div>
                                             <div class="col-lg-8 mt-3 p-0 mb-3">
                                                 <div>
                                                     <label for="ni_table_letter" class="lable uk-lable">NI Table Letter<span style="color:red;">*</span> </label>
-                                                    <input type="text" id="ni_table_letter" name="ni_table_letter" class="input-uk removeDiv" placeholder="A" style=" text-transform:uppercase">
+                                                    <input type="text" id="ni_table_letter" name="ni_table_letter" maxlength="1" class="input-uk removeDiv" placeholder="A" style=" text-transform:uppercase">
                                                 </div>
                                             </div>
                                         </div>
@@ -496,6 +496,15 @@
 @section('script')
 <script>
     $(document).ready(function() {
+            var submitTextArea = document.getElementById("ni_number");
+            submitTextArea.addEventListener("keyup", function() {
+                var nvalue = submitTextArea.value;
+                nvalue = nvalue.replace(/\s/g, '');
+                let ccnumspaced = nvalue.match(/.{1,2}/g);
+
+                submitTextArea.value = ccnumspaced.join(' ');
+            });
+
             $('.advanceTemplate').change(function() {
                 $('option:selected', '.basicTemplate').prop("selected", false);
             });
