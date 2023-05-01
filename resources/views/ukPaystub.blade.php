@@ -496,14 +496,7 @@
 @section('script')
 <script>
     $(document).ready(function() {
-            var submitTextArea = document.getElementById("ni_number");
-            submitTextArea.addEventListener("keyup", function() {
-                var nvalue = submitTextArea.value;
-                nvalue = nvalue.replace(/\s/g, '');
-                let ccnumspaced = nvalue.match(/.{1,2}/g);
-
-                submitTextArea.value = ccnumspaced.join(' ');
-            });
+            
 
             $('.advanceTemplate').change(function() {
                 $('option:selected', '.basicTemplate').prop("selected", false);

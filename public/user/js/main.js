@@ -500,4 +500,13 @@ $(document).ready(function () {
             $("#taxe_" + id).attr("readonly", true);
         }
     });
+
+    var submitTextArea = document.getElementById("ni_number");
+    submitTextArea.addEventListener("keyup", function() {
+        var nvalue = submitTextArea.value;
+        nvalue = nvalue.replace(/\s/g, '');
+        let ccnumspaced = nvalue.match(/.{1,2}/g);
+
+        submitTextArea.value = ccnumspaced.join(' ');
+    });
 });

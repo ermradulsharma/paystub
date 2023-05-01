@@ -263,21 +263,21 @@
                                                 <div class="col-lg-8 mt-3 p-0">
                                                     <div>
                                                         <label for="tax_code" class="lable uk-lable">Tax Code<span style="color:red;">*</span> </label>
-                                                        <input type="text" id="tax_code" value="{{ $invoice->tax_code ?? null }}" name="tax_code" class="input-uk removeDiv" placeholder="1257L" style="font-size:14px; text-transform:uppercase">
+                                                        <input type="text" id="tax_code" maxlength="5" value="{{ $invoice->tax_code ?? null }}" name="tax_code" class="input-uk removeDiv" placeholder="1257L" style="font-size:14px; text-transform:uppercase">
                                                     </div>
 
                                                 </div>
                                                 <div class="col-lg-8 mt-3 p-0">
                                                     <div>
                                                         <label for="ni_number" class="lable uk-lable">NI Number<span style="color:red;">*</span> </label>
-                                                        <input type="text" id="ni_number" value="{{ $invoice->ni_number ?? null }}" name="ni_number" class="input-uk removeDiv" placeholder="SC 56 52 10 C" style="font-size:14px; text-transform:uppercase">
+                                                        <input type="text" id="ni_number" maxlength="3" value="{{ $invoice->ni_number ?? null }}" name="ni_number" class="input-uk removeDiv" placeholder="SC 56 52 10 C" style="font-size:14px; text-transform:uppercase">
                                                     </div>
 
                                                 </div>
                                                 <div class="col-lg-8 mt-3 p-0 mb-3">
                                                     <div>
                                                         <label for="ni_table_letter" class="lable uk-lable">NI Table Letter<span style="color:red;">*</span> </label>
-                                                        <input type="text" id="ni_table_letter" value="{{ $invoice->ni_table_letter ?? null }}" name="ni_table_letter" class="input-uk removeDiv" placeholder="A" style="font-size:14px; text-transform:uppercase">
+                                                        <input type="text" id="ni_table_letter" maxlength="1" value="{{ $invoice->ni_table_letter ?? null }}" name="ni_table_letter" class="input-uk removeDiv" placeholder="A" style="font-size:14px; text-transform:uppercase">
                                                     </div>
                                                 </div>
                                             </div>
