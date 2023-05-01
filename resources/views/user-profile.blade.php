@@ -895,13 +895,16 @@
                 $('#addressForm').find("input[name=addressId]").val("");
             }
             var popType = $("#addNewAddress").attr('data-emptype');
+            console.log('popType', popType);
             if (popType == 'employee') {
                 $("#adress-type").val('employee');
                 $('#nameLabel').text('').text('EMPLOYEE NAME *');
                 $('#inputFullName').attr('placeholder', 'Full Employee Name');
                 $('#tel-phone-title').text('').text('Employee Telephone');
                 $('#tel-phone-title').closest("div").addClass('d-none');
-            } else if (popType == 'employer') {
+                $('#emp_ssn_title').closest("div").removeClass('d-none')
+                $('#emp_id_title').closest("div").removeClass('d-none')
+            } else {
                 $("#adress-type").val('employer');
                 $('#nameLabel').text('').text('EMPLOYER (COMPANY) NAME *');
                 $('#inputFullName').attr('placeholder', 'Full Employer (Company) Name');
