@@ -89,6 +89,35 @@ $(document).ready(function () {
         return false;
     });
 
+
+    //remove function of add earning field
+    $(".removebtn-usa").click(function(){
+
+        
+
+        var inpputidvalue= $(this).attr('data-ref');
+        var inpputdata_id= $(this).attr('data-id');
+
+        var input1 = document.getElementById('earningusa_'+inpputidvalue);
+        var input2 = document.getElementById('rateusa_'+inpputidvalue);
+        var input3 = document.getElementById('hoursusa_'+inpputidvalue);
+        var input4 = document.getElementById('totalusa_'+inpputidvalue);
+        var input5 = document.getElementById('periodusa_'+inpputidvalue);
+        var input6 = document.getElementById('removebtn_usa'+inpputidvalue);
+
+        input1.remove();
+        input2.remove();
+        input3.remove();
+        input4.remove();
+        input5.remove();
+        input6.remove();
+       
+
+        calculation(inpputdata_id);
+
+
+    });
+
     $(addDeduction).click(function () {
         var fieldHTML = '<div class="row">' +
             '<div class="col-md-4 col-lg-3 mb-3">' +
