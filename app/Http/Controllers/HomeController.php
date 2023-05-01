@@ -143,10 +143,9 @@ class HomeController extends Controller
                 $userObj->email = $request->email;
                 $userObj->code = '';
                 $userObj->temp_mail = '';
-            }
+                $userObj->save();
 
-            if ($userObj->save()) {
-                $user = User::select('name', 'email')->where('id', $userObj->id)->first();
+                $user = User::select('name', 'email', "temp_mail")->where('id', $userObj->id)->first();
                 $response['message'] = "OTP Verify Successfully";
                 $response['status'] = 200;
                 $response['data'] = $user;

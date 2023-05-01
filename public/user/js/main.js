@@ -77,14 +77,24 @@ $("#adminLogin").on("submit", function () {
 });
 
 $("#loginOtp").on("submit", function () {
+    var formType = $('#formType').val()
+    if(formType == 'verifyOtpChangeMail'){
+        url = $(this).data("action");
+    }else{
+        url = $(this).attr("action");
+    }
     $.ajax({
-        url: $(this).attr("action"),
+        url: url,
         type: "POST",
         data: $(this).serialize(),
         success: function (response) {
             if (response.firstName == "") {
                 $("#otpModal").modal("hide");
                 $("#setName").modal("show");
+            }
+            if(response.data.temp_mail == ""){
+                $("#email").text(response.data.email);
+                $("#otpModal").modal("hide");
             }
         },
         error: function (err) {

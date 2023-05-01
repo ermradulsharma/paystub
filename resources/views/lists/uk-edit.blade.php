@@ -210,7 +210,7 @@
                                 <label for="emp_street_2" class="lable">STREET ADDRESS 2</label>
                                 <input type="text" id="emp_street_2" value="{{ $invoice->emp_street_2 ?? null }}" name="emp_street_2" placeholder="Your Employer &amp; Company Name" class="w-100 p-2" style="font-size:14px;">
                             </div>
-
+                            <input type="hidden" name="city" id="city" value="{{ $invoice->city ?? 'London' }}">
                             <div class="col-md-6 mt-1">
                                 <label for="emp_zip_code" class="lable">POSTCODE<span style="color:red;">*</span></label>
                                 <input type="text" id="emp_zip_code" value="{{ $invoice->emp_zip_code ?? null }}" name="emp_zip_code" placeholder="5 Throgmorton St, London EC2N 2AD, United Kingdom" class="w-100 p-2" style="font-size:14px;">
