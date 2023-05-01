@@ -495,7 +495,7 @@
             <table style="width: 100%; margin:auto;">
                 <tr style="border-bottom: 1px solid;">
                     <td></td>
-                    <td style="padding: 0;">Pay to the<br>order off:</td>
+                    <td style="padding: 0;">Pay to the<br>order of:</td>
                     <td style="padding: 0;text-transform:capitalize;"> {{ $requestData['emp_name'] }}</td>
                     <td></td>
                 </tr>

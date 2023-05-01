@@ -405,9 +405,7 @@
                 <!-- Modal Header -->
                 <div class="modal-header" style="background: #115caecf;">
                     <h4 class="modal-title" style="text-transform: capitalize;color:#fff;">Address Book</h4>
-                    <button type="button"
-                        style="border: none; background-color:transparent; color:#fff;font-size:20px;padding:0;"
-                        class="btn-close" data-bs-dismiss="modal" aria-label="Close">x</button>
+                    <button type="button" style="border: none; background-color:transparent; color:#fff;font-size:20px;padding:0;" class="btn-close" data-bs-dismiss="modal" aria-label="Close">x</button>
                 </div>
 
                 <!-- Modal body -->
@@ -420,44 +418,31 @@
                                         style="padding-top:20px;" class="form-horizontal" role="form">
                                         @csrf
                                         <div class="row">
-                                            <label for="inputFullName" id="nameLabel" style="font-weight:bold;"
-                                                class="col-sm-12 control-label">EMPLOYER (COMPANY) NAME *</label>
+                                            <label for="inputFullName" id="nameLabel" style="font-weight:bold;" class="col-sm-12 control-label">EMPLOYER (COMPANY) NAME *</label>
                                             <div class="col-sm-12">
-                                                <input style="font-size:16px;" type="text"
-                                                    class="form-control form-control-address" id="inputFullName" name="fullName"
-                                                    placeholder="Full Employer (Company) Name">
+                                                <input style="font-size:16px;" type="text" class="form-control form-control-address" id="inputFullName" name="fullName" placeholder="Full Employer (Company) Name">
                                             </div>
                                         </div>
                                         <input type="hidden" id="adress-type" name="type" value="employer">
                                         <input type="hidden" id="adress-type" name="addressId">
                                         <div class="form-group">
-                                            <p class="col-sm-offset-2 col-sm-12 help-block"
-                                                style="font-weight: bold;margin-top:10px; margin-bottom:5px;">STREET
-                                                ADDRESS 1 * </p>
+                                            <p class="col-sm-offset-2 col-sm-12 help-block" style="font-weight: bold;margin-top:10px; margin-bottom:5px;">STREET ADDRESS 1 * </p>
                                             <div class="col-sm-12">
-                                                <input style="font-size:16px;" type="text"
-                                                    class="form-control form-control-address" id="inputAddressLine1" name="addressLine1"
-                                                    placeholder="Street Address 1">
+                                                <input style="font-size:16px;" type="text" class="form-control form-control-address" id="inputAddressLine1" name="addressLine1" placeholder="Street Address 1">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                            <p class="col-sm-offset-2 col-sm-12 help-block"
-                                                style="font-weight:bold;margin-bottom:5px;">STREET ADDRESS 2</p>
+                                            <p class="col-sm-offset-2 col-sm-12 help-block" style="font-weight:bold;margin-bottom:5px;">STREET ADDRESS 2</p>
                                             <div class="col-sm-12">
-                                                <input style="font-size:16px;" type="text"
-                                                    class="form-control form-control-address" id="inputAddressLine2" name="addressLine2"
-                                                    placeholder="Street Address 2 (Optional)">
+                                                <input style="font-size:16px;" type="text" class="form-control form-control-address" id="inputAddressLine2" name="addressLine2" placeholder="Street Address 2 (Optional)">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="inputCityTown" style="font-weight:bold;"
-                                                class="col-sm-12 control-label">City</label>
+                                            <label for="inputCityTown" style="font-weight:bold;" class="col-sm-12 control-label">City</label>
                                             <div class="col-sm-12">
-                                                <input style="font-size:16px;" type="text"
-                                                    class="form-control form-control-address" id="inputCityTown" name="cityName"
-                                                    placeholder="City">
+                                                <input style="font-size:16px;" type="text" class="form-control form-control-address" id="inputCityTown" name="cityName" placeholder="City">
                                             </div>
                                         </div>
 
@@ -466,13 +451,11 @@
                                                 class="col-sm-12 control-label">State</label>
                                             <div class="col-sm-12">
 
-                                                <select class="form-control form-control-address select-box" style="
-                                                    id="selectState" name="stateName">
+                                                <select class="form-control form-control-address select-box" style="" id="selectState" name="stateName">
                                                     <option value="" selected="selected">Select</option>
                                                     @if (count($stateList) > 0)
                                                         @foreach ($stateList as $state)
-                                                            <option value="{{ $state->state_code }}">{{ $state->state }}
-                                                            </option>
+                                                            <option value="{{ $state->state_code }}">{{ $state->state }} </option>
                                                         @endforeach
                                                     @endif
                                                 </select>
@@ -480,42 +463,29 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="inputZipPostalCode" style="font-weight:bold;"
-                                                class="col-sm-12 control-label">Zip Code</label>
+                                            <label for="inputZipPostalCode" style="font-weight:bold;" class="col-sm-12 control-label">Zip Code</label>
                                             <div class="col-sm-12">
-                                                <input style="font-size:16px;" type="text" minlength="4"
-                                                    maxlength="6"class="form-control form-control-address"
-                                                    id="inputZipPostalCode" name="zipCode" placeholder="Zip-Code">
+                                                <input style="font-size:16px;" type="text" minlength="4" maxlength="6"class="form-control form-control-address" id="inputZipPostalCode" name="zipCode" placeholder="Zip-Code">
                                             </div>
                                         </div>
                                         <div class="form-group ">
-                                            <label for="tel" style="font-weight:bold;" id="tel-phone-title"
-                                                class="col-sm-12 control-label">Employer Telephone</label>
+                                            <label for="tel" style="font-weight:bold;" id="tel-phone-title" class="col-sm-12 control-label">Employer Telephone</label>
                                             <div class="col-sm-12">
-                                                <input type="text" id="tel" name="tel"
-                                                    placeholder="123-456-7890 (optional)" maxlength="10" minlength="10"
-                                                    class="w-100 p-2 text-center input-box-font third-phone">
+                                                <input type="text" id="tel" name="tel" placeholder="123-456-7890 (optional)" maxlength="10" minlength="10" class="w-100 p-2 text-center input-box-font third-phone">
                                             </div>
                                         </div>
                                         <div class="form-group ">
-                                            <label for="tel" style="font-weight:bold;" id="emp_id_title"
-                                                class="col-sm-12 control-label">EMPLOYEE ID</label>
+                                            <label for="tel" style="font-weight:bold;" id="emp_id_title" class="col-sm-12 control-label">EMPLOYEE ID</label>
                                             <div class="col-sm-12">
-                                                <input type="text" id="emp_id" name="emp_id" placeholder="12345"
-                                                    maxlength="5" minlength="5"
-                                                    class="w-100 p-2 text-center input-box-font third-phone">
+                                                <input type="text" id="emp_id" name="emp_id" placeholder="12345" maxlength="5" minlength="5" class="w-100 p-2 text-center input-box-font third-phone">
                                             </div>
                                         </div>
                                         <div class="form-group ">
-                                            <label for="tel" style="font-weight:bold;" id="emp_ssn_title"
-                                                class="col-sm-12 control-label">EMPLOYEE SSN Last 4</label>
+                                            <label for="tel" style="font-weight:bold;" id="emp_ssn_title" class="col-sm-12 control-label">EMPLOYEE SSN Last 4</label>
                                             <div class="col-sm-12">
-                                                <input type="text" id="emp_ssn" name="emp_ssn" placeholder="1234"
-                                                    maxlength="4" minlength="4"
-                                                    class="w-100 p-2 text-center input-box-font third-phone">
+                                                <input type="text" id="emp_ssn" name="emp_ssn" placeholder="1234" maxlength="4" minlength="4" class="w-100 p-2 text-center input-box-font third-phone">
                                             </div>
                                         </div>
-
                                     </form>
                                 </div>
                             </div>
@@ -524,10 +494,8 @@
                 </div>
                 <div class="modal-footer" style="display: inline-block;">
                     <div class="d-flex justify-content-between pt-2">
-                        <button class="btn-secondary" data-bs-dismiss="modal"
-                            style="border-radius:20px; border:none;font-size:12px; padding:5px 10px;">Cancel</button>
-                        <button class="btn-danger" id="store-address"
-                            style="border-radius:20px; border:none;font-size:12px; padding:5px 15px;">Save</button>
+                        <button class="btn-secondary" data-bs-dismiss="modal" style="border-radius:20px; border:none;font-size:12px; padding:5px 10px;">Cancel</button>
+                        <button class="btn-danger" id="store-address" style="border-radius:20px; border:none;font-size:12px; padding:5px 15px;">Save</button>
                     </div>
                 </div>
             </div>

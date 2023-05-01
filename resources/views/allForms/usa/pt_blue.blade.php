@@ -309,52 +309,26 @@
                 <th class="hadding">FED.TAXABLE</th>
             </tr>
             <tr class="border-bottom" style="background-color: #ffff;">
-                <td
-                    style="color: #43407a;border-right: 1px solid #43407a; text-align:center;font-size:12px; font-weight:bold;">
-                    THIS CHECK</td>
-                <td style="font-size:13px;text-align:right;padding-right:6px; font-weight:bold">
-                    {{-- <span style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span> --}}{{ number_format($requestData['period_gross_total'], 2) }}</td>
-                <td
-                    style=" border-right: 1px solid #43407a; border-left: 1px solid #43407a;font-size:13px;text-align:center; font-weight:bold ">
-                    0.00</td>
-                <td style="font-size:13px;text-align:right;padding-right:6px;  font-weight:bold">
-                    {{-- <span style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span> --}}{{ number_format($requestData['deduction_tax'], 2) }}</td>
-                <td
-                    style=" border-right: 1px solid #43407a; border-left: 1px solid #43407a; font-size:13px;text-align:center; font-weight:bold">
-                    0.00</td>
-                <td style="font-size:13px;text-align:right;padding-right:6px;  font-weight:bold">
-                    {{-- <span style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span> --}}{{ number_format($requestData['total_net_pay'], 2) }}</td>
-                <td
-                    style=" border-right: 1px solid #43407a; border-left: 1px solid #43407a;font-size:13px;text-align:center; font-weight:bold ">
-                    0.00</td>
-                <td style="font-size:13px;text-align:right;padding-right:6px;  font-weight:bold">
-                    {{-- <span style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span> --}}{{ number_format($requestData['total_net_pay'], 2) }}</td>
-                <td style="border-left: 1px solid #43407a;font-size:13px;text-align:center; font-weight:bold ">
-                    <{{-- span style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span> --}}2,500.00< /td>
+                <td style="color: #43407a;border-right: 1px solid #43407a; text-align:center;font-size:12px; font-weight:bold;">THIS CHECK</td>
+                <td style="font-size:13px;text-align:right;padding-right:6px; font-weight:bold">{{ number_format($requestData['period_gross_total'], 2) }}</td>
+                <td style=" border-right: 1px solid #43407a; border-left: 1px solid #43407a;font-size:13px;text-align:center; font-weight:bold ">0.00</td>
+                <td style="font-size:13px;text-align:right;padding-right:6px;  font-weight:bold">{{ number_format($requestData['deduction_tax'], 2) }}</td>
+                <td style=" border-right: 1px solid #43407a; border-left: 1px solid #43407a; font-size:13px;text-align:center; font-weight:bold">0.00</td>
+                <td style="font-size:13px;text-align:right;padding-right:6px;  font-weight:bold">{{ number_format($requestData['total_net_pay'], 2) }}</td>
+                <td style=" border-right: 1px solid #43407a; border-left: 1px solid #43407a;font-size:13px;text-align:center; font-weight:bold ">0.00</td>
+                <td style="font-size:13px;text-align:right;padding-right:6px;  font-weight:bold">{{ number_format($requestData['total_net_pay'], 2) }}</td>
+                <td style="border-left: 1px solid #43407a;font-size:13px;text-align:center; font-weight:bold ">2,500.00</td>
             </tr>
             <tr>
-                <td
-                    style="color: #43407a;border-right: 1px solid #43407a;text-align:center;font-size:12px; font-weight:bold;">
-                    YEAR-TO-DATE</td>
-                <td style="font-size:13px;text-align:right;padding-right:6px; font-weight:bold">
-                    {{-- <span style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span> --}}{{ number_format($requestData['ytd_gross_total'], 2) }}</td>
-                <td
-                    style="border-right: 1px solid #43407a; border-left: 1px solid #43407a;font-size:13px;text-align:center; font-weight:bold">
-                    0.00</td>
-                <td style="font-size:13px;text-align:right;padding-right:6px;  font-weight:bold">
-                    {{-- <span style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span> --}}{{ number_format($requestData['ytd_deduction_tax'], 2) }}</td>
-                <td
-                    style=" border-right: 1px solid #43407a; border-left: 1px solid #43407a;font-size:13px;text-align:center; font-weight:bold">
-                    0.00</td>
-                <td style="font-size:13px;text-align:right;padding-right:6px;  font-weight:bold">
-                    {{-- <span style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span> --}}{{ number_format($requestData['total_ytd_net_pay'], 2) }}</td>
-                <td
-                    style="border-right: 1px solid #43407a; border-left: 1px solid #43407a;font-size:13px;text-align:center; font-weight:bold">
-                    0.00</td>
-                <td style="font-size:13px;text-align:right;padding-right:6px;  font-weight:bold">
-                    {{-- <span style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span> --}}{{ number_format($requestData['total_ytd_net_pay'], 2) }}</td>
-                <td style="border-left: 1px solid #43407a;font-size:13px;text-align:center; font-weight:bold">
-                    {{-- <span style="font-family: 'DejaVu Sans', sans-serif;">{{ $requestData['currency'] }}</span> --}}2,500.00</td>
+                <td style="color: #43407a;border-right: 1px solid #43407a;text-align:center;font-size:12px; font-weight:bold;">YEAR-TO-DATE</td>
+                <td style="font-size:13px;text-align:right;padding-right:6px; font-weight:bold">{{ number_format($requestData['ytd_gross_total'], 2) }}</td>
+                <td style="border-right: 1px solid #43407a; border-left: 1px solid #43407a;font-size:13px;text-align:center; font-weight:bold">0.00</td>
+                <td style="font-size:13px;text-align:right;padding-right:6px;  font-weight:bold">{{ number_format($requestData['ytd_deduction_tax'], 2) }}</td>
+                <td style=" border-right: 1px solid #43407a; border-left: 1px solid #43407a;font-size:13px;text-align:center; font-weight:bold">0.00</td>
+                <td style="font-size:13px;text-align:right;padding-right:6px;  font-weight:bold">{{ number_format($requestData['total_ytd_net_pay'], 2) }}</td>
+                <td style="border-right: 1px solid #43407a; border-left: 1px solid #43407a;font-size:13px;text-align:center; font-weight:bold">0.00</td>
+                <td style="font-size:13px;text-align:right;padding-right:6px;  font-weight:bold">{{ number_format($requestData['total_ytd_net_pay'], 2) }}</td>
+                <td style="border-left: 1px solid #43407a;font-size:13px;text-align:center; font-weight:bold">2,500.00</td>
             </tr>
         </table>
         <table style="width: 100%">
