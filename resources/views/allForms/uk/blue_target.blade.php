@@ -274,7 +274,7 @@
                             <tr>
                                 <td colspan="5"
                                     style="width:80%; text-align:left; font-size:16px; padding-left:5px;text-transform:capitalize;">
-                                    <b>{{ $requestData['cname'] }}, {{ $requestData['company_address'] ?? '' }}</b></td>
+                                    <b>{{ $requestData['cname'] }}, {{ $requestData['company_address'] ?? '' }} UK</b></td>
                             </tr>
                             <tr>
                                 <td style="padding-bottom:8px;font-size:11px;padding-left:5px;text-align:left;"><b>Tax Code: <br></b><span style="text-transform:capitalize;"></span>{{ $requestData['tax_code'] }}</td>
