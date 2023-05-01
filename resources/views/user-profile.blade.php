@@ -597,7 +597,7 @@
         </div>
     </div>
 
-    <div class="modal fade" id="verifyChangeEmailModal">
+    {{-- <div class="modal fade" id="verifyChangeEmailModal">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <!-- Modal Header -->
@@ -633,7 +633,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <div class="modal fade" id="userName3">
         <div class="modal-dialog modal-dialog-centered">
