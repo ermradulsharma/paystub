@@ -306,7 +306,7 @@
                     <td style="width:12%;">&nbsp;</td>
                     <td style="width:52%;">
                         <table class="emploayer_info_1" style="position:relative; bottom:10px;">
-                            <tr><td>Texable Marital Status: {{ $requestData['marital_status'] }} </td></tr>
+                            <tr><td>Texable Marital Status: @if($requestData['marital_status'] == 'single') {{ __('1') }} @elseif($requestData['marital_status'] == 'married') {{ __('2') }}  @elseif($requestData['marital_status'] == 'other') {{ __('3') }}  @endif </td></tr>
                             <tr><td> Examptions/Allowances:{{ $requestData['exemptions'] }} </td></tr>
                             <tr><td>Federal:0 </td></tr>
                         </table>

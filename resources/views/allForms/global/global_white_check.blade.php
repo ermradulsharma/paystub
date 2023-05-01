@@ -222,7 +222,7 @@
                     <table style="width: 100%;">
                         <tr>
                             <td style="font-size: 15px; line-height:1.2; text-transform: capitalize;font-family: 'Arial', sans-serif; width:40%">Taxable Marital Status:</td>
-                            <td style="font-size: 15px; line-height:1.2; text-transform: capitalize;font-family: 'Arial', sans-serif;">1</td>
+                            <td style="font-size: 15px; line-height:1.2; text-transform: capitalize;font-family: 'Arial', sans-serif;">@if($requestData['marital_status'] == 'single') {{ __('1') }} @elseif($requestData['marital_status'] == 'married') {{ __('2') }}  @elseif($requestData['marital_status'] == 'other') {{ __('3') }}  @endif</td>
                         </tr>
                         <tr>
                             <td style="font-size: 15px; line-height:1.2; text-transform: capitalize;font-family: 'Arial', sans-serif;">Expectations/Allowances:</td>
