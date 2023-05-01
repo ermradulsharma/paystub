@@ -77,7 +77,7 @@ class PayStubController extends Controller
 
     public function globlePaystub()
     {
-        $deduction = Deduction::where('state', 'global')->orderBy('id', 'asc')->get();
+        $deduction = Deduction::where('state', 'usa')->orderBy('id', 'asc')->get();
         $basicType = Template::where(['state' => 'global', 'type' => 'basic', 'status' => 1])->orderBy('title')->with('images')->get();
         $advanceType = Template::where(['state' => 'global', 'type' => 'advance', 'status' => 1])->orderBy('title')->with('images')->get();
         $stateTaxes = StateTax::orderBy('state')->get();

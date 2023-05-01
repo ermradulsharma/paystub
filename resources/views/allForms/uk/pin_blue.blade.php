@@ -123,37 +123,22 @@
     <main class="bg-img2"
         style="background-color: #b5b5bf; padding:30px 15px; border-top:2px dashed #050618; border-bottom:2px dashed #050618; border-left:3px solid #050618; border-right:3px solid #050618;">
         @guest
-        <div class="watermark"></div>
-        <div class="watermark2"></div>
-    @endguest
-    @auth
-        @php
-            $date = \Carbon\Carbon::now();
-        @endphp
-        @if(Auth::user()->device_type == '')
-            @if(Auth::user()->usa_expiry_date <= $date || !isset($requestData['watermark']) || Auth::user()->usa_expiry_date == '')
+            <div class="watermark"></div>
+            <div class="watermark2"></div>
+        @endguest
+        @auth
+            @php
+                $date = \Carbon\Carbon::now();
+            @endphp
+            @if (Auth::user()->device_type == 'website')
+                @if(Auth::user()->uk_expiry_date <= $date || !isset($requestData['watermark']))
+                    <div class="watermark"></div>
+                    <div class="watermark2"></div>
+                @endif
+            @elseif (Auth::user()->expiryDate <= $date || !isset($requestData['watermark']))
                 <div class="watermark"></div>
                 <div class="watermark2"></div>
             @endif
-        @endif
-        @if (Auth::user()->device_type == 'website')
-            @if(Auth::user()->usa_expiry_date <= $date || !isset($requestData['watermark']))
-                <div class="watermark"></div>
-                <div class="watermark2"></div>
-            @endif
-        @endif
-        @if (Auth::user()->device_type == 'iOS')
-            @if(Auth::user()->expiryDate <= $date || !isset($requestData['watermark']))
-                <div class="watermark"></div>
-                <div class="watermark2"></div>
-            @endif
-        @endif
-        @if (Auth::user()->device_type == 'android')
-            @if(Auth::user()->expiryDate <= $date || !isset($requestData['watermark']))
-                <div class="watermark"></div>
-                <div class="watermark2"></div>
-            @endif
-        @endif
         @endauth
 
         <section style="border:1px solid #3b4059; border-radius:10px;">

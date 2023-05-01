@@ -228,8 +228,7 @@
 
                 <!-- Modal Header -->
                 <div class="modal-header" style="background: #115caecf;">
-                    <h4 class="modal-title" style="text-transform: capitalize;color:#fff;">
-                        {{ __('Forgot Your Password') }}</h4>
+                    <h4 class="modal-title" style="text-transform: capitalize;color:#fff;"> {{ __('Forgot Your Password') }}</h4>
                     <button type="button"
                         style="border: none; background-color:transparent; color:#fff;font-size:20px;padding:0;"
                         class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
@@ -237,25 +236,17 @@
 
                 <!-- Modal body -->
                 <div class="modal-body pb-4" style="box-shadow: 0 0 8px rgba(0,0,0,.14);padding-top:0;">
-                    <p class="mail-text">
-                        {{ __("Please enter your registered email address, and we'll send you a link to reset your
-                                                password.") }}
-                    </p>
+                    <p class="mail-text">{{ __("Please enter your registered email address, and we'll send you a link to reset your password.") }}</p>
                     <form id="forgotPassword" method="post" action="{{ route('forgot.password') }}">
                         @csrf
-                        <label class="label-text" for="css">{{ __('Email Address') }}<span
-                                style="color:red;">*</span></label>
-                        <input class="contact-box" type="text" id="user-email" placeholder="Email Address"
-                            name="email">
+                        <label class="label-text" for="css">{{ __('Email Address') }}<span style="color:red;">*</span></label>
+                        <input class="contact-box" type="text" id="user-email" placeholder="Email Address" name="email">
                     </form>
                 </div>
                 <div class="modal-footer" style="display: inline-block;">
                     <div class="d-flex justify-content-between pt-2">
-                        <a style="color: red;" id="backToSignin"
-                            href="JavaScript:void(0);">{{ __('Back to Sign in') }}</a>
-                        <button class="btn-danger" onclick="$('#forgotPassword').submit();"
-                            style="border-radius:20px; border:none;font-size:12px; padding:5px 15px;">{{ __('Send
-                                                        Password Reset Link') }}</button>
+                        <a style="color: red;" id="backToSignin" href="JavaScript:void(0);">{{ __('Back to Sign in') }}</a>
+                        <button class="btn-danger" onclick="$('#forgotPassword').submit();" style="border-radius:20px; border:none;font-size:12px; padding:5px 15px;">{{ __('Send Password Reset Link') }}</button>
                     </div>
                 </div>
             </div>
@@ -379,8 +370,7 @@
                         @csrf
                         <input type="hidden" value="setup-account" name="type">
                         <label class="label-text" for="css">First Name<span style="color:red;">*</span></label>
-                        <input class="contact-box" type="text" name="uname" id="user-name"
-                            placeholder="First Name">
+                        <input class="contact-box" type="text" name="uname" id="user-name" placeholder="First Name">
                         <div class="contact-box-outer">
                             <label class="label-text" for="css">New Password<span style="color:red;">*</span></label>
                             <input class="contact-box" type="password" placeholder="New Password" name="password" class="form-control show-password-sd" id="new_password" required>
@@ -432,7 +422,7 @@
 
             $("#resendOtpButton").click(function() {
                 var email = $('#hidden_email').val();
-                var formType = $('#hidden_email').val();
+                var formType = $('#formType').val();
                 startTimer();
                 $.ajax({
                     url: "{{ route('sendOtp') }}?email=" + email + "&formType="+formType,

@@ -149,7 +149,7 @@ class LoginController extends Controller
             return response()->json($response, 301);
         }
         $code = rand(100000, 999999);
-        if (request('formType') != '') {
+        if (request('formType') == 'verifyOtpChangeMail') {
             $user  = User::where('temp_mail', request('email'))->first();
             if ($user->temp_mail != "") {
                 $mailData = [];
@@ -162,7 +162,7 @@ class LoginController extends Controller
 
             $user->code = $code;
             $user->save();
-            $response['message'] = "Verification code sent successfullyxxxxxx";
+            $response['message'] = "Verification code sent successfully";
         } else {
             $user  = User::where('email', request('email'))->first();
             if (!$user) {
