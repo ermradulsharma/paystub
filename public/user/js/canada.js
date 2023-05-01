@@ -104,6 +104,26 @@ $(".addEarningField").click(function () {
 
 });
 
+//remove function of add earning field
+$(".removebtn-canada").click(function(){
+        
+    var inpputidvalue= $(this).attr('data-ref');
+    var input1 = document.getElementById('earning'+inpputidvalue);
+    var input2 = document.getElementById('rate_000'+inpputidvalue);
+    var input3 = document.getElementById('hours_000'+inpputidvalue);
+    var input4 = document.getElementById('total_000'+inpputidvalue);
+    var input4btn = document.getElementById('removebtn'+inpputidvalue);      
+  
+    
+    input1.remove();
+    input2.remove();
+    input3.remove();
+    input4.remove();
+    input4btn.remove();     
+
+    
+});
+
 // 
 var j = 0;
 
@@ -153,6 +173,26 @@ $(".addTaxField").click(function () {
 // $(".rateKey, .hoursKey").keyup(function () {
 //     calculation();
 // });
+
+
+ //remove function of add earning field
+ $(".removebtn-canada2").click(function(){
+        
+    var inpputidvalue= $(this).attr('data-ref');
+    var input1 = document.getElementById('tax_'+inpputidvalue);
+    var input2 = document.getElementById('ytd_'+inpputidvalue);
+    var input3 = document.getElementById('other_Tax_'+inpputidvalue);
+    
+    var input4btn = document.getElementById('removebtn_uk'+inpputidvalue);      
+  
+    
+    input1.remove();
+    input2.remove();
+    input3.remove();
+    input4btn.remove();     
+
+    
+});
 
 $(document).ready(function() {
     $(document).on('keyup',".rateKey, .hoursKey", function () {

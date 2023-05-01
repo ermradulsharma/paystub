@@ -74,8 +74,7 @@
 </div>
 <!-- Modal End -->
 <!-- Modal Start -->
-<div class="modal fade" id="tempViewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
+<div class="modal fade" id="tempViewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -107,11 +106,11 @@
                                 <div class="mt-3">
                                     <div class="input-group mmenu mb-3 text-center">
                                         <select name="basic_temp" id="basic_temp" class="form-control dropdown1 text-center bt_id small-font basicTemplate direction-left-canada-edit" style="margin-right:10px; font-size:18px;">
-                                        <option value=""> --- Select Basic Templates --- </option>
-                                        @foreach ($basicType as $data)
+                                            <option value=""> --- Select Basic Templates --- </option>
+                                            @foreach ($basicType as $data)
                                             <option value="{{ $data->title ?? '' }}" data-src="{{ $data->images->file ?? '' }}" data-status="{{ $data->template_element }}" {{ $invoice->basic_temp == $data->title ? 'selected' : '' }}> {{ $data->name }} </option>
-                                        @endforeach
-                                    </select>
+                                            @endforeach
+                                        </select>
                                         <i class="fa fa-eye-slash basicTem uk-eye" role="button"></i>
                                     </div>
                                 </div>
@@ -150,7 +149,7 @@
                             <select id="employerAddressCanada" class="address_book add_address address input-box-font select-dropdown" data-type="employer">
                                 <option data-name="" value="">Select Address</option>
                                 @foreach ($employerList ?? [] as $key => $employer)
-                                    <option data-name="{{ $employer->name }}" data-address1="{{ $employer->address_1 }}" data-address2="{{ $employer->address_2 }}" data-city="{{ $employer->city }}" data-state="{{ $employer->state }}" data-zip="{{ $employer->zip_code }}" data-tel="{{ $employer->tel }}" value="{{ $employer->name }}"> {{ $employer->name }} </option>
+                                <option data-name="{{ $employer->name }}" data-address1="{{ $employer->address_1 }}" data-address2="{{ $employer->address_2 }}" data-city="{{ $employer->city }}" data-state="{{ $employer->state }}" data-zip="{{ $employer->zip_code }}" data-tel="{{ $employer->tel }}" value="{{ $employer->name }}"> {{ $employer->name }} </option>
                                 @endforeach
                                 <option data-name="" value="add_address">Add New Address</option>
                             </select> --}}
@@ -196,7 +195,7 @@
                                         <select name="state" id="emp_state" class="state dropdown11 tax_rate removeDiv  select-dropdown">
                                             <option value="">Select</option>
                                             @foreach ($stateTaxes as $stateTax)
-                                                <option value="{{ $stateTax->state_code }}" data-tax="{{ $stateTax->rate }}" {{ $invoice->state == $stateTax->state_code ? 'selected' : '' }}>{{ $stateTax->state }}</option>
+                                            <option value="{{ $stateTax->state_code }}" data-tax="{{ $stateTax->rate }}" {{ $invoice->state == $stateTax->state_code ? 'selected' : '' }}>{{ $stateTax->state }}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -216,14 +215,14 @@
         <div>
             <div class="row mb-3">
                 <div class="col-md-12">
-                <h5 class="box-h5">Employee Basic Info</h5>
+                    <h5 class="box-h5">Employee Basic Info</h5>
                     <div class=" box-usa">
                         <div class="row justify-content py-3">
                             {{-- <img class="address-book" src="{{ asset('images/address-book.png') }}" alt="" height="30px;">
                             <select id="employeeAddressCanada" class="address_book_1 add_address address input-box-font select-dropdown" data-type="employee">
                                 <option data-name="" value="">Select Address</option>
                                 @foreach ($employeeList ?? [] as $key => $employee)
-                                    <option data-name="{{ $employee->name }}" data-address1="{{ $employee->address_1 }}" data-address2="{{ $employee->address_2 }}" data-city="{{ $employee->city }}" data-state="{{ $employee->state }}" data-zip="{{ $employee->zip_code }}" data-emp_id="{{ $employee->emp_id }}" data-emp_ssn="{{ $employee->emp_ssn }}" value="{{ $employee->name }}"> {{ $employee->name }}</option>
+                                <option data-name="{{ $employee->name }}" data-address1="{{ $employee->address_1 }}" data-address2="{{ $employee->address_2 }}" data-city="{{ $employee->city }}" data-state="{{ $employee->state }}" data-zip="{{ $employee->zip_code }}" data-emp_id="{{ $employee->emp_id }}" data-emp_ssn="{{ $employee->emp_ssn }}" value="{{ $employee->name }}"> {{ $employee->name }}</option>
                                 @endforeach
                                 <option data-name="" value="add_address_1">Add New Address</option>
                             </select> --}}
@@ -232,7 +231,7 @@
                             <div class="col-md-4 mt-4">
                                 <div>
                                     <label for="emp_id" class="lable">EMPLOYEE ID <span class="redColor">*</span> </label>
-                                    <input type="text" id="emp_id" name="emp_id" value="{{ $invoice->emp_id ?? null }}" placeholder="Employee id" class="w-100 p-2  textInputFontSize removeDiv"  maxlength="5" minlength="5" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+                                    <input type="text" id="emp_id" name="emp_id" value="{{ $invoice->emp_id ?? null }}" placeholder="Employee id" class="w-100 p-2  textInputFontSize removeDiv" maxlength="5" minlength="5" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                 </div>
                             </div>
                             <div class="col-md-4 mt-4">
@@ -271,7 +270,7 @@
                                     <label for="currency" class="lable" class="redColor">CURRENCY <span class="redColor">*</span> </label>
                                     <select name="currency" id="currency" class=" dropdown11 removeDiv  select-dropdown">
                                         @foreach ($currencies as $currency)
-                                            <option value="{{ $currency->symbol }}" {{ $invoice->currency == $currency->symbol ? 'selected' : '' }}>{{ $currency->symbol }} ({{ $currency->name }}) </option>
+                                        <option value="{{ $currency->symbol }}" {{ $invoice->currency == $currency->symbol ? 'selected' : '' }}>{{ $currency->symbol }} ({{ $currency->name }}) </option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -310,25 +309,29 @@
                                     <div class="col-lg-3 col-md-3 mb-3 pr-lg-0 addincomeKey">
                                         <button type="button" class="statementbtn">INCOME</button>
                                         @foreach ($invoice->earning ?? [] as $key => $earning)
-                                            <input class="earnbtn mt-3 text-center incomeKey" data-id="0{{ $key }}" name="earning[]" type="text" value="{{ $earning }}">
+                                        <input class="earnbtn mt-3 text-center incomeKey" data-id="0{{ $key }}55" id="earning{{$key}}55" name="earning[]" type="text" value="{{ $earning }}">
                                         @endforeach
                                     </div>
                                     <div class="col-lg-3 col-md-3 mb-3 pr-lg-0 addrateKey">
                                         <button type="button" class="statementbtn">RATE</button>
                                         @foreach ($invoice->rate ?? [] as $key => $rate)
-                                            <input class="earnbtn mt-3 text-center rateKey" type="number" id="rate_0{{ $key }}" name="rate[]" type="text" value="{{ $rate }}">
+                                        <input class="earnbtn mt-3 text-center rateKey" type="number" id="rate_000{{ $key }}55" name="rate[]" type="text" value="{{ $rate }}">
                                         @endforeach
                                     </div>
                                     <div class="col-lg-3 col-md-3 mb-3 pr-lg-0 addhoursKey">
                                         <button type="button" class="statementbtn">HOURS</button>
                                         @foreach ($invoice->hours ?? [] as $key => $hours)
-                                            <input class="earnbtn mt-3 text-center hoursKey" type="number" id="hours_0{{ $key }}" name="hours[]" type="text" value="{{ $hours }}">
+                                        <input class="earnbtn mt-3 text-center hoursKey" type="number" id="hours_000{{ $key }}55" name="hours[]" type="text" value="{{ $hours }}">
                                         @endforeach
                                     </div>
                                     <div class="col-lg-3 col-md-3 mb-3 pr-lg-0 addcurrentTotal">
                                         <button type="button" class="statementbtn"> CURRENT TOTAL</button>
                                         @foreach ($invoice->total ?? [] as $key => $total)
-                                            <input class="earnbtn mt-3 text-center currentTotal" readonly id="total_0{{ $key }}" name="total[]" type="text" value="{{ $total }}">
+                                        <input class="earnbtn mt-3 text-center currentTotal" id="total_000{{$key}}55" readonly id="total_0{{ $key }}" name="total[]" type="text" value="{{ $total }}">
+                                        @if($key >0)
+                                        <button type="button" class="cross-btn-canadas removebtn-canada" data-ref="{{$key}}55" id="removebtn{{$key}}55">
+                                            <span>x</span></button>
+                                        @endif
                                         @endforeach
                                     </div>
                                 </div>
@@ -345,7 +348,7 @@
                                     <div class="col-lg-4 mb-4 col-md-4 pr-0 addtaxes">
                                         <button type="button" class="statementbtn">DEDUCTION</button>
                                         @foreach ($deduction as $key => $item)
-                                        <div class="d-flex mt-3">
+                                        <div class="d-flex mt-3" id="other_Tax_{{ $key }}66">
                                             <img src="{{ asset('images/lock.png') }}" class="earnbtn3 lock" data-id="{{ $key }}" id="{{ $key }}" data-src="{{ asset('images/openPadlock.png') }}">
                                             <input type="text" class="earnbtn text-center taxes" name="taxes[]" value="{{ $invoice->taxes[$key] ?? null }}" data-id="00{{ $key }}" data-value="{{ $item->price }}" id="taxe_{{ $key }}" readonly>
                                         </div>
@@ -360,23 +363,26 @@
                                     <div class="col-lg-4 mb-4 col-md-4 pr-0 addtaxes_rate">
                                         <button type="button" class="statementbtn">CURRENT TOTAL</button>
                                         @foreach ($deduction as $key => $item)
-                                            <input type="text" class="earnbtn text-center mt-3" name="taxes_rate[]" value="{{ $invoice->taxes_rate[$key] ?? null }}" id="tax_total_00{{ $key }}">
+                                        <input type="text" class="earnbtn text-center mt-3" name="taxes_rate[]" value="{{ $invoice->taxes_rate[$key] ?? null }}" id="tax_total_00{{ $key }}">
                                         @endforeach
                                         @foreach ($invoice->period_tax_deduction ?? [] as $key => $period_tax_deduction)
-                                            <input type="text" class="earnbtn text-center mt-3" name="period_tax_deduction[]" value="{{ $period_tax_deduction }}" id="tax_total_000{{ $key }}">
+                                        <input type="text" class="earnbtn text-center mt-3" name="period_tax_deduction[]" value="{{ $period_tax_deduction }}" id="tax_{{ $key }}66">
                                         @endforeach
                                     </div>
                                     <div class="col-lg-4 mb-4 col-md-4 pr-0 addtaxes_ytd">
                                         <button type="button" class="statementbtn">YTD TOTAL</button>
                                         @foreach ($deduction as $key => $item)
-                                            <input type="text" class="earnbtn text-center mt-3" name="taxes_ytd[]" value="{{ $invoice->taxes_ytd[$key] ?? null }}" id="tax_ytd_00{{ $key }}">
+                                        <input type="text" class="earnbtn text-center mt-3" name="taxes_ytd[]" value="{{ $invoice->taxes_ytd[$key] ?? null }}" id="tax_ytd_00{{ $key }}">
                                         @endforeach
                                         @foreach ($invoice->ytd_tax_deduction ?? [] as $key => $ytd_tax_deduction)
-                                            <input type="text" class="earnbtn text-center mt-3" name="ytd_tax_deduction[]" value="{{ $ytd_tax_deduction }}" id="tax_ytd_000{{ $key }}">
+                                        <input type="text" class="earnbtn text-center mt-3" name="ytd_tax_deduction[]" value="{{ $ytd_tax_deduction }}" id="ytd_{{ $key }}66">
+
+                                        <button type="button" class="cross-btn-canadas removebtn-canada2" data-ref="{{ $key }}66" id="removebtn_uk{{ $key }}66"><span>x</span></button>
+
                                         @endforeach
                                     </div>
                                 </div>
-                                <div class="row my-2">
+                                <div class=" row my-2">
                                     <div class="col-lg-12">
                                         <button type="button" class="btnCommon addTaxField"><i class="fa fa-plus-circle pr-2" style="font-size: 22px;color: #0ec23b;padding-top: 0px;"></i>Add Deductions</button>
                                     </div>

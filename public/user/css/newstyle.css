@@ -79,6 +79,10 @@ button.cross-btn-uks span {
     right: 18px;
 }
 
+.r-25 {
+    right: 21px !important;
+}
+
 button.cross-btn {
     position: absolute;
     top: 13.5px;
