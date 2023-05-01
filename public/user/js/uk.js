@@ -116,6 +116,27 @@ $(".addEarningField").click(function () {
     });
 });
 
+
+ //remove function of add earning field
+ $(".removebtn-uk").click(function(){
+        
+    var inpputidvalue= $(this).attr('data-ref');
+    var input4btn = document.getElementById('removebtn'+inpputidvalue);      
+    var input1 = document.getElementById('incomeKey_'+inpputidvalue);
+    var input2 = document.getElementById('rate_000'+inpputidvalue);
+    var input3 = document.getElementById('hours_000'+inpputidvalue);
+    var input4 = document.getElementById('total_000'+inpputidvalue);
+    
+  
+    input4btn.remove();     
+    input1.remove();
+    input2.remove();
+    input3.remove();
+    input4.remove();
+   
+
+    
+});
 // $(".rateKey, .hoursKey").keyup(function () {
 //     calculation();
 // });
