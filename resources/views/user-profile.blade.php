@@ -269,7 +269,7 @@
                                                 </div>
                                                 <div class="user-center-text">
                                                     <h6 style="padding: 0; margin:0px;color: #5a5858;"> {{ __('Email Address') }}</h6>
-                                                    <p style="padding:0px;margin:0px;">{{ $userObj->email ?? '' }}</p>
+                                                    <p style="padding:0px;margin:0px;" id="email">{{ $userObj->email ?? '' }}</p>
                                                 </div>
                                             </div>
 
@@ -733,7 +733,7 @@
                     $("#userName2").modal("hide");
                     $('#hidden_email').val(response.data.temp_mail);
                     $('#formType').val(response.type);
-                    $("#verifyChangeEmailModal").modal("show");
+                    $("#otpModal").modal("show");
                     startTimer();
                 },
                 error: function(err) {

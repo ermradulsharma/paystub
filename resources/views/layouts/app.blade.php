@@ -282,7 +282,7 @@
                             <i class="fa fa-clock-o clock"></i> <span id="resendTimeOut">30</span>
                         </p>
 
-                        <form id="loginOtp" action="{{ url('loginWithOtp') }}" method="POST" class="text-center">
+                        <form id="loginOtp" action="{{ url('loginWithOtp') }}" method="POST" class="text-center" data-action="{{ route("profile-setup") }}">
                             @csrf
                             <div class="px-lg-5">
                                 <input type="hidden" id="formType" name="type">
