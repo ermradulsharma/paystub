@@ -277,6 +277,7 @@ class UserController extends Controller
                 $userObj = new User;
                 $userObj->social_id = $post_data['social_id'];
                 $userObj->email = $post_data['email'];
+                $userObj->name = $post_data['name'] ?? '';
                 $userObj->save();
             }
             $userObj->device_token = $post_data['device_token'] ?? "";
