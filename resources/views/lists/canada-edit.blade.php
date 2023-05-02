@@ -348,7 +348,7 @@
                                     <div class="col-lg-4 mb-4 col-md-4 pr-0 addtaxes">
                                         <button type="button" class="statementbtn">DEDUCTION</button>
                                         @foreach ($deduction as $key => $item)
-                                        <div class="d-flex mt-3" id="other_Tax_{{ $key }}">
+                                        <div class="d-flex mt-3" id="other_Tax_{{ $key }}7">
                                             <img src="{{ asset('images/lock.png') }}" class="earnbtn3 lock" data-id="{{ $key }}" id="{{ $key }}" data-src="{{ asset('images/openPadlock.png') }}">
                                             <input type="text" class="earnbtn text-center taxes" name="taxes[]" value="{{ $invoice->taxes[$key] ?? null }}" data-id="00{{ $key }}" data-value="{{ $item->price }}" id="taxe_{{ $key }}" readonly>
                                         </div>
