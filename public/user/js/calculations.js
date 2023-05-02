@@ -157,6 +157,18 @@ $(document).ready(function () {
         extraYTDTaxDeduction();
     });
 
+   
+
+        $(".removebtn-usa-deductionss").click(function(e){ 
+        e.preventDefault();
+        $(this).parent().parent().remove();
+        x--; //Decrement field counter
+        extraTaxDeduction();
+        extraYTDTaxDeduction();
+    });
+
+    
+
     $(".tax_deduction").keyup(function () {
         extraTaxDeduction();
     });

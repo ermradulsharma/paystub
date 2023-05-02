@@ -622,7 +622,7 @@
                             @php(@$ytd_deduction_period_tax_other += $invoice->ytd_tax_deduction[$key] ?? 0)
                             <div class="row">
                                 <div class="col-md-4 col-lg-3 mb-3">
-                                    <img src="{{ asset('images/lock.png') }}" class="earnbtn2 lock" data-id="{{ $key }}" id="{{ $key }}" data-src="{{ asset('images/openPadlock.png') }}">
+                                    <!-- <img src="{{ asset('images/lock.png') }}" class="earnbtn2 lock" data-id="{{ $key }}" id="{{ $key }}" data-src="{{ asset('images/openPadlock.png') }}"> -->
                                     <img class="earnbtn2 lock" data-id="{{ $key }}" src="{{ asset('images/openPadlock.png') }}" style="display:none">
                                     <input name="tax_deduction[]" value="{{ $tax_deduction ?? '' }}" class="earnbtn text-center tax_deduction_00{{ $key + 1 }} tax_deduction_00{{ $key + 1 }}" data-id="00{{ $key + 1 }}" type="text">
                                 </div>
@@ -633,7 +633,7 @@
                                     <input type="text" name="period_tax_deduction[]" value="{{ $invoice->period_tax_deduction[$key] ?? 0 }}" class="earnbtn text-center tax_deduction tax" id="taxes_000{{ $key + 1 }}" data-id="00{{ $key + 1 }}">
                                 </div>
                                 <div class="col-md-2 col-lg-2 mb-3">
-                                    <input type="text" name="ytd_tax_deduction[]" value="{{ $invoice->ytd_tax_deduction[$key] ?? 0 }}" class="earnbtn text-center ytd_tax tax add_ytd_deduction" id="taxes_ytd_000{{ $key + 1 }}" data-id="00{{ $key + 1 }}">
+                                    <input type="text" name="ytd_tax_deduction[]" value="{{ $invoice->ytd_tax_deduction[$key] ?? 0 }}" class="earnbtn text-center ytd_tax tax add_ytd_deduction" id="taxes_ytd_000{{ $key + 1 }}" data-id="00{{ $key + 1 }}"><button class="cross-btn-deduction removebtn-usa-deductionss"><span>x</span></button>
                                 </div>
                             </div>
                             @endforeach

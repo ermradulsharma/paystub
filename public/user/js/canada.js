@@ -182,13 +182,13 @@ $(".addTaxField").click(function () {
     var input1 = document.getElementById('tax_'+inpputidvalue);
     var input2 = document.getElementById('ytd_'+inpputidvalue);
     var input3 = document.getElementById('other_Tax_'+inpputidvalue);
-    
+   
     var input4btn = document.getElementById('removebtn_uk'+inpputidvalue);      
   
     
     input1.remove();
     input2.remove();
-    input3.remove();
+    input3.remove(); 
     input4btn.remove();     
 
     
