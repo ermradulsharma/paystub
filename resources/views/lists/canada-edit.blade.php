@@ -355,7 +355,7 @@
                                         @endforeach
                                         @foreach ($invoice->tax_deduction ?? [] as $key => $tax_deduction)
                                         <div class="d-flex mt-3" id="other_Tax_{{ $key }}66">
-                                            <img src="../images/lock.png" class="earnbtn3 lock" data-id="{{ $key }}" id="{{ $key }}" data-src="{{ asset('images/openPadlock.png') }}">
+                                            <img src="../images/unlock.png" style="visibility: hidden;" class="earnbtn3 lock">
                                             <input type="text" class="earnbtn text-center other_taxes" name="tax_deduction[]" value="{{ $tax_deduction }}" id="taxe_{{ $key }}" data-id="000{{ $key }}">
                                         </div>
                                         @endforeach
