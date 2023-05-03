@@ -577,6 +577,7 @@ $(document).ready(function () {
     function default_tax() {
         var period_gross_total = $("#period_gross_total").val() || 0.0;
         var ytd_gross_total = $("#ytd_gross_total").val() || 0.0;
+       
         var deduction_period_tax_other = parseFloat($("#deduction_period_tax_other").val() || 0.0);
         var ytd_deduction_period_tax_other = parseFloat($("#ytd_deduction_period_tax_other").val() || 0.0);
         if ($(".tax_rate").is("select:visible")) {
@@ -603,8 +604,9 @@ $(document).ready(function () {
                     taxes_values = parseFloat(tax_state).toFixed(2);
                 }
                 // if (taxes_text == 'deduction_8' || taxes_text == 'deduction_18') {   // Local
-                if (taxes_text == 'deduction_3' || taxes_text == 'deduction_5') {   // live condition
+                if (taxes_text == 'deduction_3' || taxes_text == 'deduction_5') {    // live condition
                     var time_period = $(".time_period").val();
+                   
                     if (time_period == 'weekly') {
                         period = 52;
                     } else if (time_period == 'bi-weekly') {
@@ -629,8 +631,10 @@ $(document).ready(function () {
                         period_ytd_tax_price = taxes_values * days_number || 0.00;
                     }
 
-                } else {
+                } else { 
+                    
                     period_tax_price = parseFloat(period_gross_total).toFixed(2) * (taxes_values / 100);
+                   
                     period_ytd_tax_price = parseFloat(ytd_gross_total).toFixed(2) * (taxes_values / 100);
                 }
                 $("#taxes_" + taxes_ids).val(parseFloat(period_tax_price).toFixed(2));

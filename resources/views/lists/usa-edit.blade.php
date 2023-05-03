@@ -580,8 +580,8 @@
                         <!-- //============================= -->
 
                         <div class="d-none">
-                            <input type="text" name="period_gross_total" value="{{ $invoice->period_gross_total ?? '' }}" class="earnbtn text-center period_gross_total" value="" id="period_gross_total" hidden>
-                            <input type="text" name="ytd_gross_total" value="{{ $invoice->ytd_gross_total ?? '' }}" class="earnbtn text-center ytd_gross_total" value="" id="ytd_gross_total" hidden>
+                            <input type="text" name="period_gross_total" value="{{ $invoice->period_gross_total ?? '' }}" class="earnbtn text-center period_gross_total" id="period_gross_total" hidden>
+                            <input type="text" name="ytd_gross_total" value="{{ $invoice->ytd_gross_total ?? '' }}" class="earnbtn text-center ytd_gross_total" id="ytd_gross_total" hidden>
                         </div>
 
                         <div class="row mb-3">
@@ -603,7 +603,7 @@
                             <div class="row">
                                 <div class="col-md-4 col-lg-3 mb-3">
                                     <img src="{{ asset('images/lock.png') }}" class="earnbtn2">
-                                    <input readonly class="earnbtn text-center taxes" name="taxes[]" data-id="00{{ $key }}" data-value="{{ $item->price }}" value="{{ $item->title }}">
+                                    <input readonly class="earnbtn text-center taxes" name="taxes[]" data-id="00{{ $key }}" data-value="{{ $item->price }}" data-text="{{ $item->type }}" value="{{ $item->title }}">
                                 </div>
                                 <div class="col-md-1 col-lg-1"></div>
                                 <div class="col-md-2 col-lg-3"></div>
