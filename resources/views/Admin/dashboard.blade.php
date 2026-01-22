@@ -10,19 +10,19 @@
     <section class="section dashboard">
         <div class="row">
             <!-- Left side columns -->
-            <div class="col-lg-8">
+            <div class="col-lg-12">
                 <div class="row">
 
-                    <!-- Sales Card -->
-                    <div class="col-xxl-4 col-md-6">
+                    <!-- Templates Card -->
+                    <div class="col-xxl-4 col-md-4">
                         <div class="card info-card sales-card">
                             <div class="card-body">
-                                <h5 class="card-title">All <span>| Templates</span></h5>
+                                <h5 class="card-title">Template <span>| Library</span></h5>
 
                                 <div class="d-flex align-items-center">
                                     <div
                                         class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                        <i class="bi bi-cart"></i>
+                                        <i class="bi bi-layers-fill"></i>
                                     </div>
                                     <div class="ps-3">
                                         <h6>{{DB::table('templates')->count()}}</h6>
@@ -31,17 +31,17 @@
                             </div>
 
                         </div>
-                    </div><!-- End Sales Card -->
+                    </div><!-- End Templates Card -->
 
-                    <!-- Revenue Card -->
-                    <div class="col-xxl-4 col-md-6">
+                    <!-- Deductions Card -->
+                    <div class="col-xxl-4 col-md-4">
                         <div class="card info-card revenue-card">
                             <div class="card-body">
-                                <h5 class="card-title">All <span>| Deduction</span></h5>
+                                <h5 class="card-title">Tax <span>| Deduction Rules</span></h5>
                                 <div class="d-flex align-items-center">
                                     <div
                                         class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                        <i class="bi bi-currency-dollar"></i>
+                                        <i class="bi bi-percent"></i>
                                     </div>
                                     <div class="ps-3">
                                         <h6>{{DB::table('deductions')->count()}}</h6>
@@ -50,17 +50,18 @@
                             </div>
 
                         </div>
-                    </div><!-- End Revenue Card -->
-                    <!-- Customers Card -->
-                    <div class="col-xxl-4 col-xl-12">
+                    </div><!-- End Deductions Card -->
+
+                    <!-- Colors Card -->
+                    <div class="col-xxl-4 col-md-4">
                         <div class="card info-card customers-card">
                             <div class="card-body">
-                                <h5 class="card-title">All <span>| Colours</span></h5>
+                                <h5 class="card-title">Design <span>| Palettes</span></h5>
 
                                 <div class="d-flex align-items-center">
                                     <div
                                         class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                        <i class="bi bi-people"></i>
+                                        <i class="bi bi-palette-fill"></i>
                                     </div>
                                     <div class="ps-3">
                                         <h6>{{DB::table('color_codes')->count()}}</h6>
@@ -68,7 +69,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div><!-- End Customers Card -->
+                    </div><!-- End Colors Card -->
                 </div>
             </div><!-- End Left side columns -->
         </div>

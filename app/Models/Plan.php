@@ -10,4 +10,14 @@ class Plan extends Model
     use HasFactory;
 
     public $timestamps = true;
+
+    protected $fillable = [
+        'name',
+        'country',
+        'price',
+        'plan_duration',
+        'plan_type',
+        'description',
+        'created_by',
+    ];
 }

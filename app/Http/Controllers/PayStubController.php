@@ -18,7 +18,7 @@ class PayStubController extends Controller
         $deduction = Deduction::where('state', 'usa')->orderBy('id', 'asc')->get();
         $basicType = Template::where(['state' => 'usa', 'type' => 'basic', 'status' => 1])->orderBy('title')->with('images')->get();
         $advanceType = Template::where(['state' => 'usa', 'type' => 'advance', 'status' => 1])->orderBy('title')->with('images')->get();
-        $stateTaxes = StateTax::orderBy('state')->get();
+        $stateTaxes = StateTax::where('country_code', 'USA')->orderBy('state')->get();
         if (Auth::check()) {
             $employerList = Address::where(['type' => 'employer', 'user_id' => Auth::id()])->orderBy('id', 'DESC')->get();
             $employeeList = Address::where(['type' => 'employee', 'user_id' => Auth::id()])->orderBy('id', 'DESC')->get();
@@ -35,9 +35,9 @@ class PayStubController extends Controller
     public function ukPayStub()
     {
         $deduction = Deduction::where('state', 'uk')->orderBy('id', 'asc')->get();
-        $basicType = Template::where(['state' => 'uk', 'type' => 'basic', 'status' => 1])->orderBy('title')->get();
-        $advanceType = Template::where(['state' => 'uk', 'type' => 'advance', 'status' => 1])->orderBy('title')->get();
-        $stateTaxes = StateTax::orderBy('state')->get();
+        $basicType = Template::where(['state' => 'uk', 'type' => 'basic', 'status' => 1])->get();
+        $advanceType = Template::where(['state' => 'uk', 'type' => 'advance', 'status' => 1])->get();
+        $stateTaxes = StateTax::where('country_code', 'UK')->orderBy('state')->get();
         $currencies = Currency::get();
         if (Auth::check()) {
             $employerList = Address::where(['type' => 'employer', 'user_id' => Auth::id()])->orderBy('id', 'DESC')->get();
@@ -53,8 +53,8 @@ class PayStubController extends Controller
     public function canadaPayStub()
     {
         $deduction = Deduction::where('state', 'canada')->orderBy('id', 'asc')->get();
-        $basicType = Template::where(['state' => 'canada', 'type' => 'basic', 'status' => 1])->orderBy('title')->get();
-        $advanceType = Template::where(['state' => 'canada', 'type' => 'advance', 'status' => 1])->orderBy('title')->get();
+        $basicType = Template::where(['state' => 'canada', 'type' => 'basic', 'status' => 1])->get();
+        $advanceType = Template::where(['state' => 'canada', 'type' => 'advance', 'status' => 1])->get();
         $stateTaxes = StateTax::where('country_code', 'CA')->orderBy('state')->get();
         $currencies = Currency::get();
         if (Auth::check()) {
@@ -78,10 +78,10 @@ class PayStubController extends Controller
 
     public function globlePaystub()
     {
-        $deduction = Deduction::where('state', 'usa')->orderBy('id', 'asc')->get();
+        $deduction = Deduction::where('state', 'global')->orderBy('id', 'asc')->get();
         $basicType = Template::where(['state' => 'global', 'type' => 'basic', 'status' => 1])->orderBy('title')->with('images')->get();
         $advanceType = Template::where(['state' => 'global', 'type' => 'advance', 'status' => 1])->orderBy('title')->with('images')->get();
-        $stateTaxes = StateTax::orderBy('state')->get();
+        $stateTaxes = StateTax::where('country_code', 'USA')->orderBy('state')->get();
         $currencies = Currency::get();
         if (Auth::check()) {
             $employerList = Address::where(['type' => 'employer', 'user_id' => Auth::id()])->orderBy('id', 'DESC')->get();
@@ -96,16 +96,26 @@ class PayStubController extends Controller
 
     public function w2formPayStub()
     {
-        $stateTaxes = StateTax::orderBy('state')->get();
+        $stateTaxes = StateTax::where('country_code', 'USA')->orderBy('state')->get();
 
         return view('w2paystub', compact('stateTaxes'));
     }
 
     public function prizing(Request $request)
     {
-        // $country = $request->country ?? 'usa';
-        $plans = Plan::orderBy('id', 'asc')->get();
+        $country = strtoupper($request->country ?? '');
 
-        return view('lists.prizing', compact('plans'));
+        $plans = Plan::where(function ($query) use ($country) {
+            if ($country) {
+                $query->where('country', $country)
+                    ->orWhere('country', '')
+                    ->orWhereNull('country');
+            } else {
+                $query->where('country', '')
+                    ->orWhereNull('country');
+            }
+        })->orderBy('id', 'asc')->get();
+
+        return view('lists.prizing', compact('plans', 'country'));
     }
 }

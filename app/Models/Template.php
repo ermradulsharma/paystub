@@ -7,7 +7,22 @@ use Illuminate\Database\Eloquent\Model;
 
 class Template extends Model
 {
-    use HasFactory;
+    protected $fillable = [
+        'name',
+        'template_element',
+        'type',
+        'state',
+        'title',
+        'status',
+        'description',
+        'color_name',
+        'color_code',
+        'expiry_date',
+        'stub_no',
+        'co_no',
+        'check_no',
+        'client_no',
+    ];
 
     public function images()
     {
@@ -197,7 +212,6 @@ class Template extends Model
                 $arr['taxes_rate'] = $data->taxes_rate[$key];
                 $arr['deleteTax'] = $data->deleteTax[$key];
                 $data->tax[$key] = $arr;
-
             }
             unset($data->earning);
             unset($data->rate);

@@ -2,7 +2,8 @@
 <header id="header" class="header fixed-top d-flex align-items-center">
     <div class="d-flex align-items-center">
         <a href="{{('dashboard')}}" class="logo d-flex align-items-center">
-            <img src="{{asset('images')}}/Paystub X.webp">
+            <img src="{{asset('images')}}/Paystub X.webp" style="filter: brightness(0) invert(1);">
+            <!-- <span class="d-none d-lg-block">Admin Panel</span> -->
         </a>
         <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->

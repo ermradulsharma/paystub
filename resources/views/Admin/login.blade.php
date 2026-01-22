@@ -16,7 +16,7 @@
     <!-- Google Fonts -->
     <link href="https://fonts.gstatic.com" rel="preconnect">
     <link
-        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i|Outfit:300,400,500,600,700"
         rel="stylesheet">
 
     <!-- Vendor CSS Files -->
@@ -30,11 +30,12 @@
 
     <!-- Template Main CSS File -->
     <link href="{{asset('Admin/assets')}}/css/style.css" rel="stylesheet">
+    <link href="{{asset('Admin/assets')}}/css/admin_redesign.css" rel="stylesheet">
 
 
 </head>
 
-<body>
+<body class="dark-theme">
 
 
     <div class="container">
@@ -45,9 +46,8 @@
                     <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
 
                         <div class="d-flex justify-content-center py-4">
-                            <a href="index.html" class="logo d-flex align-items-center w-auto">
-                                <img src="assets/img/logo.png" alt="">
-
+                            <a href="{{url('/')}}" class="logo d-flex align-items-center w-auto">
+                                <img src="{{asset('images')}}/Paystub X.webp" alt="Logo" style="height: 50px; filter: brightness(0) invert(1);">
                             </a>
                         </div><!-- End Logo -->
 

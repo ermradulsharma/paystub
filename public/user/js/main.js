@@ -2,6 +2,7 @@ var getUrl = window.location;
 var baseUrl = getUrl.protocol + "//" + getUrl.host + "/";
 var userAuth = 0;
 var okk = 0;
+
 $(".registerBtn").click(function () {
     $("#loginModal").modal("show");
     userAuth = 0;
@@ -30,8 +31,8 @@ $("#sendOTPForm").on("submit", function () {
             }
         },
         error: function (err) {
-            error = err.responseJSON;
-            toastr.error(error.message);
+            var error = err.responseJSON;
+            toastr.error(error ? error.message : "An error occurred");
         },
     });
     return false;
@@ -52,7 +53,7 @@ $("#adminLogin").on("submit", function () {
                 }, 200);
             } else {
                 console.log('userAuth', userAuth);
-                if (response.user.name == '' || response.user.name == null || response.user.name == "") {
+                if (!response.user.name) {
                     $("#setName").modal("show");
                 } else {
                     $(".authUserName").text("Hi " + response.user.name);
@@ -66,21 +67,21 @@ $("#adminLogin").on("submit", function () {
                     }
                 }
             }
-
         },
         error: function (err) {
-            error = err.responseJSON;
-            toastr.error(error.message);
+            var error = err.responseJSON;
+            toastr.error(error ? error.message : "An error occurred");
         },
     });
     return false;
 });
 
 $("#loginOtp").on("submit", function () {
-    var formType = $('#formType').val()
-    if(formType == 'verifyOtpChangeMail'){
+    var formType = $('#formType').val();
+    var url;
+    if (formType == 'verifyOtpChangeMail') {
         url = $(this).data("action");
-    }else{
+    } else {
         url = $(this).attr("action");
     }
     $.ajax({
@@ -92,14 +93,14 @@ $("#loginOtp").on("submit", function () {
                 $("#otpModal").modal("hide");
                 $("#setName").modal("show");
             }
-            if(response.data.temp_mail == ""){
+            if (response.data.temp_mail == "") {
                 $("#email").text(response.data.email);
                 $("#otpModal").modal("hide");
             }
         },
         error: function (err) {
-            error = err.responseJSON;
-            toastr.error(error.message);
+            var error = err.responseJSON;
+            toastr.error(error ? error.message : "An error occurred");
         },
     });
     return false;
@@ -124,7 +125,6 @@ $("#userNameForm").on("submit", function () {
             $(".sendMailButton").addClass("d-block");
             $(".logoutDiv").removeClass("d-none");
             if (userAuth == 1) {
-
                 setTimeout(() => {
                     $(".authUserName").text("Hi " + response.data);
                 }, 300);
@@ -135,14 +135,13 @@ $("#userNameForm").on("submit", function () {
             }
         },
         error: function (err) {
-            error = err.responseJSON;
-            toastr.error(error.message);
+            var error = err.responseJSON;
+            toastr.error(error ? error.message : "An error occurred");
         },
     });
     return false;
 });
 
-// Address autofill affter select from dropdown on add and edit page
 $(document).ready(function () {
     $("#employerAddress").change(function () {
         $('#cname').val($('option:selected', this).data('name'));
@@ -177,24 +176,12 @@ $(document).ready(function () {
 
     $("#employeeAddressCanada").change(function () {
         $('#emp_name').val($('option:selected', this).data('name'));
-        // $('#emp_street_1').val($('option:selected', this).data('address1'));
-        // $('#emp_street_2').val($('option:selected', this).data('address2'));
-        $('#emp_city').val($('option:selected', this).data('city'));
-        // $('#emp_state').val($('option:selected', this).data('state'));
-        // $('#emp_zip_code').val($('option:selected', this).data('zip'));
-        // $('#emp_id').val($('option:selected', this).data('emp_id'));
-        // $('#emp_ssn').val($('option:selected', this).data('emp_ssn'));
-        $('#emp_address').val($('option:selected', this).data('address1')+' '+ $('option:selected', this).data('address2')+' '+$('option:selected', this).data('city')+' '+$('option:selected', this).data('state') +' '+$('option:selected', this).data('zip'));
+        $('#emp_address').val($('option:selected', this).data('address1') + ' ' + $('option:selected', this).data('address2') + ' ' + $('option:selected', this).data('city') + ' ' + $('option:selected', this).data('state') + ' ' + $('option:selected', this).data('zip'));
     });
 
     $("#employerAddressUnited").change(function () {
         $('#cname').val($('option:selected', this).data('name'));
-        $('#company_address').val($('option:selected', this).data('address1')+' '+$('option:selected', this).data('address2')+' '+$('option:selected', this).data('city')+' '+$('option:selected', this).data('zip'));
-        // $('#address_2').val($('option:selected', this).data('address2'));
-        // $('#city').val($('option:selected', this).data('city'));
-        // $('#state').val($('option:selected', this).data('state'));
-        // $('#zip_code').val($('option:selected', this).data('zip'));
-        // $('#tel').val($('option:selected', this).data('tel'));
+        $('#company_address').val($('option:selected', this).data('address1') + ' ' + $('option:selected', this).data('address2') + ' ' + $('option:selected', this).data('city') + ' ' + $('option:selected', this).data('zip'));
     });
 
     $("#employeeAddressUnited").change(function () {
@@ -209,7 +196,6 @@ $(document).ready(function () {
     });
 });
 
-// function addres dropdown data fill
 function addAddressDropdown() {
     $.ajax({
         url: baseUrl + 'address/get/options',
@@ -217,7 +203,6 @@ function addAddressDropdown() {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         },
         success: function (data) {
-            console.log('data', data);
             $('#employerAddress').html('').html(data.employerData);
             $('#employeeAddress').html('').html(data.employeeData);
         }
@@ -278,8 +263,8 @@ function handleCredentialResponse(response) {
             }
         },
         error: function (err) {
-            error = err.responseJSON;
-            toastr.error(error.message);
+            var error = err.responseJSON;
+            toastr.error(error ? error.message : "An error occurred");
         },
     });
     return false;
@@ -291,9 +276,7 @@ $("#forgotPassword").on("submit", function () {
         type: "POST",
         data: $(this).serialize(),
         success: function (data) {
-
             if ($.isEmptyObject(data.error)) {
-                // alert(data.message);
                 toastr.success(data.message);
                 location.reload(true);
             } else {
@@ -354,13 +337,13 @@ function checkValidationForm() {
 
     $.each(formData, function (i, element) {
         var name = element.name.replace("[]", "");
-        var blockedTile = new Array("address_2", "tel", "emp_street_2", "earning", "rate", "hours", "total", "period", "ytd_total", "period_gross_total", "ytd_gross_total", "deduction_period_tax", "deduction_period_tax_other", "advance_temp", "basic_temp", "taxes", "taxes_rate", "taxes_ytd", 'net_pay', 'note');
+        var ignoredFields = ["address_2", "tel", "emp_street_2", "earning", "rate", "hours", "total", "period", "ytd_total", "period_gross_total", "ytd_gross_total", "deduction_period_tax", "deduction_period_tax_other", "advance_temp", "basic_temp", "taxes", "taxes_rate", "taxes_ytd", 'net_pay', 'note'];
         if (!$('#' + name).is(':visible')) {
-            blockedTile.push(name);
+            ignoredFields.push(name);
         }
         $(".0_" + name).remove();
         $("#" + name).css("border-color", "gray");
-        if (blockedTile.indexOf(name) == -1 && element.value.length == 0) {
+        if (ignoredFields.indexOf(name) == -1 && element.value.length == 0) {
             if (ok == 1) {
                 $("#" + name).focus();
             }
@@ -412,7 +395,8 @@ $(".downloadPdf").click(function () {
 });
 
 function viewPDF() {
-    document.getElementById("loaderDiv").style.display = "block";
+    var loader = document.getElementById("loaderDiv");
+    if (loader) loader.style.display = "block";
     $.ajax({
         url: baseUrl + "templates",
         type: "post",
@@ -420,56 +404,56 @@ function viewPDF() {
         success: function (response) {
             $("#tempView").attr("src", response.pdf + "?embedded=true#toolbar=0");
             $("#tempViewModal").modal("show");
-            document.getElementById("loaderDiv").style.display = "none";
+            if (loader) loader.style.display = "none";
         },
         error: function (err) {
-            error = err.responseJSON;
+            var error = err.responseJSON;
             $(".error_div").remove();
-            error.errors.forEach((element, i) => {
-                if (i == 0) {
-                    $("#" + element.key).focus();
-                }
-                $("#" + element.key).css("border-color", "red");
-                $("#" + element.key).parent().children("div").append('<span class="text-danger error_div 0_' + element.key + '">' + element.message + "</span>");
-            });
-            document.getElementById("loaderDiv").style.display = "none";
+            if (error && error.errors) {
+                error.errors.forEach((element, i) => {
+                    if (i == 0) {
+                        $("#" + element.key).focus();
+                    }
+                    $("#" + element.key).css("border-color", "red");
+                    $("#" + element.key).parent().children("div").append('<span class="text-danger error_div 0_' + element.key + '">' + element.message + "</span>");
+                });
+            }
+            if (loader) loader.style.display = "none";
         },
     });
-
     return false;
 }
 
 function usaStoreData() {
-    document.getElementById("loaderDiv").style.display = "block";
+    var loader = document.getElementById("loaderDiv");
+    if (loader) loader.style.display = "block";
     $.ajax({
         url: baseUrl + "usaStoreData",
         type: "post",
         data: $("#submit_form_paystubx_id").serialize(),
         success: function (response) {
-            console.log('response', response);
             setTimeout(function () {
-                if(response.type == 'global'){
+                if (response.type == 'global') {
                     response.type = 'usa';
                 }
                 window.location.href = baseUrl + "invoiceList?type=" + response.type;
             }, 1000);
-            document.getElementById("loaderDiv").style.display = "none";
+            if (loader) loader.style.display = "none";
         },
         error: function (err) {
-            error = err.responseJSON;
-            if (error.message == "Unauthenticated.") {
+            var error = err.responseJSON;
+            if (error && error.message == "Unauthenticated.") {
                 userAuth = 1;
                 $("#loginModal").modal("show");
-            } else {
-                //
             }
-            document.getElementById("loaderDiv").style.display = "none";
+            if (loader) loader.style.display = "none";
         },
     });
 }
 
 function generatePDF() {
-    document.getElementById("loaderDiv").style.display = "block";
+    var loader = document.getElementById("loaderDiv");
+    if (loader) loader.style.display = "block";
     $.ajax({
         url: baseUrl + "generate-pdf",
         type: "post",
@@ -483,40 +467,40 @@ function generatePDF() {
                 a.click();
                 a.remove();
             }, 1000);
-            document.getElementById("loaderDiv").style.display = "none";
+            if (loader) loader.style.display = "none";
         },
         error: function (err) {
-            error = err.responseJSON;
-            if (error.message == "Unauthenticated.") {
+            var error = err.responseJSON;
+            if (error && error.message == "Unauthenticated.") {
                 $("#loginModal").modal("show");
-            } else {
-                //
             }
-            document.getElementById("loaderDiv").style.display = "none";
+            if (loader) loader.style.display = "none";
         },
     });
 }
 
 $(document).ready(function () {
-    // $('.lock').click(function () {
     $(document).on('click', '.lock', function () {
         var id = $(this).data('id');
         var img = $(this).attr('src');
         if (img == baseUrl + 'images/lock.png') {
-            $("#" + id).attr('src', 'https://paystubx.com/images/unlock.png');
+            $(this).attr('src', baseUrl + 'images/unlock.png');
             $("#taxe_" + id).attr("readonly", false);
         } else {
-            $("#" + id).attr('src', 'https://paystubx.com/images/lock.png');
+            $(this).attr('src', baseUrl + 'images/lock.png');
             $("#taxe_" + id).attr("readonly", true);
         }
     });
 
     var submitTextArea = document.getElementById("ni_number");
-    submitTextArea.addEventListener("keyup", function() {
-        var nvalue = submitTextArea.value;
-        nvalue = nvalue.replace(/\s/g, '');
-        let ccnumspaced = nvalue.match(/.{1,2}/g);
-
-        submitTextArea.value = ccnumspaced.join(' ');
-    });
+    if (submitTextArea) {
+        submitTextArea.addEventListener("keyup", function () {
+            var nvalue = submitTextArea.value;
+            nvalue = nvalue.replace(/\s/g, '');
+            let ccnumspaced = nvalue.match(/.{1,2}/g);
+            if (ccnumspaced) {
+                submitTextArea.value = ccnumspaced.join(' ');
+            }
+        });
+    }
 });

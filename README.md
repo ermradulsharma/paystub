@@ -1,20 +1,35 @@
-# Paystub X - Professional Paystub Generator
+# Paystub X – Professional Paystub Generator
 
-Paidstub X is a powerful and flexible Laravel-based web application designed to generate professional paystubs for various regions, including the USA, UK, Canada, and Global templates. It also supports W2 forms and includes a comprehensive admin dashboard for managing templates, users, and subscriptions.
+Paystub X is a Laravel‑based web application that generates professional paystubs for multiple regions (USA, UK, Canada, Global) and supports W‑2 forms. It includes a modern **admin dashboard** with a premium "Rich Aesthetic" (dark mode, glassmorphism, vibrant gradients) and a user‑facing portal for managing templates, subscriptions, and invoices.
 
-![Laravel](https://img.shields.io/badge/Laravel-9.x-FF2D20?style=for-the-badge&logo=laravel)
-![PHP](https://img.shields.io/badge/PHP-8.0+-777BB4?style=for-the-badge&logo=php)
-![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+---
 
-## 🚀 Features
+## ✨ Key Features
 
-- **Multi-Region Support**: specialized templates for USA, UK, Canada, and generic Global options.
-- **W2 Form Generation**: Easy-to-use W2 form creator.
-- **Admin Dashboard**: Manage users, templates, color codes, and deductions.
-- **User Dashboard**: Users can save profiles, manage subscriptions, and view order history.
-- **PDF Generation**: High-quality PDF export using DOMPDF.
-- **Payment Integration**: PayPal integration for handling subscriptions and one-time payments.
-- **Authentication**: Secure login with email/password, Google OAuth, and OTP support.
+- **Multi‑Region Templates** – USA, UK, Canada, and Global paystub templates.
+- **W‑2 Form Generation** – Built‑in support for US W‑2 forms.
+- **Premium Admin UI** – Dark theme, glass‑morphism cards, gradient accents, and responsive layout.
+- **Livewire Components** – Dynamic tables, forms, and real‑time validation.
+- **PDF Export** – High‑quality PDFs via DOMPDF.
+- **Payment Integration** – PayPal (sandbox & live) for subscriptions and one‑time purchases.
+- **Authentication** – Email/password, Google OAuth, OTP login.
+- **Role‑Based Access** – Admin (role_id = 1) with dedicated routes under `/admin`.
+- **Configurable Settings** – SMTP, PayPal, and application constants defined in `config/constants.php`.
+
+---
+
+## 📂 Project Structure Highlights
+
+- `resources/views/Admin/` – Blade templates for login, dashboard, settings, templates, deductions, etc.
+- `public/Admin/assets/css/admin_redesign.css` – Centralised design system (variables, glass‑effect utilities, dark theme).
+- `routes/web.php` – Admin routes are prefixed with `admin` and protected by `auth` + `userCheck` middleware.
+- `app/Http/Controllers/SettingController.php` – Handles admin settings.
+- `app/Models/*` – Eloquent models for `User`, `Template`, `Plan`, `Deduction`, etc.
+- `database/seeders/AdminSeeder.php` – Seeds default admin credentials:
+    - **Email:** `admin@admin.com`
+    - **Password:** `12345678`
+
+---
 
 ## 🛠 Prerequisites
 
@@ -23,59 +38,54 @@ Paidstub X is a powerful and flexible Laravel-based web application designed to 
 - PostgreSQL or MySQL
 - Node.js & NPM (for frontend assets)
 
-## 📦 Installation
+---
 
-1.  **Clone the Repository**
+## 🚀 Installation
 
-    ```bash
-    git clone https://github.com/yourusername/paystubx-website.git
-    cd paystubx-website
-    ```
+```bash
+# Clone the repository
+git clone https://github.com/ermradulsharma/paystub.git
+cd paystub
 
-2.  **Install PHP Dependencies**
+# Install PHP dependencies
+composer install
 
-    ```bash
-    composer install
-    ```
+# Copy environment file and configure
+cp .env.example .env
+# Edit .env – set DB credentials, mail server, PayPal keys, etc.
 
-3.  **Environment Setup**
-    Copy the example environment file and configure it:
+# Generate application key
+php artisan key:generate
 
-    ```bash
-    cp .env.example .env
-    ```
+# Run migrations and seeders (includes admin user)
+php artisan migrate --seed
 
-    Update the `.env` file with your database credentials, mail server details, and PayPal keys.
+# Install frontend assets
+npm install
+npm run dev   # or npm run build for production
 
-4.  **Generate App Key**
+# Serve the application
+php artisan serve
+```
 
-    ```bash
-    php artisan key:generate
-    ```
+The app will be available at `http://127.0.0.1:8000`.
 
-5.  **Database Migration**
+---
 
-    ```bash
-    php artisan migrate --seed
-    ```
+## 🔐 Admin Access
 
-6.  **Install Frontend Dependencies**
+- URL: `http://127.0.0.1:8000/admin/login`
+- Credentials (seeded by `AdminSeeder`):
+    - **Email:** `admin@admin.com`
+    - **Password:** `12345678`
 
-    ```bash
-    npm install
-    npm run build
-    ```
+After logging in you will see the redesigned dashboard with glass‑styled cards for **Template Library**, **Tax Deduction Rules**, and **Design Palettes**.
 
-7.  **Serve Application**
-    ```bash
-    php artisan serve
-    ```
+---
 
 ## ⚙️ Configuration
 
-### Payment Gateways
-
-Configure your PayPal credentials in `.env`:
+### PayPal
 
 ```env
 PAYPAL_MODE=sandbox
@@ -83,9 +93,7 @@ PAYPAL_SANDBOX_CLIENT_ID=your_client_id
 PAYPAL_SANDBOX_CLIENT_SECRET=your_client_secret
 ```
 
-### Social Login
-
-To enable Google Login, add your Google Console credentials:
+### Google OAuth
 
 ```env
 GOOGLE_CLIENT_ID=your_client_id
@@ -93,14 +101,26 @@ GOOGLE_CLIENT_SECRET=your_client_secret
 GOOGLE_CALLBACK_URL=http://your-domain.com/google/callback
 ```
 
+### Application Constants (`config/constants.php`)
+
+- `APP_NAME`, `APP_URL`
+- Admin, developer, and super‑admin email/username constants
+- Status codes and generic messages used throughout the API
+
+---
+
 ## 🤝 Contributing
 
-We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for details on how to get started.
+Please see the [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on how to submit pull requests, report bugs, or propose new features.
+
+---
 
 ## 🔒 Security
 
-If you discover any security related issues, please refer to [SECURITY.md](SECURITY.md) for reporting instructions.
+Report any security vulnerabilities via the [SECURITY.md](SECURITY.md) file.
+
+---
 
 ## 📄 License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT). This project also follows the MIT license. See [LICENSE](LICENSE) for more information.
+This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.

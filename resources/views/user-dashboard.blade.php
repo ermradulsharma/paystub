@@ -17,7 +17,7 @@
             </div>
 
             <div class="container bg-light  redcon" style="max-width:1450px;">
-                <div clas="recipt-box">
+                <div class="receipt-box">
                     <div class="rec-box-border">
                         <div class="row">
 
@@ -43,7 +43,7 @@
                     </div>
                 </div>
 
-                <div clas="recipt-box">
+                <div class="receipt-box">
                     <div class="rec-box-border">
                         <div class="row">
 
@@ -98,7 +98,7 @@
                                     class="w-100 p-2"><br>
                             </div>
                             <div class="col-md-3">
-                                <p class="w2p">2 Fedral Income Tax Field</p>
+                                <p class="w2p">2 Federal Income Tax Field</p>
                                 <input type="text" id="fname" name="fname" placeholder="enter text"
                                     class="w-100 p-2"><br>
                             </div>
@@ -279,7 +279,7 @@
                             </div>
 
                             <div class="col-md-4 mb-4">
-                                <label for="fname" class="lable w2p">20 Localitiy Name<span style="color:red;">
+                                <label for="fname" class="lable w2p">20 Locality Name<span style="color:red;">
                                         <span style="color:red;">*<span>
                                                 <span></label><br>
 
@@ -314,7 +314,7 @@
                             <p class="w2p" style="font-weight: 400; font-size: 16px;">Department of treasury - Internal
                                 revenue service</p>
                             <p class="w2p" style="font-size: 18px;">For Privacy Act & Paperwork Reduction </p>
-                            <p class="w2p" style="font-size: 18px;">Act Notice, See the Seprate Instructions.</p><br>
+                            <p class="w2p" style="font-size: 18px;">Act Notice, See the Separate Instructions.</p><br>
                             <p class="w2p" style="text-align: right;font-size: 15px;">Cat.No. 10134D</p>
                         </div>
                     </div>

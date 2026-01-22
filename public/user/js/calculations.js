@@ -4,6 +4,9 @@ var myNewArray = [];
 var finalArray = [];
 var arr = [];
 var period;
+var obj2;
+var output2;
+
 $(document).ready(function () {
     var maxField = 12;
     var addButton = $("#add_earning");
@@ -16,28 +19,28 @@ $(document).ready(function () {
     function addCommas(num) {
         obj2 = new Intl.NumberFormat('en-US');
         output2 = obj2.format(num);
-        return output2
+        return output2;
     }
 
     $(addButton).click(function () {
-        var addEarning = `<div class="margin-bottom" id="earningusa_`+i+`">
-                            <input class="earnbtn mb-3 text-center" type="text" name="earning[]"  id="earning_`+ i + `" data-id="` + i + `">
+        var addEarning = `<div class="margin-bottom" id="earningusa_` + i + `">
+                            <input class="earnbtn mb-3 text-center" type="text" name="earning[]"  id="earning_` + i + `" data-id="` + i + `">
                         </div>`;
-        var addRate = `<div class="margin-bottom" id="rateusa_`+i+`">
-                        <input type="text" name="rate[]" class="earnbtn mb-3 text-center calculation rate"  id="rate_`+ i + `" data-id="` + i + `">
+        var addRate = `<div class="margin-bottom" id="rateusa_` + i + `">
+                        <input type="text" name="rate[]" class="earnbtn mb-3 text-center calculation rate"  id="rate_` + i + `" data-id="` + i + `">
                     </div>`;
-        var addHours = `<div class="margin-bottom" id="hoursusa_`+i+`">
-                        <input type="text" name="hours[]" class="earnbtn mb-3 text-center hours calculation"  id="hours_`+ i + `" data-id="` + i + `">
+        var addHours = `<div class="margin-bottom" id="hoursusa_` + i + `">
+                        <input type="text" name="hours[]" class="earnbtn mb-3 text-center hours calculation"  id="hours_` + i + `" data-id="` + i + `">
                     </div>`;
-        var addTotal = `<div class="margin-bottom" id="totalusa_`+i+`">
-                        <input type="text" name="total[]" class="earnbtn mb-3 text-center total"  id="total_`+ i + `" data-id="` + i + `" readonly="true">
+        var addTotal = `<div class="margin-bottom" id="totalusa_` + i + `">
+                        <input type="text" name="total[]" class="earnbtn mb-3 text-center total"  id="total_` + i + `" data-id="` + i + `" readonly="true">
                     </div>`;
-        var addGrossTotal = `<div class="margin-bottom"" id="periodusa_`+i+`">
-                        <input type="text" name="period[]" class="earnbtn mb-3 text-center gross_total"  id="period_`+ i + `" data-id="` + i + `">
+        var addGrossTotal = `<div class="margin-bottom" id="periodusa_` + i + `">
+                        <input type="text" name="period[]" class="earnbtn mb-3 text-center gross_total"  id="period_` + i + `" data-id="` + i + `">
                     </div>`;
-        var addYtdTotal = `<div class="margin-bottom relative" style="padding-top: 2px;" id="removebtn_usa`+i+`"">
-                        <input type="text" name="ytd_total[]" class="earnbtn mb-3 text-center ytd_total"  id="ytd_total_`+ i + `" data-id="` + i + `">
-                        <button class="cross-btn removebtn-usa"  data-ref="`+i+`"   data-id="` + i + `"><span>x</span></button>
+        var addYtdTotal = `<div class="margin-bottom relative" style="padding-top: 2px;" id="removebtn_usa` + i + `"">
+                        <input type="text" name="ytd_total[]" class="earnbtn mb-3 text-center ytd_total"  id="ytd_total_` + i + `" data-id="` + i + `">
+                        <button class="cross-btn removebtn-usa"  data-ref="` + i + `"   data-id="` + i + `"><span>x</span></button>
                     </div>`;
         if (i < maxField) {
             i++;
@@ -47,75 +50,23 @@ $(document).ready(function () {
             $("#addTotal").append(addTotal);
             $("#addGrossTotal").append(addGrossTotal);
             $("#addYtdTotal").append(addYtdTotal);
-            $("#add_deduction").append(add_deduction);
         }
-
-
-        //remove function of add earning field
-        $(".removebtn-usa").click(function(){
-
-            var inpputidvalue= $(this).attr('data-ref');
-            var inpputdata_id= $(this).attr('data-id');
-            var input1 = document.getElementById('earningusa_'+inpputidvalue);
-            var input2 = document.getElementById('rateusa_'+inpputidvalue);
-            var input3 = document.getElementById('hoursusa_'+inpputidvalue);
-            var input4 = document.getElementById('totalusa_'+inpputidvalue);
-            var input5 = document.getElementById('periodusa_'+inpputidvalue);
-            var input6 = document.getElementById('removebtn_usa'+inpputidvalue);
-
-            input1.remove();
-            input2.remove();
-            input3.remove();
-            input4.remove();
-            input5.remove();
-            input6.remove();
-            i--;
-
-            calculation(inpputdata_id);
-
-
-        });
-
-        // i++;
-        $(".calculation").keyup(function () {
-            var id = $(this).data("id");
-            calculation(id);
-            arr_pushed(id);
-        });
-
-        $('.total').keyup(function () {
-            total();
-        });
         return false;
     });
 
+    $(document).on("click", ".removebtn-usa", function () {
+        var inpputidvalue = $(this).attr('data-ref');
+        var inpputdata_id = $(this).attr('data-id');
 
-    //remove function of add earning field
-    $(".removebtn-usa").click(function(){
+        $('#earningusa_' + inpputidvalue).remove();
+        $('#rateusa_' + inpputidvalue).remove();
+        $('#hoursusa_' + inpputidvalue).remove();
+        $('#totalusa_' + inpputidvalue).remove();
+        $('#periodusa_' + inpputidvalue).remove();
+        $('#removebtn_usa' + inpputidvalue).remove();
 
-        
-
-        var inpputidvalue= $(this).attr('data-ref');
-        var inpputdata_id= $(this).attr('data-id');
-
-        var input1 = document.getElementById('earningusa_'+inpputidvalue);
-        var input2 = document.getElementById('rateusa_'+inpputidvalue);
-        var input3 = document.getElementById('hoursusa_'+inpputidvalue);
-        var input4 = document.getElementById('totalusa_'+inpputidvalue);
-        var input5 = document.getElementById('periodusa_'+inpputidvalue);
-        var input6 = document.getElementById('removebtn_usa'+inpputidvalue);
-
-        input1.remove();
-        input2.remove();
-        input3.remove();
-        input4.remove();
-        input5.remove();
-        input6.remove();
-       
-
+        i--;
         calculation(inpputdata_id);
-
-
     });
 
     $(addDeduction).click(function () {
@@ -137,54 +88,39 @@ $(document).ready(function () {
             x++;
             $(wrapper_2).append(fieldHTML);
         }
-
-        $(".tax_deduction").keyup(function () {
-            var id = $(this).data('id');
-            extraTaxDeduction();
-        });
-
-        $(".ytd_tax").keyup(function () {
-            extraYTDTaxDeduction();
-        });
         return false;
     });
 
-    $(wrapper_2).on('click', '.removebtn-usa-deduction', function(e){
+    $(document).on('click', '.removebtn-usa-deduction', function (e) {
         e.preventDefault();
         $(this).parent().parent().remove();
-        x--; //Decrement field counter
+        x--;
         extraTaxDeduction();
         extraYTDTaxDeduction();
     });
 
-   
-
-        $(".removebtn-usa-deductionss").click(function(e){ 
+    $(document).on('click', '.removebtn-usa-deductionss', function (e) {
         e.preventDefault();
         $(this).parent().parent().remove();
-        
         extraTaxDeduction();
         extraYTDTaxDeduction();
     });
 
-    
-
-    $(".tax_deduction").keyup(function () {
+    $(document).on('keyup', ".tax_deduction", function () {
         extraTaxDeduction();
     });
 
-    $(".ytd_tax").keyup(function () {
+    $(document).on('keyup', ".ytd_tax", function () {
         extraYTDTaxDeduction();
     });
 
-    function extraTaxDeduction(){
+    function extraTaxDeduction() {
         var deduction_period_tax = $("#deduction_period_tax").val() || 0.0;
         var tax_deduction = 0.0;
         $(".tax_deduction").each(function () {
             tax_deduction += Number($(this).val()) || 0.00;
         });
         setTimeout(function () {
-            tax_deduction = tax_deduction;
             var total = parseFloat(deduction_period_tax) + parseFloat(tax_deduction);
             if (isNaN(total)) {
                 total = parseFloat(deduction_period_tax).toFixed(2);
@@ -195,14 +131,13 @@ $(document).ready(function () {
         }, 300);
     }
 
-    function extraYTDTaxDeduction(){
+    function extraYTDTaxDeduction() {
         var ytd_deduction_period_tax = $("#ytd_deduction_period_tax").val() || 0.0;
         var ytd_tax = 0.0;
         $(".ytd_tax").each(function () {
             ytd_tax += Number($(this).val()) || 0.00;
         });
         setTimeout(function () {
-            ytd_tax = ytd_tax;
             var sum = parseFloat(ytd_deduction_period_tax) + parseFloat(ytd_tax);
             if (isNaN(sum)) {
                 sum = parseFloat(ytd_deduction_period_tax).toFixed(2);
@@ -220,9 +155,9 @@ $(document).ready(function () {
 
     $(".time_period").change(function () {
         var time_period_val = $(this).val();
-        if(time_period_val == 'monthly'){
+        if (time_period_val == 'monthly') {
             salaryBtn();
-        }else{
+        } else {
             time_period();
             hourBtn();
         }
@@ -243,14 +178,9 @@ $(document).ready(function () {
         if (id == "") {
             $("#rate_0").val("");
         }
-
     });
 
-    /* $(".pay_date").change(function () {
-        date_calculate();
-    }); */
-
-    $(".calculation").keyup(function () {
+    $(document).on('keyup', ".calculation", function () {
         var id = $(this).data("id");
         setTimeout(function () {
             calculation(id);
@@ -274,7 +204,6 @@ $(document).ready(function () {
         } else {
             $(".error").addClass("d-none");
         }
-        // is_empty();
     }
 
     function time_period() {
@@ -290,22 +219,22 @@ $(document).ready(function () {
             $(".tax_rate").focus();
         }
 
+        var newDate;
         if (time_period == "weekly") {
             var dt1 = new Date(pay_start);
-            var dt2 = dt1.getDate() + 6;
-            var newDate = moment(dt1).add(1, "weeks").format("MM/DD/YYYY");
+            newDate = moment(dt1).add(1, "weeks").format("MM/DD/YYYY");
         }
         if (time_period == "bi-weekly") {
             var dt1 = new Date(pay_start);
-            var newDate = moment(dt1).add(2, "weeks").format("MM/DD/YYYY");
+            newDate = moment(dt1).add(2, "weeks").format("MM/DD/YYYY");
         }
         if (time_period == "monthly") {
             var dt1 = new Date(pay_start);
-            var newDate = moment(dt1).add(1, "months").format("MM/DD/YYYY");
+            newDate = moment(dt1).add(1, "months").format("MM/DD/YYYY");
         }
         if (time_period == "bi-monthly") {
             var dt1 = new Date(pay_start);
-            var newDate = moment(dt1).add(2, "months").format("MM/DD/YYYY");
+            newDate = moment(dt1).add(2, "months").format("MM/DD/YYYY");
         }
         var newDate_1 = moment(newDate).subtract(1, "days").format("MM/DD/YYYY");
         setTimeout(() => {
@@ -327,7 +256,7 @@ $(document).ready(function () {
     function date_calculate() {
         var pay_start = new Date($(".pay_start").val());
         var time_period = $(".time_period").val();
-        d = new Date(Date.UTC(pay_start.getFullYear(), pay_start.getMonth(), pay_start.getDate()));
+        var d = new Date(Date.UTC(pay_start.getFullYear(), pay_start.getMonth(), pay_start.getDate()));
         d.setUTCDate(d.getUTCDate() + 4 - (d.getUTCDay() || 7));
         var yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
         var weekNo = Math.ceil(((d - yearStart) / 86400000 + 1) / 7);
@@ -366,7 +295,7 @@ $(document).ready(function () {
         hourBtn();
     });
 
-    function hourBtn(){
+    function hourBtn() {
         $('.hour_btn').css({ "background-color": "#f70303" });
         $('.salary_btn').css({ "background-color": "#827f7f" });
         $(".rate").attr("hidden", false);
@@ -376,10 +305,8 @@ $(document).ready(function () {
         $(".hours").attr("readonly", false);
         $(".total").attr("readonly", true);
         $(".removeData").parent().removeClass("margintop-5");
-        if($('.time_period').val() == 'monthly'){
+        if ($('.time_period').val() == 'monthly') {
             $('.time_period').val('weekly');
-        }else{
-            $('.time_period').val();
         }
         $('.auto_calculate').val('on');
         $(".earnbtn_0").val("Regular");
@@ -394,7 +321,7 @@ $(document).ready(function () {
         salaryBtn();
     });
 
-    function salaryBtn(){
+    function salaryBtn() {
         $('.salary_btn').css({ "background-color": "#f70303" });
         $('.hour_btn').css({ "background-color": "#827f7f" });
         $('.rate').attr('readonly', true);
@@ -414,25 +341,26 @@ $(document).ready(function () {
         $(".removeData").parent().addClass("margintop-5");
         is_empty();
     }
-    $('.total').keyup(function () {
+
+    $(document).on('keyup', '.total', function () {
         total();
-    })
+    });
 
     function total() {
         var period_gross_total = 0;
         var ytd_gross_total = 0;
         $(".total").each(function () {
-            var total = this.value || 0.0;
+            var totalVal = parseFloat(this.value) || 0.0;
             var id = $(this).data("id");
-            var ytd_total = total * days_number || 0.0;
-            period_gross_total += total;
+            var ytd_total = totalVal * days_number || 0.0;
+            period_gross_total += totalVal;
             ytd_gross_total += ytd_total;
-            if(total != 0.0){
-                $('#period_' + id).val(parseFloat(total).toFixed(2));
+            if (totalVal != 0.0) {
+                $('#period_' + id).val(parseFloat(totalVal).toFixed(2));
                 $('#ytd_total_' + id).val(parseFloat(ytd_total).toFixed(2));
             }
         });
-        if(period_gross_total != 0.0 || ytd_gross_total != 0.0){
+        if (period_gross_total != 0.0 || ytd_gross_total != 0.0) {
             $("#period_gross_total").val(parseFloat(period_gross_total).toFixed(2));
             $("#ytd_gross_total").val(parseFloat(ytd_gross_total).toFixed(2));
             setTimeout(() => {
@@ -459,7 +387,7 @@ $(document).ready(function () {
         }, 200);
     });
 
-    $(".manualTaxTotal").keyup(function () {
+    $(document).on('keyup', ".manualTaxTotal", function () {
         manualTaxTotal();
     });
 
@@ -468,8 +396,8 @@ $(document).ready(function () {
         var ytd_gross_total = $("#ytd_gross_total").val();
         var deduction_period_tax_other = parseFloat($("#deduction_period_tax_other").val() || 0.0);
         var ytd_deduction_period_tax_other = parseFloat($("#ytd_deduction_period_tax_other").val() || 0.0);
-        period_deduction_tax = 0;
-        period_ytd_deduction_tax = 0;
+        var period_deduction_tax = 0;
+        var period_ytd_deduction_tax = 0;
         var time = 0;
         if (period_gross_total != "NaN" || ytd_gross_total != "NaN") {
             $(".taxes").each(function () {
@@ -499,9 +427,9 @@ $(document).ready(function () {
 
     function gross_total() {
         var auto_calculate = $(".auto_calculate").find(":selected").val();
-        var total = 0;
+        var totalVal = 0;
         $(".gross_total").each(function () {
-            total += parseFloat(this.value) || 0.0;
+            totalVal += parseFloat(this.value) || 0.0;
         });
         var ytd_total = 0;
         $(".ytd_total").each(function () {
@@ -509,7 +437,7 @@ $(document).ready(function () {
         });
 
         setTimeout(function () {
-            $("#period_gross_total").val(parseFloat(total).toFixed(2));
+            $("#period_gross_total").val(parseFloat(totalVal).toFixed(2));
             $("#ytd_gross_total").val(parseFloat(ytd_total).toFixed(2));
             if (auto_calculate == "on") {
                 default_tax();
@@ -517,77 +445,76 @@ $(document).ready(function () {
         }, 300);
     }
 
-
     $('.tgl').click(function () {
         if ($(this).is(":checked")) {
             $(".emp_your_state_txt").removeClass("d-none");
             $(".emp_your_state_slt").addClass("d-none");
             $(".tgl").val(1);
-            $('#emp_your_state').keyup(function(){
+            $('#emp_your_state').keyup(function () {
                 var txtlen = $('#emp_your_state').val();
-                if(txtlen.length > 3){
+                if (txtlen.length > 3) {
                     var rate = $("#rate_0").val();
                     var hours = $("#hours_0").val();
-                    var total = rate * hours || 0.0;
-                    if(total != 0.0){
+                    var totalVal = rate * hours || 0.0;
+                    if (totalVal != 0.0) {
                         default_tax();
                     }
                 }
             });
-
         } else {
             $(".emp_your_state_txt").addClass("d-none");
             $(".emp_your_state_slt").removeClass("d-none");
             $(".tgl").val(0);
             var rate = $("#rate_0").val();
             var hours = $("#hours_0").val();
-            var total = rate * hours || 0.0;
-            if(total != 0.0){
+            var totalVal = rate * hours || 0.0;
+            if (totalVal != 0.0) {
                 default_tax();
             }
         }
     });
 
-    $(function() {
+    $(function () {
         if ($(".tgl").val() == 1) {
             $(".emp_your_state_txt").removeClass("d-none");
             $(".emp_your_state_slt").addClass("d-none");
             if ($('.emp_your_state_txt').is(':visible')) {
                 var rate = $("#rate_0").val();
                 var hours = $("#hours_0").val();
-                var total = rate * hours || 0.0;
-                if(total != 0.0){
+                var totalVal = rate * hours || 0.0;
+                if (totalVal != 0.0) {
                     default_tax();
                 }
             }
-
         } else {
             $(".emp_your_state_txt").addClass("d-none");
             $(".emp_your_state_slt").removeClass("d-none");
             if ($('.emp_your_state_slt').is(':visible')) {
                 var rate = $("#rate_0").val();
                 var hours = $("#hours_0").val();
-                var total = rate * hours || 0.0;
-                if(total != 0.0){
+                var totalVal = rate * hours || 0.0;
+                if (totalVal != 0.0) {
                     default_tax();
                 }
             }
         }
     });
+
     function default_tax() {
         var period_gross_total = $("#period_gross_total").val() || 0.0;
         var ytd_gross_total = $("#ytd_gross_total").val() || 0.0;
-       
+
         var deduction_period_tax_other = parseFloat($("#deduction_period_tax_other").val() || 0.0);
         var ytd_deduction_period_tax_other = parseFloat($("#ytd_deduction_period_tax_other").val() || 0.0);
+        var tax_state;
         if ($(".tax_rate").is("select:visible")) {
-            var tax_state = $("option:selected", ".tax_rate").attr("data-tax");
+            tax_state = $("option:selected", ".tax_rate").attr("data-tax");
         } else if ($(".tax_rate").is("input:visible")) {
-            var tax_state = 0.00;
+            tax_state = 0.00;
         }
         var fieldtype = $(".tax_rate").is("input:visible");
-        period_deduction_tax = 0;
-        period_ytd_deduction_tax = 0;
+        var period_deduction_tax = 0;
+        var period_ytd_deduction_tax = 0;
         var time = 200;
         if (period_gross_total != "NaN" || ytd_gross_total != "NaN") {
             $(".taxes").each(function () {
@@ -603,10 +530,9 @@ $(document).ready(function () {
                     }
                     taxes_values = parseFloat(tax_state).toFixed(2);
                 }
-                // if (taxes_text == 'deduction_8' || taxes_text == 'deduction_18') {   // Local
                 if (taxes_text == 'deduction_3' || taxes_text == 'deduction_5') {    // live condition
                     var time_period = $(".time_period").val();
-                   
+
                     if (time_period == 'weekly') {
                         period = 52;
                     } else if (time_period == 'bi-weekly') {
@@ -623,6 +549,7 @@ $(document).ready(function () {
                     } else {
                         taxes_values = 0.00;
                     }
+                    var period_tax_price, period_ytd_tax_price;
                     if (period_gross_total == 0) {
                         period_tax_price = 0.00;
                         period_ytd_tax_price = 0.00;
@@ -630,11 +557,8 @@ $(document).ready(function () {
                         period_tax_price = taxes_values || 0.00;
                         period_ytd_tax_price = taxes_values * days_number || 0.00;
                     }
-
-                } else { 
-                    
+                } else {
                     period_tax_price = parseFloat(period_gross_total).toFixed(2) * (taxes_values / 100);
-                   
                     period_ytd_tax_price = parseFloat(ytd_gross_total).toFixed(2) * (taxes_values / 100);
                 }
                 $("#taxes_" + taxes_ids).val(parseFloat(period_tax_price).toFixed(2));
@@ -659,9 +583,9 @@ $(document).ready(function () {
     function netPay() {
         var period_gross_total = $("#period_gross_total").val() || 0.0;
         var ytd_gross_total = $("#ytd_gross_total").val() || 0.0;
-        var deduction_tax = $(".deduction_tax").val() || 0.0;
+        var deduction_tax_val = $(".deduction_tax").val() || 0.0;
         var ytd_deduction_tax = $(".ytd_deduction_tax").val() || 0.0;
-        var total_net_pay = parseFloat(period_gross_total) - parseFloat(deduction_tax) || 0.0;
+        var total_net_pay = parseFloat(period_gross_total) - parseFloat(deduction_tax_val) || 0.0;
         var total_ytd_net_pay = parseFloat(ytd_gross_total) - parseFloat(ytd_deduction_tax) || 0.0;
         setTimeout(function () {
             $(".total_net_pay").val(parseFloat(total_net_pay).toFixed(2));
@@ -669,40 +593,16 @@ $(document).ready(function () {
         }, 20);
     }
 
-    function toFixValue() {
-        $(".taxes").each(function () {
-            var taxes_ids = $(this).data("id");
-            $("#taxes_" + taxes_ids).each(function () {
-                var taxes_value = this.value || 0.0;
-                $(this).val(parseFloat(taxes_value).toFixed(2));
-            });
-
-            $("#taxes_ytd_" + taxes_ids).each(function () {
-                var taxes_ytd_value = this.value || 0.0;
-                $(this).val(parseFloat(taxes_ytd_value).toFixed(2));
-            });
-        });
-
-        $(".tax_deduction").each(function () {
-            var tax_deduction = this.value || 0.0;
-            $(this).val(parseFloat(tax_deduction).toFixed(2));
-        });
-        $(".ytd_tax").each(function () {
-            var ytd_tax = this.value || 0.0;
-            $(this).val(parseFloat(ytd_tax).toFixed(2));
-        });
-    }
-
     function is_empty() {
         $(".earning").each(function () {
-            var i = $(this).data("id");
-            $("#rate_" + i).val("");
-            $("#hours_" + i).val("");
-            $("#total_" + i).val("");
-            $("#period_" + i).val("");
-            $("#ytd_total_" + i).val("");
-            $("#taxes_0" + i).val("");
-            $("#taxes_ytd_0" + i).val("");
+            var id = $(this).data("id");
+            $("#rate_" + id).val("");
+            $("#hours_" + id).val("");
+            $("#total_" + id).val("");
+            $("#period_" + id).val("");
+            $("#ytd_total_" + id).val("");
+            $("#taxes_0" + id).val("");
+            $("#taxes_ytd_0" + id).val("");
         });
         $(".deduction_tax").val("");
         $(".ytd_deduction_tax").val("");

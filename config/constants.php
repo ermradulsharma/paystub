@@ -23,8 +23,8 @@ defined('APP_NAME') or define('APP_NAME', 'Paystub X');
 defined('APP_URL') or define('APP_URL', 'http://www.paystubx.com');
 defined('MAIL_FROM_EMAIL') or define('MAIL_FROM_EMAIL', 'noreply@paystubx.com');
 
-define('IMAGE_UPLOAD_PATH', 'public/');
-define('STORAGE_UPLOAD_PATH', storage_path('public/'));
+defined('IMAGE_UPLOAD_PATH') or define('IMAGE_UPLOAD_PATH', 'public/');
+defined('STORAGE_UPLOAD_PATH') or define('STORAGE_UPLOAD_PATH', storage_path('public/'));
 
 defined('STATUS_OK') or define('STATUS_OK', 200);
 defined('STATUS_CREATED') or define('STATUS_CREATED', 201);

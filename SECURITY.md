@@ -2,15 +2,18 @@
 
 ## Supported Versions
 
-Use this section to tell people about which versions of your project are currently being supported with security updates.
-
-| Version | Supported          |
-| ------- | ------------------ |
-| 1.0.x   | :white_check_mark: |
-| < 1.0   | :x:                |
+| Version | Supported |
+| ------- | --------- |
+| 2.0.x   | ✅        |
+| 1.x     | ✅        |
+| < 1.0   | ❌        |
 
 ## Reporting a Vulnerability
 
-We take security seriously. If you discover a security vulnerability within Paystub X, please send an e-mail to security@example.com (replace with valid email). All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability in **Paystub X**, please report it privately by emailing **security@paystubx.com**. Include a detailed description of the issue and steps to reproduce it. We will acknowledge receipt of your report and work to resolve the vulnerability as quickly as possible.
 
-**Please do not report security vulnerabilities through public GitHub issues.**
+**Do not** disclose the vulnerability publicly or open a public GitHub issue.
+
+---
+
+_This security policy is based on the standard open‑source security policy template._

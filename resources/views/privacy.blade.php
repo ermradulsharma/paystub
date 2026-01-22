@@ -3,7 +3,7 @@
 <div>
     <div class="Container-fluid mb-0 mt-2" style="Color:white; background-color: #010102!important;">
         <div class="container">
-            <div clas="row">
+            <div class="row">
                 <div class="col-md-12">
                     <h1 class="text-center pt-4 mb-4" style="font-family: serif">PRIVACY POLICY</h1>
                     <p class="" style="font-family: serif;
@@ -14,9 +14,9 @@
                         apps on devices, through APIs,
                         and through third-parties. We respectfully request that you read the policy carefully to
                         understand how your information is collected,
-                        used, and protected by u
+                        used, and protected by us
                     </p>
-                    <h6 style="font-family: serif">Iformation we collect from you:</h6>
+                    <h6 style="font-family: serif">Information we collect from you:</h6>
                     <p class="" style="font-family: serif;
     font-size: 18px;">We may collect your personal data
                         which we have categorized below:
@@ -101,7 +101,7 @@
                             Privacy Policy Page</li>
                         <h6 style="font-family: serif">Your California Privacy Rights</h6>
                         <p style="font-family: serif;
-    font-size: 18px;">f you are a California resident, California
+    font-size: 18px;">If you are a California resident, California
                             law may provide you with additional rights regarding our collection and use of your Personal
                             Information. To learn more about your California privacy rights, visit the Privacy Notice
                             for California Residents at CCPA - Privacy Policy.</p>

@@ -16,7 +16,7 @@
     <!-- Google Fonts -->
     <link href="https://fonts.gstatic.com" rel="preconnect">
     <link
-        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i|Outfit:300,400,500,600,700"
         rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
     <!-- Vendor CSS Files -->
@@ -31,11 +31,12 @@
 
     <!-- Template Main CSS File -->
     <link href="{{ asset('Admin/assets') }}/css/style.css" rel="stylesheet">
+    <!-- <link href="{{ asset('Admin/assets') }}/css/admin_redesign.css" rel="stylesheet"> -->
 
     @livewireStyles
 </head>
 
-<body>
+<body class="dark-theme">
     @include('Admin.layouts.header')
     @include('Admin.layouts.sidebar')
     @yield('content')
@@ -61,27 +62,27 @@
     <script src="{{ asset('Admin/assets') }}/js/main.js"></script>
 
     @if ($errors->any())
-        @foreach ($errors->all() as $error)
-            <script>
-                toastr.error('{{ $error }}');
-            </script>
-        @endforeach
+    @foreach ($errors->all() as $error)
+    <script>
+        toastr.error('{{ $error }}');
+    </script>
+    @endforeach
     @endif
     @if (Session::has('success'))
-        <script>
-            toastr.success("{{ Session::get('success') }}");
-        </script>
+    <script>
+        toastr.success("{{ Session::get('success') }}");
+    </script>
     @endif
 
     @if (Session::has('message'))
-        <script>
-            toastr.success("{{ Session::get('message') }}");
-        </script>
+    <script>
+        toastr.success("{{ Session::get('message') }}");
+    </script>
     @endif
     @if (Session::has('error'))
-        <script>
-            toastr.error("{{ Session::get('error') }}");
-        </script>
+    <script>
+        toastr.error("{{ Session::get('error') }}");
+    </script>
     @endif
 </body>
 

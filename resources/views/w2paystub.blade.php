@@ -37,7 +37,7 @@
         @csrf
         <input type="hidden" name="form_type" value="w2form" hidden>
         <div class="container bg-light  redcon" style="max-width:1450px;">
-            <div clas="recipt-box">
+            <div class="receipt-box">
                 <div class="rec-box-border">
                     <div style="border-bottom:2px solid red;" class="row">
                         <div class="w2-form-number">
@@ -62,7 +62,7 @@
                     <div class="w2form-box-outer">
                         <div class="w2form-left-box">
                             <div class="input-box border-none">
-                                <p style="padding: 0; margin:0;" class="color-red"><b>b</b> Employer Identifcation
+                                <p style="padding: 0; margin:0;" class="color-red"><b>b</b> Employer Identification
                                     number (EIN)</p>
                                 <input name="company_in" class="input" type="number" placeholder="Please Enter">
                             </div>
@@ -74,7 +74,7 @@
                                     placeholder="Please Enter"></textarea>
                             </div>
                             <div class="input-box border-none ">
-                                <p style="margin:0; padding:0px;" class="color-red"><b>d</b> Control Nmuber</p>
+                                <p style="margin:0; padding:0px;" class="color-red"><b>d</b> Control Number</p>
                                 <input name="control_number" class="input"
                                     style="text-align: left;margin:0px;padding-left:10px !important;" type="text"
                                     placeholder="Please Enter">
@@ -158,7 +158,7 @@
 
                                 </div>
                                 <div class="inputbox2">
-                                    <p style="padding:0; margin:0px;" class="color-red"><b>8 </b> Allocted tips</p>
+                                    <p style="padding:0; margin:0px;" class="color-red"><b>8 </b> Allocated tips</p>
                                     <input name="allocated_tips" class="input" type="number" placeholder="Please Enter">
 
                                 </div>
@@ -274,12 +274,13 @@
                                     <option value=""> --- Select --- </option>
                                     @foreach ($stateTaxes as $stateTax)
                                     <option value="{{ $stateTax->state }}" data-tax="{{ $stateTax->rate }}">
-                                        {{ $stateTax->state }}</option>
+                                        {{ $stateTax->state }}
+                                    </option>
                                     @endforeach
                                 </select>
                             </div>
                             <div class=" bottom-box-inner">
-                                <p style="padding:0; margin:0px;" class="color-red"><b></b>Employess's state id number
+                                <p style="padding:0; margin:0px;" class="color-red"><b></b>Employee's state id number
                                 </p>
                                 <input name="employee_state_id" style="border:1px solid black;" class="input"
                                     type="number" placeholder="Please Enter">
@@ -400,16 +401,16 @@
 @section('checked')
 <script>
     $('.statutory_emp').click(function() {
-            var statutory_emp = $('.statutory_emp').is(':checked');
-            $('.statutory_emp').val(statutory_emp);
-        });
-        $('.retirement_plan').click(function() {
-            var checked_2 = $('.retirement_plan').is(':checked');
-            $('.retirement_plan').val(checked_2);
-        });
-        $('.third_party_sick').click(function() {
-            var checked_3 = $('.third_party_sick').is(':checked');
-            $('.third_party_sick').val(checked_3);
-        });
+        var statutory_emp = $('.statutory_emp').is(':checked');
+        $('.statutory_emp').val(statutory_emp);
+    });
+    $('.retirement_plan').click(function() {
+        var checked_2 = $('.retirement_plan').is(':checked');
+        $('.retirement_plan').val(checked_2);
+    });
+    $('.third_party_sick').click(function() {
+        var checked_3 = $('.third_party_sick').is(':checked');
+        $('.third_party_sick').val(checked_3);
+    });
 </script>
 @endsection

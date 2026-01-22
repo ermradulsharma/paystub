@@ -5,276 +5,179 @@ var allDeductiontotal = parseFloat($('#allDeductiontotal').val() || 0.00);
 var allDeductionYTDtotal = parseFloat($('#allDeductionYTDtotal').val() || 0.00);
 var tax_total_other = parseFloat($('#tax_total_other').val() || 0.00);
 var tax_ytd_other = parseFloat($('#tax_ytd_other').val() || 0.00);
-var days_number = parseFloat($('#days_number').val() || 0.00)
+var days_number = parseFloat($('#days_number').val() || 0.00);
 
-$('.pay_start').change(function () {
-    // dayCalculate();
-    // setTimeout(() => {
-    //     calculation();
-    // }, 100);
-});
+$(document).ready(function () {
 
-$(".pay_date").change(function () {
-    // date_calculate();
-    // setTimeout(() => {
-    //     calculation();
-    // }, 100);
-});
-
-function dayCalculate() {
-    var tax_rate = $(".tax_rate").find(":selected").data("tax");
-    var pay_start = new Date($(".pay_start").val());
-    if (tax_rate == null) {
-        // $(".error").addClass("d-none");
-        $('.tax_rate').focus();
-    } else {
-        $('.error').removeClass("d-none");
-    }
-    var dt1 = new Date(pay_start);
-    var newDate = moment(dt1).add(1, "weeks").subtract(1, "days").format("MM/DD/YYYY");
-    setTimeout(() => {
-        if (pay_start != "") {
-            $(".pay_end").val(newDate);
-            date_calculate();
-            $(".pay_end").attr("readonly", true);
-        }
-    }, 100);
-}
-
-function date_calculate() {
-    var pay_start = new Date($(".pay_start").val());
-    var pay_start_1 = moment(pay_start).format("MM/DD/YYYY");
-    var pay_end = new Date($(".pay_end").val());
-    var pay_end_1 = moment(pay_end).format("MM/DD/YYYY");
-    var pay_date = new Date($(".pay_date").val());
-    var pay_date_1 = moment(pay_date).format("MM/DD/YYYY");
-    if (pay_date_1 != "NaN-NaN-NaN") {
-        if (pay_date_1 <= pay_end_1) {
-        } else {
-            var dt3 = new Date(pay_start_1);
-            var dt2 = new Date(pay_end_1);
-            var dt1 = new Date(pay_date_1);
-
-            var mBetween = dt1.getTime() - dt3.getTime();
-            var days = mBetween / (1000 * 3600 * 24);
-            days_number = days / 7;
-            if (days_number < 1) {
-                days_number = 0;
+    function dayCalculate() {
+        var tax_rate = $(".tax_rate").find(":selected").data("tax");
+        var pay_start_val = $(".pay_start").val();
+        if (pay_start_val) {
+            var pay_start = new Date(pay_start_val);
+            if (tax_rate == null) {
+                $('.tax_rate').focus();
+            } else {
+                $('.error').removeClass("d-none");
             }
-            $("#days_number").val(parseInt(days_number));
+            var dt1 = new Date(pay_start);
+            var newDate = moment(dt1).add(1, "weeks").subtract(1, "days").format("MM/DD/YYYY");
+            setTimeout(() => {
+                $(".pay_end").val(newDate);
+                date_calculate();
+                $(".pay_end").attr("readonly", true);
+            }, 100);
         }
-    } else {
-        return false;
     }
-}
 
+    function date_calculate() {
+        var pay_start_val = $(".pay_start").val();
+        var pay_end_val = $(".pay_end").val();
+        var pay_date_val = $(".pay_date").val();
 
-$(".addEarningField").click(function () {
+        if (!pay_start_val || !pay_end_val || !pay_date_val) return;
 
-    var earning = `<input class="earnbtn mt-3 text-center incomeKey" data-id="000` + i + `" name="earning[]" type="text" value="" id="earning` + i + `">`;
-    var rate = `<input class="earnbtn mt-3 text-center rateKey" type="number" id="rate_000` + i + `" name="rate[]" type="number" value="">`;
-    var hours = `<input class="earnbtn mt-3 text-center hoursKey" type="number" id="hours_000` + i + `" name="hours[]" type="number" value="">`;
-    var total = `<input class="earnbtn mt-3 text-center"  id="total_000` + i + `" name="total[]" type="text" value="">
-    <button type="button" class="cross-btn-canadas removebtn-canada"  data-ref="`+i+`" id="removebtn`+i+`">
-    <span>x</span></button>`;
-    $('.addincomeKey:last').append(earning);
-    $('.addrateKey:last').append(rate);
-    $('.addhoursKey:last').append(hours);
-    $('.addcurrentTotal:last').append(total);
-    i++;
-    //remove function of add earning field
-    $(".removebtn-canada").click(function(){
-        
-        var inpputidvalue= $(this).attr('data-ref');
-        var input1 = document.getElementById('earning'+inpputidvalue);
-        var input2 = document.getElementById('rate_000'+inpputidvalue);
-        var input3 = document.getElementById('hours_000'+inpputidvalue);
-        var input4 = document.getElementById('total_000'+inpputidvalue);
-        var input4btn = document.getElementById('removebtn'+inpputidvalue);      
-      
-        
-        input1.remove();
-        input2.remove();
-        input3.remove();
-        input4.remove();
-        input4btn.remove();     
-    
-        
+        var pay_start = moment(pay_start_val, "MM/DD/YYYY");
+        var pay_end = moment(pay_end_val, "MM/DD/YYYY");
+        var pay_date = moment(pay_date_val, "MM/DD/YYYY");
+
+        if (pay_date.isValid()) {
+            if (pay_date.isAfter(pay_end)) {
+                var days = pay_date.diff(pay_start, 'days');
+                days_number = days / 7;
+                if (days_number < 1) {
+                    days_number = 0;
+                }
+                $("#days_number").val(parseInt(days_number));
+            }
+        }
+    }
+
+    $(".addEarningField").click(function () {
+        var earning = `<input class="earnbtn mt-3 text-center incomeKey" data-id="000` + i + `" name="earning[]" type="text" value="" id="earning` + i + `">`;
+        var rate = `<input class="earnbtn mt-3 text-center rateKey" type="number" id="rate_000` + i + `" name="rate[]" value="">`;
+        var hours = `<input class="earnbtn mt-3 text-center hoursKey" type="number" id="hours_000` + i + `" name="hours[]" value="">`;
+        var total = `<div class="relative"><input class="earnbtn mt-3 text-center"  id="total_000` + i + `" name="total[]" type="text" value="">
+        <button type="button" class="cross-btn-canadas removebtn-canada"  data-ref="`+ i + `" id="removebtn` + i + `" data-type="earning">
+        <span>x</span></button></div>`;
+
+        $('.addincomeKey').append(earning);
+        $('.addrateKey').append(rate);
+        $('.addhoursKey').append(hours);
+        $('.addcurrentTotal').append(total);
+        i++;
     });
 
-});
+    $(document).on("click", ".removebtn-canada", function () {
+        var inpputidvalue = $(this).attr('data-ref');
+        var type = $(this).attr('data-type');
 
-//remove function of add earning field
-$(".removebtn-canada").click(function(){
-        
-    var inpputidvalue= $(this).attr('data-ref');
-    var input1 = document.getElementById('earning'+inpputidvalue);
-    var input2 = document.getElementById('rate_000'+inpputidvalue);
-    var input3 = document.getElementById('hours_000'+inpputidvalue);
-    var input4 = document.getElementById('total_000'+inpputidvalue);
-    var input4btn = document.getElementById('removebtn'+inpputidvalue);      
-  
-    
-    input1.remove();
-    input2.remove();
-    input3.remove();
-    input4.remove();
-    input4btn.remove();     
-
-    
-});
-
-// 
-var j = 0;
-
-$(".addTaxField").click(function () {
-
-    
-    var addtaxes = `<div class="d-flex mt-3" id="other_Tax_`+j+`">
-                        <img src="../images/unlock.png" style="visibility: hidden;" class="earnbtn3 lock">
-                        <input class="earnbtn text-center other_taxes" name="tax_deduction[]" data-id="` + j + `" >
-                    </div>`;
-    var addtaxes_rate = `<input class="earnbtn text-center deduction_other mt-3" type="number" name="period_tax_deduction[]" id="tax_` + j + `">`;
-    var addtaxes_ytd = `<input class="earnbtn text-center deduction_other_ytd mt-3" type="text" name="ytd_tax_deduction[]" id="ytd_` + j + `">
-    <button type="button" class="cross-btn-canadas removebtn-canada"  data-ref="`+j+`" id="removebtn_uk`+j+`""><span>x</span></button>`;
-    $(".addtaxes:last").append(addtaxes);
-    $(".addtaxes_rate:last").append(addtaxes_rate);
-    $(".addtaxes_ytd:last").append(addtaxes_ytd);
-    j++;
-
-     //remove function of add earning field
-     $(".removebtn-canada").click(function(){
-        
-        var inpputidvalue= $(this).attr('data-ref');
-        var input1 = document.getElementById('tax_'+inpputidvalue);
-        var input2 = document.getElementById('ytd_'+inpputidvalue);
-        var input3 = document.getElementById('other_Tax_'+inpputidvalue);
-        
-        var input4btn = document.getElementById('removebtn_uk'+inpputidvalue);      
-      
-        
-        input1.remove();
-        input2.remove();
-        input3.remove();
-        input4btn.remove();     
-    
-        
+        if (type === 'earning') {
+            $('#earning' + inpputidvalue).remove();
+            $('#rate_000' + inpputidvalue).remove();
+            $('#hours_000' + inpputidvalue).remove();
+            $('#total_000' + inpputidvalue).remove();
+            $('#removebtn' + inpputidvalue).parent().remove();
+        } else {
+            $('#tax_' + inpputidvalue).remove();
+            $('#ytd_' + inpputidvalue).remove();
+            $('#other_Tax_' + inpputidvalue).remove();
+            $('#removebtn_tax' + inpputidvalue).remove();
+        }
+        calculation();
+        taxOtherCalculate();
     });
 
-    // $(".deduction_other, .deduction_other_ytd").keyup(function () {
-    //     taxOtherCalculate();
-    // });
-});
+    var j = 0;
+    $(".addTaxField").click(function () {
+        var addtaxes = `<div class="d-flex mt-3" id="other_Tax_` + j + `">
+                            <img src="../images/unlock.png" style="visibility: hidden;" class="earnbtn3 lock">
+                            <input class="earnbtn text-center other_taxes" name="tax_deduction[]" data-id="` + j + `" >
+                        </div>`;
+        var addtaxes_rate = `<input class="earnbtn text-center deduction_other mt-3" type="number" name="period_tax_deduction[]" id="tax_` + j + `">`;
+        var addtaxes_ytd = `<div class="relative"><input class="earnbtn text-center deduction_other_ytd mt-3" type="text" name="ytd_tax_deduction[]" id="ytd_` + j + `">
+        <button type="button" class="cross-btn-canadas removebtn-canada"  data-ref="`+ j + `" id="removebtn_tax` + j + `" data-type="tax"><span>x</span></button></div>`;
 
-// $(".deduction_other, .deduction_other_ytd").keyup(function () {
-//     taxOtherCalculate();
-// });
+        $(".addtaxes").append(addtaxes);
+        $(".addtaxes_rate").append(addtaxes_rate);
+        $(".addtaxes_ytd").append(addtaxes_ytd);
+        j++;
+    });
 
-// $(".rateKey, .hoursKey").keyup(function () {
-//     calculation();
-// });
-
-
- //remove function of add earning field
- $(".removebtn-canada2").click(function(){
-        
-    var inpputidvalue= $(this).attr('data-ref');
-    var input1 = document.getElementById('tax_'+inpputidvalue);
-    var input2 = document.getElementById('ytd_'+inpputidvalue);
-    var input3 = document.getElementById('other_Tax_'+inpputidvalue);
-   
-    var input4btn = document.getElementById('removebtn_uk'+inpputidvalue);      
-  
-    
-    input1.remove();
-    input2.remove();
-    input3.remove(); 
-    input4btn.remove();     
-
-    
-});
-
-$(document).ready(function() {
-    $(document).on('keyup',".rateKey, .hoursKey", function () {
+    $(document).on('keyup', ".rateKey, .hoursKey", function () {
         calculation();
     });
-});
 
-
-
-function calculation() {
-    var timeout = 0;
-    var earningTotal = 0;
-    var earningYtdTotal = 0;
-    $('.incomeKey').each(function () {
-        var id = $(this).data('id');
-        var rate = parseFloat($('#rate_' + id).val());
-        var hours = parseFloat($('#hours_' + id).val());
-        var total = rate * hours || 0.00;
-        var ytd = total * parseInt(days_number);
-        $('#total_' + id).val(parseFloat(total).toFixed(2));
-        earningTotal += total;
-        earningYtdTotal += ytd;
-        timeout += 100;
+    $(document).on('keyup', ".deduction_other, .deduction_other_ytd", function () {
+        taxOtherCalculate();
     });
-    alltotal = earningTotal;
-    alltotalYtd = earningYtdTotal;
-    // setTimeout(() => {
-    //     taxCalculate();
-    // }, timeout);
-}
 
-function taxCalculate() {
-    var taxTotal = 0;
-    var taxYTDTotal = 0;
-    var timeout = 0;
-    $('.taxes').each(function () {
-        var total = 0;
-        var ytd_total = 0;
-        var id = $(this).data('id');
-        var rate = parseFloat($(this).data('value'));
-        total = (alltotal * rate) / 100;
-        ytd_total = total * parseInt(days_number) || 0.00;
-        taxTotal += total;
-        taxYTDTotal += ytd_total;
-        $('#tax_total_' + id).val(parseFloat(total).toFixed(2));
-        $('#tax_ytd_' + id).val(parseFloat(ytd_total).toFixed(2));
-        timeout += 50;
-    });
-    setTimeout(() => {
+    function calculation() {
+        var earningTotal = 0;
+        var earningYtdTotal = 0;
+        $('.incomeKey').each(function () {
+            var id = $(this).data('id');
+            var rate = parseFloat($('#rate_' + id).val()) || 0;
+            var hours = parseFloat($('#hours_' + id).val()) || 0;
+            var total = rate * hours || 0.00;
+            var ytd = total * parseInt(days_number) || 0;
+            $('#total_' + id).val(parseFloat(total).toFixed(2));
+            earningTotal += total;
+            earningYtdTotal += ytd;
+        });
+        alltotal = earningTotal;
+        alltotalYtd = earningYtdTotal;
+        taxCalculate();
+    }
+
+    function taxCalculate() {
+        var taxTotal = 0;
+        var taxYTDTotal = 0;
+        $('.taxes').each(function () {
+            var id = $(this).data('id');
+            var rate = parseFloat($(this).data('value')) || 0;
+            var total = (alltotal * rate) / 100;
+            var ytd_total = total * parseInt(days_number) || 0.00;
+            taxTotal += total;
+            taxYTDTotal += ytd_total;
+            $('#tax_total_' + id).val(parseFloat(total).toFixed(2));
+            $('#tax_ytd_' + id).val(parseFloat(ytd_total).toFixed(2));
+        });
         allDeductiontotal = taxTotal;
         allDeductionYTDtotal = taxYTDTotal;
         setTotals();
-    }, timeout);
+    }
 
-}
-
-function taxOtherCalculate() {
-    var tax_total = 0;
-    var tax_ytd = 0;
-    $(".other_taxes").each(function () {
-        var id = $(this).data("id");
-        var tax = $("#tax_" + id).val() || 0;
-        var ytd = $("#ytd_" + id).val() || 0;
-        tax_total += parseFloat(tax);
-        tax_ytd += parseFloat(ytd);
-    });
-    setTimeout(() => {
+    function taxOtherCalculate() {
+        var tax_total = 0;
+        var tax_ytd = 0;
+        $(".other_taxes").each(function () {
+            var id = $(this).data("id");
+            var tax = $("#tax_" + id).val() || 0;
+            var ytd = $("#ytd_" + id).val() || 0;
+            tax_total += parseFloat(tax);
+            tax_ytd += parseFloat(ytd);
+        });
         tax_total_other = tax_total;
         tax_ytd_other = tax_ytd;
         setTotals();
-    }, 200);
-}
+    }
 
-function setTotals() {
-    var deductions = parseFloat(allDeductiontotal) + parseFloat(tax_total_other);
-    var ytd_deducations = parseFloat(allDeductionYTDtotal) + parseFloat(tax_ytd_other);
-    var netPay = parseFloat(alltotal) - parseFloat(deductions);
-    var YtdnetPay = parseFloat(alltotalYtd) - parseFloat(ytd_deducations);
-    $("#ytd_gross").val(parseFloat(alltotalYtd || 0.00).toFixed(2));
-    $("#ytd_deducations").val(parseFloat(ytd_deducations || 0.00).toFixed(2));
-    $("#ytd_net_pay").val(parseFloat(YtdnetPay || 0.00).toFixed(2));
-    $("#current_total").val(parseFloat(alltotal || 0.00).toFixed(2));
-    $("#deductions").val(parseFloat(deductions || 0.00).toFixed(2));
-    $("#net_pay").val(parseFloat(netPay || 0.00).toFixed(2));
-}
+    function setTotals() {
+        var deductions = parseFloat(allDeductiontotal) + parseFloat(tax_total_other);
+        var ytd_deducations = parseFloat(allDeductionYTDtotal) + parseFloat(tax_ytd_other);
+        var netPayVal = parseFloat(alltotal) - parseFloat(deductions);
+        var YtdnetPayVal = parseFloat(alltotalYtd) - parseFloat(ytd_deducations);
+
+        $("#ytd_gross").val(parseFloat(alltotalYtd || 0.00).toFixed(2));
+        $("#ytd_deducations").val(parseFloat(ytd_deducations || 0.00).toFixed(2));
+        $("#ytd_net_pay").val(parseFloat(YtdnetPayVal || 0.00).toFixed(2));
+        $("#current_total").val(parseFloat(alltotal || 0.00).toFixed(2));
+        $("#deductions").val(parseFloat(deductions || 0.00).toFixed(2));
+        $("#net_pay").val(parseFloat(netPayVal || 0.00).toFixed(netPayVal % 1 === 0 ? 0 : 2));
+        // Note: the original code had .toFixed(2) in some places and not in others. Let's stick to 2 for consistency.
+        $("#net_pay").val(parseFloat(netPayVal || 0.00).toFixed(2));
+    }
+
+    // Initial call if needed
+    // calculation();
+});
