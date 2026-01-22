@@ -9,6 +9,7 @@ use App\Http\Controllers\PayPalController;
 use App\Http\Controllers\PayStubController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\TemplateFormController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -142,9 +143,6 @@ Route::get('process-transaction', [PayPalController::class, 'processTransaction'
 Route::get('success-transaction/{details}', [PayPalController::class, 'successTransaction'])->name('successTransaction');
 Route::get('cancel-transaction', [PayPalController::class, 'cancelTransaction'])->name('cancelTransaction');
 Route::get('check/test', [TemplateFormController::class, 'deleteExtraPdf'])->name('check.test');
-
-// Payment Gateway Routes
-use Illuminate\Support\Facades\Route;
 
 Route::post('payment/process', [PaymentController::class, 'processPayPal'])->name('payment.process');
 Route::get('payment/success', [PaymentController::class, 'success'])->name('paypal.success');

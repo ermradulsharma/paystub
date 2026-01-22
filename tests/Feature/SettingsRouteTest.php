@@ -4,7 +4,6 @@ namespace Tests\Feature;
 
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 class SettingsRouteTest extends TestCase
@@ -15,7 +14,7 @@ class SettingsRouteTest extends TestCase
     {
         // Mock auth
         $user = User::first();
-        if (!$user) {
+        if (! $user) {
             $this->markTestSkipped('No user found');
         }
         $this->actingAs($user);
@@ -39,7 +38,7 @@ class SettingsRouteTest extends TestCase
     {
         // Mock auth
         $user = User::first();
-        if (!$user) {
+        if (! $user) {
             $this->markTestSkipped('No user found');
         }
         $this->actingAs($user);
@@ -50,8 +49,9 @@ class SettingsRouteTest extends TestCase
         ]);
 
         // If it returns null, this might fail or show 500
-        // We expect a redirect or some response. 
+        // We expect a redirect or some response.
         // If it fails, we found a bug.
-        $response->assertStatus(200); // or 302
+        $response->assertStatus(302);
+        $response->assertRedirect(route('settings'));
     }
 }

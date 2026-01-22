@@ -83,7 +83,7 @@ class SettingController extends Controller
 
                 $rules['first_name'] = 'required|min:3';
                 $rules['last_name'] = 'required|min:3';
-                $rules['email'] = 'required|email|email:rfc,dns|unique:users,email,' . Auth::id();
+                $rules['email'] = 'required|email|email:rfc,dns|unique:users,email,'.Auth::id();
                 $validator = Validator::make($request->all(), $rules);
                 if ($validator->fails()) {
                     return redirect()->route('settings')->withErrors($validator)->withInput();
@@ -91,7 +91,7 @@ class SettingController extends Controller
                 $userObj = User::where('id', Auth::id())->first();
                 $userObj->first_name = $requestData['first_name'] ?? '';
                 $userObj->last_name = $requestData['last_name'] ?? '';
-                $userObj->name = (($requestData['first_name'] ?? '') . ' ' . ($requestData['last_name'] ?? ''));
+                $userObj->name = (($requestData['first_name'] ?? '').' '.($requestData['last_name'] ?? ''));
                 $userObj->email = $requestData['email'] ?? '';
                 if ($userObj->save()) {
                     return redirect()->route('settings')->with('message', 'Personal info changed successfully');
