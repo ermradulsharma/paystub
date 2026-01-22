@@ -1,15 +1,14 @@
 <?php
 
+use App\Http\Controllers\AddressBookController;
+use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\ForgotPasswordController;
-use App\Http\Controllers\PayStubController;
-use App\Http\Controllers\TemplateFormController;
-use App\Http\Controllers\AddressBookController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PayPalController;
+use App\Http\Controllers\PayStubController;
 use App\Http\Controllers\SettingController;
-use Illuminate\Support\Facades\Route;
-use Symfony\Component\Routing\Router;
+use App\Http\Controllers\TemplateFormController;
 
 /*
 |--------------------------------------------------------------------------
@@ -143,3 +142,10 @@ Route::get('process-transaction', [PayPalController::class, 'processTransaction'
 Route::get('success-transaction/{details}', [PayPalController::class, 'successTransaction'])->name('successTransaction');
 Route::get('cancel-transaction', [PayPalController::class, 'cancelTransaction'])->name('cancelTransaction');
 Route::get('check/test', [TemplateFormController::class, 'deleteExtraPdf'])->name('check.test');
+
+// Payment Gateway Routes
+use Illuminate\Support\Facades\Route;
+
+Route::post('payment/process', [PaymentController::class, 'processPayPal'])->name('payment.process');
+Route::get('payment/success', [PaymentController::class, 'success'])->name('paypal.success');
+Route::get('payment/cancel', [PaymentController::class, 'cancel'])->name('paypal.cancel');

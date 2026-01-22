@@ -3,17 +3,16 @@
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
-use Illuminate\Mail\Mailables\Content;
-use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
 class VerifyEmailSend extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $pin, $user_data;
+    public $pin;
+
+    public $user_data;
 
     /**
      * Create a new message instance.
@@ -33,7 +32,7 @@ class VerifyEmailSend extends Mailable
     public function build()
     {
         return $this->from('noreply@paystubx.com', config('mail.from.name'))
-            ->subject($this->user_data['subject'] . ' - ' . config('mail.from.name'))
+            ->subject($this->user_data['subject'].' - '.config('mail.from.name'))
             ->markdown('mail.verify')
             ->with(['user_data' => $this->user_data]);
     }

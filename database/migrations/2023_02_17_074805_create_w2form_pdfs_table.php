@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('w2form_pdfs', function (Blueprint $table) {
             $table->id();
-            $table->string('reference')->nullable()->default("");
-            $table->string('title')->nullable()->default("");
-            $table->string('pdf')->nullable()->default("");
+            $table->string('reference')->nullable()->default('');
+            $table->string('title')->nullable()->default('');
+            $table->string('pdf')->nullable()->default('');
             $table->longText('data')->nullable();
             $table->timestamps();
         });

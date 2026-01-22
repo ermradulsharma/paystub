@@ -7,14 +7,22 @@ use Livewire\Component;
 
 class ColorCodes extends Component
 {
+    public $name;
 
-    public $name, $code, $colorId, $confirming;
+    public $code;
+
+    public $colorId;
+
+    public $confirming;
+
     public $next = 1;
-    public $page_title = "Add Color";
+
+    public $page_title = 'Add Color';
 
     public function render()
     {
         $colors = ColorCode::orderBy('id', 'asc')->get();
+
         return view('livewire.color-codes', compact('colors'));
     }
 
@@ -22,13 +30,13 @@ class ColorCodes extends Component
     {
         $this->next();
         $this->resetForm();
-        $this->page_title = "Add Color";
+        $this->page_title = 'Add Color';
     }
 
     public function resetForm()
     {
-        $this->name = "";
-        $this->code = "";
+        $this->name = '';
+        $this->code = '';
         $this->colorId = null;
     }
 
@@ -38,21 +46,20 @@ class ColorCodes extends Component
             'name' => 'required',
             'code' => 'required',
 
-
         ]);
         $this->back();
         $colorObj = ColorCode::find($this->colorId);
-        if (!$colorObj) {
+        if (! $colorObj) {
             $colorObj = new ColorCode();
-            $msg = "Color saved successfully.";
+            $msg = 'Color saved successfully.';
         }
         $colorObj->name = $this->name;
         $colorObj->code = $this->code;
         $colorObj->save();
-        $msg = "Color Updated successfully.";
+        $msg = 'Color Updated successfully.';
 
         $this->resetForm();
-        session()->flash('success',  $msg);
+        session()->flash('success', $msg);
     }
 
     public function editColor($id)
@@ -63,7 +70,7 @@ class ColorCodes extends Component
 
         $this->colorId = $id;
         $this->next();
-        $this->page_title = "Edit Color";
+        $this->page_title = 'Edit Color';
     }
 
     public function next()
@@ -80,6 +87,7 @@ class ColorCodes extends Component
     {
         $this->confirming = $id;
     }
+
     public function deleteColor($id)
     {
         ColorCode::find($id)->delete();

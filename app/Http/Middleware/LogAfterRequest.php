@@ -10,6 +10,7 @@ class LogAfterRequest
     {
         return $next($request);
     }
+
     public function terminate($request, $response)
     {
         Log::info('app.requests', ['request' => $request->all(), 'response' => $response]);

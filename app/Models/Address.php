@@ -9,7 +9,8 @@ class Address extends Model
 {
     use HasFactory;
 
-    public function getFullStateNameAttribute(){
-        return StateTax::where('state_code',$this->state)->pluck('state')->first();
+    public function getFullStateNameAttribute()
+    {
+        return StateTax::where('state_code', $this->state)->pluck('state')->first();
     }
 }

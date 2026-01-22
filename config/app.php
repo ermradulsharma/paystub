@@ -216,5 +216,4 @@ return [
         'Terbilang' => Riskihajar\Terbilang\Facades\Terbilang::class,
     ])->toArray(),
 
-
 ];

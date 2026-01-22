@@ -32,10 +32,11 @@ class UserSubscriptionCommand extends Command
         $userObj = User::get();
         foreach ($userObj as $user) {
             $subscriptionDate = $user->expiryDate;
-            if($subscriptionDate <= Carbon::now()){
-              User::where('id', $user->id)->update(['expiryDate' => '']);
+            if ($subscriptionDate <= Carbon::now()) {
+                User::where('id', $user->id)->update(['expiryDate' => '']);
             }
         }
+
         return Command::SUCCESS;
     }
 }

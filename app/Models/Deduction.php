@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Deduction extends Model
 {
     use HasFactory;
-    static function getDeduction($request)
+
+    public static function getDeduction($request)
     {
 
         $dataObj = Deduction::where('state', $request->type)->get();

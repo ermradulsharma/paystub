@@ -2,11 +2,8 @@
 
 namespace Database\Seeders;
 
-use App\Models\Setting;
 use App\Models\User;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
 class AdminSeeder extends Seeder
 {
@@ -18,12 +15,12 @@ class AdminSeeder extends Seeder
     public function run()
     {
         $adminObj = User::where('role_id', 1)->first();
-        if (!$adminObj) {
+        if (! $adminObj) {
             User::create([
                 'username' => SUPER_ADMIN_USERNAME,
                 'first_name' => SUPER_ADMIN_FIRST_NAME,
                 'last_name' => SUPER_ADMIN_LAST_NAME,
-                'name' => SUPER_ADMIN_FIRST_NAME . ' ' . SUPER_ADMIN_LAST_NAME,
+                'name' => SUPER_ADMIN_FIRST_NAME.' '.SUPER_ADMIN_LAST_NAME,
                 'email' => SUPER_ADMIN_EMAIL,
                 'password' => bcrypt('12345678'),
                 'role_id' => 1,
@@ -36,7 +33,7 @@ class AdminSeeder extends Seeder
                 'username' => ADMIN_USERNAME,
                 'first_name' => ADMIN_FIRST_NAME,
                 'last_name' => ADMIN_LAST_NAME,
-                'name' => ADMIN_FIRST_NAME . ' ' . ADMIN_LAST_NAME,
+                'name' => ADMIN_FIRST_NAME.' '.ADMIN_LAST_NAME,
                 'email' => ADMIN_EMAIL,
                 'password' => bcrypt('12345678'),
                 'role_id' => 1,
@@ -48,7 +45,7 @@ class AdminSeeder extends Seeder
                 'username' => DEVELOPER_USERNAME,
                 'first_name' => DEVELOPER_FIRST_NAME,
                 'last_name' => DEVELOPER_LAST_NAME,
-                'name' => DEVELOPER_FIRST_NAME . ' ' . DEVELOPER_LAST_NAME,
+                'name' => DEVELOPER_FIRST_NAME.' '.DEVELOPER_LAST_NAME,
                 'email' => DEVELOPER_EMAIL,
                 'password' => bcrypt('12345678'),
                 'role_id' => 1,

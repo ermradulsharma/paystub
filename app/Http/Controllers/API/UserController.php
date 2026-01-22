@@ -4,26 +4,26 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Mail\ForgotPassword;
-use App\Models\ForgotPasswordMail;
-use App\Models\User;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Facades\Mail;
-use Carbon\Carbon;
 use App\Mail\VerifyEmailSend;
 use App\Models\Address;
+use App\Models\ForgotPasswordMail;
 use App\Models\PaySlip;
+use App\Models\User;
+use Carbon\Carbon;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
     public function sendOtp(Request $request)
     {
         $response = [];
-        $response['success'] = FALSE;
+        $response['success'] = false;
         $response['status'] = STATUS_BAD_REQUEST;
         $rules = [
             'email' => 'required|email:rfc,dns',
@@ -31,16 +31,17 @@ class UserController extends Controller
 
         $messages = [
             'email.required' => 'The email cannot be empty.',
-            'email.email' => 'Please enter valid email.'
+            'email.email' => 'Please enter valid email.',
         ];
         $validator = Validator::make($request->all(), $rules, $messages);
         if ($validator->fails()) {
             $response['message'] = $validator->errors()->first();
+
             return response()->json($response, 301);
         }
         $code = rand(100000, 999999);
         $userObj = User::where('email', request('email'))->first();
-        if (!$userObj) {
+        if (! $userObj) {
             $userObj = new User;
             $userObj->email = $request->email;
             $userObj->is_completed = '0';
@@ -58,8 +59,8 @@ class UserController extends Controller
         }
         $response['is_completed'] = $userObj->is_completed;
         $response['data'] = User::select('email')->find($userObj->id);
-        $response['success'] = TRUE;
-        $response['message'] = "Verification code sent successfully";
+        $response['success'] = true;
+        $response['message'] = 'Verification code sent successfully';
         $response['status'] = STATUS_OK;
 
         return response()->json($response, $response['status']);
@@ -68,12 +69,12 @@ class UserController extends Controller
     public function loginWithOtp(Request $request)
     {
         $response = [];
-        $response['success'] = FALSE;
+        $response['success'] = false;
         $response['status'] = STATUS_BAD_REQUEST;
         DB::beginTransaction();
         $rules = [
             'email' => 'required|email:rfc,dns',
-            'code' => 'required|min:4'
+            'code' => 'required|min:4',
         ];
 
         $messages = [
@@ -85,11 +86,13 @@ class UserController extends Controller
         $validator = Validator::make($request->all(), $rules, $messages);
         if ($validator->fails()) {
             $response['message'] = $validator->errors()->first();
+
             return response()->json($response, 301);
         }
-        $user  = User::where(['email' => $request->email, 'code' => $request->code])->first();
-        if (!$user) {
-            $response['message'] = "Entered wrong verification code.";
+        $user = User::where(['email' => $request->email, 'code' => $request->code])->first();
+        if (! $user) {
+            $response['message'] = 'Entered wrong verification code.';
+
             return response()->json($response, 301);
         }
         $user->code = null;
@@ -97,21 +100,22 @@ class UserController extends Controller
         $user->save();
         Auth::login($user);
         if ($user->save()) {
-            $response['token'] = $user->createToken($user->id . ' token ')->accessToken;
-            $response['success'] = TRUE;
+            $response['token'] = $user->createToken($user->id.' token ')->accessToken;
+            $response['success'] = true;
             $response['is_completed'] = $user->is_completed;
-            $response['message'] = "Login successfully";
+            $response['message'] = 'Login successfully';
             $response['status'] = STATUS_OK;
         }
         DB::commit();
+
         return response()->json($response, 200);
     }
 
     public function getUserProfile(Request $request)
     {
-        $response['success'] = TRUE;
-        $response['data'] =  User::select('name', 'email')->find($request->user()->id);;
-        $response['message'] = "Profile update successfully";
+        $response['success'] = true;
+        $response['data'] = User::select('name', 'email')->find($request->user()->id);
+        $response['message'] = 'Profile update successfully';
         $response['status'] = STATUS_OK;
 
         return response()->json($response, $response['status']);
@@ -120,7 +124,7 @@ class UserController extends Controller
     public function updateProfile(Request $request)
     {
         $response = [];
-        $response['success'] = FALSE;
+        $response['success'] = false;
         $response['status'] = STATUS_BAD_REQUEST;
 
         $rules = [
@@ -137,31 +141,34 @@ class UserController extends Controller
         $validator = Validator::make($request->all(), $rules, $messages);
         if ($validator->fails()) {
             $response['message'] = $validator->errors()->first();
+
             return response()->json($response, 301);
         }
 
-        $user  = User::find($request->user()->id);
-        if (!$user) {
+        $user = User::find($request->user()->id);
+        if (! $user) {
             $response['message'] = "User doesn't exist.";
+
             return response()->json($response, 301);
         }
 
         $user->name = $request->uname ?? '';
-        $user->is_completed = "1";
+        $user->is_completed = '1';
         $user->password = bcrypt($request->password);
         if ($user->save()) {
-            $response['success'] = TRUE;
+            $response['success'] = true;
             $response['is_completed'] = $user->is_completed;
-            $response['message'] = "Profile update successfully";
+            $response['message'] = 'Profile update successfully';
             $response['status'] = STATUS_OK;
         }
+
         return response()->json($response, $response['status']);
     }
 
     public function updateUserProfile(Request $request)
     {
         $response = [];
-        $response['success'] = FALSE;
+        $response['success'] = false;
         $response['status'] = STATUS_BAD_REQUEST;
 
         $rules = [
@@ -178,12 +185,14 @@ class UserController extends Controller
         $validator = Validator::make($request->all(), $rules, $messages);
         if ($validator->fails()) {
             $response['message'] = $validator->errors()->first();
+
             return response()->json($response, 301);
         }
 
-        $user  = User::find($request->user()->id);
-        if (!$user) {
+        $user = User::find($request->user()->id);
+        if (! $user) {
             $response['message'] = "User doesn't exist.";
+
             return response()->json($response, 301);
         }
 
@@ -191,23 +200,24 @@ class UserController extends Controller
 
         $user->email = $request->email;
         if ($user->save()) {
-            $response['success'] = TRUE;
-            $response['message'] = "Profile update successfully";
+            $response['success'] = true;
+            $response['message'] = 'Profile update successfully';
             $response['status'] = STATUS_OK;
         }
+
         return response()->json($response, $response['status']);
     }
 
     public function loginWithPassword(Request $request)
     {
         $response = [];
-        $response['success'] = FALSE;
+        $response['success'] = false;
         $response['status'] = STATUS_BAD_REQUEST;
         Log::info($request);
         DB::beginTransaction();
         $rules = [
             'email' => 'required|email:rfc,dns',
-            'password' => 'required|min:6'
+            'password' => 'required|min:6',
         ];
 
         $messages = [
@@ -219,39 +229,43 @@ class UserController extends Controller
         $validator = Validator::make($request->all(), $rules, $messages);
         if ($validator->fails()) {
             $response['message'] = $validator->errors()->first();
+
             return response()->json($response, 301);
         }
-        $user  = User::where(['email' => $request->email])->first();
-        if (!$user) {
+        $user = User::where(['email' => $request->email])->first();
+        if (! $user) {
             $response['message'] = "Email doesn't exist.";
+
             return response()->json($response, 301);
         }
-        if (!Hash::check($request->password, $user->password)) {
-            $response['message'] = "Incorrect password.";
+        if (! Hash::check($request->password, $user->password)) {
+            $response['message'] = 'Incorrect password.';
+
             return response()->json($response, 301);
         }
         $user->save();
         Auth::login($user);
-        $response['token'] = $user->createToken($user->id . ' token ')->accessToken;
-        $response['success'] = TRUE;
+        $response['token'] = $user->createToken($user->id.' token ')->accessToken;
+        $response['success'] = true;
         $response['is_completed'] = $user->is_completed;
-        $response['message'] = "Login successfully";
+        $response['message'] = 'Login successfully';
         $response['status'] = STATUS_OK;
         DB::commit();
+
         return response()->json($response, 200);
     }
 
     public function socialLogin(Request $request)
     {
         $response = [];
-        $response['success'] = FALSE;
+        $response['success'] = false;
         $response['status'] = STATUS_BAD_REQUEST;
         try {
             $post_data = $request->all();
-            $isNewAccount = FALSE;
+            $isNewAccount = false;
             $rules = [
                 'email' => 'required|email:rfc,dns',
-                'social_id' => 'required'
+                'social_id' => 'required',
             ];
 
             $messages = [
@@ -262,46 +276,48 @@ class UserController extends Controller
             $validator = Validator::make($request->all(), $rules, $messages);
             if ($validator->fails()) {
                 $response['message'] = $validator->errors()->first();
+
                 return response()->json($response, 301);
             }
             $email_exist = User::where('email', $post_data['email'])->count();
             if ($email_exist) {
                 $userObj = User::where('email', $post_data['email'])->first();
                 $social_id_exist = User::where('email', $post_data['email'])->where('social_id', $post_data['social_id'])->count();
-                if (!$social_id_exist) {
+                if (! $social_id_exist) {
                     $userObj->social_id = $post_data['social_id'];
                     $userObj->save();
                 }
             } else {
-                $isNewAccount = TRUE;
+                $isNewAccount = true;
                 $userObj = new User;
                 $userObj->social_id = $post_data['social_id'];
                 $userObj->email = $post_data['email'];
                 $userObj->name = $post_data['name'] ?? '';
                 $userObj->save();
             }
-            $userObj->device_token = $post_data['device_token'] ?? "";
+            $userObj->device_token = $post_data['device_token'] ?? '';
             $userObj->email_verified_at = Carbon::now();
             $userObj->is_completed = '1';
-            $userObj->device_type = $post_data['device_type'] ?? "";
+            $userObj->device_type = $post_data['device_type'] ?? '';
             if ($userObj->save()) {
-                $response['token'] = $userObj->createToken($userObj->id . ' token ')->accessToken;
-                $response['message'] = "Login successfully";
-                $response['success'] = TRUE;
+                $response['token'] = $userObj->createToken($userObj->id.' token ')->accessToken;
+                $response['message'] = 'Login successfully';
+                $response['success'] = true;
                 $response['status'] = STATUS_OK;
             }
         } catch (\Exception $e) {
-            $response['message'] = $e->getMessage() . ' Line No ' . $e->getLine() . ' in File' . $e->getFile();
+            $response['message'] = $e->getMessage().' Line No '.$e->getLine().' in File'.$e->getFile();
             Log::error($e->getTraceAsString());
             $response['status'] = STATUS_GENERAL_ERROR;
         }
+
         return response()->json($response, 200);
     }
 
     public function forgotPassword(Request $request)
     {
         $response = [];
-        $response['success'] = FALSE;
+        $response['success'] = false;
         $response['status'] = STATUS_BAD_REQUEST;
         try {
             DB::beginTransaction();
@@ -311,37 +327,38 @@ class UserController extends Controller
             ];
             $messages = [
                 'required' => 'The :attribute field is required.',
-                'email.email' => 'Please enter valid email address.'
+                'email.email' => 'Please enter valid email address.',
             ];
 
             $validator = Validator::make($request->all(), $rules, $messages);
             if ($validator->fails()) {
                 $response['message'] = $validator->errors()->first();
+
                 return response()->json($response, 301);
             }
 
             $userObj = User::where('email', strtolower($request->get('email')))->first();
-            if (!$userObj) {
+            if (! $userObj) {
                 return response()->json([
-                    'error' => ["Email id does not exist."],
+                    'error' => ['Email id does not exist.'],
                 ]);
             }
 
             $token = generateRandomToken(50, $request->get('email'));
             $tokenMailObj = ForgotPasswordMail::where('email', $request->get('email'))->first();
-            if (!$tokenMailObj) {
+            if (! $tokenMailObj) {
                 $tokenMailObj = new ForgotPasswordMail;
             }
             $tokenMailObj->email = $request->get('email');
             $tokenMailObj->token = $token;
-            $currentTime = date("Y-m-d H:i:s");
+            $currentTime = date('Y-m-d H:i:s');
             $mailExpireTime = date('Y-m-d H:i:s', strtotime('+10 minutes', strtotime($currentTime)));
 
             $tokenMailObj->expired_at = $mailExpireTime;
             $tokenMailObj->save();
 
             $mailData = [];
-            $mailData['name'] = $userObj->first_name . ' ' . $userObj->last_name ?? '';
+            $mailData['name'] = $userObj->first_name.' '.$userObj->last_name ?? '';
 
             $mailData['link'] = route('password.reset', [$token, 'email' => $request->get('email')]);
 
@@ -350,45 +367,47 @@ class UserController extends Controller
             DB::commit();
 
             $response['message'] = 'Please check your email to reset password.';
-            $response['success'] = TRUE;
+            $response['success'] = true;
             $response['status'] = STATUS_OK;
         } catch (\Exception $e) {
-            $response['message'] = $e->getMessage() . ' Line No ' . $e->getLine() . ' in File' . $e->getFile();
+            $response['message'] = $e->getMessage().' Line No '.$e->getLine().' in File'.$e->getFile();
             Log::error($e->getTraceAsString());
             $response['status'] = STATUS_GENERAL_ERROR;
         }
+
         return response()->json($response, $response['status']);
     }
 
     public function logout(Request $request)
     {
         $response = [];
-        $response['success'] = FALSE;
+        $response['success'] = false;
 
         try {
             $userObj = User::find(Auth::user()->id);
-            $userObj->device_token = "";
-            $userObj->device_type = "";
+            $userObj->device_token = '';
+            $userObj->device_type = '';
             if ($userObj->save()) {
                 $user = Auth::user()->token();
                 $user->revoke();
 
                 $response['message'] = 'User Logout Successfully';
-                $response['success'] = TRUE;
+                $response['success'] = true;
                 $response['status'] = STATUS_OK;
             }
         } catch (\Exception $e) {
-            $response['message'] = $e->getMessage() . ' Line No ' . $e->getLine() . ' in File' . $e->getFile();
+            $response['message'] = $e->getMessage().' Line No '.$e->getLine().' in File'.$e->getFile();
             Log::error($e->getTraceAsString());
             $response['status'] = STATUS_GENERAL_ERROR;
         }
+
         return response()->json($response, $response['status']);
     }
 
     public function deactivateAccount(Request $request)
     {
         $response = [];
-        $response['success'] = FALSE;
+        $response['success'] = false;
         $response['status'] = STATUS_BAD_REQUEST;
         try {
             DB::beginTransaction();
@@ -396,29 +415,30 @@ class UserController extends Controller
             $dataObj = User::deactivateAccount($request);
             $response['message'] = $dataObj['message'];
             if ($dataObj['status'] == 200) {
-                $response['success'] = TRUE;
+                $response['success'] = true;
                 $response['status'] = STATUS_OK;
             }
         } catch (\Exception $e) {
             DB::rollback();
-            $response['message'] = $e->getMessage() . ' Line No ' . $e->getLine() . ' in File' . $e->getFile();
+            $response['message'] = $e->getMessage().' Line No '.$e->getLine().' in File'.$e->getFile();
             Log::error($e->getTraceAsString());
             $response['status'] = STATUS_GENERAL_ERROR;
         }
         DB::commit();
+
         return response()->json($response, $response['status']);
     }
 
     public function restoreAccount(Request $request)
     {
         $response = [];
-        $response['success'] = FALSE;
+        $response['success'] = false;
         $response['status'] = STATUS_BAD_REQUEST;
         try {
             DB::beginTransaction();
             $rules = [
                 'username' => 'required|max:255',
-                'password' => 'required|min:6'
+                'password' => 'required|min:6',
             ];
 
             $messages = [
@@ -430,29 +450,31 @@ class UserController extends Controller
             if ($validator->fails()) {
                 $response['message'] = $validator->errors()->first();
                 $response['status'] = UNPROCESSABLE_ENTITY;
+
                 return $response;
             }
             $dataObj = User::restoreAccount($request);
             $response['message'] = $dataObj['message'];
             if ($dataObj['status'] == 200) {
-                $response['success'] = TRUE;
+                $response['success'] = true;
                 $response['status'] = $dataObj['status'];
             }
         } catch (\Exception $e) {
             DB::rollback();
             unset($response['data']);
-            $response['message'] = $e->getMessage() . ' Line No ' . $e->getLine() . ' in File' . $e->getFile();
+            $response['message'] = $e->getMessage().' Line No '.$e->getLine().' in File'.$e->getFile();
             Log::error($e->getTraceAsString());
             $response['status'] = STATUS_GENERAL_ERROR;
         }
         DB::commit();
+
         return response()->json($response, $response['status']);
     }
 
     public function deleteAccount(Request $request)
     {
         $response = [];
-        $response['success'] = FALSE;
+        $response['success'] = false;
         $response['status'] = STATUS_BAD_REQUEST;
 
         try {
@@ -465,24 +487,26 @@ class UserController extends Controller
             }
         } catch (\Exception $e) {
             DB::rollBack();
-            $response['message'] = $e->getMessage() . ' Line No ' . $e->getLine() . ' in File' . $e->getFile();
+            $response['message'] = $e->getMessage().' Line No '.$e->getLine().' in File'.$e->getFile();
             Log::error($e->getTraceAsString());
             $response['status'] = STATUS_GENERAL_ERROR;
         }
         DB::commit();
+
         return response()->json($response, $response['status']);
     }
 
     public function accountUpdate(Request $request)
     {
         $response = [];
-        $response['success'] = FALSE;
+        $response['success'] = false;
         $response['status'] = STATUS_BAD_REQUEST;
 
         $requestData = $request->all();
         $userObj = User::find(Auth::user()->id);
-        if (!$userObj) {
+        if (! $userObj) {
             $response['message'] = "User doesn't exist.";
+
             return response()->json($response, 301);
         }
         if ($requestData['type'] == 'name') {
@@ -497,10 +521,11 @@ class UserController extends Controller
             $validator = Validator::make($request->all(), $rules, $messages);
             if ($validator->fails()) {
                 $response['message'] = $validator->errors()->first();
+
                 return response()->json($response, 301);
             }
             $userObj->name = $request->name;
-            $msg = "Name has updated successfully";
+            $msg = 'Name has updated successfully';
             if ($userObj->save()) {
                 $user = User::select('name', 'email')->where('id', Auth::user()->id)->first();
             }
@@ -509,28 +534,30 @@ class UserController extends Controller
         if ($requestData['type'] == 'email') {
             $rules = [
                 'password' => 'required',
-                'email' => 'required|email:rfc,dns|unique:users,email'
+                'email' => 'required|email:rfc,dns|unique:users,email',
             ];
 
             $messages = [
                 'email.required' => 'The email cannot be empty.',
                 'email.unique' => 'Please enter another email.',
                 'email.email' => 'Please enter valid email.',
-                'password.required' => 'The password cannot be empty'
+                'password.required' => 'The password cannot be empty',
             ];
             $validator = Validator::make($request->all(), $rules, $messages);
             if ($validator->fails()) {
                 $response['message'] = $validator->errors()->first();
+
                 return response()->json($response, 301);
             }
-            if (!Hash::check($request->get('password'), $userObj->password)) {
+            if (! Hash::check($request->get('password'), $userObj->password)) {
                 $response['message'] = WRONG_PASSWORD;
                 $response['status'] = STATUS_BAD_REQUEST;
+
                 return $response;
             }
             $userObj->temp_mail = $request->email;
             $code = rand(100000, 999999);
-            if ($userObj->temp_mail != "") {
+            if ($userObj->temp_mail != '') {
                 $mailData = [];
                 $mailData['name'] = $request->email;
                 $mailData['otp'] = $code;
@@ -541,23 +568,24 @@ class UserController extends Controller
             $userObj->code = $code;
             $userObj->save();
             $user = User::select('name', 'email')->where('id', Auth::user()->id)->first();
-            $msg = "Please check your mail.";
+            $msg = 'Please check your mail.';
         }
 
         if ($requestData['type'] == 'verify') {
             $rules = [
                 'otp' => 'required',
-                'email' => 'required|email:rfc,dns'
+                'email' => 'required|email:rfc,dns',
             ];
 
             $messages = [
                 'email.required' => 'The email cannot be empty.',
                 'email.email' => 'Please enter valid email.',
-                'otp.required' => 'The OTP cannot be empty'
+                'otp.required' => 'The OTP cannot be empty',
             ];
             $validator = Validator::make($request->all(), $rules, $messages);
             if ($validator->fails()) {
                 $response['message'] = $validator->errors()->first();
+
                 return response()->json($response, 301);
             }
             $userObj = User::where(['temp_mail' => $request->email, 'code' => $request->otp])->first();
@@ -569,12 +597,12 @@ class UserController extends Controller
 
             $userObj->save();
             $user = User::select('name', 'email')->where('id', Auth::user()->id)->first();
-            $msg = "OTP Verify Successfully";
+            $msg = 'OTP Verify Successfully';
         }
 
         if ($requestData['type'] == 'resend') {
             $rules = [
-                'email' => 'required|email:rfc,dns'
+                'email' => 'required|email:rfc,dns',
             ];
 
             $messages = [
@@ -584,12 +612,13 @@ class UserController extends Controller
             $validator = Validator::make($request->all(), $rules, $messages);
             if ($validator->fails()) {
                 $response['message'] = $validator->errors()->first();
+
                 return response()->json($response, 301);
             }
             $userObj = User::where(['temp_mail' => $request->email])->first();
             if ($userObj) {
                 $code = rand(100000, 999999);
-                if ($userObj->temp_mail != "") {
+                if ($userObj->temp_mail != '') {
                     $mailData = [];
                     $mailData['name'] = $request->email;
                     $mailData['otp'] = $code;
@@ -601,13 +630,13 @@ class UserController extends Controller
             }
             $userObj->save();
             $user = User::select('name', 'email')->where('id', Auth::user()->id)->first();
-            $msg = "OTP Send Successfully. Please check your e-mail";
+            $msg = 'OTP Send Successfully. Please check your e-mail';
         }
 
         if ($requestData['type'] == 'password') {
             $rules = [
                 'current_password' => 'required',
-                'password' => 'required|confirmed|min:8'
+                'password' => 'required|confirmed|min:8',
             ];
 
             $messages = [
@@ -618,20 +647,21 @@ class UserController extends Controller
             $validator = Validator::make($request->all(), $rules, $messages);
             if ($validator->fails()) {
                 $response['message'] = $validator->errors()->first();
+
                 return response()->json($response, 301);
             }
 
-            if (!Hash::check($request->get('current_password'), $userObj->password)) {
+            if (! Hash::check($request->get('current_password'), $userObj->password)) {
                 $response['message'] = WRONG_PASSWORD;
                 $response['status'] = STATUS_BAD_REQUEST;
+
                 return $response;
             }
             $userObj->password = Hash::make($requestData['password']);
             $userObj->save();
             $user = User::select('name', 'email')->where('id', Auth::user()->id)->first();
-            $msg = "Password has updated successfully";
+            $msg = 'Password has updated successfully';
         }
-
 
         if ($requestData['type'] == 'delete') {
             PaySlip::where(['user_id' => Auth::user()->id])->forceDelete();
@@ -643,9 +673,10 @@ class UserController extends Controller
         }
 
         $response['data'] = $user;
-        $response['success'] = TRUE;
+        $response['success'] = true;
         $response['message'] = $msg;
         $response['status'] = STATUS_OK;
+
         return response()->json($response, $response['status']);
     }
 
@@ -654,62 +685,65 @@ class UserController extends Controller
 
         try {
             $response = [];
-            $response['success'] = FALSE;
+            $response['success'] = false;
             $response['status'] = STATUS_BAD_REQUEST;
 
             $rules = [
-                'type'      => 'required',
-                'name'      => 'required|min:3',
+                'type' => 'required',
+                'name' => 'required|min:3',
                 'address_1' => 'required|min:3',
-                'city'      => 'required',
-                'state'     => 'required',
-                'zip_code'       => 'required|min:3',
+                'city' => 'required',
+                'state' => 'required',
+                'zip_code' => 'required|min:3',
             ];
 
             $messages = [
                 'required' => 'The :attribute cannot be empty.',
-                'min'      => 'The :attribute atleast in single word.',
-                'type.in'  => 'The type is invalid.',
+                'min' => 'The :attribute atleast in single word.',
+                'type.in' => 'The type is invalid.',
             ];
             $validator = Validator::make($request->all(), $rules, $messages);
             if ($validator->fails()) {
                 $response['message'] = $validator->errors()->first();
+
                 return response()->json($response, 301);
             }
             $requestData = $request->all();
             $userObj = User::find(Auth::user()->id);
-            if (!$userObj) {
+            if (! $userObj) {
                 $response['message'] = "User doesn't exist.";
+
                 return response()->json($response, 301);
             }
 
-            $addressObj             = new Address;
-            $addressObj->user_id    = Auth::user()->id;
-            $addressObj->type       = $requestData['type'];
-            $addressObj->name       = $requestData['name'];
+            $addressObj = new Address;
+            $addressObj->user_id = Auth::user()->id;
+            $addressObj->type = $requestData['type'];
+            $addressObj->name = $requestData['name'];
             if ($requestData['type'] == 'employer') {
-                $addressObj->tel        = $requestData['tel'] ?? '';
+                $addressObj->tel = $requestData['tel'] ?? '';
             }
-            $addressObj->address_1  = $requestData['address_1'];
-            $addressObj->address_2  = $requestData['address_2'] ?? '';
-            $addressObj->city       = $requestData['city'];
-            $addressObj->state      = $requestData['state'];
-            $addressObj->zip_code   = $requestData['zip_code'];
+            $addressObj->address_1 = $requestData['address_1'];
+            $addressObj->address_2 = $requestData['address_2'] ?? '';
+            $addressObj->city = $requestData['city'];
+            $addressObj->state = $requestData['state'];
+            $addressObj->zip_code = $requestData['zip_code'];
             if ($requestData['type'] == 'employee') {
-                $addressObj->emp_id   = $requestData['emp_id'] ?? '';
-                $addressObj->emp_ssn   = $requestData['emp_ssn'] ?? '';
+                $addressObj->emp_id = $requestData['emp_id'] ?? '';
+                $addressObj->emp_ssn = $requestData['emp_ssn'] ?? '';
             }
 
             if ($addressObj->save()) {
-                $response['success'] = TRUE;
-                $response['message'] = "Address saved successfully";
+                $response['success'] = true;
+                $response['message'] = 'Address saved successfully';
                 $response['status'] = STATUS_OK;
             }
         } catch (\Exception $e) {
-            $response['message'] = $e->getMessage() . ' Line No ' . $e->getLine() . ' in File' . $e->getFile();
+            $response['message'] = $e->getMessage().' Line No '.$e->getLine().' in File'.$e->getFile();
             Log::error($e->getTraceAsString());
             $response['status'] = STATUS_GENERAL_ERROR;
         }
+
         return response()->json($response, $response['status']);
     }
 
@@ -718,66 +752,70 @@ class UserController extends Controller
 
         try {
             $response = [];
-            $response['success'] = FALSE;
+            $response['success'] = false;
             $response['status'] = STATUS_BAD_REQUEST;
 
             $rules = [
-                'address_id'        => 'required',
-                'type'      => 'required',
-                'name'      => 'required|min:3',
+                'address_id' => 'required',
+                'type' => 'required',
+                'name' => 'required|min:3',
                 'address_1' => 'required|min:3',
-                'city'      => 'required',
-                'state'     => 'required',
-                'zip_code'       => 'required|min:3',
+                'city' => 'required',
+                'state' => 'required',
+                'zip_code' => 'required|min:3',
             ];
 
             $messages = [
                 'required' => 'The :attribute cannot be empty.',
-                'min'      => 'The :attribute atleast in single word.',
-                'type.in'  => 'The type is invalid.',
+                'min' => 'The :attribute atleast in single word.',
+                'type.in' => 'The type is invalid.',
             ];
             $validator = Validator::make($request->all(), $rules, $messages);
             if ($validator->fails()) {
                 $response['message'] = $validator->errors()->first();
+
                 return response()->json($response, 301);
             }
             $requestData = $request->all();
             $userObj = User::find(Auth::user()->id);
-            if (!$userObj) {
+            if (! $userObj) {
                 $response['message'] = "User doesn't exist.";
+
                 return response()->json($response, 301);
             }
 
             $addressObj = Address::where(['id' => $requestData['address_id']])->first();
-            if (!$addressObj) {
+            if (! $addressObj) {
                 $response['message'] = "Address doesn't exist.";
+
                 return response()->json($response, 301);
             }
-            $addressObj->user_id    = Auth::user()->id;
-            $addressObj->type       = $requestData['type'];
-            $addressObj->name       = $requestData['name'];
+            $addressObj->user_id = Auth::user()->id;
+            $addressObj->type = $requestData['type'];
+            $addressObj->name = $requestData['name'];
             if ($requestData['type'] == 'employer') {
-                $addressObj->tel        = $requestData['tel'] ?? '';
+                $addressObj->tel = $requestData['tel'] ?? '';
             }
-            $addressObj->address_1  = $requestData['address_1'];
-            $addressObj->address_2  = $requestData['address_2'] ?? '';
-            $addressObj->city       = $requestData['city'];
-            $addressObj->state      = $requestData['state'];
-            $addressObj->zip_code   = $requestData['zip_code'];
+            $addressObj->address_1 = $requestData['address_1'];
+            $addressObj->address_2 = $requestData['address_2'] ?? '';
+            $addressObj->city = $requestData['city'];
+            $addressObj->state = $requestData['state'];
+            $addressObj->zip_code = $requestData['zip_code'];
             if ($requestData['type'] == 'employee') {
-                $addressObj->emp_id   = $requestData['emp_id'] ?? '';
-                $addressObj->emp_ssn   = $requestData['emp_ssn'] ?? '';
+                $addressObj->emp_id = $requestData['emp_id'] ?? '';
+                $addressObj->emp_ssn = $requestData['emp_ssn'] ?? '';
             }
             if ($addressObj->save()) {
-                $response['success'] = TRUE;
-                $response['message'] = "Address updated successfully";
+                $response['success'] = true;
+                $response['message'] = 'Address updated successfully';
                 $response['status'] = STATUS_OK;
             }
         } catch (\Exception $e) {
-            $response['message'] = $e->getMessage() . ' Line No ' . $e->getLine() . ' in File' . $e->getFile();
+            $response['message'] = $e->getMessage().' Line No '.$e->getLine().' in File'.$e->getFile();
             Log::error($e->getTraceAsString());
             $response['status'] = STATUS_GENERAL_ERROR;
         }
+
         return response()->json($response, $response['status']);
     }
 
@@ -785,22 +823,23 @@ class UserController extends Controller
     {
         try {
             $response = [];
-            $response['success'] = FALSE;
+            $response['success'] = false;
             $response['status'] = STATUS_BAD_REQUEST;
             $userObj = $request->user()->id;
             $employerList = Address::where(['type' => 'employer', 'user_id' => $userObj])->orderBy('id', 'desc')->get();
             $employeeList = Address::where(['type' => 'employee', 'user_id' => $userObj])->orderBy('id', 'desc')->get();
 
-            $response['success'] = TRUE;
+            $response['success'] = true;
             $response['employerList'] = $employerList;
             $response['employeeList'] = $employeeList;
-            $response['message'] = "Address fetch successfully";
+            $response['message'] = 'Address fetch successfully';
             $response['status'] = STATUS_OK;
         } catch (\Exception $e) {
-            $response['message'] = $e->getMessage() . ' Line No ' . $e->getLine() . ' in File' . $e->getFile();
+            $response['message'] = $e->getMessage().' Line No '.$e->getLine().' in File'.$e->getFile();
             Log::error($e->getTraceAsString());
             $response['status'] = STATUS_GENERAL_ERROR;
         }
+
         return response()->json($response, $response['status']);
     }
 
@@ -809,11 +848,11 @@ class UserController extends Controller
 
         try {
             $response = [];
-            $response['success'] = FALSE;
+            $response['success'] = false;
             $response['status'] = STATUS_BAD_REQUEST;
 
             $rules = [
-                'address_ids'      => 'required',
+                'address_ids' => 'required',
             ];
 
             $messages = [
@@ -822,27 +861,30 @@ class UserController extends Controller
             $validator = Validator::make($request->all(), $rules, $messages);
             if ($validator->fails()) {
                 $response['message'] = $validator->errors()->first();
+
                 return response()->json($response, 301);
             }
             $requestData = $request->all();
             $userObj = User::find(Auth::user()->id);
-            if (!$userObj) {
+            if (! $userObj) {
                 $response['message'] = "User doesn't exist.";
+
                 return response()->json($response, 301);
             }
             $address_ids = explode(',', $requestData['address_ids']);
             $isDeleted = Address::whereIn('id', $address_ids)->delete();
 
             if ($isDeleted) {
-                $response['success'] = TRUE;
-                $response['message'] = "Address deleted successfully";
+                $response['success'] = true;
+                $response['message'] = 'Address deleted successfully';
                 $response['status'] = STATUS_OK;
             }
         } catch (\Exception $e) {
-            $response['message'] = $e->getMessage() . ' Line No ' . $e->getLine() . ' in File' . $e->getFile();
+            $response['message'] = $e->getMessage().' Line No '.$e->getLine().' in File'.$e->getFile();
             Log::error($e->getTraceAsString());
             $response['status'] = STATUS_GENERAL_ERROR;
         }
+
         return response()->json($response, $response['status']);
     }
 
@@ -850,7 +892,7 @@ class UserController extends Controller
     {
         try {
             $response = [];
-            $response['success'] = FALSE;
+            $response['success'] = false;
             $response['status'] = STATUS_BAD_REQUEST;
 
             $requestData = $request->all();
@@ -863,15 +905,16 @@ class UserController extends Controller
                 $addressObj = Address::where('type', 'employer');
             }
 
-            $response['success'] = TRUE;
+            $response['success'] = true;
             $response['data'] = $addressObj->where('user_id', Auth::user()->id)->orderBy('id', 'desc')->get();
-            $response['message'] = "Address fetch successfully";
+            $response['message'] = 'Address fetch successfully';
             $response['status'] = STATUS_OK;
         } catch (\Exception $e) {
-            $response['message'] = $e->getMessage() . ' Line No ' . $e->getLine() . ' in File' . $e->getFile();
+            $response['message'] = $e->getMessage().' Line No '.$e->getLine().' in File'.$e->getFile();
             Log::error($e->getTraceAsString());
             $response['status'] = STATUS_GENERAL_ERROR;
         }
+
         return response()->json($response, $response['status']);
     }
 }

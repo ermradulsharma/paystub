@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\Relation;
 class Image extends Model
 {
     use HasFactory;
+
     public function images()
     {
         Relation::morphMap([
@@ -18,21 +19,23 @@ class Image extends Model
 
     public function getFileAttribute($image = null)
     {
-        if ($image != "") {
+        if ($image != '') {
             if ($this->module_type == "App\Models\Template") {
-                return asset("storage/templates/" . $image);
+                return asset('storage/templates/'.$image);
             }
         }
-        return "";
+
+        return '';
     }
 
     public function getThumbnailAttribute($image = null)
     {
-        if ($image != "") {
+        if ($image != '') {
             if ($this->module_type == "App\Models\Template") {
-                return asset("storage/watermark/" . $image);
+                return asset('storage/watermark/'.$image);
             }
         }
-        return "";
+
+        return '';
     }
 }

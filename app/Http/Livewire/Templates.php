@@ -10,15 +10,31 @@ use Livewire\WithFileUploads;
 class Templates extends Component
 {
     use WithFileUploads;
-    public $title, $type, $state, $description, $tempId, $confirming;
+
+    public $title;
+
+    public $type;
+
+    public $state;
+
+    public $description;
+
+    public $tempId;
+
+    public $confirming;
+
     public $next = 1;
+
     public $image;
+
     public $watermark;
-    public $page_title = "Add Template";
+
+    public $page_title = 'Add Template';
 
     public function render()
     {
         $templateCollection = Template::orderBy('id', 'asc')->get();
+
         return view('livewire.templates', compact('templateCollection'));
     }
 
@@ -26,16 +42,16 @@ class Templates extends Component
     {
         $this->next();
         $this->resetForm();
-        $this->page_title = "Add Template";
+        $this->page_title = 'Add Template';
     }
 
     public function resetForm()
     {
-        $this->title = "";
-        $this->image = "";
-        $this->watermark = "";
-        $this->type = "";
-        $this->state = "";
+        $this->title = '';
+        $this->image = '';
+        $this->watermark = '';
+        $this->type = '';
+        $this->state = '';
         $this->tempId = null;
     }
 
@@ -45,7 +61,7 @@ class Templates extends Component
             $this->validate([
                 'title' => 'required',
                 'type' => 'required',
-                'state' => 'required'
+                'state' => 'required',
             ]);
         } else {
             $this->validate([
@@ -59,10 +75,10 @@ class Templates extends Component
 
         $this->back();
         $tempObj = Template::find($this->tempId);
-        if (!$tempObj) {
+        if (! $tempObj) {
             $tempObj = new Template();
             $tempObj->title = strtolower(str_replace(' ', '_', $this->title));
-            $msg = "Template saved successfully.";
+            $msg = 'Template saved successfully.';
         }
         $tempObj->name = $this->title;
 
@@ -75,22 +91,22 @@ class Templates extends Component
             uploadImage("App\Models\Template", $tempObj->id, $this->image, 'templates', $tempObj->title);
         }
 
-        $pathwatermark =  IMAGE_UPLOAD_PATH . 'watermark';
+        $pathwatermark = IMAGE_UPLOAD_PATH.'watermark';
 
         if ($this->watermark) {
             $watermark = $this->watermark;
             $ext = $watermark->extension();
-            $filewatermark = date('dmY-his-') . uniqid() . '.' . $ext;
+            $filewatermark = date('dmY-his-').uniqid().'.'.$ext;
             $watermark->storeAs($pathwatermark, $filewatermark);
 
             $image = Image::where(['module_type' => 'App\Models\Template', 'module_id' => $this->tempId])->first();
-            if($image){
+            if ($image) {
                 $image->thumbnail = $filewatermark;
                 $image->save();
             }
         }
 
-        $msg = "Template Updated successfully.";
+        $msg = 'Template Updated successfully.';
 
         $this->resetForm();
         session()->flash('success', $msg);
@@ -105,7 +121,7 @@ class Templates extends Component
 
         $this->tempId = $id;
         $this->next();
-        $this->page_title = "Edit Template";
+        $this->page_title = 'Edit Template';
     }
 
     public function changeStatus($id)
@@ -124,14 +140,16 @@ class Templates extends Component
     {
         $this->next--;
     }
+
     public function confirmDelete($id)
     {
         $this->confirming = $id;
     }
+
     public function deleteTemplate($id)
     {
-        deleteImage('App\Models\Template',  $id ?? 0, 'templates');
-        deleteImage('App\Models\Template',  $id ?? 0, 'watermark;');
+        deleteImage('App\Models\Template', $id ?? 0, 'templates');
+        deleteImage('App\Models\Template', $id ?? 0, 'watermark;');
         Template::find($id)->delete();
         session()->flash('success', 'Template deleted successfully.');
     }

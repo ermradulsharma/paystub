@@ -7,53 +7,54 @@ use App\Models\PaySlip;
 use App\Models\Template;
 use App\Models\User;
 use Carbon\Carbon;
-use PDF;
-use File;
 use Exception;
+use File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
+use PDF;
 
 class TemplatesController extends Controller
 {
     public function getTemplate(Request $request)
     {
         $response = [];
-        $response['message'] = "";
+        $response['message'] = '';
         $response['status'] = STATUS_BAD_REQUEST;
-        $response['success'] = FALSE;
+        $response['success'] = false;
         try {
             $dataObj = Template::getTemplate($request);
             if ($dataObj['status'] == 200) {
                 $response['basic'] = $dataObj['basic'];
                 $response['advance'] = $dataObj['advance'];
 
-                $response['message'] = "Templates fetched successfully";
+                $response['message'] = 'Templates fetched successfully';
                 $response['status'] = STATUS_OK;
-                $response['success'] = TRUE;
+                $response['success'] = true;
             }
         } catch (Exception $e) {
-            $response['message'] = $e->getMessage() . ' Line No ' . $e->getLine() . ' in File' . $e->getFile();
+            $response['message'] = $e->getMessage().' Line No '.$e->getLine().' in File'.$e->getFile();
             Log::error($e->getTraceAsString());
             $response['status'] = STATUS_GENERAL_ERROR;
         }
+
         return response()->json($response, $response['status']);
     }
 
     public function templatesPreview(Request $request)
     {
         $response = [];
-        $response['message'] = "";
+        $response['message'] = '';
         $response['status'] = STATUS_BAD_REQUEST;
-        $response['success'] = FALSE;
+        $response['success'] = false;
         $requestData = Template::template($request);
         try {
 
-            if ($requestData['form_type'] == "w2form") {
-                $pageName = "w2form";
-                if (!array_key_exists('watermark', $requestData)) {
-                    $requestData += array('watermark' => 'yes');
+            if ($requestData['form_type'] == 'w2form') {
+                $pageName = 'w2form';
+                if (! array_key_exists('watermark', $requestData)) {
+                    $requestData += ['watermark' => 'yes'];
                 }
             } else {
                 if ($requestData['advance_temp']) {
@@ -62,35 +63,36 @@ class TemplatesController extends Controller
                     $pageName = $requestData['basic_temp'];
                 }
             }
-            $path = public_path() . '/uploads/mailData';
+            $path = public_path().'/uploads/mailData';
             File::isDirectory($path) or File::makeDirectory($path, 0777, true, true);
             $invoiceData['requestData'] = $requestData;
-            $pdf = PDF::loadView('allForms/' . $request->form_type . '/' . $pageName, $invoiceData)->setPaper('a4');
-            $fileName =  date('_d_m_Y_h_i_s') . '.pdf';
-            $pdf->save($path . '/' . $fileName);
-            $file = public_path('/uploads/mailData/' . $fileName);
-            $response['pdf'] = asset('/uploads/mailData/' . $fileName);
-            $response['message'] = "Template created";
+            $pdf = PDF::loadView('allForms/'.$request->form_type.'/'.$pageName, $invoiceData)->setPaper('a4');
+            $fileName = date('_d_m_Y_h_i_s').'.pdf';
+            $pdf->save($path.'/'.$fileName);
+            $file = public_path('/uploads/mailData/'.$fileName);
+            $response['pdf'] = asset('/uploads/mailData/'.$fileName);
+            $response['message'] = 'Template created';
             $response['status'] = 200;
-            $response['success'] = TRUE;
+            $response['success'] = true;
         } catch (Exception $e) {
-            $response['message'] = $e->getMessage() . ' Line No ' . $e->getLine() . ' in File' . $e->getFile();
+            $response['message'] = $e->getMessage().' Line No '.$e->getLine().' in File'.$e->getFile();
             Log::error($e->getTraceAsString());
             $response['status'] = STATUS_GENERAL_ERROR;
         }
+
         return response()->json($response, $response['status']);
     }
 
     public function templatesDataSave(Request $request)
     {
         $response = [];
-        $response['message'] = "";
+        $response['message'] = '';
         $response['status'] = STATUS_BAD_REQUEST;
-        $response['success'] = FALSE;
+        $response['success'] = false;
         $requestData = Template::template($request);
         try {
-            if ($requestData['form_type'] == "w2form") {
-                $pageName = "w2form";
+            if ($requestData['form_type'] == 'w2form') {
+                $pageName = 'w2form';
             } else {
                 if ($requestData['advance_temp']) {
                     $pageName = $requestData['advance_temp'];
@@ -98,7 +100,7 @@ class TemplatesController extends Controller
                     $pageName = $requestData['basic_temp'];
                 }
             }
-            $path = public_path() . '/uploads/mailData';
+            $path = public_path().'/uploads/mailData';
             File::isDirectory($path) or File::makeDirectory($path, 0777, true, true);
 
             if (Auth::user()->expiryDate != '') {
@@ -106,62 +108,64 @@ class TemplatesController extends Controller
             }
 
             $invoiceData['requestData'] = $requestData;
-            $pdf = PDF::loadView('allForms/' . $request->form_type . '/' . $pageName, $invoiceData)->setPaper('a4', 'portrait');
-            $fileName =  date('_d_m_Y_h_i_s') . '.pdf';
-            $pdf->save($path . '/' . $fileName);
+            $pdf = PDF::loadView('allForms/'.$request->form_type.'/'.$pageName, $invoiceData)->setPaper('a4', 'portrait');
+            $fileName = date('_d_m_Y_h_i_s').'.pdf';
+            $pdf->save($path.'/'.$fileName);
             $invoice_id = $request->invoice_id ?? 0;
             $slip = PaySlip::where(['user_id' => Auth::user()->id, 'id' => $invoice_id])->first();
-            if (!$slip) {
+            if (! $slip) {
                 $slip = new PaySlip;
                 $slip->user_id = Auth::user()->id;
-                $slip->reference = "PayStubx-" . rand(100000, 999999);
+                $slip->reference = 'PayStubx-'.rand(100000, 999999);
             } else {
                 try {
-                    unlink(public_path('/uploads/mailData/' . basename($slip->pdf)));
+                    unlink(public_path('/uploads/mailData/'.basename($slip->pdf)));
                 } catch (Exception $e) {
                 }
             }
             $slip->data = json_encode($requestData);
-            $slip->title = $requestData['cname'] ?? "";
+            $slip->title = $requestData['cname'] ?? '';
             $slip->pdf = $fileName;
             $slip->type = $request->form_type;
             if ($slip->save()) {
-                $response['message'] = "Template save successfully";
+                $response['message'] = 'Template save successfully';
                 $response['status'] = 200;
-                $response['success'] = TRUE;
+                $response['success'] = true;
             }
         } catch (Exception $e) {
-            $response['message'] = $e->getMessage() . ' Line No ' . $e->getLine() . ' in File' . $e->getFile();
+            $response['message'] = $e->getMessage().' Line No '.$e->getLine().' in File'.$e->getFile();
             Log::error($e->getTraceAsString());
             $response['status'] = STATUS_GENERAL_ERROR;
         }
+
         return response()->json($response, $response['status']);
     }
 
     public function getPdfList(Request $request)
     {
-        $response['message'] = "";
+        $response['message'] = '';
         $response['status'] = STATUS_BAD_REQUEST;
-        $response['success'] = FALSE;
+        $response['success'] = false;
         try {
             $paySlipObj = PaySlip::select('id', 'reference', 'user_id', 'pdf', 'type', 'created_at', 'data')->where('user_id', Auth::user()->id)->orderBy('id', 'desc')->get();
             $response['data'] = $paySlipObj;
-            $response['message'] = "Payslip fetch successfully";
+            $response['message'] = 'Payslip fetch successfully';
             $response['status'] = 200;
-            $response['success'] = TRUE;
+            $response['success'] = true;
         } catch (Exception $e) {
-            $response['message'] = $e->getMessage() . ' Line No ' . $e->getLine() . ' in File' . $e->getFile();
+            $response['message'] = $e->getMessage().' Line No '.$e->getLine().' in File'.$e->getFile();
             Log::error($e->getTraceAsString());
             $response['status'] = STATUS_GENERAL_ERROR;
         }
+
         return response()->json($response, $response['status']);
     }
 
     public function deleteTemplate(Request $request)
     {
-        $response['message'] = "";
+        $response['message'] = '';
         $response['status'] = STATUS_BAD_REQUEST;
-        $response['success'] = FALSE;
+        $response['success'] = false;
         try {
             $requestData = $request->all();
 
@@ -170,62 +174,65 @@ class TemplatesController extends Controller
                 PaySlip::where(['user_id' => Auth::user()->id, 'id' => $requestData['id']])->forceDelete();
             }
 
-            $response['message'] = "Payslip deleted successfully";
+            $response['message'] = 'Payslip deleted successfully';
             $response['status'] = 200;
-            $response['success'] = TRUE;
+            $response['success'] = true;
         } catch (Exception $e) {
-            $response['message'] = $e->getMessage() . ' Line No ' . $e->getLine() . ' in File' . $e->getFile();
+            $response['message'] = $e->getMessage().' Line No '.$e->getLine().' in File'.$e->getFile();
             Log::error($e->getTraceAsString());
             $response['status'] = STATUS_GENERAL_ERROR;
         }
+
         return response()->json($response, $response['status']);
     }
 
     public function editFormData(Request $request)
     {
-        $response['message'] = "";
+        $response['message'] = '';
         $response['status'] = STATUS_BAD_REQUEST;
-        $response['success'] = FALSE;
+        $response['success'] = false;
         try {
             $requestData = $request->all();
             $paySlipObj = PaySlip::where(['user_id' => Auth::user()->id, 'id' => $requestData['id']])->exists();
             if ($paySlipObj) {
-                $paySlipObj =  PaySlip::where(['user_id' => Auth::user()->id, 'id' => $requestData['id']])->first();
+                $paySlipObj = PaySlip::where(['user_id' => Auth::user()->id, 'id' => $requestData['id']])->first();
             }
             json_decode($paySlipObj->data, true);
             $paySlipObj->slipData = Template::editFormData(json_decode($paySlipObj->data));
             unset($paySlipObj->data);
             $response['data'] = $paySlipObj;
-            $response['message'] = "Payslip deleted successfully";
+            $response['message'] = 'Payslip deleted successfully';
             $response['status'] = 200;
-            $response['success'] = TRUE;
+            $response['success'] = true;
         } catch (Exception $e) {
-            $response['message'] = $e->getMessage() . ' Line No ' . $e->getLine() . ' in File' . $e->getFile();
+            $response['message'] = $e->getMessage().' Line No '.$e->getLine().' in File'.$e->getFile();
             Log::error($e->getTraceAsString());
             $response['status'] = STATUS_GENERAL_ERROR;
         }
+
         return response()->json($response, $response['status']);
     }
 
     public function generatePdf(Request $request)
     {
-        $response['message'] = "";
+        $response['message'] = '';
         $response['status'] = STATUS_BAD_REQUEST;
-        $response['success'] = FALSE;
+        $response['success'] = false;
         try {
             //   return  $userObj = User::find(Auth::user()->id);
             $requestData = PaySlip::generatePDF($request);
             if ($requestData['status'] == 200) {
                 $response['pdf'] = $requestData['pdf'];
                 $response['success'] = true;
-                $response['message'] = "Data saved successfully";
+                $response['message'] = 'Data saved successfully';
                 $response['status'] = STATUS_OK;
             }
         } catch (Exception $e) {
-            $response['message'] = $e->getMessage() . ' Line No ' . $e->getLine() . ' in File' . $e->getFile();
+            $response['message'] = $e->getMessage().' Line No '.$e->getLine().' in File'.$e->getFile();
             Log::error($e->getTraceAsString());
             $response['status'] = STATUS_GENERAL_ERROR;
         }
+
         return response()->json($response, $response['status']);
     }
 
@@ -287,52 +294,53 @@ class TemplatesController extends Controller
 
     public function subscription(Request $request)
     {
-        $response['message'] = "";
+        $response['message'] = '';
         $response['status'] = STATUS_BAD_REQUEST;
-        $response['success'] = FALSE;
+        $response['success'] = false;
         try {
             $requestData = $request->all();
-            if (!array_key_exists('expiryDate', $requestData)) {
-                $requestData += array('expiryDate' => Carbon::now());
+            if (! array_key_exists('expiryDate', $requestData)) {
+                $requestData += ['expiryDate' => Carbon::now()];
             }
-            if (!array_key_exists('device_type', $requestData)) {
-                $requestData += array('device_type' => '');
+            if (! array_key_exists('device_type', $requestData)) {
+                $requestData += ['device_type' => ''];
             }
             $userObj = User::find(Auth::user()->id);
             if ($requestData['type'] == 1) {
                 if ($requestData['subcription_type'] == 1) {
                     $userObj->expiryDate = Carbon::now()->addMonth();
-                } else  if ($requestData['subcription_type'] == 3) {
+                } elseif ($requestData['subcription_type'] == 3) {
                     $userObj->expiryDate = Carbon::now()->addMonths(3);
-                } else  if ($requestData['subcription_type'] == 6) {
+                } elseif ($requestData['subcription_type'] == 6) {
                     $userObj->expiryDate = Carbon::now()->addMonths(6);
-                } else  if ($requestData['subcription_type'] == 99) {
+                } elseif ($requestData['subcription_type'] == 99) {
                     $userObj->expiryDate = Carbon::now()->addYears(99);
                 } else {
                     $userObj->expiryDate = Carbon::now()->addHours(24);
                 }
             } else {
-                $userObj->expiryDate = "";
+                $userObj->expiryDate = '';
             }
             $userObj->device_type = $requestData['device_type'] ?? '';
             $userObj->subscription_type = $requestData['subcription_type'];
             $userObj->save();
             $response['success'] = true;
-            $response['message'] = "Data saved successfully";
+            $response['message'] = 'Data saved successfully';
             $response['status'] = STATUS_OK;
         } catch (Exception $e) {
-            $response['message'] = $e->getMessage() . ' Line No ' . $e->getLine() . ' in File' . $e->getFile();
+            $response['message'] = $e->getMessage().' Line No '.$e->getLine().' in File'.$e->getFile();
             Log::error($e->getTraceAsString());
             $response['status'] = STATUS_GENERAL_ERROR;
         }
+
         return response()->json($response, $response['status']);
     }
 
     public function checkSubscription(Request $request)
     {
-        $response['message'] = "";
+        $response['message'] = '';
         $response['status'] = STATUS_BAD_REQUEST;
-        $response['success'] = FALSE;
+        $response['success'] = false;
         try {
             // return Auth::user();
             $userObj = User::select('expiryDate', 'subscription_type')->find(Auth::user()->id);
@@ -343,13 +351,14 @@ class TemplatesController extends Controller
             $userObj->expiryDate = $expiry ?? '';
             $response['data'] = $userObj;
             $response['success'] = true;
-            $response['message'] = "Expiry Date";
+            $response['message'] = 'Expiry Date';
             $response['status'] = STATUS_OK;
         } catch (Exception $e) {
-            $response['message'] = $e->getMessage() . ' Line No ' . $e->getLine() . ' in File' . $e->getFile();
+            $response['message'] = $e->getMessage().' Line No '.$e->getLine().' in File'.$e->getFile();
             Log::error($e->getTraceAsString());
             $response['status'] = STATUS_GENERAL_ERROR;
         }
+
         return response()->json($response, $response['status']);
     }
 }

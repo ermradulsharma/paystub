@@ -1,11 +1,11 @@
 <?php
 
-use App\Http\Controllers\API\TemplatesController;
 use App\Http\Controllers\API\DeductionController;
+use App\Http\Controllers\API\TemplatesController;
 use App\Http\Controllers\API\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use Symfony\Component\Routing\Router;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes

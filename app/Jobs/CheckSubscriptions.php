@@ -2,16 +2,15 @@
 
 namespace App\Jobs;
 
+use App\Http\Controllers\PayPalController;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
+use Illuminate\Http\Request;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
-use Illuminate\Http\Request;
-use App\Http\Controllers\PayPalController;
 
-class CheckSubcriptions implements ShouldQueue
+class CheckSubscriptions implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
@@ -36,7 +35,6 @@ class CheckSubcriptions implements ShouldQueue
          * Fill our empty request object with arguments passed by middleware.
          * It's later will be used in controller and services.
          */
-        app()->call(PayPalController::class . '@checkExpiry');
-
+        app()->call(PayPalController::class.'@checkExpiry');
     }
 }

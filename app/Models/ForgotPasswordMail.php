@@ -13,6 +13,7 @@ class ForgotPasswordMail extends Model
     {
         if (strtotime($this->expired_at) < strtotime(now())) {
             $this->delete();
+
             return true;
         }
 

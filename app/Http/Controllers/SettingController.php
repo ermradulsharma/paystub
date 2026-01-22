@@ -2,15 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\Setting;
 use App\Models\Currency;
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Facades\Hash;
+use App\Models\Setting;
 use App\Models\User;
-use Carbon\Carbon;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class SettingController extends Controller
 {
@@ -31,19 +29,19 @@ class SettingController extends Controller
             $settings = $settingObj['settings'] ?? [];
 
             $smtpSetting = Setting::where('name', 'smtp')->first();
-            $smtp = $smtpSetting->value ?? "[]";
+            $smtp = $smtpSetting->value ?? '[]';
             $smtp = json_decode($smtp, true);
 
             $appSetting = Setting::where('name', 'app')->first();
-            $app = $appSetting->value ?? "[]";
+            $app = $appSetting->value ?? '[]';
             $app = json_decode($app, true);
 
             $notificationObj = Setting::where('name', 'push_notification_server_key')->first();
-            $notification = $notificationObj->value ?? "[]";
+            $notification = $notificationObj->value ?? '[]';
             $notification = json_decode($notification, true);
 
             $currencyObj = Setting::where('name', 'paypal_configuration')->first();
-            $currencyObj = $currencyObj->value ?? "[]";
+            $currencyObj = $currencyObj->value ?? '[]';
             $currencyData = json_decode($currencyObj, true);
 
             $userObj = User::find(Auth::user()->id);
@@ -68,9 +66,10 @@ class SettingController extends Controller
                     return redirect()->route('settings')->withErrors($validator)->withInput();
                 }
                 $userObj = User::find(Auth::user()->id);
-                if (!Hash::check($request->get('old_password'), $userObj->password)) {
+                if (! Hash::check($request->get('old_password'), $userObj->password)) {
                     $response['message'] = 'Current password is worng';
-                    return redirect()->route('settings')->with('error',  $response['message']);
+
+                    return redirect()->route('settings')->with('error', $response['message']);
                 }
                 $userObj->password = Hash::make($requestData['password']);
                 if ($userObj->save()) {
@@ -84,7 +83,7 @@ class SettingController extends Controller
 
                 $rules['first_name'] = 'required|min:3';
                 $rules['last_name'] = 'required|min:3';
-                $rules['email'] = 'required|email|email:rfc,dns|unique:users,email,' . Auth::user()->id;
+                $rules['email'] = 'required|email|email:rfc,dns|unique:users,email,'.Auth::user()->id;
                 $validator = Validator::make($request->all(), $rules);
                 if ($validator->fails()) {
                     return redirect()->route('settings')->withErrors($validator)->withInput();
@@ -92,7 +91,7 @@ class SettingController extends Controller
                 $userObj = User::where('id', Auth::user()->id)->first();
                 $userObj->first_name = $requestData['first_name'] ?? '';
                 $userObj->last_name = $requestData['last_name'] ?? '';
-                $userObj->name = (($requestData['first_name'] ?? '') . ' ' . ($requestData['last_name'] ?? ''));
+                $userObj->name = (($requestData['first_name'] ?? '').' '.($requestData['last_name'] ?? ''));
                 $userObj->email = $requestData['email'] ?? '';
                 if ($userObj->save()) {
                     return redirect()->route('settings')->with('message', 'Personal info changed successfully');
@@ -117,8 +116,8 @@ class SettingController extends Controller
                 $smtp = [
                     'email' => $requestData['smtp_email'],
                     'password' => $requestData['smtp_password'],
-                    'host' => $requestData['smtp_host'] ?? "",
-                    'port' => $requestData['smtp_port'] ?? "",
+                    'host' => $requestData['smtp_host'] ?? '',
+                    'port' => $requestData['smtp_port'] ?? '',
                     'from_address' => $requestData['smtp_from_address'],
                     'from_name' => $requestData['smtp_from_name'],
                 ];
@@ -126,7 +125,7 @@ class SettingController extends Controller
                 $jsonData = json_encode($smtp);
                 $settingObj = Setting::where('name', 'smtp')->first();
 
-                if (!$settingObj) {
+                if (! $settingObj) {
                     $settingObj = new Setting;
                     $settingObj->name = 'smtp';
                     $settingObj->description = 'SMTP setting is using to setup the mail configuration';
@@ -134,6 +133,7 @@ class SettingController extends Controller
 
                 $settingObj->value = $jsonData;
                 $settingObj->save();
+
                 return redirect()->route('settings')->with('success', 'SMTP setting updated successfully');
             }
 
@@ -146,7 +146,7 @@ class SettingController extends Controller
 
                 $settingObj = Setting::where('name', 'debug_mode')->first();
 
-                if (!$settingObj) {
+                if (! $settingObj) {
                     $settingObj = new Setting;
                     $settingObj->name = 'debug_mode';
                     $settingObj->description = 'App debug mode on/off';
@@ -154,26 +154,26 @@ class SettingController extends Controller
 
                 $settingObj->value = $jsonData;
                 $settingObj->save();
+
                 return redirect()->route('settings')->with('success', 'Debug mode updated successfully');
             }
 
             if ($requestData['request_type'] == 'push_notification_server_key') {
                 $rules['push_notification_server_key'] = 'required';
 
-
                 $validator = Validator::make($request->all(), $rules);
                 if ($validator->fails()) {
                     return redirect()->route('settings')->withErrors($validator)->withInput();
                 }
                 $push_notification_server_key = [
-                    'push_notification_server_key' => $requestData['push_notification_server_key'] ?? NULL
+                    'push_notification_server_key' => $requestData['push_notification_server_key'] ?? null,
                 ];
 
                 $jsonData = json_encode($push_notification_server_key);
 
                 $settingObj = Setting::where('name', 'push_notification_server_key')->first();
 
-                if (!$settingObj) {
+                if (! $settingObj) {
                     $settingObj = new Setting;
                     $settingObj->name = 'push_notification_server_key';
                     $settingObj->description = 'Push notification server key';
@@ -181,6 +181,7 @@ class SettingController extends Controller
 
                 $settingObj->value = $jsonData;
                 $settingObj->save();
+
                 return redirect()->route('settings')->with('success', 'Push notification server key updated successfully');
             }
 
@@ -197,18 +198,18 @@ class SettingController extends Controller
                 }
 
                 $paypalDetails = [
-                    "paypal_mode" => $requestData['paypal_mode'] ?? '',
-                    "client_id" => $requestData['client_id'] ?? '',
-                    "client_secret" => $requestData['client_secret'] ?? '',
-                    "app_id" => $requestData['app_id'] ?? '',
-                    "currency" => $requestData['currency'] ?? '',
+                    'paypal_mode' => $requestData['paypal_mode'] ?? '',
+                    'client_id' => $requestData['client_id'] ?? '',
+                    'client_secret' => $requestData['client_secret'] ?? '',
+                    'app_id' => $requestData['app_id'] ?? '',
+                    'currency' => $requestData['currency'] ?? '',
                 ];
 
                 $jsonData = json_encode($paypalDetails);
 
                 $settingObj = Setting::where('name', 'paypal_configuration')->first();
 
-                if (!$settingObj) {
+                if (! $settingObj) {
                     $settingObj = new Setting;
                     $settingObj->name = 'paypal_configuration';
                     $settingObj->description = 'Paypal details Like client id, secret key, app id and etc.';
@@ -216,12 +217,12 @@ class SettingController extends Controller
 
                 $settingObj->value = $jsonData;
                 $settingObj->save();
+
                 return redirect()->route('settings')->with('success', 'Paypal configuration updated successfully');
             }
         } catch (\Exception $e) {
             return redirect()->route('settings')->with('error', $e->getMessage());
         }
 
-       
     }
 }

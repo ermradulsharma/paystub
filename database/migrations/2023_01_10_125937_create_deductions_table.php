@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('state');
             $table->string('type');
             $table->string('title');
-            $table->double('price',8 ,2)->default('0.00');
+            $table->double('price', 8, 2)->default('0.00');
             $table->timestamps();
         });
     }

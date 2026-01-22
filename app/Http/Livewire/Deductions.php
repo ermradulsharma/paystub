@@ -7,14 +7,26 @@ use Livewire\Component;
 
 class Deductions extends Component
 {
+    public $title;
 
-    public $title, $price, $type, $state, $deductionId, $confirming;
+    public $price;
+
+    public $type;
+
+    public $state;
+
+    public $deductionId;
+
+    public $confirming;
+
     public $next = 1;
-    public $page_title = "Add Deduction";
+
+    public $page_title = 'Add Deduction';
 
     public function render()
     {
         $deductions = Deduction::orderBy('id', 'asc')->get();
+
         return view('livewire.deductions', compact('deductions'));
     }
 
@@ -22,15 +34,15 @@ class Deductions extends Component
     {
         $this->next();
         $this->resetForm();
-        $this->page_title = "Add Deduction";
+        $this->page_title = 'Add Deduction';
     }
 
     public function resetForm()
     {
-        $this->state = "";
-        $this->title = "";
-        $this->price = "";
-        $this->type = "";
+        $this->state = '';
+        $this->title = '';
+        $this->price = '';
+        $this->type = '';
         $this->deductionId = null;
     }
 
@@ -45,19 +57,19 @@ class Deductions extends Component
         ]);
         $this->back();
         $deductionObj = Deduction::find($this->deductionId);
-        if (!$deductionObj) {
+        if (! $deductionObj) {
             $deductionObj = new Deduction;
-            $msg = "Deduction saved successfully.";
+            $msg = 'Deduction saved successfully.';
         }
         $deductionObj->title = $this->title;
         $deductionObj->price = $this->price;
         $deductionObj->state = $this->state;
-        $deductionObj->type = "deduction_";
+        $deductionObj->type = 'deduction_';
         $deductionObj->save();
-        $deductionObj->type = "deduction_" . $deductionObj->id;
+        $deductionObj->type = 'deduction_'.$deductionObj->id;
         $deductionObj->save();
 
-        $msg = "Deduction Updated successfully.";
+        $msg = 'Deduction Updated successfully.';
         $this->resetForm();
         session()->flash('success', $msg);
     }
@@ -72,7 +84,7 @@ class Deductions extends Component
 
         $this->deductionId = $id;
         $this->next();
-        $this->page_title = "Edit Deduction";
+        $this->page_title = 'Edit Deduction';
     }
 
     public function next()
@@ -84,10 +96,12 @@ class Deductions extends Component
     {
         $this->next--;
     }
+
     public function confirmDelete($id)
     {
         $this->confirming = $id;
     }
+
     public function deleteDeduction($id)
     {
         Deduction::find($id)->delete();

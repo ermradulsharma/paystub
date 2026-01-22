@@ -2,17 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Address;
 use App\Models\Currency;
 use App\Models\Deduction;
-use App\Models\Address;
-use App\Models\PaySlip;
 use App\Models\Plan;
 use App\Models\StateTax;
 use App\Models\Template;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Carbon\Carbon;
-use Log;
 
 class PayStubController extends Controller
 {
@@ -31,6 +28,7 @@ class PayStubController extends Controller
         }
 
         $currencies = Currency::get();
+
         return view('usaPaystub', compact('basicType', 'advanceType', 'deduction', 'stateTaxes', 'currencies', 'employerList', 'employeeList'));
     }
 
@@ -48,6 +46,7 @@ class PayStubController extends Controller
             $employerList = [];
             $employeeList = [];
         }
+
         return view('ukPaystub', compact('basicType', 'advanceType', 'stateTaxes', 'deduction', 'currencies', 'employerList', 'employeeList'));
     }
 
@@ -56,7 +55,7 @@ class PayStubController extends Controller
         $deduction = Deduction::where('state', 'canada')->orderBy('id', 'asc')->get();
         $basicType = Template::where(['state' => 'canada', 'type' => 'basic', 'status' => 1])->orderBy('title')->get();
         $advanceType = Template::where(['state' => 'canada', 'type' => 'advance', 'status' => 1])->orderBy('title')->get();
-        $stateTaxes = StateTax::where('country_code','CA')->orderBy('state')->get();
+        $stateTaxes = StateTax::where('country_code', 'CA')->orderBy('state')->get();
         $currencies = Currency::get();
         if (Auth::check()) {
             $employerList = Address::where(['type' => 'employer', 'user_id' => Auth::user()->id])->orderBy('id', 'DESC')->get();
@@ -65,6 +64,7 @@ class PayStubController extends Controller
             $employerList = [];
             $employeeList = [];
         }
+
         return view('canadaPaystub', compact('basicType', 'advanceType', 'deduction', 'stateTaxes', 'currencies', 'employerList', 'employeeList'));
     }
 
@@ -72,6 +72,7 @@ class PayStubController extends Controller
     {
         $basicType = Template::where(['state' => 'global', 'type' => 'basic', 'status' => 1])->orderBy('title')->get();
         $advanceType = Template::where(['state' => 'global', 'type' => 'advance', 'status' => 1])->orderBy('title')->get();
+
         return view('global', compact('basicType', 'advanceType'));
     }
 
@@ -90,12 +91,13 @@ class PayStubController extends Controller
             $employeeList = [];
         }
 
-        return view('globalPaystub', compact('basicType', 'advanceType', 'deduction', 'stateTaxes', 'currencies','employerList', 'employeeList'));
+        return view('globalPaystub', compact('basicType', 'advanceType', 'deduction', 'stateTaxes', 'currencies', 'employerList', 'employeeList'));
     }
 
     public function w2formPayStub()
     {
         $stateTaxes = StateTax::orderBy('state')->get();
+
         return view('w2paystub', compact('stateTaxes'));
     }
 
@@ -103,6 +105,7 @@ class PayStubController extends Controller
     {
         // $country = $request->country ?? 'usa';
         $plans = Plan::orderBy('id', 'asc')->get();
+
         return view('lists.prizing', compact('plans'));
     }
 }

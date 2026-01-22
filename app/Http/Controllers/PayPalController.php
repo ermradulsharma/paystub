@@ -2,23 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\PaySlip;
-use Illuminate\Http\Request;
-use Srmklive\PayPal\Services\PayPal as PayPalClient;
-use Session;
 use App\Models\Plan;
-use App\Models\Subcription;
+use App\Models\Subscription;
 use App\Models\User;
-use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use Exception;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
-use PhpParser\Node\Stmt\TryCatch;
+use Srmklive\PayPal\Services\PayPal as PayPalClient;
 
 class PayPalController extends Controller
 {
-
     /**
      * create transaction.
      *
@@ -29,9 +25,10 @@ class PayPalController extends Controller
         try {
             return redirect()->route('prizing')->with('error', 'Something went wrong.');
         } catch (\Exception $e) {
-            Log::info('Create Transaction Function', array('Exception' => $e->getMessage()));
+            Log::info('Create Transaction Function', ['Exception' => $e->getMessage()]);
         }
     }
+
     /**
      * process transaction.
      *
@@ -40,36 +37,36 @@ class PayPalController extends Controller
     public function processTransaction(Request $request)
     {
         try {
-            if (!$request->has('plan')) {
-                redirect()->route('prizing')->with('error', 'Please choose plan.');
+            if (! $request->has('plan')) {
+                return redirect()->route('prizing')->with('error', 'Please choose plan.');
             }
             $planDetail = Plan::find($request->plan);
-            if (!$planDetail) {
-                redirect()->route('prizing')->with('error', 'Please choose plan.');
+            if (! $planDetail) {
+                return redirect()->route('prizing')->with('error', 'Please choose plan.');
             }
             if ($request->type != '') {
-                $req = $request->plan . '&' . $request->type;
+                $req = $request->plan.'&'.$request->type;
             } else {
                 // $req = $request->plan . '&' . $request->id;
-                $req = $request->plan . '&' . $request->id;
+                $req = $request->plan.'&'.$request->id;
             }
             $provider = new PayPalClient;
             $provider->setApiCredentials(config('paypal'));
             $paypalToken = $provider->getAccessToken();
             $response = $provider->createOrder([
-                "intent" => "CAPTURE",
-                "application_context" => [
-                    "return_url" => route('successTransaction', $req),
-                    "cancel_url" => route('cancelTransaction'),
+                'intent' => 'CAPTURE',
+                'application_context' => [
+                    'return_url' => route('successTransaction', $req),
+                    'cancel_url' => route('cancelTransaction'),
                 ],
-                "purchase_units" => [
+                'purchase_units' => [
                     0 => [
-                        "amount" => [
-                            "currency_code" => "USD",
-                            "value" => $planDetail->price
-                        ]
-                    ]
-                ]
+                        'amount' => [
+                            'currency_code' => 'USD',
+                            'value' => $planDetail->price,
+                        ],
+                    ],
+                ],
             ]);
 
             if (isset($response['id']) && $response['id'] != null) {
@@ -80,14 +77,16 @@ class PayPalController extends Controller
                         return redirect()->away($links['href']);
                     }
                 }
+
                 return redirect()->route('createTransaction')->with('error', 'Something went wrong.');
             } else {
                 return redirect()->route('createTransaction')->with('error', $response['message'] ?? 'Something went wrong.');
             }
         } catch (Exception $e) {
-            Log::info('Process Transaction Function', array('Exception' => $e->getMessage()));
+            Log::info('Process Transaction Function', ['Exception' => $e->getMessage()]);
         }
     }
+
     /**
      * success transaction.
      *
@@ -103,13 +102,18 @@ class PayPalController extends Controller
             if (isset($response['status']) && $response['status'] == 'COMPLETED') {
                 $xolode = explode('&', $details);
                 $planDetail = Plan::find($xolode[0]);
-                if (intval($xolode[1])) {
-                    $subcriptionObj = Subcription::find($xolode[1]);
-                } else {
-                    $subcriptionObj = Subcription::where(['plan_id' => $xolode[0], 'user_id' => Auth::user()->id])->where('expiry_date', '<', Carbon::now())->first();
+
+                if (! $planDetail) {
+                    return redirect()->route('prizing')->with('error', 'Plan not found.');
                 }
-                if (!$subcriptionObj) {
-                    $subcriptionObj = new Subcription;
+
+                if (intval($xolode[1])) {
+                    $subcriptionObj = Subscription::find($xolode[1]);
+                } else {
+                    $subcriptionObj = Subscription::where(['plan_id' => $xolode[0], 'user_id' => Auth::user()->id])->where('expiry_date', '<', Carbon::now())->first();
+                }
+                if (! $subcriptionObj) {
+                    $subcriptionObj = new Subscription;
                     $subcriptionObj->user_id = Auth::user()->id;
                 }
                 $subcriptionObj->plan_id = $planDetail->id;
@@ -123,25 +127,27 @@ class PayPalController extends Controller
                 $subcriptionObj->start_date = Carbon::now();
                 if ($planDetail->plan_duration == '24') {
                     $subcriptionObj->expiry_date = Carbon::now()->addDay();
-                } else if ($planDetail->plan_duration == '1') {
+                } elseif ($planDetail->plan_duration == '1') {
                     $subcriptionObj->expiry_date = Carbon::now()->addMonth();
                 } else {
                     $subcriptionObj->expiry_date = Carbon::now()->addMonths($planDetail->plan_duration);
                 }
                 $subcriptionObj->transaction_status = $response['status'] ?? '';
-                $subcriptionObj->device_type = "website";
+                $subcriptionObj->device_type = 'website';
                 if ($subcriptionObj->save()) {
                     $userObj = User::find(Auth::user()->id);
-                    if ($subcriptionObj->country == 'usa') {
-                        $userObj->usa_expiry_date = $subcriptionObj->expiry_date ?? '';
-                    } else if ($subcriptionObj->country == 'uk') {
-                        $userObj->uk_expiry_date = $subcriptionObj->expiry_date ?? '';
-                    } else if ($subcriptionObj->country == 'canada') {
-                        $userObj->canada_expiry_date = $subcriptionObj->expiry_date ?? '';
-                    }
-                    $userObj->device_type = $subcriptionObj->device_type;
-                    if ($userObj->save()) {
-                        $invoice = invoiceMail(Auth::user()->id, $subcriptionObj->country);
+                    if ($userObj) {
+                        if ($subcriptionObj->country == 'usa') {
+                            $userObj->usa_expiry_date = $subcriptionObj->expiry_date ?? '';
+                        } elseif ($subcriptionObj->country == 'uk') {
+                            $userObj->uk_expiry_date = $subcriptionObj->expiry_date ?? '';
+                        } elseif ($subcriptionObj->country == 'canada') {
+                            $userObj->canada_expiry_date = $subcriptionObj->expiry_date ?? '';
+                        }
+                        $userObj->device_type = $subcriptionObj->device_type;
+                        if ($userObj->save()) {
+                            $invoice = invoiceMail(Auth::user()->id, $subcriptionObj->country);
+                        }
                     }
                 }
                 if ($invoice == 'success') {
@@ -151,7 +157,8 @@ class PayPalController extends Controller
                 return redirect()->back()->with('message', $response['message'] ?? 'Something went wrong. Please try again later');
             }
         } catch (\Exception $e) {
-            Log::info('Success Transaction Function', array('Exception' => $e->getMessage()));
+            Log::info('Success Transaction Function', ['Exception' => $e->getMessage()]);
+
             return redirect(route('prizing'));
         }
     }
@@ -163,23 +170,23 @@ class PayPalController extends Controller
             $planDetail = Plan::find($planDetail);
             $expiryDate = Carbon::now();
             switch ($planDetail->plan_type) {
-                case "hourly":
+                case 'hourly':
                     return $expiryDate->addHours($planDetail->plan_duration);
                     break;
-                case "daily":
+                case 'daily':
                     return $expiryDate->addDay($planDetail->plan_duration);
                     break;
-                case "monthly":
+                case 'monthly':
                     return $expiryDate->addMonths($planDetail->plan_duration);
                     break;
-                case "yearly":
+                case 'yearly':
                     return $expiryDate->addYears($planDetail->plan_duration);
                     break;
                 default:
                     return $expiryDate;
             }
         } catch (\Exception $e) {
-            Log::info('Get ExpiryDate Function', array('Exception' => $e->getMessage()));
+            Log::info('Get ExpiryDate Function', ['Exception' => $e->getMessage()]);
         }
     }
 
@@ -191,9 +198,9 @@ class PayPalController extends Controller
             foreach ($subcriberData as $key => $user) {
                 User::where('id', $user->id)->update(['expiryDate' => '']);
             }
-            Log::info('Check Expiry Message', array('Success' => 'Cron successfully completed on ' . Carbon::now()));
+            Log::info('Check Expiry Message', ['Success' => 'Cron successfully completed on '.Carbon::now()]);
         } catch (\Exception $e) {
-            Log::info('Check Expiry Message', array('Exception' => $e->getMessage()));
+            Log::info('Check Expiry Message', ['Exception' => $e->getMessage()]);
         }
     }
 
@@ -207,9 +214,9 @@ class PayPalController extends Controller
         try {
             return redirect()
                 ->route('prizing')
-                ->with('error', $response['message'] ?? 'you have cancelled the transaction.');
+                ->with('error', 'You have cancelled the transaction.');
         } catch (\Exception $e) {
-            Log::info('Cancel Transaction Function', array('Exception' => $e->getMessage()));
+            Log::info('Cancel Transaction Function', ['Exception' => $e->getMessage()]);
         }
     }
 }

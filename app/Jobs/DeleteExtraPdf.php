@@ -2,13 +2,12 @@
 
 namespace App\Jobs;
 
+use App\Http\Controllers\TemplateFormController;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
-use App\Http\Controllers\TemplateFormController;
 
 class DeleteExtraPdf implements ShouldQueue
 {
@@ -32,8 +31,7 @@ class DeleteExtraPdf implements ShouldQueue
     public function handle()
     {
         echo "\n\nExtra pdf deleting...\n\n";
-        app()->call(TemplateFormController::class . '@deleteExtraPdf');
+        app()->call(TemplateFormController::class.'@deleteExtraPdf');
         echo "Extra pdf deleted..\n\n";
     }
-
 }

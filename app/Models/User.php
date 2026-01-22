@@ -45,25 +45,25 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    static function deactivateAccount($request)
+    public static function deactivateAccount($request)
     {
         $response['status'] = STATUS_BAD_REQUEST;
         $response['message'] = ENTER_VALID_CREDENTIAL;
         $userObj = User::find(Auth::user()->id);
         if ($userObj->delete()) {
             $response['message'] = ACCOUNT_DEACTIVATED_SUCCESSFULLY;
-            $response['success'] = TRUE;
+            $response['success'] = true;
             $response['status'] = STATUS_OK;
         }
 
         return $response;
     }
 
-    static function restoreAccount($request)
+    public static function restoreAccount($request)
     {
         $requestData = $request->all();
 
-        $userObj  = User::withTrashed()->where('username', $requestData['username'])->orWhere('mobile', $requestData['username'])->orWhere('email', $requestData['username'])->first();
+        $userObj = User::withTrashed()->where('username', $requestData['username'])->orWhere('mobile', $requestData['username'])->orWhere('email', $requestData['username'])->first();
         if ($userObj) {
             if (Hash::check($request->get('password'), $userObj['password'])) {
                 $userObj->restore();
@@ -79,7 +79,7 @@ class User extends Authenticatable
         return $response;
     }
 
-    static function deleteAccount($request)
+    public static function deleteAccount($request)
     {
         $userObj = User::find(Auth::user()->id);
         PaySlip::where(['user_id' => Auth::user()->id])->forceDelete();
@@ -87,7 +87,7 @@ class User extends Authenticatable
         $request->user()->token()->revoke();
 
         $response['message'] = ACCOUNT_DELETED_SUCCESSFULLY;
-        $response['success'] = TRUE;
+        $response['success'] = true;
         $response['status'] = STATUS_OK;
 
         return $response;

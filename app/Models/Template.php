@@ -8,21 +8,24 @@ use Illuminate\Database\Eloquent\Model;
 class Template extends Model
 {
     use HasFactory;
+
     public function images()
     {
         return $this->morphOne(Image::class, 'module');
     }
-    static function getTemplate($request)
+
+    public static function getTemplate($request)
     {
         $basic = Template::with('images')->where('state', $request->state)->where('type', 'basic')->get();
         $advance = Template::with('images')->where('state', $request->state)->where('type', 'advance')->get();
         $response['basic'] = $basic;
         $response['advance'] = $advance;
         $response['status'] = STATUS_OK;
+
         return $response;
     }
 
-    static function template($request)
+    public static function template($request)
     {
         if ($request->form_type == 'uk') {
             $earning = [];
@@ -124,7 +127,7 @@ class Template extends Model
         return $requestData;
     }
 
-    static function editFormData($data)
+    public static function editFormData($data)
     {
         if ($data->form_type != 'uk') {
             $earn = [];
@@ -151,7 +154,6 @@ class Template extends Model
                 $arr['deleteTax'] = $data->deleteTax[$key] ?? false;
                 $data->tax[$key] = $arr;
             }
-
 
             foreach ($data->tax_deduction ?? [] as $key => $tax_deduction) {
                 $arr = [];
@@ -206,6 +208,7 @@ class Template extends Model
             unset($data->delete);
             unset($data->deleteTax);
         }
+
         return $data;
     }
 }

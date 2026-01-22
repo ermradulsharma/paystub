@@ -14,47 +14,50 @@ class DeductionController extends Controller
     public function getDeduction(Request $request)
     {
         $response = [];
-        $response['message'] = "";
+        $response['message'] = '';
         $response['status'] = STATUS_BAD_REQUEST;
-        $response['success'] = FALSE;
+        $response['success'] = false;
         try {
             $dataObj = Deduction::getDeduction($request);
-            if($dataObj['status'] == 200){
+            if ($dataObj['status'] == 200) {
                 $response['data'] = $dataObj['data'];
 
-                $response['message'] = "Deduction fetched successfully";
+                $response['message'] = 'Deduction fetched successfully';
                 $response['status'] = STATUS_OK;
-                $response['success'] = TRUE;
+                $response['success'] = true;
             }
 
         } catch (Exception $e) {
-            $response['message'] = $e->getMessage() . ' Line No ' . $e->getLine() . ' in File' . $e->getFile();
+            $response['message'] = $e->getMessage().' Line No '.$e->getLine().' in File'.$e->getFile();
             Log::error($e->getTraceAsString());
             $response['status'] = STATUS_GENERAL_ERROR;
         }
+
         return response()->json($response, $response['status']);
     }
+
     public function getStateTaxes(Request $request)
     {
         $response = [];
-        $response['message'] = "";
+        $response['message'] = '';
         $response['status'] = STATUS_BAD_REQUEST;
-        $response['success'] = FALSE;
+        $response['success'] = false;
         try {
             $dataObj = StateTax::getStateTaxes($request);
-            if($dataObj['status'] == 200){
+            if ($dataObj['status'] == 200) {
                 $response['data'] = $dataObj['data'];
 
-                $response['message'] = "State taxes fetched successfully";
+                $response['message'] = 'State taxes fetched successfully';
                 $response['status'] = STATUS_OK;
-                $response['success'] = TRUE;
+                $response['success'] = true;
             }
 
         } catch (Exception $e) {
-            $response['message'] = $e->getMessage() . ' Line No ' . $e->getLine() . ' in File' . $e->getFile();
+            $response['message'] = $e->getMessage().' Line No '.$e->getLine().' in File'.$e->getFile();
             Log::error($e->getTraceAsString());
             $response['status'] = STATUS_GENERAL_ERROR;
         }
+
         return response()->json($response, $response['status']);
     }
 }

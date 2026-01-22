@@ -7,14 +7,13 @@ use Illuminate\Support\Facades\Validator;
 
 class ValidationService
 {
-
     public function usa($request)
     {
 
         $response['status'] = 200;
         $response['success'] = true;
 
-        if ($request->form_type == "usa" || $request->form_type == "global") {
+        if ($request->form_type == 'usa' || $request->form_type == 'global') {
             // $temp = Template::where('title', $request->advance_temp)->where('template_element', true)->first();
 
             $rules = [
@@ -48,12 +47,12 @@ class ValidationService
                 'taxes_ytd' => 'required|array',
                 'total_net_pay' => 'required',
                 'total_ytd_net_pay' => 'required',
-                'co_number' => "required_if:advance_temp,paystubx_check",
-                'file_number' => "required_if:advance_temp,paystubx_check",
-                'clock_vchr_number' => "required_if:advance_temp,paystubx_check",
-                'advice_number' => "required_if:advance_temp,lapis,olive,reddish,wood,pt_blue,pt_brown,pt_green,box_blue,global_white_check,paystubx_check,aegean,amethyst",
-                'account_number_last_4' => "required_if:advance_temp,lapis,olive,reddish,wood,pt_blue,pt_brown,pt_green,box_blue,global_white_check,paystubx_check,aegean,amethyst",
-                'transit_aba_number' => "required_if:advance_temp,lapis,olive,reddish,wood,pt_blue,pt_brown,pt_green,box_blue,global_white_check,paystubx_check,aegean,amethyst",
+                'co_number' => 'required_if:advance_temp,paystubx_check',
+                'file_number' => 'required_if:advance_temp,paystubx_check',
+                'clock_vchr_number' => 'required_if:advance_temp,paystubx_check',
+                'advice_number' => 'required_if:advance_temp,lapis,olive,reddish,wood,pt_blue,pt_brown,pt_green,box_blue,global_white_check,paystubx_check,aegean,amethyst',
+                'account_number_last_4' => 'required_if:advance_temp,lapis,olive,reddish,wood,pt_blue,pt_brown,pt_green,box_blue,global_white_check,paystubx_check,aegean,amethyst',
+                'transit_aba_number' => 'required_if:advance_temp,lapis,olive,reddish,wood,pt_blue,pt_brown,pt_green,box_blue,global_white_check,paystubx_check,aegean,amethyst',
             ];
 
             $messages = [
@@ -87,16 +86,16 @@ class ValidationService
                 'taxes_ytd' => 'Taxes YTD cannot be empty',
                 'total_net_pay' => 'TOTAL NET PAY cannot be empty',
                 'total_ytd_net_pay' => 'TOTAL YTD NET PAY cannot be empty',
-                'co_number'  => 'CO number cannot be empty',
-                'file_number'  => 'FILE number cannot be empty',
-                'clock_vchr_number'  => 'CLOCK VCHR number cannot be empty',
-                'advice_number'  => 'ADVICE number cannot be empty',
-                'account_number_last_4.required'  => 'ACCOUNT LAST 4 number cannot be empty',
-                'transit_aba_number'  => 'TRANSIT ABA number cannot be empty',
+                'co_number' => 'CO number cannot be empty',
+                'file_number' => 'FILE number cannot be empty',
+                'clock_vchr_number' => 'CLOCK VCHR number cannot be empty',
+                'advice_number' => 'ADVICE number cannot be empty',
+                'account_number_last_4.required' => 'ACCOUNT LAST 4 number cannot be empty',
+                'transit_aba_number' => 'TRANSIT ABA number cannot be empty',
                 'account_number_last_4.min' => 'You have to fill  min 4 digit numbers',
                 'account_number_last_4.max' => 'You can not fill  more than  4 digit numbers',
             ];
-        } elseif ($request->form_type == "canada") {
+        } elseif ($request->form_type == 'canada') {
             $rules = [
                 'basic_temp' => 'required',
                 'cname' => 'required',
@@ -136,7 +135,7 @@ class ValidationService
                 'total' => 'TOTAL cannot be empty',
                 'check_number' => 'Check number cannot be empty',
             ];
-        } elseif ($request->form_type == "uk") {
+        } elseif ($request->form_type == 'uk') {
             $rules = [
                 'basic_temp' => 'required',
                 'cname' => 'required',
@@ -176,7 +175,7 @@ class ValidationService
                 'rate' => 'RATE be empty',
                 'hours' => 'HOURS be empty',
             ];
-        } elseif ($request->form_type == "w2form") {
+        } elseif ($request->form_type == 'w2form') {
             $rules = [
                 'form_type' => 'required',
             ];
@@ -188,7 +187,7 @@ class ValidationService
         $validator = Validator::make($request->all(), $rules, $messages);
         if ($validator->fails()) {
             $erro = [];
-            foreach($validator->errors()->toArray() ?? [] as $key => $error){
+            foreach ($validator->errors()->toArray() ?? [] as $key => $error) {
                 $msg = [];
                 $msg['key'] = $key;
                 $msg['message'] = $error;
@@ -199,6 +198,7 @@ class ValidationService
             $response['status'] = 301;
             $response['success'] = false;
         }
+
         return $response;
     }
 }
