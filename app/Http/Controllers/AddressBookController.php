@@ -24,7 +24,7 @@ class AddressBookController extends Controller
                 ]);
             }
             $empType = $request->type;
-            $addressData = Address::where(['type' => $empType, 'user_id' => Auth::user()->id])->orderBy('id', 'DESC')->paginate(10);
+            $addressData = Address::where(['type' => $empType, 'user_id' => Auth::id()])->orderBy('id', 'DESC')->paginate(10);
             if ($request->ajax()) {
                 return view('address-list', compact('addressData', 'empType'));
             }
@@ -80,7 +80,7 @@ class AddressBookController extends Controller
             }
             if (! $request->addressId) {
                 $addressObj = new Address();
-                $addressObj->user_id = Auth::user()->id;
+                $addressObj->user_id = Auth::id();
                 $addressObj->type = $request->type ?? '';
                 $addressObj->name = $request->fullName ?? '';
                 $addressObj->tel = $request->tel ?? '';

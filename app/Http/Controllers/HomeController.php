@@ -39,7 +39,11 @@ class HomeController extends Controller
 
     public function userDetails(Request $request)
     {
-        $userObj = User::find(Auth::user()->id);
+        $userId = Auth::id();
+        if (! $userId) {
+            return redirect()->route('login');
+        }
+        $userObj = User::find($userId);
         if (! $userObj) {
             return redirect()->route('login');
         }
@@ -51,8 +55,12 @@ class HomeController extends Controller
 
     public function storeDetails(Request $request)
     {
-        $userObj = User::find(Auth::user()->id);
-        $userId = Auth::user()->id;
+        $userId = Auth::id();
+        if (! $userId) {
+            return response()->json(['error' => ['Unauthorized']], 401);
+        }
+        $userObj = User::find($userId);
+
         if ($request->type == 'user-name') {
             $validator = Validator::make($request->all(), [
                 'uname' => 'required|min:3',
@@ -72,7 +80,7 @@ class HomeController extends Controller
                 return response()->json(['error' => ['Something went wrong.']]);
             }
             $userObj = User::find($userObj->id);
-            $request->session()->flash('message', 'Profile updated successfully.');
+            session()->flash('message', 'Profile updated successfully.');
 
             return response()->json(['user' => $userObj, 'message' => 'Profile updated successfully.']);
         }
@@ -95,7 +103,7 @@ class HomeController extends Controller
 
                 return response()->json($response, 301);
             }
-            $user = User::find(Auth::user()->id);
+            $user = User::find($userId);
             if ($user) {
                 if (! Hash::check($request->get('password'), $user->password)) {
                     $response['message'] = 'Oops! you have entered wrong password. Please try again.';
@@ -117,7 +125,7 @@ class HomeController extends Controller
                 if ($user->save()) {
                     $response['message'] = 'Verification code sent successfully';
                     $response['status'] = 200;
-                    $response['data'] = User::find(Auth::user()->id);
+                    $response['data'] = User::find($userId);
                     $response['type'] = 'verifyOtpChangeMail';
 
                     return response()->json($response, $response['status']);
@@ -192,7 +200,7 @@ class HomeController extends Controller
                 $userObj->code = $code;
             }
             $userObj->save();
-            $user = User::select('name', 'email')->where('id', Auth::user()->id)->first();
+            $user = User::select('name', 'email')->where('id', $userId)->first();
             $response['message'] = 'OTP Send Successfully. Please check your e-mail';
             $response['status'] = 200;
             $response['data'] = $user;
@@ -242,7 +250,7 @@ class HomeController extends Controller
             if (! $userObj->save()) {
                 return response()->json(['error' => ['Something went wrong.']]);
             }
-            $request->session()->flash('message', 'Password changed successfully.');
+            session()->flash('message', 'Password changed successfully.');
 
             return response()->json(['message' => 'Password changed successfully.']);
         }
@@ -335,6 +343,8 @@ class HomeController extends Controller
             if ($user->delete()) {
                 return redirect()->route('welcome')->with('message', 'Your account has been deleted!');
             }
+            // Fallback if delete fails
+            return redirect()->route('welcome')->with('error', 'Failed to delete account.');
         } catch (\Exception $e) {
             Log::info('User Delete Function', ['Exception' => $e->getMessage()]);
 

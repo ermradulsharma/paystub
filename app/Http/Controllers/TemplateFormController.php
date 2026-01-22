@@ -39,8 +39,8 @@ class TemplateFormController extends Controller
         }
         $stateTaxes = StateTax::where('country_code', $countryCode)->orderBy('state')->get();
         $currencies = Currency::get();
-        $employerList = Address::where(['type' => 'employer', 'user_id' => Auth::user()->id])->orderBy('id', 'DESC')->get();
-        $employeeList = Address::where(['type' => 'employee', 'user_id' => Auth::user()->id])->orderBy('id', 'DESC')->get();
+        $employerList = Address::where(['type' => 'employer', 'user_id' => Auth::id()])->orderBy('id', 'DESC')->get();
+        $employeeList = Address::where(['type' => 'employee', 'user_id' => Auth::id()])->orderBy('id', 'DESC')->get();
 
         return view('lists/'.$invoiceData->type.'-edit', compact('basicType', 'advanceType', 'deduction', 'stateTaxes', 'currencies', 'invoiceData', 'employerList', 'employeeList'));
     }
@@ -97,7 +97,7 @@ class TemplateFormController extends Controller
         $slip = PaySlip::find($invoice_id);
         if (! $slip) {
             $slip = new PaySlip;
-            $slip->user_id = Auth::user()->id;
+            $slip->user_id = Auth::id();
             $slip->reference = 'PayStubx-'.rand(100000, 999999);
         } else {
             try {
@@ -120,7 +120,7 @@ class TemplateFormController extends Controller
     public function invoiceList(Request $request)
     {
         // return $request;
-        $invoiceList = PaySlip::where(['user_id' => Auth::user()->id])->orderBy('id', 'desc');
+        $invoiceList = PaySlip::where(['user_id' => Auth::id()])->orderBy('id', 'desc');
         if ($request->type == 'usa' || $request->type == '') {
             $invoiceList = $invoiceList->where(['type' => $request->type ?? 'usa'])->orWhere(['type' => 'global'])->get();
         } else {
@@ -146,7 +146,7 @@ class TemplateFormController extends Controller
 
     public function subscription()
     {
-        User::where('id', Auth::user()->id)->update(['expiryDate' => Carbon::now()]);
+        User::where('id', Auth::id())->update(['expiryDate' => Carbon::now()]);
         $this->invoiceMail();
 
         return redirect()->route('welcome')->with('message', 'Mail has been sent successfully.');
@@ -154,10 +154,10 @@ class TemplateFormController extends Controller
 
     public function invoiceMail(Request $request, $id = null)
     {
-        $paySlipObj = PaySlip::where(['user_id' => Auth::user()->id])->exists();
+        $paySlipObj = PaySlip::where(['user_id' => Auth::id()])->exists();
         if ($paySlipObj) {
 
-            $invoice = PaySlip::where(['user_id' => Auth::user()->id]);
+            $invoice = PaySlip::where(['user_id' => Auth::id()]);
             if ($request->type != '') {
                 $invoice = $invoice->where('type', $request->type);
             }

@@ -44,7 +44,7 @@ class SettingController extends Controller
             $currencyObj = $currencyObj->value ?? '[]';
             $currencyData = json_decode($currencyObj, true);
 
-            $userObj = User::find(Auth::user()->id);
+            $userObj = User::find(Auth::id());
 
             $currencies = Currency::pluck('name', 'name')->all();
 
@@ -65,9 +65,9 @@ class SettingController extends Controller
 
                     return redirect()->route('settings')->withErrors($validator)->withInput();
                 }
-                $userObj = User::find(Auth::user()->id);
+                $userObj = User::find(Auth::id());
                 if (! Hash::check($request->get('old_password'), $userObj->password)) {
-                    $response['message'] = 'Current password is worng';
+                    $response['message'] = 'Current password is wrong';
 
                     return redirect()->route('settings')->with('error', $response['message']);
                 }
@@ -83,15 +83,15 @@ class SettingController extends Controller
 
                 $rules['first_name'] = 'required|min:3';
                 $rules['last_name'] = 'required|min:3';
-                $rules['email'] = 'required|email|email:rfc,dns|unique:users,email,'.Auth::user()->id;
+                $rules['email'] = 'required|email|email:rfc,dns|unique:users,email,' . Auth::id();
                 $validator = Validator::make($request->all(), $rules);
                 if ($validator->fails()) {
                     return redirect()->route('settings')->withErrors($validator)->withInput();
                 }
-                $userObj = User::where('id', Auth::user()->id)->first();
+                $userObj = User::where('id', Auth::id())->first();
                 $userObj->first_name = $requestData['first_name'] ?? '';
                 $userObj->last_name = $requestData['last_name'] ?? '';
-                $userObj->name = (($requestData['first_name'] ?? '').' '.($requestData['last_name'] ?? ''));
+                $userObj->name = (($requestData['first_name'] ?? '') . ' ' . ($requestData['last_name'] ?? ''));
                 $userObj->email = $requestData['email'] ?? '';
                 if ($userObj->save()) {
                     return redirect()->route('settings')->with('message', 'Personal info changed successfully');
@@ -220,9 +220,11 @@ class SettingController extends Controller
 
                 return redirect()->route('settings')->with('success', 'Paypal configuration updated successfully');
             }
+
+            // Fallback for invalid request_type
+            return redirect()->route('settings')->with('error', 'Invalid Request');
         } catch (\Exception $e) {
             return redirect()->route('settings')->with('error', $e->getMessage());
         }
-
     }
 }

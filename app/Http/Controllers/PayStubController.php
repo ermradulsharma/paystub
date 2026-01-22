@@ -20,8 +20,8 @@ class PayStubController extends Controller
         $advanceType = Template::where(['state' => 'usa', 'type' => 'advance', 'status' => 1])->orderBy('title')->with('images')->get();
         $stateTaxes = StateTax::orderBy('state')->get();
         if (Auth::check()) {
-            $employerList = Address::where(['type' => 'employer', 'user_id' => Auth::user()->id])->orderBy('id', 'DESC')->get();
-            $employeeList = Address::where(['type' => 'employee', 'user_id' => Auth::user()->id])->orderBy('id', 'DESC')->get();
+            $employerList = Address::where(['type' => 'employer', 'user_id' => Auth::id()])->orderBy('id', 'DESC')->get();
+            $employeeList = Address::where(['type' => 'employee', 'user_id' => Auth::id()])->orderBy('id', 'DESC')->get();
         } else {
             $employerList = [];
             $employeeList = [];
@@ -40,8 +40,8 @@ class PayStubController extends Controller
         $stateTaxes = StateTax::orderBy('state')->get();
         $currencies = Currency::get();
         if (Auth::check()) {
-            $employerList = Address::where(['type' => 'employer', 'user_id' => Auth::user()->id])->orderBy('id', 'DESC')->get();
-            $employeeList = Address::where(['type' => 'employee', 'user_id' => Auth::user()->id])->orderBy('id', 'DESC')->get();
+            $employerList = Address::where(['type' => 'employer', 'user_id' => Auth::id()])->orderBy('id', 'DESC')->get();
+            $employeeList = Address::where(['type' => 'employee', 'user_id' => Auth::id()])->orderBy('id', 'DESC')->get();
         } else {
             $employerList = [];
             $employeeList = [];
@@ -58,8 +58,8 @@ class PayStubController extends Controller
         $stateTaxes = StateTax::where('country_code', 'CA')->orderBy('state')->get();
         $currencies = Currency::get();
         if (Auth::check()) {
-            $employerList = Address::where(['type' => 'employer', 'user_id' => Auth::user()->id])->orderBy('id', 'DESC')->get();
-            $employeeList = Address::where(['type' => 'employee', 'user_id' => Auth::user()->id])->orderBy('id', 'DESC')->get();
+            $employerList = Address::where(['type' => 'employer', 'user_id' => Auth::id()])->orderBy('id', 'DESC')->get();
+            $employeeList = Address::where(['type' => 'employee', 'user_id' => Auth::id()])->orderBy('id', 'DESC')->get();
         } else {
             $employerList = [];
             $employeeList = [];
@@ -84,8 +84,8 @@ class PayStubController extends Controller
         $stateTaxes = StateTax::orderBy('state')->get();
         $currencies = Currency::get();
         if (Auth::check()) {
-            $employerList = Address::where(['type' => 'employer', 'user_id' => Auth::user()->id])->orderBy('id', 'DESC')->get();
-            $employeeList = Address::where(['type' => 'employee', 'user_id' => Auth::user()->id])->orderBy('id', 'DESC')->get();
+            $employerList = Address::where(['type' => 'employer', 'user_id' => Auth::id()])->orderBy('id', 'DESC')->get();
+            $employeeList = Address::where(['type' => 'employee', 'user_id' => Auth::id()])->orderBy('id', 'DESC')->get();
         } else {
             $employerList = [];
             $employeeList = [];

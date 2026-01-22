@@ -110,11 +110,11 @@ class PayPalController extends Controller
                 if (intval($xolode[1])) {
                     $subcriptionObj = Subscription::find($xolode[1]);
                 } else {
-                    $subcriptionObj = Subscription::where(['plan_id' => $xolode[0], 'user_id' => Auth::user()->id])->where('expiry_date', '<', Carbon::now())->first();
+                    $subcriptionObj = Subscription::where(['plan_id' => $xolode[0], 'user_id' => Auth::id()])->where('expiry_date', '<', Carbon::now())->first();
                 }
                 if (! $subcriptionObj) {
                     $subcriptionObj = new Subscription;
-                    $subcriptionObj->user_id = Auth::user()->id;
+                    $subcriptionObj->user_id = Auth::id();
                 }
                 $subcriptionObj->plan_id = $planDetail->id;
                 if (intval($xolode[1])) {
@@ -135,7 +135,7 @@ class PayPalController extends Controller
                 $subcriptionObj->transaction_status = $response['status'] ?? '';
                 $subcriptionObj->device_type = 'website';
                 if ($subcriptionObj->save()) {
-                    $userObj = User::find(Auth::user()->id);
+                    $userObj = User::find(Auth::id());
                     if ($userObj) {
                         if ($subcriptionObj->country == 'usa') {
                             $userObj->usa_expiry_date = $subcriptionObj->expiry_date ?? '';
@@ -146,7 +146,7 @@ class PayPalController extends Controller
                         }
                         $userObj->device_type = $subcriptionObj->device_type;
                         if ($userObj->save()) {
-                            $invoice = invoiceMail(Auth::user()->id, $subcriptionObj->country);
+                            $invoice = invoiceMail(Auth::id(), $subcriptionObj->country);
                         }
                     }
                 }
