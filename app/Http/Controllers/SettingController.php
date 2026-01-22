@@ -221,5 +221,7 @@ class SettingController extends Controller
         } catch (\Exception $e) {
             return redirect()->route('settings')->with('error', $e->getMessage());
         }
+
+       
     }
 }

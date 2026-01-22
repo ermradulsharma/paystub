@@ -1,66 +1,106 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Paystub X - Professional Paystub Generator
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Paidstub X is a powerful and flexible Laravel-based web application designed to generate professional paystubs for various regions, including the USA, UK, Canada, and Global templates. It also supports W2 forms and includes a comprehensive admin dashboard for managing templates, users, and subscriptions.
 
-## About Laravel
+![Laravel](https://img.shields.io/badge/Laravel-9.x-FF2D20?style=for-the-badge&logo=laravel)
+![PHP](https://img.shields.io/badge/PHP-8.0+-777BB4?style=for-the-badge&logo=php)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🚀 Features
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- **Multi-Region Support**: specialized templates for USA, UK, Canada, and generic Global options.
+- **W2 Form Generation**: Easy-to-use W2 form creator.
+- **Admin Dashboard**: Manage users, templates, color codes, and deductions.
+- **User Dashboard**: Users can save profiles, manage subscriptions, and view order history.
+- **PDF Generation**: High-quality PDF export using DOMPDF.
+- **Payment Integration**: PayPal integration for handling subscriptions and one-time payments.
+- **Authentication**: Secure login with email/password, Google OAuth, and OTP support.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 🛠 Prerequisites
 
-## Learning Laravel
+- PHP >= 8.0.2
+- Composer
+- PostgreSQL or MySQL
+- Node.js & NPM (for frontend assets)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 📦 Installation
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+1.  **Clone the Repository**
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+    ```bash
+    git clone https://github.com/yourusername/paystubx-website.git
+    cd paystubx-website
+    ```
 
-## Laravel Sponsors
+2.  **Install PHP Dependencies**
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+    ```bash
+    composer install
+    ```
 
-### Premium Partners
+3.  **Environment Setup**
+    Copy the example environment file and configure it:
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+    ```bash
+    cp .env.example .env
+    ```
 
-## Contributing
+    Update the `.env` file with your database credentials, mail server details, and PayPal keys.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+4.  **Generate App Key**
 
-## Code of Conduct
+    ```bash
+    php artisan key:generate
+    ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+5.  **Database Migration**
 
-## Security Vulnerabilities
+    ```bash
+    php artisan migrate --seed
+    ```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+6.  **Install Frontend Dependencies**
 
-## License
+    ```bash
+    npm install
+    npm run build
+    ```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+7.  **Serve Application**
+    ```bash
+    php artisan serve
+    ```
+
+## ⚙️ Configuration
+
+### Payment Gateways
+
+Configure your PayPal credentials in `.env`:
+
+```env
+PAYPAL_MODE=sandbox
+PAYPAL_SANDBOX_CLIENT_ID=your_client_id
+PAYPAL_SANDBOX_CLIENT_SECRET=your_client_secret
+```
+
+### Social Login
+
+To enable Google Login, add your Google Console credentials:
+
+```env
+GOOGLE_CLIENT_ID=your_client_id
+GOOGLE_CLIENT_SECRET=your_client_secret
+GOOGLE_CALLBACK_URL=http://your-domain.com/google/callback
+```
+
+## 🤝 Contributing
+
+We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for details on how to get started.
+
+## 🔒 Security
+
+If you discover any security related issues, please refer to [SECURITY.md](SECURITY.md) for reporting instructions.
+
+## 📄 License
+
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT). This project also follows the MIT license. See [LICENSE](LICENSE) for more information.

@@ -13,7 +13,7 @@ class PlanController extends Controller
      */
     public function index()
     {
-        dd('plans index');
+
     }
 
     /**
@@ -23,7 +23,7 @@ class PlanController extends Controller
      */
     public function create()
     {
-        dd('plans create');
+
     }
 
     /**
@@ -34,7 +34,7 @@ class PlanController extends Controller
      */
     public function store(Request $request)
     {
-        dd('plans store');
+
     }
 
     /**
@@ -45,7 +45,7 @@ class PlanController extends Controller
      */
     public function show($id)
     {
-        dd('plans show');
+
     }
 
     /**
@@ -56,7 +56,7 @@ class PlanController extends Controller
      */
     public function edit($id)
     {
-        dd('plans edit');
+
     }
 
     /**
@@ -68,7 +68,7 @@ class PlanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        dd('plans update');
+
     }
 
     /**
@@ -79,6 +79,6 @@ class PlanController extends Controller
      */
     public function destroy($id)
     {
-        dd('plans destroy');
+
     }
 }
