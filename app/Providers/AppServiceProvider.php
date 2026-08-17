@@ -14,7 +14,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        if (file_exists(base_path('config/constants.php'))) {
+            require_once base_path('config/constants.php');
+        }
     }
 
     /**

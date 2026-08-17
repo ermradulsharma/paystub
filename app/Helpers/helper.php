@@ -2,21 +2,22 @@
 
 use App\Models\Image;
 use App\Models\PaySlip;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Mail;
-
-// use \PDF;
 
 function uploadImage($module, $module_id, $files, $path = 'images', $name = null)
 {
-    $path = IMAGE_UPLOAD_PATH.$path;
+    $image = null;
+    $uploadPath = defined('IMAGE_UPLOAD_PATH') ? IMAGE_UPLOAD_PATH . $path : 'public/' . $path;
 
     if (is_object($files)) {
         $file = $files;
         $extension = $file->extension();
-        $fileName = date('dmY-his-').uniqid().'.'.$extension;
+        $fileName = date('dmY-his-') . uniqid() . '.' . $extension;
         $fileName = $name != null ? $name : str_replace(' ', '_', $fileName);
-        $file->storeAs($path, $fileName);
+        $file->storeAs($uploadPath, $fileName);
         $mime = $file->getMimeType();
 
         $fileType = '';
@@ -26,7 +27,7 @@ function uploadImage($module, $module_id, $files, $path = 'images', $name = null
             $fileType = 'pdf';
         }
         $image = Image::where(['module_type' => $module, 'module_id' => $module_id])->first();
-        if (! $image) {
+        if (!$image) {
             $image = new Image();
             $image->module_type = $module;
             $image->module_id = $module_id;
@@ -38,7 +39,7 @@ function uploadImage($module, $module_id, $files, $path = 'images', $name = null
         $image->save();
     }
 
-    return $image->id;
+    return $image ? $image->id : null;
 }
 
 function deleteImage($module, $id, $path = null)
@@ -47,10 +48,12 @@ function deleteImage($module, $id, $path = null)
 
     foreach ($images as $img) {
         try {
-            $path = STORAGE_UPLOAD_PATH.$path;
-            unlink($path.'/'.basename($img->file));
-        } catch (Exception $e) {
-            return $e;
+            $storagePath = defined('STORAGE_UPLOAD_PATH') ? STORAGE_UPLOAD_PATH . $path : storage_path('public/' . $path);
+            if (file_exists($storagePath . '/' . basename($img->file))) {
+                unlink($storagePath . '/' . basename($img->file));
+            }
+        } catch (\Exception $e) {
+            return $e->getMessage();
         }
     }
     Image::where(['module_type' => $module, 'module_id' => $id])->delete();
@@ -63,40 +66,41 @@ function invoiceMail($user_id, $type)
     $paySlipObj = PaySlip::where(['user_id' => $user_id])->exists();
     if ($paySlipObj) {
         $invoice = PaySlip::where(['user_id' => $user_id, 'type' => $type])->orderBy('id', 'desc')->first();
-        if ($invoice->id != null) {
-            $invoice = $invoice->where('id', $invoice->id);
-        }
-        $invoice = $invoice->orderBy('id', 'desc')->first();
-        $requestData = json_decode($invoice->data);
-        $requestData = collect($requestData);
-        $requestData['watermark'] = 'no';
-        $pageName = $requestData['advance_temp'] ?? $requestData['basic_temp'];
+        if ($invoice && isset($invoice->data)) {
+            $requestData = json_decode($invoice->data);
+            $requestData = collect($requestData);
+            $requestData['watermark'] = 'no';
+            $pageName = $requestData['advance_temp'] ?? $requestData['basic_temp'] ?? '';
 
-        $path = public_path('/uploads/mailData');
-        File::isDirectory($path) or File::makeDirectory($path, 0777, true, true);
-        $invoiceData['requestData'] = $requestData;
-        $pdf = \PDF::loadView('allForms/'.$requestData['form_type'].'/'.$pageName, $invoiceData)->setPaper('a4', 'portrait');
-        $fileName = date('_d_m_Y_h_i_s').'.pdf';
-        $pdf->save($path.'/'.$fileName);
-        if ($invoice) {
-            $mailData = [
-                'email' => Auth::user()->email,
-                'title' => 'Please find attachment file',
-            ];
-            $moreData = [];
-            $file = public_path('/uploads/mailData/'.basename($fileName));
-            try {
-                Mail::send('mail.invoice_mail', $moreData, function ($message) use ($mailData, $file) {
-                    $message->to($mailData['email']);
-                    $message->subject($mailData['title']);
-                    $message->attach($file);
-                });
-            } catch (\Exception $e) {
-                $response['message'] = $e->getMessage().' Line No '.$e->getLine().' in File'.$e->getFile();
+            $path = public_path('/uploads/mailData');
+            File::isDirectory($path) or File::makeDirectory($path, 0777, true, true);
+            $invoiceData['requestData'] = $requestData;
+            
+            if ($pageName && isset($requestData['form_type'])) {
+                $pdf = \PDF::loadView('allForms/' . $requestData['form_type'] . '/' . $pageName, $invoiceData)->setPaper('a4', 'portrait');
+                $fileName = date('_d_m_Y_h_i_s') . '.pdf';
+                $pdf->save($path . '/' . $fileName);
+
+                $user = User::find($user_id) ?? (Auth::check() ? Auth::user() : null);
+                if ($user && !empty($user->email)) {
+                    $mailData = [
+                        'email' => $user->email,
+                        'title' => 'Please find attachment file',
+                    ];
+                    $moreData = [];
+                    $file = public_path('/uploads/mailData/' . basename($fileName));
+                    try {
+                        Mail::send('mail.invoice_mail', $moreData, function ($message) use ($mailData, $file) {
+                            $message->to($mailData['email']);
+                            $message->subject($mailData['title']);
+                            $message->attach($file);
+                        });
+                    } catch (\Exception $e) {
+                        \Log::error('Invoice Mail Send Error: ' . $e->getMessage());
+                    }
+                }
+                return 'success';
             }
-        }
-        if ($invoice->id != null) {
-            return 'success';
         }
     }
 
@@ -105,7 +109,7 @@ function invoiceMail($user_id, $type)
 
 function generateRandomToken($length = 10, $string = 'xyz')
 {
-    $characters = $string.'0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'.time();
+    $characters = $string . '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ' . time();
     $charactersLength = strlen($characters);
     $randomString = '';
     for ($i = 0; $i < $length; $i++) {
@@ -141,24 +145,24 @@ function getCurrency(float $number)
         $i += $divider == 10 ? 1 : 2;
         if ($number) {
             $plural = (($counter = count($str)) && $number > 9) ? 's' : null;
-            // $hundred = ($counter == 1 && $str[0]) ? ' and ' : null;
-            $hundred = ($counter == 1 && $str[0]) ? '' : null;
-            $str[] = ($number < 21) ? $words[$number].' '.$digits[$counter].$plural.' '.$hundred : $words[floor($number / 10) * 10].' '.$words[$number % 10].' '.$digits[$counter].$plural.' '.$hundred;
+            $hundred = ($counter == 1 && isset($str[0]) && $str[0]) ? '' : null;
+            $word1 = $words[$number % 10] ?? '';
+            $wordTens = $words[floor($number / 10) * 10] ?? '';
+            $str[] = ($number < 21) ? ($words[$number] ?? '') . ' ' . ($digits[$counter] ?? '') . $plural . ' ' . $hundred : $wordTens . ' ' . $word1 . ' ' . ($digits[$counter] ?? '') . $plural . ' ' . $hundred;
         } else {
             $str[] = null;
         }
     }
-    $Rupees = implode('', array_reverse($str));
+    $Rupees = implode('', array_reverse(array_filter($str)));
     if ($decimal == 0) {
         $cents = '';
     } elseif ($decimal > 0 && $decimal < 21) {
-        $cents = ($words[$decimal]).' Cents';
+        $cents = ($words[$decimal] ?? '') . ' Cents';
     } else {
-        $cents = ($words[floor($decimal / 10) * 10].' '.$words[$decimal % 10]).' Cents';
+        $cents = (($words[floor($decimal / 10) * 10] ?? '') . ' ' . ($words[$decimal % 10] ?? '')) . ' Cents';
     }
-    // $cents = ($decimal > 0) ? ($words[floor($decimal / 10) * 10] . " " . $words[$decimal % 10]) . ' Cents' : '';
-    // $cents = ($decimal > 0 && $decimal < 21) ? ($words[$decimal]) . ' Cents' : ($words[floor($decimal / 10) * 10] . " " . $words[$decimal % 10]) . ' Cents';
-    return ($Rupees ? $Rupees.'Dollars ' : '').'<span style="text-transform: lowercase !important;">and </span>'.$cents;
+
+    return ($Rupees ? $Rupees . 'Dollars ' : '') . '<span style="text-transform: lowercase !important;">and </span>' . $cents;
 }
 
 function addressTwo($obj, $lineBreak = false, $comma = false)

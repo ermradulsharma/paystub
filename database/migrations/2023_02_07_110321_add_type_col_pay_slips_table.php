@@ -26,7 +26,7 @@ return new class extends Migration
     public function down()
     {
         Schema::table('pay_slips', function (Blueprint $table) {
-            //
+            $table->dropColumn('type');
         });
     }
 };

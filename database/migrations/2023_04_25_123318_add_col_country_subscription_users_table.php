@@ -14,9 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('usa_expiry_date')->nullable();
-            $table->string('uk_expiry_date')->nullable();
-            $table->string('canada_expiry_date')->nullable();
+            $table->dateTime('usa_expiry_date')->nullable();
+            $table->dateTime('uk_expiry_date')->nullable();
+            $table->dateTime('canada_expiry_date')->nullable();
         });
     }
 
@@ -28,7 +28,7 @@ return new class extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            //
+            $table->dropColumn(['usa_expiry_date', 'uk_expiry_date', 'canada_expiry_date']);
         });
     }
 };

@@ -33,6 +33,7 @@ return new class extends Migration
             $table->integer('role_id')->default(2)->comment('1-admin, 2-users');
             $table->rememberToken();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

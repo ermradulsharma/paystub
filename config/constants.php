@@ -24,7 +24,7 @@ defined('APP_URL') or define('APP_URL', 'http://www.paystubx.com');
 defined('MAIL_FROM_EMAIL') or define('MAIL_FROM_EMAIL', 'noreply@paystubx.com');
 
 defined('IMAGE_UPLOAD_PATH') or define('IMAGE_UPLOAD_PATH', 'public/');
-defined('STORAGE_UPLOAD_PATH') or define('STORAGE_UPLOAD_PATH', storage_path('public/'));
+defined('STORAGE_UPLOAD_PATH') or define('STORAGE_UPLOAD_PATH', (function_exists('storage_path') && function_exists('app') && app()->bound('path.storage')) ? storage_path('public/') : __DIR__.'/../storage/app/public/');
 
 defined('STATUS_OK') or define('STATUS_OK', 200);
 defined('STATUS_CREATED') or define('STATUS_CREATED', 201);

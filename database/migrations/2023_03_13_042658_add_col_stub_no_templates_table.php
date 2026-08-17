@@ -27,7 +27,7 @@ return new class extends Migration
     public function down()
     {
         Schema::table('templates', function (Blueprint $table) {
-            //
+            $table->dropColumn(['stub_no', 'co_no']);
         });
     }
 };
