@@ -17,6 +17,12 @@
             </a>
         </li>
         <li class="nav-item">
+            <a class="nav-link {{ request()->is('admin/revenue*') ? '' : 'collapsed' }}" href="{{ route('admin.revenue') }}">
+                <i class="bi bi-currency-dollar"></i>
+                <span>Revenue Telemetry</span>
+            </a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link {{ request()->is('admin/health*') ? '' : 'collapsed' }}" href="{{ url('admin/health') }}">
                 <i class="bi bi-cpu-fill"></i>
                 <span>System Telemetry</span>
@@ -65,6 +71,12 @@
             </a>
         </li>
         <li class="nav-item">
+            <a class="nav-link {{ request()->is('admin/pdf-customizer*') ? '' : 'collapsed' }}" href="{{ route('admin.pdf-customizer') }}">
+                <i class="bi bi-palette-fill"></i>
+                <span>PDF Customizer</span>
+            </a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link {{ request()->is('admin/watermarks*') ? '' : 'collapsed' }}" href="{{ url('admin/watermarks') }}">
                 <i class="bi bi-shield-shaded"></i>
                 <span>PDF Watermarks</span>
@@ -89,6 +101,18 @@
             <a class="nav-link {{ request()->is('admin/broadcast*') ? '' : 'collapsed' }}" href="{{ url('admin/broadcast') }}">
                 <i class="bi bi-broadcast"></i>
                 <span>System Broadcasts</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link {{ request()->is('admin/email-events*') ? '' : 'collapsed' }}" href="{{ route('admin.email-events') }}">
+                <i class="bi bi-envelope-check-fill"></i>
+                <span>Email Events</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link {{ request()->is('admin/security-2fa*') ? '' : 'collapsed' }}" href="{{ route('admin.security-2fa') }}">
+                <i class="bi bi-shield-lock-fill"></i>
+                <span>2FA Security</span>
             </a>
         </li>
         <li class="nav-item">

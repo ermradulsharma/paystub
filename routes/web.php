@@ -126,6 +126,11 @@ Route::middleware(['auth'])->group(function () {
         Route::get('profile', [SettingController::class, 'profile'])->name('admin.profile');
         Route::post('profile/update', [SettingController::class, 'updateProfile'])->name('admin.profile.update');
 
+        Route::match(['get', 'post'], 'pdf-customizer', [SettingController::class, 'pdfCustomizer'])->name('admin.pdf-customizer');
+        Route::match(['get', 'post'], 'email-events', [SettingController::class, 'emailEvents'])->name('admin.email-events');
+        Route::get('revenue', [SettingController::class, 'revenue'])->name('admin.revenue');
+        Route::match(['get', 'post'], 'security-2fa', [SettingController::class, 'security2FA'])->name('admin.security-2fa');
+
         Route::match(['get', 'post'], 'settings', [SettingController::class, 'settings'])->name('admin.settings');
     });
 });

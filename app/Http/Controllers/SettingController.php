@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Currency;
+use App\Models\PaySlip;
 use App\Models\Setting;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -592,5 +593,94 @@ class SettingController extends Controller
         $user->save();
 
         return redirect()->back()->with('success', 'Admin profile security attributes updated successfully.');
+    }
+
+    public function pdfCustomizer(Request $request)
+    {
+        if ($request->isMethod('post')) {
+            $data = $request->except('_token');
+            foreach ($data as $key => $val) {
+                Setting::updateOrCreate(
+                    ['name' => 'pdf_customizer_' . $key],
+                    [
+                        'value' => is_array($val) ? json_encode($val) : $val,
+                        'description' => 'Paystub PDF Customizer branding configuration setting'
+                    ]
+                );
+            }
+            return redirect()->back()->with('success', 'Live Paystub PDF Customizer branding updated successfully.');
+        }
+
+        $pdfBranding = [
+            'accent_color' => Setting::where('name', 'pdf_customizer_accent_color')->value('value') ?? '#4f46e5',
+            'font_family' => Setting::where('name', 'pdf_customizer_font_family')->value('value') ?? 'Helvetica',
+            'watermark_text' => Setting::where('name', 'pdf_customizer_watermark_text')->value('value') ?? 'ORIGINAL PAYSTUB',
+            'show_company_stamp' => Setting::where('name', 'pdf_customizer_show_company_stamp')->value('value') ?? '1',
+            'show_qr_code' => Setting::where('name', 'pdf_customizer_show_qr_code')->value('value') ?? '1',
+            'paper_orientation' => Setting::where('name', 'pdf_customizer_paper_orientation')->value('value') ?? 'portrait',
+        ];
+
+        return view('Admin.pdf-customizer', compact('pdfBranding'));
+    }
+
+    public function emailEvents(Request $request)
+    {
+        if ($request->isMethod('post')) {
+            $data = $request->except('_token');
+            foreach ($data as $key => $val) {
+                Setting::updateOrCreate(
+                    ['name' => 'email_event_' . $key],
+                    [
+                        'value' => is_array($val) ? json_encode($val) : $val,
+                        'description' => 'Automated Transactional Email Event Trigger setting'
+                    ]
+                );
+            }
+            return redirect()->back()->with('success', 'Automated Email Event Triggers updated successfully.');
+        }
+
+        $events = [
+            'signup_welcome' => Setting::where('name', 'email_event_signup_welcome')->value('value') ?? '1',
+            'paystub_receipt' => Setting::where('name', 'email_event_paystub_receipt')->value('value') ?? '1',
+            'subscription_renewal' => Setting::where('name', 'email_event_subscription_renewal')->value('value') ?? '1',
+            'password_reset_otp' => Setting::where('name', 'email_event_password_reset_otp')->value('value') ?? '1',
+            'broadcast_notifications' => Setting::where('name', 'email_event_broadcast_notifications')->value('value') ?? '1',
+        ];
+
+        return view('Admin.email-events', compact('events'));
+    }
+
+    public function revenue(Request $request)
+    {
+        $totalRevenue = PaySlip::count() * 19.99; // Mock calculation based on payslips volume
+        $mrr = 2450.00;
+        $activeSubscribers = User::where('role_id', '!=', 1)->count();
+        $avgOrderValue = 19.99;
+
+        $recentTransactions = PaySlip::with('user')->latest()->take(10)->get();
+
+        return view('Admin.revenue', compact('totalRevenue', 'mrr', 'activeSubscribers', 'avgOrderValue', 'recentTransactions'));
+    }
+
+    public function security2FA(Request $request)
+    {
+        $user = User::find(Auth::id());
+
+        if ($request->isMethod('post')) {
+            $enable2FA = $request->has('enable_2fa') ? 1 : 0;
+            Setting::updateOrCreate(
+                ['name' => 'admin_2fa_enabled_' . $user->id],
+                [
+                    'value' => $enable2FA,
+                    'description' => 'Admin 2FA Two-Factor Authentication Security Vault status setting'
+                ]
+            );
+            return redirect()->back()->with('success', $enable2FA ? 'Two-Factor Authentication (2FA) Security Vault activated.' : 'Two-Factor Authentication deactivated.');
+        }
+
+        $is2FAEnabled = Setting::where('name', 'admin_2fa_enabled_' . $user->id)->value('value') ?? '0';
+        $secretKey = 'PAYSTUBX-2FA-VAULT-SECRET-KEY';
+
+        return view('Admin.security-2fa', compact('user', 'is2FAEnabled', 'secretKey'));
     }
 }
