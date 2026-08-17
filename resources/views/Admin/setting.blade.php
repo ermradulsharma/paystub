@@ -87,7 +87,7 @@
                             <span class="badge-clean active">Public Profile</span>
                         </div>
 
-                        <form action="{{ route('settings') }}" method="POST">
+                        <form action="{{ route('admin.settings') }}" method="POST">
                             @csrf
                             <input type="hidden" name="request_type" value="site_info">
 
@@ -138,7 +138,7 @@
                             <span class="badge-clean active">IRS Compliant</span>
                         </div>
 
-                        <form action="{{ route('settings') }}" method="POST">
+                        <form action="{{ route('admin.settings') }}" method="POST">
                             @csrf
                             <input type="hidden" name="request_type" value="tax_engine">
 
@@ -191,7 +191,7 @@
                             <span class="badge-clean active">DomPDF 2.0</span>
                         </div>
 
-                        <form action="{{ route('settings') }}" method="POST">
+                        <form action="{{ route('admin.settings') }}" method="POST">
                             @csrf
                             <input type="hidden" name="request_type" value="pdf_engine">
 
@@ -246,7 +246,7 @@
                             <span class="badge-clean active">Shield Active</span>
                         </div>
 
-                        <form action="{{ route('settings') }}" method="POST">
+                        <form action="{{ route('admin.settings') }}" method="POST">
                             @csrf
                             <input type="hidden" name="request_type" value="security_config">
 
@@ -294,7 +294,7 @@
                             <span class="badge-clean active">TLS Encrypted</span>
                         </div>
 
-                        <form action="{{ route('settings') }}" method="POST">
+                        <form action="{{ route('admin.settings') }}" method="POST">
                             @csrf
                             <input type="hidden" name="request_type" value="smtp">
 
@@ -350,7 +350,7 @@
                             <span class="badge-clean active">API v2 Ready</span>
                         </div>
 
-                        <form action="{{ route('settings') }}" method="POST">
+                        <form action="{{ route('admin.settings') }}" method="POST">
                             @csrf
                             <input type="hidden" name="request_type" value="paypal_configuration">
 
@@ -417,7 +417,7 @@
                             <span class="badge-clean active">FCM Engine</span>
                         </div>
 
-                        <form action="{{ route('settings') }}" method="POST">
+                        <form action="{{ route('admin.settings') }}" method="POST">
                             @csrf
                             <input type="hidden" name="request_type" value="push_notification_server_key">
 
@@ -450,7 +450,7 @@
                                     </div>
                                 </div>
 
-                                <form action="{{ route('settings') }}" method="POST">
+                                <form action="{{ route('admin.settings') }}" method="POST">
                                     @csrf
                                     <input type="hidden" name="request_type" value="personal_info">
 
@@ -488,7 +488,7 @@
                                     </div>
                                 </div>
 
-                                <form action="{{ route('settings') }}" method="POST">
+                                <form action="{{ route('admin.settings') }}" method="POST">
                                     @csrf
                                     <input type="hidden" name="request_type" value="change_password">
 
