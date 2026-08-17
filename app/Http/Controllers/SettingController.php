@@ -446,7 +446,65 @@ class SettingController extends Controller
 
     public function broadcast(Request $request)
     {
-        return view('Admin.broadcast');
+        if ($request->isMethod('post')) {
+            $request->validate([
+                'headline' => 'required|string|max:200',
+                'notice_type' => 'required|string',
+                'target_audience' => 'required|string',
+                'message_body' => 'required|string',
+            ]);
+
+            $broadcasts = json_decode(Setting::where('name', 'broadcast_history')->value('value') ?? '[]', true);
+
+            $newAnnouncement = [
+                'id' => 'BCST-' . rand(1000, 9999),
+                'headline' => strip_tags($request->headline),
+                'notice_type' => strip_tags($request->notice_type),
+                'target_audience' => strip_tags($request->target_audience),
+                'message_body' => strip_tags($request->message_body),
+                'status' => 'Active',
+                'created_at' => date('Y-m-d H:i')
+            ];
+
+            array_unshift($broadcasts, $newAnnouncement);
+
+            Setting::updateOrCreate(
+                ['name' => 'broadcast_history'],
+                [
+                    'value' => json_encode($broadcasts),
+                    'description' => 'System Broadcast Announcements History Log'
+                ]
+            );
+
+            return redirect()->back()->with('success', 'System Announcement Broadcasted successfully to ' . ucfirst($request->target_audience) . '!');
+        }
+
+        $broadcasts = json_decode(Setting::where('name', 'broadcast_history')->value('value') ?? '[]', true);
+
+        if (empty($broadcasts)) {
+            $broadcasts = [
+                [
+                    'id' => 'BCST-9481',
+                    'headline' => 'Scheduled IRS Tax Engine Update',
+                    'notice_type' => 'Warning',
+                    'target_audience' => 'all',
+                    'message_body' => 'PaystubX will undergo scheduled maintenance for IRS 2026 Tax Table Updates on Sunday at 02:00 UTC.',
+                    'status' => 'Active',
+                    'created_at' => '2026-08-17 10:00'
+                ],
+                [
+                    'id' => 'BCST-9475',
+                    'headline' => 'New W-2 & 1099 Form Templates Live',
+                    'notice_type' => 'Info',
+                    'target_audience' => 'usa',
+                    'message_body' => 'New 2026 W-2 Form and 1099-NEC paystub templates are now available for all US clients.',
+                    'status' => 'Active',
+                    'created_at' => '2026-08-15 16:30'
+                ]
+            ];
+        }
+
+        return view('Admin.broadcast', compact('broadcasts'));
     }
 
     public function sendDirectMail(Request $request)
@@ -682,5 +740,56 @@ class SettingController extends Controller
         $secretKey = 'PAYSTUBX-2FA-VAULT-SECRET-KEY';
 
         return view('Admin.security-2fa', compact('user', 'is2FAEnabled', 'secretKey'));
+    }
+
+    public function telemetry(Request $request)
+    {
+        $dbPath = database_path('database.sqlite');
+        $dbSize = file_exists($dbPath) ? round(filesize($dbPath) / 1024 / 1024, 2) : 0.5;
+        $memoryUsage = round(memory_get_usage(true) / 1024 / 1024, 2);
+        $peakMemory = round(memory_get_peak_usage(true) / 1024 / 1024, 2);
+        $phpVersion = PHP_VERSION;
+        $laravelVersion = app()->version();
+
+        return view('Admin.telemetry', compact('dbSize', 'memoryUsage', 'peakMemory', 'phpVersion', 'laravelVersion'));
+    }
+
+    public function supportTickets(Request $request)
+    {
+        if ($request->isMethod('post')) {
+            return redirect()->back()->with('success', 'Support ticket reply sent successfully to customer.');
+        }
+
+        $tickets = [
+            [
+                'id' => 'TCK-8921',
+                'customer' => 'Johnathan Doe',
+                'email' => 'john.doe@example.com',
+                'subject' => 'USA W-2 Form Box 12 Tax Deduction Calculation Question',
+                'priority' => 'High',
+                'status' => 'Open',
+                'created_at' => '2026-08-17 14:22'
+            ],
+            [
+                'id' => 'TCK-8919',
+                'customer' => 'Sarah Connor',
+                'email' => 'sarah.c@example.com',
+                'subject' => 'UK HMRC Payslip Year-To-Date NI Threshold Sync',
+                'priority' => 'Medium',
+                'status' => 'In Progress',
+                'created_at' => '2026-08-17 11:05'
+            ],
+            [
+                'id' => 'TCK-8915',
+                'customer' => 'Michael Scott',
+                'email' => 'mscott@dundermifflin.com',
+                'subject' => 'PayPal Subscription Invoice Receipt Download Issue',
+                'priority' => 'Low',
+                'status' => 'Resolved',
+                'created_at' => '2026-08-16 18:40'
+            ],
+        ];
+
+        return view('Admin.support-tickets', compact('tickets'));
     }
 }

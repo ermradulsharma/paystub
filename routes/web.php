@@ -121,7 +121,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('health', [SettingController::class, 'health'])->name('admin.health');
         Route::get('coupons', [SettingController::class, 'coupons'])->name('admin.coupons');
         Route::get('watermarks', [SettingController::class, 'watermarks'])->name('admin.watermarks');
-        Route::get('broadcast', [SettingController::class, 'broadcast'])->name('admin.broadcast');
+        Route::match(['get', 'post'], 'broadcast', [SettingController::class, 'broadcast'])->name('admin.broadcast');
         Route::post('send-direct-mail', [SettingController::class, 'sendDirectMail'])->name('admin.send-direct-mail');
         Route::get('profile', [SettingController::class, 'profile'])->name('admin.profile');
         Route::post('profile/update', [SettingController::class, 'updateProfile'])->name('admin.profile.update');
@@ -130,6 +130,8 @@ Route::middleware(['auth'])->group(function () {
         Route::match(['get', 'post'], 'email-events', [SettingController::class, 'emailEvents'])->name('admin.email-events');
         Route::get('revenue', [SettingController::class, 'revenue'])->name('admin.revenue');
         Route::match(['get', 'post'], 'security-2fa', [SettingController::class, 'security2FA'])->name('admin.security-2fa');
+        Route::get('telemetry', [SettingController::class, 'telemetry'])->name('admin.telemetry');
+        Route::match(['get', 'post'], 'support-tickets', [SettingController::class, 'supportTickets'])->name('admin.support-tickets');
 
         Route::match(['get', 'post'], 'settings', [SettingController::class, 'settings'])->name('admin.settings');
     });

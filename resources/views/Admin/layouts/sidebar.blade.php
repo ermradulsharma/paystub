@@ -122,6 +122,12 @@
             </a>
         </li>
         <li class="nav-item">
+            <a class="nav-link {{ request()->is('admin/support-tickets*') ? '' : 'collapsed' }}" href="{{ route('admin.support-tickets') }}">
+                <i class="bi bi-headset"></i>
+                <span>Support Tickets</span>
+            </a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link {{ request()->is('admin/faqs*') ? '' : 'collapsed' }}" href="{{ url('admin/faqs') }}">
                 <i class="bi bi-chat-dots-fill"></i>
                 <span>FAQ & Helpdesk</span>
