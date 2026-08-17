@@ -13,6 +13,6 @@ class LogAfterRequest
 
     public function terminate($request, $response)
     {
-        Log::info('app.requests', ['request' => $request->all(), 'response' => $response]);
+        Log::info('app.requests', ['request' => $request->all(), 'status' => method_exists($response, 'getStatusCode') ? $response->getStatusCode() : 200]);
     }
 }

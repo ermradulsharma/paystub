@@ -16,7 +16,7 @@ class RoleCheck
     public function handle(Request $request, Closure $next)
     {
         $userObj = $request->user();
-        if ($userObj->role_id != 1) {
+        if (! $userObj || $userObj->role_id != 1) {
             return redirect(route('welcome'));
         }
 
