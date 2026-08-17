@@ -20,64 +20,29 @@ use Illuminate\Support\Facades\Route;
 // =========================================================================
 // 1. Public & Country Paystub Routes
 // =========================================================================
-Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
-
+Route::get('/', function () {return view('welcome');})->name('welcome');
 Route::match(['get', 'post'], 'usa/paystub', [PayStubController::class, 'usaPayStub'])->name('usa.payStub');
-
 Route::match(['get', 'post'], 'global', [PayStubController::class, 'templateGlobal'])->name('global');
 Route::match(['get', 'post'], 'global/paystub', [PayStubController::class, 'globlePaystub'])->name('global.payStub');
-
-Route::get('uk', function () {
-    return view('uk');
-})->name('uk');
+Route::get('uk', function () {return view('uk');})->name('uk');
 Route::match(['get', 'post'], 'uk/paystub', [PayStubController::class, 'ukPayStub'])->name('uk.payStub');
-
-Route::get('canada', function () {
-    return view('canada');
-})->name('canada');
+Route::get('canada', function () {return view('canada');})->name('canada');
 Route::match(['get', 'post'], 'canada/paystub', [PayStubController::class, 'canadaPayStub'])->name('canada.payStub');
-
-Route::get('w2form', function () {
-    return view('forms');
-})->name('w2form');
+Route::get('w2form', function () {return view('forms');})->name('w2form');
 Route::match(['get', 'post'], 'w2form/paystub', [PayStubController::class, 'w2formPayStub'])->name('w2form.paystub');
-
 Route::post('generate-pdf', [TemplateFormController::class, 'generatePDF'])->name('generate');
 
 // =========================================================================
 // 2. Static Content & Information Routes
 // =========================================================================
-Route::get('terms', function () {
-    return view('terms');
-})->name('terms');
-
-Route::get('privacy', function () {
-    return view('privacy');
-})->name('privacy');
-
-Route::get('refund', function () {
-    return view('refund');
-})->name('refund');
-
-Route::get('contact', function () {
-    return view('contact');
-})->name('contact');
-
+Route::get('terms', function () {return view('terms');})->name('terms');
+Route::get('privacy', function () {return view('privacy');})->name('privacy');
+Route::get('refund', function () {return view('refund');})->name('refund');
+Route::get('contact', function () {return view('contact');})->name('contact');
 Route::post('contact-form', [HomeController::class, 'contactForm'])->name('contact-form');
-
-Route::get('template-view', function () {
-    return view('template');
-})->name('template-view');
-
-Route::get('userDashboard', function () {
-    return view('user-dashboard');
-})->name('userDashboard');
-
-Route::get('verify', function () {
-    return view('mail.verify');
-})->name('verify');
+Route::get('template-view', function () {return view('template');})->name('template-view');
+Route::get('userDashboard', function () {return view('user-dashboard');})->name('userDashboard');
+Route::get('verify', function () {return view('mail.verify');})->name('verify');
 
 // =========================================================================
 // 3. Authentication & Password Management Routes
@@ -85,9 +50,7 @@ Route::get('verify', function () {
 Route::post('auth/login', [LoginController::class, 'loginWithGoogle'])->name('login.google');
 Route::match(['get', 'post'], 'google/callback', [LoginController::class, 'callbackFromGoogle'])->name('google.callback');
 
-Route::get('loginWithOtp', function () {
-    return view('auth.OtpLogin');
-})->name('loginWithOtp.view');
+Route::get('loginWithOtp', function () {return view('auth.OtpLogin');})->name('loginWithOtp.view');
 Route::post('loginWithOtp', [LoginController::class, 'loginWithOtp'])->name('loginWithOtp');
 Route::post('sendOtp', [LoginController::class, 'sendOtp'])->name('sendOtp');
 Route::post('login', [LoginController::class, 'login'])->name('login');
@@ -126,9 +89,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('account/delete', [HomeController::class, 'accountDelete'])->name('delete.account');
     Route::post('update-password', [HomeController::class, 'userDetails'])->name('update-password');
     Route::post('change-password', [HomeController::class, 'changePassword'])->name('changePassword');
-    Route::get('forgotpassword', function () {
-        return view('auth.passwords.email');
-    })->name('forgotpassword');
+    Route::get('forgotpassword', function () {return view('auth.passwords.email');})->name('forgotpassword');
 
     // Address Book
     Route::get('address/fetch', [AddressBookController::class, 'fetchAddress'])->name('fetch.address');
@@ -141,26 +102,11 @@ Route::middleware(['auth'])->group(function () {
     // 6. Admin Panel Routes (Auth + userCheck Middleware)
     // =========================================================================
     Route::prefix('admin')->middleware(['userCheck'])->group(function () {
-        Route::get('welcome', function () {
-            return view('Admin.layouts.default');
-        })->name('admin.welcome');
-
-        Route::get('dashboard', function () {
-            return view('Admin.dashboard');
-        })->name('admin.dashboard');
-
-        Route::get('template', function () {
-            return view('Admin.template');
-        })->name('admin.template');
-
-        Route::get('color', function () {
-            return view('Admin.color-codes');
-        })->name('admin.color');
-
-        Route::get('deduction', function () {
-            return view('Admin.deduction');
-        })->name('admin.deduction');
-
+        Route::get('welcome', function () { return view('Admin.layouts.default');})->name('admin.welcome');
+        Route::get('dashboard', function () { return view('Admin.dashboard');})->name('admin.dashboard');
+        Route::get('template', function () {return view('Admin.template');})->name('admin.template');
+        Route::get('color', function () {return view('Admin.color-codes');})->name('admin.color');
+        Route::get('deduction', function () {return view('Admin.deduction');})->name('admin.deduction');
         Route::get('users', [SettingController::class, 'users'])->name('admin.users');
         Route::get('payslips', [SettingController::class, 'payslips'])->name('admin.payslips');
         Route::get('subscriptions', [SettingController::class, 'subscriptions'])->name('admin.subscriptions');
@@ -175,8 +121,10 @@ Route::middleware(['auth'])->group(function () {
         Route::get('health', [SettingController::class, 'health'])->name('admin.health');
         Route::get('coupons', [SettingController::class, 'coupons'])->name('admin.coupons');
         Route::get('watermarks', [SettingController::class, 'watermarks'])->name('admin.watermarks');
-        Route::get('languages', [SettingController::class, 'languages'])->name('admin.languages');
         Route::get('broadcast', [SettingController::class, 'broadcast'])->name('admin.broadcast');
+        Route::post('send-direct-mail', [SettingController::class, 'sendDirectMail'])->name('admin.send-direct-mail');
+        Route::get('profile', [SettingController::class, 'profile'])->name('admin.profile');
+        Route::post('profile/update', [SettingController::class, 'updateProfile'])->name('admin.profile.update');
 
         Route::match(['get', 'post'], 'settings', [SettingController::class, 'settings'])->name('admin.settings');
     });
@@ -184,9 +132,7 @@ Route::middleware(['auth'])->group(function () {
 
 Route::match(['get', 'post'], 'admin/settings', [SettingController::class, 'settings'])->name('settings');
 
-Route::get('currency-converter', function() {
-    return view('currency-converter');
-})->name('currency.converter');
+Route::get('currency-converter', function() {return view('currency-converter');})->name('currency.converter');
 
 // =========================================================================
 // 7. Payment Processing Routes (PayPal)

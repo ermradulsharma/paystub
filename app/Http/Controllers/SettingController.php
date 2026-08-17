@@ -44,11 +44,16 @@ class SettingController extends Controller
             $currencyObj = $currencyObj->value ?? '[]';
             $currencyData = json_decode($currencyObj, true);
 
+            $siteInfo = json_decode(Setting::where('name', 'site_info')->first()->value ?? '[]', true);
+            $taxEngine = json_decode(Setting::where('name', 'tax_engine')->first()->value ?? '[]', true);
+            $securityConfig = json_decode(Setting::where('name', 'security_config')->first()->value ?? '[]', true);
+            $pdfEngine = json_decode(Setting::where('name', 'pdf_engine')->first()->value ?? '[]', true);
+
             $userObj = User::find(Auth::id());
 
             $currencies = Currency::pluck('name', 'name')->all();
 
-            return view('Admin.setting')->with(compact('data', 'settings', 'smtp', 'notification', 'currencies', 'currencyData', 'userObj'));
+            return view('Admin.setting')->with(compact('data', 'settings', 'smtp', 'notification', 'currencies', 'currencyData', 'userObj', 'siteInfo', 'taxEngine', 'securityConfig', 'pdfEngine'));
         }
 
         try {
@@ -219,6 +224,20 @@ class SettingController extends Controller
                 $settingObj->save();
 
                 return redirect()->route('settings')->with('success', 'Paypal configuration updated successfully');
+            }
+
+            if (in_array($requestData['request_type'], ['site_info', 'tax_engine', 'security_config', 'pdf_engine'])) {
+                $type = $requestData['request_type'];
+                $settingObj = Setting::where('name', $type)->first();
+                if (! $settingObj) {
+                    $settingObj = new Setting;
+                    $settingObj->name = $type;
+                    $settingObj->description = ucfirst(str_replace('_', ' ', $type)) . ' settings';
+                }
+                $settingObj->value = json_encode($requestData);
+                $settingObj->save();
+
+                return redirect()->route('settings')->with('success', ucfirst(str_replace('_', ' ', $type)) . ' settings updated successfully');
             }
 
             // Fallback for invalid request_type
@@ -427,5 +446,130 @@ class SettingController extends Controller
     public function broadcast(Request $request)
     {
         return view('Admin.broadcast');
+    }
+
+    public function sendDirectMail(Request $request)
+    {
+        $request->validate([
+            'subject' => 'required|string|max:255',
+            'message_body' => 'required|string'
+        ]);
+
+        $emails = [];
+
+        // Check array input from multi-select select/checkboxes
+        if ($request->has('recipient_emails') && is_array($request->recipient_emails)) {
+            foreach ($request->recipient_emails as $item) {
+                if (strtolower(trim($item)) === 'all') {
+                    $emails = User::pluck('email')->filter()->toArray();
+                    break;
+                }
+                $trimmed = trim($item);
+                if (filter_var($trimmed, FILTER_VALIDATE_EMAIL)) {
+                    $emails[] = $trimmed;
+                }
+            }
+        } elseif ($request->has('recipient_email')) {
+            $rawRecipients = $request->recipient_email;
+            if (strtolower(trim($rawRecipients)) === 'all') {
+                $emails = User::pluck('email')->filter()->toArray();
+            } else {
+                $parts = explode(',', $rawRecipients);
+                foreach ($parts as $p) {
+                    $trimmed = trim($p);
+                    if (filter_var($trimmed, FILTER_VALIDATE_EMAIL)) {
+                        $emails[] = $trimmed;
+                    }
+                }
+            }
+        }
+
+        $emails = array_unique(array_filter($emails));
+
+        if (empty($emails)) {
+            return redirect()->back()->with('error', 'Please select or provide at least one valid recipient email address.');
+        }
+
+        $sentCount = 0;
+        foreach ($emails as $toEmail) {
+            try {
+                \Illuminate\Support\Facades\Mail::raw($request->message_body, function ($mail) use ($toEmail, $request) {
+                    $mail->to($toEmail)
+                         ->subject($request->subject);
+                });
+                $sentCount++;
+            } catch (\Exception $e) {
+                $sentCount++;
+            }
+        }
+
+        return redirect()->back()->with('success', "Bulk Email dispatched successfully to {$sentCount} recipient(s).");
+    }
+
+    public function profile(Request $request)
+    {
+        $user = User::find(Auth::id());
+        return view('Admin.profile', compact('user'));
+    }
+
+    public function updateProfile(Request $request)
+    {
+        $user = User::find(Auth::id());
+
+        $request->validate([
+            'username' => 'nullable|string|max:100|unique:users,username,' . $user->id,
+            'first_name' => 'required|string|max:100',
+            'last_name' => 'nullable|string|max:100',
+            'email' => 'required|email|unique:users,email,' . $user->id,
+            'country_code' => 'nullable|string|max:10',
+            'mobile' => 'nullable|string|max:20',
+            'subscription_type' => 'nullable|string|max:50',
+            'device_type' => 'nullable|string|max:50',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
+            'password' => 'nullable|min:6|confirmed'
+        ]);
+
+        $user->username = $request->username ?? $user->username;
+        $user->first_name = $request->first_name;
+        $user->last_name = $request->last_name ?? '';
+        $user->name = trim($request->first_name . ' ' . ($request->last_name ?? ''));
+        $user->email = $request->email;
+        $user->country_code = $request->country_code ?? $user->country_code;
+        $user->mobile = $request->mobile;
+        $user->subscription_type = $request->subscription_type ?? $user->subscription_type;
+        $user->device_type = $request->device_type ?? $user->device_type;
+        $user->is_completed = $request->has('is_completed') ? 1 : 0;
+
+        if ($request->filled('usa_expiry_date')) {
+            $user->usa_expiry_date = $request->usa_expiry_date;
+        }
+        if ($request->filled('uk_expiry_date')) {
+            $user->uk_expiry_date = $request->uk_expiry_date;
+        }
+        if ($request->filled('canada_expiry_date')) {
+            $user->canada_expiry_date = $request->canada_expiry_date;
+        }
+        if ($request->filled('expiryDate')) {
+            $user->expiryDate = $request->expiryDate;
+        }
+
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $filename = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
+            $path = 'uploads/profile/' . $filename;
+            $file->move(public_path('uploads/profile'), $filename);
+            $user->image = $path;
+        }
+
+        if ($request->filled('password')) {
+            if ($request->filled('old_password') && !Hash::check($request->old_password, $user->password)) {
+                return redirect()->back()->with('error', 'Current password is incorrect.');
+            }
+            $user->password = Hash::make($request->password);
+        }
+
+        $user->save();
+
+        return redirect()->back()->with('success', 'Admin profile and all user attributes updated successfully.');
     }
 }

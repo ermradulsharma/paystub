@@ -122,6 +122,12 @@
             </a>
         </li>
         <li class="nav-item">
+            <a class="nav-link {{ request()->is('admin/profile*') ? '' : 'collapsed' }}" href="{{ route('admin.profile') }}">
+                <i class="bi bi-person-circle"></i>
+                <span>My Profile</span>
+            </a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link {{ request()->is('admin/settings*') ? '' : 'collapsed' }}" href="{{ url('admin/settings') }}">
                 <i class="bi bi-sliders"></i>
                 <span>Settings</span>
