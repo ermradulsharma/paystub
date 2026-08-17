@@ -53,7 +53,7 @@ Route::match(['get', 'post'], 'google/callback', [LoginController::class, 'callb
 Route::get('loginWithOtp', function () {return view('auth.OtpLogin');})->name('loginWithOtp.view');
 Route::post('loginWithOtp', [LoginController::class, 'loginWithOtp'])->name('loginWithOtp');
 Route::post('sendOtp', [LoginController::class, 'sendOtp'])->name('sendOtp');
-Route::post('login', [LoginController::class, 'login'])->name('login');
+Route::post('login', [LoginController::class, 'login'])->middleware(['loginThrottle'])->name('login');
 
 Route::post('forgot/password', [ForgotPasswordController::class, 'forgotPassword'])->name('forgot.password');
 Route::get('password/reset/{token}', [ForgotPasswordController::class, 'resetPasswordFromWeb'])->name('password.reset');
