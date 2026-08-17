@@ -29,14 +29,14 @@
     <link href="{{asset('Admin/assets')}}/vendor/remixicon/remixicon.css" rel="stylesheet"> --}}
     <link href="{{ asset('Admin/assets') }}/vendor/simple-datatables/style.css" rel="stylesheet">
 
-    <!-- Template Main CSS File -->
+    <!-- Template Main & Redesign CSS Files -->
     <link href="{{ asset('Admin/assets') }}/css/style.css" rel="stylesheet">
-    <!-- <link href="{{ asset('Admin/assets') }}/css/admin_redesign.css" rel="stylesheet"> -->
+    <link href="{{ asset('Admin/assets') }}/css/admin_redesign.css" rel="stylesheet">
 
     @livewireStyles
 </head>
 
-<body class="dark-theme">
+<body class="light-theme">
     @include('Admin.layouts.header')
     @include('Admin.layouts.sidebar')
     @yield('content')

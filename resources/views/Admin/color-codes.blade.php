@@ -1,4 +1,6 @@
 @extends('Admin.layouts.default')
 @section('content')
-<livewire:color-codes />
+<main id="main" class="main">
+    <livewire:color-codes />
+</main>
 @endsection

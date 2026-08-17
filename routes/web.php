@@ -140,30 +140,53 @@ Route::middleware(['auth'])->group(function () {
     // =========================================================================
     // 6. Admin Panel Routes (Auth + userCheck Middleware)
     // =========================================================================
-    Route::prefix('admin')->middleware(['userCheck'])->name('admin.')->group(function () {
+    Route::prefix('admin')->middleware(['userCheck'])->group(function () {
         Route::get('welcome', function () {
             return view('Admin.layouts.default');
-        })->name('welcome');
+        })->name('admin.welcome');
 
         Route::get('dashboard', function () {
             return view('Admin.dashboard');
-        })->name('dashboard');
+        })->name('admin.dashboard');
 
         Route::get('template', function () {
             return view('Admin.template');
-        })->name('template');
+        })->name('admin.template');
 
         Route::get('color', function () {
             return view('Admin.color-codes');
-        })->name('color');
+        })->name('admin.color');
 
         Route::get('deduction', function () {
             return view('Admin.deduction');
-        })->name('deduction');
+        })->name('admin.deduction');
 
-        Route::match(['get', 'post'], 'settings', [SettingController::class, 'settings'])->name('settings');
+        Route::get('users', [SettingController::class, 'users'])->name('admin.users');
+        Route::get('payslips', [SettingController::class, 'payslips'])->name('admin.payslips');
+        Route::get('subscriptions', [SettingController::class, 'subscriptions'])->name('admin.subscriptions');
+        Route::match(['get', 'post'], 'plans', [SettingController::class, 'plans'])->name('admin.plans');
+
+        Route::get('analytics', [SettingController::class, 'analytics'])->name('admin.analytics');
+        Route::match(['get', 'post'], 'state-taxes', [SettingController::class, 'stateTaxes'])->name('admin.state-taxes');
+        Route::get('audit-logs', [SettingController::class, 'auditLogs'])->name('admin.audit-logs');
+        Route::get('emails', [SettingController::class, 'emailTemplates'])->name('admin.emails');
+        Route::get('export', [SettingController::class, 'exportData'])->name('admin.export');
+        Route::get('faqs', [SettingController::class, 'faqs'])->name('admin.faqs');
+        Route::get('health', [SettingController::class, 'health'])->name('admin.health');
+        Route::get('coupons', [SettingController::class, 'coupons'])->name('admin.coupons');
+        Route::get('watermarks', [SettingController::class, 'watermarks'])->name('admin.watermarks');
+        Route::get('languages', [SettingController::class, 'languages'])->name('admin.languages');
+        Route::get('broadcast', [SettingController::class, 'broadcast'])->name('admin.broadcast');
+
+        Route::match(['get', 'post'], 'settings', [SettingController::class, 'settings'])->name('admin.settings');
     });
 });
+
+Route::match(['get', 'post'], 'admin/settings', [SettingController::class, 'settings'])->name('settings');
+
+Route::get('currency-converter', function() {
+    return view('currency-converter');
+})->name('currency.converter');
 
 // =========================================================================
 // 7. Payment Processing Routes (PayPal)
