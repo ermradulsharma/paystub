@@ -173,7 +173,7 @@
                 <!-- Modal body -->
                 <div class="modal-body" style="padding-bottom:30px;">
                     <div class="google-btn mt-4" style="text-align: -webkit-center; text-align: -moz-center;">
-                        <div id="g_id_onload" data-client_id="601945306946-q0b39bgi5kd1ub68jp1sm27h1335mgg6.apps.googleusercontent.com" data-callback="handleCredentialResponse" data-dismiss="modal" data-ux_mode="popup" data-auto_prompt="false"></div>
+                        <div id="g_id_onload" data-client_id="{{ config('services.google.client_id', '601945306946-q0b39bgi5kd1ub68jp1sm27h1335mgg6.apps.googleusercontent.com') }}" data-callback="handleCredentialResponse" data-dismiss="modal" data-ux_mode="popup" data-auto_prompt="false"></div>
                         <div class="g_id_signin" data-dismiss="modal" data-type="standard" data-shape="rectangular" data-theme="filled_blue" data-text="signin_with" data-size="large" data-logo_alignment="left"></div>
                     </div>
                     <div class="text-center mt-4 mb-4">

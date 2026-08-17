@@ -21,41 +21,73 @@ class LoginController extends Controller
      */
     public function loginWithGoogle(Request $request)
     {
-        //
+        try {
+            return \Laravel\Socialite\Facades\Socialite::driver('google')->redirect();
+        } catch (\Exception $e) {
+            Log::error('Google OAuth Redirect Error: ' . $e->getMessage());
+            return redirect()->route('welcome')->with('error', 'Unable to redirect to Google Login.');
+        }
     }
 
     /**
-     * Create a new controller instance.
-     *
-     * @return void
+     * Handle Google Callback for both Socialite and JS GIS Token Payload.
      */
     public function callbackFromGoogle(Request $request)
     {
-        $existUser = User::where(['social_id' => $request->sub])->exists();
-        if (! $existUser) {
-            $existUser = User::where(['email' => $request->email])->first();
-            if (! $existUser) {
-                $existUser = new User;
-                $existUser->email = $request->email;
-                $existUser->password = Hash::make('123456dummy');
-            }
-            $existUser->social_id = $request->sub;
-            $existUser->first_name = $request->given_name;
-            $existUser->last_name = $request->family_name;
-            $existUser->name = $request->name;
-            $existUser->is_completed = '1';
-            if ($existUser->save()) {
-                Auth::login($existUser);
-                $response['message'] = 'Login successfully';
-            }
-        } else {
-            $existUser = User::where(['social_id' => $request->sub])->first();
-            Auth::login($existUser);
-        }
-        $response['data'] = $existUser->name;
-        $response['message'] = 'Login successfully';
+        $email = $request->email;
+        $socialId = $request->sub;
+        $name = $request->name;
+        $firstName = $request->given_name ?? $name;
+        $lastName = $request->family_name ?? '';
 
-        return response()->json($response, 200);
+        // If request came via standard Socialite web redirect
+        if (empty($email) && empty($socialId)) {
+            try {
+                $googleUser = \Laravel\Socialite\Facades\Socialite::driver('google')->user();
+                $email = $googleUser->getEmail();
+                $socialId = $googleUser->getId();
+                $name = $googleUser->getName();
+                $firstName = $googleUser->user['given_name'] ?? $name;
+                $lastName = $googleUser->user['family_name'] ?? '';
+            } catch (\Exception $e) {
+                Log::error('Google Callback Error: ' . $e->getMessage());
+                if ($request->ajax() || $request->wantsJson()) {
+                    return response()->json(['message' => 'Invalid Google authentication response.'], 400);
+                }
+                return redirect()->route('welcome')->with('error', 'Google authentication failed.');
+            }
+        }
+
+        if (empty($email)) {
+            return response()->json(['message' => 'Email address is required from Google.'], 422);
+        }
+
+        $existUser = User::where('social_id', $socialId)->orWhere('email', $email)->first();
+
+        if (! $existUser) {
+            $existUser = new User();
+            $existUser->email = $email;
+            $existUser->password = Hash::make('123456dummy');
+        }
+
+        $existUser->social_id = $socialId;
+        $existUser->first_name = $firstName;
+        $existUser->last_name = $lastName;
+        $existUser->name = $name ?? ($firstName . ' ' . $lastName);
+        $existUser->is_completed = '1';
+        $existUser->save();
+
+        Auth::login($existUser, true);
+
+        if ($request->ajax() || $request->wantsJson()) {
+            return response()->json([
+                'message' => 'Login successfully',
+                'data' => $existUser->name,
+                'user_type' => $existUser->role_id == 1 ? 'Admin' : 'User',
+            ], 200);
+        }
+
+        return redirect()->route('welcome')->with('message', 'Login successfully');
     }
 
     public function logout(Request $request)
