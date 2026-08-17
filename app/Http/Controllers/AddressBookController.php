@@ -49,7 +49,7 @@ class AddressBookController extends Controller
                 ]);
             }
 
-            $addressData = Address::where(['id' => $request->record])->first();
+            $addressData = Address::where(['id' => $request->record, 'user_id' => Auth::id()])->first();
 
             return response()->json(['addressObj' => $addressData]);
         } catch (\Exception $e) {
@@ -66,11 +66,9 @@ class AddressBookController extends Controller
                 'type' => 'required',
                 'fullName' => 'required',
                 'addressLine1' => 'required',
-                // 'addressLine2' => 'required',
                 'cityName' => 'required',
                 'stateName' => 'required',
                 'zipCode' => 'required',
-
             ]);
 
             if ($validator->fails()) {
@@ -95,7 +93,10 @@ class AddressBookController extends Controller
                     return response()->json(['pageReload' => 'no', 'message' => 'Address saved successfully.']);
                 }
             } else {
-                $addressObj = Address::where('id', $request->addressId)->first();
+                $addressObj = Address::where(['id' => $request->addressId, 'user_id' => Auth::id()])->first();
+                if (! $addressObj) {
+                    return response()->json(['error' => 'Address not found or unauthorized.'], 403);
+                }
                 $addressObj->type = $request->type ?? '';
                 $addressObj->name = $request->fullName ?? '';
                 $addressObj->tel = $request->tel ?? '';
@@ -122,17 +123,14 @@ class AddressBookController extends Controller
     public function deleteAddress($id)
     {
         try {
-            if (Address::find($id)->delete()) {
-                // return redirect()->back()->with('message', 'Address deleted successfully');
+            $address = Address::where(['id' => $id, 'user_id' => Auth::id()])->first();
+            if ($address && $address->delete()) {
                 return response()->json(['pageReload' => 'no', 'message' => 'Address deleted successfully.']);
             }
-
-            return response()->json(['pageReload' => 'no', 'message' => 'Address deleted unsuccessfull.']);
-            // return edirect()->back()->with('error' , 'Address deleted unsuccessfull.');
+            return response()->json(['pageReload' => 'no', 'message' => 'Address deletion unsuccessful or unauthorized.'], 400);
         } catch (\Exception $e) {
             Log::info('Delete Address Function', ['Exception' => $e->getMessage()]);
-
-            return response()->json(['error' => 'Something went wrong.']);
+            return response()->json(['error' => 'Something went wrong.'], 500);
         }
     }
 

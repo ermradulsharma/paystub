@@ -271,8 +271,9 @@ class HomeController extends Controller
             $validator = Validator::make($request->all(), $rules, $messages);
             if ($validator->fails()) {
                 $response['message'] = $validator->errors()->first();
+                $response['status'] = 400;
 
-                return response()->json($response, $response['status']);
+                return response()->json($response, 400);
             }
             $userObj = User::where('id', $userId)->first();
             if (! $userObj) {

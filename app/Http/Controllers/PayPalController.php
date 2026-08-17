@@ -144,15 +144,13 @@ class PayPalController extends Controller
                         } elseif ($subcriptionObj->country == 'canada') {
                             $userObj->canada_expiry_date = $subcriptionObj->expiry_date ?? '';
                         }
-                        $userObj->device_type = $subcriptionObj->device_type;
+                        $invoice = 'success';
                         if ($userObj->save()) {
                             $invoice = invoiceMail(Auth::id(), $subcriptionObj->country);
                         }
                     }
                 }
-                if ($invoice == 'success') {
-                    return redirect()->route('profile')->with('message', $response['message'] ?? 'Transaction completed successfully');
-                }
+                return redirect()->route('profile')->with('message', $response['message'] ?? 'Transaction completed successfully');
             } else {
                 return redirect()->back()->with('message', $response['message'] ?? 'Something went wrong. Please try again later');
             }

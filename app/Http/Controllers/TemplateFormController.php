@@ -23,7 +23,7 @@ class TemplateFormController extends Controller
 {
     public function edit($id)
     {
-        $invoiceData = PaySlip::find($id);
+        $invoiceData = PaySlip::where(['id' => $id, 'user_id' => Auth::id()])->firstOrFail();
         $deduction = Deduction::where(['state' => $invoiceData->type])->orderBy('id', 'asc')->get();
         $basicType = Template::where(['state' => $invoiceData->type, 'type' => 'basic', 'status' => 1])->orderBy('title')->with('images')->get();
         $advanceType = Template::where(['state' => $invoiceData->type, 'type' => 'advance', 'status' => 1])->orderBy('title')->with('images')->get();
@@ -119,20 +119,24 @@ class TemplateFormController extends Controller
     //======invoice list ==========
     public function invoiceList(Request $request)
     {
-        // return $request;
-        $invoiceList = PaySlip::where(['user_id' => Auth::id()])->orderBy('id', 'desc');
-        if ($request->type == 'usa' || $request->type == '') {
-            $invoiceList = $invoiceList->where(['type' => $request->type ?? 'usa'])->orWhere(['type' => 'global'])->get();
-        } else {
-            $invoiceList = $invoiceList->where(['type' => $request->type ?? 'usa'])->get();
-        }
+        $invoiceList = PaySlip::where('user_id', Auth::id())
+            ->where(function ($q) use ($request) {
+                $type = $request->type ?? 'usa';
+                if ($type == 'usa') {
+                    $q->where('type', 'usa')->orWhere('type', 'global');
+                } else {
+                    $q->where('type', $type);
+                }
+            })
+            ->orderBy('id', 'desc')
+            ->get();
 
         return view('lists.invoiceList', compact('invoiceList'));
     }
 
     public function invoiceDelete(Request $request, $id)
     {
-        $invoice = PaySlip::find($id);
+        $invoice = PaySlip::where(['id' => $id, 'user_id' => Auth::id()])->first();
         if ($invoice) {
             try {
                 unlink(public_path('/uploads/mailData/'.basename($invoice->pdf)));
