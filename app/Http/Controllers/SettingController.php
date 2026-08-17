@@ -514,62 +514,83 @@ class SettingController extends Controller
 
     public function updateProfile(Request $request)
     {
+        // 1. IDOR Protection: Always bind strictly to currently authenticated user ID
         $user = User::find(Auth::id());
+        if (!$user) {
+            return redirect()->route('login')->with('error', 'Unauthorized access.');
+        }
 
+        // 2. Strict Input Validation Rules
         $request->validate([
-            'username' => 'nullable|string|max:100|unique:users,username,' . $user->id,
+            'username' => 'nullable|string|max:100|alpha_dash|unique:users,username,' . $user->id,
             'first_name' => 'required|string|max:100',
             'last_name' => 'nullable|string|max:100',
-            'email' => 'required|email|unique:users,email,' . $user->id,
+            'email' => 'required|email:filter|max:150|unique:users,email,' . $user->id,
             'country_code' => 'nullable|string|max:10',
             'mobile' => 'nullable|string|max:20',
             'subscription_type' => 'nullable|string|max:50',
             'device_type' => 'nullable|string|max:50',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
-            'password' => 'nullable|min:6|confirmed'
+            'image' => 'nullable|file|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
+            'old_password' => 'nullable|string',
+            'password' => 'nullable|string|min:6|confirmed'
         ]);
 
-        $user->username = $request->username ?? $user->username;
-        $user->first_name = $request->first_name;
-        $user->last_name = $request->last_name ?? '';
-        $user->name = trim($request->first_name . ' ' . ($request->last_name ?? ''));
-        $user->email = $request->email;
-        $user->country_code = $request->country_code ?? $user->country_code;
-        $user->mobile = $request->mobile;
-        $user->subscription_type = $request->subscription_type ?? $user->subscription_type;
-        $user->device_type = $request->device_type ?? $user->device_type;
+        // 3. Strict Security Password Check
+        if ($request->filled('password')) {
+            if (!$request->filled('old_password')) {
+                return redirect()->back()->with('error', 'Security Verification Failed: Please enter your current password to set a new password.');
+            }
+
+            if (!Hash::check($request->old_password, $user->password)) {
+                return redirect()->back()->with('error', 'Security Verification Failed: Current password does not match our records.');
+            }
+
+            $user->password = Hash::make($request->password);
+        }
+
+        // 4. XSS Input Sanitization
+        $user->username = $request->username ? strip_tags(trim($request->username)) : $user->username;
+        $user->first_name = strip_tags(trim($request->first_name));
+        $user->last_name = $request->last_name ? strip_tags(trim($request->last_name)) : '';
+        $user->name = trim($user->first_name . ' ' . $user->last_name);
+        $user->email = filter_var(trim($request->email), FILTER_SANITIZE_EMAIL);
+        $user->country_code = $request->country_code ? strip_tags(trim($request->country_code)) : $user->country_code;
+        $user->mobile = $request->mobile ? strip_tags(trim($request->mobile)) : null;
+        $user->subscription_type = $request->subscription_type ? strip_tags(trim($request->subscription_type)) : $user->subscription_type;
+        $user->device_type = $request->device_type ? strip_tags(trim($request->device_type)) : $user->device_type;
         $user->is_completed = $request->has('is_completed') ? 1 : 0;
 
         if ($request->filled('usa_expiry_date')) {
-            $user->usa_expiry_date = $request->usa_expiry_date;
+            $user->usa_expiry_date = strip_tags(trim($request->usa_expiry_date));
         }
         if ($request->filled('uk_expiry_date')) {
-            $user->uk_expiry_date = $request->uk_expiry_date;
+            $user->uk_expiry_date = strip_tags(trim($request->uk_expiry_date));
         }
         if ($request->filled('canada_expiry_date')) {
-            $user->canada_expiry_date = $request->canada_expiry_date;
+            $user->canada_expiry_date = strip_tags(trim($request->canada_expiry_date));
         }
         if ($request->filled('expiryDate')) {
-            $user->expiryDate = $request->expiryDate;
+            $user->expiryDate = strip_tags(trim($request->expiryDate));
         }
 
-        if ($request->hasFile('image')) {
+        // 5. Secure File Upload Sanitization (Prevent RCE & Path Traversal)
+        if ($request->hasFile('image') && $request->file('image')->isValid()) {
             $file = $request->file('image');
-            $filename = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
-            $path = 'uploads/profile/' . $filename;
-            $file->move(public_path('uploads/profile'), $filename);
-            $user->image = $path;
-        }
-
-        if ($request->filled('password')) {
-            if ($request->filled('old_password') && !Hash::check($request->old_password, $user->password)) {
-                return redirect()->back()->with('error', 'Current password is incorrect.');
+            $allowedMimes = ['image/jpeg', 'image/png', 'image/jpg', 'image/gif', 'image/webp'];
+            
+            if (!in_array($file->getMimeType(), $allowedMimes)) {
+                return redirect()->back()->with('error', 'Invalid file type uploaded. Only safe images (JPEG, PNG, GIF, WEBP) are allowed.');
             }
-            $user->password = Hash::make($request->password);
+
+            $ext = strtolower($file->getClientOriginalExtension());
+            $safeFilename = bin2hex(random_bytes(16)) . '.' . $ext;
+            $path = 'uploads/profile/' . $safeFilename;
+            $file->move(public_path('uploads/profile'), $safeFilename);
+            $user->image = $path;
         }
 
         $user->save();
 
-        return redirect()->back()->with('success', 'Admin profile and all user attributes updated successfully.');
+        return redirect()->back()->with('success', 'Admin profile security attributes updated successfully.');
     }
 }

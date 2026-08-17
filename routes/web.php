@@ -130,7 +130,7 @@ Route::middleware(['auth'])->group(function () {
     });
 });
 
-Route::match(['get', 'post'], 'admin/settings', [SettingController::class, 'settings'])->name('settings');
+// Route::match(['get', 'post'], 'admin/settings', [SettingController::class, 'settings'])->name('settings');
 
 Route::get('currency-converter', function() {return view('currency-converter');})->name('currency.converter');
 
