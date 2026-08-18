@@ -372,9 +372,9 @@ ul.dropdown-menu.show {
     margin-top: 6px;
 }
 
-ul.dropdown-menu.show li {
-    /* padding-bottom: 10px; */
-}
+/* ul.dropdown-menu.show li {
+    padding-bottom: 10px;
+} */
 
 ul.dropdown-menu.show li a {
     color: #444;
@@ -1698,9 +1698,9 @@ p.text-white.footer-text {
 }
 
 /* chnges after testing by interen */
-ul.nav.nav-justified.navbar {
-    /* margin-bottom: 35px; */
-}
+/* ul.nav.nav-justified.navbar {
+    margin-bottom: 35px;
+} */
 
 .gennn {
     margin-bottom: 30px;
