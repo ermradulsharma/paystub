@@ -63,48 +63,9 @@ function deleteImage($module, $id, $path = null)
 
 function invoiceMail($user_id, $type)
 {
-    $paySlipObj = PaySlip::where(['user_id' => $user_id])->exists();
-    if ($paySlipObj) {
-        $invoice = PaySlip::where(['user_id' => $user_id, 'type' => $type])->orderBy('id', 'desc')->first();
-        if ($invoice && isset($invoice->data)) {
-            $requestData = json_decode($invoice->data);
-            $requestData = collect($requestData);
-            $requestData['watermark'] = 'no';
-            $pageName = $requestData['advance_temp'] ?? $requestData['basic_temp'] ?? '';
-
-            $path = public_path('/uploads/mailData');
-            File::isDirectory($path) or File::makeDirectory($path, 0777, true, true);
-            $invoiceData['requestData'] = $requestData;
-            
-            if ($pageName && isset($requestData['form_type'])) {
-                $pdf = \PDF::loadView('allForms/' . $requestData['form_type'] . '/' . $pageName, $invoiceData)->setPaper('a4', 'portrait')->set_option('isRemoteEnabled', true);
-                $fileName = date('_d_m_Y_h_i_s') . '.pdf';
-                $pdf->save($path . '/' . $fileName);
-
-                $user = User::find($user_id) ?? (Auth::check() ? Auth::user() : null);
-                if ($user && !empty($user->email)) {
-                    $mailData = [
-                        'email' => $user->email,
-                        'title' => 'Please find attachment file',
-                    ];
-                    $moreData = [];
-                    $file = public_path('/uploads/mailData/' . basename($fileName));
-                    try {
-                        Mail::send('mail.invoice_mail', $moreData, function ($message) use ($mailData, $file) {
-                            $message->to($mailData['email']);
-                            $message->subject($mailData['title']);
-                            $message->attach($file);
-                        });
-                    } catch (\Exception $e) {
-                        \Log::error('Invoice Mail Send Error: ' . $e->getMessage());
-                    }
-                }
-                return 'success';
-            }
-        }
-    }
-
-    return 0;
+    $service = app(\App\Services\PaystubService::class);
+    $sent = $service->sendInvoiceMail($user_id, $type);
+    return $sent ? 'success' : 0;
 }
 
 function generateRandomToken($length = 10, $string = 'xyz')

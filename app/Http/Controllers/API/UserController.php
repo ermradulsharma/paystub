@@ -9,6 +9,7 @@ use App\Models\Address;
 use App\Models\ForgotPasswordMail;
 use App\Models\PaySlip;
 use App\Models\User;
+use App\Services\UserService;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -20,6 +21,13 @@ use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
+    protected UserService $userService;
+
+    public function __construct(UserService $userService)
+    {
+        $this->userService = $userService;
+    }
+
     public function sendOtp(Request $request)
     {
         $response = [];
@@ -412,94 +420,62 @@ class UserController extends Controller
 
     public function deactivateAccount(Request $request)
     {
-        $response = [];
-        $response['success'] = false;
-        $response['status'] = STATUS_BAD_REQUEST;
         try {
-            DB::beginTransaction();
-
-            $dataObj = User::deactivateAccount($request);
-            $response['message'] = $dataObj['message'];
-            if ($dataObj['status'] == 200) {
-                $response['success'] = true;
-                $response['status'] = STATUS_OK;
-            }
+            $result = $this->userService->deactivateAccount(Auth::id());
+            return response()->json($result, $result['status']);
         } catch (\Exception $e) {
-            DB::rollback();
-            $response['message'] = DEFAULT_ERROR_MESSAGE;
-            Log::error($e->getTraceAsString());
-            $response['status'] = STATUS_GENERAL_ERROR;
+            Log::error('Deactivate Account Error: ' . $e->getMessage());
+            return response()->json([
+                'success' => false,
+                'status' => STATUS_GENERAL_ERROR,
+                'message' => DEFAULT_ERROR_MESSAGE,
+            ], STATUS_GENERAL_ERROR);
         }
-        DB::commit();
-
-        return response()->json($response, $response['status']);
     }
 
     public function restoreAccount(Request $request)
     {
-        $response = [];
-        $response['success'] = false;
-        $response['status'] = STATUS_BAD_REQUEST;
-        try {
-            DB::beginTransaction();
-            $rules = [
-                'username' => 'required|max:255',
-                'password' => 'required|min:6',
-            ];
+        $rules = [
+            'username' => 'required|max:255',
+            'password' => 'required|min:6',
+        ];
 
-            $messages = [
-                'required' => 'The :attribute field is required.',
-            ];
-
-            $validator = Validator::make($request->all(), $rules, $messages);
-
-            if ($validator->fails()) {
-                $response['message'] = $validator->errors()->first();
-                $response['status'] = UNPROCESSABLE_ENTITY;
-
-                return $response;
-            }
-            $dataObj = User::restoreAccount($request);
-            $response['message'] = $dataObj['message'];
-            if ($dataObj['status'] == 200) {
-                $response['success'] = true;
-                $response['status'] = $dataObj['status'];
-            }
-        } catch (\Exception $e) {
-            DB::rollback();
-            unset($response['data']);
-            $response['message'] = DEFAULT_ERROR_MESSAGE;
-            Log::error($e->getTraceAsString());
-            $response['status'] = STATUS_GENERAL_ERROR;
+        $validator = Validator::make($request->all(), $rules);
+        if ($validator->fails()) {
+            return response()->json([
+                'success' => false,
+                'status' => UNPROCESSABLE_ENTITY,
+                'message' => $validator->errors()->first(),
+            ], UNPROCESSABLE_ENTITY);
         }
-        DB::commit();
 
-        return response()->json($response, $response['status']);
+        try {
+            $result = $this->userService->restoreAccount($request->username, $request->password);
+            return response()->json($result, $result['status']);
+        } catch (\Exception $e) {
+            Log::error('Restore Account Error: ' . $e->getMessage());
+            return response()->json([
+                'success' => false,
+                'status' => STATUS_GENERAL_ERROR,
+                'message' => DEFAULT_ERROR_MESSAGE,
+            ], STATUS_GENERAL_ERROR);
+        }
     }
 
     public function deleteAccount(Request $request)
     {
-        $response = [];
-        $response['success'] = false;
-        $response['status'] = STATUS_BAD_REQUEST;
-
         try {
-            DB::beginTransaction();
-            $dataObj = User::deleteAccount($request);
-            $response['message'] = $dataObj['message'];
-            if ($dataObj['status'] == 200) {
-                $response['success'] = $dataObj['success'];
-                $response['status'] = $dataObj['status'];
-            }
+            $result = $this->userService->deleteAccount(Auth::id());
+            $request->user()->token()->revoke();
+            return response()->json($result, $result['status']);
         } catch (\Exception $e) {
-            DB::rollBack();
-            $response['message'] = DEFAULT_ERROR_MESSAGE;
-            Log::error($e->getTraceAsString());
-            $response['status'] = STATUS_GENERAL_ERROR;
+            Log::error('Delete Account Error: ' . $e->getMessage());
+            return response()->json([
+                'success' => false,
+                'status' => STATUS_GENERAL_ERROR,
+                'message' => DEFAULT_ERROR_MESSAGE,
+            ], STATUS_GENERAL_ERROR);
         }
-        DB::commit();
-
-        return response()->json($response, $response['status']);
     }
 
     public function accountUpdate(Request $request)
@@ -790,9 +766,9 @@ class UserController extends Controller
                 return response()->json($response, STATUS_BAD_REQUEST);
             }
 
-            $addressObj = Address::where(['id' => $requestData['address_id']])->first();
+            $addressObj = Address::where(['id' => $requestData['address_id'], 'user_id' => Auth::user()->id])->first();
             if (! $addressObj) {
-                $response['message'] = "Address doesn't exist.";
+                $response['message'] = "Address doesn't exist or is unauthorized.";
 
                 return response()->json($response, STATUS_BAD_REQUEST);
             }
@@ -878,7 +854,7 @@ class UserController extends Controller
                 return response()->json($response, STATUS_BAD_REQUEST);
             }
             $address_ids = explode(',', $requestData['address_ids']);
-            $isDeleted = Address::whereIn('id', $address_ids)->delete();
+            $isDeleted = Address::where('user_id', Auth::user()->id)->whereIn('id', $address_ids)->delete();
 
             if ($isDeleted) {
                 $response['success'] = true;

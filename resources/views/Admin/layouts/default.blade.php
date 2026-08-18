@@ -53,10 +53,10 @@
     <script src="{{ asset('Admin/assets') }}/vendor/simple-datatables/simple-datatables.js"></script>
     {{-- <script src="{{asset('Admin/assets')}}/vendor/tinymce/tinymce.min.js"></script>
     <script src="{{asset('Admin/assets')}}/vendor/php-email-form/validate.js"></script> --}}
-    <script class="cssdeck" src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.1.1/bootstrap.min.js"></script>
+    <script class="cssdeck" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.1.1/bootstrap.min.js"></script>
 
-    <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
-    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
     <!-- Template Main JS File -->
     <script src="{{ asset('Admin/assets') }}/js/main.js"></script>

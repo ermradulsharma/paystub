@@ -49,7 +49,7 @@ class TemplateFormController extends Controller
     public function templates(Request $request)
     {
         $response = (new ValidationService)->usa($request);
-        if ($response['status'] == 301) {
+        if (isset($response['status']) && $response['status'] != 200) {
             return response()->json($response, $response['status']);
         }
         $requestData = $request->all();
@@ -81,7 +81,7 @@ class TemplateFormController extends Controller
     public function usaStoreData(Request $request)
     {
         $response = (new ValidationService)->usa($request);
-        if ($response['status'] == 301) {
+        if (isset($response['status']) && $response['status'] != 200) {
             return response()->json($response, $response['status']);
         }
 
@@ -194,7 +194,8 @@ class TemplateFormController extends Controller
                         $message->attach($file);
                     });
                 } catch (\Exception $e) {
-                    $response['message'] = $e->getMessage().' Line No '.$e->getLine().' in File'.$e->getFile();
+                    Log::error('Invoice Mail Error: ' . $e->getMessage(), ['exception' => $e]);
+                    $response['message'] = DEFAULT_ERROR_MESSAGE;
                 }
             }
             if ($id != null) {
@@ -213,7 +214,7 @@ class TemplateFormController extends Controller
     {
 
         $response = (new ValidationService)->usa($request);
-        if (isset($response['status']) && $response['status'] == 301) {
+        if (isset($response['status']) && $response['status'] != 200) {
             return response()->json($response, $response['status']);
         }
         $requestData = PaySlip::generatePDF($request);
@@ -231,7 +232,7 @@ class TemplateFormController extends Controller
         return response()->json($response, $response['status']);
     }
 
-    public function deleteExtraPdf()
+    public function deleteExtraPdf(): void
     {
         $path = public_path('uploads/mailData');
         if (!File::isDirectory($path)) {
@@ -239,9 +240,10 @@ class TemplateFormController extends Controller
         }
         $files = File::allFiles($path);
         $now = time();
+        $existingPdfs = PaySlip::pluck('pdf')->toArray();
         foreach ($files as $file) {
             if (($now - $file->getMTime()) > 86400) {
-                if (! PaySlip::where('pdf', $file->getFilename())->first()) {
+                if (!in_array($file->getFilename(), $existingPdfs)) {
                     File::delete($path.'/'.$file->getFilename());
                 }
             }

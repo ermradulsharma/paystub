@@ -9,12 +9,10 @@ class StateTax extends Model
 {
     use HasFactory;
 
-    public static function getStateTaxes($request)
-    {
-        $dataObj = StateTax::get();
-        $response['data'] = $dataObj;
-        $response['status'] = STATUS_OK;
-
-        return $response;
-    }
+    protected $fillable = [
+        'state',
+        'state_code',
+        'country_code',
+        'state_tax',
+    ];
 }

@@ -279,7 +279,8 @@ class TemplatesController extends Controller
                         $response['success'] = TRUE;
                         return response()->json($response, $response['status']);
                     } catch (\Exception $e) {
-                        $response['message'] = $e->getMessage() . ' Line No ' . $e->getLine() . ' in File' . $e->getFile();
+                        Log::error('API Invoice Mail Error: ' . $e->getMessage(), ['exception' => $e]);
+                        $response['message'] = DEFAULT_ERROR_MESSAGE;
                     }
                 }
             } else {
@@ -287,7 +288,8 @@ class TemplatesController extends Controller
                 return response()->json($response, 422);
             }
         } catch (Exception $e) {
-            $response['message'] = $e->getMessage() . ' Line No ' . $e->getLine() . ' in File' . $e->getFile();
+            Log::error('API Invoice Main Error: ' . $e->getMessage(), ['exception' => $e]);
+            $response['message'] = DEFAULT_ERROR_MESSAGE;
         }
         return response()->json($response, $response['status']);
     } */

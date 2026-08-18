@@ -7,15 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS  -->
+    <!-- FontAwesome 4.7.0 CSS  -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Open+Sans:wght@400;600&family=Outfit:wght@100;200;300;800&family=Public+Sans:wght@300&display=swap">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;800&family=Public+Sans:wght@300&display=swap">
 
 
     <!-- Responsive CSS Style -->
@@ -29,103 +28,59 @@
             text-transform: capitalize
         }
     </style>
-    @yield('style')
-    @yield('style_edit')
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
-    <script src="https://apis.google.com/js/api:client.js" async defer></script>
+    <script>
+        window.initAutocomplete = window.initAutocomplete || function() {
+            // Global fallback for pages without custom Google Places autocompletion
+        };
+    </script>
 </head>
 
 <body>
-    <div class="container" style="max-width:1500px">
+    <div class="container modern-paystubx-header" style="max-width:1500px">
         <ul class="nav nav-justified navbar">
-            <li class="nav-item"><a href="{{ route('welcome') }}"><img class="mr-3 mt-5 header-logo" src="{{ asset('images/Paystub X.webp') }}" style="width: 222px;"></a></li>
-            <li class="nav-item ml-3 "><a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('usa*') ? 'active' : '' }} " href="{{ route('usa.payStub') }}">USA</a></li>
-            <li class="nav-item ml-3"><a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('canada*') ? 'active' : '' }}" href="{{ route('canada') }}">CANADA</a></li>
-            <li class="nav-item ml-3"><a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('uk*') ? 'active' : '' }}" href="{{ route('uk') }}">UK</a></li>
-            <li class="nav-item ml-3"><a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('global*') ? 'active' : '' }}" href="{{ route('global') }}">GLOBAL</a></li>
-            <li class="nav-item ml-3"><a class="btn btn-lg py-2 w-100 mt-5 navbtn {{ request()->is('w2form*') ? 'active' : '' }}" href="{{ route('w2form') }}" style="width: 143px !important;">W-2 FORM</a></li>
-            <li class="nav-item d-flex justify-content-center ml-3 " style="margin-top:5px;">
-                @guest
-                    <a class="btn btn-lg py-2 w-100 btn-danger login registerBtn " style="margin-top:42px;" href="javascript:void(0);">LOGIN</a>
-                    <div class="container d-none logoutDiv">
-                        <div class="user-icon"><img src="{{ asset('images/profile1.png') }}"></div>
-                        <div class="logout btn-logout"><a><img src="{{ asset('images/logout01.png') }}"></a></div>
-                        <div class="dropbtn">
-                            <button class="btn btn-default dropdown-toggle navright-btn authUserName" type="button" id="menu1" data-toggle="dropdown">Hi {{ Auth::user()->name ?? '' }}<span class="caret"></span></button>
-                            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('invoiceList') }}">Order History</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('profile') }}">My Account</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('profile') }}?tab=2">Address Book</a></li>
-                            </ul>
+            <li class="nav-item"><a href="{{ route('welcome') }}"><img class="header-logo" src="{{ asset('images/Paystub X.webp') }}" alt="PaystubX Logo"></a></li>
+            <ul class="nav-items d-flex align-items-center gap-2" style="gap: 15px;">
+                <li class="nav-item"><a class="btn navbtn {{ request()->is('usa*') ? 'active' : '' }}" href="{{ route('usa.payStub') }}">USA</a></li>
+                <li class="nav-item"><a class="btn navbtn {{ request()->is('canada*') ? 'active' : '' }}" href="{{ route('canada') }}">CANADA</a></li>
+                <li class="nav-item"><a class="btn navbtn {{ request()->is('uk*') ? 'active' : '' }}" href="{{ route('uk') }}">UK</a></li>
+                <li class="nav-item"><a class="btn navbtn {{ request()->is('global*') ? 'active' : '' }}" href="{{ route('global') }}">GLOBAL</a></li>
+                <li class="nav-item"><a class="btn navbtn {{ request()->is('w2form*') ? 'active' : '' }}" href="{{ route('w2form') }}">W-2 FORM</a></li>
+                <li class="nav-item">
+                    @guest
+                        <a class="btn login registerBtn login-header-btn" href="javascript:void(0);"><i class="fa fa-sign-in mr-1.5"></i> LOGIN</a>
+                        <div class="d-none logoutDiv">
+                            <div class="user-pill-wrapper">
+                                <div class="user-avatar-badge"><i class="fa fa-user"></i></div>
+                                <div class="dropbtn">
+                                    <button class="btn btn-default dropdown-toggle navright-btn authUserName" type="button" id="menu1" data-toggle="dropdown">Hi {{ Auth::user()->name ?? '' }} <i class="fa fa-angle-down ml-1"></i></button>
+                                    <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('invoiceList') }}"><i class="fa fa-history mr-2" style="color: #4f46e5;"></i> Order History</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('profile') }}"><i class="fa fa-user mr-2" style="color: #3b82f6;"></i> My Account</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('profile') }}?tab=2"><i class="fa fa-address-book mr-2" style="color: #10b981;"></i> Address Book</a></li>
+                                    </ul>
+                                </div>
+                                <div class="logout btn-logout logout-icon-btn" title="Logout"><i class="fa fa-power-off"></i></div>
+                            </div>
                         </div>
-                    </div>
-                @endguest
-                @auth
-                    <div class="container" style="margin-top:5px;">
-                        <div class="user-icon"><img src="{{ asset('images/profile1.png') }}"></div>
-                        <div class="logout btn-logout"><a><img src="{{ asset('images/logout01.png') }}"></a></div>
-                        <div class="dropbtn">
-                            <button class="btn btn-default dropdown-toggle navright-btn authUserName" type="button" id="menu1" data-toggle="dropdown">Hi {{ Auth::user()->name ?? '' }}<span class="caret"></span></button>
-                            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('invoiceList') }}">Order History</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('profile') }}">My Account</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('profile') }}?tab=2">Address Book</a></li>
-                            </ul>
+                    @endguest
+                    @auth
+                        <div class="user-pill-wrapper">
+                            <div class="user-avatar-badge">{{ strtoupper(substr(Auth::user()->name ?? 'U', 0, 1)) }}</div>
+                            <div class="dropbtn">
+                                <button class="btn btn-default dropdown-toggle navright-btn authUserName" type="button" id="menu1" data-toggle="dropdown">Hi {{ Auth::user()->name ?? '' }} <i class="fa fa-angle-down ml-1"></i></button>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('invoiceList') }}"><i class="fa fa-history mr-2" style="color: #4f46e5;"></i> Order History</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('profile') }}"><i class="fa fa-user mr-2" style="color: #3b82f6;"></i> My Account</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('profile') }}?tab=2"><i class="fa fa-address-book mr-2" style="color: #10b981;"></i> Address Book</a></li>
+                                </ul>
+                            </div>
+                            <div class="logout btn-logout logout-icon-btn" title="Logout"><i class="fa fa-power-off"></i></div>
                         </div>
-                    </div>
-                @endauth
-            </li>
+                    @endauth
+                </li>
+            </ul>
         </ul>
     </div>
-
-    <div id="mySidenav" class="sidenav">
-        <a href="{{ url('/') }}"><img class="mr-3 mt-5 toggle-logo" src="{{ asset('images/Paystub X.webp') }}" style="width: 222px;"></a>
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('usa*') ? 'active' : '' }} "  href="{{ route('usa.payStub') }}">USA</a>
-        <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('canada*') ? 'active' : '' }}" href="{{ route('canada') }}">CANADA</a>
-        <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('uk*') ? 'active' : '' }}" href="{{ route('uk') }}">UK</a>
-        <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('globle*') ? 'active' : '' }}" href="{{ route('global') }}">GLOBEL</a>
-        <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn {{ request()->is('w2form*') ? 'active' : '' }}"  href="{{ route('w2form') }}">W-2 FORM</a>
-        @guest
-            <a class="btn btn-lg py-2 w-100 mt-5 navbtn nav-btn login registerBtn" style="background-color:#d3230c; border-radius:15px; font-size:20px;" href="#">Login</a>
-            <div class="container d-none logoutDiv mobile2">
-                <div class="dropbtn mobile">
-                    <button class="btn btn-default dropdown-toggle navright-btn authUserName" type="button" id="menu1" data-toggle="dropdown">Hi {{ Auth::user()->name ?? '' }}<span class="caret"></span></button>
-                    <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('invoiceList') }}?type=usa" class="{{ request()->query('type') == 'usa' ? 'active' : (request()->query('type') == null ? 'active' : '') }}">Order History</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('profile') }}">My Account</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('profile') }}?tab=2">Address Book</a></li>
-                    </ul>
-                </div>
-                <div class="logout btn-logout mobile">
-                    <button class="btn-danger logout-btn ">Logout</button>
-                </div>
-            </div>
-        @endguest
-        @auth
-            <div class="container mobile" style="margin-top:5px;">
-                <div class="dropbtn mobile">
-                    <button class="btn btn-default dropdown-toggle navright-btn authUserName" type="button" id="menu1" data-toggle="dropdown">Hi {{ Auth::user()->name ?? '' }}<span class="caret"></span></button>
-                    <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('invoiceList') }}?type=usa" class="{{ request()->query('type') == 'usa' ? 'active' : (request()->query('type') == null ? 'active' : '') }}">Order History</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('profile') }}">My Account</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('profile') }}?tab=2">Address Book</a></li>
-                    </ul>
-                </div>
-                <div class="logout btn-logout mobile">
-                    <button class=" btn-danger logout-btn">Logout</button>
-                </div>
-            </div>
-        @endauth
-    </div>
-
-    <div class="openbtn">
-        <div class=" pt-4 d-flex justify-content-between" style="display:flex !important">
-            <a href="{{ url('/') }}"><img class="mr-3 mt-5 toggle-logo" src="{{ asset('images/Paystub X.webp') }}" style="width: 222px;"></a>
-            <span style="font-size:30px;cursor:pointer; padding-right:10px;" class="" onclick="openNav()">&#9776;</span>
-        </div>
-    </div>
-
     @yield('content')
 
     <!-- Start Footer Section -->
@@ -161,98 +116,249 @@
     </div>
 
     <!-- The Modal -->
-    <div class="modal fade" id="loginModal">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
+    <!-- The Redesigned Login Modal (Apple / Stripe / Vercel UX) -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" style="max-width: 440px;">
+            <div class="modal-content" style="border: 1px solid rgba(226, 232, 240, 0.8); border-radius: 24px; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25);">
                 <!-- Modal Header -->
-                <div class="modal-header" style="background: #115caecf;">
-                    <h4 class="modal-title"><img src="{{ asset('images/Paystub X.webp') }}" class="icon"></h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <div class="modal-header border-0 px-4 pt-4 pb-3" style="background: linear-gradient(135deg, #4f46e5 0%, #3b82f6 100%); position: relative;">
+                    <div class="d-flex align-items-center justify-content-between w-100">
+                        <div class="d-flex align-items-center">
+                            <img src="{{ asset('images/Paystub X.webp') }}" alt="PaystubX Logo" style="height: 26px; width: auto;">
+                        </div>
+                        <button type="button" class="close text-white opacity-75 hover-opacity-100" data-dismiss="modal" aria-label="Close" style="font-size: 1.75rem; outline: none; background: transparent; border: 0; text-shadow: none; line-height: 1;">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
                 </div>
 
-                <!-- Modal body -->
-                <div class="modal-body" style="padding-bottom:30px;">
-                    <div class="google-btn mt-4" style="text-align: -webkit-center; text-align: -moz-center;">
-                        <div id="g_id_onload" data-client_id="{{ config('services.google.client_id', '601945306946-q0b39bgi5kd1ub68jp1sm27h1335mgg6.apps.googleusercontent.com') }}" data-callback="handleCredentialResponse" data-dismiss="modal" data-ux_mode="popup" data-auto_prompt="false"></div>
-                        <div class="g_id_signin" data-dismiss="modal" data-type="standard" data-shape="rectangular" data-theme="filled_blue" data-text="signin_with" data-size="large" data-logo_alignment="left"></div>
+                <!-- Modal Body -->
+                <div class="modal-body p-4 p-sm-5" style="background-color: #ffffff;">
+                    <div class="text-center mb-4">
+                        <h4 class="font-weight-bold text-dark mb-1" style="color: #0f172a; font-size: 1.35rem; letter-spacing: -0.3px;">{{ __('Welcome Back') }}</h4>
+                        <p class="text-muted mb-0" style="font-size: 0.875rem; color: #64748b;">{{ __('Sign in or create an account to manage paystubs') }}</p>
                     </div>
-                    <div class="text-center mt-4 mb-4">
-                        <img src="{{ asset('images/Group 3.png') }}" style="width:130px;">
+
+                    <!-- Google Socialite OAuth SSO -->
+                    <div class="google-btn-wrapper mb-4 text-center">
+                        <a href="{{ route('login.google') }}" class="btn btn-block py-2.5 px-4 font-weight-semibold shadow-sm d-flex align-items-center justify-content-center" style="border: 1px solid #cbd5e1; border-radius: 12px; background: #ffffff; color: #334155; font-size: 0.925rem; transition: all 0.2s ease;">
+                            <svg class="mr-2" width="18" height="18" viewBox="0 0 24 24">
+                                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+                                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+                            </svg>
+                            {{ __('Sign in with Google') }}
+                        </a>
                     </div>
-                    <h6 class="text-center" style="color: #457bbe;" style="text-transform:capitalize;">{{ __('Sign Up Using Email') }}</h6>
-                    <p class="text-center"></p>
-                    <form id="sendOTPForm" action="{{ url('sendOtp') }}" method="POST" class="text-center">
+
+                    <!-- Divider -->
+                    <div class="d-flex align-items-center my-4">
+                        <div class="flex-grow-1" style="height: 1px; background-color: #e2e8f0;"></div>
+                        <span class="px-3 text-uppercase font-weight-bold" style="font-size: 0.725rem; letter-spacing: 1px; color: #94a3b8;">{{ __('Or with email') }}</span>
+                        <div class="flex-grow-1" style="height: 1px; background-color: #e2e8f0;"></div>
+                    </div>
+
+                    <!-- Email OTP Form -->
+                    <form id="sendOTPForm" action="{{ url('sendOtp') }}" method="POST">
                         @csrf
-                        <div class="px-lg-5">
-                            <input type="email" id="email" name="email" class="form-control formm  py-4" placeholder="Email *">
+                        <div class="form-group mb-3 text-left">
+                            <label for="email" class="font-weight-semibold mb-1" style="font-size: 0.825rem; color: #475569; font-weight: 600;">{{ __('Email Address') }}</label>
+                            <div class="position-relative">
+                                <input type="email" id="email" name="email" class="form-control py-3 px-3 shadow-none" placeholder="name@example.com" required autocomplete="email" style="border: 1px solid #cbd5e1; border-radius: 12px; font-size: 0.925rem; color: #0f172a; background-color: #f8fafc; transition: all 0.2s ease;">
+                            </div>
                         </div>
-                        <button class="previewbtn mt-4 px-3 mobile-login-btn" type="submit">Login</button>
+
+                        <button class="btn btn-block py-3 mt-4 text-white font-weight-bold shadow-md" type="submit" style="background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%); border: none; border-radius: 12px; font-size: 0.95rem; letter-spacing: 0.3px; transition: transform 0.15s ease, box-shadow 0.15s ease;">
+                            {{ __('Continue with Email') }}
+                        </button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="modal fade" id="forgotPasswordModal">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-
+    <!-- Redesigned Forgot Password Modal -->
+    <div class="modal fade" id="forgotPasswordModal" tabindex="-1" aria-labelledby="forgotPasswordModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" style="max-width: 440px;">
+            <div class="modal-content" style="border: 1px solid rgba(226, 232, 240, 0.8); border-radius: 24px; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25);">
                 <!-- Modal Header -->
-                <div class="modal-header" style="background: #115caecf;">
-                    <h4 class="modal-title" style="text-transform: capitalize;color:#fff;"> {{ __('Forgot Your Password') }}</h4>
-                    <button type="button" style="border: none; background-color:transparent; color:#fff;font-size:20px;padding:0;" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
+                <div class="modal-header border-0 px-4 pt-4 pb-3" style="background: linear-gradient(135deg, #4f46e5 0%, #3b82f6 100%);">
+                    <div class="d-flex align-items-center justify-content-between w-100">
+                        <div class="d-flex align-items-center">
+                            <img src="{{ asset('images/Paystub X.webp') }}" alt="PaystubX Logo" style="height: 26px; width: auto;">
+                        </div>
+                        <button type="button" class="close text-white opacity-75 hover-opacity-100" data-dismiss="modal" aria-label="Close" style="font-size: 1.75rem; outline: none; background: transparent; border: 0; text-shadow: none; line-height: 1;">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
                 </div>
 
-                <!-- Modal body -->
-                <div class="modal-body pb-4" style="box-shadow: 0 0 8px rgba(0,0,0,.14);padding-top:0;">
-                    <p class="mail-text">{{ __("Please enter your registered email address, and we'll send you a link to reset your password.") }}</p>
+                <!-- Modal Body -->
+                <div class="modal-body p-4 p-sm-5" style="background-color: #ffffff;">
+                    <div class="text-center mb-4">
+                        <h4 class="font-weight-bold text-dark mb-1" style="color: #0f172a; font-size: 1.35rem; letter-spacing: -0.3px;">{{ __('Reset Password') }}</h4>
+                        <p class="text-muted mb-0" style="font-size: 0.875rem; color: #64748b;">{{ __("Enter your registered email address and we'll send you a password reset link.") }}</p>
+                    </div>
+
                     <form id="forgotPassword" method="post" action="{{ route('forgot.password') }}">
                         @csrf
-                        <label class="label-text" for="css">{{ __('Email Address') }}<span style="color:red;">*</span></label>
-                        <input class="contact-box" type="text" id="user-email" placeholder="Email Address" name="email">
+                        <div class="form-group mb-4 text-left">
+                            <label for="user-email" class="font-weight-semibold mb-1" style="font-size: 0.825rem; color: #475569; font-weight: 600;">{{ __('Email Address') }} <span style="color: #ef4444;">*</span></label>
+                            <input class="form-control py-3 px-3 shadow-none" type="email" id="user-email" placeholder="name@example.com" name="email" required style="border: 1px solid #cbd5e1; border-radius: 12px; font-size: 0.925rem; color: #0f172a; background-color: #f8fafc;">
+                        </div>
+
+                        <button class="btn btn-block py-3 text-white font-weight-bold shadow-md mb-3" type="submit" style="background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%); border: none; border-radius: 12px; font-size: 0.95rem; letter-spacing: 0.3px;">
+                            {{ __('Send Password Reset Link') }}
+                        </button>
                     </form>
-                </div>
-                <div class="modal-footer" style="display: inline-block;">
-                    <div class="d-flex justify-content-between pt-2">
-                        <a style="color: red;" id="backToSignin" href="JavaScript:void(0);">{{ __('Back to Sign in') }}</a>
-                        <button class="btn-danger" onclick="$('#forgotPassword').submit();" style="border-radius:20px; border:none;font-size:12px; padding:5px 15px;">{{ __('Send Password Reset Link') }}</button>
+
+                    <div class="text-center mt-3 pt-2 border-top">
+                        <a id="backToSignin" href="JavaScript:void(0);" class="font-weight-semibold" style="color: #4f46e5; font-size: 0.875rem; text-decoration: none;">
+                            <i class="fa fa-arrow-left mr-1"></i> {{ __('Back to Sign In') }}
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="modal fade" id="loginPasswordModal">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
+    <!-- Redesigned Login Password Modal -->
+    <div class="modal fade" id="loginPasswordModal" tabindex="-1" aria-labelledby="loginPasswordModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" style="max-width: 440px;">
+            <div class="modal-content" style="border: 1px solid rgba(226, 232, 240, 0.8); border-radius: 24px; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25);">
                 <!-- Modal Header -->
-                <div class="modal-header" style="background: #115caecf;">
-                    <h4 class="modal-title"><img src="{{ asset('images/Paystub X.webp') }}" class="icon"></h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <div class="modal-header border-0 px-4 pt-4 pb-3" style="background: linear-gradient(135deg, #4f46e5 0%, #3b82f6 100%);">
+                    <div class="d-flex align-items-center justify-content-between w-100">
+                        <div class="d-flex align-items-center">
+                            <img src="{{ asset('images/Paystub X.webp') }}" alt="PaystubX Logo" style="height: 26px; width: auto;">
+                        </div>
+                        <button type="button" class="close text-white opacity-75 hover-opacity-100" data-dismiss="modal" aria-label="Close" style="font-size: 1.75rem; outline: none; background: transparent; border: 0; text-shadow: none; line-height: 1;">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
                 </div>
 
-                <!-- Modal body -->
-                <div class="modal-body" style="padding-bottom:30px;">
-                    <h2 class="text-center" style="color: #457bbe;">Login</h2>
-                    <p class="text-center"></p>
+                <!-- Modal Body -->
+                <div class="modal-body p-4 p-sm-5" style="background-color: #ffffff;">
+                    <div class="text-center mb-4">
+                        <h4 class="font-weight-bold text-dark mb-1" style="color: #0f172a; font-size: 1.35rem; letter-spacing: -0.3px;">{{ __('Enter Password') }}</h4>
+                        <p class="text-muted mb-0" style="font-size: 0.875rem; color: #64748b;">{{ __('Enter your password to access your account') }}</p>
+                    </div>
 
                     <form id="adminLogin" action="{{ url('login') }}" method="POST">
                         @csrf
-                        <div class="px-lg-5">
-                            <div class="form-group">
-                                <label class="text-left">Email</label>
-                                <input type="email" id="login_email" name="email" class="form-control formm  py-4" placeholder="Email *" readonly>
-                            </div>
-                            <div class="form-group">
-                                <label class="text-left">Password</label>
-                                <input type="password" id="password" name="password" class="form-control formm  py-4" placeholder="Password *">
-                            </div>
+                        <div class="form-group mb-3 text-left">
+                            <label for="login_email" class="font-weight-semibold mb-1" style="font-size: 0.825rem; color: #475569; font-weight: 600;">{{ __('Email Address') }}</label>
+                            <input type="email" id="login_email" name="email" class="form-control py-3 px-3 shadow-none" placeholder="Email" readonly autocomplete="username" style="border: 1px solid #cbd5e1; border-radius: 12px; font-size: 0.925rem; color: #64748b; background-color: #f1f5f9;">
                         </div>
-                        <p class="resend-otp">
-                            <a id="forgotPasswordButton" href="JavaScript:void(0);">Forgot Password?</a>
-                        </p>
-                        <div class="text-center">
-                            <button class="previewbtn continue " type="submit">Continue</button>
+
+                        <div class="form-group mb-2 text-left">
+                            <div class="d-flex justify-content-between align-items-center mb-1">
+                                <label for="password" class="font-weight-semibold mb-0" style="font-size: 0.825rem; color: #475569; font-weight: 600;">{{ __('Password') }}</label>
+                                <a id="forgotPasswordButton" href="JavaScript:void(0);" class="font-weight-semibold" style="color: #4f46e5; font-size: 0.8rem; text-decoration: none;">{{ __('Forgot Password?') }}</a>
+                            </div>
+                            <input type="password" id="password" name="password" class="form-control py-3 px-3 shadow-none" placeholder="Enter your password" required autocomplete="current-password" style="border: 1px solid #cbd5e1; border-radius: 12px; font-size: 0.925rem; color: #0f172a; background-color: #f8fafc;">
+                        </div>
+
+                        <button class="btn btn-block py-3 mt-4 text-white font-weight-bold shadow-md" type="submit" style="background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%); border: none; border-radius: 12px; font-size: 0.95rem; letter-spacing: 0.3px;">
+                            {{ __('Sign In') }}
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Redesigned OTP Verification Modal -->
+    <div class="modal fade otpModal" id="otpModal" tabindex="-1" aria-labelledby="otpModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" style="max-width: 440px;">
+            <div class="modal-content" style="border: 1px solid rgba(226, 232, 240, 0.8); border-radius: 24px; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25);">
+                <!-- Modal Header -->
+                <div class="modal-header border-0 px-4 pt-4 pb-3" style="background: linear-gradient(135deg, #4f46e5 0%, #3b82f6 100%);">
+                    <div class="d-flex align-items-center justify-content-between w-100">
+                        <div class="d-flex align-items-center">
+                            <img src="{{ asset('images/Paystub X.webp') }}" alt="PaystubX Logo" style="height: 26px; width: auto;">
+                        </div>
+                        <button type="button" class="close text-white opacity-75 hover-opacity-100" data-dismiss="modal" aria-label="Close" style="font-size: 1.75rem; outline: none; background: transparent; border: 0; text-shadow: none; line-height: 1;">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Modal Body -->
+                <div class="modal-body p-4 p-sm-5 text-center" style="background-color: #ffffff;">
+                    <div class="mb-3 d-inline-flex align-items-center justify-content-center" style="width: 56px; height: 56px; border-radius: 16px; background: #e0e7ff; color: #4f46e5;">
+                        <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    
+                    <h4 class="font-weight-bold text-dark mb-1" style="color: #0f172a; font-size: 1.35rem; letter-spacing: -0.3px;">{{ __('Verify Email Address') }}</h4>
+                    <p class="text-muted mb-1" style="font-size: 0.875rem; color: #64748b;">{{ __('Enter the 6-digit verification code sent to your email') }}</p>
+                    <span class="d-block text-muted mb-3" style="font-size: 0.775rem; color: #94a3b8;">{{ __('(Check your spam folder if not found in inbox)') }}</span>
+
+                    <div class="d-flex align-items-center justify-content-center mb-4">
+                        <a id="resendOtpButton" class="pointer-disable font-weight-semibold mr-2" href="JavaScript:void(0);" style="color: #4f46e5; font-size: 0.85rem; text-decoration: none;" disabled>{{ __('Resend Code') }}</a>
+                        <span class="badge px-2.5 py-1" style="background-color: #f1f5f9; color: #475569; font-size: 0.8rem; border-radius: 8px;">
+                            <i class="fa fa-clock-o mr-1"></i><span id="resendTimeOut">30</span>s
+                        </span>
+                    </div>
+
+                    <form id="loginOtp" action="{{ url('loginWithOtp') }}" method="POST" data-action="{{ route("profile-setup") }}">
+                        @csrf
+                        <input type="hidden" id="formType" name="type">
+                        <input type="hidden" id="hidden_email" name="email">
+                        
+                        <div class="form-group mb-4">
+                            <input type="text" id="Verificationcode" name="code" class="form-control text-center py-3 px-3 shadow-none font-weight-bold" placeholder="000000" maxlength="6" required style="border: 1px solid #cbd5e1; border-radius: 12px; font-size: 1.35rem; letter-spacing: 6px; color: #0f172a; background-color: #f8fafc;">
+                        </div>
+
+                        <button class="btn btn-block py-3 text-white font-weight-bold shadow-md" type="submit" style="background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%); border: none; border-radius: 12px; font-size: 0.95rem; letter-spacing: 0.3px;">
+                            {{ __('Verify & Continue') }}
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Redesigned Logout Confirmation Modal -->
+    <div class="modal fade logoutModal" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" style="max-width: 400px;">
+            <div class="modal-content" style="border: 1px solid rgba(226, 232, 240, 0.8); border-radius: 24px; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25);">
+                <!-- Modal Header -->
+                <div class="modal-header border-0 px-4 pt-4 pb-3" style="background: linear-gradient(135deg, #4f46e5 0%, #3b82f6 100%);">
+                    <div class="d-flex align-items-center justify-content-between w-100">
+                        <div class="d-flex align-items-center">
+                            <img src="{{ asset('images/Paystub X.webp') }}" alt="PaystubX Logo" style="height: 26px; width: auto;">
+                        </div>
+                        <button type="button" class="close text-white opacity-75 hover-opacity-100" data-dismiss="modal" aria-label="Close" style="font-size: 1.75rem; outline: none; background: transparent; border: 0; text-shadow: none; line-height: 1;">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Modal Body -->
+                <div class="modal-body p-4 text-center" style="background-color: #ffffff;">
+                    <div class="mb-3 d-inline-flex align-items-center justify-content-center" style="width: 56px; height: 56px; border-radius: 16px; background: #fee2e2; color: #ef4444;">
+                        <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/>
+                        </svg>
+                    </div>
+
+                    <h4 class="font-weight-bold text-dark mb-1" style="color: #0f172a; font-size: 1.25rem; letter-spacing: -0.3px;">{{ __('Sign Out of PaystubX?') }}</h4>
+                    <p class="text-muted mb-4" style="font-size: 0.875rem; color: #64748b;">{{ __('Are you sure you want to end your active session?') }}</p>
+
+                    <form action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        <div class="d-flex align-items-center justify-content-center" style="gap: 12px;">
+                            <button class="btn flex-fill py-2.5 font-weight-bold text-white shadow-sm" type="submit" style="background: #ef4444; border: none; border-radius: 12px; font-size: 0.9rem;">
+                                {{ __('Yes, Logout') }}
+                            </button>
+                            <button class="btn flex-fill py-2.5 bottom-close font-weight-semibold shadow-sm" type="button" style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; color: #475569; font-size: 0.9rem;">
+                                {{ __('Cancel') }}
+                            </button>
                         </div>
                     </form>
                 </div>
@@ -260,94 +366,61 @@
         </div>
     </div>
 
-    <div class="modal fade otpModal" id="otpModal">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
+    <!-- Redesigned Account Setup Modal -->
+    <div class="modal fade" id="setName" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" style="max-width: 440px;">
+            <div class="modal-content overflow-hidden border-0 shadow-lg" style="border-radius: 24px; box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25);">
                 <!-- Modal Header -->
-                <div class="modal-header" style="background: #115caecf;">
-                    <h4 class="modal-title"><img src="{{ asset('/') }}images/Paystub X.webp" class="icon"></h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-
-                <!-- Modal body -->
-                <div class="modal-body">
-                    <h5 class="text-center" style="text-transform:capitalize;">Verify your Email Address</h5>
-                    <div class=" text-center mt-4">
-                        <div class="mail"><img src="https://cdn4.iconfinder.com/data/icons/social-media-logos-6/512/112-gmail_email_mail-512.png" class="mailpic"></div>
-                        <h5 style="color: #457bbe;" class="mt-4 text-center">Almost There!</h5>
-                        <p style="color: #000;font-size: 14px;font-family: serif; text-transform:capitalize; margin-bottom:0px;" class="text-center">Enter the verification code sent to you</p>
-                        <span style="color: #02030359;font-size: 10px;font-family: serif; text-transform:capitalize;" class="text-center">Check spam if not found in inbox</span>
-                        <p class="resend-otp" style="padding-top:10px;">
-                            <a id="resendOtpButton" class="pointer-disable" style="" href="JavaScript:void(0);" disabled>Resend OTP </a>
-                            <i class="fa fa-clock-o clock"></i> <span id="resendTimeOut">30</span>
-                        </p>
-
-                        <form id="loginOtp" action="{{ url('loginWithOtp') }}" method="POST" class="text-center" data-action="{{ route("profile-setup") }}">
-                            @csrf
-                            <div class="px-lg-5">
-                                <input type="hidden" id="formType" name="type">
-                                <input type="hidden" id="hidden_email" name="email">
-                                <input type="text" id="Verificationcode" name="code" class="form-control formm py-4" placeholder="Verification Code *">
-                            </div>
-                            <button class="previewbtn mt-5 mobile-verify-btn" type="submit">Verify</button>
-                        </form>
+                <div class="modal-header border-0 px-4 pt-4 pb-3" style="background: linear-gradient(135deg, #4f46e5 0%, #3b82f6 100%);">
+                    <div class="d-flex align-items-center justify-content-between w-100">
+                        <div class="d-flex align-items-center">
+                            <img src="{{ asset('images/Paystub X.webp') }}" alt="PaystubX Logo" style="height: 26px; width: auto;">
+                        </div>
+                        <button type="button" class="close text-white opacity-75 hover-opacity-100" data-dismiss="modal" data-bs-dismiss="modal" aria-label="Close" style="font-size: 1.75rem; outline: none; background: transparent; border: 0; text-shadow: none; line-height: 1;">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
 
-    <div class="modal fade logoutModal" id="logoutModal">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header" style="background: #115caecf;">
-                    <h4 class="modal-title"><img src="{{ asset('/') }}images/Paystub X.webp" class="icon"></h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <!-- Modal body -->
-                <div class="modal-body" style="padding-bottom: 30px;">
-                    <h5 class="text-center" style="text-transform:capitalize;">Do you want to logout?</h5>
-                    <div class=" text-center mt-4">
-                        <form id="loginOtp" action="{{ route('logout') }}" method="POST" class="text-center">
-                            @csrf
-                            <button class="previewbtn mobile-logout-btn" type="submit">Yes</button>
-                            <button class="previewbtn  bottom-close  mobile-logout-btn" type="button">NO</button>
-                        </form>
+                <!-- Modal Body -->
+                <div class="modal-body p-4 p-sm-5" style="background-color: #ffffff;">
+                    <div class="text-center mb-4">
+                        <h4 class="font-weight-bold text-dark mb-1" style="color: #0f172a; font-size: 1.35rem; letter-spacing: -0.3px;">{{ __('Set Up Account') }}</h4>
+                        <p class="text-muted mb-0" style="font-size: 0.875rem; color: #64748b;">{{ __('Enter your name and set a password to complete your profile') }}</p>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <div class="modal fade" id="setName">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <!-- Modal Header -->
-                <div class="modal-header" style="background: #115caecf;">
-                    <h4 class="modal-title" style="text-transform: capitalize;color:#fff;">Set My Account</h4>
-                    <button type="button" style="border: none; background-color:transparent; color:#fff;font-size:20px;padding:0;" class="btn-close" data-bs-dismiss="modal" aria-label="Close">x</button>
-                </div>
-
-                <!-- Modal body -->
-                <div class="modal-body pb-4" style="box-shadow: 0 0 8px rgba(0,0,0,.14);padding-top:0;">
                     <form id="userNameForm" method="post" action="{{ route('profile-setup') }}">
                         @csrf
                         <input type="hidden" value="setup-account" name="type">
-                        <label class="label-text" for="css">First Name<span style="color:red;">*</span></label>
-                        <input class="contact-box" type="text" name="uname" id="user-name" placeholder="First Name">
-                        <div class="contact-box-outer">
-                            <label class="label-text" for="css">New Password<span style="color:red;">*</span></label>
-                            <input class="contact-box" type="password" placeholder="New Password" name="password" class="form-control show-password-sd" id="new_password" required>
-                            <i id="eye-icon_03" toggle="#password-field" class="fa fa-eye-slash eye-icon new-toggle-password" data-id="02"></i>
+
+                        <div class="form-group mb-3 text-left">
+                            <label for="user-name" class="font-weight-semibold mb-1" style="font-size: 0.825rem; color: #475569; font-weight: 600;">{{ __('First Name') }} <span class="text-danger">*</span></label>
+                            <input type="text" name="uname" id="user-name" class="form-control py-3 px-3 shadow-none" placeholder="First Name" autocomplete="given-name" required style="border: 1px solid #cbd5e1; border-radius: 12px; font-size: 0.925rem; color: #0f172a; background-color: #f8fafc;">
                         </div>
-                        <div class="contact-box-outer">
-                            <label class="label-text" for="css">Confirm Password<span style="color:red;">*</span></label>
-                            <input class="contact-box" type="password" placeholder="Confirm Password" name="password_confirmation" class="form-control show-password-sd" id="confirm_password" required>
-                            <i id="eye-icon_03" toggle="#password-field" class="fa fa-eye-slash eye-icon confirm-toggle-password" data-id="02"></i>
+
+                        <div class="form-group mb-3 text-left position-relative">
+                            <label for="new_password" class="font-weight-semibold mb-1" style="font-size: 0.825rem; color: #475569; font-weight: 600;">{{ __('New Password') }} <span class="text-danger">*</span></label>
+                            <div class="position-relative">
+                                <input type="password" name="password" id="new_password" class="form-control py-3 px-3 shadow-none show-password-sd" placeholder="New Password" required autocomplete="new-password" style="border: 1px solid #cbd5e1; border-radius: 12px; font-size: 0.925rem; color: #0f172a; background-color: #f8fafc; padding-right: 42px;">
+                                <i id="eye-icon_03" toggle="#password-field" class="fa fa-eye-slash eye-icon new-toggle-password position-absolute" data-id="02" style="right: 14px; top: 50%; transform: translateY(-50%); cursor: pointer; color: #94a3b8; font-size: 0.95rem;"></i>
+                            </div>
                         </div>
-                        <div class="d-flex justify-content-between pt-3">
-                            <button class="btn-secondary" data-bs-dismiss="modal" style="border-radius:20px; border:none;font-size:12px; padding:5px 10px;">Cancel</button>
-                            <button class="btn-danger" id="set-name" style="border-radius:20px; border:none; font-size:12px; padding:5px 15px; position:relative; right:26px;" type="submit">Save</button>
+
+                        <div class="form-group mb-4 text-left position-relative">
+                            <label for="confirm_password" class="font-weight-semibold mb-1" style="font-size: 0.825rem; color: #475569; font-weight: 600;">{{ __('Confirm Password') }} <span class="text-danger">*</span></label>
+                            <div class="position-relative">
+                                <input type="password" name="password_confirmation" id="confirm_password" class="form-control py-3 px-3 shadow-none show-password-sd" placeholder="Confirm Password" required autocomplete="new-password" style="border: 1px solid #cbd5e1; border-radius: 12px; font-size: 0.925rem; color: #0f172a; background-color: #f8fafc; padding-right: 42px;">
+                                <i id="eye-icon_03" toggle="#password-field" class="fa fa-eye-slash eye-icon confirm-toggle-password position-absolute" data-id="02" style="right: 14px; top: 50%; transform: translateY(-50%); cursor: pointer; color: #94a3b8; font-size: 0.95rem;"></i>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center justify-content-between pt-2">
+                            <button type="button" class="btn btn-light py-2.5 px-4 font-weight-semibold" data-dismiss="modal" data-bs-dismiss="modal" style="border-radius: 12px; border: 1px solid #cbd5e1; font-size: 0.875rem; color: #475569; background-color: #f8fafc;">
+                                {{ __('Cancel') }}
+                            </button>
+                            <button type="submit" id="set-name" class="btn text-white font-weight-bold py-2.5 px-4 shadow-sm" style="background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%); border: none; border-radius: 12px; font-size: 0.875rem; letter-spacing: 0.2px;">
+                                {{ __('Save') }}
+                            </button>
                         </div>
                     </form>
                 </div>
@@ -359,8 +432,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-    <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
-    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script>
     <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
@@ -452,7 +525,7 @@
     </script>
     <script src="{{ asset('user') }}/js/main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyDpavHXELJMJvIHifFPN6tBBiFSXKGpy2g&callback=Function.prototype"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key={{ env('GOOGLE_MAPS_API_KEY', 'AIzaSyAOVYRIgupAurZup5y1PRh8Ismb1A3lLao') }}&loading=async&callback=initAutocomplete" async defer></script>
     @yield('script')
     @yield('checked')
 

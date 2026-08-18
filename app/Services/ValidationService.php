@@ -195,7 +195,7 @@ class ValidationService
             }
             $response['errors'] = $erro;
             $response['message'] = $validator->errors()->first();
-            $response['status'] = 301;
+            $response['status'] = 422;
             $response['success'] = false;
         }
 

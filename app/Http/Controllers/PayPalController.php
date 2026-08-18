@@ -108,33 +108,37 @@ class PayPalController extends Controller
                 }
 
                 if (intval($xolode[1])) {
-                    $subcriptionObj = Subscription::find($xolode[1]);
+                    $subcriptionObj = Subscription::where(['id' => $xolode[1], 'user_id' => Auth::id()])->first();
                 } else {
                     $subcriptionObj = Subscription::where(['plan_id' => $xolode[0], 'user_id' => Auth::id()])->where('expiry_date', '<', Carbon::now())->first();
                 }
-                if (! $subcriptionObj) {
-                    $subcriptionObj = new Subscription;
-                    $subcriptionObj->user_id = Auth::id();
-                }
-                $subcriptionObj->plan_id = $planDetail->id;
-                if (intval($xolode[1])) {
-                    $subcriptionObj->country = $subcriptionObj->country;
-                } else {
-                    $subcriptionObj->country = $xolode[1];
-                }
+                \Illuminate\Support\Facades\DB::transaction(function () use (&$subcriptionObj, $planDetail, $xolode, $response) {
+                    if (! $subcriptionObj) {
+                        $subcriptionObj = new Subscription;
+                    }
+                    if (! $subcriptionObj->exists) {
+                        $subcriptionObj->user_id = Auth::id();
+                    }
+                    $subcriptionObj->plan_id = $planDetail->id;
+                    if (intval($xolode[1])) {
+                        $subcriptionObj->country = $subcriptionObj->country;
+                    } else {
+                        $subcriptionObj->country = $xolode[1];
+                    }
 
-                $subcriptionObj->transaction_id = $response['id'];
-                $subcriptionObj->start_date = Carbon::now();
-                if ($planDetail->plan_duration == '24') {
-                    $subcriptionObj->expiry_date = Carbon::now()->addDay();
-                } elseif ($planDetail->plan_duration == '1') {
-                    $subcriptionObj->expiry_date = Carbon::now()->addMonth();
-                } else {
-                    $subcriptionObj->expiry_date = Carbon::now()->addMonths($planDetail->plan_duration);
-                }
-                $subcriptionObj->transaction_status = $response['status'] ?? '';
-                $subcriptionObj->device_type = 'website';
-                if ($subcriptionObj->save()) {
+                    $subcriptionObj->transaction_id = $response['id'];
+                    $subcriptionObj->start_date = Carbon::now();
+                    if ($planDetail->plan_duration == '24') {
+                        $subcriptionObj->expiry_date = Carbon::now()->addDay();
+                    } elseif ($planDetail->plan_duration == '1') {
+                        $subcriptionObj->expiry_date = Carbon::now()->addMonth();
+                    } else {
+                        $subcriptionObj->expiry_date = Carbon::now()->addMonths($planDetail->plan_duration);
+                    }
+                    $subcriptionObj->transaction_status = $response['status'] ?? '';
+                    $subcriptionObj->device_type = 'website';
+                    $subcriptionObj->save();
+
                     $userObj = User::find(Auth::id());
                     if ($userObj) {
                         if ($subcriptionObj->country == 'usa') {
@@ -144,12 +148,10 @@ class PayPalController extends Controller
                         } elseif ($subcriptionObj->country == 'canada') {
                             $userObj->canada_expiry_date = $subcriptionObj->expiry_date ?? '';
                         }
-                        $invoice = 'success';
-                        if ($userObj->save()) {
-                            $invoice = invoiceMail(Auth::id(), $subcriptionObj->country);
-                        }
+                        $userObj->save();
+                        invoiceMail(Auth::id(), $subcriptionObj->country);
                     }
-                }
+                });
                 return redirect()->route('profile')->with('message', $response['message'] ?? 'Transaction completed successfully');
             } else {
                 return redirect()->back()->with('message', $response['message'] ?? 'Something went wrong. Please try again later');

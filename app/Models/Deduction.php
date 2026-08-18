@@ -9,13 +9,10 @@ class Deduction extends Model
 {
     use HasFactory;
 
-    public static function getDeduction($request)
-    {
-
-        $dataObj = Deduction::where('state', $request->type)->get();
-        $response['data'] = $dataObj;
-        $response['status'] = STATUS_OK;
-
-        return $response;
-    }
+    protected $fillable = [
+        'state',
+        'type',
+        'title',
+        'rate',
+    ];
 }

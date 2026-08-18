@@ -6,6 +6,7 @@ use App\Models\Currency;
 use App\Models\PaySlip;
 use App\Models\Setting;
 use App\Models\User;
+use App\Services\AdminSettingService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -13,6 +14,12 @@ use Illuminate\Support\Facades\Validator;
 
 class SettingController extends Controller
 {
+    protected AdminSettingService $adminSettingService;
+
+    public function __construct(AdminSettingService $adminSettingService)
+    {
+        $this->adminSettingService = $adminSettingService;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -264,7 +271,7 @@ class SettingController extends Controller
 
     public function payslips(Request $request)
     {
-        $query = \App\Models\PaySlip::orderBy('id', 'desc');
+        $query = \App\Models\PaySlip::with('user')->orderBy('id', 'desc');
         if ($request->has('type') && !empty($request->type)) {
             $query->where('type', $request->type);
         }
@@ -330,17 +337,7 @@ class SettingController extends Controller
                 'state_tax' => 'required|numeric',
             ]);
 
-            if ($request->has('tax_id') && !empty($request->tax_id)) {
-                $tax = \App\Models\StateTax::find($request->tax_id);
-            } else {
-                $tax = new \App\Models\StateTax();
-            }
-
-            $tax->state = $request->state;
-            $tax->state_code = strtoupper($request->state_code ?? substr($request->state, 0, 2));
-            $tax->country_code = strtoupper($request->country_code ?? 'USA');
-            $tax->state_tax = $request->state_tax;
-            $tax->save();
+            $this->adminSettingService->saveStateTax($request->all());
 
             return redirect()->back()->with('success', 'State Tax Rate saved successfully.');
         }
@@ -358,29 +355,6 @@ class SettingController extends Controller
     public function auditLogs(Request $request)
     {
         $auditLogs = json_decode(Setting::where('name', 'security_audit_logs')->value('value') ?? '[]', true);
-
-        if (empty($auditLogs)) {
-            $auditLogs = [
-                [
-                    'id' => 'LOG-8910',
-                    'user' => 'possibiltysolutions@gmail.com',
-                    'action' => 'ADMIN_PROFILE_UPDATE',
-                    'details' => 'Admin profile security attributes and avatar updated.',
-                    'ip' => '127.0.0.1',
-                    'user_agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
-                    'timestamp' => '2026-08-18 02:47:25'
-                ],
-                [
-                    'id' => 'LOG-8904',
-                    'user' => 'possibiltysolutions@gmail.com',
-                    'action' => 'SECURITY_2FA_TOGGLE',
-                    'details' => 'Google Authenticator 2FA Security Vault enabled.',
-                    'ip' => '127.0.0.1',
-                    'user_agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
-                    'timestamp' => '2026-08-18 02:54:10'
-                ]
-            ];
-        }
 
         return view('Admin.audit-logs', compact('auditLogs'));
     }
@@ -501,29 +475,6 @@ class SettingController extends Controller
         }
 
         $broadcasts = json_decode(Setting::where('name', 'broadcast_history')->value('value') ?? '[]', true);
-
-        if (empty($broadcasts)) {
-            $broadcasts = [
-                [
-                    'id' => 'BCST-9481',
-                    'headline' => 'Scheduled IRS Tax Engine Update',
-                    'notice_type' => 'Warning',
-                    'target_audience' => 'all',
-                    'message_body' => 'PaystubX will undergo scheduled maintenance for IRS 2026 Tax Table Updates on Sunday at 02:00 UTC.',
-                    'status' => 'Active',
-                    'created_at' => '2026-08-17 10:00'
-                ],
-                [
-                    'id' => 'BCST-9475',
-                    'headline' => 'New W-2 & 1099 Form Templates Live',
-                    'notice_type' => 'Info',
-                    'target_audience' => 'usa',
-                    'message_body' => 'New 2026 W-2 Form and 1099-NEC paystub templates are now available for all US clients.',
-                    'status' => 'Active',
-                    'created_at' => '2026-08-15 16:30'
-                ]
-            ];
-        }
 
         return view('Admin.broadcast', compact('broadcasts'));
     }
@@ -731,19 +682,9 @@ class SettingController extends Controller
 
     public function revenue(Request $request)
     {
-        $paymentSum = \App\Models\Payment::where('status', 'completed')->sum('amount');
-        $payslipCount = PaySlip::count();
-        $totalRevenue = $paymentSum > 0 ? (float)$paymentSum : ($payslipCount * 19.99);
+        $metrics = $this->adminSettingService->getRevenueMetrics();
 
-        $activeSubscriptionsCount = \App\Models\Subscription::where('expiry_date', '>=', \Carbon\Carbon::now())->count();
-        $mrr = $activeSubscriptionsCount > 0 ? ($activeSubscriptionsCount * 29.99) : ($payslipCount > 0 ? round(($totalRevenue / max(1, $payslipCount)) * 10, 2) : 0);
-
-        $activeSubscribers = User::where('role_id', '!=', 1)->count();
-        $avgOrderValue = $payslipCount > 0 ? round($totalRevenue / $payslipCount, 2) : 19.99;
-
-        $recentTransactions = PaySlip::with('user')->latest()->take(10)->get();
-
-        return view('Admin.revenue', compact('totalRevenue', 'mrr', 'activeSubscribers', 'avgOrderValue', 'recentTransactions'));
+        return view('Admin.revenue', $metrics);
     }
 
     public function security2FA(Request $request)
@@ -770,14 +711,9 @@ class SettingController extends Controller
 
     public function telemetry(Request $request)
     {
-        $dbPath = database_path('database.sqlite');
-        $dbSize = file_exists($dbPath) ? round(filesize($dbPath) / 1024 / 1024, 2) : 0.5;
-        $memoryUsage = round(memory_get_usage(true) / 1024 / 1024, 2);
-        $peakMemory = round(memory_get_peak_usage(true) / 1024 / 1024, 2);
-        $phpVersion = PHP_VERSION;
-        $laravelVersion = app()->version();
+        $data = $this->adminSettingService->getTelemetryData();
 
-        return view('Admin.telemetry', compact('dbSize', 'memoryUsage', 'peakMemory', 'phpVersion', 'laravelVersion'));
+        return view('Admin.telemetry', $data);
     }
 
     public function supportTickets(Request $request)
@@ -786,60 +722,13 @@ class SettingController extends Controller
             return redirect()->back()->with('success', 'Support ticket reply sent successfully to customer.');
         }
 
-        $tickets = [
-            [
-                'id' => 'TCK-8921',
-                'customer' => 'Johnathan Doe',
-                'email' => 'john.doe@example.com',
-                'subject' => 'USA W-2 Form Box 12 Tax Deduction Calculation Question',
-                'priority' => 'High',
-                'status' => 'Open',
-                'created_at' => '2026-08-17 14:22'
-            ],
-            [
-                'id' => 'TCK-8919',
-                'customer' => 'Sarah Connor',
-                'email' => 'sarah.c@example.com',
-                'subject' => 'UK HMRC Payslip Year-To-Date NI Threshold Sync',
-                'priority' => 'Medium',
-                'status' => 'In Progress',
-                'created_at' => '2026-08-17 11:05'
-            ],
-            [
-                'id' => 'TCK-8915',
-                'customer' => 'Michael Scott',
-                'email' => 'mscott@dundermifflin.com',
-                'subject' => 'PayPal Subscription Invoice Receipt Download Issue',
-                'priority' => 'Low',
-                'status' => 'Resolved',
-                'created_at' => '2026-08-16 18:40'
-            ],
-        ];
+        $ticketsSetting = Setting::where('name', 'support_tickets_list')->value('value');
+        $tickets = $ticketsSetting ? json_decode($ticketsSetting, true) : [];
 
         return view('Admin.support-tickets', compact('tickets'));
     }
     public static function logSecurityAudit($action, $details)
     {
-        $logs = json_decode(Setting::where('name', 'security_audit_logs')->value('value') ?? '[]', true);
-
-        $newEntry = [
-            'id' => 'LOG-' . rand(1000, 9999),
-            'user' => Auth::user()->email ?? 'System Admin',
-            'action' => strtoupper($action),
-            'details' => $details,
-            'ip' => request()->ip(),
-            'user_agent' => request()->userAgent(),
-            'timestamp' => date('Y-m-d H:i:s')
-        ];
-
-        array_unshift($logs, $newEntry);
-
-        Setting::updateOrCreate(
-            ['name' => 'security_audit_logs'],
-            [
-                'value' => json_encode($logs),
-                'description' => 'Real-Time Admin Security Activity Audit Trail'
-            ]
-        );
+        app(AdminSettingService::class)->logSecurityAudit($action, $details);
     }
 }

@@ -30,12 +30,11 @@ class LoginController extends Controller
     }
 
     /**
-     * Handle Google Callback for both Socialite and JS GIS Token Payload.
+     * Handle Google OAuth Callback using Laravel Socialite.
      */
     public function callbackFromGoogle(Request $request)
     {
         try {
-            // Always verify Google authentication via Socialite OAuth state/code token
             $googleUser = \Laravel\Socialite\Facades\Socialite::driver('google')->user();
             $email = filter_var($googleUser->getEmail(), FILTER_SANITIZE_EMAIL);
             $socialId = $googleUser->getId();
@@ -44,14 +43,11 @@ class LoginController extends Controller
             $lastName = $googleUser->user['family_name'] ?? '';
         } catch (\Exception $e) {
             Log::error('Google Callback OAuth Error: ' . $e->getMessage());
-            if ($request->ajax() || $request->wantsJson()) {
-                return response()->json(['message' => 'Invalid Google authentication response.'], 400);
-            }
             return redirect()->route('welcome')->with('error', 'Google authentication failed.');
         }
 
         if (empty($email)) {
-            return response()->json(['message' => 'Email address is required from Google.'], 422);
+            return redirect()->route('welcome')->with('error', 'Email address is required from Google.');
         }
 
         $existUser = User::where('social_id', $socialId)->orWhere('email', $email)->first();
@@ -71,14 +67,6 @@ class LoginController extends Controller
 
         Auth::login($existUser, true);
 
-        if ($request->ajax() || $request->wantsJson()) {
-            return response()->json([
-                'message' => 'Login successfully',
-                'data' => $existUser->name,
-                'user_type' => $existUser->role_id == 1 ? 'Admin' : 'User',
-            ], 200);
-        }
-
         return redirect()->route('welcome')->with('message', 'Login successfully');
     }
 
@@ -89,7 +77,7 @@ class LoginController extends Controller
         return redirect(route('welcome'));
     }
 
-    public function login(Request $request)
+    public function login(Request $request): \Illuminate\Http\JsonResponse
     {
         $rules = [
             'email' => 'required|email:rfc,dns',
@@ -105,7 +93,7 @@ class LoginController extends Controller
         if ($validator->fails()) {
             $response['message'] = $validator->errors()->first();
 
-            return response()->json($response, 301);
+            return response()->json($response, 422);
         }
 
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
@@ -117,11 +105,11 @@ class LoginController extends Controller
         } else {
             $response['message'] = 'Incorrect password';
 
-            return response()->json($response, 301);
+            return response()->json($response, 400);
         }
     }
 
-    public function loginWithOtp(Request $request)
+    public function loginWithOtp(Request $request): \Illuminate\Http\JsonResponse
     {
         Log::info($request);
         $rules = [
@@ -139,19 +127,19 @@ class LoginController extends Controller
         if ($validator->fails()) {
             $response['message'] = $validator->errors()->first();
 
-            return response()->json($response, 301);
+            return response()->json($response, 422);
         }
         $user = User::where(['email' => $request->email, 'code' => $request->code])->first();
         if (! $user) {
             $response['message'] = 'Entered wrong verification code.';
 
-            return response()->json($response, 301);
+            return response()->json($response, 400);
         }
         $user->code = null;
         $user->email_verified_at = Carbon::now();
         $user->save();
 
-        Auth::login($user); //
+        Auth::login($user);
 
         $response['message'] = 'Login successfully';
         $response['user_type'] = $user->role_id == 1 ? 'Admin' : 'User';
@@ -160,10 +148,10 @@ class LoginController extends Controller
         return response()->json($response, 200);
     }
 
-    public function sendOtp(Request $request)
+    public function sendOtp(Request $request): \Illuminate\Http\JsonResponse
     {
         $rules = [
-            'email' => 'required|email:rfc,dns',
+            'email' => 'required|email:rfc',
         ];
 
         $messages = [
@@ -174,22 +162,28 @@ class LoginController extends Controller
         if ($validator->fails()) {
             $response['message'] = $validator->errors()->first();
 
-            return response()->json($response, 301);
+            return response()->json($response, 422);
         }
         $code = rand(100000, 999999);
         if (request('formType') == 'verifyOtpChangeMail') {
             $user = User::where('temp_mail', request('email'))->first();
-            if ($user->temp_mail != '') {
+            if ($user && $user->temp_mail != '') {
                 $mailData = [];
                 $mailData['name'] = $request->temp_mail;
                 $mailData['otp'] = $code;
                 $mailData['type'] = 'E-mail Verification';
                 $mailData['subject'] = 'Verify E-mail';
-                Mail::to($user->temp_mail)->send(new VerifyEmailSend($mailData));
+                try {
+                    Mail::to($user->temp_mail)->send(new VerifyEmailSend($mailData));
+                } catch (\Exception $e) {
+                    Log::error('SMTP Mail Sending Error (temp_mail): ' . $e->getMessage());
+                }
             }
 
-            $user->code = $code;
-            $user->save();
+            if ($user) {
+                $user->code = $code;
+                $user->save();
+            }
             $response['message'] = 'Verification code sent successfully';
         } else {
             $user = User::where('email', request('email'))->first();
@@ -206,7 +200,11 @@ class LoginController extends Controller
                     $mailData['otp'] = $code;
                     $mailData['type'] = 'E-mail Verification';
                     $mailData['subject'] = 'Verify E-mail';
-                    Mail::to($user->email)->send(new VerifyEmailSend($mailData));
+                    try {
+                        Mail::to($user->email)->send(new VerifyEmailSend($mailData));
+                    } catch (\Exception $e) {
+                        Log::error('SMTP Mail Sending Error: ' . $e->getMessage());
+                    }
                 }
 
                 $user->code = $code;

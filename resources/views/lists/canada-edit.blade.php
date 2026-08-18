@@ -476,7 +476,7 @@
     });
 </script>
 
-<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyDpavHXELJMJvIHifFPN6tBBiFSXKGpy2g"> </script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key={{ env('GOOGLE_MAPS_API_KEY', 'AIzaSyAOVYRIgupAurZup5y1PRh8Ismb1A3lLao') }}"> </script>
 <script>
     var searchInput = 'address_1';
     $(document).ready(function() {

@@ -47,12 +47,14 @@ Route::get('verify', function () {return view('mail.verify');})->name('verify');
 // =========================================================================
 // 3. Authentication & Password Management Routes
 // =========================================================================
-Route::post('auth/login', [LoginController::class, 'loginWithGoogle'])->name('login.google');
+Route::match(['get', 'post'], 'auth/login', [LoginController::class, 'loginWithGoogle'])->name('login.google');
 Route::match(['get', 'post'], 'google/callback', [LoginController::class, 'callbackFromGoogle'])->name('google.callback');
 
 Route::get('loginWithOtp', function () {return view('auth.OtpLogin');})->name('loginWithOtp.view');
 Route::post('loginWithOtp', [LoginController::class, 'loginWithOtp'])->name('loginWithOtp');
 Route::post('sendOtp', [LoginController::class, 'sendOtp'])->name('sendOtp');
+
+Route::get('login', function () { return redirect()->route('welcome'); });
 Route::post('login', [LoginController::class, 'login'])->middleware(['loginThrottle'])->name('login');
 
 Route::post('forgot/password', [ForgotPasswordController::class, 'forgotPassword'])->name('forgot.password');
@@ -71,7 +73,7 @@ Route::post('uk/templates', [TemplateFormController::class, 'templates'])->name(
 // =========================================================================
 Route::middleware(['auth'])->group(function () {
 
-    Route::post('logout', [LoginController::class, 'logout'])->name('logout');
+    Route::match(['get', 'post'], 'logout', [LoginController::class, 'logout'])->name('logout');
 
     // Invoices & Subscriptions
     Route::post('usaStoreData', [TemplateFormController::class, 'usaStoreData'])->name('usaStoreData');

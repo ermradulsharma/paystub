@@ -101,13 +101,13 @@ class HomeController extends Controller
             if ($validator->fails()) {
                 $response['message'] = $validator->errors()->first();
 
-                return response()->json($response, 301);
+                return response()->json($response, 422);
             }
             $user = User::find($userId);
             if ($user) {
                 if (! Hash::check($request->get('password'), $user->password)) {
                     $response['message'] = 'Oops! you have entered wrong password. Please try again.';
-                    $response['status'] = 301;
+                    $response['status'] = 400;
 
                     return response()->json($response, $response['status']);
                 }
@@ -133,7 +133,7 @@ class HomeController extends Controller
             } else {
                 $response['message'] = 'This e-mail already exists. Please use another mail.';
 
-                return response()->json($response, 301);
+                return response()->json($response, 400);
             }
         }
 
@@ -152,7 +152,7 @@ class HomeController extends Controller
             if ($validator->fails()) {
                 $response['message'] = $validator->errors()->first();
 
-                return response()->json($response, 301);
+                return response()->json($response, 422);
             }
             $userObj = User::where(['temp_mail' => $request->email, 'code' => $request->code])->first();
             if ($userObj) {
@@ -184,7 +184,7 @@ class HomeController extends Controller
             if ($validator->fails()) {
                 $response['message'] = $validator->errors()->first();
 
-                return response()->json($response, 301);
+                return response()->json($response, 422);
             }
             $userObj = User::where(['temp_mail' => $request->email])->first();
             if ($userObj) {
@@ -383,7 +383,7 @@ class HomeController extends Controller
 
             return back()->with('message', 'Your feedback send successfully to the Paystubx Team.');
         } catch (\Exception $e) {
-            Log::info('User Delete Function', ['Exception' => $e->getMessage()]);
+            Log::error('Contact Form Function Error', ['Exception' => $e->getMessage()]);
 
             return back()->with('error', 'Something went wrong.');
         }
