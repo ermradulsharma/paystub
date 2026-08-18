@@ -25,7 +25,7 @@ class PdfViewerController extends Controller
         }
 
         if (!$template || !in_array($template, $allTemplates[$formType] ?? [])) {
-            $template = $allTemplates[$formType][0] ?? 'paystubx';
+            $template = $allTemplates[$formType][0] ?? 'aegean';
         }
 
         $orientation = $request->query('orientation', 'portrait');
@@ -99,7 +99,7 @@ class PdfViewerController extends Controller
     }
 
     /**
-     * Provide comprehensive sample invoice data to ensure zero missing variable errors during PDF rendering.
+     * Provide complete comprehensive sample invoice data for aegean.blade.php and all paystub templates.
      *
      * @return array
      */
@@ -107,6 +107,7 @@ class PdfViewerController extends Controller
     {
         $requestData = [
             'watermark' => 'yes',
+            'currency' => '$',
             'cname' => 'PaystubX Global Systems Corp',
             'company_name' => 'PaystubX Global Systems Corp',
             'address_1' => '100 Enterprise Way',
@@ -118,12 +119,14 @@ class PdfViewerController extends Controller
             'company_ssn' => 'XX-XXXXXXX',
             'company_in' => '12-3456789',
             'control_number' => 'CN-90812',
+            
+            // Employee details
             'emp_name' => 'Alexander Vance',
             'employee_name' => 'Alexander Vance',
             'emp_first_name' => 'Alexander',
             'emp_last_name' => 'Vance',
-            'emp_id' => 'EMP-84578',
-            'employee_id' => 'EMP-84578',
+            'emp_id' => '84578',
+            'employee_id' => '84578',
             'emp_ssn' => '5678',
             'ssn' => '5678',
             'emp_street_1' => '742 Evergreen Terrace',
@@ -133,28 +136,87 @@ class PdfViewerController extends Controller
             'emp_zip_code' => '97477',
             'emp_address' => '742 Evergreen Terrace, Springfield, OR 97477',
             'employee_address' => '742 Evergreen Terrace, Springfield, OR 97477',
+            
+            // Dates & Numbers
             'pay_start' => '2026-08-01',
             'pay_end' => '2026-08-15',
             'pay_period' => '08/01/2026 - 08/15/2026',
             'pay_date' => '2026-08-18',
             'stub_no' => '100452',
             'check_no' => '100452',
-            'rate' => '45.00',
-            'hours' => '80',
-            'gross_pay' => '3600.00',
-            'wages' => '3600.00',
-            'net_pay' => '2840.00',
-            'fed_tax' => '420.00',
-            'federal_tax' => '420.00',
-            'state_tax' => '180.00',
-            'state_income_tax' => '180.00',
-            'state_wages' => '3600.00',
-            'social_security' => '223.20',
-            'ss_tax' => '223.20',
-            'ss_wages' => '3600.00',
-            'medicare' => '52.20',
-            'medicare_tax' => '52.20',
-            'medicare_wages' => '3600.00',
+            'advice_number' => '452901',
+            'account_number_last_4' => '4321',
+            'transit_aba_number' => '98765',
+            'marital_status' => 'Single',
+            'exemptions' => '0',
+
+            // Earnings Array for aegean.blade.php & advanced tables
+            'earning' => [
+                'Regular Pay',
+                'Overtime Pay'
+            ],
+            'rate' => [
+                45.00,
+                67.50
+            ],
+            'hours' => [
+                80.00,
+                5.00
+            ],
+            'period' => [
+                3600.00,
+                337.50
+            ],
+            'ytd_total' => [
+                43200.00,
+                4050.00
+            ],
+            'period_gross_total' => 3937.50,
+            'ytd_gross_total' => 47250.00,
+
+            // Taxes Array for aegean.blade.php & advanced tables
+            'taxes' => [
+                'Federal Income Tax',
+                'Social Security Tax',
+                'Medicare Tax',
+                'State Income Tax'
+            ],
+            'taxes_rate' => [
+                420.00,
+                244.13,
+                57.09,
+                180.00
+            ],
+            'taxes_ytd' => [
+                5040.00,
+                2929.56,
+                685.08,
+                2160.00
+            ],
+            'tax_deduction' => [],
+            'period_tax_deduction' => [],
+            'ytd_tax_deduction' => [],
+
+            'deduction_tax' => 901.22,
+            'total_net_pay' => 3036.28,
+            'total_ytd_net_pay' => 36435.36,
+            'gross_pay' => 3937.50,
+            'wages' => 3937.50,
+            'net_pay' => 3036.28,
+
+            'fed_tax' => 420.00,
+            'federal_tax' => 420.00,
+            'state_tax' => 180.00,
+            'state_income_tax' => 180.00,
+            'state_wages' => 3937.50,
+            'social_security' => 244.13,
+            'ss_tax' => 244.13,
+            'ss_wages' => 3937.50,
+            'medicare' => 57.09,
+            'medicare_tax' => 57.09,
+            'medicare_wages' => 3937.50,
+
+            // W-2 Specific attributes
             'ss_tips' => '0.00',
             'allocated_tips' => '0.00',
             'dependent_care' => '0.00',
@@ -173,22 +235,15 @@ class PdfViewerController extends Controller
             'third_party_sick' => false,
             'employee_state_id' => 'ST-99881',
             'locality_name' => 'New York City',
-            'local_wages' => '3600.00',
+            'local_wages' => '3937.50',
             'local_income_tax' => '115.20',
-            'total_deductions' => '760.00',
-            'ytd_gross' => '43200.00',
-            'ytd_net' => '34080.00',
-            'ytd_fed_tax' => '5040.00',
-            'ytd_state_tax' => '2160.00',
-            'ytd_social_security' => '2678.40',
-            'ytd_medicare' => '626.40',
-            'ytd_deductions' => '9120.00',
+
+            // Miscellaneous
             'deposit_type' => 'Direct Deposit',
             'account_number' => 'XXXX-XXXX-4321',
             'routing_number' => '123456789',
-            'check_number' => '100452',
             'logo' => null,
-            'color' => '#4f46e5',
+            'color' => '#587193',
             'date' => date('Y-m-d'),
         ];
 
