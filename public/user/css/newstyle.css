@@ -1853,8 +1853,6 @@ textarea#w3review {
     max-width: 580px;
     width: 100%;
     margin-bottom: 9.5px;
-    margin-left: 10px;
-    margin-right: 10px;
 }
 
 .w2form-left-box {
@@ -5725,4 +5723,923 @@ img.earnbtn2.lockuk {
     backdrop-filter: blur(10px) !important;
     position: relative !important;
     z-index: 1 !important;
+}
+
+/* Policy & Static Pages Modern Aesthetic */
+.policy-hero-banner {
+    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%) !important;
+    border-radius: 24px !important;
+    padding: 50px 30px !important;
+    color: #ffffff !important;
+    position: relative !important;
+    overflow: hidden !important;
+    margin-bottom: 40px !important;
+    box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.25) !important;
+}
+
+.policy-badge-icon {
+    width: 60px !important;
+    height: 60px !important;
+    border-radius: 18px !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 1.6rem !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+.policy-card {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 24px !important;
+    padding: 40px !important;
+    box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.04) !important;
+    color: #334155 !important;
+    line-height: 1.75 !important;
+}
+
+.policy-card h4 {
+    color: #0f172a !important;
+    font-weight: 700 !important;
+    font-size: 1.25rem !important;
+    margin-top: 30px !important;
+    margin-bottom: 15px !important;
+    letter-spacing: -0.2px !important;
+}
+
+.policy-card p {
+    color: #475569 !important;
+    font-size: 0.95rem !important;
+    margin-bottom: 20px !important;
+}
+
+.policy-card ul {
+    list-style: none !important;
+    padding-left: 0 !important;
+    margin-bottom: 25px !important;
+}
+
+.policy-card ul li {
+    position: relative !important;
+    padding-left: 28px !important;
+    margin-bottom: 12px !important;
+    color: #334155 !important;
+    font-size: 0.95rem !important;
+}
+
+.policy-card ul li::before {
+    content: "\f058" !important;
+    font-family: FontAwesome !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 2px !important;
+    color: #4f46e5 !important;
+    font-size: 1rem !important;
+}
+
+.contact-card-box {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 20px !important;
+    padding: 24px !important;
+    transition: all 0.25s ease !important;
+}
+
+.contact-card-box:hover {
+    border-color: #818cf8 !important;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 12px 30px rgba(79, 70, 229, 0.08) !important;
+}
+
+/* =========================================================================
+   PaystubX Ultra-Premium WOW Design System (Vercel / Stripe / Apple Level)
+   ========================================================================= */
+
+/* Ambient Mesh Hero Header */
+.wow-hero-section {
+    background: radial-gradient(circle at 10% 20%, rgba(79, 70, 229, 0.2) 0%, transparent 45%),
+        radial-gradient(circle at 90% 80%, rgba(59, 130, 246, 0.2) 0%, transparent 45%),
+        linear-gradient(135deg, #0b0f19 0%, #1e1b4b 100%) !important;
+    border-radius: 28px !important;
+    padding: 60px 40px !important;
+    color: #ffffff !important;
+    position: relative !important;
+    overflow: hidden !important;
+    box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.35) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    margin-bottom: 35px !important;
+}
+
+.wow-hero-section::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0 !important;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px) !important;
+    background-size: 24px 24px !important;
+    opacity: 0.6 !important;
+    pointer-events: none !important;
+}
+
+.wow-pill-badge {
+    display: inline-flex !important;
+    align-items: center !important;
+    padding: 6px 16px !important;
+    border-radius: 100px !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.18) !important;
+    backdrop-filter: blur(12px) !important;
+    color: #a5b4fc !important;
+    font-size: 0.8rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.4px !important;
+}
+
+.wow-pulse-dot {
+    width: 8px !important;
+    height: 8px !important;
+    border-radius: 50% !important;
+    background-color: #10b981 !important;
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7) !important;
+    animation: wowPulse 2s infinite !important;
+    margin-right: 8px !important;
+}
+
+@keyframes wowPulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(16, 185, 129, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+    }
+}
+
+/* Policy Tab Switcher Bar */
+.wow-tab-switcher {
+    display: inline-flex !important;
+    padding: 6px !important;
+    background: #f1f5f9 !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 16px !important;
+    gap: 6px !important;
+}
+
+.wow-tab-link {
+    padding: 10px 22px !important;
+    border-radius: 12px !important;
+    font-weight: 600 !important;
+    font-size: 0.875rem !important;
+    color: #64748b !important;
+    text-decoration: none !important;
+    transition: all 0.25s ease !important;
+    display: inline-flex !important;
+    align-items: center !important;
+}
+
+.wow-tab-link:hover {
+    color: #4f46e5 !important;
+    background: rgba(255, 255, 255, 0.6) !important;
+}
+
+.wow-tab-link.active {
+    background: #ffffff !important;
+    color: #4f46e5 !important;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08) !important;
+}
+
+/* Glassmorphic Document Card */
+.wow-policy-card {
+    background: #ffffff !important;
+    border-radius: 28px !important;
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.05) !important;
+    padding: 50px !important;
+    position: relative !important;
+}
+
+.wow-policy-section {
+    position: relative !important;
+    padding-left: 24px !important;
+    border-left: 3px solid #e2e8f0 !important;
+    margin-bottom: 40px !important;
+    transition: border-color 0.25s ease !important;
+}
+
+.wow-policy-section:hover {
+    border-left-color: #4f46e5 !important;
+}
+
+.wow-section-number {
+    display: inline-block !important;
+    font-size: 0.775rem !important;
+    font-weight: 800 !important;
+    color: #4f46e5 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    margin-bottom: 6px !important;
+}
+
+.wow-section-title {
+    font-size: 1.35rem !important;
+    font-weight: 800 !important;
+    color: #0f172a !important;
+    letter-spacing: -0.3px !important;
+    margin-bottom: 12px !important;
+}
+
+.wow-feature-item {
+    background: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 16px !important;
+    padding: 16px 20px !important;
+    margin-bottom: 12px !important;
+    display: flex !important;
+    align-items: flex-start !important;
+    transition: all 0.25s ease !important;
+}
+
+.wow-feature-item:hover {
+    background: #ffffff !important;
+    border-color: #818cf8 !important;
+    transform: translateX(5px) !important;
+    box-shadow: 0 8px 20px rgba(79, 70, 229, 0.08) !important;
+}
+
+.wow-feature-icon {
+    width: 36px !important;
+    height: 36px !important;
+    border-radius: 10px !important;
+    background: rgba(79, 70, 229, 0.1) !important;
+    color: #4f46e5 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 1rem !important;
+    margin-right: 14px !important;
+    flex-shrink: 0 !important;
+}
+
+/* Contact Specific Premium Card */
+.wow-contact-card {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 24px !important;
+    padding: 32px !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.03) !important;
+}
+
+.wow-contact-card:hover {
+    border-color: #4f46e5 !important;
+    transform: translateY(-4px) !important;
+    box-shadow: 0 20px 35px -10px rgba(79, 70, 229, 0.15) !important;
+}
+
+.wow-icon-box-lg {
+    width: 56px !important;
+    height: 56px !important;
+    border-radius: 18px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 1.4rem !important;
+    margin-bottom: 20px !important;
+}
+
+.wow-input-wrapper input,
+.wow-input-wrapper select,
+.wow-input-wrapper textarea {
+    border: 1.5px solid #cbd5e1 !important;
+    border-radius: 14px !important;
+    padding: 14px 18px !important;
+    font-size: 0.95rem !important;
+    color: #0f172a !important;
+    background: #f8fafc !important;
+    transition: all 0.25s ease !important;
+}
+
+.wow-input-wrapper input:focus,
+.wow-input-wrapper select:focus,
+.wow-input-wrapper textarea:focus {
+    border-color: #4f46e5 !important;
+    background: #ffffff !important;
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.15) !important;
+    outline: none !important;
+}
+
+/* =========================================================================
+   PaystubX Stripe / Apple Elite Pristine Document Architecture
+   ========================================================================= */
+.stripe-doc-container {
+    max-width: 860px !important;
+    margin: 0 auto !important;
+    padding: 60px 24px 80px !important;
+}
+
+.stripe-doc-header {
+    margin-bottom: 48px !important;
+    padding-bottom: 32px !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+}
+
+.stripe-doc-tag {
+    display: inline-flex !important;
+    align-items: center !important;
+    font-size: 0.8rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    color: #4f46e5 !important;
+    background: #eef2ff !important;
+    padding: 6px 14px !important;
+    border-radius: 100px !important;
+    margin-bottom: 16px !important;
+}
+
+.stripe-doc-title {
+    font-size: 2.75rem !important;
+    font-weight: 800 !important;
+    color: #0f172a !important;
+    letter-spacing: -1.2px !important;
+    line-height: 1.15 !important;
+    margin-bottom: 14px !important;
+}
+
+.stripe-doc-meta {
+    font-size: 0.9rem !important;
+    color: #64748b !important;
+    font-weight: 500 !important;
+}
+
+.stripe-doc-body {
+    font-size: 1.05rem !important;
+    line-height: 1.8 !important;
+    color: #334155 !important;
+}
+
+.stripe-doc-body h2 {
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+    color: #0f172a !important;
+    letter-spacing: -0.4px !important;
+    margin-top: 48px !important;
+    margin-bottom: 18px !important;
+}
+
+.stripe-doc-body p {
+    margin-bottom: 24px !important;
+}
+
+.stripe-doc-body ul {
+    padding-left: 0 !important;
+    list-style: none !important;
+    margin-bottom: 32px !important;
+}
+
+.stripe-doc-body ul li {
+    position: relative !important;
+    padding-left: 28px !important;
+    margin-bottom: 14px !important;
+    color: #334155 !important;
+}
+
+.stripe-doc-body ul li::before {
+    content: "" !important;
+    position: absolute !important;
+    left: 8px !important;
+    top: 12px !important;
+    width: 6px !important;
+    height: 6px !important;
+    border-radius: 50% !important;
+    background: #4f46e5 !important;
+}
+
+.stripe-callout-box {
+    background: #f5f3ff !important;
+    border: 1px solid #ddd6fe !important;
+    border-radius: 16px !important;
+    padding: 24px !important;
+    margin: 32px 0 !important;
+    color: #4c1d95 !important;
+}
+
+/* Contact Page Elite Container */
+.stripe-contact-container {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 60px 24px 80px !important;
+}
+
+/* =========================================================================
+   PaystubX Rich Ultra-Visual Modern Aesthetics (Glassmorphism & Gradients)
+   ========================================================================= */
+
+.rich-page-wrapper {
+    background-color: #f8fafc !important;
+    background-image:
+        radial-gradient(at 10% 10%, rgba(79, 70, 229, 0.08) 0px, transparent 40%),
+        radial-gradient(at 90% 90%, rgba(59, 130, 246, 0.08) 0px, transparent 40%),
+        radial-gradient(rgba(148, 163, 184, 0.12) 1px, transparent 1px) !important;
+    background-size: 100% 100%, 100% 100%, 28px 28px !important;
+    padding-bottom: 80px !important;
+}
+
+/* Rich Hero Banner */
+.rich-hero-banner {
+    background: linear-gradient(135deg, #0b0f19 0%, #1e1b4b 60%, #312e81 100%) !important;
+    border-radius: 28px !important;
+    padding: 60px 40px !important;
+    color: #ffffff !important;
+    position: relative !important;
+    overflow: hidden !important;
+    box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.35) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    margin-bottom: 40px !important;
+}
+
+.rich-hero-banner::after {
+    content: '' !important;
+    position: absolute !important;
+    top: -50px;
+    right: -50px !important;
+    width: 300px;
+    height: 300px !important;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.3) 0%, transparent 70%) !important;
+    pointer-events: none !important;
+}
+
+.rich-hero-title {
+    font-size: 2.75rem !important;
+    font-weight: 800 !important;
+    background: linear-gradient(135deg, #ffffff 0%, #c7d2fe 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    letter-spacing: -1px !important;
+    margin-bottom: 12px !important;
+}
+
+.rich-pill-badge {
+    display: inline-flex !important;
+    align-items: center !important;
+    padding: 6px 18px !important;
+    border-radius: 100px !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: #a5b4fc !important;
+    font-size: 0.825rem !important;
+    font-weight: 600 !important;
+    backdrop-filter: blur(10px) !important;
+    margin-bottom: 18px !important;
+}
+
+/* Rich Glassmorphic Section Cards */
+.rich-glass-card {
+    background: #ffffff !important;
+    border-radius: 24px !important;
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.04) !important;
+    padding: 36px !important;
+    margin-bottom: 24px !important;
+    transition: all 0.3s ease !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.rich-glass-card:hover {
+    border-color: #818cf8 !important;
+    box-shadow: 0 20px 40px -10px rgba(79, 70, 229, 0.12) !important;
+    transform: translateY(-3px) !important;
+}
+
+.rich-icon-box {
+    width: 48px !important;
+    height: 48px !important;
+    border-radius: 14px !important;
+    background: linear-gradient(135deg, rgba(79, 70, 229, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%) !important;
+    border: 1px solid rgba(99, 102, 241, 0.2) !important;
+    color: #4f46e5 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 1.25rem !important;
+    margin-right: 16px !important;
+    flex-shrink: 0 !important;
+}
+
+.rich-card-title {
+    font-size: 1.35rem !important;
+    font-weight: 800 !important;
+    color: #0f172a !important;
+    margin-bottom: 0 !important;
+    letter-spacing: -0.3px !important;
+}
+
+.rich-callout-box {
+    background: linear-gradient(135deg, rgba(79, 70, 229, 0.04) 0%, rgba(59, 130, 246, 0.04) 100%) !important;
+    border-left: 4px solid #4f46e5 !important;
+    border-radius: 0 16px 16px 0 !important;
+    padding: 20px 24px !important;
+    margin: 20px 0 !important;
+}
+
+.rich-feature-pill {
+    background: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 14px !important;
+    padding: 14px 18px !important;
+    margin-bottom: 10px !important;
+    display: flex !important;
+    align-items: center !important;
+    font-size: 0.925rem !important;
+    font-weight: 500 !important;
+    color: #334155 !important;
+    transition: all 0.2s ease !important;
+}
+
+.rich-feature-pill:hover {
+    background: #ffffff !important;
+    border-color: #818cf8 !important;
+    transform: translateX(4px) !important;
+    color: #4f46e5 !important;
+    box-shadow: 0 4px 14px rgba(79, 70, 229, 0.08) !important;
+}
+
+/* Template Gallery & Previewer Aesthetics */
+.template-card-item {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 20px !important;
+    overflow: hidden !important;
+    box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.04) !important;
+    transition: all 0.3s ease !important;
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.template-card-item:hover {
+    border-color: #818cf8 !important;
+    transform: translateY(-6px) !important;
+    box-shadow: 0 20px 40px -10px rgba(79, 70, 229, 0.15) !important;
+}
+
+.template-thumb-wrapper {
+    position: relative !important;
+    background: #f8fafc !important;
+    padding: 16px !important;
+    overflow: hidden !important;
+    border-bottom: 1px solid #f1f5f9 !important;
+    min-height: 220px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.template-thumb-img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 220px !important;
+    object-fit: contain !important;
+    border-radius: 10px !important;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08) !important;
+    transition: transform 0.3s ease !important;
+}
+
+.template-card-item:hover .template-thumb-img {
+    transform: scale(1.03) !important;
+}
+
+.template-badge-pill {
+    position: absolute !important;
+    top: 14px !important;
+    left: 14px !important;
+    background: rgba(15, 23, 42, 0.75) !important;
+    color: #ffffff !important;
+    font-size: 0.725rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    padding: 4px 10px !important;
+    border-radius: 100px !important;
+    backdrop-filter: blur(8px) !important;
+}
+
+.template-card-body {
+    padding: 20px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    flex-grow: 1 !important;
+}
+
+/* Currency Converter Interactive Styling */
+.currency-swap-btn {
+    width: 46px !important;
+    height: 46px !important;
+    border-radius: 50% !important;
+    background: #ffffff !important;
+    border: 1.5px solid #e2e8f0 !important;
+    color: #4f46e5 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 1.1rem !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08) !important;
+}
+
+.currency-swap-btn:hover {
+    background: #4f46e5 !important;
+    color: #ffffff !important;
+    border-color: #4f46e5 !important;
+    transform: rotate(180deg) scale(1.1) !important;
+    box-shadow: 0 6px 18px rgba(79, 70, 229, 0.35) !important;
+}
+
+.currency-result-box {
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%) !important;
+    border: 2px solid #86efac !important;
+    border-radius: 20px !important;
+    padding: 24px !important;
+    box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.12) !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.currency-quick-pill {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 14px !important;
+    padding: 14px 18px !important;
+    transition: all 0.25s ease !important;
+}
+
+.currency-quick-pill:hover {
+    border-color: #818cf8 !important;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 20px rgba(79, 70, 229, 0.1) !important;
+}
+
+/* FinTech Ultra-Premium Currency Converter (Rock-Solid Layout Stability) */
+.fintech-converter-card {
+    background: #ffffff !important;
+    border-radius: 28px !important;
+    border: 1px solid rgba(226, 232, 240, 0.8) !important;
+    box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.08), 0 10px 25px -5px rgba(79, 70, 229, 0.05) !important;
+    padding: 36px 40px !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.fintech-input-box {
+    background: #f8fafc !important;
+    border: 1.5px solid #e2e8f0 !important;
+    border-radius: 20px !important;
+    padding: 18px 24px !important;
+    transition: border-color 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease !important;
+    min-height: 105px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+}
+
+.fintech-input-box:focus-within {
+    background: #ffffff !important;
+    border-color: #4f46e5 !important;
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.12) !important;
+}
+
+.fintech-amount-field {
+    font-size: 2rem !important;
+    font-weight: 800 !important;
+    color: #0f172a !important;
+    border: none !important;
+    background: transparent !important;
+    outline: none !important;
+    width: 100% !important;
+    padding: 0 !important;
+    height: 48px !important;
+    line-height: 48px !important;
+    box-sizing: border-box !important;
+}
+
+.fintech-select-pill {
+    background: #ffffff !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 14px !important;
+    padding: 8px 14px !important;
+    font-weight: 700 !important;
+    font-size: 0.95rem !important;
+    color: #0f172a !important;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04) !important;
+    cursor: pointer !important;
+    height: 46px !important;
+    box-sizing: border-box !important;
+}
+
+.fintech-swap-divider {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 12px 0 !important;
+    position: relative !important;
+}
+
+.fintech-swap-divider::before {
+    content: '' !important;
+    position: absolute !important;
+    left: 20px;
+    right: 20px !important;
+    top: 50% !important;
+    height: 1px !important;
+    background: #e2e8f0 !important;
+    z-index: 1 !important;
+}
+
+.fintech-swap-circle {
+    width: 48px !important;
+    height: 48px !important;
+    border-radius: 50% !important;
+    background: linear-gradient(135deg, #4f46e5 0%, #312e81 100%) !important;
+    color: #ffffff !important;
+    border: 3px solid #ffffff !important;
+    box-shadow: 0 4px 14px rgba(79, 70, 229, 0.25) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 1.1rem !important;
+    cursor: pointer !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+    z-index: 2 !important;
+    position: relative !important;
+}
+
+.fintech-swap-circle:hover {
+    transform: rotate(180deg) !important;
+    box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4) !important;
+}
+
+.fintech-preset-pill {
+    padding: 8px 18px !important;
+    border-radius: 100px !important;
+    background: #f1f5f9 !important;
+    border: 1px solid #e2e8f0 !important;
+    color: #475569 !important;
+    font-size: 0.85rem !important;
+    font-weight: 700 !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+}
+
+.fintech-preset-pill:hover {
+    background: #4f46e5 !important;
+    color: #ffffff !important;
+    border-color: #4f46e5 !important;
+}
+
+.fintech-rate-card {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 20px !important;
+    padding: 20px !important;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease !important;
+}
+
+.fintech-rate-card:hover {
+    border-color: #818cf8 !important;
+    box-shadow: 0 10px 25px -5px rgba(79, 70, 229, 0.1) !important;
+}
+
+/* FinTech Ultra-Modern Input Cards */
+.fintech-card-input-wrapper {
+    background: #ffffff !important;
+    border: 1.5px solid #e2e8f0 !important;
+    border-radius: 24px !important;
+    padding: 24px 28px !important;
+    box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.04) !important;
+    transition: all 0.25s ease !important;
+    position: relative !important;
+}
+
+.fintech-card-input-wrapper:focus-within {
+    border-color: #6366f1 !important;
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.12), 0 15px 35px -10px rgba(79, 70, 229, 0.1) !important;
+    transform: translateY(-2px) !important;
+}
+
+.fintech-input-label {
+    font-size: 0.775rem !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.8px !important;
+    color: #4f46e5 !important;
+    margin-bottom: 8px !important;
+    display: block !important;
+}
+
+.fintech-input-label.receive {
+    color: #059669 !important;
+}
+
+.fintech-num-input {
+    font-size: 2.5rem !important;
+    font-weight: 800 !important;
+    color: #0f172a !important;
+    border: none !important;
+    background: transparent !important;
+    outline: none !important;
+    width: 100% !important;
+    padding: 0 !important;
+    height: 54px !important;
+    line-height: 54px !important;
+}
+
+.fintech-num-input.receive-text {
+    color: #10b981 !important;
+}
+
+.fintech-currency-dropdown {
+    background: #f8fafc !important;
+    border: 1.5px solid #cbd5e1 !important;
+    border-radius: 16px !important;
+    padding: 12px 20px !important;
+    font-size: 1.05rem !important;
+    font-weight: 700 !important;
+    color: #0f172a !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    outline: none !important;
+    height: 54px !important;
+    appearance: auto !important;
+}
+
+.fintech-currency-dropdown:hover,
+.fintech-currency-dropdown:focus {
+    background: #ffffff !important;
+    border-color: #4f46e5 !important;
+    box-shadow: 0 4px 14px rgba(79, 70, 229, 0.12) !important;
+}
+
+/* Dedicated #convertAmount Input Field Styling */
+.convert-amount-card {
+    background: #ffffff !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 18px !important;
+    padding: 0px 10px !important;
+    display: flex !important;
+    align-items: center !important;
+    transition: all 0.25s ease !important;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03) !important;
+    flex-grow: 1 !important;
+}
+
+.convert-amount-card:focus-within {
+    border-color: #4f46e5 !important;
+    background: #ffffff !important;
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.15), 0 8px 20px rgba(79, 70, 229, 0.08) !important;
+}
+
+.convert-amount-prefix {
+    font-size: 1.8rem !important;
+    font-weight: 800 !important;
+    color: #4f46e5 !important;
+    margin-right: 12px !important;
+    user-select: none !important;
+}
+
+#convertAmount {
+    font-size: 2.25rem !important;
+    font-weight: 800 !important;
+    color: #0f172a !important;
+    border: none !important;
+    background: transparent !important;
+    outline: none !important;
+    width: 100% !important;
+    padding: 0 !important;
+    height: 48px !important;
+    line-height: 48px !important;
+}
+
+/* Hide HTML5 number spinners for ultra-clean UI */
+#convertAmount::-webkit-outer-spin-button,
+#convertAmount::-webkit-inner-spin-button {
+    -webkit-appearance: none !important;
+    margin: 0 !important;
+}
+
+#convertAmount[type=number] {
+    -moz-appearance: textfield !important;
 }
