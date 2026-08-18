@@ -60,6 +60,7 @@ Route::post('login', [LoginController::class, 'login'])->middleware(['loginThrot
 Route::post('forgot/password', [ForgotPasswordController::class, 'forgotPassword'])->name('forgot.password');
 Route::get('password/reset/{token}', [ForgotPasswordController::class, 'resetPasswordFromWeb'])->name('password.reset');
 Route::post('password/update/{token}', [ForgotPasswordController::class, 'passwordUpdate'])->name('password.update');
+Route::get('preview-reset-password', function () { $data = ['token' => 'test-preview']; return view('auth.passwords.reset', compact('data')); });
 
 // =========================================================================
 // 4. Form Processing & Template Render Routes

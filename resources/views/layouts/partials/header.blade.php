@@ -17,7 +17,9 @@
                 <li class="nav-item"><a class="btn navbtn {{ request()->is('w2form*') ? 'active' : '' }}" href="{{ route('w2form') }}">W-2 FORM</a></li>
                 <li class="nav-item">
                     @guest
-                        <a class="btn login registerBtn login-header-btn" href="javascript:void(0);">LOGIN <i class="fa fa-sign-in mx-2"></i></a>
+                        @if(empty($hideLogin) && !request()->is('password/reset*') && !request()->is('preview-reset-password*'))
+                            <a class="btn login registerBtn login-header-btn" href="javascript:void(0);">LOGIN <i class="fa fa-sign-in mx-2"></i></a>
+                        @endif
                         <div class="d-none logoutDiv">
                             <div class="user-pill-wrapper">
                                 <div class="user-avatar-badge user-avatar-initial"><i class="fa fa-user"></i></div>
