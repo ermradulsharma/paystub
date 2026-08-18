@@ -89,14 +89,14 @@ class PaymentController extends Controller
                 // Fire event
                 event(new PaymentProcessed($payment));
 
-                return redirect()->route('user.dashboard')->with('success', 'Payment successful!');
+                return redirect()->route('userDashboard')->with('success', 'Payment successful!');
             }
 
-            return redirect()->route('user.dashboard')->with('error', 'Payment not completed.');
+            return redirect()->route('userDashboard')->with('error', 'Payment not completed.');
         } catch (\Exception $e) {
             Log::error('Payment capture failed', ['error' => $e->getMessage()]);
 
-            return redirect()->route('user.dashboard')->with('error', 'Payment verification failed.');
+            return redirect()->route('userDashboard')->with('error', 'Payment verification failed.');
         }
     }
 
@@ -105,6 +105,6 @@ class PaymentController extends Controller
      */
     public function cancel()
     {
-        return redirect()->route('user.dashboard')->with('info', 'Payment cancelled.');
+        return redirect()->route('userDashboard')->with('info', 'Payment cancelled.');
     }
 }

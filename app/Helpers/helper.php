@@ -77,7 +77,7 @@ function invoiceMail($user_id, $type)
             $invoiceData['requestData'] = $requestData;
             
             if ($pageName && isset($requestData['form_type'])) {
-                $pdf = \PDF::loadView('allForms/' . $requestData['form_type'] . '/' . $pageName, $invoiceData)->setPaper('a4', 'portrait');
+                $pdf = \PDF::loadView('allForms/' . $requestData['form_type'] . '/' . $pageName, $invoiceData)->setPaper('a4', 'portrait')->set_option('isRemoteEnabled', true);
                 $fileName = date('_d_m_Y_h_i_s') . '.pdf';
                 $pdf->save($path . '/' . $fileName);
 

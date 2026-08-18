@@ -69,19 +69,19 @@ class SettingController extends Controller
                 $validator = Validator::make($request->all(), $rules);
                 if ($validator->fails()) {
 
-                    return redirect()->route('settings')->withErrors($validator)->withInput();
+                    return redirect()->route('admin.settings')->withErrors($validator)->withInput();
                 }
                 $userObj = User::find(Auth::id());
                 if (! Hash::check($request->get('old_password'), $userObj->password)) {
                     $response['message'] = 'Current password is wrong';
 
-                    return redirect()->route('settings')->with('error', $response['message']);
+                    return redirect()->route('admin.settings')->with('error', $response['message']);
                 }
                 $userObj->password = Hash::make($requestData['password']);
                 if ($userObj->save()) {
-                    return redirect()->route('settings')->with('success', 'Password changed successfully');
+                    return redirect()->route('admin.settings')->with('success', 'Password changed successfully');
                 } else {
-                    return redirect()->route('settings')->with('error', 'Wrong old password');
+                    return redirect()->route('admin.settings')->with('error', 'Wrong old password');
                 }
             }
 
@@ -92,7 +92,7 @@ class SettingController extends Controller
                 $rules['email'] = 'required|email|email:rfc,dns|unique:users,email,'.Auth::id();
                 $validator = Validator::make($request->all(), $rules);
                 if ($validator->fails()) {
-                    return redirect()->route('settings')->withErrors($validator)->withInput();
+                    return redirect()->route('admin.settings')->withErrors($validator)->withInput();
                 }
                 $userObj = User::where('id', Auth::id())->first();
                 $userObj->first_name = $requestData['first_name'] ?? '';
@@ -100,9 +100,9 @@ class SettingController extends Controller
                 $userObj->name = (($requestData['first_name'] ?? '').' '.($requestData['last_name'] ?? ''));
                 $userObj->email = $requestData['email'] ?? '';
                 if ($userObj->save()) {
-                    return redirect()->route('settings')->with('message', 'Personal info changed successfully');
+                    return redirect()->route('admin.settings')->with('message', 'Personal info changed successfully');
                 } else {
-                    return redirect()->route('settings')->with('error', 'Something went wrong');
+                    return redirect()->route('admin.settings')->with('error', 'Something went wrong');
                 }
             }
 
@@ -116,7 +116,7 @@ class SettingController extends Controller
 
                 $validator = Validator::make($request->all(), $rules);
                 if ($validator->fails()) {
-                    return redirect()->route('settings')->withErrors($validator)->withInput();
+                    return redirect()->route('admin.settings')->withErrors($validator)->withInput();
                 }
 
                 $smtp = [
@@ -140,7 +140,7 @@ class SettingController extends Controller
                 $settingObj->value = $jsonData;
                 $settingObj->save();
 
-                return redirect()->route('settings')->with('success', 'SMTP setting updated successfully');
+                return redirect()->route('admin.settings')->with('success', 'SMTP setting updated successfully');
             }
 
             if ($requestData['request_type'] == 'debug_mode') {
@@ -161,7 +161,7 @@ class SettingController extends Controller
                 $settingObj->value = $jsonData;
                 $settingObj->save();
 
-                return redirect()->route('settings')->with('success', 'Debug mode updated successfully');
+                return redirect()->route('admin.settings')->with('success', 'Debug mode updated successfully');
             }
 
             if ($requestData['request_type'] == 'push_notification_server_key') {
@@ -169,7 +169,7 @@ class SettingController extends Controller
 
                 $validator = Validator::make($request->all(), $rules);
                 if ($validator->fails()) {
-                    return redirect()->route('settings')->withErrors($validator)->withInput();
+                    return redirect()->route('admin.settings')->withErrors($validator)->withInput();
                 }
                 $push_notification_server_key = [
                     'push_notification_server_key' => $requestData['push_notification_server_key'] ?? null,
@@ -188,7 +188,7 @@ class SettingController extends Controller
                 $settingObj->value = $jsonData;
                 $settingObj->save();
 
-                return redirect()->route('settings')->with('success', 'Push notification server key updated successfully');
+                return redirect()->route('admin.settings')->with('success', 'Push notification server key updated successfully');
             }
 
             if ($requestData['request_type'] == 'paypal_configuration') {
@@ -200,7 +200,7 @@ class SettingController extends Controller
 
                 $validator = Validator::make($request->all(), $rules);
                 if ($validator->fails()) {
-                    return redirect()->route('settings')->withErrors($validator)->withInput();
+                    return redirect()->route('admin.settings')->withErrors($validator)->withInput();
                 }
 
                 $paypalDetails = [
@@ -224,7 +224,7 @@ class SettingController extends Controller
                 $settingObj->value = $jsonData;
                 $settingObj->save();
 
-                return redirect()->route('settings')->with('success', 'Paypal configuration updated successfully');
+                return redirect()->route('admin.settings')->with('success', 'Paypal configuration updated successfully');
             }
 
             if (in_array($requestData['request_type'], ['site_info', 'tax_engine', 'security_config', 'pdf_engine'])) {
@@ -238,13 +238,13 @@ class SettingController extends Controller
                 $settingObj->value = json_encode($requestData);
                 $settingObj->save();
 
-                return redirect()->route('settings')->with('success', ucfirst(str_replace('_', ' ', $type)) . ' settings updated successfully');
+                return redirect()->route('admin.settings')->with('success', ucfirst(str_replace('_', ' ', $type)) . ' settings updated successfully');
             }
 
             // Fallback for invalid request_type
-            return redirect()->route('settings')->with('error', 'Invalid Request');
+            return redirect()->route('admin.settings')->with('error', 'Invalid Request');
         } catch (\Exception $e) {
-            return redirect()->route('settings')->with('error', $e->getMessage());
+            return redirect()->route('admin.settings')->with('error', $e->getMessage());
         }
     }
 
@@ -731,10 +731,15 @@ class SettingController extends Controller
 
     public function revenue(Request $request)
     {
-        $totalRevenue = PaySlip::count() * 19.99; // Mock calculation based on payslips volume
-        $mrr = 2450.00;
+        $paymentSum = \App\Models\Payment::where('status', 'completed')->sum('amount');
+        $payslipCount = PaySlip::count();
+        $totalRevenue = $paymentSum > 0 ? (float)$paymentSum : ($payslipCount * 19.99);
+
+        $activeSubscriptionsCount = \App\Models\Subscription::where('expiry_date', '>=', \Carbon\Carbon::now())->count();
+        $mrr = $activeSubscriptionsCount > 0 ? ($activeSubscriptionsCount * 29.99) : ($payslipCount > 0 ? round(($totalRevenue / max(1, $payslipCount)) * 10, 2) : 0);
+
         $activeSubscribers = User::where('role_id', '!=', 1)->count();
-        $avgOrderValue = 19.99;
+        $avgOrderValue = $payslipCount > 0 ? round($totalRevenue / $payslipCount, 2) : 19.99;
 
         $recentTransactions = PaySlip::with('user')->latest()->take(10)->get();
 

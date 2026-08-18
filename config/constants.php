@@ -1,27 +1,27 @@
 <?php
 
 // ======================================== Super Admin Account ================================================
-defined('SUPER_ADMIN_EMAIL') or define('SUPER_ADMIN_EMAIL', 'possibiltysolutions@gmail.com');
-defined('SUPER_ADMIN_USERNAME') or define('SUPER_ADMIN_USERNAME', 'possibilitysolutions');
-defined('SUPER_ADMIN_FIRST_NAME') or define('SUPER_ADMIN_FIRST_NAME', 'Possibility');
-defined('SUPER_ADMIN_LAST_NAME') or define('SUPER_ADMIN_LAST_NAME', 'Solutions');
+defined('SUPER_ADMIN_EMAIL') or define('SUPER_ADMIN_EMAIL', env('SUPER_ADMIN_EMAIL', 'possibiltysolutions@gmail.com'));
+defined('SUPER_ADMIN_USERNAME') or define('SUPER_ADMIN_USERNAME', env('SUPER_ADMIN_USERNAME', 'possibilitysolutions'));
+defined('SUPER_ADMIN_FIRST_NAME') or define('SUPER_ADMIN_FIRST_NAME', env('SUPER_ADMIN_FIRST_NAME', 'Possibility'));
+defined('SUPER_ADMIN_LAST_NAME') or define('SUPER_ADMIN_LAST_NAME', env('SUPER_ADMIN_LAST_NAME', 'Solutions'));
 
 // ======================================== Admin Account ======================================================
-defined('ADMIN_EMAIL') or define('ADMIN_EMAIL', 'admin@admin.com');
-defined('ADMIN_USERNAME') or define('ADMIN_USERNAME', 'admin');
-defined('ADMIN_FIRST_NAME') or define('ADMIN_FIRST_NAME', 'Admin');
-defined('ADMIN_LAST_NAME') or define('ADMIN_LAST_NAME', 'Account');
+defined('ADMIN_EMAIL') or define('ADMIN_EMAIL', env('ADMIN_EMAIL', 'admin@admin.com'));
+defined('ADMIN_USERNAME') or define('ADMIN_USERNAME', env('ADMIN_USERNAME', 'admin'));
+defined('ADMIN_FIRST_NAME') or define('ADMIN_FIRST_NAME', env('ADMIN_FIRST_NAME', 'Admin'));
+defined('ADMIN_LAST_NAME') or define('ADMIN_LAST_NAME', env('ADMIN_LAST_NAME', 'Account'));
 
 // ======================================== Developer Account ==================================================
-defined('DEVELOPER_EMAIL') or define('DEVELOPER_EMAIL', 'developers@admin.com');
-defined('DEVELOPER_USERNAME') or define('DEVELOPER_USERNAME', 'developers');
-defined('DEVELOPER_FIRST_NAME') or define('DEVELOPER_FIRST_NAME', 'Developer');
-defined('DEVELOPER_LAST_NAME') or define('DEVELOPER_LAST_NAME', 'Account');
+defined('DEVELOPER_EMAIL') or define('DEVELOPER_EMAIL', env('DEVELOPER_EMAIL', 'developers@admin.com'));
+defined('DEVELOPER_USERNAME') or define('DEVELOPER_USERNAME', env('DEVELOPER_USERNAME', 'developers'));
+defined('DEVELOPER_FIRST_NAME') or define('DEVELOPER_FIRST_NAME', env('DEVELOPER_FIRST_NAME', 'Developer'));
+defined('DEVELOPER_LAST_NAME') or define('DEVELOPER_LAST_NAME', env('DEVELOPER_LAST_NAME', 'Account'));
 
 // ======================================== App Details ========================================================
-defined('APP_NAME') or define('APP_NAME', 'Paystub X');
-defined('APP_URL') or define('APP_URL', 'http://www.paystubx.com');
-defined('MAIL_FROM_EMAIL') or define('MAIL_FROM_EMAIL', 'noreply@paystubx.com');
+defined('APP_NAME') or define('APP_NAME', env('APP_NAME', 'Paystub X'));
+defined('APP_URL') or define('APP_URL', env('APP_URL', 'http://www.paystubx.com'));
+defined('MAIL_FROM_EMAIL') or define('MAIL_FROM_EMAIL', env('MAIL_FROM_ADDRESS', 'noreply@paystubx.com'));
 
 defined('IMAGE_UPLOAD_PATH') or define('IMAGE_UPLOAD_PATH', 'public/');
 defined('STORAGE_UPLOAD_PATH') or define('STORAGE_UPLOAD_PATH', (function_exists('storage_path') && function_exists('app') && app()->bound('path.storage')) ? storage_path('public/') : __DIR__.'/../storage/app/public/');

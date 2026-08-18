@@ -37,27 +37,33 @@ class UserController extends Controller
         if ($validator->fails()) {
             $response['message'] = $validator->errors()->first();
 
-            return response()->json($response, 301);
+            return response()->json($response, STATUS_BAD_REQUEST);
         }
+
+        $email = filter_var(trim($request->email), FILTER_SANITIZE_EMAIL);
         $code = rand(100000, 999999);
-        $userObj = User::where('email', request('email'))->first();
+        $userObj = User::where('email', $email)->first();
         if (! $userObj) {
             $userObj = new User;
-            $userObj->email = $request->email;
+            $userObj->email = $email;
             $userObj->is_completed = '0';
         }
         $userObj->code = $code;
         if ($userObj->save()) {
             if ($userObj->is_completed == '0') {
                 $mailData = [];
-                $mailData['name'] = $request->email;
+                $mailData['name'] = $email;
                 $mailData['otp'] = $code;
                 $mailData['type'] = 'E-mail Verification';
                 $mailData['subject'] = 'Verify E-mail';
-                Mail::to($userObj->email)->send(new VerifyEmailSend($mailData));
+                try {
+                    Mail::to($userObj->email)->send(new VerifyEmailSend($mailData));
+                } catch (\Exception $e) {
+                    Log::error('Send OTP Mail Error: ' . $e->getMessage());
+                }
             }
         }
-        $response['is_completed'] = $userObj->is_completed;
+        $response['is_completed'] = $userObj->is_completed ?? '0';
         $response['data'] = User::select('email')->find($userObj->id);
         $response['success'] = true;
         $response['message'] = 'Verification code sent successfully';
@@ -87,13 +93,13 @@ class UserController extends Controller
         if ($validator->fails()) {
             $response['message'] = $validator->errors()->first();
 
-            return response()->json($response, 301);
+            return response()->json($response, STATUS_BAD_REQUEST);
         }
         $user = User::where(['email' => $request->email, 'code' => $request->code])->first();
         if (! $user) {
             $response['message'] = 'Entered wrong verification code.';
 
-            return response()->json($response, 301);
+            return response()->json($response, STATUS_BAD_REQUEST);
         }
         $user->code = null;
         $user->email_verified_at = Carbon::now();
@@ -142,14 +148,14 @@ class UserController extends Controller
         if ($validator->fails()) {
             $response['message'] = $validator->errors()->first();
 
-            return response()->json($response, 301);
+            return response()->json($response, STATUS_BAD_REQUEST);
         }
 
         $user = User::find($request->user()->id);
         if (! $user) {
             $response['message'] = "User doesn't exist.";
 
-            return response()->json($response, 301);
+            return response()->json($response, STATUS_BAD_REQUEST);
         }
 
         $user->name = $request->uname ?? '';
@@ -186,14 +192,14 @@ class UserController extends Controller
         if ($validator->fails()) {
             $response['message'] = $validator->errors()->first();
 
-            return response()->json($response, 301);
+            return response()->json($response, STATUS_BAD_REQUEST);
         }
 
         $user = User::find($request->user()->id);
         if (! $user) {
             $response['message'] = "User doesn't exist.";
 
-            return response()->json($response, 301);
+            return response()->json($response, STATUS_BAD_REQUEST);
         }
 
         $user->name = $request->uname ?? '';
@@ -230,18 +236,18 @@ class UserController extends Controller
         if ($validator->fails()) {
             $response['message'] = $validator->errors()->first();
 
-            return response()->json($response, 301);
+            return response()->json($response, STATUS_BAD_REQUEST);
         }
         $user = User::where(['email' => $request->email])->first();
         if (! $user) {
             $response['message'] = "Email doesn't exist.";
 
-            return response()->json($response, 301);
+            return response()->json($response, STATUS_BAD_REQUEST);
         }
         if (! Hash::check($request->password, $user->password)) {
             $response['message'] = 'Incorrect password.';
 
-            return response()->json($response, 301);
+            return response()->json($response, STATUS_BAD_REQUEST);
         }
         $user->save();
         Auth::login($user);
@@ -277,7 +283,7 @@ class UserController extends Controller
             if ($validator->fails()) {
                 $response['message'] = $validator->errors()->first();
 
-                return response()->json($response, 301);
+                return response()->json($response, STATUS_BAD_REQUEST);
             }
             $email_exist = User::where('email', $post_data['email'])->count();
             if ($email_exist) {
@@ -306,12 +312,12 @@ class UserController extends Controller
                 $response['status'] = STATUS_OK;
             }
         } catch (\Exception $e) {
-            $response['message'] = $e->getMessage().' Line No '.$e->getLine().' in File'.$e->getFile();
+            $response['message'] = DEFAULT_ERROR_MESSAGE;
             Log::error($e->getTraceAsString());
             $response['status'] = STATUS_GENERAL_ERROR;
         }
 
-        return response()->json($response, 200);
+        return response()->json($response, $response['status']);
     }
 
     public function forgotPassword(Request $request)
@@ -334,7 +340,7 @@ class UserController extends Controller
             if ($validator->fails()) {
                 $response['message'] = $validator->errors()->first();
 
-                return response()->json($response, 301);
+                return response()->json($response, STATUS_BAD_REQUEST);
             }
 
             $userObj = User::where('email', strtolower($request->get('email')))->first();
@@ -370,7 +376,7 @@ class UserController extends Controller
             $response['success'] = true;
             $response['status'] = STATUS_OK;
         } catch (\Exception $e) {
-            $response['message'] = $e->getMessage().' Line No '.$e->getLine().' in File'.$e->getFile();
+            $response['message'] = DEFAULT_ERROR_MESSAGE;
             Log::error($e->getTraceAsString());
             $response['status'] = STATUS_GENERAL_ERROR;
         }
@@ -396,7 +402,7 @@ class UserController extends Controller
                 $response['status'] = STATUS_OK;
             }
         } catch (\Exception $e) {
-            $response['message'] = $e->getMessage().' Line No '.$e->getLine().' in File'.$e->getFile();
+            $response['message'] = DEFAULT_ERROR_MESSAGE;
             Log::error($e->getTraceAsString());
             $response['status'] = STATUS_GENERAL_ERROR;
         }
@@ -420,7 +426,7 @@ class UserController extends Controller
             }
         } catch (\Exception $e) {
             DB::rollback();
-            $response['message'] = $e->getMessage().' Line No '.$e->getLine().' in File'.$e->getFile();
+            $response['message'] = DEFAULT_ERROR_MESSAGE;
             Log::error($e->getTraceAsString());
             $response['status'] = STATUS_GENERAL_ERROR;
         }
@@ -462,7 +468,7 @@ class UserController extends Controller
         } catch (\Exception $e) {
             DB::rollback();
             unset($response['data']);
-            $response['message'] = $e->getMessage().' Line No '.$e->getLine().' in File'.$e->getFile();
+            $response['message'] = DEFAULT_ERROR_MESSAGE;
             Log::error($e->getTraceAsString());
             $response['status'] = STATUS_GENERAL_ERROR;
         }
@@ -487,7 +493,7 @@ class UserController extends Controller
             }
         } catch (\Exception $e) {
             DB::rollBack();
-            $response['message'] = $e->getMessage().' Line No '.$e->getLine().' in File'.$e->getFile();
+            $response['message'] = DEFAULT_ERROR_MESSAGE;
             Log::error($e->getTraceAsString());
             $response['status'] = STATUS_GENERAL_ERROR;
         }
@@ -507,7 +513,7 @@ class UserController extends Controller
         if (! $userObj) {
             $response['message'] = "User doesn't exist.";
 
-            return response()->json($response, 301);
+            return response()->json($response, STATUS_BAD_REQUEST);
         }
         if ($requestData['type'] == 'name') {
             $rules = [
@@ -522,7 +528,7 @@ class UserController extends Controller
             if ($validator->fails()) {
                 $response['message'] = $validator->errors()->first();
 
-                return response()->json($response, 301);
+                return response()->json($response, STATUS_BAD_REQUEST);
             }
             $userObj->name = $request->name;
             $msg = 'Name has updated successfully';
@@ -547,7 +553,7 @@ class UserController extends Controller
             if ($validator->fails()) {
                 $response['message'] = $validator->errors()->first();
 
-                return response()->json($response, 301);
+                return response()->json($response, STATUS_BAD_REQUEST);
             }
             if (! Hash::check($request->get('password'), $userObj->password)) {
                 $response['message'] = WRONG_PASSWORD;
@@ -586,7 +592,7 @@ class UserController extends Controller
             if ($validator->fails()) {
                 $response['message'] = $validator->errors()->first();
 
-                return response()->json($response, 301);
+                return response()->json($response, STATUS_BAD_REQUEST);
             }
             $userObj = User::where(['temp_mail' => $request->email, 'code' => $request->otp])->first();
             if ($userObj) {
@@ -613,7 +619,7 @@ class UserController extends Controller
             if ($validator->fails()) {
                 $response['message'] = $validator->errors()->first();
 
-                return response()->json($response, 301);
+                return response()->json($response, STATUS_BAD_REQUEST);
             }
             $userObj = User::where(['temp_mail' => $request->email])->first();
             if ($userObj) {
@@ -648,7 +654,7 @@ class UserController extends Controller
             if ($validator->fails()) {
                 $response['message'] = $validator->errors()->first();
 
-                return response()->json($response, 301);
+                return response()->json($response, STATUS_BAD_REQUEST);
             }
 
             if (! Hash::check($request->get('current_password'), $userObj->password)) {
@@ -706,14 +712,14 @@ class UserController extends Controller
             if ($validator->fails()) {
                 $response['message'] = $validator->errors()->first();
 
-                return response()->json($response, 301);
+                return response()->json($response, STATUS_BAD_REQUEST);
             }
             $requestData = $request->all();
             $userObj = User::find(Auth::user()->id);
             if (! $userObj) {
                 $response['message'] = "User doesn't exist.";
 
-                return response()->json($response, 301);
+                return response()->json($response, STATUS_BAD_REQUEST);
             }
 
             $addressObj = new Address;
@@ -739,7 +745,7 @@ class UserController extends Controller
                 $response['status'] = STATUS_OK;
             }
         } catch (\Exception $e) {
-            $response['message'] = $e->getMessage().' Line No '.$e->getLine().' in File'.$e->getFile();
+            $response['message'] = DEFAULT_ERROR_MESSAGE;
             Log::error($e->getTraceAsString());
             $response['status'] = STATUS_GENERAL_ERROR;
         }
@@ -774,21 +780,21 @@ class UserController extends Controller
             if ($validator->fails()) {
                 $response['message'] = $validator->errors()->first();
 
-                return response()->json($response, 301);
+                return response()->json($response, STATUS_BAD_REQUEST);
             }
             $requestData = $request->all();
             $userObj = User::find(Auth::user()->id);
             if (! $userObj) {
                 $response['message'] = "User doesn't exist.";
 
-                return response()->json($response, 301);
+                return response()->json($response, STATUS_BAD_REQUEST);
             }
 
             $addressObj = Address::where(['id' => $requestData['address_id']])->first();
             if (! $addressObj) {
                 $response['message'] = "Address doesn't exist.";
 
-                return response()->json($response, 301);
+                return response()->json($response, STATUS_BAD_REQUEST);
             }
             $addressObj->user_id = Auth::user()->id;
             $addressObj->type = $requestData['type'];
@@ -811,7 +817,7 @@ class UserController extends Controller
                 $response['status'] = STATUS_OK;
             }
         } catch (\Exception $e) {
-            $response['message'] = $e->getMessage().' Line No '.$e->getLine().' in File'.$e->getFile();
+            $response['message'] = DEFAULT_ERROR_MESSAGE;
             Log::error($e->getTraceAsString());
             $response['status'] = STATUS_GENERAL_ERROR;
         }
@@ -835,7 +841,7 @@ class UserController extends Controller
             $response['message'] = 'Address fetch successfully';
             $response['status'] = STATUS_OK;
         } catch (\Exception $e) {
-            $response['message'] = $e->getMessage().' Line No '.$e->getLine().' in File'.$e->getFile();
+            $response['message'] = DEFAULT_ERROR_MESSAGE;
             Log::error($e->getTraceAsString());
             $response['status'] = STATUS_GENERAL_ERROR;
         }
@@ -862,14 +868,14 @@ class UserController extends Controller
             if ($validator->fails()) {
                 $response['message'] = $validator->errors()->first();
 
-                return response()->json($response, 301);
+                return response()->json($response, STATUS_BAD_REQUEST);
             }
             $requestData = $request->all();
             $userObj = User::find(Auth::user()->id);
             if (! $userObj) {
                 $response['message'] = "User doesn't exist.";
 
-                return response()->json($response, 301);
+                return response()->json($response, STATUS_BAD_REQUEST);
             }
             $address_ids = explode(',', $requestData['address_ids']);
             $isDeleted = Address::whereIn('id', $address_ids)->delete();
@@ -880,7 +886,7 @@ class UserController extends Controller
                 $response['status'] = STATUS_OK;
             }
         } catch (\Exception $e) {
-            $response['message'] = $e->getMessage().' Line No '.$e->getLine().' in File'.$e->getFile();
+            $response['message'] = DEFAULT_ERROR_MESSAGE;
             Log::error($e->getTraceAsString());
             $response['status'] = STATUS_GENERAL_ERROR;
         }
@@ -910,7 +916,7 @@ class UserController extends Controller
             $response['message'] = 'Address fetch successfully';
             $response['status'] = STATUS_OK;
         } catch (\Exception $e) {
-            $response['message'] = $e->getMessage().' Line No '.$e->getLine().' in File'.$e->getFile();
+            $response['message'] = DEFAULT_ERROR_MESSAGE;
             Log::error($e->getTraceAsString());
             $response['status'] = STATUS_GENERAL_ERROR;
         }

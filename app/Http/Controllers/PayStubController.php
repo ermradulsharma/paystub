@@ -10,15 +10,20 @@ use App\Models\StateTax;
 use App\Models\Template;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
 
 class PayStubController extends Controller
 {
     public function usaPayStub()
     {
-        $deduction = Deduction::where('state', 'usa')->orderBy('id', 'asc')->get();
+        $deduction = Cache::remember('deductions_usa', 3600, function() {
+            return Deduction::where('state', 'usa')->orderBy('id', 'asc')->get();
+        });
         $basicType = Template::where(['state' => 'usa', 'type' => 'basic', 'status' => 1])->orderBy('title')->with('images')->get();
         $advanceType = Template::where(['state' => 'usa', 'type' => 'advance', 'status' => 1])->orderBy('title')->with('images')->get();
-        $stateTaxes = StateTax::where('country_code', 'USA')->orderBy('state')->get();
+        $stateTaxes = Cache::remember('state_taxes_USA', 3600, function() {
+            return StateTax::where('country_code', 'USA')->orderBy('state')->get();
+        });
         if (Auth::check()) {
             $employerList = Address::where(['type' => 'employer', 'user_id' => Auth::id()])->orderBy('id', 'DESC')->get();
             $employeeList = Address::where(['type' => 'employee', 'user_id' => Auth::id()])->orderBy('id', 'DESC')->get();

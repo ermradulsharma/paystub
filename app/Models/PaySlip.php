@@ -36,16 +36,16 @@ class PaySlip extends Model
         // if (!array_key_exists('watermark', $requestData)) {
         //     $requestData += array('watermark' => 'no');
         // }
-        if ($requestData['form_type'] == 'w2form') {
+        if (isset($requestData['form_type']) && $requestData['form_type'] == 'w2form') {
             $pageName = 'w2form';
-            // $requestData['watermark'] == 'no';
+        } else {
+            $pageName = $requestData['advance_temp'] ?? $requestData['basic_temp'] ?? 'paystubx_basic';
         }
         $path = public_path().'/uploads/mailData';
         File::isDirectory($path) or File::makeDirectory($path, 0777, true, true);
         $invoiceData['requestData'] = $requestData;
 
-        // dd($requestData);
-        $pdf = PDF::loadView('allForms/'.$request->form_type.'/'.$pageName, $invoiceData)->setPaper('a4', 'portrait');
+        $pdf = PDF::loadView('allForms/'.($requestData['form_type'] ?? 'usa').'/'.$pageName, $invoiceData)->setPaper('a4', 'portrait')->set_option('isRemoteEnabled', true);
         $fileName = date('_d_m_Y_h_i_s').'.pdf';
         $pdf->save($path.'/'.$fileName);
 

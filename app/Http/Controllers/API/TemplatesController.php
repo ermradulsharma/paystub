@@ -34,7 +34,7 @@ class TemplatesController extends Controller
                 $response['success'] = true;
             }
         } catch (Exception $e) {
-            $response['message'] = $e->getMessage().' Line No '.$e->getLine().' in File'.$e->getFile();
+            $response['message'] = DEFAULT_ERROR_MESSAGE;
             Log::error($e->getTraceAsString());
             $response['status'] = STATUS_GENERAL_ERROR;
         }
@@ -75,7 +75,7 @@ class TemplatesController extends Controller
             $response['status'] = 200;
             $response['success'] = true;
         } catch (Exception $e) {
-            $response['message'] = $e->getMessage().' Line No '.$e->getLine().' in File'.$e->getFile();
+            $response['message'] = DEFAULT_ERROR_MESSAGE;
             Log::error($e->getTraceAsString());
             $response['status'] = STATUS_GENERAL_ERROR;
         }
@@ -133,7 +133,7 @@ class TemplatesController extends Controller
                 $response['success'] = true;
             }
         } catch (Exception $e) {
-            $response['message'] = $e->getMessage().' Line No '.$e->getLine().' in File'.$e->getFile();
+            $response['message'] = DEFAULT_ERROR_MESSAGE;
             Log::error($e->getTraceAsString());
             $response['status'] = STATUS_GENERAL_ERROR;
         }
@@ -153,7 +153,7 @@ class TemplatesController extends Controller
             $response['status'] = 200;
             $response['success'] = true;
         } catch (Exception $e) {
-            $response['message'] = $e->getMessage().' Line No '.$e->getLine().' in File'.$e->getFile();
+            $response['message'] = DEFAULT_ERROR_MESSAGE;
             Log::error($e->getTraceAsString());
             $response['status'] = STATUS_GENERAL_ERROR;
         }
@@ -178,7 +178,7 @@ class TemplatesController extends Controller
             $response['status'] = 200;
             $response['success'] = true;
         } catch (Exception $e) {
-            $response['message'] = $e->getMessage().' Line No '.$e->getLine().' in File'.$e->getFile();
+            $response['message'] = DEFAULT_ERROR_MESSAGE;
             Log::error($e->getTraceAsString());
             $response['status'] = STATUS_GENERAL_ERROR;
         }
@@ -205,7 +205,7 @@ class TemplatesController extends Controller
             $response['status'] = 200;
             $response['success'] = true;
         } catch (Exception $e) {
-            $response['message'] = $e->getMessage().' Line No '.$e->getLine().' in File'.$e->getFile();
+            $response['message'] = DEFAULT_ERROR_MESSAGE;
             Log::error($e->getTraceAsString());
             $response['status'] = STATUS_GENERAL_ERROR;
         }
@@ -228,7 +228,7 @@ class TemplatesController extends Controller
                 $response['status'] = STATUS_OK;
             }
         } catch (Exception $e) {
-            $response['message'] = $e->getMessage().' Line No '.$e->getLine().' in File'.$e->getFile();
+            $response['message'] = DEFAULT_ERROR_MESSAGE;
             Log::error($e->getTraceAsString());
             $response['status'] = STATUS_GENERAL_ERROR;
         }
@@ -328,7 +328,7 @@ class TemplatesController extends Controller
             $response['message'] = 'Data saved successfully';
             $response['status'] = STATUS_OK;
         } catch (Exception $e) {
-            $response['message'] = $e->getMessage().' Line No '.$e->getLine().' in File'.$e->getFile();
+            $response['message'] = DEFAULT_ERROR_MESSAGE;
             Log::error($e->getTraceAsString());
             $response['status'] = STATUS_GENERAL_ERROR;
         }
@@ -354,7 +354,7 @@ class TemplatesController extends Controller
             $response['message'] = 'Expiry Date';
             $response['status'] = STATUS_OK;
         } catch (Exception $e) {
-            $response['message'] = $e->getMessage().' Line No '.$e->getLine().' in File'.$e->getFile();
+            $response['message'] = DEFAULT_ERROR_MESSAGE;
             Log::error($e->getTraceAsString());
             $response['status'] = STATUS_GENERAL_ERROR;
         }

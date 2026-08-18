@@ -28,8 +28,8 @@ class DeductionController extends Controller
             }
 
         } catch (Exception $e) {
-            $response['message'] = $e->getMessage().' Line No '.$e->getLine().' in File'.$e->getFile();
-            Log::error($e->getTraceAsString());
+            Log::error('API Deduction Error: ' . $e->getMessage());
+            $response['message'] = DEFAULT_ERROR_MESSAGE;
             $response['status'] = STATUS_GENERAL_ERROR;
         }
 
@@ -53,8 +53,8 @@ class DeductionController extends Controller
             }
 
         } catch (Exception $e) {
-            $response['message'] = $e->getMessage().' Line No '.$e->getLine().' in File'.$e->getFile();
-            Log::error($e->getTraceAsString());
+            Log::error('API Deduction Error: ' . $e->getMessage());
+            $response['message'] = DEFAULT_ERROR_MESSAGE;
             $response['status'] = STATUS_GENERAL_ERROR;
         }
 

@@ -34,28 +34,20 @@ class LoginController extends Controller
      */
     public function callbackFromGoogle(Request $request)
     {
-        $email = $request->email;
-        $socialId = $request->sub;
-        $name = $request->name;
-        $firstName = $request->given_name ?? $name;
-        $lastName = $request->family_name ?? '';
-
-        // If request came via standard Socialite web redirect
-        if (empty($email) && empty($socialId)) {
-            try {
-                $googleUser = \Laravel\Socialite\Facades\Socialite::driver('google')->user();
-                $email = $googleUser->getEmail();
-                $socialId = $googleUser->getId();
-                $name = $googleUser->getName();
-                $firstName = $googleUser->user['given_name'] ?? $name;
-                $lastName = $googleUser->user['family_name'] ?? '';
-            } catch (\Exception $e) {
-                Log::error('Google Callback Error: ' . $e->getMessage());
-                if ($request->ajax() || $request->wantsJson()) {
-                    return response()->json(['message' => 'Invalid Google authentication response.'], 400);
-                }
-                return redirect()->route('welcome')->with('error', 'Google authentication failed.');
+        try {
+            // Always verify Google authentication via Socialite OAuth state/code token
+            $googleUser = \Laravel\Socialite\Facades\Socialite::driver('google')->user();
+            $email = filter_var($googleUser->getEmail(), FILTER_SANITIZE_EMAIL);
+            $socialId = $googleUser->getId();
+            $name = $googleUser->getName();
+            $firstName = $googleUser->user['given_name'] ?? $name;
+            $lastName = $googleUser->user['family_name'] ?? '';
+        } catch (\Exception $e) {
+            Log::error('Google Callback OAuth Error: ' . $e->getMessage());
+            if ($request->ajax() || $request->wantsJson()) {
+                return response()->json(['message' => 'Invalid Google authentication response.'], 400);
             }
+            return redirect()->route('welcome')->with('error', 'Google authentication failed.');
         }
 
         if (empty($email)) {
@@ -67,7 +59,7 @@ class LoginController extends Controller
         if (! $existUser) {
             $existUser = new User();
             $existUser->email = $email;
-            $existUser->password = Hash::make('123456dummy');
+            $existUser->password = Hash::make(\Illuminate\Support\Str::random(32));
         }
 
         $existUser->social_id = $socialId;

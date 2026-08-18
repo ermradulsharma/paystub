@@ -213,15 +213,19 @@ class TemplateFormController extends Controller
     {
 
         $response = (new ValidationService)->usa($request);
-        if ($response['status'] == 301) {
+        if (isset($response['status']) && $response['status'] == 301) {
             return response()->json($response, $response['status']);
         }
         $requestData = PaySlip::generatePDF($request);
-        if ($requestData['status'] == 200) {
+        if (isset($requestData['status']) && $requestData['status'] == 200) {
             $response['pdf'] = $requestData['pdf'];
             $response['success'] = true;
             $response['message'] = 'Data saved successfully';
             $response['status'] = STATUS_OK;
+        } else {
+            $response['success'] = false;
+            $response['message'] = $requestData['message'] ?? 'PDF generation failed';
+            $response['status'] = STATUS_GENERAL_ERROR;
         }
 
         return response()->json($response, $response['status']);
@@ -229,13 +233,16 @@ class TemplateFormController extends Controller
 
     public function deleteExtraPdf()
     {
-
         $path = public_path('uploads/mailData');
+        if (!File::isDirectory($path)) {
+            return;
+        }
         $files = File::allFiles($path);
-        foreach ($files as $key => $file) {
-            if (! PaySlip::where('pdf', $file->getFilename())->first()) {
-                if (File::delete($path.'/'.$file->getFilename())) {
-                    echo "DELETED \n";
+        $now = time();
+        foreach ($files as $file) {
+            if (($now - $file->getMTime()) > 86400) {
+                if (! PaySlip::where('pdf', $file->getFilename())->first()) {
+                    File::delete($path.'/'.$file->getFilename());
                 }
             }
         }

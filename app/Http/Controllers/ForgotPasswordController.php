@@ -69,12 +69,11 @@ class ForgotPasswordController extends Controller
             return response()->json(['message' => 'Please check your email to reset password.']);
         } catch (\Exception $e) {
             DB::rollBack();
-            $response['message'] = $e->getMessage().' Line No '.$e->getLine().' in File'.$e->getFile();
-            Log::error($e->getTraceAsString());
+            Log::error('Forgot Password Exception: ' . $e->getMessage() . ' in ' . $e->getFile() . ':' . $e->getLine());
 
             return response()->json([
-                'error' => [$response['message']],
-            ]);
+                'error' => ['An error occurred while processing your request. Please try again.'],
+            ], 500);
         }
 
         return response()->json(['message' => 'Please check your email to reset password.']);
