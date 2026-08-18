@@ -925,20 +925,8 @@ img.earnbtn2.lock {
 }
 
 .bottom-close {
-    font-size: 23px;
-    color: #ffffff;
-    background: #ef2e21 !important;
-    padding: 0px 35px;
-    border: none;
-    border-radius: 4px;
-    box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, 0.6));
-    background-color: #8ebc42;
-    -webkit-appearance: none;
-    -moz-appearance: none;
     appearance: none;
     transition: all 0.5s ease-in-out;
-    border: 1px solid transparent;
-    margin-left: 5px;
 }
 
 .previewbtn:hover {
@@ -3234,10 +3222,10 @@ img.earnbtn2.lockuk {
         padding-right: 0 !important;
     }
 
-    .text-white {
+    /* .text-white {
         text-align: center;
         margin-top: 4px;
-    }
+    } */
 
     .text-padding {
         padding: 0px 0px 0px 30px;
@@ -5496,7 +5484,7 @@ img.earnbtn2.lockuk {
 
 /* Device Responsive Adjustments for Mobile, Tablet & Desktop */
 @media (max-width: 1200px) {
-    .modern-paystubx-header .navbtn {
+    f .modern-paystubx-header .navbtn {
         padding: 8px 12px !important;
         font-size: 0.8rem !important;
         min-width: 75px !important;

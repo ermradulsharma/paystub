@@ -3,6 +3,15 @@ var baseUrl = getUrl.protocol + "//" + getUrl.host + "/";
 var userAuth = 0;
 var okk = 0;
 
+function updateAuthUI(uName) {
+    if (!uName) return;
+    var uInitial = uName.charAt(0).toUpperCase();
+    $(".authUserName").html("Hi " + uName + ' <i class="fa fa-angle-down ml-1"></i>');
+    $(".user-avatar-initial").text(uInitial);
+    $(".registerBtn, .login-header-btn").attr("style", "display: none !important;").removeClass("d-block d-inline-block").addClass("d-none");
+    $(".logoutDiv").removeClass("d-none").attr("style", "display: inline-flex !important;");
+}
+
 $(".registerBtn").click(function () {
     $("#loginModal").modal("show");
     userAuth = 0;
@@ -56,9 +65,7 @@ $("#adminLogin").on("submit", function () {
                 if (!response.user.name) {
                     $("#setName").modal("show");
                 } else {
-                    $(".authUserName").text("Hi " + response.user.name);
-                    $(".registerBtn").removeClass("d-block").addClass("d-none");
-                    $(".logoutDiv").removeClass("d-none");
+                    updateAuthUI(response.user.name);
                     if (userAuth == 1) {
                         addAddressDropdown();
                         if (okk == 1) {
@@ -115,19 +122,9 @@ $("#userNameForm").on("submit", function () {
             userAuth = 1;
             $("#setName").modal("hide");
             toastr.success(response.message);
-            setTimeout(() => {
-                $(".authUserName").text("Hi " + response.data);
-            }, 300);
-
-            $(".registerBtn").removeClass("d-block");
-            $(".registerBtn").addClass("d-none");
-            $(".sendMailButton").removeClass("d-none");
-            $(".sendMailButton").addClass("d-block");
-            $(".logoutDiv").removeClass("d-none");
+            updateAuthUI(response.data);
+            $(".sendMailButton").removeClass("d-none").addClass("d-block");
             if (userAuth == 1) {
-                setTimeout(() => {
-                    $(".authUserName").text("Hi " + response.data);
-                }, 300);
                 addAddressDropdown();
                 if (okk == 1) {
                     usaStoreData();
@@ -240,22 +237,13 @@ function handleCredentialResponse(response) {
             userAuth = 1;
             $("#loginModal").modal("hide");
             toastr.success(response.message);
-            setTimeout(() => {
-                $(".authUserName").text("Hi " + response.data);
-            }, 300);
+            updateAuthUI(response.data);
 
-            $(".registerBtn").removeClass("d-block");
-            $(".registerBtn").addClass("d-none");
-            $(".sendMailButton").removeClass("d-none");
-            $(".sendMailButton").addClass("d-block");
-            $(".logoutDiv").removeClass("d-none");
+            $(".sendMailButton").removeClass("d-none").addClass("d-block");
             if (response.user_type == "Admin") {
                 window.location.href = baseUrl + "admin/dashboard";
             }
             if (userAuth == 1) {
-                setTimeout(() => {
-                    $(".authUserName").text("Hi " + response.data);
-                }, 300);
                 addAddressDropdown();
                 if (okk == 1) {
                     usaStoreData();

@@ -361,12 +361,8 @@
                     <form action="{{ route('logout') }}" method="POST">
                         @csrf
                         <div class="d-flex align-items-center justify-content-center" style="gap: 12px;">
-                            <button class="btn flex-fill py-2.5 font-weight-bold text-white shadow-sm" type="submit" style="background: #ef4444; border: none; border-radius: 12px; font-size: 0.9rem;">
-                                {{ __('Yes, Logout') }}
-                            </button>
-                            <button class="btn flex-fill py-2.5 bottom-close font-weight-semibold shadow-sm" type="button" style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; color: #475569; font-size: 0.9rem;">
-                                {{ __('Cancel') }}
-                            </button>
+                            <button class="btn flex-fill py-2.5 font-weight-semibold shadow-sm text-white" type="submit" style="background: #ef4444; border: 1px solid #ef4444; border-radius: 12px; color: #ffffff; font-size: 0.9rem;">{{ __('Yes, Logout') }}</button>
+                            <button class="btn flex-fill py-2.5 font-weight-semibold shadow-sm bottom-close" type="button" style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; color: #475569; font-size: 0.9rem;">{{ __('Cancel') }}</button>
                         </div>
                     </form>
                 </div>
