@@ -140,8 +140,6 @@ Route::middleware(['auth'])->group(function () {
     });
 });
 
-// Route::match(['get', 'post'], 'admin/settings', [SettingController::class, 'settings'])->name('settings');
-
 Route::get('currency-converter', function (\App\Services\CurrencyService $currencyService) {
     $initialRates = $currencyService->getLiveExchangeRates();
     return view('currency-converter', compact('initialRates'));
