@@ -5546,3 +5546,137 @@ img.earnbtn2.lockuk {
         height: 32px !important;
     }
 }
+
+/* PaystubX World-Class Enterprise Professional Footer */
+.footerSection {
+    background: #0b0f19 !important;
+    border-top: 1px solid #1e293b !important;
+    padding: 70px 0 10px !important;
+    color: #94a3b8 !important;
+    position: relative !important;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
+.footerSection .footer-trust-banner {
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.9) 100%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25) !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+.footerSection .trust-icon-box {
+    width: 52px !important;
+    height: 52px !important;
+    border-radius: 14px !important;
+    background: rgba(79, 70, 229, 0.15) !important;
+    border: 1px solid rgba(99, 102, 241, 0.3) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: #818cf8 !important;
+}
+
+.footerSection .btn-indigo-glow {
+    background: linear-gradient(135deg, #4f46e5 0%, #3b82f6 100%) !important;
+    color: #ffffff !important;
+    border-radius: 12px !important;
+    border: none !important;
+    box-shadow: 0 4px 16px rgba(79, 70, 229, 0.4) !important;
+    transition: all 0.25s ease !important;
+}
+
+.footerSection .btn-indigo-glow:hover {
+    box-shadow: 0 6px 20px rgba(79, 70, 229, 0.6) !important;
+    transform: translateY(-2px) !important;
+    color: #ffffff !important;
+}
+
+.footerSection .footer-description {
+    font-size: 0.875rem !important;
+    line-height: 1.65 !important;
+    color: #94a3b8 !important;
+}
+
+.footerSection .footer-col-title {
+    font-size: 0.925rem !important;
+    font-weight: 700 !important;
+    color: #f8fafc !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.6px !important;
+    margin-bottom: 20px !important;
+}
+
+.footerSection .footer-link-list {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.footerSection .footer-link-list li {
+    margin-bottom: 12px !important;
+}
+
+.footerSection .footer-link-list li a {
+    color: #cbd5e1 !important;
+    font-size: 0.875rem !important;
+    font-weight: 500 !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease !important;
+    display: inline-flex !important;
+    align-items: center !important;
+}
+
+.footerSection .footer-link-list li a:hover {
+    color: #818cf8 !important;
+    transform: translateX(4px) !important;
+}
+
+.footerSection .footer-social-pill {
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 12px !important;
+    background: rgba(255, 255, 255, 0.04) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    color: #cbd5e1 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 1rem !important;
+    transition: all 0.25s ease !important;
+    text-decoration: none !important;
+}
+
+.footerSection .footer-social-pill:hover {
+    background: #4f46e5 !important;
+    color: #ffffff !important;
+    border-color: #4f46e5 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 14px rgba(79, 70, 229, 0.35) !important;
+}
+
+.footerSection .trust-badge-card {
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.07) !important;
+    border-radius: 16px !important;
+}
+
+.footerSection .text-slate-400 {
+    color: #94a3b8 !important;
+}
+
+.footerSection .text-emerald-400 {
+    color: #34d399 !important;
+}
+
+.footerSection .badge-dark-indigo {
+    background: rgba(79, 70, 229, 0.15) !important;
+    color: #a5b4fc !important;
+    border: 1px solid rgba(99, 102, 241, 0.3) !important;
+    border-radius: 8px !important;
+    font-size: 0.75rem !important;
+}
+
+.footerSection .footer-sub-bar {
+    border-top: 1px solid rgba(255, 255, 255, 0.07) !important;
+}
