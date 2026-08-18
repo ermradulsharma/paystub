@@ -142,7 +142,10 @@ Route::middleware(['auth'])->group(function () {
 
 // Route::match(['get', 'post'], 'admin/settings', [SettingController::class, 'settings'])->name('settings');
 
-Route::get('currency-converter', function() {return view('currency-converter');})->name('currency.converter');
+Route::get('currency-converter', function (\App\Services\CurrencyService $currencyService) {
+    $initialRates = $currencyService->getLiveExchangeRates();
+    return view('currency-converter', compact('initialRates'));
+})->name('currency.converter');
 
 // =========================================================================
 // 7. Payment Processing Routes (PayPal)
