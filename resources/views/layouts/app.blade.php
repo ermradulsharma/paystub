@@ -54,7 +54,7 @@
                     <li class="nav-item"><a class="btn navbtn {{ request()->is('w2form*') ? 'active' : '' }}" href="{{ route('w2form') }}">W-2 FORM</a></li>
                     <li class="nav-item">
                         @guest
-                            <a class="btn login registerBtn login-header-btn" href="javascript:void(0);"><i class="fa fa-sign-in mr-1.5"></i> LOGIN</a>
+                            <a class="btn login registerBtn login-header-btn" href="javascript:void(0);">LOGIN <i class="fa fa-sign-in mx-2"></i></a>
                             <div class="d-none logoutDiv">
                                 <div class="user-pill-wrapper">
                                     <div class="user-avatar-badge"><i class="fa fa-user"></i></div>
