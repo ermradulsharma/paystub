@@ -41,6 +41,11 @@ Route::get('refund', function () {return view('refund');})->name('refund');
 Route::get('contact', function () {return view('contact');})->name('contact');
 Route::post('contact-form', [HomeController::class, 'contactForm'])->name('contact-form');
 Route::get('template-view', function () {return view('template');})->name('template-view');
+
+// DomPDF Live Viewer & Template Testbench
+Route::get('pdf-viewer/{form_type?}/{template?}', [\App\Http\Controllers\PdfViewerController::class, 'index'])->name('pdf.viewer');
+Route::get('pdf-viewer-stream/{form_type}/{template}', [\App\Http\Controllers\PdfViewerController::class, 'streamPdf'])->name('pdf.stream');
+
 Route::get('userDashboard', function () {return view('user-dashboard');})->name('userDashboard');
 Route::get('verify', function () {return view('mail.verify');})->name('verify');
 
