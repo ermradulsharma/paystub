@@ -1,12 +1,13 @@
-# PaystubX Security & Hardening Rules
+# PaystubX Senior Developer Security & Hardening Rules
 
-Mandatory security protocols and hardening constraints for all controllers, middleware, and route handlers.
+Mandatory security protocols and hardening constraints established by 15+ years Senior Laravel Architects for all controllers, middleware, services, and route handlers.
 
 ## 🛡️ Authentication & Access Control
 
 1. **Admin Middleware Protection:** All `/admin/*` routes MUST be registered inside `Route::prefix('admin')->middleware(['userCheck'])` in `routes/web.php`.
 2. **Role Check Verification:** `RoleCheck.php` MUST strictly enforce `$userObj->role_id == 1`. Unauthenticated or non-admin access MUST be blocked immediately.
-3. **No Standalone Unprotected Admin Routes:** NEVER declare fallback unauthenticated admin routes outside the middleware group.
+3. **Zero Trust Google OAuth Guard:** Social OAuth callbacks MUST ALWAYS verify identity via server-side OAuth providers (`Socialite::driver('google')->user()`). NEVER accept untrusted raw request parameters (`$request->email`, `$request->sub`) for login or session creation.
+4. **Secure Password Hashing:** Newly created OAuth accounts MUST use cryptographically secure random passwords (`Hash::make(Str::random(32))`). NEVER use hardcoded dummy passwords like `'123456dummy'`.
 
 ---
 
@@ -20,3 +21,5 @@ Mandatory security protocols and hardening constraints for all controllers, midd
    - Validate MIME types strictly (`image/jpeg`, `image/png`, `image/jpg`, `image/gif`, `image/webp`).
    - Limit file size to `2048 KB`.
    - Generate safe, randomized filenames using `bin2hex(random_bytes(16))` to prevent Remote Code Execution (RCE) and path traversal attacks.
+5. **Information Disclosure Prevention:**
+   - Catch blocks MUST NEVER return raw exception messages containing local file paths or line numbers (`$e->getFile()`, `$e->getLine()`). Log errors securely with `Log::error($e)` and return clean, user-friendly messages (`DEFAULT_ERROR_MESSAGE`).
