@@ -57,11 +57,71 @@ class PdfViewerController extends Controller
             abort(404, "Template {$viewPath} not found.");
         }
 
-        $pdf = PDF::loadView($viewPath, $invoiceData)
-            ->setPaper('a4', $orientation)
-            ->setOption('isRemoteEnabled', true);
+        $html = view($viewPath, $invoiceData)->render();
+        $processedHtml = $this->preprocessDomPdfHtml($html);
 
-        return $pdf->stream("{$template}.pdf");
+        // Temporarily suppress PHP 8.4+ vendor deprecation warnings (E_STRICT in DomPDF Helpers.php)
+        $oldLevel = error_reporting(E_ALL & ~E_DEPRECATED & ~E_USER_DEPRECATED);
+
+        try {
+            $pdf = PDF::loadHtml($processedHtml)
+                ->setPaper('a4', $orientation)
+                ->setOption('isRemoteEnabled', true)
+                ->setOption('isHtml5ParserEnabled', true)
+                ->setOption('chroot', [public_path(), storage_path()]);
+
+            return $pdf->stream("{$template}.pdf");
+        } finally {
+            error_reporting($oldLevel);
+        }
+    }
+
+    /**
+     * Preprocess DomPDF HTML to convert all local image paths under public/images and public/user
+     * into inline Base64 Data URIs. Prevents any DomPDF "Image not found or type unknown" errors.
+     *
+     * @param string $html
+     * @return string
+     */
+    private function preprocessDomPdfHtml(string $html): string
+    {
+        return preg_replace_callback('/<img[^>]+src=["\']([^"\']+)["\']/i', function ($matches) {
+            $imgPath = $matches[1];
+            
+            // Skip if already a base64 data URI
+            if (str_starts_with($imgPath, 'data:')) {
+                return $matches[0];
+            }
+
+            // Clean file protocols and normalize slashes
+            $cleanPath = str_replace(['file:///', 'file://', 'file:'], '', $imgPath);
+            $cleanPath = str_replace(['/', '\\'], DIRECTORY_SEPARATOR, $cleanPath);
+
+            // Check if file exists directly on disk
+            if (!File::exists($cleanPath)) {
+                $relativeClean = ltrim(str_replace(['/', '\\'], DIRECTORY_SEPARATOR, $imgPath), DIRECTORY_SEPARATOR);
+                $cleanPath = public_path($relativeClean);
+            }
+
+            // If file exists, convert to Base64 Data URI for 100% reliable DomPDF rendering
+            if (File::exists($cleanPath)) {
+                $ext = strtolower(pathinfo($cleanPath, PATHINFO_EXTENSION));
+                $mime = match ($ext) {
+                    'png' => 'image/png',
+                    'jpg', 'jpeg' => 'image/jpeg',
+                    'gif' => 'image/gif',
+                    'svg' => 'image/svg+xml',
+                    'webp' => 'image/webp',
+                    default => 'image/png'
+                };
+
+                $imageData = File::get($cleanPath);
+                $base64 = 'data:' . $mime . ';base64,' . base64_encode($imageData);
+                return str_replace($imgPath, $base64, $matches[0]);
+            }
+
+            return $matches[0];
+        }, $html);
     }
 
     /**
